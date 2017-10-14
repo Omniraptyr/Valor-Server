@@ -1,0 +1,36 @@
+C:\Users\darkd\Desktop\NR-CORE-master\wServer\obj\Debug\wServer.csprojResolveAssemblyReference.cache
+C:\Users\darkd\Desktop\NR-CORE-master\wServer\obj\Debug\wServer.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\NR-CORE-master\bin\log4net.config
+C:\Users\darkd\Desktop\NR-CORE-master\bin\wServer.json
+C:\Users\darkd\Desktop\NR-CORE-master\bin\wServer.exe.config
+C:\Users\darkd\Desktop\NR-CORE-master\bin\wServer.exe
+C:\Users\darkd\Desktop\NR-CORE-master\bin\wServer.pdb
+C:\Users\darkd\Desktop\NR-CORE-master\wServer\obj\Debug\wServer.exe
+C:\Users\darkd\Desktop\NR-CORE-master\wServer\obj\Debug\wServer.pdb
+C:\Users\darkd\Desktop\votr-server2.0\wServer\obj\Debug\wServer.csprojResolveAssemblyReference.cache
+C:\Users\darkd\Desktop\votr-server2.0\wServer\obj\Debug\wServer.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\votr-server2.0\wServer\obj\Debug\wServer.exe
+C:\Users\darkd\Desktop\votr-server2.0\wServer\obj\Debug\wServer.pdb
+C:\Users\darkd\Desktop\votr-server2.0\bin\log4net.config
+C:\Users\darkd\Desktop\votr-server2.0\bin\wServer.json
+C:\Users\darkd\Desktop\votr-server2.0\bin\wServer.exe.config
+C:\Users\darkd\Desktop\votr-server2.0\bin\wServer.exe
+C:\Users\darkd\Desktop\votr-server2.0\bin\wServer.pdb
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\bin\log4net.config
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\bin\wServer.json
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\bin\wServer.exe.config
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\bin\wServer.exe
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\bin\wServer.pdb
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\wServer\obj\Debug\wServer.csprojResolveAssemblyReference.cache
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\wServer\obj\Debug\wServer.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\wServer\obj\Debug\wServer.exe
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\wServer\obj\Debug\wServer.pdb
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\bin\log4net.config
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\bin\wServer.json
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\bin\wServer.exe.config
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\bin\wServer.exe
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\bin\wServer.pdb
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\wServer\obj\Debug\wServer.csprojResolveAssemblyReference.cache
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\wServer\obj\Debug\wServer.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\wServer\obj\Debug\wServer.exe
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\wServer\obj\Debug\wServer.pdb

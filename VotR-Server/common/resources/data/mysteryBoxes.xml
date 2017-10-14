@@ -1,0 +1,45 @@
+<MysteryBoxData version = "1408515972.279192">
+	<MysteryBox id = "33" title = "The Sword of the Mad God Box" weight = "-1">
+		<Description></Description>
+		<Contents>8962,3272,3180,4622,4901,3275</Contents>
+		<Price amount="1" currency="0"/>
+		<Image>http://i.imgur.com/WnkWTbQ.png</Image>
+		<Icon></Icon>
+		<StartTime>2014-06-06 14:30:16</StartTime>
+	</MysteryBox>
+	<MysteryBox id = "43" title = "The New Ambrosia Box" weight = "-1">
+		<Description></Description>
+		<Contents>3276,3271,3272,3269,3275</Contents>
+		<Price amount="1" currency="0"/>
+		<Image>http://rotmg.kabamcdn.com/NewAmbrosiaMysteryModal.png</Image>
+		<Icon></Icon>
+		<StartTime>2014-08-11 14:05:31</StartTime>
+	</MysteryBox>
+	<MysteryBox id = "44" title = "Big Ol' Skin Box" weight = "0">
+		<Description></Description>
+		<Contents>8850,9615,8812,8851,4096,4097,4098,4099,4100,4101,4102,4103,4104,4105,4106,4107,4108,4109,4110,4111,4112,4113,4114,4115,4116,4117,4118,4119,4120,4121,4122,4123,4124,4125,4126,4127,4128,4129,4130,4131,4132,4133,4134,4135,4136,4137,4138,4139,4140,4141,4142,4143,4144,4145,4146,4147,4148,4149,4150,4151,4152,4153,4154,4156,4155,4157,4158,4159,4160,4161,4162,4164,4163,4165,4166,4167,4168,4169,4170,4171,4172,4173,4174,4175,4176,4177,4178,4179,4180,4181,4182,4183,4184,4185,4186,4187,4188,4189,4190,4191,4192,4193,4194,4195,4196,4197,4198,4199,4200,4201,4202,4203,4204,4205,4206,4207,4208,4209,4210,4211,4212,4213,4214,4215,4216,4217,4218,4219,4220,4221,4222,4223,4236,4224</Contents>
+		<Price amount="1" currency="0"/>
+		<Image>http://rotmg.kabamcdn.com/BigOlSkinBoxMysteryModal.png</Image>
+		<Icon></Icon>
+		<StartTime>2014-08-14 12:53:41</StartTime>
+	</MysteryBox>
+	<MysteryBox id = "39" title = "The Lair of Draconis Box" weight = "-1">
+		<Description></Description>
+		<Contents>3284,1808,1793,1802,3170,3293,8852</Contents>
+		<Price amount="1" currency="0"/>
+		<Image>http://i.imgur.com/hgRW660.png</Image>
+		<Icon></Icon>
+		<StartTime>2014-06-20 13:56:00</StartTime>
+	</MysteryBox>
+	<MysteryBox id = "25" title = "The Triple Dungeon Mystery Box" weight = "0">
+		<Description></Description>
+		<Contents>1808,3089,3170,3119,1793;1808,3089,3170,3119,1793;1808,3089,3170,3119,1793</Contents>
+		<Price amount="1" currency="0"/>
+		<Image>http://i.imgur.com/odrBR53.png</Image>
+		<Icon></Icon>
+		<StartTime>2014-04-03 13:47:12</StartTime>
+		<Sale price = "375" currency = "0">
+			<End>2014-08-20 23:59:43</End>
+		</Sale>
+	</MysteryBox>
+</MysteryBoxData>

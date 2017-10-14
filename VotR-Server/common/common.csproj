@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2361688D-6D1E-4A29-9D42-A7C384F76012}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>common</RootNamespace>
+    <AssemblyName>common</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.Mono.1.0.0\lib\StackExchange.Redis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Zlib.Portable, Version=1.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zlib.Portable.1.11.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigModels.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="DbModels.cs" />
+    <Compile Include="DbStatus.cs" />
+    <Compile Include="FameStats.cs" />
+    <Compile Include="Interfaces.cs" />
+    <Compile Include="InterServerChannel.cs" />
+    <Compile Include="ISManager.cs" />
+    <Compile Include="ISDataTypes.cs" />
+    <Compile Include="NReader.cs" />
+    <Compile Include="NWriter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="resources\ChangePassword.cs" />
+    <Compile Include="resources\MysteryBoxes.cs" />
+    <Compile Include="resources\Packages.cs" />
+    <Compile Include="resources\PrivateMessages.cs" />
+    <Compile Include="resources\Ranks.cs" />
+    <Compile Include="resources\Tinker.cs" />
+    <Compile Include="resources\WorldData.cs" />
+    <Compile Include="resources\XmlDescriptors.Pets.cs" />
+    <Compile Include="terrain\Json2Wmap.cs" />
+    <Compile Include="terrain\TerrainTile.cs" />
+    <Compile Include="terrain\WorldMapExporter.cs" />
+    <Compile Include="TimedLock.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="WeakDictionary.cs" />
+    <Compile Include="resources\Resources.cs" />
+    <Compile Include="resources\AppSettings.cs" />
+    <Compile Include="resources\XmlDescriptors.cs" />
+    <Compile Include="resources\XmlData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="resources\data\roles.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dbSchema.txt" />
+    <Content Include="resources\data\changePassword\request.txt" />
+    <Content Include="resources\data\changePassword\reset.html" />
+    <Content Include="resources\data\changePassword\reset.txt" />
+    <Content Include="resources\data\changePassword\resetError.html" />
+    <Content Include="resources\data\filterList.txt" />
+    <Content Include="resources\data\inGameNews.txt" />
+    <Content Include="resources\data\init.xml" />
+    <Content Include="resources\data\languages\en.txt" />
+    <Content Include="resources\data\loginRewards.xml" />
+    <Content Include="resources\data\mysteryBoxes.xml" />
+    <Content Include="resources\data\news.txt" />
+    <Content Include="resources\data\packages.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_AbyssOfDemonsCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_BelladonnaCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_BTestingCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_CandyLandCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_CaveOfAThousandTreasuresCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_DyesCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_EncountersCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_EpicForestMazeCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_EpicPirateCaveCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_EpicSpiderDenCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_EquipCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_EquipmentSetsCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_ForbiddenJungleCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_ForestMazeCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_GhostShipCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_GroundCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_HauntedCemeteryCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_HighCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_IceCaveCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_KTestingCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_LairOfDraconisCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_LairOfShaitanCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_LowCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_MadLabCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_ManorOfTheImmortalsCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_MidCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_MiniDungeonHubCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_MonstersCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_MountainsCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_MTestingCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_NexusDestroyedCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_ObjectsCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_OceanTrenchCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_OryxCastleCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_OryxChamberCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_OryxWineCellarCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_PermapetsCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_PetsCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_PirateCaveCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_PlayersCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_ProjectilesCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_PuppetMasterCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_RegionsCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_ShattersCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_ShoreCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_SkinsCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_SnakePitCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_SpriteWorldCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_StaticObjectsCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_STestingCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_TempObjectsCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_TestingObjectsCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_TextilesCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_TombOfTheAncientsCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_TTestingCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_TutorialObjectsCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_TutorialScriptCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_UndeadLairCXML.xml" />
+    <Content Include="resources\xmls\client\EmbeddedData_WillemTestingCXML.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="resources\xmls\additional\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

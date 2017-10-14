@@ -1,0 +1,33 @@
+[{
+	"slot": 3, 
+	"linkType": 1, 
+	"title": "NR's Wiki", 
+	"image": "https://cdn.discordapp.com/attachments/167769661902028801/208722688120848386/unknown.png", 
+	"priority": 759, 
+	"linkDetail": "http://nillysrealm.wikidot.com/", 
+	"platform": "kabam.com,kongregate,steam,rotmg", 
+	"startTime": 1413334800000, 
+	"endTime": 1914022340000
+}, 
+{
+	"slot": 2, 
+	"linkType": 1, 
+	"title": "Patch Notes", 
+	"image": "https://cdn.discordapp.com/attachments/167769661902028801/208722673704894467/unknown.png", 
+	"priority": 756, 
+	"linkDetail": "http://nillysrealm.com/category/15/patch-notes", 
+	"platform": "kabam.com,kongregate,steam,rotmg", 
+	"startTime": 1412730000000, 
+	"endTime": 1913417540000
+}, 
+{
+	"slot": 1, 
+	"linkType": 1, 
+	"title": "Join our Discord channel", 
+	"image": "https://cdn.discordapp.com/attachments/167769661902028801/208722662845972481/unknown.png", 
+	"priority": 757, 
+	"linkDetail": "https://discord.gg/d9VuYxJ", 
+	"platform": "kabam.com,kongregate,steam,rotmg", 
+	"startTime": 1413199137000, 
+	"endTime": 1913935940000
+}]

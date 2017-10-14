@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Deadwater Docks",
+"sbName":"Deadwater Docks",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x075d],
+"maps":["ddocks.jm"],
+"music":[""]}
