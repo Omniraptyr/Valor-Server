@@ -1264,12 +1264,12 @@ namespace wServer.realm.entities
                 if (enemy.Owner == null || w == null)
                     return true;
 
-                /*w.BroadcastPacketConditional(new ShowEffect()
+                w.BroadcastPacketConditional(new ShowEffect()
                 {
                     EffectType = EffectType.Dead,
                     TargetObjectId = enemy.Id,
                     Color = new ARGB(0xffddff00)
-                }, p => enemy.DistSqr(p) < RadiusSqr);*/
+                }, p => enemy.DistSqr(p) < RadiusSqr);
 
                 if (x % 4 == 0) // make sure to change this if timer delay is changed
                 {

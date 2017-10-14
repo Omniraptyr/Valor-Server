@@ -34,3 +34,12 @@ C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\server\obj\Debug
 C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\server\obj\Debug\server.csproj.CoreCompileInputs.cache
 C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\server\obj\Debug\server.exe
 C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\server\obj\Debug\server.pdb
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\log4net.config
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\server.json
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\server.exe.config
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\server.exe
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\server.pdb
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\server\obj\Debug\server.csprojResolveAssemblyReference.cache
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\server\obj\Debug\server.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\server\obj\Debug\server.exe
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\server\obj\Debug\server.pdb

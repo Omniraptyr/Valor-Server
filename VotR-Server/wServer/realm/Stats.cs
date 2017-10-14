@@ -124,6 +124,7 @@ namespace wServer.realm
         RaidToken = 108,
         RaidRank = 109,
         Surge = 110,
+        SurgeCounter = 111,
 
         None = 255
     }

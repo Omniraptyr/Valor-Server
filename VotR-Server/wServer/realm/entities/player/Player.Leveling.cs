@@ -7,8 +7,6 @@ namespace wServer.realm.entities
 {
     public partial class Player
     {
-        int _surgeCounter;
-
         public static int GetExpGoal(int level)
         {
             return 50 + (level - 1) * 100;
@@ -298,17 +296,21 @@ namespace wServer.realm.entities
             CalculateFame();
             return false;
         }
-        public void SurgeActivation()
+        public void SurgeActivation(RealmTime time)
         {
             if (Surge <= 100)
             {
-                Surge++;  
+                SurgeCounter = 150;
+                Surge += 2;
+                isSurgeGone = true;
+                surgewither = false;
             }
+
         }
 
         public bool EnemyKilled(Enemy enemy, int exp, bool killer)
         {
-            
+            var time = new RealmTime();
             if (enemy == questEntity)
                 BroadcastSync(new Notification()
                 {
@@ -320,7 +322,7 @@ namespace wServer.realm.entities
             {
                 Experience += exp;
             }
-            SurgeActivation();
+            SurgeActivation(time);
             FameCounter.Killed(enemy, killer);
             return CheckLevelUp();
         }

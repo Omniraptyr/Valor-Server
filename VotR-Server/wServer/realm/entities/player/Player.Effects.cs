@@ -7,12 +7,21 @@ namespace wServer.realm.entities
     {
         float _healing;
         float _bleeding;
-        
+        float _surgeDepletion;
+        float _surgeDepletion2;
+
         int _newbieTime;
         int _canTpCooldownTime;
 
+        bool isSurgeGone;
+        bool surgewither;
         void HandleEffects(RealmTime time)
         {
+            if(SurgeCounter == 1)
+            {
+                Surge = 0;
+            }
+
             if (_client.Account.Hidden && !HasConditionEffect(ConditionEffects.Hidden))
             {
                 ApplyConditionEffect(ConditionEffectIndex.Hidden);
@@ -46,6 +55,33 @@ namespace wServer.realm.entities
                     _bleeding -= (int)_bleeding;
                 }
                 _bleeding += 28 * (time.ElaspedMsDelta / 1000f);
+            }
+            if (isSurgeGone == true)
+            {
+                if (_surgeDepletion > 1)
+                {
+                    SurgeCounter -= (int)_surgeDepletion;
+                    if (SurgeCounter < 1)
+                        SurgeCounter = 0;
+                    _surgeDepletion -= (int)_surgeDepletion;
+                    if (SurgeCounter == 0)
+                    {
+                        isSurgeGone = false;
+                        surgewither = true;
+                    }
+                }
+                _surgeDepletion += 28 * (time.ElaspedMsDelta / 1000f);
+            }
+            if(surgewither == true)
+            {
+                if (_surgeDepletion2 > 1)
+                {
+                    Surge -= (int)_surgeDepletion2;
+                    if (Surge < 1)
+                        Surge = 0;
+                    _surgeDepletion2 -= (int)_surgeDepletion2;
+                }
+                _surgeDepletion2 += 7 * (time.ElaspedMsDelta / 1000f);
             }
 
             if (HasConditionEffect(ConditionEffects.NinjaSpeedy))

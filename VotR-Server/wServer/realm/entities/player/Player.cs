@@ -157,6 +157,13 @@ namespace wServer.realm.entities
             set { _surge.SetValue(value); }
         }
 
+        private readonly SV<int> _surgeCounter;
+        public int SurgeCounter
+        {
+            get { return _surgeCounter.GetValue(); }
+            set { _surgeCounter.SetValue(value); }
+        }
+
         private readonly SV<bool> _hasBackpack;
         public bool HasBackpack
         {
@@ -314,6 +321,7 @@ namespace wServer.realm.entities
                 case StatsType.RaidToken: RaidToken = (int)val; break;
                 case StatsType.RaidRank: RaidRank = (int)val; break;
                 case StatsType.Surge: Surge = (int)val; break;
+                case StatsType.SurgeCounter: SurgeCounter = (int)val; break;
             }
         }
 
@@ -396,6 +404,7 @@ namespace wServer.realm.entities
             stats[StatsType.RaidToken] = RaidToken;
             stats[StatsType.RaidRank] = RaidRank;
             stats[StatsType.Surge] = Surge;
+            stats[StatsType.SurgeCounter] = SurgeCounter;
         }
 
         public void SaveToCharacter()
@@ -462,6 +471,7 @@ namespace wServer.realm.entities
             _raidToken = new SV<int>(this, StatsType.RaidToken, client.Account.RaidToken, true);
             _raidRank = new SV<int>(this, StatsType.RaidRank, client.Account.RaidRank, true);
             _surge = new SV<int>(this, StatsType.Surge, -1);
+            _surgeCounter = new SV<int>(this, StatsType.SurgeCounter, -1);
 
 
             Name = client.Account.Name;

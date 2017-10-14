@@ -10,7 +10,6 @@ namespace wServer.realm.entities
 
         private readonly SV<int> _hp;
         private readonly SV<int> _maximumHP;
-        private readonly SV<int> _surge;
 
         public int HP
         {
@@ -22,11 +21,7 @@ namespace wServer.realm.entities
             get { return _maximumHP.GetValue(); }
             set { _maximumHP.SetValue(value); }
         }
-        public int Surge
-        {
-            get { return _surge.GetValue(); }
-            set { _surge.SetValue(value); }
-        }
+
 
         protected Character(RealmManager manager, ushort objType)
             : base(manager, objType)

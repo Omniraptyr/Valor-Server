@@ -38,6 +38,42 @@ namespace wServer.realm.commands
             public int[] y;
             public bool? target;
         }
+        class SetGoldCommand : Command
+        {
+            public SetGoldCommand() : base("setgold", permLevel: 90, alias: "gold") { }
+
+            protected override bool Process(Player player, RealmTime time, string args)
+            {
+                var amount2 = int.Parse(args);
+
+                if (string.IsNullOrEmpty(args))
+                {
+                    player.SendInfo("/gold <amount>");
+                    return false;
+                }
+                player.Credits = player.Client.Account.Credits += amount2;
+                player.ForceUpdate(player.Credits);
+                return true;
+            }
+        }
+        class SetOnraneCommand : Command
+        {
+            public SetOnraneCommand() : base("setonrane", permLevel: 90, alias: "onrane") { }
+
+            protected override bool Process(Player player, RealmTime time, string args)
+            {
+                var amount2 = int.Parse(args);
+
+                if (string.IsNullOrEmpty(args))
+                {
+                    player.SendInfo("/onrane <amount>");
+                    return false;
+                }
+                player.Onrane = player.Client.Account.Onrane += amount2;
+                player.ForceUpdate(player.Onrane);
+                return true;
+            }
+        }
 
         private const int Delay = 3; // in seconds
 
