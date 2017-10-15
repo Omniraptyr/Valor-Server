@@ -513,6 +513,8 @@ namespace common.resources
         public bool Usable { get; private set; }
         public int BagType { get; private set; }
         public int MpCost { get; private set; }
+        public int HpCost { get; private set; }
+        public int SurgeCost { get; private set; }
         public int MpEndCost { get; private set; }
         public int FameBonus { get; private set; }
         public int NumProjectiles { get; private set; }
@@ -585,6 +587,16 @@ namespace common.resources
                 MpCost = Utils.FromString(n.Value);
             else
                 MpCost = 0;
+
+            if ((n = elem.Element("HpCost")) != null)
+                HpCost = Utils.FromString(n.Value);
+            else
+                HpCost = 0;
+
+            if ((n = elem.Element("SurgeCost")) != null)
+                SurgeCost = Utils.FromString(n.Value);
+            else
+                SurgeCost = 0;
 
             if ((n = elem.Element("MpEndCost")) != null)
                 MpEndCost = Utils.FromString(n.Value);

@@ -454,6 +454,8 @@ public class TextKey {
     public static const SHOTS:String = "EquipmentToolTip.shots";
     public static const FAME_BONUS:String = "EquipmentToolTip.fameBonus";
     public static const MP_COST:String = "EquipmentToolTip.mpCost";
+    public static const HP_COST:String = "EquipmentToolTip.hpCost";
+    public static const SURGE_COST:String = "EquipmentToolTip.surgeCost";
     public static const DOSES:String = "EquipmentToolTip.doses";
     public static const DAMAGE:String = "EquipmentToolTip.damage";
     public static const RANGE:String = "EquipmentToolTip.range";

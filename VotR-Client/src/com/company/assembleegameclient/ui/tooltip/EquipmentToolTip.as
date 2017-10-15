@@ -90,6 +90,8 @@ public class EquipmentToolTip extends ToolTip {
         this.addActivateOnEquipTagsToEffectsList();
         this.addDoseTagsToEffectsList();
         this.addMpCostTagToEffectsList();
+        this.addHpCostTagToEffectsList();
+        this.addSurgeCostTagToEffectsList();
         this.addFameBonusTagToEffectsList();
         this.makeEffectsList();
         this.makeLineTwo();
@@ -293,6 +295,18 @@ public class EquipmentToolTip extends ToolTip {
                     this.effects.push(new Effect(TextKey.MP_COST, {"cost": this.objectXML.MpCost}));
                 }
             }
+        }
+    }
+
+    private function addHpCostTagToEffectsList():void {
+        if (this.objectXML.hasOwnProperty("HpCost")) {
+            this.effects.push(new Effect(TextKey.HP_COST, {"hpcost": this.objectXML.HpCost}));
+        }
+    }
+
+    private function addSurgeCostTagToEffectsList():void {
+        if (this.objectXML.hasOwnProperty("SurgeCost")) {
+            this.effects.push(new Effect(TextKey.SURGE_COST, {"surgecost": this.objectXML.SurgeCost}));
         }
     }
 

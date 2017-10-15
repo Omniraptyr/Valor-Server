@@ -243,6 +243,15 @@ namespace wServer.realm.entities
         private void Activate(RealmTime time, Item item, Position target)
         {
             MP -= item.MpCost;
+
+            if(Surge >= item.SurgeCost) 
+            Surge -= item.SurgeCost;
+
+
+            if (HP < item.HpCost)
+                HP = item.HpCost;
+            else
+                HP -= item.HpCost;
             foreach (var eff in item.ActivateEffects)
             {
                 switch (eff.Effect)

@@ -179,6 +179,10 @@ namespace wServer.logic.behaviors
                     _rotateCount++;
 
                     int dmg = Random.Next(desc.MinDamage, desc.MaxDamage);
+                    if (host.HasConditionEffect(ConditionEffects.Weak))
+                    {
+                        dmg = dmg / 2;
+                    }
                     var startAngle = a - _shootAngle * (count - 1) / 2;
                     byte prjId = 0;
                     Position prjPos = new Position() { X = host.X, Y = host.Y };
