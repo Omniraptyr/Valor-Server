@@ -878,7 +878,6 @@ namespace wServer.realm.entities
 
             return base.HitByProjectile(projectile, time);
         }
-
         public void Damage(int dmg, Entity src)
         {
             if (IsInvulnerable())

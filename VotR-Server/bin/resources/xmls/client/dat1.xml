@@ -75997,33 +75997,37 @@ A magnificent legendary blade which only cuts those who deserve death.
     </Texture>
     <Rotation>60</Rotation>
   </Object>
-  <Object type="0x1485" id="Waraxe of Judgement">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>lofiObj5</File>
-      <Index>0xaf</Index>
-    </Texture>
-    <SlotType>1</SlotType>
-    <Description>The opposers will be judged without mercy.</Description>
-    <RateOfFire>.70</RateOfFire>
-    <Sound>weapon/mithril_sword</Sound>
-    <Projectile>
-      <ObjectId>Waraxe Shot</ObjectId>
-      <Speed>75</Speed>
-      <MinDamage>250</MinDamage>
-      <MaxDamage>250</MaxDamage>
-      <LifetimeMS>325</LifetimeMS>
-    </Projectile>
-    <ActivateOnEquip stat="21" amount="25">IncrementStat</ActivateOnEquip>
-      <ActivateOnEquip stat="26" amount="-10">IncrementStat</ActivateOnEquip>
-    <BagType>6</BagType>
-    <Legendary/>
-    <feedPower>1800</feedPower>
-    <FameBonus>9</FameBonus>
-    <NumProjectiles>5</NumProjectiles>
-    <OldSound>bladeSwing</OldSound>
-  </Object>
+    <Object type="0x1485" id="Waraxe of Judgement">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj5</File>
+            <Index>0xaf</Index>
+        </Texture>
+        <SlotType>1</SlotType>
+        <Description>The opposers will be judged without mercy.</Description>
+        <RateOfFire>.70</RateOfFire>
+        <Sound>weapon/mithril_sword</Sound>
+        <Projectile>
+            <ObjectId>Waraxe Shot</ObjectId>
+            <Speed>75</Speed>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <LifetimeMS>325</LifetimeMS>
+        </Projectile>
+        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="-20">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <Legendary/>
+        <Legend id="1">
+            <Name>Relentless</Name>
+            <Description>When your Surge is at least 40 you get an attack boost.</Description>
+        </Legend>
+        <feedPower>1800</feedPower>
+        <FameBonus>9</FameBonus>
+        <NumProjectiles>5</NumProjectiles>
+        <OldSound>bladeSwing</OldSound>
+    </Object>
  <Object type="0x1486" id="Solar Burst Dirk">
     <Class>Equipment</Class>
     <Item/>

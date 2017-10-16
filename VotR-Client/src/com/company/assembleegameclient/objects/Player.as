@@ -870,6 +870,8 @@ public class Player extends Character {
         var _local9:Number;
         var _local10:int;
         var _local11:int;
+        var _local12:int;
+        var _local13:int;
         if ((((map_ == null)) || (isPaused()))) {
             return (false);
         }
@@ -902,6 +904,16 @@ public class Player extends Character {
             }
             _local10 = int(_local5.MpCost);
             if (_local10 > this.mp_) {
+                SoundEffectLibrary.play("no_mana");
+                return (false);
+            }
+            _local12 = int(_local5.SurgeCost);
+            if (_local12 > this.surge_) {
+                SoundEffectLibrary.play("no_mana");
+                return (false);
+            }
+            _local13 = int(_local5.HpCost);
+            if (_local13 > this.hp_) {
                 SoundEffectLibrary.play("no_mana");
                 return (false);
             }

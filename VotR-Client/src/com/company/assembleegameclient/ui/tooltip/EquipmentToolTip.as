@@ -49,6 +49,7 @@ public class EquipmentToolTip extends ToolTip {
     private var playerCanUse:Boolean;
     private var comparisonResults:SlotComparisonResult;
     private var powerText:TextFieldDisplayConcrete;
+    private var legendaryText:TextFieldDisplayConcrete;
 
     public function EquipmentToolTip(_arg_1:int, _arg_2:Player, _arg_3:int, _arg_4:String, _arg_5:uint = 1, _arg_6:Boolean = false, _arg7:Object = null) {
         this.uniqueEffects = new Vector.<Effect>();
@@ -98,6 +99,7 @@ public class EquipmentToolTip extends ToolTip {
         this.makeRestrictionList();
         this.makeRestrictionText();
         this.makeItemPowerText();
+        this.makeLegendaryExtraText();
     }
 
     private function makeItemPowerText():void {
@@ -109,6 +111,16 @@ public class EquipmentToolTip extends ToolTip {
             this.powerText.filters = [new DropShadowFilter(0, 0, 0, 0.5, 12, 12)];
             waiter.push(this.powerText.textChanged);
             addChild(this.powerText);
+        }
+    }
+
+    private function makeLegendaryExtraText():void {
+        if (this.objectXML.hasOwnProperty("Legend")) {
+            this.legendaryText = new TextFieldDisplayConcrete().setSize(12).setColor(0xFFFF19).setBold(true).setTextWidth((((MAX_WIDTH - this.icon.width) - 4) - 30)).setWordWrap(true);
+            this.legendaryText.setStringBuilder(new StaticStringBuilder().setString((this.objectXML.Legend.Name + ": " + this.objectXML.Legend.Description)));
+            this.legendaryText.filters = [new DropShadowFilter(0, 0, 0, 0.5, 12, 12)];
+            waiter.push(this.legendaryText.textChanged);
+            addChild(this.legendaryText);
         }
     }
 
@@ -683,100 +695,17 @@ public class EquipmentToolTip extends ToolTip {
         {
             this.restrictions.push(new Restriction(("This item is a part of " + this.objectXML.attribute("setName")), 0xFF9900, false));
         }
-        if (this.objectXML.hasOwnProperty("Enchantable"))
-        {
-            this.restrictions.push(new Restriction("Enchantable", 0xFFFF, false));
-        }
-        if (this.objectXML.hasOwnProperty("Enchanted"))
-        {
-            this.restrictions.push(new Restriction("Enchanted", 0xFF00, false));
-        }
-        if (this.objectXML.hasOwnProperty("EnchantMaterial"))
-        {
-            this.restrictions.push(new Restriction("This item is used to Enchant", 5259, false));
-        }
-        if (this.objectXML.hasOwnProperty("Enchanter"))
-        {
-            this.restrictions.push(new Restriction("This item is used to enchant!", 1149183, false));
-        }
         if (this.objectXML.hasOwnProperty("Legendary"))
         {
             this.restrictions.push(new Restriction("This legendary item is extremely rare.", 0xFFFF00, true));
-        }
-        if (this.objectXML.hasOwnProperty("Lootbox"))
-        {
-            this.titleText.setColor(16744272);
-        }
-        if (this.objectXML.hasOwnProperty("Task"))
-        {
-            this.restrictions.push(new Restriction("This item can be used to create an active task.", 15783876, false));
-        }
-        if (this.objectXML.hasOwnProperty("ActiveTask"))
-        {
-            this.restrictions.push(new Restriction("This task is currently active.", 16714734, false));
-        }
-        if (this.objectXML.hasOwnProperty("WeeklyPackage"))
-        {
-            this.restrictions.push(new Restriction("This package is a loayalty reward.", 5898193, true));
-        }
-        if (this.objectXML.hasOwnProperty("Rare"))
-        {
-            this.restrictions.push(new Restriction("This material is rare.", 54015, true));
-        }
-        if (this.objectXML.hasOwnProperty("Resistance"))
-        {
-            this.restrictions.push(new Restriction("When this item is equipped you are immune to slowed.", 14981276, true));
         }
         if (this.objectXML.hasOwnProperty("Outfit"))
         {
             this.restrictions.push(new Restriction("This item adds both Large and Small dye effects.", 0xFF00, true));
         }
-        if (this.objectXML.hasOwnProperty("SorMachine"))
-        {
-            this.restrictions.push(new Restriction("Use this item in order to fully ascend Legendary Sor Crystals.", 0xFFFF00, false));
-            this.titleText.setColor(11904578);
-        }
-        if (this.objectXML.hasOwnProperty("Mark"))
-        {
-            this.restrictions.push(new Restriction("Use to activate this mark onto your character.", 0xFFFF00, false));
-            this.titleText.setColor(10420224);
-        }
-        if (this.objectXML.hasOwnProperty("FabledToken"))
-        {
-            this.restrictions.push(new Restriction("This item opens a Fabled Dungeon inside of the Gauntlet.", 1182351, true));
-            this.titleText.setColor(1182351);
-        }
-        if (this.objectXML.hasOwnProperty("CResistance"))
-        {
-            this.restrictions.push(new Restriction("When equipped you are immune to armor break at half your maximum health.", 14981276, false));
-        }
-        if (this.objectXML.hasOwnProperty("DResistance"))
-        {
-            this.restrictions.push(new Restriction("When equipped you deal extra damage (+40 attack) to enemies at 1/2 of your health.", 14981276, false));
-        }
-        if (this.objectXML.hasOwnProperty("MResistance"))
-        {
-            this.restrictions.push(new Restriction("If you have your max amount of MP, you gain a large bonus of to every stat.", 14981276, false));
-        }
-        if (this.objectXML.hasOwnProperty("MMResistance"))
-        {
-            this.restrictions.push(new Restriction("If your MP is at a 1/4th of your Maximum MP this armor's attack doubles but your speed drops dramatically.", 14981276, false));
-        }
-        if (this.objectXML.hasOwnProperty("AResistance"))
-        {
-            this.restrictions.push(new Restriction("If you have lower than 1/3 of your health you get a slight speed bonus; wearing this helm slows the effects of bleeding.", 14981276, false));
-        }
         if (this.objectXML.hasOwnProperty("Fabled"))
         {
             this.restrictions.push(new Restriction("This item can only be found in Fabled Dungeons.", 0x9F0000, true));
-        }
-        if (this.objectXML.hasOwnProperty("DDSResistance"))
-        {
-            this.restrictions.push(new Restriction("Your critical chance (luck) is 100% when you have the berserk condition effect.", 14981276, true));
-        }
-        if (this.objectXML.hasOwnProperty("Lootbox"))
-        {
-            this.restrictions.push(new Restriction("On use this box will open a random item listed in the description.", 0x880088, true));
         }
         if (this.objectXML.hasOwnProperty("Fuel"))
         {
@@ -790,29 +719,13 @@ public class EquipmentToolTip extends ToolTip {
         {
             this.restrictions.push(new Restriction("This item can be read to activate marks on your account..", 0xFF0000, true));
         }
-        if (this.objectXML.hasOwnProperty("UnochAbility"))
+        if (this.objectXML.hasOwnProperty("Shard"))
         {
-            this.restrictions.push(new Restriction("This orb's ability has double the range than any other orb.", 14981276, true));
+            this.restrictions.push(new Restriction("This item can be used to enchant items and forge legendaries.", 0x000099, true));
         }
-        if (this.objectXML.hasOwnProperty("PResistance"))
+        if (this.objectXML.hasOwnProperty("Enchanter"))
         {
-            this.restrictions.push(new Restriction("When this item is equipped you gain 1 extra defense for each enemy around you.", 14981276, true));
-        }
-        if (this.objectXML.hasOwnProperty("SPAbility"))
-        {
-            this.restrictions.push(new Restriction("When this item is equipped your dexterity is increased extremely but your defense is lowered severely when you are at lower than half health.", 14981276, true));
-        }
-        if (this.objectXML.hasOwnProperty("VRAbility"))
-        {
-            this.restrictions.push(new Restriction("Having above 1/2 of your health gives you a +80 vitality.", 14981276, true));
-        }
-        if (this.objectXML.hasOwnProperty("BWAbility"))
-        {
-            this.restrictions.push(new Restriction("You can toggle having dazedimmunity on or having damaging on by holding spacebar. Releasing lets out a burst of high damage bolts.", 14981276, true));
-        }
-        if (this.objectXML.hasOwnProperty("GResistance"))
-        {
-            this.restrictions.push(new Restriction("This armor makes you fully immune to having your armor broken if you are above half your maximum health.", 14981276, false));
+            this.restrictions.push(new Restriction("This item is neccessary to enchant an item.", 0x000099, true));
         }
         if (this.objectXML.hasOwnProperty("PetStone"))
         {
@@ -942,6 +855,12 @@ public class EquipmentToolTip extends ToolTip {
             if (contains(this.powerText)) {
                 this.powerText.x = 4;
                 this.powerText.y = _local_1;
+            }
+        }
+        if (this.legendaryText) {
+            if (contains(this.legendaryText)) {
+                this.legendaryText.x = 4;
+                this.legendaryText.y = _local_1 + 12;
             }
         }
     }

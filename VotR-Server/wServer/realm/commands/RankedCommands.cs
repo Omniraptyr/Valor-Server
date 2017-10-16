@@ -403,6 +403,17 @@ namespace wServer.realm.commands
         }
     }
 
+    class WhatIsCommand : Command
+    {
+        public WhatIsCommand() : base("whatis", permLevel: 80, alias: "wita") { }
+
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+            player.SendInfo("It is" + player.PowerIdentify());
+            return true;
+        }
+    }
+
     class ToggleEffCommand : Command
     {
         public ToggleEffCommand() : base("eff", permLevel: 90) { }

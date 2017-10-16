@@ -144,6 +144,7 @@ namespace common.resources
         public ConditionEffectIndex Effect { get; set; }
         public int DurationMS { get; set; }
         public float Range { get; set; }
+
         public ConditionEffect() { }
         public ConditionEffect(XElement elem)
         {
@@ -154,7 +155,19 @@ namespace common.resources
                 Range = float.Parse(elem.Attribute("range").Value);
         }
     }
-
+    public class LegendaryPower
+    {
+        public int PowerId { get; private set; }
+        public string Name { get; private set; }
+        public string Description { get; private set; }
+        public LegendaryPower(XElement elem)
+        {
+            if (elem.Attribute("id") != null)
+                PowerId = Utils.FromString(elem.Attribute("id").Value);
+            Name = elem.Element("Name").Value;
+            Description = elem.Element("Description").Value;
+        }
+    }
     public class ProjectileDesc
     {
         public int BulletType { get; private set; }
@@ -515,6 +528,7 @@ namespace common.resources
         public int MpCost { get; private set; }
         public int HpCost { get; private set; }
         public int SurgeCost { get; private set; }
+        public bool Legendary { get; private set; }
         public int MpEndCost { get; private set; }
         public int FameBonus { get; private set; }
         public int NumProjectiles { get; private set; }
@@ -546,6 +560,7 @@ namespace common.resources
         public KeyValuePair<int, int>[] StatsBoost { get; private set; }
         public ActivateEffect[] ActivateEffects { get; private set; }
         public ProjectileDesc[] Projectiles { get; private set; }
+        public LegendaryPower[] Legend { get; private set; }
 
         public Item(ushort type, XElement elem)
         {
@@ -592,6 +607,8 @@ namespace common.resources
                 HpCost = Utils.FromString(n.Value);
             else
                 HpCost = 0;
+
+            Legendary = elem.Element("Legendary") != null;
 
             if ((n = elem.Element("SurgeCost")) != null)
                 SurgeCost = Utils.FromString(n.Value);
@@ -712,6 +729,11 @@ namespace common.resources
             foreach (XElement i in elem.Elements("Projectile"))
                 prj.Add(new ProjectileDesc(i));
             Projectiles = prj.ToArray();
+
+            var leg = new List<LegendaryPower>();
+            foreach (XElement i in elem.Elements("Legend"))
+                leg.Add(new LegendaryPower(i));
+            Legend = leg.ToArray();
         }
 
         public override string ToString()

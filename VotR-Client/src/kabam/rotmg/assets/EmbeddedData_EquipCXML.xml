@@ -15272,6 +15272,10 @@
         <ActivateOnEquip stat="28" amount="-20">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <Legendary/>
+        <Legend id="1">
+            <Name>Relentless</Name>
+            <Description>When your Surge is at least 40 you get an attack boost.</Description>
+        </Legend>
         <feedPower>1800</feedPower>
         <FameBonus>9</FameBonus>
         <NumProjectiles>5</NumProjectiles>

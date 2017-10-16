@@ -296,11 +296,12 @@ namespace wServer.realm.entities
             CalculateFame();
             return false;
         }
+
         public void SurgeActivation(RealmTime time)
         {
             if (Surge <= 100)
             {
-                SurgeCounter = 150;
+                SurgeCounter = 75; //approx 3s
                 Surge += 2;
                 isSurgeGone = true;
                 surgewither = false;

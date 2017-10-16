@@ -110,13 +110,13 @@ namespace common
             else
                 _db.KeyDelete("classStats.0");
 
-            // make sure guests have all skins if they are supposed to
+            /*// make sure guests have all skins if they are supposed to
             if (newAccounts.SkinsUnlocked)
             {
                 acnt.Skins = (from skin in _resources.GameData.Skins.Values
                     where !skin.NoSkinSelect
                     select skin.Type).ToArray();
-            }
+            }*/
 
             return acnt;
         }

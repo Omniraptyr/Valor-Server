@@ -198,6 +198,7 @@
     <Compile Include="networking\packets\incoming\ReskinPet.cs" />
     <Compile Include="networking\packets\outgoing\ClaimDailyRewardResponse.cs" />
     <Compile Include="networking\packets\outgoing\KeyInfoResponse.cs" />
+    <Compile Include="realm\entities\player\Player.Powers.cs" />
     <Compile Include="realm\ISControl.cs" />
     <Compile Include="logic\behaviors\AnnounceOnDeath.cs" />
     <Compile Include="logic\behaviors\ChangeMusic.cs" />

@@ -212,7 +212,7 @@ public class ObjectLibrary {
         var _local_9:XML = xmlLibrary_[_arg_1] || new XML();
         if (_local_8 == null && _local_9.hasOwnProperty("Legendary")) {
             return (TextureRedrawer.redraw(_local_6, _arg_2, _arg_3, 0xDDDD00, _arg_4, _arg_5));
-        }else if(_local_8 == null && _local_9.hasOwnProperty("Lootbox")){
+        }else if(_local_8 == null && _local_9.hasOwnProperty("Outfit")){
             return (TextureRedrawer.redraw(_local_6, _arg_2, _arg_3, 0xFFFFFF, _arg_4, _arg_5));
         }else if(_local_8 == null ){
             return (TextureRedrawer.redraw(_local_6, _arg_2, _arg_3, 0, _arg_4, _arg_5));

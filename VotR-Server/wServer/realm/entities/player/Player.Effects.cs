@@ -81,7 +81,7 @@ namespace wServer.realm.entities
                         Surge = 0;
                     _surgeDepletion2 -= (int)_surgeDepletion2;
                 }
-                _surgeDepletion2 += 7 * (time.ElaspedMsDelta / 1000f);
+                _surgeDepletion2 += 14 * (time.ElaspedMsDelta / 1000f);
             }
 
             if (HasConditionEffect(ConditionEffects.NinjaSpeedy))
