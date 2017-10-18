@@ -242,6 +242,8 @@ namespace wServer.realm.entities
 
         private void Activate(RealmTime time, Item item, Position target)
         {
+            ActivateSecondaryPower(SecondaryPowerIdentify());
+
             MP -= item.MpCost;
 
             if(Surge >= item.SurgeCost) 
@@ -1220,7 +1222,7 @@ namespace wServer.realm.entities
             var newHp = Math.Min(maxHp, player.HP + amount);
             if (newHp == player.HP)
                 return;
-            
+
             pkts.Add(new ShowEffect()
             {
                 EffectType = EffectType.Potion,
@@ -1231,7 +1233,8 @@ namespace wServer.realm.entities
             {
                 Color = new ARGB(0xff00ff00),
                 ObjectId = player.Id,
-                Message = "+" + (newHp - player.HP)
+                Message = "{\"key\":\"blank\",\"tokens\":{\"data\":\"+" + (newHp - player.HP) + "\"}}"
+                //"+" + (newHp - player.HP)
             });
 
             player.HP = newHp;

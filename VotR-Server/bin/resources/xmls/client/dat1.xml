@@ -75997,37 +75997,6 @@ A magnificent legendary blade which only cuts those who deserve death.
     </Texture>
     <Rotation>60</Rotation>
   </Object>
-    <Object type="0x1485" id="Waraxe of Judgement">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>lofiObj5</File>
-            <Index>0xaf</Index>
-        </Texture>
-        <SlotType>1</SlotType>
-        <Description>The opposers will be judged without mercy.</Description>
-        <RateOfFire>.70</RateOfFire>
-        <Sound>weapon/mithril_sword</Sound>
-        <Projectile>
-            <ObjectId>Waraxe Shot</ObjectId>
-            <Speed>75</Speed>
-            <MinDamage>200</MinDamage>
-            <MaxDamage>200</MaxDamage>
-            <LifetimeMS>325</LifetimeMS>
-        </Projectile>
-        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="-20">IncrementStat</ActivateOnEquip>
-        <BagType>6</BagType>
-        <Legendary/>
-        <Legend id="1">
-            <Name>Relentless</Name>
-            <Description>When your Surge is at least 40 you get an attack boost.</Description>
-        </Legend>
-        <feedPower>1800</feedPower>
-        <FameBonus>9</FameBonus>
-        <NumProjectiles>5</NumProjectiles>
-        <OldSound>bladeSwing</OldSound>
-    </Object>
  <Object type="0x1486" id="Solar Burst Dirk">
     <Class>Equipment</Class>
     <Item/>
@@ -87843,37 +87812,6 @@ A whole thanksgiving turkey!
     </Texture>
 	  <AngleCorrection>1</AngleCorrection>
   </Object>
-  <Object type="0x42c5" id="The 2-K">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x15d</Index>
-        </Texture>
-        <SlotType>17</SlotType>
-        <Description>Created from Genisus shards and assembled by the blacksmith that also resided in the Genisus until he was killed by Oryx because of the creation of this powerful weapon.</Description>
-        <RateOfFire>0.25</RateOfFire>
-        <Sound>weapon/sprite_wand</Sound>
-        <Projectile>
-            <ObjectId>2000 Blast</ObjectId>
-            <Speed>180</Speed>
-            <MinDamage>200</MinDamage>
-            <MaxDamage>2000</MaxDamage>
-            <LifetimeMS>563</LifetimeMS>
-            <MultiHit/>
-            <Amplitude>0.5</Amplitude>
-            <Frequency>2</Frequency>
-            <ParticleTrail>0xff00ff</ParticleTrail>
-        </Projectile>
-        <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="3" amount="-80">IncrementStat</ActivateOnEquip>
-        <BagType>6</BagType>
-        <FameBonus>8</FameBonus>
-        <OldSound>weapon/hells_fire_wand</OldSound>
-        <feedPower>1750</feedPower>
-        <Legendary/>
-        <DisplayId>The 2-K</DisplayId>
-    </Object>
 <Object type="0x42c6" id="Dec Arrow">
     <Class>Projectile</Class>
     <Texture>
@@ -92693,6 +92631,10 @@ A whole thanksgiving turkey!
     <BagType>6</BagType>
     <Legendary/>
     <feedPower>2200</feedPower>
+	        <Legend id="2">
+            <Name>Relentless</Name>
+            <Description>When your Surge is at least 40 you get an attack boost.</Description>
+        </Legend>
   </Object>
   <Object type="0x47cd" id="Wraith of Sorrow">
     <Enemy/>
@@ -106513,4 +106455,46 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <ConditionEffect duration="4">Paralyzed</ConditionEffect>
     </Projectile>
   </Object>
+    <Object type="0x64aa" id="Oath of the Ages">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x00</Index>
+        </Texture>
+        <SlotType>1</SlotType>
+        <Description>Eons have past but this ancient weapon has never failed to annihilate opposers.</Description>
+        <RateOfFire>0.6</RateOfFire>
+        <Sound>weapon/mithril_sword</Sound>
+        <Projectile>
+            <ObjectId>Oath Projectile</ObjectId>
+            <Speed>80</Speed>
+            <MinDamage>370</MinDamage>
+            <MaxDamage>550</MaxDamage>
+            <LifetimeMS>900</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+        <ActivateOnEquip stat="3" amount="220">IncrementStat</ActivateOnEquip>
+        <Legendary/>
+        <Legend id="2" stat="27">
+            <Name>Mana Focus</Name>
+            <Description>When your surge is at least 40 you gain a 20% overall maximum wisdom boost.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>40</Surge>
+        </Legend>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>weapon/mithril_sword</OldSound>
+        <feedPower>1800</feedPower>
+        <DisplayId>Oath of the Ages</DisplayId>
+    </Object>
+    <Object type="0x64ab" id="Oath Projectile">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x01</Index>
+        </Texture>
+        <Rotation>20</Rotation>
+    </Object>
 </Objects>

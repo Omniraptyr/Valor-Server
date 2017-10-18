@@ -17,11 +17,11 @@ namespace wServer.realm.entities
         bool surgewither;
         void HandleEffects(RealmTime time)
         {
-            if(SurgeCounter == 1)
+            MainLegendaryPassives();
+            if (SurgeCounter == 1)
             {
                 Surge = 0;
             }
-
             if (_client.Account.Hidden && !HasConditionEffect(ConditionEffects.Hidden))
             {
                 ApplyConditionEffect(ConditionEffectIndex.Hidden);

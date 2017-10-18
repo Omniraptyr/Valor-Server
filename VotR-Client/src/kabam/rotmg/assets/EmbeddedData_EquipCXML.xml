@@ -29903,4 +29903,46 @@
             <ConditionEffect duration="4">Paralyzed</ConditionEffect>
         </Projectile>
     </Object>
+    <Object type="0x64aa" id="Oath of the Ages">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x00</Index>
+        </Texture>
+        <SlotType>1</SlotType>
+        <Description>Eons have past but this ancient weapon has never failed to annihilate opposers.</Description>
+        <RateOfFire>0.6</RateOfFire>
+        <Sound>weapon/mithril_sword</Sound>
+        <Projectile>
+            <ObjectId>Oath Projectile</ObjectId>
+            <Speed>80</Speed>
+            <MinDamage>370</MinDamage>
+            <MaxDamage>550</MaxDamage>
+            <LifetimeMS>900</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+        <ActivateOnEquip stat="3" amount="220">IncrementStat</ActivateOnEquip>
+        <Legendary/>
+        <Legend id="2" stat="27">
+            <Name>Mana Focus</Name>
+            <Description>When your surge is at least 40 you gain a 20% overall maximum wisdom boost.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>40</Surge>
+        </Legend>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>weapon/mithril_sword</OldSound>
+        <feedPower>1800</feedPower>
+        <DisplayId>Oath of the Ages</DisplayId>
+    </Object>
+    <Object type="0x64ab" id="Oath Projectile">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x01</Index>
+        </Texture>
+        <Rotation>20</Rotation>
+    </Object>
 </Objects>

@@ -817,7 +817,13 @@ public class EquipmentToolTip extends ToolTip {
     }
 
     private function addDescriptionText():void {
-        this.descText = new TextFieldDisplayConcrete().setSize(14).setColor(0xB3B3B3).setTextWidth(MAX_WIDTH).setWordWrap(true);
+        var _local_1:int;
+        if (this.objectXML.hasOwnProperty("Legendary")) {
+            _local_1 = 0xD4D406;
+        }else{
+            _local_1 = 0xB3B3B3;
+        }
+        this.descText = new TextFieldDisplayConcrete().setSize(14).setColor(_local_1).setTextWidth(MAX_WIDTH).setWordWrap(true);
         this.descText.setStringBuilder(new LineBuilder().setParams(String(this.objectXML.Description)));
         this.descText.filters = [new DropShadowFilter(0, 0, 0, 0.5, 12, 12)];
         waiter.push(this.descText.textChanged);

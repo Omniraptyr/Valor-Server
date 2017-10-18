@@ -489,6 +489,7 @@ namespace wServer.realm.entities
                 SetDefaultSize(gameData.Skins[s].Size);
             }
 
+
             var guild = Manager.Database.GetGuild(client.Account.GuildId);
             if (guild?.Name != null)
             {
@@ -556,7 +557,7 @@ namespace wServer.realm.entities
 
         public Entity SpectateTarget { get; set; }
         public bool IsControlling => SpectateTarget != null && !(SpectateTarget is Player);
-        
+
         public void ResetFocus(object target, EventArgs e)
         {
             var entity = target as Entity;
@@ -658,7 +659,6 @@ namespace wServer.realm.entities
                 HandleOceanTrenchGround(time);
                 TickActivateEffects(time);
                 FameCounter.Tick(time);
-
                 // TODO, server side ground damage
                 //if (HandleGround(time))
                 //    return; // death resulted
@@ -1000,6 +1000,7 @@ namespace wServer.realm.entities
             }
             return false;
         }
+
 
         private void ReconnectToNexus()
         {

@@ -52,6 +52,7 @@ namespace wServer.realm
 
                 foreach (var b in _player.Inventory[i].StatsBoost)
                     IncrementBoost((StatsType)b.Key, b.Value);
+                    
             }
         }
 
@@ -152,7 +153,7 @@ namespace wServer.realm
                 }
             }
         }
-
+        
         private void IncrementBoost(StatsType stat, int amount)
         {
             var i = StatsManager.GetStatIndex(stat);

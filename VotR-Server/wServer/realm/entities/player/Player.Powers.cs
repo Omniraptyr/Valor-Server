@@ -1,31 +1,84 @@
-﻿using System;
-using common.resources;
-
+﻿using common.resources;
+using wServer.networking.packets;
+using System.Collections.Generic;
+using System;
 namespace wServer.realm.entities
 {
     partial class Player
     {
-        public int PowerIdentify()
+        public void MainLegendaryPassives()
         {
-
-            int powerId = 0;
-            for (var i = 0; i < 4; i++)
+            for (var i = 0; i < 3; i++)
             {
                 var item = Inventory[i];
                 if (item == null || !item.Legendary)
                     continue;
                 foreach (var eff in item.Legend)
                 {
-                    switch (eff.PowerId)
+                        ActivateMainPower(eff.PowerId, eff.HPAmount, eff.MPAmount, eff.SurgeAmount, eff.Stats);
+                }
+            }
+        }
+        //Add all main powers here
+        private void ActivateMainPower(int id, int hp_, int mp_, int surge_, int stat_)
+        {
+            var idx = StatsManager.GetStatIndex((StatsType)stat_);
+                switch (id)
+            {
+                //Recovery
+                case 1:
+                    break;
+                //Mana Focus
+                case 2:
+                    int a = Convert.ToInt32(Stats[2] * 0.20);
+                    if (Surge >= surge_)
                     {
-                        case 1:
-                            powerId = 1;
-                            break;
+                        Stats.Boost.ActivateBoost[idx].Push(a, false);
+                        Stats.ReCalculateValues();
+                    }
+                    else
+                    {
+                        Stats.Boost.ActivateBoost[idx].Pop(a, false);
+                        Stats.ReCalculateValues();
+                    }
+                    break;
+            }
+        }
+        private void ActivateSecondaryPower(int id)
+        {
+            List<Packet> pkts = new List<Packet>();
+
+            switch (id)
+            {
+                //MiniHeal
+                case 2:
+                    ApplyConditionEffect(ConditionEffectIndex.Invulnerable);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        public int SecondaryPowerIdentify()
+        {
+            int powerId = 0;
+                var item = Inventory[3];
+            try
+            {
+                if (item.Legendary)
+                {
+                    foreach (var eff in item.Legend)
+                    {
+                        powerId = eff.PowerId;
+
                     }
                 }
                 return powerId;
             }
-            return 0;
+            catch
+            {
+                return 0;
+            }
         }
     }
 }

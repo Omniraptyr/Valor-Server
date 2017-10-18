@@ -160,12 +160,22 @@ namespace common.resources
         public int PowerId { get; private set; }
         public string Name { get; private set; }
         public string Description { get; private set; }
+        public int Stats { get; private set; }
+        public int HPAmount { get; private set; }
+        public int MPAmount { get; private set; }
+        public int SurgeAmount { get; private set; }
+
         public LegendaryPower(XElement elem)
         {
+            if (elem.Attribute("stat") != null)
+                Stats = Utils.FromString(elem.Attribute("stat").Value);
             if (elem.Attribute("id") != null)
                 PowerId = Utils.FromString(elem.Attribute("id").Value);
             Name = elem.Element("Name").Value;
             Description = elem.Element("Description").Value;
+            HPAmount = Utils.FromString(elem.Element("HP")?.Value ?? "0");
+            MPAmount = Utils.FromString(elem.Element("MP")?.Value ?? "0");
+            SurgeAmount = Utils.FromString(elem.Element("Surge")?.Value ?? "0");
         }
     }
     public class ProjectileDesc

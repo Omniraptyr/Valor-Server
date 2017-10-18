@@ -94,7 +94,6 @@ namespace wServer.networking.handlers
             var itemB = conBTrans[slotB];
             conBTrans[slotB] = itemA;
             conATrans[slotA] = itemB;
-
             // validate that soulbound items are not placed in public bags (includes any swaped item from admins)
             if (!ValidateItemSwap(player, a, itemB))
             {

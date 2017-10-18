@@ -36,7 +36,7 @@ namespace wServer.logic.loot
         static readonly ushort POTION_BAG = 0x050B;
         static readonly ushort WHITE_BAG = 0x050C;
         static readonly ushort WHITE_BAG2 = 0x050E;
-        static readonly ushort TROLL_WHITE_BAG = 0x050F;
+        static readonly ushort ANCIENT_BAG = 0x44d4;
         static readonly ushort RED_BAG = 0x0510;
 
         public Loot(params MobDrops[] lootDefs)   //For independent loots(e.g. chests)
@@ -242,7 +242,7 @@ namespace wServer.logic.loot
                 case 5: bag = POTION_BAG; break;
                 case 6: bag = WHITE_BAG; break;
                 case 7: bag = WHITE_BAG2; break;
-                case 8: bag = TROLL_WHITE_BAG; break;
+                case 8: bag = ANCIENT_BAG; break;
             }
 
             // allow white bags to override boosted bag
