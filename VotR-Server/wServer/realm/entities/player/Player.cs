@@ -699,33 +699,46 @@ namespace wServer.realm.entities
         float _hpRegenCounter;
         float _mpRegenCounter;
         float _hpPotRegenCounter;
+
         void HandleRegen(RealmTime time)
         {
             // hp regen
-            if (HP == Stats[0] || !CanHpRegen())
-                _hpRegenCounter = 0;
+            if (HasConditionEffect(ConditionEffects.Corrupted))
+            {
+            }
             else
             {
-                _hpRegenCounter += Stats.GetHPRegen() * time.ElaspedMsDelta / 1000f;
-                var regen = (int)_hpRegenCounter;
-                if (regen > 0)
+                if (HP == Stats[0] || !CanHpRegen())
+                    _hpRegenCounter = 0;
+                else
                 {
-                    HP = Math.Min(Stats[0], HP + regen);
-                    _hpRegenCounter -= regen;
+                    _hpRegenCounter += Stats.GetHPRegen() * time.ElaspedMsDelta / 1000f;
+                    var regen = (int)_hpRegenCounter;
+                    if (regen > 0)
+                    {
+                        HP = Math.Min(Stats[0], HP + regen);
+                        _hpRegenCounter -= regen;
+                    }
                 }
             }
 
             // mp regen
-            if (MP == Stats[1] || !CanMpRegen())
-                _mpRegenCounter = 0;
+            if (HasConditionEffect(ConditionEffects.Corrupted))
+            {
+            }
             else
             {
-                _mpRegenCounter += Stats.GetMPRegen() * time.ElaspedMsDelta / 1000f;
-                var regen = (int)_mpRegenCounter;
-                if (regen > 0)
+                if (MP == Stats[1] || !CanMpRegen())
+                    _mpRegenCounter = 0;
+                else
                 {
-                    MP = Math.Min(Stats[1], MP + regen);
-                    _mpRegenCounter -= regen;
+                    _mpRegenCounter += Stats.GetMPRegen() * time.ElaspedMsDelta / 1000f;
+                    var regen = (int)_mpRegenCounter;
+                    if (regen > 0)
+                    {
+                        MP = Math.Min(Stats[1], MP + regen);
+                        _mpRegenCounter -= regen;
+                    }
                 }
             }
 

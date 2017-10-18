@@ -62,6 +62,12 @@ public class ConditionEffect {
     public static const WIS_BOOST:uint = 47;
     public static const HIDDEN:uint = 48;
     public static const MUTED:int = 49;
+    public static const EMPOWERED:int = 50;
+    public static const BRAVERY:int = 51;
+    public static const EXHAUSTED:int = 52;
+    public static const SURGED:int = 53;
+    public static const CORRUPTED:int = 54;
+    public static const DEATHBOUND:int = 55;
     public static const GROUND_DAMAGE:uint = 99;
     public static const DEAD_BIT:uint = (1 << (DEAD - 1));
     public static const QUIET_BIT:uint = (1 << (QUIET - 1));
@@ -112,6 +118,12 @@ public class ConditionEffect {
     public static const DEX_BOOST_BIT:uint = (1 << (DEX_BOOST - NEW_CON_THREASHOLD));
     public static const HIDDEN_BIT:uint = (1 << (HIDDEN - NEW_CON_THREASHOLD));
     public static const MUTED_BIT:uint = (1 << (MUTED - NEW_CON_THREASHOLD));
+    public static const EMPOWERED_BIT:uint = (1 << (EMPOWERED - NEW_CON_THREASHOLD));
+    public static const BRAVERY_BIT:uint = (1 << (BRAVERY - NEW_CON_THREASHOLD));
+    public static const EXHAUSTED_BIT:uint = (1 << (EXHAUSTED - NEW_CON_THREASHOLD));
+    public static const SURGED_BIT:uint = (1 << (SURGED - NEW_CON_THREASHOLD));
+    public static const CORRUPTED_BIT:uint = (1 << (CORRUPTED - NEW_CON_THREASHOLD));
+    public static const DEATHBOUND_BIT:uint = (1 << (DEATHBOUND - NEW_CON_THREASHOLD));
     public static const MAP_FILTER_BITMASK:uint = DRUNK_BIT | BLIND_BIT | PAUSED_BIT;
     public static const PROJ_NOHIT_BITMASK:uint = INVINCIBLE_BIT | STASIS_BIT | PAUSED_BIT;
     public static const CE_FIRST_BATCH:uint = 0;
@@ -171,7 +183,13 @@ public class ConditionEffect {
                 new ConditionEffect("Wis Boost", WIS_BOOST_BIT, [39], "Wis Boost", true),
                 new ConditionEffect("Dex Boost", DEX_BOOST_BIT, [37], "Dex Boost", true),
                 new ConditionEffect("Hidden", HIDDEN_BIT, [27], "Hidden", true),
-                new ConditionEffect("Muted", MUTED_BIT, [21], "Muted", true)
+                new ConditionEffect("Muted", MUTED_BIT, [21], "Muted", true),
+                new ConditionEffect("Empowered", EMPOWERED_BIT, [59], "Empowered"),
+                new ConditionEffect("Bravery", BRAVERY_BIT, [60], "Bravery"),
+                new ConditionEffect("Exhausted", EXHAUSTED_BIT, [61], "Exhausted"),
+                new ConditionEffect("Surged", SURGED_BIT, [62], "Surged"),
+                new ConditionEffect("Corrupted", CORRUPTED_BIT, [63], "Corrupted"),
+                new ConditionEffect("Deathbound", DEATHBOUND_BIT, [64], "Deathbound")
             ];
     
     private static var conditionEffectFromName_:Object = null;

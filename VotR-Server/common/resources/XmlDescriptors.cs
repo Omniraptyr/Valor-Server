@@ -80,8 +80,12 @@ namespace common.resources
         WisBoost =          (ulong) 1 << 46,
         Hidden =            (ulong) 1 << 47,
         Muted =             (ulong) 1 << 48,
-        PartyVision =       (ulong) 1 << 49,
-        XMasVision =        (ulong) 1 << 50
+        Empowered =         (ulong) 1 << 49,
+        Bravery =           (ulong) 1 << 50,
+        Exhausted =         (ulong)1 << 51,
+        Surged =            (ulong)1 << 52,
+        Corrupted =         (ulong)1 << 53,
+        Deathbound =         (ulong)1 << 54
     }
 
     public enum ConditionEffectIndex
@@ -135,8 +139,12 @@ namespace common.resources
         WisBoost = 46,
         Hidden = 47,
         Muted = 48,
-        PartyVision = 49,
-        XMasVision = 50
+        Empowered = 49,
+        Bravery = 50,
+        Exhausted = 51,
+        Surged = 52,
+        Corrupted = 53,
+        Deathbound = 54
     }
 
     public class ConditionEffect

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/kabam/rotmg/stage3D/Renderer.as" line="220" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cae20479-2504-456f-8cba-82caff22139d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -16,12 +19,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EquipmentToolTip.as" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EquipmentToolTip.as" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/tooltip/EquipmentToolTip.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="816" column="5" lean-forward="true" selection-start-line="816" selection-start-column="5" selection-end-line="816" selection-end-column="5" />
+            <state relative-caret-position="34">
+              <caret line="816" column="5" lean-forward="false" selection-start-line="816" selection-start-column="5" selection-end-line="816" selection-end-column="5" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConditionEffect.as" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/util/ConditionEffect.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-435">
+              <caret line="87" column="72" lean-forward="true" selection-start-line="87" selection-start-column="72" selection-end-line="87" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameObject.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/GameObject.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="525" column="5" lean-forward="false" selection-start-line="525" selection-start-column="5" selection-end-line="525" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Renderer.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/stage3D/Renderer.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="35" column="54" lean-forward="false" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Context3DProxy.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/stage3D/proxies/Context3DProxy.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-697">
+              <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+              <folding>
+                <element signature="e#38#71#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -29,32 +74,8 @@
       <file leaf-file-name="EmbeddedData_EquipCXML.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="508385">
               <caret line="29905" column="0" lean-forward="false" selection-start-line="29905" selection-start-column="0" selection-end-line="29938" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmbeddedAssets_d2Chars8x8rEmbed_.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedAssets_d2Chars8x8rEmbed_.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmbeddedAssets_d3LofiObjEmbed_.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedAssets_d3LofiObjEmbed_.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmbeddedAssets_d3LofiObjEmbed_.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedAssets_d3LofiObjEmbed_.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -83,7 +104,7 @@
       <file leaf-file-name="EmbeddedAssets.as" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedAssets.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="2346">
               <caret line="138" column="42" lean-forward="false" selection-start-line="138" selection-start-column="22" selection-end-line="138" selection-end-column="42" />
               <folding />
             </state>
@@ -93,17 +114,10 @@
       <file leaf-file-name="AssetLoader.as" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/util/AssetLoader.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="1020">
               <caret line="75" column="53" lean-forward="false" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="53" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmbeddedAssets_legendaries8x8Embed_.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedAssets_legendaries8x8Embed_.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -118,18 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this.launchButton = new DeprecatedTextButton(12, &quot;Launch&quot;);</find>
-      <find>MP_STAT</find>
-      <find>_mp</find>
-      <find>rank_</find>
-      <find>Statmet</find>
-      <find>Status</find>
-      <find>StatusBar</find>
-      <find>draw</find>
-      <find>colorSprite</find>
-      <find>pulseBackColor</find>
-      <find>addMpCostTagToEffectsList</find>
-      <find>Blasphe</find>
       <find>no_mana</find>
       <find>legendaryText</find>
       <find>Descri</find>
@@ -148,6 +150,18 @@
       <find>OnEqu</find>
       <find>Descr</find>
       <find>objectXML</find>
+      <find>Blind</find>
+      <find>MUTED_BIT</find>
+      <find>isBlind</find>
+      <find>STAGE3D_FILTER_DRUNK</find>
+      <find>STAGE3D_FILTER_BLIND</find>
+      <find>BLIND</find>
+      <find>BLIND_FRAGMENT_CONSTANTS</find>
+      <find>setTextureAt</find>
+      <find>0x</find>
+      <find>GRAYSCALE_FRAGMENT_CONSTANTS</find>
+      <find>setProgramConstantsFromVector</find>
+      <find>context3D</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -213,6 +227,9 @@
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/util/AssetLoader.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/ui/tooltip/EquipmentToolTip.as" />
+        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/util/ConditionEffect.as" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/stage3D/Renderer.as" />
+        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/GameObject.as" />
       </list>
     </option>
   </component>
@@ -225,7 +242,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="y" value="33" />
-    <option name="width" value="1028" />
+    <option name="width" value="1025" />
     <option name="height" value="702" />
   </component>
   <component name="ProjectView">
@@ -243,6 +260,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,10 +301,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -470,30 +487,32 @@
       <workItem from="1508009535920" duration="2172000" />
       <workItem from="1508086399509" duration="9535000" />
       <workItem from="1508180944055" duration="6971000" />
+      <workItem from="1508288940375" duration="9197000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92325000" />
+    <option name="totallyTimeSpent" value="101522000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="33" width="1028" height="702" extended-state="0" />
+    <frame x="-7" y="33" width="1025" height="702" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.49209487" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1663837" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3293718" sideWeight="0.5079051" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3715415" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37264618" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -505,7 +524,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,22 +539,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/game/GameSprite.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="326" column="14" lean-forward="false" selection-start-line="326" selection-start-column="14" selection-end-line="326" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/news/view/NewsModal.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2516">
-          <caret line="176" column="51" lean-forward="false" selection-start-line="176" selection-start-column="32" selection-end-line="176" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/raidLauncher/RaidLauncher_foregroundImageEmbed.as" />
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/raidLauncher/RaidLauncher_foregroundImageEmbed.png" />
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/raidLauncher/RaidLauncher_backgroundImageEmbed.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -748,7 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -756,7 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3400">
           <caret line="213" column="28" lean-forward="false" selection-start-line="213" selection-start-column="28" selection-end-line="213" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -829,7 +829,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedAssets.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="2346">
           <caret line="138" column="42" lean-forward="false" selection-start-line="138" selection-start-column="22" selection-end-line="138" selection-end-column="42" />
           <folding />
         </state>
@@ -837,7 +837,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/util/AssetLoader.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="1020">
           <caret line="75" column="53" lean-forward="false" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="53" />
           <folding />
         </state>
@@ -853,7 +853,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="508385">
           <caret line="29905" column="0" lean-forward="false" selection-start-line="29905" selection-start-column="0" selection-end-line="29938" selection-end-column="13" />
           <folding />
         </state>
@@ -861,8 +861,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/tooltip/EquipmentToolTip.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="816" column="5" lean-forward="true" selection-start-line="816" selection-start-column="5" selection-end-line="816" selection-end-column="5" />
+        <state relative-caret-position="34">
+          <caret line="816" column="5" lean-forward="false" selection-start-line="816" selection-start-column="5" selection-end-line="816" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/stage3D/proxies/Context3DProxy.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-697">
+          <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+          <folding>
+            <element signature="e#38#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/stage3D/Renderer.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="35" column="54" lean-forward="false" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/GameObject.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="525" column="5" lean-forward="false" selection-start-line="525" selection-start-column="5" selection-end-line="525" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/util/ConditionEffect.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-435">
+          <caret line="87" column="72" lean-forward="true" selection-start-line="87" selection-start-column="72" selection-end-line="87" selection-end-column="72" />
           <folding />
         </state>
       </provider>

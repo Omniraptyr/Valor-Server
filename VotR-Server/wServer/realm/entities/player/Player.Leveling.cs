@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using wServer.networking.packets.outgoing;
 using System.Timers;
+using common.resources;
 namespace wServer.realm.entities
 {
     public partial class Player
@@ -302,7 +303,14 @@ namespace wServer.realm.entities
             if (Surge <= 100)
             {
                 SurgeCounter = 75; //approx 3s
-                Surge += 2;
+                if (HasConditionEffect(ConditionEffects.Surged))
+                {
+                    Surge += 4;
+                }
+                else
+                {
+                    Surge += 2;
+                }
                 isSurgeGone = true;
                 surgewither = false;
             }
@@ -323,7 +331,13 @@ namespace wServer.realm.entities
             {
                 Experience += exp;
             }
-            SurgeActivation(time);
+            if (HasConditionEffect(ConditionEffects.Exhausted)){
+
+            }
+            else
+            {
+                SurgeActivation(time);
+            }
             FameCounter.Killed(enemy, killer);
             return CheckLevelUp();
         }

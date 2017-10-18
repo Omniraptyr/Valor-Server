@@ -147,32 +147,37 @@ namespace wServer.realm
 
         public float GetHPRegen()
         {
-            var vit = this[6];
-            if (Owner.HasConditionEffect(ConditionEffects.Sick))
-                vit = 0;
-            return 6 + vit * .12f;
+            if (Owner.HasConditionEffect(ConditionEffects.Corrupted))
+            {
+                return 0;
+            }
+            else{
+                var vit = this[6];
+                if (Owner.HasConditionEffect(ConditionEffects.Sick))
+                    vit = 0;
+                return 6 + vit * .12f;
+            }
+
         }
 
         public float GetMPRegen()
         {
-            if (Owner.HasConditionEffect(ConditionEffects.Quiet))
+            if (Owner.HasConditionEffect(ConditionEffects.Corrupted))
+            {
                 return 0;
-            return 0.5f + this[7] * .06f;
+            }
+            else
+            {
+                
+                int wis = this[7];
+                if (Owner.HasConditionEffect(ConditionEffects.Quiet))
+                    return 0;
+                if (Owner.HasConditionEffect(ConditionEffects.Empowered))
+                    return 22f + 0.06f * wis;
+
+                return 0.5f + this[7] * .06f;
+            }
         }
-
-        /*public float Dex()
-        {
-            var dex = this[5];
-            if (Owner.HasConditionEffect(ConditionEffects.Dazed))
-                dex = 0;
-
-            var ret = 1.5f + 6.5f * (dex / 75f);
-            if (Owner.HasConditionEffect(ConditionEffects.Berserk))
-                ret *= 1.5f;
-            if (Owner.HasConditionEffect(ConditionEffects.Stunned))
-                ret = 0;
-            return ret;
-        }*/
 
         public static string StatIndexToName(int index)
         {

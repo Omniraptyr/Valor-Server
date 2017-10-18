@@ -103,6 +103,11 @@ namespace wServer.realm.entities
             {
                 Effect= ConditionEffectIndex.Curse,
                 DurationMS = 0
+            },
+            new ConditionEffect()
+            {
+                Effect= ConditionEffectIndex.Exhausted,
+                DurationMS = 0
             }
         };
 
