@@ -22668,26 +22668,6 @@
         <NumProjectiles>1</NumProjectiles>
         <DisplayId>Spiritclaw</DisplayId>
     </Object>
-    <Object type="0x48fa" id="Vardon's Resilience">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x31e</Index>
-        </Texture>
-        <SlotType>7</SlotType>
-        <Description>Our army will always move forward; we shall make our mark. ~Vardon, the Remembered</Description>
-        <ActivateOnEquip stat="21" amount="28">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="-8">IncrementStat</ActivateOnEquip>
-        <BagType>6</BagType>
-        <FameBonus>8</FameBonus>
-        <feedPower>2000</feedPower>
-        <DisplayId>Vardon's Resilience</DisplayId>
-        <Legendary/>
-        <VRAbility/>
-    </Object>
     <Object type="0x48fd" id="Calling of the Storm">
         <Class>Equipment</Class>
         <Item/>
@@ -29944,5 +29924,30 @@
             <Index>0x01</Index>
         </Texture>
         <Rotation>20</Rotation>
+    </Object>
+    <Object type="0x48fa" id="Vardon's Resilience">
+        <DisplayId>Vardon's Resilience</DisplayId>
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x02</Index>
+        </Texture>
+        <SlotType>7</SlotType>
+        <Description>This armor surges the wearer with true determination. Not even the most lethal blow will deter the warrior of grasping victory.</Description>
+        <ActivateOnEquip stat="21" amount="28">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-8">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <Legend id="3" stat="26">
+            <Name>Recovery</Name>
+            <Description>If you have at least 1/3rd of your HP you gain a 40% overall vitality boost.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
     </Object>
 </Objects>

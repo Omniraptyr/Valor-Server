@@ -106497,4 +106497,29 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <Rotation>20</Rotation>
     </Object>
+    <Object type="0x48fa" id="Vardon's Resilience">
+        <DisplayId>Vardon's Resilience</DisplayId>
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x02</Index>
+        </Texture>
+        <SlotType>7</SlotType>
+        <Description>This armor surges the wearer with true determination. Not even the most lethal blow will deter the warrior of grasping victory.</Description>
+        <ActivateOnEquip stat="21" amount="28">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-8">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <Legend id="3" stat="26">
+            <Name>Recovery</Name>
+            <Description>If you have at least 1/3rd of your HP you gain a 40% overall vitality boost.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+    </Object>
 </Objects>

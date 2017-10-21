@@ -193,7 +193,7 @@ namespace wServer.realm
                 case 7: return "MpRegen";
                 case 8: return "DamageMin";
                 case 9: return "DamageMax";
-                case 10: return "LuckBoost";
+                case 10: return "FortuneBoost";
             } return null;
         }
 
@@ -211,7 +211,7 @@ namespace wServer.realm
                 case "MpRegen": return 7;
                 case "DamageMin": return 8;
                 case "DamageMax": return 9;
-                case "LuckBoost": return 10;
+                case "FortuneBoost": return 10;
             } return -1;
         }
 
@@ -239,7 +239,7 @@ namespace wServer.realm
                     return 8;
                 case StatsType.DamageMax:
                     return 9;
-                case StatsType.Luck:
+                case StatsType.Fortune:
                     return 10;
                 default:
                     return -1;
@@ -271,7 +271,7 @@ namespace wServer.realm
                 case 9:
                     return StatsType.DamageMax;
                 case 10:
-                    return StatsType.Luck;
+                    return StatsType.Fortune;
                 default:
                     return StatsType.None;
             }
@@ -302,7 +302,7 @@ namespace wServer.realm
                 case 9:
                     return StatsType.DamageMaxBonus;
                 case 10:
-                    return StatsType.LuckBonus;
+                    return StatsType.Fortune;
                 default:
                     return StatsType.None;
             }

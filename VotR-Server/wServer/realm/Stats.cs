@@ -115,16 +115,21 @@ namespace wServer.realm
         DamageMax = 99,
         DamageMinBonus = 100,
         DamageMaxBonus = 101,
-        LuckBonus = 105,
+        FortuneBonus = 105,
         Rank = 103,
         Admin = 104,
-        Luck = 102,
+        Fortune = 102,
         Onrane = 106,
         Kantos = 107,
         RaidToken = 108,
         RaidRank = 109,
         Surge = 110,
         SurgeCounter = 111,
+        Might = 112,
+        MightBonus = 113,
+        Luck = 114,
+        LuckBonus = 115,
+
 
         None = 255
     }

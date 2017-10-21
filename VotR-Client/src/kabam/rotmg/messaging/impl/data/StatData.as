@@ -106,6 +106,11 @@ public class StatData {
     public static const RAID_TOKEN = 108;
     public static const RAID_RANK = 109;
     public static const SURGE = 110;
+    public static const MIGHT = 112;
+    public static const MIGHTBONUS = 113;
+    public static const LUCK = 114;
+    public static const LUCKBONUS = 115;
+
 
 
     // unimplemented
@@ -116,7 +121,7 @@ public class StatData {
     public static const LUCK_BONUS = 105;
     public static const RANK = 103;
     public static const ADMIN = 104;
-    public static const LUCK = 102;
+    public static const FORTUNE = 102;
 
     public var statType_:uint = 0;
     public var statValue_:int;

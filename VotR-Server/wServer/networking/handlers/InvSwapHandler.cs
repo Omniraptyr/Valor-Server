@@ -128,12 +128,14 @@ namespace wServer.networking.handlers
                 // if execute failed, undo inventory changes
                 if (!Inventory.Revert(conATrans, conBTrans))
                     Log.Warn($"Failed to revert changes. {player.Name} has an extra {itemA?.ObjectId} or {itemB?.ObjectId}");
+
             }
 
             a.ForceUpdate(slotA);
             b.ForceUpdate(slotB);
             player.Client.SendPacket(new InvResult() { Result = 1 });
         }
+
 
         bool ValidateEntities(Player p, Entity a, Entity b)
         { // returns false if bad input

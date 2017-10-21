@@ -306,7 +306,9 @@ namespace wServer.realm.entities
                 case StatsType.Wisdom: Stats.Base[7] = (int)val; break;
                 case StatsType.DamageMin: Stats.Base[8] = (int)val; break;
                 case StatsType.DamageMax: Stats.Base[9] = (int)val; break;
-                case StatsType.Luck: Stats.Base[10] = (int)val; break;
+                case StatsType.Fortune: Stats.Base[10] = (int)val; break;
+                case StatsType.Might: Stats.Base[11] = (int)val; break;
+                case StatsType.Luck: Stats.Base[12] = (int)val; break;
                 case StatsType.HealthStackCount: HealthPots.Count = (int)val; break;
                 case StatsType.MagicStackCount: MagicPots.Count = (int)val; break;
                 case StatsType.HasBackpack: HasBackpack = (int)val == 1; break;
@@ -376,7 +378,9 @@ namespace wServer.realm.entities
             stats[StatsType.Wisdom] = Stats[7];
             stats[StatsType.DamageMin] = Stats[8];
             stats[StatsType.DamageMax] = Stats[9];
-            stats[StatsType.Luck] = Stats[10];
+            stats[StatsType.Fortune] = Stats[10];
+            stats[StatsType.Might] = Stats[11];
+            stats[StatsType.Luck] = Stats[12];
             stats[StatsType.HPBoost] = Stats.Boost[0];
             stats[StatsType.MPBoost] = Stats.Boost[1];
             stats[StatsType.AttackBonus] = Stats.Boost[2];
@@ -387,7 +391,9 @@ namespace wServer.realm.entities
             stats[StatsType.WisdomBonus] = Stats.Boost[7];
             stats[StatsType.DamageMinBonus] = Stats.Boost[8];
             stats[StatsType.DamageMaxBonus] = Stats.Boost[9];
-            stats[StatsType.LuckBonus] = Stats.Boost[10];
+            stats[StatsType.FortuneBonus] = Stats.Boost[10];
+            stats[StatsType.MightBonus] = Stats.Boost[11];
+            stats[StatsType.Luck] = Stats.Boost[12];
             stats[StatsType.HealthStackCount] = HealthPots.Count;
             stats[StatsType.MagicStackCount] = MagicPots.Count;
             stats[StatsType.HasBackpack] = (HasBackpack) ? 1 : 0;
@@ -488,6 +494,7 @@ namespace wServer.realm.entities
                 SetDefaultSkin(s);
                 SetDefaultSize(gameData.Skins[s].Size);
             }
+
 
 
             var guild = Manager.Database.GetGuild(client.Account.GuildId);
@@ -862,6 +869,17 @@ namespace wServer.realm.entities
             return false;
         }
 
+        public bool CheckLegendarySlot()
+        {
+            for (var i = 0; i < 3; i++)
+            {
+                var item = Inventory[i];
+                if (item == null || !item.Legendary)
+                    continue;
+                return true;
+            }
+            return false;
+        }
         public override bool HitByProjectile(Projectile projectile, RealmTime time)
         {
             if (projectile.ProjectileOwner is Player ||
