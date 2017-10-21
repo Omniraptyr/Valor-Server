@@ -26,7 +26,8 @@ public class CharacterClass {
     public var unlockCost:int;
     private var maxLevelAchieved:int;
     private var isSelected:Boolean;
-
+    public var might:CharacterClassStat;
+    public var luck:CharacterClassStat;
 
     public function getIsSelected():Boolean {
         return (this.isSelected);

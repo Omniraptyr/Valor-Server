@@ -705,7 +705,12 @@ public class TextKey {
     public static const SECURITY_QUESTIONS_CONFIRM_TEXT:String = "SecurityQuestionsConfirmDialog.text";
     public static const SECURITY_QUESTIONS_CONFIRM_LEFT_BUTTON:String = "SecurityQuestionsConfirmDialog.leftButton";
     public static const SECURITY_QUESTIONS_CONFIRM_RIGHT_BUTTON:String = "SecurityQuestionsConfirmDialog.rightButton";
-
+    public static const STAT_MODEL_MIGHT_SHORT:String = "MGT";
+    public static const STAT_MODEL_MIGHT_LONG:String = "Might";
+    public static const STAT_MODEL_MIGHT_DESCRIPTION:String = "StatModel.attack.description";
+    public static const STAT_MODEL_LUCK_SHORT:String = "LUC";
+    public static const STAT_MODEL_LUCK_LONG:String = "Luck";
+    public static const STAT_MODEL_LUCK_DESCRIPTION:String = "StatModel.attack.description";
 
     public static function wrapForTokenResolution(_arg1:String):String {
         return ((("{" + _arg1) + "}"));

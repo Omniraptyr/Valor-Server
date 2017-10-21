@@ -1729,6 +1729,18 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                 case StatData.SURGE:
                     _local4.surge_ = _local8;
                     break;
+                case StatData.MIGHT_STAT:
+                    _local4.might_ = _local8;
+                    break;
+                case StatData.LUCK_STAT:
+                    _local4.luck_ = _local8;
+                    break;
+                case StatData.MIGHT_BOOST_STAT:
+                    _local4.mightBoost_ = _local8;
+                    break;
+                case StatData.LUCK_BOOST_STAT:
+                    _local4.luckBoost_ = _local8;
+                    break;
             }
         }
     }

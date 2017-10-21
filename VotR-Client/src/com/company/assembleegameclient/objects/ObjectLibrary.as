@@ -365,6 +365,10 @@ public class ObjectLibrary {
                     return ((_arg2.wisdom_ >= _local3));
                 case StatData.DEXTERITY_STAT:
                     return ((_arg2.dexterity_ >= _local3));
+                case StatData.LUCK_STAT:
+                    return ((_arg2.luck_ >= _local3));
+                case StatData.MIGHT_STAT:
+                    return ((_arg2.might_ >= _local3));
             }
         }
         return (false);

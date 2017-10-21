@@ -18,7 +18,9 @@ public class StatsView extends Sprite {
     public static const SPEED:int = 2;
     public static const DEXTERITY:int = 3;
     public static const VITALITY:int = 4;
-    public static const WISDOM:int = 5;
+    public static const WISDOM:int = 5;]
+    public static const MIGHT:int = 6;
+    public static const LUCK:int = 7;
     public static const STATE_UNDOCKED:String = "state_undocked";
     public static const STATE_DOCKED:String = "state_docked";
     public static const STATE_DEFAULT:String = STATE_DOCKED;//"state_docked"
@@ -81,6 +83,8 @@ public class StatsView extends Sprite {
         this.stats_[DEXTERITY].draw(_arg1.dexterity_, _arg1.dexterityBoost_, _arg1.dexterityMax_);
         this.stats_[VITALITY].draw(_arg1.vitality_, _arg1.vitalityBoost_, _arg1.vitalityMax_);
         this.stats_[WISDOM].draw(_arg1.wisdom_, _arg1.wisdomBoost_, _arg1.wisdomMax_);
+        this.stats_[MIGHT].draw(_arg1.might_, _arg1.mightBoost_, _arg1.mightMax_);
+        this.stats_[LUCK].draw(_arg1.luck_, _arg1.luckBoost_, _arg1.luckMax_);
     }
 
     public function dock():void {

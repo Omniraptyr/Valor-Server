@@ -106,10 +106,10 @@ public class StatData {
     public static const RAID_TOKEN = 108;
     public static const RAID_RANK = 109;
     public static const SURGE = 110;
-    public static const MIGHT = 112;
-    public static const MIGHTBONUS = 113;
-    public static const LUCK = 114;
-    public static const LUCKBONUS = 115;
+    public static const MIGHT_STAT = 112;
+    public static const MIGHT_BOOST_STAT = 113;
+    public static const LUCK_STAT = 114;
+    public static const LUCK_BOOST_STAT = 115;
 
 
 
@@ -118,7 +118,7 @@ public class StatData {
     public static const DAMAGE_MAX:int = 99;
     public static const DAMAGE_MIN_BONUS = 100;
     public static const DAMAGE_MAX_BONUS = 101;
-    public static const LUCK_BONUS = 105;
+    public static const FORTUNE_BONUS = 105;
     public static const RANK = 103;
     public static const ADMIN = 104;
     public static const FORTUNE = 102;
@@ -156,6 +156,10 @@ public class StatData {
                 return (TextKey.STAT_MODEL_WISDOM_LONG);
             case DEXTERITY_STAT:
                 return (TextKey.STAT_MODEL_DEXTERITY_LONG);
+            case LUCK_STAT:
+                return (TextKey.STAT_MODEL_LUCK_LONG);
+            case MIGHT_STAT:
+                return (TextKey.STAT_MODEL_MIGHT_LONG);
         }
         return (TextKey.STAT_DATA_UNKNOWN_STAT);
     }

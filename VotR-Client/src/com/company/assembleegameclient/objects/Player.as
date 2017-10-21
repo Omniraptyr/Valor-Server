@@ -85,6 +85,10 @@ public class Player extends Character {
     public var fame_:int = 0;
     public var onrane_:int = 0;
     public var kantos_:int = 0;
+    public var might_:int = 0;
+    public var luck_:int = 0;
+    public var mightBoost_:int = 0;
+    public var luckBoost_:int = 0;
     public var raidToken_:int = 0;
     public var nameChosen_:Boolean = false;
     public var currFame_:int = 0;
@@ -123,6 +127,8 @@ public class Player extends Character {
     public var maxMPMax_:int = 0;
     public var hasBackpack_:Boolean = false;
     public var rank_:int = 0;
+    public var luckMax_:int = 0;
+    public var mightMax_:int = 0;
     public var admin_:Boolean = false;
     public var starred_:Boolean = false;
     public var ignored_:Boolean = false;
@@ -165,6 +171,8 @@ public class Player extends Character {
         this.wisdomMax_ = int(_arg1.MpRegen.@max);
         this.maxHPMax_ = int(_arg1.MaxHitPoints.@max);
         this.maxMPMax_ = int(_arg1.MaxMagicPoints.@max);
+        this.mightMax_ = int(_arg1.Might.@max);
+        this.luckMax_ = int(_arg1.Luck.@max);
         texturingCache_ = new Dictionary();
         this.slideVec_ = new Vector3D();
     }
@@ -181,6 +189,8 @@ public class Player extends Character {
         _local5.maxHP_ = int(_arg2.MaxHitPoints);
         _local5.hp_ = int(_arg2.HitPoints);
         _local5.maxMP_ = int(_arg2.MaxMagicPoints);
+        _local5.might_ = int(_arg2.Might);
+        _local5.luck_ = int(_arg2.Luck);
         _local5.mp_ = int(_arg2.MagicPoints);
         _local5.attack_ = int(_arg2.Attack);
         _local5.defense_ = int(_arg2.Defense);
