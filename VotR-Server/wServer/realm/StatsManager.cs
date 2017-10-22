@@ -336,11 +336,11 @@ namespace wServer.realm
                 case 5: return "Dexterity";
                 case 6: return "HpRegen";
                 case 7: return "MpRegen";
-                case 8: return "DamageMin";
-                case 9: return "DamageMax";
-                case 10: return "FortuneBoost";
-                case 11: return "Might";
-                case 12: return "Luck";
+                case 8: return "Might";
+                case 9: return "Luck";
+                case 10: return "DamageMin";
+                case 11: return "DamageMax";
+                case 12: return "FortuneBoost";
             } return null;
         }
 
@@ -356,11 +356,11 @@ namespace wServer.realm
                 case "Dexterity": return 5;
                 case "HpRegen": return 6;
                 case "MpRegen": return 7;
-                case "DamageMin": return 8;
-                case "DamageMax": return 9;
-                case "FortuneBoost": return 10;
-                case "Might": return 11;
-                case "Luck": return 12;
+                case "Might": return 8;
+                case "Luck": return 9;
+                case "DamageMin": return 10;
+                case "DamageMax": return 11;
+                case "FortuneBoost": return 12;
             } return -1;
         }
 
@@ -384,15 +384,15 @@ namespace wServer.realm
                     return 6;
                 case StatsType.Wisdom:
                     return 7;
-                case StatsType.DamageMin:
-                    return 8;
-                case StatsType.DamageMax:
-                    return 9;
-                case StatsType.Fortune:
-                    return 10;
                 case StatsType.Might:
-                    return 11;
+                    return 8;
                 case StatsType.Luck:
+                    return 9;
+                case StatsType.DamageMin:
+                    return 10;
+                case StatsType.DamageMax:
+                    return 11;
+                case StatsType.Fortune:
                     return 12;
                 default:
                     return -1;
@@ -420,15 +420,15 @@ namespace wServer.realm
                 case 7:
                     return StatsType.Wisdom;
                 case 8:
-                    return StatsType.DamageMin;
-                case 9:
-                    return StatsType.DamageMax;
-                case 10:
-                    return StatsType.Fortune;
-                case 11:
                     return StatsType.Might;
-                case 12:
+                case 9:
                     return StatsType.Luck;
+                case 10:
+                    return StatsType.DamageMin;
+                case 11:
+                    return StatsType.DamageMax;
+                case 12:
+                    return StatsType.Fortune;
                 default:
                     return StatsType.None;
             }
@@ -455,15 +455,15 @@ namespace wServer.realm
                 case 7:
                     return StatsType.WisdomBonus;
                 case 8:
-                    return StatsType.DamageMinBonus;
-                case 9:
-                    return StatsType.DamageMaxBonus;
-                case 10:
-                    return StatsType.FortuneBonus;
-                case 11:
                     return StatsType.MightBonus;
-                case 12:
+                case 9:
                     return StatsType.LuckBonus;
+                case 10:
+                    return StatsType.DamageMinBonus;
+                case 11:
+                    return StatsType.DamageMaxBonus;
+                case 12:
+                    return StatsType.FortuneBonus;
                 default:
                     return StatsType.None;
             }

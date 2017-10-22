@@ -113,7 +113,7 @@ namespace wServer.logic.loot
             foreach (var player in eligiblePlayers)
             {
                 var lootDropBoost = player.Item1.LDBoostTime > 0 ? 1.5 : 1;
-                var luckStatBoost = 1 + player.Item1.Stats.Boost[10] / 100.0;
+                var luckStatBoost = 1 + player.Item1.Stats.Boost[12] / 100.0;
 
                 var loot = new List<Item>();
                 foreach (var i in possibleDrops)

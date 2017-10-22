@@ -875,7 +875,7 @@ namespace wServer.realm.entities
             var players = new List<Player>();
             this.AOE(eff.Radius, true, player =>
             {
-                if (!player.HasConditionEffect(ConditionEffects.Sick))
+                if (!player.HasConditionEffect(ConditionEffects.Sick) || !player.HasConditionEffect(ConditionEffects.Corrupted))
                 {
                     players.Add(player as Player);
                     ActivateHealHp(player as Player, totalDmg, pkts);
@@ -910,8 +910,11 @@ namespace wServer.realm.entities
         private void AEMagicNova(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var pkts = new List<Packet>();
-            this.AOE(eff.Range, true, player => 
-                ActivateHealMp(player as Player, eff.Amount, pkts));
+            this.AOE(eff.Range, true, player =>
+            {
+                if (!player.HasConditionEffect(ConditionEffects.Corrupted))
+                    ActivateHealMp(player as Player, eff.Amount, pkts);
+            });
             pkts.Add(new ShowEffect()
             {
                 EffectType = EffectType.AreaBlast,
@@ -925,7 +928,10 @@ namespace wServer.realm.entities
         private void AEMagic(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var pkts = new List<Packet>();
-            ActivateHealMp(this, eff.Amount, pkts);
+            if (!HasConditionEffect(ConditionEffects.Corrupted))
+            {
+                ActivateHealMp(this, eff.Amount, pkts);
+            }
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
         }
 
@@ -942,7 +948,7 @@ namespace wServer.realm.entities
             var pkts = new List<Packet>();
             this.AOE(range, true, player =>
                 {
-                    if(!player.HasConditionEffect(ConditionEffects.Sick))
+                    if(!player.HasConditionEffect(ConditionEffects.Sick) || !player.HasConditionEffect(ConditionEffects.Corrupted))
                         ActivateHealHp(player as Player, amount, pkts);
                 });
             pkts.Add(new ShowEffect()
@@ -957,7 +963,7 @@ namespace wServer.realm.entities
 
         private void AEHeal(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            if (!HasConditionEffect(ConditionEffects.Sick))
+            if (!HasConditionEffect(ConditionEffects.Sick) || !HasConditionEffect(ConditionEffects.Corrupted))
             {
                 var pkts = new List<Packet>();
                 ActivateHealHp(this, eff.Amount, pkts);
@@ -1256,11 +1262,11 @@ namespace wServer.realm.entities
             {
                 EffectType = EffectType.Potion,
                 TargetObjectId = player.Id,
-                Color = new ARGB(0xffffffff)
+                Color = new ARGB(0x6084e0)
             });
             pkts.Add(new Notification()
             {
-                Color = new ARGB(0xff9000ff),
+                Color = new ARGB(0x6084e0),
                 ObjectId = player.Id,
                 Message = "+" + (newMp - player.MP)
             });

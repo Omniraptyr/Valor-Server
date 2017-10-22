@@ -864,7 +864,8 @@ namespace wServer.realm.commands
             player.SendInfo($"Dexterity: {pd.Stats[5].MaxValue - player.Stats.Base[5]}");
             player.SendInfo($"Vitality: {pd.Stats[6].MaxValue - player.Stats.Base[6]}");
             player.SendInfo($"Wisdom: {pd.Stats[7].MaxValue - player.Stats.Base[7]}");
-
+            player.SendInfo($"Might: {pd.Stats[8].MaxValue - player.Stats.Base[8]}");
+            player.SendInfo($"Luck: {pd.Stats[9].MaxValue - player.Stats.Base[9]}");
             return true;
         }
     }
