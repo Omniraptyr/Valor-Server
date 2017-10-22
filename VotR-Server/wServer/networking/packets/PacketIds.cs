@@ -106,6 +106,7 @@ namespace wServer.networking.packets
         SWITCH_MUSIC = 106,
         CLAIM_LOGIN_REWARD_MSG = 153,
         LOGIN_REWARD_MSG = 154,
-        LAUNCH_RAID = 156
+        LAUNCH_RAID = 156,
+        CRITICALDAMAGE = 157
     }
 }

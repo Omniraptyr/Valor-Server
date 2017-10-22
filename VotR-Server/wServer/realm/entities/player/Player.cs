@@ -393,7 +393,7 @@ namespace wServer.realm.entities
             stats[StatsType.DamageMaxBonus] = Stats.Boost[9];
             stats[StatsType.FortuneBonus] = Stats.Boost[10];
             stats[StatsType.MightBonus] = Stats.Boost[11];
-            stats[StatsType.Luck] = Stats.Boost[12];
+            stats[StatsType.LuckBonus] = Stats.Boost[12];
             stats[StatsType.HealthStackCount] = HealthPots.Count;
             stats[StatsType.MagicStackCount] = MagicPots.Count;
             stats[StatsType.HasBackpack] = (HasBackpack) ? 1 : 0;

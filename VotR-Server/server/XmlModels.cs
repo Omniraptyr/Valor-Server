@@ -382,6 +382,8 @@ namespace server
         public int Dexterity { get; private set; }
         public int HpRegen { get; private set; }
         public int MpRegen { get; private set; }
+        public int Might { get; private set; }
+        public int Luck { get; private set; }
         public int Tex1 { get; private set; }
         public int Tex2 { get; private set; }
         public int Skin { get; private set; }
@@ -410,6 +412,8 @@ namespace server
                 Dexterity = character.Stats[5],
                 HpRegen = character.Stats[6],
                 MpRegen = character.Stats[7],
+                Might = character.Stats[11],
+                Luck = character.Stats[12],
                 HitPoints = character.HP,
                 MagicPoints = character.MP,
                 Tex1 = character.Tex1,
@@ -444,6 +448,8 @@ namespace server
                     new XElement("Dexterity", Dexterity),
                     new XElement("HpRegen", HpRegen),
                     new XElement("MpRegen", MpRegen),
+                    new XElement("Might", Might),
+                    new XElement("Luck", Luck),
                     new XElement("Tex1", Tex1),
                     new XElement("Tex2", Tex2),
                     new XElement("Texture", Skin),

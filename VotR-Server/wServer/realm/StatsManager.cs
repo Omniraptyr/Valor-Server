@@ -1,14 +1,13 @@
 ﻿using common.resources;
-using log4net;
 using wServer.realm.entities;
-
+using System;
+using wServer.networking.packets.outgoing;
 namespace wServer.realm
 {
     public class StatsManager
     {
         //static readonly ILog Log = LogManager.GetLogger(typeof(StatsManager));
-
-        internal const int NumStatTypes = 11;
+        internal const int NumStatTypes = 13; // change this to add more stats
         private const float MinAttackMult = 0.5f;
         private const float MaxAttackMult = 2f;
         private const float MinAttackFreq = 0.0015f;
@@ -49,7 +48,7 @@ namespace wServer.realm
 
         public int GetAttackDamage(int min, int max, bool isAbility = false)
         {
-            var ret = Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility);
+            var ret = Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility) * CriticalModifier();
             //Log.Info($"Dmg: {ret}");
             return (int)ret;
         } 
@@ -67,6 +66,152 @@ namespace wServer.realm
                 mult *= 1.5f;
 
             return mult;
+        }
+
+        private float CriticalModifier()
+        {
+
+            Random rnd = new Random();
+            int luckNm = rnd.Next(1, 1001);
+            var ret = 1.0f;
+            if (luckNm <= Owner.Stats[12])
+            {
+                ret *= FinalMightMultiplier();
+                Owner.Client.SendPacket(new CriticalDamage()
+                {
+                    IsCritical = true,
+                    CriticalHit = ret
+                });
+            }
+            else
+            {
+                Owner.Client.SendPacket(new CriticalDamage()
+                {
+                    IsCritical = false,
+                    CriticalHit = 1
+                });
+                ret = 1.0f;
+            }
+            return ret;
+        }
+
+        public float FinalMightMultiplier()
+        {
+            if (Owner.HasConditionEffect(ConditionEffects.Bravery))
+            {
+                return MightMultiplier() * 2;
+            }
+            else
+            {
+                return MightMultiplier();
+            }
+        }
+
+        private float MightMultiplier()
+        {
+
+            if (Owner.Stats[11] >= 0 && Owner.Stats[11] <= 10)
+            {
+                return 1.1f;
+            }
+            else if (Owner.Stats[11] >= 11 && Owner.Stats[11] <= 20)
+            {
+                return 1.2f;
+            }
+            else if (Owner.Stats[11] >= 21 && Owner.Stats[11] <= 30)
+            {
+                return 1.3f;
+            }
+            else if (Owner.Stats[11] >= 31 && Owner.Stats[11] <= 40)
+            {
+                return 1.4f;
+            }
+            else if (Owner.Stats[11] >= 41 && Owner.Stats[11] <= 50)
+            {
+                return 1.5f;
+            }
+            else if (Owner.Stats[11] >= 51 && Owner.Stats[11] <= 60)
+            {
+                return 1.6f;
+            }
+            else if (Owner.Stats[11] >= 61 && Owner.Stats[11] <= 70)
+            {
+                return 1.7f;
+            }
+            else if (Owner.Stats[11] >= 71 && Owner.Stats[11] <= 80)
+            {
+                return 1.8f;
+            }
+            else if (Owner.Stats[11] >= 81 && Owner.Stats[11] <= 90)
+            {
+                return 1.9f;
+            }
+            else if (Owner.Stats[11] >= 91 && Owner.Stats[11] <= 100)
+            {
+                return 2.0f;
+            }
+            else if (Owner.Stats[11] >= 101 && Owner.Stats[11] <= 110)
+            {
+                return 2.1f;
+            }
+            else if (Owner.Stats[11] >= 111 && Owner.Stats[11] <= 120)
+            {
+                return 2.2f;
+            }
+            else if (Owner.Stats[11] >= 121 && Owner.Stats[11] <= 130)
+            {
+                return 2.3f;
+            }
+            else if (Owner.Stats[11] >= 131 && Owner.Stats[11] <= 140)
+            {
+                return 2.4f;
+            }
+            else if (Owner.Stats[11] >= 141 && Owner.Stats[11] <= 150)
+            {
+                return 2.5f;
+            }
+            else if (Owner.Stats[11] >= 151 && Owner.Stats[11] <= 160)
+            {
+                return 2.6f;
+            }
+            else if (Owner.Stats[11] >= 161 && Owner.Stats[11] <= 170)
+            {
+                return 2.7f;
+            }
+            else if (Owner.Stats[11] >= 171 && Owner.Stats[11] <= 180)
+            {
+                return 2.8f;
+            }
+            else if (Owner.Stats[11] >= 181 && Owner.Stats[11] <= 190)
+            {
+                return 2.9f;
+            }
+            else if (Owner.Stats[11] >= 191 && Owner.Stats[11] <= 200)
+            {
+                return 3.0f;
+            }
+            else if (Owner.Stats[11] >= 201 && Owner.Stats[11] <= 210)
+            {
+                return 3.1f;
+            }
+            else if (Owner.Stats[11] >= 211 && Owner.Stats[11] <= 220)
+            {
+                return 3.2f;
+            }
+            else if (Owner.Stats[11] >= 221 && Owner.Stats[11] <= 230)
+            {
+                return 3.3f;
+            }
+            else if (Owner.Stats[11] >= 231 && Owner.Stats[11] <= 240)
+            {
+                return 3.4f;
+            }
+            else if (Owner.Stats[11] >= 241 && Owner.Stats[11] <= 250 || Owner.Stats[11] >= 250)
+            {
+                return 3.5f;
+            }
+            return 1.0f;
+
         }
 
         public float GetAttackFrequency()
@@ -194,6 +339,8 @@ namespace wServer.realm
                 case 8: return "DamageMin";
                 case 9: return "DamageMax";
                 case 10: return "FortuneBoost";
+                case 11: return "Might";
+                case 12: return "Luck";
             } return null;
         }
 
@@ -212,6 +359,8 @@ namespace wServer.realm
                 case "DamageMin": return 8;
                 case "DamageMax": return 9;
                 case "FortuneBoost": return 10;
+                case "Might": return 11;
+                case "Luck": return 12;
             } return -1;
         }
 
@@ -241,6 +390,10 @@ namespace wServer.realm
                     return 9;
                 case StatsType.Fortune:
                     return 10;
+                case StatsType.Might:
+                    return 11;
+                case StatsType.Luck:
+                    return 12;
                 default:
                     return -1;
             }
@@ -272,6 +425,10 @@ namespace wServer.realm
                     return StatsType.DamageMax;
                 case 10:
                     return StatsType.Fortune;
+                case 11:
+                    return StatsType.Might;
+                case 12:
+                    return StatsType.Luck;
                 default:
                     return StatsType.None;
             }
@@ -302,7 +459,11 @@ namespace wServer.realm
                 case 9:
                     return StatsType.DamageMaxBonus;
                 case 10:
-                    return StatsType.Fortune;
+                    return StatsType.FortuneBonus;
+                case 11:
+                    return StatsType.MightBonus;
+                case 12:
+                    return StatsType.LuckBonus;
                 default:
                     return StatsType.None;
             }

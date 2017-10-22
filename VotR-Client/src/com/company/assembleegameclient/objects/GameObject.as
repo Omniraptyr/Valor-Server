@@ -688,6 +688,175 @@ public class GameObject extends BasicObject {
         this.myLastTickId_ = _arg4;
     }
 
+    public function criticalDamage(_arg_1:int, _arg_2:int, _arg_3:Vector.<uint>, _arg_4:Boolean, _arg_5:Projectile):void {
+        var _local_7:int;
+        var _local_8:uint;
+        var _local_9:ConditionEffect;
+        var _local_10:CharacterStatusText;
+        var _local_11:PetsModel;
+        var _local_12:PetVO;
+        var _local_13:String;
+        var _local_14:Vector.<uint>;
+        var _local_15:Boolean;
+        var _local_6:Boolean;
+        if (_arg_4) {
+            this.dead_ = true;
+        }
+        else {
+            if (_arg_3 != null) {
+                _local_7 = 0;
+                for each (_local_8 in _arg_3) {
+                    _local_9 = null;
+                    if (((((!((_arg_5 == null))) && (_arg_5.projProps_.isPetEffect_))) && (_arg_5.projProps_.isPetEffect_[_local_8]))) {
+                        _local_11 = StaticInjectorContext.getInjector().getInstance(PetsModel);
+                        _local_12 = _local_11.getActivePet();
+                        if (_local_12 != null) {
+                            _local_9 = ConditionEffect.effects_[_local_8];
+                            this.showConditionEffectPet(_local_7, _local_9.name_);
+                            _local_7 = (_local_7 + 500);
+                        }
+                    }
+                    else {
+                        switch (_local_8) {
+                            case ConditionEffect.NOTHING:
+                                break;
+                            case ConditionEffect.QUIET:
+                            case ConditionEffect.WEAK:
+                            case ConditionEffect.SICK:
+                            case ConditionEffect.BLIND:
+                            case ConditionEffect.HALLUCINATING:
+                            case ConditionEffect.DRUNK:
+                            case ConditionEffect.CONFUSED:
+                            case ConditionEffect.STUN_IMMUNE:
+                            case ConditionEffect.INVISIBLE:
+                            case ConditionEffect.SPEEDY:
+                            case ConditionEffect.BLEEDING:
+                            case ConditionEffect.STASIS:
+                            case ConditionEffect.STASIS_IMMUNE:
+                            case ConditionEffect.NINJA_SPEEDY:
+                            case ConditionEffect.UNSTABLE:
+                            case ConditionEffect.DARKNESS:
+                            case ConditionEffect.PETRIFIED_IMMUNE:
+                                _local_9 = ConditionEffect.effects_[_local_8];
+                                break;
+                            case ConditionEffect.SLOWED:
+                                if (this.isSlowedImmune()) {
+                                    _local_10 = new CharacterStatusText(this, 0xFF0000, 3000);
+                                    _local_10.setStringBuilder(new LineBuilder().setParams(TextKey.GAMEOBJECT_IMMUNE));
+                                    map_.mapOverlay_.addStatusText(_local_10);
+                                }
+                                else {
+                                    _local_9 = ConditionEffect.effects_[_local_8];
+                                }
+                                break;
+                            case ConditionEffect.ARMORBROKEN:
+                                if (this.isArmorBrokenImmune()) {
+                                    _local_10 = new CharacterStatusText(this, 0xFF0000, 3000);
+                                    _local_10.setStringBuilder(new LineBuilder().setParams(TextKey.GAMEOBJECT_IMMUNE));
+                                    map_.mapOverlay_.addStatusText(_local_10);
+                                }
+                                else {
+                                    _local_9 = ConditionEffect.effects_[_local_8];
+                                }
+                                break;
+                            case ConditionEffect.STUNNED:
+                                if (this.isStunImmune()) {
+                                    _local_10 = new CharacterStatusText(this, 0xFF0000, 3000);
+                                    _local_10.setStringBuilder(new LineBuilder().setParams(TextKey.GAMEOBJECT_IMMUNE));
+                                    map_.mapOverlay_.addStatusText(_local_10);
+                                }
+                                else {
+                                    _local_9 = ConditionEffect.effects_[_local_8];
+                                }
+                                break;
+                            case ConditionEffect.DAZED:
+                                if (this.isDazedImmune()) {
+                                    _local_10 = new CharacterStatusText(this, 0xFF0000, 3000);
+                                    _local_10.setStringBuilder(new LineBuilder().setParams(TextKey.GAMEOBJECT_IMMUNE));
+                                    map_.mapOverlay_.addStatusText(_local_10);
+                                }
+                                else {
+                                    _local_9 = ConditionEffect.effects_[_local_8];
+                                }
+                                break;
+                            case ConditionEffect.PARALYZED:
+                                if (this.isParalyzeImmune()) {
+                                    _local_10 = new CharacterStatusText(this, 0xFF0000, 3000);
+                                    _local_10.setStringBuilder(new LineBuilder().setParams(TextKey.GAMEOBJECT_IMMUNE));
+                                    map_.mapOverlay_.addStatusText(_local_10);
+                                }
+                                else {
+                                    _local_9 = ConditionEffect.effects_[_local_8];
+                                }
+                                break;
+                            case ConditionEffect.PETRIFIED:
+                                if (this.isPetrifiedImmune()) {
+                                    _local_10 = new CharacterStatusText(this, 0xFF0000, 3000);
+                                    _local_10.setStringBuilder(new LineBuilder().setParams(TextKey.GAMEOBJECT_IMMUNE));
+                                    map_.mapOverlay_.addStatusText(_local_10);
+                                }
+                                else {
+                                    _local_9 = ConditionEffect.effects_[_local_8];
+                                }
+                                break;
+                            case ConditionEffect.CURSE:
+                                if (this.isCursedImmune()) {
+                                    _local_10 = new CharacterStatusText(this, 0xFF0000, 3000);
+                                    _local_10.setStringBuilder(new LineBuilder().setParams(TextKey.GAMEOBJECT_IMMUNE));
+                                    map_.mapOverlay_.addStatusText(_local_10);
+                                }
+                                else {
+                                    _local_9 = ConditionEffect.effects_[_local_8];
+                                }
+                                break;
+                            case ConditionEffect.GROUND_DAMAGE:
+                                _local_6 = true;
+                                break;
+                        }
+                        if (_local_9 != null) {
+                            if (_local_8 < ConditionEffect.NEW_CON_THREASHOLD) {
+                                if ((this.condition_[ConditionEffect.CE_FIRST_BATCH] | _local_9.bit_) == this.condition_[ConditionEffect.CE_FIRST_BATCH]) continue;
+                                this.condition_[ConditionEffect.CE_FIRST_BATCH] = (this.condition_[ConditionEffect.CE_FIRST_BATCH] | _local_9.bit_);
+                            }
+                            else {
+                                if ((this.condition_[ConditionEffect.CE_SECOND_BATCH] | _local_9.bit_) == this.condition_[ConditionEffect.CE_SECOND_BATCH]) continue;
+                                this.condition_[ConditionEffect.CE_SECOND_BATCH] = (this.condition_[ConditionEffect.CE_SECOND_BATCH] | _local_9.bit_);
+                            }
+                            _local_13 = _local_9.localizationKey_;
+                            this.showConditionEffect(_local_7, _local_13);
+                            _local_7 = (_local_7 + 500);
+                        }
+                    }
+                }
+            }
+        }
+        if (!((this.props_.isEnemy_) && (Parameters.data_.disableEnemyParticles))) {
+            _local_14 = BloodComposition.getBloodComposition(this.objectType_, this.texture_, this.props_.bloodProb_, this.props_.bloodColor_);
+            if (this.dead_) {
+                map_.addObj(new ExplosionEffect(_local_14, this.size_, 30), x_, y_);
+            }
+            else {
+                if (_arg_5 != null) {
+                    map_.addObj(new HitEffect(_local_14, this.size_, 10, _arg_5.angle_, _arg_5.projProps_.speed_), x_, y_);
+                }
+                else {
+                    map_.addObj(new ExplosionEffect(_local_14, this.size_, 10), x_, y_);
+                }
+            }
+        }
+        if (_arg_2 > 0) {
+            _local_15 = ((((this.isArmorBroken()) || (((!((_arg_5 == null))) && (_arg_5.projProps_.armorPiercing_))))) || (_local_6));
+            this.showDamageText2(_arg_2, _local_15);
+        }
+    }
+
+    public function showDamageText2(_arg_1:int, _arg_2:Boolean):void {
+        var value:Number = Math.round(map_.player_.criticalMultiplier_ * 10)/10
+        var _local_3:String = ("-" + _arg_1 + " (" + value + ")");
+        var _local_4:CharacterStatusText = new CharacterStatusText(this, ((_arg_2) ? 0xFF4500 : 0xFFFF00), 1000);
+        _local_4.setStringBuilder(new StaticStringBuilder(_local_3));
+        map_.mapOverlay_.addStatusText(_local_4);
+    }
     public function damage(_arg1:int, _arg2:int, _arg3:Vector.<uint>, _arg4:Boolean, _arg5:Projectile):void {
         var _local7:int;
         var _local8:uint;

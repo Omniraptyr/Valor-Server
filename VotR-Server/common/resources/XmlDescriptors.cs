@@ -936,6 +936,11 @@ namespace common.resources
                 case 5: return "Dexterity";
                 case 6: return "HpRegen";
                 case 7: return "MpRegen";
+                case 8: return "DamageMin";
+                case 9: return "DamageMax";
+                case 10: return "Fortune";
+                case 11: return "Might";
+                case 12: return "Luck";
             } return null;
         }
     }
@@ -951,7 +956,7 @@ namespace common.resources
             XElement n;
             SlotTypes = elem.Element("SlotTypes").Value.CommaToArray<int>();
             Equipment = elem.Element("Equipment").Value.CommaToArray<ushort>();
-            Stats = new Stat[8];
+            Stats = new Stat[13];
             for (var i = 0; i < Stats.Length; i++)
                 Stats[i] = new Stat(i, elem);
             if (elem.Element("UnlockLevel") != null ||

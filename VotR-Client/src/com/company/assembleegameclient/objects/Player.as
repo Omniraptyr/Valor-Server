@@ -149,6 +149,8 @@ public class Player extends Character {
     private var addTextLine:AddTextLineSignal;
     private var factory:CharacterFactory;
     private var ip_:IntPoint;
+    public var criticalMultiplier_:Number;
+    public var isCrit_:Boolean;
     private var breathBackFill_:GraphicsSolidFill = null;
     private var breathBackPath_:GraphicsPath = null;
     private var breathFill_:GraphicsSolidFill = null;

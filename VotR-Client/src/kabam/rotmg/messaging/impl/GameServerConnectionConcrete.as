@@ -121,6 +121,7 @@ import kabam.rotmg.messaging.impl.incoming.EnemyShoot;
 import kabam.rotmg.messaging.impl.incoming.EvolvedMessageHandler;
 import kabam.rotmg.messaging.impl.incoming.EvolvedPetMessage;
 import kabam.rotmg.messaging.impl.incoming.Failure;
+import kabam.rotmg.messaging.impl.incoming.CriticalDamage;
 import kabam.rotmg.messaging.impl.incoming.File;
 import kabam.rotmg.messaging.impl.incoming.GlobalNotification;
 import kabam.rotmg.messaging.impl.incoming.Goto;
@@ -468,6 +469,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(SERVER_FULL).toMessage(ServerFull).toMethod(this.HandleServerFull);
         _local1.map(QUEUE_PING).toMessage(QueuePing).toMethod(this.HandleQueuePing);
         _local1.map(SWITCH_MUSIC).toMessage(SwitchMusic).toMethod(this.onSwitchMusic);
+        _local1.map(CRITICALDAMAGE).toMessage(CriticalDamage).toMethod(this.onCriticalDamage);
     }
 
     private function onSwitchMusic(sm:SwitchMusic):void {
@@ -587,6 +589,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.unmap(TRADEREQUESTED);
         _local1.unmap(TRADESTART);
         _local1.unmap(TRADECHANGED);
+        _local1.unmap(CRITICALDAMAGE)
         _local1.unmap(TRADEDONE);
         _local1.unmap(TRADEACCEPTED);
         _local1.unmap(CLIENTSTAT);
@@ -645,6 +648,15 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         }
     }
 
+    private function onCriticalDamage(_arg1:CriticalDamage):void {
+        if (_arg1.isCritical_ == true) {
+            this.player.criticalMultiplier_ = _arg1.criticalHit_
+            this.player.isCrit_ = _arg1.isCritical_;
+        }else{
+            this.player.criticalMultiplier_ = 1
+            this.player.isCrit_ = false;
+        }
+    }
     override public function playerShoot(_arg1:int, _arg2:Projectile):void {
         var _local3:PlayerShoot = (this.messages.require(PLAYERSHOOT) as PlayerShoot);
         _local3.time_ = _arg1;

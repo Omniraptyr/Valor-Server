@@ -20,7 +20,7 @@ namespace wServer.realm
         public int[] GetStats()
         {
             return (int[]) _base.Clone();
-        }
+        } 
 
         public int this[int index]
         {

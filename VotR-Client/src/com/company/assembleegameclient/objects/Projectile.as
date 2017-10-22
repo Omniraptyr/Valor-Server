@@ -268,7 +268,11 @@ public class Projectile extends BasicObject {
                 else {
                     if (goIsEnemy) {
                         map_.gs_.gsc_.enemyHit(currentTime, this.bulletId_, go.objectId_, killed);
-                        go.damage(this.containerType_, dmg, this.projProps_.effects_, killed, this);
+                        if(player.isCrit_ == false) {
+                            go.damage(this.containerType_, dmg, this.projProps_.effects_, killed, this);
+                        }else{
+                            go.criticalDamage(this.containerType_, dmg, this.projProps_.effects_, killed, this);
+                        }
                     }
                     else {
                         if (!this.projProps_.multiHit_) {

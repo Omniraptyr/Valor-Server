@@ -105078,7 +105078,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Tier>2</Tier>
       <Description>A potion that permanently increases your might.</Description>
       <Sound>use_potion</Sound>
-      <Activate stat="103" amount="2">IncrementStat</Activate>
+      <Activate stat="112" amount="2">IncrementStat</Activate>
       <Consumable/>
       <Potion/>
       <BagType>5</BagType>
@@ -105096,7 +105096,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Tier>2</Tier>
       <Description>A potion that permanently increases your luck.</Description>
       <Sound>use_potion</Sound>
-      <Activate stat="104" amount="2">IncrementStat</Activate>
+      <Activate stat="114" amount="2">IncrementStat</Activate>
       <Consumable/>
       <Potion/>
       <BagType>5</BagType>

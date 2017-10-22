@@ -117,6 +117,7 @@ public class GameServerConnection {
     public static const CLAIM_LOGIN_REWARD_MSG:int = 153;
     public static const LOGIN_REWARD_MSG:int = 154;
     public static const LAUNCH_RAID:int = 156;
+    public static const CRITICALDAMAGE:int = 157;
     
     public static var instance:GameServerConnection;
 
