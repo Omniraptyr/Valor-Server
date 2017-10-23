@@ -74,7 +74,7 @@ namespace wServer.realm
             Random rnd = new Random();
             int luckNm = rnd.Next(1, 1001);
             var ret = 1.0f;
-            if (luckNm <= Owner.Stats[12])
+            if (luckNm <= Owner.Stats[9])
             {
                 ret *= FinalMightMultiplier();
                 Owner.Client.SendPacket(new CriticalDamage()
@@ -110,103 +110,103 @@ namespace wServer.realm
         private float MightMultiplier()
         {
 
-            if (Owner.Stats[11] >= 0 && Owner.Stats[11] <= 10)
+            if (Owner.Stats[8] >= 0 && Owner.Stats[8] <= 10)
             {
                 return 1.1f;
             }
-            else if (Owner.Stats[11] >= 11 && Owner.Stats[11] <= 20)
+            else if (Owner.Stats[8] >= 11 && Owner.Stats[8] <= 20)
             {
                 return 1.2f;
             }
-            else if (Owner.Stats[11] >= 21 && Owner.Stats[11] <= 30)
+            else if (Owner.Stats[8] >= 21 && Owner.Stats[8] <= 30)
             {
                 return 1.3f;
             }
-            else if (Owner.Stats[11] >= 31 && Owner.Stats[11] <= 40)
+            else if (Owner.Stats[8] >= 31 && Owner.Stats[8] <= 40)
             {
                 return 1.4f;
             }
-            else if (Owner.Stats[11] >= 41 && Owner.Stats[11] <= 50)
+            else if (Owner.Stats[8] >= 41 && Owner.Stats[8] <= 50)
             {
                 return 1.5f;
             }
-            else if (Owner.Stats[11] >= 51 && Owner.Stats[11] <= 60)
+            else if (Owner.Stats[8] >= 51 && Owner.Stats[8] <= 60)
             {
                 return 1.6f;
             }
-            else if (Owner.Stats[11] >= 61 && Owner.Stats[11] <= 70)
+            else if (Owner.Stats[8] >= 61 && Owner.Stats[8] <= 70)
             {
                 return 1.7f;
             }
-            else if (Owner.Stats[11] >= 71 && Owner.Stats[11] <= 80)
+            else if (Owner.Stats[8] >= 71 && Owner.Stats[8] <= 80)
             {
                 return 1.8f;
             }
-            else if (Owner.Stats[11] >= 81 && Owner.Stats[11] <= 90)
+            else if (Owner.Stats[8] >= 81 && Owner.Stats[8] <= 90)
             {
                 return 1.9f;
             }
-            else if (Owner.Stats[11] >= 91 && Owner.Stats[11] <= 100)
+            else if (Owner.Stats[8] >= 91 && Owner.Stats[8] <= 100)
             {
                 return 2.0f;
             }
-            else if (Owner.Stats[11] >= 101 && Owner.Stats[11] <= 110)
+            else if (Owner.Stats[8] >= 101 && Owner.Stats[8] <= 110)
             {
                 return 2.1f;
             }
-            else if (Owner.Stats[11] >= 111 && Owner.Stats[11] <= 120)
+            else if (Owner.Stats[8] >= 111 && Owner.Stats[8] <= 120)
             {
                 return 2.2f;
             }
-            else if (Owner.Stats[11] >= 121 && Owner.Stats[11] <= 130)
+            else if (Owner.Stats[8] >= 121 && Owner.Stats[8] <= 130)
             {
                 return 2.3f;
             }
-            else if (Owner.Stats[11] >= 131 && Owner.Stats[11] <= 140)
+            else if (Owner.Stats[8] >= 131 && Owner.Stats[8] <= 140)
             {
                 return 2.4f;
             }
-            else if (Owner.Stats[11] >= 141 && Owner.Stats[11] <= 150)
+            else if (Owner.Stats[8] >= 141 && Owner.Stats[8] <= 150)
             {
                 return 2.5f;
             }
-            else if (Owner.Stats[11] >= 151 && Owner.Stats[11] <= 160)
+            else if (Owner.Stats[8] >= 151 && Owner.Stats[8] <= 160)
             {
                 return 2.6f;
             }
-            else if (Owner.Stats[11] >= 161 && Owner.Stats[11] <= 170)
+            else if (Owner.Stats[8] >= 161 && Owner.Stats[8] <= 170)
             {
                 return 2.7f;
             }
-            else if (Owner.Stats[11] >= 171 && Owner.Stats[11] <= 180)
+            else if (Owner.Stats[8] >= 171 && Owner.Stats[8] <= 180)
             {
                 return 2.8f;
             }
-            else if (Owner.Stats[11] >= 181 && Owner.Stats[11] <= 190)
+            else if (Owner.Stats[8] >= 181 && Owner.Stats[8] <= 190)
             {
                 return 2.9f;
             }
-            else if (Owner.Stats[11] >= 191 && Owner.Stats[11] <= 200)
+            else if (Owner.Stats[8] >= 191 && Owner.Stats[8] <= 200)
             {
                 return 3.0f;
             }
-            else if (Owner.Stats[11] >= 201 && Owner.Stats[11] <= 210)
+            else if (Owner.Stats[8] >= 201 && Owner.Stats[8] <= 210)
             {
                 return 3.1f;
             }
-            else if (Owner.Stats[11] >= 211 && Owner.Stats[11] <= 220)
+            else if (Owner.Stats[8] >= 211 && Owner.Stats[8] <= 220)
             {
                 return 3.2f;
             }
-            else if (Owner.Stats[11] >= 221 && Owner.Stats[11] <= 230)
+            else if (Owner.Stats[8] >= 221 && Owner.Stats[8] <= 230)
             {
                 return 3.3f;
             }
-            else if (Owner.Stats[11] >= 231 && Owner.Stats[11] <= 240)
+            else if (Owner.Stats[8] >= 231 && Owner.Stats[8] <= 240)
             {
                 return 3.4f;
             }
-            else if (Owner.Stats[11] >= 241 && Owner.Stats[11] <= 250 || Owner.Stats[11] >= 250)
+            else if (Owner.Stats[8] >= 241 && Owner.Stats[8] <= 250 || Owner.Stats[8] >= 250)
             {
                 return 3.5f;
             }

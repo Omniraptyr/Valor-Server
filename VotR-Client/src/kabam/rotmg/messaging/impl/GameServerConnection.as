@@ -118,6 +118,7 @@ public class GameServerConnection {
     public static const LOGIN_REWARD_MSG:int = 154;
     public static const LAUNCH_RAID:int = 156;
     public static const CRITICALDAMAGE:int = 157;
+    public static const SORFORGE:int = 158;
     
     public static var instance:GameServerConnection;
 

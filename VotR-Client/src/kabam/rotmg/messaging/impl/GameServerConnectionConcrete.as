@@ -149,6 +149,7 @@ import kabam.rotmg.messaging.impl.incoming.ServerFull;
 import kabam.rotmg.messaging.impl.incoming.ServerPlayerShoot;
 import kabam.rotmg.messaging.impl.incoming.ShowEffect;
 import kabam.rotmg.messaging.impl.incoming.SetFocus;
+import kabam.rotmg.messaging.impl.incoming.SorForge;
 import kabam.rotmg.messaging.impl.incoming.SwitchMusic;
 import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
 import kabam.rotmg.messaging.impl.incoming.TradeChanged;
@@ -470,6 +471,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(QUEUE_PING).toMessage(QueuePing).toMethod(this.HandleQueuePing);
         _local1.map(SWITCH_MUSIC).toMessage(SwitchMusic).toMethod(this.onSwitchMusic);
         _local1.map(CRITICALDAMAGE).toMessage(CriticalDamage).toMethod(this.onCriticalDamage);
+        _local1.map(SORFORGE).toMessage(SorForge).toMethod(this.onCriticalDamage);
     }
 
     private function onSwitchMusic(sm:SwitchMusic):void {

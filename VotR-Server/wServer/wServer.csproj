@@ -199,6 +199,7 @@
     <Compile Include="networking\packets\outgoing\ClaimDailyRewardResponse.cs" />
     <Compile Include="networking\packets\outgoing\CriticalDamage.cs" />
     <Compile Include="networking\packets\outgoing\KeyInfoResponse.cs" />
+    <Compile Include="networking\packets\outgoing\SorForge.cs" />
     <Compile Include="realm\entities\player\Player.Powers.cs" />
     <Compile Include="realm\ISControl.cs" />
     <Compile Include="logic\behaviors\AnnounceOnDeath.cs" />
