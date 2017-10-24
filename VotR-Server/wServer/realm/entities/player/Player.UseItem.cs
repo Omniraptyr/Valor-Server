@@ -238,7 +238,7 @@ namespace wServer.realm.entities
                     FameCounter.DrinkPot();
                 }
 
-                if (item.Consumable || item.SlotType == slotType)
+                if (item.Consumable || item.SlotType == slotType || item.InvUse)
                     Activate(time, item, pos);
                 else
                     Client.SendPacket(new InvResult() { Result = 1 });
@@ -367,6 +367,9 @@ namespace wServer.realm.entities
                         break;
                     case ActivateEffects.HealingGrenade:
                         AEHealingGrenade(time, item, target, eff);
+                        break;
+                    case ActivateEffects.SorForge:
+                        AESorForge(time, item, target, eff);
                         break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
@@ -571,6 +574,14 @@ namespace wServer.realm.entities
                 Texture1 = item.Texture1;
             if (item.Texture2 != 0)
                 Texture2 = item.Texture2;
+        }
+
+        private void AESorForge(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            Client.SendPacket(new SorForge()
+            {
+                IsForge = true
+            });
         }
 
         private void AECreate(RealmTime time, Item item, Position target, ActivateEffect eff)

@@ -108,6 +108,7 @@ namespace wServer.networking.packets
         LOGIN_REWARD_MSG = 154,
         LAUNCH_RAID = 156,
         CRITICALDAMAGE = 157,
-        SORFORGE = 157
+        SORFORGE = 158,
+        SORFORGEREQUEST = 159
     }
 }

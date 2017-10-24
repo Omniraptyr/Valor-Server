@@ -23100,8 +23100,10 @@
         <ExtraTooltipData>
             <EffectInfo name="" description="Can be used to forge a Legendary Sor Crystal."/>
         </ExtraTooltipData>
-        <BagType>9</BagType>
-        <feedPower>300</feedPower>
+        <BagType>8</BagType>
+        <InvUse/>
+        <Activate>SorForge</Activate>
+        <feedPower>1000</feedPower>
     </Object>
     <Object type="0x49e6" id="Legendary Sor Crystal">
         <Class>Equipment</Class>

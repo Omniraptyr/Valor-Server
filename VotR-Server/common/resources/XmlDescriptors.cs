@@ -330,7 +330,7 @@ namespace common.resources
         IdScroll,
         BrownScroll,
         HealNovaSigil,
-        OvergrowthBox,
+        SorForge,
         RevivementBox,
         NeonBox,
         DareFistBox,
@@ -557,6 +557,7 @@ namespace common.resources
         public int NumProjectiles2 { get; private set; }
         public bool DualShooting { get; private set; }
         public bool Consumable { get; private set; }
+        public bool InvUse { get; private set; }
         public bool Potion { get; private set; }
         public string DisplayId { get; private set; }
         public string DisplayName { get; private set; }
@@ -676,6 +677,8 @@ namespace common.resources
             DualShooting = elem.Element("DualShooting") != null;
 
             Consumable = elem.Element("Consumable") != null;
+
+            InvUse = elem.Element("InvUse") != null;
 
             Potion = elem.Element("Potion") != null;
 

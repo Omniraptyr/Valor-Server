@@ -145,11 +145,11 @@ import kabam.rotmg.messaging.impl.incoming.QuestRedeemResponse;
 import kabam.rotmg.messaging.impl.incoming.QueuePing;
 import kabam.rotmg.messaging.impl.incoming.Reconnect;
 import kabam.rotmg.messaging.impl.incoming.ReskinUnlock;
+import kabam.rotmg.messaging.impl.incoming.SorForge;
 import kabam.rotmg.messaging.impl.incoming.ServerFull;
 import kabam.rotmg.messaging.impl.incoming.ServerPlayerShoot;
 import kabam.rotmg.messaging.impl.incoming.ShowEffect;
 import kabam.rotmg.messaging.impl.incoming.SetFocus;
-import kabam.rotmg.messaging.impl.incoming.SorForge;
 import kabam.rotmg.messaging.impl.incoming.SwitchMusic;
 import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
 import kabam.rotmg.messaging.impl.incoming.TradeChanged;
@@ -202,6 +202,7 @@ import kabam.rotmg.messaging.impl.outgoing.Reskin;
 import kabam.rotmg.messaging.impl.outgoing.ReskinPet;
 import kabam.rotmg.messaging.impl.outgoing.SetCondition;
 import kabam.rotmg.messaging.impl.outgoing.ShootAck;
+import kabam.rotmg.messaging.impl.outgoing.SorForgeRequest;
 import kabam.rotmg.messaging.impl.outgoing.SquareHit;
 import kabam.rotmg.messaging.impl.outgoing.Teleport;
 import kabam.rotmg.messaging.impl.outgoing.UseItem;
@@ -223,6 +224,7 @@ import kabam.rotmg.questrewards.controller.QuestRedeemCompleteSignal;
 import kabam.rotmg.queue.control.ShowQueueSignal;
 import kabam.rotmg.queue.control.UpdateQueueSignal;
 import kabam.rotmg.servers.api.Server;
+import kabam.rotmg.sorForge.SorForgeModal;
 import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.ui.model.Key;
@@ -417,6 +419,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(PET_CHANGE_FORM_MSG).toMessage(ReskinPet);
         _local1.map(CLAIM_LOGIN_REWARD_MSG).toMessage(ClaimDailyRewardMessage);
         _local1.map(LAUNCH_RAID).toMessage(LaunchRaid);
+        _local1.map(SORFORGEREQUEST).toMessage(SorForgeRequest);
         _local1.map(FAILURE).toMessage(Failure).toMethod(this.onFailure);
         _local1.map(CREATE_SUCCESS).toMessage(CreateSuccess).toMethod(this.onCreateSuccess);
         _local1.map(SERVERPLAYERSHOOT).toMessage(ServerPlayerShoot).toMethod(this.onServerPlayerShoot);
@@ -471,7 +474,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(QUEUE_PING).toMessage(QueuePing).toMethod(this.HandleQueuePing);
         _local1.map(SWITCH_MUSIC).toMessage(SwitchMusic).toMethod(this.onSwitchMusic);
         _local1.map(CRITICALDAMAGE).toMessage(CriticalDamage).toMethod(this.onCriticalDamage);
-        _local1.map(SORFORGE).toMessage(SorForge).toMethod(this.onCriticalDamage);
+        _local1.map(SORFORGE).toMessage(SorForge).toMethod(this.onSorForge);
     }
 
     private function onSwitchMusic(sm:SwitchMusic):void {
@@ -659,6 +662,14 @@ public class GameServerConnectionConcrete extends GameServerConnection {
             this.player.isCrit_ = false;
         }
     }
+
+    private function onSorForge(_arg1:SorForge):void {
+        if (_arg1.isForge == true) {
+            var _local_2:OpenDialogSignal = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
+            _local_2.dispatch(new SorForgeModal());
+        }
+    }
+
     override public function playerShoot(_arg1:int, _arg2:Projectile):void {
         var _local3:PlayerShoot = (this.messages.require(PLAYERSHOOT) as PlayerShoot);
         _local3.time_ = _arg1;

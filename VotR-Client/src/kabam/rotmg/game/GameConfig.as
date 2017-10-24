@@ -72,6 +72,8 @@ import kabam.rotmg.game.view.components.TabStripMediator;
 import kabam.rotmg.game.view.components.TabStripView;
 import kabam.rotmg.raidLauncher.RaidLauncherMediator;
 import kabam.rotmg.raidLauncher.RaidLauncherModal;
+import kabam.rotmg.sorForge.SorForgeModal;
+import kabam.rotmg.sorForge.SorForgeMediator;
 import kabam.rotmg.ui.model.TabStripModel;
 
 import org.swiftsuspenders.Injector;
@@ -122,6 +124,7 @@ public class GameConfig implements IConfig {
         this.mediatorMap.map(StatsView).toMediator(StatsMediator);
         this.mediatorMap.map(TabStripView).toMediator(TabStripMediator);
         this.mediatorMap.map(RaidLauncherModal).toMediator(RaidLauncherMediator);
+        this.mediatorMap.map(SorForgeModal).toMediator(SorForgeMediator);
         this.commandMap.map(AppInitDataReceivedSignal).toCommand(ParsePotionDataCommand);
         this.commandMap.map(GiftStatusUpdateSignal).toCommand(GiftStatusUpdateCommand);
         this.commandMap.map(UpdateMarkShopButtonSignal).toCommand(MarkShopUpdateCommand);

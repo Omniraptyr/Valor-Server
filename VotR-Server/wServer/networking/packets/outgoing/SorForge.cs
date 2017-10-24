@@ -7,7 +7,7 @@ namespace wServer.networking.packets.outgoing
         public bool IsForge { get; set; }
 
         public override PacketId ID => PacketId.SORFORGE;
-        public override Packet CreateInstance() { return new CriticalDamage(); }
+        public override Packet CreateInstance() { return new SorForge(); }
 
         protected override void Read(NReader rdr)
         {

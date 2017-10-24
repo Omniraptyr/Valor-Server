@@ -32,6 +32,8 @@ public class LegacyBuyButton extends BuyButton {
     public static const fortune:BitmapData = IconFactory.makeFortune();
     public static const fame:BitmapData = IconFactory.makeFame();
     public static const guildFame:BitmapData = IconFactory.makeGuildFame();
+    public static const onrane:BitmapData = IconFactory.makeOnrane();
+    public static const kantos:BitmapData = IconFactory.makeKantos();
     private static const grayfilter:ColorMatrixFilter = new ColorMatrixFilter(MoreColorUtil.greyscaleFilterMatrix);
 
     private const enabledFill:GraphicsSolidFill = new GraphicsSolidFill(0xFFFFFF, 1);
@@ -137,6 +139,12 @@ public class LegacyBuyButton extends BuyButton {
                 break;
             case Currency.FORTUNE:
                 this.icon.bitmapData = fortune;
+                break;
+            case Currency.ONRANE:
+                this.icon.bitmapData = onrane;
+                break;
+            case Currency.KANTOS:
+                this.icon.bitmapData = kantos;
                 break;
             default:
                 this.icon.bitmapData = null;

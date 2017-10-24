@@ -808,6 +808,26 @@ namespace wServer.realm.entities
             }
         }
 
+        public bool ascendSorCrystal(Player player)
+        {
+                        for (int i = 0; i < Inventory.Length; i++)
+                        {
+                            if (Inventory[i] == null)
+                                continue;
+
+                            if (Inventory[i].ObjectId == "Sor Crystal")
+                            {
+                                Inventory[i] = Manager.Resources.GameData.Items[0x49e6];
+                                SaveToCharacter();
+                                SendInfo("Your Sor Crystal has been ascended into a Legendary Sor Crystal!");
+                                Onrane = Client.Account.Onrane -= 20;
+                                player.ForceUpdate(Onrane);
+                    return false;
+                            };
+            }
+            return true;
+        }
+
         public void Teleport(RealmTime time, int objId, bool ignoreRestrictions = false)
         {
             var obj = Owner.GetEntity(objId);

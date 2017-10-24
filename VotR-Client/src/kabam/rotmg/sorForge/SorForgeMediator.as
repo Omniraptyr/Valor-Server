@@ -1,4 +1,5 @@
 package kabam.rotmg.sorForge {
+import kabam.rotmg.messaging.impl.outgoing.SorForgeRequest;
 import kabam.rotmg.raidLauncher.*;
 
 import com.company.assembleegameclient.game.AGameSprite;
@@ -30,7 +31,7 @@ public class SorForgeMediator extends Mediator {
     [Inject]
     public var messages:MessageProvider;
     [Inject]
-    public var view:RaidLauncherModal;
+    public var view:SorForgeModal;
     [Inject]
     public var gameSprite:AGameSprite;
     [Inject]
@@ -41,7 +42,7 @@ public class SorForgeMediator extends Mediator {
 
 
     override public function initialize():void {
-        this.view.launchButton.addEventListener(MouseEvent.CLICK, this.onButtonLaunch);
+        this.view.buyButton.addEventListener(MouseEvent.CLICK, this.onButtonLaunch);
     }
 
     override public function destroy():void {
@@ -49,10 +50,9 @@ public class SorForgeMediator extends Mediator {
     }
 
     protected function onButtonLaunch(_arg_1:MouseEvent):void {
-        var _local_1:LaunchRaid;
-        _local_1 = (this.messages.require(GameServerConnection.LAUNCH_RAID) as LaunchRaid);
-        _local_1.raidId_ = 1;
-        _local_1.ultra_ = this.view.ultraCheckbox.isChecked();
+        var _local_1:SorForgeRequest;
+        _local_1 = (this.messages.require(GameServerConnection.SORFORGEREQUEST) as SorForgeRequest);
+        _local_1.isForge_ = true;
         this.socketServer.sendMessage(_local_1);
     }
 

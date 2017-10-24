@@ -1,7 +1,11 @@
 ﻿package kabam.rotmg.sorForge {
+import com.company.assembleegameclient.game.AGameSprite;
+import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.util.Currency;
+
 import kabam.rotmg.raidLauncher.*;
 
-import com.company.assembleegameclient.account.ui.CheckBoxField;
+import kabam.rotmg.util.components.LegacyBuyButton;
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 
 import kabam.rotmg.news.view.*;
@@ -38,24 +42,23 @@ import kabam.rotmg.ui.model.HUDModel;
 
 public class SorForgeModal extends EmptyFrame {
 
-    public static const MODAL_WIDTH:int = 440;
-    public static const MODAL_HEIGHT:int = 500;
+    public static const MODAL_WIDTH:int = 240;
+    public static const MODAL_HEIGHT:int = 250;
     private static const OVER_COLOR_TRANSFORM:ColorTransform = new ColorTransform(1, (220 / 0xFF), (133 / 0xFF));
     private static const DROP_SHADOW_FILTER:DropShadowFilter = new DropShadowFilter(0, 0, 0);
     private static const GLOW_FILTER:GlowFilter = new GlowFilter(0xFF0000, 1, 11, 5);
     private static const filterWithGlow:Array = [DROP_SHADOW_FILTER, GLOW_FILTER];
     private static const filterNoGlow:Array = [DROP_SHADOW_FILTER];
 
-    public static var backgroundImageEmbed:Class = RaidLauncher_backgroundImageEmbed;
-    public static var raid1launchFlagEmbed:Class = Raid1_launchFlag;
-    public static var raid2launchFlagEmbed:Class = Raid2_launchFlag;
+
+    public static var backgroundImageEmbed:Class = SorForger_backgroundImageEmbed;
     public static var modalWidth:int = MODAL_WIDTH;//440
     public static var modalHeight:int = MODAL_HEIGHT;//400
 
     private var fontModel:FontModel;
-    public var launchButton:DeprecatedTextButton;
-    public var ultraCheckbox:CheckBoxField;
+    public var buyButton:LegacyBuyButton;
     private var triggeredOnStartup:Boolean;
+    private var sorPic:SorForge_ImageEmbed;
 
     public function SorForgeModal(_arg1:Boolean = false) {
         this.triggeredOnStartup = _arg1;
@@ -64,7 +67,7 @@ public class SorForgeModal extends EmptyFrame {
         modalHeight = MODAL_HEIGHT;
         super(modalWidth, modalHeight);
         this.setCloseButton(true);
-        this.setTitle("Choose a raid to launch", true);
+        this.setTitle("Ascend?", true);
         addEventListener(Event.ADDED_TO_STAGE, this.onAdded);
         addEventListener(Event.REMOVED_FROM_STAGE, this.destroy);
         closeButton.clicked.add(this.onCloseButtonClicked);
@@ -97,7 +100,14 @@ public class SorForgeModal extends EmptyFrame {
             _local1.dispatch();
         }
     }
+    private function isOnrane(_arg1:Player):Boolean{
+        if(_arg1.onrane_ >= 20){
+            return true;
+        }else{
+            return false;
+        }
 
+    }
     private function onAdded(_arg1:Event) {
     }
 
@@ -118,32 +128,20 @@ public class SorForgeModal extends EmptyFrame {
         _local2.height = (modalHeight - 25);
         _local2.y = 27;
         _local2.alpha = 1.00;
-        var _local3:DisplayObject = new raid1launchFlagEmbed();
-        _local3.width = 440;
-        _local3.height = 80;
-        _local3.y = 30;
-        _local3.alpha = 1.00;
-       /* var _local5:DisplayObject = new raid2launchFlagEmbed();
-        _local5.width = 440;
-        _local5.height = 80;
-        _local5.y = 150;
-        _local5.alpha = 0.75;*/
+        this.sorPic = new SorForge_ImageEmbed();
+        sorPic.y = 30;
+        sorPic.x = 70;
         var _local4:PopupWindowBackground = new PopupWindowBackground();
         _local4.draw(modalWidth, modalHeight, PopupWindowBackground.TYPE_TRANSPARENT_WITH_HEADER);
         _local1.addChild(_local2);
-        _local1.addChild(_local3);
+        _local1.addChild(this.sorPic);
         _local1.addChild(_local4);
-        //_local1.addChild(_local5);
-        this.launchButton = new DeprecatedTextButton(12, "Launch");
-        this.launchButton.y = 118
-        this.launchButton.x = this.launchButton.x + 10
-        this.launchButton.setEnabled(true);
-        _local1.addChild(this.launchButton);
-        this.ultraCheckbox = new CheckBoxField("Ultra", false)
-        this.ultraCheckbox.y = this.launchButton.y
-        this.ultraCheckbox.x = this.launchButton.x + 80
-        _local1.addChild(this.ultraCheckbox);
-        this.launchButton.addEventListener(MouseEvent.CLICK, this.onMouseClick)
+        this.buyButton = new LegacyBuyButton("", 16, 20, Currency.ONRANE);
+        this.buyButton.y = 200
+        this.buyButton.x = this.buyButton.x + 95
+        this.buyButton.setEnabled(true);
+        _local1.addChild(this.buyButton);
+        this.buyButton.addEventListener(MouseEvent.CLICK, this.onMouseClick)
         return (_local1);
     }
     private function onMouseClick(e:MouseEvent):void {

@@ -3,7 +3,7 @@ import flash.utils.IDataInput;
 
 public class SorForge extends IncomingMessage {
 
-    public var IsForge:Boolean;
+    public var isForge:Boolean;
 
     public function SorForge(_arg_1:uint, _arg_2:Function) {
         super(_arg_1, _arg_2);
@@ -11,12 +11,12 @@ public class SorForge extends IncomingMessage {
 
     override public function parseFromInput(_arg_1:IDataInput):void {
 
-        this.IsForge = _arg_1.readBoolean();
+        this.isForge = _arg_1.readBoolean();
 
     }
 
     override public function toString():String {
-        return (formatToString("SORFORGE", "IsForge"));
+        return (formatToString("SORFORGE", "isForge"));
     }
 
 
