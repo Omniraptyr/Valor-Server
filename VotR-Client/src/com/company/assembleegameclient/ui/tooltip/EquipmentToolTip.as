@@ -721,7 +721,7 @@ public class EquipmentToolTip extends ToolTip {
         }
         if (this.objectXML.hasOwnProperty("Shard"))
         {
-            this.restrictions.push(new Restriction("This item can be used to enchant items and forge legendaries.", 0x000099, true));
+            this.restrictions.push(new Restriction("This item can be used to enchant items and forge legendaries.", 16738740, true));
         }
         if (this.objectXML.hasOwnProperty("Enchanter"))
         {

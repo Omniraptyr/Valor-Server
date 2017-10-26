@@ -2021,10 +2021,10 @@
     <Object type="0x49e7" id="Sor Forger Object">
         <Class>SorForger</Class>
         <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x332</Index>
+            <File>lofiObjBig</File>
+            <Index>0x1af</Index>
         </Texture>
-        <Size>140</Size>
+        <Size>120</Size>
         <Static/>
     </Object>
     <Object type="0x49f4" id="Crimson Caverns Wall">

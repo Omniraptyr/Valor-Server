@@ -54,6 +54,7 @@ public class SorForgeMediator extends Mediator {
         _local_1 = (this.messages.require(GameServerConnection.SORFORGEREQUEST) as SorForgeRequest);
         _local_1.isForge_ = true;
         this.socketServer.sendMessage(_local_1);
+        this.closeDialogs.dispatch();
     }
 
 

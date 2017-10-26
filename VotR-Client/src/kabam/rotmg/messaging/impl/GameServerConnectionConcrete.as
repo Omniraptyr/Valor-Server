@@ -176,6 +176,7 @@ import kabam.rotmg.messaging.impl.outgoing.CreateGuild;
 import kabam.rotmg.messaging.impl.outgoing.EditAccountList;
 import kabam.rotmg.messaging.impl.outgoing.EnemyHit;
 import kabam.rotmg.messaging.impl.outgoing.Escape;
+import kabam.rotmg.messaging.impl.outgoing.ForgeItem;
 import kabam.rotmg.messaging.impl.outgoing.GoToQuestRoom;
 import kabam.rotmg.messaging.impl.outgoing.GotoAck;
 import kabam.rotmg.messaging.impl.outgoing.GroundDamage;
@@ -420,6 +421,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(CLAIM_LOGIN_REWARD_MSG).toMessage(ClaimDailyRewardMessage);
         _local1.map(LAUNCH_RAID).toMessage(LaunchRaid);
         _local1.map(SORFORGEREQUEST).toMessage(SorForgeRequest);
+        _local1.map(FORGEITEM).toMessage(ForgeItem);
         _local1.map(FAILURE).toMessage(Failure).toMethod(this.onFailure);
         _local1.map(CREATE_SUCCESS).toMessage(CreateSuccess).toMethod(this.onCreateSuccess);
         _local1.map(SERVERPLAYERSHOOT).toMessage(ServerPlayerShoot).toMethod(this.onServerPlayerShoot);

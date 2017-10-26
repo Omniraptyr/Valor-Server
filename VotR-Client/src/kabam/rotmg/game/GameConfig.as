@@ -74,6 +74,8 @@ import kabam.rotmg.raidLauncher.RaidLauncherMediator;
 import kabam.rotmg.raidLauncher.RaidLauncherModal;
 import kabam.rotmg.sorForge.SorForgeModal;
 import kabam.rotmg.sorForge.SorForgeMediator;
+import kabam.rotmg.sorForge.components.SorForgePanel;
+import kabam.rotmg.sorForge.components.SorForgePanelMediator;
 import kabam.rotmg.ui.model.TabStripModel;
 
 import org.swiftsuspenders.Injector;
@@ -111,6 +113,7 @@ public class GameConfig implements IConfig {
         this.injector.map(SocketServerModel).asSingleton();
         this.makeTextPanelMappings();
         this.makeGiftStatusDisplayMappings();
+        this.mediatorMap.map(SorForgePanel).toMediator(SorForgePanelMediator);
         this.mediatorMap.map(PortalPanel).toMediator(PortalPanelMediator);
         this.mediatorMap.map(PartyPanel).toMediator(PartyPanelMediator);
         this.mediatorMap.map(InteractPanel).toMediator(InteractPanelMediator);

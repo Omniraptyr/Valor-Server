@@ -33,7 +33,37 @@ public class GraphicsUtil {
         _local6.createGradientBox(_arg1, _arg2, _arg3, _arg4, _arg5);
         return (_local6);
     }
-
+    public static function drawUI(x:int, y:int, width:int, height:int, cornerRadius:int, corner:Array, data:GraphicsPath):void {
+        if (corner[0] != 0) {
+            data.moveTo(x, (y + cornerRadius));
+            data.lineTo((x + cornerRadius), y);
+        } else {
+            data.moveTo(x, y);
+        }
+        if (corner[1] != 0) {
+            data.lineTo(((x + width) - cornerRadius), y);
+            data.lineTo((x + width), (y + cornerRadius));
+        } else {
+            data.lineTo((x + width), y);
+        }
+        if (corner[2] != 0) {
+            data.lineTo((x + width), ((y + height) - cornerRadius));
+            data.lineTo(((x + width) - cornerRadius), (y + height));
+        } else {
+            data.lineTo((x + width), (y + height));
+        }
+        if (corner[3] != 0) {
+            data.lineTo((x + cornerRadius), (y + height));
+            data.lineTo(x, ((y + height) - cornerRadius));
+        } else {
+            data.lineTo(x, (y + height));
+        }
+        if (corner[0] != 0) {
+            data.lineTo(x, (y + cornerRadius));
+        } else {
+            data.lineTo(x, y);
+        }
+    }
     public static function drawRect(_arg1:int, _arg2:int, _arg3:int, _arg4:int, _arg5:GraphicsPath):void {
         _arg5.moveTo(_arg1, _arg2);
         _arg5.lineTo((_arg1 + _arg3), _arg2);

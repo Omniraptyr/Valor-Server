@@ -100,14 +100,6 @@ public class SorForgeModal extends EmptyFrame {
             _local1.dispatch();
         }
     }
-    private function isOnrane(_arg1:Player):Boolean{
-        if(_arg1.onrane_ >= 20){
-            return true;
-        }else{
-            return false;
-        }
-
-    }
     private function onAdded(_arg1:Event) {
     }
 
@@ -139,7 +131,7 @@ public class SorForgeModal extends EmptyFrame {
         this.buyButton = new LegacyBuyButton("", 16, 20, Currency.ONRANE);
         this.buyButton.y = 200
         this.buyButton.x = this.buyButton.x + 95
-        this.buyButton.setEnabled(true);
+        this.buyButton.setEnabled(true)
         _local1.addChild(this.buyButton);
         this.buyButton.addEventListener(MouseEvent.CLICK, this.onMouseClick)
         return (_local1);

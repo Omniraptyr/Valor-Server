@@ -52,6 +52,7 @@ public class RaidLauncherMediator extends Mediator {
         _local_1.raidId_ = 1;
         _local_1.ultra_ = this.view.ultraCheckbox.isChecked();
         this.socketServer.sendMessage(_local_1);
+        this.closeDialogs.dispatch()
     }
 
 

@@ -109,6 +109,7 @@ namespace wServer.networking.packets
         LAUNCH_RAID = 156,
         CRITICALDAMAGE = 157,
         SORFORGE = 158,
-        SORFORGEREQUEST = 159
+        SORFORGEREQUEST = 159,
+        FORGEITEM = 160
     }
 }

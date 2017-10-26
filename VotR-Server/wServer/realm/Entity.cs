@@ -641,6 +641,8 @@ namespace wServer.realm
                     return new StaticObject(manager, id, null, true, false, false);
                 case "Pet":
                     return new Pet(manager, id);
+                case "SorForger":
+                case "EnchantingGround":
                 default:
                     Log.WarnFormat("Not supported type: {0}", type);
                     return new Entity(manager, id);

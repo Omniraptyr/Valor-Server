@@ -547,6 +547,7 @@ namespace common.resources
         public int HpCost { get; private set; }
         public int SurgeCost { get; private set; }
         public bool Legendary { get; private set; }
+        public bool Shard { get; private set; }
         public int MpEndCost { get; private set; }
         public int FameBonus { get; private set; }
         public int NumProjectiles { get; private set; }
@@ -628,6 +629,8 @@ namespace common.resources
                 HpCost = 0;
 
             Legendary = elem.Element("Legendary") != null;
+
+            Shard = elem.Element("Shard") != null;
 
             if ((n = elem.Element("SurgeCost")) != null)
                 SurgeCost = Utils.FromString(n.Value);

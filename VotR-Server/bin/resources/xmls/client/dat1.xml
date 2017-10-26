@@ -94860,15 +94860,15 @@ A whole thanksgiving turkey!
         <Legendary/>
         <feedPower>2200</feedPower>
     </Object>
-  <Object type="0x49e7" id="Sor Forger Object">
-      <Class>SorForger</Class>
-      <Texture>
-        <File>d3LofiObjEmbed</File>
-        <Index>0x332</Index>
-      </Texture>
-	  <Size>140</Size>
-      <Static/>
-   </Object>
+    <Object type="0x49e7" id="Sor Forger Object">
+        <Class>SorForger</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1af</Index>
+        </Texture>
+        <Size>120</Size>
+        <Static/>
+    </Object>
   <Object type="0x49e9" id="Ultimate Onrane Cache">
     <Class>Equipment</Class>
     <Item/>
@@ -106523,5 +106523,44 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <MP>0</MP>
             <Surge>0</Surge>
         </Legend>
+    </Object>
+	    <Object type="0x68fa" id="Shard of Cosmic Collapse">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x07</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A shard of true power used to spark the true energy of an ascendent crystal. This energy is so powerful that it materializes a new powerful item.</Description>
+        <Legendary/>
+        <Shard/>
+        <feedPower>1000</feedPower>
+    </Object>
+    <Object type="0x68fb" id="Shard of Eternal Fury">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x08</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A shard of true power used to spark the true energy of an ascendent crystal. This energy is so powerful that it materializes a new powerful item.</Description>
+        <Legendary/>
+        <Shard/>
+        <feedPower>1000</feedPower>
+    </Object>
+    <Object type="0x68fc" id="Shard of Zol Corruption">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x09</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A shard of true power used to spark the true energy of an ascendent crystal. This energy is so powerful that it materializes a new powerful item.</Description>
+        <Legendary/>
+        <Shard/>
+        <feedPower>1000</feedPower>
     </Object>
 </Objects>

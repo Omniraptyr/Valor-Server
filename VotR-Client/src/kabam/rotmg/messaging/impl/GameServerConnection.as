@@ -120,6 +120,7 @@ public class GameServerConnection {
     public static const CRITICALDAMAGE:int = 157;
     public static const SORFORGE:int = 158;
     public static const SORFORGEREQUEST:int = 159;
+    public static const FORGEITEM:int = 160;
     
     public static var instance:GameServerConnection;
 
