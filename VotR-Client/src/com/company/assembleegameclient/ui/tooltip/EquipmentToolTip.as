@@ -731,6 +731,10 @@ public class EquipmentToolTip extends ToolTip {
         {
             this.restrictions.push(new Restriction("This magical stone changes the skin of your current following pet.", 16776960, true));
         }
+        if (this.objectXML.hasOwnProperty("Ascended"))
+        {
+            this.restrictions.push(new Restriction("This item can be used to forge a legendary item.", 0xFFFFFF, false));
+        }
         if (this.playerCanUse) {
             if (this.objectXML.hasOwnProperty("Usable")) {
                 this.addAbilityItemRestrictions();

@@ -92,6 +92,7 @@ public class SorForgerUIMediator extends Mediator {
         _local_1.sor_ = this.slot4Data;
         _local_1.shard_ = this.slot1Data;
         this.socketServer.sendMessage(_local_1);
+        this.closeDialogs.dispatch()
     }
 
 

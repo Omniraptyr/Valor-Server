@@ -23098,7 +23098,7 @@
         <SlotType>10</SlotType>
         <Description>An uncommon crystal found in the mountains; holds a source energy and power.</Description>
         <ExtraTooltipData>
-            <EffectInfo name="" description="Can be used to forge a Legendary Sor Crystal."/>
+            <EffectInfo name="" description="Double-Click to ascend to a Legendary Sor Crystal."/>
         </ExtraTooltipData>
         <BagType>8</BagType>
         <InvUse/>
@@ -23115,6 +23115,7 @@
         <SlotType>10</SlotType>
         <Description>An uncommon crystal that has been charged into a powerful shard of pure ascendant energy.</Description>
         <Legendary/>
+        <Ascended/>
         <feedPower>2200</feedPower>
     </Object>
     <Object type="0x49e8" id="The Extraordinary Sor Machine 3">

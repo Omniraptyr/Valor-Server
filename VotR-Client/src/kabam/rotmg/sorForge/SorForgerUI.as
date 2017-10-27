@@ -19,6 +19,7 @@ public class SorForgerUI extends FrameChef {
     public var slot1:ModalItemSlot
     public var slot4:ModalItemSlot;
     public var cookButton:DeprecatedTextButton
+    private var shardImage:Shard_ImageEmbed;
     public function SorForgerUI(_arg_1:AGameSprite) {
         this.gameSprite = _arg_1;
         super("Forge your Legendary Item.", "", 288);
@@ -45,7 +46,12 @@ public class SorForgerUI extends FrameChef {
         this.slot4 = new ModalItemSlot(true, false);
         this.slot4.y = 100;
         this.slot4.x = this.slot1.x;
+        this.slot4.playOutLineAnimation(-1);
         addChild(this.slot4);
+        this.shardImage = new Shard_ImageEmbed();
+        this.shardImage.y = this.slot1.y;
+        this.shardImage.x = this.slot1.x - 60;
+        addChild(this.shardImage);
     }
 
 

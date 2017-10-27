@@ -74,6 +74,8 @@ import kabam.rotmg.raidLauncher.RaidLauncherMediator;
 import kabam.rotmg.raidLauncher.RaidLauncherModal;
 import kabam.rotmg.sorForge.SorForgeModal;
 import kabam.rotmg.sorForge.SorForgeMediator;
+import kabam.rotmg.sorForge.SorForgerUI;
+import kabam.rotmg.sorForge.SorForgerUIMediator;
 import kabam.rotmg.sorForge.components.SorForgePanel;
 import kabam.rotmg.sorForge.components.SorForgePanelMediator;
 import kabam.rotmg.ui.model.TabStripModel;
@@ -128,6 +130,7 @@ public class GameConfig implements IConfig {
         this.mediatorMap.map(TabStripView).toMediator(TabStripMediator);
         this.mediatorMap.map(RaidLauncherModal).toMediator(RaidLauncherMediator);
         this.mediatorMap.map(SorForgeModal).toMediator(SorForgeMediator);
+        this.mediatorMap.map(SorForgerUI).toMediator(SorForgerUIMediator);
         this.commandMap.map(AppInitDataReceivedSignal).toCommand(ParsePotionDataCommand);
         this.commandMap.map(GiftStatusUpdateSignal).toCommand(GiftStatusUpdateCommand);
         this.commandMap.map(UpdateMarkShopButtonSignal).toCommand(MarkShopUpdateCommand);

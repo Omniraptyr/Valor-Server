@@ -190,9 +190,11 @@
     <Compile Include="logic\db\BehaviorDb.Yazanahar.cs" />
     <Compile Include="logic\transitions\ChatTransition.cs" />
     <Compile Include="logic\transitions\DamageTakenTransition.cs" />
+    <Compile Include="networking\handlers\ForgeItemHandler.cs" />
     <Compile Include="networking\handlers\LaunchRaidHandler.cs" />
     <Compile Include="networking\handlers\SorForgeRequestHandler.cs" />
     <Compile Include="networking\packets\incoming\ClaimDailyRewardMessage.cs" />
+    <Compile Include="networking\packets\incoming\ForgeItem.cs" />
     <Compile Include="networking\packets\incoming\LaunchRaid.cs" />
     <Compile Include="networking\packets\incoming\GoToQuestRoom.cs" />
     <Compile Include="networking\packets\incoming\KeyInfoRequest.cs" />
