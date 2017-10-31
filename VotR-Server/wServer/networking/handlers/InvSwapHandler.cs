@@ -14,7 +14,7 @@ namespace wServer.networking.handlers
     class InvSwapHandler : PacketHandlerBase<InvSwap>
     {
         private static readonly Random Rand = new Random();
-
+        public Inventory inv { get; private set; }
         public override PacketId ID => PacketId.INVSWAP;
 
         protected override void HandlePacket(Client client, InvSwap packet)

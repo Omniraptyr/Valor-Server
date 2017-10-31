@@ -18,16 +18,16 @@ public class SorForgerUI extends FrameChef {
     public var gameSprite:AGameSprite;
     public var slot1:ModalItemSlot
     public var slot4:ModalItemSlot;
-    public var cookButton:DeprecatedTextButton
+    public var forgeButton:DeprecatedTextButton
     private var shardImage:Shard_ImageEmbed;
     public function SorForgerUI(_arg_1:AGameSprite) {
         this.gameSprite = _arg_1;
         super("Forge your Legendary Item.", "", 288);
-        this.addCookingTable();
-        this.cookButton = new DeprecatedTextButton(16, "Forge");
-        this.cookButton.y = 360;
-        this.cookButton.x = 108;
-        addChild(this.cookButton)
+        this.addForgeUI();
+        this.forgeButton = new DeprecatedTextButton(16, "Forge");
+        this.forgeButton.y = 360;
+        this.forgeButton.x = 108;
+        addChild(this.forgeButton)
         XButton.addEventListener(MouseEvent.CLICK, this.onClose);
     }
 
@@ -38,7 +38,7 @@ public class SorForgerUI extends FrameChef {
         return (this.slot4);
     }
 
-    private function addCookingTable(){
+    private function addForgeUI(){
         this.slot1 = new ModalItemSlot(true, false);
         this.slot1.y = 180;
         this.slot1.x = 85;

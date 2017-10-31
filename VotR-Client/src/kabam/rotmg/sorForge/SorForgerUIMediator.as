@@ -52,7 +52,7 @@ public class SorForgerUIMediator extends Mediator {
         this.clearItemslots();
         this.itemslot1 = this.view.getItemSlot1()
         this.itemslot4 = this.view.getItemSlot4()
-        this.view.cookButton.addEventListener(MouseEvent.CLICK, this.onButtonForge);
+        this.view.forgeButton.addEventListener(MouseEvent.CLICK, this.onButtonForge);
     }
     override public function destroy():void {
         super.destroy();
@@ -63,21 +63,6 @@ public class SorForgerUIMediator extends Mediator {
         this.itemslot4 = null;
 
     }
-
-
-    /*private function resetStuff(_arg_1:CookResult):void {
-        this.cookResultDone.remove(this.resetStuff);
-        this.closeDialogs.dispatch();
-        this.clearItemslots();
-        this.addTextLine.dispatch(ChatMessage.make(Parameters.SERVER_CHAT_NAME, _arg_1.message));
-    }*/
-
-    private function onClearItem():void {
-    }
-
-    private function onNewItem():void {
-    }
-
     protected function onButtonForge(_arg_1:MouseEvent):void {
         slot1Data = new SlotObjectData();
         slot1Data.objectId_ = this.itemslot1.objectId;

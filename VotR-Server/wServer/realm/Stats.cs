@@ -129,6 +129,11 @@ namespace wServer.realm
         MightBonus = 113,
         Luck = 114,
         LuckBonus = 115,
+        Lootbox1 = 116,
+        Lootbox2 = 117,
+        Lootbox3 = 118,
+        Lootbox4 = 119,
+        Lootbox5 = 120,
 
 
         None = 255

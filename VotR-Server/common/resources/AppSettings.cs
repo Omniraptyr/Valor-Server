@@ -78,7 +78,11 @@ namespace common.resources
         public int PetYardType { get; private set; }
         public int VaultCount { get; private set; }
         public int MaxCharSlot { get; private set; }
-
+        public int Lootbox1 { get; private set; }
+        public int Lootbox2 { get; private set; }
+        public int Lootbox3 { get; private set; }
+        public int Lootbox4 { get; private set; }
+        public int Lootbox5 { get; private set; }
         public NewAccounts(XElement e)
         {
             elem = e;
@@ -88,6 +92,11 @@ namespace common.resources
             Onrane = GetIntValue("Onrane");
             Kantos = GetIntValue("Kantos");
             RaidToken = GetIntValue("RaidToken");
+            Lootbox1 = GetIntValue("Lootbox1");
+            Lootbox2 = GetIntValue("Lootbox2");
+            Lootbox3 = GetIntValue("Lootbox3");
+            Lootbox4 = GetIntValue("Lootbox4");
+            Lootbox5 = GetIntValue("Lootbox5");
             ClassesUnlocked = GetBoolValue("ClassesUnlocked");
             SkinsUnlocked = GetBoolValue("SkinsUnlocked");
             PetYardType = GetIntValue("PetYardType");

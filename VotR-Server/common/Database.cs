@@ -96,6 +96,11 @@ namespace common
                 Kantos = newAccounts.Kantos,
                 TotalKantos = newAccounts.Kantos,
                 RaidToken = newAccounts.RaidToken,
+                Lootbox1 = newAccounts.Lootbox1,
+                Lootbox2 = newAccounts.Lootbox2,
+                Lootbox3 = newAccounts.Lootbox3,
+                Lootbox4 = newAccounts.Lootbox4,
+                Lootbox5 = newAccounts.Lootbox5,
                 PassResetToken = ""
             };
 
@@ -381,6 +386,11 @@ namespace common
                 Kantos = newAccounts.Kantos,
                 TotalKantos = newAccounts.Kantos,
                 RaidToken = newAccounts.RaidToken,
+                Lootbox1 = newAccounts.Lootbox1,
+                Lootbox2 = newAccounts.Lootbox2,
+                Lootbox3 = newAccounts.Lootbox3,
+                Lootbox4 = newAccounts.Lootbox4,
+                Lootbox5 = newAccounts.Lootbox5,
                 PassResetToken = "",
                 LastSeen = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds
             };
@@ -1330,6 +1340,11 @@ namespace common
             _db.HashSetAsync(acc.Key, "onrane", 0, flags: CommandFlags.FireAndForget);
             _db.HashSetAsync(acc.Key, "totalOnrane", 0, flags: CommandFlags.FireAndForget);
             _db.HashSetAsync(acc.Key, "kantos", 0, flags: CommandFlags.FireAndForget);
+            _db.HashSetAsync(acc.Key, "lootBox1", 0, flags: CommandFlags.FireAndForget);
+            _db.HashSetAsync(acc.Key, "lootBox2", 0, flags: CommandFlags.FireAndForget);
+            _db.HashSetAsync(acc.Key, "lootBox3", 0, flags: CommandFlags.FireAndForget);
+            _db.HashSetAsync(acc.Key, "lootBox4", 0, flags: CommandFlags.FireAndForget);
+            _db.HashSetAsync(acc.Key, "lootBox5", 0, flags: CommandFlags.FireAndForget);
             _db.HashSetAsync(acc.Key, "totalKantos", 0, flags: CommandFlags.FireAndForget);
             _db.HashSetAsync(acc.Key, "raidToken", 0, flags: CommandFlags.FireAndForget);
             _db.HashDeleteAsync(acc.Key, "skins", CommandFlags.FireAndForget);

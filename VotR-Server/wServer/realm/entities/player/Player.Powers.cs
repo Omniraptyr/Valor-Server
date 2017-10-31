@@ -19,6 +19,18 @@ namespace wServer.realm.entities
                 }
             }
         }
+        public bool CheckForLeggies()
+        {
+            for (var i = 0; i < 3; i++)
+            {
+                var item = Inventory[i];
+                if (item == null || !item.Legendary)
+                    continue;
+                return true;
+            }
+            return false;
+        }
+
         //Add all main powers here
         private void ActivateMainPower(int id, int hp_, int mp_, int surge_, int stat_)
         {

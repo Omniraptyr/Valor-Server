@@ -7,8 +7,8 @@
   },
   "serverInfo": {
     "type": "World",
-    "name": "Localhost",
-    "address": "127.0.0.1",
+    "name": "VotR 2 Beta",
+    "address": "24.254.44.215",
     "port": "2050",
     "coordinates": {
       "latitude": "0",

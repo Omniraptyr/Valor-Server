@@ -234,6 +234,40 @@ namespace wServer.realm.entities
             set { _raidRank.SetValue(value); }
         }
 
+        private readonly SV<int> _lootbox1;
+        public int Lootbox1
+        {
+            get { return _lootbox1.GetValue(); }
+            set { _lootbox1.SetValue(value); }
+        }
+
+        private readonly SV<int> _lootbox2;
+        public int Lootbox2
+        {
+            get { return _lootbox2.GetValue(); }
+            set { _lootbox2.SetValue(value); }
+        }
+
+        private readonly SV<int> _lootbox3;
+        public int Lootbox3
+        {
+            get { return _lootbox3.GetValue(); }
+            set { _lootbox3.SetValue(value); }
+        }
+
+        private readonly SV<int> _lootbox4;
+        public int Lootbox4
+        {
+            get { return _lootbox4.GetValue(); }
+            set { _lootbox4.SetValue(value); }
+        }
+
+        private readonly SV<int> _lootbox5;
+        public int Lootbox5
+        {
+            get { return _lootbox5.GetValue(); }
+            set { _lootbox5.SetValue(value); }
+        }
         public int XPBoostTime { get; set; }
         public int LDBoostTime { get; set; }
         public int LTBoostTime { get; set; }
@@ -321,6 +355,11 @@ namespace wServer.realm.entities
                 case StatsType.Onrane: Onrane = (int)val; break;
                 case StatsType.Kantos: Kantos = (int)val; break;
                 case StatsType.RaidToken: RaidToken = (int)val; break;
+                case StatsType.Lootbox1: Lootbox1 = (int)val; break;
+                case StatsType.Lootbox2: Lootbox2 = (int)val; break;
+                case StatsType.Lootbox3: Lootbox3 = (int)val; break;
+                case StatsType.Lootbox4: Lootbox4 = (int)val; break;
+                case StatsType.Lootbox5: Lootbox5 = (int)val; break;
                 case StatsType.RaidRank: RaidRank = (int)val; break;
                 case StatsType.Surge: Surge = (int)val; break;
                 case StatsType.SurgeCounter: SurgeCounter = (int)val; break;
@@ -411,6 +450,11 @@ namespace wServer.realm.entities
             stats[StatsType.RaidRank] = RaidRank;
             stats[StatsType.Surge] = Surge;
             stats[StatsType.SurgeCounter] = SurgeCounter;
+            stats[StatsType.Lootbox1] = Lootbox1;
+            stats[StatsType.Lootbox2] = Lootbox2;
+            stats[StatsType.Lootbox3] = Lootbox3;
+            stats[StatsType.Lootbox4] = Lootbox4;
+            stats[StatsType.Lootbox5] = Lootbox5;
         }
 
         public void SaveToCharacter()
@@ -478,6 +522,11 @@ namespace wServer.realm.entities
             _raidRank = new SV<int>(this, StatsType.RaidRank, client.Account.RaidRank, true);
             _surge = new SV<int>(this, StatsType.Surge, -1);
             _surgeCounter = new SV<int>(this, StatsType.SurgeCounter, -1);
+            _lootbox1 = new SV<int>(this, StatsType.Lootbox1, client.Account.Lootbox1, true);
+            _lootbox2 = new SV<int>(this, StatsType.Lootbox2, client.Account.Lootbox2, true);
+            _lootbox3 = new SV<int>(this, StatsType.Lootbox3, client.Account.Lootbox3, true);
+            _lootbox4 = new SV<int>(this, StatsType.Lootbox4, client.Account.Lootbox4, true);
+            _lootbox5 = new SV<int>(this, StatsType.Lootbox5, client.Account.Lootbox5, true);
 
 
             Name = client.Account.Name;
