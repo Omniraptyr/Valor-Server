@@ -45,6 +45,7 @@ import kabam.rotmg.dialogs.model.DialogsModel;
 import kabam.rotmg.dialogs.model.PopupNamesConfig;
 import kabam.rotmg.game.view.CreditDisplay;
 import kabam.rotmg.game.view.GiftStatusDisplay;
+import kabam.rotmg.game.view.LootboxModalButton;
 import kabam.rotmg.game.view.NewsModalButton;
 import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
 import kabam.rotmg.maploading.signals.MapLoadedSignal;
@@ -85,6 +86,7 @@ public class GameSprite extends AGameSprite {
     public var creditDisplay_:CreditDisplay;
     public var giftStatusDisplay:GiftStatusDisplay;
     public var markShopButton:MarkShopModalButton;
+    public var lootBoxButton:LootboxModalButton;
     public var newsModalButton:NewsModalButton;
     public var newsTicker:NewsTicker;
     public var arenaTimer:ArenaTimer;
@@ -266,6 +268,7 @@ public class GameSprite extends AGameSprite {
         this.showGuildText();
         this.setYAndPositionPackage();
         this.showMarkShopButton();
+        this.showLootboxButton();
         this.showGiftStatusDisplay();
        // this.showNewsUpdate();
         // this.showNewsTicker();
@@ -305,6 +308,12 @@ public class GameSprite extends AGameSprite {
         this.markShopButton.y = (this.displaysPosY + 2);
         this.displaysPosY = (this.displaysPosY + UIUtils.NOTIFICATION_SPACE);
         addChild(this.markShopButton);
+    }
+    private function showLootboxButton():void {
+        this.lootBoxButton = new LootboxModalButton();
+        this.lootBoxButton.x = this.markShopButton.x + 32;
+        this.lootBoxButton.y = this.markShopButton.y;
+        addChild(this.lootBoxButton);
     }
 
     private function showNewsUpdate(_arg1:Boolean = true):void {

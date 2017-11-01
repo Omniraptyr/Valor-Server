@@ -14,7 +14,7 @@ namespace wServer.realm.entities
             int time, Position position, float angle)
         {
             projectileId = id;
-            var dmg = (int) Stats.GetAttackDamage(Stats[8], Stats[9]);
+            var dmg = (int) Stats.GetAttackDamage(Stats[10], Stats[11]);
             return CreateProjectile(desc, objType, dmg,
                 C2STime(time), position, angle);
         }

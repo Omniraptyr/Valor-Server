@@ -29,6 +29,7 @@ import kabam.rotmg.friends.view.FriendListView;
 import kabam.rotmg.game.model.PotionInventoryModel;
 import kabam.rotmg.game.model.UseBuyPotionVO;
 import kabam.rotmg.game.signals.AddTextLineSignal;
+import kabam.rotmg.game.signals.UpdateLootboxButtonSignal;
 import kabam.rotmg.game.signals.UpdateMarkShopButtonSignal;
 import kabam.rotmg.game.signals.ExitGameSignal;
 import kabam.rotmg.game.signals.GiftStatusUpdateSignal;
@@ -70,6 +71,7 @@ public class MapUserInput {
     private var statsTabHotKeyInputSignal:StatsTabHotKeyInputSignal;
     private var miniMapZoom:MiniMapZoomSignal;
     private var markShopUpdateSignal:UpdateMarkShopButtonSignal;
+    private var lootBoxUpdateSignal:UpdateLootboxButtonSignal;
     private var useBuyPotionSignal:UseBuyPotionSignal;
     private var potionInventoryModel:PotionInventoryModel;
     private var openDialogSignal:OpenDialogSignal;
@@ -87,6 +89,7 @@ public class MapUserInput {
         var _local2:Injector = StaticInjectorContext.getInjector();
         this.giftStatusUpdateSignal = _local2.getInstance(GiftStatusUpdateSignal);
         this.markShopUpdateSignal = _local2.getInstance(UpdateMarkShopButtonSignal);
+        this.lootBoxUpdateSignal = _local2.getInstance(UpdateLootboxButtonSignal);
         this.reskinPetFlowStart = _local2.getInstance(ReskinPetFlowStartSignal);
         this.addTextLine = _local2.getInstance(AddTextLineSignal);
         this.setTextBoxVisibility = _local2.getInstance(SetTextBoxVisibilitySignal);

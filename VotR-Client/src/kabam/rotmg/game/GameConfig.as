@@ -1,6 +1,7 @@
 ﻿package kabam.rotmg.game {
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.game.GiftStatusModel;
+import com.company.assembleegameclient.game.LootboxModel;
 import com.company.assembleegameclient.game.MarkShopModel;
 import com.company.assembleegameclient.map.Map;
 import com.company.assembleegameclient.map.MapMediator;
@@ -25,6 +26,7 @@ import kabam.rotmg.application.api.ApplicationSetup;
 import kabam.rotmg.chat.ChatConfig;
 import kabam.rotmg.core.signals.AppInitDataReceivedSignal;
 import kabam.rotmg.game.commands.GiftStatusUpdateCommand;
+import kabam.rotmg.game.commands.LootboxUpdateCommand;
 import kabam.rotmg.game.commands.MarkShopUpdateCommand;
 import kabam.rotmg.game.commands.ParsePotionDataCommand;
 import kabam.rotmg.game.commands.PlayGameCommand;
@@ -47,6 +49,7 @@ import kabam.rotmg.game.signals.SetTextBoxVisibilitySignal;
 import kabam.rotmg.game.signals.SetWorldInteractionSignal;
 import kabam.rotmg.game.signals.TextPanelMessageUpdateSignal;
 import kabam.rotmg.game.signals.UpdateGiftStatusDisplaySignal;
+import kabam.rotmg.game.signals.UpdateLootboxButtonSignal;
 import kabam.rotmg.game.signals.UseBuyPotionSignal;
 import kabam.rotmg.game.signals.UpdateMarkShopButtonSignal;
 import kabam.rotmg.game.view.CreditDisplay;
@@ -54,6 +57,8 @@ import kabam.rotmg.game.view.CreditDisplayMediator;
 import kabam.rotmg.game.view.GameSpriteMediator;
 import kabam.rotmg.game.view.GiftStatusDisplay;
 import kabam.rotmg.game.view.GiftStatusDisplayMediator;
+import kabam.rotmg.game.view.LootboxMediator;
+import kabam.rotmg.game.view.LootboxModalButton;
 import kabam.rotmg.game.view.MapOverlayMediator;
 import kabam.rotmg.game.view.MoneyChangerPanel;
 import kabam.rotmg.game.view.MoneyChangerPanelMediator;
@@ -109,6 +114,7 @@ public class GameConfig implements IConfig {
         this.injector.map(ChatFilter).asSingleton();
         this.injector.map(GiftStatusModel).asSingleton();
         this.injector.map(MarkShopModel).asSingleton();
+        this.injector.map(LootboxModel).asSingleton();
         this.injector.map(TabStripModel).asSingleton();
         this.injector.map(ExitGameSignal).asSingleton();
         this.injector.map(QueueStatusTextSignal).asSingleton();
@@ -134,6 +140,7 @@ public class GameConfig implements IConfig {
         this.commandMap.map(AppInitDataReceivedSignal).toCommand(ParsePotionDataCommand);
         this.commandMap.map(GiftStatusUpdateSignal).toCommand(GiftStatusUpdateCommand);
         this.commandMap.map(UpdateMarkShopButtonSignal).toCommand(MarkShopUpdateCommand);
+        this.commandMap.map(UpdateLootboxButtonSignal).toCommand(LootboxUpdateCommand);
         this.commandMap.map(UseBuyPotionSignal).toCommand(UseBuyPotionCommand);
         this.commandMap.map(GameClosedSignal).toCommand(TransitionFromGameToMenuCommand);
         this.commandMap.map(PlayGameSignal).toCommand(PlayGameCommand);
@@ -159,6 +166,7 @@ public class GameConfig implements IConfig {
         this.mediatorMap.map(CreditDisplay).toMediator(CreditDisplayMediator);
         this.mediatorMap.map(MoneyChangerPanel).toMediator(MoneyChangerPanelMediator);
         this.mediatorMap.map(MarkShopModalButton).toMediator(MarkShopMediator);
+        this.mediatorMap.map(LootboxModalButton).toMediator(LootboxMediator);
         this.mediatorMap.map(SellableObjectPanel).toMediator(SellableObjectPanelMediator);
     }
 

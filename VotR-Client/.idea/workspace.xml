@@ -20,107 +20,99 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SorForgerUI.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/sorForge/SorForgerUI.as">
+      <file leaf-file-name="LootboxModal.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/LootboxModal.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+            <state relative-caret-position="198">
+              <caret line="40" column="45" lean-forward="false" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#76#132#0" expanded="true" />
+                <element signature="e#32#96#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuestRewardsView.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/questrewards/view/QuestRewardsView.as">
+      <file leaf-file-name="BronzeLootbox_ImageEmbed.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/BronzeLootbox_ImageEmbed.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4794">
-              <caret line="313" column="8" lean-forward="false" selection-start-line="313" selection-start-column="8" selection-end-line="313" selection-end-column="48" />
+            <state relative-caret-position="170">
+              <caret line="10" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModalItemSlot.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/questrewards/components/ModalItemSlot.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1207">
-              <caret line="87" column="8" lean-forward="false" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Shard_ImageEmbed.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/sorForge/Shard_ImageEmbed.png">
+      <file leaf-file-name="BronzeLootbox_ImageEmbed.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/BronzeLootbox_ImageEmbed.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SorForge_ImageEmbed.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/sorForge/SorForge_ImageEmbed.as">
+      <file leaf-file-name="GoldLootbox_ImageEmbed.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/GoldLootbox_ImageEmbed.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="85">
+              <caret line="5" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Shard_ImageEmbed.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/sorForge/Shard_ImageEmbed.as">
+      <file leaf-file-name="EliteLootbox_ImageEmbed.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/EliteLootbox_ImageEmbed.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="10" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PremiumLootbox_ImageEmbed.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/PremiumLootbox_ImageEmbed.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="45" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SilverLootbox_ImageEmbed.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/SilverLootbox_ImageEmbed.as">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SorForgerUIMediator.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/sorForge/SorForgerUIMediator.as">
+      <file leaf-file-name="NewsModal.as" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/news/view/NewsModal.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-19">
-              <caret line="64" column="5" lean-forward="false" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
-              <folding>
-                <element signature="e#31#87#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebMain.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WebMain.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="100" column="29" lean-forward="false" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="29" />
+            <state relative-caret-position="38">
+              <caret line="225" column="33" lean-forward="false" selection-start-line="225" selection-start-column="21" selection-end-line="225" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductionSetup.as" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/application/impl/ProductionSetup.as">
+      <file leaf-file-name="LootboxBackground_ImageEmbed.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/LootboxBackground_ImageEmbed.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="48" />
+            <state relative-caret-position="153">
+              <caret line="9" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameConfig.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/GameConfig.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="132" column="72" lean-forward="false" selection-start-line="132" selection-start-column="53" selection-end-line="132" selection-end-column="72" />
-              <folding>
-                <element signature="e#27#82#0" expanded="true" />
-              </folding>
-            </state>
+      <file leaf-file-name="LootboxBackground_ImageEmbed.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/LootboxBackground_ImageEmbed.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -135,12 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>raid</find>
-      <find>onSorForge</find>
-      <find>sorForgeIconEmbed</find>
-      <find>Player</find>
-      <find>map_</find>
-      <find>pla</find>
       <find>player</find>
       <find>LAUNC</find>
       <find>makeModalBackground</find>
@@ -165,6 +151,12 @@
       <find>p</find>
       <find>playOutli</find>
       <find>Local</find>
+      <find>Marks</find>
+      <find>LootboxMed</find>
+      <find>markShopButton</find>
+      <find>showMarkShopButton</find>
+      <find>rightNavSprite</find>
+      <find>makeRightNav</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -186,22 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/util/AssetLoader.as" />
-        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/util/ConditionEffect.as" />
-        <option value="$PROJECT_DIR$/src/kabam/rotmg/stage3D/Renderer.as" />
-        <option value="$PROJECT_DIR$/src/kabam/rotmg/text/model/TextKey.as" />
-        <option value="$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/data/StatData.as" />
-        <option value="$PROJECT_DIR$/src/kabam/rotmg/classes/control/ParseClassesXmlCommand.as" />
-        <option value="$PROJECT_DIR$/src/kabam/rotmg/classes/model/CharacterClass.as" />
-        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/Player.as" />
-        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/GameObject.as" />
-        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/Projectile.as" />
-        <option value="$PROJECT_DIR$/src/kabam/rotmg/game/view/components/StatsView.as" />
-        <option value="$PROJECT_DIR$/src/kabam/rotmg/game/view/components/StatView.as" />
-        <option value="$PROJECT_DIR$/src/kabam/rotmg/sorForge/SorForge_ImageEmbed.as" />
-        <option value="$PROJECT_DIR$/src/kabam/rotmg/sorForge/signals/NewsButtonRefreshSignal.java" />
-        <option value="$PROJECT_DIR$/src/kabam/rotmg/sorForge/signals/SorForgeSignal.java" />
-        <option value="$PROJECT_DIR$/src/kabam/rotmg/news/controller/NewsButtonRefreshSignal.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/sorForge/signals/SorForgeSignal.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/sorForge/RaidLauncherMediator.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/sorForge/RaidLauncher_backgroundImageEmbed.as" />
@@ -231,12 +207,28 @@
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/ui/tooltip/EquipmentToolTip.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml" />
         <option value="$PROJECT_DIR$/../../badomptiraptor-votr-server-fecbd952c896/votr-client/src/kabam/rotmg/game/GameConfig.as" />
-        <option value="$PROJECT_DIR$/src/kabam/rotmg/game/GameConfig.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/sorForge/Shard_ImageEmbed.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/sorForge/SorForgerUI.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/sorForge/SorForgerUIMediator.as" />
         <option value="$PROJECT_DIR$/src/WebMain.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/application/impl/ProductionSetup.as" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/game/signals/UpdateLootboxButtonSignal.as" />
+        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/game/LootboxModel.as" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/game/commands/LootboxUpdateCommand.as" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/game/view/LootboxMediator.as" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/game/GameConfig.as" />
+        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/game/MapUserInput.as" />
+        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/game/GameSprite.as" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/lootboxes.as" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/RaidLauncher_backgroundImageEmbed.as" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/LootboxBackground_ImageEmbed.as" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/game/view/LootboxModalButton.as" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/LootboxModal.as" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/BronzeLootbox_ImageEmbed.as" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/EliteLootbox_ImageEmbed.as" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/GoldLootbox_ImageEmbed.as" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/PremiumLootbox_ImageEmbed.as" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/SilverLootbox_ImageEmbed.as" />
       </list>
     </option>
   </component>
@@ -246,8 +238,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="7" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-10" />
+    <option name="y" value="9" />
     <option name="width" value="1025" />
     <option name="height" value="631" />
   </component>
@@ -266,8 +259,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -284,6 +279,27 @@
               <item name="NR-27.7.X13" type="b2602c69:ProjectViewProjectNode" />
               <item name="VotR-Client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NR-27.7.X13" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VotR-Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="assembleegameclient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NR-27.7.X13" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VotR-Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="assembleegameclient" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NR-27.7.X13" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VotR-Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="kabam" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -299,7 +315,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="kabam" type="462c0819:PsiDirectoryNode" />
               <item name="rotmg" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NR-27.7.X13" type="b2602c69:ProjectViewProjectNode" />
@@ -307,15 +323,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="kabam" type="462c0819:PsiDirectoryNode" />
               <item name="rotmg" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -327,26 +341,26 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\darkd\Desktop\votrmaster\VotR-Client\src\kabam\rotmg\lootBoxes" />
+      <recent name="C:\Users\darkd\Desktop\votrmaster\VotR-Client\src\kabam\rotmg\game\view" />
+      <recent name="C:\Users\darkd\Desktop\votrmaster\VotR-Client\src\com\company\assembleegameclient\ui" />
+      <recent name="C:\Users\darkd\Desktop\votrmaster\VotR-Client\src\kabam\rotmg\sorForge" />
+      <recent name="C:\Users\darkd\Desktop\votrmaster\VotR-Client\src\kabam\rotmg\sorForge\components" />
+    </key>
+    <key name="CreateActionScriptClassDialog.DESTINATION_PACKAGE_RECENT_KEY">
+      <recent name="kabam.rotmg.lootBoxes" />
+      <recent name="kabam.rotmg" />
+      <recent name="kabam.rotmg.game.commands" />
+      <recent name="com.company.assembleegameclient.game" />
+      <recent name="kabam.rotmg.game.signals" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\darkd\Desktop\votrmaster\VotR-Client\src\kabam\rotmg\lootBoxes" />
       <recent name="C:\Users\darkd\Desktop\votrmaster\VotR-Client\src\kabam\rotmg\sorForge" />
       <recent name="C:\Users\darkd\Desktop\votrmaster\VotR-Client\src\kabam\rotmg\messaging\impl\incoming" />
       <recent name="C:\Users\darkd\Desktop\votrmaster\VotR-Client\src\kabam\rotmg\assets" />
       <recent name="C:\Users\darkd\Desktop\NR-27.7.X13-master\src\kabam\rotmg\raidLauncher" />
-      <recent name="C:\Users\darkd\Desktop\NR-27.7.X13-master\src\com\company\assembleegameclient\game" />
-    </key>
-    <key name="CreateActionScriptClassDialog.DESTINATION_PACKAGE_RECENT_KEY">
-      <recent name="kabam.rotmg.sorForge" />
-      <recent name="kabam.rotmg.messaging.impl.outgoing" />
-      <recent name="kabam.rotmg.messaging.impl.incoming" />
-      <recent name="kabam.rotmg.sorForge.signals" />
-      <recent name="kabam.rotmg.raidLauncher" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\darkd\Desktop\votrmaster\VotR-Client\src\com\company\assembleegameclient\ui" />
-      <recent name="C:\Users\darkd\Desktop\votrmaster\VotR-Client\src\kabam\rotmg\sorForge" />
-      <recent name="C:\Users\darkd\Desktop\votrmaster\VotR-Client\src\kabam\rotmg\sorForge\components" />
-      <recent name="C:\Users\darkd\Desktop\votrmaster\VotR-Client\src\com\company\assembleegameclient\objects" />
-      <recent name="C:\Users\darkd\Desktop\votrmaster\VotR-Client\src\kabam\rotmg\messaging\impl\incoming" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -523,27 +537,27 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176028000" />
+    <option name="totallyTimeSpent" value="185252000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1192" height="640" extended-state="7" />
-    <editor active="true" />
+    <frame x="-10" y="9" width="1025" height="631" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262548" sideWeight="0.46085232" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32637572" sideWeight="0.48129252" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32068312" sideWeight="0.5391477" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33397684" sideWeight="0.50765306" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31887755" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4271556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827324" sideWeight="0.49234694" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -551,11 +565,31 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32068312" sideWeight="0.5391477" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262548" sideWeight="0.46085232" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.49609375" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31887755" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,271 +605,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/incoming/CriticalDamage.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/incoming/ShowEffect.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/sorForge/SorForger_backgroundImageEmbed.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/sorForge/SorForger_backgroundImageEmbed.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/incoming/SorForge.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/Projectile.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="139" column="33" lean-forward="false" selection-start-line="139" selection-start-column="29" selection-end-line="139" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/outgoing/PlayerHit.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/GameObject.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="297" column="26" lean-forward="false" selection-start-line="297" selection-start-column="20" selection-end-line="297" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/outgoing/KeyInfoRequest.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/outgoing/JoinGuild.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/outgoing/MarketCommand.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/outgoing/EnterArena.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/outgoing/EnemyHit.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="22" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/outgoing/AcceptTrade.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/util/components/LegacyBuyButton.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="144" column="22" lean-forward="false" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/account/core/view/EmptyFrame.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="51" column="40" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/sorForge/SorForgeModal.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="65" column="33" lean-forward="false" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
-          <folding>
-            <element signature="e#31#87#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/sorForge/SorForgeMediator.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="48" column="24" lean-forward="false" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
-          <folding>
-            <element signature="e#31#90#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/raidLauncher/RaidLauncherModal.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/raidLauncher/RaidLauncherMediator.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/SellableObject.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/sorForge/components.as" />
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/SorForger.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="55" lean-forward="false" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/ClickableTextBase.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/util/GraphicsUtil.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="65" column="5" lean-forward="false" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/account/ui/TextInputField.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24">
-          <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/FrameChef.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="77" column="36" lean-forward="false" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../badomptiraptor-votr-server-fecbd952c896/votr-client/src/kabam/rotmg/assets/EmbeddedData_ObjectsCXML.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="2020" column="0" lean-forward="false" selection-start-line="2020" selection-start-column="0" selection-end-line="2028" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../badomptiraptor-votr-server-fecbd952c896/votr-client/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="29759" column="0" lean-forward="false" selection-start-line="29759" selection-start-column="0" selection-end-line="29762" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/ObjectLibrary.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="56" column="37" lean-forward="true" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/sorForge/components/SorForgePanelMediator.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="33" column="56" lean-forward="false" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/outgoing/SorForgeRequest.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_ObjectsCXML.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34476">
-          <caret line="2028" column="13" lean-forward="false" selection-start-line="2028" selection-start-column="13" selection-end-line="2028" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/outgoing/ForgeItem.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/tooltip/EquipmentToolTip.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="733" column="51" lean-forward="false" selection-start-line="733" selection-start-column="43" selection-end-line="733" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="23102" column="25" lean-forward="true" selection-start-line="23102" selection-start-column="25" selection-end-line="23102" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/GameServerConnectionConcrete.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="423" column="50" lean-forward="false" selection-start-line="423" selection-start-column="50" selection-end-line="423" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/sorForge/components/SorForgePanel.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-414">
@@ -845,9 +614,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/GameServerConnection.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="122" column="33" lean-forward="false" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="1632">
+          <caret line="106" column="41" lean-forward="false" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="41" />
+          <folding>
+            <marker date="1509486792974" expanded="true" signature="35:8788" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="449:8786" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="5979:5986" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="6083:6090" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="6130:6137" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="6179:6186" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="6222:6229" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="6425:6456" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="6505:6512" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="6562:6569" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="6709:6716" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="6769:6776" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="6830:6837" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="6900:6907" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="7042:7049" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="7100:7107" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="7226:7257" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="7304:7311" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="7359:7366" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="7431:7458" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="7678:7685" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="7769:7776" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="7992:7999" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="8131:8162" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="8300:8331" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="8406:8413" ph="{...}" />
+            <marker date="1509486792974" expanded="true" signature="8586:8593" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -855,16 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="153" column="72" lean-forward="false" selection-start-line="153" selection-start-column="72" selection-end-line="153" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/GameConfig.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="132" column="72" lean-forward="false" selection-start-line="132" selection-start-column="53" selection-end-line="132" selection-end-column="72" />
-          <folding>
-            <element signature="e#27#82#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -885,7 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -893,7 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -901,7 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1207">
           <caret line="87" column="8" lean-forward="false" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -909,10 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#76#132#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -920,9 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-19">
           <caret line="64" column="5" lean-forward="false" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
-          <folding>
-            <element signature="e#31#87#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -938,6 +715,629 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_PlayersCXML.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10625">
+          <caret line="625" column="0" lean-forward="false" selection-start-line="625" selection-start-column="0" selection-end-line="625" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/Player.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2397">
+          <caret line="205" column="5" lean-forward="false" selection-start-line="205" selection-start-column="5" selection-end-line="205" selection-end-column="5" />
+          <folding>
+            <marker date="1509415378219" expanded="true" signature="8390:8836" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="8926:9382" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="9178:9376" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="9431:9469" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="9517:9554" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="9602:9639" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="9687:9724" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="9778:10604" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="9974:10249" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="10023:10239" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="10263:10598" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="10486:10588" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="10784:10893" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="10948:11933" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="10974:11113" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="11188:11365" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="11411:11788" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="11450:11591" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="11609:11750" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="12020:12123" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="12200:12446" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="12221:12274" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="12502:12794" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="12568:12707" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="12721:12788" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="12990:13290" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="13018:13049" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="13342:13929" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="13564:13900" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="13762:13890" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="13994:14092" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="14166:14380" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="14275:14348" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="14459:15438" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="14511:14594" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="14835:14916" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="15145:15432" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="15189:15277" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="15517:17915" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="15917:16006" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="16028:16226" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="16157:16216" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="16248:16446" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="16377:16436" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="16469:16706" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="16616:16676" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="16729:16965" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="17171:17506" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="17227:17334" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="17389:17496" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="17520:17855" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="17576:17683" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="17738:17845" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="17974:18157" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="18027:18082" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="18096:18151" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="18231:20360" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="18558:19155" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="18694:18877" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="18895:19145" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="18932:19131" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="19050:19113" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="19169:20331" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="19202:19863" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="19263:19318" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="19354:19553" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="19575:19849" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="19616:19831" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="19881:20321" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="19918:20064" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="20086:20307" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="20127:20289" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="20196:20267" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="20431:20649" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="20725:24526" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="20770:20924" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="20863:20914" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="20968:21122" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="21061:21112" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="21164:21310" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="21251:21300" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="21352:21545" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="21399:21535" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="21559:21738" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="21606:21728" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="21828:21974" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="22024:22060" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="22100:23675" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="22170:23042" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="22370:22851" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="22674:22833" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="22873:23028" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="23060:23357" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="23144:23230" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="23252:23343" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="23415:23586" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="23689:23799" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="23744:23789" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="24070:24499" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="24562:25045" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="24712:24928" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="24942:25039" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="25111:25529" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="25572:25796" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="25607:25670" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="25701:25763" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="25881:28018" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="25977:26315" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="26370:26608" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="26622:26684" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="27266:27864" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="28114:28435" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="28191:28303" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="28238:28293" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="28317:28429" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="28354:28419" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="28480:28842" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="28506:28579" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="28735:28785" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="28889:29184" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="28914:28963" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="29102:29152" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="29233:29525" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="29257:29306" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="29571:29808" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="29867:30298" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="30386:33700" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="30739:31128" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="30793:31118" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="30914:30999" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="31158:31248" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="31262:31374" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="31309:31364" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="31446:31510" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="31524:31618" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="31751:32168" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="31867:31957" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="31975:32032" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="32182:32237" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="32263:32592" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="32415:32501" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="32519:32582" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="32626:33161" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="32790:33079" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="33245:33368" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="33424:33521" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="33535:33671" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="33765:33963" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="33814:33915" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="34019:34482" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="34110:34448" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="34564:37425" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="34796:34835" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="34904:34943" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="35206:35291" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="35339:35604" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="35404:35594" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="35471:35580" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="35675:36922" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="35724:35821" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="35903:36002" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="36090:36189" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="36271:36370" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="36451:36528" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="36936:37396" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="36992:37386" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="37187:37372" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="37623:37975" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="38023:38759" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="38097:38128" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="38200:38231" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="38523:38554" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="38857:40728" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="39447:40722" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="39811:39905" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="40768:40876" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="40924:41260" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="41107:41231" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="41151:41198" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="41315:41664" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="41511:41637" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="41555:41604" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="41715:42087" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="41936:42055" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="41980:42022" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="42146:42875" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="42230:42266" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="42312:42484" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="42498:42651" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="42722:42848" ph="{...}" />
+            <marker date="1509415378219" expanded="true" signature="42766:42815" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/view/components/StatsView.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="89" column="33" lean-forward="false" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
+          <folding>
+            <marker date="1509415378469" expanded="true" signature="4434:4446" ph="{...}" />
+            <marker date="1509415378469" expanded="true" signature="4480:4529" ph="{...}" />
+            <marker date="1509415378469" expanded="true" signature="4565:4616" ph="{...}" />
+            <marker date="1509415378469" expanded="true" signature="4665:5070" ph="{...}" />
+            <marker date="1509415378469" expanded="true" signature="5175:5225" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/view/MarkShopMediator.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="62" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/Projectile.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3502">
+          <caret line="231" column="54" lean-forward="false" selection-start-line="231" selection-start-column="54" selection-end-line="231" selection-end-column="54" />
+          <folding>
+            <marker date="1509415378220" expanded="true" signature="8543:12049" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="10077:12022" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="10433:11842" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="11079:11828" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="11116:11567" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="11593:11810" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="11651:11788" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="11887:11949" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="11967:12012" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="12109:13194" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="12248:13168" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="12604:12645" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="12744:13158" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="12818:13144" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="12864:12922" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="13025:13126" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="13290:15538" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="13429:13460" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="13553:14466" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="13602:14381" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="13627:13734" ph="..." />
+            <marker date="1509415378220" expanded="true" signature="13758:13865" ph="..." />
+            <marker date="1509415378220" expanded="true" signature="13889:13996" ph="..." />
+            <marker date="1509415378220" expanded="true" signature="14020:14119" ph="..." />
+            <marker date="1509415378220" expanded="true" signature="14143:14250" ph="..." />
+            <marker date="1509415378220" expanded="true" signature="14274:14367" ph="..." />
+            <marker date="1509415378220" expanded="true" signature="14881:15532" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="15074:15522" ph="{...}" />
+            <marker date="1509415378220" expanded="true" signature="15677:15708" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/signals/UpdateMarkShopButtonSignal.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/data/StatData.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2499">
+          <caret line="150" column="28" lean-forward="false" selection-start-line="150" selection-start-column="28" selection-end-line="150" selection-end-column="28" />
+          <folding>
+            <marker date="1509415378509" expanded="true" signature="7247:7254" ph="..." />
+            <marker date="1509415378509" expanded="true" signature="7247:7264" ph="{...}" />
+            <marker date="1509415378509" expanded="true" signature="7247:7319" ph="{...}" />
+            <marker date="1509415378509" expanded="true" signature="7365:7639" ph="{...}" />
+            <marker date="1509415378509" expanded="true" signature="7399:7609" ph="{...}" />
+            <marker date="1509415378509" expanded="true" signature="7568:7599" ph="..." />
+            <marker date="1509415378509" expanded="true" signature="7699:7925" ph="{...}" />
+            <marker date="1509415378509" expanded="true" signature="7786:7844" ph="{...}" />
+            <marker date="1509415378509" expanded="true" signature="7858:7919" ph="{...}" />
+            <marker date="1509415378509" expanded="true" signature="7985:8197" ph="{...}" />
+            <marker date="1509415378509" expanded="true" signature="8062:8118" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/signals/UpdateLootboxButtonSignal.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/GameObject.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13566">
+          <caret line="1020" column="0" lean-forward="false" selection-start-line="1020" selection-start-column="0" selection-end-line="1020" selection-end-column="0" />
+          <folding>
+            <marker date="1509415378195" expanded="true" signature="36130:45253" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="36465:36507" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="36521:44327" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="36554:44317" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="36629:44303" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="36798:37259" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="37001:37237" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="37285:44285" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="37328:43196" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="37387:37426" ph="..." />
+            <marker date="1509415378195" expanded="true" signature="38434:38550" ph="..." />
+            <marker date="1509415378195" expanded="true" signature="38607:39186" ph="..." />
+            <marker date="1509415378195" expanded="true" signature="38667:38993" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="39031:39147" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="39248:39832" ph="..." />
+            <marker date="1509415378195" expanded="true" signature="39313:39639" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="39677:39793" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="39890:40467" ph="..." />
+            <marker date="1509415378195" expanded="true" signature="39948:40274" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="40312:40428" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="40523:41101" ph="..." />
+            <marker date="1509415378195" expanded="true" signature="40582:40908" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="40946:41062" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="41161:41742" ph="..." />
+            <marker date="1509415378195" expanded="true" signature="41223:41549" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="41587:41703" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="41802:42384" ph="..." />
+            <marker date="1509415378195" expanded="true" signature="41865:42191" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="42229:42345" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="42440:43019" ph="..." />
+            <marker date="1509415378195" expanded="true" signature="42500:42826" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="42864:42980" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="43083:43170" ph="..." />
+            <marker date="1509415378195" expanded="true" signature="43242:44263" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="43322:43664" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="43698:44044" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="44411:45031" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="44584:44683" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="44701:45021" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="44738:44878" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="44900:45007" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="45055:45247" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="45325:45547" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="45919:46199" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="46256:46527" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="46607:47576" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="46651:46909" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="47638:47864" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="47688:47813" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="47936:52031" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="48194:48617" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="48332:48456" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="48379:48442" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="48474:48607" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="48528:48593" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="48776:50154" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="48906:49184" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="48959:49032" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="49202:49972" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="49286:49958" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="49800:49877" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="50168:50398" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="50212:50388" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="50315:50374" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="50472:50513" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="50550:50789" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="50845:50944" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="51028:51127" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="51190:51275" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="51289:51858" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="51366:51438" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="51456:51529" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="51564:51816" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="51912:51999" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="52097:52225" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="52272:52771" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="52367:52732" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="52833:52915" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="52990:53085" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="53028:53079" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="53166:55325" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="53261:53596" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="53707:53827" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="53861:54060" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="54074:54135" ph="{...}" />
+            <marker date="1509415378195" expanded="true" signature="54659:55173" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/text/model/TextKey.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11815">
+          <caret line="695" column="79" lean-forward="false" selection-start-line="695" selection-start-column="79" selection-end-line="695" selection-end-column="79" />
+          <folding>
+            <marker date="1509415378685" expanded="true" signature="59078:59125" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/commands/LootboxUpdateCommand.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#36#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/game/MarkShopModel.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="36" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/game/LootboxModel.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/commands/MarkShopUpdateCommand.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="4" column="45" lean-forward="true" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/GameConfig.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="162" column="59" lean-forward="false" selection-start-line="162" selection-start-column="59" selection-end-line="162" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/game/MapUserInput.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="91" column="80" lean-forward="false" selection-start-line="91" selection-start-column="80" selection-end-line="91" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/game/GameSprite.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="313" column="55" lean-forward="false" selection-start-line="313" selection-start-column="55" selection-end-line="313" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootboxes.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/PremiumLootbox_ImageEmbed.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/SilverLootbox_ImageEmbed.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/EliteLootbox_ImageEmbed.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/GoldLootbox_ImageEmbed.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/news/NewsConfig.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/news/view/NewsModal_backgroundImageEmbed.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/RaidLauncher_backgroundImageEmbed.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/raidLauncher/RaidLauncher_backgroundImageEmbed.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="15" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/view/MarkShopModalButton.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/view/LootboxModalButton.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/view/LootboxMediator.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="63" lean-forward="false" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/LootboxBackground_ImageEmbed.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/LootboxModal.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="40" column="45" lean-forward="false" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+          <folding>
+            <element signature="e#32#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/LootboxBackground_ImageEmbed.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/BronzeLootbox_ImageEmbed.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/BronzeLootbox_ImageEmbed.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/EliteLootbox_ImageEmbed.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="10" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/GoldLootbox_ImageEmbed.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/PremiumLootbox_ImageEmbed.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="45" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/lootBoxes/SilverLootbox_ImageEmbed.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/news/view/NewsModal.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="225" column="33" lean-forward="false" selection-start-line="225" selection-start-column="21" selection-end-line="225" selection-end-column="33" />
           <folding />
         </state>
       </provider>
