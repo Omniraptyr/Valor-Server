@@ -300,7 +300,7 @@ namespace wServer.realm
                             return i;
                     for (var i = 0; i < 3; i++)
                     {
-                        if (item != null || item.Legendary)
+                        if (item != null && item.Legendary)
                         return -1;
                     }
                     
