@@ -298,13 +298,19 @@ namespace wServer.realm
                     for (var i = 0; i < 4; i++)
                         if (_items[i] == null && playerDesc.SlotTypes[i] == item.SlotType)
                             return i;
-
+                    for (var i = 0; i < 3; i++)
+                    {
+                        if (item != null || item.Legendary)
+                        return -1;
+                    }
+                    
+                }
                     for (var i = 4; i < 12 || (plr.HasBackpack && i < plr.Inventory.Length); i++)
                         if (_items[i] == null)
                             return i;
                 }
                 else
-                {
+                { 
                     for (var i = 0; i < 8; i++)
                         if (_items[i] == null)
                             return i;
@@ -313,7 +319,7 @@ namespace wServer.realm
                 return -1;
             }
         }
-
+        
         private static Item[] ConvertObjectType2ItemArray(IEnumerable<ushort> a)
         {
             var gameData = Program.Resources.GameData;

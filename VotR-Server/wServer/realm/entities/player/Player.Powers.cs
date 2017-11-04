@@ -17,7 +17,7 @@ namespace wServer.realm.entities
                 {
                         ActivateMainPower(eff.PowerId, eff.HPAmount, eff.MPAmount, eff.SurgeAmount, eff.Stats);
                 }
-            }
+            } 
         }
         public bool CheckForLeggies()
         {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using common;
 using common.resources;
 using Mono.Game;
 using wServer.realm;
@@ -68,6 +69,7 @@ namespace wServer.networking.handlers
                                 player.Manager.Database.RemoveGift(player.Client.Account, stackTrans[slotA].ObjectType, trans);
                                 trans.Execute();
                             }
+                            
                             stackTrans[slotA] = null;
                             Inventory.Execute(stackTrans);
                             player.Client.SendPacket(new InvResult() { Result = 0 });
@@ -124,9 +126,11 @@ namespace wServer.networking.handlers
                     player.Client.SendPacket(new InvResult() { Result = 0 });
                     return;
                 }
+                
 
                 // if execute failed, undo inventory changes
                 if (!Inventory.Revert(conATrans, conBTrans))
+                    
                     Log.Warn($"Failed to revert changes. {player.Name} has an extra {itemA?.ObjectId} or {itemB?.ObjectId}");
 
             }
