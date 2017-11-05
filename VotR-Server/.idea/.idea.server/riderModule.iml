@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RIDER_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../..">
+      <sourceFolder url="file://$MODULE_DIR$/../../RemoteLogger" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../RotMG-Dungeon-Generator/DungeonGen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../common" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../server" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../wServer" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../RemoteLogger/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../RotMG-Dungeon-Generator/DungeonGen/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../RotMG-Dungeon-Generator/DungeonGen/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../common/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../packages" />
+      <excludeFolder url="file://$MODULE_DIR$/../../server/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../wServer/obj" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
