@@ -20,18 +20,19 @@ namespace wServer.networking.handlers
             switch (packet.lootboxType)
             {
                 case 1:
+                    player.Unbox(1);
                     break;
                 case 2:
-                    player.SendError("Yes.");
+                    player.Unbox(2);
                     break;
                 case 3:
-                    player.SendError("Yes.");
+                    player.Unbox(3);
                     break;
                 case 4:
-                    player.SendError("Yes.");
+                    player.Unbox(4);
                     break;
                 case 5:
-                    player.SendError("Yes.");
+                    player.Unbox(5);
                     break;
             }
         }

@@ -438,7 +438,7 @@ namespace common.resources
 
         private void AddLootboxes(XElement root)
         {
-            foreach (var elem in root.XPathSelectElements("//Lootbox"))
+            foreach (var elem in root.XPathSelectElements("//Lootcase"))
             {
                 string id = elem.Attribute("id").Value;
 
@@ -496,7 +496,7 @@ namespace common.resources
             AddObjects(root);
             AddGrounds(root);
             AddEquipmentSets(root);
-          //AddLootboxes(root);
+            AddLootboxes(root);
         }
 
         private void UpdateXml()

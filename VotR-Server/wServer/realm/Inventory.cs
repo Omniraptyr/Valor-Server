@@ -302,11 +302,6 @@ namespace wServer.realm
                     for (var i = 4; i < 12 || (plr.HasBackpack && i < plr.Inventory.Length); i++)
                         if (_items[i] == null)
                             return i;
-                    for (var i = 0; i < 3; i++)
-                    {
-                        if (item != null && item.Legendary)
-                            return -1;
-                    }
                 }
                 else
                 {

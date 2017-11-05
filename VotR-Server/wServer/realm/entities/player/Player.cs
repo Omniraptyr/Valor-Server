@@ -1001,6 +1001,30 @@ namespace wServer.realm.entities
                       src.ObjectDesc.ObjectId,
                       src);
         }
+        public void Unbox(int type)
+        {
+            Random rand1 = new Random();
+
+            ushort[] items = new ushort[50];
+            for (int x = 0; x < 50; x++)
+            {
+                var result = GetUnboxResult(type, rand1);
+                items[x] = result.Item1.ObjectType;
+            }
+            for (int i = 4; i < Inventory.Length; i++)
+                if (Inventory[i] == null)
+                {
+                    Inventory[i] = Manager.Resources.GameData.Items[items[45]];
+                    SaveToCharacter();
+                    break;
+                };
+            SaveToCharacter();
+
+            Client.SendPacket(new UnboxResult()
+            {
+                Items = items
+            });
+        }
 
         void GenerateGravestone(bool phantomDeath = false)
         {

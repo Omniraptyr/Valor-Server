@@ -208,6 +208,7 @@
     <Compile Include="networking\packets\outgoing\SorForge.cs" />
     <Compile Include="networking\packets\outgoing\UnboxResult.cs" />
     <Compile Include="realm\entities\player\Player.Powers.cs" />
+    <Compile Include="realm\entities\player\Player.Unboxing.cs" />
     <Compile Include="realm\ISControl.cs" />
     <Compile Include="logic\behaviors\AnnounceOnDeath.cs" />
     <Compile Include="logic\behaviors\ChangeMusic.cs" />
