@@ -115,6 +115,11 @@ public class Player extends Character {
     public var wisdomBoost_:int = 0;
     public var dexterityBoost_:int = 0;
     public var xpBoost_:int = 0;
+    public var lootBox1_:int = 0;
+    public var lootBox2_:int = 0;
+    public var lootBox3_:int = 0;
+    public var lootBox4_:int = 0;
+    public var lootBox5_:int = 0;
     public var healthPotionCount_:int = 0;
     public var magicPotionCount_:int = 0;
     public var attackMax_:int = 0;
@@ -236,6 +241,22 @@ public class Player extends Character {
 
     public function setKantos(_arg1:int):void {
         this.kantos_ = _arg1;
+    }
+
+    public function setLootbox1(_arg1:int):void {
+        this.lootBox1_ = _arg1;
+    }
+
+    public function setLootbox2(_arg1:int):void {
+        this.lootBox2_ = _arg1;
+    }
+
+    public function setLootbox3(_arg1:int):void {
+        this.lootBox3_ = _arg1;
+    }
+
+    public function setLootbox4(_arg1:int):void {
+        this.lootBox4_ = _arg1;
     }
 
     public function setGuildName(_arg1:String):void {

@@ -31,6 +31,9 @@ namespace common.resources
         Dictionary<ushort, XElement> type2elem_equipSet;
         Dictionary<ushort, string> type2id_equipSet;
         Dictionary<string, ushort> id2type_equipSet;
+        Dictionary<ushort, XElement> type2elem_lootBox;
+        Dictionary<ushort, string> type2id_lootBox;
+        Dictionary<string, ushort> id2type_lootBox;
         Dictionary<ushort, ushort> skinType2equipSetType;
         Dictionary<ushort, TileDesc> tiles;
         Dictionary<ushort, Item> items;
@@ -38,6 +41,7 @@ namespace common.resources
         Dictionary<ushort, PortalDesc> portals;
         Dictionary<ushort, SkinDesc> skins;
         Dictionary<ushort, EquipmentSetDesc> equipmentSets;
+        Dictionary<ushort, Lootbox> lootBox;
         Dictionary<ushort, PlayerDesc> classes;
         Dictionary<ushort, ObjectDesc> merchants; 
         Dictionary<ushort, PetDesc> pets;
@@ -56,13 +60,17 @@ namespace common.resources
         public IDictionary<ushort, XElement> EquipSetTypeToElement { get; private set; }
         public IDictionary<ushort, string> EquipSetTypeToId { get; private set; }
         public IDictionary<string, ushort> IdToEquipSetType { get; private set; }
+        		public IDictionary<ushort, XElement> LootboxTypeToElement { get; private set; }
+        public IDictionary<ushort, string> LootboxTypetoId { get; private set; }
+        public IDictionary<string, ushort> IdtoLootboxType { get; private set; }
         public IDictionary<ushort, ushort> SkinTypeToEquipSetType { get; private set; } 
         public IDictionary<ushort, TileDesc> Tiles { get; private set; }
         public IDictionary<ushort, Item> Items { get; private set; }
         public IDictionary<ushort, ObjectDesc> ObjectDescs { get; private set; }
         public IDictionary<ushort, PortalDesc> Portals { get; private set; }
         public IDictionary<ushort, SkinDesc> Skins { get; private set; }
-        public IDictionary<ushort, EquipmentSetDesc> EquipmentSets { get; private set; } 
+        public IDictionary<ushort, EquipmentSetDesc> EquipmentSets { get; private set; }
+        public IDictionary<ushort, Lootbox> Lootboxes { get; private set; }
         public IDictionary<ushort, PlayerDesc> Classes { get; private set; }
         public IDictionary<ushort, ObjectDesc> Merchants { get; private set; }
         public IDictionary<ushort, PetDesc> Pets { get; private set; }
@@ -121,6 +129,15 @@ namespace common.resources
             IdToEquipSetType =
                 new ReadOnlyDictionary<string, ushort>(
                     id2type_equipSet = new Dictionary<string, ushort>(StringComparer.InvariantCultureIgnoreCase));
+            LootboxTypeToElement =
+                new ReadOnlyDictionary<ushort, XElement>(
+                    type2elem_lootBox = new Dictionary<ushort, XElement>());
+            LootboxTypetoId =
+                new ReadOnlyDictionary<ushort, string>(
+                    type2id_lootBox = new Dictionary<ushort, string>());
+            IdtoLootboxType =
+                new ReadOnlyDictionary<string, ushort>(
+                    id2type_lootBox = new Dictionary<string, ushort>(StringComparer.InvariantCultureIgnoreCase));
             Tiles = 
                 new ReadOnlyDictionary<ushort, TileDesc>(
                     tiles = new Dictionary<ushort, TileDesc>());
@@ -139,6 +156,9 @@ namespace common.resources
             EquipmentSets =
                 new ReadOnlyDictionary<ushort, EquipmentSetDesc>(
                     equipmentSets = new Dictionary<ushort, EquipmentSetDesc>());
+            Lootboxes =
+                new ReadOnlyDictionary<ushort, Lootbox>(
+                    lootBox = new Dictionary<ushort, Lootbox>());
             Classes = 
                 new ReadOnlyDictionary<ushort, PlayerDesc>(
                     classes = new Dictionary<ushort, PlayerDesc>());
@@ -185,6 +205,7 @@ namespace common.resources
             log.InfoFormat("{0} Objects", objDescs.Count);
             log.InfoFormat("{0} Skins", skins.Count);
             log.InfoFormat("{0} Equipment Sets", equipmentSets.Count);
+            log.InfoFormat("{0} Lootboxes", lootBox.Count);
             log.InfoFormat("{0} Classes", classes.Count);
             log.InfoFormat("{0} Portals", portals.Count);
             log.InfoFormat("{0} Merchants", merchants.Count);
@@ -415,6 +436,30 @@ namespace common.resources
             }
         }
 
+        private void AddLootboxes(XElement root)
+        {
+            foreach (var elem in root.XPathSelectElements("//Lootbox"))
+            {
+                string id = elem.Attribute("id").Value;
+
+                ushort type;
+                var typeAttr = elem.Attribute("type");
+                type = (ushort)Utils.FromString(typeAttr.Value);
+
+                if (type2id_lootBox.ContainsKey(type))
+                    log.WarnFormat("'{0}' and '{1}' has the same ID of 0x{2:x4}!", id, type2id_equipSet[type], type);
+                if (id2type_lootBox.ContainsKey(id))
+                    log.WarnFormat("0x{0:x4} and 0x{1:x4} has the same name of {2}!", type, id2type_equipSet[id], id);
+
+                type2id_lootBox[type] = id;
+                id2type_lootBox[id] = type;
+                type2elem_lootBox[type] = elem;
+
+                lootBox[type] = Lootbox.FromElem(type, elem);
+
+            }
+        }
+
         /* GetRemoteTexType - Generates texture type 
          * given the different formats people have
          * been using to specify remote textures.
@@ -451,6 +496,7 @@ namespace common.resources
             AddObjects(root);
             AddGrounds(root);
             AddEquipmentSets(root);
+          //AddLootboxes(root);
         }
 
         private void UpdateXml()

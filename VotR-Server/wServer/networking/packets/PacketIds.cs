@@ -110,6 +110,8 @@ namespace wServer.networking.packets
         CRITICALDAMAGE = 157,
         SORFORGE = 158,
         SORFORGEREQUEST = 159,
-        FORGEITEM = 160
+        FORGEITEM = 160,
+        UNBOXREQUEST = 161,
+        UNBOXRESULT = 162
     }
 }

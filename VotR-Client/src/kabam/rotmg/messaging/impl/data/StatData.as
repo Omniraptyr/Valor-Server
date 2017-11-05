@@ -110,6 +110,12 @@ public class StatData {
     public static const MIGHT_BOOST_STAT = 113;
     public static const LUCK_STAT = 114;
     public static const LUCK_BOOST_STAT = 115;
+    public static const LOOTBOX1 = 116;
+    public static const LOOTBOX2 = 117;
+    public static const LOOTBOX3 = 118;
+    public static const LOOTBOX4 = 119;
+    public static const LOOTBOX5 = 120;
+
 
 
 

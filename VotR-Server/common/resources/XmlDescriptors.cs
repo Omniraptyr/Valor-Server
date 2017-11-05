@@ -514,6 +514,8 @@ namespace common.resources
             ItemType = ushort.Parse(elem.Attribute("itemtype").Value.Substring(2), NumberStyles.AllowHexSpecifier);
         }
     }
+
+
     public class PortalDesc : ObjectDesc
     {
         public int Timeout { get; private set; }
@@ -824,6 +826,35 @@ namespace common.resources
             return eqSet;
         }
     }
+
+    public class Lootbox
+    {
+        public ushort Type { get; private set; }
+        public string Id { get; private set; }
+        public List<Tuple<double, List<CrateLoot>>> CrateLoot { get; private set; }
+
+        public static Lootbox FromElem(ushort type, XElement elem)
+        {
+
+            var crateLoot = new List<Tuple<double, List<CrateLoot>>>();
+            foreach (XElement i in elem.Elements("CrateLoot"))
+            {
+                var crateLootList = new List<CrateLoot>();
+                foreach (XElement o in i.Elements("Loot"))
+                    crateLootList.Add(new CrateLoot(o));
+                crateLoot.Add(Tuple.Create(double.Parse(i.Attribute("chance").Value), crateLootList));
+            }
+            crateLoot.Sort((a, b) => a.Item1.CompareTo(b.Item1));
+
+            var lootbox = new Lootbox();
+            lootbox.Type = type;
+            lootbox.Id = elem.Attribute("id").Value;
+            lootbox.CrateLoot = crateLoot;
+            return lootbox;
+        }
+       
+    }
+
     public class SkinDesc
     {
         public ushort Type { get; private set; }
@@ -868,6 +899,59 @@ namespace common.resources
 
             return sd;
         }
+    }
+    public enum CrateLootTypes
+    {
+        Item,
+        TieredStrangifier,
+        StrangePart,
+        Skin
+    }
+    public class CrateLoot
+    {
+        public CrateLoot(XElement elem)
+        {
+            XAttribute n;
+            Type = (CrateLootTypes)Enum.Parse(typeof(CrateLootTypes), elem.Value);
+            if ((n = elem.Attribute("strange")) != null)
+                Strange = (n.Value == "true");
+            else
+                Strange = false;
+            if ((n = elem.Attribute("name")) != null)
+                Name = n.Value;
+            if ((n = elem.Attribute("minTier")) != null)
+                MinTier = int.Parse(n.Value);
+            if ((n = elem.Attribute("maxTier")) != null)
+                MaxTier = int.Parse(n.Value);
+            if ((n = elem.Attribute("tier")) != null)
+                MinTier = MaxTier = int.Parse(n.Value);
+            if ((n = elem.Attribute("series")) != null)
+                Series = int.Parse(n.Value);
+            else
+                Series = 0;
+            if ((n = elem.Attribute("premium")) != null)
+                Premium = (n.Value == "true");
+            else
+                Premium = false;
+            if ((n = elem.Attribute("unusual")) != null)
+                Unusual = (n.Value == "true");
+            else
+                Unusual = false;
+            if ((n = elem.Attribute("nameColor")) != null)
+                NameColor = (uint)Utils.FromString(n.Value);
+            else
+                NameColor = 0xFFFFFF;
+        }
+
+        public CrateLootTypes Type { get; private set; }
+        public bool Strange { get; private set; }
+        public string Name { get; private set; }
+        public int MinTier { get; private set; }
+        public int MaxTier { get; private set; }
+        public int Series { get; private set; }
+        public bool Premium { get; private set; }
+        public bool Unusual { get; private set; }
+        public uint NameColor { get; private set; }
     }
     public class SpawnCount
     {

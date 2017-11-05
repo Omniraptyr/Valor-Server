@@ -36,6 +36,10 @@ public class SavedCharactersList extends Event {
     public var tokens_:int = 0;
     public var onrane_:int = 0;
     public var kantos_:int = 0;
+    public var lootBox1_:int = 0;
+    public var lootBox2_:int = 0;
+    public var lootBox3_:int = 0;
+    public var lootBox4_:int = 0;
     public var numStars_:int = 0;
     public var nextCharSlotPrice_:int;
     public var charSlotCurrency_:int;
@@ -118,6 +122,10 @@ public class SavedCharactersList extends Event {
         this.tokens_ = int(_arg1.FortuneToken);
         this.onrane_ = int(_arg1.Onrane);
         this.kantos_ = int(_arg1.Kantos);
+        this.lootBox1_ = int(_arg1.Lootbox1);
+        this.lootBox2_ = int(_arg1.Lootbox2);
+        this.lootBox3_ = int(_arg1.Lootbox3);
+        this.lootBox4_ = int(_arg1.Lootbox4);
         this.nextCharSlotPrice_ = int(_arg1.NextCharSlotPrice);
         this.charSlotCurrency_ = int(_arg1.CharSlotCurrency);
         this.isAgeVerified = ((!((this.accountId_ == ""))) && ((_arg1.IsAgeVerified == 1)));

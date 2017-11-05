@@ -18,6 +18,11 @@ public class PlayerModel {
     public const onraneChanged:Signal = new Signal(int);
     public const kantosChanged:Signal = new Signal(int);
 
+    public const lootBox1Changed:Signal = new Signal(int);
+    public const lootBox2Changed:Signal = new Signal(int);
+    public const lootBox3Changed:Signal = new Signal(int);
+    public const lootBox4Changed:Signal = new Signal(int);
+
     public var charList:SavedCharactersList;
     public var isInvalidated:Boolean;
     private var _currentCharId:int;
@@ -277,11 +282,21 @@ public class PlayerModel {
     public function getOnrane():int {
         return (this.charList.onrane_);
     }
-
     public function getKantos():int {
         return (this.charList.kantos_);
     }
-
+    public function getLootbox1():int {
+        return (this.charList.lootBox1_);
+    }
+    public function getLootbox2():int {
+        return (this.charList.lootBox2_);
+    }
+    public function getLootbox3():int {
+        return (this.charList.lootBox3_);
+    }
+    public function getLootbox4():int {
+        return (this.charList.lootBox4_);
+    }
     public function updateOnrane():int {
         return (this.charList.onrane_);
     }

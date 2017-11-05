@@ -16,7 +16,8 @@ namespace wServer.networking.handlers
 
         void Handle(Player player, RealmTime time, LaunchRaid packet)
         {
-            var Manager = player.Manager;
+            player.SendError("Nope.");
+           /* var Manager = player.Manager;
 
             var gameData = Manager.Resources.GameData;
 
@@ -41,7 +42,7 @@ namespace wServer.networking.handlers
                 Color = new ARGB(0xFF00FF00),
                 ObjectId = player.Id,
                 Message = "Opened by " + player.Name
-            }, null, PacketPriority.Low);
+            }, null, PacketPriority.Low);*/
         }
     }
 }

@@ -944,6 +944,74 @@ namespace common
             return task;
         }
 
+        public Task UpdateLootbox1(DbAccount acc, int amount, ITransaction transaction = null)
+        {
+            var trans = transaction ?? _db.CreateTransaction();
+
+            var task = trans.HashIncrementAsync(acc.Key, "lootBox1", amount)
+                .ContinueWith(t =>
+                {
+                    if (!t.IsCanceled)
+                        acc.Lootbox1 = (int)t.Result;
+                });
+
+            if (transaction == null)
+                trans.Execute();
+
+            return task;
+        }
+
+        public Task UpdateLootbox2(DbAccount acc, int amount, ITransaction transaction = null)
+        {
+            var trans = transaction ?? _db.CreateTransaction();
+
+            var task = trans.HashIncrementAsync(acc.Key, "lootBox2", amount)
+                .ContinueWith(t =>
+                {
+                    if (!t.IsCanceled)
+                        acc.Lootbox2 = (int)t.Result;
+                });
+
+            if (transaction == null)
+                trans.Execute();
+
+            return task;
+        }
+
+        public Task UpdateLootbox3(DbAccount acc, int amount, ITransaction transaction = null)
+        {
+            var trans = transaction ?? _db.CreateTransaction();
+
+            var task = trans.HashIncrementAsync(acc.Key, "lootBox3", amount)
+                .ContinueWith(t =>
+                {
+                    if (!t.IsCanceled)
+                        acc.Lootbox3 = (int)t.Result;
+                });
+
+            if (transaction == null)
+                trans.Execute();
+
+            return task;
+        }
+
+        public Task UpdateLootbox4(DbAccount acc, int amount, ITransaction transaction = null)
+        {
+            var trans = transaction ?? _db.CreateTransaction();
+
+            var task = trans.HashIncrementAsync(acc.Key, "lootBox4", amount)
+                .ContinueWith(t =>
+                {
+                    if (!t.IsCanceled)
+                        acc.Lootbox4 = (int)t.Result;
+                });
+
+            if (transaction == null)
+                trans.Execute();
+
+            return task;
+        }
+
         public Task UpdateGuildFame(DbGuild guild, int amount, ITransaction transaction = null)
         {
             var guildKey = $"guild.{guild.Id}";

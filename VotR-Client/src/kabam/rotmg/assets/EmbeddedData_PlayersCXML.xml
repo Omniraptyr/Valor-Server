@@ -527,7 +527,7 @@
         <UnlockCost>999</UnlockCost>
         <DisplayId>{players.Ninja}</DisplayId>
     </Object>
-    <Object type="0x0327" id="Samurai">
+    <!--<Object type="0x0327" id="Samurai">
         <Class>Player</Class>
         <Description>The samurai uses his sheath to slice up foes at incredible speeds and finish off with a devastating blow.</Description>
         <AnimatedTexture>
@@ -752,5 +752,5 @@
         <UnlockLevel level="20">Assassin</UnlockLevel>
         <UnlockLevel level="20">Shrine Maiden</UnlockLevel>
         <DisplayId>Gambler</DisplayId>
-    </Object>
+    </Object>-->
 </Objects>

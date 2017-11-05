@@ -4,6 +4,8 @@ import com.company.assembleegameclient.account.ui.ChooseNameFrameMediator;
 import com.company.assembleegameclient.account.ui.CreateGuildFrame;
 import com.company.assembleegameclient.account.ui.NewChooseNameFrame;
 import com.company.assembleegameclient.account.ui.NewChooseNameFrameMediator;
+import com.company.assembleegameclient.account.ui.Unboxing.UnboxResultBox;
+import com.company.assembleegameclient.account.ui.Unboxing.UnboxResultBoxMediator;
 import com.company.assembleegameclient.account.ui.components.CreateGuildFrameMediator;
 import com.company.assembleegameclient.map.partyoverlay.GameObjectArrow;
 import com.company.assembleegameclient.mapeditor.MapEditor;
@@ -154,6 +156,7 @@ public class UIConfig implements IConfig {
         this.mediatorMap.map(AccountInfoView).toMediator(AccountInfoMediator);
         this.mediatorMap.map(AccountScreen).toMediator(AccountScreenMediator);
         this.mediatorMap.map(TitleView).toMediator(TitleMediator);
+        this.mediatorMap.map(UnboxResultBox).toMediator(UnboxResultBoxMediator);
         this.mediatorMap.map(NewCharacterScreen).toMediator(NewCharacterMediator);
         this.mediatorMap.map(MapEditor).toMediator(MapEditorMediator);
         this.mediatorMap.map(CurrentCharacterRect).toMediator(CurrentCharacterRectMediator);

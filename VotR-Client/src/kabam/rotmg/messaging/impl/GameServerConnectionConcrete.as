@@ -1,4 +1,5 @@
 ﻿package kabam.rotmg.messaging.impl {
+import com.company.assembleegameclient.account.ui.Unboxing.UnboxResultBox;
 import com.company.assembleegameclient.game.AGameSprite;
 import com.company.assembleegameclient.game.events.GuildResultEvent;
 import com.company.assembleegameclient.game.events.KeyInfoResponseSignal;
@@ -156,6 +157,7 @@ import kabam.rotmg.messaging.impl.incoming.TradeChanged;
 import kabam.rotmg.messaging.impl.incoming.TradeDone;
 import kabam.rotmg.messaging.impl.incoming.TradeRequested;
 import kabam.rotmg.messaging.impl.incoming.TradeStart;
+import kabam.rotmg.messaging.impl.incoming.UnboxResultPacket;
 import kabam.rotmg.messaging.impl.incoming.Update;
 import kabam.rotmg.messaging.impl.incoming.VerifyEmail;
 import kabam.rotmg.messaging.impl.incoming.arena.ArenaDeath;
@@ -206,6 +208,7 @@ import kabam.rotmg.messaging.impl.outgoing.ShootAck;
 import kabam.rotmg.messaging.impl.outgoing.SorForgeRequest;
 import kabam.rotmg.messaging.impl.outgoing.SquareHit;
 import kabam.rotmg.messaging.impl.outgoing.Teleport;
+import kabam.rotmg.messaging.impl.outgoing.UnboxRequest;
 import kabam.rotmg.messaging.impl.outgoing.UseItem;
 import kabam.rotmg.messaging.impl.outgoing.UsePortal;
 import kabam.rotmg.messaging.impl.outgoing.EnterArena;
@@ -422,6 +425,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(LAUNCH_RAID).toMessage(LaunchRaid);
         _local1.map(SORFORGEREQUEST).toMessage(SorForgeRequest);
         _local1.map(FORGEITEM).toMessage(ForgeItem);
+        _local1.map(UNBOXREQUEST).toMessage(UnboxRequest);
         _local1.map(FAILURE).toMessage(Failure).toMethod(this.onFailure);
         _local1.map(CREATE_SUCCESS).toMessage(CreateSuccess).toMethod(this.onCreateSuccess);
         _local1.map(SERVERPLAYERSHOOT).toMessage(ServerPlayerShoot).toMethod(this.onServerPlayerShoot);
@@ -477,6 +481,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(SWITCH_MUSIC).toMessage(SwitchMusic).toMethod(this.onSwitchMusic);
         _local1.map(CRITICALDAMAGE).toMessage(CriticalDamage).toMethod(this.onCriticalDamage);
         _local1.map(SORFORGE).toMessage(SorForge).toMethod(this.onSorForge);
+        _local1.map(UNBOXRESULT).toMessage(UnboxResultPacket).toMethod(this.unboxResult);
     }
 
     private function onSwitchMusic(sm:SwitchMusic):void {
@@ -670,6 +675,10 @@ public class GameServerConnectionConcrete extends GameServerConnection {
             var _local_2:OpenDialogSignal = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
             _local_2.dispatch(new SorForgeModal());
         }
+    }
+
+    private function unboxResult(_arg1:UnboxResultPacket):void {
+        this.openDialog.dispatch(new UnboxResultBox(this.gs_, _arg1.items_));
     }
 
     override public function playerShoot(_arg1:int, _arg2:Projectile):void {
@@ -1767,6 +1776,21 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                     break;
                 case StatData.LUCK_BOOST_STAT:
                     _local4.luckBoost_ = _local8;
+                    break;
+                case StatData.LOOTBOX1:
+                    _local4.setLootbox1(_local8);
+                    break;
+                case StatData.LOOTBOX2:
+                    _local4.setLootbox2(_local8);
+                    break;
+                case StatData.LOOTBOX3:
+                    _local4.setLootbox3(_local8);
+                    break;
+                case StatData.LOOTBOX4:
+                    _local4.setLootbox4(_local8);
+                    break;
+                case StatData.LOOTBOX5:
+                    _local4.lootBox5_ = _local8;
                     break;
             }
         }

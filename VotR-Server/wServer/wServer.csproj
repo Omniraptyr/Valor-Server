@@ -193,6 +193,7 @@
     <Compile Include="networking\handlers\ForgeItemHandler.cs" />
     <Compile Include="networking\handlers\LaunchRaidHandler.cs" />
     <Compile Include="networking\handlers\SorForgeRequestHandler.cs" />
+    <Compile Include="networking\handlers\UnboxRequestHandler.cs" />
     <Compile Include="networking\packets\incoming\ClaimDailyRewardMessage.cs" />
     <Compile Include="networking\packets\incoming\ForgeItem.cs" />
     <Compile Include="networking\packets\incoming\LaunchRaid.cs" />
@@ -200,10 +201,12 @@
     <Compile Include="networking\packets\incoming\KeyInfoRequest.cs" />
     <Compile Include="networking\packets\incoming\ReskinPet.cs" />
     <Compile Include="networking\packets\incoming\SorForgeRequest.cs" />
+    <Compile Include="networking\packets\incoming\UnboxRequest.cs" />
     <Compile Include="networking\packets\outgoing\ClaimDailyRewardResponse.cs" />
     <Compile Include="networking\packets\outgoing\CriticalDamage.cs" />
     <Compile Include="networking\packets\outgoing\KeyInfoResponse.cs" />
     <Compile Include="networking\packets\outgoing\SorForge.cs" />
+    <Compile Include="networking\packets\outgoing\UnboxResult.cs" />
     <Compile Include="realm\entities\player\Player.Powers.cs" />
     <Compile Include="realm\ISControl.cs" />
     <Compile Include="logic\behaviors\AnnounceOnDeath.cs" />

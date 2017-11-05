@@ -35,6 +35,23 @@ public class IconFactory {
         return (cropAndGlowIcon(_local1));
     }
 
+    public static function makeLootbox1():BitmapData {
+        var _local1:BitmapData = TextureRedrawer.resize(AssetLibrary.getImageFromSet("legendaries8x8Embed", 16), null, 40, true, 0, 0);
+        return (cropAndGlowIcon(_local1));
+    }
+    public static function makeLootbox2():BitmapData {
+        var _local1:BitmapData = TextureRedrawer.resize(AssetLibrary.getImageFromSet("legendaries8x8Embed", 17), null, 40, true, 0, 0);
+        return (cropAndGlowIcon(_local1));
+    }
+    public static function makeLootbox3():BitmapData {
+        var _local1:BitmapData = TextureRedrawer.resize(AssetLibrary.getImageFromSet("legendaries8x8Embed", 18), null, 40, true, 0, 0);
+        return (cropAndGlowIcon(_local1));
+    }
+    public static function makeLootbox4():BitmapData {
+        var _local1:BitmapData = TextureRedrawer.resize(AssetLibrary.getImageFromSet("legendaries8x8Embed", 19), null, 40, true, 0, 0);
+        return (cropAndGlowIcon(_local1));
+    }
+
     public static function makeGuildFame():BitmapData {
         var _local_1:BitmapData = TextureRedrawer.resize(AssetLibrary.getImageFromSet("lofiObj3", 226), null, 40, true, 0, 0);
         return (cropAndGlowIcon(_local_1));

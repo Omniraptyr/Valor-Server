@@ -33,6 +33,17 @@ public class GraphicsUtil {
         _local6.createGradientBox(_arg1, _arg2, _arg3, _arg4, _arg5);
         return (_local6);
     }
+    public static function drawTriangle(x:int, y:int, width:int, height:int, up:Boolean, data:GraphicsPath):void {
+        if(up) {
+            data.moveTo(x + width, y + height);
+            data.lineTo(x, y + height);
+            data.lineTo(x + (width/2), y);
+        } else {
+            data.moveTo(x, y);
+            data.lineTo(x + width, y);
+            data.lineTo(x + (width/2), y + height);
+        }
+    }
     public static function drawUI(x:int, y:int, width:int, height:int, cornerRadius:int, corner:Array, data:GraphicsPath):void {
         if (corner[0] != 0) {
             data.moveTo(x, (y + cornerRadius));

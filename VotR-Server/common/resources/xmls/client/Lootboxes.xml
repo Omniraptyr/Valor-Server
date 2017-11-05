@@ -1,0 +1,25 @@
+<Lootboxes>
+  <Lootbox type="0x0001" id="Bronze Lootbox">
+            <CrateLoot chance="1.00">
+            <Loot name="Legendary Sor Crystal">Item</Loot>
+            <Loot name="Ultimate Onrane Cache">Item</Loot>
+            <Loot name="The Realmtracer">Item</Loot>
+            <Loot name="Words of Wisdom">Item</Loot>
+            <Loot name="Page of Zaragon">Item</Loot>
+            <Loot name="Scepter of the Other">Item</Loot>
+            <Loot name="Wand of the Magma Lands">Item</Loot>
+            <Loot name="Vulcanstriker">Item</Loot>
+            <Loot name="The 2-K">Item</Loot>
+            <Loot name="Vardon's Resilience">Item</Loot>
+            <Loot name="Dagger of Tindailius">Item</Loot>
+            <Loot name="Bracelet of Tranquility">Item</Loot>
+            <Loot name="Waraxe of Judgement">Item</Loot>
+            <Loot name="The Atium">Item</Loot>
+            <Loot name="Living Corrupted Ambition">Item</Loot>
+            <Loot name="Force Between Avex">Item</Loot>
+            <Loot name="Tundracian Frozen Armor">Item</Loot>
+            <Loot name="Never Before Seen">Item</Loot>
+            <Loot name="Solace and Calamity">Item</Loot>
+        </CrateLoot>
+  </Lootbox>
+</Lootboxes>

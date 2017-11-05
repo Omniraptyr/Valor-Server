@@ -121,7 +121,9 @@ public class GameServerConnection {
     public static const SORFORGE:int = 158;
     public static const SORFORGEREQUEST:int = 159;
     public static const FORGEITEM:int = 160;
-    
+    public static const UNBOXREQUEST:int = 161;
+    public static const UNBOXRESULT:int = 162;
+
     public static var instance:GameServerConnection;
 
     public var changeMapSignal:Signal;

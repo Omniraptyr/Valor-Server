@@ -479,22 +479,25 @@ namespace wServer.realm
                     Tuple.Create("Flamer King", 0.2)
                 })
             },
-            { WmapTerrain.Mountains, Tuple.Create(
-                100, new []
-                {
-                    Tuple.Create("White Demon", 0.1),
-                    Tuple.Create("Sprite God", 0.11),
-                    Tuple.Create("Medusa", 0.1),
-                    Tuple.Create("Ent God", 0.1),
-                    Tuple.Create("Beholder", 0.1),
-                    Tuple.Create("Flying Brain", 0.1),
-                    Tuple.Create("Slime God", 0.09),
-                    Tuple.Create("Ghost God", 0.09),
-                    Tuple.Create("Rock Bot", 0.05),
-                    Tuple.Create("Djinn", 0.09),
-                    Tuple.Create("Leviathan", 0.09),
-                    Tuple.Create("Arena Headless Horseman", 0.04)
-                })
+            {               WmapTerrain.Mountains, Tuple.Create(
+                    200, new []
+                    {
+                        Tuple.Create("White Demon", 0.09),
+                        Tuple.Create("Sprite God", 0.08),
+                        Tuple.Create("Medusa", 0.08),
+                        Tuple.Create("Ent God", 0.1),
+                        Tuple.Create("Beholder", 0.09),
+                        Tuple.Create("Flying Brain", 0.09),
+                        Tuple.Create("Slime God", 0.08),
+                        Tuple.Create("Ghost God", 0.07),
+                        Tuple.Create("Rock Bot", 0.05),
+                        Tuple.Create("Djinn", 0.09),
+                        Tuple.Create("Leviathan", 0.07),
+                        Tuple.Create("Arena Headless Horseman", 0.01),
+                        Tuple.Create("Thunder God", 0.025),
+                        Tuple.Create("Mysterious Crystal", 0.001),
+                        Tuple.Create("Large Sor Crystal", 0.02),
+                    })
             },
         };
         #endregion

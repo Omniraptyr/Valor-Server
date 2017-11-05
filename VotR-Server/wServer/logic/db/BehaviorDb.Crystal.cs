@@ -310,8 +310,7 @@ namespace wServer.logic
                         )
                 ),
                 new Threshold(0.05,
-                    new ItemLoot("Sor Crystal", 0.01),
-                    new ItemLoot("Sor Gem", 0.0005)
+                    new ItemLoot("Sor Crystal", 0.00001)
                     )
             )
             ;
