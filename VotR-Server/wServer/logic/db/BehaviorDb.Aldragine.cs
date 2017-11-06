@@ -47,6 +47,7 @@ namespace wServer.logic
             )
         .Init("Beacon of Zol A",
             new State(
+                new SetNoXP(),
                 new TransformOnDeath("Beacon of Zol B", 1, 1, 1),
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("first",
@@ -59,6 +60,7 @@ namespace wServer.logic
             )
         .Init("Beacon of Zol B",
             new State(
+                new SetNoXP(),
                 new TransformOnDeath("Beacon of Zol A", 1, 1, 1),
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("first",
@@ -856,7 +858,7 @@ namespace wServer.logic
                         ),
                     new State("begin2",
                         new Taunt("DO YOU ACCEPT MY CHALLENGE?", "THE ECHOES OF ZOL HAVE SEEN YOU FIGHT. ENGAGE IN THE TEST?"),
-                        new ChatTransition("commence", "Release the Zol!", "release the zol!")
+                        new PlayerTextTransition("commence", "Unleash the Power of the Zol!", 99, false, true)
                         )
                       ),
                     new State("commence",

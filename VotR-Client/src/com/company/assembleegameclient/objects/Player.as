@@ -749,7 +749,7 @@ public class Player extends Character {
             return (MIN_ATTACK_FREQ);
         }
         var _local1:Number = (MIN_ATTACK_FREQ + ((this.dexterity_ / 75) * (MAX_ATTACK_FREQ - MIN_ATTACK_FREQ)));
-        if (isBerserk()) {
+        if (isBerserk() || isSamuraiBerserk()) {
             _local1 = (_local1 * 1.5);
         }
         return (_local1);

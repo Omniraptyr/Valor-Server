@@ -82,8 +82,11 @@ namespace wServer.logic
                 if (player.HasConditionEffect(common.resources.ConditionEffects.Paused))
                     continue;
                 float xp = enemy.GivesNoXp ? 0 : 1;
+
+
                 xp *= enemy.ObjectDesc.MaxHP / 10f * 
                     (enemy.ObjectDesc.ExpMultiplier ?? 1);
+
                 float upperLimit = player.ExperienceGoal * 0.1f;
                 if (player.Quest == enemy)
                     upperLimit = player.ExperienceGoal * 0.5f;

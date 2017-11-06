@@ -24,7 +24,7 @@ namespace wServer.logic
                     new Suicide()
                     )
                 ),
-                new ItemLoot("Charcoal", 0.05),
+                new ItemLoot("Minor Magic Potion", 0.05),
                 new Threshold(0.5,
                     new ItemLoot("Mithril Armor", 0.01)
                     )

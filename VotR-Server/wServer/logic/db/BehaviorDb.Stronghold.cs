@@ -10,10 +10,8 @@ namespace wServer.logic
         private _ Stronghold = () => Behav()
             .Init("Golem King I",
                 new State(
-
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new State("inactive",
-                        new ChatTransition("1", "Iutamnsasq")
+                    new State("inactive"
                         ),
                     new State("1",
                         new TransformOnDeath("Golem King A", 1, 1, 1),

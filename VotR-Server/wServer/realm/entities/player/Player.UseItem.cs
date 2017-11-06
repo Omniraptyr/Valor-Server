@@ -371,6 +371,30 @@ namespace wServer.realm.entities
                     case ActivateEffects.SorForge:
                         AESorForge(time, item, target, eff);
                         break;
+                    case ActivateEffects.TreasureActivate:
+                        AETreasureActivate(time, item, target, eff);
+                        break;
+                    case ActivateEffects.OnraneActivate:
+                        AEOnraneActivate(time, item, target, eff);
+                        break;
+                    case ActivateEffects.RandomOnrane:
+                        AERandomOnrane(time, item, target, eff);
+                        break;
+                    case ActivateEffects.URandomOnrane:
+                        AEURandomOnrane(time, item, target, eff);
+                        break;
+                    case ActivateEffects.RandomGold:
+                        AERandomGold(time, item, target, eff);
+                        break;
+                    case ActivateEffects.SamuraiAbility:
+                        AESamuraiAbility(time, item, target, eff);
+                        break;
+                    case ActivateEffects.Banner:
+                        AEBanner(time, item, target, eff);
+                        break;
+                    case ActivateEffects.SiphonAbility:
+                        AESiphonAbility(time, item, target, eff);
+                        break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
@@ -568,6 +592,58 @@ namespace wServer.realm.entities
             ApplyConditionEffect(ConditionEffectIndex.NinjaSpeedy, 0);
         }
 
+        private void AESamuraiAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            if (!HasConditionEffect(ConditionEffects.SamuraiBerserk))
+            {
+                ApplyConditionEffect(ConditionEffectIndex.SamuraiBerserk);
+                return;
+            }
+
+            if (MP >= item.MpEndCost)
+            {
+                MP -= item.MpEndCost;
+                List<Packet> pkts = new List<Packet>();
+                this.AOE(eff.Range / 2, false, enemy =>
+                {
+                    (enemy as Enemy).Damage(this, time,
+                        (int)Stats.GetAttackDamage(eff.TotalDamage, eff.TotalDamage),
+                        false, new ConditionEffect[0]);
+                });
+                pkts.Add(new ShowEffect()
+                {
+                    EffectType = EffectType.AreaBlast,
+                    TargetObjectId = Id,
+                    Color = new ARGB(0x000000),
+                    Pos1 = new Position() { X = eff.Range / 2 }
+                });
+                BroadcastSync(pkts, p => this.Dist(p) < 25);
+            }
+
+            ApplyConditionEffect(ConditionEffectIndex.SamuraiBerserk, 0);
+        }
+
+        private void AEBanner(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            BroadcastSync(new ShowEffect()
+            {
+                EffectType = EffectType.Throw,
+                Color = new ARGB(0x0000ff),
+                TargetObjectId = Id,
+                Pos1 = target
+            }, p => this.Dist(p) < 25);
+            Owner.Timers.Add(new WorldTimer(1500, (world, t) =>
+            {
+                Banner banner = new Banner(this, eff.Range, eff.Amount, eff.DurationMS);
+                banner.Move(target.X, target.Y);
+                world.EnterWorld(banner);
+            }));
+        }
+
+        private void AESiphonAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+        }
+
         private void AEDye(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             if (item.Texture1 != 0)
@@ -583,6 +659,144 @@ namespace wServer.realm.entities
                 IsForge = true
             });
         }
+
+        private void AETreasureActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            var acc = Client.Account;
+            Client.Manager.Database.UpdateCredit(acc, eff.Amount);
+            Credits += eff.Amount;
+            this.ForceUpdate(Credits);
+            
+        }
+
+        private void AEOnraneActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            var acc = Client.Account;
+            Client.Manager.Database.UpdateOnrane(acc, eff.Amount);
+            Onrane += eff.Amount;
+            this.ForceUpdate(Credits);
+
+        }
+
+        private void AERandomOnrane(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            var acc = Client.Account;
+            int OnraneChance = Random.Next(0, 5);
+            switch (OnraneChance)
+            {
+                case 0:
+                    Client.Manager.Database.UpdateOnrane(acc, 2);
+                    Onrane += 2;
+                    this.ForceUpdate(Onrane);
+                    SendInfo("You have obtained 2 Onrane.");
+                    break;
+
+                case 1:
+                    Client.Manager.Database.UpdateOnrane(acc, 4);
+                    Onrane += 4;
+                    this.ForceUpdate(Onrane);
+                    SendInfo("You have obtained 4 Onrane.");
+                    break;
+
+                case 2:
+                    Client.Manager.Database.UpdateOnrane(acc, 6);
+                    Onrane += 6;
+                    this.ForceUpdate(Onrane);
+                    SendInfo("You have obtained 6 Onrane.");
+                    break;
+
+                case 3:
+                    Client.Manager.Database.UpdateOnrane(acc, 8);
+                    Onrane += 8;
+                    this.ForceUpdate(Onrane);
+                    SendInfo("You have obtained 8 Onrane.");
+                    break;
+
+                case 4:
+                    Client.Manager.Database.UpdateOnrane(acc, 10);
+                    Onrane += 10;
+                    this.ForceUpdate(Onrane);
+                    SendInfo("You have obtained 10 Onrane.");
+                    break;
+            }
+
+        }
+
+        private void AERandomGold(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            var acc = Client.Account;
+            int GoldChance = Random.Next(0, 3);
+            switch (GoldChance)
+            {
+                case 0:
+                    Client.Manager.Database.UpdateCredit(acc, 250);
+                    Credits += 250;
+                    this.ForceUpdate(Credits);
+                    SendInfo("You have obtained 250 Gold.");
+                    break;
+
+                case 1:
+                    Client.Manager.Database.UpdateCredit(acc, 500);
+                    Credits += 500;
+                    this.ForceUpdate(Credits);
+                    SendInfo("You have obtained 500 Gold.");
+                    break;
+
+                case 2:
+                    Client.Manager.Database.UpdateCredit(acc, 750);
+                    Credits += 750;
+                    this.ForceUpdate(Credits);
+                    SendInfo("You have obtained 750 Gold.");
+                    break;
+            }
+
+        }
+        private void AEURandomOnrane(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            var acc = Client.Account;
+            int OnraneChance = Random.Next(0, 5);
+            switch (OnraneChance)
+            {
+                case 0:
+                    Client.Manager.Database.UpdateOnrane(acc, 12);
+                    Onrane += 12;
+                    this.ForceUpdate(Onrane);
+                    SendInfo("You have obtained 12 Onrane.");
+                    break;
+
+                case 1:
+                    Client.Manager.Database.UpdateOnrane(acc, 14);
+                    Onrane += 14;
+                    this.ForceUpdate(Onrane);
+                    SendInfo("You have obtained 14 Onrane.");
+                    break;
+
+                case 2:
+                    Client.Manager.Database.UpdateOnrane(acc, 16);
+                    Onrane += 16;
+                    this.ForceUpdate(Onrane);
+                    SendInfo("You have obtained 16 Onrane.");
+                    break;
+
+                case 3:
+                    Client.Manager.Database.UpdateOnrane(acc, 18);
+                    Onrane += 18;
+                    this.ForceUpdate(Onrane);
+                    SendInfo("You have obtained 18 Onrane.");
+                    break;
+
+                case 4:
+                    Client.Manager.Database.UpdateOnrane(acc, 20);
+                    Onrane += 20;
+                    this.ForceUpdate(Onrane);
+                    SendInfo("You have obtained 20 Onrane.");
+                    break;
+            }
+        
+
+    }
+
+
 
         private void AECreate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {

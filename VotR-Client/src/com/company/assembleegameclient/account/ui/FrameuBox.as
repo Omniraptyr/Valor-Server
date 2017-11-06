@@ -10,6 +10,8 @@ import com.company.util.GraphicsUtil;
 
 import flash.display.CapsStyle;
 import flash.display.DisplayObject;
+import flash.display.GraphicsBitmapFill;
+import flash.display.GraphicsGradientFill;
 import flash.display.GraphicsPath;
 import flash.display.GraphicsSolidFill;
 import flash.display.GraphicsStroke;
@@ -30,10 +32,11 @@ public class FrameuBox extends Sprite
 {
 
     public function FrameuBox(_arg1:String, button1Text:String, _arg5:int = 288) {
+
         this.frameTextInputBoxes = new Vector.<TextInputField>();
         this.frameTextButtons_ = new Vector.<DeprecatedClickableText>();
-        this.primaryColorLight = new GraphicsSolidFill(0x220022, 1);
-        this.primaryColorDark = new GraphicsSolidFill(0x444444, 1);
+        this.primaryColorLight = new GraphicsSolidFill(0x000000, 1);
+        this.primaryColorDark = new GraphicsGradientFill("linear", [0x696969, 0xA9A9A9, 0xC0C0C0, 0xD3D3D3], null, null, null, "pad", "rgb")
         this.outlineFill_ = new GraphicsSolidFill(0xFFFFFF, 1);
         this._graphicsStroke = new GraphicsStroke(1, false, LineScaleMode.NORMAL, CapsStyle.NONE, JointStyle.ROUND, 3, this.outlineFill_);
         this.path1_ = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
@@ -70,12 +73,11 @@ public class FrameuBox extends Sprite
     protected var h_:int = 100;
     private var graphicsData_:Vector.<IGraphicsData>;
     private var primaryColorLight:GraphicsSolidFill;
-    private var primaryColorDark:GraphicsSolidFill;
+    private var primaryColorDark:GraphicsGradientFill;
     private var outlineFill_:GraphicsSolidFill;
     private var _graphicsStroke:GraphicsStroke;
     private var path1_:GraphicsPath;
     private var path2_:GraphicsPath;
-
 
 
     public function addTextButton(_arg1:DeprecatedClickableText):void
@@ -171,8 +173,8 @@ public class FrameuBox extends Sprite
 
     public function onAddedToStage(_arg1:Event):void {
         this.draw();
-        x = 500
-        y = 380
+        x = ((stage.stageWidth / 2) - ((this.w_ - 6) / 2));
+        y = ((stage.stageHeight / 2) - (height / 2));
         if (this.frameTextInputBoxes.length > 0) {
             (stage.focus = this.frameTextInputBoxes[0].inputText_);
         }

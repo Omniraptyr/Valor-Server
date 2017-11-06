@@ -10,7 +10,7 @@ namespace wServer.logic.loot
     public abstract class MobDrops
     {
         protected static XmlData XmlData;
-        protected readonly IList<LootDef> LootDefs = new List<LootDef>(); 
+        protected readonly IList<LootDef> LootDefs = new List<LootDef>();
 
         public static void Init(RealmManager manager)
         {
@@ -32,7 +32,7 @@ namespace wServer.logic.loot
             foreach (var lootDef in LootDefs)
             {
                 lootDefs.Add(new LootDef(
-                    lootDef.Item, 
+                    lootDef.Item,
                     overrides.Probabilty >= 0 ? overrides.Probabilty : lootDef.Probabilty,
                     overrides.NumRequired >= 0 ? overrides.NumRequired : lootDef.NumRequired,
                     overrides.Threshold >= 0 ? overrides.Threshold : lootDef.Threshold));
@@ -69,7 +69,7 @@ namespace wServer.logic.loot
         private static readonly int[] ArmorT = new int[] { 6, 7, 14, };
         private static readonly int[] RingT = new int[] { 9 };
         private static readonly int[] PotionT = new int[] { 10 };
-        
+
         public TierLoot(byte tier, ItemType type, double probability = 1, int numRequired = 0, double threshold = 0)
         {
             int[] types;
@@ -104,8 +104,8 @@ namespace wServer.logic.loot
         }
     }
 
-   
-        public class Threshold : MobDrops
+
+    public class Threshold : MobDrops
     {
         public Threshold(double threshold, params MobDrops[] children)
         {

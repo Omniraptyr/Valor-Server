@@ -102,8 +102,8 @@ namespace wServer.logic
                     new Wander(0.2),
                     new Shoot(8, 5, 10, coolDown: 3200)
                     ),
-                new ItemLoot("Charcoal", 0.1),
-                new ItemLoot("Wheat", 0.1),
+                new ItemLoot("Minor Magic Potion", 0.1),
+                new ItemLoot("Minor Health Potion", 0.1),
                 new Threshold(0.5,
                     new ItemLoot("Cloak of the Red Agent", 0.01),
                     new ItemLoot("Felwasp Toxin", 0.01)
@@ -158,7 +158,7 @@ namespace wServer.logic
                         ),
                     new Shoot(8, 3, shootAngle: 10, coolDown: 800)
                     ),
-                new ItemLoot("Charcoal", 0.1),
+                new ItemLoot("Minor Magic Potion", 0.1),
                 new Threshold(0.1,
                     new ItemLoot("Obsidian Dagger", 0.02),
                     new ItemLoot("Steel Helm", 0.02)

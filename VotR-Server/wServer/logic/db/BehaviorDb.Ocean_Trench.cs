@@ -189,12 +189,7 @@ namespace wServer.logic
                new ConditionalEffect(ConditionEffectIndex.Invincible, true),
                new State("Say",
                    new Taunt("Is King Alexander alive?"),
-                   new ChatTransition("Throw Gifts", "He lives and reigns and conquers the world."),
-                   new ChatTransition("Throw Gifts", "he lives and reigns and conquers the world."),
-                   new ChatTransition("Throw Gifts", "He lives and reigns and conquers the world"),
-                   new ChatTransition("Throw Gifts", "he lives and reigns and conquers the world"),
-                   new ChatTransition("Throw Gifts", "HE LIVES AND REIGNS AND CONQUERS THE WORLD."),
-                   new ChatTransition("Throw Gifts", "HE LIVES AND REIGNS AND CONQUERS THE WORLD"),
+                   new PlayerTextTransition("Throw Gifts", "HE LIVES AND REIGNS AND CONQUERS THE WORLD", 8, false, true),
                    new TimedTransition(12000, "Doom")
                    ),
                new State("Throw Gifts",

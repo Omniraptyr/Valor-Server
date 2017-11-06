@@ -15,8 +15,9 @@ namespace wServer.logic
 					new State (
 						new State ("default",
 							new ConditionalEffect(ConditionEffectIndex.Invincible),
-							new ChatTransition("default1", "Arise, Yazanahar, ARISE!")
-						),
+                            new PlayerTextTransition("default1", "Arise, Yazanahar, ARISE!", 8, false, false)
+
+                        ),
 						new State ("default1",
 							new ConditionalEffect(ConditionEffectIndex.Invincible),
 							new Flash (0xFFFFFF, 2, 2),
@@ -70,7 +71,7 @@ namespace wServer.logic
 					),
 					new State (
 						new Shoot(10, 8, projectileIndex: 1, coolDown: 2000),
-						new RemoveEntity(3, "Yazanahar Helper"),
+						new RemoveEntity(8, "Yazanahar Helper"),
 
 						new State (
 							new TimedTransition(24000, "Return"),
@@ -84,7 +85,7 @@ namespace wServer.logic
 								new TimedTransition (3000, "WeirdMovement2")
 							),
 							new State ("WeirdMovement2",
-								new Grenade(1, 500, range: 8, coolDown: 1),
+								new Grenade(1, 500, range: 8, coolDown: 1000),
 								new Shoot (10, count: 2, shootAngle: 18, projectileIndex: 3, coolDown: 1000),
 								new Shoot (10, count: 8, shootAngle: 8, projectileIndex: 4, coolDown: 100),
 								new TimedTransition (4000, "WeirdMovement1")
@@ -114,10 +115,10 @@ namespace wServer.logic
 								new StayCloseToSpawn(0.5, 3),
 								new Wander(0.05)
 							),
-							new Grenade(2, 400, range: 8, coolDown: 200),
-							new Shoot (10, 6, projectileIndex: 1, coolDown: 3000),
-							new Shoot (10, 10, shootAngle: 10, projectileIndex: 5, coolDown: 4000),
-							new Shoot (10, 5, shootAngle: 4, projectileIndex: 2, coolDown: 800),
+							new Grenade(2, 400, range: 8, coolDown: 400),
+							new Shoot (10, 6, projectileIndex: 1, coolDown: 4000),
+							new Shoot (10, 10, shootAngle: 10, projectileIndex: 5, coolDown: 5000),
+							new Shoot (10, 5, shootAngle: 4, projectileIndex: 2, coolDown: 1600),
 							new TimedTransition (8000, "fast")
 						),
 						new State("fast",
@@ -127,10 +128,10 @@ namespace wServer.logic
 							new Prioritize(
 								new Orbit(0.7, 2, target:null)
 							),
-							new Shoot(10, 20, projectileIndex: 2, coolDown: 1000),
-							new Shoot(10, 7, shootAngle: 12, predictive: 1, projectileIndex: 0, coolDown: 4000),
-							new Shoot(10, 5, shootAngle: 4, projectileIndex: 2, coolDown: 800),
-							new Shoot(10, 10, shootAngle: 4, projectileIndex: 4, coolDown: 1680),
+							new Shoot(10, 20, projectileIndex: 2, coolDown: 2000),
+							new Shoot(10, 7, shootAngle: 12, predictive: 1, projectileIndex: 0, coolDown: 6000),
+							new Shoot(10, 5, shootAngle: 4, projectileIndex: 2, coolDown: 1600),
+							new Shoot(10, 10, shootAngle: 4, projectileIndex: 4, coolDown: 2900),
 							new TimedTransition(15000, "Return2")
 						),
 						new State("Return2",
@@ -141,9 +142,9 @@ namespace wServer.logic
 						),
 						new State("DropDown",
 							new HealSelf(coolDown: 6000, amount: 1000),
-							new Shoot(10, 6, shootAngle: 22, projectileIndex: 6, coolDown: 800),
-							new Shoot(10, 3, shootAngle: 8, projectileIndex: 2, coolDown: 200),
-							new Shoot(10, 9, shootAngle: 8, projectileIndex: 4, predictive: 1, coolDown: 200, coolDownOffset: 400),
+							new Shoot(10, 6, shootAngle: 22, projectileIndex: 6, coolDown: 1600),
+							new Shoot(10, 3, shootAngle: 8, projectileIndex: 2, coolDown: 400),
+							new Shoot(10, 9, shootAngle: 8, projectileIndex: 4, predictive: 1, coolDown: 400, coolDownOffset: 800),
 							new Taunt("You strange mortals think you have the bravery and courage of a true guardian?", "Cowards."),
 							new ConditionalEffect(ConditionEffectIndex.Armored),
 							new InvisiToss("Yazanahar Helper 2", 4, 0, coolDown: 9999999),
@@ -164,10 +165,10 @@ namespace wServer.logic
 						),
 						new State("swagche",
 							new HealSelf(coolDown: 1000, amount: 300),
-							new Shoot(10, 24, projectileIndex: 5, coolDown: 3000),
-							new Shoot(10, 4, projectileIndex: 4, predictive: 1, shootAngle: 12, coolDown: 1),
-							new Shoot(10, 1, projectileIndex: 6, coolDown: 1),
-							new Shoot(10, 1, projectileIndex: 6, coolDown: 1, coolDownOffset: 1),
+							new Shoot(10, 24, projectileIndex: 5, coolDown: 6000),
+							new Shoot(10, 4, projectileIndex: 4, predictive: 1, shootAngle: 12, coolDown: 100),
+							new Shoot(10, 1, projectileIndex: 6, coolDown: 100),
+							new Shoot(10, 1, projectileIndex: 6, coolDown: 100, coolDownOffset: 100),
 							new TimedTransition(9000, "startup")
 						),
 						new State("death1",
@@ -177,7 +178,7 @@ namespace wServer.logic
 							new RemoveEntity(20, "Yazanahar Helper"),
 							new RemoveEntity(20, "Yazanahar Helper 2"),
 							new ReturnToSpawn(speed: 2),
-							new TimedTransition(6600, "death")
+							new TimedTransition(8600, "death")
 						),
 						new State("death",
 							new Suicide()
@@ -194,9 +195,6 @@ namespace wServer.logic
                     new ItemLoot("Greater Potion of Attack", 1.0),
                     new ItemLoot("Greater Potion of Defense", 1.0),
                     new ItemLoot("Greater Potion of Wisdom", 1.0),
-                    new ItemLoot("Overgrowth Lootbox", 1.0),
-                    new ItemLoot("Mayhem Lootbox", 1.0),
-                    new ItemLoot("Questing Package", 1.0),
                     new ItemLoot("Onrane", 1.0),
                     new TierLoot(11, ItemType.Weapon, 0.1),
 					new TierLoot(6, ItemType.Ability, 0.1),
@@ -205,11 +203,7 @@ namespace wServer.logic
 					new TierLoot(12, ItemType.Armor, 0.05),
 					new TierLoot(12, ItemType.Weapon, 0.05),
 					new TierLoot(6, ItemType.Ring, 0.025),
-					new ItemLoot("Mercy of Yazanahar", 0.0001),
-					new ItemLoot("Exile's Resolve", 0.0001),
-					new ItemLoot("Sor Crystal", 0.05),
-					new ItemLoot("Xion Charge", 0.0001),
-					new ItemLoot("Godslayer Sword", 0.01)
+					new ItemLoot("Sor Crystal", 0.05)
 				)
 			)
 
@@ -222,12 +216,12 @@ namespace wServer.logic
 							new Wander(0.05)
 						),
 						new Shoot(10, count: 8, projectileIndex: 0, coolDown: 1400),
-						new TimedTransition(8000, "time")
+						new TimedTransition(12000, "time")
 					),
 					new State("time",
 						new ConditionalEffect(ConditionEffectIndex.Invulnerable),
 						new Shoot(10, count: 8, shootAngle: 6, projectileIndex: 1, coolDown: 1),
-						new TimedTransition(4000, "swag")
+						new TimedTransition(8000, "swag")
 					)
 				)
 			)
@@ -236,8 +230,7 @@ namespace wServer.logic
 					new ConditionalEffect(ConditionEffectIndex.StasisImmune),
 					new ConditionalEffect (ConditionEffectIndex.Invincible),
 					new State("swag",
-						new Shoot(10, count: 1, projectileIndex: 0, coolDown: 1),
-						new Shoot(10, count: 1, projectileIndex: 0, coolDown: 1, coolDownOffset: 1)
+						new Shoot(10, count: 1, projectileIndex: 0, coolDown: 1)
 					)
 				)
 			)
@@ -246,19 +239,19 @@ namespace wServer.logic
 					new ConditionalEffect(ConditionEffectIndex.StasisImmune),
 					new ConditionalEffect(ConditionEffectIndex.Invincible),
 					new State("1",
-						new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 0, coolDown: 1),
+						new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 0, coolDown: 600),
 						new TimedTransition(4000, "2")
 					),
 					new State("2",
-						new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 0, coolDown: 1),
+						new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 0, coolDown: 600),
 						new TimedTransition(4000, "3")
 					),
 					new State("3",
-						new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 0, coolDown: 1),
+						new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 0, coolDown: 600),
 						new TimedTransition(4000, "4")
 					),
 					new State("4",
-						new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 0, coolDown: 1),
+						new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 0, coolDown: 600),
 						new TimedTransition(4000, "1")
 					),
 

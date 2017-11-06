@@ -38,7 +38,16 @@ public class UnboxSquare extends Sprite {
             _local5 = 0xADD8E6;
         }
         if (_local1.hasOwnProperty("Fabled")) {
-            _local5 = 0x770000;
+            _local5 = 0x880000;
+        }
+        if (!_local1.hasOwnProperty("Tier")) {
+            _local5 = 0x550055;
+        }
+        if (_local1.Tier >= 12) {
+            _local5 = 0x008800;
+        }
+        if (_local1.hasOwnProperty("Potion")) {
+            _local5 = 0x708090;
         }
         this.background = new Sprite();
         this.background.graphics.beginFill(_local5);

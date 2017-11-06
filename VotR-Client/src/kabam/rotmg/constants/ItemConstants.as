@@ -29,10 +29,17 @@ public class ItemConstants {
     public static const KATANA_TYPE:int = 24;
     public static const SHURIKEN_TYPE:int = 25;
     public static const EGG_TYPE:int = 26;
+    public static const SHEATH_TYPE:int = 27;
+    public static const BANNER_TYPE:int = 28;
+    public static const LANCE_TYPE:int = 29;
+    public static const SIPHON_TYPE:int = 30;
+    public static const TURRET_TYPE:int = 31;
+    public static const CHARM_TYPE:int = 32;
+    public static const DICE_TYPE:int = 33;
 
 
-    public static function itemTypeToName(_arg1:int):String {
-        switch (_arg1) {
+    public static function itemTypeToName(_arg_1:int):String {
+        switch (_arg_1) {
             case ALL_TYPE:
                 return ("EquipmentType.Any");
             case SWORD_TYPE:
@@ -87,10 +94,24 @@ public class ItemConstants {
                 return ("EquipmentType.Shuriken");
             case EGG_TYPE:
                 return ("EquipmentType.Any");
+            case SHEATH_TYPE:
+                return ("Sheath");
+            case BANNER_TYPE:
+                return ("Banner");
+            case LANCE_TYPE:
+                return ("Lance");
+            case SIPHON_TYPE:
+                return ("Siphon");
+            case TURRET_TYPE:
+                return ("Turret");
+            case CHARM_TYPE:
+                return ("Charm");
+            case DICE_TYPE:
+                return ("Dice");
         }
         return ("EquipmentType.InvalidType");
     }
 
 
 }
-}
+}//package kabam.rotmg.constants

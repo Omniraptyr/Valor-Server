@@ -31,8 +31,8 @@ namespace wServer.logic
                         new TimedTransition(10000, "taunt3")
                         ),
                     new State("taunt3",
-                        new Taunt("Do you wish to fight me?"),
-                        new ChatTransition("Start1", "Yes", "yes")
+                        new Taunt("Look me in the eye...Do you really wish to fight me?"),
+                        new PlayerTextTransition("Start1", "Yes, Daddy", 5, false, true)
                         )
                       ),
                     new State(

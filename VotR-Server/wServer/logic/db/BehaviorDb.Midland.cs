@@ -18,7 +18,7 @@ namespace wServer.logic
                         )
                     ),
                 new TierLoot(5, ItemType.Weapon, 0.02),
-                new ItemLoot("Magic Potion", 0.05)
+                new ItemLoot("Minor Magic Potion", 0.05)
             )
             .Init("Ice Sprite",
                 new State(
@@ -30,7 +30,7 @@ namespace wServer.logic
                         )
                     ),
                 new TierLoot(2, ItemType.Ability, 0.04),
-                new ItemLoot("Magic Potion", 0.05)
+                new ItemLoot("Minor Magic Potion", 0.05)
             )
             .Init("Magic Sprite",
                 new State(
@@ -42,7 +42,7 @@ namespace wServer.logic
                         )
                     ),
                 new TierLoot(6, ItemType.Armor, 0.01),
-                new ItemLoot("Magic Potion", 0.05)
+                new ItemLoot("Minor Magic Potion", 0.05)
             )
             .Init("Orc King",
                 new State(
@@ -59,7 +59,7 @@ namespace wServer.logic
                 new TierLoot(5, ItemType.Weapon, 0.05),
                 new TierLoot(5, ItemType.Armor, 0.21),
                 new TierLoot(6, ItemType.Armor, 0.035),
-                new ItemLoot("Magic Potion", 0.03),
+                new ItemLoot("Minor Magic Potion", 0.03),
                 new TierLoot(2, ItemType.Ring, 0.07),
                 new TierLoot(2, ItemType.Ability, 0.17)
             )
@@ -74,7 +74,7 @@ namespace wServer.logic
                         ),
                     new HealGroup(10, "OrcKings", 300)
                     ),
-                new ItemLoot("Health Potion", 0.03)
+                new ItemLoot("Minor Health Potion", 0.03)
             )
             .Init("Orc Mage",
                 new State(
@@ -97,7 +97,7 @@ namespace wServer.logic
                         new TimedTransition(3500, "circle_player")
                         )
                     ),
-                new ItemLoot("Magic Potion", 0.03)
+                new ItemLoot("Minor Magic Potion", 0.03)
             )
             .Init("Orc Warrior",
                 new State(
@@ -108,7 +108,7 @@ namespace wServer.logic
                             radiusVariance: 0.1)
                         )
                     ),
-                new ItemLoot("Health Potion", 0.03)
+                new ItemLoot("Minor Health Potion", 0.03)
             )
             .Init("Pink Blob",
                 new State(
@@ -120,8 +120,8 @@ namespace wServer.logic
                         ),
                     new Reproduce(densityMax: 5, densityRadius: 10)
                     ),
-                new ItemLoot("Health Potion", 0.03),
-                new ItemLoot("Magic Potion", 0.03)
+                new ItemLoot("Minor Health Potion", 0.03),
+                new ItemLoot("Minor Magic Potion", 0.03)
             )
             .Init("Gray Blob",
                 new State(
@@ -139,8 +139,8 @@ namespace wServer.logic
                         new Decay(0)
                         )
                     ),
-                new ItemLoot("Health Potion", 0.03),
-                new ItemLoot("Magic Potion", 0.03),
+                new ItemLoot("Minor Health Potion", 0.03),
+                new ItemLoot("Minor Magic Potion", 0.03),
                 new ItemLoot("Magic Mushroom", 0.005)
             )
             .Init("Big Green Slime",
@@ -162,8 +162,8 @@ namespace wServer.logic
                     new Wander(0.4),
                     new Protect(0.4, "Big Green Slime")
                     ),
-                new ItemLoot("Health Potion", 0.03),
-                new ItemLoot("Magic Potion", 0.03)
+                new ItemLoot("Minor Health Potion", 0.03),
+                new ItemLoot("Minor Magic Potion", 0.03)
             )
             .Init("Wasp Queen",
                 new State(
@@ -191,8 +191,8 @@ namespace wServer.logic
                 new TierLoot(3, ItemType.Ring, 0.001),
                 new TierLoot(2, ItemType.Ability, 0.28),
                 new TierLoot(3, ItemType.Ability, 0.01),
-                new ItemLoot("Health Potion", 0.15),
-                new ItemLoot("Magic Potion", 0.07)
+                new ItemLoot("Minor Health Potion", 0.15),
+                new ItemLoot("Minor Magic Potion", 0.07)
             )
             .Init("Worker Wasp",
                 new State(
@@ -256,8 +256,8 @@ namespace wServer.logic
                 new TierLoot(6, ItemType.Armor, 0.02),
                 new TierLoot(2, ItemType.Ring, 0.07),
                 new TierLoot(2, ItemType.Ability, 0.27),
-                new ItemLoot("Health Potion", 0.15),
-                new ItemLoot("Magic Potion", 0.10)
+                new ItemLoot("Minor Health Potion", 0.15),
+                new ItemLoot("Minor Magic Potion", 0.10)
             )
             .Init("Sludget",
                 new State(
@@ -327,8 +327,8 @@ namespace wServer.logic
                 new TierLoot(5, ItemType.Armor, 0.02),
                 new TierLoot(1, ItemType.Ring, 0.1),
                 new TierLoot(1, ItemType.Ability, 0.21),
-                new ItemLoot("Health Potion", 0.24),
-                new ItemLoot("Magic Potion", 0.07)
+                new ItemLoot("Minor Health Potion", 0.24),
+                new ItemLoot("Minor Magic Potion", 0.07)
             )
             .Init("Black Bat",
                 new State(
@@ -339,8 +339,8 @@ namespace wServer.logic
                     new Shoot(1),
                     new Reproduce(densityMax: 5, densityRadius: 20, coolDown: 20000)
                     ),
-                new ItemLoot("Health Potion", 0.01),
-                new ItemLoot("Magic Potion", 0.01),
+                new ItemLoot("Minor Health Potion", 0.01),
+                new ItemLoot("Minor Magic Potion", 0.01),
                 new TierLoot(2, ItemType.Armor, 0.01)
             )
             .Init("Red Spider",
@@ -349,8 +349,8 @@ namespace wServer.logic
                     new Shoot(9),
                     new Reproduce(densityMax: 3, densityRadius: 15, coolDown: 45000)
                     ),
-                new ItemLoot("Health Potion", 0.03),
-                new ItemLoot("Magic Potion", 0.03)
+                new ItemLoot("Minor Health Potion", 0.03),
+                new ItemLoot("Minor Magic Potion", 0.03)
             )
             .Init("Dwarf Axebearer",
                 new State(
@@ -377,7 +377,7 @@ namespace wServer.logic
                         new EntityNotExistsTransition("Dwarf King", 8, "Default")
                         )
                     ),
-                new ItemLoot("Health Potion", 0.04)
+                new ItemLoot("Minor Health Potion", 0.04)
             )
             .Init("Dwarf Mage",
                 new State(
@@ -430,7 +430,7 @@ namespace wServer.logic
                         new EntityNotExistsTransition("Dwarf King", 8, "Default")
                         )
                     ),
-                new ItemLoot("Magic Potion", 0.03)
+                new ItemLoot("Minor Magic Potion", 0.03)
             )
             .Init("Dwarf Veteran",
                 new State(
@@ -460,7 +460,7 @@ namespace wServer.logic
                         new EntityNotExistsTransition("Dwarf King", 8, "Default")
                         )
                     ),
-                new ItemLoot("Health Potion", 0.04)
+                new ItemLoot("Minor Health Potion", 0.04)
             )
             .Init("Dwarf King",
                 new State(
@@ -490,7 +490,7 @@ namespace wServer.logic
                 new TierLoot(5, ItemType.Armor, 0.02),
                 new TierLoot(1, ItemType.Ring, 0.11),
                 new TierLoot(1, ItemType.Ability, 0.38),
-                new ItemLoot("Magic Potion", 0.03)
+                new ItemLoot("Minor Magic Potion", 0.03)
             )
             .Init("Werelion",
                 new State(
@@ -532,8 +532,8 @@ namespace wServer.logic
                 new TierLoot(6, ItemType.Armor, 0.03),
                 new TierLoot(2, ItemType.Ring, 0.07),
                 new TierLoot(2, ItemType.Ability, 0.2),
-                new ItemLoot("Health Potion", 0.04),
-                new ItemLoot("Magic Potion", 0.05)
+                new ItemLoot("Minor Health Potion", 0.04),
+                new ItemLoot("Minor Magic Potion", 0.05)
             )
             .Init("Weretiger",
                 new State(
@@ -545,7 +545,7 @@ namespace wServer.logic
                         new Wander(0.6)
                         )
                     ),
-                new ItemLoot("Health Potion", 0.03)
+                new ItemLoot("Minor Health Potion", 0.03)
             )
             .Init("Wereleopard",
                 new State(
@@ -556,7 +556,7 @@ namespace wServer.logic
                         new Wander(1)
                         )
                     ),
-                new ItemLoot("Health Potion", 0.03)
+                new ItemLoot("Minor Health Potion", 0.03)
             )
             .Init("Werepanther",
                 new State(
@@ -590,7 +590,7 @@ namespace wServer.logic
                         new TimedTransition(4000, "idle")
                         )
                     ),
-                new ItemLoot("Magic Potion", 0.03)
+                new ItemLoot("Minor Magic Potion", 0.03)
             )
             .Init("Horned Drake",
                 new State(
@@ -637,8 +637,8 @@ namespace wServer.logic
                 new TierLoot(3, ItemType.Ring, 0.001),
                 new TierLoot(2, ItemType.Ability, 0.28),
                 new TierLoot(3, ItemType.Ability, 0.001),
-                new ItemLoot("Health Potion", 0.09),
-                new ItemLoot("Magic Potion", 0.12)
+                new ItemLoot("Minor Health Potion", 0.09),
+                new ItemLoot("Minor Magic Potion", 0.12)
             )
             .Init("Drake Baby",
                 new State(
@@ -690,7 +690,7 @@ namespace wServer.logic
                         new TimedTransition(2200, "fire1")
                         )
                     ),
-                new ItemLoot("Magic Potion", 0.04)
+                new ItemLoot("Minor Magic Potion", 0.04)
             )
             .Init("Sand Phantom",
                 new State(
@@ -787,8 +787,8 @@ namespace wServer.logic
                 new TierLoot(6, ItemType.Armor, 0.02),
                 new TierLoot(2, ItemType.Ring, 0.07),
                 new TierLoot(2, ItemType.Ability, 0.27),
-                new ItemLoot("Health Potion", 0.12),
-                new ItemLoot("Magic Potion", 0.10)
+                new ItemLoot("Minor Health Potion", 0.12),
+                new ItemLoot("Minor Magic Potion", 0.10)
             )
             .Init("Tawny Warg",
                 new State(
@@ -799,7 +799,7 @@ namespace wServer.logic
                         new Wander(0.8)
                         )
                     ),
-                new ItemLoot("Health Potion", 0.04)
+                new ItemLoot("Minor Health Potion", 0.04)
             )
             .Init("Demon Warg",
                 new State(
@@ -809,7 +809,7 @@ namespace wServer.logic
                         new Wander(0.8)
                         )
                     ),
-                new ItemLoot("Health Potion", 0.04)
+                new ItemLoot("Minor Health Potion", 0.04)
             )
             .Init("Desert Werewolf",
                 new State(
@@ -840,7 +840,7 @@ namespace wServer.logic
                 new TierLoot(5, ItemType.Armor, 0.02),
                 new TierLoot(1, ItemType.Ring, 0.11),
                 new TierLoot(1, ItemType.Ability, 0.38),
-                new ItemLoot("Magic Potion", 0.03)
+                new ItemLoot("Minor Magic Potion", 0.03)
             );
     }
 }

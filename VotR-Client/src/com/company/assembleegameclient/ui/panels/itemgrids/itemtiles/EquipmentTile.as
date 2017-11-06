@@ -106,6 +106,27 @@ public class EquipmentTile extends InteractiveItemTile {
             case ItemConstants.SHURIKEN_TYPE:
                 _local2 = AssetLibrary.getImageFromSet("lofiObj3", 555);
                 break;
+            case ItemConstants.SHEATH_TYPE:
+                _local2 = AssetLibrary.getImageFromSet("d3LofiObjEmbed", 112);
+                break;
+            case ItemConstants.BANNER_TYPE:
+                _local2 = AssetLibrary.getImageFromSet("lofiObj6", 208);
+                break;
+            case ItemConstants.LANCE_TYPE:
+                _local2 = AssetLibrary.getImageFromSet("d3LofiObjEmbed", 832);
+                break;
+            case ItemConstants.SIPHON_TYPE:
+                _local2 = AssetLibrary.getImageFromSet("lofiObj6", 224);
+                break;
+            /*case ItemConstants.TURRET_TYPE:
+                _local2 = AssetLibrary.getImageFromSet("lofiObj6", 240);
+                break;
+            case ItemConstants.CHARM_TYPE:
+                _local2 = AssetLibrary.getImageFromSet("d3LofiObjEmbed", 1027);
+                break;
+            case ItemConstants.DICE_TYPE:
+                _local2 = AssetLibrary.getImageFromSet("d3LofiObjEmbed", 1041);
+                break;*/
         }
         if (_local2 != null) {
             this.backgroundDetail = new Bitmap(_local2);

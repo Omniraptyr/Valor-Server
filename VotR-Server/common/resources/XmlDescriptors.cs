@@ -85,7 +85,9 @@ namespace common.resources
         Exhausted =         (ulong)1 << 51,
         Surged =            (ulong)1 << 52,
         Corrupted =         (ulong)1 << 53,
-        Deathbound =         (ulong)1 << 54
+        Deathbound =         (ulong)1 << 54,
+        SamuraiBerserk = (ulong)1 << 55,
+        DrakzixCharging = (ulong)1 << 56
     }
 
     public enum ConditionEffectIndex
@@ -144,7 +146,9 @@ namespace common.resources
         Exhausted = 51,
         Surged = 52,
         Corrupted = 53,
-        Deathbound = 54
+        Deathbound = 54,
+        SamuraiBerserk = 55,
+        DrakzixCharging = 56
     }
 
     public class ConditionEffect

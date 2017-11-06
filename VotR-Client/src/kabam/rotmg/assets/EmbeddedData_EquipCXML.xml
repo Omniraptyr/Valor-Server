@@ -2,6 +2,40 @@
 
 
 <Objects>
+    <Object type="0xa22" id="Health Potion">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj2</File>
+            <Index>0x32</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Tier>1</Tier>
+        <Description>A potion that instantly restores health points.</Description>
+        <Sound>use_potion</Sound>
+        <Activate amount="100">Heal</Activate>
+        <Consumable/>
+        <Potion/>
+        <BagType>0</BagType>
+        <feedPower>5</feedPower>
+    </Object>
+    <Object type="0xa23" id="Magic Potion">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj2</File>
+            <Index>0x33</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Tier>1</Tier>
+        <Description>A potion that instantly restores magic points.</Description>
+        <Sound>use_potion</Sound>
+        <Activate amount="100">Magic</Activate>
+        <Consumable/>
+        <Potion/>
+        <BagType>0</BagType>
+        <feedPower>5</feedPower>
+    </Object>
     <Object type="0xc85" id="Common Feline Egg">
         <Class>Equipment</Class>
         <Item/>

@@ -260,10 +260,10 @@ namespace wServer.logic
                 new TierLoot(2, ItemType.Ability, 0.7),
                 new TierLoot(3, ItemType.Ability, 0.16),
                 new TierLoot(4, ItemType.Ability, 0.02),
-                new ItemLoot("Charcoal", 0.7),
+                new ItemLoot("Minor Magic Potion", 0.7),
                 new ItemLoot("50 Gold", 0.05),
                 new ItemLoot("Pepper", 0.05),
-                new ItemLoot("Wheat", 0.7),
+                new ItemLoot("Minor Health Potion", 0.7),
                 new ItemLoot("Ghost Remnant", 0.1)
             )
             .Init("Small Ghost",
@@ -289,7 +289,7 @@ namespace wServer.logic
                         ),
                     new Decay(160000)
                     ),
-                new ItemLoot("Wheat", 0.02),
+                new ItemLoot("Minor Health Potion", 0.02),
                 new ItemLoot("Ring of Magic", 0.02),
                 new ItemLoot("Ring of Attack", 0.02)
             )
@@ -321,7 +321,7 @@ namespace wServer.logic
                         ),
                     new Decay(160000)
                     ),
-                new ItemLoot("Wheat", 0.02),
+                new ItemLoot("Minor Health Potion", 0.02),
                 new ItemLoot("Ring of Speed", 0.02),
                 new ItemLoot("Ring of Attack", 0.02),
                 new ItemLoot("Iron Quiver", 0.02)
@@ -364,7 +364,7 @@ namespace wServer.logic
                         ),
                     new Decay(160000)
                     ),
-                new ItemLoot("Wheat", 0.02),
+                new ItemLoot("Minor Health Potion", 0.02),
                 new ItemLoot("Blue Drake Egg", 0.02),
                 new ItemLoot("Yellow Drake Egg", 0.02)
             )

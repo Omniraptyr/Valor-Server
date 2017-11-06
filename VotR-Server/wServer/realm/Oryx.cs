@@ -44,7 +44,8 @@ namespace wServer.realm
             Tuple.Create("Hermit God", (ISetPiece) new Hermit()),
             Tuple.Create("Ghost Ship", (ISetPiece) new GhostShip()),
             Tuple.Create("shtrs Defense System", (ISetPiece) new Avatar()),
-            
+            //Tuple.Create("Yazanahar", (ISetPiece) new Yazanahar()),
+
         };
 
         private readonly List<Tuple<string, ISetPiece>> _rareEvents = new List<Tuple<string, ISetPiece>>()
@@ -343,6 +344,15 @@ namespace wServer.realm
                     "Enjoy your little victory while it lasts, {PLAYER}!"
                 }
             }),
+           Tuple.Create("Yazanahar", new TauntData
+                {
+                    Spawn = new string[] {
+                        "The ancient guardian will not rise to you fools."
+                    },
+                    Killed = new string[] {
+                        "You have released power beyond your comprehension, {PLAYER}."
+                    }
+                }),
             Tuple.Create("Zombie Horde", new TauntData()
             {
                 Spawn = new string[] {

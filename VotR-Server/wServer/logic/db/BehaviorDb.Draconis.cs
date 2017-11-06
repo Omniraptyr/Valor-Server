@@ -63,7 +63,7 @@ namespace wServer.logic
                 new State(
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("idle",
-                        new ChatTransition("goToRedDragon", "Red", "red", "RED", "CornRed"),
+                        new PlayerTextTransition("goToRedDragon", "Red", 99, false, true),
                         new Orbit(0.2, 2.5, 20, "NM Altar of Draconis")
                     ),
                     new State("goToRedDragon",
@@ -101,7 +101,7 @@ namespace wServer.logic
                 new State(
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("idle",
-                        new ChatTransition("goToBlueDragon", "Blue", "blue", "BLUE", "CornBlue"),
+                        new PlayerTextTransition("goToBlueDragon", "Blue", 99, false, true),
                         new Orbit(0.2, 2.5, 20, "NM Altar of Draconis")
                     ),
                     new State("goToBlueDragon",
@@ -138,7 +138,7 @@ namespace wServer.logic
                 new State(
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("idle",
-                        new ChatTransition("goToGreenDragon", "Green", "green", "GREEN", "CornGreen"),
+                        new PlayerTextTransition("goToGreenDragon", "Green", 99, false, true),
                         new Orbit(0.2, 2.5, 20, "NM Altar of Draconis")
                     ),
                     new State("goToGreenDragon",
@@ -175,7 +175,7 @@ namespace wServer.logic
                 new State(
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("idle",
-                        new ChatTransition("goToBlackDragon", "Black", "black", "BLACK", "niggabitchnigga"),
+                        new PlayerTextTransition("goToBlackDragon", "Black", 99, false, true),
                         new Orbit(0.3, 2.5, 20, "NM Altar of Draconis")
                     ),
                     new State("goToBlackDragon",

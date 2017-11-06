@@ -14,7 +14,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>2, 13, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa14, 0xa56, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xa14, 0xa56, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="720">150</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="50">10</Attack>
@@ -51,7 +51,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>3, 15, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa1a, 0xa61, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xa1a, 0xa61, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="700">130</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="75">12</Attack>
@@ -88,7 +88,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>17, 11, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa97, 0xa2e, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xa97, 0xa2e, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="670">100</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
         <Attack max="75">12</Attack>
@@ -124,7 +124,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>8, 4, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa04, 0xa31, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xa04, 0xa31, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="670">100</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
         <Attack max="50">12</Attack>
@@ -161,7 +161,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>1, 16, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa00, 0x0a66, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xa00, 0x0a66, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="770">200</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="75">15</Attack>
@@ -198,7 +198,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>1, 5, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa00, 0x0a08, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xa00, 0x0a08, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="770">200</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="50">15</Attack>
@@ -235,7 +235,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>1, 12, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa00, 0xa52, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xa00, 0xa52, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="770">200</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="50">12</Attack>
@@ -273,7 +273,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>2, 18, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa14, 0xaa3, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xa14, 0xaa3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="720">150</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="60">12</Attack>
@@ -311,7 +311,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>17, 19, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa97, 0xaaa, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xa97, 0xaaa, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="670">100</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
         <Attack max="65">12</Attack>
@@ -349,7 +349,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>3, 20, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa1a, 0xab1, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xa1a, 0xab1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="700">130</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="75">12</Attack>
@@ -387,7 +387,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>17, 21, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa97, 0xae4, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xa97, 0xae4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="670">100</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
         <Attack max="60">10</Attack>
@@ -425,7 +425,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>2, 22, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa14, 0xae3, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xa14, 0xae3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="720">150</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="65">10</Attack>
@@ -463,7 +463,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>8, 23, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa04, 0xae5, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xa04, 0xae5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="670">100</MaxHitPoints>
         <MaxMagicPoints max="425">100</MaxMagicPoints>
         <Attack max="70">10</Attack>
@@ -501,7 +501,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>24, 25, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xc44, 0xc53, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xc44, 0xc53, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="720">150</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="70">15</Attack>
@@ -527,7 +527,7 @@
         <UnlockCost>999</UnlockCost>
         <DisplayId>{players.Ninja}</DisplayId>
     </Object>
-    <!--<Object type="0x0327" id="Samurai">
+    <Object type="0x0327" id="Samurai">
         <Class>Player</Class>
         <Description>The samurai uses his sheath to slice up foes at incredible speeds and finish off with a devastating blow.</Description>
         <AnimatedTexture>
@@ -539,7 +539,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>24, 27, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xc44, 0x185a, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xc44, 0x185a, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="720">150</MaxHitPoints>
         <MaxMagicPoints max="225">100</MaxMagicPoints>
         <Attack max="65">15</Attack>
@@ -577,7 +577,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>29, 28, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0x52b1, 0x51ab, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0x52b1, 0x51ab, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="800">175</MaxHitPoints>
         <MaxMagicPoints max="125">72</MaxMagicPoints>
         <Attack max="85">15</Attack>
@@ -604,10 +604,10 @@
         <UnlockCost>999</UnlockCost>
         <DisplayId>Templar</DisplayId>
     </Object>
-    <Object type="0x0329" id="Drakzix">
+    <!--<Object type="0x0329" id="Drakzix">
         <Class>Player</Class>
         <Description>Ancient species that live in the depths of the unspeakable who have turned on their lord, Oryx. They have the ability to hold infinite power and seek vengeance.</Description>
-        <AnimatedTexture>e swo
+        <AnimatedTexture>
             <File>players</File>
             <Index>16</Index>
         </AnimatedTexture>
@@ -616,7 +616,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>8, 30, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa04, 0x52ca, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xa04, 0x52ca, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="520">100</MaxHitPoints>
         <MaxMagicPoints max="900">200</MaxMagicPoints>
         <Attack max="50">15</Attack>
@@ -624,7 +624,7 @@
         <Speed max="40">5</Speed>
         <Dexterity max="55">12</Dexterity>
         <HpRegen max="35">2</HpRegen>
-        <MpRegen max="76">2</MpRegen>
+        <MpRegen max="80">2</MpRegen>
         <Might max="50">2</Might>
         <Luck max="30">2</Luck>
         <LevelIncrease min="8" max="12">MaxHitPoints</LevelIncrease>
@@ -654,7 +654,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>29, 31, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0x52b1, 0x55c1, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0x52b1, 0x55c1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="670">100</MaxHitPoints>
         <MaxMagicPoints max="300">100</MaxMagicPoints>
         <Attack max="70">12</Attack>
@@ -691,7 +691,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>24, 32, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xc44, 0x5811, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xc44, 0x5811, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="690">130</MaxHitPoints>
         <MaxMagicPoints max="410">100</MaxMagicPoints>
         <Attack max="70">10</Attack>
@@ -728,7 +728,7 @@
         <Player/>
         <BloodProb>1.0</BloodProb>
         <SlotTypes>2, 33, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa14, 0x5829, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <Equipment>0xa14, 0x5829, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="660">100</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
         <Attack max="55">10</Attack>

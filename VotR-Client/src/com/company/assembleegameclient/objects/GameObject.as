@@ -524,6 +524,10 @@ public class GameObject extends BasicObject {
     {
         return (this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.HIDDEN_BIT) != 0;
     }
+
+    public function isSamuraiBerserk():Boolean {
+        return (!(((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.SAMURAIBERSERK_BIT) == 0)));
+    }
     public function isSafe(_arg1:int = 20):Boolean {
         var _local2:GameObject;
         var _local3:int;

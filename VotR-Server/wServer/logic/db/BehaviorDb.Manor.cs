@@ -61,7 +61,7 @@ namespace wServer.logic
                     new Follow(1.25, 8, 1, coolDown: 275),
                     new Shoot(10, count: 5, shootAngle: 7, coolDown: 2000)
                     ),
-                new ItemLoot("Charcoal", 0.05),
+                new ItemLoot("Minor Magic Potion", 0.05),
                 new Threshold(0.5,
                     new ItemLoot("Timelock Orb", 0.01)
                     )
@@ -77,7 +77,7 @@ namespace wServer.logic
                     new Follow(0.35, 8, 1),
                     new Shoot(10, count: 6, shootAngle: 2, coolDown: 900)
                     ),
-                new ItemLoot("Wheat", 0.05),
+                new ItemLoot("Minor Health Potion", 0.05),
                 new Threshold(0.5,
                     new ItemLoot("Steel Helm", 0.01)
                     )
@@ -87,7 +87,7 @@ namespace wServer.logic
                     new Follow(0.35, 8, 1),
                     new Shoot(10, count: 5, shootAngle: 6, coolDown: 1000)
                     ),
-                new ItemLoot("Wheat", 0.05),
+                new ItemLoot("Minor Health Potion", 0.05),
                 new Threshold(0.5,
                     new ItemLoot("Steel Helm", 0.01)
                     )
@@ -98,7 +98,7 @@ namespace wServer.logic
                     new Shoot(10, count: 5, shootAngle: 2, projectileIndex: 1, coolDown: 1000),
                     new Shoot(10, count: 6, shootAngle: 90, projectileIndex: 0, coolDown: 1500)
                     ),
-                new ItemLoot("Wheat", 0.05),
+                new ItemLoot("Minor Health Potion", 0.05),
                 new Threshold(0.5,
                     new ItemLoot("Bone Dagger", 0.01),
                     new ItemLoot("Wand of Death", 0.05),
@@ -114,7 +114,7 @@ namespace wServer.logic
                     new Shoot(10, count: 1, projectileIndex: 0, predictive: 7, coolDown: 1000),
                     new Shoot(10, count: 1, projectileIndex: 1, coolDown: 750)
                     ),
-                new ItemLoot("Charcoal", 0.05),
+                new ItemLoot("Minor Magic Potion", 0.05),
                 new Threshold(0.5,
                     new ItemLoot("Glass Sword", 0.01),
                     new ItemLoot("Staff of Destruction", 0.01),
@@ -127,7 +127,7 @@ namespace wServer.logic
                     new Spawn("Lil Feratu", initialSpawn: 1, maxChildren: 2, coolDown: 2250),
                     new Shoot(10, count: 1, projectileIndex: 0, coolDown: 700)
                     ),
-                new ItemLoot("Charcoal", 0.05)
+                new ItemLoot("Minor Magic Potion", 0.05)
             )
                               .Init("RockBomb",
                         new State(

@@ -160,8 +160,8 @@ namespace wServer.logic
                         new Shoot(10, count: 5, shootAngle: 10, coolDown: 1500)
                         )
                     ),
-                new ItemLoot("Health Potion", 0.1),
-                new ItemLoot("Magic Potion", 0.1)
+                new ItemLoot("Minor Health Potion", 0.1),
+                new ItemLoot("Minor Magic Potion", 0.1)
             )
             .Init("Knight of the Lost Lands",
                 new State(
@@ -172,8 +172,8 @@ namespace wServer.logic
                         ),
                     new Shoot(13, 1, coolDown: 700)
                     ),
-                new ItemLoot("Health Potion", 0.1),
-                new ItemLoot("Magic Potion", 0.1)
+                new ItemLoot("Minor Health Potion", 0.1),
+                new ItemLoot("Minor Magic Potion", 0.1)
             )
             ;
     }

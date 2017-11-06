@@ -106,6 +106,7 @@
     <Compile Include="logic\behaviors\OnDeathBehavior.cs" />
     <Compile Include="logic\behaviors\RealmPortalDrop.cs" />
     <Compile Include="logic\behaviors\RemoveEntity.cs" />
+    <Compile Include="logic\behaviors\SetNoXP.cs" />
     <Compile Include="logic\db\BehaviorDb.Abyss.cs" />
     <Compile Include="logic\db\BehaviorDb.Aldragine.cs" />
     <Compile Include="logic\db\BehaviorDb.Avatar.cs" />
@@ -188,7 +189,8 @@
     <Compile Include="logic\db\BehaviorDb.Unspeakable.cs" />
     <Compile Include="logic\db\BehaviorDb.Woodland.cs" />
     <Compile Include="logic\db\BehaviorDb.Yazanahar.cs" />
-    <Compile Include="logic\transitions\ChatTransition.cs" />
+    <Compile Include="logic\loot\Loots.cs" />
+    <Compile Include="logic\loot\MobDrops.cs" />
     <Compile Include="logic\transitions\DamageTakenTransition.cs" />
     <Compile Include="networking\handlers\ForgeItemHandler.cs" />
     <Compile Include="networking\handlers\LaunchRaidHandler.cs" />
@@ -207,6 +209,7 @@
     <Compile Include="networking\packets\outgoing\KeyInfoResponse.cs" />
     <Compile Include="networking\packets\outgoing\SorForge.cs" />
     <Compile Include="networking\packets\outgoing\UnboxResult.cs" />
+    <Compile Include="realm\entities\Banner.cs" />
     <Compile Include="realm\entities\player\Player.Powers.cs" />
     <Compile Include="realm\entities\player\Player.Unboxing.cs" />
     <Compile Include="realm\ISControl.cs" />
@@ -500,8 +503,6 @@
     <Compile Include="logic\Cooldown.cs" />
     <Compile Include="logic\DamageCounter.cs" />
     <Compile Include="logic\CycleBehavior.cs" />
-    <Compile Include="logic\loot\MobDrops.cs" />
-    <Compile Include="logic\loot\Loots.cs" />
     <Compile Include="logic\State.cs" />
     <Compile Include="logic\Transition.cs" />
     <Compile Include="logic\transitions\NoPlayerWithinTransition.cs" />

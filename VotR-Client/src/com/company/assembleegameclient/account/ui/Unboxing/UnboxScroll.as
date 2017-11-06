@@ -33,7 +33,7 @@ public class UnboxScroll extends Sprite {
 
     private function draw():void {
         graphics.clear();
-        graphics.beginFill(0x220022, 1);
+        graphics.beginGradientFill("linear", [0x000000, 0x1a1919, 0x272727], null, null, null, "pad", "rgb");
         graphics.drawRect(0, 0, WIDTH, HEIGHT);
         graphics.endFill();
         var _local1:GraphicsSolidFill = new GraphicsSolidFill(0xFFFFFF, 1);

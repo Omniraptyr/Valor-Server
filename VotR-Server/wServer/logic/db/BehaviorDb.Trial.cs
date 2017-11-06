@@ -33,7 +33,7 @@ namespace wServer.logic
                     new Shoot(10, count: 8, projectileIndex: 2, coolDown: 4000)
                        )
                     ),
-                new ItemLoot("Charcoal", 0.25)
+                new ItemLoot("Minor Magic Potion", 0.25)
               )
 
         .Init("CR Guardian of Illusionist",
@@ -82,8 +82,8 @@ namespace wServer.logic
                         new TimedTransition(5000, "ShootStaff")
                         )
                     ),
-                new ItemLoot("Charcoal", 0.25),
-                new ItemLoot("Wheat", 0.25)
+                new ItemLoot("Minor Magic Potion", 0.25),
+                new ItemLoot("Minor Health Potion", 0.25)
                  )
            .Init("CR Rogue of Illusionist",
                 new State(

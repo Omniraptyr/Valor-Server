@@ -92,6 +92,22 @@ namespace wServer.realm.entities
                     ApplyConditionEffect(ConditionEffectIndex.NinjaSpeedy, 0);
             }
 
+            if (HasConditionEffect(ConditionEffects.SamuraiBerserk))
+            {
+                MP = Math.Max(0, (int)(MP - 10 * time.ElaspedMsDelta / 1000f));
+
+                if (MP == 0)
+                    ApplyConditionEffect(ConditionEffectIndex.SamuraiBerserk, 0);
+            }
+
+            if (HasConditionEffect(ConditionEffects.DrakzixCharging))
+            {
+                HP = Math.Max(0, (int)(HP - 10 * time.ElaspedMsDelta / 1000f));
+
+                if (HP == 10)
+                    ApplyConditionEffect(ConditionEffectIndex.DrakzixCharging, 0);
+            }
+
             if (_newbieTime > 0)
             {
                 _newbieTime -= time.ElaspedMsDelta;
@@ -119,7 +135,8 @@ namespace wServer.realm.entities
         bool CanMpRegen()
         {
             if (HasConditionEffect(ConditionEffects.Quiet) ||
-                HasConditionEffect(ConditionEffects.NinjaSpeedy))
+                    HasConditionEffect(ConditionEffects.NinjaSpeedy) || 
+                        HasConditionEffect(ConditionEffects.SamuraiBerserk))
                 return false;
             
             return true;

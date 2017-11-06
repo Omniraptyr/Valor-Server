@@ -39,7 +39,7 @@ namespace wServer.logic
                         ),
                     new Shoot(10)
                     ),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Minor Health Potion", 0.05)
             )
             .Init("Birdman",
                 new State(
@@ -50,7 +50,7 @@ namespace wServer.logic
                         ),
                     new Shoot(10, predictive: 0.5)
                     ),
-                new ItemLoot("Charcoal", 0.05)
+                new ItemLoot("Minor Magic Potion", 0.05)
             )
             .Init("Phoenix Egg",
                 new State(

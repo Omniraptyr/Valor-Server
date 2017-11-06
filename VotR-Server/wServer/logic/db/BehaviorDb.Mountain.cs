@@ -305,8 +305,8 @@ namespace wServer.logic
                     ),
                 new Threshold(.01,
                     new TierLoot(6, ItemType.Weapon, 0.01),
-                    new ItemLoot("Health Potion", 0.04),
-                    new ItemLoot("Magic Potion", 0.01),
+                    new ItemLoot("Minor Health Potion", 0.04),
+                    new ItemLoot("Minor Magic Potion", 0.01),
                     new ItemLoot("Tincture of Life", 0.01)
                     ),
                 new Threshold(0.04,
@@ -336,8 +336,8 @@ namespace wServer.logic
                     ),
                 new Threshold(.01,
                     new TierLoot(6, ItemType.Weapon, 0.01),
-                    new ItemLoot("Health Potion", 0.04),
-                    new ItemLoot("Magic Potion", 0.01)
+                    new ItemLoot("Minor Health Potion", 0.04),
+                    new ItemLoot("Minor Magic Potion", 0.01)
                     ),
                 new Threshold(0.04,
                     new ItemLoot("Potion of Attack", 0.03)
@@ -460,8 +460,8 @@ namespace wServer.logic
                 new Threshold(.01,
                     new ItemLoot("Potion of Defense", 0.07),
                     new TierLoot(6, ItemType.Weapon, 0.01),
-                    new ItemLoot("Health Potion", 0.04),
-                    new ItemLoot("Magic Potion", 0.01)
+                    new ItemLoot("Minor Health Potion", 0.04),
+                    new ItemLoot("Minor Magic Potion", 0.01)
                     )
             )
             .Init("Lucky Djinn",

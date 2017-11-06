@@ -38,8 +38,8 @@ namespace wServer.logic
                 new TierLoot(2, ItemType.Armor, 0.3),
                 new TierLoot(1, ItemType.Ring, 0.11),
                 new TierLoot(1, ItemType.Ability, 0.39),
-                new ItemLoot("Health Potion", 0.02),
-                new ItemLoot("Magic Potion", 0.02)
+                new ItemLoot("Minor Health Potion", 0.02),
+                new ItemLoot("Minor Magic Potion", 0.02)
             )
             .Init("Hobbit Archer",
                 new State(
@@ -66,7 +66,7 @@ namespace wServer.logic
                         new TimedTransition(400, "run1")
                         )
                     ),
-                new ItemLoot("Health Potion", 0.04)
+                new ItemLoot("Minor Health Potion", 0.04)
             )
             .Init("Hobbit Rogue",
                 new State(
@@ -77,7 +77,7 @@ namespace wServer.logic
                         new Wander(0.4)
                         )
                     ),
-                new ItemLoot("Health Potion", 0.04)
+                new ItemLoot("Minor Health Potion", 0.04)
             )
             .Init("Undead Hobbit Mage",
                 new State(
@@ -109,7 +109,7 @@ namespace wServer.logic
                 new TierLoot(3, ItemType.Armor, 0.3),
                 new TierLoot(1, ItemType.Ring, 0.12),
                 new TierLoot(1, ItemType.Ability, 0.39),
-                new ItemLoot("Magic Potion", 0.03)
+                new ItemLoot("Minor Magic Potion", 0.03)
             )
             .Init("Undead Hobbit Archer",
                 new State(
@@ -138,7 +138,7 @@ namespace wServer.logic
                         new TimedTransition(400, "run1")
                         )
                     ),
-                new ItemLoot("Magic Potion", 0.03)
+                new ItemLoot("Minor Magic Potion", 0.03)
             )
             .Init("Undead Hobbit Rogue",
                 new State(
@@ -149,7 +149,7 @@ namespace wServer.logic
                         new Wander(0.4)
                         )
                     ),
-                new ItemLoot("Health Potion", 0.04)
+                new ItemLoot("Minor Health Potion", 0.04)
             )
             .Init("Sumo Master",
                 new State(
@@ -193,8 +193,8 @@ namespace wServer.logic
                             )
                         )
                     ),
-                new ItemLoot("Health Potion", 0.05),
-                new ItemLoot("Magic Potion", 0.05)
+                new ItemLoot("Minor Health Potion", 0.05),
+                new ItemLoot("Minor Magic Potion", 0.05)
             )
             .Init("Lil Sumo",
                 new State(
@@ -204,8 +204,8 @@ namespace wServer.logic
                         new Wander(0.4)
                         )
                     ),
-                new ItemLoot("Health Potion", 0.02),
-                new ItemLoot("Magic Potion", 0.02)
+                new ItemLoot("Minor Health Potion", 0.02),
+                new ItemLoot("Minor Magic Potion", 0.02)
             )
             .Init("Elf Wizard",
                 new State(
@@ -247,8 +247,8 @@ namespace wServer.logic
                 new TierLoot(2, ItemType.Armor, 0.36),
                 new TierLoot(1, ItemType.Ring, 0.11),
                 new TierLoot(1, ItemType.Ability, 0.39),
-                new ItemLoot("Health Potion", 0.02),
-                new ItemLoot("Magic Potion", 0.02)
+                new ItemLoot("Minor Health Potion", 0.02),
+                new ItemLoot("Minor Magic Potion", 0.02)
             )
             .Init("Elf Archer",
                 new State(
@@ -259,7 +259,7 @@ namespace wServer.logic
                         new Wander(0.4)
                         )
                     ),
-                new ItemLoot("Health Potion", 0.04)
+                new ItemLoot("Minor Health Potion", 0.04)
             )
             .Init("Elf Swordsman",
                 new State(
@@ -271,7 +271,7 @@ namespace wServer.logic
                         new Wander(0.4)
                         )
                     ),
-                new ItemLoot("Health Potion", 0.04)
+                new ItemLoot("Minor Health Potion", 0.04)
             )
             .Init("Elf Mage",
                 new State(
@@ -282,7 +282,7 @@ namespace wServer.logic
                         new Wander(0.4)
                         )
                     ),
-                new ItemLoot("Magic Potion", 0.03)
+                new ItemLoot("Minor Magic Potion", 0.03)
             )
             .Init("Goblin Rogue",
                 new State(
@@ -301,7 +301,7 @@ namespace wServer.logic
                         new EntityNotExistsTransition("Goblin Mage", 15, "protect")
                         )
                     ),
-                new ItemLoot("Health Potion", 0.04)
+                new ItemLoot("Minor Health Potion", 0.04)
             )
             .Init("Goblin Warrior",
                 new State(
@@ -321,7 +321,7 @@ namespace wServer.logic
                         ),
                     new DropPortalOnDeath("Pirate Cave Portal", .01)
                     ),
-                new ItemLoot("Health Potion", 0.04)
+                new ItemLoot("Minor Health Potion", 0.04)
             )
             .Init("Goblin Mage",
                 new State(
@@ -354,8 +354,8 @@ namespace wServer.logic
                 new TierLoot(3, ItemType.Armor, 0.3),
                 new TierLoot(1, ItemType.Ring, 0.09),
                 new TierLoot(1, ItemType.Ability, 0.38),
-                new ItemLoot("Health Potion", 0.02),
-                new ItemLoot("Magic Potion", 0.02)
+                new ItemLoot("Minor Health Potion", 0.02),
+                new ItemLoot("Minor Magic Potion", 0.02)
             )
             .Init("Easily Enraged Bunny",
                 new State(
@@ -388,8 +388,8 @@ namespace wServer.logic
                         new Wander(0.85)
                         )
                     ),
-                new ItemLoot("Health Potion", 0.01),
-                new ItemLoot("Magic Potion", 0.02)
+                new ItemLoot("Minor Health Potion", 0.01),
+                new ItemLoot("Minor Magic Potion", 0.02)
             )
             .Init("Forest Nymph",
                 new State(
@@ -410,8 +410,8 @@ namespace wServer.logic
                         ),
                     new DropPortalOnDeath("Pirate Cave Portal", .01)
                     ),
-                new ItemLoot("Health Potion", 0.03),
-                new ItemLoot("Magic Potion", 0.02)
+                new ItemLoot("Minor Health Potion", 0.03),
+                new ItemLoot("Minor Magic Potion", 0.02)
             )
             .Init("Sandsman King",
                 new State(
@@ -428,7 +428,7 @@ namespace wServer.logic
                 new TierLoot(3, ItemType.Armor, 0.3),
                 new TierLoot(1, ItemType.Ring, 0.11),
                 new TierLoot(1, ItemType.Ability, 0.39),
-                new ItemLoot("Health Potion", 0.04)
+                new ItemLoot("Minor Health Potion", 0.04)
             )
             .Init("Sandsman Sorcerer",
                 new State(
@@ -439,7 +439,7 @@ namespace wServer.logic
                         new Wander(0.4)
                         )
                     ),
-                new ItemLoot("Magic Potion", 0.03)
+                new ItemLoot("Minor Magic Potion", 0.03)
             )
             .Init("Sandsman Archer",
                 new State(
@@ -449,7 +449,7 @@ namespace wServer.logic
                         new Wander(0.4)
                         )
                     ),
-                new ItemLoot("Magic Potion", 0.03)
+                new ItemLoot("Minor Magic Potion", 0.03)
             )
             .Init("Giant Crab",
                 new State(
@@ -501,8 +501,8 @@ namespace wServer.logic
                 new TierLoot(2, ItemType.Armor, 0.19),
                 new TierLoot(1, ItemType.Ring, 0.05),
                 new TierLoot(1, ItemType.Ability, 0.28),
-                new ItemLoot("Health Potion", 0.02),
-                new ItemLoot("Magic Potion", 0.02)
+                new ItemLoot("Minor Health Potion", 0.02),
+                new ItemLoot("Minor Magic Potion", 0.02)
             )
             .Init("Sand Devil",
                 new State(

@@ -1001,29 +1001,30 @@ namespace wServer.realm.entities
                       src.ObjectDesc.ObjectId,
                       src);
         }
+
+
+
         public void Unbox(int type)
         {
+            var acc = Client.Account;
             Random rand1 = new Random();
-
             ushort[] items = new ushort[50];
             for (int x = 0; x < 50; x++)
             {
                 var result = GetUnboxResult(type, rand1);
                 items[x] = result.Item1.ObjectType;
             }
-            for (int i = 4; i < Inventory.Length; i++)
-                if (Inventory[i] == null)
-                {
-                    Inventory[i] = Manager.Resources.GameData.Items[items[45]];
-                    SaveToCharacter();
-                    break;
-                };
-            SaveToCharacter();
+            Manager.Database.AddGift(acc, items[45]);
 
             Client.SendPacket(new UnboxResult()
             {
                 Items = items
             });
+            Owner.Timers.Add(new WorldTimer(13000, (world, t) =>
+            {
+                foreach (var player in Owner.Players.Values)
+                    player.SendHelp(Name + " has unboxed a " + Manager.Resources.GameData.Items[items[45]].ObjectId + " from the " + LootboxType(type) + "!");
+            }));
         }
 
         void GenerateGravestone(bool phantomDeath = false)

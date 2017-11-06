@@ -17,7 +17,7 @@ namespace wServer.logic
                     new Shoot(3, coolDown: 2500)
                     ),
                 new TierLoot(1, ItemType.Weapon, 0.2),
-                new ItemLoot("Health Potion", 0.03)
+                new ItemLoot("Minor Health Potion", 0.03)
             )
             .Init("Piratess",
                 new State(
@@ -30,7 +30,7 @@ namespace wServer.logic
                     new Reproduce("Piratess", densityMax: 5)
                     ),
                 new TierLoot(1, ItemType.Armor, 0.2),
-                new ItemLoot("Health Potion", 0.03)
+                new ItemLoot("Minor Health Potion", 0.03)
             )
             .Init("Snake",
                 new State(
@@ -38,8 +38,8 @@ namespace wServer.logic
                     new Shoot(10, coolDown: 2000),
                     new Reproduce(densityMax: 5)
                     ),
-                new ItemLoot("Health Potion", 0.03),
-                new ItemLoot("Magic Potion", 0.02)
+                new ItemLoot("Minor Health Potion", 0.03),
+                new ItemLoot("Minor Magic Potion", 0.02)
             )
             .Init("Poison Scorpion",
                 new State(
@@ -58,8 +58,8 @@ namespace wServer.logic
                     new Reproduce("Poison Scorpion", coolDown: 10000, densityMax: 10),
                     new Reproduce(densityMax: 2, densityRadius: 40)
                     ),
-                new ItemLoot("Health Potion", 0.03),
-                new ItemLoot("Magic Potion", 0.02)
+                new ItemLoot("Minor Health Potion", 0.03),
+                new ItemLoot("Minor Magic Potion", 0.02)
             )
             .Init("Bandit Enemy",
                 new State(
@@ -149,8 +149,8 @@ namespace wServer.logic
                 new TierLoot(1, ItemType.Armor, 0.2),
                 new TierLoot(2, ItemType.Weapon, 0.12),
                 new TierLoot(2, ItemType.Armor, 0.12),
-                new ItemLoot("Health Potion", 0.12),
-                new ItemLoot("Magic Potion", 0.14)
+                new ItemLoot("Minor Health Potion", 0.12),
+                new ItemLoot("Minor Magic Potion", 0.14)
             )
             .Init("Red Gelatinous Cube",
                 new State(
@@ -159,8 +159,8 @@ namespace wServer.logic
                     new Reproduce(densityMax: 5),
                     new DropPortalOnDeath("Pirate Cave Portal", .01)
                     ),
-                new ItemLoot("Health Potion", 0.04),
-                new ItemLoot("Magic Potion", 0.04)
+                new ItemLoot("Minor Health Potion", 0.04),
+                new ItemLoot("Minor Magic Potion", 0.04)
             )
             .Init("Purple Gelatinous Cube",
                 new State(
@@ -169,8 +169,8 @@ namespace wServer.logic
                     new Reproduce(densityMax: 5),
                     new DropPortalOnDeath("Pirate Cave Portal", .01)
                     ),
-                new ItemLoot("Health Potion", 0.04),
-                new ItemLoot("Magic Potion", 0.04)
+                new ItemLoot("Minor Health Potion", 0.04),
+                new ItemLoot("Minor Magic Potion", 0.04)
             )
             .Init("Green Gelatinous Cube",
                 new State(
@@ -179,8 +179,8 @@ namespace wServer.logic
                     new Reproduce(densityMax: 5),
                     new DropPortalOnDeath("Pirate Cave Portal", .01)
                     ),
-                new ItemLoot("Health Potion", 0.04),
-                new ItemLoot("Magic Potion", 0.04)
+                new ItemLoot("Minor Health Potion", 0.04),
+                new ItemLoot("Minor Magic Potion", 0.04)
             );
     }
 }

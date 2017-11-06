@@ -371,7 +371,7 @@ namespace wServer.logic
                      new Follow(0.5, 8, 1),
                      new Shoot(10, count: 3, projectileIndex: 0, coolDown: 1200)
                     ),
-                new ItemLoot("Charcoal", 0.02),
+                new ItemLoot("Minor Magic Potion", 0.02),
                 new Threshold(0.5,
                     new ItemLoot("Golden Sword", 0.01),
                     new ItemLoot("Ring of Greater Attack", 0.01),
@@ -387,7 +387,7 @@ namespace wServer.logic
                      new Shoot(10, count: 4, projectileIndex: 0, shootAngle: 5, coolDown: 1500),
                      new Shoot(10, count: 1, projectileIndex: 1, coolDown: 2000)
                     ),
-                new ItemLoot("Wheat", 0.02),
+                new ItemLoot("Minor Health Potion", 0.02),
                 new Threshold(0.5,
                     new ItemLoot("Golden Sword", 0.01),
                     new ItemLoot("Ring of Greater Dexterity", 0.01),
@@ -400,7 +400,7 @@ namespace wServer.logic
                      new Shoot(10, count: 6, projectileIndex: 0, shootAngle: 5, coolDown: 1500),
                      new Spawn("Mini Werewolf", initialSpawn: 1, maxChildren: 3, coolDown: 7000)
                     ),
-                new ItemLoot("Wheat", 0.02),
+                new ItemLoot("Minor Health Potion", 0.02),
                 new Threshold(0.5,
                     new ItemLoot("Golden Sword", 0.01),
                     new ItemLoot("Ring of Greater Dexterity", 0.01),
@@ -969,7 +969,7 @@ namespace wServer.logic
                                         new State("talk3",
                                             new SetAltTexture(1),
                                            new Taunt(1.00, "Well. Say READY when you want to start or something along those lines. You probably won't because you are a pussy."),
-                                           new ChatTransition("1", "Ready", "READY", "Kermit", "Good Person is good!", "urbad", "gotobedfalcoo")
+                                            new PlayerTextTransition("1", "Ready", 99, false, true)
                                                ),
                                            new State("1",
                                                new SetAltTexture(0),
@@ -1076,7 +1076,7 @@ namespace wServer.logic
                                         new State("talk3",
                                             new SetAltTexture(1),
                                            new Taunt(1.00, "Anyways, tell me when you fuckers are ready so I can get you killed."),
-                                           new ChatTransition("1", "Ready", "READY", "Kermit", "Good Person is good!", "urbad", "gotobedfalcoo")
+                                           new PlayerTextTransition("1", "Ready", 99, false, true)
                                                ),
                                            new State("1",
                                                new SetAltTexture(0),
@@ -1183,7 +1183,7 @@ namespace wServer.logic
                  new State("talk3",
                      new SetAltTexture(1),
                     new Taunt(1.00, "Go jack off or some shit. Tired of looking at your dumb face."),
-                    new ChatTransition("1", "Ready", "READY", "Kermit", "Good Person is good!", "urbad", "gotobedfalcoo")
+                    new PlayerTextTransition("1", "Ready", 99, false, true)
                         ),
                     new State("1",
                         new SetAltTexture(0),
@@ -1290,7 +1290,7 @@ namespace wServer.logic
                  new State("talk3",
                      new SetAltTexture(1),
                     new Taunt(1.00, "BUT! Since I love you..I'l give you a nice reward at the end. Go ahead. Say READY!"),
-                    new ChatTransition("1", "Ready", "READY", "Kermit", "Good Person is good!", "urbad", "gotobedfalcoo")
+                    new PlayerTextTransition("1", "Ready", 99, false, true)
                         ),
                     new State("1",
                         new SetAltTexture(0),

@@ -91,7 +91,7 @@ namespace wServer.realm.entities
             { "Lucky Ent God",                  Tuple.Create(14,15, 20) },
             { "Lucky Djinn",                    Tuple.Create(14,15, 20) },
             { "Zombie Horde",                   Tuple.Create(14,15, 20) },
-
+            { "Yazanahar",                   Tuple.Create(14,15, 20) },
                 // dungeon bosses
             { "Evil Chicken God",               Tuple.Create(15,1, 20) },
             { "Bonegrind the Butcher",          Tuple.Create(15,1, 20) },
@@ -319,14 +319,44 @@ namespace wServer.realm.entities
 
         public bool EnemyKilled(Enemy enemy, int exp, bool killer)
         {
+            var acc = Client.Account;
+            Random rnd = new Random();
+            int drop = rnd.Next(1, 101);
             var time = new RealmTime();
+            int drop2 = rnd.Next(1, 4);
             if (enemy == questEntity)
+            {
                 BroadcastSync(new Notification()
                 {
                     ObjectId = Id,
                     Color = new ARGB(0xFF00FF00),
                     Message = "{\"key\":\"server.quest_complete\"}"
                 }, p => this.DistSqr(p) < RadiusSqr);
+                if(drop == 1)
+                {
+                    switch (drop2)
+                    {
+                        case 1:
+                            Client.Manager.Database.UpdateLootbox1(acc, 1);
+                            Lootbox1 += 1;
+                            this.ForceUpdate(Lootbox1);
+                            SendHelp("You have obtained a Bronze Lootbox drop! Go to nexus to open it!");
+                            break;
+                        case 2:
+                            Client.Manager.Database.UpdateLootbox2(acc, 1);
+                            Lootbox2 += 1;
+                            this.ForceUpdate(Lootbox2);
+                            SendHelp("You have obtained a Silver Lootbox drop! Go to nexus to open it!");
+                            break;
+                        case 3:
+                            Client.Manager.Database.UpdateLootbox3(acc, 1);
+                            Lootbox3 += 1;
+                            this.ForceUpdate(Lootbox3);
+                            SendHelp("You have obtained a Gold Lootbox drop! Go to nexus to open it!");
+                            break;
+                    }
+                }
+            }
             if (exp != 0)
             {
                 Experience += exp;
