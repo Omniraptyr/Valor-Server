@@ -44,7 +44,7 @@ namespace wServer.realm
             Tuple.Create("Hermit God", (ISetPiece) new Hermit()),
             Tuple.Create("Ghost Ship", (ISetPiece) new GhostShip()),
             Tuple.Create("shtrs Defense System", (ISetPiece) new Avatar()),
-            //Tuple.Create("Yazanahar", (ISetPiece) new Yazanahar()),
+            Tuple.Create("Yazanahar", (ISetPiece) new Yazanahar()),
 
         };
 

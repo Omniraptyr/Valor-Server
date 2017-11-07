@@ -17,10 +17,19 @@ namespace wServer.logic.behaviors
 
         protected override void OnStateEntry(Entity host, RealmTime time, ref object state)
         {
-            Entity[] ens = host.GetNearestEntities(dist, null).ToArray();
-            foreach (Entity e in ens)
-                if (e.ObjectType == host.Manager.Resources.GameData.IdToObjectType[children])
-                    host.Owner.LeaveWorld(e);
+            var lastKilled = -1;
+            var killed = 0;
+            while (killed != lastKilled)
+            {
+                lastKilled = killed;
+                foreach (var entity in host.GetNearestEntitiesByName(dist, children).OfType<Enemy>())
+                {
+                    entity.Spawned = true;
+                    entity.Death(time);
+                    killed++;
+                }
+            }
+
         }
 
         protected override void TickCore(Entity host, RealmTime time, ref object state)

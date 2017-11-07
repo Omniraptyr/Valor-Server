@@ -1143,9 +1143,8 @@ namespace wServer.realm.entities
         {
             var playerDesc = Manager.Resources.GameData.Classes[ObjectType];
             var maxed = playerDesc.Stats.Where((t, i) => Stats.Base[i] >= t.MaxValue).Count();
-            var deathMessage = string.Format(
-                "{{\"key\":\"{{server.deathStats}}\",\"tokens\":{{\"player\":\"{0}\",\"level\":\"{1}\",\"fame\":\"{2}\",\"maxed\":\"{3}\",\"enemy\":\"{4}\"}}}}",
-                Name, Level, _client.Character.FinalFame, maxed, killer);
+            var deathMessage = "{\"key\":\"server.death\",\"tokens\":{\"player\":\"" + Name + "\",\"level\":\"" +
+                               Level + "\",\"enemy\":\"" + killer + "\"}}";
 
             // notable deaths
             if ((maxed >= 6 || Fame >= 1000) && !Client.Account.Admin)

@@ -332,7 +332,7 @@ namespace wServer.realm.entities
                     Color = new ARGB(0xFF00FF00),
                     Message = "{\"key\":\"server.quest_complete\"}"
                 }, p => this.DistSqr(p) < RadiusSqr);
-                if(drop == 1)
+                if(drop >= 1)
                 {
                     switch (drop2)
                     {

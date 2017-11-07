@@ -61,6 +61,7 @@ namespace wServer.logic
 
          .Init("NM Red Dragon Soul",
                 new State(
+                    new SetNoXP(),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("idle",
                         new PlayerTextTransition("goToRedDragon", "Red", 99, false, true),
@@ -71,7 +72,7 @@ namespace wServer.logic
                         new Order(670, "NM Black Dragon Soul", "redinactive"),
                         new Order(670, "NM Red Dragon Soul", "redinactive"),
                         new Order(670, "NM Blue Dragon Soul", "redinactive"),
-                        new RemoveEntity(9999, "Iron Brick"),
+                        new RemoveObject(9999, "Iron Brick"),
                         new Orbit(0.45, 2.5, 9999, "NM Red Dragon God"),
                         new Suicide()
                         ),
@@ -99,6 +100,7 @@ namespace wServer.logic
             )
           .Init("NM Blue Dragon Soul",
                 new State(
+                    new SetNoXP(),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("idle",
                         new PlayerTextTransition("goToBlueDragon", "Blue", 99, false, true),
@@ -109,7 +111,7 @@ namespace wServer.logic
                         new Order(670, "NM Black Dragon Soul", "blueinactive"),
                         new Order(670, "NM Red Dragon Soul", "blueinactive"),
                         new Order(670, "NM Blue Dragon Soul", "blueinactive"),
-                        new RemoveEntity(9999, "Ice Cave Wall"),
+                        new RemoveObject(9999, "Ice Cave Wall"),
                         new Orbit(0.45, 2.5, 9999, "NM Blue Dragon God"),
                         new Suicide()
                         ),
@@ -136,6 +138,7 @@ namespace wServer.logic
             )
         .Init("NM Green Dragon Soul",
                 new State(
+                    new SetNoXP(),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("idle",
                         new PlayerTextTransition("goToGreenDragon", "Green", 99, false, true),
@@ -146,7 +149,7 @@ namespace wServer.logic
                         new Order(670, "NM Black Dragon Soul", "greeninactive"),
                         new Order(670, "NM Red Dragon Soul", "greeninactive"),
                         new Order(670, "NM Blue Dragon Soul", "greeninactive"),
-                        new RemoveEntity(9999, "Jungle Temple Walls"),
+                        new RemoveObject(9999, "Jungle Temple Walls"),
                         new Orbit(0.45, 2.5, 9999, "NM Green Dragon God"),
                         new Suicide()
                         ),
@@ -173,6 +176,7 @@ namespace wServer.logic
             )
         .Init("NM Black Dragon Soul",
                 new State(
+                    new SetNoXP(),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("idle",
                         new PlayerTextTransition("goToBlackDragon", "Black", 99, false, true),
@@ -183,7 +187,7 @@ namespace wServer.logic
                         new Order(670, "NM Black Dragon Soul", "blackinactive"),
                         new Order(670, "NM Red Dragon Soul", "blackinactive"),
                         new Order(670, "NM Blue Dragon Soul", "blackinactive"),
-                        new RemoveEntity(9999, "Blue Wall"),
+                        new RemoveObject(9999, "Blue Wall"),
                         new Orbit(0.45, 2.5, 9999, "NM Black Dragon God"),
                         new Suicide()
                         ),

@@ -1,6 +1,6 @@
 {"id":0,
 "isLimbo":false,
-"name":"Abyss of Demons",
+"name":"Abyss",
 "sbName":"Abyss of Demons",
 "difficulty":4,
 "background":0,
@@ -8,5 +8,5 @@
 "restrictTp":false,
 "showDisplays":false,
 "portals":[0x071b],
-"maps":["abyss.wmap","abyss2.wmap"],
+"maps":[],
 "music":[""]}

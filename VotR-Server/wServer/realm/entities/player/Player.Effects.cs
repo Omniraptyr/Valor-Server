@@ -102,10 +102,14 @@ namespace wServer.realm.entities
 
             if (HasConditionEffect(ConditionEffects.DrakzixCharging))
             {
-                HP = Math.Max(0, (int)(HP - 10 * time.ElaspedMsDelta / 1000f));
 
-                if (HP == 10)
-                    ApplyConditionEffect(ConditionEffectIndex.DrakzixCharging, 0);
+                Owner.Timers.Add(new WorldTimer(100, (w, t) =>
+                {
+                    HP -= 10;
+                    DrainedHP += 1;
+                }));
+                if (HP < 1)
+                    HP = 1;
             }
 
             if (_newbieTime > 0)

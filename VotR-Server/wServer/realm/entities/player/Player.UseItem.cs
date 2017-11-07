@@ -17,6 +17,8 @@ namespace wServer.realm.entities
     {
         public const int MaxAbilityDist = 14;
 
+        public int DrainedHP = 0;
+
         public static readonly ConditionEffect[] NegativeEffs = new ConditionEffect[]
         {
             new ConditionEffect()
@@ -642,6 +644,46 @@ namespace wServer.realm.entities
 
         private void AESiphonAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            int wisBoost = Stats[7]^2;
+            int drained = DrainedHP;
+            int mpAvailable = MP;
+            if (!HasConditionEffect(ConditionEffects.DrakzixCharging))
+            {
+                ApplyConditionEffect(ConditionEffectIndex.DrakzixCharging);
+                return;
+            }
+
+            List<Packet> pkts = new List<Packet>();
+            pkts.Add(new ShowEffect()
+            {
+                EffectType = EffectType.Flow,
+                TargetObjectId = Id,
+                Pos1 = target,
+                Color = new ARGB(0xFFA500)
+            });
+            
+            pkts.Add(new ShowEffect()
+            {
+                EffectType = EffectType.Diffuse,
+                TargetObjectId = Id,
+                Color = new ARGB(0xFFA500),
+                Pos1 = target,
+                Pos2 = new Position { X = target.X + eff.Range, Y = target.Y }
+            });
+            List<Enemy> enemies = new List<Enemy>();
+
+            Owner.AOE(target, eff.Range, false, enemy =>
+            {
+                (enemy as Enemy).Damage(this, time, ((((MP*2)+(wisBoost^2))*(drained/2))/2)+eff.Amount, false,
+                    new ConditionEffect[0]);
+            });
+            BroadcastSync(pkts, p => this.Dist(p) < 25);
+
+            MP = MP/2;
+            DrainedHP = 0;
+
+            ApplyConditionEffect(ConditionEffectIndex.DrakzixCharging, 0);
+            ApplyConditionEffect(ConditionEffectIndex.Empowered, eff.DurationMS);
         }
 
         private void AEDye(RealmTime time, Item item, Position target, ActivateEffect eff)

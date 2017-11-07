@@ -604,7 +604,7 @@
         <UnlockCost>999</UnlockCost>
         <DisplayId>Templar</DisplayId>
     </Object>
-    <!--<Object type="0x0329" id="Drakzix">
+    <Object type="0x0329" id="Drakzix">
         <Class>Player</Class>
         <Description>Ancient species that live in the depths of the unspeakable who have turned on their lord, Oryx. They have the ability to hold infinite power and seek vengeance.</Description>
         <AnimatedTexture>
@@ -642,7 +642,7 @@
         <UnlockCost>999</UnlockCost>
         <DisplayId>Drakzix</DisplayId>
     </Object>
-    <Object type="0x55b9" id="Mechanic">
+    <!--<Object type="0x55b9" id="Mechanic">
         <Class>Player</Class>
         <Description>The mechanic fights using a lance, while building turrets to fend off enemies.</Description>
         <AnimatedTexture>

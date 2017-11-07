@@ -24654,22 +24654,49 @@
         <Description>A basic siphon that can hold a standard amount of power.</Description>
         <Sound>spell/fire_spray</Sound>
         <ExtraTooltipData>
-            <EffectInfo name="Health Price" description="20"/>
-            <EffectInfo name="Health Cast" description="20"/>
             <EffectInfo name="Radius" description="1"/>
+            <EffectInfo name="Base Damage" description="50"/>
+            <EffectInfo name="Mana Recovery" description="3"/>
             <EffectInfo name="{equip.While_Key_Held}" description=""/>
-            <EffectInfo name="" description="Drain 10 mp/s"/>
+            <EffectInfo name="" description="Drain 100 hp/s"/>
             <EffectInfo name="{equip.When_Key_Released}" description=""/>
-            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of mana drained."/>
+            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of health drained, current mana, overall wisdom stat, and this item's base damage."/>
         </ExtraTooltipData>
         <ActivateOnEquip stat="3" amount="-40">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>1</BagType>
-        <MpCost>0</MpCost>
-        <HpCost>20</HpCost>
-        <HpEndCost>20</HpEndCost>
+        <SurgeCost>30</SurgeCost>
         <MultiPhase/>
-        <Activate range="1">SiphonAbility</Activate>
+        <Activate range="1" amount="50" duration="3">SiphonAbility</Activate>
+        <feedPower>5</feedPower>
+        <DisplayId>Standard Siphon</DisplayId>
+    </Object>
+    <Object type="0x52ca" id="Standard Siphon">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj6</File>
+            <Index>0xe0</Index>
+        </Texture>
+        <SlotType>30</SlotType>
+        <Tier>0</Tier>
+        <Description>A basic siphon that can hold a standard amount of power.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <ExtraTooltipData>
+            <EffectInfo name="Radius" description="1"/>
+            <EffectInfo name="Base Damage" description="50"/>
+            <EffectInfo name="Mana Recovery" description="3"/>
+            <EffectInfo name="{equip.While_Key_Held}" description=""/>
+            <EffectInfo name="" description="Drain 100 hp/s"/>
+            <EffectInfo name="{equip.When_Key_Released}" description=""/>
+            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of health drained, current mana, overall wisdom stat, and this item's base damage."/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="3" amount="-40">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>1</BagType>
+        <SurgeCost>20</SurgeCost>
+        <MultiPhase/>
+        <Activate range="1" amount="50" duration="3">SiphonAbility</Activate>
         <feedPower>5</feedPower>
         <DisplayId>Standard Siphon</DisplayId>
     </Object>
@@ -24685,22 +24712,19 @@
         <Description>A common siphon that can hold above average power.</Description>
         <Sound>spell/fire_spray</Sound>
         <ExtraTooltipData>
-            <EffectInfo name="Health Price" description="30"/>
-            <EffectInfo name="Health Cast" description="20"/>
             <EffectInfo name="Radius" description="1"/>
+            <EffectInfo name="Base Damage" description="100"/>
+            <EffectInfo name="Mana Recovery" description="4"/>
             <EffectInfo name="{equip.While_Key_Held}" description=""/>
-            <EffectInfo name="" description="Drain 10 mp/s"/>
+            <EffectInfo name="" description="Drain 100 hp/s"/>
             <EffectInfo name="{equip.When_Key_Released}" description=""/>
-            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of mana drained."/>
+            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of health drained, current mana, overall wisdom stat, and this item's base damage."/>
         </ExtraTooltipData>
-        <Usable/>
-        <ActivateOnEquip stat="3" amount="-50">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="-20">IncrementStat</ActivateOnEquip>
         <BagType>1</BagType>
-        <MpCost>0</MpCost>
-        <HpCost>30</HpCost>
-        <HpEndCost>20</HpEndCost>
+        <SurgeCost>20</SurgeCost>
         <MultiPhase/>
-        <Activate range="1">SiphonAbility</Activate>
+        <Activate range="1" amount="100" duration="4">SiphonAbility</Activate>
         <feedPower>10</feedPower>
         <DisplayId>Power Siphon</DisplayId>
     </Object>
@@ -24716,22 +24740,20 @@
         <Description>The power of water drives the energy of this siphon.</Description>
         <Sound>spell/fire_spray</Sound>
         <ExtraTooltipData>
-            <EffectInfo name="Health Price" description="30"/>
-            <EffectInfo name="Health Cast" description="25"/>
             <EffectInfo name="Radius" description="1"/>
+            <EffectInfo name="Base Damage" description="200"/>
+            <EffectInfo name="Mana Recovery" description="4"/>
             <EffectInfo name="{equip.While_Key_Held}" description=""/>
-            <EffectInfo name="" description="Drain 10 mp/s"/>
+            <EffectInfo name="" description="Drain 100 hp/s"/>
             <EffectInfo name="{equip.When_Key_Released}" description=""/>
-            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of mana drained."/>
+            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of health drained, current mana, overall wisdom stat, and this item's base damage."/>
         </ExtraTooltipData>
         <ActivateOnEquip stat="3" amount="100">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>1</BagType>
-        <MpCost>0</MpCost>
-        <HpCost>30</HpCost>
-        <HpEndCost>25</HpEndCost>
+        <SurgeCost>20</SurgeCost>
         <MultiPhase/>
-        <Activate range="1">SiphonAbility</Activate>
+        <Activate range="1" amount="200" duration="4">SiphonAbility</Activate>
         <feedPower>20</feedPower>
         <DisplayId>Hydro Siphon</DisplayId>
     </Object>
@@ -24747,22 +24769,20 @@
         <Description>A siphon that emits dark energy around the user.</Description>
         <Sound>spell/fire_spray</Sound>
         <ExtraTooltipData>
-            <EffectInfo name="Health Price" description="30"/>
-            <EffectInfo name="Health Cast" description="30"/>
-            <EffectInfo name="Radius" description="2"/>
+            <EffectInfo name="Radius" description="1"/>
+            <EffectInfo name="Base Damage" description="300"/>
+            <EffectInfo name="Mana Recovery" description="4"/>
             <EffectInfo name="{equip.While_Key_Held}" description=""/>
-            <EffectInfo name="" description="Drain 10 mp/s"/>
+            <EffectInfo name="" description="Drain 100 hp/s"/>
             <EffectInfo name="{equip.When_Key_Released}" description=""/>
-            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of mana drained."/>
+            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of health drained, current mana, overall wisdom stat, and this item's base damage."/>
         </ExtraTooltipData>
         <ActivateOnEquip stat="3" amount="125">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>1</BagType>
-        <MpCost>0</MpCost>
-        <HpCost>30</HpCost>
-        <HpEndCost>30</HpEndCost>
+        <SurgeCost>15</SurgeCost>
         <MultiPhase/>
-        <Activate range="2">SiphonAbility</Activate>
+        <Activate range="2" amount="300" duration="4">SiphonAbility</Activate>
         <feedPower>55</feedPower>
         <FameBonus>1</FameBonus>
         <DisplayId>Dark Siphon</DisplayId>
@@ -24779,22 +24799,20 @@
         <Description>An ancient siphon that harnesses forgotten power.</Description>
         <Sound>spell/fire_spray</Sound>
         <ExtraTooltipData>
-            <EffectInfo name="Health Price" description="40"/>
-            <EffectInfo name="Health Cast" description="40"/>
-            <EffectInfo name="Radius" description="2"/>
+            <EffectInfo name="Radius" description="1"/>
+            <EffectInfo name="Base Damage" description="400"/>
+            <EffectInfo name="Mana Recovery" description="4"/>
             <EffectInfo name="{equip.While_Key_Held}" description=""/>
-            <EffectInfo name="" description="Drain 10 mp/s"/>
+            <EffectInfo name="" description="Drain 100 hp/s"/>
             <EffectInfo name="{equip.When_Key_Released}" description=""/>
-            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of mana drained."/>
+            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of health drained, current mana, overall wisdom stat, and this item's base damage."/>
         </ExtraTooltipData>
         <ActivateOnEquip stat="3" amount="150">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>4</BagType>
-        <MpCost>0</MpCost>
-        <HpCost>40</HpCost>
-        <HpEndCost>40</HpEndCost>
+        <SurgeCost>15</SurgeCost>
         <MultiPhase/>
-        <Activate range="2">SiphonAbility</Activate>
+        <Activate range="2" amount="400" duration="4">SiphonAbility</Activate>
         <feedPower>65</feedPower>
         <FameBonus>2</FameBonus>
         <DisplayId>Forgotten Siphon</DisplayId>
@@ -24811,22 +24829,20 @@
         <Description>A siphon forged by the will of 3 constructs.</Description>
         <Sound>spell/fire_spray</Sound>
         <ExtraTooltipData>
-            <EffectInfo name="Health Price" description="40"/>
-            <EffectInfo name="Health Cast" description="45"/>
-            <EffectInfo name="Radius" description="3"/>
+            <EffectInfo name="Radius" description="1"/>
+            <EffectInfo name="Base Damage" description="500"/>
+            <EffectInfo name="Mana Recovery" description="5"/>
             <EffectInfo name="{equip.While_Key_Held}" description=""/>
-            <EffectInfo name="" description="Drain 10 mp/s"/>
+            <EffectInfo name="" description="Drain 100 hp/s"/>
             <EffectInfo name="{equip.When_Key_Released}" description=""/>
-            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of mana drained."/>
+            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of health drained, current mana, overall wisdom stat, and this item's base damage."/>
         </ExtraTooltipData>
-        <ActivateOnEquip stat="3" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>4</BagType>
-        <MpCost>0</MpCost>
-        <HpCost>40</HpCost>
-        <HpEndCost>45</HpEndCost>
+        <SurgeCost>10</SurgeCost>
         <MultiPhase/>
-        <Activate range="3">SiphonAbility</Activate>
+        <Activate range="3" amount="500" duration="5">SiphonAbility</Activate>
         <feedPower>185</feedPower>
         <FameBonus>3</FameBonus>
         <DisplayId>Siphon of the Constructs</DisplayId>
@@ -24843,22 +24859,20 @@
         <Description>Legend has it this siphon was used to blast down a whole kingdom in one single charge.</Description>
         <Sound>spell/fire_spray</Sound>
         <ExtraTooltipData>
-            <EffectInfo name="Health Price" description="45"/>
-            <EffectInfo name="Health Cast" description="45"/>
-            <EffectInfo name="Radius" description="3"/>
+            <EffectInfo name="Radius" description="1"/>
+            <EffectInfo name="Base Damage" description="600"/>
+            <EffectInfo name="Mana Recovery" description="6"/>
             <EffectInfo name="{equip.While_Key_Held}" description=""/>
-            <EffectInfo name="" description="Drain 10 mp/s"/>
+            <EffectInfo name="" description="Drain 100 hp/s"/>
             <EffectInfo name="{equip.When_Key_Released}" description=""/>
-            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of mana drained."/>
+            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of health drained, current mana, overall wisdom stat, and this item's base damage."/>
         </ExtraTooltipData>
         <ActivateOnEquip stat="3" amount="300">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>4</BagType>
-        <MpCost>0</MpCost>
-        <HpCost>45</HpCost>
-        <HpEndCost>45</HpEndCost>
+        <SurgeCost>5</SurgeCost>
         <MultiPhase/>
-        <Activate range="3">SiphonAbility</Activate>
+        <Activate range="3" amount="600" duration="6">SiphonAbility</Activate>
         <feedPower>380</feedPower>
         <FameBonus>4</FameBonus>
         <DisplayId>Siphon of Redemption</DisplayId>

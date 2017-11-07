@@ -935,20 +935,21 @@ public class Player extends Character {
                 SoundEffectLibrary.play("error");
                 return (false);
             }
+            _local12 = int(_local5.SurgeCost);
+            _local13 = int(_local5.HpCost);
             _local10 = int(_local5.MpCost);
             if (_local10 > this.mp_) {
                 SoundEffectLibrary.play("no_mana");
                 return (false);
-            }
-            _local12 = int(_local5.SurgeCost);
-            if (_local12 > this.surge_) {
+            }else if(_local13 > this.hp_){
                 SoundEffectLibrary.play("no_mana");
                 return (false);
             }
-            _local13 = int(_local5.HpCost);
-            if (_local13 > this.hp_) {
-                SoundEffectLibrary.play("no_mana");
-                return (false);
+            if(_local12 != 0){
+                if(_local12 > this.surge_){
+                    SoundEffectLibrary.play("no_mana");
+                    return (false);
+                }
             }
             _local11 = 500;
             if (_local5.hasOwnProperty("Cooldown")) {
