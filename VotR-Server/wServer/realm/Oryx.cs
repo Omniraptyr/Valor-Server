@@ -45,6 +45,7 @@ namespace wServer.realm
             Tuple.Create("Ghost Ship", (ISetPiece) new GhostShip()),
             Tuple.Create("shtrs Defense System", (ISetPiece) new Avatar()),
             Tuple.Create("Yazanahar", (ISetPiece) new Yazanahar()),
+            Tuple.Create("Zaragon, the Blood Mage", (ISetPiece) new BloodGod()),
 
         };
 
@@ -258,6 +259,17 @@ namespace wServer.realm
                     "You got lucky this time {PLAYER}, but you stand no chance against me!",
                 }
             }),
+            Tuple.Create("Zaragon, the Blood Mage", new TauntData
+                {
+                    Spawn = new string[] {
+                    
+                        "They will know his name..ZARAGON SHOW THEM YOUR POWER!"
+                    },
+                    Killed = new string[] {
+                    
+                        "The Catacombs hasn't been unveiled just yet."
+                    }
+                }),
             Tuple.Create("Hermit God", new TauntData()
             {
                 Spawn = new string[] {

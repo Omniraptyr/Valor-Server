@@ -120,7 +120,6 @@ namespace wServer.logic
                     new TierLoot(12, ItemType.Weapon, 0.04),
                     new ItemLoot("Sheath of the Holy Revival", 0.03),
                     new ItemLoot("Spectrum Robe", 0.03),
-                    new ItemLoot("Skysoar Lootbox", 0.1),
                     new ItemLoot("Eternity Armor", 0.03)
                 )
             )

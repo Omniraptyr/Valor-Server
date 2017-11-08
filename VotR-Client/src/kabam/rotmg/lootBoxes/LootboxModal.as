@@ -245,13 +245,13 @@ public class LootboxModal extends EmptyFrame {
         _local1.addChild(this.Lootbox3Amount);
         _local1.addChild(this.Lootbox4Amount);
         _local1.addChild(this.Lootbox5Amount);
-        this.lootboxDisplay_ = new LootboxesDisplay(null, true, false);
+        this.lootboxDisplay_ = new LootboxesDisplay(null);
         this.lootboxDisplay_.x = this.Lootbox3Amount.x + 36;
         this.lootboxDisplay_.y = this.Lootbox3Amount.y + 20;
         _local1.addChild(this.lootboxDisplay_);
         var _local_3:Player = StaticInjectorContext.getInjector().getInstance(GameModel).player;
         if (_local_3 != null) {
-            this.lootboxDisplay_.draw(_local_3.lootBox1_, _local_3.lootBox2_, _local_3.lootBox3_, _local_3.lootBox4_, _local_3.lootBox4_);
+            this.lootboxDisplay_.draw(_local_3.lootBox1_, _local_3.lootBox2_, _local_3.lootBox3_, _local_3.lootBox4_);
         }
         //_local1.addChild(_local5);
         return (_local1);

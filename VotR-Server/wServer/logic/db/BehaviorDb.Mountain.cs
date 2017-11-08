@@ -157,6 +157,7 @@ namespace wServer.logic
             )
             .Init("Beholder",
                 new State(
+                    new DropPortalOnDeath("Tunnel of Pain Portal", .10),
                     new Prioritize(
                         new StayAbove(1, 200),
                         new Follow(1, range: 7),

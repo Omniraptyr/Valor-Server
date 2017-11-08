@@ -86,8 +86,8 @@ namespace wServer.logic
                         )
                     ),
                 new Threshold(0.01,
-                    new ItemLoot("Potion of Vitality", 0.1,1),
-                    new ItemLoot("Potion of Wisdom", 0.1,1),
+                    new ItemLoot("Potion of Vitality", 0.1),
+                    new ItemLoot("Potion of Wisdom", 0.1),
                     new ItemLoot("Helm of the Juggernaut", 0.004)
                     )
             )

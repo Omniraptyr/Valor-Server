@@ -1,38 +1,37 @@
-﻿using System;
+﻿using common.resources;
+using log4net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using common.resources;
+using System.Reflection;
+using System.Threading;
+using wServer.logic.loot;
 using wServer.realm;
 using wServer.realm.entities;
-using wServer.logic.loot;
-using System.Threading;
-using System.Reflection;
-using log4net;
 
 namespace wServer.logic
 {
     public partial class BehaviorDb
     {
-        static readonly ILog Log = LogManager.GetLogger(typeof(BehaviorDb));
+        private static ILog log = LogManager.GetLogger(nameof(BehaviorDb));
 
         public RealmManager Manager { get; private set; }
 
-        static int _initializing;
+        private static int initializing;
         internal static BehaviorDb InitDb;
-        internal static XmlData InitGameData => InitDb.Manager.Resources.GameData;
+        internal static XmlData InitGameData { get { return InitDb.Manager.Resources.GameData; } }
 
         public BehaviorDb(RealmManager manager)
         {
-            Log.Info("Initializing Behavior Database...");
+            log.Info("Initializing Behavior Database...");
 
             Manager = manager;
-            MobDrops.Init(manager);
 
             Definitions = new Dictionary<ushort, Tuple<State, Loot>>();
 
-            if (Interlocked.Exchange(ref _initializing, 1) == 1)
+            if (Interlocked.Exchange(ref initializing, 1) == 1)
             {
-                Log.Error("Attempted to initialize multiple BehaviorDb at the same time.");
+                log.Error("Attempted to initialize multiple BehaviorDb at the same time.");
                 throw new InvalidOperationException("Attempted to initialize multiple BehaviorDb at the same time.");
             }
             InitDb = this;
@@ -44,15 +43,15 @@ namespace wServer.logic
             for (int i = 0; i < fields.Length; i++)
             {
                 var field = fields[i];
-                Log.InfoFormat("Loading behavior for '{0}'({1}/{2})...", field.Name, i + 1, fields.Length);
+                log.Info($"Loading behavior for \"{field.Name}\" ({i + 1}/{fields.Length})");
                 ((_)field.GetValue(this))();
                 field.SetValue(this, null);
             }
 
             InitDb = null;
-            _initializing = 0;
+            initializing = 0;
 
-            Log.Info("Behavior Database initialized...");
+            log.Info("Behavior Database initialized...");
         }
 
         public void ResolveBehavior(Entity entity)
@@ -62,39 +61,33 @@ namespace wServer.logic
                 entity.SwitchTo(def.Item1);
         }
 
-        delegate ctor _();
-        struct ctor
+        private delegate ctor _();
+
+        private struct ctor
         {
-            public ctor Init(string id, State rootState, params MobDrops[] defs)
+            public ctor Init(string objType, State rootState, params ILootDef[] defs)
             {
                 var d = new Dictionary<string, State>();
                 rootState.Resolve(d);
                 rootState.ResolveChildren(d);
                 var dat = InitDb.Manager.Resources.GameData;
-
-                if (!dat.IdToObjectType.ContainsKey(id))
-                {
-                    Log.Error($"Failed to add behavior: {id}. Xml data not found.");
-                    return this;
-                }
-
                 if (defs.Length > 0)
                 {
                     var loot = new Loot(defs);
                     rootState.Death += (sender, e) => loot.Handle((Enemy)e.Host, e.Time);
-                    InitDb.Definitions.Add(dat.IdToObjectType[id], new Tuple<State, Loot>(rootState, loot));
+                    InitDb.Definitions.Add(dat.IdToObjectType[objType], new Tuple<State, Loot>(rootState, loot));
                 }
                 else
-                    InitDb.Definitions.Add(dat.IdToObjectType[id], new Tuple<State, Loot>(rootState, null));
+                    InitDb.Definitions.Add(dat.IdToObjectType[objType], new Tuple<State, Loot>(rootState, null));
                 return this;
             }
         }
-        static ctor Behav()
+
+        private static ctor Behav()
         {
             return new ctor();
         }
 
         public Dictionary<ushort, Tuple<State, Loot>> Definitions { get; private set; }
-
     }
 }

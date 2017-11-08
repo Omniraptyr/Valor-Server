@@ -31,19 +31,19 @@ public class LootboxesDisplayMediator extends Mediator {
     }
 
     private function onLootbox1Changed(_arg_1:int):void {
-        this.view.draw(this.model.getLootbox1(), this.model.getLootbox2(), this.model.getLootbox3(), this.model.getLootbox4(), _arg_1);
+        this.view.draw(this.model.getLootbox1(), this.model.getLootbox2(), this.model.getLootbox3(), this.model.getLootbox4());
     }
 
     private function onLootbox2Changed(_arg_1:int):void {
-        this.view.draw(this.model.getLootbox1(), this.model.getLootbox2(), this.model.getLootbox3(), this.model.getLootbox4(), _arg_1);
+        this.view.draw(this.model.getLootbox1(), this.model.getLootbox2(), this.model.getLootbox3(), this.model.getLootbox4());
     }
 
     private function onLootbox3Changed(_arg_1:int):void {
-        this.view.draw(this.model.getLootbox1(), this.model.getLootbox2(), this.model.getLootbox3(), this.model.getLootbox4(), _arg_1);
+        this.view.draw(this.model.getLootbox1(), this.model.getLootbox2(), this.model.getLootbox3(), this.model.getLootbox4());
     }
 
     private function onLootbox4Changed(_arg_1:int):void {
-        this.view.draw(this.model.getLootbox1(), this.model.getLootbox2(), this.model.getLootbox3(), this.model.getLootbox4(), _arg_1);
+        this.view.draw(this.model.getLootbox1(), this.model.getLootbox2(), this.model.getLootbox3(), this.model.getLootbox4());
     }
 
 

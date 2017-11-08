@@ -23,7 +23,7 @@ namespace wServer.logic
             )
         .Init("Zaragon, the Blood Mage",
                 new State(
-                    new DropPortalOnDeath("The Catacombs Portal", 100),
+                    //new DropPortalOnDeath("The Catacombs Portal", 100),
                     new Orbit(0.3, 3, target: "Blood Boss Anchor"),
                     new HpLessTransition(0.18, "Dead1"),
                     new State("swag",
@@ -126,11 +126,10 @@ namespace wServer.logic
                         )
                     ),
                 new Threshold(0.05,
-                    new ItemLoot("Onrane", 0.075),
+                    new ItemLoot("Onrane", 1),
                     new ItemLoot("God Blood Robes", 0.04),
                     new ItemLoot("Banner of the Blood Mountains", 0.04),
                     new ItemLoot("Titan Blood Armor", 0.04),
-                    new ItemLoot("Page of Zaragon", 0.04),
                     new TierLoot(8, ItemType.Weapon, 0.3),
                     new TierLoot(9, ItemType.Weapon, 0.275),
                     new TierLoot(10, ItemType.Weapon, 0.225),

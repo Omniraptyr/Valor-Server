@@ -191,7 +191,7 @@
     <Compile Include="logic\db\BehaviorDb.Woodland.cs" />
     <Compile Include="logic\db\BehaviorDb.Yazanahar.cs" />
     <Compile Include="logic\loot\Loots.cs" />
-    <Compile Include="logic\loot\MobDrops.cs" />
+    <Compile Include="logic\loot\LootDefs.cs" />
     <Compile Include="logic\transitions\DamageTakenTransition.cs" />
     <Compile Include="networking\handlers\ForgeItemHandler.cs" />
     <Compile Include="networking\handlers\LaunchRaidHandler.cs" />
