@@ -139,7 +139,155 @@ namespace wServer.logic.loot
                 lootDefs.Add(new LootDef(i, probability / candidates.Length));
         }
     }
+    public static class LootTemplates
+    {
 
+        public static ILootDef[] StatIncreasePotionsLoot()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Potion of Defense", 1),
+                    new ItemLoot("Potion of Attack", 1),
+                    new ItemLoot("Potion of Speed", 1),
+                    new ItemLoot("Potion of Vitality", 1),
+                    new ItemLoot("Potion of Wisdom", 1),
+                    new ItemLoot("Potion of Dexterity", 1)
+                )
+             };
+        }
+
+
+
+
+        public static ILootDef[] GStatIncreasePotionsLoot()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Greater Potion of Defense", 1),
+                    new ItemLoot("Greater Potion of Attack", 1),
+                    new ItemLoot("Greater Potion of Speed", 1),
+                    new ItemLoot("Greater Potion of Vitality", 1),
+                    new ItemLoot("Greater Potion of Wisdom", 1),
+                    new ItemLoot("Greater Potion of Dexterity", 1)
+                )
+             };
+        }
+
+
+        public static ILootDef[] GoldLoot()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("1 Gold", 1),
+                    new ItemLoot("5 Gold", 1),
+                    new ItemLoot("10 Gold", 1)
+                ),
+             };
+        }
+
+        //Hideout Fabled Dungeon
+        public static ILootDef[] FabledItemsLoot1()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Kismet Seal", 0.75),
+                    new ItemLoot("Soundpiercer Shuriken", 0.75),
+                    new ItemLoot("Doomgrazer", 0.75),
+                    new ItemLoot("Age of Zol", 0.75),
+                    new ItemLoot("Wrath of Aldragine", 0.75),
+                    new ItemLoot("Bane of the Vision", 0.75),
+                    new ItemLoot("Spirit of the Heart", 0.75),
+                    new ItemLoot("The Grand Finale", 0.75),
+                    new ItemLoot("Merit of Rebellion", 0.75),
+                    new ItemLoot("Enigma Wand", 0.75),
+                    new ItemLoot("Spear of the Unforgiven", 0.75),
+                    new ItemLoot("Dagger of Corruption", 0.75)
+                ),
+                //Have another chance to get fabled iten
+                new OnlyOne(
+                    new ItemLoot("Kismet Seal", 0.5),
+                    new ItemLoot("Soundpiercer Shuriken", 0.5),
+                    new ItemLoot("Doomgrazer", 0.5),
+                    new ItemLoot("Age of Zol", 0.5),
+                    new ItemLoot("Wrath of Aldragine", 0.5),
+                    new ItemLoot("Bane of the Vision", 0.5),
+                    new ItemLoot("Spirit of the Heart", 0.5),
+                    new ItemLoot("The Grand Finale", 0.5),
+                    new ItemLoot("Merit of Rebellion", 0.5),
+                    new ItemLoot("Enigma Wand", 0.5),
+                    new ItemLoot("Spear of the Unforgiven", 0.5),
+                    new ItemLoot("Dagger of Corruption", 0.5)
+                ),
+                //You have a 100% chance to get attack or wisdom eon
+                new OnlyOne(
+                    new ItemLoot("Attack Eon", 1),
+                    new ItemLoot("Wisdom Eon", 1)
+                ),
+                //You have a 25% chance to get ANOTHER attack or wisdom eon
+                new OnlyOne(
+                    new ItemLoot("Attack Eon", 0.25),
+                    new ItemLoot("Wisdom Eon", 0/25)
+                ),
+                //High chance to get 2 cloth
+                new OnlyOne(
+                    new ItemLoot("Large Zol Cloth", 0.6),
+                    new ItemLoot("Small Zol Cloth", 0.6)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Large Vortex Cloth", 0.6),
+                    new ItemLoot("Small Vortex Cloth", 0.6)
+                    ),
+                new OnlyOne(
+                    new ItemLoot("Large Aura Cloth", 0.6),
+                    new ItemLoot("Small Aura Cloth", 0.6)
+                    ),
+                new OnlyOne(
+                    new ItemLoot("Sword of Dark Retribution", 0.8),
+                    new ItemLoot("Helm of Dark Retribution", 0.8),
+                    new ItemLoot("Armor of Dark Retribution", 0.8),
+                    new ItemLoot("Ring of Dark Retribution", 0.8)
+                    ),
+                new OnlyOne(
+                    new ItemLoot("Sword of Dark Retribution", 0.8),
+                    new ItemLoot("Helm of Dark Retribution", 0.8),
+                    new ItemLoot("Armor of Dark Retribution", 0.8),
+                    new ItemLoot("Ring of Dark Retribution", 0.8)
+                    )
+            };
+        }
+
+        //Sincryer (Hideout) Fabled Dungeon
+        public static ILootDef[] FabledItemsLoot2()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Kismet Seal", 0.75),
+                    new ItemLoot("Soundpiercer Shuriken", 0.75),
+                    new ItemLoot("Doomgrazer", 0.75),
+                    new ItemLoot("Age of Zol", 0.75),
+                    new ItemLoot("Wrath of Aldragine", 0.75),
+                    new ItemLoot("Bane of the Vision", 0.75),
+                    new ItemLoot("Spirit of the Heart", 0.75),
+                    new ItemLoot("The Grand Finale", 0.75),
+                    new ItemLoot("Merit of Rebellion", 0.75),
+                    new ItemLoot("Enigma Wand", 0.75),
+                    new ItemLoot("Spear of the Unforgiven", 0.75),
+                    new ItemLoot("Dagger of Corruption", 0.75)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Sword of Dark Retribution", 0.8),
+                    new ItemLoot("Helm of Dark Retribution", 0.8),
+                    new ItemLoot("Armor of Dark Retribution", 0.8),
+                    new ItemLoot("Ring of Dark Retribution", 0.8)
+                    )
+            };
+        }
+    }
     public class Threshold : ILootDef
     {
         private double threshold;

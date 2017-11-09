@@ -1,7 +1,9 @@
-﻿using common.resources;
+﻿using wServer.realm;
+using common.resources;
 using wServer.logic.behaviors;
 using wServer.logic.loot;
 using wServer.logic.transitions;
+
 
 namespace wServer.logic
 {
@@ -66,6 +68,9 @@ namespace wServer.logic
                     new TierLoot(3, ItemType.Ring, 0.015),
                     new TierLoot(4, ItemType.Ring, 0.005)
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.GoldLoot()
+                ),
                 new Threshold(0.07,
                     new ItemLoot("Potion of Attack", 0.07)
                     )
@@ -91,6 +96,9 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ring, 0.02),
                     new TierLoot(4, ItemType.Ability, 0.02)
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.GoldLoot()
+                ),
                 new Threshold(0.07,
                     new ItemLoot("Potion of Attack", 0.07)
                     )
@@ -128,6 +136,9 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ring, 0.005),
                     new TierLoot(4, ItemType.Ability, 0.02)
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.GoldLoot()
+                ),
                 new Threshold(0.07,
                     new ItemLoot("Potion of Speed", 0.07)
                     )
@@ -151,6 +162,9 @@ namespace wServer.logic
                     new TierLoot(9, ItemType.Armor, 0.01),
                     new TierLoot(4, ItemType.Ability, 0.02)
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.GoldLoot()
+                ),
                 new Threshold(0.07,
                     new ItemLoot("Potion of Defense", 0.07)
                     )
@@ -177,6 +191,9 @@ namespace wServer.logic
                     new TierLoot(3, ItemType.Ring, 0.015),
                     new TierLoot(4, ItemType.Ring, 0.005)
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.GoldLoot()
+                ),
                 new Threshold(0.07,
                     new ItemLoot("Potion of Defense", 0.07)
                     )
@@ -201,6 +218,9 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ring, 0.005),
                     new TierLoot(4, ItemType.Ability, 0.02)
                     ),
+                new MostDamagers(3,
+                    LootTemplates.GoldLoot()
+                ),
                 new Threshold(0.07,
                     new ItemLoot("Potion of Attack", 0.07)
                     )
@@ -216,6 +236,9 @@ namespace wServer.logic
                     new Shoot(10, projectileIndex: 1, predictive: 1, coolDown: 650),
                     new Reproduce(densityMax: 2)
                     ),
+                new MostDamagers(3,
+                    LootTemplates.GoldLoot()
+                ),
                 new Threshold(.01,
                     new TierLoot(6, ItemType.Weapon, 0.04),
                     new TierLoot(7, ItemType.Weapon, 0.02),
@@ -253,8 +276,34 @@ namespace wServer.logic
                     new ItemLoot("Potion of Speed", 0.07)
                     )
             )
+        .Init("Construct of the Concealment",
+                new State(
+                    new Taunt("STRONGER!", "AGAIN!"),
+                    new Wander(0.6),
+                    new Shoot(12, 2, 1, coolDown: 10),
+                    new Shoot(12, 10, 1, projectileIndex: 1, coolDown: 2000),
+                    new DropPortalOnDeath("Concealment of the Dreadnought Portal", 10)
+                    ),
+                new TierLoot(6, ItemType.Weapon, 0.07),
+                new Threshold(0.18,
+
+                    new TierLoot(9, ItemType.Weapon, 0.045),
+                new TierLoot(7, ItemType.Weapon, 0.06),
+                new TierLoot(8, ItemType.Weapon, 0.05),
+                new TierLoot(7, ItemType.Armor, 0.07),
+                new TierLoot(8, ItemType.Armor, 0.05),
+
+                new TierLoot(3, ItemType.Ring, 0.029),
+                new TierLoot(4, ItemType.Ring, 0.015),
+                new TierLoot(4, ItemType.Ability, 0.027),
+                new TierLoot(3, ItemType.Ability, 0.05),
+                    new TierLoot(9, ItemType.Armor, 0.04),
+                    new ItemLoot("Potion of Wisdom", 0.06)
+                    )
+            )
             .Init("Rock Bot",
                 new State(
+                    new TransformOnDeath("Construct of the Concealment", 1, 1, probability: 0.5),
                     new Spawn("Paper Bot", maxChildren: 1, initialSpawn: 1, coolDown: 10000, givesNoXp: false),
                     new Spawn("Steel Bot", maxChildren: 1, initialSpawn: 1, coolDown: 10000, givesNoXp: false),
                     new Swirl(speed: 0.6, radius: 3, targeted: false),
@@ -285,6 +334,7 @@ namespace wServer.logic
             )
             .Init("Paper Bot",
                 new State(
+                    new TransformOnDeath("Construct of the Concealment", 1, 1, probability: 0.5),
                     new DropPortalOnDeath("Puppet Theatre Portal", 0.15),
                     new Prioritize(
                         new Orbit(0.4, 3, target: "Rock Bot"),
@@ -316,6 +366,7 @@ namespace wServer.logic
             )
             .Init("Steel Bot",
                 new State(
+                    new TransformOnDeath("Construct of the Concealment", 1, 1, probability: 0.5),
                     new Prioritize(
                         new Orbit(0.4, 3, target: "Rock Bot"),
                         new Wander(0.8)
@@ -411,6 +462,9 @@ namespace wServer.logic
                         new Suicide()
                         )
                     ),
+                                                new MostDamagers(3,
+                    LootTemplates.GoldLoot()
+                ),
                 new Threshold(.01,
                     new TierLoot(6, ItemType.Weapon, 0.04),
                     new TierLoot(7, ItemType.Weapon, 0.02),
@@ -458,6 +512,9 @@ namespace wServer.logic
                             new TimedTransition(1500, "Wander"))
                         )
                     ),
+                                                new MostDamagers(3,
+                    LootTemplates.GoldLoot()
+                ),
                 new Threshold(.01,
                     new ItemLoot("Potion of Defense", 0.07),
                     new TierLoot(6, ItemType.Weapon, 0.01),
@@ -531,10 +588,6 @@ namespace wServer.logic
                         new Suicide()
                         ),
                     new DropPortalOnDeath("The Crawling Depths", 1)
-                    ),
-                new Threshold(0.1,
-                    new ItemLoot("Lucky Seal", 0.01),
-                    new ItemLoot("Lucky Ring", 0.01)
                     )
             )
             .Init("Lucky Ent God",
@@ -547,9 +600,7 @@ namespace wServer.logic
                     new Shoot(12, count: 5, shootAngle: 10, predictive: 1, coolDown: 1250),
                     new DropPortalOnDeath("Woodland Labyrinth", 1)
                     ),
-                new Threshold(0.1,
-                    new ItemLoot("Lucky Armor", 0.01),
-                    new ItemLoot("Lucky Sword", 0.01)
+                new Threshold(0.1
                     )
             )
             ;

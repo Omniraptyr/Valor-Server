@@ -317,7 +317,7 @@ namespace wServer.logic
                     new Shoot(10, count: 8, projectileIndex: 2, fixedAngle: fixedAngle_RingAttack2),
                     new Suicide()
                 )
-                    )
+             )
             )
                 )
         .Init("Escaped Experiment",
@@ -462,24 +462,6 @@ namespace wServer.logic
                     new Suicide()
                     )
                 )
-            )
-        .Init("Dr Terrible Bubble",
-            new State(
-                new State("nothing change",
-                    new ConditionalEffect(ConditionEffectIndex.Invincible)
-                    //new SetAltTexture(0)
-                    ),
-                new State("Bubble time",
-                    new ConditionalEffect(ConditionEffectIndex.Invincible),
-                    //new SetAltTexture(1),
-                    new TimedTransition(1000, "Bubble time2")
-                    ),
-                new State("Bubble time2",
-                    new ConditionalEffect(ConditionEffectIndex.Invincible),
-                    //new SetAltTexture(2),
-                    new TimedTransition(1000, "Bubble time")
-                )
-            )
             )
         .Init("Mad Gas Controller", //don't need xD
             new State(

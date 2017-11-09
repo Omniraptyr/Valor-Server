@@ -46,6 +46,7 @@ namespace wServer.realm
             Tuple.Create("shtrs Defense System", (ISetPiece) new Avatar()),
             Tuple.Create("Yazanahar", (ISetPiece) new Yazanahar()),
             Tuple.Create("Zaragon, the Blood Mage", (ISetPiece) new BloodGod()),
+            Tuple.Create("The Mothership", (ISetPiece) new Mothership()),
 
         };
 
@@ -259,6 +260,20 @@ namespace wServer.realm
                     "You got lucky this time {PLAYER}, but you stand no chance against me!",
                 }
             }),
+            Tuple.Create("The Mothership", new TauntData
+                {
+                    Spawn = new string[] {
+                    
+                        "The coordinates must have been off...that's kind of weird...",
+                        "The invaders have invaded us. Aaah!",
+                        "This big flying saucer is sure to take you dumb fools down for good!"
+                    },
+                    Killed = new string[] {
+                    
+                        "Well...maybe aliens can't handle realmers like you.",
+                        "{PLAYER}, that thing cost me about 99999999 gold man. Pay up!"
+                    }
+                }),
             Tuple.Create("Zaragon, the Blood Mage", new TauntData
                 {
                     Spawn = new string[] {
