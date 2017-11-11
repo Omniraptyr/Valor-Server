@@ -72,6 +72,12 @@ namespace wServer.logic
                         new TimedTransition(4000, "fight1")
                        )
                     ),
+                                new MostDamagers(3,
+                    new ItemLoot("Potion of Might", 1.0)
+                ),
+                new MostDamagers(1,
+                    new ItemLoot("Potion of Defense", 1.0)
+                ),
                 new Threshold(0.022,
                     new TierLoot(10, ItemType.Weapon, 0.06),
                     new TierLoot(11, ItemType.Weapon, 0.05),
@@ -82,6 +88,7 @@ namespace wServer.logic
                     new TierLoot(12, ItemType.Armor, 0.05),
                     new TierLoot(13, ItemType.Armor, 0.04),
                     new TierLoot(6, ItemType.Ring, 0.06),
+                    new ItemLoot("Potion of Restoration", 1),
                     new ItemLoot("Dreadplate Sword", 0.04),
                     new ItemLoot("Mythical Basilisk Venom", 0.04),
                     new ItemLoot("Bow of Dreadful Reign", 0.04)

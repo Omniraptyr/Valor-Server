@@ -299,7 +299,7 @@ namespace wServer.realm.entities
         }
 
         public void SurgeActivation(RealmTime time)
-        {
+        {   
             if (Surge <= 100)
             {
                 SurgeCounter = 75; //approx 3s
@@ -314,7 +314,10 @@ namespace wServer.realm.entities
                 isSurgeGone = true;
                 surgewither = false;
             }
-
+            if (Surge == 100)
+            {
+                protectionDamage = 0;
+            }
         }
 
         public bool EnemyKilled(Enemy enemy, int exp, bool killer)

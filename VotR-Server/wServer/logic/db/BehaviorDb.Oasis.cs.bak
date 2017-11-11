@@ -36,7 +36,7 @@ namespace wServer.logic
                         ),
                     new Shoot(10)
                     ),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Minor Health Potion", 0.05)
             )
             .Init("Oasis Soldier",
                 new State(
@@ -48,7 +48,7 @@ namespace wServer.logic
                     new Shoot(10, predictive: 0.5)
                     ),
                 new ItemLoot("Cheese", 0.05),
-                new ItemLoot("Minor Magic Potion", 0.05)
+                new ItemLoot("Magic Potion", 0.05)
             )
             .Init("Oasis Creature",
                 new State(
@@ -60,7 +60,7 @@ namespace wServer.logic
                     new Shoot(10, coolDown: 400)
                     ),
                 new ItemLoot("Cheese", 0.1),
-                new ItemLoot("Minor Magic Potion", 0.05)
+                new ItemLoot("Magic Potion", 0.05)
             )
             .Init("Oasis Monster",
                 new State(
@@ -72,7 +72,7 @@ namespace wServer.logic
                     new Shoot(10, predictive: 0.5)
                     ),
                 new ItemLoot("Processed Meat", 0.05),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Minor Health Potion", 0.05)
             )
             ;
     }

@@ -34,6 +34,9 @@ namespace wServer.logic
                     new ConditionalEffect(ConditionEffectIndex.StunImmune)
                    )
                 ),
+              new MostDamagers(3,
+                     LootTemplates.StatIncreasePotionsLoot()
+                     ),
                 new Threshold(0.05,
                     new TierLoot(8, ItemType.Weapon, 0.2),
                     new TierLoot(9, ItemType.Weapon, 0.03),

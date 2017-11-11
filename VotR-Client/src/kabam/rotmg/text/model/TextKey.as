@@ -711,6 +711,12 @@ public class TextKey {
     public static const STAT_MODEL_LUCK_SHORT:String = "LUC";
     public static const STAT_MODEL_LUCK_LONG:String = "Luck";
     public static const STAT_MODEL_LUCK_DESCRIPTION:String = "StatModel.attack.description";
+    public static const STAT_MODEL_RESTORATION_SHORT:String = "RES";
+    public static const STAT_MODEL_RESTORATION_LONG:String = "Restoration";
+    public static const STAT_MODEL_RESTORATION_DESCRIPTION:String = "StatModel.attack.description";
+    public static const STAT_MODEL_PROTECTION_SHORT:String = "PRT";
+    public static const STAT_MODEL_PROTECTION_LONG:String = "Protection";
+    public static const STAT_MODEL_PROTECTION_DESCRIPTION:String = "StatModel.attack.description";
 
     public static function wrapForTokenResolution(_arg1:String):String {
         return ((("{" + _arg1) + "}"));

@@ -144,7 +144,6 @@
     <Compile Include="logic\db\BehaviorDb.HauntedCeme.cs" />
     <Compile Include="logic\db\BehaviorDb.HiddenTemple.cs" />
     <Compile Include="logic\db\BehaviorDb.Highland.cs" />
-    <Compile Include="logic\db\BehaviorDb.Hive.cs" />
     <Compile Include="logic\db\BehaviorDb.Hollows.cs" />
     <Compile Include="logic\db\BehaviorDb.IceCave.cs" />
     <Compile Include="logic\db\BehaviorDb.Janus.cs" />

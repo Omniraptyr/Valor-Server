@@ -92,7 +92,6 @@ public class PotionSlotView extends Sprite {
         this.bg.graphics.drawGraphicsData(this.buyOuterGraphicsData);
         this.bg.graphics.drawGraphicsData(this.buyInnerGraphicsData);
         addChild(this.bg);
-        addChild(this.costIcon);
         addChild(this.text);
         this.potionIconDraggableSprite = new Sprite();
         this.doubleClickTimer = new Timer(DOUBLE_CLICK_PAUSE, 1);

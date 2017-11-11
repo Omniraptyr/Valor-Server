@@ -151,8 +151,8 @@ namespace wServer.logic
                     new Wander(0.25),
                     new Shoot(8, 1, coolDown: 1000)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.25),
-                new ItemLoot("Wheat", 0.25)
+                new ItemLoot("Magic Potion", 0.25),
+                new ItemLoot("Minor Health Potion", 0.25)
             )
             .Init("Lair Ghost Warrior",
                 new State(
@@ -160,8 +160,8 @@ namespace wServer.logic
                     new Wander(0.25),
                     new Shoot(8, 1, coolDown: 1000)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.25),
-                new ItemLoot("Wheat", 0.25)
+                new ItemLoot("Magic Potion", 0.25),
+                new ItemLoot("Minor Health Potion", 0.25)
             )
 
             .Init("Lair Skeleton",
@@ -172,8 +172,8 @@ namespace wServer.logic
                         new Wander(0.4)
                         )
                     ),
-                new ItemLoot("Minor Magic Potion", 0.05),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Magic Potion", 0.05),
+                new ItemLoot("Minor Health Potion", 0.05)
             )
             .Init("Lair Skeleton King",
                 new State(
@@ -202,8 +202,8 @@ namespace wServer.logic
                         new Wander(0.4)
                         )
                     ),
-                new ItemLoot("Minor Magic Potion", 0.05),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Magic Potion", 0.05),
+                new ItemLoot("Minor Health Potion", 0.05)
             )
             .Init("Lair Skeleton Swordsman",
                 new State(
@@ -213,8 +213,8 @@ namespace wServer.logic
                         new Wander(0.4)
                         )
                     ),
-                new ItemLoot("Minor Magic Potion", 0.05),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Magic Potion", 0.05),
+                new ItemLoot("Minor Health Potion", 0.05)
             )
             .Init("Lair Skeleton Veteran",
                 new State(
@@ -224,8 +224,8 @@ namespace wServer.logic
                         new Wander(0.4)
                         )
                     ),
-                new ItemLoot("Minor Magic Potion", 0.05),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Magic Potion", 0.05),
+                new ItemLoot("Minor Health Potion", 0.05)
             )
             .Init("Lair Mummy",
                 new State(
@@ -235,8 +235,8 @@ namespace wServer.logic
                         new Wander(0.4)
                         )
                     ),
-                new ItemLoot("Minor Magic Potion", 0.05),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Magic Potion", 0.05),
+                new ItemLoot("Minor Health Potion", 0.05)
             )
             .Init("Lair Mummy King",
                 new State(
@@ -246,8 +246,8 @@ namespace wServer.logic
                         new Wander(0.4)
                         )
                     ),
-                new ItemLoot("Minor Magic Potion", 0.05),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Magic Potion", 0.05),
+                new ItemLoot("Minor Health Potion", 0.05)
             )
             .Init("Lair Mummy Pharaoh",
                 new State(
@@ -283,8 +283,8 @@ namespace wServer.logic
                     new Protect(0.1, "Lair Big Brown Slime", acquireRange: 5, protectionRange: 2),
                     new Wander(0.1)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.05),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Magic Potion", 0.05),
+                new ItemLoot("Minor Health Potion", 0.05)
             )
             .Init("Lair Big Black Slime",
                 new State(
@@ -307,8 +307,8 @@ namespace wServer.logic
                     new Shoot(10, coolDown: 1000),
                     new Wander(0.1)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.05),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Magic Potion", 0.05),
+                new ItemLoot("Minor Health Potion", 0.05)
             )
 
             .Init("Lair Construct Giant",
@@ -358,8 +358,8 @@ namespace wServer.logic
                     new Charge(3, 8, 2000),
                     new Shoot(3, coolDown: 1000)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.05),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Magic Potion", 0.05),
+                new ItemLoot("Minor Health Potion", 0.05)
             )
             .Init("Lair Ghost Bat",
                 new State(
@@ -367,8 +367,8 @@ namespace wServer.logic
                     new Charge(3, 8, 2000),
                     new Shoot(3, coolDown: 1000)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.05),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Magic Potion", 0.05),
+                new ItemLoot("Minor Health Potion", 0.05)
             )
 
             .Init("Lair Reaper",
@@ -395,8 +395,8 @@ namespace wServer.logic
                     new Follow(1.3, range: 1),
                     new Wander(0.1)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.05),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Magic Potion", 0.05),
+                new ItemLoot("Minor Health Potion", 0.05)
             )
             .Init("Lair Vampire King",
                 new State(

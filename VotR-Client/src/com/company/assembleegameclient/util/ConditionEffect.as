@@ -70,6 +70,7 @@ public class ConditionEffect {
     public static const DEATHBOUND:int = 55;
     public static const SAMURAIBERSERK:int = 56;
     public static const DRAKZIXCHARGING:int = 57;
+    public static const PROTECTED:int = 58;
     public static const GROUND_DAMAGE:uint = 99;
     public static const DEAD_BIT:uint = (1 << (DEAD - 1));
     public static const QUIET_BIT:uint = (1 << (QUIET - 1));
@@ -128,6 +129,7 @@ public class ConditionEffect {
     public static const DEATHBOUND_BIT:uint = (1 << (DEATHBOUND - NEW_CON_THREASHOLD));
     public static const SAMURAIBERSERK_BIT:uint = (1 << (SAMURAIBERSERK - NEW_CON_THREASHOLD));
     public static const DRAKZIXCHARGING_BIT:uint = (1 << (DRAKZIXCHARGING - NEW_CON_THREASHOLD));
+    public static const PROTECTED_BIT:uint = (1 << (PROTECTED - NEW_CON_THREASHOLD));
     public static const MAP_FILTER_BITMASK:uint = DRUNK_BIT | BLIND_BIT | PAUSED_BIT;
     public static const PROJ_NOHIT_BITMASK:uint = INVINCIBLE_BIT | STASIS_BIT | PAUSED_BIT;
     public static const CE_FIRST_BATCH:uint = 0;
@@ -195,7 +197,8 @@ public class ConditionEffect {
                 new ConditionEffect("Corrupted", CORRUPTED_BIT, [63], "Corrupted"),
                 new ConditionEffect("Deathbound", DEATHBOUND_BIT, [64], "Deathbound"),
                 new ConditionEffect("Samurai Berserk", SAMURAIBERSERK_BIT, [50], "Samurai Berserk"),
-                new ConditionEffect("Charging", DRAKZIXCHARGING_BIT, [65], "Charging")
+                new ConditionEffect("Charging", DRAKZIXCHARGING_BIT, [65], "Charging"),
+                new ConditionEffect("Protected", PROTECTED_BIT, [66], "Protected")
             ];
     
     private static var conditionEffectFromName_:Object = null;

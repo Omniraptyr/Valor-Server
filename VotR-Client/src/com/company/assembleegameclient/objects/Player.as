@@ -87,8 +87,12 @@ public class Player extends Character {
     public var kantos_:int = 0;
     public var might_:int = 0;
     public var luck_:int = 0;
+    public var protection_:int = 0;
+    public var restoration_:int = 0;
     public var mightBoost_:int = 0;
     public var luckBoost_:int = 0;
+    public var restorationBoost_:int = 0;
+    public var protectionBoost_:int = 0;
     public var raidToken_:int = 0;
     public var nameChosen_:Boolean = false;
     public var currFame_:int = 0;
@@ -103,11 +107,13 @@ public class Player extends Character {
     public var exp_:int = 0;
     public var attack_:int = 0;
     public var speed_:int = 0;
+    public var protectionPointsMax_:int = 0;
     public var dexterity_:int = 0;
     public var vitality_:int = 0;
     public var wisdom_:int = 0;
     public var maxHPBoost_:int = 0;
     public var maxMPBoost_:int = 0;
+    public var protectionPoints_:int = 0;
     public var attackBoost_:int = 0;
     public var defenseBoost_:int = 0;
     public var speedBoost_:int = 0;
@@ -134,6 +140,8 @@ public class Player extends Character {
     public var rank_:int = 0;
     public var luckMax_:int = 0;
     public var mightMax_:int = 0;
+    public var restorationMax_:int = 0;
+    public var protectionMax_:int = 0;
     public var admin_:Boolean = false;
     public var starred_:Boolean = false;
     public var ignored_:Boolean = false;
@@ -180,6 +188,8 @@ public class Player extends Character {
         this.maxMPMax_ = int(_arg1.MaxMagicPoints.@max);
         this.mightMax_ = int(_arg1.Might.@max);
         this.luckMax_ = int(_arg1.Luck.@max);
+        this.restorationMax_ = int(_arg1.Restoration.@max);
+        this.protectionMax_ = int(_arg1.Protection.@max);
         texturingCache_ = new Dictionary();
         this.slideVec_ = new Vector3D();
     }
@@ -198,6 +208,8 @@ public class Player extends Character {
         _local5.maxMP_ = int(_arg2.MaxMagicPoints);
         _local5.might_ = int(_arg2.Might);
         _local5.luck_ = int(_arg2.Luck);
+        _local5.protection_ = int(_arg2.Restoration);
+        _local5.restoration_ = int(_arg2.Protection);
         _local5.mp_ = int(_arg2.MagicPoints);
         _local5.attack_ = int(_arg2.Attack);
         _local5.defense_ = int(_arg2.Defense);

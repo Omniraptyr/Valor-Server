@@ -13,7 +13,7 @@
         <Tier>1</Tier>
         <Description>A potion that instantly restores health points.</Description>
         <Sound>use_potion</Sound>
-        <Activate amount="100">Heal</Activate>
+        <Activate>Heal2</Activate>
         <Consumable/>
         <Potion/>
         <BagType>0</BagType>
@@ -30,7 +30,7 @@
         <Tier>1</Tier>
         <Description>A potion that instantly restores magic points.</Description>
         <Sound>use_potion</Sound>
-        <Activate amount="100">Magic</Activate>
+        <Activate>Magic2</Activate>
         <Consumable/>
         <Potion/>
         <BagType>0</BagType>
@@ -23818,6 +23818,7 @@
         <Usable/>
         <BagType>1</BagType>
         <MpCost>70</MpCost>
+        <Activate effect="Surged" duration="3" range="3">ConditionEffectAura</Activate>
         <Activate range="2" amount="4" duration="3">Banner</Activate>
         <Cooldown>6</Cooldown>
         <feedPower>5</feedPower>
@@ -23843,6 +23844,7 @@
         <Usable/>
         <BagType>1</BagType>
         <MpCost>70</MpCost>
+        <Activate effect="Surged" duration="3" range="4">ConditionEffectAura</Activate>
         <Activate range="2" amount="5" duration="4">Banner</Activate>
         <Cooldown>6.5</Cooldown>
         <feedPower>10</feedPower>
@@ -23868,6 +23870,7 @@
         <Usable/>
         <BagType>1</BagType>
         <MpCost>75</MpCost>
+        <Activate effect="Surged" duration="3" range="4">ConditionEffectAura</Activate>
         <Activate range="3" amount="5" duration="4">Banner</Activate>
         <Cooldown>6.5</Cooldown>
         <feedPower>20</feedPower>
@@ -23893,6 +23896,7 @@
         <Usable/>
         <BagType>2</BagType>
         <MpCost>80</MpCost>
+        <Activate effect="Surged" duration="3.5" range="4">ConditionEffectAura</Activate>
         <Activate range="3" amount="5" duration="5">Banner</Activate>
         <Cooldown>7</Cooldown>
         <FameBonus>1</FameBonus>
@@ -23919,6 +23923,7 @@
         <Usable/>
         <BagType>2</BagType>
         <MpCost>80</MpCost>
+        <Activate effect="Surged" duration="4" range="4">ConditionEffectAura</Activate>
         <Activate range="3" amount="5" duration="5">Banner</Activate>
         <Activate effect="Invulnerable" duration="0.8">ConditionEffectSelf</Activate>
         <Cooldown>7.5</Cooldown>
@@ -23946,6 +23951,7 @@
         <Usable/>
         <BagType>4</BagType>
         <MpCost>85</MpCost>
+        <Activate effect="Surged" duration="4" range="4">ConditionEffectAura</Activate>
         <Activate range="4" amount="5" duration="5">Banner</Activate>
         <Activate effect="Invulnerable" duration="1.00">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
@@ -23973,6 +23979,7 @@
         <Usable/>
         <BagType>4</BagType>
         <MpCost>90</MpCost>
+        <Activate effect="Surged" duration="4" range="5">ConditionEffectAura</Activate>
         <Activate range="4" amount="6" duration="5">Banner</Activate>
         <Activate effect="Invulnerable" duration="1.25">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
@@ -24002,7 +24009,7 @@
         <MpCost>85</MpCost>
         <Activate range="3" amount="6" duration="5">Banner</Activate>
         <Activate effect="Invulnerable" duration="1">ConditionEffectSelf</Activate>
-        <Activate effect="Damaging" duration="2">ConditionEffectSelf</Activate>
+        <Activate effect="Damaging" duration="3">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
         <feedPower>760</feedPower>
         <FameBonus>6</FameBonus>
@@ -25009,6 +25016,10 @@
         <Activate stat="20" amount="150">IncrementStat</Activate>
         <Activate stat="22" amount="150">IncrementStat</Activate>
         <Activate stat="28" amount="150">IncrementStat</Activate>
+        <Activate stat="112" amount="150">IncrementStat</Activate>
+        <Activate stat="114" amount="150">IncrementStat</Activate>
+        <Activate stat="121" amount="150">IncrementStat</Activate>
+        <Activate stat="122" amount="150">IncrementStat</Activate>
         <Consumable/>
         <Potion/>
         <Legendary/>
@@ -25053,6 +25064,7 @@
         <Activate range="4" amount="6" duration="4">Banner</Activate>
         <Activate effect="Invulnerable" duration="1.5">ConditionEffectSelf</Activate>
         <Activate effect="Speedy" duration="3.5">ConditionEffectSelf</Activate>
+        <Activate effect="Surged" duration="6" range="3">ConditionEffectAura</Activate>
         <Cooldown>8</Cooldown>
         <feedPower>700</feedPower>
         <FameBonus>6</FameBonus>
@@ -25358,7 +25370,7 @@
         <Sound>spell/fire_nova</Sound>
         <DisplayId>100000 Gold</DisplayId>
     </Object>
-    <Object type="0x53c7" id="1000000 Gold">
+    <Object type="0x53c7" id="1 Gold">
         <Class>Equipment</Class>
         <Item/>
         <SlotType>10</SlotType>
@@ -25366,7 +25378,7 @@
             <File>lofiObj3</File>
             <Index>0xe1</Index>
         </Texture>
-        <Description>syke you thought.</Description>
+        <Description>1 Single Gold. 1.</Description>
         <Consumable/>
         <Activate amount="1">TreasureActivate</Activate>
         <Sound>spell/fire_nova</Sound>
@@ -30039,5 +30051,421 @@
         <Legendary/>
         <Shard/>
         <feedPower>1000</feedPower>
+    </Object>
+    <Object type="0x68fd" id="Potion of Restoration">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x43d</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Tier>2</Tier>
+        <Description>A potion that permanently increases your restoration.</Description>
+        <Sound>use_potion</Sound>
+        <Activate stat="121" amount="2">IncrementStat</Activate>
+        <Consumable/>
+        <Potion/>
+        <BagType>5</BagType>
+        <feedPower>150</feedPower>
+        <DisplayId>Potion of Restoration</DisplayId>
+    </Object>
+    <Object type="0x68fe" id="Potion of Protection">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x43c</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Tier>2</Tier>
+        <Description>A potion that permanently increases your protection.</Description>
+        <Sound>use_potion</Sound>
+        <Activate stat="121" amount="2">IncrementStat</Activate>
+        <Consumable/>
+        <Potion/>
+        <BagType>5</BagType>
+        <feedPower>150</feedPower>
+        <DisplayId>Potion of Protection</DisplayId>
+    </Object>
+    <Object type="0x68ff" id="Might Eon">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x442</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>This relic can be shattered. Once shattered it causes the mortal to have the strength of the gods.</Description>
+        <Sound>use_potion</Sound>
+        <Activate stat="112" amount="150">IncrementStat</Activate>
+        <Consumable/>
+        <Potion/>
+        <Fabled/>
+        <BagType>11</BagType>
+    </Object>
+    <Object type="0x69a1" id="Luck Eon">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x441</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>This relic can be shattered. Once shattered it causes the mortal to have the strength of the gods.</Description>
+        <Sound>use_potion</Sound>
+        <Activate stat="114" amount="150">IncrementStat</Activate>
+        <Consumable/>
+        <Potion/>
+        <Fabled/>
+        <BagType>11</BagType>
+    </Object>
+    <Object type="0x69a2" id="Restoration Eon">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x440</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>This relic can be shattered. Once shattered it causes the mortal to have the strength of the gods.</Description>
+        <Sound>use_potion</Sound>
+        <Activate stat="121" amount="150">IncrementStat</Activate>
+        <Consumable/>
+        <Potion/>
+        <Fabled/>
+        <BagType>11</BagType>
+    </Object>
+    <Object type="0x69a3" id="Protection Eon">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x443</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>This relic can be shattered. Once shattered it causes the mortal to have the strength of the gods.</Description>
+        <Sound>use_potion</Sound>
+        <Activate stat="122" amount="150">IncrementStat</Activate>
+        <Consumable/>
+        <Potion/>
+        <Fabled/>
+        <BagType>11</BagType>
+    </Object>
+    <Object type="0x69a4" id="Ring of Restoration">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x450</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>1</Tier>
+        <Description>A corundum set in a silver ring.</Description>
+        <ActivateOnEquip stat="121" amount="5">IncrementStat</ActivateOnEquip>
+        <BagType>1</BagType>
+        <feedPower>20</feedPower>
+        <DisplayId>Ring of Restoration</DisplayId>
+    </Object>
+    <Object type="0x69a5" id="Ring of Greater Restoration">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x460</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>2</Tier>
+        <Description>A corundum set in a gold ring.</Description>
+        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>2</BagType>
+        <FameBonus>1</FameBonus>
+        <feedPower>37</feedPower>
+        <DisplayId>Ring of Greater Restoration</DisplayId>
+    </Object>
+    <Object type="0x69a6" id="Ring of Superior Restoration">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x470</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>3</Tier>
+        <Description>A large corundum set in a glittering gold ring.</Description>
+        <ActivateOnEquip stat="121" amount="15">IncrementStat</ActivateOnEquip>
+        <BagType>2</BagType>
+        <FameBonus>2</FameBonus>
+        <feedPower>75</feedPower>
+        <DisplayId>Ring of Superior Restoration</DisplayId>
+    </Object>
+    <Object type="0x69a7" id="Ring of Paramount Restoration">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x480</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>4</Tier>
+        <Description>A very large corundum set in a dazzling gold ring.</Description>
+        <ActivateOnEquip stat="121" amount="20">IncrementStat</ActivateOnEquip>
+        <BagType>2</BagType>
+        <FameBonus>3</FameBonus>
+        <feedPower>150</feedPower>
+        <DisplayId>Ring of Paramount Restoration</DisplayId>
+    </Object>
+    <Object type="0x69a8" id="Ring of Exalted Restoration">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x490</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>5</Tier>
+        <Description>A huge flawless corundom set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="121" amount="25">IncrementStat</ActivateOnEquip>
+        <BagType>4</BagType>
+        <FameBonus>4</FameBonus>
+        <feedPower>300</feedPower>
+        <DisplayId>Ring of Exalted Restoration</DisplayId>
+    </Object>
+    <Object type="0x69a9" id="Ring of Protection">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x451</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>1</Tier>
+        <Description>A diamond set in a silver ring.</Description>
+        <ActivateOnEquip stat="122" amount="3">IncrementStat</ActivateOnEquip>
+        <BagType>1</BagType>
+        <feedPower>20</feedPower>
+        <DisplayId>Ring of Protection</DisplayId>
+    </Object>
+    <Object type="0x69aa" id="Ring of Greater Protection">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x461</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>2</Tier>
+        <Description>A diamond set in a gold ring.</Description>
+        <ActivateOnEquip stat="122" amount="5">IncrementStat</ActivateOnEquip>
+        <BagType>2</BagType>
+        <FameBonus>1</FameBonus>
+        <feedPower>37</feedPower>
+        <DisplayId>Ring of Greater Protection</DisplayId>
+    </Object>
+    <Object type="0x69ab" id="Ring of Superior Protection">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x471</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>3</Tier>
+        <Description>A large diamond set in a glittering gold ring.</Description>
+        <ActivateOnEquip stat="122" amount="6">IncrementStat</ActivateOnEquip>
+        <BagType>2</BagType>
+        <FameBonus>2</FameBonus>
+        <feedPower>75</feedPower>
+        <DisplayId>Ring of Superior Protection</DisplayId>
+    </Object>
+    <Object type="0x69ac" id="Ring of Paramount Protection">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x481</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>4</Tier>
+        <Description>A very large corundum set in a dazzling gold ring.</Description>
+        <ActivateOnEquip stat="122" amount="7">IncrementStat</ActivateOnEquip>
+        <BagType>2</BagType>
+        <FameBonus>3</FameBonus>
+        <feedPower>150</feedPower>
+        <DisplayId>Ring of Paramount Protection</DisplayId>
+    </Object>
+    <Object type="0x69ae" id="Ring of Exalted Protection">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x491</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>5</Tier>
+        <Description>A huge flawless corundom set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="122" amount="8">IncrementStat</ActivateOnEquip>
+        <BagType>4</BagType>
+        <FameBonus>4</FameBonus>
+        <feedPower>300</feedPower>
+        <DisplayId>Ring of Exalted Protection</DisplayId>
+    </Object>
+    <Object type="0x69af" id="Ring of Luck">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x452</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>1</Tier>
+        <Description>A sphene set in a silver ring.</Description>
+        <ActivateOnEquip stat="114" amount="3">IncrementStat</ActivateOnEquip>
+        <BagType>1</BagType>
+        <feedPower>20</feedPower>
+        <DisplayId>Ring of Luck</DisplayId>
+    </Object>
+    <Object type="0x69ba" id="Ring of Greater Luck">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x462</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>2</Tier>
+        <Description>A sphene set in a gold ring.</Description>
+        <ActivateOnEquip stat="114" amount="5">IncrementStat</ActivateOnEquip>
+        <BagType>2</BagType>
+        <FameBonus>1</FameBonus>
+        <feedPower>37</feedPower>
+        <DisplayId>Ring of Greater Luck</DisplayId>
+    </Object>
+    <Object type="0x69bb" id="Ring of Superior Luck">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x472</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>3</Tier>
+        <Description>A large sphene set in a glittering gold ring.</Description>
+        <ActivateOnEquip stat="114" amount="6">IncrementStat</ActivateOnEquip>
+        <BagType>2</BagType>
+        <FameBonus>2</FameBonus>
+        <feedPower>75</feedPower>
+        <DisplayId>Ring of Superior Luck</DisplayId>
+    </Object>
+    <Object type="0x69bc" id="Ring of Paramount Luck">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x482</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>4</Tier>
+        <Description>A very large sphene set in a dazzling gold ring.</Description>
+        <ActivateOnEquip stat="114" amount="7">IncrementStat</ActivateOnEquip>
+        <BagType>2</BagType>
+        <FameBonus>3</FameBonus>
+        <feedPower>150</feedPower>
+        <DisplayId>Ring of Paramount Luck</DisplayId>
+    </Object>
+    <Object type="0x69bd" id="Ring of Exalted Luck">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x492</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>5</Tier>
+        <Description>A huge flawless sphene set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="114" amount="8">IncrementStat</ActivateOnEquip>
+        <BagType>4</BagType>
+        <FameBonus>4</FameBonus>
+        <feedPower>300</feedPower>
+        <DisplayId>Ring of Exalted Luck</DisplayId>
+    </Object>
+    <Object type="0x69be" id="Ring of Might">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x453</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>1</Tier>
+        <Description>A garnet set in a silver ring.</Description>
+        <ActivateOnEquip stat="112" amount="4">IncrementStat</ActivateOnEquip>
+        <BagType>1</BagType>
+        <feedPower>20</feedPower>
+        <DisplayId>Ring of Might</DisplayId>
+    </Object>
+    <Object type="0x69bf" id="Ring of Greater Might">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x463</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>2</Tier>
+        <Description>A garnet set in a gold ring.</Description>
+        <ActivateOnEquip stat="112" amount="6">IncrementStat</ActivateOnEquip>
+        <BagType>2</BagType>
+        <FameBonus>1</FameBonus>
+        <feedPower>37</feedPower>
+        <DisplayId>Ring of Greater Might</DisplayId>
+    </Object>
+    <Object type="0x69ca" id="Ring of Superior Might">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x473</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>3</Tier>
+        <Description>A large garnet set in a glittering gold ring.</Description>
+        <ActivateOnEquip stat="112" amount="8">IncrementStat</ActivateOnEquip>
+        <BagType>2</BagType>
+        <FameBonus>2</FameBonus>
+        <feedPower>75</feedPower>
+        <DisplayId>Ring of Superior Might</DisplayId>
+    </Object>
+    <Object type="0x69cb" id="Ring of Paramount Might">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x483</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>4</Tier>
+        <Description>A very large garnet set in a dazzling gold ring.</Description>
+        <ActivateOnEquip stat="112" amount="9">IncrementStat</ActivateOnEquip>
+        <BagType>2</BagType>
+        <FameBonus>3</FameBonus>
+        <feedPower>150</feedPower>
+        <DisplayId>Ring of Paramount Might</DisplayId>
+    </Object>
+    <Object type="0x69cc" id="Ring of Exalted Might">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x493</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>5</Tier>
+        <Description>A huge flawless garnet set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="112" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>4</BagType>
+        <FameBonus>4</FameBonus>
+        <feedPower>300</feedPower>
+        <DisplayId>Ring of Exalted Might</DisplayId>
     </Object>
 </Objects>

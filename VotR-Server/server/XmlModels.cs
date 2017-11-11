@@ -384,6 +384,8 @@ namespace server
         public int MpRegen { get; private set; }
         public int Might { get; private set; }
         public int Luck { get; private set; }
+        public int Restoration { get; private set; }
+        public int Protection { get; private set; }
         public int Tex1 { get; private set; }
         public int Tex2 { get; private set; }
         public int Skin { get; private set; }
@@ -414,6 +416,8 @@ namespace server
                 MpRegen = character.Stats[7],
                 Might = character.Stats[8],
                 Luck = character.Stats[9],
+                Restoration = character.Stats[10],
+                Protection = character.Stats[11],
                 HitPoints = character.HP,
                 MagicPoints = character.MP,
                 Tex1 = character.Tex1,
@@ -450,6 +454,8 @@ namespace server
                     new XElement("MpRegen", MpRegen),
                     new XElement("Might", Might),
                     new XElement("Luck", Luck),
+                    new XElement("Restoration", Restoration),
+                    new XElement("Protection", Protection),
                     new XElement("Tex1", Tex1),
                     new XElement("Tex2", Tex2),
                     new XElement("Texture", Skin),

@@ -371,7 +371,7 @@ namespace wServer.logic
                      new Follow(0.5, 8, 1),
                      new Shoot(10, count: 3, projectileIndex: 0, coolDown: 1200)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.02),
+                new ItemLoot("Magic Potion", 0.02),
                 new Threshold(0.5,
                     new ItemLoot("Golden Sword", 0.01),
                     new ItemLoot("Ring of Greater Attack", 0.01),
@@ -387,7 +387,7 @@ namespace wServer.logic
                      new Shoot(10, count: 4, projectileIndex: 0, shootAngle: 5, coolDown: 1500),
                      new Shoot(10, count: 1, projectileIndex: 1, coolDown: 2000)
                     ),
-                new ItemLoot("Minor Health Potion", 0.02),
+                new ItemLoot("Health Potion", 0.02),
                 new Threshold(0.5,
                     new ItemLoot("Golden Sword", 0.01),
                     new ItemLoot("Ring of Greater Dexterity", 0.01),
@@ -400,7 +400,7 @@ namespace wServer.logic
                      new Shoot(10, count: 6, projectileIndex: 0, shootAngle: 5, coolDown: 1500),
                      new Spawn("Mini Werewolf", initialSpawn: 1, maxChildren: 3, coolDown: 7000)
                     ),
-                new ItemLoot("Minor Health Potion", 0.02),
+                new ItemLoot("Health Potion", 0.02),
                 new Threshold(0.5,
                     new ItemLoot("Golden Sword", 0.01),
                     new ItemLoot("Ring of Greater Dexterity", 0.01),

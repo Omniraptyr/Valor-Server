@@ -866,6 +866,20 @@ namespace wServer.realm.commands
             player.SendInfo($"Wisdom: {pd.Stats[7].MaxValue - player.Stats.Base[7]}");
             player.SendInfo($"Might: {pd.Stats[8].MaxValue - player.Stats.Base[8]}");
             player.SendInfo($"Luck: {pd.Stats[9].MaxValue - player.Stats.Base[9]}");
+            player.SendInfo($"Restoration: {pd.Stats[10].MaxValue - player.Stats.Base[10]}");
+            player.SendInfo($"Protection: {pd.Stats[11].MaxValue - player.Stats.Base[11]}");
+            return true;
+        }
+    }
+
+    class ProtCommand : Command
+    {
+        public ProtCommand() : base("protty") { }
+
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+
+            player.SendInfo("Prot: " + player.Protection);
             return true;
         }
     }

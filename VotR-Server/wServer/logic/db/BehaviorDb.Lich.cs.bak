@@ -180,8 +180,8 @@ namespace wServer.logic
                 new TierLoot(2, ItemType.Ability, 0.15),
                 new TierLoot(3, ItemType.Ability, 0.02),
                 new ItemLoot("50 Gold", 0.028),
-                new ItemLoot("Minor Magic Potion", 0.4),
-                new ItemLoot("Wheat", 0.4)
+                new ItemLoot("Magic Potion", 0.4),
+                new ItemLoot("Minor Health Potion", 0.4)
                     )
             )
             .Init("Phylactery Bearer",
@@ -249,7 +249,7 @@ namespace wServer.logic
                         ),
                     new Decay(130000)
                     ),
-                new ItemLoot("Wheat", 0.03),
+                new ItemLoot("Minor Health Potion", 0.03),
                 new Threshold(0.15,
 
                 new ItemLoot("The Phylactery", 0.002),
@@ -281,7 +281,7 @@ namespace wServer.logic
                     new Decay(90000)
                     ),
                 new TierLoot(8, ItemType.Weapon, 0.02),
-                new ItemLoot("Wheat", 0.02),
+                new ItemLoot("Minor Health Potion", 0.02),
                 new ItemLoot("Ring of Magic", 0.02),
                 new ItemLoot("Ring of Attack", 0.02)
             )
@@ -294,7 +294,7 @@ namespace wServer.logic
                         ),
                     new Shoot(10)
                     ),
-                new ItemLoot("Wheat", 0.02),
+                new ItemLoot("Minor Health Potion", 0.02),
                 new ItemLoot("Spirit Salve Tome", 0.02)
             )
             .Init("Mummy King",
@@ -306,7 +306,7 @@ namespace wServer.logic
                         ),
                     new Shoot(10)
                     ),
-                new ItemLoot("Wheat", 0.02),
+                new ItemLoot("Minor Health Potion", 0.02),
                 new ItemLoot("Spirit Salve Tome", 0.02)
             )
             .Init("Mummy Pharaoh",

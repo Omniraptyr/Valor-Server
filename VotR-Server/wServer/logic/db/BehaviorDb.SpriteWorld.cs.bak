@@ -248,7 +248,7 @@ namespace wServer.logic
                         )
                     ),
                 new TierLoot(5, ItemType.Weapon, 0.02),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Minor Health Potion", 0.05)
             )
             .Init("Native Ice Sprite",
                 new State(
@@ -260,7 +260,7 @@ namespace wServer.logic
                         )
                     ),
                 new TierLoot(2, ItemType.Ability, 0.04),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Minor Health Potion", 0.05)
             )
             .Init("Native Magic Sprite",
                 new State(
@@ -272,7 +272,7 @@ namespace wServer.logic
                         )
                     ),
                 new TierLoot(6, ItemType.Armor, 0.01),
-                new ItemLoot("Wheat", 0.05)
+                new ItemLoot("Minor Health Potion", 0.05)
         )
         .Init("Native Nature Sprite",
              new State(
@@ -283,7 +283,7 @@ namespace wServer.logic
                         )
                     ),
                 new ItemLoot("Sprite Wand", 0.05),
-                new ItemLoot("Wheat", 0.05),
+                new ItemLoot("Minor Health Potion", 0.05),
                 new ItemLoot("Ring of Greater Magic", 0.05)
             )
         .Init("Native Darkness Sprite",
@@ -294,7 +294,7 @@ namespace wServer.logic
                         new Wander(1.6)
                         )
                     ),
-                new ItemLoot("Minor Magic Potion", 0.05),
+                new ItemLoot("Magic Potion", 0.05),
                 new ItemLoot("Ring of Dexterity", 0.05)
         )
         .Init("Native Sprite God",

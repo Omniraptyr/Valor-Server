@@ -28,6 +28,8 @@ public class CharacterClass {
     private var isSelected:Boolean;
     public var might:CharacterClassStat;
     public var luck:CharacterClassStat;
+    public var restoration:CharacterClassStat;
+    public var protection:CharacterClassStat;
 
     public function getIsSelected():Boolean {
         return (this.isSelected);

@@ -23,6 +23,7 @@ namespace wServer.realm.entities
 
     public partial class Player : Character, IContainer, IPlayer
     {
+
         new static readonly ILog Log = LogManager.GetLogger(typeof(Player));
 
         private readonly Client _client;
@@ -155,6 +156,20 @@ namespace wServer.realm.entities
         {
             get { return _surge.GetValue(); }
             set { _surge.SetValue(value); }
+        }
+
+        private readonly SV<int> _protection;
+        public int Protection
+        {
+            get { return _protection.GetValue(); }
+            set { _protection.SetValue(value); }
+        }
+
+        private readonly SV<int> _protectionMax;
+        public int ProtectionMax
+        {
+            get { return _protectionMax.GetValue(); }
+            set { _protectionMax.SetValue(value); }
         }
 
         private readonly SV<int> _surgeCounter;
@@ -340,9 +355,11 @@ namespace wServer.realm.entities
                 case StatsType.Wisdom: Stats.Base[7] = (int)val; break;
                 case StatsType.Might: Stats.Base[8] = (int)val; break;
                 case StatsType.Luck: Stats.Base[9] = (int)val; break;
-                case StatsType.DamageMin: Stats.Base[10] = (int)val; break;
-                case StatsType.DamageMax: Stats.Base[11] = (int)val; break;
-                case StatsType.Fortune: Stats.Base[12] = (int)val; break;
+                case StatsType.Restoration: Stats.Base[10] = (int)val; break;
+                case StatsType.Protection: Stats.Base[11] = (int)val; break;
+                case StatsType.DamageMin: Stats.Base[12] = (int)val; break;
+                case StatsType.DamageMax: Stats.Base[13] = (int)val; break;
+                case StatsType.Fortune: Stats.Base[14] = (int)val; break;
                 case StatsType.HealthStackCount: HealthPots.Count = (int)val; break;
                 case StatsType.MagicStackCount: MagicPots.Count = (int)val; break;
                 case StatsType.HasBackpack: HasBackpack = (int)val == 1; break;
@@ -363,6 +380,8 @@ namespace wServer.realm.entities
                 case StatsType.RaidRank: RaidRank = (int)val; break;
                 case StatsType.Surge: Surge = (int)val; break;
                 case StatsType.SurgeCounter: SurgeCounter = (int)val; break;
+                case StatsType.ProtectionPoints: Protection = (int)val; break;
+                case StatsType.ProtectionPointsMax: ProtectionMax = (int)val; break;
             }
         }
 
@@ -417,9 +436,11 @@ namespace wServer.realm.entities
             stats[StatsType.Wisdom] = Stats[7];
             stats[StatsType.Might] = Stats[8];
             stats[StatsType.Luck] = Stats[9];
-            stats[StatsType.DamageMin] = Stats[10];
-            stats[StatsType.DamageMax] = Stats[11];
-            stats[StatsType.Fortune] = Stats[12];
+            stats[StatsType.Restoration] = Stats[10];
+            stats[StatsType.Protection] = Stats[11];
+            stats[StatsType.DamageMin] = Stats[12];
+            stats[StatsType.DamageMax] = Stats[13];
+            stats[StatsType.Fortune] = Stats[14];
             stats[StatsType.HPBoost] = Stats.Boost[0];
             stats[StatsType.MPBoost] = Stats.Boost[1];
             stats[StatsType.AttackBonus] = Stats.Boost[2];
@@ -430,9 +451,11 @@ namespace wServer.realm.entities
             stats[StatsType.WisdomBonus] = Stats.Boost[7];
             stats[StatsType.MightBonus] = Stats.Boost[8];
             stats[StatsType.LuckBonus] = Stats.Boost[9];
-            stats[StatsType.DamageMinBonus] = Stats.Boost[10];
-            stats[StatsType.DamageMaxBonus] = Stats.Boost[11];
-            stats[StatsType.FortuneBonus] = Stats.Boost[12];
+            stats[StatsType.RestorationBonus] = Stats.Boost[10];
+            stats[StatsType.ProtectionBonus] = Stats.Boost[11];
+            stats[StatsType.DamageMinBonus] = Stats.Boost[12];
+            stats[StatsType.DamageMaxBonus] = Stats.Boost[13];
+            stats[StatsType.FortuneBonus] = Stats.Boost[14];
             stats[StatsType.HealthStackCount] = HealthPots.Count;
             stats[StatsType.MagicStackCount] = MagicPots.Count;
             stats[StatsType.HasBackpack] = (HasBackpack) ? 1 : 0;
@@ -455,6 +478,8 @@ namespace wServer.realm.entities
             stats[StatsType.Lootbox3] = Lootbox3;
             stats[StatsType.Lootbox4] = Lootbox4;
             stats[StatsType.Lootbox5] = Lootbox5;
+            stats[StatsType.ProtectionPoints] = Protection;
+            stats[StatsType.ProtectionPointsMax] = ProtectionMax;
         }
 
         public void SaveToCharacter()
@@ -521,6 +546,8 @@ namespace wServer.realm.entities
             _raidToken = new SV<int>(this, StatsType.RaidToken, client.Account.RaidToken, true);
             _raidRank = new SV<int>(this, StatsType.RaidRank, client.Account.RaidRank, true);
             _surge = new SV<int>(this, StatsType.Surge, -1);
+            _protection = new SV<int>(this, StatsType.ProtectionPoints, -1);
+            _protectionMax = new SV<int>(this, StatsType.ProtectionPointsMax, -1);
             _surgeCounter = new SV<int>(this, StatsType.SurgeCounter, -1);
             _lootbox1 = new SV<int>(this, StatsType.Lootbox1, client.Account.Lootbox1, true);
             _lootbox2 = new SV<int>(this, StatsType.Lootbox2, client.Account.Lootbox2, true);
@@ -937,7 +964,93 @@ namespace wServer.realm.entities
                 return true;
             return false;
         }
+        private int RestorationHeal()
+        {
 
+            if (Stats[10] >= 0 && Stats[10] <= 10)
+            {
+                return 25;
+            }
+            else if (Stats[10] >= 11 && Stats[10] <= 20)
+            {
+                return 50;
+            }
+            else if (Stats[10] >= 21 && Stats[10] <= 30)
+            {
+                return 75;
+            }
+            else if (Stats[10] >= 31 && Stats[10] <= 40)
+            {
+                return 100;
+            }
+            else if (Stats[10] >= 41 && Stats[10] <= 50)
+            {
+                return 125;
+            }
+            else if (Stats[10] >= 51 && Stats[10] <= 60)
+            {
+                return 150;
+            }
+            else if (Stats[10] >= 61 && Stats[10] <= 70)
+            {
+                return 175;
+            }
+            else if (Stats[10] >= 71 && Stats[10] <= 80)
+            {
+                return 200;
+            }
+            else if (Stats[10] >= 81 && Stats[10] <= 90)
+            {
+                return 225;
+            }
+            else if (Stats[10] >= 91 && Stats[10] <= 100)
+            {
+                return 250;
+            }
+            else if (Stats[10] >= 101 && Stats[10] <= 110)
+            {
+                return 275;
+            }
+            else if (Stats[10] >= 111 && Stats[10] <= 120)
+            {
+                return 300;
+            }
+            else if (Stats[10] >= 121 && Stats[10] <= 130)
+            {
+                return 325;
+            }
+            else if (Stats[10] >= 131 && Stats[10] <= 140)
+            {
+                return 350;
+            }
+            else if (Stats[10] >= 141 && Stats[10] <= 150)
+            {
+                return 375;
+            }
+            else if (Stats[10] >= 151 && Stats[10] <= 160)
+            {
+                return 400;
+            }
+            else if (Stats[10] >= 161 && Stats[10] <= 170)
+            {
+                return 425;
+            }
+            else if (Stats[10] >= 171 && Stats[10] <= 180)
+            {
+                return 450;
+            }
+            else if (Stats[10] >= 181 && Stats[10] <= 190)
+            {
+                return 475;
+            }
+            else if (Stats[10] >= 191 && Stats[10] <= 200)
+            {
+                return 500;
+            }
+            return 20;
+
+        }
+       
         public bool CheckLegendarySlot()
         {
             for (var i = 0; i < 3; i++)
@@ -949,27 +1062,51 @@ namespace wServer.realm.entities
             }
             return false;
         }
+
         public override bool HitByProjectile(Projectile projectile, RealmTime time)
         {
+            ushort dmgAmount;
+            
             if (projectile.ProjectileOwner is Player ||
                 IsInvulnerable())
             {
                 return false;
             }
 
+            var truedmg = (int)Stats.GetDefenseDamage(projectile.Damage, true);
             var dmg = (int)Stats.GetDefenseDamage(projectile.Damage, projectile.ProjDesc.ArmorPiercing);
-            if (!HasConditionEffect(ConditionEffects.Invulnerable))
-                HP -= dmg;
-            ApplyConditionEffect(projectile.ProjDesc.Effects);
-            Owner.BroadcastPacketNearby(new Damage()
+            if (Protection > 0)
             {
-                TargetId = this.Id,
-                Effects = HasConditionEffect(ConditionEffects.Invincible) ? 0 : projectile.ConditionEffects,
-                DamageAmount = (ushort)dmg,
-                Kill = HP <= 0,
-                BulletId = projectile.ProjectileId,
-                ObjectId = projectile.ProjectileOwner.Self.Id
-            }, this, this, PacketPriority.Low);
+                dmgAmount = (ushort)truedmg;
+            }
+            else
+            {
+                dmgAmount = (ushort)dmg;
+            }
+            if (!HasConditionEffect(ConditionEffects.Invulnerable))
+                {
+                    if (Protection > 0)
+                    {
+                        protectionDamage += (int)Stats.GetDefenseDamage(projectile.Damage, true);
+                    }
+                    else
+                    {
+                        HP -= dmg;
+                    }
+                }
+            ApplyConditionEffect(projectile.ProjDesc.Effects);
+
+                Owner.BroadcastPacketNearby(new Damage()
+                {
+                    TargetId = this.Id,
+                    Effects = HasConditionEffect(ConditionEffects.Invincible) ? 0 : projectile.ConditionEffects,
+                    DamageAmount = (ushort)dmgAmount,
+                    Kill = HP <= 0,
+                    BulletId = projectile.ProjectileId,
+                    ObjectId = projectile.ProjectileOwner.Self.Id
+               }, this, this, PacketPriority.Low);
+            
+
 
             if (HP <= 0)
                 Death(projectile.ProjectileOwner.Self.ObjectDesc.DisplayId ??
@@ -982,10 +1119,19 @@ namespace wServer.realm.entities
         {
             if (IsInvulnerable())
                 return;
-
             dmg = (int)Stats.GetDefenseDamage(dmg, false);
             if (!HasConditionEffect(ConditionEffects.Invulnerable))
-                HP -= dmg;
+            {
+                if(Protection > 0)
+                   {
+                    protectionDamage += dmg;
+                }
+                else
+                {
+                    HP -= dmg;
+                }
+            }
+                
             Owner.BroadcastPacketNearby(new Damage()
             {
                 TargetId = Id,

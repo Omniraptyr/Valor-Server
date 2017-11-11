@@ -15,19 +15,23 @@ public class StatMetersView extends Sprite {
     private var hpBar_:StatusBar;
     private var mpBar_:StatusBar;
     private var surgeBar_:StatusBar;
+    private var protectionBar:StatusBar;
     private var areTempXpListenersAdded:Boolean;
     private var curXPBoost:int;
+    private var barSize:int = 12;
     private var expTimer:ExperienceBoostTimerPopup;
 
     public function StatMetersView() {
-        this.expBar_ = new StatusBar(140, 12, 5931045, 0x545454, TextKey.EXP_BAR_LEVEL);
-        this.fameBar_ = new StatusBar(140, 12, 0xE25F00, 0x545454, TextKey.CURRENCY_FAME);
-        this.hpBar_ = new StatusBar(140, 12, 14693428, 0x545454, TextKey.STATUS_BAR_HEALTH_POINTS);
-        this.mpBar_ = new StatusBar(140, 12, 6325472, 0x545454, TextKey.STATUS_BAR_MANA_POINTS);
-        this.surgeBar_ = new StatusBar(140, 12, 0xFFFF66, 0x545454, "SG");
-        this.hpBar_.y = 18;
-        this.mpBar_.y = 36;
-        this.surgeBar_.y = 54;
+        this.expBar_ = new StatusBar(140, barSize, 5931045, 0x545454, TextKey.EXP_BAR_LEVEL);
+        this.fameBar_ = new StatusBar(140, barSize, 0xE25F00, 0x545454, TextKey.CURRENCY_FAME);
+        this.hpBar_ = new StatusBar(140, barSize, 14693428, 0x545454, TextKey.STATUS_BAR_HEALTH_POINTS);
+        this.mpBar_ = new StatusBar(140, barSize, 6325472, 0x545454, TextKey.STATUS_BAR_MANA_POINTS);
+        this.surgeBar_ = new StatusBar(140, barSize, 0xFFFF66, 0x545454, "SG");
+        this.protectionBar = new StatusBar(140, barSize, 0xFFFFFF, 0x545454, "PT");
+        this.protectionBar.y = 12 + 2;
+        this.hpBar_.y = 24 + 4;
+        this.mpBar_.y = 36 + 6;
+        this.surgeBar_.y = 48 + 8;
         this.expBar_.visible = true;
         this.fameBar_.visible = false;
         addChild(this.expBar_);
@@ -35,6 +39,7 @@ public class StatMetersView extends Sprite {
         addChild(this.hpBar_);
         addChild(this.mpBar_);
         addChild(this.surgeBar_);
+        addChild(this.protectionBar);
     }
 
     public function update(_arg1:Player):void {
@@ -86,6 +91,7 @@ public class StatMetersView extends Sprite {
         this.hpBar_.draw(_arg1.hp_, _arg1.maxHP_, _arg1.maxHPBoost_, _arg1.maxHPMax_);
         this.mpBar_.draw(_arg1.mp_, _arg1.maxMP_, _arg1.maxMPBoost_, _arg1.maxMPMax_);
         this.surgeBar_.draw(_arg1.surge_, 100, 0);
+        this.protectionBar.draw(_arg1.protectionPoints_, _arg1.protectionPointsMax_, 0);
     }
 
     private function onExpBarOver(_arg1:Event):void {

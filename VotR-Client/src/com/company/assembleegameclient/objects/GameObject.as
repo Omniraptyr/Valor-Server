@@ -528,6 +528,10 @@ public class GameObject extends BasicObject {
     public function isSamuraiBerserk():Boolean {
         return (!(((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.SAMURAIBERSERK_BIT) == 0)));
     }
+
+    public function isProtected():Boolean {
+        return (!(((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.PROTECTED_BIT) == 0)));
+    }
     public function isSafe(_arg1:int = 20):Boolean {
         var _local2:GameObject;
         var _local3:int;
@@ -1019,7 +1023,12 @@ public class GameObject extends BasicObject {
         }
         if (_arg2 > 0) {
             _local15 = ((((this.isArmorBroken()) || (((!((_arg5 == null))) && (_arg5.projProps_.armorPiercing_))))) || (_local6));
-            this.showDamageText(_arg2, _local15);
+            if(isProtected()){
+                this.showDamageText3(_arg2, _local15);
+            }else{
+                this.showDamageText(_arg2, _local15);
+            }
+
         }
     }
 
@@ -1038,6 +1047,13 @@ public class GameObject extends BasicObject {
     public function showDamageText(_arg1:int, _arg2:Boolean):void {
         var _local3:String = ("-" + _arg1);
         var _local4:CharacterStatusText = new CharacterStatusText(this, ((_arg2) ? 0x9000FF : 0xFF0000), 1000);
+        _local4.setStringBuilder(new StaticStringBuilder(_local3));
+        map_.mapOverlay_.addStatusText(_local4);
+    }
+
+    public function showDamageText3(_arg1:int, _arg2:Boolean):void {
+        var _local3:String = ("-" + _arg1);
+        var _local4:CharacterStatusText = new CharacterStatusText(this, ((_arg2) ? 0xFFFFFF : 0xFFFFFF), 1000);
         _local4.setStringBuilder(new StaticStringBuilder(_local3));
         map_.mapOverlay_.addStatusText(_local4);
     }

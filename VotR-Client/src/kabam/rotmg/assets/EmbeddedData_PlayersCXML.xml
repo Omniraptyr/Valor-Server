@@ -15,7 +15,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>2, 13, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa14, 0xa56, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="720">150</MaxHitPoints>
+        <MaxHitPoints max="680">110</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="50">10</Attack>
         <Defense max="25">0</Defense>
@@ -24,7 +24,9 @@
         <HpRegen max="40">15</HpRegen>
         <MpRegen max="50">10</MpRegen>
         <Might max="50">2</Might>
-        <Luck max="25">2</Luck>
+        <Luck max="75">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="0" max="2">Attack</LevelIncrease>
@@ -33,8 +35,10 @@
         <LevelIncrease min="1" max="2">Dexterity</LevelIncrease>
         <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
-        <LevelIncrease min="0" max="1">Might</LevelIncrease>
-        <LevelIncrease min="0" max="1">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="2">Might</LevelIncrease>
+        <LevelIncrease min="0" max="2">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="5" type="0x0307">Archer</UnlockLevel>
         <UnlockCost>199</UnlockCost>
         <DisplayId>{players.Rogue}</DisplayId>
@@ -52,7 +56,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>3, 15, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa1a, 0xa61, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="700">130</MaxHitPoints>
+        <MaxHitPoints max="680">130</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="75">12</Attack>
         <Defense max="25">0</Defense>
@@ -61,7 +65,9 @@
         <HpRegen max="40">12</HpRegen>
         <MpRegen max="50">10</MpRegen>
         <Might max="80">2</Might>
-        <Luck max="20">2</Luck>
+        <Luck max="40">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -71,7 +77,9 @@
         <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
-        <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="5" type="0x0310">Priest</UnlockLevel>
         <UnlockCost>199</UnlockCost>
         <DisplayId>{players.Archer}</DisplayId>
@@ -89,7 +97,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>17, 11, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa97, 0xa2e, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="670">100</MaxHitPoints>
+        <MaxHitPoints max="630">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
         <Attack max="75">12</Attack>
         <Defense max="25">0</Defense>
@@ -99,6 +107,8 @@
         <MpRegen max="60">12</MpRegen>
         <Might max="30">2</Might>
         <Luck max="20">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="40">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="5" max="15">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -109,6 +119,8 @@
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        `	<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockCost>0</UnlockCost>
         <DisplayId>{players.Wizard}</DisplayId>
     </Object>
@@ -125,7 +137,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>8, 4, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa04, 0xa31, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="670">100</MaxHitPoints>
+        <MaxHitPoints max="630">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
         <Attack max="50">12</Attack>
         <Defense max="25">0</Defense>
@@ -135,6 +147,8 @@
         <MpRegen max="75">15</MpRegen>
         <Might max="40">2</Might>
         <Luck max="70">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="50">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="5" max="15">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="0" max="2">Attack</LevelIncrease>
@@ -145,6 +159,8 @@
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="5" type="0x030e">Wizard</UnlockLevel>
         <UnlockCost>50</UnlockCost>
         <DisplayId>{players.Priest}</DisplayId>
@@ -162,7 +178,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>1, 16, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa00, 0x0a66, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="770">200</MaxHitPoints>
+        <MaxHitPoints max="730">180</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="75">15</Attack>
         <Defense max="25">0</Defense>
@@ -172,6 +188,8 @@
         <MpRegen max="50">10</MpRegen>
         <Might max="50">2</Might>
         <Luck max="10">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -182,6 +200,8 @@
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="0">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="5" type="0x0300">Rogue</UnlockLevel>
         <UnlockCost>199</UnlockCost>
         <DisplayId>{players.Warrior}</DisplayId>
@@ -199,7 +219,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>1, 5, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa00, 0x0a08, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="770">200</MaxHitPoints>
+        <MaxHitPoints max="730">180</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="50">15</Attack>
         <Defense max="40">0</Defense>
@@ -209,6 +229,8 @@
         <MpRegen max="50">10</MpRegen>
         <Might max="40">2</Might>
         <Luck max="10">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -219,6 +241,8 @@
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="0">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x031d">Warrior</UnlockLevel>
         <UnlockCost>499</UnlockCost>
         <DisplayId>{players.Knight}</DisplayId>
@@ -236,7 +260,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>1, 12, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa00, 0xa52, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="770">200</MaxHitPoints>
+        <MaxHitPoints max="720">170</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="50">12</Attack>
         <Defense max="30">0</Defense>
@@ -246,6 +270,8 @@
         <MpRegen max="75">10</MpRegen>
         <Might max="30">2</Might>
         <Luck max="10">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="50">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -256,6 +282,8 @@
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="0">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x031e">Knight</UnlockLevel>
         <UnlockLevel level="20" type="0x0310">Priest</UnlockLevel>
         <UnlockCost>499</UnlockCost>
@@ -274,7 +302,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>2, 18, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa14, 0xaa3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="720">150</MaxHitPoints>
+        <MaxHitPoints max="680">130</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="60">12</Attack>
         <Defense max="25">0</Defense>
@@ -282,8 +310,10 @@
         <Dexterity max="75">15</Dexterity>
         <HpRegen max="40">15</HpRegen>
         <MpRegen max="60">10</MpRegen>
-        <Might max="70">2</Might>
-        <Luck max="40">2</Luck>
+        <Might max="80">2</Might>
+        <Luck max="60">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="0" max="2">Attack</LevelIncrease>
@@ -294,6 +324,8 @@
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0300">Rogue</UnlockLevel>
         <UnlockLevel level="20" type="0x030e">Wizard</UnlockLevel>
         <UnlockCost>499</UnlockCost>
@@ -312,7 +344,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>17, 19, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa97, 0xaaa, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="670">100</MaxHitPoints>
+        <MaxHitPoints max="630">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
         <Attack max="65">12</Attack>
         <Defense max="30">0</Defense>
@@ -322,6 +354,8 @@
         <MpRegen max="75">12</MpRegen>
         <Might max="30">2</Might>
         <Luck max="10">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="5" max="15">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -332,6 +366,8 @@
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x030e">Wizard</UnlockLevel>
         <UnlockLevel level="20" type="0x0310">Priest</UnlockLevel>
         <UnlockCost>499</UnlockCost>
@@ -350,16 +386,18 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>3, 20, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa1a, 0xab1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="700">130</MaxHitPoints>
+        <MaxHitPoints max="660">110</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="75">12</Attack>
         <Defense max="25">0</Defense>
-        <Speed max="50">12</Speed>
+        <Speed max="55">12</Speed>
         <Dexterity max="50">12</Dexterity>
-        <HpRegen max="40">12</HpRegen>
+        <HpRegen max="35">12</HpRegen>
         <MpRegen max="50">10</MpRegen>
-        <Might max="80">2</Might>
-        <Luck max="5">2</Luck>
+        <Might max="70">2</Might>
+        <Luck max="50">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -369,7 +407,9 @@
         <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
-        <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0300">Rogue</UnlockLevel>
         <UnlockLevel level="20" type="0x0307">Archer</UnlockLevel>
         <UnlockCost>499</UnlockCost>
@@ -388,7 +428,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>17, 21, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa97, 0xae4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="670">100</MaxHitPoints>
+        <MaxHitPoints max="630">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
         <Attack max="60">10</Attack>
         <Defense max="25">0</Defense>
@@ -398,6 +438,8 @@
         <MpRegen max="75">15</MpRegen>
         <Might max="40">2</Might>
         <Luck max="50">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="50">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="5" max="15">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -408,6 +450,8 @@
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0322">Huntress</UnlockLevel>
         <UnlockLevel level="20" type="0x0321">Necromancer</UnlockLevel>
         <UnlockCost>999</UnlockCost>
@@ -426,7 +470,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>2, 22, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa14, 0xae3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="720">150</MaxHitPoints>
+        <MaxHitPoints max="680">130</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="65">10</Attack>
         <Defense max="25">0</Defense>
@@ -436,6 +480,8 @@
         <MpRegen max="60">12</MpRegen>
         <Might max="80">2</Might>
         <Luck max="25">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="40">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -446,6 +492,8 @@
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0320">Assassin</UnlockLevel>
         <UnlockLevel level="20" type="0x031f">Paladin</UnlockLevel>
         <UnlockCost>999</UnlockCost>
@@ -474,6 +522,8 @@
         <MpRegen max="80">15</MpRegen>
         <Might max="50">2</Might>
         <Luck max="40">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="40">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="5" max="15">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -484,6 +534,8 @@
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0321">Necromancer</UnlockLevel>
         <UnlockLevel level="20" type="0x0320">Assassin</UnlockLevel>
         <UnlockCost>999</UnlockCost>
@@ -502,7 +554,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>24, 25, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xc44, 0xc53, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="720">150</MaxHitPoints>
+        <MaxHitPoints max="680">130</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="70">15</Attack>
         <Defense max="25">0</Defense>
@@ -512,6 +564,8 @@
         <MpRegen max="70">12</MpRegen>
         <Might max="50">2</Might>
         <Luck max="50">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -522,6 +576,8 @@
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0300">Rogue</UnlockLevel>
         <UnlockLevel level="20" type="0x031d">Warrior</UnlockLevel>
         <UnlockCost>999</UnlockCost>
@@ -540,7 +596,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>24, 27, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xc44, 0x185a, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="720">150</MaxHitPoints>
+        <MaxHitPoints max="690">130</MaxHitPoints>
         <MaxMagicPoints max="225">100</MaxMagicPoints>
         <Attack max="65">15</Attack>
         <Defense max="25">0</Defense>
@@ -550,6 +606,8 @@
         <MpRegen max="45">12</MpRegen>
         <Might max="60">2</Might>
         <Luck max="25">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -560,6 +618,8 @@
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0300">Necromancer</UnlockLevel>
         <UnlockLevel level="20" type="0x031d">Ninja</UnlockLevel>
         <UnlockCost>999</UnlockCost>
@@ -578,7 +638,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>29, 28, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0x52b1, 0x51ab, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="800">175</MaxHitPoints>
+        <MaxHitPoints max="780">155</MaxHitPoints>
         <MaxMagicPoints max="125">72</MaxMagicPoints>
         <Attack max="85">15</Attack>
         <Defense max="20">0</Defense>
@@ -588,6 +648,8 @@
         <MpRegen max="30">4</MpRegen>
         <Might max="40">2</Might>
         <Luck max="40">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="50">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -598,6 +660,8 @@
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0310">Priest</UnlockLevel>
         <UnlockLevel level="20" type="0x0327">Samurai</UnlockLevel>
         <UnlockLevel level="20" type="0x031e">Knight</UnlockLevel>
@@ -617,7 +681,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>8, 30, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa04, 0x52ca, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="520">100</MaxHitPoints>
+        <MaxHitPoints max="600">110</MaxHitPoints>
         <MaxMagicPoints max="900">200</MaxMagicPoints>
         <Attack max="50">15</Attack>
         <Defense max="20">0</Defense>
@@ -627,6 +691,8 @@
         <MpRegen max="80">2</MpRegen>
         <Might max="50">2</Might>
         <Luck max="30">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="8" max="12">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="5" max="10">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -637,6 +703,8 @@
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0325">Sorcerer</UnlockLevel>
         <UnlockLevel level="20" type="0x0327">Templar</UnlockLevel>
         <UnlockCost>999</UnlockCost>

@@ -196,9 +196,9 @@ namespace wServer.logic
                 new TierLoot(1, ItemType.Ability, 0.95),
                 new TierLoot(2, ItemType.Ability, 0.25),
                 new TierLoot(3, ItemType.Ability, 0.05),
-                new ItemLoot("Minor Magic Potion", 0.7),
+                new ItemLoot("Magic Potion", 0.7),
                 new ItemLoot("50 Gold", 0.038),
-                new ItemLoot("Minor Health Potion", 0.7)
+                new ItemLoot("Health Potion", 0.7)
                     )
             )
             .Init("Ent",
@@ -261,7 +261,7 @@ namespace wServer.logic
                     new Decay(60000)
                     ),
                 new Threshold(0.15,
-                new ItemLoot("Minor Health Potion", 0.25),
+                new ItemLoot("Health Potion", 0.25),
                 new ItemLoot("Potion of Dexterity", 0.06),
                 new ItemLoot("Green Drake Egg", 0.08),
                 new ItemLoot("Quiver of Thunder", 0.007),

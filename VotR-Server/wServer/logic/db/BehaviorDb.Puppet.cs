@@ -17,7 +17,7 @@ namespace wServer.logic
                     new Shoot(8.4, count: 1, projectileIndex: 0, coolDown: 1750),
                     new Shoot(8, count: 1, projectileIndex: 1, coolDown: 2000)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.1),
+                new ItemLoot("Magic Potion", 0.1),
                 new Threshold(0.1,
                     new ItemLoot("Obsidian Dagger", 0.02),
                     new ItemLoot("Steel Helm", 0.02)
@@ -29,7 +29,7 @@ namespace wServer.logic
                     new Shoot(8.4, count: 3, projectileIndex: 0, coolDown: 1550),
                     new Shoot(8, count: 1, projectileIndex: 1, coolDown: 2700)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.1),
+                new ItemLoot("Magic Potion", 0.1),
                 new Threshold(0.1,
                     new ItemLoot("Obsidian Dagger", 0.02),
                     new ItemLoot("Steel Helm", 0.02)
@@ -44,7 +44,7 @@ namespace wServer.logic
                     new HealSelf(coolDown: 5000),
                     new Shoot(8.4, count: 1, projectileIndex: 0, coolDown: 1000)
                     ),
-                new ItemLoot("Minor Health Potion", 0.1),
+                new ItemLoot("Health Potion", 0.1),
                 new Threshold(0.1,
                     new ItemLoot("Mithril Dagger", 0.02),
                     new ItemLoot("Mithril Chainmail", 0.02)
@@ -59,7 +59,7 @@ namespace wServer.logic
                     new Grenade(3, 100, 4, coolDown: 3000),
                     new Shoot(8.4, count: 1, projectileIndex: 0, coolDown: 1500)
                     ),
-                new ItemLoot("Minor Health Potion", 0.1),
+                new ItemLoot("Health Potion", 0.1),
                 new Threshold(0.1,
                     new ItemLoot("Mithril Dagger", 0.02),
                     new ItemLoot("Mithril Chainmail", 0.02)
@@ -115,7 +115,7 @@ namespace wServer.logic
                     new Wander(0.31),
                     new Shoot(8.4, count: 1, projectileIndex: 0, coolDown: 1400)
                     ),
-                new ItemLoot("Minor Health Potion", 0.1),
+                new ItemLoot("Health Potion", 0.1),
                 new Threshold(0.1,
                     new ItemLoot("Mithril Dagger", 0.02),
                     new ItemLoot("Mithril Chainmail", 0.02)
@@ -127,7 +127,7 @@ namespace wServer.logic
                     new Shoot(8.4, count: 1, projectileIndex: 0, coolDown: 1350),
                     new Shoot(8.4, count: 1, projectileIndex: 1, coolDown: 1950)
                     ),
-                new ItemLoot("Minor Health Potion", 0.1),
+                new ItemLoot("Health Potion", 0.1),
                 new Threshold(0.1,
                     new ItemLoot("Mithril Dagger", 0.02),
                     new ItemLoot("Mithril Chainmail", 0.02)
@@ -141,7 +141,7 @@ namespace wServer.logic
                         ),
                     new Shoot(8.4, count: 10, projectileIndex: 0, coolDown: 2650)
                     ),
-                new ItemLoot("Minor Health Potion", 0.1),
+                new ItemLoot("Health Potion", 0.1),
                 new Threshold(0.1,
                     new ItemLoot("Golden Bow", 0.02),
                     new ItemLoot("Demon Edge", 0.02)
@@ -153,7 +153,7 @@ namespace wServer.logic
                     new Orbit(0.37, 4, 20, "The Puppet Master"),
                     new HealGroup(8, "Master", coolDown: 4500, healAmount: 75)
                     ),
-                new ItemLoot("Minor Health Potion", 0.1),
+                new ItemLoot("Health Potion", 0.1),
                 new Threshold(0.1,
                     new ItemLoot("Golden Bow", 0.02),
                     new ItemLoot("Demon Edge", 0.02)
@@ -166,7 +166,7 @@ namespace wServer.logic
                     new Shoot(8.4, count: 1, projectileIndex: 0, coolDown: 1250),
                     new HealGroup(10, "Healers", coolDown: 3000)
                     ),
-                new ItemLoot("Minor Health Potion", 0.1),
+                new ItemLoot("Health Potion", 0.1),
                 new Threshold(0.1,
                     new ItemLoot("Golden Bow", 0.02),
                     new ItemLoot("Demon Edge", 0.02)
@@ -182,7 +182,7 @@ namespace wServer.logic
                      new TossObject("Puppet Bomb", 5, coolDown: 7500),
                     new Shoot(8.4, count: 1, projectileIndex: 0, coolDown: 2000)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.1)
+                new ItemLoot("Magic Potion", 0.1)
             )
               .Init("Puppet Bomb",
                         new State(

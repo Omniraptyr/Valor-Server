@@ -11,7 +11,6 @@ namespace wServer.logic
         private _ CubeGod = () => Behav()
              .Init("Cube God",
                  new State(
-                     new DropPortalOnDeath("Prison of Time Portal", 100),
                      new StayCloseToSpawn(0.3, range: 7),
                             new Wander(0.5),
                               new Shoot(10, count: 9, predictive: 0.9, shootAngle: 6.5, coolDown: 1000),
@@ -20,6 +19,9 @@ namespace wServer.logic
                               new Spawn("Cube Defender", maxChildren: 5, initialSpawn: 5, coolDown: 100000),
                               new Spawn("Cube Blaster", maxChildren: 5, initialSpawn: 5, coolDown: 100000)
                  ),
+                 new MostDamagers(3,
+                     LootTemplates.StatIncreasePotionsLoot()
+                     ),
                  new Threshold(0.15,
                      new TierLoot(3, ItemType.Ring, 0.2),
                      new TierLoot(7, ItemType.Armor, 0.2),
@@ -36,8 +38,7 @@ namespace wServer.logic
                      new TierLoot(11, ItemType.Weapon, 0.01),
                      new TierLoot(5, ItemType.Ring, 0.01),
                      new ItemLoot("Kepi of Uncontrollable Darkness", 0.03),
-                     new ItemLoot("Dirk of Cronus", 0.03),
-                     new ItemLoot("Potion of Speed", 1.00)
+                     new ItemLoot("Dirk of Cronus", 0.03)
                  )
              )
              .Init("Cube Overseer",

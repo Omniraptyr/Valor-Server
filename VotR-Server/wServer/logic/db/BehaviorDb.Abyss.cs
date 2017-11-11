@@ -73,8 +73,7 @@ namespace wServer.logic
                     new TierLoot(10, ItemType.Armor, 0.05),
                     new TierLoot(10, ItemType.Weapon, 0.05),
                     new TierLoot(4, ItemType.Ring, 0.025),
-                    new ItemLoot("Demon Blade", 0.035),
-                    new ItemLoot("Mark of Fortitude", 0.01)
+                    new ItemLoot("Demon Blade", 0.035)
                 )
             )
             .Init("Malphas Missile",
@@ -102,8 +101,8 @@ namespace wServer.logic
                     new Wander(0.2),
                     new Shoot(8, 5, 10, coolDown: 3200)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.1),
-                new ItemLoot("Minor Health Potion", 0.1),
+                new ItemLoot("Magic Potion", 0.1),
+                new ItemLoot("Health Potion", 0.1),
                 new Threshold(0.5,
                     new ItemLoot("Cloak of the Red Agent", 0.01),
                     new ItemLoot("Felwasp Toxin", 0.01)
@@ -158,7 +157,7 @@ namespace wServer.logic
                         ),
                     new Shoot(8, 3, shootAngle: 10, coolDown: 800)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.1),
+                new ItemLoot("Magic Potion", 0.1),
                 new Threshold(0.1,
                     new ItemLoot("Obsidian Dagger", 0.02),
                     new ItemLoot("Steel Helm", 0.02)

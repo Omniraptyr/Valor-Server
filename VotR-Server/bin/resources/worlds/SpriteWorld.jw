@@ -9,4 +9,4 @@
 "showDisplays":false,
 "portals":[0x070c],
 "maps":["spriteworld1.wmap", "spriteworld2.wmap", "spriteworld3.wmap", "spriteworld4.wmap", "spriteworld5.wmap"],
-"music":[""]}
+"music":["spriteworld"]}

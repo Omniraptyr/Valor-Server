@@ -56,16 +56,6 @@ namespace wServer.realm.entities
                         Effect = ConditionEffectIndex.Empowered,
                         DurationMS = duration
                     });
-                    player.ApplyConditionEffect(new ConditionEffect
-                    {
-                        Effect = ConditionEffectIndex.StunImmune,
-                        DurationMS = duration
-                    });
-                    player.ApplyConditionEffect(new ConditionEffect
-                    {
-                        Effect = ConditionEffectIndex.ParalyzeImmune,
-                        DurationMS = duration
-                    });
                 });
 
                 Owner.BroadcastPackets(pkts, null);

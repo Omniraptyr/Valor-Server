@@ -1,17 +1,17 @@
 <AppSettings>
-  <MenuMusic></MenuMusic>
-  <DeadMusic></DeadMusic>
+  <MenuMusic>sorc6</MenuMusic>
+  <DeadMusic>dedte</DeadMusic>
   <EditorMinRank>0</EditorMinRank>
-  <CharacterSlotCost>1000</CharacterSlotCost>
-  <CharacterSlotCurrency>1</CharacterSlotCurrency>
+  <CharacterSlotCost>2000</CharacterSlotCost>
+  <CharacterSlotCurrency>0</CharacterSlotCurrency>
   <VaultChestCost>250</VaultChestCost>
   <InventorySize>20</InventorySize>
   <UseExternalPayments>0</UseExternalPayments>
-  <MaxStackablePotions>3</MaxStackablePotions>
+  <MaxStackablePotions>6</MaxStackablePotions>
   <PotionPurchaseCooldown>400</PotionPurchaseCooldown>
   <PotionPurchaseCostCooldown>8000</PotionPurchaseCostCooldown>
   <PotionPurchaseCosts>
-    <cost>5</cost>
+    <cost>0</cost>
     <cost>10</cost>
     <cost>20</cost>
     <cost>40</cost>
@@ -31,8 +31,8 @@
   <NewAccounts>
     <Gold>0</Gold>
     <Fame>0</Fame>
-    <ClassesUnlocked>1</ClassesUnlocked>
-    <SkinsUnlocked>1</SkinsUnlocked>
+    <ClassesUnlocked>0</ClassesUnlocked>
+    <SkinsUnlocked>0</SkinsUnlocked>
     <PetYardType>1</PetYardType>
     <VaultCount>1</VaultCount>
     <MaxCharSlot>2</MaxCharSlot>

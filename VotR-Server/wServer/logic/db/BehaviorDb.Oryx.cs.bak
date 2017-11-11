@@ -225,7 +225,7 @@ namespace wServer.logic
                     new Shoot(3, 3, projectileIndex: 1, shootAngle: 10, coolDown: 1000)
                     ),
                 new TierLoot(7, ItemType.Weapon, 0.2),
-                new ItemLoot("Charcoal", 0.03)
+                new ItemLoot("Minor Magic Potion", 0.03)
             )
             .Init("Guardian Element 1",
                 new State(

@@ -54,7 +54,7 @@ namespace wServer.logic
                         new Prioritize(
                             new Wander(0.5)
                             ),
-                        new Shoot(20, count: 9, fixedAngle: 360/9, projectileIndex: 2, coolDown: 2300),
+                        new Shoot(20, count: 9, fixedAngle: 360 / 9, projectileIndex: 2, coolDown: 2300),
                         new TimedTransition(6000, "TransAttack1"),
                         new State("Shoot1",
                             new Shoot(20, count: 2, shootAngle: 4, projectileIndex: 2, coolDown: 700),
@@ -85,6 +85,9 @@ namespace wServer.logic
                         new TimedTransition(1900, "Attack1")
                         )
                     ),
+                 new MostDamagers(3,
+                    LootTemplates.StatIncreasePotionsLoot()
+                ),
                 new Threshold(0.01,
                     new ItemLoot("Potion of Vitality", 0.1),
                     new ItemLoot("Potion of Wisdom", 0.1),

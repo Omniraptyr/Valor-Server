@@ -48,8 +48,8 @@ namespace wServer.realm
                 max = weap.Projectiles[0].MaxDamage;
             }
 
-            _base[10] = min;
-            _base[11] = max;
+            _base[12] = min;
+            _base[13] = max;
         }
     }
 }

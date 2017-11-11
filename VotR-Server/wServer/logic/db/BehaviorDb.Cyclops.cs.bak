@@ -85,7 +85,7 @@ namespace wServer.logic
                     ),
                 new ItemLoot("Golden Sword", 0.02),
                 new ItemLoot("Studded Leather Armor", 0.02),
-                new ItemLoot("Charcoal", 0.05)
+                new ItemLoot("Minor Magic Potion", 0.05)
             )
             .Init("Cyclops Warrior",
                 new State(
@@ -98,7 +98,7 @@ namespace wServer.logic
                     ),
                 new ItemLoot("Golden Sword", 0.03),
                 new ItemLoot("Golden Shield", 0.02),
-                new ItemLoot("Charcoal", 0.05)
+                new ItemLoot("Minor Magic Potion", 0.05)
             )
             .Init("Cyclops Noble",
                 new State(
@@ -111,7 +111,7 @@ namespace wServer.logic
                     ),
                 new ItemLoot("Golden Dagger", 0.02),
                 new ItemLoot("Studded Leather Armor", 0.02),
-                new ItemLoot("Charcoal", 0.05)
+                new ItemLoot("Minor Magic Potion", 0.05)
             )
             .Init("Cyclops Prince",
                 new State(
@@ -125,7 +125,7 @@ namespace wServer.logic
                 new ItemLoot("Mithril Dagger", 0.02),
                 new ItemLoot("Plate Mail", 0.02),
                 new ItemLoot("Seal of the Divine", 0.01),
-                new ItemLoot("Charcoal", 0.05)
+                new ItemLoot("Minor Magic Potion", 0.05)
             )
             .Init("Cyclops King",
                 new State(
@@ -138,7 +138,7 @@ namespace wServer.logic
                     ),
                 new ItemLoot("Golden Sword", 0.02),
                 new ItemLoot("Mithril Armor", 0.02),
-                new ItemLoot("Charcoal", 0.05)
+                new ItemLoot("Minor Magic Potion", 0.05)
             )
             ;
     }

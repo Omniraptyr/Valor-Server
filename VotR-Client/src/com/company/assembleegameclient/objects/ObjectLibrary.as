@@ -370,6 +370,10 @@ public class ObjectLibrary {
                     return ((_arg2.luck_ >= _local3));
                 case StatData.MIGHT_STAT:
                     return ((_arg2.might_ >= _local3));
+                case StatData.RESTORATION_STAT:
+                    return ((_arg2.restoration_ >= _local3));
+                case StatData.PROTECTION_STAT:
+                    return ((_arg2.protection_ >= _local3));
             }
         }
         return (false);

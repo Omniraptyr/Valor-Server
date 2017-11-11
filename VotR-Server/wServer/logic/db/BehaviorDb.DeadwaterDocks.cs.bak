@@ -54,8 +54,8 @@ namespace wServer.logic
                     new Shoot(8, 1, 10, coolDown: 1000),
                     new TossObject("Bottled Evil Water", angle: null, coolDown: 6750)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.1),
-                new ItemLoot("Wheat", 0.1)
+                new ItemLoot("Magic Potion", 0.1),
+                new ItemLoot("Minor Health Potion", 0.1)
             )
           .Init("Deadwater Docks Veteran",
                 new State(
@@ -63,32 +63,32 @@ namespace wServer.logic
                     new Shoot(8, 1, 10, coolDown: 500)
                     ),
                 new TierLoot(10, ItemType.Weapon, 0.05),
-                new ItemLoot("Minor Magic Potion", 0.1),
-                new ItemLoot("Wheat", 0.1)
+                new ItemLoot("Magic Potion", 0.1),
+                new ItemLoot("Minor Health Potion", 0.1)
             )
           .Init("Deadwater Docks Admiral",
                 new State(
                     new Follow(0.6, 8, 1),
                     new Shoot(8, 3, 10, coolDown: 1325)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.1),
-                new ItemLoot("Wheat", 0.1)
+                new ItemLoot("Magic Potion", 0.1),
+                new ItemLoot("Minor Health Potion", 0.1)
             )
           .Init("Deadwater Docks Brawler",
                 new State(
                     new Follow(1.12, 8, 1),
                     new Shoot(8, 1, 10, coolDown: 350)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.1),
-                new ItemLoot("Wheat", 0.1)
+                new ItemLoot("Magic Potion", 0.1),
+                new ItemLoot("Minor Health Potion", 0.1)
             )
           .Init("Deadwater Docks Sailor",
                 new State(
                     new Follow(0.9, 8, 1),
                     new Shoot(8, 1, 10, coolDown: 525)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.1),
-                new ItemLoot("Wheat", 0.1)
+                new ItemLoot("Magic Potion", 0.1),
+                new ItemLoot("Minor Health Potion", 0.1)
             )
           .Init("Deadwater Docks Commander",
                 new State(
@@ -96,16 +96,16 @@ namespace wServer.logic
                     new Shoot(8, 1, 10, coolDown: 900),
                     new TossObject("Bottled Evil Water", angle: null, coolDown: 8750)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.1),
-                new ItemLoot("Wheat", 0.1)
+                new ItemLoot("Magic Potion", 0.1),
+                new ItemLoot("Minor Health Potion", 0.1)
             )
           .Init("Deadwater Docks Captain",
                 new State(
                     new Follow(0.47, 8, 1),
                     new Shoot(8, 1, 10, coolDown: 3500)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.1),
-                new ItemLoot("Wheat", 0.1)
+                new ItemLoot("Magic Potion", 0.1),
+                new ItemLoot("Minor Health Potion", 0.1)
             )
 
           .Init("Jon Bilgewater the Pirate King",

@@ -252,7 +252,7 @@ public class Projectile extends BasicObject {
 
             if (goHit) {
                 var dmg:int = GameObject.damageWithDefense(this.damage_, go.defense_, this.projProps_.armorPiercing_, go.condition_);
-
+                var dmg2:int = GameObject.damageWithDefense(this.damage_, go.defense_, true, go.condition_);
                 var killed:Boolean = false;
                 if (go.hp_ <= dmg) {
                     killed = true;
@@ -263,7 +263,12 @@ public class Projectile extends BasicObject {
 
                 if (go == player) {
                     map_.gs_.gsc_.playerHit(this.bulletId_, this.ownerId_);
-                    go.damage(this.containerType_, dmg, this.projProps_.effects_, false, this);
+                    if(go.isProtected()){
+                        go.damage(this.containerType_, dmg2, this.projProps_.effects_, false, this);
+                    }else{
+                        go.damage(this.containerType_, dmg, this.projProps_.effects_, false, this);
+                    }
+
                 }
                 else {
                     if (goIsEnemy) {

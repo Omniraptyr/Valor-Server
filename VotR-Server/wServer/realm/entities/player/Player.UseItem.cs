@@ -19,6 +19,82 @@ namespace wServer.realm.entities
 
         public int DrainedHP = 0;
 
+        public static readonly ConditionEffect[] NegativeEffs2 = new ConditionEffect[]
+        {
+            new ConditionEffect()
+            {
+                Effect = ConditionEffectIndex.Slowed
+            },
+            new ConditionEffect()
+            {
+                Effect = ConditionEffectIndex.Paralyzed
+            },
+            new ConditionEffect()
+            {
+                Effect = ConditionEffectIndex.Weak
+            },
+            new ConditionEffect()
+            {
+                Effect = ConditionEffectIndex.Stunned
+            },
+            new ConditionEffect()
+            {
+                Effect = ConditionEffectIndex.Confused
+            },
+            new ConditionEffect()
+            {
+                Effect = ConditionEffectIndex.Blind
+            },
+            new ConditionEffect()
+            {
+                Effect = ConditionEffectIndex.Quiet
+            },
+            new ConditionEffect()
+            {
+                Effect = ConditionEffectIndex.ArmorBroken
+            },
+            new ConditionEffect()
+            {
+                Effect = ConditionEffectIndex.Bleeding
+            },
+            new ConditionEffect()
+            {
+                Effect = ConditionEffectIndex.Dazed
+            },
+            new ConditionEffect()
+            {
+                Effect = ConditionEffectIndex.Sick
+            },
+            new ConditionEffect()
+            {
+                Effect = ConditionEffectIndex.Drunk
+            },
+            new ConditionEffect()
+            {
+                Effect = ConditionEffectIndex.Hallucinating
+            },
+            new ConditionEffect()
+            {
+                Effect = ConditionEffectIndex.Hexed
+            },
+            new ConditionEffect()
+            {
+                Effect= ConditionEffectIndex.Unstable
+            },
+            new ConditionEffect()
+            {
+                Effect= ConditionEffectIndex.Darkness
+            },
+            new ConditionEffect()
+            {
+                Effect= ConditionEffectIndex.Curse
+            },
+            new ConditionEffect()
+            {
+                Effect= ConditionEffectIndex.Exhausted
+            }
+        };
+
         public static readonly ConditionEffect[] NegativeEffs = new ConditionEffect[]
         {
             new ConditionEffect()
@@ -396,6 +472,12 @@ namespace wServer.realm.entities
                         break;
                     case ActivateEffects.SiphonAbility:
                         AESiphonAbility(time, item, target, eff);
+                        break;
+                    case ActivateEffects.Heal2:
+                        AEHeal2(time, item, target, eff);
+                        break;
+                    case ActivateEffects.Magic2:
+                        AEMagic2(time, item, target, eff);
                         break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
@@ -1197,7 +1279,7 @@ namespace wServer.realm.entities
             var pkts = new List<Packet>();
             if (!HasConditionEffect(ConditionEffects.Corrupted))
             {
-                ActivateHealMp(this, eff.Amount, pkts);
+                ActivateHealMp(this, eff.Amount+(RestorationHeal()/4), pkts);
             }
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
         }
@@ -1233,11 +1315,28 @@ namespace wServer.realm.entities
             if (!HasConditionEffect(ConditionEffects.Sick) || !HasConditionEffect(ConditionEffects.Corrupted))
             {
                 var pkts = new List<Packet>();
-                ActivateHealHp(this, eff.Amount, pkts);
+                ActivateHealHp(this, eff.Amount+(RestorationHeal() / 4), pkts);
                 BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
             }
         }
-
+        private void AEHeal2(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            if (!HasConditionEffect(ConditionEffects.Sick) || !HasConditionEffect(ConditionEffects.Corrupted))
+            {
+                var pkts = new List<Packet>();
+                ActivateHealHp(this, RestorationHeal(), pkts);
+                BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
+            }
+        }
+        private void AEMagic2(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            var pkts = new List<Packet>();
+            if (!HasConditionEffect(ConditionEffects.Corrupted))
+            {
+                ActivateHealMp(this, RestorationHeal(), pkts);
+            }
+            BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
+        }
         private void AEConditionEffectAura(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var duration = eff.DurationMS;
@@ -1259,6 +1358,8 @@ namespace wServer.realm.entities
             var color = 0xffffffff;
             if (eff.ConditionEffect.Value == ConditionEffectIndex.Damaging)
                 color = 0xffff0000;
+            if (eff.ConditionEffect.Value == ConditionEffectIndex.Surged)
+                color = 0xFFFF00;
             BroadcastSync(new ShowEffect()
             {
                 EffectType = EffectType.AreaBlast,

@@ -181,9 +181,9 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("1 Gold", 1),
-                    new ItemLoot("5 Gold", 1),
-                    new ItemLoot("10 Gold", 1)
+                    new ItemLoot("1 Gold", 0.025),
+                    new ItemLoot("5 Gold", 0.025),
+                    new ItemLoot("10 Gold", 0.025)
                 ),
              };
         }

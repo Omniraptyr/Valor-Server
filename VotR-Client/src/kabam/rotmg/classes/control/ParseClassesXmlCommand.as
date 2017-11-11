@@ -50,6 +50,8 @@ public class ParseClassesXmlCommand {
         _arg1.mpRegeneration = this.parseCharacterStat(_arg2, "MpRegen");
         _arg1.might = this.parseCharacterStat(_arg2, "Might");
         _arg1.luck = this.parseCharacterStat(_arg2, "Luck");
+        _arg1.restoration = this.parseCharacterStat(_arg2, "Restoration");
+        _arg1.protection = this.parseCharacterStat(_arg2, "Protection");
         _arg1.unlockCost = _arg2.UnlockCost;
         for each (_local3 in _arg2.UnlockLevel) {
             _arg1.unlocks.push(this.parseUnlock(_local3));

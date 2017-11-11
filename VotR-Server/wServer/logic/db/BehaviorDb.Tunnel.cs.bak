@@ -22,8 +22,8 @@ namespace wServer.logic
                     new Shoot(10, count: 5, shootAngle: 18, projectileIndex: 0, coolDown: 1900)
                        )
                     ),
-                new ItemLoot("Minor Magic Potion", 0.25),
-                new ItemLoot("Wheat", 0.25)
+                new ItemLoot("Magic Potion", 0.25),
+                new ItemLoot("Minor Health Potion", 0.25)
               )
         .Init("Tunnel Fearless Archer",
                   new State(
@@ -65,8 +65,8 @@ namespace wServer.logic
                         new TimedTransition(5000, "ShootStaff")
                         )
                     ),
-                new ItemLoot("Minor Magic Potion", 0.25),
-                new ItemLoot("Wheat", 0.25)
+                new ItemLoot("Magic Potion", 0.25),
+                new ItemLoot("Minor Health Potion", 0.25)
                  )
            .Init("Tunnel Spearman of Pain",
                 new State(

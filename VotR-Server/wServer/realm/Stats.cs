@@ -134,6 +134,12 @@ namespace wServer.realm
         Lootbox3 = 118,
         Lootbox4 = 119,
         Lootbox5 = 120,
+        Restoration = 121,
+        Protection = 122,
+        RestorationBonus = 123,
+        ProtectionBonus = 124,
+        ProtectionPoints = 125,
+        ProtectionPointsMax = 126,
 
 
         None = 255

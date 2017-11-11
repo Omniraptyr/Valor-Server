@@ -152,7 +152,7 @@ namespace wServer.logic
                     new Shoot(10, count: 1, shootAngle: 0, coolDown: 500)
                 ),
                 new ItemLoot("Healing Ichor", 0.2),
-                new ItemLoot("Wheat", 0.3)
+                new ItemLoot("Minor Health Potion", 0.3)
             )
           .Init("Crawling Grey Spider",
                 new State(
@@ -163,7 +163,7 @@ namespace wServer.logic
                     new Shoot(9, count: 1, shootAngle: 0, coolDown: 850)
                 ),
                 new ItemLoot("Healing Ichor", 0.2),
-                new ItemLoot("Wheat", 0.3)
+                new ItemLoot("Minor Health Potion", 0.3)
             )
         .Init("Crawling Red Spotted Spider",
                 new State(
@@ -173,7 +173,7 @@ namespace wServer.logic
                     new Shoot(8, count: 1, shootAngle: 0, coolDown: 750)
                 ),
                 new ItemLoot("Healing Ichor", 0.2),
-                new ItemLoot("Wheat", 0.3)
+                new ItemLoot("Minor Health Potion", 0.3)
             )
          .Init("Crawling Green Spider",
                 new State(
@@ -184,7 +184,7 @@ namespace wServer.logic
                     new Shoot(8, count: 3, shootAngle: 10, coolDown: 400)
                 ),
                 new ItemLoot("Healing Ichor", 0.2),
-                new ItemLoot("Wheat", 0.3)
+                new ItemLoot("Minor Health Potion", 0.3)
             )
          .Init("Yellow Son of Arachna Giant Egg Sac",
                 new State(

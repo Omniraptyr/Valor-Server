@@ -115,8 +115,12 @@ public class StatData {
     public static const LOOTBOX3 = 118;
     public static const LOOTBOX4 = 119;
     public static const LOOTBOX5 = 120;
-
-
+    public static const RESTORATION_STAT = 121;
+    public static const PROTECTION_STAT = 122;
+    public static const RESTORATION_BOOST_STAT = 123;
+    public static const PROTECTION_BOOST_STAT = 124;
+    public static const PROTECTIONPOINTS = 125;
+    public static const PROTECTIONMAX = 126;
 
 
     // unimplemented
@@ -166,6 +170,10 @@ public class StatData {
                 return (TextKey.STAT_MODEL_LUCK_LONG);
             case MIGHT_STAT:
                 return (TextKey.STAT_MODEL_MIGHT_LONG);
+            case RESTORATION_STAT:
+                return (TextKey.STAT_MODEL_RESTORATION_LONG);
+            case PROTECTION_STAT:
+                return (TextKey.STAT_MODEL_PROTECTION_LONG);
         }
         return (TextKey.STAT_DATA_UNKNOWN_STAT);
     }

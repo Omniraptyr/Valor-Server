@@ -136,11 +136,40 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ring, 0.005),
                     new TierLoot(4, ItemType.Ability, 0.02)
                     ),
-                                new MostDamagers(3,
+                 new MostDamagers(3,
                     LootTemplates.GoldLoot()
                 ),
                 new Threshold(0.07,
                     new ItemLoot("Potion of Speed", 0.07)
+                    )
+            )
+                .Init("Thunder God",
+                new State(
+                    new DropPortalOnDeath("Storm Palace Portal", 45),
+                    new Prioritize(
+                        new Swirl(0.4, 7),
+                        new Wander(0.4)
+                        ),
+                    new Shoot(10, 4, 20, coolDown: 3000),
+                    new Shoot(10, 8, coolDown: 2500, predictive: 1, coolDownOffset: 2690, projectileIndex: 1)
+                    ),
+                new MostDamagers(3,
+                    LootTemplates.GoldLoot()
+                ),
+                new TierLoot(6, ItemType.Weapon, 0.071),
+                new Threshold(0.18,
+                new TierLoot(11, ItemType.Armor, 0.06),
+                new TierLoot(7, ItemType.Weapon, 0.052),
+                new TierLoot(8, ItemType.Weapon, 0.042),
+                new TierLoot(7, ItemType.Armor, 0.062),
+                new TierLoot(8, ItemType.Armor, 0.042),
+
+                new TierLoot(3, ItemType.Ring, 0.0192),
+                new TierLoot(4, ItemType.Ring, 0.0082),
+                new TierLoot(4, ItemType.Ability, 0.0172),
+                new TierLoot(3, ItemType.Ability, 0.042),
+                    new TierLoot(9, ItemType.Armor, 0.03),
+                    new ItemLoot("Potion of Defense", 0.07)
                     )
             )
             .Init("Ent God",
@@ -282,7 +311,7 @@ namespace wServer.logic
                     new Wander(0.6),
                     new Shoot(12, 2, 1, coolDown: 10),
                     new Shoot(12, 10, 1, projectileIndex: 1, coolDown: 2000),
-                    new DropPortalOnDeath("Concealment of the Dreadnought Portal", 10)
+                    new DropPortalOnDeath("Concealment of the Dreadnought Portal", .20)
                     ),
                 new TierLoot(6, ItemType.Weapon, 0.07),
                 new Threshold(0.18,
@@ -356,8 +385,8 @@ namespace wServer.logic
                     ),
                 new Threshold(.01,
                     new TierLoot(6, ItemType.Weapon, 0.01),
-                    new ItemLoot("Minor Health Potion", 0.04),
-                    new ItemLoot("Minor Magic Potion", 0.01),
+                    new ItemLoot("Health Potion", 0.04),
+                    new ItemLoot("Magic Potion", 0.01),
                     new ItemLoot("Tincture of Life", 0.01)
                     ),
                 new Threshold(0.04,
@@ -388,8 +417,8 @@ namespace wServer.logic
                     ),
                 new Threshold(.01,
                     new TierLoot(6, ItemType.Weapon, 0.01),
-                    new ItemLoot("Minor Health Potion", 0.04),
-                    new ItemLoot("Minor Magic Potion", 0.01)
+                    new ItemLoot("Health Potion", 0.04),
+                    new ItemLoot("Magic Potion", 0.01)
                     ),
                 new Threshold(0.04,
                     new ItemLoot("Potion of Attack", 0.03)
@@ -397,6 +426,7 @@ namespace wServer.logic
             )
             .Init("Djinn",
                 new State(
+                    new DropPortalOnDeath("Trial of the Illusionist Portal", .10),
                     new State("Idle",
                         new Prioritize(
                             new StayAbove(1, 200),
@@ -518,8 +548,8 @@ namespace wServer.logic
                 new Threshold(.01,
                     new ItemLoot("Potion of Defense", 0.07),
                     new TierLoot(6, ItemType.Weapon, 0.01),
-                    new ItemLoot("Minor Health Potion", 0.04),
-                    new ItemLoot("Minor Magic Potion", 0.01)
+                    new ItemLoot("Health Potion", 0.04),
+                    new ItemLoot("Magic Potion", 0.01)
                     )
             )
             .Init("Lucky Djinn",

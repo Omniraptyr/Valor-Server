@@ -1792,6 +1792,24 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                 case StatData.LOOTBOX5:
                     _local4.lootBox5_ = _local8;
                     break;
+                case StatData.RESTORATION_STAT:
+                    _local4.restoration_ = _local8;
+                    break;
+                case StatData.PROTECTION_STAT:
+                    _local4.protection_ = _local8;
+                    break;
+                case StatData.RESTORATION_BOOST_STAT:
+                    _local4.restorationBoost_ = _local8;
+                    break;
+                case StatData.PROTECTION_BOOST_STAT:
+                    _local4.protectionBoost_ = _local8;
+                    break;
+                case StatData.PROTECTIONPOINTS:
+                    _local4.protectionPoints_ = _local8;
+                    break;
+                case StatData.PROTECTIONMAX:
+                    _local4.protectionPointsMax_ = _local8;
+                    break;
             }
         }
     }

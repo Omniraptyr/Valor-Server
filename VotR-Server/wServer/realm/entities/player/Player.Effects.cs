@@ -9,14 +9,32 @@ namespace wServer.realm.entities
         float _bleeding;
         float _surgeDepletion;
         float _surgeDepletion2;
-
         int _newbieTime;
         int _canTpCooldownTime;
-
+        int protectionDamage = 0;
         bool isSurgeGone;
         bool surgewither;
         void HandleEffects(RealmTime time)
         {
+            ProtectionMax = (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50))+10;
+            Protection =    (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50))+10-protectionDamage;
+            if(Protection > 0)
+            {
+                ApplyConditionEffect(ConditionEffectIndex.Protected);
+            }
+            else
+            {
+                ApplyConditionEffect(ConditionEffectIndex.Protected, 0);
+
+            }
+            if(Protection < 0)
+            {
+            Protection = 0;
+            }
+            if(Surge == 100)
+            {
+                protectionDamage = 0;
+            }
             MainLegendaryPassives();
             if (SurgeCounter == 1)
             {
@@ -91,7 +109,16 @@ namespace wServer.realm.entities
                 if (MP == 0)
                     ApplyConditionEffect(ConditionEffectIndex.NinjaSpeedy, 0);
             }
-
+            if (HasConditionEffect(ConditionEffects.Protected))
+            {
+                ApplyConditionEffect(ConditionEffectIndex.ParalyzeImmune);
+                ApplyConditionEffect(ConditionEffectIndex.StunImmune);
+            }
+            else
+            {
+                ApplyConditionEffect(ConditionEffectIndex.ParalyzeImmune, 0);
+                ApplyConditionEffect(ConditionEffectIndex.StunImmune, 0);
+            }
             if (HasConditionEffect(ConditionEffects.SamuraiBerserk))
             {
                 MP = Math.Max(0, (int)(MP - 10 * time.ElaspedMsDelta / 1000f));

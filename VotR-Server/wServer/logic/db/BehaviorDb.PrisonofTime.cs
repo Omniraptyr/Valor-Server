@@ -62,7 +62,7 @@ namespace wServer.logic
                         ),
                     new Shoot(8, 1, shootAngle: 10, coolDown: 500)
                     ),
-                new ItemLoot("Minor Magic Potion", 0.1),
+                new ItemLoot("Magic Potion", 0.1),
                 new Threshold(0.1,
                     new ItemLoot("Golden Shield", 0.02),
                     new ItemLoot("Steel Helm", 0.02)
@@ -76,7 +76,7 @@ namespace wServer.logic
                         ),
                     new Shoot(8, 1, shootAngle: 10, coolDown: 500)
                     ),
-                new ItemLoot("Minor Health Potion", 0.1),
+                new ItemLoot("Health Potion", 0.1),
                 new Threshold(0.1,
                     new ItemLoot("Cloak of the Red Agent", 0.02),
                     new ItemLoot("Timelock Orb", 0.02)

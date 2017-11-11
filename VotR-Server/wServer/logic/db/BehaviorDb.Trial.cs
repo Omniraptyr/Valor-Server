@@ -33,7 +33,7 @@ namespace wServer.logic
                     new Shoot(10, count: 8, projectileIndex: 2, coolDown: 4000)
                        )
                     ),
-                new ItemLoot("Minor Magic Potion", 0.25)
+                new ItemLoot("Magic Potion", 0.25)
               )
 
         .Init("CR Guardian of Illusionist",
@@ -82,8 +82,8 @@ namespace wServer.logic
                         new TimedTransition(5000, "ShootStaff")
                         )
                     ),
-                new ItemLoot("Minor Magic Potion", 0.25),
-                new ItemLoot("Minor Health Potion", 0.25)
+                new ItemLoot("Magic Potion", 0.25),
+                new ItemLoot("Health Potion", 0.25)
                  )
            .Init("CR Rogue of Illusionist",
                 new State(
@@ -291,8 +291,8 @@ namespace wServer.logic
                       )
                     ),
                 new Threshold(0.025,
-                    new ItemLoot("Potion of Life", 1.0),
-                    new ItemLoot("Greater Potion of Mana", 1.0),
+                    new ItemLoot("Potion of Mana", 1.0),
+                    new ItemLoot("Potion of Protection", 1.0),
                     new TierLoot(10, ItemType.Weapon, 0.1),
                     new TierLoot(5, ItemType.Ability, 0.1),
                     new TierLoot(10, ItemType.Armor, 0.1),
@@ -306,9 +306,7 @@ namespace wServer.logic
                     new ItemLoot("1000 Gold", 0.2),
                     new ItemLoot("Warped Worlds Staff", 0.05),
                     new ItemLoot("Null-Magic Trap", 0.05),
-                    new ItemLoot("Mirage Lance", 0.05),
-                    new ItemLoot("Paranoia Lootbox", 0.4),
-                    new ItemLoot("Mark of Blood", 0.02)
+                    new ItemLoot("Mirage Lance", 0.05)
                 )
             )
     ;

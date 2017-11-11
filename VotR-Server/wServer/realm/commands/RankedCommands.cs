@@ -1006,6 +1006,8 @@ namespace wServer.realm.commands
             player.Stats.Base[7] = pd.Stats[7].MaxValue;
             player.Stats.Base[8] = pd.Stats[8].MaxValue;
             player.Stats.Base[9] = pd.Stats[9].MaxValue;
+            player.Stats.Base[10] = pd.Stats[10].MaxValue;
+            player.Stats.Base[11] = pd.Stats[11].MaxValue;
             player.SendInfo("Your character stats have been maxed.");
             return true;
         }

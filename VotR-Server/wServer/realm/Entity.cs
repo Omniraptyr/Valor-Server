@@ -13,7 +13,7 @@ namespace wServer.realm
 {
     public class Entity : IProjectileOwner, ICollidable<Entity>
     {
-        private const int EffectCount = 57;
+        private const int EffectCount = 58;
 
         protected static readonly ILog Log = LogManager.GetLogger(typeof(Entity));
         
@@ -748,6 +748,7 @@ namespace wServer.realm
 
         private bool ApplyCondition(ConditionEffectIndex effect)
         {
+
             if (effect == ConditionEffectIndex.Stunned &&
                 HasConditionEffect(ConditionEffects.StunImmume))
                 return false;

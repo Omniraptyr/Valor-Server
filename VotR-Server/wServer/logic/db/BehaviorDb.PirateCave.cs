@@ -92,7 +92,7 @@ namespace wServer.logic
                       new Shoot(radius: 5, count: 1, projectileIndex: 0, coolDown: 1000)
                       )
                   ),
-                  new ItemLoot("Minor Magic Potion", 0.2)
+                  new ItemLoot("Magic Potion", 0.2)
           )
           .Init("Cave Pirate Sailor",
               new State(
@@ -102,7 +102,7 @@ namespace wServer.logic
                       new Shoot(radius: 5, count: 1, projectileIndex: 0, coolDown: 1000)
                       )
                   ),
-                  new ItemLoot("Minor Magic Potion", 0.2)
+                  new ItemLoot("Magic Potion", 0.2)
           )
           .Init("Cave Pirate Cabin Boy",
               new State(
@@ -160,7 +160,7 @@ namespace wServer.logic
                       new Shoot(radius: 5, count: 1, projectileIndex: 0, coolDown: 1000)
                       )
                   ),
-                  new ItemLoot("Minor Magic Potion", 0.2)
+                  new ItemLoot("Magic Potion", 0.2)
           )
           .Init("Pirate Admiral",
               new State(

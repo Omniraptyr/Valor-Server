@@ -115,8 +115,6 @@ public class StatusBar extends Sprite {
         this.maxMax_ = _arg4;
         this.internalDraw();
     }
-
-
     public function setLabelText(_arg1:String, _arg2:Object = null):void {
         this.labelTextStringBuilder_.setParams(_arg1, _arg2);
         this.labelText_.setStringBuilder(this.labelTextStringBuilder_);

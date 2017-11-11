@@ -57,7 +57,7 @@ namespace wServer.logic
                     new Wander(0.08),
                     new Shoot(8, count: 1, coolDown: new Cooldown(100, 600))
                     ),
-                new ItemLoot("Charcoal", 0.1)
+                new ItemLoot("Minor Magic Potion", 0.1)
             )
         .Init("Dark Basement Fighter",
             new State(
@@ -128,7 +128,7 @@ namespace wServer.logic
                         ),
                     new Shoot(8, 3, shootAngle: 10, coolDown: 760)
                     ),
-                new ItemLoot("Charcoal", 0.1)
+                new ItemLoot("Minor Magic Potion", 0.1)
             )
         .Init("Sphere of Fear",
             new State(

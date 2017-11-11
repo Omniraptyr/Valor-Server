@@ -74633,7 +74633,7 @@ A magnificent legendary blade which only cuts those who deserve death.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>2, 13, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa14, 0xa56, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="720">150</MaxHitPoints>
+        <MaxHitPoints max="680">110</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="50">10</Attack>
         <Defense max="25">0</Defense>
@@ -74642,7 +74642,9 @@ A magnificent legendary blade which only cuts those who deserve death.
         <HpRegen max="40">15</HpRegen>
         <MpRegen max="50">10</MpRegen>
         <Might max="50">2</Might>
-        <Luck max="25">2</Luck>
+        <Luck max="75">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="0" max="2">Attack</LevelIncrease>
@@ -74651,8 +74653,10 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="1" max="2">Dexterity</LevelIncrease>
         <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
-        <LevelIncrease min="0" max="1">Might</LevelIncrease>
-        <LevelIncrease min="0" max="1">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="2">Might</LevelIncrease>
+        <LevelIncrease min="0" max="2">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+		<LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="5" type="0x0307">Archer</UnlockLevel>
         <UnlockCost>199</UnlockCost>
         <DisplayId>{players.Rogue}</DisplayId>
@@ -74670,7 +74674,7 @@ A magnificent legendary blade which only cuts those who deserve death.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>3, 15, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa1a, 0xa61, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="700">130</MaxHitPoints>
+        <MaxHitPoints max="680">130</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="75">12</Attack>
         <Defense max="25">0</Defense>
@@ -74679,7 +74683,9 @@ A magnificent legendary blade which only cuts those who deserve death.
         <HpRegen max="40">12</HpRegen>
         <MpRegen max="50">10</MpRegen>
         <Might max="80">2</Might>
-        <Luck max="20">2</Luck>
+        <Luck max="40">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -74689,7 +74695,9 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
-        <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="5" type="0x0310">Priest</UnlockLevel>
         <UnlockCost>199</UnlockCost>
         <DisplayId>{players.Archer}</DisplayId>
@@ -74707,7 +74715,7 @@ A magnificent legendary blade which only cuts those who deserve death.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>17, 11, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa97, 0xa2e, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="670">100</MaxHitPoints>
+        <MaxHitPoints max="630">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
         <Attack max="75">12</Attack>
         <Defense max="25">0</Defense>
@@ -74717,6 +74725,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <MpRegen max="60">12</MpRegen>
         <Might max="30">2</Might>
         <Luck max="20">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="40">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="5" max="15">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -74727,6 +74737,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+	`	<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockCost>0</UnlockCost>
         <DisplayId>{players.Wizard}</DisplayId>
     </Object>
@@ -74743,7 +74755,7 @@ A magnificent legendary blade which only cuts those who deserve death.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>8, 4, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa04, 0xa31, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="670">100</MaxHitPoints>
+        <MaxHitPoints max="630">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
         <Attack max="50">12</Attack>
         <Defense max="25">0</Defense>
@@ -74753,6 +74765,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <MpRegen max="75">15</MpRegen>
         <Might max="40">2</Might>
         <Luck max="70">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="50">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="5" max="15">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="0" max="2">Attack</LevelIncrease>
@@ -74763,6 +74777,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="5" type="0x030e">Wizard</UnlockLevel>
         <UnlockCost>50</UnlockCost>
         <DisplayId>{players.Priest}</DisplayId>
@@ -74780,7 +74796,7 @@ A magnificent legendary blade which only cuts those who deserve death.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>1, 16, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa00, 0x0a66, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="770">200</MaxHitPoints>
+        <MaxHitPoints max="730">180</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="75">15</Attack>
         <Defense max="25">0</Defense>
@@ -74790,6 +74806,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <MpRegen max="50">10</MpRegen>
         <Might max="50">2</Might>
         <Luck max="10">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -74800,6 +74818,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="0">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="5" type="0x0300">Rogue</UnlockLevel>
         <UnlockCost>199</UnlockCost>
         <DisplayId>{players.Warrior}</DisplayId>
@@ -74817,7 +74837,7 @@ A magnificent legendary blade which only cuts those who deserve death.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>1, 5, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa00, 0x0a08, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="770">200</MaxHitPoints>
+        <MaxHitPoints max="730">180</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="50">15</Attack>
         <Defense max="40">0</Defense>
@@ -74827,6 +74847,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <MpRegen max="50">10</MpRegen>
         <Might max="40">2</Might>
         <Luck max="10">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -74837,6 +74859,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="0">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x031d">Warrior</UnlockLevel>
         <UnlockCost>499</UnlockCost>
         <DisplayId>{players.Knight}</DisplayId>
@@ -74854,7 +74878,7 @@ A magnificent legendary blade which only cuts those who deserve death.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>1, 12, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa00, 0xa52, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="770">200</MaxHitPoints>
+        <MaxHitPoints max="720">170</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="50">12</Attack>
         <Defense max="30">0</Defense>
@@ -74864,6 +74888,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <MpRegen max="75">10</MpRegen>
         <Might max="30">2</Might>
         <Luck max="10">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="50">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -74874,6 +74900,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="0">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x031e">Knight</UnlockLevel>
         <UnlockLevel level="20" type="0x0310">Priest</UnlockLevel>
         <UnlockCost>499</UnlockCost>
@@ -74892,7 +74920,7 @@ A magnificent legendary blade which only cuts those who deserve death.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>2, 18, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa14, 0xaa3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="720">150</MaxHitPoints>
+        <MaxHitPoints max="680">130</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="60">12</Attack>
         <Defense max="25">0</Defense>
@@ -74900,8 +74928,10 @@ A magnificent legendary blade which only cuts those who deserve death.
         <Dexterity max="75">15</Dexterity>
         <HpRegen max="40">15</HpRegen>
         <MpRegen max="60">10</MpRegen>
-        <Might max="70">2</Might>
-        <Luck max="40">2</Luck>
+        <Might max="80">2</Might>
+        <Luck max="60">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="0" max="2">Attack</LevelIncrease>
@@ -74912,6 +74942,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0300">Rogue</UnlockLevel>
         <UnlockLevel level="20" type="0x030e">Wizard</UnlockLevel>
         <UnlockCost>499</UnlockCost>
@@ -74930,7 +74962,7 @@ A magnificent legendary blade which only cuts those who deserve death.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>17, 19, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa97, 0xaaa, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="670">100</MaxHitPoints>
+        <MaxHitPoints max="630">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
         <Attack max="65">12</Attack>
         <Defense max="30">0</Defense>
@@ -74940,6 +74972,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <MpRegen max="75">12</MpRegen>
         <Might max="30">2</Might>
         <Luck max="10">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="5" max="15">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -74950,6 +74984,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x030e">Wizard</UnlockLevel>
         <UnlockLevel level="20" type="0x0310">Priest</UnlockLevel>
         <UnlockCost>499</UnlockCost>
@@ -74968,16 +75004,18 @@ A magnificent legendary blade which only cuts those who deserve death.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>3, 20, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa1a, 0xab1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="700">130</MaxHitPoints>
+        <MaxHitPoints max="660">110</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="75">12</Attack>
         <Defense max="25">0</Defense>
-        <Speed max="50">12</Speed>
+        <Speed max="55">12</Speed>
         <Dexterity max="50">12</Dexterity>
-        <HpRegen max="40">12</HpRegen>
+        <HpRegen max="35">12</HpRegen>
         <MpRegen max="50">10</MpRegen>
-        <Might max="80">2</Might>
-        <Luck max="5">2</Luck>
+        <Might max="70">2</Might>
+        <Luck max="50">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -74987,7 +75025,9 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
-        <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0300">Rogue</UnlockLevel>
         <UnlockLevel level="20" type="0x0307">Archer</UnlockLevel>
         <UnlockCost>499</UnlockCost>
@@ -75006,7 +75046,7 @@ A magnificent legendary blade which only cuts those who deserve death.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>17, 21, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa97, 0xae4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="670">100</MaxHitPoints>
+        <MaxHitPoints max="630">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
         <Attack max="60">10</Attack>
         <Defense max="25">0</Defense>
@@ -75016,6 +75056,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <MpRegen max="75">15</MpRegen>
         <Might max="40">2</Might>
         <Luck max="50">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="50">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="5" max="15">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -75026,6 +75068,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0322">Huntress</UnlockLevel>
         <UnlockLevel level="20" type="0x0321">Necromancer</UnlockLevel>
         <UnlockCost>999</UnlockCost>
@@ -75044,7 +75088,7 @@ A magnificent legendary blade which only cuts those who deserve death.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>2, 22, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa14, 0xae3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="720">150</MaxHitPoints>
+        <MaxHitPoints max="680">130</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="65">10</Attack>
         <Defense max="25">0</Defense>
@@ -75054,6 +75098,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <MpRegen max="60">12</MpRegen>
         <Might max="80">2</Might>
         <Luck max="25">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="40">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -75064,6 +75110,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0320">Assassin</UnlockLevel>
         <UnlockLevel level="20" type="0x031f">Paladin</UnlockLevel>
         <UnlockCost>999</UnlockCost>
@@ -75092,6 +75140,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <MpRegen max="80">15</MpRegen>
         <Might max="50">2</Might>
         <Luck max="40">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="40">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="5" max="15">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -75102,6 +75152,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0321">Necromancer</UnlockLevel>
         <UnlockLevel level="20" type="0x0320">Assassin</UnlockLevel>
         <UnlockCost>999</UnlockCost>
@@ -75120,7 +75172,7 @@ A magnificent legendary blade which only cuts those who deserve death.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>24, 25, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xc44, 0xc53, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="720">150</MaxHitPoints>
+        <MaxHitPoints max="680">130</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
         <Attack max="70">15</Attack>
         <Defense max="25">0</Defense>
@@ -75130,6 +75182,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <MpRegen max="70">12</MpRegen>
         <Might max="50">2</Might>
         <Luck max="50">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -75140,6 +75194,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0300">Rogue</UnlockLevel>
         <UnlockLevel level="20" type="0x031d">Warrior</UnlockLevel>
         <UnlockCost>999</UnlockCost>
@@ -75158,7 +75214,7 @@ A magnificent legendary blade which only cuts those who deserve death.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>24, 27, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xc44, 0x185a, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="720">150</MaxHitPoints>
+        <MaxHitPoints max="690">130</MaxHitPoints>
         <MaxMagicPoints max="225">100</MaxMagicPoints>
         <Attack max="65">15</Attack>
         <Defense max="25">0</Defense>
@@ -75168,6 +75224,8 @@ A magnificent legendary blade which only cuts those who deserve death.
         <MpRegen max="45">12</MpRegen>
         <Might max="60">2</Might>
         <Luck max="25">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -75178,10 +75236,97 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0300">Necromancer</UnlockLevel>
         <UnlockLevel level="20" type="0x031d">Ninja</UnlockLevel>
         <UnlockCost>999</UnlockCost>
         <DisplayId>Samurai</DisplayId>
+    </Object>
+	  <Object type="0x0328" id="Templar">
+        <Class>Player</Class>
+        <Description>The holy templar fights only for justice. He uses his banner to invigorate allies by it and strikes down his opponents with ease.</Description>
+        <AnimatedTexture>
+            <File>players</File>
+            <Index>15</Index>
+        </AnimatedTexture>
+        <HitSound>player/paladin_hit</HitSound>
+        <DeathSound>player/paladin_death</DeathSound>
+        <Player/>
+        <BloodProb>1.0</BloodProb>
+        <SlotTypes>29, 28, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Equipment>0x52b1, 0x51ab, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <MaxHitPoints max="780">155</MaxHitPoints>
+        <MaxMagicPoints max="125">72</MaxMagicPoints>
+        <Attack max="85">15</Attack>
+        <Defense max="20">0</Defense>
+        <Speed max="65">10</Speed>
+        <Dexterity max="45">12</Dexterity>
+        <HpRegen max="80">10</HpRegen>
+        <MpRegen max="30">4</MpRegen>
+        <Might max="40">2</Might>
+        <Luck max="40">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="50">4</Protection>
+        <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
+        <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
+        <LevelIncrease min="1" max="2">Attack</LevelIncrease>
+        <LevelIncrease min="0" max="0">Defense</LevelIncrease>
+        <LevelIncrease min="0" max="2">Speed</LevelIncrease>
+        <LevelIncrease min="1" max="2">Dexterity</LevelIncrease>
+        <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
+        <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
+        <LevelIncrease min="0" max="1">Might</LevelIncrease>
+        <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
+        <UnlockLevel level="20" type="0x0310">Priest</UnlockLevel>
+        <UnlockLevel level="20" type="0x0327">Samurai</UnlockLevel>
+        <UnlockLevel level="20" type="0x031e">Knight</UnlockLevel>
+        <UnlockCost>999</UnlockCost>
+        <DisplayId>Templar</DisplayId>
+    </Object>
+	       <Object type="0x0329" id="Drakzix">
+        <Class>Player</Class>
+        <Description>Ancient species that live in the depths of the unspeakable who have turned on their lord, Oryx. They have the ability to hold infinite power and seek vengeance.</Description>
+        <AnimatedTexture>
+            <File>players</File>
+            <Index>16</Index>
+        </AnimatedTexture>
+        <HitSound>monster/abyss_demons_hit</HitSound>
+        <DeathSound>monster/demons_death</DeathSound>
+        <Player/>
+        <BloodProb>1.0</BloodProb>
+        <SlotTypes>8, 30, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Equipment>0xa04, 0x52ca, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <MaxHitPoints max="600">110</MaxHitPoints>
+        <MaxMagicPoints max="900">200</MaxMagicPoints>
+        <Attack max="50">15</Attack>
+        <Defense max="20">0</Defense>
+        <Speed max="40">5</Speed>
+        <Dexterity max="55">12</Dexterity>
+        <HpRegen max="35">2</HpRegen>
+        <MpRegen max="80">2</MpRegen>
+        <Might max="50">2</Might>
+        <Luck max="30">2</Luck>
+		<Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
+        <LevelIncrease min="8" max="12">MaxHitPoints</LevelIncrease>
+        <LevelIncrease min="5" max="10">MaxMagicPoints</LevelIncrease>
+        <LevelIncrease min="1" max="2">Attack</LevelIncrease>
+        <LevelIncrease min="0" max="0">Defense</LevelIncrease>
+        <LevelIncrease min="0" max="1">Speed</LevelIncrease>
+        <LevelIncrease min="1" max="2">Dexterity</LevelIncrease>
+        <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
+        <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
+        <LevelIncrease min="0" max="1">Might</LevelIncrease>
+        <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
+        <UnlockLevel level="20" type="0x0325">Sorcerer</UnlockLevel>
+        <UnlockLevel level="20" type="0x0327">Templar</UnlockLevel>
+        <UnlockCost>999</UnlockCost>
+        <DisplayId>Drakzix</DisplayId>
     </Object>
 <Object type="0x185a" id="Leather Sheath">
     <Class>Equipment</Class>
@@ -95332,45 +95477,6 @@ A whole thanksgiving turkey!
     <feedPower>230</feedPower>
     <DisplayId>The Gauntlet Key</DisplayId>
   </Object>
-  <Object type="0x0328" id="Templar">
-        <Class>Player</Class>
-        <Description>The holy templar fights only for justice. He uses his banner to invigorate allies by it and strikes down his opponents with ease.</Description>
-        <AnimatedTexture>
-            <File>players</File>
-            <Index>15</Index>
-        </AnimatedTexture>
-        <HitSound>player/paladin_hit</HitSound>
-        <DeathSound>player/paladin_death</DeathSound>
-        <Player/>
-        <BloodProb>1.0</BloodProb>
-        <SlotTypes>29, 28, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0x52b1, 0x51ab, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="800">175</MaxHitPoints>
-        <MaxMagicPoints max="125">72</MaxMagicPoints>
-        <Attack max="85">15</Attack>
-        <Defense max="20">0</Defense>
-        <Speed max="65">10</Speed>
-        <Dexterity max="45">12</Dexterity>
-        <HpRegen max="80">10</HpRegen>
-        <MpRegen max="30">4</MpRegen>
-        <Might max="40">2</Might>
-        <Luck max="40">2</Luck>
-        <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
-        <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
-        <LevelIncrease min="1" max="2">Attack</LevelIncrease>
-        <LevelIncrease min="0" max="0">Defense</LevelIncrease>
-        <LevelIncrease min="0" max="2">Speed</LevelIncrease>
-        <LevelIncrease min="1" max="2">Dexterity</LevelIncrease>
-        <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
-        <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
-        <LevelIncrease min="0" max="1">Might</LevelIncrease>
-        <LevelIncrease min="0" max="0">Luck</LevelIncrease>
-        <UnlockLevel level="20" type="0x0310">Priest</UnlockLevel>
-        <UnlockLevel level="20" type="0x0327">Samurai</UnlockLevel>
-        <UnlockLevel level="20" type="0x031e">Knight</UnlockLevel>
-        <UnlockCost>999</UnlockCost>
-        <DisplayId>Templar</DisplayId>
-    </Object>
   <Object type="0x51ab" id="Cloth Banner">
         <Class>Equipment</Class>
         <Item/>
@@ -95391,6 +95497,7 @@ A whole thanksgiving turkey!
         <Usable/>
         <BagType>1</BagType>
         <MpCost>70</MpCost>
+		<Activate effect="Surged" duration="3" range="3">ConditionEffectAura</Activate>
         <Activate range="2" amount="4" duration="3">Banner</Activate>
         <Cooldown>6</Cooldown>
         <feedPower>5</feedPower>
@@ -95416,6 +95523,7 @@ A whole thanksgiving turkey!
         <Usable/>
         <BagType>1</BagType>
         <MpCost>70</MpCost>
+		<Activate effect="Surged" duration="3" range="4">ConditionEffectAura</Activate>
         <Activate range="2" amount="5" duration="4">Banner</Activate>
         <Cooldown>6.5</Cooldown>
         <feedPower>10</feedPower>
@@ -95441,6 +95549,7 @@ A whole thanksgiving turkey!
         <Usable/>
         <BagType>1</BagType>
         <MpCost>75</MpCost>
+		<Activate effect="Surged" duration="3" range="4">ConditionEffectAura</Activate>
         <Activate range="3" amount="5" duration="4">Banner</Activate>
         <Cooldown>6.5</Cooldown>
         <feedPower>20</feedPower>
@@ -95466,6 +95575,7 @@ A whole thanksgiving turkey!
         <Usable/>
         <BagType>2</BagType>
         <MpCost>80</MpCost>
+		<Activate effect="Surged" duration="3.5" range="4">ConditionEffectAura</Activate>
         <Activate range="3" amount="5" duration="5">Banner</Activate>
         <Cooldown>7</Cooldown>
         <FameBonus>1</FameBonus>
@@ -95492,6 +95602,7 @@ A whole thanksgiving turkey!
         <Usable/>
         <BagType>2</BagType>
         <MpCost>80</MpCost>
+		<Activate effect="Surged" duration="4" range="4">ConditionEffectAura</Activate>
         <Activate range="3" amount="5" duration="5">Banner</Activate>
         <Activate effect="Invulnerable" duration="0.8">ConditionEffectSelf</Activate>
         <Cooldown>7.5</Cooldown>
@@ -95519,6 +95630,7 @@ A whole thanksgiving turkey!
         <Usable/>
         <BagType>4</BagType>
         <MpCost>85</MpCost>
+		<Activate effect="Surged" duration="4" range="4">ConditionEffectAura</Activate>
         <Activate range="4" amount="5" duration="5">Banner</Activate>
         <Activate effect="Invulnerable" duration="1.00">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
@@ -95546,6 +95658,7 @@ A whole thanksgiving turkey!
         <Usable/>
         <BagType>4</BagType>
         <MpCost>90</MpCost>
+		<Activate effect="Surged" duration="4" range="5">ConditionEffectAura</Activate>
         <Activate range="4" amount="6" duration="5">Banner</Activate>
         <Activate effect="Invulnerable" duration="1.25">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
@@ -95575,7 +95688,7 @@ A whole thanksgiving turkey!
         <MpCost>85</MpCost>
         <Activate range="3" amount="6" duration="5">Banner</Activate>
         <Activate effect="Invulnerable" duration="1">ConditionEffectSelf</Activate>
-        <Activate effect="Damaging" duration="2">ConditionEffectSelf</Activate>
+        <Activate effect="Damaging" duration="3">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
         <feedPower>760</feedPower>
         <FameBonus>6</FameBonus>
@@ -96395,44 +96508,6 @@ A whole thanksgiving turkey!
       <NumProjectiles>3</NumProjectiles>
       <DisplayId>Mirage Lance</DisplayId>
    </Object>
-       <Object type="0x0329" id="Drakzix">
-        <Class>Player</Class>
-        <Description>Ancient species that live in the depths of the unspeakable who have turned on their lord, Oryx. They have the ability to hold infinite power and seek vengeance.</Description>
-        <AnimatedTexture>
-            <File>players</File>
-            <Index>16</Index>
-        </AnimatedTexture>
-        <HitSound>monster/abyss_demons_hit</HitSound>
-        <DeathSound>monster/demons_death</DeathSound>
-        <Player/>
-        <BloodProb>1.0</BloodProb>
-        <SlotTypes>8, 30, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa04, 0x52ca, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="520">100</MaxHitPoints>
-        <MaxMagicPoints max="900">200</MaxMagicPoints>
-        <Attack max="50">15</Attack>
-        <Defense max="20">0</Defense>
-        <Speed max="40">5</Speed>
-        <Dexterity max="55">12</Dexterity>
-        <HpRegen max="35">2</HpRegen>
-        <MpRegen max="80">2</MpRegen>
-        <Might max="50">2</Might>
-        <Luck max="30">2</Luck>
-        <LevelIncrease min="8" max="12">MaxHitPoints</LevelIncrease>
-        <LevelIncrease min="5" max="10">MaxMagicPoints</LevelIncrease>
-        <LevelIncrease min="1" max="2">Attack</LevelIncrease>
-        <LevelIncrease min="0" max="0">Defense</LevelIncrease>
-        <LevelIncrease min="0" max="1">Speed</LevelIncrease>
-        <LevelIncrease min="1" max="2">Dexterity</LevelIncrease>
-        <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
-        <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
-        <LevelIncrease min="0" max="1">Might</LevelIncrease>
-        <LevelIncrease min="0" max="0">Luck</LevelIncrease>
-        <UnlockLevel level="20" type="0x0325">Sorcerer</UnlockLevel>
-        <UnlockLevel level="20" type="0x0327">Templar</UnlockLevel>
-        <UnlockCost>999</UnlockCost>
-        <DisplayId>Drakzix</DisplayId>
-    </Object>
       <Object type="0x52ca" id="Standard Siphon">
         <Class>Equipment</Class>
         <Item/>
@@ -97215,6 +97290,10 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
     <Activate stat="20" amount="150">IncrementStat</Activate>
     <Activate stat="22" amount="150">IncrementStat</Activate>
     <Activate stat="28" amount="150">IncrementStat</Activate>
+	<Activate stat="112" amount="150">IncrementStat</Activate>
+	<Activate stat="114" amount="150">IncrementStat</Activate>
+    <Activate stat="121" amount="150">IncrementStat</Activate>
+	<Activate stat="122" amount="150">IncrementStat</Activate>
     <Consumable/>
     <Potion/>
     <Legendary/>
@@ -97271,22 +97350,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       </Texture>
       <AngleCorrection>1</AngleCorrection>
    </Object>
-   <Object type="0x53a1" id="Page of Zaragon">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x370</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>A page that belongs to the book of Zaragon, the magic god of the Blood Mountains.</Description>
-        <BagType>11</BagType>
-        <Legendary/>
-        <PoZPage/>
-        <Activate>PZara</Activate>
-        <Consumable/>
-        <feedPower>3000</feedPower>
-    </Object>
   <Object type="0x53a2" id="Banner of the Blood Mountains">
         <Class>Equipment</Class>
         <Item/>
@@ -97310,6 +97373,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate range="4" amount="6" duration="4">Banner</Activate>
         <Activate effect="Invulnerable" duration="1.5">ConditionEffectSelf</Activate>
         <Activate effect="Speedy" duration="3.5">ConditionEffectSelf</Activate>
+		<Activate effect="Surged" duration="6" range="3">ConditionEffectAura</Activate>
         <Cooldown>8</Cooldown>
         <feedPower>700</feedPower>
         <FameBonus>6</FameBonus>
@@ -97533,125 +97597,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
     <Sound>spell/fire_nova</Sound>
     <DisplayId>Quest Gold Cache</DisplayId>
   </Object>
-  <Object type="0x53b1" id="Mark of Fortitude">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>marks10x10</File>
-      <Index>0x00</Index>
-    </Texture>
-    <SlotType>10</SlotType>
-    <Description>Activating this mark raises your base defense by 20%.</Description>
-    <Activate amount="1">MarkActivate</Activate>
-    <Sound>use_potion</Sound>
-    <VaultItem/>
-    <Mark/>
-    <Soulbound/>
-    <InvUse/>
-    <BagType>11</BagType>
-  </Object>
-  <Object type="0x53b2" id="Mark of Recovery">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>marks10x10</File>
-      <Index>0x01</Index>
-    </Texture>
-    <SlotType>10</SlotType>
-    <Description>Activating this mark raises your base vitality by 20%.</Description>
-    <Activate amount="2">MarkActivate</Activate>
-    <Sound>use_potion</Sound>
-    <VaultItem/>
-    <Mark/>
-    <Soulbound/>
-    <InvUse/>
-    <BagType>11</BagType>
-  </Object>
-  <Object type="0x53b3" id="Mark of Soulpower">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>marks10x10</File>
-      <Index>0x03</Index>
-    </Texture>
-    <SlotType>10</SlotType>
-    <Description>Activating this mark raises your base wisdom by 20%.</Description>
-    <Activate amount="3">MarkActivate</Activate>
-    <Sound>use_potion</Sound>
-    <VaultItem/>
-    <Mark/>
-    <Soulbound/>
-    <InvUse/>
-    <BagType>11</BagType>
-  </Object>
-  <Object type="0x53b4" id="Mark of Swiftness">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>marks10x10</File>
-      <Index>0x06</Index>
-    </Texture>
-    <SlotType>10</SlotType>
-    <Description>Activating this mark raises your base speed by 20%.</Description>
-    <Activate amount="4">MarkActivate</Activate>
-    <Sound>use_potion</Sound>
-    <VaultItem/>
-    <Mark/>
-    <Soulbound/>
-    <InvUse/>
-    <BagType>11</BagType>
-  </Object>
-  <Object type="0x53b5" id="Mark of Blood">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>marks10x10</File>
-      <Index>0x02</Index>
-    </Texture>
-    <SlotType>10</SlotType>
-    <Description>Activating this mark raises your base attack by 20%.</Description>
-    <Activate amount="5">MarkActivate</Activate>
-    <Sound>use_potion</Sound>
-    <VaultItem/>
-    <Mark/>
-    <Soulbound/>
-    <InvUse/>
-    <BagType>11</BagType>
-  </Object>
-  <Object type="0x53b6" id="Mark of Agility">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>marks10x10</File>
-      <Index>0x0a</Index>
-    </Texture>
-    <SlotType>10</SlotType>
-    <Description>Activating this mark raises your base dexterity by 20%.</Description>
-    <Activate amount="6">MarkActivate</Activate>
-    <Sound>use_potion</Sound>
-    <VaultItem/>
-    <Mark/>
-    <Soulbound/>
-    <InvUse/>
-    <BagType>11</BagType>
-  </Object>
-  <Object type="0x53b7" id="Mark of Unity">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>marks10x10</File>
-      <Index>0x0b</Index>
-    </Texture>
-    <SlotType>10</SlotType>
-    <Description>Activating this mark raises your base wisdom, vitality, defense, speed, dexterity, and attack by 1.</Description>
-    <Activate amount="7">MarkActivate</Activate>
-    <Sound>use_potion</Sound>
-    <VaultItem/>
-    <Mark/>
-    <Soulbound/>
-    <InvUse/>
-    <BagType>11</BagType>
-  </Object>
   <Object type="0x53b8" id="Marketplace Ground">
     <Class>MarketplaceGround</Class>
     <ShadowSize>0</ShadowSize>
@@ -97769,7 +97714,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
     <BagType>10</BagType>
     <DisplayId>100000 Gold</DisplayId>
   </Object>
-    <Object type="0x53c7" id="1000000 Gold">
+    <Object type="0x53c7" id="1 Gold">
         <Class>Equipment</Class>
         <Item/>
         <SlotType>10</SlotType>
@@ -97777,29 +97722,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <File>lofiObj3</File>
             <Index>0xe1</Index>
         </Texture>
-        <Description>syke you thought.</Description>
+        <Description>1 Single Gold. 1.</Description>
         <Consumable/>
         <Activate amount="1">TreasureActivate</Activate>
         <Sound>spell/fire_nova</Sound>
         <DisplayId>1 Gold</DisplayId>
     </Object>
-  <Object type="0x53c8" id="Mark of Zol">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>marks10x10</File>
-      <Index>0x07</Index>
-    </Texture>
-    <SlotType>10</SlotType>
-    <Description>Activating this mark raises your base wisdom by 25%, and dexterity by 25%.</Description>
-    <Activate amount="8">MarkActivate</Activate>
-    <Sound>use_potion</Sound>
-    <VaultItem/>
-    <Mark/>
-    <Soulbound/>
-    <InvUse/>
-    <BagType>11</BagType>
-  </Object>
   <Object type="0x45d9" id="AH Ozar, the Destined">
       <DisplayId>Ozar, the Destined</DisplayId>
       <Class>Character</Class>
@@ -98874,7 +98802,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Tier>1</Tier>
       <Description>A potion that instantly restores health points.</Description>
       <Sound>use_potion</Sound>
-      <Activate amount="100">Heal</Activate>
+      <Activate>Heal2</Activate>
       <Consumable/>
       <Potion/>
       <BagType>0</BagType>
@@ -98891,7 +98819,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Tier>1</Tier>
       <Description>A potion that instantly restores magic points.</Description>
       <Sound>use_potion</Sound>
-      <Activate amount="100">Magic</Activate>
+      <Activate>Magic2</Activate>
       <Consumable/>
       <Potion/>
       <BagType>0</BagType>
@@ -106543,4 +106471,420 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Shard/>
         <feedPower>1000</feedPower>
     </Object>
+	<Object type="0x68fd" id="Potion of Restoration">
+      <Class>Equipment</Class>
+      <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x43d</Index>
+        </Texture>
+      <SlotType>10</SlotType>
+      <Tier>2</Tier>
+      <Description>A potion that permanently increases your restoration.</Description>
+      <Sound>use_potion</Sound>
+      <Activate stat="121" amount="2">IncrementStat</Activate>
+      <Consumable/>
+      <Potion/>
+      <BagType>5</BagType>
+      <feedPower>150</feedPower>
+      <DisplayId>Potion of Restoration</DisplayId>
+   </Object>
+   <Object type="0x68fe" id="Potion of Protection">
+      <Class>Equipment</Class>
+      <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x43c</Index>
+        </Texture>
+      <SlotType>10</SlotType>
+      <Tier>2</Tier>
+      <Description>A potion that permanently increases your protection.</Description>
+      <Sound>use_potion</Sound>
+      <Activate stat="121" amount="2">IncrementStat</Activate>
+      <Consumable/>
+      <Potion/>
+      <BagType>5</BagType>
+      <feedPower>150</feedPower>
+      <DisplayId>Potion of Protection</DisplayId>
+   </Object>
+   <Object type="0x68ff" id="Might Eon">
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+      <File>d3LofiObjEmbed</File>
+      <Index>0x442</Index>
+    </Texture>
+    <SlotType>10</SlotType>
+    <Description>This relic can be shattered. Once shattered it causes the mortal to have the strength of the gods.</Description>
+    <Sound>use_potion</Sound>
+    <Activate stat="112" amount="150">IncrementStat</Activate>
+    <Consumable/>
+    <Potion/>
+    <Fabled/>
+    <BagType>11</BagType>
+  </Object>
+  <Object type="0x69a1" id="Luck Eon">
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+      <File>d3LofiObjEmbed</File>
+      <Index>0x441</Index>
+    </Texture>
+    <SlotType>10</SlotType>
+    <Description>This relic can be shattered. Once shattered it causes the mortal to have the strength of the gods.</Description>
+    <Sound>use_potion</Sound>
+    <Activate stat="114" amount="150">IncrementStat</Activate>
+    <Consumable/>
+    <Potion/>
+    <Fabled/>
+    <BagType>11</BagType>
+  </Object>
+  <Object type="0x69a2" id="Restoration Eon">
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+      <File>d3LofiObjEmbed</File>
+      <Index>0x440</Index>
+    </Texture>
+    <SlotType>10</SlotType>
+    <Description>This relic can be shattered. Once shattered it causes the mortal to have the strength of the gods.</Description>
+    <Sound>use_potion</Sound>
+    <Activate stat="121" amount="150">IncrementStat</Activate>
+    <Consumable/>
+    <Potion/>
+    <Fabled/>
+    <BagType>11</BagType>
+  </Object>
+  <Object type="0x69a3" id="Protection Eon">
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+      <File>d3LofiObjEmbed</File>
+      <Index>0x443</Index>
+    </Texture>
+    <SlotType>10</SlotType>
+    <Description>This relic can be shattered. Once shattered it causes the mortal to have the strength of the gods.</Description>
+    <Sound>use_potion</Sound>
+    <Activate stat="122" amount="150">IncrementStat</Activate>
+    <Consumable/>
+    <Potion/>
+    <Fabled/>
+    <BagType>11</BagType>
+  </Object>
+  <Object type="0x69a4" id="Ring of Restoration">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x450</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>1</Tier>
+      <Description>A corundum set in a silver ring.</Description>
+      <ActivateOnEquip stat="121" amount="5">IncrementStat</ActivateOnEquip>
+      <BagType>1</BagType>
+      <feedPower>20</feedPower>
+      <DisplayId>Ring of Restoration</DisplayId>
+   </Object>
+   <Object type="0x69a5" id="Ring of Greater Restoration">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x460</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>2</Tier>
+      <Description>A corundum set in a gold ring.</Description>
+      <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
+      <BagType>2</BagType>
+      <FameBonus>1</FameBonus>
+      <feedPower>37</feedPower>
+      <DisplayId>Ring of Greater Restoration</DisplayId>
+   </Object>
+	<Object type="0x69a6" id="Ring of Superior Restoration">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x470</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>3</Tier>
+      <Description>A large corundum set in a glittering gold ring.</Description>
+      <ActivateOnEquip stat="121" amount="15">IncrementStat</ActivateOnEquip>
+      <BagType>2</BagType>
+      <FameBonus>2</FameBonus>
+      <feedPower>75</feedPower>
+      <DisplayId>Ring of Superior Restoration</DisplayId>
+   </Object>
+   <Object type="0x69a7" id="Ring of Paramount Restoration">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x480</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>4</Tier>
+      <Description>A very large corundum set in a dazzling gold ring.</Description>
+      <ActivateOnEquip stat="121" amount="20">IncrementStat</ActivateOnEquip>
+      <BagType>2</BagType>
+      <FameBonus>3</FameBonus>
+      <feedPower>150</feedPower>
+      <DisplayId>Ring of Paramount Restoration</DisplayId>
+   </Object>
+   <Object type="0x69a8" id="Ring of Exalted Restoration">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x490</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>5</Tier>
+      <Description>A huge flawless corundom set in a stunningly beautiful gold ring.</Description>
+      <ActivateOnEquip stat="121" amount="25">IncrementStat</ActivateOnEquip>
+      <BagType>4</BagType>
+      <FameBonus>4</FameBonus>
+      <feedPower>300</feedPower>
+      <DisplayId>Ring of Exalted Restoration</DisplayId>
+   </Object>
+   <Object type="0x69a9" id="Ring of Protection">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x451</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>1</Tier>
+      <Description>A diamond set in a silver ring.</Description>
+      <ActivateOnEquip stat="122" amount="3">IncrementStat</ActivateOnEquip>
+      <BagType>1</BagType>
+      <feedPower>20</feedPower>
+      <DisplayId>Ring of Protection</DisplayId>
+   </Object>
+   <Object type="0x69aa" id="Ring of Greater Protection">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x461</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>2</Tier>
+      <Description>A diamond set in a gold ring.</Description>
+      <ActivateOnEquip stat="122" amount="5">IncrementStat</ActivateOnEquip>
+      <BagType>2</BagType>
+      <FameBonus>1</FameBonus>
+      <feedPower>37</feedPower>
+      <DisplayId>Ring of Greater Protection</DisplayId>
+   </Object>
+	<Object type="0x69ab" id="Ring of Superior Protection">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x471</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>3</Tier>
+      <Description>A large diamond set in a glittering gold ring.</Description>
+      <ActivateOnEquip stat="122" amount="6">IncrementStat</ActivateOnEquip>
+      <BagType>2</BagType>
+      <FameBonus>2</FameBonus>
+      <feedPower>75</feedPower>
+      <DisplayId>Ring of Superior Protection</DisplayId>
+   </Object>
+   <Object type="0x69ac" id="Ring of Paramount Protection">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x481</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>4</Tier>
+      <Description>A very large corundum set in a dazzling gold ring.</Description>
+      <ActivateOnEquip stat="122" amount="7">IncrementStat</ActivateOnEquip>
+      <BagType>2</BagType>
+      <FameBonus>3</FameBonus>
+      <feedPower>150</feedPower>
+      <DisplayId>Ring of Paramount Protection</DisplayId>
+   </Object>
+   <Object type="0x69ae" id="Ring of Exalted Protection">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x491</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>5</Tier>
+      <Description>A huge flawless corundom set in a stunningly beautiful gold ring.</Description>
+      <ActivateOnEquip stat="122" amount="8">IncrementStat</ActivateOnEquip>
+      <BagType>4</BagType>
+      <FameBonus>4</FameBonus>
+      <feedPower>300</feedPower>
+      <DisplayId>Ring of Exalted Protection</DisplayId>
+   </Object>
+    <Object type="0x69af" id="Ring of Luck">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x452</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>1</Tier>
+      <Description>A sphene set in a silver ring.</Description>
+      <ActivateOnEquip stat="114" amount="3">IncrementStat</ActivateOnEquip>
+      <BagType>1</BagType>
+      <feedPower>20</feedPower>
+      <DisplayId>Ring of Luck</DisplayId>
+   </Object>
+   <Object type="0x69ba" id="Ring of Greater Luck">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x462</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>2</Tier>
+      <Description>A sphene set in a gold ring.</Description>
+      <ActivateOnEquip stat="114" amount="5">IncrementStat</ActivateOnEquip>
+      <BagType>2</BagType>
+      <FameBonus>1</FameBonus>
+      <feedPower>37</feedPower>
+      <DisplayId>Ring of Greater Luck</DisplayId>
+   </Object>
+	<Object type="0x69bb" id="Ring of Superior Luck">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x472</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>3</Tier>
+      <Description>A large sphene set in a glittering gold ring.</Description>
+      <ActivateOnEquip stat="114" amount="6">IncrementStat</ActivateOnEquip>
+      <BagType>2</BagType>
+      <FameBonus>2</FameBonus>
+      <feedPower>75</feedPower>
+      <DisplayId>Ring of Superior Luck</DisplayId>
+   </Object>
+   <Object type="0x69bc" id="Ring of Paramount Luck">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x482</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>4</Tier>
+      <Description>A very large sphene set in a dazzling gold ring.</Description>
+      <ActivateOnEquip stat="114" amount="7">IncrementStat</ActivateOnEquip>
+      <BagType>2</BagType>
+      <FameBonus>3</FameBonus>
+      <feedPower>150</feedPower>
+      <DisplayId>Ring of Paramount Luck</DisplayId>
+   </Object>
+   <Object type="0x69bd" id="Ring of Exalted Luck">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x492</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>5</Tier>
+      <Description>A huge flawless sphene set in a stunningly beautiful gold ring.</Description>
+      <ActivateOnEquip stat="114" amount="8">IncrementStat</ActivateOnEquip>
+      <BagType>4</BagType>
+      <FameBonus>4</FameBonus>
+      <feedPower>300</feedPower>
+      <DisplayId>Ring of Exalted Luck</DisplayId>
+   </Object>
+   <Object type="0x69be" id="Ring of Might">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x453</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>1</Tier>
+      <Description>A garnet set in a silver ring.</Description>
+      <ActivateOnEquip stat="112" amount="4">IncrementStat</ActivateOnEquip>
+      <BagType>1</BagType>
+      <feedPower>20</feedPower>
+      <DisplayId>Ring of Might</DisplayId>
+   </Object>
+   <Object type="0x69bf" id="Ring of Greater Might">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x463</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>2</Tier>
+      <Description>A garnet set in a gold ring.</Description>
+      <ActivateOnEquip stat="112" amount="6">IncrementStat</ActivateOnEquip>
+      <BagType>2</BagType>
+      <FameBonus>1</FameBonus>
+      <feedPower>37</feedPower>
+      <DisplayId>Ring of Greater Might</DisplayId>
+   </Object>
+	<Object type="0x69ca" id="Ring of Superior Might">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x473</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>3</Tier>
+      <Description>A large garnet set in a glittering gold ring.</Description>
+      <ActivateOnEquip stat="112" amount="8">IncrementStat</ActivateOnEquip>
+      <BagType>2</BagType>
+      <FameBonus>2</FameBonus>
+      <feedPower>75</feedPower>
+      <DisplayId>Ring of Superior Might</DisplayId>
+   </Object>
+   <Object type="0x69cb" id="Ring of Paramount Might">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x483</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>4</Tier>
+      <Description>A very large garnet set in a dazzling gold ring.</Description>
+      <ActivateOnEquip stat="112" amount="9">IncrementStat</ActivateOnEquip>
+      <BagType>2</BagType>
+      <FameBonus>3</FameBonus>
+      <feedPower>150</feedPower>
+      <DisplayId>Ring of Paramount Might</DisplayId>
+   </Object>
+   <Object type="0x69cc" id="Ring of Exalted Might">
+      <Class>Equipment</Class>
+      <Item/>
+		<Texture>
+		  <File>d3LofiObjEmbed</File>
+		  <Index>0x493</Index>
+		</Texture>
+      <SlotType>9</SlotType>
+      <Tier>5</Tier>
+      <Description>A huge flawless garnet set in a stunningly beautiful gold ring.</Description>
+      <ActivateOnEquip stat="112" amount="10">IncrementStat</ActivateOnEquip>
+      <BagType>4</BagType>
+      <FameBonus>4</FameBonus>
+      <feedPower>300</feedPower>
+      <DisplayId>Ring of Exalted Might</DisplayId>
+   </Object>
 </Objects>

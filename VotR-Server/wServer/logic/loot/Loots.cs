@@ -78,7 +78,7 @@ namespace wServer.logic.loot
                     i.Populate(enemy.Manager, enemy, dat, rand, consideration);
 
                 var lootDropBoost = dat.Item1.LDBoostTime > 0 ? 1.5 : 1;
-                var luckStatBoost = 1 + dat.Item1.Stats.Boost[12] / 100.0;
+                var luckStatBoost = 1 + dat.Item1.Stats.Boost[14] / 100.0;
 
                 IList<Item> playerLoot = loots[dat.Item1];
                 foreach (var i in consideration)

@@ -6,8 +6,7 @@ namespace wServer.realm
 {
     public class StatsManager
     {
-        //static readonly ILog Log = LogManager.GetLogger(typeof(StatsManager));
-        internal const int NumStatTypes = 13; // change this to add more stats
+        internal const int NumStatTypes = 15; // change this to add more stats
         private const float MinAttackMult = 0.5f;
         private const float MaxAttackMult = 2f;
         private const float MinAttackFreq = 0.0015f;
@@ -224,6 +223,9 @@ namespace wServer.realm
             if (Owner.HasConditionEffect(ConditionEffects.Berserk))
                 rof *= 1.5f;
 
+            if (Owner.HasConditionEffect(ConditionEffects.SamuraiBerserk))
+                rof *= 1.5f;
+
             return rof;
         }
 
@@ -338,9 +340,11 @@ namespace wServer.realm
                 case 7: return "MpRegen";
                 case 8: return "Might";
                 case 9: return "Luck";
-                case 10: return "DamageMin";
-                case 11: return "DamageMax";
-                case 12: return "FortuneBoost";
+                case 10: return "Restoration";
+                case 11: return "Protection";
+                case 12: return "DamageMin";
+                case 13: return "DamageMax";
+                case 14: return "FortuneBoost";
             } return null;
         }
 
@@ -358,9 +362,11 @@ namespace wServer.realm
                 case "MpRegen": return 7;
                 case "Might": return 8;
                 case "Luck": return 9;
-                case "DamageMin": return 10;
-                case "DamageMax": return 11;
-                case "FortuneBoost": return 12;
+                case "Restoration": return 10;
+                case "Protection": return 11;
+                case "DamageMin": return 12;
+                case "DamageMax": return 13;
+                case "FortuneBoost": return 14;
             } return -1;
         }
 
@@ -388,12 +394,16 @@ namespace wServer.realm
                     return 8;
                 case StatsType.Luck:
                     return 9;
-                case StatsType.DamageMin:
+                case StatsType.Restoration:
                     return 10;
-                case StatsType.DamageMax:
+                case StatsType.Protection:
                     return 11;
-                case StatsType.Fortune:
+                case StatsType.DamageMin:
                     return 12;
+                case StatsType.DamageMax:
+                    return 13;
+                case StatsType.Fortune:
+                    return 14;
                 default:
                     return -1;
             }
@@ -424,10 +434,14 @@ namespace wServer.realm
                 case 9:
                     return StatsType.Luck;
                 case 10:
-                    return StatsType.DamageMin;
+                    return StatsType.Restoration;
                 case 11:
-                    return StatsType.DamageMax;
+                    return StatsType.Protection;
                 case 12:
+                    return StatsType.DamageMin;
+                case 13:
+                    return StatsType.DamageMax;
+                case 14:
                     return StatsType.Fortune;
                 default:
                     return StatsType.None;
@@ -459,10 +473,14 @@ namespace wServer.realm
                 case 9:
                     return StatsType.LuckBonus;
                 case 10:
-                    return StatsType.DamageMinBonus;
+                    return StatsType.RestorationBonus;
                 case 11:
-                    return StatsType.DamageMaxBonus;
+                    return StatsType.ProtectionBonus;
                 case 12:
+                    return StatsType.DamageMinBonus;
+                case 13:
+                    return StatsType.DamageMaxBonus;
+                case 14:
                     return StatsType.FortuneBonus;
                 default:
                     return StatsType.None;

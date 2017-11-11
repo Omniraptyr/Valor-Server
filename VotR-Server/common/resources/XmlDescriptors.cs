@@ -87,7 +87,8 @@ namespace common.resources
         Corrupted =         (ulong)1 << 53,
         Deathbound =         (ulong)1 << 54,
         SamuraiBerserk = (ulong)1 << 55,
-        DrakzixCharging = (ulong)1 << 56
+        DrakzixCharging = (ulong)1 << 56,
+        Protected = (ulong)1 << 57
     }
 
     public enum ConditionEffectIndex
@@ -148,7 +149,8 @@ namespace common.resources
         Corrupted = 53,
         Deathbound = 54,
         SamuraiBerserk = 55,
-        DrakzixCharging = 56
+        DrakzixCharging = 56,
+        Protected = 57
     }
 
     public class ConditionEffect
@@ -376,7 +378,8 @@ namespace common.resources
         CrimsonBox,
         FUnlockPortal,
         CreateGauntlet,
-        PZara
+        Heal2,
+        Magic2,
     }
 
     public class ActivateEffect
@@ -1035,6 +1038,8 @@ namespace common.resources
                 case 7: return "MpRegen";
                 case 8: return "Might";
                 case 9: return "Luck";
+                case 10: return "Restoration";
+                case 11: return "Protection";
             } return null;
         }
     }
@@ -1050,7 +1055,7 @@ namespace common.resources
             XElement n;
             SlotTypes = elem.Element("SlotTypes").Value.CommaToArray<int>();
             Equipment = elem.Element("Equipment").Value.CommaToArray<ushort>();
-            Stats = new Stat[10];
+            Stats = new Stat[12];
             for (var i = 0; i < Stats.Length; i++)
                 Stats[i] = new Stat(i, elem);
             if (elem.Element("UnlockLevel") != null ||

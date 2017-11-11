@@ -64,8 +64,8 @@ namespace wServer.logic
                      new Shoot(25, projectileIndex: 0, count: 3, shootAngle: 20, coolDown: 700, coolDownOffset: 1000)
                     ),
                 new Threshold(0.5,
-                    new ItemLoot("Minor Magic Potion", 0.1),
-                    new ItemLoot("Minor Magic Potion", 0.1)
+                    new ItemLoot("Magic Potion", 0.1),
+                    new ItemLoot("Magic Potion", 0.1)
                     )
             )
                   .Init("Mini Larva",
@@ -77,8 +77,8 @@ namespace wServer.logic
                      new Shoot(25, projectileIndex: 0, count: 6, coolDown: 3500, coolDownOffset: 1200)
                     ),
                 new Threshold(0.5,
-                    new ItemLoot("Minor Health Potion", 0.01),
-                    new ItemLoot("Minor Magic Potion", 0.01)
+                    new ItemLoot("Health Potion", 0.01),
+                    new ItemLoot("Magic Potion", 0.01)
                     )
             )
                    .Init("Blood Ground Effector",
