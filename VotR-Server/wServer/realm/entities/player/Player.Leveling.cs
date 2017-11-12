@@ -297,6 +297,14 @@ namespace wServer.realm.entities
             CalculateFame();
             return false;
         }
+        public int SurgeBonus()
+        {
+            if (CheckInsurgency() == true)
+            {
+                return 2;
+            }
+            return 1;
+        }
 
         public void SurgeActivation(RealmTime time)
         {   
@@ -305,11 +313,11 @@ namespace wServer.realm.entities
                 SurgeCounter = 75; //approx 3s
                 if (HasConditionEffect(ConditionEffects.Surged))
                 {
-                    Surge += 4;
+                    Surge += 4*SurgeBonus();
                 }
                 else
                 {
-                    Surge += 2;
+                    Surge += 2*SurgeBonus();
                 }
                 isSurgeGone = true;
                 surgewither = false;
@@ -319,7 +327,17 @@ namespace wServer.realm.entities
                 protectionDamage = 0;
             }
         }
-
+        public bool CheckInsurgency()
+        {
+            for (var i = 0; i < 4; i++)
+            {
+                var item = Inventory[i];
+                if (item == null || item.ObjectId == "Insurgency Amulet")
+                    continue;
+                return true;
+            }
+            return false;
+        }
         public bool EnemyKilled(Enemy enemy, int exp, bool killer)
         {
             var acc = Client.Account;

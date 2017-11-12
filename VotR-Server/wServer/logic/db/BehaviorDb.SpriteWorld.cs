@@ -142,8 +142,10 @@ namespace wServer.logic
                      new TimedTransition(2000, "nothing")
                      )
                  ),
+             new MostDamagers(3, 
+                 new ItemLoot("Potion of Dexterity", 1.00)
+                 ),
                 new Threshold(0.1,
-                new ItemLoot("Potion of Dexterity", 1),
                 new ItemLoot("Potion of Defense", 0.3),
                 new ItemLoot("Sprite Wand", 0.3),
                 new ItemLoot("Golden Limon Eye", 0.032),
@@ -151,7 +153,6 @@ namespace wServer.logic
                 new ItemLoot("Wine Cellar Incantation", 0.03),
                 new ItemLoot("Cloak of the Planewalker", 0.03),
                 new ItemLoot("Staff of Extreme Prejudice", 0.03),
-                new ItemLoot("Mark of Agility", 0.008),
 
                     new TierLoot(3, ItemType.Ring, 0.2),
 

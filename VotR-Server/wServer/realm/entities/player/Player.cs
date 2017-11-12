@@ -1166,7 +1166,7 @@ namespace wServer.realm.entities
             {
                 Items = items
             });
-            Owner.Timers.Add(new WorldTimer(13000, (world, t) =>
+            Owner.Timers.Add(new WorldTimer(15000, (world, t) =>
             {
                 foreach (var player in Owner.Players.Values)
                     player.SendHelp(Name + " has unboxed a " + Manager.Resources.GameData.Items[items[45]].ObjectId + " from the " + LootboxType(type) + "!");
@@ -1271,8 +1271,15 @@ namespace wServer.realm.entities
             }
             return false;
         }
-
-
+        bool isAdminsArena()
+        {
+            if(Owner.Name == "Admins Arena")
+            {
+                ReconnectToNexus();
+                return true;
+            }
+            return false;
+        }
         private void ReconnectToNexus()
         {
             HP = 1;
@@ -1355,6 +1362,8 @@ namespace wServer.realm.entities
             if (NonPermaKillEnemy(entity, killer))
                 return;
             if (TestWorld(killer))
+                return;
+            if (isAdminsArena())
                 return;
             if (Resurrection())
                 return;

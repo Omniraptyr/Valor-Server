@@ -24,8 +24,8 @@ namespace wServer.networking.handlers
                 {
                     if (packet.ShardSlot.ObjectType == 0x68fa)
                     {
-                        client.Player.SendError("Congratulations.");
-                        client.Player.Inventory[packet.SorSlot.SlotId] = client.Player.Manager.Resources.GameData.Items[0x64aa];
+                        client.Player.SendError("You have forged the Insurgency Amulet!");
+                        client.Player.Inventory[packet.SorSlot.SlotId] = client.Player.Manager.Resources.GameData.Items[0x69cd];
                         client.Player.Inventory[packet.ShardSlot.SlotId] = null;
                     }
                     else

@@ -479,6 +479,9 @@ namespace wServer.realm.entities
                     case ActivateEffects.Magic2:
                         AEMagic2(time, item, target, eff);
                         break;
+                    case ActivateEffects.DiceActivate:
+                        AEDiceActivate(time, item, target, eff);
+                        break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
@@ -1336,6 +1339,32 @@ namespace wServer.realm.entities
                 ActivateHealMp(this, RestorationHeal(), pkts);
             }
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
+        }
+        private void AEDiceActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            Random rnd = new Random();
+            int ability = rnd.Next(1, 7);
+            switch (ability)
+            {
+                case 1:
+                    ApplyConditionEffect(ConditionEffectIndex.Bravery, eff.DurationMS);
+                    break;
+                case 2:
+                    ApplyConditionEffect(ConditionEffectIndex.ArmorBroken, eff.DurationMS);
+                    break;
+                case 3:
+                    ApplyConditionEffect(ConditionEffectIndex.Berserk, eff.DurationMS);
+                    break;
+                case 4:
+                    ApplyConditionEffect(ConditionEffectIndex.Speedy, eff.DurationMS);
+                    break;
+                case 5:
+                    ApplyConditionEffect(ConditionEffectIndex.Healing, eff.DurationMS);
+                    break;
+                case 6:
+                    ApplyConditionEffect(ConditionEffectIndex.Hexed, eff.DurationMS);
+                    break;
+            }
         }
         private void AEConditionEffectAura(RealmTime time, Item item, Position target, ActivateEffect eff)
         {

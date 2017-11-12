@@ -253,7 +253,16 @@ namespace wServer.realm.worlds
                 }
             }
         }
+        protected void LoadMap(string embeddedResource)
+        {
+            if (embeddedResource == null)
+                return;
+            var stream = typeof(RealmManager).Assembly.GetManifestResourceStream(embeddedResource);
+            if (stream == null)
+                throw new ArgumentException("Resource not found", nameof(embeddedResource));
 
+            FromWorldMap(stream);
+        }
         public bool Delete()
         {
             using (TimedLock.Lock(_deleteLock))

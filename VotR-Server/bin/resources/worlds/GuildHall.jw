@@ -1,0 +1,12 @@
+{"id":-8,
+"isLimbo":false,
+"name":"GuildHall",
+"sbName":"Guild Hall",
+"difficulty":0,
+"background":0,
+"blocking":0,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x072f],
+"maps":[],
+"music":["meadow"]}

@@ -75328,6 +75328,88 @@ A magnificent legendary blade which only cuts those who deserve death.
         <UnlockCost>999</UnlockCost>
         <DisplayId>Drakzix</DisplayId>
     </Object>
+	<Object type="0x582a" id="Shrine Maiden">
+        <Class>Player</Class>
+        <Description>The Shrine Maiden uses her mystical charms to weaken her enemys, and her katana to rend them to bits.</Description>
+        <AnimatedTexture>
+            <File>players</File>
+            <Index>18</Index>
+        </AnimatedTexture>
+        <HitSound>player/warrior_hit</HitSound>
+        <DeathSound>player/warrior_death</DeathSound>
+        <Player/>
+        <BloodProb>1.0</BloodProb>
+        <SlotTypes>24, 32, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Equipment>0xc44, 0x5811, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <MaxHitPoints max="650">110</MaxHitPoints>
+        <MaxMagicPoints max="410">100</MaxMagicPoints>
+        <Attack max="70">10</Attack>
+        <Defense max="25">0</Defense>
+        <Speed max="65">10</Speed>
+        <Dexterity max="60">12</Dexterity>
+        <HpRegen max="50">10</HpRegen>
+        <MpRegen max="75">15</MpRegen>
+        <Might max="60">2</Might>
+        <Luck max="85">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="60">4</Protection>
+        <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
+        <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
+        <LevelIncrease min="1" max="2">Attack</LevelIncrease>
+        <LevelIncrease min="0" max="0">Defense</LevelIncrease>
+        <LevelIncrease min="1" max="2">Speed</LevelIncrease>
+        <LevelIncrease min="1" max="2">Dexterity</LevelIncrease>
+        <LevelIncrease min="1" max="2">HpRegen</LevelIncrease>
+        <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
+        <LevelIncrease min="0" max="1">Might</LevelIncrease>
+        <LevelIncrease min="0" max="1">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
+        <UnlockLevel level="20">Priest</UnlockLevel>
+        <UnlockLevel level="20">Samurai</UnlockLevel>
+        <DisplayId>Shrine Maiden</DisplayId>
+    </Object>
+    <Object type="0x5826" id="Gambler">
+        <Class>Player</Class>
+        <Description>The Gambler fights with daggers, wears leather armor and uses his magical dice to give him a variety of powers.</Description>
+        <AnimatedTexture>
+            <File>players</File>
+            <Index>19</Index>
+        </AnimatedTexture>
+        <HitSound>player/wizard_hit</HitSound>
+        <DeathSound>player/wizard_death</DeathSound>
+        <Player/>
+        <BloodProb>1.0</BloodProb>
+        <SlotTypes>2, 33, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Equipment>0xa14, 0x5829, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <MaxHitPoints max="620">80</MaxHitPoints>
+        <MaxMagicPoints max="385">100</MaxMagicPoints>
+        <Attack max="55">10</Attack>
+        <Defense max="25">0</Defense>
+        <Speed max="60">10</Speed>
+        <Dexterity max="55">12</Dexterity>
+        <HpRegen max="60">10</HpRegen>
+        <MpRegen max="100">15</MpRegen>
+        <Might max="100">2</Might>
+        <Luck max="100">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
+        <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
+        <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
+        <LevelIncrease min="0" max="2">Attack</LevelIncrease>
+        <LevelIncrease min="0" max="0">Defense</LevelIncrease>
+        <LevelIncrease min="1" max="2">Speed</LevelIncrease>
+        <LevelIncrease min="1" max="2">Dexterity</LevelIncrease>
+        <LevelIncrease min="1" max="2">HpRegen</LevelIncrease>
+        <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
+        <LevelIncrease min="0" max="2">Might</LevelIncrease>
+        <LevelIncrease min="0" max="1">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
+        <UnlockLevel level="20">Assassin</UnlockLevel>
+        <UnlockLevel level="20">Shrine Maiden</UnlockLevel>
+        <DisplayId>Gambler</DisplayId>
+    </Object>
 <Object type="0x185a" id="Leather Sheath">
     <Class>Equipment</Class>
     <Item/>
@@ -104616,43 +104698,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <LifetimeMS>8000</LifetimeMS>
       	</Projectile>
 	</Object>
-  <Object type="0x582a" id="Shrine Maiden">
-        <Class>Player</Class>
-        <Description>The Shrine Maiden uses her mystical charms to weaken her enemys, and her katana to rend them to bits.</Description>
-        <AnimatedTexture>
-            <File>players</File>
-            <Index>18</Index>
-        </AnimatedTexture>
-        <HitSound>player/warrior_hit</HitSound>
-        <DeathSound>player/warrior_death</DeathSound>
-        <Player/>
-        <BloodProb>1.0</BloodProb>
-        <SlotTypes>24, 32, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xc44, 0x5811, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="690">130</MaxHitPoints>
-        <MaxMagicPoints max="410">100</MaxMagicPoints>
-        <Attack max="70">10</Attack>
-        <Defense max="25">0</Defense>
-        <Speed max="65">10</Speed>
-        <Dexterity max="60">12</Dexterity>
-        <HpRegen max="50">10</HpRegen>
-        <MpRegen max="75">15</MpRegen>
-        <Might max="80">2</Might>
-        <Luck max="20">2</Luck>
-        <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
-        <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
-        <LevelIncrease min="1" max="2">Attack</LevelIncrease>
-        <LevelIncrease min="0" max="0">Defense</LevelIncrease>
-        <LevelIncrease min="1" max="2">Speed</LevelIncrease>
-        <LevelIncrease min="1" max="2">Dexterity</LevelIncrease>
-        <LevelIncrease min="1" max="2">HpRegen</LevelIncrease>
-        <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
-        <LevelIncrease min="0" max="1">Might</LevelIncrease>
-        <LevelIncrease min="0" max="0">Luck</LevelIncrease>
-        <UnlockLevel level="20">Priest</UnlockLevel>
-        <UnlockLevel level="20">Samurai</UnlockLevel>
-        <DisplayId>Shrine Maiden</DisplayId>
-    </Object>
   <Object type="0x5811" id="Paper Charm">
       <Class>Equipment</Class>
       <Item/>
@@ -104678,7 +104723,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <ConditionEffect duration="2">Weak</ConditionEffect>
       <Usable/>
       <BagType>1</BagType>
-      <MpCost>40</MpCost>
+      <MpCost>30</MpCost>
       <Cooldown>5</Cooldown>
       <Activate>Shoot</Activate>
       <feedPower>4</feedPower>
@@ -104709,7 +104754,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <ConditionEffect duration="2">Weak</ConditionEffect>
       <Usable/>
       <BagType>1</BagType>
-      <MpCost>55</MpCost>
+      <MpCost>45</MpCost>
       <Cooldown>4</Cooldown>
       <NumProjectiles>2</NumProjectiles>
       <Activate>Shoot</Activate>
@@ -104742,7 +104787,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <ActivateOnEquip stat="21" amount="1">IncrementStat</ActivateOnEquip>
       <Usable/>
       <BagType>1</BagType>
-      <MpCost>65</MpCost>
+      <MpCost>55</MpCost>
       <Cooldown>4</Cooldown>
       <Activate>Shoot</Activate>
       <NumProjectiles>3</NumProjectiles>
@@ -104776,7 +104821,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Usable/>
       <BagType>2</BagType>
       <FameBonus>1</FameBonus>
-      <MpCost>75</MpCost>
+      <MpCost>65</MpCost>
       <Activate>Shoot</Activate>
       <Cooldown>4</Cooldown>
       <feedPower>45</feedPower>
@@ -104811,7 +104856,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <BagType>2</BagType>
       <FameBonus>2</FameBonus>
       <Cooldown>4</Cooldown>
-      <MpCost>85</MpCost>
+      <MpCost>75</MpCost>
       <Activate>Shoot</Activate>
       <feedPower>90</feedPower>
       <NumProjectiles>5</NumProjectiles>
@@ -104844,7 +104889,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Usable/>
       <BagType>4</BagType>
       <FameBonus>3</FameBonus>
-      <MpCost>95</MpCost>
+      <MpCost>85</MpCost>
       <Cooldown>4</Cooldown>
       <NumProjectiles>6</NumProjectiles>
       <Activate>Shoot</Activate>
@@ -104878,7 +104923,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Usable/>
       <BagType>4</BagType>
       <FameBonus>4</FameBonus>
-      <MpCost>100</MpCost>
+      <MpCost>90</MpCost>
       <Activate>Shoot</Activate>
       <feedPower>380</feedPower>
       <NumProjectiles>7</NumProjectiles>
@@ -104914,7 +104959,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Usable/>
       <BagType>6</BagType>
       <FameBonus>6</FameBonus>
-      <MpCost>110</MpCost>
+      <MpCost>100</MpCost>
       <Activate>Shoot</Activate>
       <feedPower>880</feedPower>
       <Cooldown>5</Cooldown>
@@ -105047,43 +105092,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <feedPower>800</feedPower>
       <DisplayId>Razzmatazz Armor</DisplayId>
    </Object>
-   <Object type="0x5826" id="Gambler">
-        <Class>Player</Class>
-        <Description>The Gambler fights with daggers, wears leather armor and uses his magical dice to give him a variety of powers.</Description>
-        <AnimatedTexture>
-            <File>players</File>
-            <Index>19</Index>
-        </AnimatedTexture>
-        <HitSound>player/wizard_hit</HitSound>
-        <DeathSound>player/wizard_death</DeathSound>
-        <Player/>
-        <BloodProb>1.0</BloodProb>
-        <SlotTypes>2, 33, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0xa14, 0x5829, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="660">100</MaxHitPoints>
-        <MaxMagicPoints max="385">100</MaxMagicPoints>
-        <Attack max="55">10</Attack>
-        <Defense max="25">0</Defense>
-        <Speed max="60">10</Speed>
-        <Dexterity max="55">12</Dexterity>
-        <HpRegen max="60">10</HpRegen>
-        <MpRegen max="100">15</MpRegen>
-        <Might max="100">2</Might>
-        <Luck max="80">2</Luck>
-        <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
-        <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
-        <LevelIncrease min="0" max="2">Attack</LevelIncrease>
-        <LevelIncrease min="0" max="0">Defense</LevelIncrease>
-        <LevelIncrease min="1" max="2">Speed</LevelIncrease>
-        <LevelIncrease min="1" max="2">Dexterity</LevelIncrease>
-        <LevelIncrease min="1" max="2">HpRegen</LevelIncrease>
-        <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
-        <LevelIncrease min="0" max="2">Might</LevelIncrease>
-        <LevelIncrease min="0" max="1">Luck</LevelIncrease>
-        <UnlockLevel level="20">Assassin</UnlockLevel>
-        <UnlockLevel level="20">Shrine Maiden</UnlockLevel>
-        <DisplayId>Gambler</DisplayId>
-    </Object>
   <Object type="0x5827" id="RNG Clown">
     <Skin/>
     <Class>Skin</Class>
@@ -105251,7 +105259,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Tier>6</Tier>
       <Description>A dice created from the stone found from the mountains where the gods abide.</Description>
       <ExtraTooltipData>
-         <EffectInfo name="Duration - 7  " description="Applies a random gambler effect."/>
+         <EffectInfo name="Duration - 6  " description="Applies a random gambler effect."/>
       </ExtraTooltipData>
       <Usable/>
       <BagType>4</BagType>
@@ -105271,7 +105279,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 	      <Index>0x411</Index>
 	  </Texture>
 	  <ExtraTooltipData>
-         <EffectInfo name="Duration - 6  " description="Applies a random gambler effect."/>
+         <EffectInfo name="Duration - 5  " description="Applies a random gambler effect."/>
       </ExtraTooltipData>
       <SlotType>33</SlotType>
       <Description>A dice that embraces the power of the night.</Description>
@@ -105283,8 +105291,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <ActivateOnEquip stat="6" amount="40">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="112" amount="40">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
-      <Activate duration="3">DiceActivate</Activate>
-      <Activate effect="Armored" duration="2">ConditionEffectSelf</Activate>
+      <Activate duration="5">DiceActivate</Activate>
+      <Activate effect="Armored" duration="6">ConditionEffectSelf</Activate>
       <feedPower>880</feedPower>
       <DisplayId>Night Dice</DisplayId>
    </Object>
@@ -106886,5 +106894,31 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <FameBonus>4</FameBonus>
       <feedPower>300</feedPower>
       <DisplayId>Ring of Exalted Might</DisplayId>
+   </Object>
+      <Object type="0x69cd" id="Insurgency Amulet">
+      <Class>Equipment</Class>
+      <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x0f</Index>
+        </Texture>
+      <SlotType>9</SlotType>
+      <Description>Boundless energies fill this gemstone..</Description>
+	  <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="28" amount="8">IncrementStat</ActivateOnEquip>
+      <BagType>6</BagType>
+      <FameBonus>8</FameBonus>
+      <feedPower>2000</feedPower>
+	  <Legendary/>
+      <Legend id="3" stat="27">
+            <Name>Insurgency</Name>
+            <Description>The surge you gain is doubled while this item is equipped.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+      </Legend>
+      <DisplayId>Insurgency Amulet</DisplayId>
    </Object>
 </Objects>

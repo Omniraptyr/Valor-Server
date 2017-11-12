@@ -69,7 +69,6 @@ namespace wServer.realm
 
         private float CriticalModifier()
         {
-
             Random rnd = new Random();
             int luckNm = rnd.Next(1, 1001);
             var ret = 1.0f;

@@ -640,6 +640,10 @@
     <None Include="app.config" />
     <EmbeddedResource Include="realm\worlds\*.wmap" />
     <None Include="packages.config" />
+    <EmbeddedResource Include="realm\worlds\maps\GuildHall0.wmap" />
+    <EmbeddedResource Include="realm\worlds\maps\GuildHall1.wmap" />
+    <EmbeddedResource Include="realm\worlds\maps\GuildHall2.wmap" />
+    <EmbeddedResource Include="realm\worlds\maps\GuildHall3.wmap" />
     <None Include="wServer.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

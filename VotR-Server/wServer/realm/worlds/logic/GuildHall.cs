@@ -26,16 +26,16 @@ namespace wServer.realm.worlds.logic
             switch (Level())
             {
                 case 0:
-                    FromWorldMap(new MemoryStream(Manager.Resources.Worlds[Name].wmap[0]));
+                    LoadMap("wServer.realm.worlds.maps.GuildHall0.wmap");
                     break;
                 case 1:
-                    FromWorldMap(new MemoryStream(Manager.Resources.Worlds[Name].wmap[1]));
+                    LoadMap("wServer.realm.worlds.maps.GuildHall1.wmap");
                     break;
                 case 2:
-                    FromWorldMap(new MemoryStream(Manager.Resources.Worlds[Name].wmap[2]));
+                    LoadMap("wServer.realm.worlds.maps.GuildHall2.wmap");
                     break;
                 case 3:
-                    FromWorldMap(new MemoryStream(Manager.Resources.Worlds[Name].wmap[3]));
+                    LoadMap("wServer.realm.worlds.maps.GuildHall3.wmap");
                     break;
             }
         }

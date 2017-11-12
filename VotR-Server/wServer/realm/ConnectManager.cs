@@ -147,7 +147,7 @@ namespace wServer.realm
         {
             var client = conInfo.Client;
             var acc = conInfo.Account;
-            
+
             // configure override
             if (acc.Admin && acc.AccountIdOverride != 0)
             {
@@ -251,6 +251,7 @@ namespace wServer.realm
 
             if (world.IsLimbo)
                 world = world.GetInstance(client);
+
 
             if (!world.AllowedAccess(client))
             {

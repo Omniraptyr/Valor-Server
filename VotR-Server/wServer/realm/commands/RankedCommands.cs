@@ -378,7 +378,47 @@ namespace wServer.realm.commands
             return true;
         }
     }
+    class SArenaCommand : Command
+    {
+        public SArenaCommand() : base("superarena", permLevel: 90, alias: "adar") { }
 
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+            Entity entity = Entity.Resolve(player.Manager, 0x47a9);
+            World we = player.Manager.GetWorld(player.Owner.Id); //can't use Owner here, as it goes out of scope
+            int TimeoutTime = player.Manager.Resources.GameData.Portals[0x47a9].Timeout;
+            string DungName = player.Manager.Resources.GameData.Portals[0x47a9].DungeonName;
+
+            entity.Move(player.X, player.Y);
+            we.EnterWorld(entity);
+
+            ARGB c = new ARGB(0xFF00FF);
+
+            Text packet = new Text()
+            {
+                BubbleTime = 0,
+                NumStars = -1,
+                TextColor = 0xFF00FF,
+                Name = "",
+                Txt = "A spawn arena has been opened by " + player.Name
+            };
+            player.Owner.BroadcastPacket(packet, null);
+            we.Timers.Add(new WorldTimer(TimeoutTime * 1000,
+                (world, t) => //default portal close time * 1000
+                {
+                    try
+                    {
+                        we.LeaveWorld(entity);
+                    }
+                    catch (Exception ex)
+                    //couldn't remove portal, Owner became null. Should be fixed with RealmManager implementation
+                    {
+                        Log.ErrorFormat("Couldn't despawn portal.\n{0}", ex);
+                    }
+                }));
+            return true;
+        }
+    }
     class ClearGravesCommand : Command
     {
         public ClearGravesCommand() : base("cleargraves", permLevel: 80, alias: "cgraves") { }

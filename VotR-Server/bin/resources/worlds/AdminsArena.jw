@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Admins Arena",
+"sbName":"Admins Arena",
+"difficulty":0,
+"background":0,
+"blocking":0,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x47a9],
+"maps":["AdminsArena.jm"],
+"music":["sorc5"]}

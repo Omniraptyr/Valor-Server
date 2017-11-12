@@ -55,17 +55,6 @@ namespace wServer.realm.entities
                     }
                     break;
                 case 3:
-                    int n = Convert.ToInt32(Stats[7] * 0.40);
-                    if (HP <= MaximumHP / 3)
-                    {
-                        Stats.Boost.ActivateBoost[idx].Push(n, false);
-                        Stats.ReCalculateValues();
-                    }
-                    else
-                    {
-                        Stats.Boost.ActivateBoost[idx].Pop(n, false);
-                        Stats.ReCalculateValues();
-                    }
                     break;
             }
         }
