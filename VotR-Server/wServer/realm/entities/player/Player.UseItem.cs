@@ -764,7 +764,7 @@ namespace wServer.realm.entities
             });
             BroadcastSync(pkts, p => this.Dist(p) < 25);
 
-            MP = MP/2;
+            MP = Stats[1] / 2;
             DrainedHP = 0;
 
             ApplyConditionEffect(ConditionEffectIndex.DrakzixCharging, 0);

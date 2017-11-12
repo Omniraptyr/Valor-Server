@@ -1181,6 +1181,10 @@ namespace wServer.realm.entities
             int time;
             switch (maxed)
             {
+                case 12: objType = 0x0735; time = 600000; break;
+                case 11: objType = 0x0735; time = 600000; break;
+                case 10: objType = 0x585d; time = 600000; break;
+                case 9: objType = 0x585c; time = 600000; break;
                 case 8: objType = 0x0735; time = 600000; break;
                 case 7: objType = 0x0734; time = 600000; break;
                 case 6: objType = 0x072b; time = 600000; break;
@@ -1272,9 +1276,47 @@ namespace wServer.realm.entities
             return false;
         }
         bool isAdminsArena()
-        {
+        {   
             if(Owner.Name == "Admins Arena")
             {
+                Random rnd = new Random();
+                int num = rnd.Next(1, 9);
+                switch (num)
+                {
+                    case 1:
+                        foreach (var player in Owner.Players.Values)
+                            player.SendInfo($"{Name} was utterly destroyed..");
+                        break;
+                    case 2:
+                        foreach (var player in Owner.Players.Values)
+                            player.SendInfo($"{Name} got bopped.");
+                        break;
+                    case 3:
+                        foreach (var player in Owner.Players.Values)
+                            player.SendInfo($"Later, {Name}!");
+                        break;
+                    case 4:
+                        foreach (var player in Owner.Players.Values)
+                            player.SendInfo($"{Name} couldn't take the fight.");
+                        break;
+                    case 5:
+                        foreach (var player in Owner.Players.Values)
+                            player.SendInfo($"{Name} got overwhelmed.");
+                        break;
+                    case 6:
+                        foreach (var player in Owner.Players.Values)
+                            player.SendInfo($"Sidon spares his mercy to {Name}.");
+                        break;
+                    case 7:
+                        foreach (var player in Owner.Players.Values)
+                            player.SendInfo($"Goodnight, {Name}.");
+                        break;
+                    case 8:
+                        foreach (var player in Owner.Players.Values)
+                            player.SendInfo($"{Name} IS OUTTA HERE!");
+                        break;
+                }
+
                 ReconnectToNexus();
                 return true;
             }

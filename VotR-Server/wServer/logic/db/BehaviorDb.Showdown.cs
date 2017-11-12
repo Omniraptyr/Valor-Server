@@ -230,7 +230,6 @@ namespace wServer.logic
                 new ItemLoot("Skull of Hades", 0.03),
                 new ItemLoot("Hellslicer", 0.04),
                 new ItemLoot("The Eye of Peril", 0.04),
-                new ItemLoot("Crimson Steel Lootbox", 0.5),
                 new ItemLoot("Sinburn Hide", 0.03),
                 new ItemLoot("Wildfire Crossbow", 0.03)
                 )

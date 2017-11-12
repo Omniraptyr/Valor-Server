@@ -175,8 +175,7 @@ namespace wServer.logic
                )
         .Init("CR Pillar of Illusions",
                 new State(
-                    new ChangeGroundOnDeath(new[] { "CR Ground Tick" }, new[] { "CR Ground Sinking" },
-                    30),
+                    new SetNoXP(),
                     new Grenade(4, 80, range: 8, coolDown: 8000),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("idle"
@@ -283,9 +282,10 @@ namespace wServer.logic
                         ),
                     new State("returntalk5",
                         new Order(9999, "CR Pillar of Illusions", "dead"),
-                        new Taunt(true, "The floor sinks in as you struggle..", "SINK!"),
+                        new Taunt(true, "DIE!"),
                         new Shoot(10, count: 5, shootAngle: 6, projectileIndex: 2, coolDown: 2000),
                         new Shoot(10, count: 8, projectileIndex: 0, coolDown: 6000),
+                        new Shoot(10, count: 1, projectileIndex: 1, coolDown: 200),
                         new TimedTransition(4000, "start")
                         )
                       )

@@ -30081,7 +30081,7 @@
         <Tier>2</Tier>
         <Description>A potion that permanently increases your protection.</Description>
         <Sound>use_potion</Sound>
-        <Activate stat="121" amount="2">IncrementStat</Activate>
+        <Activate stat="122" amount="2">IncrementStat</Activate>
         <Consumable/>
         <Potion/>
         <BagType>5</BagType>
@@ -30493,5 +30493,23 @@
             <Surge>0</Surge>
         </Legend>
         <DisplayId>Insurgency Amulet</DisplayId>
+    </Object>
+    <Object type="0x585d" id="Gravestone 13">
+        <Class>GameObject</Class>
+        <ShowName/>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1ae</Index>
+        </Texture>
+        <DisplayId>Gravestone 13</DisplayId>
+    </Object>
+    <Object type="0x585d" id="Gravestone 13">
+        <Class>GameObject</Class>
+        <ShowName/>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1ae</Index>
+        </Texture>
+        <DisplayId>Gravestone 13</DisplayId>
     </Object>
 </Objects>

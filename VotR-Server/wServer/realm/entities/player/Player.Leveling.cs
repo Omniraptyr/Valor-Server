@@ -329,14 +329,14 @@ namespace wServer.realm.entities
         }
         public bool CheckInsurgency()
         {
-            for (var i = 0; i < 4; i++)
+            if(Inventory[3].ObjectId == "Insurgency Amulet")
             {
-                var item = Inventory[i];
-                if (item == null || item.ObjectId == "Insurgency Amulet")
-                    continue;
                 return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
         }
         public bool EnemyKilled(Enemy enemy, int exp, bool killer)
         {
