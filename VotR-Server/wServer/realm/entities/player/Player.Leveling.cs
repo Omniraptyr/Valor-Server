@@ -328,7 +328,10 @@ namespace wServer.realm.entities
             }
         }
         public bool CheckInsurgency()
-        {
+        {   if(Inventory[3] == null)
+            {
+                return false;
+            }
             if(Inventory[3].ObjectId == "Insurgency Amulet")
             {
                 return true;

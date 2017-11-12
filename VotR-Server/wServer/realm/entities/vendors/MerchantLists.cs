@@ -147,7 +147,6 @@ namespace wServer.realm.entities.vendors
         {
             new ShopItem("Amulet of Resurrection", 50000) 
         };
-        
         public static readonly Dictionary<TileRegion, Tuple<List<ISellableItem>, CurrencyType, /*Rank Req*/int>> Shops = 
             new Dictionary<TileRegion, Tuple<List<ISellableItem>, CurrencyType, int>>()
         {
