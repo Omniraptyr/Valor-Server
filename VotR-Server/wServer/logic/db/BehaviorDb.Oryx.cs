@@ -60,6 +60,9 @@ namespace wServer.logic
                         new Taunt(1, 6000, "Puny mortals! My {HP} HP will annihilate you!")
                     )
                 ),
+                new MostDamagers(3,
+                    LootTemplates.RaidTokens()
+                ),
                 new Threshold(0.29,
                     new ItemLoot("Potion of Vitality", 1)
                 ),
