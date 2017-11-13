@@ -583,6 +583,22 @@ namespace wServer.realm.worlds
                 i.Value.SendInfo(announcement);
         }
 
+        public void RaidAnnouncement(string msg)
+        {
+            var announcement = string.Concat("<RAID ALERT> ", msg);
+            foreach (var i in Players)
+            {
+                Text packet = new Text()
+                {
+                    BubbleTime = 0,
+                    NumStars = -1,
+                    TextColor = 0x0085ff,
+                    Name = "",
+                    Txt = msg
+                };
+                i.Value.Owner.BroadcastPacket(packet, null);
+            }
+        }
         public void QuakeToWorld(World newWorld)
         {
             if (!Persist || this is Realm)

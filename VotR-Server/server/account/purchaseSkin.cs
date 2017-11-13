@@ -18,7 +18,7 @@ namespace server.account
                 var classStats = Program.Database.ReadClassStats(acc);
 
                 if (skinDesc.UnlockLevel > classStats[skinDesc.PlayerClassType].BestLevel ||
-                    skinDesc.Cost > acc.Credits ||
+                    skinDesc.Cost > acc.Kantos ||
                     skinDesc.Restricted ||
                     skinDesc.UnlockSpecial)
                 {

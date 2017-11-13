@@ -1167,7 +1167,6 @@ namespace wServer.logic
                 )
         .Init("AH Aldragine",
                 new State(
-                    new AnnounceOnDeath("The Zol, a dark burden, seems to fade away slowly..."),
                     new HpLessTransition(0.13, "ded"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -1469,6 +1468,7 @@ namespace wServer.logic
                         new TimedTransition(6000, "Success")
                         ),
                     new State("Success",
+                        new AnnounceOnDeath("The Zol, a dark burden, seems to fade away slowly..."),
                         new Shoot(8, count: 10, projectileIndex: 2, coolDown: 9999),
                         new DropPortalOnDeath("Treasure of Zol Portal", 50, timeout: 120),
                         new InvisiToss("AH Loot Chest 4", 2, 270, coolDown: 9999999),

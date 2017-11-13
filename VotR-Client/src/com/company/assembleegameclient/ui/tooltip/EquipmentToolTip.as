@@ -735,6 +735,10 @@ public class EquipmentToolTip extends ToolTip {
         {
             this.restrictions.push(new Restriction("This item can be used to forge a legendary item.", 0xFFFFFF, false));
         }
+        if (this.objectXML.hasOwnProperty("FabledToken"))
+        {
+            this.restrictions.push(new Restriction("This item is used to open raids.", 0xFF00FF, true));
+        }
         if (this.playerCanUse) {
             if (this.objectXML.hasOwnProperty("Usable")) {
                 this.addAbilityItemRestrictions();

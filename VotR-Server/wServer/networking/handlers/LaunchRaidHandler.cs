@@ -21,14 +21,10 @@ namespace wServer.networking.handlers
             {
             if(packet.Ultra == false)
                 {
-                    if(player.Credits >= 750)
+                    if(player.startRaid1(player) == false)
                     {
-                        player.Client.Manager.Database.UpdateCredit(acc, -750);
-                        player.Credits -= 750;
-                        player.ForceUpdate(player.Credits);
-
-                        var Manager = player.Manager;
-
+                    var Manager = player.Manager;
+                    player.Owner.RaidAnnouncement("The Zol Awakening Raid has been launched!");
                     var gameData = Manager.Resources.GameData;
 
                     ushort objType;
@@ -62,7 +58,7 @@ namespace wServer.networking.handlers
                 }
                 else
                 {
-                    player.SendError("You do not have enough gold to launch this Raid.");
+                    player.SendError("You don't have the token for this Raid.");
                 }
             }
             else

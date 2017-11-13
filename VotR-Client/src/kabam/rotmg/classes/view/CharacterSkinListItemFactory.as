@@ -42,7 +42,7 @@ public class CharacterSkinListItemFactory {
     }
 
     private function makeBuyButton():LegacyBuyButton {
-        return (new LegacyBuyButton("", 16, 0, Currency.GOLD));
+        return (new LegacyBuyButton("", 16, 0, Currency.KANTOS));
     }
 
     private function makeIcon(_arg1:CharacterSkin):Bitmap {

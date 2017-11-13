@@ -30551,4 +30551,75 @@
             <Index>0x15</Index>
         </Texture>
     </Object>
+    <Object type="0x51a2" id="The Zol Awakening (Token)">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x33b</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A wicked corrupted force must be stopped..</Description>
+        <Sound>use_key</Sound>
+        <Consumable/>
+        <BagType>6</BagType>
+        <FabledToken/>
+        <DisplayId>The Zol Awakening (Token)</DisplayId>
+    </Object>
+    <Object type="0x52ac" id="Calling of the Titan (Token)">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x33c</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Sidon will do anything to capture the immortal beast..</Description>
+        <Sound>use_key</Sound>
+        <BagType>6</BagType>
+        <FabledToken/>
+        <DisplayId>Calling of the Titan (Token)</DisplayId>
+    </Object>
+    <Object type="0x51a4" id="A Fallen Light (Token)">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x33d</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>The power of the nexus must be saved..</Description>
+        <Sound>use_key</Sound>
+        <BagType>6</BagType>
+        <FabledToken/>
+        <DisplayId>A Fallen Light (Token)</DisplayId>
+    </Object>
+    <Object type="0x51a5" id="Sidon's Fall (Token)">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x33e</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Their reign has come to an end..</Description>
+        <Sound>use_key</Sound>
+        <BagType>6</BagType>
+        <FabledToken/>
+        <DisplayId>Sidon's Fall (Token)</DisplayId>
+    </Object>
+    <Object type="0x51a6" id="War of Decades (Token)">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x33f</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A new threat..</Description>
+        <Sound>use_key</Sound>
+        <BagType>6</BagType>
+        <FabledToken/>
+        <DisplayId>War of Decades (Token)</DisplayId>
+    </Object>
 </Objects>

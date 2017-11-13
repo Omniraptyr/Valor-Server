@@ -41,7 +41,7 @@ public class BuyCharacterSkinCommand {
     }
 
     private function isSkinAffordable():Boolean {
-        return ((this.model.getCredits() >= this.skin.cost));
+        return true;
     }
 
     private function purchaseSkin():void {
@@ -50,7 +50,6 @@ public class BuyCharacterSkinCommand {
     }
 
     private function enterGetCreditsFlow():void {
-        this.openDialog.dispatch(new NotEnoughGoldDialog());
     }
 
 

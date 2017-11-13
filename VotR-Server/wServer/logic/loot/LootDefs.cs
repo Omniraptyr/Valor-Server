@@ -259,7 +259,19 @@ namespace wServer.logic.loot
                     )
             };
         }
-
+        public static ILootDef[] RaidTokens()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("The Zol Awakening (Token)", 0.1),
+                    new ItemLoot("Calling of the Titan (Token)", 0.1),
+                    new ItemLoot("A Fallen Light (Token)", 0.1),
+                    new ItemLoot("Sidon's Fall (Token)", 0.1),
+                    new ItemLoot("War of Decades (Token)", 0.1)
+                )
+             };
+        }
         //Sincryer (Hideout) Fabled Dungeon
         public static ILootDef[] FabledItemsLoot2()
         {

@@ -233,7 +233,7 @@ public class CharacterSkinListItem extends Sprite {
 
     private function setCost():void {
         var _local1:int = ((this.model) ? this.model.cost : 0);
-        this.buyButton.setPrice(_local1, Currency.GOLD);
+        this.buyButton.setPrice(_local1, Currency.KANTOS);
     }
 
     public function getIsSelected():Boolean {
