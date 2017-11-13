@@ -401,6 +401,52 @@ namespace wServer.realm
                     "{PLAYER}, I will kill you myself and turn you into the newest member of my Zombie Horde!",
                 }
             }),
+            Tuple.Create("Encounter Altar", new TauntData
+                {
+                    Spawn = new string[] {
+                        "Kill them my great statues!"
+                    },
+                    Killed = new string[] {
+
+                        "ARGH!"
+                    }
+                }),
+            Tuple.Create("Mad Jester", new TauntData
+                {
+                    Spawn = new string[] {
+                        "Silly fools. I have summoned the TRUE FOOL!"
+                    },
+                    Killed = new string[] {
+
+                        "That joke got old anyway."
+                    }
+                }),
+            Tuple.Create("Lord Stone Gargoyle", new TauntData
+                {
+                    Spawn = new string[] {
+                    
+                        "These ancient creatures are fierce..",
+                        "Don't tamper with something you don't understand. Heed my warning."
+                    },
+                    Killed = new string[] {
+                   
+                        "Your life will soon crumble away by my hand, {PLAYER}!"
+                    }
+                }),
+            Tuple.Create("Elemental Phantom", new TauntData
+                {
+                    Spawn = new string[] {
+                    
+                        "The elements are now in union!",
+                        "My elemental phantom shall burn you into ashes!",
+                        "My elemental phantom thinks you will look good in a glacier."
+                    },
+                    Killed = new string[] {
+                    
+                        "Soon you will become my new servant, {PLAYER}.",
+                        "Your lives were nothing to the Elemental Phantom...how could it fall?"
+                    }
+                }),
             Tuple.Create("Boshy", new TauntData()),
             Tuple.Create("The Kid", new TauntData()),
             Tuple.Create("Sanic", new TauntData())

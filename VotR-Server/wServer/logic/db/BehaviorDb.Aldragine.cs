@@ -1167,6 +1167,7 @@ namespace wServer.logic
                 )
         .Init("AH Aldragine",
                 new State(
+                    new AnnounceOnDeath("The Zol, a dark burden, seems to fade away slowly..."),
                     new HpLessTransition(0.13, "ded"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
