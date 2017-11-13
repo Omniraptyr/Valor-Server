@@ -159,8 +159,14 @@ namespace wServer.logic
 						new Shoot(10, count: 2, shootAngle: 20, coolDown: 99999, fixedAngle: 315, projectileIndex: 4, coolDownOffset: 1400),
 						new TimedTransition(1500, "ChooseRandomV2")
 					)
-				)
-			)
+				),
+               new MostDamagers(5,
+                    LootTemplates.StatIncreasePotionsLoot()
+                ),
+                new MostDamagers(1,
+                    new ItemLoot("Kageboshi", 0.025)
+                )
+            )
 			#endregion
 			#region Jade Statue
 			.Init("Jade Statue",
@@ -299,8 +305,14 @@ namespace wServer.logic
 						new Shoot(10, count: 2, shootAngle: 20, coolDown: 99999, fixedAngle: 315, projectileIndex: 4, coolDownOffset: 1400),
 						new TimedTransition(1500, "ChooseRandomV2")
 					)
-				)
-			)
+				),
+                new MostDamagers(5,
+                    LootTemplates.StatIncreasePotionsLoot()
+                ),
+                new MostDamagers(1,
+                    new ItemLoot("Wand of the Fallen", 0.025)
+                )
+            )
 			#endregion
 			#region Misc
 			.Init("Corrupted Sprite",

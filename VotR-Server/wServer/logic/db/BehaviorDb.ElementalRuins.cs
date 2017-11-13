@@ -327,12 +327,9 @@ namespace wServer.logic
                 new TierLoot(10, ItemType.Weapon, 0.02),
                 new TierLoot(13, ItemType.Armor, 0.015),
                 new TierLoot(12, ItemType.Armor, 0.02),
-                new ItemLoot("Overgrowth Lootbox", 0.5),
-                new ItemLoot("Potion of Vitality", 1),
+                new ItemLoot("Potion of Restoration", 1),
                 new ItemLoot("Potion of Mana", 0.8),
                 new ItemLoot("Elemental Tome", 0.04),
-                new ItemLoot("Mark of Recovery", 0.015),
-                new ItemLoot("Overgrowth Lootbox", 0.1),
                 new ItemLoot("Wand of Elemental Sanctuary", 0.04),
                 new ItemLoot("Earthbound Lance", 0.04)
                 )

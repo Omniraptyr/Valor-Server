@@ -14934,6 +14934,7 @@
         <Description>A rare amulet that is made of a yellow crystal found in the Elemental Ruins</Description>
         <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="90">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
@@ -30494,22 +30495,60 @@
         </Legend>
         <DisplayId>Insurgency Amulet</DisplayId>
     </Object>
-    <Object type="0x585d" id="Gravestone 13">
+    <Object type="0x69ce" id="Gravestone 14">
         <Class>GameObject</Class>
         <ShowName/>
         <Texture>
             <File>lofiObjBig</File>
-            <Index>0x1ae</Index>
+            <Index>0x1b3</Index>
         </Texture>
-        <DisplayId>Gravestone 13</DisplayId>
+        <DisplayId>Gravestone 14</DisplayId>
     </Object>
-    <Object type="0x585d" id="Gravestone 13">
+    <Object type="0x69cf" id="Gravestone 15">
         <Class>GameObject</Class>
         <ShowName/>
         <Texture>
             <File>lofiObjBig</File>
-            <Index>0x1ae</Index>
+            <Index>0x1b4</Index>
         </Texture>
-        <DisplayId>Gravestone 13</DisplayId>
+        <DisplayId>Gravestone 15</DisplayId>
+    </Object>
+    <Object type="0x69d1" id="The Mocking Raven">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x14</Index>
+        </Texture>
+        <SlotType>24</SlotType>
+        <Description>The silence of death will show no mercy.</Description>
+        <RateOfFire>1.25</RateOfFire>
+        <Sound>weapon/long_sword</Sound>
+        <Projectile>
+            <ObjectId>Masamune Slash</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>220</MinDamage>
+            <MaxDamage>260</MaxDamage>
+            <LifetimeMS>360</LifetimeMS>
+        </Projectile>
+        <Legendary/>
+        <Legend id="3" stat="27">
+            <Name>Relentless</Name>
+            <Description>Each surge you have gained adds.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <BagType>6</BagType>
+        <OldSound>bladeSwing</OldSound>
+        <feedPower>2000</feedPower>
+        <DisplayId>The Mocking Raven</DisplayId>
+    </Object>
+    <Object type="0x69d2" id="Mocking Slash">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x15</Index>
+        </Texture>
     </Object>
 </Objects>

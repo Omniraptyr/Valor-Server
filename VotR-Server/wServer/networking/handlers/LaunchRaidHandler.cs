@@ -16,33 +16,64 @@ namespace wServer.networking.handlers
 
         void Handle(Player player, RealmTime time, LaunchRaid packet)
         {
-            player.SendError("Nope.");
-           /* var Manager = player.Manager;
-
-            var gameData = Manager.Resources.GameData;
-
-            ushort objType;
-            if (!gameData.IdToObjectType.TryGetValue("Ice Cave Portal", out objType) ||
-                !gameData.Portals.ContainsKey(objType))
-                return; // object not found, ignore
-
-            var entity = Entity.Resolve(Manager, objType);
-            var timeoutTime = gameData.Portals[objType].Timeout;
-
-            entity.Move(63, 67);
-            player.Owner.EnterWorld(entity);
-
-            (entity as Portal).PlayerOpened = true;
-            (entity as Portal).Opener = player.Name;
-
-            player.Owner.Timers.Add(new WorldTimer(timeoutTime * 1000, (world, t) => world.LeaveWorld(entity)));
-
-            player.Owner.BroadcastPacket(new Notification
+            var acc = player.Client.Account;
+            if (player.Manager._isRaidLaunched == false)
             {
-                Color = new ARGB(0xFF00FF00),
-                ObjectId = player.Id,
-                Message = "Opened by " + player.Name
-            }, null, PacketPriority.Low);*/
+            if(packet.Ultra == false)
+                {
+                    if(player.Credits >= 750)
+                    {
+                        player.Client.Manager.Database.UpdateCredit(acc, -750);
+                        player.Credits -= 750;
+                        player.ForceUpdate(player.Credits);
+
+                        var Manager = player.Manager;
+
+                    var gameData = Manager.Resources.GameData;
+
+                    ushort objType;
+
+                    Manager._isRaidLaunched = true;
+
+                    if (!gameData.IdToObjectType.TryGetValue("Aldragine's Hideout Portal", out objType) ||
+                        !gameData.Portals.ContainsKey(objType))
+                        return;
+
+                    var entity = Entity.Resolve(Manager, objType);
+                    var timeoutTime = gameData.Portals[objType].Timeout;
+
+                    entity.Move(16, 64);
+                    player.Owner.EnterWorld(entity);
+
+                    (entity as Portal).PlayerOpened = true;
+                    (entity as Portal).Opener = player.Name;
+
+                    player.Owner.Timers.Add(new WorldTimer(timeoutTime * 1000, (world, t) => world.LeaveWorld(entity)));
+                    player.Owner.Timers.Add(new WorldTimer(60000, (w, t) =>
+                    {
+                        Manager._isRaidLaunched = false;
+                    }));
+                    player.Owner.BroadcastPacket(new Notification
+                    {
+                        Color = new ARGB(0xFF00FF00),
+                        ObjectId = player.Id,
+                        Message = player.Name + " has launched the Zol Awakening Raid!"
+                    }, null, PacketPriority.Low);
+                }
+                else
+                {
+                    player.SendError("You do not have enough gold to launch this Raid.");
+                }
+            }
+            else
+            {
+                player.SendError("The Ultra Zol Awakening raid is not yet implemented.");
+            }
+            }
+            else
+            {
+                player.SendError("A raid has already been launched earlier.");
+            }
         }
     }
 }

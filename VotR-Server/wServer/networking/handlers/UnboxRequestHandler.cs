@@ -59,19 +59,20 @@ namespace wServer.networking.handlers
                     }
                     break;
                 case 4:
-                   /* if (player.Lootbox4 >= 1 && player.Onrane >= 5)
+                    if (player.Lootbox4 >= 1 && player.Onrane >= 5)
                     {
                         player.Client.Manager.Database.UpdateLootbox4(acc, -1);
                         player.Client.Manager.Database.UpdateOnrane(acc, -5);
                         player.Lootbox4 -= 1;
                         player.Onrane = player.Client.Account.Onrane - 5;
                         player.ForceUpdate(player.Onrane);
+                        player.ForceUpdate(player.Lootbox4);
                         player.Unbox(4);
                     }
                     else
                     {
                         player.SendError("You do not have any lootboxes to open or you don't have the sufficient amount of onrane!");
-                    }*/
+                    }
                     break;
                 case 5:
                     if (player.Kantos >= 600)

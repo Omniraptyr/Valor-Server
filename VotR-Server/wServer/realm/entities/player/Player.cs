@@ -1181,8 +1181,8 @@ namespace wServer.realm.entities
             int time;
             switch (maxed)
             {
-                case 12: objType = 0x0735; time = 600000; break;
-                case 11: objType = 0x0735; time = 600000; break;
+                case 12: objType = 0x69cf; time = 600000; break;
+                case 11: objType = 0x69ce; time = 600000; break;
                 case 10: objType = 0x585d; time = 600000; break;
                 case 9: objType = 0x585c; time = 600000; break;
                 case 8: objType = 0x0735; time = 600000; break;

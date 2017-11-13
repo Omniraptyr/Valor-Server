@@ -4558,7 +4558,7 @@
             <Speed>30</Speed>
             <Size>120</Size>
             <LifetimeMS>6000</LifetimeMS>
-            <ConditionEffect duration="5" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Gatling missile</ObjectId>
@@ -4841,7 +4841,7 @@
             <Damage>60</Damage>
             <Speed>85</Speed>
             <LifetimeMS>1800</LifetimeMS>
-            <ConditionEffect duration="5" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
             <ArmorPiercing/>
         </Projectile>
     </Object>
@@ -5293,7 +5293,7 @@
             <Speed>55</Speed>
             <Size>100</Size>
             <LifetimeMS>6000</LifetimeMS>
-            <ConditionEffect duration="5" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
         <Projectile id="4">
             <ObjectId>Temple Green Trident</ObjectId>
@@ -5353,7 +5353,7 @@
             <Speed>55</Speed>
             <Size>100</Size>
             <LifetimeMS>6000</LifetimeMS>
-            <ConditionEffect duration="5" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
         <Projectile id="4">
             <ObjectId>Temple Orange Trident</ObjectId>
@@ -5452,7 +5452,7 @@
             <Damage>60</Damage>
             <Speed>85</Speed>
             <LifetimeMS>1800</LifetimeMS>
-            <ConditionEffect duration="5" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
             <ArmorPiercing/>
         </Projectile>
     </Object>
@@ -5479,7 +5479,7 @@
             <Damage>60</Damage>
             <Speed>85</Speed>
             <LifetimeMS>1800</LifetimeMS>
-            <ConditionEffect duration="5" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
             <ArmorPiercing/>
         </Projectile>
     </Object>
@@ -5614,7 +5614,7 @@
             <Damage>135</Damage>
             <Size>100</Size>
             <LifetimeMS>7000</LifetimeMS>
-            <ConditionEffect duration="15" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
         <Size>130</Size>
         <Hero/>

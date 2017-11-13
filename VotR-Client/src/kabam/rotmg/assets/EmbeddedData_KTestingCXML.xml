@@ -35,7 +35,7 @@
             <Damage>65</Damage>
             <Size>100</Size>
             <LifetimeMS>1200</LifetimeMS>
-            <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
         <Projectile id="2">
             <ObjectId>White Bullet</ObjectId>

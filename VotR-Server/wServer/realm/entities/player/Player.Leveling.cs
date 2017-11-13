@@ -306,6 +306,15 @@ namespace wServer.realm.entities
             return 1;
         }
 
+        public int MockingBonus()
+        {
+            if (CheckMocking() == true)
+            {
+                return 5*(Surge+1);
+            }
+            return 0;
+        }
+
         public void SurgeActivation(RealmTime time)
         {   
             if (Surge <= 100)
@@ -327,27 +336,13 @@ namespace wServer.realm.entities
                 protectionDamage = 0;
             }
         }
-        public bool CheckInsurgency()
-        {   if(Inventory[3] == null)
-            {
-                return false;
-            }
-            if(Inventory[3].ObjectId == "Insurgency Amulet")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
         public bool EnemyKilled(Enemy enemy, int exp, bool killer)
         {
             var acc = Client.Account;
             Random rnd = new Random();
             int drop = rnd.Next(1, 101);
             var time = new RealmTime();
-            int drop2 = rnd.Next(1, 4);
+            int drop2 = rnd.Next(1, 7);
             if (enemy == questEntity)
             {
                 BroadcastSync(new Notification()
@@ -356,7 +351,10 @@ namespace wServer.realm.entities
                     Color = new ARGB(0xFF00FF00),
                     Message = "{\"key\":\"server.quest_complete\"}"
                 }, p => this.DistSqr(p) < RadiusSqr);
-                if(drop == 1)
+            }
+            if(enemy.ObjectDesc.Lootdrop == true)
+            {
+                if (drop <= 10)
                 {
                     switch (drop2)
                     {
@@ -367,18 +365,46 @@ namespace wServer.realm.entities
                             SendHelp("You have obtained a Bronze Lootbox drop! Go to nexus to open it!");
                             break;
                         case 2:
+                            Client.Manager.Database.UpdateLootbox1(acc, 1);
+                            Lootbox1 += 1;
+                            this.ForceUpdate(Lootbox1);
+                            SendHelp("You have obtained a Bronze Lootbox drop! Go to nexus to open it!");
+                            break;
+                        case 3:
+                            Client.Manager.Database.UpdateLootbox1(acc, 1);
+                            Lootbox1 += 1;
+                            this.ForceUpdate(Lootbox1);
+                            SendHelp("You have obtained a Bronze Lootbox drop! Go to nexus to open it!");
+                            break;
+                        case 4:
                             Client.Manager.Database.UpdateLootbox2(acc, 1);
                             Lootbox2 += 1;
                             this.ForceUpdate(Lootbox2);
                             SendHelp("You have obtained a Silver Lootbox drop! Go to nexus to open it!");
                             break;
-                        case 3:
+                        case 5:
+                            Client.Manager.Database.UpdateLootbox2(acc, 1);
+                            Lootbox2 += 1;
+                            this.ForceUpdate(Lootbox2);
+                            SendHelp("You have obtained a Silver Lootbox drop! Go to nexus to open it!");
+                            break;
+                        case 6:
                             Client.Manager.Database.UpdateLootbox3(acc, 1);
                             Lootbox3 += 1;
                             this.ForceUpdate(Lootbox3);
                             SendHelp("You have obtained a Gold Lootbox drop! Go to nexus to open it!");
                             break;
                     }
+                }
+            }
+            if (enemy.ObjectDesc.Elitedrop == true)
+            {
+                if (drop <= 75)
+                {
+                     Client.Manager.Database.UpdateLootbox4(acc, 1);
+                     Lootbox4 += 1;
+                     this.ForceUpdate(Lootbox4);
+                     SendHelp("You have obtained a Elite Lootbox drop! Go to nexus to open it!");
                 }
             }
             if (exp != 0)

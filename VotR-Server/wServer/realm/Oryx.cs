@@ -47,6 +47,10 @@ namespace wServer.realm
             Tuple.Create("Yazanahar", (ISetPiece) new Yazanahar()),
             Tuple.Create("Zaragon, the Blood Mage", (ISetPiece) new BloodGod()),
             Tuple.Create("The Mothership", (ISetPiece) new Mothership()),
+            Tuple.Create("Elemental Phantom", (ISetPiece) new Elemental()),
+            Tuple.Create("Mad Jester", (ISetPiece) new MadJester()),
+            Tuple.Create("Encounter Altar", (ISetPiece) new GarnetJade()),
+            Tuple.Create("Lord Stone Gargoyle", (ISetPiece) new Gargland()),
 
         };
 

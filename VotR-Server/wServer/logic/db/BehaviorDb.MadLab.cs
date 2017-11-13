@@ -18,7 +18,6 @@ namespace wServer.logic
                     ),
                 new State("rage",
                     new Order(100, "Monster Cage", "no spawn"),
-                    new Order(100, "Dr Terrible Bubble", "nothing change"),
                     new Order(100, "Red Gas Spawner UL", "OFF"),
                     new Order(100, "Red Gas Spawner UR", "OFF"),
                     new Order(100, "Red Gas Spawner LL", "OFF"),
@@ -30,7 +29,6 @@ namespace wServer.logic
                     ),
                 new State("rage TA",
                     new Order(100, "Monster Cage", "no spawn"),
-                    new Order(100, "Dr Terrible Bubble", "nothing change"),
                     new Order(100, "Red Gas Spawner UL", "OFF"),
                     new Order(100, "Red Gas Spawner UR", "OFF"),
                     new Order(100, "Red Gas Spawner LL", "OFF"),
@@ -42,7 +40,6 @@ namespace wServer.logic
                     ),
                 new State("GP",
                     new Order(100, "Monster Cage", "no spawn"),
-                    new Order(100, "Dr Terrible Bubble", "nothing change"),
                     new Order(100, "Red Gas Spawner UL", "OFF"),
                     new Order(100, "Red Gas Spawner UR", "ON"),
                     new Order(100, "Red Gas Spawner LL", "ON"),
@@ -55,7 +52,6 @@ namespace wServer.logic
                     ),
                 new State("TA",
                     new Order(100, "Monster Cage", "no spawn"),
-                    new Order(100, "Dr Terrible Bubble", "nothing change"),
                     new Order(100, "Red Gas Spawner UL", "OFF"),
                     new Order(100, "Red Gas Spawner UR", "ON"),
                     new Order(100, "Red Gas Spawner LL", "ON"),
@@ -67,7 +63,6 @@ namespace wServer.logic
                     ),
                 new State("hide",
                     new Order(100, "Monster Cage", "spawn"),
-                    new Order(100, "Dr Terrible Bubble", "Bubble time"),
                     new Order(100, "Red Gas Spawner UL", "OFF"),
                     new Order(100, "Red Gas Spawner UR", "OFF"),
                     new Order(100, "Red Gas Spawner LL", "OFF"),
@@ -80,7 +75,6 @@ namespace wServer.logic
                     ),
                 new State("nohide",
                     new Order(100, "Monster Cage", "no spawn"),
-                    new Order(100, "Dr Terrible Bubble", "nothing change"),
                     new Order(100, "Red Gas Spawner UL", "ON"),
                     new Order(100, "Red Gas Spawner UR", "OFF"),
                     new Order(100, "Red Gas Spawner LL", "ON"),
@@ -92,7 +86,6 @@ namespace wServer.logic
                     ),
                 new State("TA2",
                     new Order(100, "Monster Cage", "no spawn"),
-                    new Order(100, "Dr Terrible Bubble", "nothing change"),
                     new Order(100, "Red Gas Spawner UL", "ON"),
                     new Order(100, "Red Gas Spawner UR", "OFF"),
                     new Order(100, "Red Gas Spawner LL", "ON"),
@@ -104,7 +97,6 @@ namespace wServer.logic
                     ),
                 new State("hide2",
                     new Order(100, "Monster Cage", "spawn"),
-                    new Order(100, "Dr Terrible Bubble", "Bubble time"),
                     new Order(100, "Red Gas Spawner UL", "OFF"),
                     new Order(100, "Red Gas Spawner UR", "OFF"),
                     new Order(100, "Red Gas Spawner LL", "OFF"),
@@ -116,7 +108,6 @@ namespace wServer.logic
                     ),
                 new State("nohide2",
                     new Order(100, "Monster Cage", "no spawn"),
-                    new Order(100, "Dr Terrible Bubble", "nothing change"),
                     new Order(100, "Red Gas Spawner UL", "ON"),
                     new Order(100, "Red Gas Spawner UR", "ON"),
                     new Order(100, "Red Gas Spawner LL", "OFF"),
@@ -128,7 +119,6 @@ namespace wServer.logic
                     ),
                 new State("TA3",
                     new Order(100, "Monster Cage", "no spawn"),
-                    new Order(100, "Dr Terrible Bubble", "nothing change"),
                     new Order(100, "Red Gas Spawner UL", "ON"),
                     new Order(100, "Red Gas Spawner UR", "ON"),
                     new Order(100, "Red Gas Spawner LL", "OFF"),
@@ -140,7 +130,6 @@ namespace wServer.logic
                     ),
                 new State("hide3",
                     new Order(100, "Monster Cage", "spawn"),
-                    new Order(100, "Dr Terrible Bubble", "Bubble time"),
                     new Order(100, "Red Gas Spawner UL", "OFF"),
                     new Order(100, "Red Gas Spawner UR", "OFF"),
                     new Order(100, "Red Gas Spawner LL", "OFF"),
@@ -152,7 +141,6 @@ namespace wServer.logic
                     ),
                 new State("nohide3",
                     new Order(100, "Monster Cage", "no spawn"),
-                    new Order(100, "Dr Terrible Bubble", "nothing change"),
                     new Order(100, "Red Gas Spawner UL", "ON"),
                     new Order(100, "Red Gas Spawner UR", "ON"),
                     new Order(100, "Red Gas Spawner LL", "ON"),
@@ -164,7 +152,6 @@ namespace wServer.logic
                     ),
                 new State("TA4",
                     new Order(100, "Monster Cage", "no spawn"),
-                    new Order(100, "Dr Terrible Bubble", "nothing change"),
                     new Order(100, "Red Gas Spawner UL", "ON"),
                     new Order(100, "Red Gas Spawner UR", "ON"),
                     new Order(100, "Red Gas Spawner LL", "ON"),
@@ -176,7 +163,6 @@ namespace wServer.logic
                     ),
                 new State("hide4",
                     new Order(100, "Monster Cage", "spawn"),
-                    new Order(100, "Dr Terrible Bubble", "Bubble time"),
                     new Order(100, "Red Gas Spawner UL", "OFF"),
                     new Order(100, "Red Gas Spawner UR", "OFF"),
                     new Order(100, "Red Gas Spawner LL", "OFF"),
@@ -266,8 +252,8 @@ namespace wServer.logic
             )
         .Init("Dr Terrible Escaped Experiment",
               new State(
-                  new Wander(0.5),
-                  new Shoot(10, 1, 0, defaultAngle: 0, angleOffset: 0, projectileIndex: 1, predictive: 1,
+                  new Follow(0.5, 8, 1),
+                  new Shoot(10, 1, 0, defaultAngle: 0, angleOffset: 0, projectileIndex: 0, predictive: 1,
                   coolDown: 800, coolDownOffset: 0)
                   )
                )
@@ -438,45 +424,13 @@ namespace wServer.logic
                 new Shoot(10, 2, 20, angleOffset: 0 / 2, projectileIndex: 0, coolDown: 1000)
             )
         )
-        .Init("Mad Lab Open Wall",//need fix
-            new State(
-                new TransformOnDeath("Invisible"),
-                new ConditionalEffect(ConditionEffectIndex.Invincible),
-                new State("destroy all tesla coils",
-                    new ConditionalEffect(ConditionEffectIndex.Invincible),
-                    new EntityNotExistsTransition("Tesla Coil", 1000, "Suicide :D")
-                    ),
-                new State("Suicide :D",
-                    new Suicide()
-                )
-                )
-        )
-        .Init("Mad Scientist Summoner",
-            new State(
-                new ConditionalEffect(ConditionEffectIndex.Invincible, true),
-                new RealmPortalDrop(),
-                new State("idle",
-                     new EntitiesNotExistsTransition(300, "Death", "Dr Terrible")
-                    ),
-                new State("Death",
-                    new Suicide()
-                    )
-                )
-            )
-        .Init("Mad Gas Controller", //don't need xD
-            new State(
-                new ConditionalEffect(ConditionEffectIndex.Invincible, true)
-               )
-           )
+
         .Init("Monster Cage",
             new State(
-                new State("no spawn",
-                    new ConditionalEffect(ConditionEffectIndex.Invincible)
+                new State("no spawn"
                 //new SetAltTexture(0)
                 ),
                 new State("spawn",
-                    new ConditionalEffect(ConditionEffectIndex.Invincible),
-                    // new SetAltTexture(2),
                     new Spawn("Dr Terrible Rampage Cyborg", maxChildren: 1, initialSpawn: 0.5),
                     new Spawn("Dr Terrible Mini Bot", maxChildren: 1, initialSpawn: 0.5),
                     new Spawn("Dr Terrible Escaped Experiment", maxChildren: 1, initialSpawn: 0.5)

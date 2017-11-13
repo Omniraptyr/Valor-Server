@@ -32,7 +32,6 @@ C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\log4net.config
 C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\common.dll.config
 C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\common.dll
 C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\common.pdb
-C:\Users\darkd\Desktop\votrmaster\VotR-Server\common\obj\Debug\common.csprojResolveAssemblyReference.cache
 C:\Users\darkd\Desktop\votrmaster\VotR-Server\common\obj\Debug\common.csproj.CoreCompileInputs.cache
 C:\Users\darkd\Desktop\votrmaster\VotR-Server\common\obj\Debug\common.dll
 C:\Users\darkd\Desktop\votrmaster\VotR-Server\common\obj\Debug\common.pdb

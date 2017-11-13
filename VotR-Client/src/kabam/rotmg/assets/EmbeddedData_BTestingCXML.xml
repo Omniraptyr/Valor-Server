@@ -5299,7 +5299,7 @@
             <Damage>120</Damage>
             <Speed>70</Speed>
             <LifetimeMS>8000</LifetimeMS>
-            <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
             <ArmorPiercing/>
             <Wavy/>
         </Projectile>
@@ -5620,7 +5620,7 @@
             <LifetimeMS>3000</LifetimeMS>
             <ConditionEffect duration="1.5">Confused</ConditionEffect>
             <ConditionEffect duration="2.5">Hexed</ConditionEffect>
-            <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
         <Projectile id="3">
             <ObjectId>Blue Mystic Shot</ObjectId>
@@ -5786,7 +5786,7 @@
             <Speed>80</Speed>
             <LifetimeMS>8000</LifetimeMS>
             <Size>140</Size>
-            <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
             <MultiHit/>
             <ArmorPiercing/>
         </Projectile>
@@ -6344,7 +6344,7 @@
             <Speed>60</Speed>
             <Size>60</Size>
             <LifetimeMS>1600</LifetimeMS>
-            <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
             <ConditionEffect duration="1">Paralyzed</ConditionEffect>
         </Projectile>
         <DisplayId>Timelord Blocker</DisplayId>
@@ -6904,7 +6904,7 @@
             <Speed>80</Speed>
             <LifetimeMS>2200</LifetimeMS>
             <Size>110</Size>
-            <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
     </Object>
     <Object type="0x47d5" id="Skeleton the Alive">
@@ -7312,7 +7312,7 @@
             <LifetimeMS>3400</LifetimeMS>
             <Size>110</Size>
             <ConditionEffect duration="2">Weak</ConditionEffect>
-            <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
         <DisplayId>Galactic Trap</DisplayId>
     </Object>
@@ -7526,7 +7526,7 @@
             <Size>120</Size>
             <LifetimeMS>3000</LifetimeMS>
             <MultiHit/>
-            <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
         <DisplayId>UFO Shadow Turret</DisplayId>
     </Object>

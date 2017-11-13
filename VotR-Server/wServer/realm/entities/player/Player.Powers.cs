@@ -6,6 +6,36 @@ namespace wServer.realm.entities
 {
     partial class Player
     {
+        public bool CheckInsurgency()
+        {
+            if (Inventory[3] == null)
+            {
+                return false;
+            }
+            if (Inventory[3].ObjectId == "Insurgency Amulet")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckMocking()
+        {
+            if (Inventory[0] == null)
+            {
+                return false;
+            }
+            if (Inventory[0].ObjectId == "The Mocking Raven")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public void MainLegendaryPassives()
         {
             for (var i = 0; i < 3; i++)

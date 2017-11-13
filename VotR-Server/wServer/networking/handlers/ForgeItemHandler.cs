@@ -18,15 +18,28 @@ namespace wServer.networking.handlers
 
         private void Handle(Client client, ForgeItem packet)
         {
+            Random rnd = new Random();
+            int drop = rnd.Next(1, 3);
             try
             {
                 if (packet.SorSlot.ObjectType == 18918)
                 {
                     if (packet.ShardSlot.ObjectType == 0x68fa)
                     {
-                        client.Player.SendError("You have forged the Insurgency Amulet!");
-                        client.Player.Inventory[packet.SorSlot.SlotId] = client.Player.Manager.Resources.GameData.Items[0x69cd];
-                        client.Player.Inventory[packet.ShardSlot.SlotId] = null;
+                        switch (drop)
+                        {
+                            case 1:
+                                client.Player.SendError("You have forged the Insurgency Amulet!");
+                                client.Player.Inventory[packet.SorSlot.SlotId] = client.Player.Manager.Resources.GameData.Items[0x69cd];
+                                client.Player.Inventory[packet.ShardSlot.SlotId] = null;
+                                break;
+                            case 2:
+                                client.Player.SendError("You have forged the Amulet of Resurrection!");
+                                client.Player.Inventory[packet.SorSlot.SlotId] = client.Player.Manager.Resources.GameData.Items[0x47cb];
+                                client.Player.Inventory[packet.ShardSlot.SlotId] = null;
+                                break;
+                    }
+
                     }
                     else
                     {

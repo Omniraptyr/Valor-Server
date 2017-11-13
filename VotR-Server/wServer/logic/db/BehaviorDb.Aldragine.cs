@@ -651,8 +651,7 @@ namespace wServer.logic
                 new ItemLoot("Greater Potion of Defense", 1),
                 new ItemLoot("Greater Potion of Attack", 0.6),
                 new ItemLoot("Greater Potion of Dexterity", 0.5),
-                new ItemLoot("Greater Potion of Vitality", 0.5),
-                new ItemLoot("Raid Package 1", 0.50)
+                new ItemLoot("Greater Potion of Vitality", 0.5)
                 )
             )
         .Init("AH Loot Chest 3",
@@ -727,7 +726,6 @@ namespace wServer.logic
                     new ItemLoot("Armor of Dark Retribution", 0.8),
                     new ItemLoot("Ring of Dark Retribution", 0.8)
                     ),
-
                 new Threshold(0.05,
                 new TierLoot(12, ItemType.Weapon, 0.08),
                 new TierLoot(5, ItemType.Ability, 0.07),
@@ -744,8 +742,7 @@ namespace wServer.logic
                 new ItemLoot("Greater Potion of Attack", 0.6),
                 new ItemLoot("Greater Potion of Dexterity", 0.5),
                 new ItemLoot("Greater Potion of Vitality", 0.5),
-                new ItemLoot("Greater Potion of Speed", 0.5),
-                new ItemLoot("Raid Package 1", 1.00)
+                new ItemLoot("Greater Potion of Speed", 0.5)
                 )
             )
         .Init("AH Loot Chest 4",
@@ -836,8 +833,7 @@ namespace wServer.logic
                 new ItemLoot("Greater Potion of Dexterity", 0.5),
                 new ItemLoot("Greater Potion of Vitality", 0.5),
                 new ItemLoot("Greater Potion of Speed", 0.5),
-                new ItemLoot("Greater Potion of Mana", 0.5),
-                new ItemLoot("Raid Package 1", 1.00)
+                new ItemLoot("Greater Potion of Mana", 0.5)
                 )
             )
         .Init("AH Secret Chest",

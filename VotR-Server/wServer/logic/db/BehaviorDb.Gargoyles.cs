@@ -194,7 +194,6 @@ namespace wServer.logic
                     new ItemLoot("Greater Potion of Attack", 1.0),
                     new ItemLoot("Greater Potion of Defense", 1.0),
                     new ItemLoot("Greater Potion of Wisdom", 1.0),
-                    new ItemLoot("Questing Package", 1.0),
                     new ItemLoot("Onrane", 1.0),
 
                     new TierLoot(11, ItemType.Weapon, 0.1),
@@ -204,9 +203,6 @@ namespace wServer.logic
 					new TierLoot(12, ItemType.Armor, 0.05),
 					new TierLoot(12, ItemType.Weapon, 0.05),
 					new TierLoot(6, ItemType.Ring, 0.025),
-					new ItemLoot("Gargoyle Crusher", 0.0001),
-					new ItemLoot("Gargoyle Stoneplate", 0.0001),
-					new ItemLoot("Avalanche", 0.0001),
 					new ItemLoot("Sor Crystal", 0.05),
 					new ItemLoot("Ancient Stone Sword", 0.01)
 				)

@@ -276,6 +276,7 @@
       <Defense>40</Defense>
       <Flying/>
       <Hero/>
+	  <Lootdrop/>
       <Level>20</Level>
       <Quest/>
       <God/>
@@ -2487,7 +2488,7 @@
          <Damage>45</Damage>
          <Size>100</Size>
          <LifetimeMS>1200</LifetimeMS>
-         <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+         <ConditionEffect duration="6">Slowed</ConditionEffect>
       </Projectile>
       <Projectile id="5">
          <ObjectId>Dragon Attack Green Spin Ball</ObjectId>
@@ -2563,7 +2564,7 @@
          <Damage>45</Damage>
          <Size>100</Size>
          <LifetimeMS>1200</LifetimeMS>
-         <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+         <ConditionEffect duration="6">Slowed</ConditionEffect>
       </Projectile>
       <Projectile id="1">
          <ObjectId>Silver Shield</ObjectId>
@@ -2673,7 +2674,7 @@
          <Damage>45</Damage>
          <Size>100</Size>
          <LifetimeMS>1200</LifetimeMS>
-         <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+         <ConditionEffect duration="6">Slowed</ConditionEffect>
       </Projectile>
       <Projectile id="7">
          <ObjectId>Red Fire</ObjectId>
@@ -3119,7 +3120,7 @@
          <Damage>45</Damage>
          <Size>100</Size>
          <LifetimeMS>1200</LifetimeMS>
-         <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+         <ConditionEffect duration="6">Slowed</ConditionEffect>
       </Projectile>
       <Projectile id="1">
          <ObjectId>Dragon Attack Green Spin Ball</ObjectId>
@@ -3235,7 +3236,7 @@
          <Damage>45</Damage>
          <Size>100</Size>
          <LifetimeMS>1200</LifetimeMS>
-         <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+         <ConditionEffect duration="6">Slowed</ConditionEffect>
       </Projectile>
       <Projectile id="2">
          <ObjectId>Dragon Attack Black Shot</ObjectId>
@@ -3363,7 +3364,7 @@
          <Damage>45</Damage>
          <Size>100</Size>
          <LifetimeMS>1200</LifetimeMS>
-         <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+         <ConditionEffect duration="6">Slowed</ConditionEffect>
       </Projectile>
       <Projectile id="2">
          <ObjectId>Dragon Attack Black Shot</ObjectId>
@@ -22238,6 +22239,7 @@
       <Quest/>
       <Level>20</Level>
       <God/>
+	  <Lootdrop/>
       <StasisImmune/>
       <StunImmune/>
       <ParalyzeImmune/>
@@ -23300,6 +23302,7 @@
       <Hero/>
       <Quest/>
       <God/>
+	  <Lootdrop/>
       <Encounter/>
       <StasisImmune/>
       <Level>20</Level>
@@ -23451,6 +23454,7 @@
       <Defense>25</Defense>
       <God/>
       <StasisImmune/>
+	  <Lootdrop/>
       <Hero/>
       <Quest/>
       <Encounter/>
@@ -23531,6 +23535,7 @@
       <MaxHitPoints>15000</MaxHitPoints>
       <Defense>40</Defense>
       <Enemy/>
+	  <Lootdrop/>
       <Hero/>
       <Quest/>
       <God/>
@@ -23604,6 +23609,7 @@
       <Hero/>
       <Quest/>
       <God/>
+	  <Lootdrop/>
       <Encounter/>
       <StasisImmune/>
       <Level>20</Level>
@@ -23798,6 +23804,7 @@
       <Size>0</Size>
       <Hero/>
       <Quest/>
+	  <Lootdrop/>
       <God/>
       <Encounter/>
       <Level>20</Level>
@@ -23892,6 +23899,7 @@
       <Hero/>
       <Quest/>
       <God/>
+	  <Lootdrop/>
       <Encounter/>
       <StasisImmune/>
       <Level>20</Level>
@@ -42395,7 +42403,7 @@ A magnificent legendary blade which only cuts those who deserve death.
          <Speed>70</Speed>
          <LifetimeMS>2200</LifetimeMS>
          <Size>85</Size>
-         <ConditionEffect duration="5" target="1">Stasis</ConditionEffect>
+         <ConditionEffect duration="6">Slowed</ConditionEffect>
       </Projectile>
    </Object>
    <Object type="0x7453" id="Sorcerer Puppet">
@@ -67364,7 +67372,7 @@ A magnificent legendary blade which only cuts those who deserve death.
          <Damage>65</Damage>
          <Size>100</Size>
          <LifetimeMS>1200</LifetimeMS>
-         <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+         <ConditionEffect duration="6">Slowed</ConditionEffect>
       </Projectile>
       <Projectile id="2">
          <ObjectId>White Bullet</ObjectId>
@@ -79386,6 +79394,7 @@ This dagger was a myth, will you live to tell the tale?
     <Description>A rare amulet that is made of a yellow crystal found in the Elemental Ruins</Description>
     <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="3" amount="90">IncrementStat</ActivateOnEquip>
+	<ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
     <BagType>6</BagType>
@@ -82039,6 +82048,7 @@ This dagger was a myth, will you live to tell the tale?
     <MaxHitPoints>95700</MaxHitPoints>
     <Defense>40</Defense>
     <Quest/>
+	<Lootdrop/>
     <Level>20</Level>
     <XpMult>0.3</XpMult>
     <Projectile id="0">
@@ -89126,7 +89136,7 @@ A whole thanksgiving turkey!
       <Damage>120</Damage>
       <Speed>70</Speed>
       <LifetimeMS>8000</LifetimeMS>
-      <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+      <ConditionEffect duration="6">Slowed</ConditionEffect>
       <ArmorPiercing/>
       <Wavy/>
     </Projectile>
@@ -89352,6 +89362,7 @@ A whole thanksgiving turkey!
     <Defense>35</Defense>
     <Size>160</Size>
     <XpMult>0.0</XpMult>
+	<Elitedrop/>
     <StasisImmune/>
     <DisplayId>AH Loot Chest</DisplayId>
   </Object>
@@ -89380,6 +89391,7 @@ A whole thanksgiving turkey!
     <Defense>35</Defense>
     <Size>160</Size>
     <XpMult>0.0</XpMult>
+	<Elitedrop/>
     <StasisImmune/>
     <DisplayId>AH Loot Chest</DisplayId>
   </Object>
@@ -89463,7 +89475,7 @@ A whole thanksgiving turkey!
       <LifetimeMS>3000</LifetimeMS>
       <ConditionEffect duration="1.5">Confused</ConditionEffect>
       <ConditionEffect duration="2.5">Hexed</ConditionEffect>
-      <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+      <ConditionEffect duration="6">Slowed</ConditionEffect>
     </Projectile>
     <Projectile id="3">
       <ObjectId>Blue Mystic Shot</ObjectId>
@@ -89550,6 +89562,7 @@ A whole thanksgiving turkey!
     <Defense>35</Defense>
     <Size>160</Size>
     <XpMult>0.0</XpMult>
+	<Elitedrop/>
     <StasisImmune/>
     <DisplayId>AH Loot Chest</DisplayId>
   </Object>
@@ -89564,6 +89577,7 @@ A whole thanksgiving turkey!
     <Defense>35</Defense>
     <Size>160</Size>
     <XpMult>0.0</XpMult>
+	<Elitedrop/>
     <StasisImmune/>
     <DisplayId>AH Loot Chest</DisplayId>
   </Object>
@@ -89657,7 +89671,7 @@ A whole thanksgiving turkey!
       <Speed>80</Speed>
       <LifetimeMS>8000</LifetimeMS>
       <Size>140</Size>
-      <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+      <ConditionEffect duration="6">Slowed</ConditionEffect>
       <MultiHit/>
       <ArmorPiercing/>
     </Projectile>
@@ -91222,7 +91236,7 @@ A whole thanksgiving turkey!
       <Speed>60</Speed>
       <Size>60</Size>
       <LifetimeMS>1600</LifetimeMS>
-      <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+      <ConditionEffect duration="6">Slowed</ConditionEffect>
       <ConditionEffect duration="1">Paralyzed</ConditionEffect>
     </Projectile>
     <DisplayId>Timelord Blocker</DisplayId>
@@ -92852,10 +92866,6 @@ A whole thanksgiving turkey!
     <BagType>6</BagType>
     <Legendary/>
     <feedPower>2200</feedPower>
-	        <Legend id="2">
-            <Name>Relentless</Name>
-            <Description>When your Surge is at least 40 you get an attack boost.</Description>
-        </Legend>
   </Object>
   <Object type="0x47cd" id="Wraith of Sorrow">
     <Enemy/>
@@ -93028,7 +93038,7 @@ A whole thanksgiving turkey!
       <Speed>80</Speed>
       <LifetimeMS>2200</LifetimeMS>
       <Size>110</Size>
-      <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+      <ConditionEffect duration="6">Slowed</ConditionEffect>
     </Projectile>
   </Object>
 <Object type="0x47d5" id="Skeleton the Alive">
@@ -93761,7 +93771,7 @@ A whole thanksgiving turkey!
       <LifetimeMS>3400</LifetimeMS>
       <Size>110</Size>
       <ConditionEffect duration="2">Weak</ConditionEffect>
-      <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+      <ConditionEffect duration="6">Slowed</ConditionEffect>
     </Projectile>
     <DisplayId>Galactic Trap</DisplayId>
   </Object>
@@ -94182,7 +94192,7 @@ A whole thanksgiving turkey!
       <Size>120</Size>
       <LifetimeMS>3000</LifetimeMS>
       <MultiHit/>
-      <ConditionEffect duration="8" target="1">Stasis</ConditionEffect>
+      <ConditionEffect duration="6">Slowed</ConditionEffect>
     </Projectile>
     <DisplayId>UFO Shadow Turret</DisplayId>
   </Object>
@@ -97524,6 +97534,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Quest/>
       <God/>
       <Encounter/>
+	  <Lootdrop/>
       <StasisImmune/>
       <ParalyzeImmune/>
       <Level>20</Level>
@@ -100223,13 +100234,14 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		<Quest/>
 		<Flying/>
 		<God/>
+		<Lootdrop/>
 		<ShadowSize>0</ShadowSize>
         <ParalyzeImmune/>
         <DazedImmune/>
         <StunImmune/>
 		<StasisImmune/>
 		<Level>20</Level>
-		<XpMult>100</XpMult>
+		<XpMult>10</XpMult>
 		<NoArticle/>
       	<Projectile id="0">
          <ObjectId>Yaz Energy Waves</ObjectId>
@@ -103272,7 +103284,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Speed>30</Speed>
             <Size>120</Size>
             <LifetimeMS>6000</LifetimeMS>
-            <ConditionEffect duration="5" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Gatling missile</ObjectId>
@@ -103555,7 +103567,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Damage>60</Damage>
             <Speed>85</Speed>
             <LifetimeMS>1800</LifetimeMS>
-            <ConditionEffect duration="5" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
             <ArmorPiercing/>
         </Projectile>
     </Object>
@@ -103958,6 +103970,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <StasisImmune/>
         <StunImmune/>
         <ParalyzeImmune/>
+		<Lootdrop/>
         <SlowImmune/>
         <AltTexture id="1">
             <Texture>
@@ -104007,7 +104020,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Speed>55</Speed>
             <Size>100</Size>
             <LifetimeMS>6000</LifetimeMS>
-            <ConditionEffect duration="5" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
         <Projectile id="4">
             <ObjectId>Temple Green Trident</ObjectId>
@@ -104067,7 +104080,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Speed>55</Speed>
             <Size>100</Size>
             <LifetimeMS>6000</LifetimeMS>
-            <ConditionEffect duration="5" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
         <Projectile id="4">
             <ObjectId>Temple Orange Trident</ObjectId>
@@ -104166,7 +104179,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Damage>60</Damage>
             <Speed>85</Speed>
             <LifetimeMS>1800</LifetimeMS>
-            <ConditionEffect duration="5" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
             <ArmorPiercing/>
         </Projectile>
     </Object>
@@ -104193,7 +104206,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Damage>60</Damage>
             <Speed>85</Speed>
             <LifetimeMS>1800</LifetimeMS>
-            <ConditionEffect duration="5" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
             <ArmorPiercing/>
         </Projectile>
     </Object>
@@ -104203,6 +104216,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Class>Character</Class>
         <StasisImmune/>
         <StunImmune/>
+		<Lootdrop/>
         <ParalyzeImmune/>
         <AnimatedTexture>
             <File>mountainTempleChars16x16</File>
@@ -104328,7 +104342,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Damage>135</Damage>
             <Size>100</Size>
             <LifetimeMS>7000</LifetimeMS>
-            <ConditionEffect duration="15" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
         <Size>130</Size>
         <Hero/>
@@ -104508,6 +104522,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		<Defense>200</Defense>
 		<Quest/>
     	<Flying/>
+		<Lootdrop/>
     	<Z>0.2</Z>
     	<Level>20</Level>
 		<God/>
@@ -106508,7 +106523,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Tier>2</Tier>
       <Description>A potion that permanently increases your protection.</Description>
       <Sound>use_potion</Sound>
-      <Activate stat="121" amount="2">IncrementStat</Activate>
+      <Activate stat="122" amount="2">IncrementStat</Activate>
       <Consumable/>
       <Potion/>
       <BagType>5</BagType>
@@ -106921,4 +106936,60 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       </Legend>
       <DisplayId>Insurgency Amulet</DisplayId>
    </Object>
+       <Object type="0x69ce" id="Gravestone 14">
+        <Class>GameObject</Class>
+        <ShowName/>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1b3</Index>
+        </Texture>
+        <DisplayId>Gravestone 14</DisplayId>
+    </Object>
+    <Object type="0x69cf" id="Gravestone 15">
+        <Class>GameObject</Class>
+        <ShowName/>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1b4</Index>
+        </Texture>
+        <DisplayId>Gravestone 15</DisplayId>
+    </Object>
+	<Object type="0x69d1" id="The Mocking Raven">
+      <Class>Equipment</Class>
+      <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x14</Index>
+        </Texture>
+      <SlotType>24</SlotType>
+      <Description>The silence of death will show no mercy.</Description>
+      <RateOfFire>1.25</RateOfFire>
+      <Sound>weapon/long_sword</Sound>
+      <Projectile>
+         <ObjectId>Masamune Slash</ObjectId>
+         <Speed>100</Speed>
+         <MinDamage>220</MinDamage>
+         <MaxDamage>260</MaxDamage>
+         <LifetimeMS>360</LifetimeMS>
+      </Projectile>
+	  <Legendary/>
+        <Legend id="3" stat="27">
+            <Name>Relentless</Name>
+            <Description>Each surge you have gained adds.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+      <BagType>6</BagType>
+      <OldSound>bladeSwing</OldSound>
+      <feedPower>2000</feedPower>
+      <DisplayId>The Mocking Raven</DisplayId>
+   </Object>
+   <Object type="0x69d2" id="Mocking Slash">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x15</Index>
+        </Texture>
+    </Object>
 </Objects>

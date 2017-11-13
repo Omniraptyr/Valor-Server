@@ -309,8 +309,11 @@ namespace wServer.logic
                         new Suicide()
                         )
                 ),
+                new MostDamagers(3,
+                    LootTemplates.StatIncreasePotionsLoot()
+                ),
                 new Threshold(0.05,
-                    new ItemLoot("Sor Crystal", 0.00001)
+                    new ItemLoot("Sor Crystal", 0.01)
                     )
             )
             ;

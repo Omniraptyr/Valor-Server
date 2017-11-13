@@ -695,7 +695,7 @@
             <Speed>70</Speed>
             <LifetimeMS>2200</LifetimeMS>
             <Size>85</Size>
-            <ConditionEffect duration="5" target="1">Stasis</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
     </Object>
     <Object type="0x7453" id="Sorcerer Puppet">
