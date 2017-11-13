@@ -170,6 +170,30 @@ namespace wServer.realm
             });
         }
 
+        public void RaidAnnounce(string text, bool local = false)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return;
+
+            if (local)
+            {
+                foreach (var i in manager.Clients.Keys
+                .Where(x => x.Player != null)
+                .Select(x => x.Player))
+                {
+                    i.RaidAlertReceived(text);
+                }
+                return;
+            }
+
+            manager.InterServer.Publish(Channel.Chat, new ChatMsg()
+            {
+                Type = ChatType.Announce,
+                Inst = manager.InstanceId,
+                Text = text
+            });
+        }
+
         public bool SendInfo(int target, string text)
         {
             if (String.IsNullOrWhiteSpace(text))

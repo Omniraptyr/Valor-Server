@@ -281,6 +281,18 @@ namespace wServer.realm.entities
             });*/
         }
 
+        internal void RaidAlertReceived(string text)
+        {
+            _client.Player.SendInfo(string.Concat("<RAID ALERT> ", text));
+
+            /*client.SendPacket(new Text()
+            {
+                BubbleTime = 0,
+                NumStars = -1,
+                Name = "@ANNOUNCEMENT",
+                Txt = text
+            });*/
+        }
         internal void GuildReceived(int objId, int stars, int admin, string from, string text)
         {
             Client.SendPacket(new Text()

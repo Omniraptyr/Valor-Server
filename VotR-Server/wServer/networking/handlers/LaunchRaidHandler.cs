@@ -24,7 +24,7 @@ namespace wServer.networking.handlers
                     if(player.startRaid1(player) == false)
                     {
                     var Manager = player.Manager;
-                    player.Owner.RaidAnnouncement("The Zol Awakening Raid has been launched!");
+                    player.Manager.Chat.RaidAnnounce("The Zol Awakening Raid has been launched!");
                     var gameData = Manager.Resources.GameData;
 
                     ushort objType;

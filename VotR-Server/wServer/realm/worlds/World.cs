@@ -155,7 +155,7 @@ namespace wServer.realm.worlds
 
         public virtual bool AllowedAccess(Client client)
         {
-            return !Closed || client.Account.Admin;
+            return !Closed;
         }
 
         public virtual KeyValuePair<IntPoint, TileRegion> [] GetSpawnPoints()
@@ -582,23 +582,6 @@ namespace wServer.realm.worlds
             foreach (var i in Players)
                 i.Value.SendInfo(announcement);
         }
-
-        public void RaidAnnouncement(string msg)
-        {
-            var announcement = string.Concat("<RAID ALERT> ", msg);
-            foreach (var i in Players)
-            {
-                Text packet = new Text()
-                {
-                    BubbleTime = 0,
-                    NumStars = -1,
-                    TextColor = 0x0085ff,
-                    Name = "",
-                    Txt = msg
-                };
-                i.Value.Owner.BroadcastPacket(packet, null);
-            }
-        }
         public void QuakeToWorld(World newWorld)
         {
             if (!Persist || this is Realm)
@@ -608,7 +591,7 @@ namespace wServer.realm.worlds
             {
                 EffectType = EffectType.Earthquake
             }, null, PacketPriority.Low);
-
+            
             Timers.Add(new WorldTimer(8000, (w, t) =>
             {
                 var rcpNotPaused = new Reconnect()
