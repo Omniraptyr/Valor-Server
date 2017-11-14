@@ -16,6 +16,14 @@ namespace wServer.realm.entities
         bool surgewither;
         void HandleEffects(RealmTime time)
         {
+            if (CheckMocking())
+            {
+                ApplyConditionEffect(ConditionEffectIndex.Relentless);
+            }
+            else
+            {
+                ApplyConditionEffect(ConditionEffectIndex.Relentless, 0);
+            }
             ProtectionMax = (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50))+10;
             Protection =    (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50))+10-protectionDamage;
             if(Protection > 0)

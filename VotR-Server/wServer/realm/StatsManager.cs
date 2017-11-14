@@ -47,7 +47,7 @@ namespace wServer.realm
 
         public int GetAttackDamage(int min, int max, bool isAbility = false)
         {
-            var ret = Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility);
+            var ret = Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility) + RelentlessDamage();
             //Log.Info($"Dmg: {ret}");
             return (int)ret;
         } 
@@ -65,6 +65,18 @@ namespace wServer.realm
                 mult *= 1.5f;
 
             return mult;
+        }
+
+        public int RelentlessDamage()
+        {
+            if (Owner.HasConditionEffect(ConditionEffects.Relentless))
+            {
+                return Owner.Surge * 5;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         private float CriticalModifier()

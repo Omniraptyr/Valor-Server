@@ -337,7 +337,7 @@ namespace wServer.realm.entities
         {   
             if (Surge <= 100)
             {
-                SurgeCounter = 75; //approx 3s
+                SurgeCounter =  100;
                 if (HasConditionEffect(ConditionEffects.Surged))
                 {
                     Surge += 4*SurgeBonus();

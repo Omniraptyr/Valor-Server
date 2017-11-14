@@ -106963,19 +106963,19 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
       <SlotType>24</SlotType>
       <Description>The silence of death will show no mercy.</Description>
-      <RateOfFire>1.25</RateOfFire>
+      <RateOfFire>1.3</RateOfFire>
       <Sound>weapon/long_sword</Sound>
       <Projectile>
-         <ObjectId>Masamune Slash</ObjectId>
+         <ObjectId>Mocking Slash</ObjectId>
          <Speed>100</Speed>
          <MinDamage>220</MinDamage>
          <MaxDamage>260</MaxDamage>
          <LifetimeMS>360</LifetimeMS>
       </Projectile>
 	  <Legendary/>
-        <Legend id="3" stat="27">
+        <Legend id="4" stat="27">
             <Name>Relentless</Name>
-            <Description>Each surge you have gained adds.</Description>
+            <Description>Each surge point you currently have adds bonus outputting damage.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>

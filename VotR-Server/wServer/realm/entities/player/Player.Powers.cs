@@ -49,6 +49,7 @@ namespace wServer.realm.entities
                 }
             } 
         }
+
         public bool CheckForLeggies()
         {
             for (var i = 0; i < 3; i++)
@@ -86,6 +87,9 @@ namespace wServer.realm.entities
                     break;
                 case 3:
                     break;
+                case 4:
+                    
+                        break;
             }
         }
         private void ActivateSecondaryPower(int id)
