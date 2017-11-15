@@ -106447,9 +106447,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <FameBonus>8</FameBonus>
         <feedPower>2000</feedPower>
         <Legendary/>
-        <Legend id="3" stat="26">
-            <Name>Recovery</Name>
-            <Description>If you have at least 1/3rd of your HP you gain a 40% overall vitality boost.</Description>
+        <Legend id="1" stat="26">
+            <Name>Lifeline</Name>
+            <Description>Having less than 1/3rd of your maximum health pool adds a massive health regeneration boost.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
@@ -106968,10 +106968,14 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Projectile>
          <ObjectId>Mocking Slash</ObjectId>
          <Speed>100</Speed>
-         <MinDamage>220</MinDamage>
-         <MaxDamage>260</MaxDamage>
+         <MinDamage>225</MinDamage>
+         <MaxDamage>275</MaxDamage>
          <LifetimeMS>360</LifetimeMS>
+		 <Wavy/>
       </Projectile>
+	  <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
 	  <Legendary/>
         <Legend id="4" stat="27">
             <Name>Relentless</Name>

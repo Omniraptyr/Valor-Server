@@ -68,8 +68,16 @@ namespace wServer.realm.entities
             var idx = StatsManager.GetStatIndex((StatsType)stat_);
                 switch (id)
             {
-                //Recovery
+                //Lifeline
                 case 1:
+                    if(HP <= Stats[0] / 3)
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.HealthRecovery);
+                    }
+                    else
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.HealthRecovery, 0);
+                    }
                     break;
                 //Mana Focus
                 case 2:

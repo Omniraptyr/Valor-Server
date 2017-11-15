@@ -47,7 +47,7 @@ namespace wServer.realm
 
         public int GetAttackDamage(int min, int max, bool isAbility = false)
         {
-            var ret = Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility) + RelentlessDamage();
+            var ret = Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility) * CriticalModifier() + RelentlessDamage();
             //Log.Info($"Dmg: {ret}");
             return (int)ret;
         } 
@@ -71,7 +71,7 @@ namespace wServer.realm
         {
             if (Owner.HasConditionEffect(ConditionEffects.Relentless))
             {
-                return Owner.Surge * 5;
+                return Owner.Surge * 6;
             }
             else
             {
@@ -313,6 +313,7 @@ namespace wServer.realm
                 var vit = this[6];
                 if (Owner.HasConditionEffect(ConditionEffects.Sick))
                     vit = 0;
+
                 return 6 + vit * .12f;
             }
 
@@ -332,6 +333,8 @@ namespace wServer.realm
                     return 0;
                 if (Owner.HasConditionEffect(ConditionEffects.Empowered))
                     return 22f + 0.06f * wis;
+                if (Owner.HasConditionEffect(ConditionEffects.ManaRecovery))
+                    return 25f + 0.06f * wis;
 
                 return 0.5f + this[7] * .06f;
             }

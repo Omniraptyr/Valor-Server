@@ -141,7 +141,6 @@ namespace wServer.realm
         ProtectionPoints = 125,
         ProtectionPointsMax = 126,
 
-
         None = 255
     }
 

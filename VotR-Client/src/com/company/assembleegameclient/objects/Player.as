@@ -779,7 +779,7 @@ public class Player extends Character {
     }
     private function relentlessDamageBonus():Number{
         if(isRelentless()){
-            return surge_*5;
+            return surge_*6;
         }else{
             return 0;
         }

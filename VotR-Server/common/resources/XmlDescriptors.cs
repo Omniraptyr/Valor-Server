@@ -90,7 +90,10 @@ namespace common.resources
         DrakzixCharging =   (ulong)1 << 56,
         Protected =         (ulong)1 << 57,
         Relentless =        (ulong)1 << 58,
-        Vengeance =         (ulong)1 << 59
+        Vengeance =         (ulong)1 << 59,
+        ManaRecovery =      (ulong)1 << 60,
+        Alliance =          (ulong)1 << 61,
+        HealthRecovery =    (ulong)1 << 62
     }
 
     public enum ConditionEffectIndex
@@ -154,7 +157,10 @@ namespace common.resources
         DrakzixCharging = 56,
         Protected = 57,
         Relentless = 58,
-        Vengeance = 59
+        Vengeance = 59,
+        ManaRecovery = 60,
+        Alliance = 61,
+        HealthRecovery = 62
     }
 
     public class ConditionEffect

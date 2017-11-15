@@ -73,6 +73,9 @@ public class ConditionEffect {
     public static const PROTECTED:int = 58;
     public static const RELENTLESS:int = 59;
     public static const VENGEANCE:int = 60;
+    public static const MANARECOVERY:int = 61;
+    public static const ALLIANCE:int = 62;
+    public static const HEALTHRECOVERY:int = 63;
     public static const GROUND_DAMAGE:uint = 99;
     public static const DEAD_BIT:uint = (1 << (DEAD - 1));
     public static const QUIET_BIT:uint = (1 << (QUIET - 1));
@@ -134,6 +137,9 @@ public class ConditionEffect {
     public static const PROTECTED_BIT:uint = (1 << (PROTECTED - NEW_CON_THREASHOLD));
     public static const RELENTLESS_BIT:uint = (1 << (RELENTLESS - NEW_CON_THREASHOLD));
     public static const VENGEANCE_BIT:uint = (1 << (VENGEANCE - NEW_CON_THREASHOLD));
+    public static const MANARECOVERY_BIT:uint = (1 << (MANARECOVERY - NEW_CON_THREASHOLD));
+    public static const ALLIANCE_BIT:uint = (1 << (ALLIANCE - NEW_CON_THREASHOLD));
+    public static const HEALTHRECOVERY_BIT:uint = (1 << (HEALTHRECOVERY - NEW_CON_THREASHOLD));
     public static const MAP_FILTER_BITMASK:uint = DRUNK_BIT | BLIND_BIT | PAUSED_BIT;
     public static const PROJ_NOHIT_BITMASK:uint = INVINCIBLE_BIT | STASIS_BIT | PAUSED_BIT;
     public static const CE_FIRST_BATCH:uint = 0;
@@ -204,7 +210,13 @@ public class ConditionEffect {
                 new ConditionEffect("Charging", DRAKZIXCHARGING_BIT, [65], "Charging"),
                 new ConditionEffect("Protected", PROTECTED_BIT, [66], "Protected"),
                 new ConditionEffect("Relentless", RELENTLESS_BIT, [67], "Relentless"),
-                new ConditionEffect("Vengeance", VENGEANCE_BIT, [68], "Vengeance")
+                new ConditionEffect("Vengeance", VENGEANCE_BIT, [68], "Vengeance"),
+                new ConditionEffect("ManaRecovery", MANARECOVERY_BIT, [69], "ManaRecovery"),
+                new ConditionEffect("Alliance", RELENTLESS_BIT, [67], "Alliance"),
+                new ConditionEffect("Vengeance", VENGEANCE_BIT, [68], "Vengeance"),
+                new ConditionEffect("ManaRecovery", MANARECOVERY_BIT, [69], "ManaRecovery"),
+                new ConditionEffect("Alliance", ALLIANCE_BIT, [70], "Alliance"),
+                new ConditionEffect("HealthRecovery", HEALTHRECOVERY_BIT, [71], "HealthRecovery")
             ];
     
     private static var conditionEffectFromName_:Object = null;
