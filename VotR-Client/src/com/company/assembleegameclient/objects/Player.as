@@ -784,6 +784,15 @@ public class Player extends Character {
             return 0;
         }
     }
+
+    private function aegisDamageBonus():Number{
+        if(isVengeance()){
+            return (maxHP_-hp_)/2;
+        }else{
+            return 0;
+        }
+    }
+
     private function makeSkinTexture():void {
         var _local1:MaskedImage = this.skin.imageFromAngle(0, AnimatedChar.STAND, 0);
         animatedChar_ = this.skin;
@@ -1056,7 +1065,7 @@ public class Player extends Character {
             _local13 = int(_local12.projProps_.minDamage_);
             _local14 = int(_local12.projProps_.maxDamage_);
             _local15 = ((_arg5) ? this.attackMultiplier() : 1);
-            _local16 = (map_.gs_.gsc_.getNextDamage(_local13, _local14) * _local15 + this.relentlessDamageBonus());
+            _local16 = (map_.gs_.gsc_.getNextDamage(_local13, _local14) * _local15 + this.relentlessDamageBonus() + this.aegisDamageBonus());
             if (_arg1 > (map_.gs_.moveRecords_.lastClearTime_ + 600)) {
                 _local16 = 0;
             }

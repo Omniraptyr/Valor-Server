@@ -25,8 +25,11 @@ namespace server.account
                     Write(context, "<Error>Failed to purchase skin</Error>");
                     return;
                 }
-
-                Program.Database.PurchaseSkin(acc, skinType, skinDesc.Cost);
+                if(acc.Kantos >= skinDesc.Cost)
+                {
+                    Program.Database.PurchaseSkin(acc, skinType, skinDesc.Cost);
+                }
+                
                 Write(context, "<Success />");
             }
             else

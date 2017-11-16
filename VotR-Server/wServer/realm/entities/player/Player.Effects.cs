@@ -25,6 +25,25 @@ namespace wServer.realm.entities
             {
                 ApplyConditionEffect(ConditionEffectIndex.Relentless, 0);
             }
+
+            if (CheckAegis())
+            {
+                ApplyConditionEffect(ConditionEffectIndex.Vengeance);
+            }
+            else
+            {
+                ApplyConditionEffect(ConditionEffectIndex.Vengeance, 0);
+            }
+
+            if (CheckGuilded())
+            {
+                ApplyConditionEffect(ConditionEffectIndex.Alliance);
+            }
+            else
+            {
+                ApplyConditionEffect(ConditionEffectIndex.Alliance, 0);
+            }
+
             ProtectionMax = (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50))+10;
             Protection =    (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50))+10-protectionDamage;
             if(Protection > 0)
@@ -76,7 +95,7 @@ namespace wServer.realm.entities
                     HP = Math.Min(Stats[0], HP + (int)_healing2);
                     _healing2 -= (int)_healing2;
                 }
-                _healing2 += 32 * (time.ElaspedMsDelta / 1000f);
+                _healing2 += 36 * (time.ElaspedMsDelta / 1000f);
             }
 
             if (HasConditionEffect(ConditionEffects.Quiet) && MP > 0)

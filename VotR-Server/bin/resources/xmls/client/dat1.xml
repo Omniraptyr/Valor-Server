@@ -106996,5 +106996,70 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Index>0x15</Index>
         </Texture>
     </Object>
-	
+	<Object type="0x69d4" id="The Guilded Blade">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x16</Index>
+        </Texture>
+        <SlotType>2</SlotType>
+        <Description>A silver dagger with a golden hilt awarded by the best teams and guilds in the realm.</Description>
+        <RateOfFire>1.2</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Guilded Magic</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>120</MinDamage>
+            <MaxDamage>175</MaxDamage>
+            <LifetimeMS>440</LifetimeMS>
+        </Projectile>
+        <Legendary/>
+        <Legend id="5" stat="27">
+            <Name>Alliance</Name>
+            <Description>If you have another ally close to you shoot faster.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <NumProjectiles>3</NumProjectiles>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>daggerSwing</OldSound>
+        <feedPower>2050</feedPower>
+        <DisplayId>The Guilded Blade</DisplayId>
+    </Object>
+    <Object type="0x69d5" id="Guilded Magic">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x17</Index>
+        </Texture>
+    </Object>
+	    <Object type="0x46d9" id="Aegis of the Devourer">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x2c3</Index>
+        </Texture>
+        <SlotType>7</SlotType>
+        <Description>The devourer must not be awakened once again or our world will tear and shatter to pieces.</Description>
+        <ActivateOnEquip stat="0" amount="90">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="28">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="12">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2000</feedPower>
+        <DisplayId>Aegis of the Devourer</DisplayId>
+        <Legendary/>
+        <Legend id="4" stat="27">
+            <Name>Vengeance</Name>
+            <Description>The less health that you currently have effects how much more damage you deal.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+    </Object>
 </Objects>

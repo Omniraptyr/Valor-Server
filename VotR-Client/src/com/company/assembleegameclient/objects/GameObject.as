@@ -532,12 +532,15 @@ public class GameObject extends BasicObject {
     public function isProtected():Boolean {
         return (!(((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.PROTECTED_BIT) == 0)));
     }
+
     public function isRelentless():Boolean {
         return (!(((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.RELENTLESS_BIT) == 0)));
     }
+
     public function isVengeance():Boolean {
         return (!(((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.VENGEANCE_BIT) == 0)));
     }
+
     public function isSafe(_arg1:int = 20):Boolean {
         var _local2:GameObject;
         var _local3:int;

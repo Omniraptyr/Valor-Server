@@ -47,7 +47,7 @@ namespace wServer.realm
 
         public int GetAttackDamage(int min, int max, bool isAbility = false)
         {
-            var ret = Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility) * CriticalModifier() + RelentlessDamage();
+            var ret = Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility) * CriticalModifier() + VengeanceDamage() + RelentlessDamage();
             //Log.Info($"Dmg: {ret}");
             return (int)ret;
         } 
@@ -78,7 +78,17 @@ namespace wServer.realm
                 return 0;
             }
         }
-
+        public int VengeanceDamage()
+        {
+            if (Owner.HasConditionEffect(ConditionEffects.Vengeance))
+            {
+                return (Owner.Stats[0]-Owner.HP)/2;
+            }
+            else
+            {
+                return 0;
+            }
+        }
         private float CriticalModifier()
         {
             Random rnd = new Random();
@@ -237,6 +247,8 @@ namespace wServer.realm
             if (Owner.HasConditionEffect(ConditionEffects.SamuraiBerserk))
                 rof *= 1.5f;
 
+            if (Owner.HasConditionEffect(ConditionEffects.Alliance))
+                rof *= 1.8f;
             return rof;
         }
 
@@ -334,7 +346,7 @@ namespace wServer.realm
                 if (Owner.HasConditionEffect(ConditionEffects.Empowered))
                     return 22f + 0.06f * wis;
                 if (Owner.HasConditionEffect(ConditionEffects.ManaRecovery))
-                    return 25f + 0.06f * wis;
+                    return 26f + 0.06f * wis;
 
                 return 0.5f + this[7] * .06f;
             }

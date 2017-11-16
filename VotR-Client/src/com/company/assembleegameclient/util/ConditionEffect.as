@@ -212,9 +212,6 @@ public class ConditionEffect {
                 new ConditionEffect("Relentless", RELENTLESS_BIT, [67], "Relentless"),
                 new ConditionEffect("Vengeance", VENGEANCE_BIT, [68], "Vengeance"),
                 new ConditionEffect("ManaRecovery", MANARECOVERY_BIT, [69], "ManaRecovery"),
-                new ConditionEffect("Alliance", RELENTLESS_BIT, [67], "Alliance"),
-                new ConditionEffect("Vengeance", VENGEANCE_BIT, [68], "Vengeance"),
-                new ConditionEffect("ManaRecovery", MANARECOVERY_BIT, [69], "ManaRecovery"),
                 new ConditionEffect("Alliance", ALLIANCE_BIT, [70], "Alliance"),
                 new ConditionEffect("HealthRecovery", HEALTHRECOVERY_BIT, [71], "HealthRecovery")
             ];

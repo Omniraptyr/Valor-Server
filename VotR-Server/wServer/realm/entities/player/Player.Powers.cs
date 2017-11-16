@@ -21,6 +21,21 @@ namespace wServer.realm.entities
                 return false;
             }
         }
+        public bool CheckGuilded()
+        {
+            if (Inventory[0] == null)
+            {
+                return false;
+            }
+            if (Inventory[0].ObjectId == "The Guilded Blade")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public bool CheckMocking()
         {
             if (Inventory[0] == null)
@@ -28,6 +43,21 @@ namespace wServer.realm.entities
                 return false;
             }
             if (Inventory[0].ObjectId == "The Mocking Raven")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckAegis()
+        {
+            if (Inventory[2] == null)
+            {
+                return false;
+            }
+            if (Inventory[2].ObjectId == "Aegis of the Devourer")
             {
                 return true;
             }
@@ -95,9 +125,12 @@ namespace wServer.realm.entities
                     break;
                 case 3:
                     break;
+
                 case 4:
-                    
-                        break;
+                    break;
+
+                case 5:
+                    break;
             }
         }
         private void ActivateSecondaryPower(int id)
