@@ -330,7 +330,7 @@ namespace wServer.realm.entities
             MP -= item.MpCost;
             if (CheckFurious())
             {
-                if (item.Tier < 6)
+                if (item.Tier != 0 || item.Tier != 1 || item.Tier != 2 || item.Tier != 3 || item.Tier != 4 || item.Tier != 5)
                 {
                 }
                 else
@@ -350,7 +350,7 @@ namespace wServer.realm.entities
             }
             if (CheckInfernus())
             {
-                if (item.Tier < 6)
+                if (item.Tier != 0 || item.Tier != 1 || item.Tier != 2 || item.Tier != 3 || item.Tier != 4 || item.Tier != 5)
                 {
                 }
                 else
