@@ -330,14 +330,7 @@ namespace wServer.realm.entities
             MP -= item.MpCost;
             if (CheckFurious())
             {
-                if (item.Tier != 0 || item.Tier != 1 || item.Tier != 2 || item.Tier != 3 || item.Tier != 4 || item.Tier != 5)
-                {
-                }
-                else
-                {
                     WeakBlast(time, item, target);
-                }
-                
             }
             if (CheckDran())
             {
@@ -350,14 +343,7 @@ namespace wServer.realm.entities
             }
             if (CheckInfernus())
             {
-                if (item.Tier != 0 || item.Tier != 1 || item.Tier != 2 || item.Tier != 3 || item.Tier != 4 || item.Tier != 5)
-                {
-                }
-                else
-                {
                     BurstFire(time, item, target);
-                }
-
             }
             if (Surge >= item.SurgeCost) 
             Surge -= item.SurgeCost;
