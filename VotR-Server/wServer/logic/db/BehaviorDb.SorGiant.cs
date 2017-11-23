@@ -193,8 +193,15 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.StatIncreasePotionsLoot()
                 ),
+                new MostDamagers(3,
+                    LootTemplates.GStatIncreasePotionsLoot()
+                ),
                 new Threshold(0.10,
                     new ItemLoot("Sor Crystal", 0.025),
+                    new ItemLoot("Amethyst Lair Armor", 0.07),
+                    new ItemLoot("Sword of the Truthfinder", 0.07),
+                    new ItemLoot("Kami Cloth", 0.07),
+                    new ItemLoot("Staff of Uranium", 0.07),
                     new TierLoot(11, ItemType.Weapon, 0.1),
                     new TierLoot(6, ItemType.Ability, 0.1),
                     new TierLoot(11, ItemType.Armor, 0.1),
