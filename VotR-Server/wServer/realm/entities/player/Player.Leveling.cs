@@ -180,6 +180,7 @@ namespace wServer.realm.entities
             {"Garnet Statue",                   Tuple.Create(15, 1, 20)},
             {"Jade Statue",                     Tuple.Create(15, 1, 20)},
             {"Lord Stone Gargoyle",             Tuple.Create(20, 1, 1000)},
+            {"Sorgigas, the Sor Giant",         Tuple.Create(20, 1, 1000)},
 
             // special events
             { "Megaman",                        Tuple.Create(50,20, 20) },
