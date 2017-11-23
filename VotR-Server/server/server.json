@@ -1,8 +1,8 @@
 {
   "dbInfo": {
     "host": "127.0.0.1",
-    "port": "6379",
-    "auth": "",
+    "port": "1985",
+    "auth": "y5let1de@isaKraze@non8712jok",
     "index": "0"
   },
   "serverInfo": {
