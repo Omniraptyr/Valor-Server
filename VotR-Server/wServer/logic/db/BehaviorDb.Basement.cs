@@ -170,7 +170,7 @@ namespace wServer.logic
                 new State(
                     new HpLessTransition(0.14, "rip1"),
                     new State("default",
-                        new PlayerWithinTransition(5, "taunt")
+                        new PlayerWithinTransition(18, "taunt")
                         ),
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),

@@ -49,7 +49,7 @@ public class ConditionEffect {
     public static const PARALYZED_IMMUNE:uint = 34;
     public static const PETRIFIED:uint = 35;
     public static const PETRIFIED_IMMUNE:uint = 36;
-    public static const PET_EFFECT_ICON:uint = 37;
+    public static const SWIFTNESS:uint = 37;
     public static const CURSE:uint = 38;
     public static const CURSE_IMMUNE:uint = 39;
     public static const HP_BOOST:uint = 40;
@@ -67,7 +67,7 @@ public class ConditionEffect {
     public static const EXHAUSTED:int = 52;
     public static const SURGED:int = 53;
     public static const CORRUPTED:int = 54;
-    public static const DEATHBOUND:int = 55;
+    public static const GRASPOFZOL:int = 55;
     public static const SAMURAIBERSERK:int = 56;
     public static const DRAKZIXCHARGING:int = 57;
     public static const PROTECTED:int = 58;
@@ -113,7 +113,7 @@ public class ConditionEffect {
     public static const PARALYZED_IMMUNE_BIT:uint = (1 << (PARALYZED_IMMUNE - NEW_CON_THREASHOLD));
     public static const PETRIFIED_BIT:uint = (1 << (PETRIFIED - NEW_CON_THREASHOLD));
     public static const PETRIFIED_IMMUNE_BIT:uint = (1 << (PETRIFIED_IMMUNE - NEW_CON_THREASHOLD));
-    public static const PET_EFFECT_ICON_BIT:uint = (1 << (PET_EFFECT_ICON - NEW_CON_THREASHOLD));
+    public static const SWIFTNESS_BIT:uint = (1 << (SWIFTNESS - NEW_CON_THREASHOLD));
     public static const CURSE_BIT:uint = (1 << (CURSE - NEW_CON_THREASHOLD));
     public static const CURSE_IMMUNE_BIT:uint = (1 << (CURSE_IMMUNE - NEW_CON_THREASHOLD));
     public static const HP_BOOST_BIT:uint = (1 << (HP_BOOST - NEW_CON_THREASHOLD));
@@ -131,7 +131,7 @@ public class ConditionEffect {
     public static const EXHAUSTED_BIT:uint = (1 << (EXHAUSTED - NEW_CON_THREASHOLD));
     public static const SURGED_BIT:uint = (1 << (SURGED - NEW_CON_THREASHOLD));
     public static const CORRUPTED_BIT:uint = (1 << (CORRUPTED - NEW_CON_THREASHOLD));
-    public static const DEATHBOUND_BIT:uint = (1 << (DEATHBOUND - NEW_CON_THREASHOLD));
+    public static const GRASPOFZOL_BIT:uint = (1 << (GRASPOFZOL - NEW_CON_THREASHOLD));
     public static const SAMURAIBERSERK_BIT:uint = (1 << (SAMURAIBERSERK - NEW_CON_THREASHOLD));
     public static const DRAKZIXCHARGING_BIT:uint = (1 << (DRAKZIXCHARGING - NEW_CON_THREASHOLD));
     public static const PROTECTED_BIT:uint = (1 << (PROTECTED - NEW_CON_THREASHOLD));
@@ -144,7 +144,7 @@ public class ConditionEffect {
     public static const PROJ_NOHIT_BITMASK:uint = INVINCIBLE_BIT | STASIS_BIT | PAUSED_BIT;
     public static const CE_FIRST_BATCH:uint = 0;
     public static const CE_SECOND_BATCH:uint = 1;
-    public static const NUMBER_CE_BATCHES:uint = 2;
+    public static const NUMBER_CE_BATCHES:uint = 3;
     public static const NEW_CON_THREASHOLD:uint = 32;
     private static const GLOW_FILTER:GlowFilter = new GlowFilter(0, 0.3, 6, 6, 2, BitmapFilterQuality.LOW, false, false);
 
@@ -187,7 +187,7 @@ public class ConditionEffect {
                 new ConditionEffect("Paralyzed Immune", PARALYZED_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_PARALYZEDIMMUNE),
                 new ConditionEffect("Petrify", PETRIFIED_BIT, null, TextKey.CONDITIONEFFECT_PETRIFIED),
                 new ConditionEffect("Petrify Immune", PETRIFIED_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_PETRIFY_IMMUNE),
-                new ConditionEffect("Pet Disable", PET_EFFECT_ICON_BIT, [27], TextKey.CONDITIONEFFECT_STASIS, true),
+                new ConditionEffect("Swiftness", SWIFTNESS_BIT, [72], "Swiftness"),
                 new ConditionEffect("Curse", CURSE_BIT, [58], TextKey.CONDITIONEFFECT_CURSE),
                 new ConditionEffect("Curse Immune", CURSE_IMMUNE_BIT, null, TextKey.CONDITIONEFFECT_CURSE_IMMUNE),
                 new ConditionEffect("HP Boost", HP_BOOST_BIT, [32], "HP Boost", true),
@@ -205,7 +205,7 @@ public class ConditionEffect {
                 new ConditionEffect("Exhausted", EXHAUSTED_BIT, [61], "Exhausted"),
                 new ConditionEffect("Surged", SURGED_BIT, [62], "Surged"),
                 new ConditionEffect("Corrupted", CORRUPTED_BIT, [63], "Corrupted"),
-                new ConditionEffect("Deathbound", DEATHBOUND_BIT, [64], "Deathbound"),
+                new ConditionEffect("GraspofZol", GRASPOFZOL_BIT, [64], "GraspofZol"),
                 new ConditionEffect("Samurai Berserk", SAMURAIBERSERK_BIT, [50], "Samurai Berserk"),
                 new ConditionEffect("Charging", DRAKZIXCHARGING_BIT, [65], "Charging"),
                 new ConditionEffect("Protected", PROTECTED_BIT, [66], "Protected"),

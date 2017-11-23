@@ -255,7 +255,28 @@ namespace wServer
                 }
             return ret;
         }
-
+        public static int CountEntity2(this Entity entity, double dist, ushort? objType)
+        {
+            if (entity.Owner == null) return 0;
+            int ret = 0;
+            if (objType == null)
+                foreach (var i in entity.Owner.PlayersCollision.HitTest(entity.X, entity.Y, dist).Where(e => e is Player))
+                {
+                    if (!(i as IPlayer).IsVisibleToEnemy()) continue;
+                    var d = i.Dist(entity);
+                    if (d < dist)
+                        ret++;
+                }
+            else
+                foreach (var i in entity.Owner.EnemiesCollision.HitTest(entity.X, entity.Y, dist))
+                {
+                    if (i.ObjectType != objType.Value) continue;
+                    var d = i.Dist(entity);
+                    if (d < dist)
+                        ret++;
+                }
+            return ret;
+        }
         public static int CountEntity(this Entity entity, double dist, string group)
         {
             if (entity.Owner == null) return 0;

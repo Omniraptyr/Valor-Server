@@ -7,6 +7,6 @@
 "blocking":1,
 "restrictTp":true,
 "showDisplays":false,
-"portals":[0x49a7],
+"portals":[0x22c5],
 "maps":["nontridus1.jm", "nontridus2.jm", "nontridus3.jm"],
 "music":["dark fallout"]}

@@ -510,7 +510,7 @@ namespace wServer.logic
             )
             .Init("Leviathan",
                 new State(
-                    new DropPortalOnDeath("Ice Cave Portal", .01),
+                    new DropPortalOnDeath("Puppet Theatre Portal", .10),
                     new State("Wander",
                         new Swirl(),
                         new Shoot(10, 2, 10, 1, coolDown: 500),

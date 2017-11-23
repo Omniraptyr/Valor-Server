@@ -533,7 +533,6 @@ namespace wServer.logic
                 ),
                 new Threshold(0.10,
 					new ItemLoot("Onrane", 0.5),
-					new ItemLoot("Sor Crystal", 0.25),
                     new TierLoot(11, ItemType.Weapon, 0.1),
 					new TierLoot(6, ItemType.Ability, 0.1),
 					new TierLoot(11, ItemType.Armor, 0.1),

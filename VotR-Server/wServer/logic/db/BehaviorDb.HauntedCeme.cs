@@ -627,8 +627,6 @@ namespace wServer.logic
                     new ItemLoot("Potion of Wisdom", 0.5),
                     new ItemLoot("Resurrected Warrior's Armor", 0.04),
                     new ItemLoot("Plague Poison", 0.04),
-                    new ItemLoot("Mark of Recovery", 0.01),
-
                     new ItemLoot("Etherite Dagger", 0.02),
                     new ItemLoot("Ghastly Drape", 0.02),
                     new ItemLoot("Mantle of Skuld", 0.02),

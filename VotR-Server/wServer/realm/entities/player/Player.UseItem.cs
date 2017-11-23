@@ -15,6 +15,7 @@ namespace wServer.realm.entities
 {
     partial class Player
     {
+
         public const int MaxAbilityDist = 14;
 
         public int DrainedHP = 0;
@@ -326,10 +327,39 @@ namespace wServer.realm.entities
         private void Activate(RealmTime time, Item item, Position target)
         {
             ActivateSecondaryPower(SecondaryPowerIdentify());
-
             MP -= item.MpCost;
+            if (CheckFurious())
+            {
+                if (item.Tier < 6)
+                {
+                }
+                else
+                {
+                    WeakBlast(time, item, target);
+                }
+                
+            }
+            if (CheckDran())
+            {
+                AEHealNoRest(time, item, target, 60);
+            }
+            if (CheckStar())
+            {
+                if(item.MpCost != 0)
+                AEMagicNoRest(time, item, target, item.MpCost/4);
+            }
+            if (CheckInfernus())
+            {
+                if (item.Tier < 6)
+                {
+                }
+                else
+                {
+                    BurstFire(time, item, target);
+                }
 
-            if(Surge >= item.SurgeCost) 
+            }
+            if (Surge >= item.SurgeCost) 
             Surge -= item.SurgeCost;
 
 
@@ -481,6 +511,9 @@ namespace wServer.realm.entities
                         break;
                     case ActivateEffects.DiceActivate:
                         AEDiceActivate(time, item, target, eff);
+                        break;
+                    case ActivateEffects.BigStasisBlast:
+                        BigStasisBlast(time, item, target, eff);
                         break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
@@ -759,7 +792,7 @@ namespace wServer.realm.entities
 
             Owner.AOE(target, eff.Range, false, enemy =>
             {
-                (enemy as Enemy).Damage(this, time, ((((MP*2)+(wisBoost^2))*(drained/2))/2)+eff.Amount, false,
+                (enemy as Enemy).Damage(this, time, ((((MP*2)+(wisBoost^2))*(drained/2))/4)+eff.Amount, false,
                     new ConditionEffect[0]);
             });
             BroadcastSync(pkts, p => this.Dist(p) < 25);
@@ -1025,7 +1058,7 @@ namespace wServer.realm.entities
                     Color = new ARGB(0xffddff00),
                     TargetObjectId = x.Id,
                     Pos1 = new Position() { X = eff.Radius }
-                }, x, null, PacketPriority.Low);
+                }, x, null, PacketPriority.High);
 
                 world.AOE(target, eff.Radius, false,
                     enemy => PoisonEnemy(world, enemy as Enemy, eff));
@@ -1171,7 +1204,48 @@ namespace wServer.realm.entities
             });
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
         }
+        private void BigStasisBlast(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            var pkts = new List<Packet>
+            {
+                new ShowEffect()
+                {
+                    EffectType = EffectType.Concentrate,
+                    TargetObjectId = Id,
+                    Pos1 = target,
+                    Pos2 = new Position() {X = target.X + 6, Y = target.Y},
+                    Color = new ARGB(0x00FF00)
+                }
+            };
 
+            Owner.AOE(target, 6, false, enemy =>
+            {
+                if (enemy.HasConditionEffect(ConditionEffects.StasisImmune))
+                {
+                    pkts.Add(new Notification()
+                    {
+                        ObjectId = enemy.Id,
+                        Color = new ARGB(0xff00ff00),
+                        Message = "Immune"
+                    });
+                }
+                else if (!enemy.HasConditionEffect(ConditionEffects.Stasis))
+                {
+                    enemy.ApplyConditionEffect(ConditionEffectIndex.Stasis, eff.DurationMS);
+
+                    Owner.Timers.Add(new WorldTimer(eff.DurationMS, (world, t) =>
+                        enemy.ApplyConditionEffect(ConditionEffectIndex.StasisImmune, 3000)));
+
+                    pkts.Add(new Notification()
+                    {
+                        ObjectId = enemy.Id,
+                        Color = new ARGB(0xffff0000),
+                        Message = "Stasis"
+                    });
+                }
+            });
+            BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
+        }
         private void AETrap(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             BroadcastSync(new ShowEffect()
@@ -1265,7 +1339,7 @@ namespace wServer.realm.entities
             this.AOE(eff.Range, true, player =>
             {
                 if (!player.HasConditionEffect(ConditionEffects.Corrupted))
-                    ActivateHealMp(player as Player, eff.Amount, pkts);
+                    ActivateHealMp(player as Player, eff.Amount+(RestorationHeal() / 4), pkts);
             });
             pkts.Add(new ShowEffect()
             {
@@ -1286,7 +1360,24 @@ namespace wServer.realm.entities
             }
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
         }
-
+        private void AEMagicNoRest(RealmTime time, Item item, Position target, int amount)
+        {
+            var pkts = new List<Packet>();
+            if (!HasConditionEffect(ConditionEffects.Corrupted))
+            {
+                ActivateHealMp(this, amount, pkts);
+            }
+            BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
+        }
+        private void AEHealNoRest(RealmTime time, Item item, Position target, int amount)
+        {
+            var pkts = new List<Packet>();
+            if (!HasConditionEffect(ConditionEffects.Corrupted))
+            {
+                ActivateHealHp(this, amount, pkts);
+            }
+            BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
+        }
         private void AEHealNova(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var amount = eff.Amount;
@@ -1301,7 +1392,7 @@ namespace wServer.realm.entities
             this.AOE(range, true, player =>
                 {
                     if(!player.HasConditionEffect(ConditionEffects.Sick) || !player.HasConditionEffect(ConditionEffects.Corrupted))
-                        ActivateHealHp(player as Player, amount, pkts);
+                        ActivateHealHp(player as Player, amount+(RestorationHeal()/4), pkts);
                 });
             pkts.Add(new ShowEffect()
             {
@@ -1395,6 +1486,38 @@ namespace wServer.realm.entities
                 TargetObjectId = Id,
                 Color = new ARGB(color),
                 Pos1 = new Position() { X = range }
+            }, p => this.DistSqr(p) < RadiusSqr);
+        }
+
+
+        private void BurstFire(RealmTime time, Item item, Position target)
+        {
+            this.AOE(3, false, enemy => BurnEnemy(Owner, enemy as Enemy, 1250));
+            BroadcastSync(new ShowEffect()
+            {
+                EffectType = EffectType.AreaBlast,
+                TargetObjectId = Id,
+                Color = new ARGB(0xf26e2c),
+                Pos1 = new Position() { X = 3 }
+            }, p => this.DistSqr(p) < RadiusSqr);
+        }
+
+        private void WeakBlast(RealmTime time, Item item, Position target)
+        {
+            this.AOE(4, false, enemy =>
+            {
+                enemy.ApplyConditionEffect(new ConditionEffect()
+                {
+                    Effect = ConditionEffectIndex.Weak,
+                    DurationMS = 2500
+                });
+            });
+            BroadcastSync(new ShowEffect()
+            {
+                EffectType = EffectType.AreaBlast,
+                TargetObjectId = Id,
+                Color = new ARGB(0x000000),
+                Pos1 = new Position() { X = 4 }
             }, p => this.DistSqr(p) < RadiusSqr);
         }
 
@@ -1626,6 +1749,12 @@ namespace wServer.realm.entities
 
         static void ActivateHealHp(Player player, int amount, List<Packet> pkts)
         {
+            if (player.HasConditionEffect(ConditionEffects.DrakzixCharging))
+            return;
+
+            if (player.HasConditionEffect(ConditionEffects.Corrupted))
+            return;
+
             var maxHp = player.Stats[0];
             var newHp = Math.Min(maxHp, player.HP + amount);
             if (newHp == player.HP)
@@ -1650,6 +1779,11 @@ namespace wServer.realm.entities
 
         static void ActivateHealMp(Player player, int amount, List<Packet> pkts)
         {
+            if (player.HasConditionEffect(ConditionEffects.DrakzixCharging))
+                return;
+
+            if (player.HasConditionEffect(ConditionEffects.Corrupted))
+                return;
             var maxMp = player.Stats[1];
             var newMp = Math.Min(maxMp, player.MP + amount);
             if (newMp == player.MP) 
@@ -1711,7 +1845,46 @@ namespace wServer.realm.entities
             tmr = new WorldTimer(250, poisonTick);
             world.Timers.Add(tmr);
         }
+        void BurnEnemy(World world, Enemy enemy, int damage)
+        {
+            var remainingDmg = (int)StatsManager.GetDefenseDamage(enemy, damage, enemy.ObjectDesc.Defense);
+            var perDmg = remainingDmg * 1000 / 7000;
 
+            WorldTimer tmr = null;
+            var x = 0;
+
+            Func<World, RealmTime, bool> burnTick = (w, t) =>
+            {
+                if (enemy.Owner == null || w == null)
+                    return true;
+
+                w.BroadcastPacketConditional(new ShowEffect()
+                {
+                    EffectType = EffectType.Dead,
+                    TargetObjectId = enemy.Id,
+                    Color = new ARGB(0xbd460a)
+                }, p => enemy.DistSqr(p) < RadiusSqr);
+
+                if (x % 4 == 0) // make sure to change this if timer delay is changed
+                {
+                    var thisDmg = perDmg;
+                    if (remainingDmg < thisDmg)
+                        thisDmg = remainingDmg;
+
+                    enemy.Damage(this, t, thisDmg, true);
+                    remainingDmg -= thisDmg;
+                    if (remainingDmg <= 0)
+                        return true;
+                }
+                x++;
+
+                tmr.Reset();
+                return false;
+            };
+
+            tmr = new WorldTimer(250, burnTick);
+            world.Timers.Add(tmr);
+        }
         void HealingPlayersPoison(World world, Player player, ActivateEffect eff)
         {
             var remainingHeal = eff.TotalDamage;

@@ -362,7 +362,20 @@ public class Player extends Character {
         _local2.setStringBuilder(new LineBuilder().setParams(TextKey.PLAYER_EXP, {"exp": _arg1}));
         map_.mapOverlay_.addStatusText(_local2);
     }
-
+    public function BotDModifier():int {
+        if(ObjectLibrary.typeToDisplayId_[this.equipment_[3]] == "Bracelet of the Demolished" && hp_ == maxHP_ && protectionPoints_ == protectionPointsMax_){
+            return 2;
+        }else{
+            return 1;
+        }
+    }
+    public function KaraModifier():int {
+        if(ObjectLibrary.typeToDisplayId_[this.equipment_[0]] == "Karana's Secret" && isInvisible() == true){
+            return 20 + this.wisdom_*2;
+        }else{
+            return 0;
+        }
+    }
     private function getNearbyMerchant():Merchant {
         var _local3:Point;
         var _local4:Merchant;
@@ -753,6 +766,9 @@ public class Player extends Character {
         if (((isSpeedy()) || (isNinjaSpeedy()))) {
             _local1 = (_local1 * 1.5);
         }
+        if (isSwiftness()) {
+            _local1 = (_local1 * 1.7);
+        }
         return ((_local1 * this.moveMultiplier_));
     }
 
@@ -761,8 +777,11 @@ public class Player extends Character {
             return (MIN_ATTACK_FREQ);
         }
         var _local1:Number = (MIN_ATTACK_FREQ + ((this.dexterity_ / 75) * (MAX_ATTACK_FREQ - MIN_ATTACK_FREQ)));
-        if (isBerserk() || isSamuraiBerserk()) {
+        if (isBerserk() || isSamuraiBerserk() || isGrasp()) {
             _local1 = (_local1 * 1.5);
+        }
+        if (isAlliance()) {
+            _local1 = (_local1 * 1.8);
         }
         return (_local1);
     }
@@ -780,6 +799,14 @@ public class Player extends Character {
     private function relentlessDamageBonus():Number{
         if(isRelentless()){
             return surge_*6;
+        }else{
+            return 0;
+        }
+    }
+
+    private function graspDamage():Number{
+        if(isGrasp()){
+            return 125;
         }else{
             return 0;
         }
@@ -1065,7 +1092,7 @@ public class Player extends Character {
             _local13 = int(_local12.projProps_.minDamage_);
             _local14 = int(_local12.projProps_.maxDamage_);
             _local15 = ((_arg5) ? this.attackMultiplier() : 1);
-            _local16 = (map_.gs_.gsc_.getNextDamage(_local13, _local14) * _local15 + this.relentlessDamageBonus() + this.aegisDamageBonus());
+            _local16 = this.BotDModifier() * (map_.gs_.gsc_.getNextDamage(_local13, _local14) * _local15 + this.relentlessDamageBonus() + this.aegisDamageBonus() + this.graspDamage() + this.KaraModifier());
             if (_arg1 > (map_.gs_.moveRecords_.lastClearTime_ + 600)) {
                 _local16 = 0;
             }

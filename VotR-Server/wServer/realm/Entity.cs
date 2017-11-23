@@ -126,7 +126,7 @@ namespace wServer.realm
             _y = new SV<float>(this, StatsType.None, 0);
             _conditionEffects1 = new SV<int>(this, StatsType.Effects, 0);
             _conditionEffects2 = new SV<int>(this, StatsType.Effects2, 0);
-            
+
             ObjectType = objType;
             Manager = manager;
             manager.Behaviors.ResolveBehavior(this);

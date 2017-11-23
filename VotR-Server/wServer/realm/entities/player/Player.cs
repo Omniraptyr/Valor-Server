@@ -1296,7 +1296,7 @@ namespace wServer.realm.entities
             if(Owner.Name == "Admins Arena")
             {
                 Random rnd = new Random();
-                int num = rnd.Next(1, 9);
+                int num = rnd.Next(1, 11);
                 switch (num)
                 {
                     case 1:
@@ -1330,6 +1330,14 @@ namespace wServer.realm.entities
                     case 8:
                         foreach (var player in Owner.Players.Values)
                             player.SendInfo($"{Name} IS OUTTA HERE!");
+                        break;
+                    case 9:
+                        foreach (var player in Owner.Players.Values)
+                            player.SendInfo($"{Name} has been E L I M I N A T E D.");
+                        break;
+                    case 10:
+                        foreach (var player in Owner.Players.Values)
+                            player.SendInfo($"CY@, {Name}");
                         break;
                 }
 

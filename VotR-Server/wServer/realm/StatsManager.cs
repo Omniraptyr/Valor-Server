@@ -47,7 +47,7 @@ namespace wServer.realm
 
         public int GetAttackDamage(int min, int max, bool isAbility = false)
         {
-            var ret = Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility) * CriticalModifier() + VengeanceDamage() + RelentlessDamage();
+            var ret = isDoubleDamage() * Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility) * CriticalModifier() + VengeanceDamage() + RelentlessDamage() + KaraDamage();
             //Log.Info($"Dmg: {ret}");
             return (int)ret;
         } 
@@ -66,12 +66,22 @@ namespace wServer.realm
 
             return mult;
         }
-
         public int RelentlessDamage()
         {
             if (Owner.HasConditionEffect(ConditionEffects.Relentless))
             {
                 return Owner.Surge * 6;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        public int GraspDamage()
+        {
+            if (Owner.HasConditionEffect(ConditionEffects.GraspofZol))
+            {
+                return 125;
             }
             else
             {
@@ -120,6 +130,10 @@ namespace wServer.realm
             if (Owner.HasConditionEffect(ConditionEffects.Bravery))
             {
                 return MightMultiplier() * 2;
+            }
+            else if (Owner.HasConditionEffect(ConditionEffects.GraspofZol))
+            {
+                return MightMultiplier() * 3;
             }
             else
             {
@@ -247,8 +261,13 @@ namespace wServer.realm
             if (Owner.HasConditionEffect(ConditionEffects.SamuraiBerserk))
                 rof *= 1.5f;
 
+            if (Owner.HasConditionEffect(ConditionEffects.GraspofZol))
+                rof *= 1.5f;
+
             if (Owner.HasConditionEffect(ConditionEffects.Alliance))
                 rof *= 1.8f;
+
+
             return rof;
         }
 
@@ -297,12 +316,38 @@ namespace wServer.realm
                 ret = 0;
             return ret;
         }
+       
+       public int KaraDamage()
+        {
+            if (Owner.CheckKar() && Owner.HasConditionEffect(ConditionEffects.Invisible))
+            {
+                return Owner.Stats[7] * 2 + 20;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+       public int isDoubleDamage()
+        {
+            if (Owner.CheckDemo())
+            {
+                return 2;
+            }
+            else
+            {
+                return 1;
+            }
+        }
 
         public static float GetSpeed(Entity entity, float stat)
         {
             var ret = 4 + 5.6f * (stat / 75f);
             if (entity.HasConditionEffect(ConditionEffects.Speedy))
                 ret *= 1.5f;
+            if (entity.HasConditionEffect(ConditionEffects.Swiftness))
+                ret *= 1.7f;
             if (entity.HasConditionEffect(ConditionEffects.Slowed))
                 ret = 4;
             if (entity.HasConditionEffect(ConditionEffects.Paralyzed))

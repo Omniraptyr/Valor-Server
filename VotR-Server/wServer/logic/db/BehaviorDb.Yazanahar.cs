@@ -97,6 +97,7 @@ namespace wServer.logic
 								new ReturnToSpawn(speed: 1.2),
 								new TimedTransition (6000, "Reform")
 							),
+
 							new State ("Reform",
 								new SetAltTexture (1),
 								new InvisiToss ("Split Yazanahar", 2, 0, coolDown: 9999999),

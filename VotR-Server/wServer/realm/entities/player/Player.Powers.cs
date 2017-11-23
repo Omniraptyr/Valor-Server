@@ -21,13 +21,178 @@ namespace wServer.realm.entities
                 return false;
             }
         }
+        public bool CheckSunMoon()
+        {
+            if (Inventory[1] == null)
+            {
+                return false;
+            }
+            if (Inventory[1].ObjectId == "The Sun & Moon Expansion" && Surge >= 50)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckAnubis()
+        {
+            if (Inventory[2] == null)
+            {
+                return false;
+            }
+            if (Inventory[2].ObjectId == "Armor of Anubis" && Surge >= 20)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckForce()
+        {
+            if (Inventory[2] == null)
+            {
+                return false;
+            }
+            if (Inventory[2].ObjectId == "Force Between Avex" && HP <= Stats[0]/2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckRoyal()
+        {
+            if (Inventory[0] == null)
+            {
+                return false;
+            }
+            if (Inventory[0].ObjectId == "Staff of Royal Revenge" && this.AnyEnemyNearby(10) == false)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckStar()
+        {
+            if (Inventory[3] == null)
+            {
+                return false;
+            }
+            if (Inventory[3].ObjectId == "Starcrash Ring")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckInfernus()
+        {
+            if (Inventory[2] == null)
+            {
+                return false;
+            }
+            if (Inventory[2].ObjectId == "The Infernus")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckDran()
+        {
+            if (Inventory[2] == null)
+            {
+                return false;
+            }
+            if (Inventory[2].ObjectId == "Dranbiel Garbs" && MP >= Stats[1]/2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckDemo()
+        {
+            if (Inventory[3] == null)
+            {
+                return false;
+            }
+            if (Inventory[3].ObjectId == "Bracelet of the Demolished" && HP == Stats[0] && protectionDamage == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckKar()
+        {
+            if (Inventory[0] == null)
+            {
+                return false;
+            }
+            if (Inventory[0].ObjectId == "Karana's Secret")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckFurious()
+        {
+            if (Inventory[3] == null)
+            {
+                return false;
+            }
+            if (Inventory[3].ObjectId == "Furious Gauntlet" && Surge >= 60)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public bool CheckGuilded()
         {
             if (Inventory[0] == null)
             {
                 return false;
             }
-            if (Inventory[0].ObjectId == "The Guilded Blade")
+            if (Inventory[0].ObjectId == "The Gilded Blade" && this.CountEntity2(6, null) >= 2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckAxe()
+        {
+            if (Inventory[0] == null)
+            {
+                return false;
+            }
+            if (Inventory[0].ObjectId == "Waraxe of Judgement" && Surge >= 40)
             {
                 return true;
             }
@@ -43,6 +208,21 @@ namespace wServer.realm.entities
                 return false;
             }
             if (Inventory[0].ObjectId == "The Mocking Raven")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckResistance()
+        {
+            if (Inventory[2] == null)
+            {
+                return false;
+            }
+            if (Inventory[2].ObjectId == "Words of Wisdom")
             {
                 return true;
             }
@@ -109,19 +289,8 @@ namespace wServer.realm.entities
                         ApplyConditionEffect(ConditionEffectIndex.HealthRecovery, 0);
                     }
                     break;
-                //Mana Focus
+                //Warcry
                 case 2:
-                    int a = Convert.ToInt32(Stats[2] * 0.20);
-                    if (Surge >= surge_)
-                    {
-                        Stats.Boost.ActivateBoost[idx].Push(a, false);
-                        Stats.ReCalculateValues();
-                    }
-                    else
-                    {
-                        Stats.Boost.ActivateBoost[idx].Pop(a, false);
-                        Stats.ReCalculateValues();
-                    }
                     break;
                 case 3:
                     break;
@@ -130,6 +299,72 @@ namespace wServer.realm.entities
                     break;
 
                 case 5:
+                    break;
+                case 6:
+                    if (MP <= Stats[1] / 2)
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.SlowedImmune);
+                    }
+                    else
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.SlowedImmune, 0);
+                    }
+                    break;
+                    //Stoneheart
+                case 7:
+                    if (HP >= Stats[0] / 2)
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune);
+                    }
+                    else
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune, 0);
+                    }
+                    break;
+                //Mana Recovery
+                case 8:
+                    if (Surge >= surge_)
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.ManaRecovery);
+                    }
+                    else
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.ManaRecovery, 0);
+                    }
+                    break;
+                //Grasp of Zol
+                case 9:
+                    if (Owner.Name == "Aldragine's Hideout" || Owner.Name == "Nontridus" || Owner.Name == "The Nontridus" || Owner.Name == "Sincryer's Gate" || Owner.Name == "Core of the Hideout" || Owner.Name == "Keeping of Aldragine" || Owner.Name == "Zol Secret Shop")
+
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.GraspofZol);
+                    }
+                    else
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.GraspofZol, 0);
+                    }
+                    break;
+                //Swiftness
+                case 10:
+                    if (Surge >= surge_)
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.Swiftness);
+                    }
+                    else
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.Swiftness, 0);
+                    }
+                    break;
+                //Rockheart
+                case 11:
+                    if (Surge >= surge_)
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.PetrifyImmune);
+                    }
+                    else
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.PetrifyImmune, 0);
+                    }
                     break;
             }
         }

@@ -17,6 +17,36 @@ namespace wServer.realm.entities
         bool surgewither;
         void HandleEffects(RealmTime time)
         {
+                if (CheckAxe())
+                {
+                    Stats.Boost.ActivateBoost[3].Push(10, false);
+                    Stats.ReCalculateValues();
+                }
+                else
+                {
+                    Stats.Boost.ActivateBoost[3].Pop(10, false);
+                    Stats.ReCalculateValues();
+                }
+            if (CheckSunMoon())
+            {
+                Stats.Boost.ActivateBoost[1].Push(100, false);
+                Stats.ReCalculateValues();
+            }
+            else
+            {
+                Stats.Boost.ActivateBoost[1].Pop(100, false);
+                Stats.ReCalculateValues();
+            }
+            if (CheckAnubis())
+            {
+                Stats.Boost.ActivateBoost[1].Push(60, false);
+                Stats.ReCalculateValues();
+            }
+            else
+            {
+                Stats.Boost.ActivateBoost[1].Pop(60, false);
+                Stats.ReCalculateValues();
+            }
             if (CheckMocking())
             {
                 ApplyConditionEffect(ConditionEffectIndex.Relentless);
@@ -24,6 +54,30 @@ namespace wServer.realm.entities
             else
             {
                 ApplyConditionEffect(ConditionEffectIndex.Relentless, 0);
+            }
+            if (CheckForce())
+            {
+                ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune);
+            }
+            else
+            {
+                ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune, 0);
+            }
+            if (CheckRoyal())
+            {
+                ApplyConditionEffect(ConditionEffectIndex.HealthRecovery);
+            }
+            else
+            {
+                ApplyConditionEffect(ConditionEffectIndex.HealthRecovery, 0);
+            }
+            if (CheckResistance())
+            {
+                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune);
+            }
+            else
+            {
+                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune, 0);
             }
 
             if (CheckAegis())
@@ -173,8 +227,6 @@ namespace wServer.realm.entities
                     HP -= 10;
                     DrainedHP += 1;
                 }));
-                if (HP < 1)
-                    HP = 1;
             }
 
             if (_newbieTime > 0)

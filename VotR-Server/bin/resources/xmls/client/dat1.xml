@@ -37331,26 +37331,32 @@ A magnificent legendary blade which only cuts those who deserve death.
       <Soulbound/>
       <DisplayId>{equip.Admin_Staff}</DisplayId>
    </Object>
-   <Object type="0x9d2" id="Strike Amulet">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>lofiObj2</File>
-         <Index>0xf0</Index>
-      </Texture>
-      <SlotType>4</SlotType>
-      <Description>{equip.A_magical_amulet_that_enables_lightning_assaults.}</Description>
-      <Sound>spell/fire_nova</Sound>
-      <Usable/>
-      <Soulbound/>
-      <MpCost>5</MpCost>
-      <ActivateOnEquip stat="26" amount="5">IncrementStat</ActivateOnEquip>
-      <Activate radius="2.0" totalDamage="25">DazeBlast</Activate>
-      <Activate maxDistance="20">Teleport</Activate>
-      <BagType>6</BagType>
-      <feedPower>1000</feedPower>
-      <DisplayId>{equip.Strike_Amulet}</DisplayId>
-   </Object>
+    <Object type="0x9d2" id="Strike Amulet">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj2</File>
+            <Index>0xf0</Index>
+        </Texture>
+        <SlotType>4</SlotType>
+        <Description>{equip.A_magical_amulet_that_enables_lightning_assaults.}</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <MpCost>10</MpCost>
+        <ActivateOnEquip stat="122" amount="25">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+        <Activate maxDistance="20">Teleport</Activate>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>1800</feedPower>
+        <Activate effect="Dazed" duration="2" range="3" color="0xFFFF00" target="enemy" center="mouse"
+                  visualEffect="8" useWisMod="true">GenericActivate
+        </Activate>
+        <Legendary/>
+        <DisplayId>{equip.Strike_Amulet}</DisplayId>
+    </Object>
    <Object type="0xc6d" id="Plague Poison">
       <Class>Equipment</Class>
       <Item/>
@@ -75808,39 +75814,6 @@ A magnificent legendary blade which only cuts those who deserve death.
     <BagType>4</BagType>
     <FameBonus>4</FameBonus>
   </Object>
-  <Object type="0x1399" id="Quiver of Vast Power">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>lofiObj6</File>
-      <Index>0xab</Index>
-    </Texture>
-    <SlotType>15</SlotType>
-    <Description>A quiver banished from every kingdom due to it's unthinkable power.</Description>
-    <Sound>spell/fire_spray</Sound>
-    <Projectile>
-      <ObjectId>Black Arrow</ObjectId>
-      <Speed>150</Speed>
-      <MinDamage>500</MinDamage>
-      <MaxDamage>2000</MaxDamage>
-      <LifetimeMS>1000</LifetimeMS>
-      <Size>150</Size>
-      <MultiHit/>
-      <PassesCover/>
-      <ConditionEffect duration="3.5">Paralyzed</ConditionEffect>
-      <ParticleTrail>0x00000</ParticleTrail>
-    </Projectile>
-    <ActivateOnEquip stat="20" amount="14">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="28" amount="-8">IncrementStat</ActivateOnEquip>
-    <Usable/>
-    <ConditionEffect duration="3.5">Paralyzed</ConditionEffect>
-    <BagType>0</BagType>
-    <MpCost>140</MpCost>
-    <Activate>Shoot</Activate>
-    <Legendary/>
-    <feedPower>2000</feedPower>
-    <FameBonus>8</FameBonus>
-  </Object>
   <Object type="0x1460" id="Ring of No Return">
     <Class>Equipment</Class>
     <Item/>
@@ -97346,24 +97319,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Size>120</Size>
       <Static/>
    </Object>
-	<Object type="0x52df" id="Sor Gem">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x373</Index>
-        </Texture>
-        <SlotType>9</SlotType>
-        <Description>A bracelet with Sor gemstones placed in it.</Description>
-        <ActivateOnEquip stat="20" amount="50">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="3" amount="80">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="5">IncrementStat</ActivateOnEquip>
-        <BagType>6</BagType>
-        <FameBonus>8</FameBonus>
-        <feedPower>1750</feedPower>
-        <Legendary/>
-        <DisplayId>Bracelet of Tranquility</DisplayId>
-    </Object>
     <Object type="0x53aa" id="Master Eon">
     <Class>Equipment</Class>
     <Item/>
@@ -98057,6 +98012,36 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Loot name="Quest Gold Cache">Item</Loot>
             <Loot name="50 Fame">Item</Loot>
         </CrateLoot>
+    </Object>
+	<Object type="0x53de" id="Cloud Edge">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x38c</Index>
+        </Texture>
+        <SlotType>24</SlotType>
+        <Description>A katana made of valuable ivory metals wielded by the worthy.</Description>
+        <RateOfFire>1.6</RateOfFire>
+        <Sound>weapon/long_sword</Sound>
+        <Projectile id="0">
+            <ObjectId>Cloud Edge Slash</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>166</MinDamage>
+            <MaxDamage>278</MaxDamage>
+            <LifetimeMS>550</LifetimeMS>
+            <MultiHit/>
+            <Boomerang/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>bladeSwing</OldSound>
+        <feedPower>1800</feedPower>
+        <Legendary/>
+        <DisplayId>Cloud Edge</DisplayId>
     </Object>
    <Object type="0x53df" id="Cloud Edge Slash">
       <Class>Projectile</Class>
@@ -100144,6 +100129,66 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Loot name="Never Before Seen">Item</Loot>
             <Loot name="Solace and Calamity">Item</Loot>
         </CrateLoot>
+    </Object>
+	    <Object type="0x5435" id="Katana of Mythical Alliance">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x15f</Index>
+        </Texture>
+        <SlotType>24</SlotType>
+        <Description>Katana assigned to be used by the guardians of the Genisus but were banned from being used due to the weapon having a mind of it's own.</Description>
+        <RateOfFire>1.1</RateOfFire>
+        <Sound>weapon/loLegendng_sword</Sound>
+        <Projectile>
+            <ObjectId>Mythical Blast</ObjectId>
+            <Speed>180</Speed>
+            <MinDamage>160</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <LifetimeMS>344</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <ActivateOnEquip stat="3" amount="160">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="8">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>bladeSwing</OldSound>
+        <feedPower>1600</feedPower>
+        <Legendary/>
+        <DisplayId>Katana of Mythical Alliance</DisplayId>
+    </Object>
+	    <Object type="0x47ca" id="The Atium">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x2b3</Index>
+        </Texture>
+        <SlotType>11</SlotType>
+        <Description>A spell made from Dark Elven Wizards of Agnaztir; a lost kingdom.</Description>
+        <Sound>spell/magic_nova</Sound>
+        <Projectile>
+            <ObjectId>Deadly Bolt Projectile</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>120</MinDamage>
+            <MaxDamage>160</MaxDamage>
+            <LifetimeMS>700</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <Activate effect="Speedy" duration="2.6" useWisMod="true">ConditionEffectSelf</Activate>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>140</MpCost>
+        <Activate>BulletNova</Activate>
+        <Legendary/>
+        <feedPower>1850</feedPower>
+        <DisplayId>The Atium</DisplayId>
     </Object>
     	  <Object type="0x55f4" id="Yaz Energy Spinner">
    <Class>Projectile</Class>
@@ -106388,6 +106433,64 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <ConditionEffect duration="4">Paralyzed</ConditionEffect>
     </Projectile>
   </Object>
+      <Object type="0x54d9" id="Unoch's Defiance">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3ae</Index>
+        </Texture>
+        <SlotType>30</SlotType>
+        <Description>No truths here</Description>
+        <Sound>spell/fire_spray</Sound>
+        <ExtraTooltipData>
+            <EffectInfo name="Radius" description="4"/>
+            <EffectInfo name="Base Damage" description="750"/>
+            <EffectInfo name="Mana Recovery" description="7"/>
+            <EffectInfo name="{equip.While_Key_Held}" description=""/>
+            <EffectInfo name="" description="Drain 100 hp/s"/>
+            <EffectInfo name="{equip.When_Key_Released}" description=""/>
+            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of health drained, current mana, overall wisdom stat, and this item's base damage."/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="3" amount="440">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <SurgeCost>10</SurgeCost>
+        <MultiPhase/>
+        <Activate effect="Speedy" duration="2" useWisMod="true">ConditionEffectSelf</Activate>
+        <Activate range="4" amount="750" duration="7">SiphonAbility</Activate>
+        <feedPower>2000</feedPower>
+        <FameBonus>8</FameBonus>
+        <Legendary/>
+        <DisplayId>Unoch's Defiance</DisplayId>
+    </Object>
+      <Object type="0x46d5" id="Force Between Avex">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x2ba</Index>
+        </Texture>
+        <SlotType>6</SlotType>
+        <Description>Our focus can't be halted.</Description>
+        <ActivateOnEquip stat="0" amount="160">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="20">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2000</feedPower>
+        <Legend id="2" stat="21">
+            <Name>Persistance</Name>
+            <Description>You can't be armor broken if your health is lower than 50%.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <Legendary/>
+    </Object>
     <Object type="0x64aa" id="Oath of the Ages">
         <Class>Equipment</Class>
         <Item/>
@@ -106395,6 +106498,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <File>legendaries8x8Embed</File>
             <Index>0x00</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Bituloss"/>
+        </ExtraTooltipData>
         <SlotType>1</SlotType>
         <Description>Eons have past but this ancient weapon has never failed to annihilate opposers.</Description>
         <RateOfFire>0.6</RateOfFire>
@@ -106409,12 +106515,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Projectile>
         <ActivateOnEquip stat="3" amount="220">IncrementStat</ActivateOnEquip>
         <Legendary/>
-        <Legend id="2" stat="27">
+        <Legend id="8" stat="27">
             <Name>Mana Focus</Name>
-            <Description>When your surge is at least 40 you gain a 20% overall maximum wisdom boost.</Description>
+            <Description>When your surge is at least 30 you regenerate mana faster.</Description>
             <HP>0</HP>
             <MP>0</MP>
-            <Surge>40</Surge>
+            <Surge>30</Surge>
         </Legend>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -106965,6 +107071,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Description>The silence of death will show no mercy.</Description>
       <RateOfFire>1.3</RateOfFire>
       <Sound>weapon/long_sword</Sound>
+	  <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Bituloss"/>
+      </ExtraTooltipData>
       <Projectile>
          <ObjectId>Mocking Slash</ObjectId>
          <Speed>100</Speed>
@@ -106996,7 +107105,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Index>0x15</Index>
         </Texture>
     </Object>
-	<Object type="0x69d4" id="The Guilded Blade">
+	<Object type="0x69d4" id="The Gilded Blade">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -107005,12 +107114,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>2</SlotType>
         <Description>A silver dagger with a golden hilt awarded by the best teams and guilds in the realm.</Description>
-        <RateOfFire>1.2</RateOfFire>
+        <RateOfFire>0.72</RateOfFire>
         <Sound>weapon/fire_dagger</Sound>
         <Projectile>
             <ObjectId>Guilded Magic</ObjectId>
             <Speed>140</Speed>
-            <MinDamage>120</MinDamage>
+            <MinDamage>160</MinDamage>
             <MaxDamage>175</MaxDamage>
             <LifetimeMS>440</LifetimeMS>
         </Projectile>
@@ -107027,7 +107136,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <FameBonus>6</FameBonus>
         <OldSound>daggerSwing</OldSound>
         <feedPower>2050</feedPower>
-        <DisplayId>The Guilded Blade</DisplayId>
+        <DisplayId>The Gilded Blade</DisplayId>
     </Object>
     <Object type="0x69d5" id="Guilded Magic">
         <Class>Projectile</Class>
@@ -107062,4 +107171,2040 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Surge>0</Surge>
         </Legend>
     </Object>
+	    <Object type="0x42fa" id="Platinum Argarius">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x59</Index>
+        </Texture>
+        <SlotType>7</SlotType>
+        <Description>Shiny, tough armor with sapphire lined in the middle of it's plates. This armor is used by the most worthy.</Description>
+        <ActivateOnEquip stat="21" amount="45">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>1850</feedPower>
+        <DisplayId>Platinum Argarius</DisplayId>
+        <Legendary/>
+    </Object>
+	<Object type="0x69d6" id="Moon Crescent Halberd">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x18</Index>
+        </Texture>
+        <SlotType>29</SlotType>
+        <Description></Description>
+        <RateOfFire>0.8</RateOfFire>
+        <Sound>weapon/mithril_sword</Sound>
+        <Projectile>
+            <ObjectId>Moon Magic</ObjectId>
+            <Speed>60</Speed>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>380</MaxDamage>
+            <LifetimeMS>380</LifetimeMS>
+            <ArmorPiercing/>
+            <MultiHit/>
+        </Projectile>
+        <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>weapon/blunt_sword</OldSound>
+        <feedPower>2050</feedPower>
+        <Legendary/>
+        <Legend id="6" stat="27">
+            <Name>Moonguard</Name>
+            <Description>Being above half of your mana allows you to be immune to slowed.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <DisplayId>Moon Crescent Halberd</DisplayId>
+    </Object>
+    <Object type="0x69d7" id="Moon Magic">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x19</Index>
+        </Texture>
+    </Object>
+	<Object type="0x69dc" id="Staff of Royal Revenge">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1e</Index>
+        </Texture>
+        <SlotType>17</SlotType>
+        <Description>A wicked staff that brings about a sensation of emptiness, but whispers occasionally seep forth from the darkness.</Description>
+        <RateOfFire>0.9</RateOfFire>
+        <Sound>weapon/wand_of_death</Sound>
+        <Projectile>
+            <ObjectId>Royal Missile</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>75</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <LifetimeMS>500</LifetimeMS>
+            <Amplitude>0.5</Amplitude>
+            <Frequency>2</Frequency>
+            <PassesCover/>
+            <MultiHit/>
+        </Projectile>
+		<Activate effect="Armored" duration="1.4">ConditionEffectSelf</Activate>
+		<ActivateOnEquip stat="0" amount="-80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="112" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <NumProjectiles>4</NumProjectiles>
+        <ArcGap>10</ArcGap>
+        <Legendary/>
+        <Legend id="2" stat="21">
+            <Name>Royalty</Name>
+            <Description>When no enemies are 10 squares away from you, you heal much faster.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>40</Surge>
+        </Legend>
+        <OldSound>magicShoot</OldSound>
+        <feedPower>2000</feedPower>
+        <DisplayId>Staff of Royal Revenge</DisplayId>
+    </Object>
+    <Object type="0x69dd" id="Royal Missile">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1f</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+	    <Object type="0x56c4" id="Gargoyle Stoneplate">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3fb</Index>
+        </Texture>
+        <SlotType>7</SlotType>
+        <Description>An armor forged utilizing gargoyle stone, various metals, and its enchanted gargoyle stone placed in the center.</Description>
+        <ActivateOnEquip stat="0" amount="220">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="32">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="20">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>3000</feedPower>
+        <Legendary/>
+        <Legend id="7" stat="27">
+            <Name>Stoneheart</Name>
+            <Description>While being above 50% of your health you can't be armor broken.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+    </Object>
+	    <Object type="0x1644" id="Whispers of Murak'ul">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiProjs</File>
+            <Index>0xc9</Index>
+        </Texture>
+        <SlotType>14</SlotType>
+        <Description>A corrupted vestment awed for its magical properties, but feared for its ability to break the wills of the weak.</Description>
+        <ActivateOnEquip stat="3" amount="220">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="17">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="24">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <Legend id="8" stat="27">
+            <Name>Mana Focus</Name>
+            <Description>While having above 20 surge points your mana will regenerated faster.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>20</Surge>
+        </Legend>
+    </Object>
+	    <Object type="0x48fb" id="Spiritclaw">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x317</Index>
+        </Texture>
+        <SlotType>1</SlotType>
+        <Description>Lives won't be spared.</Description>
+        <RateOfFire>1.75</RateOfFire>
+        <Sound>weapon/mithril_sword</Sound>
+        <Projectile>
+            <ObjectId>Spiritclaw Bolt</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>207</MinDamage>
+            <MaxDamage>438</MaxDamage>
+            <LifetimeMS>330</LifetimeMS>
+            <ArmorPiercing/>
+            <MultiHit/>
+        </Projectile>
+        <ActivateOnEquip stat="3" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="-14">IncrementStat</ActivateOnEquip>
+        <BagType>11</BagType>
+        <FameBonus>12</FameBonus>
+        <OldSound>bladeSwing</OldSound>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <Legend id="9" stat="27">
+            <Name>Grasp of Zol</Name>
+            <Description>Being in the presence of the Zol charges this ancient blade. While being in the Zol Awakening Raid you get a rate of fire AND damage boost.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <NumProjectiles>1</NumProjectiles>
+        <DisplayId>Spiritclaw</DisplayId>
+    </Object>
+    <Object type="0x69db" id="Starcrash Ring">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1d</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>Boundless energies fill this gemstone..</Description>
+        <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <Legend id="9" stat="27">
+            <Name>Manabond</Name>
+            <Description>Having this item equipped restores 1/4th mana when using an ability.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <DisplayId>Starcrash Ring</DisplayId>
+    </Object>
+	    <Object type="0x43a6" id="An Astonishing Happening">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x294</Index>
+        </Texture>
+        <SlotType>27</SlotType>
+        <Description>Somethings strange going on here..?</Description>
+        <Sound>spell/fire_spray</Sound>
+        <ExtraTooltipData>
+            <EffectInfo name="{equip.While_Key_Held}" description=""/>
+            <EffectInfo name="" description="Berserk on self"/>
+            <EffectInfo name="" description="Drain 10 mp/s"/>
+            <EffectInfo name="{equip.When_Key_Released}" description=""/>
+            <EffectInfo name="" description="Releases an aura of energy."/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <Projectile>
+            <ObjectId>Oditri Shot</ObjectId>
+            <Speed>120</Speed>
+            <MinDamage>400</MinDamage>
+            <MaxDamage>420</MaxDamage>
+            <LifetimeMS>860</LifetimeMS>
+            <Size>120</Size>
+            <MultiHit/>
+            <PassesCover/>
+            <Parametric/>
+            <ParticleTrail intensity="0.1" lifetimeMS="150">0xff0000</ParticleTrail>
+        </Projectile>
+        <BagType>6</BagType>
+        <MpCost>20</MpCost>
+        <MpEndCost>120</MpEndCost>
+        <MultiPhase/>
+        <Activate effect="Armored" duration="3">ConditionEffectSelf</Activate>
+		<Activate effect="Surged" duration="3">ConditionEffectSelf</Activate>
+        <Activate>AstonAbility</Activate>
+        <feedPower>1650</feedPower>
+        <Legendary/>
+        <NumProjectiles>6</NumProjectiles>
+        <ArcGap>60</ArcGap>
+        <FameBonus>8</FameBonus>
+        <DisplayId>An Astonishing Happening</DisplayId>
+    </Object>
+    <Object type="0x43a7" id="Rip of Soul">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x29c</Index>
+        </Texture>
+        <SlotType>19</SlotType>
+        <Description>First is thirst..and now your essence belongs to me.</Description>
+		<ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="16">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="-6">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <Legendary/>
+        <feedPower>1780</feedPower>
+        <FameBonus>8</FameBonus>
+        <MpCost>130</MpCost>
+        <Activate radius="1.5" totalDamage="1250">VampireBlast</Activate>
+    </Object>
+	    <Object type="0x1686" id="Magic Throwing Cards">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x2b</Index>
+        </Texture>
+        <SlotType>2</SlotType>
+        <Description>A set of cards that have accidentally been exposed to dark and powerful energies from magic rituals.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>MagicT Shot</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>55</MinDamage>
+            <MaxDamage>150</MaxDamage>
+            <LifetimeMS>500</LifetimeMS>
+            <MultiHit/>
+            <Wavy/>
+        </Projectile>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <Legendary/>
+        <feedPower>1600</feedPower>
+        <NumProjectiles>3</NumProjectiles>
+        <OldSound>weapon/fire_dagger</OldSound>
+    </Object>
+	<Object type="0x42fc" id="Stargazer">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1ff</Index>
+        </Texture>
+        <SlotType>8</SlotType>
+        <Description>Some say that an actual star was captured out of space and put into this wand.</Description>
+        <RateOfFire>1.3</RateOfFire>
+        <Sound>weapon/wand_of_death</Sound>
+        <Projectile>
+            <ObjectId>Star Bloop</ObjectId>
+            <Speed>150</Speed>
+            <LifetimeMS>600</LifetimeMS>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>246</MaxDamage>
+            <ConditionEffect duration="0.8">Curse</ConditionEffect>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="60">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>weapon/wand_of_death</OldSound>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <DisplayId>Stargazer</DisplayId>
+    </Object>
+    <Object type="0x32c2" id="Sincryer's Demise">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x200</Index>
+        </Texture>
+        <SlotType>8</SlotType>
+        <Description>The evils I have done can't be concealed forever.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/wand_of_death</Sound>
+        <Projectile>
+            <ObjectId>Demise Shot</ObjectId>
+            <Speed>140</Speed>
+            <LifetimeMS>1500</LifetimeMS>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>400</MaxDamage>
+            <MultiHit/>
+            <Wavy/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="-40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="-6">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>weapon/fire_wand</OldSound>
+        <feedPower>2200</feedPower>
+        <Legendary/>
+        <DisplayId>Sincryer's Demise</DisplayId>
+    </Object>
+	    <Object type="0x46d7" id="Sorrowful Boundtouch">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x2bd</Index>
+        </Texture>
+        <SlotType>8</SlotType>
+        <Description>On the other side there is nothing but deceit and hatred.</Description>
+        <RateOfFire>0.80</RateOfFire>
+        <Sound>weapon/wand_of_death</Sound>
+        <Projectile>
+            <ObjectId>Mystical Shot Proj</ObjectId>
+            <Speed>80</Speed>
+            <LifetimeMS>840</LifetimeMS>
+            <MinDamage>150</MinDamage>
+            <MaxDamage>195</MaxDamage>
+            <Wavy/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="380">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-4">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>magicShoot</OldSound>
+        <feedPower>1700</feedPower>
+        <Legendary/>
+        <NumProjectiles>2</NumProjectiles>
+        <DisplayId>Sorrowful Boundtouch</DisplayId>
+    </Object>
+	<Object type="0x69df" id="Amulet of Oryx">
+      <Class>Equipment</Class>
+      <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x20</Index>
+        </Texture>
+      <SlotType>9</SlotType>
+      <Description>A dark amulet of oryx himself.</Description>
+	  <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="3" amount="80">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="20" amount="8">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="28" amount="8">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="27" amount="8">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="112" amount="10">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="114" amount="10">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="122" amount="5">IncrementStat</ActivateOnEquip>
+      <BagType>6</BagType>
+      <FameBonus>8</FameBonus>
+      <feedPower>1800</feedPower>
+	  <Legendary/>
+      <DisplayId>Amulet of Oryx</DisplayId>
+   </Object>
+    <Object type="0x1398" id="The Infernus">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x21</Index>
+        </Texture>
+        <SlotType>6</SlotType>
+        <Description>An armor said to have been found in the tallest tower of the realm. This tower is said to be where Oryx's father resides.</Description>
+        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="112" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="30">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <Legend id="3" stat="27">
+            <Name>Combustion</Name>
+            <Description>If your ability isnt lower than 6 tiers using your ability causes an explosion that burns enemies around you. This explosion does 1200 damage over 7 seconds.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+    </Object>
+	    <Object type="0x54b6" id="Ring of the Unstable Mind">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0xbf</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>Your sanity collapses on itself as you wear this jewel.</Description>
+        <ActivateOnEquip stat="3" amount="300">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-100">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <feedPower>1750</feedPower>
+        <Legendary/>
+        <FameBonus>8</FameBonus>
+    </Object>
+	    <Object type="0x42f8" id="Dagger of Tindailius">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1f6</Index>
+        </Texture>
+        <SlotType>2</SlotType>
+        <Description>Fading away from reality is what keeps the darkness persisting to devour all of us. We can only do what is possible to stay away from this Void.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Mirac Doom</ObjectId>
+            <Speed>120</Speed>
+            <MinDamage>150</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <LifetimeMS>580</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>weapon/blunt_dagger</OldSound>
+        <feedPower>1800</feedPower>
+        <Legendary/>
+        <DisplayId>Dagger of Tindailius</DisplayId>
+    </Object>
+    <Object type="0x42b7" id="Dirk of Notorious Agents">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1c3</Index>
+        </Texture>
+        <SlotType>2</SlotType>
+        <Description>A darkened dagger with an emerald jewel in the middle of the blade. It's a popular dagger but hard to retrieve since few merchants sell them because of material of the blade.</Description>
+        <RateOfFire>0.85</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Notorious Slash</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>183</MinDamage>
+            <MaxDamage>250</MaxDamage>
+            <LifetimeMS>418</LifetimeMS>
+        </Projectile>
+        <ActivateOnEquip stat="21" amount="14">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>daggerSwing</OldSound>
+        <feedPower>1550</feedPower>
+        <Legendary/>
+        <DisplayId>Dirk of Notorious Agents</DisplayId>
+    </Object>
+    <Object type="0x42c5" id="The 2-K">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x15d</Index>
+        </Texture>
+        <SlotType>17</SlotType>
+        <Description>Created from Genisus shards and assembled by the blacksmith that also resided in the Genisus until he was killed by Oryx because of the creation of this powerful weapon.</Description>
+        <RateOfFire>0.25</RateOfFire>
+        <Sound>weapon/sprite_wand</Sound>
+        <Projectile>
+            <ObjectId>2000 Blast</ObjectId>
+            <Speed>180</Speed>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>2000</MaxDamage>
+            <LifetimeMS>563</LifetimeMS>
+            <MultiHit/>
+            <Amplitude>0.5</Amplitude>
+            <Frequency>2</Frequency>
+            <ParticleTrail>0xff00ff</ParticleTrail>
+        </Projectile>
+        <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="-80">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>weapon/hells_fire_wand</OldSound>
+        <feedPower>1750</feedPower>
+        <Legendary/>
+        <DisplayId>The 2-K</DisplayId>
+    </Object>
+    <Object type="0x42c7" id="Decimator Bow">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x151</Index>
+        </Texture>
+        <SlotType>3</SlotType>
+        <Description>Dark spirits influence the prey of this bow. In the wrong hands this weapon is fatal.</Description>
+        <RateOfFire>1.3</RateOfFire>
+        <Sound>weapon/golden_bow</Sound>
+        <Projectile>
+            <ObjectId>Dec Arrow</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>120</MaxDamage>
+            <LifetimeMS>432</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="-50">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <NumProjectiles>5</NumProjectiles>
+        <Legendary/>
+        <OldSound>weapon/fire_bow</OldSound>
+        <DisplayId>Decimator Bow</DisplayId>
+        <feedPower>1900</feedPower>
+    </Object>
+	    <Object type="0x42f4" id="Faith of the Angel">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1ea</Index>
+        </Texture>
+        <SlotType>1</SlotType>
+        <Description>An ivory curved sword that shoots blast of holy light.</Description>
+        <RateOfFire>0.92</RateOfFire>
+        <Sound>weapon/poison_fang_dagger</Sound>
+        <Projectile>
+            <ObjectId>FaithShot</ObjectId>
+            <Speed>110</Speed>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>400</MaxDamage>
+            <LifetimeMS>490</LifetimeMS>
+            <PassesCover/>
+            <MultiHit/>
+            <ParticleTrail intensity="0.3" lifetimeMS="270">0xffff00</ParticleTrail>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="160">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="8">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>magicShoot</OldSound>
+        <feedPower>1750</feedPower>
+        <Legendary/>
+        <DisplayId>Faith of the Angel</DisplayId>
+    </Object>
+	    <Object type="0x45d8" id="The Odyssey">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x26d</Index>
+        </Texture>
+        <SlotType>7</SlotType>
+        <Description>Yes! Adventures await us young warrior! You must fight with valor and and might. ~ Itani</Description>
+        <ActivateOnEquip stat="21" amount="22">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="16">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="16">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="16">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>1800</feedPower>
+        <DisplayId>The Odyssey</DisplayId>
+        <Legendary/>
+    </Object>
+	    <Object type="0x48fe" id="Burden of the Warpawn">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x363</Index>
+        </Texture>
+        <SlotType>16</SlotType>
+        <Description>The end will be forever if we don't stop this war. ~Vardon, the Remembered</Description>
+        <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="15">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="15">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="15">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>200</MpCost>
+        <Activate effect="Berserk" duration="5">ConditionEffectSelf</Activate>
+        <Activate range="4" amount="60" useWisMod="true">HealNova</Activate>
+        <Activate effect="Stunned" duration="2" range="3" color="0x0000cc" target="enemy" center="mouse" visualEffect="0" useWisMod="true">GenericActivate</Activate>
+        <Cooldown>8</Cooldown>
+        <feedPower>1800</feedPower>
+        <Legendary/>
+        <DisplayId>Burden of the Warpawn</DisplayId>
+    </Object>
+    <Object type="0x69d8" id="Hand of Zeus">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1a</Index>
+        </Texture>
+        <SlotType>8</SlotType>
+        <Description>A powerful weapon that sends the energy and force of zeus in the form of a lightning bolt to it's enemies.</Description>
+        <RateOfFire>1.65</RateOfFire>
+        <Sound>weapon/wand_of_death</Sound>
+        <Projectile>
+            <ObjectId>Zeus Bolt</ObjectId>
+            <Speed>130</Speed>
+            <MinDamage>96</MinDamage>
+            <MaxDamage>185</MaxDamage>
+            <LifetimeMS>530</LifetimeMS>
+            <MultiHit/>
+            <ArmorPiercing/>
+        </Projectile>
+        <ActivateOnEquip stat="112" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="16">IncrementStat</ActivateOnEquip>
+        <Legendary/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>magicShoot</OldSound>
+    </Object>
+    <Object type="0x69d9" id="Zeus Bolt">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1b</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+	    <Object type="0x49b2" id="The Cataclysmic Veil">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1d</Index>
+        </Texture>
+        <SlotType>13</SlotType>
+        <Description>Vanish into the darkness.</Description>
+        <ActivateOnEquip stat="22" amount="-2">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <BagType>11</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <MpCost>120</MpCost>
+        <Activate effect="Invisible" duration="8">ConditionEffectSelf</Activate>
+        <Activate effect="Damaging" duration="2">ConditionEffectSelf</Activate>
+        <Activate maxDistance="20">Teleport</Activate>
+        <Activate stat="26" amount="5" duration="6" noStack="true" useWisMod="false">StatBoostSelf</Activate>
+        <Cooldown>8</Cooldown>
+    </Object>
+	<Object type="0x1571" id="Hallowed Shield">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x39</Index>
+        </Texture>
+        <SlotType>5</SlotType>
+        <Description>A superior shield forged in deep armories for the construct armies of the underworld.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Projectile>
+            <ObjectId>Yellow Wall</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>370</MinDamage>
+            <MaxDamage>460</MaxDamage>
+            <LifetimeMS>268</LifetimeMS>
+            <Size>140</Size>
+            <ConditionEffect duration="3.7">Stunned</ConditionEffect>
+            <MultiHit/>
+            <PassesCover/>
+            <ParticleTrail intensity="0.3" lifetimeMS="270">0x0f0ff0</ParticleTrail>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
+        <ConditionEffect duration="3.7">Stunned</ConditionEffect>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <Legendary/>
+        <MpCost>110</MpCost>
+        <feedPower>1800</feedPower>
+        <Activate>Shoot</Activate>
+        <NumProjectiles>4</NumProjectiles>
+    </Object>
+	    <Object type="0x542b" id="Soul Buster">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1a5</Index>
+        </Texture>
+        <SlotType>3</SlotType>
+        <Description>A crossbow that destroys foes and crushes it's enemies within seconds.</Description>
+        <RateOfFire>0.48</RateOfFire>
+        <Sound>weapon/golden_bow</Sound>
+        <Projectile>
+            <ObjectId>Black Arrow</ObjectId>
+            <Speed>120</Speed>
+            <MinDamage>400</MinDamage>
+            <MaxDamage>600</MaxDamage>
+            <LifetimeMS>550</LifetimeMS>
+        </Projectile>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <Legendary/>
+        <NumProjectiles>2</NumProjectiles>
+        <OldSound>arrowShoot</OldSound>
+        <feedPower>1800</feedPower>
+        <DisplayId>Soul Buster</DisplayId>
+    </Object>
+    <Object type="0x69e1" id="Tool of Galactic Destruction">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x22</Index>
+        </Texture>
+        <SlotType>3</SlotType>
+        <Description>This weapon has power akin to the explosion of a planet.</Description>
+        <RateOfFire>2</RateOfFire>
+        <Sound>weapon/golden_bow</Sound>
+        <Projectile>
+            <ObjectId>Galactic Wave</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>174</MaxDamage>
+            <LifetimeMS>479</LifetimeMS>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <Wavy/>
+        </Projectile>
+        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <Legendary/>
+        <OldSound>arrowShoot</OldSound>
+        <DisplayId>Tool of Galactic Destruction</DisplayId>
+        <feedPower>1900</feedPower>
+    </Object>
+    <Object type="0x69e2" id="Galactic Wave">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x23</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+	    <Object type="0x45d3" id="Exile's Resolve">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x268</Index>
+        </Texture>
+        <SlotType>17</SlotType>
+        <Description>Time will cause suffering that can't be healed by change. ~ Azar</Description>
+        <RateOfFire>1.65</RateOfFire>
+        <Sound>weapon/sprite_wand</Sound>
+        <Projectile>
+            <ObjectId>Exile Blast</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>175</MinDamage>
+            <MaxDamage>235</MaxDamage>
+            <LifetimeMS>520</LifetimeMS>
+            <Amplitude>0.25</Amplitude>
+            <Frequency>1</Frequency>
+            <ConditionEffect duration="0.25">Slowed</ConditionEffect>
+            <ParticleTrail intensity="0.2" lifetimeMS="200">0x00ff00</ParticleTrail>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="160">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="160">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>magicShoot</OldSound>
+        <feedPower>1850</feedPower>
+        <Legendary/>
+        <DisplayId>Exile's Resolve</DisplayId>
+    </Object>
+	    <Object type="0x49e4" id="Hide of Garutious">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x330</Index>
+        </Texture>
+        <SlotType>6</SlotType>
+        <Description>A hide from the fierce beast Garutious.</Description>
+        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <Legend id="10" stat="27">
+            <Name>Swiftness</Name>
+            <Description>If your surge is at least 35 you move much faster.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>35</Surge>
+        </Legend>
+    </Object>
+	    <Object type="0x49f6" id="Zeal of the Far-Ranger">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x335</Index>
+        </Texture>
+        <SlotType>15</SlotType>
+        <Description>Tales have said that the Far-Ranger was able to slay 3 infernal beast at once..</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Projectile>
+            <ObjectId>Zeal Arrow</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>560</MinDamage>
+            <MaxDamage>780</MaxDamage>
+            <LifetimeMS>1250</LifetimeMS>
+            <Size>150</Size>
+            <ArmorPiercing/>
+            <PassesCover/>
+            <ConditionEffect duration="6">Paralyzed</ConditionEffect>
+            <ParticleTrail>0xFF0000</ParticleTrail>
+        </Projectile>
+        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-80">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <ConditionEffect duration="6">Paralyzed</ConditionEffect>
+        <BagType>6</BagType>
+        <MpCost>140</MpCost>
+        <Activate>Shoot</Activate>
+        <Legendary/>
+        <NumProjectiles>3</NumProjectiles>
+        <ArcGap>40</ArcGap>
+        <feedPower>2000</feedPower>
+        <FameBonus>8</FameBonus>
+    </Object>
+	    <Object type="0x1399" id="Quiver of Vast Power">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj6</File>
+            <Index>0xab</Index>
+        </Texture>
+        <SlotType>15</SlotType>
+        <Description>A quiver banished from every kingdom due to it's unthinkable power.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Projectile>
+            <ObjectId>Black Arrow</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>500</MinDamage>
+            <MaxDamage>2500</MaxDamage>
+            <LifetimeMS>1000</LifetimeMS>
+            <Size>150</Size>
+            <MultiHit/>
+            <PassesCover/>
+            <ConditionEffect duration="4">Dazed</ConditionEffect>
+            <ParticleTrail>0x00000</ParticleTrail>
+        </Projectile>
+        <ActivateOnEquip stat="20" amount="14">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="-8">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <ConditionEffect duration="4">Dazed</ConditionEffect>
+        <BagType>0</BagType>
+        <MpCost>140</MpCost>
+        <Activate>Shoot</Activate>
+        <Legendary/>
+        <feedPower>2000</feedPower>
+        <FameBonus>8</FameBonus>
+    </Object>
+	    <Object type="0x46f2" id="Vulcanstriker">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x2ca</Index>
+        </Texture>
+        <SlotType>17</SlotType>
+        <Description>A staff that is made out of marvelous cystal and has been crafted into a rhombus shape, which has been decorated with bright, jagged crystals that give off a soft humming sound whenever magic is used.</Description>
+        <RateOfFire>1.6</RateOfFire>
+        <Sound>weapon/sprite_wand</Sound>
+        <Projectile>
+            <ObjectId>Vulcan Shot</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>70</MinDamage>
+            <MaxDamage>110</MaxDamage>
+            <LifetimeMS>550</LifetimeMS>
+            <Amplitude>0.25</Amplitude>
+            <Frequency>1</Frequency>
+            <ArmorPiercing/>
+            <MultiHit/>
+            <PassesCover/>
+        </Projectile>
+        <ActivateOnEquip stat="20" amount="-8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="8">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>magicShoot</OldSound>
+        <feedPower>1900</feedPower>
+        <NumProjectiles>2</NumProjectiles>
+        <Legendary/>
+        <DisplayId>Vulcanstriker</DisplayId>
+    </Object>
+	    <Object type="0x1483" id="Mind of Aanaraki">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj5</File>
+            <Index>0xbe</Index>
+        </Texture>
+        <SlotType>22</SlotType>
+        <Description>A prism that leaves behind 2 time-void blasts from the power of a mystic's orb.</Description>
+        <ActivateOnEquip stat="27" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="6">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <MpCost>90</MpCost>
+        <Activate duration="5">Decoy</Activate>
+        <Activate maxDistance="20">Teleport</Activate>
+        <Cooldown>2.1</Cooldown>
+        <Activate effect="Berserk" duration="2">ConditionEffectSelf</Activate>
+        <Activate effect="Slowed" duration="2" range="2.5" color="0x00ff00" target="enemy" center="player" visualEffect="5" useWisMod="false">GenericActivate</Activate>
+        <Activate effect="Curse" duration="2.7" range="3.5" color="0x00ff00" target="enemy" center="player" visualEffect="0" useWisMod="false">GenericActivate</Activate>
+    </Object>
+    <Object type="0x511a" id="Revenant Prism">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0xe2</Index>
+        </Texture>
+        <SlotType>22</SlotType>
+        <Description>A peridot prism meant to lure unsuspecting souls into the underworld, but seems to have weakened over time.</Description>
+        <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>140</MpCost>
+        <Cooldown>4</Cooldown>
+        <feedPower>2200</feedPower>
+        <Legendary/>
+        <Activate duration="6.25">Decoy</Activate>
+        <Activate maxDistance="20">Teleport</Activate>
+        <Activate effect="Invulnerable" duration="2.4">ConditionEffectSelf</Activate>
+        <Activate effect="Dazed" duration="0.5">ConditionEffectSelf</Activate>
+        <DisplayId>Revenant Prism</DisplayId>
+    </Object>
+	<Object type="0x69e4" id="Protector of Grandeur">
+      <Class>Equipment</Class>
+      <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x25</Index>
+        </Texture>
+      <SlotType>5</SlotType>
+      <Description>A shield forged for the most outstanding of knights that also has magical aspects.</Description>
+      <Sound>spell/fire_spray</Sound>
+      <Projectile>
+         <ObjectId>Silver Shield</ObjectId>
+         <Speed>160</Speed>
+         <MinDamage>380</MinDamage>
+         <MaxDamage>420</MaxDamage>
+         <LifetimeMS>200</LifetimeMS>
+         <Size>140</Size>
+         <ConditionEffect duration="7">Stunned</ConditionEffect>
+         <MultiHit/>
+         <PassesCover/>
+         <ParticleTrail/>
+      </Projectile>
+      <ActivateOnEquip stat="21" amount="15">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="121" amount="20">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="28" amount="12">IncrementStat</ActivateOnEquip>
+      <ConditionEffect duration="7">Stunned</ConditionEffect>
+      <Usable/>
+	  <Legendary/>
+        <Legend id="11" stat="27">
+            <Name>Rockheart</Name>
+            <Description>While equipped you are immune to petrify if you have more than 5 surge.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+      <BagType>6</BagType>
+      <FameBonus>8</FameBonus>
+      <MpCost>110</MpCost>
+      <Activate>Shoot</Activate>
+      <NumProjectiles>8</NumProjectiles>
+      <feedPower>2000</feedPower>
+      <DisplayId>Protector of Grandeur</DisplayId>
+   </Object>
+    <Object type="0x69e3" id="Dranbiel Garbs">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x24</Index>
+        </Texture>
+        <SlotType>14</SlotType>
+        <Description>A robe used by the great holy clerics of Dranbiel.</Description>
+        <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="180">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <Legendary/>
+        <Legend id="3" stat="27">
+            <Name>Lifeburst</Name>
+            <Description>If your mana is not below half you heal 60 health when using your ability.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <FameBonus>8</FameBonus>
+        <feedPower>2000</feedPower>
+        <DisplayId>Dranbiel Garbs</DisplayId>
+    </Object>
+	    <Object type="0x5839" id="Jackpot">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x422</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>Cha-ching.</Description>
+        <ActivateOnEquip stat="114" amount="250">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <feedPower>5000</feedPower>
+        <Legendary/>
+        <FameBonus>8</FameBonus>
+    </Object>
+	    <Object type="0x52df" id="Bracelet of the Demolished">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x05</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>Utter destruction will follow your path. Unstoppable.</Description>
+        <ActivateOnEquip stat="20" amount="50">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>3000</feedPower>
+        <Legendary/>
+        <Legend id="11" stat="27">
+            <Name>Unstoppable</Name>
+            <Description>If your health AND protection is full you deal double damage.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <DisplayId>Bracelet of the Demolished</DisplayId>
+    </Object>
+	    <Object type="0x43a2" id="Grasp of Elysium">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x281</Index>
+        </Texture>
+        <SlotType>2</SlotType>
+        <Description>Become a machine of the heavens, and strike down the unholy!</Description>
+        <RateOfFire>1.4</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Ely Shot</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>74</MinDamage>
+            <MaxDamage>130</MaxDamage>
+            <LifetimeMS>420</LifetimeMS>
+            <Wavy/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="-6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="-4">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>daggerSwing</OldSound>
+        <feedPower>1850</feedPower>
+        <Legendary/>
+        <NumProjectiles>2</NumProjectiles>
+        <ArcGap>10</ArcGap>
+        <DisplayId>Grasp of Elysium</DisplayId>
+    </Object>
+	    <Object type="0x42f2" id="Poseidon's Will">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1e8</Index>
+        </Texture>
+        <SlotType>29</SlotType>
+        <Description>The trident once wielded by poseidon himself, a powerful weapon now among the realm. The current warrior who now wields this weapon shall live again and conquer the world.</Description>
+        <RateOfFire>0.88</RateOfFire>
+        <Sound>weapon/poison_fang_dagger</Sound>
+        <Projectile>
+            <ObjectId>WillShot</ObjectId>
+            <Speed>80</Speed>
+            <MinDamage>230</MinDamage>
+            <MaxDamage>375</MaxDamage>
+            <LifetimeMS>545</LifetimeMS>
+            <MultiHit/>
+            <ArmorPiercing/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="300">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>weapon/poison_fang_dagger</OldSound>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <DisplayId>Poseidon's Will</DisplayId>
+    </Object>
+	    <Object type="0x43a4" id="The Executioner">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x297</Index>
+        </Texture>
+        <SlotType>24</SlotType>
+        <Description>This is a joke and it's my death, wanderer. Kill me and see how long you live to tell the others.</Description>
+        <RateOfFire>2</RateOfFire>
+        <Sound>weapon/katana_swipe</Sound>
+        <Projectile>
+            <ObjectId>Exeshot</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>165</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <LifetimeMS>345</LifetimeMS>
+            <Size>100</Size>
+        </Projectile>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="3">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="3">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <feedPower>2000</feedPower>
+        <FameBonus>8</FameBonus>
+        <NumProjectiles>2</NumProjectiles>
+        <ArcGap>40</ArcGap>
+        <Legendary/>
+        <OldSound>bladeSwing</OldSound>
+    </Object>
+	<Object type="0x47f3" id="Man O War">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x19d</Index>
+        </Texture>
+        <SlotType>17</SlotType>
+        <Description>An already known power increased to it's maximum potential morphed to be handled by mortals.</Description>
+        <RateOfFire>0.54</RateOfFire>
+        <Sound>weapon/sprite_wand</Sound>
+        <Projectile>
+            <ObjectId>War Missile</ObjectId>
+            <Speed>110</Speed>
+            <MinDamage>111</MinDamage>
+            <MaxDamage>118</MaxDamage>
+            <LifetimeMS>370</LifetimeMS>
+            <Amplitude>0.15</Amplitude>
+            <Frequency>2</Frequency>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="1">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="1">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="1">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="1">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <NumProjectiles>12</NumProjectiles>
+        <ArcGap>36</ArcGap>
+        <OldSound>magicShoot</OldSound>
+        <feedPower>1800</feedPower>
+        <Legendary/>
+        <DisplayId>Man O War</DisplayId>
+    </Object>
+	<Object type="0x179c" id="Petrification Cloak">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x6a</Index>
+        </Texture>
+        <SlotType>13</SlotType>
+        <Description>A peculiar cloak that gives one the composition of chiseled marble.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-5">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>110</MpCost>
+        <Activate effect="Invisible" duration="4.5">ConditionEffectSelf</Activate>
+        <Activate effect="Armored" duration="3.0">ConditionEffectSelf</Activate>
+        <Activate effect="Slowed" duration="1">ConditionEffectSelf</Activate>
+        <feedPower>1600</feedPower>
+        <Legendary/>
+        <DisplayId>Petrification Cloak</DisplayId>
+    </Object>
+    <Object type="0x47f8" id="Opus Salutem">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1ed</Index>
+        </Texture>
+        <SlotType>4</SlotType>
+        <Description>The book used to aid the gods; the book present at the creation of the universe.</Description>
+        <Sound>spell/major_heal</Sound>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="-2">IncrementStat</ActivateOnEquip>
+        <MpCost>100</MpCost>
+        <Activate effect="Healing" duration="6" range="5" useWisMod="true">ConditionEffectAura</Activate>
+        <Activate range="6" amount="320" useWisMod="true">HealNova</Activate>
+        <Activate effect="Speedy" duration="1" range="2.5" useWisMod="true">ConditionEffectAura</Activate>
+        <Activate effect="Invulnerable" duration="0.34">ConditionEffectSelf</Activate>
+        <feedPower>1800</feedPower>
+        <Cooldown>1.4</Cooldown>
+        <Legendary/>
+        <DisplayId>Opus Salutem</DisplayId>
+    </Object>
+    <Object type="0x47f5" id="The Chaos Theory">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1ee</Index>
+        </Texture>
+        <SlotType>25</SlotType>
+        <Description>Control is nothing.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <ExtraTooltipData>
+            <EffectInfo name="{equip.While_Key_Held}" description=""/>
+            <EffectInfo name="" description="{equip.Speedy_on_self}"/>
+            <EffectInfo name="" description="{equip.Drain_10_MP/sec}"/>
+            <EffectInfo name="{equip.When_Key_Released}" description=""/>
+        </ExtraTooltipData>
+        <Projectile>
+            <ObjectId>Chaos Star</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>1200</MinDamage>
+            <MaxDamage>1400</MaxDamage>
+            <LifetimeMS>1100</LifetimeMS>
+            <Size>120</Size>
+            <PassesCover/>
+            <MultiHit/>
+        </Projectile>
+        <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="2">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>0</MpCost>
+        <MpEndCost>120</MpEndCost>
+        <MultiPhase/>
+        <Activate amount="65">Heal</Activate>
+        <Activate effect="Damaging" duration="2" useWisMod="true">ConditionEffectSelf</Activate>
+        <Activate>ShurikenAbility</Activate>
+        <Legendary/>
+        <feedPower>1900</feedPower>
+        <DisplayId>The Chaos Theory</DisplayId>
+    </Object>
+	    <Object type="0x56b8" id="Garnet's Onslaught">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3ee</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>A gigantic bracelet worn by Garnet. Wearing this makes you feel like you can strike down anything. Thanks to: Png</Description>
+        <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="50">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>1800</feedPower>
+        <DisplayId>Garnet's Onslaught</DisplayId>
+        <Legendary/>
+    </Object>
+    <Object type="0x56b9" id="Jade's Judgment">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3ed</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>A gigantic bracelet worn by Jade. Wearing this gives you comprehension to unknown energies . Thanks to: Png</Description>
+        <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="50">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>1800</feedPower>
+        <DisplayId>Jade's Judgment</DisplayId>
+        <Legendary/>
+    </Object>
+	<Object type="0x69e6" id="Karana's Secret">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x26</Index>
+        </Texture>
+        <SlotType>2</SlotType>
+        <Description>Proof that she is still alive?</Description>
+        <RateOfFire>0.8</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Karana Blade</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>175</MinDamage>
+            <MaxDamage>195</MaxDamage>
+            <LifetimeMS>400</LifetimeMS>
+        </Projectile>
+        <ActivateOnEquip stat="22" amount="12">IncrementStat</ActivateOnEquip>
+        <Legendary/>
+        <Legend id="3" stat="27">
+            <Name>Ghost's Wrath</Name>
+            <Description>When this item is equipped and you are also invisible you deal damage based on the amount of wisdom you have.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <NumProjectiles>1</NumProjectiles>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>daggerSwing</OldSound>
+        <feedPower>2250</feedPower>
+        <DisplayId>Karana's Secret</DisplayId>
+    </Object>
+	    <Object type="0x1643" id="Dark Conflagration Spell">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiProjs</File>
+            <Index>0xb7</Index>
+        </Texture>
+        <SlotType>11</SlotType>
+        <Description>A spell created to hold a calamitous inferno within time, unbinding the temporal locks unleashes a fraction of its destructive power. WARNING: Fatigue may be caused after use of this spell.</Description>
+        <OldSound>spell/magic_nova</OldSound>
+        <Projectile>
+            <ObjectId>Red Scale</ObjectId>
+            <Speed>50</Speed>
+            <MinDamage>205</MinDamage>
+            <MaxDamage>285</MaxDamage>
+            <LifetimeMS>6000</LifetimeMS>
+            <Amplitude>2</Amplitude>
+            <Frequency>6</Frequency>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="-80">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>4</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>160</MpCost>
+        <Legendary/>
+        <Activate effect="Unstable" duration="2">ConditionEffectSelf</Activate>
+        <Activate>BulletNova</Activate>
+        <feedPower>2000</feedPower>
+    </Object>
+	    <Object type="0x169f" id="March of the Army">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x8c</Index>
+        </Texture>
+        <SlotType>7</SlotType>
+        <Description>Sturdy armor with a cape attached to it worn when going into an intense battle.</Description>
+        <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="30">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>1600</feedPower>
+        <Legendary/>
+        <DisplayId>March of the Army</DisplayId>
+    </Object>
+    <Object type="0x69e7" id="Karana Blade">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x27</Index>
+        </Texture>
+    </Object>
+	    <Object type="0x55b8" id="Scepter of the Other">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x11f</Index>
+        </Texture>
+        <SlotType>23</SlotType>
+        <Description>A scepter that contains mystical abilities borrowed from the energy of time itself.</Description>
+        <Sound>spell/magic_nova</Sound>
+        <ActivateOnEquip stat="28" amount="25">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>120</MpCost>
+        <Activate totalDamage="1800" maxTargets="8" condEffect="Stasis" condDuration="2.7" color="0x000000">Lightning</Activate>
+        <Activate effect="Slowed" duration="1.5">ConditionEffectSelf</Activate>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <DisplayId>Scepter of the Other</DisplayId>
+    </Object>
+	    <Object type="0x45ef" id="Pernicious Fate-36">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x58</Index>
+        </Texture>
+        <SlotType>23</SlotType>
+        <Description>Don't believe them when they say you'll become a demon. We are your friends not your end.</Description>
+        <Sound>spell/magic_nova</Sound>
+        <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>1850</feedPower>
+        <Legendary/>
+        <MpCost>105</MpCost>
+        <Activate totalDamage="650" condEffect="Slowed" condDuration="2.2" maxTargets="7" useWisMod="true">Lightning</Activate>
+        <Activate effect="Berserk" duration="3.25">ConditionEffectSelf</Activate>
+    </Object>
+	<Object type="0x69e8" id="Furious Gauntlet">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x2a</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>No fear shall be shown.</Description>
+		<ActivateOnEquip stat="121" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="18">IncrementStat</ActivateOnEquip>
+		<ActivateOnEquip stat="26" amount="25">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <Legend id="3" stat="27">
+            <Name>Undermind</Name>
+            <Description>If your ability's tier is not lower than 6 and you have over 60 surge you activate a blast around you that inflicts weak.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <DisplayId>Furious Gauntlet</DisplayId>
+    </Object>
+	    <Object type="0x69da" id="Armor of Anubis">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1c</Index>
+        </Texture>
+        <SlotType>7</SlotType>
+        <Description>The forgotten ancient has risen.</Description>
+        <ActivateOnEquip stat="21" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="35">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>1850</feedPower>
+        <DisplayId>Armor of Anubis</DisplayId>
+        <Legendary/>
+		<Legend id="3" stat="27">
+            <Name>Clarity</Name>
+            <Description>When your surge is over 20 you gain a maximum mana boost.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+    </Object>
+	    <Object type="0x48fd" id="Calling of the Storm">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x31f</Index>
+        </Texture>
+        <SlotType>11</SlotType>
+        <Description>Fear the storm.</Description>
+        <Sound>spell/magic_nova</Sound>
+        <Projectile>
+            <ObjectId>SBlue Shot</ObjectId>
+            <Speed>55</Speed>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>140</MaxDamage>
+            <LifetimeMS>7750</LifetimeMS>
+            <ConditionEffect duration="1.5">Slowed</ConditionEffect>
+            <Parametric/>
+            <PassesCover/>
+            <MultiHit/>
+        </Projectile>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>130</MpCost>
+        <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+        <Cooldown>2</Cooldown>
+        <Legendary/>
+        <Activate>BulletNova</Activate>
+    </Object>
+	    <Object type="0x1485" id="Waraxe of Judgement">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj5</File>
+            <Index>0xaf</Index>
+        </Texture>
+        <SlotType>1</SlotType>
+        <Description>The opposers will be judged without mercy.</Description>
+        <RateOfFire>.70</RateOfFire>
+        <Sound>weapon/mithril_sword</Sound>
+        <Projectile>
+            <ObjectId>Waraxe Shot</ObjectId>
+            <Speed>75</Speed>
+            <MinDamage>225</MinDamage>
+            <MaxDamage>225</MaxDamage>
+            <LifetimeMS>325</LifetimeMS>
+        </Projectile>
+        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="-20">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <Legendary/>
+        <Legend id="2" stat="21">
+            <Name>Warcry</Name>
+            <Description>When your Surge is at least 40 you gain a bonus defense.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>40</Surge>
+        </Legend>
+        <feedPower>1800</feedPower>
+        <FameBonus>9</FameBonus>
+        <NumProjectiles>5</NumProjectiles>
+        <OldSound>bladeSwing</OldSound>
+    </Object>
+	    <Object type="0x42f6" id="Tyrant Helm">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x17c</Index>
+        </Texture>
+        <SlotType>16</SlotType>
+        <Description>Showing no mercy, shows power. We must begin our lead in the realm. The true rulers of this world, show yourself. ~Odem, Controller of Fortitude</Description>
+        <ActivateOnEquip stat="21" amount="14">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>120</MpCost>
+        <Activate effect="Berserk" duration="6" range="4" useWisMod="true">ConditionEffectAura</Activate>
+        <Activate effect="Healing" duration="4" useWisMod="true">ConditionEffectSelf</Activate>
+        <Activate stat="0" amount="200" duration="6" noStack="true" useWisMod="false">StatBoostSelf</Activate>
+        <Cooldown>7</Cooldown>
+        <feedPower>2200</feedPower>
+        <Legendary/>
+        <DisplayId>Tyrant Helm</DisplayId>
+    </Object>
+    <Object type="0x69e9" id="Sun and Moon Expansion">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x2c</Index>
+        </Texture>
+        <SlotType>11</SlotType>
+        <Description>Time will only tell when the war will end for good.</Description>
+        <Sound>spell/magic_nova</Sound>
+        <Projectile>
+            <ObjectId>SM Wave</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>145</MinDamage>
+            <MaxDamage>170</MaxDamage>
+            <LifetimeMS>6800</LifetimeMS>
+            <PassesCover/>
+            <ArmorPiercing/>
+            <MultiHit/>
+        </Projectile>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>100</MpCost>
+        <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="10">IncrementStat</ActivateOnEquip>
+        <Legendary/>
+        <Activate effect="Armored" duration="1.4">ConditionEffectSelf</Activate>
+        <Legend id="2" stat="21">
+            <Name>Expansion</Name>
+            <Description>When your Surge is at least 50 you gain bonus mana.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>40</Surge>
+        </Legend>
+        <Activate>BulletNova</Activate>
+    </Object>
+    <Object type="0x69ea" id="SM Wave">
+        <Class>Projectile</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x2e</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x2d</Index>
+            </Texture>
+        </RandomTexture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+	    <Object type="0x1636" id="Haloflower Toxin">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiProjs</File>
+            <Index>0xdc</Index>
+        </Texture>
+        <SlotType>18</SlotType>
+        <Description>Fast-acting and infamously lethal poison pressed from the Haloflower seed.</Description>
+        <Usable/>
+        <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <MpCost>130</MpCost>
+        <Activate radius="2.5" totalDamage="1500" duration="1">PoisonGrenade</Activate>
+        <feedPower>1800</feedPower>
+        <FameBonus>8</FameBonus>
+        <Legendary/>
+    </Object>
+	    <Object type="0x47db" id="Never Before Seen">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x2fb</Index>
+        </Texture>
+        <SlotType>14</SlotType>
+        <Description>A robe that promotes swift movement and god-like life essence never before seen.</Description>
+        <ActivateOnEquip stat="0" amount="240">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="18">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="9">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="-6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="-4">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+    </Object>
+	    <Object type="0x521c" id="Scythe of Grim Memories">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x112</Index>
+        </Texture>
+        <SlotType>24</SlotType>
+        <Description>A scythe that will rip through enemies like they're only a sheet of paper.</Description>
+        <RateOfFire>1.25</RateOfFire>
+        <Sound>weapon/long_sword</Sound>
+        <Projectile id="0">
+            <ObjectId>Grimly Slash</ObjectId>
+            <Speed>130</Speed>
+            <MinDamage>110</MinDamage>
+            <MaxDamage>140</MaxDamage>
+            <LifetimeMS>352</LifetimeMS>
+            <Amplitude>0.25</Amplitude>
+            <Frequency>0.5</Frequency>
+            <Size>100</Size>
+            <MultiHit/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="-40">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>bladeSwing</OldSound>
+        <feedPower>1600</feedPower>
+        <Legendary/>
+        <DisplayId>Scythe of Grim Memories</DisplayId>
+        <NumProjectiles>4</NumProjectiles>
+    </Object>
+		<Object type="0x69ec" id="Eye of Insanity">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x2f</Index>
+        </Texture>
+        <SlotType>11</SlotType>
+        <Description>Time will only tell when the war will end for good.</Description>
+        <Sound>spell/magic_nova</Sound>
+        <Projectile>
+            <ObjectId>Blue Boomerang</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>110</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <LifetimeMS>4000</LifetimeMS>
+            <PassesCover/>
+			<Boomerang/>
+            <MultiHit/>
+        </Projectile>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>125</MpCost>
+        <ActivateOnEquip stat="28" amount="20">IncrementStat</ActivateOnEquip>
+        <Activate>BulletNova</Activate>
+    </Object>
+	    <Object type="0x46d8" id="Unoch's Truth">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x2bf</Index>
+        </Texture>
+        <SlotType>21</SlotType>
+        <Description>Hiding isn't the answer, face it.</Description>
+        <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="4">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>110</MpCost>
+        <Activate duration="5.5">BigStasisBlast</Activate>
+        <Activate effect="Damaging" duration="3" useWisMod="true">ConditionEffectSelf</Activate>
+        <Activate effect="Berserk" duration="3" useWisMod="true">ConditionEffectSelf</Activate>
+        <Activate effect="Armored" duration="2.8" useWisMod="true">ConditionEffectSelf</Activate>
+        <Cooldown>5</Cooldown>
+        <feedPower>1850</feedPower>
+        <DisplayId>Unoch's Truth</DisplayId>
+        <Legendary/>
+		<Legend id="2" stat="21">
+            <Name>Timeplosion</Name>
+            <Description>This orb has double the radius of a regular orb.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>40</Surge>
+        </Legend>
+    </Object>
+	    <Object type="0x69de" id="Helm of Erebus">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x0e</Index>
+        </Texture>
+        <SlotType>16</SlotType>
+        <Description>Erebus the sentinel of Sidon's towers is the first guardian you must defeat to slay Sidon. This helm burst with the power of Erebus.</Description>
+        <ActivateOnEquip stat="20" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>95</MpCost>
+        <Activate effect="Berserk" duration="6" range="4">ConditionEffectAura</Activate>
+        <Activate effect="Bravery" duration="6">ConditionEffectSelf</Activate>
+        <Cooldown>7</Cooldown>
+        <feedPower>1880</feedPower>
+        <DisplayId>Helm of Erebus</DisplayId>
+    </Object>
+	<Object type="0x69ed" id="The Gilded Helm">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x28</Index>
+        </Texture>
+        <SlotType>16</SlotType>
+        <Description>Stay golden, warrior.</Description>
+        <ActivateOnEquip stat="21" amount="16">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="15">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>110</MpCost>
+        <Activate effect="Berserk" duration="6" range="4">ConditionEffectAura</Activate>
+		<Activate effect="Speedy" duration="6" range="4">ConditionEffectAura</Activate>
+        <Activate effect="Surged" duration="4" useWisMod="true">ConditionEffectSelf</Activate>
+        <Cooldown>7</Cooldown>
+        <feedPower>1880</feedPower>
+        <DisplayId>The Gilded Helm</DisplayId>
+    </Object>
+	<Object type="0x69ee" id="Sor Mini Crystals">
+    <Class>GameObject</Class>
+    <RandomTexture>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x33</Index>
+        </Texture>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x34</Index>
+        </Texture>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x35</Index>
+        </Texture>
+    </RandomTexture>
+    <Size>100</Size>
+    <ShadowSize>60</ShadowSize>
+    <DisplayId>Sor Mini Crystals</DisplayId>
+  </Object>
+  <Object type="0x69ef" id="Sorgigas, the Sor Giant">
+      <Group>Sorgigas</Group>
+      <Enemy/>
+      <Class>Character</Class>
+      <Hero/>
+      <Quest/>
+      <God/>
+      <Encounter/>
+	  <Lootdrop/>
+      <StasisImmune/>
+      <ParalyzeImmune/>
+      <Level>20</Level>
+      <PerRealmMax>1</PerRealmMax>
+      <AnimatedTexture>
+        <File>d1chars16x16r</File>
+        <Index>9</Index>
+      </AnimatedTexture>
+      <HitSound>monster/ogres_hit</HitSound>
+      <DeathSound>monster/ogres_death</DeathSound>
+      <MaxHitPoints>375000</MaxHitPoints>
+      <Projectile id="0">
+         <ObjectId>Dragon Attack Green Ball</ObjectId>
+         <Speed>70</Speed>
+         <Damage>160</Damage>
+         <Size>100</Size>
+         <MultiHit/>
+		 <ArmorPiercing/>
+		 <ConditionEffect duration="3">Exhausted</ConditionEffect>
+         <LifetimeMS>2000</LifetimeMS>
+      </Projectile>
+      <Projectile id="1">
+         <ObjectId>Green Missile</ObjectId>
+         <Speed>100</Speed>
+         <Damage>140</Damage>
+         <Size>100</Size>
+         <LifetimeMS>4000</LifetimeMS>
+      </Projectile>
+      <Projectile id="2">
+         <ObjectId>Silver Shield</ObjectId>
+         <Speed>100</Speed>
+         <Damage>80</Damage>
+         <Size>120</Size>
+		 <ConditionEffect duration="2">Confused</ConditionEffect>
+         <LifetimeMS>1800</LifetimeMS>
+      </Projectile>
+	  <Projectile id="3">
+         <ObjectId>Dragon Attack Green Spin Ball</ObjectId>
+         <Speed>100</Speed>
+         <Damage>200</Damage>
+         <Size>120</Size>
+		 <ConditionEffect duration="6">Quiet</ConditionEffect>
+		 <Amplitude>1.0</Amplitude>
+         <Frequency>3.0</Frequency>
+         <LifetimeMS>5000</LifetimeMS>
+      </Projectile>
+      <Size>150</Size>
+      <Defense>70</Defense>
+      <XpMult>0.8</XpMult>
+      <DisplayId>Sorgigas, the Sor Giant</DisplayId>
+   </Object>
+   <Object type="0x69f1" id="Sor Fiend">
+    <Enemy/>
+    <Class>Character</Class>
+    <DisplayId>Sor Fiend</DisplayId>
+    <AnimatedTexture>
+      <File>d3Chars8x8rEmbed</File>
+      <Index>0x06</Index>
+    </AnimatedTexture>
+    <HitSound>monster/eggs_death</HitSound>
+    <DeathSound>monster/golems_death</DeathSound>
+    <Size>115</Size>
+    <MaxHitPoints>8000</MaxHitPoints>
+    <Projectile id="0">
+      <ObjectId>Green Magic</ObjectId>
+      <Damage>200</Damage>
+      <Speed>60</Speed>
+      <LifetimeMS>800</LifetimeMS>
+    </Projectile>
+    <Projectile id="1">
+      <ObjectId>Green Bolt</ObjectId>
+      <Damage>80</Damage>
+      <Speed>80</Speed>
+      <LifetimeMS>6500</LifetimeMS>
+      <Boomerang/>
+	  <MultiHit/>
+    <ConditionEffect duration="4">Dazed</ConditionEffect>
+    </Projectile>
+  </Object>
+     <Object type="0x69f2" id="Sor Soul">
+    <Enemy/>
+    <Class>Character</Class>
+    <DisplayId>Sor Soul</DisplayId>
+    <AnimatedTexture>
+      <File>d3Chars8x8rEmbed</File>
+      <Index>0x07</Index>
+    </AnimatedTexture>
+    <HitSound>monster/beholder_hit</HitSound>
+    <DeathSound>monster/beholder_death</DeathSound>
+    <Size>90</Size>
+    <MaxHitPoints>2000</MaxHitPoints>
+    <Projectile id="0">
+      <ObjectId>White Bullet</ObjectId>
+      <Damage>75</Damage>
+      <Speed>60</Speed>
+	  <Wavy/>
+	  <ArmorPiercing/>
+      <LifetimeMS>1600</LifetimeMS>
+    </Projectile>
+  </Object>
 </Objects>

@@ -4571,4 +4571,20 @@
         <Index>0x434</Index>
       </Texture>
   </Ground>
+    <Ground type="0x279e" id="Sor Floor">
+      <RandomTexture>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x30</Index>
+        </Texture>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x31</Index>
+        </Texture>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x32</Index>
+        </Texture>
+      </RandomTexture>
+  </Ground>
 </GroundTypes>

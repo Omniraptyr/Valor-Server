@@ -108,6 +108,7 @@
     <Compile Include="logic\behaviors\RemoveEntity.cs" />
     <Compile Include="logic\behaviors\RemoveObject.cs" />
     <Compile Include="logic\behaviors\SetNoXP.cs" />
+    <Compile Include="logic\db\BehaviorDb.SorGiant.cs" />
     <Compile Include="logic\db\BehaviorDb.Abyss.cs" />
     <Compile Include="logic\db\BehaviorDb.Aldragine.cs" />
     <Compile Include="logic\db\BehaviorDb.Avatar.cs" />
@@ -478,6 +479,7 @@
     <Compile Include="realm\setpieces\RockDragon.cs" />
     <Compile Include="realm\setpieces\SetPieces.cs" />
     <Compile Include="realm\setpieces\SkullShrine.cs" />
+    <Compile Include="realm\setpieces\SorGiant.cs" />
     <Compile Include="realm\setpieces\Sphinx.cs" />
     <Compile Include="realm\setpieces\SpriteSafe.cs" />
     <Compile Include="realm\setpieces\Temple.cs" />

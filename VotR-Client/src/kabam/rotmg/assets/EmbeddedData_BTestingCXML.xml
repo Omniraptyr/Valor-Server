@@ -7771,7 +7771,7 @@
         <Legendary/>
         <MpCost>120</MpCost>
         <Activate effect="Invisible" duration="8">ConditionEffectSelf</Activate>
-        <Activate effect="Damaging" duration="1.7">ConditionEffectSelf</Activate>
+        <Activate effect="Damaging" duration="2">ConditionEffectSelf</Activate>
         <Activate maxDistance="20">Teleport</Activate>
         <Activate stat="26" amount="5" duration="6" noStack="true" useWisMod="false">StatBoostSelf</Activate>
         <Cooldown>8</Cooldown>
@@ -8653,5 +8653,134 @@
         <StasisImmune/>
         <NoMinimap/>
         <Static/>
+    </Object>
+    <Object type="0x69ee" id="Sor Mini Crystals">
+        <Class>GameObject</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x33</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x34</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x35</Index>
+            </Texture>
+        </RandomTexture>
+        <Size>100</Size>
+        <ShadowSize>60</ShadowSize>
+        <DisplayId>Sor Mini Crystals</DisplayId>
+    </Object>
+    <Object type="0x69ef" id="Sorgigas, the Sor Giant">
+        <Group>Sorgigas</Group>
+        <Enemy/>
+        <Class>Character</Class>
+        <Hero/>
+        <Quest/>
+        <God/>
+        <Encounter/>
+        <Lootdrop/>
+        <StasisImmune/>
+        <ParalyzeImmune/>
+        <Level>20</Level>
+        <PerRealmMax>1</PerRealmMax>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>9</Index>
+        </AnimatedTexture>
+        <HitSound>monster/ogres_hit</HitSound>
+        <DeathSound>monster/ogres_death</DeathSound>
+        <MaxHitPoints>375000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Dragon Attack Green Ball</ObjectId>
+            <Speed>70</Speed>
+            <Damage>160</Damage>
+            <Size>100</Size>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <ConditionEffect duration="3">Exhausted</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Green Missile</ObjectId>
+            <Speed>100</Speed>
+            <Damage>140</Damage>
+            <Size>100</Size>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Silver Shield</ObjectId>
+            <Speed>100</Speed>
+            <Damage>80</Damage>
+            <Size>120</Size>
+            <ConditionEffect duration="2">Confused</ConditionEffect>
+            <LifetimeMS>1800</LifetimeMS>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Dragon Attack Green Spin Ball</ObjectId>
+            <Speed>100</Speed>
+            <Damage>200</Damage>
+            <Size>120</Size>
+            <ConditionEffect duration="6">Quiet</ConditionEffect>
+            <Amplitude>1.0</Amplitude>
+            <Frequency>3.0</Frequency>
+            <LifetimeMS>5000</LifetimeMS>
+        </Projectile>
+        <Size>150</Size>
+        <Defense>70</Defense>
+        <XpMult>0.8</XpMult>
+        <DisplayId>Sorgigas, the Sor Giant</DisplayId>
+    </Object>
+    <Object type="0x69f1" id="Sor Fiend">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Sor Fiend</DisplayId>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>0x06</Index>
+        </AnimatedTexture>
+        <HitSound>monster/eggs_death</HitSound>
+        <DeathSound>monster/golems_death</DeathSound>
+        <Size>115</Size>
+        <MaxHitPoints>8000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Green Magic</ObjectId>
+            <Damage>200</Damage>
+            <Speed>60</Speed>
+            <LifetimeMS>800</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Green Bolt</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>6500</LifetimeMS>
+            <Boomerang/>
+            <MultiHit/>
+            <ConditionEffect duration="4">Dazed</ConditionEffect>
+        </Projectile>
+    </Object>
+    <Object type="0x69f2" id="Sor Soul">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Sor Soul</DisplayId>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>0x07</Index>
+        </AnimatedTexture>
+        <HitSound>monster/beholder_hit</HitSound>
+        <DeathSound>monster/beholder_death</DeathSound>
+        <Size>90</Size>
+        <MaxHitPoints>2000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>White Bullet</ObjectId>
+            <Damage>75</Damage>
+            <Speed>60</Speed>
+            <Wavy/>
+            <ArmorPiercing/>
+            <LifetimeMS>1600</LifetimeMS>
+        </Projectile>
     </Object>
 </Objects>

@@ -51,6 +51,7 @@ namespace wServer.realm
             Tuple.Create("Mad Jester", (ISetPiece) new MadJester()),
             Tuple.Create("Encounter Altar", (ISetPiece) new GarnetJade()),
             Tuple.Create("Lord Stone Gargoyle", (ISetPiece) new Gargland()),
+            Tuple.Create("Sorgigas, the Sor Giant", (ISetPiece) new SorGiant()),
 
         };
 
@@ -287,6 +288,20 @@ namespace wServer.realm
                     Killed = new string[] {
                     
                         "The Catacombs hasn't been unveiled just yet."
+                    }
+                }),
+            Tuple.Create("Sorgigas, the Sor Giant", new TauntData
+                {
+                    Spawn = new string[] {
+
+                        "The power of the Sor should be given to just anyone...my great giant shall protect that ultimate power!"
+                    },
+                    NumberOfEnemies = new string[] {
+                        "My Sor Giants are untouchable!"
+                    },
+                    Killed = new string[] {
+
+                        "Mere mortals..the power must not be in your filthy hands!"
                     }
                 }),
             Tuple.Create("Hermit God", new TauntData()
@@ -583,7 +598,7 @@ namespace wServer.realm
                         Tuple.Create("Arena Headless Horseman", 0.01),
                         Tuple.Create("Thunder God", 0.025),
                         Tuple.Create("Mysterious Crystal", 0.001),
-                        Tuple.Create("Large Sor Crystal", 0.02),
+                        //Tuple.Create("Large Sor Crystal", 0.02),
                     })
             },
         };

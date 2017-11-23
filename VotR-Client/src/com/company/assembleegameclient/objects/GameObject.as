@@ -488,8 +488,8 @@ public class GameObject extends BasicObject {
         return (!(((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.UNSTABLE_BIT) == 0)));
     }
 
-    public function isShowPetEffectIcon():Boolean {
-        return (!(((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.PET_EFFECT_ICON) == 0)));
+    public function isSwiftness():Boolean {
+        return (!(((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.SWIFTNESS_BIT) == 0)));
     }
 
     public function isDarkness():Boolean {
@@ -541,6 +541,13 @@ public class GameObject extends BasicObject {
         return (!(((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.VENGEANCE_BIT) == 0)));
     }
 
+    public function isAlliance():Boolean {
+        return (!(((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.ALLIANCE_BIT) == 0)));
+    }
+
+    public function isGrasp():Boolean {
+        return (!(((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.GRASPOFZOL_BIT) == 0)));
+    }
     public function isSafe(_arg1:int = 20):Boolean {
         var _local2:GameObject;
         var _local3:int;
