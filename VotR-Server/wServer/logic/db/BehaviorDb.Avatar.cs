@@ -1544,7 +1544,6 @@ namespace wServer.logic
                     new TierLoot(12, ItemType.Armor, 0.06),
                     new TierLoot(13, ItemType.Armor, 0.03),
                     new TierLoot(5, ItemType.Ring, 0.05),
-                    new ItemLoot("Onrane", 0.075),
                     new ItemLoot("Tablet of the King's Avatar", 0.04),
                     new ItemLoot("Blade of Offerings", 0.02),
                     new ItemLoot("Cultist Armor", 0.02),

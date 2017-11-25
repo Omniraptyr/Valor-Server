@@ -198,7 +198,7 @@ namespace wServer.logic
                     LootTemplates.GStatIncreasePotionsLoot()
                 ),
                 new Threshold(0.10,
-                    new ItemLoot("Sor Crystal", 0.025),
+                    new ItemLoot("Sor Crystal", 0.03),
                     new ItemLoot("Amethyst Lair Armor", 0.07),
                     new ItemLoot("Sword of the Truthfinder", 0.07),
                     new ItemLoot("Kami Cloth", 0.07),

@@ -126,7 +126,6 @@ namespace wServer.logic
                         )
                     ),
                 new Threshold(0.05,
-                    new ItemLoot("Onrane", 1),
                     new ItemLoot("God Blood Robes", 0.04),
                     new ItemLoot("Banner of the Blood Mountains", 0.04),
                     new ItemLoot("Titan Blood Armor", 0.04),

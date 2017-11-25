@@ -196,7 +196,6 @@ namespace wServer.logic
                     new ItemLoot("Greater Potion of Attack", 1.0),
                     new ItemLoot("Greater Potion of Defense", 1.0),
                     new ItemLoot("Greater Potion of Wisdom", 1.0),
-                    new ItemLoot("Onrane", 1.0),
                     new TierLoot(11, ItemType.Weapon, 0.1),
 					new TierLoot(6, ItemType.Ability, 0.1),
 					new TierLoot(11, ItemType.Armor, 0.1),
