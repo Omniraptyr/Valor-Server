@@ -330,7 +330,7 @@ namespace wServer.realm.entities
             MP -= item.MpCost;
             if (CheckFurious())
             {
-                if(item.Tier != 0)
+                if (item.MpCost > 0)
                     WeakBlast(time, item, target);
             }
             if (CheckDran())
@@ -345,6 +345,7 @@ namespace wServer.realm.entities
             }
             if (CheckInfernus())
             {
+                if (item.MpCost > 0)
                     BurstFire(time, item, target);
             }
             if (Surge >= item.SurgeCost) 

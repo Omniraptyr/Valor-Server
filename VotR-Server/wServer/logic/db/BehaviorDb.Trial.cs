@@ -177,7 +177,6 @@ namespace wServer.logic
                 new State(
                     new ConditionalEffect(ConditionEffectIndex.StasisImmune),
                     new SetNoXP(),
-                    new Grenade(4, 80, range: 8, coolDown: 8000),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("idle"
                       ),
@@ -262,7 +261,6 @@ namespace wServer.logic
                         new TimedTransition(6000, "basictwo")
                         ),
                     new State("basictwo",
-                        new Grenade(1, 360, coolDown: 1),
                         new Shoot(10, count: 10, shootAngle: 6, projectileIndex: 1, coolDown: 3000),
                         new TimedTransition(6000, "Orbit")
                         ),
