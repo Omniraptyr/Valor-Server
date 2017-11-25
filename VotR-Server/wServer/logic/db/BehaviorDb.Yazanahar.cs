@@ -203,8 +203,7 @@ namespace wServer.logic
 					new TierLoot(5, ItemType.Ring, 0.05),
 					new TierLoot(12, ItemType.Armor, 0.05),
 					new TierLoot(12, ItemType.Weapon, 0.05),
-					new TierLoot(6, ItemType.Ring, 0.025),
-					new ItemLoot("Sor Crystal", 0.05)
+					new TierLoot(6, ItemType.Ring, 0.025)
 				)
 			)
 

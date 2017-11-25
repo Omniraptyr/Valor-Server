@@ -103,6 +103,43 @@ namespace wServer.logic
                     new ItemLoot("Potion of Attack", 0.07)
                     )
             )
+            .Init("Angelic Commander",
+            new State(
+                new DropPortalOnDeath("Heavenly Rift Portal", .50),
+                new Reproduce(densityMax: 3),
+                new State("First",
+                    new Prioritize(
+                        new StayAbove(1, 200),
+                        new Follow(1, range: 7),
+                        new Wander(0.4)
+                        ),
+                    new Shoot(12, projectileIndex: 0, count: 3, shootAngle: 6, coolDown: 800),
+                    new TimedTransition(4000, "Battle")
+                         ),
+                 new State("Battle",
+                    new Follow(1.2, 8, 6),
+                    new Shoot(12, projectileIndex: 1, count: 6, shootAngle: 12, coolDown: 1000),
+                    new Shoot(12, projectileIndex: 2, count: 8, coolDown: 2000),
+                    new TimedTransition(4000, "First")
+                         )
+                    ),
+                new Threshold(.01,
+                    new TierLoot(6, ItemType.Weapon, 0.04),
+                    new TierLoot(7, ItemType.Weapon, 0.02),
+                    new TierLoot(8, ItemType.Weapon, 0.01),
+                    new TierLoot(7, ItemType.Armor, 0.04),
+                    new TierLoot(8, ItemType.Armor, 0.02),
+                    new TierLoot(9, ItemType.Armor, 0.01),
+                    new TierLoot(4, ItemType.Ring, 0.02),
+                    new TierLoot(4, ItemType.Ability, 0.02)
+                    ),
+                new MostDamagers(3,
+                    LootTemplates.GoldLoot()
+                ),
+                new Threshold(0.07,
+                    new ItemLoot("Potion of Speed", 0.07)
+                    )
+            )
             .Init("Sprite Child",
                 new State(
                     new Prioritize(
@@ -364,7 +401,6 @@ namespace wServer.logic
             .Init("Paper Bot",
                 new State(
                     new TransformOnDeath("Construct of the Concealment", 1, 1, probability: 0.5),
-                    new DropPortalOnDeath("Puppet Theatre Portal", 0.15),
                     new Prioritize(
                         new Orbit(0.4, 3, target: "Rock Bot"),
                         new Wander(0.8)

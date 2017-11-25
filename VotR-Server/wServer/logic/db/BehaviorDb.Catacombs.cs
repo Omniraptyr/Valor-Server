@@ -19,6 +19,17 @@ namespace wServer.logic
                     )
                )
             )
+         .Init("Tooky Catacombs Master",
+                new State(
+                    new RemoveObjectOnDeath("Grey Torch Wall", 99),
+                    new State("Idle",
+                        new EntitiesNotExistsTransition(999, "Rip", "Arena Spider")
+                    ),
+                    new State("Rip",
+                        new Suicide()
+                    )
+                )
+            )
         .Init("Tooky Test TaskMastah",
             new State(
                 new ConditionalEffect(ConditionEffectIndex.Invincible),

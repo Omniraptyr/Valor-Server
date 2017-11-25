@@ -106,8 +106,9 @@
     <Compile Include="logic\behaviors\OnDeathBehavior.cs" />
     <Compile Include="logic\behaviors\RealmPortalDrop.cs" />
     <Compile Include="logic\behaviors\RemoveEntity.cs" />
-    <Compile Include="logic\behaviors\RemoveObject.cs" />
+    <Compile Include="logic\behaviors\RemoveObjectOnDeath.cs" />
     <Compile Include="logic\behaviors\SetNoXP.cs" />
+    <Compile Include="logic\db\BehaviorDb.Shatters.cs" />
     <Compile Include="logic\db\BehaviorDb.SorGiant.cs" />
     <Compile Include="logic\db\BehaviorDb.Abyss.cs" />
     <Compile Include="logic\db\BehaviorDb.Aldragine.cs" />

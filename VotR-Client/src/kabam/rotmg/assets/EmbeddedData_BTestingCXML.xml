@@ -694,6 +694,48 @@
             <LifetimeMS>5250</LifetimeMS>
         </Projectile>
     </Object>
+    <Object type="0x69f5" id="Angelic Commander">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>10</Index>
+        </AnimatedTexture>
+        <HitSound>monster/sprite_god_hit</HitSound>
+        <DeathSound>monster/ghost_god_death</DeathSound>
+        <Size>150</Size>
+        <MaxHitPoints>3600</MaxHitPoints>
+        <Defense>5</Defense>
+        <Terrain>Mountains</Terrain>
+        <SpawnProb>1.0</SpawnProb>
+        <God/>
+        <XpMult>0.5</XpMult>
+        <Projectile id="0">
+            <ObjectId>Grey Boomerang</ObjectId>
+            <Size>120</Size>
+            <Damage>75</Damage>
+            <Speed>100</Speed>
+            <Boomerang/>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>White Bolt</ObjectId>
+            <Size>100</Size>
+            <Damage>120</Damage>
+            <Speed>60</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <MultiHit/>
+            <ConditionEffect duration="4">Exhausted</ConditionEffect>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>White Flame</ObjectId>
+            <Size>100</Size>
+            <Damage>40</Damage>
+            <Speed>75</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+    </Object>
     <Object type="0x158d" id="Tunnel Mini Eye">
         <Enemy/>
         <DisplayId>Mini Eye</DisplayId>

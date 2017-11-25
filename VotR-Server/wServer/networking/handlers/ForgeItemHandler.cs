@@ -330,6 +330,11 @@ namespace wServer.networking.handlers
                                 client.Player.Inventory[packet.SorSlot.SlotId] = client.Player.Manager.Resources.GameData.Items[0x69ed];
                                 client.Player.Inventory[packet.ShardSlot.SlotId] = null;
                                 break;
+                            case 61:
+                                client.Player.SendError("You have forged the Brace of Anguish!");
+                                client.Player.Inventory[packet.SorSlot.SlotId] = client.Player.Manager.Resources.GameData.Items[0x45d1];
+                                client.Player.Inventory[packet.ShardSlot.SlotId] = null;
+                                break;
                         }
 
                     }else if (packet.ShardSlot.ObjectType == 0x68fb)

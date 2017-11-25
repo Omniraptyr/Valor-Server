@@ -15058,12 +15058,13 @@
         <Projectile>
             <ObjectId>Aqua Slash</ObjectId>
             <Speed>130</Speed>
-            <MinDamage>70</MinDamage>
+            <MinDamage>80</MinDamage>
             <MaxDamage>95</MaxDamage>
-            <LifetimeMS>320</LifetimeMS>
+            <LifetimeMS>370</LifetimeMS>
             <MultiHit/>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="114" amount="60">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <OldSound>daggerSwing</OldSound>
@@ -22023,7 +22024,7 @@
         <MpCost>0</MpCost>
         <MpEndCost>120</MpEndCost>
         <MultiPhase/>
-        <Activate amount="65">Heal</Activate>
+        <Activate effect="Surged" duration="2" useWisMod="true">ConditionEffectSelf</Activate>
         <Activate effect="Damaging" duration="2" useWisMod="true">ConditionEffectSelf</Activate>
         <Activate>ShurikenAbility</Activate>
         <Legendary/>
@@ -31278,5 +31279,43 @@
         <FameBonus>8</FameBonus>
         <Legendary/>
         <DisplayId>Unoch's Defiance</DisplayId>
+    </Object>
+    <Object type="0x69f3" id="Tooky Catacombs Master">
+        <DisplayId>Tooky Catacombs Master</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <Class>Character</Class>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <Size>110</Size>
+        <MaxHitPoints>999999</MaxHitPoints>
+        <Defense>50</Defense>
+        <NoMiniMap/>
+        <Level>1</Level>
+        <XpMult>100</XpMult>
+        <NoArticle/>
+        <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x69f4" id="Tooky Shatters Master">
+        <DisplayId>Tooky Shatters Master</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <Class>Character</Class>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <Size>110</Size>
+        <MaxHitPoints>999999</MaxHitPoints>
+        <Defense>50</Defense>
+        <NoMiniMap/>
+        <Level>1</Level>
+        <XpMult>100</XpMult>
+        <NoArticle/>
+        <ShadowSize>0</ShadowSize>
     </Object>
 </Objects>

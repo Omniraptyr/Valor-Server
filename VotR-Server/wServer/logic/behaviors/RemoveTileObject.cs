@@ -2,7 +2,7 @@
 using System.Linq;
 using wServer.realm;
 using wServer.realm.entities;
-
+using common.resources;
 namespace wServer.logic.behaviors
 {
     class RemoveTileObject : Behavior
@@ -18,7 +18,9 @@ namespace wServer.logic.behaviors
 
         protected override void OnStateEntry(Entity host, RealmTime time, ref object state)
         {
-            var objType = GetObjType(_objName);
+            //var objType = GetObjType(_objName);
+            XmlData dat = host.Manager.Resources.GameData;
+            var objType = dat.IdToObjectType[_objName];
 
             var map = host.Owner.Map;
 

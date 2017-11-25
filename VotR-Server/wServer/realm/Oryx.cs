@@ -581,7 +581,7 @@ namespace wServer.realm
                     Tuple.Create("Flamer King", 0.2)
                 })
             },
-            {               WmapTerrain.Mountains, Tuple.Create(
+            { WmapTerrain.Mountains, Tuple.Create(
                     200, new []
                     {
                         Tuple.Create("White Demon", 0.09),
@@ -597,8 +597,7 @@ namespace wServer.realm
                         Tuple.Create("Leviathan", 0.07),
                         Tuple.Create("Arena Headless Horseman", 0.01),
                         Tuple.Create("Thunder God", 0.025),
-                        Tuple.Create("Mysterious Crystal", 0.001),
-                        //Tuple.Create("Large Sor Crystal", 0.02),
+                        Tuple.Create("Angelic Commander", 0.021),
                     })
             },
         };

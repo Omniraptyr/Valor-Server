@@ -22,42 +22,6 @@ namespace wServer.logic
                     )
                 )
             )
-        .Init("Jungle Temple Walls",
-                new State(
-                    new State("Idle"
-                    ),
-                    new State("Rip",
-                        new Decay(500)
-                    )
-               )
-            )
-        .Init("Ice Cave Wall",
-                new State(
-                    new State("Idle"
-                    ),
-                    new State("Rip",
-                        new Decay(500)
-                    )
-               )
-            )
-         .Init("Blue Wall",
-                new State(
-                    new State("Idle"
-                    ),
-                    new State("Rip",
-                        new Decay(500)
-                    )
-               )
-            )
-         .Init("Iron Brick",
-                new State(
-                    new State("Idle"
-                    ),
-                    new State("Rip",
-                        new Decay(500)
-                    )
-               )
-            )
 
          .Init("NM Red Dragon Soul",
                 new State(
@@ -72,7 +36,7 @@ namespace wServer.logic
                         new Order(670, "NM Black Dragon Soul", "redinactive"),
                         new Order(670, "NM Red Dragon Soul", "redinactive"),
                         new Order(670, "NM Blue Dragon Soul", "redinactive"),
-                        new RemoveObject(9999, "Iron Brick"),
+                        new RemoveTileObject("Iron Brick", 99),
                         new Orbit(0.45, 2.5, 9999, "NM Red Dragon God"),
                         new Suicide()
                         ),
@@ -111,7 +75,7 @@ namespace wServer.logic
                         new Order(670, "NM Black Dragon Soul", "blueinactive"),
                         new Order(670, "NM Red Dragon Soul", "blueinactive"),
                         new Order(670, "NM Blue Dragon Soul", "blueinactive"),
-                        new RemoveObject(9999, "Ice Cave Wall"),
+                        new RemoveTileObject("Ice Cave Wall", 99),
                         new Orbit(0.45, 2.5, 9999, "NM Blue Dragon God"),
                         new Suicide()
                         ),
@@ -149,7 +113,7 @@ namespace wServer.logic
                         new Order(670, "NM Black Dragon Soul", "greeninactive"),
                         new Order(670, "NM Red Dragon Soul", "greeninactive"),
                         new Order(670, "NM Blue Dragon Soul", "greeninactive"),
-                        new RemoveObject(9999, "Jungle Temple Walls"),
+                        new RemoveTileObject("Jungle Temple Walls", 99),
                         new Orbit(0.45, 2.5, 9999, "NM Green Dragon God"),
                         new Suicide()
                         ),
@@ -187,7 +151,7 @@ namespace wServer.logic
                         new Order(670, "NM Black Dragon Soul", "blackinactive"),
                         new Order(670, "NM Red Dragon Soul", "blackinactive"),
                         new Order(670, "NM Blue Dragon Soul", "blackinactive"),
-                        new RemoveObject(9999, "Blue Wall"),
+                        new RemoveTileObject("Blue Wall", 99),
                         new Orbit(0.45, 2.5, 9999, "NM Black Dragon God"),
                         new Suicide()
                         ),

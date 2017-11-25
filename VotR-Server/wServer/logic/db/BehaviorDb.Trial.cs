@@ -175,6 +175,7 @@ namespace wServer.logic
                )
         .Init("CR Pillar of Illusions",
                 new State(
+                    new ConditionalEffect(ConditionEffectIndex.StasisImmune),
                     new SetNoXP(),
                     new Grenade(4, 80, range: 8, coolDown: 8000),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),

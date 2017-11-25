@@ -330,15 +330,17 @@ namespace wServer.realm.entities
             MP -= item.MpCost;
             if (CheckFurious())
             {
+                if(item.Tier != 0)
                     WeakBlast(time, item, target);
             }
             if (CheckDran())
             {
-                AEHealNoRest(time, item, target, 60);
+                if (item.MpCost > 0)
+                    AEHealNoRest(time, item, target, 60);
             }
             if (CheckStar())
             {
-                if(item.MpCost != 0)
+                if(item.MpCost > 0)
                 AEMagicNoRest(time, item, target, item.MpCost/4);
             }
             if (CheckInfernus())

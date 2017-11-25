@@ -28,6 +28,7 @@ namespace wServer.logic
                         )
                      ),
                     new State("Fight1",
+                    new RemoveEntity(20, "Sor Fiend"),
                     new Prioritize(
                         new StayCloseToSpawn(0.5, 3),
                         new Wander(0.05)
