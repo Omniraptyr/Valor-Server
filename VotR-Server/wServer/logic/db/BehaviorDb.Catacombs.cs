@@ -21,6 +21,7 @@ namespace wServer.logic
             )
          .Init("Tooky Catacombs Master",
                 new State(
+                    new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new RemoveObjectOnDeath("Grey Torch Wall", 99),
                     new State("Idle",
                         new EntitiesNotExistsTransition(999, "Rip", "Arena Spider")
@@ -112,7 +113,7 @@ namespace wServer.logic
                     new ItemLoot("Turret of Catacombs", 0.4),
                     new ItemLoot("Overgrowth Lootbox", 1.00),
                     new ItemLoot("Forsaken Shield", 0.04),
-                    new ItemLoot("Sword of Dark Necromancy", 0.1),
+                    new ItemLoot("Sword of Dark Necromancy", 0.005),
                     new ItemLoot("Ring of Undeadly Conjury", 0.03),
                     new ItemLoot("Gold Cache", 0.8)
 
@@ -354,7 +355,7 @@ namespace wServer.logic
                     new TierLoot(10, ItemType.Armor, 0.06),
                     new TierLoot(11, ItemType.Armor, 0.05),
                     new TierLoot(4, ItemType.Ring, 0.06),
-                    new ItemLoot("Sword of Dark Necromancy", 0.15),
+                    new ItemLoot("Sword of Dark Necromancy", 0.005),
                     new ItemLoot("Olden Necromancy Cloth", 0.035)
 
                 )
@@ -546,11 +547,8 @@ namespace wServer.logic
                     new TierLoot(12, ItemType.Armor, 0.085),
                     new TierLoot(13, ItemType.Armor, 0.072),
                     new TierLoot(6, ItemType.Ring, 0.075),
-                    new ItemLoot("Turret of Catacombs", 0.4),
                     new ItemLoot("Forsaken Shield", 0.05),
-                    new ItemLoot("Exanimation Stone", 0.75),
-                    new ItemLoot("Overgrowth Lootbox", 1.00),
-                    new ItemLoot("Sword of Dark Necromancy", 0.2),
+                    new ItemLoot("Sword of Dark Necromancy", 0.025),
                     new ItemLoot("Staff of the Withering", 0.035),
                     new ItemLoot("Gold Cache", 0.8),
                     new ItemLoot("Daring Windrage Robe", 0.04),

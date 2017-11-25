@@ -109288,4 +109288,35 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <ArmorPiercing/>
         </Projectile>
     </Object>
+	<Object type="0x47bd" id="Undead Nemesis">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x261</Index>
+        </Texture>
+        <SlotType>1</SlotType>
+        <Description>A blade forged by the magic of necromancy and a curse from the evil undead.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/glass_sword</Sound>
+        <Projectile>
+            <ObjectId>Undead N Shot</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>400</MinDamage>
+            <MaxDamage>500</MaxDamage>
+            <LifetimeMS>350</LifetimeMS>
+            <ArmorPiercing/>
+            <Wavy/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="12">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>bladeSwing</OldSound>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <NumProjectiles>1</NumProjectiles>
+        <DisplayId>Undead Nemesis</DisplayId>
+    </Object>
 </Objects>

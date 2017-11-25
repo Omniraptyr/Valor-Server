@@ -353,6 +353,12 @@ namespace wServer.networking.handlers
                                 break;
                              }
                         }
+                    else if (packet.ShardSlot.ObjectType == 0x47c4)
+                    {
+                                client.Player.SendError("You have forged the Undead Nemesis!");
+                                client.Player.Inventory[packet.SorSlot.SlotId] = client.Player.Manager.Resources.GameData.Items[0x47bd];
+                                client.Player.Inventory[packet.ShardSlot.SlotId] = null;
+                    }
                     else
                     {
                         client.Player.SendError("You do not have the materials to forge a legendary.");

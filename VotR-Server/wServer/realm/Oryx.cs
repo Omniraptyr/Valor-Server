@@ -287,7 +287,7 @@ namespace wServer.realm
                     },
                     Killed = new string[] {
                     
-                        "The Catacombs hasn't been unveiled just yet."
+                        "The Catacombs has been UNVEILED?!"
                     }
                 }),
             Tuple.Create("Sorgigas, the Sor Giant", new TauntData

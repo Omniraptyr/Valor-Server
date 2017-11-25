@@ -143,6 +143,15 @@ namespace wServer.realm.entities.vendors
             new ShopItem("TEST Common Mystery Egg", 0)
         };
 
+        private static readonly List<ISellableItem> Aldragine = new List<ISellableItem>
+        {
+            new ShopItem("Scepter of the Other", 75),
+            new ShopItem("Burden of the Warpawn", 80),
+            new ShopItem("The Odyssey", 60),
+            new ShopItem("The Executioner", 60),
+            new ShopItem("Rip of Soul", 65)
+        };
+
         private static readonly List<ISellableItem> Special = new List<ISellableItem>
         {
             new ShopItem("Amulet of Resurrection", 50000) 
@@ -158,6 +167,7 @@ namespace wServer.realm.entities.vendors
             { TileRegion.Store_6, new Tuple<List<ISellableItem>, CurrencyType, int>(PurchasableFame, CurrencyType.Fame, 5) },
             { TileRegion.Store_7, new Tuple<List<ISellableItem>, CurrencyType, int>(Consumables, CurrencyType.Fame, 0) },
             { TileRegion.Store_8, new Tuple<List<ISellableItem>, CurrencyType, int>(Special, CurrencyType.Fame, 0) },
+            { TileRegion.Store_11, new Tuple<List<ISellableItem>, CurrencyType, int>(Aldragine, CurrencyType.Onrane, 0) },
         };
         
         public static void Init(RealmManager manager)

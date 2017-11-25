@@ -64,7 +64,7 @@ namespace wServer.logic
                         )
                     ),
                 new Threshold(0.025,
-                    new ItemLoot("Potion of Defense", 1.0),
+                    new ItemLoot("Potion of Vitality", 1.0),
                     new ItemLoot("Potion of Defense", 1.0),
                     new TierLoot(9, ItemType.Weapon, 0.1),
                     new TierLoot(4, ItemType.Ability, 0.1),

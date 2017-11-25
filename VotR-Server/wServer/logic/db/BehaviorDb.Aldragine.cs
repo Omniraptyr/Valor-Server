@@ -576,26 +576,9 @@ namespace wServer.logic
                     ),
                     new State("UnsetEffect")
                 ),
-                                new OnlyOne(
-                    new ItemLoot("Kismet Seal", 0.75),
-                    new ItemLoot("Soundpiercer Shuriken", 0.75),
-                    new ItemLoot("Doomgrazer", 0.75),
-                    new ItemLoot("Age of Zol", 0.75),
-                    new ItemLoot("Wrath of Aldragine", 0.75),
-                    new ItemLoot("Bane of the Vision", 0.75),
-                    new ItemLoot("Spirit of the Heart", 0.75),
-                    new ItemLoot("The Grand Finale", 0.75),
-                    new ItemLoot("Merit of Rebellion", 0.75),
-                    new ItemLoot("Enigma Wand", 0.75),
-                    new ItemLoot("Spear of the Unforgiven", 0.75),
-                    new ItemLoot("Dagger of Corruption", 0.75)
+                new MostDamagers(3,
+                    LootTemplates.FabledItemsLoot2()
                 ),
-                new OnlyOne(
-                    new ItemLoot("Sword of Dark Retribution", 0.8),
-                    new ItemLoot("Helm of Dark Retribution", 0.8),
-                    new ItemLoot("Armor of Dark Retribution", 0.8),
-                    new ItemLoot("Ring of Dark Retribution", 0.8)
-                    ),
 
                 new Threshold(0.05,
                 new TierLoot(12, ItemType.Weapon, 0.08),
@@ -618,26 +601,9 @@ namespace wServer.logic
                     ),
                     new State("UnsetEffect")
                 ),
-                                new OnlyOne(
-                    new ItemLoot("Kismet Seal", 0.75),
-                    new ItemLoot("Soundpiercer Shuriken", 0.75),
-                    new ItemLoot("Doomgrazer", 0.75),
-                    new ItemLoot("Age of Zol", 0.75),
-                    new ItemLoot("Wrath of Aldragine", 0.75),
-                    new ItemLoot("Bane of the Vision", 0.75),
-                    new ItemLoot("Spirit of the Heart", 0.75),
-                    new ItemLoot("The Grand Finale", 0.75),
-                    new ItemLoot("Merit of Rebellion", 0.75),
-                    new ItemLoot("Enigma Wand", 0.75),
-                    new ItemLoot("Spear of the Unforgiven", 0.75),
-                    new ItemLoot("Dagger of Corruption", 0.75)
+                new MostDamagers(3,
+                    LootTemplates.FabledItemsLoot2()
                 ),
-                new OnlyOne(
-                    new ItemLoot("Sword of Dark Retribution", 0.8),
-                    new ItemLoot("Helm of Dark Retribution", 0.8),
-                    new ItemLoot("Armor of Dark Retribution", 0.8),
-                    new ItemLoot("Ring of Dark Retribution", 0.8)
-                    ),
                 new Threshold(0.05,
                 new TierLoot(12, ItemType.Weapon, 0.08),
                 new TierLoot(5, ItemType.Ability, 0.07),
@@ -662,70 +628,9 @@ namespace wServer.logic
                     ),
                     new State("UnsetEffect")
                 ),
-                                new OnlyOne(
-                    new ItemLoot("Kismet Seal", 0.75),
-                    new ItemLoot("Soundpiercer Shuriken", 0.75),
-                    new ItemLoot("Doomgrazer", 0.75),
-                    new ItemLoot("Age of Zol", 0.75),
-                    new ItemLoot("Wrath of Aldragine", 0.75),
-                    new ItemLoot("Bane of the Vision", 0.75),
-                    new ItemLoot("Spirit of the Heart", 0.75),
-                    new ItemLoot("The Grand Finale", 0.75),
-                    new ItemLoot("Merit of Rebellion", 0.75),
-                    new ItemLoot("Enigma Wand", 0.75),
-                    new ItemLoot("Spear of the Unforgiven", 0.75),
-                    new ItemLoot("Dagger of Corruption", 0.75)
+                new MostDamagers(3,
+                    LootTemplates.FabledItemsLoot2()
                 ),
-                //Have another chance to get fabled iten
-                new OnlyOne(
-                    new ItemLoot("Kismet Seal", 0.5),
-                    new ItemLoot("Soundpiercer Shuriken", 0.5),
-                    new ItemLoot("Doomgrazer", 0.5),
-                    new ItemLoot("Age of Zol", 0.5),
-                    new ItemLoot("Wrath of Aldragine", 0.5),
-                    new ItemLoot("Bane of the Vision", 0.5),
-                    new ItemLoot("Spirit of the Heart", 0.5),
-                    new ItemLoot("The Grand Finale", 0.5),
-                    new ItemLoot("Merit of Rebellion", 0.5),
-                    new ItemLoot("Enigma Wand", 0.5),
-                    new ItemLoot("Spear of the Unforgiven", 0.5),
-                    new ItemLoot("Dagger of Corruption", 0.5)
-                ),
-                //You have a 100% chance to get attack or wisdom eon
-                new OnlyOne(
-                    new ItemLoot("Attack Eon", 1),
-                    new ItemLoot("Wisdom Eon", 1)
-                ),
-                //You have a 25% chance to get ANOTHER attack or wisdom eon
-                new OnlyOne(
-                    new ItemLoot("Attack Eon", 0.25),
-                    new ItemLoot("Wisdom Eon", 0 / 25)
-                ),
-                //High chance to get 2 cloth
-                new OnlyOne(
-                    new ItemLoot("Large Zol Cloth", 0.6),
-                    new ItemLoot("Small Zol Cloth", 0.6)
-                ),
-                new OnlyOne(
-                    new ItemLoot("Large Vortex Cloth", 0.6),
-                    new ItemLoot("Small Vortex Cloth", 0.6)
-                    ),
-                new OnlyOne(
-                    new ItemLoot("Large Aura Cloth", 0.6),
-                    new ItemLoot("Small Aura Cloth", 0.6)
-                    ),
-                new OnlyOne(
-                    new ItemLoot("Sword of Dark Retribution", 0.8),
-                    new ItemLoot("Helm of Dark Retribution", 0.8),
-                    new ItemLoot("Armor of Dark Retribution", 0.8),
-                    new ItemLoot("Ring of Dark Retribution", 0.8)
-                    ),
-                new OnlyOne(
-                    new ItemLoot("Sword of Dark Retribution", 0.8),
-                    new ItemLoot("Helm of Dark Retribution", 0.8),
-                    new ItemLoot("Armor of Dark Retribution", 0.8),
-                    new ItemLoot("Ring of Dark Retribution", 0.8)
-                    ),
                 new Threshold(0.05,
                 new TierLoot(12, ItemType.Weapon, 0.08),
                 new TierLoot(5, ItemType.Ability, 0.07),
@@ -753,77 +658,16 @@ namespace wServer.logic
                     ),
                     new State("UnsetEffect")
                 ),
-                                new OnlyOne(
-                    new ItemLoot("Kismet Seal", 0.75),
-                    new ItemLoot("Soundpiercer Shuriken", 0.75),
-                    new ItemLoot("Doomgrazer", 0.75),
-                    new ItemLoot("Age of Zol", 0.75),
-                    new ItemLoot("Wrath of Aldragine", 0.75),
-                    new ItemLoot("Bane of the Vision", 0.75),
-                    new ItemLoot("Spirit of the Heart", 0.75),
-                    new ItemLoot("The Grand Finale", 0.75),
-                    new ItemLoot("Merit of Rebellion", 0.75),
-                    new ItemLoot("Enigma Wand", 0.75),
-                    new ItemLoot("Spear of the Unforgiven", 0.75),
-                    new ItemLoot("Dagger of Corruption", 0.75)
+                new MostDamagers(3,
+                    LootTemplates.FabledItemsLoot1()
                 ),
-                //Have another chance to get fabled iten
-                new OnlyOne(
-                    new ItemLoot("Kismet Seal", 0.5),
-                    new ItemLoot("Soundpiercer Shuriken", 0.5),
-                    new ItemLoot("Doomgrazer", 0.5),
-                    new ItemLoot("Age of Zol", 0.5),
-                    new ItemLoot("Wrath of Aldragine", 0.5),
-                    new ItemLoot("Bane of the Vision", 0.5),
-                    new ItemLoot("Spirit of the Heart", 0.5),
-                    new ItemLoot("The Grand Finale", 0.5),
-                    new ItemLoot("Merit of Rebellion", 0.5),
-                    new ItemLoot("Enigma Wand", 0.5),
-                    new ItemLoot("Spear of the Unforgiven", 0.5),
-                    new ItemLoot("Dagger of Corruption", 0.5)
-                ),
-                //You have a 100% chance to get attack or wisdom eon
-                new OnlyOne(
-                    new ItemLoot("Attack Eon", 1),
-                    new ItemLoot("Wisdom Eon", 1)
-                ),
-                //You have a 25% chance to get ANOTHER attack or wisdom eon
-                new OnlyOne(
-                    new ItemLoot("Attack Eon", 0.25),
-                    new ItemLoot("Wisdom Eon", 0 / 25)
-                ),
-                //High chance to get 2 cloth
-                new OnlyOne(
-                    new ItemLoot("Large Zol Cloth", 0.6),
-                    new ItemLoot("Small Zol Cloth", 0.6)
-                ),
-                new OnlyOne(
-                    new ItemLoot("Large Vortex Cloth", 0.6),
-                    new ItemLoot("Small Vortex Cloth", 0.6)
-                    ),
-                new OnlyOne(
-                    new ItemLoot("Large Aura Cloth", 0.6),
-                    new ItemLoot("Small Aura Cloth", 0.6)
-                    ),
-                new OnlyOne(
-                    new ItemLoot("Sword of Dark Retribution", 0.8),
-                    new ItemLoot("Helm of Dark Retribution", 0.8),
-                    new ItemLoot("Armor of Dark Retribution", 0.8),
-                    new ItemLoot("Ring of Dark Retribution", 0.8)
-                    ),
-                new OnlyOne(
-                    new ItemLoot("Sword of Dark Retribution", 0.8),
-                    new ItemLoot("Helm of Dark Retribution", 0.8),
-                    new ItemLoot("Armor of Dark Retribution", 0.8),
-                    new ItemLoot("Ring of Dark Retribution", 0.8)
-                    ),
                 new Threshold(0.05,
                 new TierLoot(12, ItemType.Weapon, 0.08),
                 new TierLoot(5, ItemType.Ability, 0.07),
                 new TierLoot(6, ItemType.Ability, 0.05),
                 new TierLoot(13, ItemType.Armor, 0.06),
                 new TierLoot(7, ItemType.Ring, 0.08),
-                new ItemLoot("Spiritclaw", 0.02),
+                new ItemLoot("Spiritclaw", 0.01),
                 new ItemLoot("Ultimate Onrane Cache", 1),
                 new ItemLoot("The Stronghold Key", 0.75),
                 new ItemLoot("10000 Gold", 1.00),
