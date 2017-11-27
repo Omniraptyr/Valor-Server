@@ -73,6 +73,7 @@
     <Compile Include="NWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="resources\ChangePassword.cs" />
+    <Compile Include="resources\EffectData.cs" />
     <Compile Include="resources\MysteryBoxes.cs" />
     <Compile Include="resources\Packages.cs" />
     <Compile Include="resources\PrivateMessages.cs" />

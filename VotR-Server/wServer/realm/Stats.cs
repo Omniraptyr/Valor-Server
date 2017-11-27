@@ -140,6 +140,7 @@ namespace wServer.realm
         ProtectionBonus = 124,
         ProtectionPoints = 125,
         ProtectionPointsMax = 126,
+        Effect = 127,
 
         None = 255
     }

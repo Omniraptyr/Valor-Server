@@ -128,6 +128,14 @@ namespace wServer.realm.entities
             set { _texture2.SetValue(value); }
         }
 
+        private readonly SV<string> _effect;
+        public string Effect
+        {
+            get { return _effect.GetValue(); }
+            set { _effect.SetValue(value); }
+        }
+
+        public string XmlEffect { get; set; }
 
         private int _originalSkin;
         private readonly SV<int> _skin;
@@ -322,6 +330,7 @@ namespace wServer.realm.entities
                 case StatsType.NameChosen: NameChosen = (int)val != 0; break;
                 case StatsType.Texture1: Texture1 = (int)val; break;
                 case StatsType.Texture2: Texture2 = (int)val; break;
+                case StatsType.Effect: Effect = (string)val; break;
                 case StatsType.Skin: Skin = (int)val; break;
                 case StatsType.Glow: Glow = (int)val; break;
                 case StatsType.MP: MP = (int)val; break;
@@ -403,6 +412,8 @@ namespace wServer.realm.entities
                 (_client.Account?.NameChosen ?? NameChosen) ? 1 : 0;
             stats[StatsType.Texture1] = Texture1;
             stats[StatsType.Texture2] = Texture2;
+            stats[StatsType.Texture2] = Texture2;
+            stats[StatsType.Effect] = XmlEffect == "" ? PlayerEffects.GetXML(Effect) : XmlEffect;
             stats[StatsType.Skin] = Skin;
             stats[StatsType.Glow] = Glow;
             stats[StatsType.MP] = MP;
@@ -532,6 +543,7 @@ namespace wServer.realm.entities
             _nameChosen = new SV<bool>(this, StatsType.NameChosen, client.Account.NameChosen, false, v => _client.Account?.NameChosen ?? v);
             _texture1 = new SV<int>(this, StatsType.Texture1, client.Character.Tex1);
             _texture2 = new SV<int>(this, StatsType.Texture2, client.Character.Tex2);
+            _effect = new SV<string>(this, StatsType.Effect, client.Character.Effect);
             _skin = new SV<int>(this, StatsType.Skin, 0);
             _glow = new SV<int>(this, StatsType.Glow, 0);
             _mp = new SV<int>(this, StatsType.MP, client.Character.MP);
@@ -557,6 +569,7 @@ namespace wServer.realm.entities
 
 
             Name = client.Account.Name;
+            XmlEffect = "";
             HP = client.Character.HP;
             ConditionEffects = 0;
 

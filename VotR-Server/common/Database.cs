@@ -1166,6 +1166,7 @@ namespace common
                 MP = playerDesc.Stats[1].StartingValue,
                 Tex1 = 0,
                 Tex2 = 0,
+                Effect = "",
                 Skin = skinType,
                 PetId = 0xffff,
                 FameStats = new byte[0],

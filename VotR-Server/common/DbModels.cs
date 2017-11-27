@@ -762,6 +762,12 @@ namespace common
             set { SetValue<int>("tex2", value); }
         }
 
+        public string Effect
+        {
+            get { return GetValue<string>("effect"); }
+            set { SetValue<string>("effect", value); }
+        }
+
         public int Skin
         {
             get { return GetValue<int>("skin"); }

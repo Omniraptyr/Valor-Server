@@ -39,6 +39,12 @@ public class ParticleEffect extends GameObject {
                 return (new XMLEffect(_arg2, _arg1));
             case "CustomParticles":
                 return (ParticleGenerator.attachParticleGenerator(_arg1, _arg2));
+            case "Orbiting":
+                return (new OrbitEffect(_arg1, _arg2));
+            case "FollowOrbiting":
+                return (new FollowOrbitEffect(_arg1, _arg2));
+            case "QuadSpaceConcentrate":
+                return (new QuadSpaceConcentrate(_arg1, _arg2));
         }
         return (null);
     }

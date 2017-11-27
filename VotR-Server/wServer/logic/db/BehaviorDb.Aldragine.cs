@@ -73,6 +73,7 @@ namespace wServer.logic
             )
         .Init("Mark of Zol A",
             new State(
+                new SetNoXP(),
                 new TransformOnDeath("Mark of Zol B", 1, 1, 1),
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("first",
@@ -85,6 +86,7 @@ namespace wServer.logic
             )
         .Init("Mark of Zol B",
             new State(
+                new SetNoXP(),
                 new TransformOnDeath("Mark of Zol A", 1, 1, 1),
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("first",

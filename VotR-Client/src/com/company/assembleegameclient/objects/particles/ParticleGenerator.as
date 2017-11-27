@@ -62,6 +62,22 @@ public class ParticleGenerator extends ParticleEffect {
             map_.addObj(_local9, (x_ + (this.effectProps.rangeX * ((2 * Math.random()) - 1))), (y_ + (this.effectProps.rangeY * ((2 * Math.random()) - 1))));
             this.liveParticles.push(_local9);
             _local7++;
+            var _local13:BitmapData;
+            var _local12:Object;
+            if (this.effectProps.bitmapFile) {
+                _local12 = this.effectProps.bitmapIndex;
+                if(this.effectProps.bitmapIndexMax != -1) {
+                    _local12 = Math.floor(Math.random() * (1 + this.effectProps.bitmapIndexMax - this.effectProps.bitmapIndex) + this.effectProps.bitmapIndex);
+                }
+                _local13 = AssetLibrary.getImageFromSet(this.effectProps.bitmapFile, uint(_local12));
+                _local13 = TextureRedrawer.redraw(_local13, this.effectProps.size, true, 0);
+            } else {
+                _local13 = TextureRedrawer.redrawSolidSquare(this.effectProps.color, this.effectProps.size);
+            }
+            _local9.bitmapData_ = _local13;
+            if(_local12 != null) {
+                _local9.bitmapIndex_ = uint(_local12);
+            }
         }
         this.generatedParticles = (this.generatedParticles + _local6);
         var _local8:int;

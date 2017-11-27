@@ -1810,6 +1810,9 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                 case StatData.PROTECTIONMAX:
                     _local4.protectionPointsMax_ = _local8;
                     break;
+                case StatData.EFFECT:
+                    _local4.setEffect(_local7.strStatValue_);
+                    break;
             }
         }
     }

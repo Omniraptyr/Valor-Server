@@ -1,6 +1,7 @@
 ﻿package com.company.assembleegameclient.objects.particles {
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.objects.BasicObject;
+import com.company.util.CachingColorTransformer;
 import com.company.util.GraphicsUtil;
 
 import flash.display.BitmapData;
@@ -19,6 +20,8 @@ public class BaseParticle extends BasicObject {
     protected var fillMatrix_:Matrix;
     protected var path_:GraphicsPath;
     protected var bitmapFill_:GraphicsBitmapFill;
+    public var bitmapData_:BitmapData;
+    public var bitmapIndex_:Number = -1;
 
     public function BaseParticle(_arg1:BitmapData) {
         this.vS_ = new Vector.<Number>(8);

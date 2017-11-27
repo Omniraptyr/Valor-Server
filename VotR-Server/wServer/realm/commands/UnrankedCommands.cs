@@ -741,39 +741,6 @@ namespace wServer.realm.commands
         }
     }
 
-    class RealmCommand : Command
-    {
-        public RealmCommand() : base("realm") { }
-
-        protected override bool Process(Player player, RealmTime time, string args)
-        {
-            player.Client.Reconnect(new Reconnect()
-            {
-                Host = "",
-                Port = 2050,
-                GameId = World.Realm,
-                Name = "Realm"
-            });
-            return true;
-        }
-    }
-
-    class NexusCommand : Command
-    {
-        public NexusCommand() : base("nexus") { }
-
-        protected override bool Process(Player player, RealmTime time, string args)
-        {
-            player.Client.Reconnect(new Reconnect()
-            {
-                Host = "",
-                Port = 2050,
-                GameId = World.Nexus,
-                Name = "Nexus"
-            });
-            return true;
-        }
-    }
 
     class DailyQuestCommand : Command
     {
@@ -787,23 +754,6 @@ namespace wServer.realm.commands
                 Port = 2050,
                 GameId = World.Tinker,
                 Name = "Daily Quest Room"
-            });
-            return true;
-        }
-    }
-
-    class VaultCommand : Command
-    {
-        public VaultCommand() : base("vault") { }
-
-        protected override bool Process(Player player, RealmTime time, string args)
-        {
-            player.Client.Reconnect(new Reconnect()
-            {
-                Host = "",
-                Port = 2050,
-                GameId = World.Vault,
-                Name = "Vault"
             });
             return true;
         }
@@ -871,19 +821,6 @@ namespace wServer.realm.commands
             return true;
         }
     }
-
-    class ProtCommand : Command
-    {
-        public ProtCommand() : base("protty") { }
-
-        protected override bool Process(Player player, RealmTime time, string args)
-        {
-
-            player.SendInfo("Prot: " + player.Protection);
-            return true;
-        }
-    }
-
     class GLandCommand : Command
     {
         public GLandCommand() : base("gland", alias: "glands") { }
@@ -1492,101 +1429,6 @@ namespace wServer.realm.commands
                 }
                 player.SendInfo(sb.ToString());
             }
-            return true;
-        }
-    }
-
-    class SpectateCommand : Command
-    {
-        public SpectateCommand() : base("spectate") { }
-
-        protected override bool Process(Player player, RealmTime time, string name)
-        {
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                player.SendError("Usage: /spectate <player name>");
-                return false;
-            }
-
-            var owner = player.Owner;
-            if (!player.Client.Account.Admin && owner != null &&
-                (owner is Arena || owner is ArenaSolo || owner is DeathArena))
-            {
-                player.SendInfo("Can't spectate in Arenas. (Temporary solution till we get spectate working across maps.)");
-                return false;
-            }
-
-            var target = player.Owner.Players.Values
-                .SingleOrDefault(p => p.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase) && p.CanBeSeenBy(player));
-
-            if (target == null)
-            {
-                player.SendError("Player not found. Note: Target player must be on the same map.");
-                return false;
-            }
-
-            if (!player.Client.Account.Admin && 
-                player.Owner.EnemiesCollision.HitTest(player.X, player.Y, 8).OfType<Enemy>().Any())
-            {
-                player.SendError("Enemies cannot be nearby when initiating spectator mode.");
-                return false;
-            }
-
-            if (player.SpectateTarget != null)
-            {
-                player.SpectateTarget.FocusLost -= player.ResetFocus;
-                player.SpectateTarget.Controller = null;
-            }
-
-            if (player != target)
-            {
-                player.ApplyConditionEffect(ConditionEffectIndex.Paused);
-                target.FocusLost += player.ResetFocus;
-                player.SpectateTarget = target;
-            }
-            else
-            {
-                player.SpectateTarget = null;
-                player.Owner.Timers.Add(new WorldTimer(3000, (w, t) =>
-                    {
-                        if (player.SpectateTarget == null)
-                            player.ApplyConditionEffect(ConditionEffectIndex.Paused, 0);
-                    }));
-            }
-
-            player.Client.SendPacket(new SetFocus()
-            {
-                ObjectId = target.Id
-            });
-
-            player.SendInfo($"Now spectating {target.Name}. Use the /self command to exit.");
-            return true;
-        }
-    }
-
-    class SelfCommand : Command
-    {
-        public SelfCommand() : base("self") { }
-
-        protected override bool Process(Player player, RealmTime time, string name)
-        {
-            if (player.SpectateTarget != null)
-            {
-                player.SpectateTarget.FocusLost -= player.ResetFocus;
-                player.SpectateTarget.Controller = null;
-            }
-
-            player.SpectateTarget = null;
-            player.Sight.UpdateCount++;
-            player.Owner.Timers.Add(new WorldTimer(3000, (w, t) =>
-            {
-                if (player.SpectateTarget == null)
-                    player.ApplyConditionEffect(ConditionEffectIndex.Paused, 0);
-            }));
-            player.Client.SendPacket(new SetFocus()
-            {
-                ObjectId = player.Id
-            });
             return true;
         }
     }

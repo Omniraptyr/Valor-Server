@@ -74,6 +74,22 @@ namespace common
             return Path.GetDirectoryName(path);
         }
 
+        public static string GetCommaSepString<T>(T[] arr)
+        {
+            var ret = new StringBuilder();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i != 0) ret.Append(", ");
+                ret.Append(arr[i]);
+            }
+            return ret.ToString();
+        }
+
+        public static string[] FromCommaSepString(string x)
+        {
+            return x.Split(',').Select(_ => _.Trim()).ToArray();
+        }
+
         public static byte[] Deflate(string src)
         {
             var bytes = Encoding.UTF8.GetBytes(src);

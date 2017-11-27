@@ -117,6 +117,8 @@ public class EmbeddedAssets {
     public static var d1Chars8x8rEmbed_:Class = EmbeddedAssets_d1Chars8x8rEmbed_;
     public static var d1Chars16x16rEmbed_:Class = EmbeddedAssets_d1Chars16x16rEmbed_;
     public static var d1LofiObjEmbed_:Class = EmbeddedAssets_d1LofiObjEmbed_;
+    public static var customEffects8x8Embed_:Class = EmbeddedAssets_customEffects8x8Embed_;
+    public static var customEffects16x16Embed_:Class = EmbeddedAssets_customEffects16x16Embed_;
     public static var d1LofiObjBigEmbed_:Class = EmbeddedAssets_d1LofiObjBigEmbed_;
     public static var d2Chars8x8rEmbed_:Class = EmbeddedAssets_d2Chars8x8rEmbed_;
     public static var d2Chars16x16rEmbed_:Class = EmbeddedAssets_d2Chars16x16rEmbed_;

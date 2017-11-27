@@ -1,5 +1,6 @@
 ﻿package com.company.util {
 import flash.display.BitmapData;
+import flash.geom.ColorTransform;
 import flash.geom.Matrix;
 import flash.geom.Point;
 import flash.geom.Rectangle;

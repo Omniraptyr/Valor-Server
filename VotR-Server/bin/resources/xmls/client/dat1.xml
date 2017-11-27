@@ -79749,7 +79749,7 @@ This dagger was a myth, will you live to tell the tale?
     </Texture>
 	  <AngleCorrection>1</AngleCorrection>
   </Object>
-	  <Object type="0x169a" id="Loot Bag Treasure">
+  <Object type="0x169a" id="Loot Bag Treasure">
     <DisplayId>Loot Bag Lockbox</DisplayId>
     <Class>Container</Class>
     <Container/>
@@ -88737,6 +88737,13 @@ A whole thanksgiving turkey!
       <Size>80</Size>
       <LifetimeMS>100</LifetimeMS>
       <ConditionEffect duration="5">Paralyzed</ConditionEffect>
+    </Projectile>
+	<Projectile id="1">
+      <ObjectId>Invisible</ObjectId>
+      <Damage>9999</Damage>
+      <Speed>0</Speed>
+      <Size>80</Size>
+      <LifetimeMS>100</LifetimeMS>
     </Projectile>
     <ParalyzeImmune/>
     <StasisImmune/>

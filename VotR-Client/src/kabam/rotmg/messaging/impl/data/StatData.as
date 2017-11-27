@@ -121,6 +121,7 @@ public class StatData {
     public static const PROTECTION_BOOST_STAT = 124;
     public static const PROTECTIONPOINTS = 125;
     public static const PROTECTIONMAX = 126;
+    public static const EFFECT = 127;
 
     // unimplemented
     public static const DAMAGE_MIN:int = 98;
@@ -185,6 +186,7 @@ public class StatData {
             case PET_NAME_STAT:
             case ACCOUNT_ID_STAT:
             case OWNER_ACCOUNT_ID_STAT:
+            case EFFECT:
                 return (true);
         }
         return (false);
