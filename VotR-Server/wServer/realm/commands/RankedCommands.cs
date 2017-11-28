@@ -1022,7 +1022,7 @@ namespace wServer.realm.commands
 
     class SizeCommand : Command
     {
-        public SizeCommand() : base("size", permLevel: 20) { }
+        public SizeCommand() : base("size", permLevel: 10) { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
@@ -1903,7 +1903,7 @@ namespace wServer.realm.commands
 
     class GlowCommand : Command
     {
-        public GlowCommand() : base("glow", permLevel: 70) { }
+        public GlowCommand() : base("glow", permLevel: 10) { }
 
         protected override bool Process(Player player, RealmTime time, string color)
         {
@@ -2166,7 +2166,7 @@ namespace wServer.realm.commands
 
     class Level20Command : Command
     {
-        public Level20Command() : base("level20", permLevel: 80, alias: "l20") { }
+        public Level20Command() : base("level20", permLevel: 10, alias: "l20") { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
