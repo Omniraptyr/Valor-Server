@@ -139,6 +139,7 @@ public class EmbeddedAssets {
     public static var SakuraEnvironment8x8Embed_:Class = EmbeddedAssets_SakuraEnvironment8x8Embed_;
     public static var SakuraEnvironment16x16Embed_:Class = EmbeddedAssets_SakuraEnvironment16x16Embed_;
     public static var legendaries8x8Embed_:Class = EmbeddedAssets_legendaries8x8Embed_;
+    public static var emotesEmbed_:Class = EmbeddedAssets_emotesEmbed_;
     public static var models_:Object = {
         "Monster Tank1": new monsterTank1Embed_(),
         "Monster Tank2": new monsterTank2Embed_(),

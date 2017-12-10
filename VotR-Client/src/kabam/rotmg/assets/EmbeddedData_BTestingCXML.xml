@@ -4961,49 +4961,21 @@
         <Defense>0</Defense>
         <DrawOnGround/>
         <NoMiniMap/>
-        <Object type="0x22ce" id="Aura of Zol">
-            <Group>Platez</Group>
-            <Enemy/>
-            <Class>Character</Class>
-            <Texture>
-                <File>d3LofiObjEmbed</File>
-                <Index>0x20b</Index>
-            </Texture>
-            <AltTexture id="1">
-                <Texture>
-                    <File>d3LofiObjEmbed</File>
-                    <Index>0x20c</Index>
-                </Texture>
-            </AltTexture>
-            <HitSound>monster/traps_hit</HitSound>
-            <DeathSound>monster/traps_death</DeathSound>
-            <Size>100</Size>
-            <MaxHitPoints>999999</MaxHitPoints>
-            <Defense>0</Defense>
-            <DrawOnGround/>
-            <NoMiniMap/>
-            <Projectile id="0">
-                <ObjectId>Invisible</ObjectId>
-                <Damage>9999</Damage>
-                <Speed>0</Speed>
-                <Size>80</Size>
-                <LifetimeMS>100</LifetimeMS>
-                <ConditionEffect duration="5">Paralyzed</ConditionEffect>
-            </Projectile>
-            <Projectile id="1">
-                <ObjectId>Invisible</ObjectId>
-                <Damage>9999</Damage>
-                <Speed>0</Speed>
-                <Size>80</Size>
-                <LifetimeMS>100</LifetimeMS>
-            </Projectile>
-            <ParalyzeImmune/>
-            <StasisImmune/>
-            <DazedImmune/>
-            <StunImmune/>
-            <ArmorBreakImmune/>
-            <DisplayId>Aura of Zol</DisplayId>
-        </Object>
+        <Projectile id="0">
+            <ObjectId>Invisible</ObjectId>
+            <Damage>9999</Damage>
+            <Speed>0</Speed>
+            <Size>80</Size>
+            <LifetimeMS>100</LifetimeMS>
+            <ConditionEffect duration="5">Paralyzed</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Invisible</ObjectId>
+            <Damage>9999</Damage>
+            <Speed>0</Speed>
+            <Size>80</Size>
+            <LifetimeMS>100</LifetimeMS>
+        </Projectile>
         <ParalyzeImmune/>
         <StasisImmune/>
         <DazedImmune/>

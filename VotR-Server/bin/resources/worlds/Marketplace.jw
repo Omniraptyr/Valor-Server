@@ -1,0 +1,13 @@
+{"id":-15,
+"isLimbo":false,
+"persist":true,
+"name":"Marketplace",
+"sbName":"Marketplace",
+"difficulty":0,
+"background":0,
+"blocking":0,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x69f7],
+"maps":["marketplace.jm"],
+"music":["meadow"]}

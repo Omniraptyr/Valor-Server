@@ -78,11 +78,11 @@ namespace wServer.realm.entities.vendors
             TransactionItemComplete(player, invTrans, success);
             if (success)
             {
-                if (seller?.Player != null && seller.Account != null)
-                    seller.Player.CurrentFame = seller.Account.Fame;
+                /*if (seller?.Player != null && seller.Account != null)
+                    seller.Player.CurrentFame = seller.Account.Fame;*/
 
                 var itemDesc = Manager.Resources.GameData.Items[type];
-                Manager.Chat.SendInfo(sellerId, $"Your {itemDesc.DisplayName} has sold for {price} fame.");
+                Manager.Chat.SendInfo(sellerId, $"Your {itemDesc.DisplayName} has sold for {price} gold.");
                 Reload();
                 BeingPurchased = false;
                 AwaitingReload = false;

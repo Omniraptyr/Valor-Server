@@ -175,18 +175,19 @@ namespace wServer.logic
                )
         .Init("CR Pillar of Illusions",
                 new State(
+                    new EntitiesNotExistsTransition(40, "dead", "The Illusionist"),
                     new ConditionalEffect(ConditionEffectIndex.StasisImmune),
                     new SetNoXP(),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
-                    new State("idle"
-                      ),
                   new State("activated1",
                       new SetAltTexture(0),
-                      new Shoot(10, count: 8, projectileIndex: 0, coolDown: 6000)
+                      new Shoot(10, count: 8, projectileIndex: 0, coolDown: 6000),
+                      new TimedTransition(8000, "activated2")
                       ),
                   new State("activated2",
                       new SetAltTexture(1),
-                      new Shoot(10, count: 8, projectileIndex: 1, coolDown: 6000)
+                      new Shoot(10, count: 8, projectileIndex: 1, coolDown: 6000),
+                      new TimedTransition(8000, "activated1")
                       ),
                   new State("dead",
                       new Suicide()
@@ -234,7 +235,6 @@ namespace wServer.logic
                         new TimedTransition(8000, "fight1")
                         ),
                     new State("fight1",
-                        new Order(99, "CR Pillar of Illusions", "activated1"),
                         new Follow(0.4, 8, 1),
                         new Shoot(10, count: 8, shootAngle: 20, projectileIndex: 2, coolDown: 2000),
                         new Shoot(10, count: 12, projectileIndex: 1, coolDown: 3000),
@@ -254,7 +254,6 @@ namespace wServer.logic
                         )
                       ),
                     new State("command",
-                        new Order(99, "CR Pillar of Illusions", "activated2"),
                         new Shoot(10, count: 1, projectileIndex: 0, coolDown: 1),
                         new Shoot(10, count: 1, projectileIndex: 0, coolDown: 1, coolDownOffset: 1),
                         new Shoot(10, count: 16, projectileIndex: 1, coolDown: 2000),
@@ -280,7 +279,6 @@ namespace wServer.logic
                         new TimedTransition(5000, "returntalk5")
                         ),
                     new State("returntalk5",
-                        new Order(9999, "CR Pillar of Illusions", "dead"),
                         new Taunt(true, "DIE!"),
                         new Shoot(10, count: 5, shootAngle: 6, projectileIndex: 2, coolDown: 2000),
                         new Shoot(10, count: 8, projectileIndex: 0, coolDown: 6000),

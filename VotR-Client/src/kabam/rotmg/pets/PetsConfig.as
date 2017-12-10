@@ -2,6 +2,10 @@
 import com.company.assembleegameclient.ui.dialogs.DialogCloser;
 import com.company.assembleegameclient.ui.dialogs.DialogCloserMediator;
 
+import kabam.rotmg.Market.MarketNPCPanel;
+
+import kabam.rotmg.Market.MarketNPCPanelMediator;
+
 import kabam.rotmg.pets.controller.ActivatePet;
 import kabam.rotmg.pets.controller.ActivatePetCommand;
 import kabam.rotmg.pets.controller.AddPetsConsoleActionsCommand;
@@ -110,6 +114,7 @@ public class PetsConfig implements IConfig {
         this.injector.map(PetFeedResultSignal).asSingleton();
         this.injector.map(FeedFuseCostModel).asSingleton();
         this.injector.map(PetFormModel).asSingleton();
+        this.mediatorMap.map(MarketNPCPanel).toMediator(MarketNPCPanelMediator);
         this.injector.map(UpdateSelectedPetForm).asSingleton();
         this.mediatorMap.map(PetSkinGroup).toMediator(PetSkinGroupMediator);
         this.mediatorMap.map(AvailablePetsView).toMediator(AvailablePetsMediator);

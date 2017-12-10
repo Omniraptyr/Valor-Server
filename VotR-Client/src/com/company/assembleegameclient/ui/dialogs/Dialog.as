@@ -231,7 +231,12 @@ public class Dialog extends Sprite {
     protected function onRightButtonClick(_arg1:Event):void {
         dispatchEvent(new Event(RIGHT_BUTTON));
     }
-
+    public function addFullDim() : void
+    {
+        graphics.beginFill(0,0.5);
+        graphics.drawRect(0,0,800,600);
+        graphics.endFill();
+    }
 
 }
 }

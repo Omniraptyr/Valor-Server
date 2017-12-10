@@ -12,6 +12,7 @@ import flash.events.Event;
 import flash.system.Capabilities;
 
 import kabam.lib.net.NetConfig;
+import kabam.rotmg.Market.ui.MarketMediatorConfig;
 import kabam.rotmg.account.AccountConfig;
 import kabam.rotmg.appengine.AppEngineConfig;
 import kabam.rotmg.application.ApplicationConfig;
@@ -143,6 +144,7 @@ public class WebMain extends Sprite {
                 .configure(PromotionsConfig)
                 .configure(ProTipConfig)
                 .configure(MapLoadingConfig)
+                .configure(MarketMediatorConfig)
                 .configure(ClassesConfig)
                 .configure(PackageConfig)
                 .configure(PetsConfig)

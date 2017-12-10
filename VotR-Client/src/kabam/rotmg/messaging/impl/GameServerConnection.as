@@ -7,6 +7,8 @@ import com.company.assembleegameclient.objects.Projectile;
 import flash.utils.ByteArray;
 
 import kabam.lib.net.impl.SocketServer;
+import kabam.rotmg.messaging.impl.data.MarketOffer;
+import kabam.rotmg.messaging.impl.data.PlayerShopItem;
 import kabam.rotmg.servers.api.Server;
 
 import org.osflash.signals.Signal;
@@ -264,6 +266,16 @@ public class GameServerConnection {
     public function gotoQuestRoom():void {
     }
 
+    public function requestMarketOffers() : void
+    {
+    }
 
+    public function removeMarketOffer(param1:PlayerShopItem) : void
+    {
+    }
+
+    public function addOffer(param1:Vector.<MarketOffer>) : void
+    {
+    }
 }
 }

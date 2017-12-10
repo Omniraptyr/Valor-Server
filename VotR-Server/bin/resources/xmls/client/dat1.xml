@@ -109326,4 +109326,23 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <NumProjectiles>1</NumProjectiles>
         <DisplayId>Undead Nemesis</DisplayId>
     </Object>
+	    <Object type="0x69f6" id="The Market NPC">
+        <Class>MarketNPC</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1af</Index>
+        </Texture>
+        <Size>120</Size>
+        <Static/>
+    </Object>
+	    <Object type="0x69f7" id="Marketplace Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Marketplace</DungeonName>
+      <AnimatedTexture>
+         <File>chars8x8rEncounters</File>
+         <Index>83</Index>
+      </AnimatedTexture>
+        <DisplayId>Marketplace</DisplayId>
+    </Object>
 </Objects>

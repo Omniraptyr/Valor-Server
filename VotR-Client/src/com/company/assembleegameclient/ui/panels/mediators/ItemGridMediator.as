@@ -15,6 +15,10 @@ import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTileEve
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
 import com.company.assembleegameclient.util.DisplayHierarchy;
 
+import kabam.rotmg.Market.ui.MarketCreateOfferScreen;
+
+import kabam.rotmg.Market.ui.MarketInventorySlot;
+
 import kabam.rotmg.chat.model.ChatMessage;
 import kabam.rotmg.constants.ItemConstants;
 import kabam.rotmg.core.model.MapModel;
@@ -86,11 +90,13 @@ public class ItemGridMediator extends Mediator {
         var _local7:FoodFeedFuseSlot;
         var _local8:int;
         var _local2:InteractiveItemTile = _arg1.tile;
+        var _local10:* = DisplayHierarchy.getParentWithTypeArray(_local2.getDropTarget(),TabStripView,InteractiveItemTile,FoodFeedFuseSlot,MarketInventorySlot,MarketCreateOfferScreen,FoodFeedFuseSlot,Map);
         var _local3:* = DisplayHierarchy.getParentWithTypeArray(_local2.getDropTarget(), TabStripView, InteractiveItemTile, FoodFeedFuseSlot, QuestRewardsView, Map);
         if ((((_local2.getItemId() == PotionInventoryModel.HEALTH_POTION_ID)) || ((((_local2.getItemId() == PotionInventoryModel.MAGIC_POTION_ID)) && (!(Boolean((_local3 as FoodFeedFuseSlot)))))))) {
             this.onPotionMove(_arg1);
             return;
         }
+
         if ((_local3 is InteractiveItemTile)) {
             _local4 = (_local3 as InteractiveItemTile);
             if (this.view.curPlayer.lockedSlot[_local4.tileId] == 0) {
@@ -125,6 +131,20 @@ public class ItemGridMediator extends Mediator {
                         _local2.updateUseability(this.view.curPlayer);
                         _local7.setItemPart2(_local8);
                     }
+                }else if(_local10 is MarketInventorySlot || _local10 is MarketCreateOfferScreen)
+                {
+                    if(_local10 is MarketCreateOfferScreen)
+                    {
+                        _local2.resetItemPosition()
+                        return;
+                    }
+                    this.petSlotsState.rightSlotId = _local2.tileId;
+                    this.petSlotsState.rightSlotOwnerId = _local2.ownerGrid.owner.objectId_;
+                    _local8 = _local2.getItemId();
+                    (_local10 as MarketInventorySlot).setItem(_local8,_local2.tileId,_local2.ownerGrid.owner.objectId_,this.petFoodCancel(_local2));
+                    _local2.setItem(ItemConstants.NO_ITEM);
+                    _local2.blockingItemUpdates = true;
+                    _local2.updateUseability(this.view.curPlayer);
                 }
                 else {
                     if ((((_local3 is Map)) || ((this.hudModel.gameSprite.map.mouseX < 300)))) {

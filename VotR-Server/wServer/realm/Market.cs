@@ -292,7 +292,7 @@ namespace wServer.realm
                         PlayerShopItem = item,
                         Item = item.ItemId,
                         Price = item.Price,
-                        Currency = CurrencyType.Fame,
+                        Currency = CurrencyType.Gold,
                         Count = itemList.Count,
                         //TimeLeft = Rand.Next(30000, 90000),
                         ReloadOffset = shopLoc.Value

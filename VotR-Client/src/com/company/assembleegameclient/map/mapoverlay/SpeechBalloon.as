@@ -22,6 +22,7 @@ import flash.text.TextFieldAutoSize;
 import flash.text.TextFormat;
 
 import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.emotes.EmoteGraphicHelper;
 import kabam.rotmg.ui.model.HUDModel;
 
 public class SpeechBalloon extends Sprite implements IMapOverlayElement {
@@ -30,7 +31,7 @@ public class SpeechBalloon extends Sprite implements IMapOverlayElement {
     public var lifetime_:int;
     public var hideable_:Boolean;
     public var offset_:Point = new Point();
-    public var text_:TextField;
+    public var text_:Sprite;
     private var backgroundFill_:GraphicsSolidFill = new GraphicsSolidFill(0, 1);
     private var outlineFill_:GraphicsSolidFill = new GraphicsSolidFill(0xFFFFFF, 1);
     private var lineStyle_:GraphicsStroke = new GraphicsStroke(2, false, LineScaleMode.NORMAL, CapsStyle.NONE, JointStyle.ROUND, 3, outlineFill_);
@@ -50,23 +51,10 @@ public class SpeechBalloon extends Sprite implements IMapOverlayElement {
         this.isGuild = _arg5;
         this.lifetime_ = (_arg11 * 1000);
         this.hideable_ = _arg13;
-        this.text_ = new TextField();
-        this.text_.autoSize = TextFieldAutoSize.LEFT;
-        this.text_.embedFonts = true;
-        this.text_.width = 150;
-        var _local14:TextFormat = new TextFormat();
-        _local14.font = "Myriad Pro";
-        _local14.size = 14;
-        _local14.bold = _arg12;
-        _local14.color = _arg10;
-        this.text_.defaultTextFormat = _local14;
-        this.text_.selectable = false;
-        this.text_.mouseEnabled = false;
-        this.text_.multiline = true;
-        this.text_.wordWrap = true;
-        this.text_.text = _arg2;
+        this.text_ = this.makeText(_arg2,_arg12,_arg10);
+        this.text_.y = this.text_.height;
         addChild(this.text_);
-        var _local15:int = (this.text_.textWidth + 4);
+        var _local15:int = this.text_.width;
         this.offset_.x = (-(_local15) / 2);
         this.backgroundFill_.color = _arg6;
         this.backgroundFill_.alpha = _arg7;
@@ -83,6 +71,12 @@ public class SpeechBalloon extends Sprite implements IMapOverlayElement {
         this.offset_.y = ((-(height) - ((this.go_.texture_.height * (_arg1.size_ / 100)) * 5)) - 2);
         visible = false;
         addEventListener(MouseEvent.RIGHT_CLICK, this.onSpeechBalloonRightClicked);
+    }
+
+    private function makeText(param1:String, param2:Boolean, param3:uint) : Sprite
+    {
+        var _loc4_:EmoteGraphicHelper = new EmoteGraphicHelper();
+        return _loc4_.getChatBubbleText(param1,param2,param3);
     }
 
     private function onSpeechBalloonRightClicked(e:MouseEvent):void {

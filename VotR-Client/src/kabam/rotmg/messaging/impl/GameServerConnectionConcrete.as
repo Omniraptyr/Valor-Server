@@ -73,6 +73,8 @@ import kabam.lib.net.api.MessageMap;
 import kabam.lib.net.api.MessageProvider;
 import kabam.lib.net.impl.Message;
 import kabam.lib.net.impl.SocketServer;
+import kabam.rotmg.Market.MarketItemsResultSignal;
+import kabam.rotmg.Market.MarketResultSignal;
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.core.view.PurchaseConfirmationDialog;
 import kabam.rotmg.arena.control.ArenaDeathSignal;
@@ -106,8 +108,10 @@ import kabam.rotmg.game.view.components.QueuedStatusText;
 import kabam.rotmg.maploading.signals.ChangeMapSignal;
 import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
 import kabam.rotmg.messaging.impl.data.GroundTileData;
+import kabam.rotmg.messaging.impl.data.MarketOffer;
 import kabam.rotmg.messaging.impl.data.ObjectData;
 import kabam.rotmg.messaging.impl.data.ObjectStatusData;
+import kabam.rotmg.messaging.impl.data.PlayerShopItem;
 import kabam.rotmg.messaging.impl.data.StatData;
 import kabam.rotmg.messaging.impl.incoming.AccountList;
 import kabam.rotmg.messaging.impl.incoming.ActivePet;
@@ -131,6 +135,7 @@ import kabam.rotmg.messaging.impl.incoming.InvResult;
 import kabam.rotmg.messaging.impl.incoming.InvitedToGuild;
 import kabam.rotmg.messaging.impl.incoming.KeyInfoResponse;
 import kabam.rotmg.messaging.impl.incoming.MapInfo;
+import kabam.rotmg.messaging.impl.incoming.MarketResult;
 import kabam.rotmg.messaging.impl.incoming.NameResult;
 import kabam.rotmg.messaging.impl.incoming.NewAbilityMessage;
 import kabam.rotmg.messaging.impl.incoming.NewTick;
@@ -191,6 +196,7 @@ import kabam.rotmg.messaging.impl.outgoing.JoinGuild;
 import kabam.rotmg.messaging.impl.outgoing.KeyInfoRequest;
 import kabam.rotmg.messaging.impl.outgoing.LaunchRaid;
 import kabam.rotmg.messaging.impl.outgoing.Load;
+import kabam.rotmg.messaging.impl.outgoing.MarketCommand;
 import kabam.rotmg.messaging.impl.outgoing.Move;
 import kabam.rotmg.messaging.impl.outgoing.OtherHit;
 import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
@@ -426,6 +432,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(SORFORGEREQUEST).toMessage(SorForgeRequest);
         _local1.map(FORGEITEM).toMessage(ForgeItem);
         _local1.map(UNBOXREQUEST).toMessage(UnboxRequest);
+        _local1.map(MARKET_COMMAND).toMessage(MarketCommand);
         _local1.map(FAILURE).toMessage(Failure).toMethod(this.onFailure);
         _local1.map(CREATE_SUCCESS).toMessage(CreateSuccess).toMethod(this.onCreateSuccess);
         _local1.map(SERVERPLAYERSHOOT).toMessage(ServerPlayerShoot).toMethod(this.onServerPlayerShoot);
@@ -482,6 +489,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(CRITICALDAMAGE).toMessage(CriticalDamage).toMethod(this.onCriticalDamage);
         _local1.map(SORFORGE).toMessage(SorForge).toMethod(this.onSorForge);
         _local1.map(UNBOXRESULT).toMessage(UnboxResultPacket).toMethod(this.unboxResult);
+        _local1.map(MARKET_RESULT).toMessage(MarketResult).toMethod(this.HandleMarketResult);
     }
 
     private function onSwitchMusic(sm:SwitchMusic):void {
@@ -613,6 +621,8 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.unmap(QUEUE_PONG);
         _local1.unmap(SET_FOCUS);
         _local1.unmap(SWITCH_MUSIC);
+        _local1.unmap(MARKET_COMMAND);
+        _local1.unmap(MARKET_RESULT);
     }
 
     private function encryptConnection():void {
@@ -2324,7 +2334,42 @@ public class GameServerConnectionConcrete extends GameServerConnection {
             gs_.hudView.setMiniMapFocus(go);
         }
     }
+    override public function requestMarketOffers() : void
+    {
+        var _loc1_:MarketCommand = this.messages.require(MARKET_COMMAND) as MarketCommand;
+        _loc1_.commandId = MarketCommand.REQUEST_MY_ITEMS;
+        serverConnection.queueMessage(_loc1_);
+    }
 
+    override public function removeMarketOffer(param1:PlayerShopItem) : void
+    {
+        var _loc2_:MarketCommand = this.messages.require(MARKET_COMMAND) as MarketCommand;
+        _loc2_.commandId = MarketCommand.REMOVE_OFFER;
+        _loc2_.offerId = param1.id;
+        serverConnection.queueMessage(_loc2_);
+    }
+
+    private function HandleMarketResult(param1:MarketResult) : void
+    {
+        switch(param1.commandId)
+        {
+            case MarketResult.MARKET_REQUEST_RESULT:
+                StaticInjectorContext.getInjector().getInstance(MarketItemsResultSignal).dispatch(param1.items);
+                break;
+            case MarketResult.MARKET_ERROR:
+            case MarketResult.MARKET_SUCCESS:
+                StaticInjectorContext.getInjector().getInstance(MarketResultSignal).dispatch(param1.message,param1.error);
+        }
+    }
+
+    override public function addOffer(param1:Vector.<MarketOffer>) : void
+    {
+        var _local_1:MarketCommand;
+        _local_1 = (this.messages.require(GameServerConnection.MARKET_COMMAND) as MarketCommand);
+        _local_1.commandId = MarketCommand.ADD_OFFER;
+        _local_1.newOffers = param1;
+        serverConnection.queueMessage(_local_1)
+    }
 
 }
 }

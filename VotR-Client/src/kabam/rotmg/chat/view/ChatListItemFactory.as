@@ -13,6 +13,7 @@ import flash.text.TextFormat;
 
 import kabam.rotmg.chat.model.ChatMessage;
 import kabam.rotmg.chat.model.ChatModel;
+import kabam.rotmg.emotes.Emotes;
 import kabam.rotmg.text.model.FontModel;
 import kabam.rotmg.text.view.BitmapTextFactory;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
@@ -120,6 +121,49 @@ public class ChatListItemFactory {
         var _local1:StringBuilder = new StaticStringBuilder(this.processName());
         var _local2:BitmapData = this.getBitmapData(_local1, this.getNameColor());
         this.buffer.push(new Bitmap(_local2));
+    }
+    private function getAllWords(param1:String) : Array
+    {
+        return param1.split(" ");
+    }
+    private function containsEmotes(param1:String) : Boolean
+    {
+        var _loc3_:String = null;
+        var _loc2_:Array = param1.split(" ");
+        for each(_loc3_ in _loc2_)
+        {
+            if(Emotes.hasEmote(_loc3_))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    private function add(param1:String) : void
+    {
+        var _loc2_:StringBuilder = null;
+        var _loc3_:BitmapData = null;
+        var _loc4_:String = null;
+        if(this.containsEmotes(param1))
+        {
+            for each(_loc4_ in this.getAllWords(param1))
+            {
+                if(Emotes.hasEmote(_loc4_))
+                {
+                    this.buffer.push(Emotes.getEmote(_loc4_));
+                }
+                else
+                {
+                    _loc2_ = new StaticStringBuilder(_loc4_);
+                    _loc3_ = this.getBitmapData(_loc2_,this.getTextColor());
+                    this.buffer.push(new Bitmap(_loc3_));
+                }
+            }
+            return;
+        }
+        _loc2_ = new StaticStringBuilder(param1);
+        _loc3_ = this.getBitmapData(_loc2_,this.getTextColor());
+        this.buffer.push(new Bitmap(_loc3_));
     }
 
     private function processName():String {

@@ -30964,7 +30964,7 @@
             <MaxDamage>420</MaxDamage>
             <LifetimeMS>200</LifetimeMS>
             <Size>140</Size>
-            <ConditionEffect duration="7">Stunned</ConditionEffect>
+            <ConditionEffect duration="4.25">Stunned</ConditionEffect>
             <MultiHit/>
             <PassesCover/>
             <ParticleTrail/>
@@ -30973,7 +30973,7 @@
         <ActivateOnEquip stat="121" amount="20">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="28" amount="12">IncrementStat</ActivateOnEquip>
-        <ConditionEffect duration="7">Stunned</ConditionEffect>
+        <ConditionEffect duration="4.25">Stunned</ConditionEffect>
         <Usable/>
         <Legendary/>
         <Legend id="11" stat="27">
@@ -31317,5 +31317,24 @@
         <XpMult>100</XpMult>
         <NoArticle/>
         <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x69f6" id="The Market NPC">
+        <Class>MarketNPC</Class>
+        <AnimatedTexture>
+            <File>chars8x8rEncounters</File>
+            <Index>83</Index>
+        </AnimatedTexture>
+        <Size>120</Size>
+        <Static/>
+    </Object>
+    <Object type="0x69f7" id="Marketplace Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Marketplace</DungeonName>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x36</Index>
+        </Texture>
+        <DisplayId>Marketplace</DisplayId>
     </Object>
 </Objects>
