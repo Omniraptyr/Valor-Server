@@ -297,11 +297,10 @@ namespace wServer.logic
                     new TierLoot(11, ItemType.Armor, 0.05),
                     new TierLoot(11, ItemType.Weapon, 0.05),
                     new TierLoot(5, ItemType.Ring, 0.025),
-                    new ItemLoot("Terradius Crystal", 0.4),
                     new ItemLoot("Onrane", 0.8),
                     new ItemLoot("Gold Cache", 1),
                     new ItemLoot("1000 Gold", 0.2),
-                    new ItemLoot("Warped Worlds Staff", 0.05),
+                    new ItemLoot("Warped Worlds Staff", 0.025),
                     new ItemLoot("Null-Magic Trap", 0.05),
                     new ItemLoot("Mirage Lance", 0.05)
                 )
