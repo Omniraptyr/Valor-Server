@@ -58,7 +58,6 @@ namespace wServer.realm.entities
             OnDeath?.Invoke(this, new BehaviorEventArgs(this, time));
             Owner.LeaveWorld(this);
         }
-        private int[] stealHits = { 0, 0 };
 
         public int Damage(Player from, RealmTime time, int dmg, bool noDef, params ConditionEffect[] effs)
         {

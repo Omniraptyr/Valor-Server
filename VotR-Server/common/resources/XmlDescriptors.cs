@@ -807,24 +807,9 @@ namespace common.resources
                     int.Parse(i.Attribute("amount").Value)));
             StatReq = reqs.ToArray();
 
-            var effs = new List<KeyValuePair<string, int>>();
-            foreach (XElement i in elem.Elements("EffectEquip"))
-                effs.Add(new KeyValuePair<string, int>(
-                    i.Attribute("effect").Value,
-                    int.Parse(i.Attribute("delay").Value)));
-            EffectEquip = effs.ToArray();
-
             var leg = new List<LegendaryPower>();
             foreach (XElement i in elem.Elements("Legend"))
                 leg.Add(new LegendaryPower(i));
-
-            var steal = new List<KeyValuePair<string, int>>();
-            foreach (XElement i in elem.Elements("Steal"))
-                steal.Add(new KeyValuePair<string, int>(
-                    i.Attribute("type").Value,
-                    int.Parse(i.Attribute("amount").Value)));
-            Steal = steal.ToArray();
-
             Legend = leg.ToArray();
 
             var steal = new List<KeyValuePair<string, int>>();

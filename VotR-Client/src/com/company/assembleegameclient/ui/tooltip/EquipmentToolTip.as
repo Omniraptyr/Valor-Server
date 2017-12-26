@@ -634,9 +634,12 @@ public class EquipmentToolTip extends ToolTip {
                 this.effects.push(new Effect(TextKey.ON_EQUIP, ""));
                 _local2 = false;
             }
+			var delay:String = this.objectXML.EffectEquip.@delay % (10 | 15) == 0 ?
+			               this.objectXML.EffectEquip.@delay / 60 + " minutes" :
+						   this.objectXML.EffectEquip.@delay + " seconds";
             this.effects.push(new Effect("Grants '" + this.objectXML.EffectEquip.@effect
                     + (this.objectXML.EffectEquip.@delay == 0 ? "'"
-                            : "' after " + this.objectXML.EffectEquip.@delay + " seconds"), "")
+                            : "' after " + delay), "")
                     .setColor(9055202));
         }
     }

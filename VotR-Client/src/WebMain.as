@@ -99,7 +99,7 @@ public class WebMain extends Sprite {
     private function setEnvironment():void {
         ENV = stage.loaderInfo.parameters["env"];
         if (ENV == null)
-            ENV = "localhost";
+            ENV = "production";
         
         //ENV = "nrtest";
     }
