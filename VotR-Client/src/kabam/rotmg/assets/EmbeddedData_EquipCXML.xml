@@ -14979,20 +14979,19 @@
         </Texture>
         <SlotType>17</SlotType>
         <Description>A staff that binds our reality to another.</Description>
-        <RateOfFire>1.35</RateOfFire>
+        <RateOfFire>1.40</RateOfFire>
         <Sound>weapon/fire_wand</Sound>
         <Projectile>
             <ObjectId>White Flame</ObjectId>
             <Speed>60</Speed>
             <MinDamage>55</MinDamage>
-            <MaxDamage>245</MaxDamage>
-            <LifetimeMS>1200</LifetimeMS>
+            <MaxDamage>205</MaxDamage>
+            <LifetimeMS>1100</LifetimeMS>
             <Wavy/>
             <MultiHit/>
         </Projectile>
-        <EffectEquip effect="Damaging" delay="45"/>
-        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+		<EffectEquip effect="Damaging" delay="45"/>
+        <ActivateOnEquip stat="22" amount="-6">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <NumProjectiles>1</NumProjectiles>
         <OldSound>magicShoot</OldSound>
@@ -15005,7 +15004,7 @@
             <Index>0x2b</Index>
         </Texture>
         <SlotType>7</SlotType>
-        <Description>Its so good, it's weird. P.S Just look at that sprite doe! amazen ~Dark</Description>
+        <Description>Its so good, it's wierd. P.S Just look at that sprite doe! amazen ~Dark</Description>
         <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="100">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="28" amount="5">IncrementStat</ActivateOnEquip>
@@ -15252,7 +15251,7 @@
             <LifetimeMS>500</LifetimeMS>
 			<MultiHit/>
         </Projectile>
-        <Steal type="life" amount="2"/>
+		<Steal type="life" amount="2"/>
         <BagType>6</BagType>
         <FameBonus>4</FameBonus>
         <NumProjectiles>1</NumProjectiles>
@@ -17865,8 +17864,8 @@
             <Index>0xe8</Index>
         </Texture>
         <SlotType>9</SlotType>
-        <Description>A ring that was found in the hidden chest from the Lair of Draconis.</Description>
-        <ActivateOnEquip stat="0" amount="160">IncrementStat</ActivateOnEquip>
+        <Description>A ring that was found in the hidden chest from the Lair od Draconis.</Description>
+        <ActivateOnEquip stat="0" amount="180">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="2">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
@@ -22434,10 +22433,10 @@
         <Projectile>
             <ObjectId>ETEXP Blast</ObjectId>
             <Speed>180</Speed>
-            <MinDamage>125</MinDamage>
+            <MinDamage>120</MinDamage>
             <MaxDamage>205</MaxDamage>
             <LifetimeMS>500</LifetimeMS>
-            <CondChance effect="Armored" chance="0.1" duration="3"/>
+			<CondChance effect="Armored" chance="0.1" duration="3"/>
         </Projectile>
         <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="20">IncrementStat</ActivateOnEquip>
