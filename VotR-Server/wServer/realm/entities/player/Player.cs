@@ -708,6 +708,11 @@ namespace wServer.realm.entities
 
             if (owner.Name.Equals("OceanTrench"))
                 OxygenBar = 100;
+            if (owner.Name.Equals("Nexus")) {
+                HealthPots = new ItemStacker(this, 254, 0x0A22, 6, 6);
+                MagicPots = new ItemStacker(this, 255, 0x0A23, 6, 6);
+                SaveToCharacter();
+            }
 
             SetNewbiePeriod();
 

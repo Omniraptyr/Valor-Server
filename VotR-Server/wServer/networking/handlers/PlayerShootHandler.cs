@@ -21,6 +21,8 @@ namespace wServer.networking.handlers
         
         private void Handle(Player player, PlayerShoot packet)
         {
+            if (player?.Owner == null) return;
+
             Item item;
             if (!player.Manager.Resources.GameData.Items.TryGetValue(packet.ContainerType, out item))
             {
