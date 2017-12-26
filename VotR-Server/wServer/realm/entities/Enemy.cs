@@ -98,6 +98,9 @@ namespace wServer.realm.entities
             }
             return 0;
         }
+
+        private int[] stealHits = new int[1];
+
         public override bool HitByProjectile(Projectile projectile, RealmTime time)
         {
             if (stat) return false;
@@ -107,6 +110,8 @@ namespace wServer.realm.entities
                 !HasConditionEffect(ConditionEffects.Paused) &&
                 !HasConditionEffect(ConditionEffects.Stasis))
             {
+                var p = (projectile.ProjectileOwner as Player);
+
                 var def = this.ObjectDesc.Defense;
                 if (projectile.ProjDesc.ArmorPiercing)
                     def = 0;
@@ -123,6 +128,25 @@ namespace wServer.realm.entities
                     BulletId = projectile.ProjectileId,
                     ObjectId = projectile.ProjectileOwner.Self.Id
                 }, this, (projectile.ProjectileOwner as Player), PacketPriority.Low);
+
+                if (p.stealAmount[0] != 0 && !p.HasConditionEffect(ConditionEffects.Sick)) {
+                    if (p.stealAmount[0] >= 1 && p.HP < p.Stats[0]) //stats[0] is maxhp
+                        p.HP = ((p.HP + p.stealAmount[0]) > p.Stats[0] ? p.Stats[0] : p.HP + p.stealAmount[0]);
+                    else {
+                        stealHits[0]++;
+                        if (stealHits[0] >= 1 / p.stealAmount[0])
+                            p.HP = ((p.HP + p.stealAmount[0]) > p.Stats[0] ? p.Stats[0] : p.HP + p.stealAmount[0]);
+                    }
+                }
+                if (p.stealAmount[1] != 0 && !p.HasConditionEffect(ConditionEffects.Quiet)) {
+                    if (p.stealAmount[1] >= 1 && p.MP < p.Stats[1]) //stats[1] is maxmp
+                        p.MP = ((p.MP + p.stealAmount[1]) > p.Stats[1] ? p.Stats[1] : p.MP + p.stealAmount[1]);
+                    else {
+                        stealHits[1]++;
+                        if (stealHits[1] >= 1 / p.stealAmount[1])
+                            p.MP = ((p.MP + p.stealAmount[1]) > p.Stats[1] ? p.Stats[1] : p.MP + p.stealAmount[1]);
+                    }
+                }
 
                 counter.HitBy(projectile.ProjectileOwner as Player, time, projectile, dmg);
 

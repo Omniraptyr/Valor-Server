@@ -5,6 +5,8 @@ using wServer.networking.packets.incoming;
 using wServer.networking.packets.outgoing;
 using wServer.realm;
 using log4net;
+using System;
+using System.Collections.Generic;
 
 namespace wServer.networking.handlers
 {
@@ -18,7 +20,9 @@ namespace wServer.networking.handlers
             //client.Manager.Logic.AddPendingAction(t => Handle(client.Player, packet, t));
             Handle(client.Player, packet);
         }
-        
+
+        private int condHitReq = -1;
+
         private void Handle(Player player, PlayerShoot packet)
         {
             if (player?.Owner == null) return;
@@ -44,6 +48,36 @@ namespace wServer.networking.handlers
 
             // create projectile and show other players
             var prjDesc = item.Projectiles[0]; //Assume only one
+
+            foreach (var pair in prjDesc.CondChance) {
+                if (condHitReq != -1) {
+                    condHitReq--;
+                    continue;
+                }
+
+                if (pair.Value <= 0 || pair.Key == default(ConditionEffect)) {
+                    condHitReq = -1;
+                    continue;
+                }
+
+                AlreadyZero:
+                if (condHitReq == 0) {
+                    var effList = new List<ConditionEffect>(prjDesc.Effects);
+                    effList.Add(pair.Key);
+                    prjDesc.Effects = effList.ToArray();
+                    condHitReq = -1;
+                    continue;
+                }
+
+                Random r = new Random();
+                double chance = (100 / pair.Value) - 1; //required shots on avg
+                condHitReq = (int)(Math.Truncate(chance) //non-integral part
+                    + (r.NextDouble() < (chance - Math.Truncate(chance)) ? 1 : 0) //integral part as random since there's no decimals in shot measurement
+                    + (Math.Sqrt(-2.0 * Math.Log(r.NextDouble())) *
+                                Math.Sin(2.0 * Math.PI * r.NextDouble())) * (chance / 3)); //gaussian to account for discrepancies
+                if (condHitReq == 0) goto AlreadyZero;
+            }
+
             Projectile prj = player.PlayerShootProjectile(
                 packet.BulletId, prjDesc, item.ObjectType,
                 packet.Time, packet.StartingPos, packet.Angle);

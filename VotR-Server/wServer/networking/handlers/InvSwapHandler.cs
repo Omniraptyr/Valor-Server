@@ -42,6 +42,22 @@ namespace wServer.networking.handlers
             if (player?.Owner == null)
                 return;
 
+            if (slotA != slotB && slotA < 12 && slotB < 12) {
+                Player playerA = null, playerB = null;
+                if (a is Player) playerA = a as Player;
+                if (b is Player) playerB = b as Player;
+
+                if (slotA >= 0 && slotA < 4) {
+                    playerA?.OnUnequip(playerA.Inventory[slotA]);
+                    if (playerB?.Inventory[slotB] != null)
+                        playerB?.OnEquip(playerB.Inventory[slotB]);
+                } else if (slotB >= 0 && slotB < 4) {
+                    playerA?.OnEquip(playerA.Inventory[slotA]);
+                    if (playerB?.Inventory[slotB] != null)
+                        playerB?.OnUnequip(playerB.Inventory[slotB]);
+                }
+            }
+
             if (!ValidateEntities(player, a, b) || player.tradeTarget != null)
             {
                 a.ForceUpdate(slotA);

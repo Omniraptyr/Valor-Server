@@ -13,6 +13,9 @@ namespace wServer.realm.entities
         public bool Hittestable { get; private set; }
         public bool Dying { get; private set; }
 
+        private bool[] isSet = new bool[1];
+        private Timer timer;
+
         private readonly SV<int> _hp;
         public int HP
         {
@@ -35,6 +38,38 @@ namespace wServer.realm.entities
             _hp = new SV<int>(this, StatsType.HP, 0, dying);
             if (Vulnerable = life.HasValue)
                 HP = life.Value;
+            else if (!isSet[0] && this is Portal) { //todo: make this not shit
+                int loops = 0;
+                timer = new Timer(1000);
+                timer.AutoReset = true;
+                timer.Elapsed += (o, e) => {
+                    switch (loops) {
+                        case 20:
+                            Owner.BroadcastPacketNearby(new ShowEffect() {
+                                EffectType = EffectType.Flashing,
+                                Pos1 = new Position() { X = 0.5f, Y = 14 },
+                                TargetObjectId = Id,
+                                Color = new ARGB(0xA9A9A9)
+                            }, this, null, PacketPriority.Low);
+                            loops++;
+                            break;
+                        case 27:
+                            Owner.BroadcastPacketNearby(new ShowEffect() {
+                                EffectType = EffectType.Flashing,
+                                Pos1 = new Position() { X = 0.33f, Y = 9 },
+                                TargetObjectId = Id,
+                                Color = new ARGB(0xA9A9A9)
+                            }, this, null, PacketPriority.Low);
+                            loops++;
+                            break;
+                        default:
+                            loops++;
+                            break;
+                    }
+                };
+                timer.Enabled = true;
+                isSet[0] = true;
+            }
             Dying = dying;
             Static = stat;
             Hittestable = hittestable;
@@ -76,6 +111,27 @@ namespace wServer.realm.entities
 
         protected bool CheckHP()
         {
+            if (this is Container || this is Portal) {
+                if (!isSet[0] && HP <= 10000) {
+                    Owner.BroadcastPacketNearby(new ShowEffect() {
+                        EffectType = EffectType.Flashing,
+                        Pos1 = new Position() { X = 0.5f, Y = 14 },
+                        TargetObjectId = Id,
+                        Color = new ARGB(0xA9A9A9)
+                    }, this, null, PacketPriority.Low);
+                    isSet[0] = true;
+                }
+                if (!isSet[1] && HP <= 3000) {
+                    Owner.BroadcastPacketNearby(new ShowEffect() {
+                        EffectType = EffectType.Flashing,
+                        Pos1 = new Position() { X = 0.33f, Y = 9 },
+                        TargetObjectId = Id,
+                        Color = new ARGB(0xA9A9A9)
+                    }, this, null, PacketPriority.Low);
+                    isSet[1] = true;
+                }
+            }
+
             if (HP <= 0)
             {
                 var x = (int) (X - 0.5);
