@@ -97826,8 +97826,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Index>0xe8</Index>
     </Texture>
     <SlotType>9</SlotType>
-    <Description>A ring that was found in the hidden chest from the Lair od Draconis.</Description>
-    <ActivateOnEquip stat="0" amount="180">IncrementStat</ActivateOnEquip>
+    <Description>A ring that was found in the hidden chest from the Lair of Draconis.</Description>
+    <ActivateOnEquip stat="0" amount="160">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="20" amount="2">IncrementStat</ActivateOnEquip>
     <BagType>6</BagType>
