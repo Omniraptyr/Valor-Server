@@ -183,7 +183,7 @@ namespace wServer.logic
                     .Init("Urios, God of Elements",
                 new State(
                     new RealmPortalDrop(),
-                    new TransformOnDeath("Urios Test Chest", 1, 1, 1),
+                    //new TransformOnDeath("Urios Test Chest", 1, 1, 1),
                      new DamageTakenTransition(88800, "RealRage"),
                     new State("idle",
 
@@ -311,10 +311,23 @@ namespace wServer.logic
                         new Shoot(8.4, count: 1, projectileIndex: 5, coolDown: 3250),
                         new ConditionalEffect(ConditionEffectIndex.Armored)
                         )
-                    )
-            )
+                    ),
+                new MostDamagers(3,
+                    new ItemLoot("Potion of Restoration", 1.00)
+                    ),
+                new Threshold(0.15,
+                new TierLoot(11, ItemType.Weapon, 0.015),
+                new TierLoot(10, ItemType.Weapon, 0.02),
+                new TierLoot(13, ItemType.Armor, 0.015),
+                new TierLoot(12, ItemType.Armor, 0.02),
+                new ItemLoot("Potion of Mana", 0.8),
+                new ItemLoot("Elemental Tome", 0.04),
+                new ItemLoot("Wand of Elemental Sanctuary", 0.04),
+                new ItemLoot("Earthbound Lance", 0.04)
+                )
+            );
 
-              .Init("Urios Test Chest",
+             /* .Init("Urios Test Chest",
                 new State(
                     new State("Idle",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -335,6 +348,6 @@ namespace wServer.logic
                 new ItemLoot("Wand of Elemental Sanctuary", 0.04),
                 new ItemLoot("Earthbound Lance", 0.04)
                 )
-            );
+            );*/
     }
 }

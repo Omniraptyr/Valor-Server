@@ -1581,6 +1581,10 @@ namespace wServer.realm.entities
                     return CurrentFame;
                 case CurrencyType.Tokens:
                     return Tokens;
+                case CurrencyType.Kantos:
+                    return Kantos;
+                case CurrencyType.Onrane:
+                    return Onrane;
                 default:
                     return 0;
             }
@@ -1596,6 +1600,10 @@ namespace wServer.realm.entities
                     CurrentFame = amount; break;
                 case CurrencyType.Tokens:
                     Tokens = amount; break;
+                case CurrencyType.Kantos:
+                    Kantos = amount; break;
+                case CurrencyType.Onrane:
+                    Onrane = amount; break;
             }
         }
 

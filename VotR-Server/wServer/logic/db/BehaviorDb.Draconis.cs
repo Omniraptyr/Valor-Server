@@ -269,7 +269,7 @@ namespace wServer.logic
                 )
             )
 
-                .Init("lod Ivory Loot",
+             /*   .Init("lod Ivory Loot",
                 new State(
                     new State("Idle",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -291,7 +291,7 @@ namespace wServer.logic
                 new ItemLoot("Wine Cellar Incantation", 0.02),
                 new ItemLoot("Dragon Pearl", 0.1)
                 )
-            )
+            )*/
 
         //Dragon mini0ns & spawners
           .Init("NM Blue Dragon Minion",
@@ -781,7 +781,7 @@ namespace wServer.logic
                   .Init("lod Ivory Wyvern",
                 new State(
                     new RealmPortalDrop(),
-                    new TransformOnDeath("lod Ivory Loot", 1, 1, 1),
+                    //new TransformOnDeath("lod Ivory Loot", 1, 1, 1),
                     new HpLessTransition(0.11, "ripwyvern"),
                     new RealmPortalDrop(),
                     new State("default",
@@ -883,7 +883,22 @@ namespace wServer.logic
                         new Suicide()
                         )
                     )
-                )
+
+                ),
+                new Threshold(0.15,
+                new TierLoot(12, ItemType.Weapon, 0.065),
+                new TierLoot(12, ItemType.Weapon, 0.055),
+                new TierLoot(6, ItemType.Ability, 0.065),
+                new TierLoot(5, ItemType.Ability, 0.0685),
+                new TierLoot(13, ItemType.Armor, 0.0525),
+                new ItemLoot("Midnight Star", 0.04),
+                new ItemLoot("Ivory Ring", 0.055),
+                new ItemLoot("Large Ivory Dragon Scale Cloth", 0.045),
+                new ItemLoot("Small Ivory Dragon Scale Cloth", 0.047),
+                new ItemLoot("The World Tarot Card", 0.05),
+                new ItemLoot("Wine Cellar Incantation", 0.02),
+                new ItemLoot("Dragon Pearl", 0.1)
+            )
             )
 ;
     }

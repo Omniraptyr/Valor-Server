@@ -129,7 +129,7 @@ namespace wServer.logic
                         )
                      )
                   )
-           .Init("Varghus Test Chest",
+           /*.Init("Varghus Test Chest",
                  new State(
                      new State("Idle",
                          new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -155,11 +155,11 @@ namespace wServer.logic
                  new ItemLoot("Shadow Beacon", 0.035),
                  new ItemLoot("Staff of Dark Malediction", 0.035)
                  )
-             )
+             )*/
               .Init("Tunnel Varghus the Eye",
                    new State(
                        new RealmPortalDrop(),
-                        new TransformOnDeath("Varghus Test Chest", 1, 1, 1),
+                       //new TransformOnDeath("Varghus Test Chest", 1, 1, 1),
                        new HpLessTransition(0.10, "RemovePowerandDie"),
                        new State("default",
                            new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -211,7 +211,25 @@ namespace wServer.logic
                            new RemoveEntity(9999, "Tunnel Hazv Power Thing"),
                            new Suicide()
                            )
-                       )
+                       ),
+                     new MostDamagers(3,
+                         new ItemLoot("Potion of Restoration", 1)
+                     ),
+                     new Threshold(0.15,
+                         new TierLoot(10, ItemType.Weapon, 0.1),
+                         new TierLoot(4, ItemType.Ability, 0.1),
+                         new TierLoot(10, ItemType.Armor, 0.1),
+                         new TierLoot(3, ItemType.Ring, 0.05),
+                         new TierLoot(10, ItemType.Armor, 0.05),
+                         new TierLoot(10, ItemType.Weapon, 0.05),
+                         new TierLoot(4, ItemType.Ring, 0.025),
+                         new ItemLoot("Potion of Dexterity", 0.8),
+                         new ItemLoot("Potion of Defense", 0.3),
+                         new ItemLoot("Soulreaper Armor", 0.035),
+                         new ItemLoot("Nether Blade", 0.035),
+                         new ItemLoot("Shadow Beacon", 0.035),
+                         new ItemLoot("Staff of Dark Malediction", 0.035)
+                     )
                );
     }
 }
