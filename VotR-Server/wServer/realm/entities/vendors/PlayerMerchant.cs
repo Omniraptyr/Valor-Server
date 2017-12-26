@@ -73,7 +73,6 @@ namespace wServer.realm.entities.vendors
                 Manager.Database.UpdateCurrency(sellerId, Price - Tax, Currency, trans);
             var t3 = trans.ExecuteAsync();
             await Task.WhenAll(t1, t2, t3);
-
             var success = !t3.IsCanceled && t3.Result;
             TransactionItemComplete(player, invTrans, success);
             if (success)

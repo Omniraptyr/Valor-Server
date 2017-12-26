@@ -168,11 +168,15 @@ namespace common.resources
         public ConditionEffectIndex Effect { get; set; }
         public int DurationMS { get; set; }
         public float Range { get; set; }
-
         public ConditionEffect() { }
-        public ConditionEffect(XElement elem)
+        public ConditionEffect(XElement elem, bool isCondChance = false)
         {
-            Effect = (ConditionEffectIndex)Enum.Parse(typeof(ConditionEffectIndex), elem.Value.Replace(" ", ""));
+            Effect = (ConditionEffectIndex)Enum.Parse(typeof(ConditionEffectIndex),
+                isCondChance ?
+                    elem.Attribute("effect") != null ?
+                         elem.Attribute("effect").Value.Replace(" ", "")
+                         : string.Empty
+                    : elem.Value.Replace(" ", ""));
             if (elem.Attribute("duration") != null)
                 DurationMS = (int)(float.Parse(elem.Attribute("duration").Value) * 1000);
             if (elem.Attribute("range") != null)
@@ -212,7 +216,8 @@ namespace common.resources
         public int MinDamage { get; private set; }
         public int MaxDamage { get; private set; }
 
-        public ConditionEffect[] Effects { get; private set; }
+        public ConditionEffect[] Effects { get; set; }
+        public KeyValuePair<ConditionEffect, double>[] CondChance { get; private set; }
 
         public bool MultiHit { get; private set; }
         public bool PassesCover { get; private set; }
@@ -250,7 +255,15 @@ namespace common.resources
             foreach (XElement i in elem.Elements("ConditionEffect"))
                 effects.Add(new ConditionEffect(i));
             Effects = effects.ToArray();
-
+            List<KeyValuePair<ConditionEffect, double>> condChance
+                = new List<KeyValuePair<ConditionEffect, double>>();
+            foreach (XElement i in elem.Elements("CondChance"))
+            {
+                condChance.Add(new KeyValuePair<ConditionEffect, double>(
+                    new ConditionEffect(i, true),
+                    double.Parse(i.Attribute("chance").Value)));
+            }
+            CondChance = condChance.ToArray();
             MultiHit = elem.Element("MultiHit") != null;
             PassesCover = elem.Element("PassesCover") != null;
             ArmorPiercing = elem.Element("ArmorPiercing") != null;
@@ -597,6 +610,10 @@ namespace common.resources
         public PFamily Family { get; private set; }
         public PRarity Rarity { get; private set; }
 
+        public KeyValuePair<int, int>[] StatsBoostPerc { get; private set; }
+        public KeyValuePair<string, int>[] Steal { get; private set; }
+        public KeyValuePair<int, int>[] StatReq { get; private set; }
+        public KeyValuePair<string, int>[] EffectEquip { get; private set; }
         public KeyValuePair<int, int>[] StatsBoost { get; private set; }
         public ActivateEffect[] ActivateEffects { get; private set; }
         public ProjectileDesc[] Projectiles { get; private set; }
@@ -760,11 +777,22 @@ namespace common.resources
                 Texture2 = 0;
 
             var stats = new List<KeyValuePair<int, int>>();
-            foreach (XElement i in elem.Elements("ActivateOnEquip"))
-                stats.Add(new KeyValuePair<int, int>(
-                    int.Parse(i.Attribute("stat").Value), 
-                    int.Parse(i.Attribute("amount").Value)));
             StatsBoost = stats.ToArray();
+            StatsBoostPerc = stats.ToArray();
+            foreach (XElement i in elem.Elements("ActivateOnEquip"))
+            {
+                stats.Add(new KeyValuePair<int, int>(
+                    int.Parse(i.Attribute("stat").Value),
+                    int.Parse(i.Attribute("amount").Value)));
+                if (elem.Element("ActivateOnEquip").Value == "IncrementStat")
+                {
+                    StatsBoost = stats.ToArray();
+                }
+                else if (elem.Element("ActivateOnEquip").Value == "IncrStatPerc")
+                {
+                    StatsBoostPerc = stats.ToArray();
+                }
+            }
 
             var activate = new List<ActivateEffect>();
             foreach (XElement i in elem.Elements("Activate"))
@@ -776,9 +804,31 @@ namespace common.resources
                 prj.Add(new ProjectileDesc(i));
             Projectiles = prj.ToArray();
 
+            var reqs = new List<KeyValuePair<int, int>>();
+            foreach (XElement i in elem.Elements("StatReq"))
+                reqs.Add(new KeyValuePair<int, int>(
+                    int.Parse(i.Attribute("stat").Value),
+                    int.Parse(i.Attribute("amount").Value)));
+            StatReq = reqs.ToArray();
+
+            var effs = new List<KeyValuePair<string, int>>();
+            foreach (XElement i in elem.Elements("EffectEquip"))
+                effs.Add(new KeyValuePair<string, int>(
+                    i.Attribute("effect").Value,
+                    int.Parse(i.Attribute("delay").Value)));
+            EffectEquip = effs.ToArray();
+
             var leg = new List<LegendaryPower>();
             foreach (XElement i in elem.Elements("Legend"))
                 leg.Add(new LegendaryPower(i));
+
+            var steal = new List<KeyValuePair<string, int>>();
+            foreach (XElement i in elem.Elements("Steal"))
+                steal.Add(new KeyValuePair<string, int>(
+                    i.Attribute("type").Value,
+                    int.Parse(i.Attribute("amount").Value)));
+            Steal = steal.ToArray();
+
             Legend = leg.ToArray();
         }
 

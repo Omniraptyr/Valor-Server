@@ -42,8 +42,23 @@ public class GeneralProjectileComparison extends SlotComparison {
         if (this.projXML.hasOwnProperty("ArmorPiercing")) {
             comparisonStringBuilder.pushParams(TextKey.ARMOR_PIERCING, {}, TooltipHelper.getOpenTag(NO_DIFF_COLOR), TooltipHelper.getCloseTag());
         }
-    }
+        if (this.projXML.hasOwnProperty("CondChance")) {
+            addCondChanceText();
+        }
 
+
+    }
+    private function addCondChanceText():void {
+        var durColor:uint = getTextColor(this.itemXML.CondChance.@duration - this.itemXML.CondChance.@duration);
+        var chanceColor:uint = getTextColor(this.itemXML.CondChance.@chance - this.itemXML.CondChance.@chance);
+        comparisonStringBuilder.pushParams("{condChance}% to inflict " +
+                "{condEff} for {condDuration} seconds"
+                , {"condChance": wrapInColoredFont(this.projXML.CondChance.@chance, chanceColor),
+                    "condEff": wrapInColoredFont(this.projXML.CondChance.@effect, chanceColor),
+                    "condDuration": wrapInColoredFont(this.projXML.CondChance.@duration, durColor)
+                });
+    }
+    
     private function addNumProjectileText():void {
         var _local1:int = int(this.itemXML.NumProjectiles);
         var _local2:int = int(this.curItemXML.NumProjectiles);

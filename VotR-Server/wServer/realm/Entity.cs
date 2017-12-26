@@ -724,7 +724,8 @@ namespace wServer.realm
 
                 var eff = (int)i.Effect;
 
-                _effects[eff] = i.DurationMS;
+                if (_effects[eff] != -1 || i.DurationMS == 0)
+                    _effects[eff] = i.DurationMS;
                 if (i.DurationMS != 0)
                     ConditionEffects |= (ConditionEffects)((ulong)1 << eff);
             }
@@ -737,9 +738,11 @@ namespace wServer.realm
             if (!ApplyCondition(effect))
                 return;
 
+
             var eff = (int)effect;
 
-            _effects[eff] = durationMs;
+            if (_effects[eff] != -1 || durationMs == 0)
+                _effects[eff] = durationMs;
             if (durationMs != 0)
                 ConditionEffects |= (ConditionEffects)((ulong)1 << eff);
 

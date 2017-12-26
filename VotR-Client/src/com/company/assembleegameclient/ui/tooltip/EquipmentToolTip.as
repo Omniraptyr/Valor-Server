@@ -601,26 +601,51 @@ public class EquipmentToolTip extends ToolTip {
     }
 
     private function addActivateOnEquipTagsToEffectsList():void {
-        var _local_1:XML;
-        var _local_2:Boolean = true;
-        for each (_local_1 in this.objectXML.ActivateOnEquip) {
-            if (_local_2) {
+        var _local1:XML;
+        var _local2:Boolean = true;
+        for each (_local1 in this.objectXML.ActivateOnEquip) {
+            if (_local2) {
                 this.effects.push(new Effect(TextKey.ON_EQUIP, ""));
-                _local_2 = false;
+                _local2 = false;
             }
-            if (_local_1.toString() == "IncrementStat") {
-                this.effects.push(new Effect(TextKey.INCREMENT_STAT, this.getComparedStatText(_local_1)).setReplacementsColor(this.getComparedStatColor(_local_1)));
+            if (_local1.toString() == "IncrementStat") {
+                this.effects.push(new Effect(TextKey.INCREMENT_STAT, this.getComparedStatText(_local1, false)).setReplacementsColor(this.getComparedStatColor(_local1)));
             }
+            if (_local1.toString() == "IncrStatPerc") {
+                this.effects.push(new Effect(TextKey.INCREMENT_STAT, this.getComparedStatText(_local1, true)).setReplacementsColor(this.getComparedStatColor(_local1)));
+            }
+        }
+        for each (_local1 in this.objectXML.Steal) {
+            if (_local2) {
+                this.effects.push(new Effect(TextKey.ON_EQUIP, ""));
+                _local2 = false;
+            }
+            if (this.objectXML.Steal.@type == "life")
+                this.effects.push(new Effect("+" + this.objectXML.Steal.@amount + " Life Steal", {})
+                        .setColor(9055202));
+            else
+                this.effects.push(new Effect("+" + this.objectXML.Steal.@amount + " Mana Leech", {})
+                        .setColor(9055202));
+        }
+        for each (_local1 in this.objectXML.EffectEquip) {
+            if (_local2) {
+                this.effects.push(new Effect(TextKey.ON_EQUIP, ""));
+                _local2 = false;
+            }
+            this.effects.push(new Effect("Grants '" + this.objectXML.EffectEquip.@effect
+                    + (this.objectXML.EffectEquip.@delay == 0 ? "'"
+                            : "' after " + this.objectXML.EffectEquip.@delay + " seconds"), "")
+                    .setColor(9055202));
         }
     }
 
-    private function getComparedStatText(_arg_1:XML):Object {
-        var _local_2:int = int(_arg_1.@stat);
-        var _local_3:int = int(_arg_1.@amount);
-        var _local_4:String = (((_local_3) > -1) ? "+" : "");
+    private function getComparedStatText(xml:XML, isPerc:Boolean):Object {
+        var stat:int = int(xml.@stat);
+        var amount:int = int(xml.@amount);
+        var _local4:String = amount > -1 ? "+" : "";
         return ({
-            "statAmount": ((_local_4 + String(_local_3)) + " "),
-            "statName": new LineBuilder().setParams(StatData.statToName(_local_2))
+            "statAmount": ((_local4 + String(amount)) + (isPerc ? "% " : " ")),
+            "statName": new LineBuilder().setParams(StatData.statToName(stat))
         });
     }
 

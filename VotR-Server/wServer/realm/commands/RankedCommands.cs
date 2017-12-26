@@ -2166,18 +2166,28 @@ namespace wServer.realm.commands
 
     class Level20Command : Command
     {
-        public Level20Command() : base("level20", permLevel: 10, alias: "l20") { }
+        public Level20Command(RealmManager manager) : base("level20", permLevel: 80, alias: "l20")
+        {
+            _manager = manager;
+        }
+
+        private readonly RealmManager _manager;
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
             if (player.Level < 20)
             {
-                player.Experience = Player.GetLevelExp(20);
+                var statInfo = _manager.Resources.GameData.Classes[player.ObjectType].Stats;
+                for (var i = 0; i < 21 - player.Level; i++)
+                    for (var v = 0; v < statInfo.Length; v++)
+                    {
+                        player.Stats.Base[v] += (statInfo[v].MaxIncrease + statInfo[v].MinIncrease) / 2;
+                        if (player.Stats.Base[v] > statInfo[v].MaxValue)
+                            player.Stats.Base[v] = statInfo[v].MaxValue;
+                    }
                 player.Level = 20;
-                player.CalculateFame();
                 return true;
             }
-
             return false;
         }
     }

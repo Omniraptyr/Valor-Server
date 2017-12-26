@@ -21,6 +21,16 @@ namespace wServer.realm.entities
         bool IsVisibleToEnemy();
     }
 
+    public class Timer : System.Timers.Timer
+    {
+        public int Id { get; set; }
+
+        public Timer(double interval, int id = -1) : base(interval)
+        {
+            Id = id;
+        }
+    }
+
     public partial class Player : Character, IContainer, IPlayer
     {
 
@@ -28,6 +38,72 @@ namespace wServer.realm.entities
 
         private readonly Client _client;
         public Client Client => _client;
+        //fluttar 
+        List<Timer> timerList = new List<Timer>();
+
+        void TimerHandler(int delay, ConditionEffectIndex cei)
+        {
+            Timer timer = new Timer(delay, (int)cei);
+            timer.Elapsed += (o, e) => {
+                Client.Player?.ApplyConditionEffect(cei);
+                if (timerList.Exists(t => t == timer)) timerList.Remove(timer); //feels inefficient, prob isn't tho
+                timer.Dispose();
+            };
+            timer.Enabled = true;
+            timerList.Add(timer);
+        }
+        public int[] stealAmount = { 0, 0 };
+        public void OnEquip(Item item)
+        {
+            if (Client.Player != null && item != null)
+            {
+                foreach (var pair in item.StatReq)
+                    if (pair.Value < Stats[pair.Key])
+                        Client.Disconnect();
+
+                foreach (var pair in item.EffectEquip)
+                    if (pair.Key != string.Empty)
+                    {
+                        TimerHandler(pair.Value * 1000,
+                        (ConditionEffectIndex)Enum.Parse(typeof(ConditionEffectIndex), pair.Key.Trim().Replace(" ", ""), true));
+                    }
+
+                foreach (var pair in item.Steal)
+                    if (pair.Key != "")
+                    {
+                        if (pair.Key == "life") stealAmount[0] += pair.Value;
+                        else stealAmount[1] += pair.Value;
+                    }
+            }
+        }
+
+        public void OnUnequip(Item item)
+        {
+            if (Client.Player != null && item != null)
+            {
+                foreach (var pair in item.EffectEquip)
+                    if (pair.Key != string.Empty)
+                    {
+                        var cei = (int)Enum.Parse(typeof(ConditionEffectIndex), pair.Key.Trim().Replace(" ", ""), true);
+                        foreach (Timer t in timerList)
+                            if (t.Id == cei)
+                            {
+                                t.Dispose();
+                                timerList.Remove(t);
+                                return; //so that it only clears effs after the delay (unless no delay)
+                            }
+                        Client.Player.ApplyConditionEffect((ConditionEffectIndex)cei, 0);
+                    }
+                foreach (var pair in item.Steal)
+                {
+                    if (pair.Key != "")
+                    {
+                        if (pair.Key == "life") stealAmount[0] -= pair.Value;
+                        else stealAmount[1] -= pair.Value;
+                    }
+                }
+            }
+        }
 
         //Stats
         private readonly SV<int> _accountId;
@@ -737,7 +813,10 @@ namespace wServer.realm.entities
                 }
             }
 
-            base.Init(owner);
+            for (int i = 0; i < 4; i++)
+                if (Inventory[i] != null) OnEquip(Inventory[i]);
+
+             base.Init(owner);
         }
 
         public override void Tick(RealmTime time)

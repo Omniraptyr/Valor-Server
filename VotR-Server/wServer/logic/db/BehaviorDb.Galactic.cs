@@ -366,7 +366,7 @@ namespace wServer.logic
                     new TierLoot(9, ItemType.Armor, 0.055),
                     new TierLoot(9, ItemType.Weapon, 0.055),
                     new ItemLoot("Some Alien Equipment", 0.75),
-                    new ItemLoot("Gold Cache", 0.6),
+                    new ItemLoot("Gold Cache", 0.05),
                     new ItemLoot("The ET Experience", 0.035),
                     new ItemLoot("Blade of the Nightbringer", 0.035),
                     new ItemLoot("Doge's Pendant", 0.035)

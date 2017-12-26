@@ -504,6 +504,9 @@ namespace wServer.realm.entities
                     case ActivateEffects.BigStasisBlast:
                         BigStasisBlast(time, item, target, eff);
                         break;
+                   /* case ActivateEffects.FameActivate:
+                        AEFameActivate(time, item, target, eff);
+                        break;*/
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
@@ -817,6 +820,15 @@ namespace wServer.realm.entities
             this.ForceUpdate(Credits);
             
         }
+
+       /* private void AEFameActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            var acc = Client.Account;
+            Client.Manager.Database.UpdateFame(acc, eff.Amount);
+            Fame += eff.Amount;
+            this.ForceUpdate(Fame);
+
+        }*/
 
         private void AEOnraneActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
@@ -1442,7 +1454,7 @@ namespace wServer.realm.entities
                     ApplyConditionEffect(ConditionEffectIndex.Healing, eff.DurationMS);
                     break;
                 case 6:
-                    ApplyConditionEffect(ConditionEffectIndex.Hexed, eff.DurationMS);
+                    ApplyConditionEffect(ConditionEffectIndex.Damaging, eff.DurationMS);
                     break;
             }
         }
