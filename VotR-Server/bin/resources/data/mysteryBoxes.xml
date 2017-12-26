@@ -1,8 +1,8 @@
 <MysteryBoxData version = "1408515972.279192">
 	<MysteryBox id = "33" title = "The Sword of the Mad God Box" weight = "-1">
 		<Description></Description>
-		<Contents>8962,3272,3180,4622,4901,3275</Contents>
-		<Price amount="400" currency="0"/>
+		<Contents>8962,3272,4622,4901,3275</Contents>
+		<Price amount="600" currency="0"/>
 		<Image>http://i.imgur.com/WnkWTbQ.png</Image>
 		<Icon></Icon>
 		<StartTime>2014-06-06 14:30:16</StartTime>

@@ -53,7 +53,7 @@ public class GeneralProjectileComparison extends SlotComparison {
                 });
         }
     }
-
+    
     private function addNumProjectileText():void {
         var _local1:int = int(this.itemXML.NumProjectiles);
         var _local2:int = int(this.curItemXML.NumProjectiles);

@@ -9443,6 +9443,7 @@
         <BagType>2</BagType>
         <Timer>-1.0</Timer>
         <XpBoost/>
+        <Activate duration="2700">XPBoost</Activate>
         <feedPower>200</feedPower>
         <DisplayId>{equip.XP_Booster}</DisplayId>
     </Object>
@@ -10527,6 +10528,8 @@
         <Sound>spell/light_heal</Sound>
         <Consumable/>
         <Backpack/>
+        <Soulbound/>
+        <Activate>Backpack</Activate>
         <BagType>2</BagType>
         <OldSound>use_potion</OldSound>
         <feedPower>200</feedPower>
@@ -24931,23 +24934,21 @@
         <feedPower>1200</feedPower>
         <DisplayId>God Blood Robes</DisplayId>
     </Object>
-    <Object type="0x49e3" id="Zol Gem">
+    <Object type="0x49e3" id="Forgotten Zol Gem">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x32b</Index>
+            <File>legendaries8x8Embed</File>
+            <Index>0x51</Index>
         </Texture>
         <SlotType>9</SlotType>
-        <Description>A bracelet with a gemstone placed in it made out of pure crystalized Zol Energy.</Description>
-        <ActivateOnEquip stat="20" amount="50">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="5">IncrementStat</ActivateOnEquip>
-        <BagType>11</BagType>
+        <Description>A ring with a gemstone placed in it made out of pure crystalized Zol Energy.</Description>
+        <ActivateOnEquip stat="26" amount="50">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="50">IncrStatPerc</ActivateOnEquip>
         <FameBonus>8</FameBonus>
         <feedPower>1650</feedPower>
-        <Fabled/>
-        <DisplayId>Bracelet of Torment</DisplayId>
+        <Legendary/>
+        <DisplayId>Forgotten Zol Gem</DisplayId>
     </Object>
     <Object type="0x53a8" id="Sor Forger Battery">
         <Class>Equipment</Class>
@@ -31341,30 +31342,189 @@
         </Texture>
         <DisplayId>Marketplace</DisplayId>
     </Object>
-    <Object type="0x4ae0" id="test sword">
+    <Object type="0x69f8" id="The Genisus Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>The Genisus</DungeonName>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x40</Index>
+        </Texture>
+        <DisplayId>The Genisus</DisplayId>
+    </Object>
+    <Object type="0x69f9" id="Genesus Stalgamite">
+        <Class>GameObject</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x41</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x42</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x43</Index>
+            </Texture>
+        </RandomTexture>
+        <Size>120</Size>
+        <ShadowSize>60</ShadowSize>
+        <DisplayId>Genesus Stalgamite</DisplayId>
+    </Object>
+    <Object type="0x61aa" id="The Genisus Wall">
+        <Class>Wall</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x48</Index>
+        </Texture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x46</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x61ab" id="The Genisus Wall Breakable">
+        <Class>Wall</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x4a</Index>
+        </Texture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x4a</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x61ac" id="Genisus Landmine">
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x4f</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>120</Size>
+        <MaxHitPoints>2500</MaxHitPoints>
+        <Defense>5</Defense>
+        <NoMiniMap/>
+        <Projectile id="0">
+            <ObjectId>Dragon Attack Blue Fireball</ObjectId>
+            <Speed>45</Speed>
+            <Damage>120</Damage>
+            <Size>100</Size>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="4">Exhausted</ConditionEffect>
+            <MultiHit/>
+        </Projectile>
+        <DisplayId>Genisus Landmine</DisplayId>
+    </Object>
+    <Object type="0x61ad" id="Flashburst Spell">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
-            <File>lofiObj5</File>
-            <Index>0x30</Index>
+            <File>legendaries8x8Embed</File>
+            <Index>0x4c</Index>
         </Texture>
-        <SlotType>1</SlotType>
-        <Description>test</Description>
-        <RateOfFire>1</RateOfFire>
-        <Sound>weapon/blunt_sword</Sound>
+        <SlotType>11</SlotType>
+        <Description>Command the power of the genisus by will by using this spell.</Description>
+        <Sound>spell/magic_nova</Sound>
         <Projectile>
-            <ObjectId>Blade</ObjectId>
-            <Speed>100</Speed>
-            <MinDamage>1488</MinDamage>
-            <MaxDamage>1488</MaxDamage>
-            <LifetimeMS>350</LifetimeMS>
-            <CondChance effect="Stunned" chance="7.3" duration="3"/>
+            <ObjectId>Blue Scale</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>45</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <LifetimeMS>1000</LifetimeMS>
+            <Amplitude>2</Amplitude>
+            <Frequency>6</Frequency>
+            <MultiHit/>
         </Projectile>
-        <Steal type="life" amount="5"/>
-        <EffectEquip effect="Paralyzed" delay="25"/>
-        <ActivateOnEquip stat="26" amount="50">IncrStatPerc</ActivateOnEquip>
-        <BagType>5</BagType>
-        <OldSound>bladeSwing</OldSound>
-        <feedPower>5</feedPower>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>110</MpCost>
+        <ActivateOnEquip stat="6" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <Activate>BulletNova</Activate>
+    </Object>
+    <Object type="0x61ae" id="Prime Chaotic Seal">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x4d</Index>
+        </Texture>
+        <SlotType>12</SlotType>
+        <Description>A seal used by the great defenders that guarded the powers of the almighty Genisus Core.</Description>
+        <Sound>spell/light_heal</Sound>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>100</MpCost>
+        <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
+        <Activate stat="0" amount="60" duration="4" range="4.5" noStack="true" useWisMod="true">StatBoostAura</Activate>
+        <Activate stat="3" amount="30" duration="4" range="4.5" noStack="true" useWisMod="true">StatBoostAura</Activate>
+        <Activate effect="Healing" duration="4" range="4.5" color="0xff0080" target="player" center="player"
+                  visualEffect="5" useWisMod="true">GenericActivate
+        </Activate>
+        <Activate effect="Damaging" duration="4" range="4.5" color="0xff0080" target="player" center="player"
+                  visualEffect="0" useWisMod="true">GenericActivate
+        </Activate>
+        <Activate effect="Armored" duration="1.4" useWisMod="false">ConditionEffectSelf</Activate>
+        <feedPower>1000</feedPower>
+        <DisplayId>Prime Chaotic Seal</DisplayId>
+    </Object>
+    <Object type="0x61af" id="Ascendant Quiver">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x4e</Index>
+        </Texture>
+        <SlotType>15</SlotType>
+        <Description>A powerful quiver that shoots a magical arrow that pierces through the toughest of armors.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Projectile>
+            <ObjectId>Blue Bolt</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>550</MaxDamage>
+            <LifetimeMS>1000</LifetimeMS>
+            <Size>150</Size>
+            <ConditionEffect duration="3">Curse</ConditionEffect>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <PassesCover/>
+            <ParticleTrail/>
+        </Projectile>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="2">IncrementStat</ActivateOnEquip>
+        <ConditionEffect duration="3">Curse</ConditionEffect>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>65</MpCost>
+        <Activate>Shoot</Activate>
+        <feedPower>880</feedPower>
+        <DisplayId>Ascendant Quiver</DisplayId>
     </Object>
 </Objects>

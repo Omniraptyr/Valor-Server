@@ -738,6 +738,7 @@ namespace wServer.realm
             if (!ApplyCondition(effect))
                 return;
 
+
             var eff = (int)effect;
 
             if (_effects[eff] != -1 || durationMs == 0)

@@ -1134,7 +1134,7 @@ namespace wServer.logic
                         ),
                     new State(
 						new Taunt(0.50, "Your time is ticking, warriors!", "Unstoppable."),
-                        new TimedTransition(30000, "Failed"),
+                        new TimedTransition(15000, "Failed"),
                     new State("KillStones2",
 						new Shoot(8, count: 3, shootAngle: 6, projectileIndex: 6, coolDown: 400),
 						new Shoot(8, count: 6, shootAngle: 6, projectileIndex: 7, predictive: 1, coolDown: 400, coolDownOffset: 800),
@@ -1234,7 +1234,7 @@ namespace wServer.logic
                         ),
                     new State(
 						new Taunt(0.50, "Your time is ticking, warriors!", "Unstoppable."),
-                        new TimedTransition(30000, "Failed"),
+                        new TimedTransition(15000, "Failed"),
                     new State("KillStones2B",
 							new Shoot(8, count: 3, shootAngle: 6, projectileIndex: 6, coolDown: 400),
 							new Shoot(8, count: 6, shootAngle: 6, projectileIndex: 7, predictive: 1, coolDown: 400, coolDownOffset: 800),

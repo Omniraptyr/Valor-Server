@@ -100,6 +100,7 @@
   <ItemGroup>
     <Compile Include="logic\behaviors\ApplySetpiece.cs" />
     <Compile Include="logic\behaviors\ChangeGroundOnDeath.cs" />
+    <Compile Include="logic\behaviors\ConditionalBehavior.cs" />
     <Compile Include="logic\behaviors\CopyDamageOnDeath.cs" />
     <Compile Include="logic\behaviors\DropPortalOnDeath.cs" />
     <Compile Include="logic\behaviors\InvisiToss.cs" />
@@ -542,7 +543,9 @@
     <Compile Include="realm\entities\Enemy.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="realm\entities\player\Player.cs" />
+    <Compile Include="realm\entities\player\Player.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="realm\entities\Projectile.cs" />
     <Compile Include="realm\entities\StaticObject.cs" />
     <Compile Include="realm\entities\Trap.cs" />

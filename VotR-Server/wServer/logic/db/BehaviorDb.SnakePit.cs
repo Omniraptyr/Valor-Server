@@ -263,6 +263,9 @@ namespace wServer.logic
                         )
                     )
                 ),
+                new MostDamagers(3,
+                    new ItemLoot("Potion of Speed", 1)
+                    ),
                 new Threshold(0.1,
                     new ItemLoot("Wand of the Bulwark", 0.02),
                     new ItemLoot("Snake Skin Armor", 0.1),

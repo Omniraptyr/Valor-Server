@@ -36,7 +36,7 @@ public class MarketOverview extends EmptyFrame
          addChild(this.closeButton_);
          this.myOffersButton = this.createButton("My offers",10,this.myOffers,true);
          this.createOfferButton = this.createButton("Create offer",110,this.createOffer);
-         this.createOffer();
+         this.myOffers();
       }
       
       private function createOffer() : void

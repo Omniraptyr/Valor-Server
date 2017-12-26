@@ -61,6 +61,40 @@ namespace wServer.realm.commands
         }
     }
 
+    /*class GoldFameTransferCommand : Command
+    {
+        public GoldFameTransferCommand() : base("transfer") { }
+
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+            var acc = player.Client.Account;
+
+            if (player.Credits <= 0)
+            {
+                player.SendError("You have no gold to transfer into fame.");
+                return false;
+            }
+            var amount2 = int.Parse(args);
+
+            if (string.IsNullOrEmpty(args))
+            {
+                player.SendInfo("/transfer <amount>  {Every 5 gold is 1 fame.}");
+                return false;
+            }
+
+            player.Client.Manager.Database.UpdateCredit(acc, -amount2);
+            player.Credits = player.Client.Account.Credits - amount2;
+            player.ForceUpdate(player.Credits);
+
+
+            player.Client.Manager.Database.UpdateFame(acc, amount2);
+            player.Fame = player.Client.Account.Credits + amount2;
+            player.ForceUpdate(player.Fame);
+
+            return true;
+        }
+    }*/
+
     class PauseCommand : Command
     {
         public PauseCommand() : base("pause") { }
