@@ -13,7 +13,7 @@ namespace wServer.realm.entities
         public bool Hittestable { get; private set; }
         public bool Dying { get; private set; }
 
-        private bool[] isSet = new bool[1];
+        private bool[] isSet = { false, false };
         private Timer timer;
 
         private readonly SV<int> _hp;

@@ -758,7 +758,7 @@ namespace wServer.realm.entities
         }
 
         private List<Timer> timerList = new List<Timer>();
-        public int[] stealAmount = new int[1];
+        public int[] stealAmount = { 0, 0 };
 
         void TimerHandler(int delay, ConditionEffectIndex cei) {
             Timer timer = new Timer(delay, (int)cei);

@@ -575,10 +575,10 @@ public class TextKey {
     public static const CONDITIONEFFECT_SLOWIMMUNE:String = "conditionEffect.SlowImmune";
     public static const CONDITIONEFFECT_DAZEDIMMUNE:String = "conditionEffect.DazedImmune";
     public static const CONDITIONEFFECT_PARALYZEDIMMUNE:String = "conditionEffect.ParalyzedImmune";
-    public static const CONDITIONEFFECT_PETRIFIED:String = "conditionEffect.Petrify";
-    public static const CONDITIONEFFECT_PETRIFY_IMMUNE:String = "conditionEffect.PetrifyImmune";
-    public static const CONDITIONEFFECT_CURSE:String = "conditionEffect.Curse";
-    public static const CONDITIONEFFECT_CURSE_IMMUNE:String = "conditionEffect.CurseImmune";
+    public static const CONDITIONEFFECT_PETRIFIED:String = "Petrify";
+    public static const CONDITIONEFFECT_PETRIFY_IMMUNE:String = "Petrify Immune";
+    public static const CONDITIONEFFECT_CURSE:String = "Curse";
+    public static const CONDITIONEFFECT_CURSE_IMMUNE:String = "Curse Immune";
     public static const MONEY_GOLD_NEED_REGISTRATION:String = "Money.goldNeedsRegistration";
     public static const CHARACTERSLOTNEEDGOLDDIALOG_PRICE:String = "CharacterSlotNeedGoldDialog.price";
     public static const BUY_GOLD:String = "Gold.Buy";
