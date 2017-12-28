@@ -18,7 +18,7 @@ namespace wServer.logic
             .Init("Arena Headless Horseman",
                 new State(
                     new Spawn("Arena Horseman Anchor", 1, 1),
-                    new State("EverythingIsCool",
+                    new State("Default",
                         new HpLessTransition(0.1, "End"),
                         new State("Circle",
                             new Shoot(15, 3, shootAngle: 25, projectileIndex: 0, coolDown: 1000),
@@ -59,20 +59,18 @@ namespace wServer.logic
                     new Reproduce(densityMax: 3)
                     ),
                 new Threshold(.01,
-                    new TierLoot(6, ItemType.Weapon, 0.04),
-                    new TierLoot(7, ItemType.Weapon, 0.02),
-                    new TierLoot(8, ItemType.Weapon, 0.01),
-                    new TierLoot(7, ItemType.Armor, 0.04),
-                    new TierLoot(8, ItemType.Armor, 0.02),
-                    new TierLoot(9, ItemType.Armor, 0.01),
-                    new TierLoot(3, ItemType.Ring, 0.015),
-                    new TierLoot(4, ItemType.Ring, 0.005)
+                    new TierLoot(6, ItemType.Weapon, 0.1),
+                    new TierLoot(7, ItemType.Weapon, 0.07),
+                    new TierLoot(8, ItemType.Weapon, 0.05),
+                    new TierLoot(7, ItemType.Armor, 0.1),
+                    new TierLoot(8, ItemType.Armor, 0.07),
+                    new TierLoot(9, ItemType.Armor, 0.05),
+                    new TierLoot(4, ItemType.Ring, 0.04),
+                    new TierLoot(4, ItemType.Ability, 0.04)
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.GoldLoot()
-                ),
+                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Attack", 0.07)
+                    new ItemLoot("Potion of Attack", 0.2)
                     )
             )
             .Init("Sprite God",
@@ -87,20 +85,18 @@ namespace wServer.logic
                     new ReproduceChildren(5, .5, 5000, "Sprite Child")
                     ),
                 new Threshold(.01,
-                    new TierLoot(6, ItemType.Weapon, 0.04),
-                    new TierLoot(7, ItemType.Weapon, 0.02),
-                    new TierLoot(8, ItemType.Weapon, 0.01),
-                    new TierLoot(7, ItemType.Armor, 0.04),
-                    new TierLoot(8, ItemType.Armor, 0.02),
-                    new TierLoot(9, ItemType.Armor, 0.01),
-                    new TierLoot(4, ItemType.Ring, 0.02),
-                    new TierLoot(4, ItemType.Ability, 0.02)
+                    new TierLoot(6, ItemType.Weapon, 0.1),
+                    new TierLoot(7, ItemType.Weapon, 0.07),
+                    new TierLoot(8, ItemType.Weapon, 0.05),
+                    new TierLoot(7, ItemType.Armor, 0.1),
+                    new TierLoot(8, ItemType.Armor, 0.07),
+                    new TierLoot(9, ItemType.Armor, 0.05),
+                    new TierLoot(4, ItemType.Ring, 0.04),
+                    new TierLoot(4, ItemType.Ability, 0.04)
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.GoldLoot()
-                ),
+                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Attack", 0.07)
+                    new ItemLoot("Potion of Attack", 0.2)
                     )
             )
             .Init("Angelic Commander",
@@ -124,20 +120,18 @@ namespace wServer.logic
                          )
                     ),
                 new Threshold(.01,
-                    new TierLoot(6, ItemType.Weapon, 0.04),
-                    new TierLoot(7, ItemType.Weapon, 0.02),
-                    new TierLoot(8, ItemType.Weapon, 0.01),
-                    new TierLoot(7, ItemType.Armor, 0.04),
-                    new TierLoot(8, ItemType.Armor, 0.02),
-                    new TierLoot(9, ItemType.Armor, 0.01),
-                    new TierLoot(4, ItemType.Ring, 0.02),
-                    new TierLoot(4, ItemType.Ability, 0.02)
+                    new TierLoot(6, ItemType.Weapon, 0.1),
+                    new TierLoot(7, ItemType.Weapon, 0.07),
+                    new TierLoot(8, ItemType.Weapon, 0.05),
+                    new TierLoot(7, ItemType.Armor, 0.1),
+                    new TierLoot(8, ItemType.Armor, 0.07),
+                    new TierLoot(9, ItemType.Armor, 0.05),
+                    new TierLoot(4, ItemType.Ring, 0.04),
+                    new TierLoot(4, ItemType.Ability, 0.04)
                     ),
-                new MostDamagers(3,
-                    LootTemplates.GoldLoot()
-                ),
+                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Speed", 0.07)
+                    new ItemLoot("Potion of Speed", 0.2)
                     )
             )
             .Init("Sprite Child",
@@ -163,26 +157,23 @@ namespace wServer.logic
                     new Reproduce(densityMax: 3)
                     ),
                 new Threshold(.01,
-                    new TierLoot(6, ItemType.Weapon, 0.04),
-                    new TierLoot(7, ItemType.Weapon, 0.02),
-                    new TierLoot(8, ItemType.Weapon, 0.01),
-                    new TierLoot(7, ItemType.Armor, 0.04),
-                    new TierLoot(8, ItemType.Armor, 0.02),
-                    new TierLoot(9, ItemType.Armor, 0.01),
-                    new TierLoot(3, ItemType.Ring, 0.015),
-                    new TierLoot(4, ItemType.Ring, 0.005),
-                    new TierLoot(4, ItemType.Ability, 0.02)
+                    new TierLoot(6, ItemType.Weapon, 0.1),
+                    new TierLoot(7, ItemType.Weapon, 0.07),
+                    new TierLoot(8, ItemType.Weapon, 0.05),
+                    new TierLoot(7, ItemType.Armor, 0.1),
+                    new TierLoot(8, ItemType.Armor, 0.07),
+                    new TierLoot(9, ItemType.Armor, 0.05),
+                    new TierLoot(4, ItemType.Ring, 0.04),
+                    new TierLoot(4, ItemType.Ability, 0.04)
                     ),
-                 new MostDamagers(3,
-                    LootTemplates.GoldLoot()
-                ),
+                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Speed", 0.07)
+                    new ItemLoot("Potion of Speed", 0.2)
                     )
             )
-                .Init("Thunder God",
+           .Init("Thunder God",
                 new State(
-                    new DropPortalOnDeath("Storm Palace Portal", 45),
+                    new DropPortalOnDeath("Storm Palace Portal", 0.3),
                     new Prioritize(
                         new Swirl(0.4, 7),
                         new Wander(0.4)
@@ -190,24 +181,21 @@ namespace wServer.logic
                     new Shoot(10, 4, 20, coolDown: 3000),
                     new Shoot(10, 8, coolDown: 2500, predictive: 1, coolDownOffset: 2690, projectileIndex: 1)
                     ),
-                new MostDamagers(3,
-                    LootTemplates.GoldLoot()
-                ),
-                new TierLoot(6, ItemType.Weapon, 0.071),
-                new Threshold(0.18,
-                new TierLoot(11, ItemType.Armor, 0.06),
-                new TierLoot(7, ItemType.Weapon, 0.052),
-                new TierLoot(8, ItemType.Weapon, 0.042),
-                new TierLoot(7, ItemType.Armor, 0.062),
-                new TierLoot(8, ItemType.Armor, 0.042),
+                new MostDamagers(3, LootTemplates.GoldLoot()),
+                new Threshold(0.1,
+                    new TierLoot(11, ItemType.Armor, 0.1),
+                    new TierLoot(7, ItemType.Weapon, 0.25),
+                    new TierLoot(8, ItemType.Weapon, 0.17),
+                    new TierLoot(7, ItemType.Armor, 0.25),
+                    new TierLoot(8, ItemType.Armor, 0.17),
 
-                new TierLoot(3, ItemType.Ring, 0.0192),
-                new TierLoot(4, ItemType.Ring, 0.0082),
-                new TierLoot(4, ItemType.Ability, 0.0172),
-                new TierLoot(3, ItemType.Ability, 0.042),
-                    new TierLoot(9, ItemType.Armor, 0.03),
-                    new ItemLoot("Potion of Defense", 0.07)
-                    )
+                    new TierLoot(3, ItemType.Ring, 0.17),
+                    new TierLoot(4, ItemType.Ring, 0.1),
+                    new TierLoot(4, ItemType.Ability, 0.1),
+                    new TierLoot(3, ItemType.Ability, 0.17),
+                    new TierLoot(9, ItemType.Armor, 0.25),
+                    new ItemLoot("Potion of Defense", 0.33)
+                )
             )
             .Init("Ent God",
                 new State(
@@ -220,19 +208,18 @@ namespace wServer.logic
                     new Reproduce(densityMax: 3)
                     ),
                 new Threshold(.01,
-                    new TierLoot(6, ItemType.Weapon, 0.04),
-                    new TierLoot(7, ItemType.Weapon, 0.02),
-                    new TierLoot(8, ItemType.Weapon, 0.01),
-                    new TierLoot(7, ItemType.Armor, 0.04),
-                    new TierLoot(8, ItemType.Armor, 0.02),
-                    new TierLoot(9, ItemType.Armor, 0.01),
-                    new TierLoot(4, ItemType.Ability, 0.02)
+                    new TierLoot(6, ItemType.Weapon, 0.1),
+                    new TierLoot(7, ItemType.Weapon, 0.07),
+                    new TierLoot(8, ItemType.Weapon, 0.05),
+                    new TierLoot(7, ItemType.Armor, 0.1),
+                    new TierLoot(8, ItemType.Armor, 0.07),
+                    new TierLoot(9, ItemType.Armor, 0.05),
+                    new TierLoot(4, ItemType.Ring, 0.04),
+                    new TierLoot(4, ItemType.Ability, 0.04)
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.GoldLoot()
-                ),
+                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Defense", 0.07)
+                    new ItemLoot("Potion of Defense", 0.2)
                     )
             )
             .Init("Beholder",
@@ -248,20 +235,18 @@ namespace wServer.logic
                     new Reproduce(densityMax: 3)
                     ),
                 new Threshold(.01,
-                    new TierLoot(6, ItemType.Weapon, 0.04),
-                    new TierLoot(7, ItemType.Weapon, 0.02),
-                    new TierLoot(8, ItemType.Weapon, 0.01),
-                    new TierLoot(7, ItemType.Armor, 0.04),
-                    new TierLoot(8, ItemType.Armor, 0.02),
-                    new TierLoot(9, ItemType.Armor, 0.01),
-                    new TierLoot(3, ItemType.Ring, 0.015),
-                    new TierLoot(4, ItemType.Ring, 0.005)
+                    new TierLoot(6, ItemType.Weapon, 0.1),
+                    new TierLoot(7, ItemType.Weapon, 0.07),
+                    new TierLoot(8, ItemType.Weapon, 0.05),
+                    new TierLoot(7, ItemType.Armor, 0.1),
+                    new TierLoot(8, ItemType.Armor, 0.07),
+                    new TierLoot(9, ItemType.Armor, 0.05),
+                    new TierLoot(4, ItemType.Ring, 0.04),
+                    new TierLoot(4, ItemType.Ability, 0.04)
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.GoldLoot()
-                ),
+                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Defense", 0.07)
+                    new ItemLoot("Potion of Defense", 0.2)
                     )
             )
             .Init("Flying Brain",
@@ -276,19 +261,18 @@ namespace wServer.logic
                     new DropPortalOnDeath("Mad Lab Portal", .17)
                     ),
                 new Threshold(.01,
-                    new TierLoot(6, ItemType.Weapon, 0.04),
-                    new TierLoot(7, ItemType.Weapon, 0.02),
-                    new TierLoot(7, ItemType.Armor, 0.04),
-                    new TierLoot(8, ItemType.Armor, 0.02),
-                    new TierLoot(3, ItemType.Ring, 0.015),
-                    new TierLoot(4, ItemType.Ring, 0.005),
-                    new TierLoot(4, ItemType.Ability, 0.02)
+                    new TierLoot(6, ItemType.Weapon, 0.1),
+                    new TierLoot(7, ItemType.Weapon, 0.07),
+                    new TierLoot(8, ItemType.Weapon, 0.05),
+                    new TierLoot(7, ItemType.Armor, 0.1),
+                    new TierLoot(8, ItemType.Armor, 0.07),
+                    new TierLoot(9, ItemType.Armor, 0.05),
+                    new TierLoot(4, ItemType.Ring, 0.04),
+                    new TierLoot(4, ItemType.Ability, 0.04)
                     ),
-                new MostDamagers(3,
-                    LootTemplates.GoldLoot()
-                ),
+                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Attack", 0.07)
+                    new ItemLoot("Potion of Attack", 0.2)
                     )
             )
             .Init("Slime God",
@@ -302,20 +286,19 @@ namespace wServer.logic
                     new Shoot(10, projectileIndex: 1, predictive: 1, coolDown: 650),
                     new Reproduce(densityMax: 2)
                     ),
-                new MostDamagers(3,
-                    LootTemplates.GoldLoot()
-                ),
+                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(.01,
-                    new TierLoot(6, ItemType.Weapon, 0.04),
-                    new TierLoot(7, ItemType.Weapon, 0.02),
-                    new TierLoot(8, ItemType.Weapon, 0.01),
-                    new TierLoot(7, ItemType.Armor, 0.04),
-                    new TierLoot(8, ItemType.Armor, 0.02),
-                    new TierLoot(9, ItemType.Armor, 0.01),
-                    new TierLoot(4, ItemType.Ability, 0.02)
+                    new TierLoot(6, ItemType.Weapon, 0.1),
+                    new TierLoot(7, ItemType.Weapon, 0.07),
+                    new TierLoot(8, ItemType.Weapon, 0.05),
+                    new TierLoot(7, ItemType.Armor, 0.1),
+                    new TierLoot(8, ItemType.Armor, 0.07),
+                    new TierLoot(9, ItemType.Armor, 0.05),
+                    new TierLoot(4, ItemType.Ring, 0.04),
+                    new TierLoot(4, ItemType.Ability, 0.04)
                     ),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Defense", 0.07)
+                    new ItemLoot("Potion of Defense", 0.2)
                     )
             )
             .Init("Ghost God",
@@ -329,20 +312,22 @@ namespace wServer.logic
                     new Reproduce(densityMax: 3),
                     new DropPortalOnDeath("Undead Lair Portal", 0.17)
                     ),
+                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(.01,
-                    new TierLoot(6, ItemType.Weapon, 0.04),
-                    new TierLoot(7, ItemType.Weapon, 0.02),
-                    new TierLoot(7, ItemType.Armor, 0.04),
-                    new TierLoot(8, ItemType.Armor, 0.02),
-                    new TierLoot(3, ItemType.Ring, 0.015),
-                    new TierLoot(4, ItemType.Ring, 0.005),
-                    new TierLoot(4, ItemType.Ability, 0.02)
+                    new TierLoot(6, ItemType.Weapon, 0.1),
+                    new TierLoot(7, ItemType.Weapon, 0.07),
+                    new TierLoot(8, ItemType.Weapon, 0.05),
+                    new TierLoot(7, ItemType.Armor, 0.1),
+                    new TierLoot(8, ItemType.Armor, 0.07),
+                    new TierLoot(9, ItemType.Armor, 0.05),
+                    new TierLoot(4, ItemType.Ring, 0.04),
+                    new TierLoot(4, ItemType.Ability, 0.04)
                     ),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Speed", 0.07)
+                    new ItemLoot("Potion of Speed", 0.2)
                     )
             )
-        .Init("Construct of the Concealment",
+           .Init("Construct of the Concealment",
                 new State(
                     new Taunt("STRONGER!", "AGAIN!"),
                     new Wander(0.6),
@@ -350,21 +335,19 @@ namespace wServer.logic
                     new Shoot(12, 10, 1, projectileIndex: 1, coolDown: 2000),
                     new DropPortalOnDeath("Concealment of the Dreadnought Portal", .20)
                     ),
-                new TierLoot(6, ItemType.Weapon, 0.07),
+                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.18,
-
-                    new TierLoot(9, ItemType.Weapon, 0.045),
-                new TierLoot(7, ItemType.Weapon, 0.06),
-                new TierLoot(8, ItemType.Weapon, 0.05),
-                new TierLoot(7, ItemType.Armor, 0.07),
-                new TierLoot(8, ItemType.Armor, 0.05),
-
-                new TierLoot(3, ItemType.Ring, 0.029),
-                new TierLoot(4, ItemType.Ring, 0.015),
-                new TierLoot(4, ItemType.Ability, 0.027),
-                new TierLoot(3, ItemType.Ability, 0.05),
-                    new TierLoot(9, ItemType.Armor, 0.04),
-                    new ItemLoot("Potion of Wisdom", 0.06)
+                    new TierLoot(9, ItemType.Weapon, 0.055),
+                    new TierLoot(7, ItemType.Weapon, 0.15),
+                    new TierLoot(8, ItemType.Weapon, 0.08),
+                    new TierLoot(7, ItemType.Armor, 0.15),
+                    new TierLoot(8, ItemType.Armor, 0.08),
+                    new TierLoot(3, ItemType.Ring, 0.1),
+                    new TierLoot(4, ItemType.Ring, 0.05),
+                    new TierLoot(4, ItemType.Ability, 0.05),
+                    new TierLoot(3, ItemType.Ability, 0.1),
+                    new TierLoot(9, ItemType.Armor, 0.055),
+                    new ItemLoot("Potion of Wisdom", 0.25)
                     )
             )
             .Init("Rock Bot",
@@ -395,7 +378,7 @@ namespace wServer.logic
                     new ItemLoot("Purple Drake Egg", 0.01)
                     ),
                 new Threshold(0.04,
-                    new ItemLoot("Potion of Attack", 0.03)
+                    new ItemLoot("Potion of Attack", 0.07)
                     )
             )
             .Init("Paper Bot",
@@ -420,13 +403,17 @@ namespace wServer.logic
                         )
                     ),
                 new Threshold(.01,
-                    new TierLoot(6, ItemType.Weapon, 0.01),
-                    new ItemLoot("Health Potion", 0.04),
-                    new ItemLoot("Magic Potion", 0.01),
-                    new ItemLoot("Tincture of Life", 0.01)
+                    new TierLoot(5, ItemType.Weapon, 0.16),
+                    new TierLoot(6, ItemType.Weapon, 0.08),
+                    new TierLoot(7, ItemType.Weapon, 0.04),
+                    new TierLoot(5, ItemType.Armor, 0.16),
+                    new TierLoot(6, ItemType.Armor, 0.08),
+                    new TierLoot(7, ItemType.Armor, 0.04),
+                    new TierLoot(3, ItemType.Ring, 0.05),
+                    new TierLoot(3, ItemType.Ability, 0.1)
                     ),
                 new Threshold(0.04,
-                    new ItemLoot("Potion of Attack", 0.03)
+                    new ItemLoot("Potion of Attack", 0.07)
                     )
             )
             .Init("Steel Bot",
@@ -452,17 +439,22 @@ namespace wServer.logic
                         )
                     ),
                 new Threshold(.01,
-                    new TierLoot(6, ItemType.Weapon, 0.01),
-                    new ItemLoot("Health Potion", 0.04),
-                    new ItemLoot("Magic Potion", 0.01)
+                    new TierLoot(5, ItemType.Weapon, 0.16),
+                    new TierLoot(6, ItemType.Weapon, 0.08),
+                    new TierLoot(7, ItemType.Weapon, 0.04),
+                    new TierLoot(5, ItemType.Armor, 0.16),
+                    new TierLoot(6, ItemType.Armor, 0.08),
+                    new TierLoot(7, ItemType.Armor, 0.04),
+                    new TierLoot(3, ItemType.Ring, 0.05),
+                    new TierLoot(3, ItemType.Ability, 0.1)
                     ),
                 new Threshold(0.04,
-                    new ItemLoot("Potion of Attack", 0.03)
+                    new ItemLoot("Potion of Attack", 0.07)
                     )
             )
             .Init("Djinn",
                 new State(
-                    new DropPortalOnDeath("Trial of the Illusionist Portal", .10),
+                    new DropPortalOnDeath("Trial of the Illusionist Portal", .05),
                     new State("Idle",
                         new Prioritize(
                             new StayAbove(1, 200),
@@ -474,39 +466,10 @@ namespace wServer.logic
                         ),
                     new State("Attacking",
                         new State("Bullet",
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 90, coolDownOffset: 0, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 100, coolDownOffset: 200, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 110, coolDownOffset: 400, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 120, coolDownOffset: 600, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 130, coolDownOffset: 800, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 140, coolDownOffset: 1000,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 150, coolDownOffset: 1200,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 160, coolDownOffset: 1400,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 170, coolDownOffset: 1600,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 180, coolDownOffset: 1800,
-                                shootAngle: 90),
-                            new Shoot(1, count: 8, coolDown: 10000, fixedAngle: 180, coolDownOffset: 2000,
-                                shootAngle: 45),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 180, coolDownOffset: 0, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 170, coolDownOffset: 200, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 160, coolDownOffset: 400, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 150, coolDownOffset: 600, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 140, coolDownOffset: 800, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 130, coolDownOffset: 1000,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 120, coolDownOffset: 1200,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 110, coolDownOffset: 1400,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 100, coolDownOffset: 1600,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 90, coolDownOffset: 1800, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 90, coolDownOffset: 2000,
-                                shootAngle: 22.5),
+                            new Shoot(1, count: 4, coolDown: 200, fixedAngle: 90, rotateAngle: 10, coolDownOffset: 0, shootAngle: 90),
+                            new Shoot(1, count: 8, coolDown: 10000, fixedAngle: 180, coolDownOffset: 2000, shootAngle: 45),
+                            new Shoot(1, count: 4, coolDown: 200, fixedAngle: 180, rotateAngle: -10, coolDownOffset: 0, shootAngle: 90),
+                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 90, coolDownOffset: 2000, shootAngle: 22.5),
                             new TimedTransition(2000, "Wait")
                             ),
                         new State("Wait",
@@ -528,20 +491,19 @@ namespace wServer.logic
                         new Suicide()
                         )
                     ),
-                                                new MostDamagers(3,
-                    LootTemplates.GoldLoot()
-                ),
+                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(.01,
-                    new TierLoot(6, ItemType.Weapon, 0.04),
-                    new TierLoot(7, ItemType.Weapon, 0.02),
-                    new TierLoot(7, ItemType.Armor, 0.04),
-                    new TierLoot(8, ItemType.Armor, 0.02),
-                    new TierLoot(3, ItemType.Ring, 0.015),
-                    new TierLoot(4, ItemType.Ring, 0.005),
-                    new TierLoot(4, ItemType.Ability, 0.02)
+                    new TierLoot(6, ItemType.Weapon, 0.1),
+                    new TierLoot(7, ItemType.Weapon, 0.07),
+                    new TierLoot(8, ItemType.Weapon, 0.05),
+                    new TierLoot(7, ItemType.Armor, 0.1),
+                    new TierLoot(8, ItemType.Armor, 0.07),
+                    new TierLoot(9, ItemType.Armor, 0.05),
+                    new TierLoot(4, ItemType.Ring, 0.04),
+                    new TierLoot(4, ItemType.Ability, 0.04)
                     ),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Speed", 0.07)
+                    new ItemLoot("Potion of Speed", 0.2)
                     )
             )
             .Init("Leviathan",
@@ -578,14 +540,19 @@ namespace wServer.logic
                             new TimedTransition(1500, "Wander"))
                         )
                     ),
-                                                new MostDamagers(3,
-                    LootTemplates.GoldLoot()
-                ),
+                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(.01,
-                    new ItemLoot("Potion of Defense", 0.07),
-                    new TierLoot(6, ItemType.Weapon, 0.01),
-                    new ItemLoot("Health Potion", 0.04),
-                    new ItemLoot("Magic Potion", 0.01)
+                    new TierLoot(6, ItemType.Weapon, 0.1),
+                    new TierLoot(7, ItemType.Weapon, 0.07),
+                    new TierLoot(8, ItemType.Weapon, 0.05),
+                    new TierLoot(7, ItemType.Armor, 0.1),
+                    new TierLoot(8, ItemType.Armor, 0.07),
+                    new TierLoot(9, ItemType.Armor, 0.05),
+                    new TierLoot(4, ItemType.Ring, 0.04),
+                    new TierLoot(4, ItemType.Ability, 0.04)
+                    ),
+                new Threshold(0.07,
+                    new ItemLoot("Potion of Defense", 0.2)
                     )
             )
             .Init("Lucky Djinn",
@@ -600,39 +567,10 @@ namespace wServer.logic
                         ),
                     new State("Attacking",
                         new State("Bullet",
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 90, coolDownOffset: 0, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 100, coolDownOffset: 200, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 110, coolDownOffset: 400, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 120, coolDownOffset: 600, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 130, coolDownOffset: 800, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 140, coolDownOffset: 1000,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 150, coolDownOffset: 1200,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 160, coolDownOffset: 1400,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 170, coolDownOffset: 1600,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 180, coolDownOffset: 1800,
-                                shootAngle: 90),
-                            new Shoot(1, count: 8, coolDown: 10000, fixedAngle: 180, coolDownOffset: 2000,
-                                shootAngle: 45),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 180, coolDownOffset: 0, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 170, coolDownOffset: 200, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 160, coolDownOffset: 400, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 150, coolDownOffset: 600, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 140, coolDownOffset: 800, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 130, coolDownOffset: 1000,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 120, coolDownOffset: 1200,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 110, coolDownOffset: 1400,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 100, coolDownOffset: 1600,
-                                shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 90, coolDownOffset: 1800, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 90, coolDownOffset: 2000,
-                                shootAngle: 22.5),
+                            new Shoot(1, count: 4, coolDown: 200, fixedAngle: 90, rotateAngle: 10, coolDownOffset: 0, shootAngle: 90),
+                            new Shoot(1, count: 8, coolDown: 10000, fixedAngle: 180, coolDownOffset: 2000, shootAngle: 45),
+                            new Shoot(1, count: 4, coolDown: 200, fixedAngle: 180, rotateAngle: -10, coolDownOffset: 0, shootAngle: 90),
+                            new Shoot(1, count: 4, coolDown: 10000, fixedAngle: 90, coolDownOffset: 2000, shootAngle: 22.5),
                             new TimedTransition(2000, "Wait")
                             ),
                         new State("Wait",
@@ -654,6 +592,21 @@ namespace wServer.logic
                         new Suicide()
                         ),
                     new DropPortalOnDeath("The Crawling Depths", 1)
+                    ),
+                new Threshold(.01,
+                    new ItemLoot("1000 Gold", 0.01),
+                    new ItemLoot("100 Gold", .1),
+                    new TierLoot(10, ItemType.Weapon, 0.17),
+                    new TierLoot(11, ItemType.Weapon, 0.07),
+                    new TierLoot(12, ItemType.Weapon, 0.03),
+                    new TierLoot(11, ItemType.Armor, 0.17),
+                    new TierLoot(12, ItemType.Armor, 0.07),
+                    new TierLoot(13, ItemType.Armor, 0.03),
+                    new TierLoot(5, ItemType.Ring, 0.2),
+                    new TierLoot(5, ItemType.Ability, 0.2)
+                    ),
+                new Threshold(0.15,
+                    new ItemLoot("Greater Potion of Speed", 1)
                     )
             )
             .Init("Lucky Ent God",
@@ -666,7 +619,20 @@ namespace wServer.logic
                     new Shoot(12, count: 5, shootAngle: 10, predictive: 1, coolDown: 1250),
                     new DropPortalOnDeath("Woodland Labyrinth", 1)
                     ),
-                new Threshold(0.1
+                new Threshold(.01,
+                    new ItemLoot("1000 Gold", 0.01),
+                    new ItemLoot("100 Gold", .1),
+                    new TierLoot(10, ItemType.Weapon, 0.17),
+                    new TierLoot(11, ItemType.Weapon, 0.07),
+                    new TierLoot(12, ItemType.Weapon, 0.03),
+                    new TierLoot(11, ItemType.Armor, 0.17),
+                    new TierLoot(12, ItemType.Armor, 0.07),
+                    new TierLoot(13, ItemType.Armor, 0.03),
+                    new TierLoot(5, ItemType.Ring, 0.2),
+                    new TierLoot(5, ItemType.Ability, 0.2)
+                    ),
+                new Threshold(0.15,
+                    new ItemLoot("Greater Potion of Defense", 1)
                     )
             )
             ;

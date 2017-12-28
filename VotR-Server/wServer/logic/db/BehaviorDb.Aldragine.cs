@@ -134,7 +134,6 @@ namespace wServer.logic
                      new TimedTransition(1600, "3")
                     ),
                 new State("3",
-
                      new Shoot(10, count: 12, projectileIndex: 0, coolDown: 9999),
                      new Suicide()
                         )
@@ -143,14 +142,24 @@ namespace wServer.logic
             )
         .Init("Giant Cube of Zol",
             new State(
-                new State("swag1",
-                    new Shoot(10, count: 5, shootAngle: 14, projectileIndex: 0, coolDown: new Cooldown(3000, 1000)),
-                    new Shoot(10, count: 1, shootAngle: 2, projectileIndex: 1, coolDown: 500),
-                    new TimedTransition(5000, "swag2")
+                new State("Default",
+                    new EntityExistsTransition("AH The Heart", 50, "Transfer"),
+                    new TimedTransition(1000, "Main")
                     ),
-                new State("swag2",
-                     new TossObject("Cube of Zol", coolDown: 2500),
-                     new TimedTransition(5000, "swag1")
+                new State("Transfer",
+                    new TransferDamageOnDeath("AH The Heart", 50),
+                    new TimedTransition(1000, "Main")
+                    ),
+                new State("Main",
+                    new State("swag1",
+                        new Shoot(10, count: 5, shootAngle: 14, projectileIndex: 0, coolDown: new Cooldown(3000, 1000)),
+                        new Shoot(10, count: 1, shootAngle: 2, projectileIndex: 1, coolDown: 500),
+                        new TimedTransition(5000, "swag2")
+                    ),
+                    new State("swag2",
+                        new TossObject("Cube of Zol", coolDown: 2500),
+                        new TimedTransition(5000, "swag1")
+                        )
                     )
                 )
             )
@@ -172,23 +181,33 @@ namespace wServer.logic
             )
         .Init("Demon of the Dark",
             new State(
-                new State("fight1",
-                    new Prioritize(
-                        new Follow(0.8, 8, 1),
-                        new Wander(0.5)
-                        ),
-                     new Shoot(10, count: 3, shootAngle: 12, projectileIndex: 0, coolDown: 2000),
-                     new Shoot(10, count: 7, projectileIndex: 1, coolDown: 6000),
-                     new TimedTransition(6800, "fight2")
+                new State("Default",
+                    new EntityExistsTransition("AH The Heart", 50, "Transfer"),
+                    new TimedTransition(1000, "Main")
                     ),
-                new State("fight2",
-                    new Prioritize(
-                        new Follow(0.5, 8, 1),
-                        new Wander(0.5)
+                new State("Transfer",
+                    new TransferDamageOnDeath("AH The Heart", 50),
+                    new TimedTransition(1000, "Main")
+                    ),
+                new State("Main",
+                    new State("fight1",
+                        new Prioritize(
+                            new Follow(0.8, 8, 1),
+                            new Wander(0.5)
+                            ),
+                        new Shoot(10, count: 3, shootAngle: 12, projectileIndex: 0, coolDown: 2000),
+                        new Shoot(10, count: 7, projectileIndex: 1, coolDown: 6000),
+                        new TimedTransition(6800, "fight2")
                         ),
-                     new ConditionalEffect(ConditionEffectIndex.Armored),
-                     new Shoot(10, count: 5, projectileIndex: 2, coolDown: 2000),
-                     new TimedTransition(4000, "fight1")
+                    new State("fight2",
+                        new Prioritize(
+                            new Follow(0.5, 8, 1),
+                            new Wander(0.5)
+                            ),
+                        new ConditionalEffect(ConditionEffectIndex.Armored),
+                        new Shoot(10, count: 5, projectileIndex: 2, coolDown: 2000),
+                        new TimedTransition(4000, "fight1")
+                        )
                     )
                 )
             )
@@ -205,18 +224,28 @@ namespace wServer.logic
             )
         .Init("Corrupted Stone Giant B",
             new State(
-                new TransformOnDeath("Headless Stone Giant", 1, 1, 1),
-                new Orbit(0.15, 3.7, 20),
-                new State("fight1",
-                     new Shoot(10, count: 1, projectileIndex: 1, coolDown: 4200, coolDownOffset: 1000),
-                     new Shoot(10, count: 1, projectileIndex: 0, coolDown: 2400, coolDownOffset: 1000),
-                     new TimedTransition(5000, "fight2")
+                new State("Default",
+                    new EntityExistsTransition("AH The Heart", 50, "Transfer"),
+                    new TimedTransition(1000, "Main")
                     ),
-                new State("fight2",
-                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                     new Shoot(10, count: 1, projectileIndex: 1, coolDown: 4200, coolDownOffset: 1000),
-                     new Shoot(10, count: 1, projectileIndex: 0, coolDown: 2400, coolDownOffset: 1000),
-                     new TimedTransition(3600, "fight1")
+                new State("Transfer",
+                    new TransferDamageOnDeath("AH The Heart", 50),
+                    new TimedTransition(1000, "Main")
+                    ),
+                new State("Main",
+                    new TransformOnDeath("Headless Stone Giant", 1, 1, 1),
+                    new Orbit(0.15, 3.7, 20),
+                    new State("fight1",
+                        new Shoot(10, count: 1, projectileIndex: 1, coolDown: 4200, coolDownOffset: 1000),
+                        new Shoot(10, count: 1, projectileIndex: 0, coolDown: 2400, coolDownOffset: 1000),
+                        new TimedTransition(5000, "fight2")
+                        ),
+                    new State("fight2",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Shoot(10, count: 1, projectileIndex: 1, coolDown: 4200, coolDownOffset: 1000),
+                        new Shoot(10, count: 1, projectileIndex: 0, coolDown: 2400, coolDownOffset: 1000),
+                        new TimedTransition(3600, "fight1")
+                        )
                     )
                 )
             )
@@ -280,25 +309,47 @@ namespace wServer.logic
                 )
             )
         .Init("Cube of Zol",
-                new State(
-                    new Wander(0.8),
-                    new Shoot(8, 1, coolDown: 750)
+            new State(
+                new State("Default",
+                    new EntityExistsTransition("AH The Heart", 50, "Transfer"),
+                    new TimedTransition(1000, "Main")
                     ),
-                new Threshold(0.5,
-                    new ItemLoot("Mithril Shield", 0.01),
-                    new ItemLoot("Agateclaw Dagger", 0.01)
+                new State("Transfer",
+                    new TransferDamageOnDeath("AH The Heart", 50),
+                    new TimedTransition(1000, "Main")
+                    ),
+                new State("Main",
+                    new State("",
+                        new Wander(0.8),
+                        new Shoot(8, 1, coolDown: 750)
+                        )
                     )
+                ),
+            new Threshold(0.5,
+                new ItemLoot("Mithril Shield", 0.01),
+                new ItemLoot("Agateclaw Dagger", 0.01)
+                )
             )
         .Init("Servant of Darkness",
             new State(
-                new Wander(1),
-                new State("fight1",
-                     new Shoot(10, count: 2, shootAngle: 8, projectileIndex: 0, coolDown: 200),
-                     new TimedTransition(4000, "fight2")
+                new State("Default",
+                    new EntityExistsTransition("AH The Heart", 50, "Transfer"),
+                    new TimedTransition(1000, "Main")
                     ),
-                new State("fight2",
-                     new Shoot(10, count: 5, projectileIndex: 1, coolDown: 1200),
-                     new TimedTransition(4000, "fight1")
+                new State("Transfer",
+                    new TransferDamageOnDeath("AH The Heart", 50),
+                    new TimedTransition(1000, "Main")
+                     ),
+                new State("Main",
+                    new Wander(1),
+                    new State("fight1",
+                        new Shoot(10, count: 2, shootAngle: 8, projectileIndex: 0, coolDown: 200),
+                        new TimedTransition(4000, "fight2")
+                        ),
+                    new State("fight2",
+                        new Shoot(10, count: 5, projectileIndex: 1, coolDown: 1200),
+                        new TimedTransition(4000, "fight1")
+                        )
                     )
                 )
             )
@@ -369,6 +420,7 @@ namespace wServer.logic
                      new TimedTransition(4000, "fight1")
                     ),
                 new State("fight4",
+                     new TransferDamageOnDeath("AH The Heart"),
                      new Orbit(0.5, 5, 20, "AH The Heart"),
                      new Shoot(10, count: 2, shootAngle: 18, projectileIndex: 0, coolDown: new Cooldown(4000, 2000))
                     )
@@ -401,11 +453,21 @@ namespace wServer.logic
             )
         .Init("Brute of the Hideout",
                 new State(
-                    new Prioritize(
-                        new Follow(1, 8, 1),
-                        new Wander(0.4)
+                    new State("Default",
+                        new EntityExistsTransition("AH The Heart", 50, "Transfer"),
+                        new TimedTransition(1000, "Main")
                         ),
-                    new Shoot(8, 1, coolDown: 100)
+                    new State("Transfer",
+                        new TransferDamageOnDeath("AH The Heart", 50),
+                        new TimedTransition(1000, "Main")
+                        ),
+                    new State("Main",
+                        new Prioritize(
+                            new Follow(1, 8, 1),
+                            new Wander(0.4)
+                            ),
+                        new Shoot(8, 1, coolDown: 100)
+                        )
                     ),
                 new Threshold(0.5,
                     new ItemLoot("Ring of Exalted Vitality", 0.01)
@@ -566,70 +628,91 @@ namespace wServer.logic
                         new TimedTransition(6000, "ded")
                         ),
                     new State("ded",
-                        new InvisiToss("AH Loot Chest 1", 2, 270, coolDown: 9999999),
+                        //new InvisiToss("AH Loot Chest 1", 2, 270, coolDown: 9999999),
                         new Suicide()
                         )
-                    )
-                )
-        .Init("AH Loot Chest 1",
-                new State(
-                    new State("Idle",
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new TimedTransition(5000, "UnsetEffect")
                     ),
-                    new State("UnsetEffect")
-                ),
-                new MostDamagers(3,
-                    LootTemplates.FabledItemsLoot2()
-                ),
+                    new Threshold(0.05,
+                       new TierLoot(12, ItemType.Weapon, 0.08),
+                       new TierLoot(5, ItemType.Ability, 0.07),
+                       new TierLoot(6, ItemType.Ability, 0.05),
+                       new TierLoot(13, ItemType.Armor, 0.06),
+                       new TierLoot(5, ItemType.Ring, 0.06),
+                       new ItemLoot("Onrane Cache", 0.25),
+                       new ItemLoot("The Stronghold Key", 0.06),
+                       new ItemLoot("Gold Cache", 0.025),
+                       new ItemLoot("Greater Potion of Life", 1),
+                       new ItemLoot("Greater Potion of Mana", 1)
+                       )
+            )
+                        /* .Init("AH Loot Chest 1",
+                                 new State(
+                                     new State("Idle",
+                                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                                         new TimedTransition(5000, "UnsetEffect")
+                                     ),
+                                     new State("UnsetEffect")
+                                 ),
+                                 new MostDamagers(3,
+                                     LootTemplates.FabledItemsLoot2()
+                                 ),
 
-                new Threshold(0.05,
-                new TierLoot(12, ItemType.Weapon, 0.08),
-                new TierLoot(5, ItemType.Ability, 0.07),
-                new TierLoot(6, ItemType.Ability, 0.05),
-                new TierLoot(13, ItemType.Armor, 0.06),
-                new TierLoot(5, ItemType.Ring, 0.06),
-                new ItemLoot("Onrane Cache", 0.25),
-                new ItemLoot("The Stronghold Key", 0.06),
-                new ItemLoot("Gold Cache", 0.025),
-                new ItemLoot("Greater Potion of Life", 1),
-                new ItemLoot("Greater Potion of Mana", 1)
-                )
-            )
-        .Init("AH Loot Chest 2",
+                                 new Threshold(0.05,
+                                 new TierLoot(12, ItemType.Weapon, 0.08),
+                                 new TierLoot(5, ItemType.Ability, 0.07),
+                                 new TierLoot(6, ItemType.Ability, 0.05),
+                                 new TierLoot(13, ItemType.Armor, 0.06),
+                                 new TierLoot(5, ItemType.Ring, 0.06),
+                                 new ItemLoot("Onrane Cache", 0.25),
+                                 new ItemLoot("The Stronghold Key", 0.06),
+                                 new ItemLoot("Gold Cache", 0.025),
+                                 new ItemLoot("Greater Potion of Life", 1),
+                                 new ItemLoot("Greater Potion of Mana", 1)
+                                 )
+                             )*/
+                        /*.Init("AH Loot Chest 2",
+                                new State(
+                                    new State("Idle",
+                                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                                        new TimedTransition(5000, "UnsetEffect")
+                                    ),
+                                    new State("UnsetEffect")
+                                ),
+                                new MostDamagers(3,
+                                    LootTemplates.FabledItemsLoot2()
+                                ),
+                                new Threshold(0.05,
+                                new TierLoot(12, ItemType.Weapon, 0.08),
+                                new TierLoot(5, ItemType.Ability, 0.07),
+                                new TierLoot(6, ItemType.Ability, 0.05),
+                                new TierLoot(13, ItemType.Armor, 0.06),
+                                new TierLoot(7, ItemType.Ring, 0.08),
+                                new ItemLoot("Onrane Cache", 1),
+                                new ItemLoot("The Stronghold Key", 0.07),
+                                new ItemLoot("Gold Cache", 0.5),
+                                new ItemLoot("Greater Potion of Life", 1),
+                                new ItemLoot("Greater Potion of Defense", 1),
+                                new ItemLoot("Greater Potion of Attack", 0.6),
+                                new ItemLoot("Greater Potion of Dexterity", 0.5),
+                                new ItemLoot("Greater Potion of Vitality", 0.5)
+                                )
+                            )*/
+            .Init("AH Heart Portal Spawner",
                 new State(
-                    new State("Idle",
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new TimedTransition(5000, "UnsetEffect")
-                    ),
-                    new State("UnsetEffect")
-                ),
-                new MostDamagers(3,
-                    LootTemplates.FabledItemsLoot2()
-                ),
-                new Threshold(0.05,
-                new TierLoot(12, ItemType.Weapon, 0.08),
-                new TierLoot(5, ItemType.Ability, 0.07),
-                new TierLoot(6, ItemType.Ability, 0.05),
-                new TierLoot(13, ItemType.Armor, 0.06),
-                new TierLoot(7, ItemType.Ring, 0.08),
-                new ItemLoot("Onrane Cache", 1),
-                new ItemLoot("The Stronghold Key", 0.07),
-                new ItemLoot("Gold Cache", 0.5),
-                new ItemLoot("Greater Potion of Life", 1),
-                new ItemLoot("Greater Potion of Defense", 1),
-                new ItemLoot("Greater Potion of Attack", 0.6),
-                new ItemLoot("Greater Potion of Dexterity", 0.5),
-                new ItemLoot("Greater Potion of Vitality", 0.5)
-                )
+                   new DropPortalOnDeath("Core of the Hideout", timeout: 60),
+                   new State("Default",
+                       new Suicide()
+                       )
+                   )
             )
-        .Init("AH Loot Chest 3",
+           .Init("AH Heart Loot Ctrl",
                 new State(
-                    new State("Idle",
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new TimedTransition(5000, "UnsetEffect")
-                    ),
-                    new State("UnsetEffect")
+                    new TransformOnDeath("AH Heart Portal Spawner"),
+                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                    new State("Idle"),
+                    new State("Loot",
+                        new Suicide()
+                        )
                 ),
                 new MostDamagers(3,
                     LootTemplates.FabledItemsLoot2()
@@ -653,34 +736,48 @@ namespace wServer.logic
                 new ItemLoot("Greater Potion of Speed", 0.5)
                 )
             )
-        .Init("AH Loot Chest 4",
+            .Init("AH TZol Portal Spawner",
                 new State(
+                   new DropPortalOnDeath("Treasure of Zol", timeout: 60),
+                   new State("Default",
+                       new Taunt("Access is granted to the Treasure in 3 seconds."),
+                       new TimedTransition(3000 ,"Spawn")
+                       ),
+                   new State("Spawn",
+                       new Suicide()
+                       )
+                   )
+            )
+            .Init("AH Aldragine Loot Ctrl",
+                new State(
+                    new TransformOnDeath("AH TZol Portal Spawner"),
                     new State("Idle",
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new TimedTransition(5000, "UnsetEffect")
-                    ),
-                    new State("UnsetEffect")
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable)
+                        ),
+                    new State("Loot",
+                        new Suicide()
+                        )
                 ),
                 new MostDamagers(3,
                     LootTemplates.FabledItemsLoot1()
                 ),
                 new Threshold(0.05,
-                new TierLoot(12, ItemType.Weapon, 0.08),
-                new TierLoot(5, ItemType.Ability, 0.07),
-                new TierLoot(6, ItemType.Ability, 0.05),
-                new TierLoot(13, ItemType.Armor, 0.06),
-                new TierLoot(7, ItemType.Ring, 0.08),
-                new ItemLoot("Spiritclaw", 0.01),
-                new ItemLoot("Ultimate Onrane Cache", 1),
-                new ItemLoot("The Stronghold Key", 0.75),
-                new ItemLoot("10000 Gold", 1.00),
-                new ItemLoot("Greater Potion of Life", 1),
-                new ItemLoot("Greater Potion of Defense", 1),
-                new ItemLoot("Greater Potion of Attack", 0.6),
-                new ItemLoot("Greater Potion of Dexterity", 0.5),
-                new ItemLoot("Greater Potion of Vitality", 0.5),
-                new ItemLoot("Greater Potion of Speed", 0.5),
-                new ItemLoot("Greater Potion of Mana", 0.5)
+                    new TierLoot(12, ItemType.Weapon, 0.08),
+                    new TierLoot(5, ItemType.Ability, 0.07),
+                    new TierLoot(6, ItemType.Ability, 0.05),
+                    new TierLoot(13, ItemType.Armor, 0.06),
+                    new TierLoot(7, ItemType.Ring, 0.08),
+                    new ItemLoot("Spiritclaw", 0.01),
+                    new ItemLoot("Ultimate Onrane Cache", 1),
+                    //new ItemLoot("The Stronghold Key", 0.75),
+                    new ItemLoot("10000 Gold", 1.00),
+                    new ItemLoot("Greater Potion of Life", 1),
+                    new ItemLoot("Greater Potion of Defense", 1),
+                    new ItemLoot("Greater Potion of Attack", 0.6),
+                    new ItemLoot("Greater Potion of Dexterity", 0.5),
+                    new ItemLoot("Greater Potion of Vitality", 0.5),
+                    new ItemLoot("Greater Potion of Speed", 0.5),
+                    new ItemLoot("Greater Potion of Mana", 0.5)
                 )
             )
         .Init("AH Secret Chest",
@@ -847,11 +944,26 @@ namespace wServer.logic
                         new TimedTransition(6000, "ded")
                         ),
                     new State("ded",
-                        new InvisiToss("AH Loot Chest 2", 2, 270, coolDown: 9999999),
+                        //new InvisiToss("AH Loot Chest 2", 2, 270, coolDown: 9999999),
                         new Suicide()
                         )
-                    )
+                    ),
+                    new Threshold(0.05,
+                        new TierLoot(12, ItemType.Weapon, 0.08),
+                        new TierLoot(5, ItemType.Ability, 0.07),
+                        new TierLoot(6, ItemType.Ability, 0.05),
+                        new TierLoot(13, ItemType.Armor, 0.06),
+                        new TierLoot(7, ItemType.Ring, 0.08),
+                        new ItemLoot("Onrane Cache", 1),
+                        new ItemLoot("The Stronghold Key", 0.07),
+                        new ItemLoot("Gold Cache", 0.5),
+                        new ItemLoot("Greater Potion of Life", 1),
+                        new ItemLoot("Greater Potion of Defense", 1),
+                        new ItemLoot("Greater Potion of Attack", 0.6),
+                        new ItemLoot("Greater Potion of Dexterity", 0.5),
+                        new ItemLoot("Greater Potion of Vitality", 0.5)
                 )
+            )
         .Init("AH The Heart",
                 new State(
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -1006,14 +1118,17 @@ namespace wServer.logic
                         new Suicide()
                         ),
                     new State("Success",
-                        new DropPortalOnDeath("Keeping of Aldragine Portal", 100, timeout: 180),
-                        new InvisiToss("AH Loot Chest 3", 2, 270, coolDown: 9999999),
+                        //new DropPortalOnDeath("Keeping of Aldragine Portal", 100, timeout: 180),
+                        //new InvisiToss("AH Loot Chest 3", 2, 270, coolDown: 9999999),
+                        new TransferDamageOnDeath("AH Heart Loot Ctrl"),
+                        new Order(50, "AH Heart Loot Ctrl", "Loot"),
                         new Suicide()
                         )
                     )
                 )
-        .Init("AH Aldragine",
+        .Init("AH Aldragine",               
                 new State(
+                    new TransferDamageOnDeath("AH Aldragine Loot Ctrl"),
                     new HpLessTransition(0.13, "ded"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -1318,6 +1433,7 @@ namespace wServer.logic
                         new AnnounceOnDeath("The Zol, a dark burden, seems to fade away slowly..."),
                         new Shoot(8, count: 10, projectileIndex: 2, coolDown: 9999),
                         new DropPortalOnDeath("Treasure of Zol Portal", 50, timeout: 120),
+                        new Order(50, "AH Aldragine Loot Ctrl", "Loot"),
                         new InvisiToss("AH Loot Chest 4", 2, 270, coolDown: 9999999),
                         new Suicide()
                         ),

@@ -166,7 +166,7 @@ namespace wServer.realm.entities
                 }
                 _bleeding += 28 * (time.ElaspedMsDelta / 1000f);
             }
-            if (isSurgeGone == true)
+            if (isSurgeGone)
             {
                 if (_surgeDepletion > 1)
                 {
@@ -180,9 +180,9 @@ namespace wServer.realm.entities
                         surgewither = true;
                     }
                 }
-                _surgeDepletion += 28 * (time.ElaspedMsDelta / 1000f);
+                _surgeDepletion += 6 * (time.ElaspedMsDelta / 1000f);
             }
-            if(surgewither == true)
+            if (surgewither)
             {
                 if (_surgeDepletion2 > 1)
                 {
@@ -191,7 +191,7 @@ namespace wServer.realm.entities
                         Surge = 0;
                     _surgeDepletion2 -= (int)_surgeDepletion2;
                 }
-                _surgeDepletion2 += 14 * (time.ElaspedMsDelta / 1000f);
+                _surgeDepletion2 += 3 * (time.ElaspedMsDelta / 1000f);
             }
 
             if (HasConditionEffect(ConditionEffects.NinjaSpeedy))
