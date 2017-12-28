@@ -27,7 +27,7 @@ x64/
 x86/
 bld/
 [Bb]in/
-![Bb]in/resources/
+!dat1.xml
 [Oo]bj/
 [Ll]og/
 
