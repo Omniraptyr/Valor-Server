@@ -89537,36 +89537,6 @@ A whole thanksgiving turkey!
     <FullOccupy/>
     <EnemyOccupySquare/>
   </Object>
-<Object type="0x23a4" id="AH Heart Loot Ctrl">
-    <Class>Character</Class>
-    <Enemy/>
-    <StasisImmune/>
-    <NoMiniMap/>
-    <Texture>
-      <File>invisible</File>
-      <Index>0</Index>
-    </Texture>
-    <MaxHitPoints>309600</MaxHitPoints>
-    <Defense>0</Defense>
-    <Size>0</Size>
-    <XpMult>0.0</XpMult>
-	<Elitedrop/>
-  </Object>
-<Object type="0x23a5" id="AH Aldragine Loot Ctrl">
-    <Class>Character</Class>
-    <Enemy/>
-    <StasisImmune/>
-    <NoMiniMap/>
-    <Texture>
-      <File>invisible</File>
-      <Index>0</Index>
-    </Texture>
-    <MaxHitPoints>800000</MaxHitPoints>
-    <Defense>0</Defense>
-    <Size>0</Size>
-    <XpMult>0.0</XpMult>
-	<Elitedrop/>
-  </Object>
   <Object type="0x23a6" id="Green Energy Missile">
     <Class>Projectile</Class>
     <Texture>
@@ -89672,7 +89642,7 @@ A whole thanksgiving turkey!
     </Texture>
     <DisplayId>Treasure of Zol Portal</DisplayId>
   </Object>
-  <Object type="0x23a9" id="AH Heart Portal Spawner">
+    <Object type="0x23a9" id="AH Heart Portal Spawner">
     <Class>Character</Class>
     <Enemy/>
     <StasisImmune/>
@@ -89699,6 +89669,36 @@ A whole thanksgiving turkey!
     <Defense>0</Defense>
     <Size>0</Size>
     <XpMult>0.0</XpMult>
+  </Object>
+  <Object type="0x23a4" id="AH Heart Loot Ctrl">
+    <Class>Character</Class>
+    <Enemy/>
+    <StasisImmune/>
+    <NoMiniMap/>
+    <Texture>
+      <File>invisible</File>
+      <Index>0</Index>
+    </Texture>
+    <MaxHitPoints>309600</MaxHitPoints>
+    <Defense>0</Defense>
+    <Size>0</Size>
+    <XpMult>0.0</XpMult>
+	<Elitedrop/>
+  </Object>
+<Object type="0x23a5" id="AH Aldragine Loot Ctrl">
+    <Class>Character</Class>
+    <Enemy/>
+    <StasisImmune/>
+    <NoMiniMap/>
+    <Texture>
+      <File>invisible</File>
+      <Index>0</Index>
+    </Texture>
+    <MaxHitPoints>800000</MaxHitPoints>
+    <Defense>0</Defense>
+    <Size>0</Size>
+    <XpMult>0.0</XpMult>
+	<Elitedrop/>
   </Object>
   <Object type="0x44d2" id="AA Nexus Wall 1">
     <Class>Wall</Class>
