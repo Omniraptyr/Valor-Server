@@ -1,0 +1,45 @@
+C:\Users\darkd\Desktop\NR-CORE-master\bin\log4net_rl.config
+C:\Users\darkd\Desktop\NR-CORE-master\bin\RemoteLogger.exe.config
+C:\Users\darkd\Desktop\NR-CORE-master\bin\RemoteLogger.exe
+C:\Users\darkd\Desktop\NR-CORE-master\bin\RemoteLogger.pdb
+C:\Users\darkd\Desktop\NR-CORE-master\RemoteLogger\obj\Debug\RemoteLogger.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\NR-CORE-master\RemoteLogger\obj\Debug\RemoteLogger.exe
+C:\Users\darkd\Desktop\NR-CORE-master\RemoteLogger\obj\Debug\RemoteLogger.pdb
+C:\Users\darkd\Desktop\votr-server2.0\bin\log4net_rl.config
+C:\Users\darkd\Desktop\votr-server2.0\bin\RemoteLogger.exe.config
+C:\Users\darkd\Desktop\votr-server2.0\bin\RemoteLogger.exe
+C:\Users\darkd\Desktop\votr-server2.0\bin\RemoteLogger.pdb
+C:\Users\darkd\Desktop\votr-server2.0\RemoteLogger\obj\Debug\RemoteLogger.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\votr-server2.0\RemoteLogger\obj\Debug\RemoteLogger.exe
+C:\Users\darkd\Desktop\votr-server2.0\RemoteLogger\obj\Debug\RemoteLogger.pdb
+C:\Users\darkd\Desktop\votr-server2.0\RemoteLogger\obj\Debug\RemoteLogger.csprojResolveAssemblyReference.cache
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\bin\log4net_rl.config
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\bin\RemoteLogger.exe.config
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\bin\RemoteLogger.exe
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\bin\RemoteLogger.pdb
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\RemoteLogger\obj\Debug\RemoteLogger.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\RemoteLogger\obj\Debug\RemoteLogger.exe
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\RemoteLogger\obj\Debug\RemoteLogger.pdb
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\bin\log4net_rl.config
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\bin\RemoteLogger.exe.config
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\bin\RemoteLogger.exe
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\bin\RemoteLogger.pdb
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\RemoteLogger\obj\Debug\RemoteLogger.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\RemoteLogger\obj\Debug\RemoteLogger.exe
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\RemoteLogger\obj\Debug\RemoteLogger.pdb
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\RemoteLogger\obj\Debug\RemoteLogger.csprojResolveAssemblyReference.cache
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\log4net_rl.config
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\RemoteLogger.exe.config
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\RemoteLogger.exe
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\RemoteLogger.pdb
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.exe
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.pdb
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.csprojResolveAssemblyReference.cache
+C:\votr\VotR-Server2\VotR-Server\bin\log4net_rl.config
+C:\votr\VotR-Server2\VotR-Server\bin\RemoteLogger.exe.config
+C:\votr\VotR-Server2\VotR-Server\bin\RemoteLogger.exe
+C:\votr\VotR-Server2\VotR-Server\bin\RemoteLogger.pdb
+C:\votr\VotR-Server2\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.csproj.CoreCompileInputs.cache
+C:\votr\VotR-Server2\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.exe
+C:\votr\VotR-Server2\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.pdb
