@@ -13,6 +13,8 @@
 *.dll
 server.json
 wServer.json
+ProductionSetup.as
+![Bb]in/resources
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
