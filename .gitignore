@@ -14,6 +14,7 @@
 server.json
 wServer.json
 ProductionSetup.as
+web/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -26,8 +27,6 @@ ProductionSetup.as
 x64/
 x86/
 bld/
-[Bb]in/
-!dat1.xml
 [Oo]bj/
 [Ll]og/
 

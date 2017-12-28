@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Galactic Plateau",
+"sbName":"Galactic Plateau",
+"difficulty":4,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x47fe],
+"maps":["gplateau.jm"],
+"music":["sorc5"]}

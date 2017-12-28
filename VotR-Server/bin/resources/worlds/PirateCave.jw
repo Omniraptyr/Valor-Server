@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Pirate Cave",
+"sbName":"Pirate Cave",
+"difficulty":1,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x0717],
+"maps":["pcave.wmap"],
+"music":["pirates"]}

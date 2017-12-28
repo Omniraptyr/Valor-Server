@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"The Stronghold",
+"sbName":"The Stronghold",
+"difficulty":4,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x511c],
+"maps":["stronghold1.jm", "stronghold2.jm", "stronghold3.jm"],
+"music":["sorc2"]}

@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Lair of Draconis",
+"sbName":"Lair of Draconis",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x753E],
+"maps":["draconis.jm"],
+"music":["draconis"]}

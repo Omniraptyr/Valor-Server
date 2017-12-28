@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Snake Pit",
+"sbName":"Snake Pit",
+"difficulty":3,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x0718],
+"maps":["snakepit.wmap"],
+"music":["snakepit"]}

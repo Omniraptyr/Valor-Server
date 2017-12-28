@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Heavenly Rift",
+"sbName":"Heavenly Rift",
+"difficulty":4,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x5148],
+"maps":["heaven.jm"],
+"music":["sorc5"]}

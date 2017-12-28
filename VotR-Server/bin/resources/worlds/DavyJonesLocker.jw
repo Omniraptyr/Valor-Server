@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Davy Jones' Locker",
+"sbName":"Davy Jones' Locker",
+"difficulty":4,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x0741],
+"maps":["davy.jm"],
+"music":["locker"]}

@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Forest Maze",
+"sbName":"Forest Maze",
+"difficulty":2,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x5f34],
+"maps":["forestmaze.wmap"],
+"music":["forest"]}

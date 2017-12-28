@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Ice Cave",
+"sbName":"Ice Cave",
+"difficulty":4,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x748b],
+"maps":["icecave.wmap"],
+"music":["icecave"]}

@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Crimson Showdown",
+"sbName":"Crimson Showdown",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x167f],
+"maps":["crimson.jm"],
+"music":["crimson"]}

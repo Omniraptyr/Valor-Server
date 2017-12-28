@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Sprite World",
+"sbName":"Sprite World",
+"difficulty":3,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x070c],
+"maps":["spriteworld1.wmap", "spriteworld2.wmap", "spriteworld3.wmap", "spriteworld4.wmap", "spriteworld5.wmap"],
+"music":["spriteworld"]}

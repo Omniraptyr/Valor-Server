@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Haunted Cemetery Final Battle",
+"sbName":"Haunted Cemetery Final Battle",
+"difficulty":4,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x5f29],
+"maps":["cemefinal.jm"],
+"music":["ceme"]}

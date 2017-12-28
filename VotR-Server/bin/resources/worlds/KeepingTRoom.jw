@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Treasure of Zol",
+"sbName":"Treasure of Zol",
+"difficulty":-1,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x23a8],
+"maps":["keepingtroom.jm"],
+"music":["safe"]}

@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Abandoned Basement",
+"sbName":"Abandoned Basement",
+"difficulty":4,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x47b3],
+"maps":["abandonedbasement.jm"],
+"music":["abandoned"]}

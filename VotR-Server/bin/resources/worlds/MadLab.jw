@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Lab",
+"sbName":"Mad Lab",
+"difficulty":5,
+"background":0,
+"blocking":3,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x0890],
+"maps":[],
+"music":["lab"]}

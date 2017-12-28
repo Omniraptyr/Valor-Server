@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Storm Palace",
+"sbName":"Storm Palace",
+"difficulty":4,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x1670],
+"maps":["stormpalace.jm"],
+"music":["stormypalace"]}

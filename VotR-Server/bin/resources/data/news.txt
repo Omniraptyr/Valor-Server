@@ -1,0 +1,33 @@
+[{
+	"slot": 3, 
+	"linkType": 1, 
+	"title": "VotR Wiki", 
+	"image": "https://cdn.discordapp.com/attachments/368574563002613765/374695719828717568/Untitledhvhjvhjvhvhcgcgc.png", 
+	"priority": 759, 
+	"linkDetail": "", 
+	"platform": "kabam.com,kongregate,steam,rotmg", 
+	"startTime": 1413334800000, 
+	"endTime": 1914022340000
+}, 
+{
+	"slot": 2, 
+	"linkType": 1, 
+	"title": "Our Discord", 
+	"image": "https://cdn.discordapp.com/attachments/368574563002613765/374695719828717568/Untitledhvhjvhjvhvhcgcgc.png", 
+	"priority": 756, 
+	"linkDetail": "https://discord.gg/JGXFatR", 
+	"platform": "kabam.com,kongregate,steam,rotmg", 
+	"startTime": 1412730000000, 
+	"endTime": 1913417540000
+}, 
+{
+	"slot": 1, 
+	"linkType": 1, 
+	"title": "Bastille of Drannol", 
+	"image": "https://cdn.discordapp.com/attachments/368574563002613765/374695677722099712/zzzzzsasas.png", 
+	"priority": 757, 
+	"linkDetail": "", 
+	"platform": "kabam.com,kongregate,steam,rotmg", 
+	"startTime": 1413199137000, 
+	"endTime": 1913935940000
+}]

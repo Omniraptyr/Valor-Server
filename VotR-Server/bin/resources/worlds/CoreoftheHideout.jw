@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Core of the Hideout",
+"sbName":"Core of the Hideout",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x22c6],
+"maps":["core.jm"],
+"music":["coreofthehideout"]}

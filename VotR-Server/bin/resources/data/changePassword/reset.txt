@@ -1,0 +1,16 @@
+Hello,
+
+Your new password is: {PASSWORD}
+
+Passwords are CaSe-SeNsItIvE!
+
+You can change your password using the 'account' link on the title screen.
+
+Now come play at: http://test.nillysrealm.com/
+
+Do not reply to this email, it will not be read. If you need support, go here:
+
+http://nillysrealm.com/category/9/help-requests
+
+- Nilly's Realm Team
+http://nillysrealm.com/

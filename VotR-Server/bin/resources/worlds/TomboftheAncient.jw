@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Tomb of the Ancients",
+"sbName":"Tomb of the Ancients",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x072c],
+"maps":["tomb.wmap"],
+"music":["tomb"]}

@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Trial of the Illusionist",
+"sbName":"Trial of the Illusionist",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x54b4],
+"maps":["trial1.jm", "trial2.jm", "trial3.jm"],
+"music":["illu"]}

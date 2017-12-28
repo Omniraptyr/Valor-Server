@@ -1,0 +1,52 @@
+<PackageResponse>
+	<Packages>
+		<!--<Package id = "406">
+			<Name>Super Ambrosia Pack</Name>
+			<Price currency="0">7000</Price>
+			<Quantity>-1</Quantity>
+			<MaxPurchase>-1</MaxPurchase>
+			<Weight>0</Weight>
+			<BgURL>http://rotmg.kabamcdn.com/Super%20Ambrosia%20Pack.png</BgURL>
+			<EndDate>08/20/2014 23:59:00 GMT-0800</EndDate>
+			<Contents>{"Items":[{"Item":0xccc,"Count":10}]}</Contents>
+		</Package>
+		<Package id = "407">
+			<Name>Big Bag O' Keys</Name>
+			<Price currency="0">5600</Price>
+			<Quantity>-1</Quantity>
+			<MaxPurchase>-1</MaxPurchase>
+			<Weight>0</Weight>
+			<BgURL>http://rotmg.kabamcdn.com/Big-Bag-of-Keys-Modal.png</BgURL>
+			<EndDate>08/20/2014 23:59:00 GMT-0800</EndDate>
+			<Contents>
+				{"Items":
+					[	{"Item":0x710,"Count":8},
+						{"Item":0xc11,"Count":8},
+						{"Item":0xc2f,"Count":1},
+						{"Item":0xc62,"Count":1}
+					]
+				}
+			</Contents>
+		</Package>
+		<Package id = "408">
+			<Name>Play More Pack</Name>
+			<Price currency="0">1000</Price>
+			<Quantity>-1</Quantity>
+			<MaxPurchase>-1</MaxPurchase>
+			<Weight>0</Weight>
+			<BgURL>http://i.imgur.com/73EncLo.png</BgURL>
+			<EndDate>08/20/2014 23:59:00 GMT-0800</EndDate>
+			<Contents>{"CharacterSlots":1,"VaultChests":1,"Items":[{"Item":0xc6c,"Count":2}]}</Contents>
+		</Package>
+		<Package id = "410">
+			<Name></Name>
+			<Price currency="1">0</Price>
+			<Quantity>-1</Quantity>
+			<MaxPurchase>1</MaxPurchase>
+			<Weight>0</Weight>
+			<BgURL>http://i59.tinypic.com/6rrhba.png</BgURL>
+			<EndDate>08/01/2016 23:59:00 GMT-0800</EndDate>
+			<Contents>{"Items":[{"Item":0x22C,"Count":1}]}</Contents>
+		</Package>-->
+	</Packages>
+</PackageResponse>

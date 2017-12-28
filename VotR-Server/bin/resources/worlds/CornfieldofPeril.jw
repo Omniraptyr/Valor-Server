@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Cornfield of Peril",
+"sbName":"Cornfield of Peril",
+"difficulty":4,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x57ca],
+"maps":["cornfield.jm"],
+"music":["sorc3"]}

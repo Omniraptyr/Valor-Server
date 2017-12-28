@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Haunted Cemetery Graves",
+"sbName":"Haunted Cemetery Graves",
+"difficulty":4,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x5f26],
+"maps":["ceme3.jm"],
+"music":["ceme"]}

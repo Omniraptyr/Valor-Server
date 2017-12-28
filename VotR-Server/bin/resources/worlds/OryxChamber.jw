@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Oryx's Chamber",
+"sbName":"Oryx's Chamber",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x0d7b],
+"maps":["oryxchamber.jm"],
+"music":["oryxchamber"]}

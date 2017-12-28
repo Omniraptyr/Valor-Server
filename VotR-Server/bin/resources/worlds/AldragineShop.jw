@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Zol Secret Shop",
+"sbName":"Zol Secret Shop",
+"difficulty":-1,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x49a6],
+"maps":["ashop.jm"],
+"music":["safe"]}

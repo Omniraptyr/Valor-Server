@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Concealment of the Dreadnought",
+"sbName":"Concealment of the Dreadnought",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x5120],
+"maps":["concealment.jm"],
+"music":["sorc5"]}

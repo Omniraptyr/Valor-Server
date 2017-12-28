@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"The Ivory Wyvern",
+"sbName":"The Ivory Wyvern",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x754e],
+"maps":["ivory.jm"],
+"music":["draconis"]}

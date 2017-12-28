@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Crimson Caverns",
+"sbName":"Crimson Caverns",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x49f3],
+"maps":["crimsoncaverns.jm"],
+"music":["caverns"]}

@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Abyss",
+"sbName":"Abyss of Demons",
+"difficulty":4,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x071b],
+"maps":[],
+"music":["abyss"]}
