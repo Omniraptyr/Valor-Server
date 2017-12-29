@@ -32,6 +32,7 @@ public class GeneralProjectileComparison extends SlotComparison {
         var _local1:Number = ((Number(this.projXML.Speed) * Number(this.projXML.LifetimeMS)) / 10000);
         var _local2:Number = ((Number(this.otherProjXML.Speed) * Number(this.otherProjXML.LifetimeMS)) / 10000);
         var _local3:String = TooltipHelper.getFormattedRangeString(_local1);
+		var _local4:XML;
         comparisonStringBuilder.pushParams(TextKey.RANGE, {"range": wrapInColoredFont(_local3, getTextColor((_local1 - _local2)))});
         if (this.projXML.hasOwnProperty("MultiHit")) {
             comparisonStringBuilder.pushParams(TextKey.MULTIHIT, {}, TooltipHelper.getOpenTag(NO_DIFF_COLOR), TooltipHelper.getCloseTag());
@@ -42,7 +43,13 @@ public class GeneralProjectileComparison extends SlotComparison {
         if (this.projXML.hasOwnProperty("ArmorPiercing")) {
             comparisonStringBuilder.pushParams(TextKey.ARMOR_PIERCING, {}, TooltipHelper.getOpenTag(NO_DIFF_COLOR), TooltipHelper.getCloseTag());
         }
-        if (this.projXML.hasOwnProperty("CondChance")) {
+		for each (_local4 in this.projXML.ConditionEffect) {
+            comparisonStringBuilder.pushParams("Shot Effect:\n{condition}"
+                , {"condition": wrapInColoredFont(this.projXML.ConditionEffect + " for " + this.projXML.ConditionEffect.@duration
+				+ " seconds", getTextColor(0))
+                });
+        }		
+        for each (_local4 in this.projXML.CondChance) {
             var durColor:uint = getTextColor(this.itemXML.CondChance.@duration - this.itemXML.CondChance.@duration);
             var chanceColor:uint = getTextColor(this.itemXML.CondChance.@chance - this.itemXML.CondChance.@chance);
             comparisonStringBuilder.pushParams("{condChance}% to inflict " +

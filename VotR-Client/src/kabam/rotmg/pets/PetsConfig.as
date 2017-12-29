@@ -2,12 +2,12 @@
 import com.company.assembleegameclient.ui.dialogs.DialogCloser;
 import com.company.assembleegameclient.ui.dialogs.DialogCloserMediator;
 
-import kabam.rotmg.Market.InfoDialog;
-import kabam.rotmg.Market.InfoDialogEvents;
+import kabam.rotmg.market.InfoDialog;
+import kabam.rotmg.market.InfoDialogEvents;
 
-import kabam.rotmg.Market.MarketNPCPanel;
+import kabam.rotmg.market.MarketNPCPanel;
 
-import kabam.rotmg.Market.MarketNPCPanelMediator;
+import kabam.rotmg.market.MarketNPCPanelMediator;
 
 import kabam.rotmg.pets.controller.ActivatePet;
 import kabam.rotmg.pets.controller.ActivatePetCommand;

@@ -493,6 +493,10 @@ public class GameSprite extends AGameSprite {
         if (_local5 != null) {
             this.creditDisplay_.draw(_local5.credits_, _local5.fame_, _local5.tokens_, _local5.onrane_, _local5.kantos_);
             this.drawCharacterWindow.dispatch(_local5);
+			if (map.name_ == Map.NEXUS) {
+				_local5.healthPotionCount_ = 6;
+				_local5.magicPotionCount_ = 6;
+			}
             if (this.evalIsNotInCombatMapArea()) {
                 this.rankText_.draw(_local5.numStars_, _local5.rank_, _local5.admin_);
                 this.guildText_.draw(_local5.guildName_, _local5.guildRank_);

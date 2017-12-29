@@ -1,6 +1,8 @@
-package kabam.rotmg.Market.ui
+package kabam.rotmg.market.ui
 {
 import com.company.assembleegameclient.screens.TitleMenuOption;
+import kabam.rotmg.market.ui.MarketCreateOfferScreen;
+import kabam.rotmg.market.ui.MarketMyOffersScreen;
 
 
 import flash.display.Sprite;

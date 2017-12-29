@@ -5725,34 +5725,64 @@
             <LifetimeMS>12000</LifetimeMS>
         </Projectile>
     </Object>
-    <Object type="0x23a4" id="AH Loot Chest 3">
-        <Class>Character</Class>
-        <Enemy/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x20f</Index>
-        </Texture>
-        <MaxHitPoints>90000</MaxHitPoints>
-        <Defense>35</Defense>
-        <Size>160</Size>
-        <XpMult>0.0</XpMult>
-        <StasisImmune/>
-        <DisplayId>AH Loot Chest</DisplayId>
-    </Object>
-    <Object type="0x23a5" id="AH Loot Chest 4">
-        <Class>Character</Class>
-        <Enemy/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x20f</Index>
-        </Texture>
-        <MaxHitPoints>90000</MaxHitPoints>
-        <Defense>35</Defense>
-        <Size>160</Size>
-        <XpMult>0.0</XpMult>
-        <StasisImmune/>
-        <DisplayId>AH Loot Chest</DisplayId>
-    </Object>
+<Object type="0x23a4" id="AH Heart Loot Ctrl">
+    <Class>Character</Class>
+    <Enemy/>
+    <StasisImmune/>
+    <NoMiniMap/>
+    <Texture>
+      <File>invisible</File>
+      <Index>0</Index>
+    </Texture>
+    <MaxHitPoints>309600</MaxHitPoints>
+    <Defense>0</Defense>
+    <Size>0</Size>
+    <XpMult>0.0</XpMult>
+	<Elitedrop/>
+  </Object>
+<Object type="0x23a5" id="AH Aldragine Loot Ctrl">
+    <Class>Character</Class>
+    <Enemy/>
+    <StasisImmune/>
+    <NoMiniMap/>
+    <Texture>
+      <File>invisible</File>
+      <Index>0</Index>
+    </Texture>
+    <MaxHitPoints>800000</MaxHitPoints>
+    <Defense>0</Defense>
+    <Size>0</Size>
+    <XpMult>0.0</XpMult>
+	<Elitedrop/>
+  </Object>
+	<Object type="0x23a9" id="AH Heart Portal Spawner">
+    <Class>Character</Class>
+    <Enemy/>
+    <StasisImmune/>
+    <NoMiniMap/>
+    <Texture>
+      <File>invisible</File>
+      <Index>0</Index>
+    </Texture>
+    <MaxHitPoints>90000</MaxHitPoints>
+    <Defense>0</Defense>
+    <Size>0</Size>
+    <XpMult>0.0</XpMult>
+  </Object>
+<Object type="0x23aa" id="AH TZol Portal Spawner">
+    <Class>Character</Class>
+    <Enemy/>
+    <StasisImmune/>
+    <NoMiniMap/>
+    <Texture>
+      <File>invisible</File>
+      <Index>0</Index>
+    </Texture>
+    <MaxHitPoints>800000</MaxHitPoints>
+    <Defense>0</Defense>
+    <Size>0</Size>
+    <XpMult>0.0</XpMult>
+  </Object>
     <Object type="0x23a7" id="AH Aldragine">
         <Enemy/>
         <DisplayId>Aldragine</DisplayId>

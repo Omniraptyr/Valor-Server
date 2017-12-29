@@ -12,7 +12,7 @@ import flash.events.Event;
 import flash.system.Capabilities;
 
 import kabam.lib.net.NetConfig;
-import kabam.rotmg.Market.ui.MarketMediatorConfig;
+import kabam.rotmg.market.ui.MarketMediatorConfig;
 import kabam.rotmg.account.AccountConfig;
 import kabam.rotmg.appengine.AppEngineConfig;
 import kabam.rotmg.application.ApplicationConfig;

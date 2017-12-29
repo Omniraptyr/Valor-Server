@@ -35,7 +35,7 @@ import kabam.rotmg.ui.UIUtils;
 
 public class Options extends Sprite {
 
-    private static const TABS:Vector.<String> = new <String>[TextKey.OPTIONS_CONTROLS, TextKey.OPTIONS_HOTKEYS, TextKey.OPTIONS_CHAT, TextKey.OPTIONS_GRAPHICS, TextKey.OPTIONS_SOUND, TextKey.OPTIONS_FRIEND, TextKey.OPTIONS_MISC];
+    private static const TABS:Vector.<String> = new <String>[TextKey.OPTIONS_CONTROLS, TextKey.OPTIONS_HOTKEYS, TextKey.OPTIONS_CHAT, TextKey.OPTIONS_GRAPHICS, TextKey.OPTIONS_SOUND];
     public static const Y_POSITION:int = 550;
     public static const CHAT_COMMAND:String = "chatCommand";
     public static const CHAT:String = "chat";
@@ -237,12 +237,12 @@ public class Options extends Sprite {
             case TextKey.OPTIONS_SOUND:
                 this.addSoundOptions();
                 return;
-            case TextKey.OPTIONS_MISC:
+            /*case TextKey.OPTIONS_MISC:
                 this.addMiscOptions();
                 return;
             case TextKey.OPTIONS_FRIEND:
                 this.addFriendOptions();
-                return;
+                return;*/
             case "Experimental":
                 this.addExperimentalOptions();
                 return;

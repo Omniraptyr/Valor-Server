@@ -130,17 +130,18 @@ namespace wServer.realm.entities.vendors
 
         private static readonly List<ISellableItem> Aldragine = new List<ISellableItem>
         {
-            new ShopItem("Scepter of the Other", 75),
-            new ShopItem("Burden of the Warpawn", 80),
-            new ShopItem("The Odyssey", 60),
-            new ShopItem("The Executioner", 60),
-            new ShopItem("Rip of Soul", 65)
+            new ShopItem("Scepter of the Other", 150),
+            new ShopItem("Burden of the Warpawn", 160),
+            new ShopItem("The Odyssey", 120),
+            new ShopItem("The Executioner", 120),
+            new ShopItem("Rip of Soul", 130)/*,
+            new ShopItem("Shard of the Unknown", 300)*/
         };
 
         private static readonly List<ISellableItem> Special = new List<ISellableItem>
         {
-            new ShopItem("Backpack", 10000),
-            new ShopItem("XP Booster", 50)
+            new ShopItem("Backpack", 5000),
+            new ShopItem("XP Booster", 24) 
         };
         public static readonly Dictionary<TileRegion, Tuple<List<ISellableItem>, CurrencyType, /*Rank Req*/int>> Shops = 
             new Dictionary<TileRegion, Tuple<List<ISellableItem>, CurrencyType, int>>()

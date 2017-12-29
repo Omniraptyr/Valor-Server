@@ -1,7 +1,7 @@
-package kabam.rotmg.Market
+package kabam.rotmg.market
 {
 import flash.events.MouseEvent;
-import kabam.rotmg.Market.ui.MarketOverview;
+import kabam.rotmg.market.ui.MarketOverview;
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.dialogs.control.OpenDialogNoModalSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
