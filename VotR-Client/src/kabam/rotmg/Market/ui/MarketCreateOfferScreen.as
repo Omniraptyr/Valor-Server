@@ -1,4 +1,4 @@
-package kabam.rotmg.Market.ui
+package kabam.rotmg.market.ui
 {
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 import com.company.assembleegameclient.ui.Scrollbar;
@@ -9,7 +9,7 @@ import flash.display.Sprite;
    import flash.events.MouseEvent;
    import flash.events.Event;
 
-import kabam.rotmg.Market.MarketResultSignal;
+import kabam.rotmg.market.MarketResultSignal;
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.messaging.impl.GameServerConnection;
 import kabam.rotmg.messaging.impl.data.MarketOffer;
@@ -178,7 +178,7 @@ import flash.display.Sprite;
 import flash.events.MouseEvent;
 import flash.events.Event;
 
-import kabam.rotmg.Market.ui.MarketInventorySlot;
+import kabam.rotmg.market.ui.MarketInventorySlot;
 import kabam.rotmg.messaging.impl.data.MarketOffer;
 import kabam.rotmg.pets.view.dialogs.PetDialog;
 

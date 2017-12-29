@@ -872,19 +872,13 @@ namespace wServer.realm.entities
         void HandleRegen(RealmTime time)
         {
             // hp regen
-            if (HasConditionEffect(ConditionEffects.Corrupted))
-            {
-            }
-            else
-            {
+            if (!HasConditionEffect(ConditionEffects.Corrupted)) {
                 if (HP == Stats[0] || !CanHpRegen())
                     _hpRegenCounter = 0;
-                else
-                {
+                else {
                     _hpRegenCounter += Stats.GetHPRegen() * time.ElaspedMsDelta / 1000f;
                     var regen = (int)_hpRegenCounter;
-                    if (regen > 0)
-                    {
+                    if (regen > 0) {
                         HP = Math.Min(Stats[0], HP + regen);
                         _hpRegenCounter -= regen;
                     }
@@ -892,19 +886,13 @@ namespace wServer.realm.entities
             }
 
             // mp regen
-            if (HasConditionEffect(ConditionEffects.Corrupted))
-            {
-            }
-            else
-            {
+            if (!HasConditionEffect(ConditionEffects.Corrupted)) {
                 if (MP == Stats[1] || !CanMpRegen())
                     _mpRegenCounter = 0;
-                else
-                {
+                else {
                     _mpRegenCounter += Stats.GetMPRegen() * time.ElaspedMsDelta / 1000f;
                     var regen = (int)_mpRegenCounter;
-                    if (regen > 0)
-                    {
+                    if (regen > 0) {
                         MP = Math.Min(Stats[1], MP + regen);
                         _mpRegenCounter -= regen;
                     }
@@ -970,22 +958,19 @@ namespace wServer.realm.entities
             }
         }
 
-        public bool ascendSorCrystal(Player player)
-        {
-                        for (int i = 0; i < Inventory.Length; i++)
-                        {
-                            if (Inventory[i] == null)
-                                continue;
+        public bool ascendSorCrystal(Player player) {
+            for (int i = 0; i < Inventory.Length; i++) {
+                if (Inventory[i] == null)
+                    continue;
 
-                            if (Inventory[i].ObjectId == "Sor Crystal")
-                            {
-                                Inventory[i] = Manager.Resources.GameData.Items[0x49e6];
-                                SaveToCharacter();
-                                SendInfo("Your Sor Crystal has been ascended into a Legendary Sor Crystal!");
-                                Onrane = Client.Account.Onrane -= 20;
-                                player.ForceUpdate(Onrane);
+                if (Inventory[i].ObjectId == "Sor Crystal") {
+                    Inventory[i] = Manager.Resources.GameData.Items[0x49e6];
+                    SaveToCharacter();
+                    SendInfo("Your Sor Crystal has been ascended into a Legendary Sor Crystal!");
+                    Onrane = Client.Account.Onrane -= 20;
+                    player.ForceUpdate(Onrane);
                     return false;
-                            };
+                };
             }
             return true;
         }

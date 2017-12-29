@@ -44,14 +44,12 @@ namespace wServer.networking.handlers
                     }
                 }
 
-                Item item = null;
-                if (ItemValue() != 0x0) {
-                    item = client.Player.Manager.Resources.GameData.Items[ItemValue()];
-                }
+                if (ItemValue() == 0x0) return;
+                Item item = client.Player.Manager.Resources.GameData.Items[ItemValue()];
 
-                client.Player.SendError("You have forged the item \"" + item.DisplayId == "" ?
+                client.Player.SendError("You have forged the item \"" + (item.DisplayId == "" ?
                                                                         item.ObjectId
-                                                                        : item.DisplayId + "\"");
+                                                                        : item.DisplayId) + "\"");
                 client.Player.Inventory[packet.SorSlot.SlotId] = item;
                 client.Player.Inventory[packet.ShardSlot.SlotId] = null;
             }

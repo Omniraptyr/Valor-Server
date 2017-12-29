@@ -1,4 +1,4 @@
-package kabam.rotmg.Market.ui
+package kabam.rotmg.market.ui
 {
 import com.company.assembleegameclient.ui.Scrollbar;
 import com.company.assembleegameclient.ui.dialogs.Dialog;
@@ -8,9 +8,9 @@ import flash.display.Sprite;
    import flash.events.Event;
    import flash.text.TextFieldAutoSize;
 
-import kabam.rotmg.Market.MarketItemsResultSignal;
+import kabam.rotmg.market.MarketItemsResultSignal;
 
-import kabam.rotmg.Market.MarketResultSignal;
+import kabam.rotmg.market.MarketResultSignal;
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.messaging.impl.GameServerConnection;
 import kabam.rotmg.messaging.impl.data.PlayerShopItem;

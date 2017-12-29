@@ -316,14 +316,14 @@ namespace wServer.logic
                     new ItemLoot("Potion of Restoration", 1.00)
                     ),
                 new Threshold(0.15,
-                new TierLoot(11, ItemType.Weapon, 0.015),
-                new TierLoot(10, ItemType.Weapon, 0.02),
-                new TierLoot(13, ItemType.Armor, 0.015),
-                new TierLoot(12, ItemType.Armor, 0.02),
-                new ItemLoot("Potion of Mana", 0.8),
-                new ItemLoot("Elemental Tome", 0.04),
-                new ItemLoot("Wand of Elemental Sanctuary", 0.04),
-                new ItemLoot("Earthbound Lance", 0.04)
+                    new TierLoot(11, ItemType.Weapon, 0.015),
+                    new TierLoot(10, ItemType.Weapon, 0.02),
+                    new TierLoot(13, ItemType.Armor, 0.015),
+                    new TierLoot(12, ItemType.Armor, 0.02),
+                    new ItemLoot("Potion of Mana", 0.8),
+                    new ItemLoot("Elemental Tome", 0.04),
+                    new ItemLoot("Wand of Elemental Sanctuary", 0.04),
+                    new ItemLoot("Earthbound Lance", 0.04)
                 )
             );
 

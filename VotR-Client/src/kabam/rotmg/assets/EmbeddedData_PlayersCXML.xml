@@ -139,10 +139,10 @@
         <Equipment>0xa04, 0xa31, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="630">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
-        <Attack max="50">12</Attack>
+        <Attack max="60">13</Attack>
         <Defense max="25">0</Defense>
         <Speed max="55">12</Speed>
-        <Dexterity max="55">12</Dexterity>
+        <Dexterity max="60">13</Dexterity>
         <HpRegen max="40">10</HpRegen>
         <MpRegen max="75">15</MpRegen>
         <Might max="40">2</Might>

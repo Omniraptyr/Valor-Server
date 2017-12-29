@@ -645,61 +645,61 @@ namespace wServer.logic
                        new ItemLoot("Greater Potion of Mana", 1)
                        )
             )
-                        /* .Init("AH Loot Chest 1",
-                                 new State(
-                                     new State("Idle",
-                                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                                         new TimedTransition(5000, "UnsetEffect")
-                                     ),
-                                     new State("UnsetEffect")
-                                 ),
-                                 new MostDamagers(3,
-                                     LootTemplates.FabledItemsLoot2()
-                                 ),
+            /* .Init("AH Loot Chest 1",
+                     new State(
+                         new State("Idle",
+                             new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                             new TimedTransition(5000, "UnsetEffect")
+                         ),
+                         new State("UnsetEffect")
+                     ),
+                     new MostDamagers(3,
+                         LootTemplates.FabledItemsLoot2()
+                     ),
 
-                                 new Threshold(0.05,
-                                 new TierLoot(12, ItemType.Weapon, 0.08),
-                                 new TierLoot(5, ItemType.Ability, 0.07),
-                                 new TierLoot(6, ItemType.Ability, 0.05),
-                                 new TierLoot(13, ItemType.Armor, 0.06),
-                                 new TierLoot(5, ItemType.Ring, 0.06),
-                                 new ItemLoot("Onrane Cache", 0.25),
-                                 new ItemLoot("The Stronghold Key", 0.06),
-                                 new ItemLoot("Gold Cache", 0.025),
-                                 new ItemLoot("Greater Potion of Life", 1),
-                                 new ItemLoot("Greater Potion of Mana", 1)
-                                 )
-                             )*/
-                        /*.Init("AH Loot Chest 2",
-                                new State(
-                                    new State("Idle",
-                                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                                        new TimedTransition(5000, "UnsetEffect")
-                                    ),
-                                    new State("UnsetEffect")
-                                ),
-                                new MostDamagers(3,
-                                    LootTemplates.FabledItemsLoot2()
-                                ),
-                                new Threshold(0.05,
-                                new TierLoot(12, ItemType.Weapon, 0.08),
-                                new TierLoot(5, ItemType.Ability, 0.07),
-                                new TierLoot(6, ItemType.Ability, 0.05),
-                                new TierLoot(13, ItemType.Armor, 0.06),
-                                new TierLoot(7, ItemType.Ring, 0.08),
-                                new ItemLoot("Onrane Cache", 1),
-                                new ItemLoot("The Stronghold Key", 0.07),
-                                new ItemLoot("Gold Cache", 0.5),
-                                new ItemLoot("Greater Potion of Life", 1),
-                                new ItemLoot("Greater Potion of Defense", 1),
-                                new ItemLoot("Greater Potion of Attack", 0.6),
-                                new ItemLoot("Greater Potion of Dexterity", 0.5),
-                                new ItemLoot("Greater Potion of Vitality", 0.5)
-                                )
-                            )*/
+                     new Threshold(0.05,
+                     new TierLoot(12, ItemType.Weapon, 0.08),
+                     new TierLoot(5, ItemType.Ability, 0.07),
+                     new TierLoot(6, ItemType.Ability, 0.05),
+                     new TierLoot(13, ItemType.Armor, 0.06),
+                     new TierLoot(5, ItemType.Ring, 0.06),
+                     new ItemLoot("Onrane Cache", 0.25),
+                     new ItemLoot("The Stronghold Key", 0.06),
+                     new ItemLoot("Gold Cache", 0.025),
+                     new ItemLoot("Greater Potion of Life", 1),
+                     new ItemLoot("Greater Potion of Mana", 1)
+                     )
+                 )*/
+            /*.Init("AH Loot Chest 2",
+                    new State(
+                        new State("Idle",
+                            new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                            new TimedTransition(5000, "UnsetEffect")
+                        ),
+                        new State("UnsetEffect")
+                    ),
+                    new MostDamagers(3,
+                        LootTemplates.FabledItemsLoot2()
+                    ),
+                    new Threshold(0.05,
+                    new TierLoot(12, ItemType.Weapon, 0.08),
+                    new TierLoot(5, ItemType.Ability, 0.07),
+                    new TierLoot(6, ItemType.Ability, 0.05),
+                    new TierLoot(13, ItemType.Armor, 0.06),
+                    new TierLoot(7, ItemType.Ring, 0.08),
+                    new ItemLoot("Onrane Cache", 1),
+                    new ItemLoot("The Stronghold Key", 0.07),
+                    new ItemLoot("Gold Cache", 0.5),
+                    new ItemLoot("Greater Potion of Life", 1),
+                    new ItemLoot("Greater Potion of Defense", 1),
+                    new ItemLoot("Greater Potion of Attack", 0.6),
+                    new ItemLoot("Greater Potion of Dexterity", 0.5),
+                    new ItemLoot("Greater Potion of Vitality", 0.5)
+                    )
+                )*/
             .Init("AH Heart Portal Spawner",
                 new State(
-                   new DropPortalOnDeath("Core of the Hideout", timeout: 60),
+                   new DropPortalOnDeath("Keeping of Aldragine Portal", timeout: 60),
                    new State("Default",
                        new Suicide()
                        )
@@ -709,7 +709,9 @@ namespace wServer.logic
                 new State(
                     new TransformOnDeath("AH Heart Portal Spawner"),
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new State("Idle"),
+                    new State("Idle",
+                        new EntityNotExistsTransition("AH The Heart", 50, "Loot")
+                        ),
                     new State("Loot",
                         new Suicide()
                         )
@@ -726,8 +728,8 @@ namespace wServer.logic
                 new ItemLoot("Onrane Cache", 1),
                 new ItemLoot("The Stronghold Key", 0.07),
                 new ItemLoot("Gold Cache", 1),
-				new ItemLoot("Wisdom Eon", 0.01),
-				new ItemLoot("Defense Eon", 0.01),
+                new ItemLoot("Wisdom Eon", 0.01),
+                new ItemLoot("Defense Eon", 0.01),
                 new ItemLoot("Greater Potion of Life", 1),
                 new ItemLoot("Greater Potion of Defense", 1),
                 new ItemLoot("Greater Potion of Attack", 0.6),
@@ -736,23 +738,23 @@ namespace wServer.logic
                 new ItemLoot("Greater Potion of Speed", 0.5)
                 )
             )
-            .Init("AH TZol Portal Spawner",
+            /*.Init("AH TZol Portal Spawner",
                 new State(
-                   new DropPortalOnDeath("Treasure of Zol", timeout: 60),
+                   new DropPortalOnDeath("Treasure of Zol Portal", timeout: 60),
                    new State("Default",
-                       new Taunt("Access is granted to the Treasure in 3 seconds."),
-                       new TimedTransition(3000 ,"Spawn")
+                       new TimedTransition(3000, "Spawn")
                        ),
                    new State("Spawn",
                        new Suicide()
                        )
                    )
-            )
+            )*/
             .Init("AH Aldragine Loot Ctrl",
                 new State(
-                    new TransformOnDeath("AH TZol Portal Spawner"),
+                    //new TransformOnDeath("AH TZol Portal Spawner"),
+                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                     new State("Idle",
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable)
+                        new EntityNotExistsTransition("AH Aldragine", 50, "Loot")
                         ),
                     new State("Loot",
                         new Suicide()
@@ -1120,15 +1122,14 @@ namespace wServer.logic
                     new State("Success",
                         //new DropPortalOnDeath("Keeping of Aldragine Portal", 100, timeout: 180),
                         //new InvisiToss("AH Loot Chest 3", 2, 270, coolDown: 9999999),
+                        new Spawn("AH Heart Loot Ctrl", givesNoXp: true),                        
                         new TransferDamageOnDeath("AH Heart Loot Ctrl"),
-                        new Order(50, "AH Heart Loot Ctrl", "Loot"),
                         new Suicide()
                         )
                     )
                 )
         .Init("AH Aldragine",               
                 new State(
-                    new TransferDamageOnDeath("AH Aldragine Loot Ctrl"),
                     new HpLessTransition(0.13, "ded"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -1432,9 +1433,10 @@ namespace wServer.logic
                     new State("Success",
                         new AnnounceOnDeath("The Zol, a dark burden, seems to fade away slowly..."),
                         new Shoot(8, count: 10, projectileIndex: 2, coolDown: 9999),
-                        new DropPortalOnDeath("Treasure of Zol Portal", 50, timeout: 120),
-                        new Order(50, "AH Aldragine Loot Ctrl", "Loot"),
-                        new InvisiToss("AH Loot Chest 4", 2, 270, coolDown: 9999999),
+                        //new DropPortalOnDeath("Treasure of Zol Portal", 50, timeout: 120),
+                        new Spawn("AH Aldragine Loot Ctrl", givesNoXp: true),
+                        new TransferDamageOnDeath("AH Aldragine Loot Ctrl"),
+                        //new InvisiToss("AH Loot Chest 4", 2, 270, coolDown: 9999999),
                         new Suicide()
                         ),
                     new State("Failed",

@@ -14,7 +14,7 @@ namespace wServer.logic
         private _ Crystal = () => Behav()
             .Init("Mysterious Crystal",
                 new State(
-                    new DropPortalOnDeath("Deadwater Docks", 100),
+                    //new DropPortalOnDeath("Deadwater Docks", 100), temp remove because of the exploit
                     new State("Idle",
                         new Taunt(0.1, "Break the crystal for great rewards..."),
                         new Taunt(0.1, "Help me..."),

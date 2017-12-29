@@ -359,6 +359,13 @@ public class EquipmentToolTip extends ToolTip {
                     }).setColor(TooltipHelper.NO_DIFF_COLOR));
                 }
             }
+			for each (_local_5 in _local_1.CondChance) {
+            this.effects.push(new Effect("{condChance}% to inflict " +
+                "{condEff} for {condDuration} seconds", {"condChance": this.objectXML.Projectile.CondChance.@chance,
+                    "condEff": this.objectXML.Projectile.CondChance.@effect,
+                    "condDuration": this.objectXML.Projectile.CondChance.@duration
+                }));
+        }
         }
     }
 
@@ -634,7 +641,7 @@ public class EquipmentToolTip extends ToolTip {
                 this.effects.push(new Effect(TextKey.ON_EQUIP, ""));
                 _local2 = false;
             }
-			var delay:String = this.objectXML.EffectEquip.@delay % (10 | 15) == 0 ?
+			var delay:String = (this.objectXML.EffectEquip.@delay % (10 | 15) == 0 && this.objectXML.EffectEquip.@delay > 60) ?
 			               this.objectXML.EffectEquip.@delay / 60 + " minutes" :
 						   this.objectXML.EffectEquip.@delay + " seconds";
             this.effects.push(new Effect("Grants '" + this.objectXML.EffectEquip.@effect

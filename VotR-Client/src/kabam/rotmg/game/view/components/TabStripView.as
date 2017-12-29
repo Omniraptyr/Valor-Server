@@ -47,14 +47,6 @@ public class TabStripView extends Sprite {
         this.containerSprite.y = TabConstants.TAB_TOP_OFFSET;
     }
 
-    public function initFriendList(_arg1:ImageFactory, _arg2:IconButtonFactory, _arg3:Function):void {
-        this.friendsBtn = _arg2.create(_arg1.getImageFromSet("lofiInterfaceBig", 13), "", TextKey.OPTIONS_FRIEND, "");
-        this.friendsBtn.x = 160;
-        this.friendsBtn.y = 6;
-        this.friendsBtn.addEventListener(MouseEvent.CLICK, _arg3);
-        addChild(this.friendsBtn);
-    }
-
     private function onTabClicked(_arg1:MouseEvent):void {
         this.selectTab((_arg1.target.parent as TabView));
     }
