@@ -8,12 +8,12 @@
   "serverInfo": {
     "type": "Account",
     "name": "AppEngine",
-    "bindAddress":  "*", // enter * to bind to all network connections
+    "bindAddress": "*", // enter * to bind to all network connections
     "port": "8080"
   },
   "serverSettings": {
     "logFolder": "./logs",
-    "resourceFolder":  "./resources",
+    "resourceFolder": "./resources",
     "sendGridApiKey": ""
   }
 }

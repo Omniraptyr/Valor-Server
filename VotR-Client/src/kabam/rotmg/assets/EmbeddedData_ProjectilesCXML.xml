@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 
 <Objects>
@@ -6225,5 +6225,13 @@
             <Index>0x421</Index>
         </Texture>
         <AngleCorrection>1</AngleCorrection>
+    </Object>
+	<Object type="0x61b1" id="Marble Tablet Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x43e</Index>
+        </Texture>
+		    <AngleCorrection>1</AngleCorrection>
     </Object>
 </Objects>

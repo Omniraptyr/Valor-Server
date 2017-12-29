@@ -4,7 +4,7 @@ import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.ui.panels.Panel;
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
-import kabam.rotmg.Market.MarketNPCPanel;
+import kabam.rotmg.market.MarketNPCPanel;
 
 
 public class MarketNPC extends GameObject implements IInteractiveObject

@@ -18,20 +18,21 @@ public class StatMetersView extends Sprite {
     private var protectionBar:StatusBar;
     private var areTempXpListenersAdded:Boolean;
     private var curXPBoost:int;
-    private var barSize:int = 12;
+    private var barSize:int = 13;
     private var expTimer:ExperienceBoostTimerPopup;
 
     public function StatMetersView() {
-        this.expBar_ = new StatusBar(140, barSize, 5931045, 0x545454, TextKey.EXP_BAR_LEVEL);
-        this.fameBar_ = new StatusBar(140, barSize, 0xE25F00, 0x545454, TextKey.CURRENCY_FAME);
-        this.hpBar_ = new StatusBar(140, barSize, 14693428, 0x545454, TextKey.STATUS_BAR_HEALTH_POINTS);
-        this.mpBar_ = new StatusBar(140, barSize, 6325472, 0x545454, TextKey.STATUS_BAR_MANA_POINTS);
-        this.surgeBar_ = new StatusBar(140, barSize, 0xFFFF66, 0x545454, "SG");
-        this.protectionBar = new StatusBar(140, barSize, 0xFFFFFF, 0x545454, "PT");
-        this.protectionBar.y = 12 + 2;
-        this.hpBar_.y = 24 + 4;
-        this.mpBar_.y = 36 + 6;
-        this.surgeBar_.y = 48 + 8;
+        this.expBar_ = new StatusBar(176, barSize, 5931045, 0x545454, TextKey.EXP_BAR_LEVEL);
+        this.fameBar_ = new StatusBar(176, barSize, 0xE25F00, 0x545454, TextKey.CURRENCY_FAME);
+        this.hpBar_ = new StatusBar(176, barSize, 14693428, 0x545454, TextKey.STATUS_BAR_HEALTH_POINTS);
+        this.mpBar_ = new StatusBar(176, barSize, 6325472, 0x545454, TextKey.STATUS_BAR_MANA_POINTS);
+        this.surgeBar_ = new StatusBar(176 / 2 - 2, barSize, 0xFFFF66, 0x545454, "SG");
+        this.protectionBar = new StatusBar(176 / 2 - 2, barSize, 0xFFFFFF, 0x545454, "PT");
+        this.hpBar_.y = 12 + 6;
+        this.mpBar_.y = 24 + 12;
+	    this.protectionBar.y = this.surgeBar_.y = 36 + 18;
+		this.surgeBar_.x = 176 / 2 + 2;
+        //this.surgeBar_.y = 48 + 8;
         this.expBar_.visible = true;
         this.fameBar_.visible = false;
         addChild(this.expBar_);

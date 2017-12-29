@@ -74775,10 +74775,10 @@ A magnificent legendary blade which only cuts those who deserve death.
         <Equipment>0xa04, 0xa31, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="630">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
-        <Attack max="50">12</Attack>
+        <Attack max="60">13</Attack>
         <Defense max="25">0</Defense>
         <Speed max="55">12</Speed>
-        <Dexterity max="55">12</Dexterity>
+        <Dexterity max="60">13</Dexterity>
         <HpRegen max="40">10</HpRegen>
         <MpRegen max="75">15</MpRegen>
         <Might max="40">2</Might>
@@ -89537,36 +89537,6 @@ A whole thanksgiving turkey!
     <FullOccupy/>
     <EnemyOccupySquare/>
   </Object>
-<Object type="0x23a4" id="AH Loot Chest 3">
-    <Class>Character</Class>
-    <Enemy/>
-      <Texture>
-      <File>d3LofiObjEmbed</File>
-      <Index>0x20f</Index>
-    </Texture>
-    <MaxHitPoints>90000</MaxHitPoints>
-    <Defense>35</Defense>
-    <Size>160</Size>
-    <XpMult>0.0</XpMult>
-	<Elitedrop/>
-    <StasisImmune/>
-    <DisplayId>AH Loot Chest</DisplayId>
-  </Object>
-<Object type="0x23a5" id="AH Loot Chest 4">
-    <Class>Character</Class>
-    <Enemy/>
-      <Texture>
-      <File>d3LofiObjEmbed</File>
-      <Index>0x20f</Index>
-    </Texture>
-    <MaxHitPoints>90000</MaxHitPoints>
-    <Defense>35</Defense>
-    <Size>160</Size>
-    <XpMult>0.0</XpMult>
-	<Elitedrop/>
-    <StasisImmune/>
-    <DisplayId>AH Loot Chest</DisplayId>
-  </Object>
   <Object type="0x23a6" id="Green Energy Missile">
     <Class>Projectile</Class>
     <Texture>
@@ -89671,6 +89641,64 @@ A whole thanksgiving turkey!
       <Index>0x1a4</Index>
     </Texture>
     <DisplayId>Treasure of Zol Portal</DisplayId>
+  </Object>
+    <Object type="0x23a9" id="AH Heart Portal Spawner">
+    <Class>Character</Class>
+    <Enemy/>
+    <StasisImmune/>
+    <NoMiniMap/>
+    <Texture>
+      <File>invisible</File>
+      <Index>0</Index>
+    </Texture>
+    <MaxHitPoints>90000</MaxHitPoints>
+    <Defense>0</Defense>
+    <Size>0</Size>
+    <XpMult>0.0</XpMult>
+  </Object>
+<Object type="0x23aa" id="AH TZol Portal Spawner">
+    <Class>Character</Class>
+    <Enemy/>
+    <StasisImmune/>
+    <NoMiniMap/>
+    <Texture>
+      <File>invisible</File>
+      <Index>0</Index>
+    </Texture>
+    <MaxHitPoints>800000</MaxHitPoints>
+    <Defense>0</Defense>
+    <Size>0</Size>
+    <XpMult>0.0</XpMult>
+  </Object>
+  <Object type="0x23a4" id="AH Heart Loot Ctrl">
+    <Class>Character</Class>
+    <Enemy/>
+    <StasisImmune/>
+    <NoMiniMap/>
+    <Texture>
+      <File>invisible</File>
+      <Index>0</Index>
+    </Texture>
+    <MaxHitPoints>309600</MaxHitPoints>
+    <Defense>0</Defense>
+    <Size>0</Size>
+    <XpMult>0.0</XpMult>
+	<Elitedrop/>
+  </Object>
+<Object type="0x23a5" id="AH Aldragine Loot Ctrl">
+    <Class>Character</Class>
+    <Enemy/>
+    <StasisImmune/>
+    <NoMiniMap/>
+    <Texture>
+      <File>invisible</File>
+      <Index>0</Index>
+    </Texture>
+    <MaxHitPoints>800000</MaxHitPoints>
+    <Defense>0</Defense>
+    <Size>0</Size>
+    <XpMult>0.0</XpMult>
+	<Elitedrop/>
   </Object>
   <Object type="0x44d2" id="AA Nexus Wall 1">
     <Class>Wall</Class>
@@ -109535,5 +109563,43 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate>Shoot</Activate>
         <feedPower>880</feedPower>
         <DisplayId>Ascendant Quiver</DisplayId>
+    </Object>
+    <Object type="0x61b0" id="Marble Tablet">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x43f</Index>
+        </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BubbaBlu"/>
+        </ExtraTooltipData>
+        <SlotType>11</SlotType>
+        <Description>The remains of the Gargoyle, ennchanted with its residual energy.</Description>
+        <Sound>spell/magic_nova</Sound>
+        <Projectile>
+            <ObjectId>Marble Tablet Proj</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>150</MaxDamage>
+            <LifetimeMS>1000</LifetimeMS>
+			<ConditionEffect duration="2">Paralyzed</ConditionEffect>
+            <MultiHit/>
+        </Projectile>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>80</MpCost>
+		<Steal type="life" amount="1"/>
+        <ActivateOnEquip stat="0" amount="12">IncrStatPerc</ActivateOnEquip>
+        <Activate>BulletNova</Activate>
+    </Object>
+	<Object type="0x61b1" id="Marble Tablet Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x43e</Index>
+        </Texture>
+		<AngleCorrection>1</AngleCorrection>
     </Object>
 </Objects>

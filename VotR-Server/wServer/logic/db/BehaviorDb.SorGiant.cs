@@ -191,18 +191,17 @@ namespace wServer.logic
                         new TimedTransition(4000, "Fight1")
                         )
                     ),
-                new MostDamagers(3,
-                    LootTemplates.StatIncreasePotionsLoot()
+                new Threshold(0.22,
+                    new ItemLoot("Sor Crystal", 0.055),
+                    new ItemLoot("Amethyst Lair Armor", 0.25),
+                    new ItemLoot("Sword of the Truthfinder", 0.25),
+                    new ItemLoot("Kami Cloth", 0.25),
+                    new ItemLoot("Staff of Uranium", 0.25)
                 ),
-                new MostDamagers(3,
-                    LootTemplates.GStatIncreasePotionsLoot()
-                ),
-                new Threshold(0.10,
-                    new ItemLoot("Sor Crystal", 0.03),
-                    new ItemLoot("Amethyst Lair Armor", 0.07),
-                    new ItemLoot("Sword of the Truthfinder", 0.07),
-                    new ItemLoot("Kami Cloth", 0.07),
-                    new ItemLoot("Staff of Uranium", 0.07),
+                new Threshold(0.05,
+                    new ItemLoot("Greater Potion of Vitality", 0.5),
+                    new ItemLoot("Greater Potion of Dexterity", 0.5),
+                    new ItemLoot("Greater Potion of Wisdom", 0.5),
                     new TierLoot(11, ItemType.Weapon, 0.1),
                     new TierLoot(6, ItemType.Ability, 0.1),
                     new TierLoot(11, ItemType.Armor, 0.1),
@@ -210,7 +209,7 @@ namespace wServer.logic
                     new TierLoot(12, ItemType.Armor, 0.05),
                     new TierLoot(12, ItemType.Weapon, 0.05),
                     new TierLoot(6, ItemType.Ring, 0.025)
-                )
+                    )
             )
             .Init("Sor Fiend",
                 new State(

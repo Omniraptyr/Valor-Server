@@ -185,24 +185,25 @@ namespace wServer.logic
 						)
 				)
 			  ),
-				new Threshold(0.010,
-                    new ItemLoot("Greater Potion of Life", 1.0),
-                    new ItemLoot("Greater Potion of Mana", 1.0),
-                    new ItemLoot("Greater Potion of Vitality", 1.0),
-                    new ItemLoot("Greater Potion of Dexterity", 1.0),
-                    new ItemLoot("Greater Potion of Speed", 1.0),
-                    new ItemLoot("Greater Potion of Attack", 1.0),
-                    new ItemLoot("Greater Potion of Defense", 1.0),
-                    new ItemLoot("Greater Potion of Wisdom", 1.0),
+				new Threshold(0.015,
+                    new ItemLoot("Greater Potion of Life", 0.3),
+                    new ItemLoot("Greater Potion of Mana", 0.3),
+                    new ItemLoot("Greater Potion of Vitality", 0.3),
+                    new ItemLoot("Greater Potion of Dexterity", 0.3),
+                    new ItemLoot("Greater Potion of Speed", 0.3),
+                    new ItemLoot("Greater Potion of Attack", 0.3),
+                    new ItemLoot("Greater Potion of Defense", 0.3),
+                    new ItemLoot("Greater Potion of Wisdom", 0.3),
 
-                    new TierLoot(11, ItemType.Weapon, 0.1),
-					new TierLoot(6, ItemType.Ability, 0.1),
-					new TierLoot(11, ItemType.Armor, 0.1),
-					new TierLoot(5, ItemType.Ring, 0.05),
-					new TierLoot(12, ItemType.Armor, 0.05),
-					new TierLoot(12, ItemType.Weapon, 0.05),
-					new TierLoot(6, ItemType.Ring, 0.025),
-					new ItemLoot("Ancient Stone Sword", 0.01)
+                    new TierLoot(11, ItemType.Weapon, 1),
+					new TierLoot(6, ItemType.Ability, 0.5),
+					new TierLoot(11, ItemType.Armor, 1),
+					new TierLoot(5, ItemType.Ring, 0.5),
+					new TierLoot(12, ItemType.Armor, 0.1),
+					new TierLoot(12, ItemType.Weapon, 0.1),
+					new TierLoot(6, ItemType.Ring, 0.1),
+                    new ItemLoot("Marble Tablet", 0.02),
+					new ItemLoot("Ancient Stone Sword", 0.05)
 				)
 			)
 			.Init("Stone Gargoyle",

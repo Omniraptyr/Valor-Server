@@ -1,4 +1,4 @@
-package kabam.rotmg.Market.ui
+package kabam.rotmg.market.ui
 {
 
 import org.osflash.signals.Signal;
