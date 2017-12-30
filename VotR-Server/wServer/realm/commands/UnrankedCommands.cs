@@ -124,7 +124,11 @@ namespace wServer.realm.commands
                 player.SendInfo("Can't pause in arena.");
                 return false;
             }
-
+            if (owner.Difficulty >= 4)
+            {
+                player.SendInfo("Can't pause in a dungeon greater than difficulty 4!");
+                return false;
+            }
             if (player.Owner.EnemiesCollision.HitTest(player.X, player.Y, 8).OfType<Enemy>().Any())
             {
                 player.SendError("Not safe to pause.");

@@ -141,7 +141,6 @@ namespace wServer.realm.entities.vendors
         private static readonly List<ISellableItem> Special = new List<ISellableItem>
         {
             new ShopItem("Backpack", 5000),
-            new ShopItem("XP Booster", 24) 
         };
         public static readonly Dictionary<TileRegion, Tuple<List<ISellableItem>, CurrencyType, /*Rank Req*/int>> Shops = 
             new Dictionary<TileRegion, Tuple<List<ISellableItem>, CurrencyType, int>>()

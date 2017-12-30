@@ -669,7 +669,14 @@ namespace wServer.realm.entities
 
         private void AEBackpack(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            HasBackpack = true;
+            if (Rank >= 10)
+            {
+                HasBackpack = true;
+            }
+            else
+            {
+                SendError("You must be a donator to use this item!");
+            }
         }
 
         private void AEAddFame(RealmTime time, Item item, Position target, ActivateEffect eff)
