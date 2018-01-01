@@ -31552,8 +31552,7 @@
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
-        <MpCost>80</MpCost>
-		    <Steal type="life" amount="1"/>
+        <MpCost>80</MpCost><Steal type="life" amount="1"/>
         <ActivateOnEquip stat="0" amount="12">IncrStatPerc</ActivateOnEquip>
         <Activate>BulletNova</Activate>
     </Object>

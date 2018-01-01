@@ -132,7 +132,7 @@ namespace wServer.realm.entities
             if (Muted && !HasConditionEffect(ConditionEffects.Muted))
                 ApplyConditionEffect(ConditionEffectIndex.Muted);
 
-            if (HasConditionEffect(ConditionEffects.Healing) && !HasConditionEffect(ConditionEffects.Sick))
+            if (HasConditionEffect(ConditionEffects.Healing) && !HasConditionEffect(ConditionEffects.Sick) || !HasConditionEffect(ConditionEffects.DrakzixCharging))
             {
                 if (_healing > 1)
                 {
@@ -142,7 +142,7 @@ namespace wServer.realm.entities
                 _healing += 28 * (time.ElaspedMsDelta / 1000f);
             }
 
-            if (HasConditionEffect(ConditionEffects.HealthRecovery) && !HasConditionEffect(ConditionEffects.Sick))
+            if (HasConditionEffect(ConditionEffects.HealthRecovery) && !HasConditionEffect(ConditionEffects.Sick) || !HasConditionEffect(ConditionEffects.DrakzixCharging))
             {
                 if (_healing2 > 1)
                 {
@@ -180,7 +180,7 @@ namespace wServer.realm.entities
                         surgewither = true;
                     }
                 }
-                _surgeDepletion += 6 * (time.ElaspedMsDelta / 1000f);
+                _surgeDepletion += 28 * (time.ElaspedMsDelta / 1000f);
             }
             if (surgewither)
             {
@@ -191,7 +191,7 @@ namespace wServer.realm.entities
                         Surge = 0;
                     _surgeDepletion2 -= (int)_surgeDepletion2;
                 }
-                _surgeDepletion2 += 3 * (time.ElaspedMsDelta / 1000f);
+                _surgeDepletion2 += 14 * (time.ElaspedMsDelta / 1000f);
             }
 
             if (HasConditionEffect(ConditionEffects.NinjaSpeedy))

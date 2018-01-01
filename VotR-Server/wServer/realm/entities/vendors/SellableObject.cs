@@ -12,8 +12,8 @@ namespace wServer.realm.entities.vendors
     {
         [Description("Purchase successful.")]
         Ok,
-        [Description("Cannot purchase items with a guest account.")]
-        IsGuest,
+        [Description("Cannot purchase items with an account with no name chosen.")]
+        isNameChosen,
         [Description("Insufficient Rank.")]
         InsufficientRank,
         [Description("Insufficient Funds.")]
@@ -99,12 +99,12 @@ namespace wServer.realm.entities.vendors
                 return BuyResult.InsufficientRank;
 
             var acc = player.Client.Account;
-            if (acc.Guest)
+            if (acc.NameChosen)
             {
                 // reload guest prop just in case user registered in game
                 acc.Reload("guest");
-                if (acc.Guest)
-                    return BuyResult.IsGuest;
+                if (acc.NameChosen)
+                    return BuyResult.isNameChosen;
             }
 
             if (player.GetCurrency(Currency) < Price)
