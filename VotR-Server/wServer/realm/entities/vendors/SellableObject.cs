@@ -99,11 +99,11 @@ namespace wServer.realm.entities.vendors
                 return BuyResult.InsufficientRank;
 
             var acc = player.Client.Account;
-            if (acc.NameChosen)
+            if (acc.NameChosen == false)
             {
                 // reload guest prop just in case user registered in game
                 acc.Reload("guest");
-                if (acc.NameChosen)
+                if (acc.NameChosen == false)
                     return BuyResult.isNameChosen;
             }
 
