@@ -20,8 +20,9 @@ namespace wServer.networking.handlers
                 0x69e1, 0x1571, 0x49b2, 0x69d8, 0x42f4, 0x42b7, 0x42f8, 0x46f2, 0x1483,
                 0x511a, 0x43a2, 0x179c, 0x56b8, 0x56b9, 0x69e6, 0x45ef, 0x42f6, 0x69e9,
                 0x1636, 0x47db, 0x521c, 0x69ec, 0x69de, 0x69ed, 0x45d1 };
-        private readonly ushort[] furyList = { 0x1485, 0x1398 };
-        private readonly ushort[] zolList = { };
+        private readonly ushort[] furyList = { 0x1485, 0x1398, 0x61b6 };
+        private readonly ushort[] zolList = { 0x585b, 0x49e3, 0x61b5 };
+        private readonly ushort[] stoneList = { 0x61b2, 0x56c5, 0x56c4 };
 
         private void Handle(Client client, ForgeItem packet) {
             Random rnd = new Random();
@@ -33,11 +34,13 @@ namespace wServer.networking.handlers
                         case 0x68fb:
                             return furyList[rnd.Next(furyList.Length)];
                         case 0x68fc:
-                            client.Player.SendError("The Zol Corruption shard has not been implemented yet.");
-                            return 0x0;
-                        //return zolList[rnd.Next(zolList.Length)];
+                            return zolList[rnd.Next(zolList.Length)];
                         case 0x47c4:
                             return 0x47bd;
+                        case 0x1628:
+                            return 0x61b7;
+                        case 0x61b4:
+                            return stoneList[rnd.Next(stoneList.Length)];
                         default:
                             client.Player.SendError("You can't forge anything with these items.");
                             return 0x0;

@@ -203,7 +203,8 @@ namespace wServer.logic
 					new TierLoot(12, ItemType.Weapon, 0.1),
 					new TierLoot(6, ItemType.Ring, 0.1),
                     new ItemLoot("Marble Tablet", 0.02),
-					new ItemLoot("Ancient Stone Sword", 0.05)
+                    new ItemLoot("Shard of the Stone Soul", 0.001),
+                    new ItemLoot("Ancient Stone Sword", 0.05)
 				)
 			)
 			.Init("Stone Gargoyle",

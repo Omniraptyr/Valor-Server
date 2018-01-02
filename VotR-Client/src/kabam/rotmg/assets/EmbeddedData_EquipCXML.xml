@@ -16384,7 +16384,7 @@
         <BagType>4</BagType>
         <FameBonus>4</FameBonus>
     </Object>
-    <Object type="0x1628" id="Doge's Pendant">
+    <Object type="0x1628" id="Hunter Necklace">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -16392,7 +16392,7 @@
             <Index>0x58c</Index>
         </Texture>
         <SlotType>9</SlotType>
-        <Description>A wonderful pendant that Doge wears sometimes when he goes out to get his Swag hat..</Description>
+        <Description>A necklace that improves your skills to hunt and kill monsters.</Description>
         <Steal type="life" amount="3"/>
         <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
@@ -24945,6 +24945,7 @@
         <Description>A ring with a gemstone placed in it made out of pure crystalized Zol Energy.</Description>
         <ActivateOnEquip stat="26" amount="50">IncrStatPerc</ActivateOnEquip>
         <ActivateOnEquip stat="27" amount="50">IncrStatPerc</ActivateOnEquip>
+        <Steal type="mana" amount="2"/>
         <FameBonus>8</FameBonus>
         <feedPower>1650</feedPower>
         <Legendary/>
@@ -27790,19 +27791,20 @@
             <Index>0x3fa</Index>
         </Texture>
         <SlotType>1</SlotType>
-        <Description>A gicantic mace made of gargoyle stone plates. The pure crush of this mace cripples it's victims.</Description>
+        <Description>A gigantic mace made of gargoyle stone plates. The pure crush of this mace cripples it's victims.</Description>
         <RateOfFire>0.25</RateOfFire>
         <Sound>weapon/mithril_sword</Sound>
         <Projectile>
             <ObjectId>Gargoyle Pulse</ObjectId>
             <Speed>55</Speed>
-            <MinDamage>670</MinDamage>
-            <MaxDamage>960</MaxDamage>
+            <MinDamage>680</MinDamage>
+            <MaxDamage>965</MaxDamage>
             <LifetimeMS>565</LifetimeMS>
-            <ConditionEffect duration="0.2">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="0.25">Paralyzed</ConditionEffect>
         </Projectile>
         <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="28" amount="-15">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="-10">IncrementStat</ActivateOnEquip>
         <Legendary/>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -31552,8 +31554,126 @@
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
-        <MpCost>80</MpCost><Steal type="life" amount="1"/>
+        <MpCost>80</MpCost>
+          <Steal type="life" amount="1"/>
         <ActivateOnEquip stat="0" amount="12">IncrStatPerc</ActivateOnEquip>
         <Activate>BulletNova</Activate>
+    </Object>
+    <Object type="0x61b2" id="Gargoyle Slayer">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x54</Index>
+        </Texture>
+        <SlotType>25</SlotType>
+        <Description>A shuriken that is made for slaying gargoyles but will work just as well with slaying anything else.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <ExtraTooltipData>
+            <EffectInfo name="{equip.While_Key_Held}" description=""/>
+            <EffectInfo name="" description="{equip.Speedy_on_self}"/>
+            <EffectInfo name="" description="{equip.Drain_10_MP/sec}"/>
+            <EffectInfo name="{equip.When_Key_Released}" description=""/>
+        </ExtraTooltipData>
+        <Projectile>
+            <ObjectId>Gargoyle Slayer Proj</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>1000</MinDamage>
+            <MaxDamage>1800</MaxDamage>
+            <LifetimeMS>1100</LifetimeMS>
+            <Size>120</Size>
+            <PassesCover/>
+            <ArmorPiercing/>
+        </Projectile>
+        <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>0</MpCost>
+        <MpEndCost>110</MpEndCost>
+        <MultiPhase/>
+        <Activate effect="Invulnerable" duration="0.5" useWisMod="false">ConditionEffectSelf</Activate>
+        <Activate>ShurikenAbility</Activate>
+        <Legendary/>
+        <feedPower>3000</feedPower>
+        <DisplayId>Gargoyle Slayer</DisplayId>
+    </Object>
+    <Object type="0x61b4" id="Shard of the Stone Soul">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x0d</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A shard of true power used to spark the true energy of an ascendent crystal. This energy is so powerful that it materializes a new powerful item.</Description>
+        <Legendary/>
+        <Shard/>
+        <feedPower>1000</feedPower>
+    </Object>
+    <Object type="0x61b5" id="The Nuruaj">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x50</Index>
+        </Texture>
+        <SlotType>4</SlotType>
+        <Description>An ancient book that contains forsaken hymns of to consume enemies around you with the Zol.</Description>
+        <Sound>spell/major_heal</Sound>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <MpCost>150</MpCost>
+        <Activate effect="Armored" duration="2" range="4" useWisMod="false">ConditionEffectAura</Activate>
+        <Activate range="6" amount="260" useWisMod="true">HealNova</Activate>
+        <Activate effect="Cursed" duration="2" range="2" color="0xff0080" target="enemy" center="player"
+                  visualEffect="0" useWisMod="true">GenericActivate
+        </Activate>
+        <Activate effect="Paralyzed" duration="2" range="2" color="0xff0080" target="enemy" center="player"
+                  visualEffect="0" useWisMod="true">GenericActivate
+        </Activate>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <DisplayId>The Nuruaj</DisplayId>
+    </Object>
+    <Object type="0x61b6" id="Ring of Solar Focus">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x52</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>A ring infused with the energy of the sun.</Description>
+        <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="25">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="20">IncrementStat</ActivateOnEquip>
+        <FameBonus>8</FameBonus>
+        <feedPower>1650</feedPower>
+        <Legendary/>
+        <DisplayId>Ring of Solar Focus</DisplayId>
+    </Object>
+    <Object type="0x61b7" id="Predator Necklace">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x55</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>A necklace that greatly improves your skills to hunt and kill monsters.</Description>
+        <Steal type="life" amount="5"/>
+        <ActivateOnEquip stat="0" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="15">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="25">IncrStatPerc</ActivateOnEquip>
+        <BagType>8</BagType>
     </Object>
 </Objects>

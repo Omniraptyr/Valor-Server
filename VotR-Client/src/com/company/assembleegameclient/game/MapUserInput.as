@@ -567,7 +567,7 @@ public class MapUserInput {
     }
 
     private function useItem(slot:int):void {
-        /*if (this.tabStripModel.currentSelection == TabStripModel.BACKPACK) {
+       if (this.tabStripModel.currentSelection == TabStripModel.BACKPACK) {
             slot = slot + GeneralConstants.NUM_INVENTORY_SLOTS;
         }
         var slotIndex:int =
@@ -580,9 +580,9 @@ public class MapUserInput {
                     this.gs_.map.player_, slotIndex,
                     this.gs_.map.player_.equipment_[slotIndex]);
         }
-        else { */
+        else {
             GameServerConnection.instance.useItem_new(this.gs_.map.player_, slot);
-        //}
+   }
     }
 
     private function togglePerformanceStats():void {
