@@ -35,7 +35,7 @@ namespace wServer.networking
                 {
                     wtr.WriteNullTerminatedString(
                         @"<cross-domain-policy>" +
-                        @"<allow-access-from domain=""http://www.votrproject.com/"" to-ports=""*"" />" +
+                        @"<allow-access-from domain=""*.votrproject.com"" to-ports=""*"" />" +
                         @"</cross-domain-policy>");
                     wtr.Write((byte)'\r');
                     wtr.Write((byte)'\n');
