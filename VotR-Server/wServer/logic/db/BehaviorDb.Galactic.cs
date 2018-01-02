@@ -235,8 +235,7 @@ namespace wServer.logic
                     new ItemLoot("Some Alien Equipment", 0.75),
                     new ItemLoot("Ieastorian Armor", 0.035),
                     new ItemLoot("Blade of the Nightbringer", 0.035),
-                    new ItemLoot("Dire Sword", 0.035),
-                    new ItemLoot("Doge's Pendant", 0.035)
+                    new ItemLoot("Dire Sword", 0.035)
                 )
             )
         .Init("The Alien King",
@@ -368,8 +367,7 @@ namespace wServer.logic
                     new ItemLoot("Some Alien Equipment", 0.75),
                     new ItemLoot("Gold Cache", 0.05),
                     new ItemLoot("The ET Experience", 0.035),
-                    new ItemLoot("Blade of the Nightbringer", 0.035),
-                    new ItemLoot("Doge's Pendant", 0.035)
+                    new ItemLoot("Blade of the Nightbringer", 0.035)
                 )
             )
             ;

@@ -31675,5 +31675,7 @@
         <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="25">IncrStatPerc</ActivateOnEquip>
         <BagType>8</BagType>
+        <Legendary/>
     </Object>
 </Objects>
+    no
