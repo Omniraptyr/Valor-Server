@@ -42,7 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebMain.as" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WebMain.as" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WebMain.as">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
@@ -82,7 +82,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmbeddedAssets_legendaries8x8Embed_.png" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EmbeddedAssets_legendaries8x8Embed_.png" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedAssets_legendaries8x8Embed_.png">
           <provider selected="true" editor-type-id="images">
             <state />
@@ -257,7 +257,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="426" />
     <option name="y" value="259" />
     <option name="width" value="1023" />
@@ -627,16 +627,15 @@
       <workItem from="1514328604755" duration="31000" />
       <workItem from="1514607319559" duration="1873000" />
       <workItem from="1514772387947" duration="1207000" />
-      <workItem from="1514782560330" duration="17492000" />
+      <workItem from="1514782560330" duration="17514000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="581269000" />
+    <option name="totallyTimeSpent" value="581291000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1025,14 +1024,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebMain.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="111" column="10" lean-forward="false" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -1044,6 +1035,14 @@
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedAssets_legendaries8x8Embed_.png">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebMain.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="111" column="10" lean-forward="false" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="10" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
