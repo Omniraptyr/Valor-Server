@@ -2190,7 +2190,7 @@ namespace wServer.realm.commands
 
     class RenameCommand : Command
     {
-        public RenameCommand() : base("rename", permLevel: 100) { }
+        public RenameCommand() : base("rename", permLevel: 90) { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
