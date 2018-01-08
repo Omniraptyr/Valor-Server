@@ -39444,7 +39444,7 @@ A magnificent legendary blade which only cuts those who deserve death.
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>{equip.Customize_your_Archer_with_the_Ranger_Skin._Thanks_to:_Radi}</Description>
-      <Activate skinType="888">UnlockSkin</Activate>
+      <Activate skinType2="888">UnlockSkin</Activate>
       <Consumable/>
       <BagType>0</BagType>
       <DisplayId>Ranger Skin</DisplayId>

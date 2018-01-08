@@ -504,9 +504,12 @@ namespace wServer.realm.entities
                     case ActivateEffects.BigStasisBlast:
                         BigStasisBlast(time, item, target, eff);
                         break;
-                   /* case ActivateEffects.FameActivate:
-                        AEFameActivate(time, item, target, eff);
-                        break;*/
+                    case ActivateEffects.UnlockSkin:
+                        AEUnlockSkin(time, item, target, eff);
+                        break;
+                    /* case ActivateEffects.FameActivate:
+                         AEFameActivate(time, item, target, eff);
+                         break;*/
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
@@ -1464,6 +1467,24 @@ namespace wServer.realm.entities
                     ApplyConditionEffect(ConditionEffectIndex.Damaging, eff.DurationMS);
                     break;
             }
+        }
+        private void AEUnlockSkin(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            var acc = Client.Account;
+            var ownedSkins = acc.Skins.ToList();
+            if (!ownedSkins.Contains(eff.SkinType))
+            {
+                ownedSkins.Add(eff.SkinType);
+                acc.Skins = ownedSkins.ToArray();
+
+                acc.FlushAsync();
+                SendInfo("You've unlocked a new skin! Check your Wardrobe in the vault!");
+            }
+            else
+            {
+                SendError("You already have this skin!");
+            }
+
         }
         private void AEConditionEffectAura(RealmTime time, Item item, Position target, ActivateEffect eff)
         {

@@ -674,7 +674,9 @@ namespace common
 
             acc.FlushAsync();
         }
-        
+
+
+
         public void AddToTreasury(int amount, ITransaction transaction = null)
         {
             if (transaction != null)

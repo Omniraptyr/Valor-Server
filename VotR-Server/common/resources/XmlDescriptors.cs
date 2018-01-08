@@ -429,6 +429,7 @@ namespace common.resources
         public string LockedName { get; private set; }
         public uint Color { get; private set; }
         public ushort SkinType { get; private set; }
+        public int SkinType2 { get; private set; }
         public int Size { get; private set; }
         public bool NoStack { get; private set; }
         public bool UseWisMod { get; private set; }
@@ -511,6 +512,9 @@ namespace common.resources
 
             if (elem.Attribute("skinType") != null)
                 SkinType = ushort.Parse(elem.Attribute("skinType").Value.Substring(2), NumberStyles.AllowHexSpecifier);
+
+            if (elem.Attribute("skinType2") != null)
+                SkinType2 = int.Parse(elem.Attribute("skinType2").Value);
 
             if (elem.Attribute("size") != null)
                 Size = int.Parse(elem.Attribute("size").Value);
