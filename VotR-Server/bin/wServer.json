@@ -8,7 +8,7 @@
   "serverInfo": {
     "type": "World",
     "name": "VotR 2 Beta",
-    "address": "144.217.80.74",
+    "address": "13.67.136.161",
     "port": "2050",
     "coordinates": {
       "latitude": "0",
@@ -19,7 +19,7 @@
   "serverSettings": {
     "logFolder": "./logs",
     "resourceFolder": "./resources",
-    "version": "16.0.C5",
+    "version": "16.5.C5",
     "tps": "7",
     "mode": "Single",
     "key": "B1A5ED",
