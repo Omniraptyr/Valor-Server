@@ -5,7 +5,7 @@ import kabam.rotmg.application.api.ApplicationSetup;
 
 public class ProductionSetup implements ApplicationSetup {
 
-    private const SERVER:String = "144.217.80.74:8080";
+    private const SERVER:String = "13.67.136.161:8080";
     private const UNENCRYPTED:String = ("http://" + SERVER);
     private const ENCRYPTED:String = ("http://" + SERVER);
     private const BUILD_LABEL:String = "<font color='#DDDD00'>VotR 2.0 Testing</font>";
