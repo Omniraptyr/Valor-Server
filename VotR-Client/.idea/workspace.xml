@@ -33,7 +33,7 @@
       <file leaf-file-name="ProductionSetup.as" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/application/impl/ProductionSetup.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="357">
               <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
               <folding />
             </state>
@@ -43,8 +43,8 @@
       <file leaf-file-name="EmbeddedData_EquipCXML.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="31687" column="63" lean-forward="false" selection-start-line="31687" selection-start-column="63" selection-end-line="31687" selection-end-column="63" />
+            <state relative-caret-position="387">
+              <caret line="31656" column="30" lean-forward="false" selection-start-line="31656" selection-start-column="30" selection-end-line="31656" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -283,6 +283,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -366,10 +367,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -674,11 +674,12 @@
       <workItem from="1517713593090" duration="279000" />
       <workItem from="1517719391017" duration="268000" />
       <workItem from="1517721221944" duration="1187000" />
+      <workItem from="1517723936134" duration="256000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="615388000" />
+    <option name="totallyTimeSpent" value="615644000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1082,7 +1083,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/application/impl/ProductionSetup.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="357">
           <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding />
         </state>
@@ -1090,8 +1091,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="31687" column="63" lean-forward="false" selection-start-line="31687" selection-start-column="63" selection-end-line="31687" selection-end-column="63" />
+        <state relative-caret-position="387">
+          <caret line="31656" column="30" lean-forward="false" selection-start-line="31656" selection-start-column="30" selection-end-line="31656" selection-end-column="30" />
           <folding />
         </state>
       </provider>

@@ -85,12 +85,7 @@ namespace wServer.networking.handlers
                 client.SendFailureDialog("Admin Only Server", $"Only admins can play on {client.Manager.Config.serverInfo.name}.");
                 return null;
             }
-
-            if (!acc.NameChosen)
-            {
-                client.SendFailureDialog("You need to choose a name!", "Please choose a name at main menu.");
-                return null;
-            }
+            
 
             var minRank = client.Manager.Config.serverInfo.minRank;
             if (acc.Rank < minRank)
