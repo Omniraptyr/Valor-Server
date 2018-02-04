@@ -385,6 +385,7 @@ namespace common.resources
         PoZPage,
         URandomOnrane,
         FameActivate,
+        ActivateFragment,
         AsiHeal,
         AsiimovBox,
         NewCharSlot,

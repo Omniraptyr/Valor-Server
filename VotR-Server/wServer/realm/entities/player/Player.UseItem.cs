@@ -510,9 +510,9 @@ namespace wServer.realm.entities
                     case ActivateEffects.SorConstruct:
                         AESorConstruct(time, item, target, eff);
                         break;
-                    /* case ActivateEffects.FameActivate:
-                         AEFameActivate(time, item, target, eff);
-                         break;*/
+                    case ActivateEffects.ActivateFragment:
+                         AEActivateFragment(time, item, target, eff);
+                         break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
@@ -848,6 +848,7 @@ namespace wServer.realm.entities
                                     inv[c] = null;
                                     SaveToCharacter();
                                     SendInfo("You have successfully constructed a Sor Crystal!");
+                                    break;
                                 }
                                 else
                                 {
@@ -892,6 +893,67 @@ namespace wServer.realm.entities
             Client.Manager.Database.UpdateOnrane(acc, eff.Amount);
             Onrane += eff.Amount;
             this.ForceUpdate(Credits);
+
+        }
+
+        private void AEActivateFragment(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            ushort[] fragmentList = { 0x61c3, 0x61c2, 0x61c1 };
+            var acc = Client.Account;
+            Random rnd = new Random();
+            int Chance = Random.Next(0, 8);
+            switch (Chance)
+            {
+                case 0:
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    SendInfo("You received 1 Sor Fragment.");
+                    break;
+
+                case 1:
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    SendInfo("You received 2 Sor Fragments.");
+                    break;
+
+                case 2:
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    SendInfo("You received 3 Sor Fragments.");
+                    break;
+
+                case 3:
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    SendInfo("You received 4 Sor Fragments.");
+                    break;
+
+                case 4:
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    SendInfo("Astonishing! You've received 5 Sor Fragments!");
+                    break;
+
+                case 5:
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    SendInfo("You received 1 Sor Fragment.");
+                    break;
+
+                case 6:
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    SendInfo("You received 1 Sor Fragment.");
+                    break;
+
+                case 7:
+                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    SendInfo("You received 1 Sor Fragment.");
+                    break;
+            }
 
         }
 

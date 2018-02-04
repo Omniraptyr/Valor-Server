@@ -316,7 +316,7 @@ namespace wServer.logic
                     LootTemplates.StatIncreasePotionsLoot()
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SFCrystal()
+                    LootTemplates.SFCrystal2()
                     )
             )
             ;

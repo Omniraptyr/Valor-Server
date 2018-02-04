@@ -191,8 +191,8 @@ namespace wServer.logic
                         new TimedTransition(4000, "Fight1")
                         )
                     ),
-                                                new MostDamagers(3,
-                    LootTemplates.SFGigas()
+                new MostDamagers(3,
+                    LootTemplates.SFCrystal()
                     ),
                 new Threshold(0.01,
                     new ItemLoot("Amethyst Lair Armor", 0.25),

@@ -16,10 +16,10 @@ namespace wServer.networking.handlers
 
         void Handle(Player player, RealmTime time, LaunchRaid packet)
         {
-            if (player.Credits >= 5000)
+            if (player.Credits >= 6000)
             {
-                player.Client.Manager.Database.UpdateCredit(player.Client.Account, -5000);
-                player.Credits = player.Client.Account.Credits - 5000;
+                player.Client.Manager.Database.UpdateCredit(player.Client.Account, -6000);
+                player.Credits = player.Client.Account.Credits - 6000;
                 player.ForceUpdate(player.Credits);
 
                 var acc = player.Client.Account;
@@ -78,7 +78,7 @@ namespace wServer.networking.handlers
                 }
             }
             else{
-                player.SendError("You do not have enough gold to launch this raid.");
+                player.SendError("You do not have at least 6000 gold to launch this raid.");
             }
         }
     }

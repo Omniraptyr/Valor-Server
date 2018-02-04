@@ -722,8 +722,8 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.FabledItemsLoot2()
                 ),
-                                new MostDamagers(3,
-                    LootTemplates.SFElite()
+                new MostDamagers(3,
+                    LootTemplates.SFGigas()
                     ),
                 new Threshold(0.05,
                 new TierLoot(12, ItemType.Weapon, 0.08),
@@ -770,7 +770,7 @@ namespace wServer.logic
                     LootTemplates.FabledItemsLoot1()
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SFElite()
+                    LootTemplates.SFGigas()
                     ),
                 new Threshold(0.05,
                     new TierLoot(12, ItemType.Weapon, 0.08),
@@ -800,7 +800,7 @@ namespace wServer.logic
                     new State("UnsetEffect")
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SFCrystal()
+                    LootTemplates.SFElite()
                     ),
                 new Threshold(0.15,
                 new ItemLoot("Gold Cache", 0.35),
@@ -962,8 +962,8 @@ namespace wServer.logic
                         new Suicide()
                         )
                     ),
-                    new MostDamagers(3,
-                        LootTemplates.SFElite()
+                new MostDamagers(3,
+                    LootTemplates.SFGigas()
                     ),
                     new Threshold(0.05,
                         new TierLoot(12, ItemType.Weapon, 0.08),

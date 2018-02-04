@@ -105404,7 +105404,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <FameBonus>6</FameBonus>
       <MpCost>50</MpCost>
       <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
-      <ActivateOnEquip stat="6" amount="40">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="112" amount="40">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
       <Activate duration="5">DiceActivate</Activate>
@@ -109924,8 +109923,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <MaxDamage>215</MaxDamage>
             <LifetimeMS>430</LifetimeMS>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="25">IncrStatPerc</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="12">IncrStatPerc</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="28" amount="-15">IncrementStat</ActivateOnEquip>
         <NumProjectiles>3</NumProjectiles>
@@ -109942,5 +109940,24 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Index>0x57</Index>
         </Texture>
         <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x61c4" id="Sor Fragment Cache">
+        <Class>Equipment</Class>
+        <Item/>
+        <SlotType>10</SlotType>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1ec</Index>
+        </Texture>
+        <Description>Using this item sends 1-5 Sor Fragments to your gift chest.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="" description="This item only drops from Elite Lootboxes"/>
+        </ExtraTooltipData>
+        <Consumable/>
+        <Activate>ActivateFragment</Activate>
+        <Sound>spell/fire_nova</Sound>
+        <feedPower>275</feedPower>
+        <Fabled/>
+        <DisplayId>Sor Fragment Cache</DisplayId>
     </Object>
 </Objects>

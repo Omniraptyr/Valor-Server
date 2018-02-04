@@ -320,6 +320,18 @@ namespace wServer.logic.loot
                 )
              };
         }
+        //1/1000
+        public static ILootDef[] SFCrystal2()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Sor Fragment 1", 0.001),
+                    new ItemLoot("Sor Fragment 2", 0.001),
+                    new ItemLoot("Sor Fragment 3", 0.001)
+                )
+             };
+        }
         //1/25
         public static ILootDef[] SFGigas()
         {
