@@ -264,11 +264,71 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("The Zol Awakening (Token)", 0.1),
-                    new ItemLoot("Calling of the Titan (Token)", 0.1),
-                    new ItemLoot("A Fallen Light (Token)", 0.1),
-                    new ItemLoot("Sidon's Fall (Token)", 0.1),
-                    new ItemLoot("War of Decades (Token)", 0.1)
+                    new ItemLoot("The Zol Awakening (Token)", 0.50),
+                    new ItemLoot("Calling of the Titan (Token)", 0.50),
+                    new ItemLoot("A Fallen Light (Token)", 0.50),
+                    new ItemLoot("Sidon's Fall (Token)", 0.50),
+                    new ItemLoot("War of Decades (Token)", 0.50)
+                )
+             };
+        }
+        //1/125K
+        public static ILootDef[] SFExtremelyLow()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Sor Fragment 1", 0.000008),
+                    new ItemLoot("Sor Fragment 2", 0.000008),
+                    new ItemLoot("Sor Fragment 3", 0.000008)
+                )
+             };
+        }
+        //1/50k
+        public static ILootDef[] SFLow()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Sor Fragment 1", 0.00002),
+                    new ItemLoot("Sor Fragment 2", 0.00002),
+                    new ItemLoot("Sor Fragment 3", 0.00002)
+                )
+             };
+        }
+        //1/50
+        public static ILootDef[] SFElite()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Sor Fragment 1", 0.02),
+                    new ItemLoot("Sor Fragment 2", 0.02),
+                    new ItemLoot("Sor Fragment 3", 0.02)
+                )
+             };
+        }
+        //1/100
+        public static ILootDef[] SFCrystal()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Sor Fragment 1", 0.01),
+                    new ItemLoot("Sor Fragment 2", 0.01),
+                    new ItemLoot("Sor Fragment 3", 0.01)
+                )
+             };
+        }
+        //1/25
+        public static ILootDef[] SFGigas()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Sor Fragment 1", 0.04),
+                    new ItemLoot("Sor Fragment 2", 0.04),
+                    new ItemLoot("Sor Fragment 3", 0.04)
                 )
              };
         }

@@ -14941,11 +14941,11 @@
         </Texture>
         <SlotType>9</SlotType>
         <Description>A rare amulet that is made of a yellow crystal found in the Elemental Ruins</Description>
-        <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="90">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="40">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>4</FameBonus>
         <feedPower>800</feedPower>
@@ -17275,20 +17275,22 @@
         <Class>Equipment</Class>
         <Item/>
         <Texture>
-            <File>lofiObj6</File>
-            <Index>0x4c</Index>
+            <File>legendaries8x8Embed</File>
+            <Index>0x58</Index>
         </Texture>
         <SlotType>3</SlotType>
         <Description>A bow that will leave you with no regrets.</Description>
-        <RateOfFire>0.55</RateOfFire>
+        <RateOfFire>0.75</RateOfFire>
         <Sound>weapon/double_bow</Sound>
         <Projectile>
             <ObjectId>White Bullet</ObjectId>
             <Speed>185</Speed>
-            <MinDamage>180</MinDamage>
+            <MinDamage>160</MinDamage>
             <MaxDamage>250</MaxDamage>
             <LifetimeMS>400</LifetimeMS>
         </Projectile>
+        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <NumProjectiles>2</NumProjectiles>
         <feedPower>1000</feedPower>
@@ -19858,7 +19860,8 @@
             <MaxDamage>442</MaxDamage>
             <LifetimeMS>350</LifetimeMS>
         </Projectile>
-        <ActivateOnEquip stat="26" amount="35">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <OldSound>bladeSwing</OldSound>
@@ -20084,7 +20087,7 @@
             <Speed>120</Speed>
             <MinDamage>150</MinDamage>
             <MaxDamage>200</MaxDamage>
-            <LifetimeMS>580</LifetimeMS>
+            <LifetimeMS>590</LifetimeMS>
             <MultiHit/>
         </Projectile>
         <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
@@ -21680,20 +21683,20 @@
         <Description>A seal that grants a shield of impenetrable light and energy around you.</Description>
         <Sound>spell/light_heal</Sound>
         <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="25">IncrStatPerc</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="-8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="-10">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <MpCost>110</MpCost>
         <Legendary/>
         <feedPower>2000</feedPower>
-        <Activate effect="Healing" duration="7.5" range="5">ConditionEffectAura</Activate>
+        <Activate stat="0" amount="90" duration="4" range="4.5" noStack="true" useWisMod="true">StatBoostAura</Activate>
         <Activate effect="Damaging" duration="10" range="7.5">ConditionEffectAura</Activate>
-        <Activate effect="Invulnerable" duration="1.4">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="1.4" useWisMod="true">ConditionEffectSelf</Activate>
         <Activate effect="Armored" duration="4.25">ConditionEffectSelf</Activate>
-        <Cooldown>2.5</Cooldown>
+        <Cooldown>3</Cooldown>
     </Object>
     <Object type="0x47c1" id="Spear of the Unforgiven">
         <Class>Equipment</Class>
@@ -22074,17 +22077,18 @@
         <SlotType>13</SlotType>
         <Description>A peculiar cloak that gives one the composition of chiseled marble.</Description>
         <Sound>spell/fire_nova</Sound>
-        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="5">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="-5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-6">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <MpCost>110</MpCost>
         <Activate effect="Invisible" duration="4.5">ConditionEffectSelf</Activate>
-        <Activate effect="Armored" duration="3.0">ConditionEffectSelf</Activate>
-        <Activate effect="Slowed" duration="1">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="1">ConditionEffectSelf</Activate>
+        <Activate effect="Slowed" duration="2.5">ConditionEffectSelf</Activate>
+        <EffectEquip effect="Armored" delay="85"/>
         <feedPower>1600</feedPower>
+        <Cooldown>4.5</Cooldown>
         <Legendary/>
         <DisplayId>Petrification Cloak</DisplayId>
     </Object>
@@ -22110,7 +22114,7 @@
         <Activate effect="Healing" duration="6" range="5" useWisMod="true">ConditionEffectAura</Activate>
         <Activate range="6" amount="320" useWisMod="true">HealNova</Activate>
         <Activate effect="Speedy" duration="1" range="2.5" useWisMod="true">ConditionEffectAura</Activate>
-        <Activate effect="Invulnerable" duration="0.34">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="1">ConditionEffectSelf</Activate>
         <feedPower>1800</feedPower>
         <Cooldown>1.4</Cooldown>
         <Legendary/>
@@ -22459,13 +22463,14 @@
         <Description>A cloak surged with unlimited godly energy.</Description>
         <Sound>spell/fire_nova</Sound>
         <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
-        <MpCost>95</MpCost>
-        <Activate effect="Slowed" duration="2.5" range="5" color="0xffff00" target="enemy" center="player" visualEffect="5" useWisMod="false">GenericActivate</Activate>
+        <MpCost>90</MpCost>
+        <Activate effect="Slowed" duration="3.5" range="5" color="0xffff00" target="enemy" center="player" visualEffect="5" useWisMod="false">GenericActivate</Activate>
         <Activate effect="Invisible" duration="5">ConditionEffectSelf</Activate>
-        <Activate effect="Speedy" duration="1.5">ConditionEffectSelf</Activate>
+        <Activate effect="Speedy" duration="2.5">ConditionEffectSelf</Activate>
         <Cooldown>6.5</Cooldown>
         <feedPower>1000</feedPower>
         <DisplayId>Surge Cloak</DisplayId>
@@ -23397,9 +23402,10 @@
         </Texture>
         <SlotType>9</SlotType>
         <Description>The legends shall die, and the hero will turn.</Description>
-        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="60">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="20">IncrStatPerc</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
     </Object>
@@ -23430,17 +23436,18 @@
         </Texture>
         <SlotType>17</SlotType>
         <Description>A staff that uses the magic of the ghouls and demons that lurk in our world.</Description>
-        <RateOfFire>0.70</RateOfFire>
+        <RateOfFire>0.8</RateOfFire>
         <Sound>weapon/wand_of_death</Sound>
         <Projectile>
             <ObjectId>Hades Proj</ObjectId>
             <Speed>125</Speed>
-            <MinDamage>30</MinDamage>
-            <MaxDamage>120</MaxDamage>
+            <MinDamage>50</MinDamage>
+            <MaxDamage>130</MaxDamage>
             <LifetimeMS>660</LifetimeMS>
             <Amplitude>0.50</Amplitude>
             <Frequency>2.2</Frequency>
         </Projectile>
+        <ActivateOnEquip stat="20" amount="30">IncrStatPerc</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>5</FameBonus>
         <ArcGap>10</ArcGap>
@@ -23556,7 +23563,7 @@
         <SlotType>10</SlotType>
         <Description>A wicked corrupted force must be stopped..</Description>
         <Sound>use_key</Sound>
-        <Consumable/>
+        <Soulbound/>
         <BagType>9</BagType>
         <Activate dungeonName="Aldragine's Hideout" lockedName="Locked Aldragine's Hideout Portal">FUnlockPortal</Activate>
         <FabledToken/>
@@ -23574,6 +23581,7 @@
         <Sound>use_key</Sound>
         <BagType>9</BagType>
         <FabledToken/>
+        <Soulbound/>
         <DisplayId>Calling of the Titan (Token)</DisplayId>
     </Object>
     <Object type="0x51a4" id="A Fallen Light (Token)">
@@ -23588,6 +23596,7 @@
         <Sound>use_key</Sound>
         <BagType>9</BagType>
         <FabledToken/>
+        <Soulbound/>
         <DisplayId>A Fallen Light (Token)</DisplayId>
     </Object>
     <Object type="0x51a5" id="Sidon's Fall (Token)">
@@ -23602,6 +23611,7 @@
         <Sound>use_key</Sound>
         <BagType>9</BagType>
         <FabledToken/>
+        <Soulbound/>
         <DisplayId>Sidon's Fall (Token)</DisplayId>
     </Object>
     <Object type="0x51a6" id="War of Decades (Token)">
@@ -23616,6 +23626,7 @@
         <Sound>use_key</Sound>
         <BagType>9</BagType>
         <FabledToken/>
+        <Soulbound/>
         <DisplayId>War of Decades (Token)</DisplayId>
     </Object>
     <Object type="0x51a7" id="Locked Aldragine's Hideout Portal">
@@ -24535,35 +24546,6 @@
         <ActivateOnEquip stat="3" amount="-40">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>1</BagType>
-        <SurgeCost>30</SurgeCost>
-        <MultiPhase/>
-        <Activate range="1" amount="50" duration="3">SiphonAbility</Activate>
-        <feedPower>5</feedPower>
-        <DisplayId>Standard Siphon</DisplayId>
-    </Object>
-    <Object type="0x52ca" id="Standard Siphon">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>lofiObj6</File>
-            <Index>0xe0</Index>
-        </Texture>
-        <SlotType>30</SlotType>
-        <Tier>0</Tier>
-        <Description>A basic siphon that can hold a standard amount of power.</Description>
-        <Sound>spell/fire_spray</Sound>
-        <ExtraTooltipData>
-            <EffectInfo name="Radius" description="1"/>
-            <EffectInfo name="Base Damage" description="50"/>
-            <EffectInfo name="Mana Recovery" description="3"/>
-            <EffectInfo name="{equip.While_Key_Held}" description=""/>
-            <EffectInfo name="" description="Drain 100 hp/s"/>
-            <EffectInfo name="{equip.When_Key_Released}" description=""/>
-            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of health drained, current mana, overall wisdom stat, and this item's base damage."/>
-        </ExtraTooltipData>
-        <ActivateOnEquip stat="3" amount="-40">IncrementStat</ActivateOnEquip>
-        <Usable/>
-        <BagType>1</BagType>
         <SurgeCost>20</SurgeCost>
         <MultiPhase/>
         <Activate range="1" amount="50" duration="3">SiphonAbility</Activate>
@@ -24639,7 +24621,7 @@
         <Description>A siphon that emits dark energy around the user.</Description>
         <Sound>spell/fire_spray</Sound>
         <ExtraTooltipData>
-            <EffectInfo name="Radius" description="1"/>
+            <EffectInfo name="Radius" description="2"/>
             <EffectInfo name="Base Damage" description="300"/>
             <EffectInfo name="Mana Recovery" description="4"/>
             <EffectInfo name="{equip.While_Key_Held}" description=""/>
@@ -24652,6 +24634,7 @@
         <BagType>1</BagType>
         <SurgeCost>15</SurgeCost>
         <MultiPhase/>
+        <Steal type="mana" amount="1"/>
         <Activate range="2" amount="300" duration="4">SiphonAbility</Activate>
         <feedPower>55</feedPower>
         <FameBonus>1</FameBonus>
@@ -24669,7 +24652,7 @@
         <Description>An ancient siphon that harnesses forgotten power.</Description>
         <Sound>spell/fire_spray</Sound>
         <ExtraTooltipData>
-            <EffectInfo name="Radius" description="1"/>
+            <EffectInfo name="Radius" description="2"/>
             <EffectInfo name="Base Damage" description="400"/>
             <EffectInfo name="Mana Recovery" description="4"/>
             <EffectInfo name="{equip.While_Key_Held}" description=""/>
@@ -24682,6 +24665,7 @@
         <BagType>4</BagType>
         <SurgeCost>15</SurgeCost>
         <MultiPhase/>
+        <Steal type="mana" amount="2"/>
         <Activate range="2" amount="400" duration="4">SiphonAbility</Activate>
         <feedPower>65</feedPower>
         <FameBonus>2</FameBonus>
@@ -24699,7 +24683,7 @@
         <Description>A siphon forged by the will of 3 constructs.</Description>
         <Sound>spell/fire_spray</Sound>
         <ExtraTooltipData>
-            <EffectInfo name="Radius" description="1"/>
+            <EffectInfo name="Radius" description="3"/>
             <EffectInfo name="Base Damage" description="500"/>
             <EffectInfo name="Mana Recovery" description="5"/>
             <EffectInfo name="{equip.While_Key_Held}" description=""/>
@@ -24712,6 +24696,7 @@
         <BagType>4</BagType>
         <SurgeCost>10</SurgeCost>
         <MultiPhase/>
+        <Steal type="mana" amount="4"/>
         <Activate range="3" amount="500" duration="5">SiphonAbility</Activate>
         <feedPower>185</feedPower>
         <FameBonus>3</FameBonus>
@@ -24729,7 +24714,7 @@
         <Description>Legend has it this siphon was used to blast down a whole kingdom in one single charge.</Description>
         <Sound>spell/fire_spray</Sound>
         <ExtraTooltipData>
-            <EffectInfo name="Radius" description="1"/>
+            <EffectInfo name="Radius" description="3"/>
             <EffectInfo name="Base Damage" description="600"/>
             <EffectInfo name="Mana Recovery" description="6"/>
             <EffectInfo name="{equip.While_Key_Held}" description=""/>
@@ -24742,6 +24727,7 @@
         <BagType>4</BagType>
         <SurgeCost>5</SurgeCost>
         <MultiPhase/>
+        <Steal type="mana" amount="4"/>
         <Activate range="3" amount="600" duration="6">SiphonAbility</Activate>
         <feedPower>380</feedPower>
         <FameBonus>4</FameBonus>
@@ -24785,25 +24771,24 @@
         <Description>A siphon used for the greater good. Only the brave can harness the power of this siphon.</Description>
         <Sound>spell/fire_spray</Sound>
         <ExtraTooltipData>
-            <EffectInfo name="Health Price" description="45"/>
-            <EffectInfo name="Health Cast" description="45"/>
-            <EffectInfo name="Radius" description="4"/>
+            <EffectInfo name="Radius" description="5"/>
+            <EffectInfo name="Base Damage" description="500"/>
+            <EffectInfo name="Mana Recovery" description="6"/>
             <EffectInfo name="{equip.While_Key_Held}" description=""/>
-            <EffectInfo name="" description="Drain 10 mp/s"/>
+            <EffectInfo name="" description="Drain 100 hp/s"/>
             <EffectInfo name="{equip.When_Key_Released}" description=""/>
-            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of mana drained."/>
+            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of health drained, current mana, overall wisdom stat, and this item's base damage."/>
         </ExtraTooltipData>
-        <ActivateOnEquip stat="3" amount="280">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="12">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="2">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="240">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>6</BagType>
-        <MpCost>0</MpCost>
-        <HpCost>45</HpCost>
-        <HpEndCost>45</HpEndCost>
+        <SurgeCost>5</SurgeCost>
         <MultiPhase/>
-        <Activate range="4">SiphonAbility</Activate>
-        <feedPower>1180</feedPower>
+        <Steal type="life" amount="2"/>
+        <Activate range="5" amount="500" duration="6">SiphonAbility</Activate>
+        <feedPower>980</feedPower>
         <FameBonus>6</FameBonus>
         <DisplayId>Siphon of Courage</DisplayId>
     </Object>
@@ -29321,9 +29306,9 @@
         </Texture>
         <SlotType>9</SlotType>
         <Description>A ring that shocks the energy of a storm god into it's user.</Description>
-        <ActivateOnEquip stat="3" amount="60">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="112" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
@@ -29762,6 +29747,7 @@
         </Projectile>
         <ActivateOnEquip stat="3" amount="220">IncrementStat</ActivateOnEquip>
         <Legendary/>
+        <Steal type="mana" amount="2"/>
         <Legend id="8" stat="27">
             <Name>Mana Focus</Name>
             <Description>When your surge is at least 30 you regenerate mana faster.</Description>
@@ -30586,6 +30572,7 @@
         <feedPower>1850</feedPower>
         <DisplayId>Armor of Anubis</DisplayId>
         <Legendary/>
+        <Steal type="mana" amount="4"/>
         <Legend id="3" stat="27">
             <Name>Clarity</Name>
             <Description>When your surge is over 20 you gain a maximum mana boost.</Description>
@@ -31266,7 +31253,7 @@
         <Sound>spell/fire_spray</Sound>
         <ExtraTooltipData>
             <EffectInfo name="Radius" description="4"/>
-            <EffectInfo name="Base Damage" description="750"/>
+            <EffectInfo name="Base Damage" description="800"/>
             <EffectInfo name="Mana Recovery" description="7"/>
             <EffectInfo name="{equip.While_Key_Held}" description=""/>
             <EffectInfo name="" description="Drain 100 hp/s"/>
@@ -31275,13 +31262,14 @@
         </ExtraTooltipData>
         <ActivateOnEquip stat="3" amount="440">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>6</BagType>
-        <SurgeCost>10</SurgeCost>
+        <SurgeCost>5</SurgeCost>
         <MultiPhase/>
+        <Steal type="mana" amount="5"/>
         <Activate effect="Speedy" duration="2" useWisMod="true">ConditionEffectSelf</Activate>
-        <Activate range="4" amount="750" duration="7">SiphonAbility</Activate>
+        <Activate range="4" amount="800" duration="7">SiphonAbility</Activate>
         <feedPower>2000</feedPower>
         <FameBonus>8</FameBonus>
         <Legendary/>
@@ -31548,14 +31536,14 @@
             <MinDamage>100</MinDamage>
             <MaxDamage>150</MaxDamage>
             <LifetimeMS>1000</LifetimeMS>
-			      <ConditionEffect duration="2">Paralyzed</ConditionEffect>
+			<ConditionEffect duration="2">Paralyzed</ConditionEffect>
             <MultiHit/>
         </Projectile>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
-        <MpCost>80</MpCost>
-          <Steal type="life" amount="1"/>
+        <MpCost>85</MpCost>
+        <Steal type="life" amount="1"/>
         <ActivateOnEquip stat="0" amount="12">IncrStatPerc</ActivateOnEquip>
         <Activate>BulletNova</Activate>
     </Object>
@@ -31650,10 +31638,10 @@
         <SlotType>9</SlotType>
         <Description>A ring infused with the energy of the sun.</Description>
         <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="3" amount="25">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="120">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="121" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="60">IncrementStat</ActivateOnEquip>
         <FameBonus>8</FameBonus>
         <feedPower>1650</feedPower>
         <Legendary/>
@@ -31676,5 +31664,85 @@
         <ActivateOnEquip stat="22" amount="25">IncrStatPerc</ActivateOnEquip>
         <BagType>8</BagType>
         <Legendary/>
+    </Object>
+    <Object type="0x61b8" id="Ancient Stone Maul">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x56</Index>
+        </Texture>
+        <SlotType>1</SlotType>
+        <Description>A large maul made of gargoyle stone with an amethyst encrusted handle. </Description>
+        <RateOfFire>0.45</RateOfFire>
+        <Sound>weapon/glass_sword</Sound>
+        <Projectile>
+            <ObjectId>ASMaul Proj</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>215</MaxDamage>
+            <LifetimeMS>430</LifetimeMS>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="25">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="-15">IncrementStat</ActivateOnEquip>
+        <NumProjectiles>3</NumProjectiles>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>bladeSwing</OldSound>
+        <feedPower>1000</feedPower>
+        <DisplayId>Ancient Stone Maul</DisplayId>
+    </Object>
+    <Object type="0x61c1" id="Sor Fragment 1">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x59</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A fragment of what seems to be a green crystal. It glows a light green and might contain some type of hidden power.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="" description="Double-Click to construct a Sor Crystal."/>
+        </ExtraTooltipData>
+        <BagType>8</BagType>
+        <InvUse/>
+        <Fragment/>
+        <Activate>SorConstruct</Activate>
+    </Object>
+    <Object type="0x61c2" id="Sor Fragment 2">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x5a</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A fragment of what seems to be a green crystal. It glows a light green and might contain some type of hidden power.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="" description="Double-Click to construct a Sor Crystal."/>
+        </ExtraTooltipData>
+        <BagType>8</BagType>
+        <InvUse/>
+        <Fragment/>
+        <Activate>SorConstruct</Activate>
+    </Object>
+    <Object type="0x61c3" id="Sor Fragment 3">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x5b</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A fragment of what seems to be a green crystal. It glows a light green and might contain some type of hidden power.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="" description="Double-Click to construct a Sor Crystal."/>
+        </ExtraTooltipData>
+        <BagType>8</BagType>
+        <InvUse/>
+        <Fragment/>
+        <Activate>SorConstruct</Activate>
     </Object>
 </Objects>

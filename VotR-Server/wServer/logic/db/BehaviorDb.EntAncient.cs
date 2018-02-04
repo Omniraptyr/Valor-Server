@@ -260,6 +260,9 @@ namespace wServer.logic
                         ),
                     new Decay(60000)
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.SFExtremelyLow()
+                    ),
                 new Threshold(0.15,
                 new ItemLoot("Health Potion", 0.25),
                 new ItemLoot("Potion of Dexterity", 0.06),

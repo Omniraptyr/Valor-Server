@@ -61,3 +61,12 @@ C:\Users\darkd\Desktop\votrmaster2\VotR-Server2\VotR-Server\server\obj\Debug\ser
 C:\Users\darkd\Desktop\votrmaster2\VotR-Server2\VotR-Server\server\obj\Debug\server.csproj.CoreCompileInputs.cache
 C:\Users\darkd\Desktop\votrmaster2\VotR-Server2\VotR-Server\server\obj\Debug\server.exe
 C:\Users\darkd\Desktop\votrmaster2\VotR-Server2\VotR-Server\server\obj\Debug\server.pdb
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\bin\log4net.config
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\bin\server.json
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\bin\server.exe.config
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\bin\server.exe
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\bin\server.pdb
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\server\obj\Debug\server.csprojResolveAssemblyReference.cache
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\server\obj\Debug\server.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\server\obj\Debug\server.exe
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\server\obj\Debug\server.pdb

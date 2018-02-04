@@ -110,6 +110,9 @@ namespace wServer.logic
                             new TimedTransition(2500, "Follow")
                             ))
                         ),
+                                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                         new Threshold(0.03,
                                   new TierLoot(10, ItemType.Weapon, 0.06),
                                   new TierLoot(11, ItemType.Weapon, 0.05),

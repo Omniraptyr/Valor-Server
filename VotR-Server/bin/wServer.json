@@ -1,13 +1,13 @@
 {
   "dbInfo": {
     "host": "127.0.0.1",
-    "port": "6379",
+    "port": "1985",
     "auth": "y5let1de@isaKraze@non8712jok",
     "index": "0"
   },
   "serverInfo": {
     "type": "World",
-    "name": "VotR 2 Alpha",
+    "name": "VotR 2 Beta",
     "address": "144.217.80.74",
     "port": "2050",
     "coordinates": {
@@ -19,13 +19,13 @@
   "serverSettings": {
     "logFolder": "./logs",
     "resourceFolder": "./resources",
-    "version": "15.0.C5",
+    "version": "16.0.C5",
     "tps": "7",
     "mode": "Single",
     "key": "B1A5ED",
-    "maxConnections": "512",
-    "maxPlayers": "160",
-    "maxPlayersWithPriority": "180",
+    "maxConnections": "1024",
+    "maxPlayers": "100",
+    "maxPlayersWithPriority": "120",
     "enablePets": "false",
     "enableMarket": "true"
   }

@@ -529,6 +529,9 @@ namespace wServer.logic
 					)
 				),
                  new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
+                 new MostDamagers(3,
                     LootTemplates.StatIncreasePotionsLoot()
                 ),
                 new Threshold(0.10,

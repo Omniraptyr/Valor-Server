@@ -250,7 +250,7 @@ namespace wServer.realm.entities
                     Client.SendPacket(new InvResult() { Result = 1 });
                     return;
                 }
-                    
+
 
                 // use item
                 var slotType = 10;
@@ -289,9 +289,9 @@ namespace wServer.realm.entities
                                     FameCounter.UseAbility();
                                 } else
                                 {
-                                    if (item.ActivateEffects.Any(eff => eff.Effect == ActivateEffects.Heal || 
-                                                                        eff.Effect == ActivateEffects.HealNova || 
-                                                                        eff.Effect == ActivateEffects.Magic || 
+                                    if (item.ActivateEffects.Any(eff => eff.Effect == ActivateEffects.Heal ||
+                                                                        eff.Effect == ActivateEffects.HealNova ||
+                                                                        eff.Effect == ActivateEffects.Magic ||
                                                                         eff.Effect == ActivateEffects.MagicNova))
                                     {
                                         FameCounter.DrinkPot();
@@ -340,16 +340,16 @@ namespace wServer.realm.entities
             }
             if (CheckStar())
             {
-                if(item.MpCost > 0)
-                AEMagicNoRest(time, item, target, item.MpCost/4);
+                if (item.MpCost > 0)
+                    AEMagicNoRest(time, item, target, item.MpCost / 4);
             }
             if (CheckInfernus())
             {
                 if (item.MpCost > 0)
                     BurstFire(time, item, target);
             }
-            if (Surge >= item.SurgeCost) 
-            Surge -= item.SurgeCost;
+            if (Surge >= item.SurgeCost)
+                Surge -= item.SurgeCost;
 
 
             if (HP < item.HpCost)
@@ -507,6 +507,9 @@ namespace wServer.realm.entities
                     case ActivateEffects.UnlockSkin:
                         AEUnlockSkin(time, item, target, eff);
                         break;
+                    case ActivateEffects.SorConstruct:
+                        AESorConstruct(time, item, target, eff);
+                        break;
                     /* case ActivateEffects.FameActivate:
                          AEFameActivate(time, item, target, eff);
                          break;*/
@@ -547,7 +550,7 @@ namespace wServer.realm.entities
                 SendError("server.use_in_petyard");
                 return;
             }
-            
+
             var pet = Pet.Create(Manager, this, item);
             if (pet == null)
                 return;
@@ -571,7 +574,7 @@ namespace wServer.realm.entities
             var portals = Owner.StaticObjects.Values
                 .Where(s => s is Portal && s.ObjectDesc.ObjectId.Equals(eff.LockedName) && s.DistSqr(this) <= 9)
                 .Select(s => s as Portal);
-            if (!portals.Any()) 
+            if (!portals.Any())
                 return;
             var portal = portals.Aggregate(
                 (curmin, x) => (curmin == null || x.DistSqr(this) < curmin.DistSqr(this) ? x : curmin));
@@ -593,7 +596,7 @@ namespace wServer.realm.entities
             }
 
             // create portal of unlocked world
-            var portalType = (ushort) proto.portals[0];
+            var portalType = (ushort)proto.portals[0];
             var uPortal = Resolve(Manager, portalType) as Portal;
             if (uPortal == null)
             {
@@ -630,7 +633,7 @@ namespace wServer.realm.entities
                 var timeoutTime = gameData.Portals[portalType].Timeout;
                 Owner.Timers.Add(new WorldTimer(timeoutTime * 1000, (w, t) => w.LeaveWorld(uPortal)));
             }
-            
+
             // announce
             Owner.BroadcastPacket(new Notification
             {
@@ -704,7 +707,7 @@ namespace wServer.realm.entities
                 ApplyConditionEffect(ConditionEffectIndex.NinjaSpeedy);
                 return;
             }
-            
+
             if (MP >= item.MpEndCost)
             {
                 MP -= item.MpEndCost;
@@ -764,7 +767,7 @@ namespace wServer.realm.entities
 
         private void AESiphonAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            int wisBoost = Stats[7]^2;
+            int wisBoost = Stats[7] ^ 2;
             int drained = DrainedHP;
             int mpAvailable = MP;
             if (!HasConditionEffect(ConditionEffects.DrakzixCharging))
@@ -781,7 +784,7 @@ namespace wServer.realm.entities
                 Pos1 = target,
                 Color = new ARGB(0xFFA500)
             });
-            
+
             pkts.Add(new ShowEffect()
             {
                 EffectType = EffectType.Diffuse,
@@ -794,7 +797,7 @@ namespace wServer.realm.entities
 
             Owner.AOE(target, eff.Range, false, enemy =>
             {
-                (enemy as Enemy).Damage(this, time, ((((MP*2)+(wisBoost^2))*(drained/2))/4)+eff.Amount, false,
+                (enemy as Enemy).Damage(this, time, ((((MP * 2) + (wisBoost ^ 2)) * (drained / 2)) / 4) + eff.Amount, false,
                     new ConditionEffect[0]);
             });
             BroadcastSync(pkts, p => this.Dist(p) < 25);
@@ -821,6 +824,49 @@ namespace wServer.realm.entities
                 IsForge = true
             });
         }
+
+        private void AESorConstruct(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            var inv = Inventory;
+            for (int c = 0; c < inv.Length; c++)
+            {
+                if (inv[c] == null) continue;
+                if (inv[c].ObjectId == "Sor Fragment 1")
+                {
+                    for (int d = 0; d < inv.Length; d++)
+                    {
+                        if (inv[d] == null) continue;
+                        if (inv[d].ObjectId == "Sor Fragment 2")
+                        {
+                            for (int i = 0; i < inv.Length; i++)
+                            {
+                                if (inv[i] == null) continue;
+                                if (inv[i].ObjectId == "Sor Fragment 3")
+                                {
+                                    inv[i] = Manager.Resources.GameData.Items[0x49e5];
+                                    inv[d] = null;
+                                    inv[c] = null;
+                                    SaveToCharacter();
+                                    SendInfo("You have successfully constructed a Sor Crystal!");
+                                }
+                                else
+                                {
+                                    SendError("You do not have a Sor Fragment 3 in your inventory.");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            SendError("You do not have a Sor Fragment 2 in your inventory.");
+                        }
+                    }
+                }
+                else
+                {
+                    SendError("You do not have a Sor Fragment 1 in your inventory.");
+                }
+            }
+        } 
 
         private void AETreasureActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {

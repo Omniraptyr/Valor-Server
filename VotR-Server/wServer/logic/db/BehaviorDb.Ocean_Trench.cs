@@ -168,6 +168,9 @@ namespace wServer.logic
              new TimedTransition(2000, "Spawning Bomb", randomized: true)
             )
             ),
+                           new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
              new Threshold(0.01,
               new ItemLoot("Coral Bow", 0.045),
               new ItemLoot("Coral Venom Trap", 0.045),

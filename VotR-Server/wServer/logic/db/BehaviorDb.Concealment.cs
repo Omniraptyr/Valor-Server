@@ -73,6 +73,9 @@ namespace wServer.logic
                        )
                     ),
                                 new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
+                                new MostDamagers(3,
                     new ItemLoot("Potion of Might", 1.0)
                 ),
                 new MostDamagers(1,

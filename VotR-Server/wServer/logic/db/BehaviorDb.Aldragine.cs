@@ -632,6 +632,9 @@ namespace wServer.logic
                         new Suicide()
                         )
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.SFElite()
+                    ),
                     new Threshold(0.05,
                        new TierLoot(12, ItemType.Weapon, 0.08),
                        new TierLoot(5, ItemType.Ability, 0.07),
@@ -719,6 +722,9 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.FabledItemsLoot2()
                 ),
+                                new MostDamagers(3,
+                    LootTemplates.SFElite()
+                    ),
                 new Threshold(0.05,
                 new TierLoot(12, ItemType.Weapon, 0.08),
                 new TierLoot(5, ItemType.Ability, 0.07),
@@ -763,6 +769,9 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.FabledItemsLoot1()
                 ),
+                new MostDamagers(3,
+                    LootTemplates.SFElite()
+                    ),
                 new Threshold(0.05,
                     new TierLoot(12, ItemType.Weapon, 0.08),
                     new TierLoot(5, ItemType.Ability, 0.07),
@@ -771,7 +780,7 @@ namespace wServer.logic
                     new TierLoot(7, ItemType.Ring, 0.08),
                     new ItemLoot("Spiritclaw", 0.01),
                     new ItemLoot("Ultimate Onrane Cache", 1),
-                    //new ItemLoot("The Stronghold Key", 0.75),
+                    new ItemLoot("The Stronghold Key", 0.75),
                     new ItemLoot("10000 Gold", 1.00),
                     new ItemLoot("Greater Potion of Life", 1),
                     new ItemLoot("Greater Potion of Defense", 1),
@@ -790,6 +799,9 @@ namespace wServer.logic
                     ),
                     new State("UnsetEffect")
                 ),
+                new MostDamagers(3,
+                    LootTemplates.SFCrystal()
+                    ),
                 new Threshold(0.15,
                 new ItemLoot("Gold Cache", 0.35),
                 new ItemLoot("Onrane", 1),
@@ -949,6 +961,9 @@ namespace wServer.logic
                         //new InvisiToss("AH Loot Chest 2", 2, 270, coolDown: 9999999),
                         new Suicide()
                         )
+                    ),
+                    new MostDamagers(3,
+                        LootTemplates.SFElite()
                     ),
                     new Threshold(0.05,
                         new TierLoot(12, ItemType.Weapon, 0.08),
@@ -1433,10 +1448,9 @@ namespace wServer.logic
                     new State("Success",
                         new AnnounceOnDeath("The Zol, a dark burden, seems to fade away slowly..."),
                         new Shoot(8, count: 10, projectileIndex: 2, coolDown: 9999),
-                        //new DropPortalOnDeath("Treasure of Zol Portal", 50, timeout: 120),
+                        new DropPortalOnDeath("Treasure of Zol Portal", 50, timeout: 120),
                         new Spawn("AH Aldragine Loot Ctrl", givesNoXp: true),
                         new TransferDamageOnDeath("AH Aldragine Loot Ctrl"),
-                        //new InvisiToss("AH Loot Chest 4", 2, 270, coolDown: 9999999),
                         new Suicide()
                         ),
                     new State("Failed",

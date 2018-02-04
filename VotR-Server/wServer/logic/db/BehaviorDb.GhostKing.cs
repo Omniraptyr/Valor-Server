@@ -248,6 +248,9 @@ namespace wServer.logic
                     new Flash(0xff000000, 0.4, 100),
                     new BackAndForth(0.5, 3)
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.SFExtremelyLow()
+                    ),
                 new Threshold(0.18,
                 new ItemLoot("Deathwanderer", 0.02)
                     ),
@@ -262,9 +265,7 @@ namespace wServer.logic
                 new TierLoot(4, ItemType.Ability, 0.02),
                 new ItemLoot("Magic Potion", 0.7),
                 new ItemLoot("50 Gold", 0.05),
-                new ItemLoot("Pepper", 0.05),
-                new ItemLoot("Health Potion", 0.7),
-                new ItemLoot("Ghost Remnant", 0.1)
+                new ItemLoot("Health Potion", 0.7)
             )
             .Init("Small Ghost",
                 new State(

@@ -191,8 +191,10 @@ namespace wServer.logic
                         new TimedTransition(4000, "Fight1")
                         )
                     ),
-                new Threshold(0.22,
-                    new ItemLoot("Sor Crystal", 0.055),
+                                                new MostDamagers(3,
+                    LootTemplates.SFGigas()
+                    ),
+                new Threshold(0.01,
                     new ItemLoot("Amethyst Lair Armor", 0.25),
                     new ItemLoot("Sword of the Truthfinder", 0.25),
                     new ItemLoot("Kami Cloth", 0.25),

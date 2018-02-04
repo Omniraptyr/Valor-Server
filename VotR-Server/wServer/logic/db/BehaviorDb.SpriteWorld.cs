@@ -142,6 +142,9 @@ namespace wServer.logic
                      new TimedTransition(2000, "nothing")
                      )
                  ),
+                             new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
              new MostDamagers(3, 
                  new ItemLoot("Potion of Dexterity", 1.00)
                  ),

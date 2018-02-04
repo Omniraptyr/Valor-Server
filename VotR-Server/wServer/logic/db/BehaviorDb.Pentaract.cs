@@ -40,6 +40,7 @@ namespace wServer.logic
             )
             .Init("Pentaract Tower Corpse",
                 new State(
+                    new DropPortalOnDeath("The Unspeakable Portal", 0.1),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("Waiting",
                         new TimedTransition(15000, "Spawn"),
@@ -51,6 +52,9 @@ namespace wServer.logic
                     new State("Die",
                         new Suicide()
                         )
+                    ), 
+                new MostDamagers(3,
+                    LootTemplates.SFLow()
                     ),
                 new Threshold(0.01,
                     new TierLoot(8, ItemType.Weapon, .15),
@@ -73,7 +77,7 @@ namespace wServer.logic
                     new ItemLoot("Potion of Wisdom", .1),
                     new ItemLoot("Potion of Speed", .1),
                     new ItemLoot("Potion of Dexterity", .1),
-                    new ItemLoot("Seal of Blasphemous Prayer", .004)
+                    new ItemLoot("Seal of Blasphemous Prayer", .04)
                     )
             )
             ;

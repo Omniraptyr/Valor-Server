@@ -22,6 +22,9 @@ namespace wServer.logic
                  new MostDamagers(3,
                      LootTemplates.StatIncreasePotionsLoot()
                      ),
+                                 new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                  new Threshold(0.15,
                      new TierLoot(3, ItemType.Ring, 0.2),
                      new TierLoot(7, ItemType.Armor, 0.2),

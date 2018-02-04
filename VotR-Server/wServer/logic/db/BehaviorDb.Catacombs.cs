@@ -97,6 +97,9 @@ namespace wServer.logic
                         new TimedTransition(6000, "basic")
                         )
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                 new Threshold(0.025,
                     new ItemLoot("Potion of Defense", 1.0),
                     new ItemLoot("Potion of Dexterity", 1.0),
@@ -341,6 +344,9 @@ namespace wServer.logic
                         new TimedTransition(3000, "Blargh1")
                         )
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                 new Threshold(0.025,
                     new ItemLoot("Onrane", 0.3),
                     new ItemLoot("Potion of Might", 1.0),
@@ -527,6 +533,9 @@ namespace wServer.logic
                    new State("rip",
                         new Suicide()
                         )
+                    ),
+                                new MostDamagers(3,
+                    LootTemplates.SFLow()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Gold Cache", 1.0),

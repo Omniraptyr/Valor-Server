@@ -185,7 +185,10 @@ namespace wServer.logic
 						)
 				)
 			  ),
-				new Threshold(0.015,
+                                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
+                new Threshold(0.015,
                     new ItemLoot("Greater Potion of Life", 0.3),
                     new ItemLoot("Greater Potion of Mana", 0.3),
                     new ItemLoot("Greater Potion of Vitality", 0.3),
@@ -202,10 +205,11 @@ namespace wServer.logic
 					new TierLoot(12, ItemType.Armor, 0.1),
 					new TierLoot(12, ItemType.Weapon, 0.1),
 					new TierLoot(6, ItemType.Ring, 0.1),
+                    new ItemLoot("Shard of the Stone Soul", 0.005),
+                    new ItemLoot("Ancient Stone Maul", 0.02),
                     new ItemLoot("Marble Tablet", 0.02),
-                    new ItemLoot("Shard of the Stone Soul", 0.001),
                     new ItemLoot("Ancient Stone Sword", 0.05)
-				)
+                )
 			)
 			.Init("Stone Gargoyle",
 					new State(

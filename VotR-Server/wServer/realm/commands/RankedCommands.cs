@@ -558,7 +558,7 @@ namespace wServer.realm.commands
 
     class GimmeCommand : Command
     {
-        public GimmeCommand() : base("gimme", permLevel: 80, alias: "give") { }
+        public GimmeCommand() : base("gimme", permLevel: 90, alias: "give") { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {

@@ -403,6 +403,7 @@ namespace common.resources
         CreateGauntlet,
         Heal2,
         Magic2,
+        SorConstruct,
     }
 
     public class ActivateEffect
@@ -584,6 +585,7 @@ namespace common.resources
         public int SurgeCost { get; private set; }
         public bool Legendary { get; private set; }
         public bool Shard { get; private set; }
+        public bool Fragment { get; private set; }
         public bool Ascended { get; private set; }
         public int MpEndCost { get; private set; }
         public int FameBonus { get; private set; }
@@ -672,6 +674,8 @@ namespace common.resources
             Legendary = elem.Element("Legendary") != null;
 
             Shard = elem.Element("Shard") != null;
+
+            Fragment = elem.Element("Fragment") != null;
 
             Ascended = elem.Element("Ascended") != null;
 

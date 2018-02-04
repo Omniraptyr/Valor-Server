@@ -86,6 +86,12 @@ namespace wServer.networking.handlers
                 return null;
             }
 
+            if (!acc.NameChosen)
+            {
+                client.SendFailureDialog("You must choose a name before logging in.", "No name chosen.");
+                return null;
+            }
+
             var minRank = client.Manager.Config.serverInfo.minRank;
             if (acc.Rank < minRank)
             {

@@ -37,7 +37,9 @@ namespace wServer.logic
                         "I will munch on your bones until there is no tommorow."
                         )
                     ),
-                new ItemLoot("Pepper", 0.07),
+                                new MostDamagers(3,
+                    LootTemplates.SFExtremelyLow()
+                    ),
                 new Threshold(0.12,
                 new ItemLoot("Golden Sword", 0.04),
                 new ItemLoot("Ring of Greater Defense", 0.04),

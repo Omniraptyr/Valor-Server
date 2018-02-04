@@ -63,6 +63,9 @@ namespace wServer.logic
                         new TimedTransition(1000, "basic")
                         )
                     ),
+                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                 new Threshold(0.025,
                     new ItemLoot("Potion of Vitality", 1.0),
                     new ItemLoot("Potion of Defense", 1.0),

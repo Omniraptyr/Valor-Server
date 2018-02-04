@@ -70,6 +70,9 @@ namespace wServer.logic
                         new TimedTransition(15000, "Spawn Segment")
                         )
                     ),
+                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                 new Threshold(0.01,
                     new TierLoot(8, ItemType.Weapon, .15),
                     new TierLoot(9, ItemType.Weapon, .1),

@@ -167,6 +167,9 @@ namespace wServer.logic
                         new TimedTransition(2000, "fight1")
                         )
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                 new Threshold(0.025,
                     new ItemLoot("Potion of Defense", 1.0),
                     new ItemLoot("Potion of Speed", 1.0),
@@ -177,7 +180,7 @@ namespace wServer.logic
                     new TierLoot(10, ItemType.Armor, 0.05),
                     new TierLoot(10, ItemType.Weapon, 0.05),
                     new TierLoot(4, ItemType.Ring, 0.025),
-                    new ItemLoot("Ghilact Dagger", 0.03)
+                    new ItemLoot("Ghilact Dagger", 0.04)
                 )
             )
 
@@ -361,6 +364,9 @@ namespace wServer.logic
                     ),
                     new State("UnsetEffect")
                 ),
+                                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                 new Threshold(0.11,
 				new ItemLoot("Potion of Luck", 1),
                 new ItemLoot("Greater Potion of Mana", 1),

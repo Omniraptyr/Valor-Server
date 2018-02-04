@@ -186,7 +186,10 @@ namespace wServer.logic
 						)
 					)
 				),
-				new Threshold(0.010,
+                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
+                new Threshold(0.010,
                     new ItemLoot("Potion of Luck", 1.0),
                     new ItemLoot("Greater Potion of Life", 1.0),
                     new ItemLoot("Greater Potion of Mana", 1.0),

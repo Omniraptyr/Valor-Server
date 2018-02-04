@@ -176,6 +176,9 @@ namespace wServer.logic
                     new Threshold(0.32,
                     new ItemLoot("Potion of Wisdom", 1)
                 ),
+                                    new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                 new Threshold(0.1,
                     new ItemLoot("Conducting Wand", 0.04),
                     new ItemLoot("Scepter of Fulmination", 0.04),

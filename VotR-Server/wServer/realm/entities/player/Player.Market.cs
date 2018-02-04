@@ -120,7 +120,7 @@ namespace wServer.realm.entities
 
             if (acc.Admin && acc.Rank < 100 || !Manager.Config.serverSettings.enableMarket)
                 return LogError(MarketResult.MarketplaceDisabled);
-            if (acc.LastMarketId != shopItemId && acc.Fame < 5)
+            if (acc.LastMarketId != shopItemId && acc.Credits < 50)
                 return LogError(MarketResult.InsufficientFunds);
 
             var shopItem = market.GetShopItem(shopItemId);
@@ -132,7 +132,7 @@ namespace wServer.realm.entities
 
             Task t1 = Task.FromResult(0);
             if (acc.LastMarketId != shopItemId)
-                t1 = db.UpdateCurrency(acc, -5, CurrencyType.Fame, trans);
+                t1 = db.UpdateCurrency(acc, -50, CurrencyType.Gold, trans);
             market.Remove(shopItem, trans);
             db.AddGift(acc, shopItem.ItemId, trans);
             var t2 = trans.ExecuteAsync();

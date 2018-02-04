@@ -615,6 +615,9 @@ namespace wServer.logic
                         new Suicide()
                         )
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                 new Threshold(0.025,
                     new TierLoot(11, ItemType.Weapon, 0.1),
                     new TierLoot(4, ItemType.Ability, 0.1),

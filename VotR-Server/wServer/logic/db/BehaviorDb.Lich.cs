@@ -165,8 +165,9 @@ namespace wServer.logic
                         new TimedTransition(6000, "typeA")
                         )
                     ),
-                new ItemLoot("Raw Egg", 0.05),
-                new ItemLoot("Flour", 0.05),
+                new MostDamagers(3,
+                    LootTemplates.SFExtremelyLow()
+                    ),
                 new Threshold(0.15,
                 new TierLoot(2, ItemType.Ring, 0.11),
                 new TierLoot(3, ItemType.Ring, 0.01),

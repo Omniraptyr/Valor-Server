@@ -63,6 +63,9 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.RaidTokens()
                 ),
+                                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                 new Threshold(0.29,
                     new ItemLoot("Potion of Vitality", 1)
                 ),

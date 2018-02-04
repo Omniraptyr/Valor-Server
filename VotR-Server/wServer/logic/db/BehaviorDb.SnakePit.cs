@@ -263,6 +263,9 @@ namespace wServer.logic
                         )
                     )
                 ),
+                                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                 new MostDamagers(3,
                     new ItemLoot("Greater Potion of Speed", 1)
                     ),

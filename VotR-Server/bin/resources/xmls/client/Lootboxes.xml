@@ -270,7 +270,9 @@
         </CrateLoot>
 		<CrateLoot chance="0.05">
 			<Loot name="Onrane">Item</Loot>
-			<Loot name="Sor Crystal">Item</Loot>
+			<Loot name="Sor Fragment 1">Item</Loot>
+			<Loot name="Sor Fragment 2">Item</Loot>
+			<Loot name="Sor Fragment 3">Item</Loot>
 			<Loot name="Shard of Cosmic Collapse">Item</Loot>
 			<Loot name="Hunter Necklace">Item</Loot>
 			<Loot name="Shard of Zol Corruption">Item</Loot>
@@ -331,7 +333,9 @@
 			<Loot name="Ultimate Onrane Cache">Item</Loot>
 			<Loot name="1000 Gold">Item</Loot>
 			<Loot name="10000 Gold">Item</Loot>
-			<Loot name="Sor Crystal">Item</Loot>
+			<Loot name="Sor Fragment 1">Item</Loot>
+			<Loot name="Sor Fragment 2">Item</Loot>
+			<Loot name="Sor Fragment 3">Item</Loot>
 			<Loot name="Shard of Cosmic Collapse">Item</Loot>
 			<Loot name="Shard of Zol Corruption">Item</Loot>
 			<Loot name="Shard of Eternal Fury">Item</Loot>

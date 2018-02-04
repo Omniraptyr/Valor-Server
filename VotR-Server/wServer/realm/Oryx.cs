@@ -51,13 +51,13 @@ namespace wServer.realm
             Tuple.Create("Mad Jester", (ISetPiece) new MadJester()),
             Tuple.Create("Encounter Altar", (ISetPiece) new GarnetJade()),
             Tuple.Create("Lord Stone Gargoyle", (ISetPiece) new Gargland()),
-            Tuple.Create("Sorgigas, the Sor Giant", (ISetPiece) new SorGiant()),
+            
 
         };
 
         private readonly List<Tuple<string, ISetPiece>> _rareEvents = new List<Tuple<string, ISetPiece>>()
         {
-
+            Tuple.Create("Sorgigas, the Sor Giant", (ISetPiece) new SorGiant())
         };
 
         #region "Taunt data"

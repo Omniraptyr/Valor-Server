@@ -265,6 +265,9 @@ namespace wServer.logic
                              new Follow(0.65, 8, 1)
                          )
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                 new Threshold(0.025,
                     new ItemLoot("Potion of Speed", 1.0),
                     new ItemLoot("Potion of Luck", 1.0),

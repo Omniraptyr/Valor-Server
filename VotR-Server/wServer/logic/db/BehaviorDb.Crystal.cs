@@ -230,6 +230,9 @@ namespace wServer.logic
                         new TimedTransition(3000, "Daisy_attack")
                         )
                     ),
+                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                 new Threshold(0.05,
                     new ItemLoot("Crystal Wand", 0.045),
                     new ItemLoot("Crystal Sword", 0.045),
@@ -312,8 +315,8 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.StatIncreasePotionsLoot()
                 ),
-                new Threshold(0.05,
-                    new ItemLoot("Sor Crystal", 0.01)
+                new MostDamagers(3,
+                    LootTemplates.SFCrystal()
                     )
             )
             ;

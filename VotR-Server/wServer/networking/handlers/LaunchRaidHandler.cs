@@ -16,60 +16,74 @@ namespace wServer.networking.handlers
 
         void Handle(Player player, RealmTime time, LaunchRaid packet)
         {
-            var acc = player.Client.Account;
-            if (player.Manager._isRaidLaunched == false)
+            if (player.Credits >= 5000)
             {
-            if(packet.Ultra == false)
+                player.Client.Manager.Database.UpdateCredit(player.Client.Account, -5000);
+                player.Credits = player.Client.Account.Credits - 5000;
+                player.ForceUpdate(player.Credits);
+
+                var acc = player.Client.Account;
+                if (player.Manager._isRaidLaunched == false)
                 {
-                    if(player.startRaid1(player) == false)
+                    if (packet.Ultra == false)
                     {
-                    var Manager = player.Manager;
-                    player.Manager.Chat.RaidAnnounce("The Zol Awakening Raid has been launched!");
-                    var gameData = Manager.Resources.GameData;
+                        if (player.startRaid1(player) == false)
+                        {
+                            var Manager = player.Manager;
+                            player.Manager.Chat.RaidAnnounce("The Zol Awakening Raid has been launched!");
+                            var gameData = Manager.Resources.GameData;
 
-                    ushort objType;
+                            ushort objType;
 
-                    Manager._isRaidLaunched = true;
+                            Manager._isRaidLaunched = true;
 
-                    if (!gameData.IdToObjectType.TryGetValue("Aldragine's Hideout Portal", out objType) ||
-                        !gameData.Portals.ContainsKey(objType))
-                        return;
+                            if (!gameData.IdToObjectType.TryGetValue("Aldragine's Hideout Portal", out objType) ||
+                                !gameData.Portals.ContainsKey(objType))
+                                return;
 
-                    var entity = Entity.Resolve(Manager, objType);
-                    var timeoutTime = gameData.Portals[objType].Timeout;
+                            var entity = Entity.Resolve(Manager, objType);
+                            var timeoutTime = gameData.Portals[objType].Timeout;
 
-                    entity.Move(16, 64);
-                    player.Owner.EnterWorld(entity);
+                            entity.Move(16, 64);
+                            player.Owner.EnterWorld(entity);
 
-                    (entity as Portal).PlayerOpened = true;
-                    (entity as Portal).Opener = player.Name;
+                            (entity as Portal).PlayerOpened = true;
+                            (entity as Portal).Opener = player.Name;
 
-                    player.Owner.Timers.Add(new WorldTimer(timeoutTime * 1000, (world, t) => world.LeaveWorld(entity)));
-                    player.Owner.Timers.Add(new WorldTimer(60000, (w, t) =>
+                            player.Owner.Timers.Add(new WorldTimer(timeoutTime * 1000, (world, t) => world.LeaveWorld(entity)));
+                            player.Owner.Timers.Add(new WorldTimer(60000, (w, t) =>
+                            {
+                                Manager._isRaidLaunched = false;
+                            }));
+                            player.Owner.BroadcastPacket(new Notification
+                            {
+                                Color = new ARGB(0xFF00FF00),
+                                ObjectId = player.Id,
+                                Message = player.Name + " has launched the Zol Awakening Raid!"
+                            }, null, PacketPriority.Low);
+                        }
+                        else
+                        {
+                            player.SendError("You don't have the token for this Raid.");
+                        }
+                    }
+                    else
                     {
-                        Manager._isRaidLaunched = false;
-                    }));
-                    player.Owner.BroadcastPacket(new Notification
-                    {
-                        Color = new ARGB(0xFF00FF00),
-                        ObjectId = player.Id,
-                        Message = player.Name + " has launched the Zol Awakening Raid!"
-                    }, null, PacketPriority.Low);
+                        player.SendError("The Ultra Zol Awakening raid is not yet implemented.");
+                    }
                 }
                 else
                 {
-                    player.SendError("You don't have the token for this Raid.");
+                    player.SendError("A raid has already been launched earlier.");
                 }
             }
-            else
-            {
-                player.SendError("The Ultra Zol Awakening raid is not yet implemented.");
-            }
-            }
-            else
-            {
-                player.SendError("A raid has already been launched earlier.");
+            else{
+                player.SendError("You do not have enough gold to launch this raid.");
             }
         }
     }
+
+
 }
+    
+

@@ -760,6 +760,10 @@ public class EquipmentToolTip extends ToolTip {
         {
             this.restrictions.push(new Restriction("This item can be used to enchant items and forge legendaries.", 16738740, true));
         }
+        if (this.objectXML.hasOwnProperty("Fragment"))
+        {
+            this.restrictions.push(new Restriction("Double-click this item if you have Sor Fragment 1, 2 and 3 in your inventory to create a Sor Crystal.", 16738740, true));
+        }
         if (this.objectXML.hasOwnProperty("Enchanter"))
         {
             this.restrictions.push(new Restriction("This item is neccessary to enchant an item.", 0x000099, true));

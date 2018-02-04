@@ -125,6 +125,9 @@ namespace wServer.logic
                         new Suicide()
                         )
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                 new Threshold(0.05,
                     new ItemLoot("God Blood Robes", 0.04),
                     new ItemLoot("Banner of the Blood Mountains", 0.04),
