@@ -86,6 +86,12 @@ namespace wServer.networking.handlers
                 return null;
             }
 
+            if (!acc.NameChosen)
+            {
+                client.SendFailureDialog("You need to choose a name!", "Please choose a name at main menu.");
+                return null;
+            }
+
             var minRank = client.Manager.Config.serverInfo.minRank;
             if (acc.Rank < minRank)
             {
