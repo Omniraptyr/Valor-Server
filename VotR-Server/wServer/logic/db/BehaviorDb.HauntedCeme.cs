@@ -969,7 +969,7 @@ namespace wServer.logic
                                                ),
                                         new State("talk3",
                                             new SetAltTexture(1),
-                                           new Taunt(1.00, "Well. Say READY when you want to start or something along those lines. You probably won't because you are a pussy."),
+                                           new Taunt(1.00, "Well. Say READY when you want to start."),
                                             new PlayerTextTransition("1", "Ready", 99, false, true)
                                                ),
                                            new State("1",
@@ -986,7 +986,7 @@ namespace wServer.logic
                                                ),
                                                   new State("3",
                                                new SetAltTexture(1),
-                                           new Taunt(1.00, "Round 2, coming right up fagit!"),
+                                           new Taunt(1.00, "Round 2, coming right up!"),
                                            new TimedTransition(5000, "4")
                                                ),
                                           new State("4",
@@ -1003,7 +1003,7 @@ namespace wServer.logic
                                                ),
                                         new State("6",
                                                new SetAltTexture(1),
-                                           new Taunt(1.00, "Very impressive. Who knew fagits had such great power?!"),
+                                           new Taunt(1.00, "Very impressive. Who knew you had such great power?!"),
                                            new TimedTransition(5000, "7")
                                                ),
                                         new State("7",
@@ -1020,7 +1020,7 @@ namespace wServer.logic
                                                ),
                                          new State("9",
                                                new SetAltTexture(1),
-                                           new Taunt(1.00, "HA! I saw that. You almost died. Fucking loser."),
+                                           new Taunt(1.00, "HA! I saw that. You almost died."),
                                            new TimedTransition(5000, "10")
                                                ),
                                          new State("10",
@@ -1037,7 +1037,7 @@ namespace wServer.logic
                                                ),
                                         new State("12",
                                            new SetAltTexture(1),
-                                           new Taunt(1.00, "Alright, now you're fucking pissing me off faggot. You belong in my anus along with all those other warriors."),
+                                           new Taunt(1.00, "Alright, now you're making me mad. You belong in the ground along with all those other warriors."),
                                            new TimedTransition(5000, "13")
                                                ),
                                         new State("13",
@@ -1076,7 +1076,7 @@ namespace wServer.logic
                                                ),
                                         new State("talk3",
                                             new SetAltTexture(1),
-                                           new Taunt(1.00, "Anyways, tell me when you fuckers are ready so I can get you killed."),
+                                           new Taunt(1.00, "Anyways, tell me when you're ready so I can get you killed."),
                                            new PlayerTextTransition("1", "Ready", 99, false, true)
                                                ),
                                            new State("1",
@@ -1110,7 +1110,7 @@ namespace wServer.logic
                                                ),
                                         new State("6",
                                                new SetAltTexture(2),
-                                           new Taunt(1.00, "Corny cheese chuckers blocking the fuckers."),
+                                           new Taunt(1.00, "Corny cheese chuckers blocking the heckers."),
                                            new TimedTransition(5000, "7")
                                                ),
                                         new State("7",
@@ -1178,12 +1178,12 @@ namespace wServer.logic
                         ),
                  new State("talk2",
                      new SetAltTexture(1),
-                    new Taunt(1.00, "You look dumb. You can't defeat me. You are bad."),
+                    new Taunt(1.00, "You can't defeat me. You are bad."),
                     new TimedTransition(5000, "talk3")
                         ),
                  new State("talk3",
                      new SetAltTexture(1),
-                    new Taunt(1.00, "Go jack off or some shit. Tired of looking at your dumb face."),
+                    new Taunt(1.00, "You're beginning to annoy me."),
                     new PlayerTextTransition("1", "Ready", 99, false, true)
                         ),
                     new State("1",
@@ -1217,7 +1217,7 @@ namespace wServer.logic
                         ),
                  new State("6",
                         new SetAltTexture(2),
-                    new Taunt(1.00, "Holy shit! I found my dild...Oh hi!"),
+                    new Taunt(1.00, "Hmph."),
                     new TimedTransition(5000, "7")
                         ),
                  new State("7",
@@ -1234,7 +1234,7 @@ namespace wServer.logic
                         ),
                   new State("9",
                         new SetAltTexture(2),
-                    new Taunt(1.00, "YOU BITCHY BITCH BITCH FUCKING HORNY ASS DICK LICKER!"),
+                    new Taunt(1.00, "You really are getting on my nerves."),
                     new TimedTransition(5000, "10")
                         ),
                   new State("10",
@@ -1251,7 +1251,7 @@ namespace wServer.logic
                         ),
                  new State("12",
                     new SetAltTexture(2),
-                    new Taunt(1.00, "You are a little cunt, you know that? You piss me off. GET RID OF IT, CARETAKER!"),
+                    new Taunt(1.00, "You make me mad. GET RID OF 'EM, CARETAKER!"),
                     new TimedTransition(5000, "13")
                         ),
                  new State("13",
@@ -1280,7 +1280,7 @@ namespace wServer.logic
                         ),
                     new State("talk1",
                         new SetAltTexture(2),
-                    new Taunt(1.00, "Yep. You are definitely a nuissance. I fucking hate you."),
+                    new Taunt(1.00, "Yep. You are definitely a nuissance."),
                     new TimedTransition(5000, "talk2")
                         ),
                  new State("talk2",
@@ -1290,7 +1290,7 @@ namespace wServer.logic
                         ),
                  new State("talk3",
                      new SetAltTexture(1),
-                    new Taunt(1.00, "BUT! Since I love you..I'l give you a nice reward at the end. Go ahead. Say READY!"),
+                    new Taunt(1.00, "BUT! There'll be an award if you beat me... Go ahead. Say READY!"),
                     new PlayerTextTransition("1", "Ready", 99, false, true)
                         ),
                     new State("1",
@@ -1358,7 +1358,7 @@ namespace wServer.logic
                         ),
                  new State("12",
                     new SetAltTexture(2),
-                    new Taunt(1.00, "I got something for your ass."),
+                    new Taunt(1.00, "HUUGHAAGHGAHAA!!"),
                     new TimedTransition(5000, "13")
                         ),
                  new State("13",
