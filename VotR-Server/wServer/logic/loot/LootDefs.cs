@@ -264,11 +264,11 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("The Zol Awakening (Token)", 0.50),
-                    new ItemLoot("Calling of the Titan (Token)", 0.50),
-                    new ItemLoot("A Fallen Light (Token)", 0.50),
-                    new ItemLoot("Sidon's Fall (Token)", 0.50),
-                    new ItemLoot("War of Decades (Token)", 0.50)
+                    new ItemLoot("The Zol Awakening (Token)", 0.25),
+                    new ItemLoot("Calling of the Titan (Token)", 0.25),
+                    new ItemLoot("A Fallen Light (Token)", 0.25),
+                    new ItemLoot("Sidon's Fall (Token)", 0.25),
+                    new ItemLoot("War of Decades (Token)", 0.25)
                 )
              };
         }

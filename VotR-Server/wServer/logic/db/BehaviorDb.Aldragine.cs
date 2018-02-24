@@ -834,7 +834,7 @@ namespace wServer.logic
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("callout",
-                        new Taunt(true, "He will fulfill the destiny in store. Come. Let me show you his vision.", "Even the ancients, the controllers, and Oryx himself fear us. Share that fear with them.", "Courage can only take you so long."),
+                        new Taunt(true, "He will fulfill the destiny in store. Come. Let me show you his vision.", "Even the ancients, the controllers, and Oryx himself fear us. Share that fear with them.", "Courage can only take you so far."),
                         new PlayerWithinTransition(8, "start")
                         ),
                     new State("start",
@@ -958,7 +958,6 @@ namespace wServer.logic
                         new TimedTransition(6000, "ded")
                         ),
                     new State("ded",
-                        //new InvisiToss("AH Loot Chest 2", 2, 270, coolDown: 9999999),
                         new Suicide()
                         )
                     ),
@@ -1296,13 +1295,43 @@ namespace wServer.logic
                         new TimedTransition(6200, "CheckForNeccessaries")
                         ),
                     new State(
-                        new TimedTransition(30000, "BeamofDeath"),
+                        new TimedTransition(30000, "StopBeforeRape4"),
                     new State("CheckForNeccessaries",
                         new Shoot(8, count: 14, projectileIndex: 7, coolDown: 4000, coolDownOffset: 10000),
                         new TossObject("Corrupted Stone Giant C", range: 10, angle: 270, coolDown: 10000),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new EntityExistsTransition("Mark of Zol A", 9999, "Failed")
                       )
+                    ),
+                    new State("StopBeforeRape4",
+                        new Taunt("You think you can just stop the Zol from becoming stronger?!", "NO MORTAL WILL RESIST THE CONSUMPTION OF THE ZOL!"),
+                        new Flash(0x00FFFF, 1, 1),
+                        new TossObject("Niolru", 2, 0, coolDown: 9999999),
+                        new TossObject("Niolru", 2, 90, coolDown: 9999999),
+                        new TossObject("Niolru", 2, 180, coolDown: 9999999),
+                        new TossObject("Niolru", 2, 270, coolDown: 9999999),
+                        new TimedTransition(4000, "BHellSecond")
+                        ),
+                    new State("BHellSecond",
+                        new ConditionalEffect(ConditionEffectIndex.Armored),
+                        new TimedTransition(12000, "BeamofDeath"),
+                        new Shoot(8, count: 3, projectileIndex: 9, coolDown: 2000),
+                        new State("222Idle",
+                            new TimedTransition(1000, "222Spin")
+                        ),
+                        new State("222Spin",
+                                new Shoot(0, projectileIndex: 8, count: 6, shootAngle: 60, fixedAngle: 0, coolDown: 1200),
+                                new Shoot(0, projectileIndex: 8, count: 6, shootAngle: 60, fixedAngle: 15, coolDown: 1200, coolDownOffset: 200),
+                                new Shoot(0, projectileIndex: 8, count: 6, shootAngle: 60, fixedAngle: 30, coolDown: 1200, coolDownOffset: 400),
+                                new Shoot(0, projectileIndex: 8, count: 6, shootAngle: 60, fixedAngle: 45, coolDown: 1200, coolDownOffset: 600),
+                                new Shoot(0, projectileIndex: 8, count: 6, shootAngle: 60, fixedAngle: 60, coolDown: 1200, coolDownOffset: 800),
+                                new Shoot(0, projectileIndex: 8, count: 6, shootAngle: 60, fixedAngle: 75, coolDown: 1200, coolDownOffset: 1000),
+                                new TimedTransition(1200, "222Pause")
+                        ),
+                        new State("222Pause",
+                           new Shoot(8, count: 8, projectileIndex: 3, coolDown: 9999),
+                           new TimedTransition(3000, "222Idle")
+                        )
                     ),
                     new State("BeamofDeath",
                         new Taunt("You shall be brought to the hands of doom by me!"),
@@ -1396,13 +1425,43 @@ namespace wServer.logic
                         new TimedTransition(6200, "CheckForNeccessariesB")
                         ),
                     new State(
-                        new TimedTransition(30000, "Vulnerable1"),
+                        new TimedTransition(30000, "StopBeforeRape"),
                     new State("CheckForNeccessariesB",
                         new Shoot(8, count: 14, projectileIndex: 7, coolDown: 4000, coolDownOffset: 10000),
                         new TossObject("Corrupted Stone Giant C", range: 10, angle: 270, coolDown: 10000),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new EntityExistsTransition("Mark of Zol A", 9999, "Failed")
                       )
+                    ),
+                    new State("StopBeforeRape",
+                        new Taunt("You think you can just stop the Zol from becoming stronger?!", "NO MORTAL WILL RESIST THE CONSUMPTION OF THE ZOL!"),
+                        new Flash(0x00FFFF, 1, 1),
+                        new TossObject("Niolru", 2, 0, coolDown: 9999999),
+                        new TossObject("Niolru", 2, 90, coolDown: 9999999),
+                        new TossObject("Niolru", 2, 180, coolDown: 9999999),
+                        new TossObject("Niolru", 2, 270, coolDown: 9999999),
+                        new TimedTransition(4000, "BHell")
+                        ),
+                    new State("BHell",
+                        new ConditionalEffect(ConditionEffectIndex.Armored),
+                        new TimedTransition(12000, "Vulnerable1"),
+                        new Shoot(8, count: 3, projectileIndex: 9, coolDown: 2000),
+                        new State("22Idle",
+                            new TimedTransition(1000, "22Spin")
+                        ),
+                        new State("22Spin",
+                                new Shoot(0, projectileIndex: 8, count: 6, shootAngle: 60, fixedAngle: 0, coolDown: 1200),
+                                new Shoot(0, projectileIndex: 8, count: 6, shootAngle: 60, fixedAngle: 15, coolDown: 1200, coolDownOffset: 200),
+                                new Shoot(0, projectileIndex: 8, count: 6, shootAngle: 60, fixedAngle: 30, coolDown: 1200, coolDownOffset: 400),
+                                new Shoot(0, projectileIndex: 8, count: 6, shootAngle: 60, fixedAngle: 45, coolDown: 1200, coolDownOffset: 600),
+                                new Shoot(0, projectileIndex: 8, count: 6, shootAngle: 60, fixedAngle: 60, coolDown: 1200, coolDownOffset: 800),
+                                new Shoot(0, projectileIndex: 8, count: 6, shootAngle: 60, fixedAngle: 75, coolDown: 1200, coolDownOffset: 1000),
+                                new TimedTransition(1200, "22Pause")
+                        ),
+                        new State("22Pause",
+                           new Shoot(8, count: 8, projectileIndex: 3, coolDown: 9999),
+                           new TimedTransition(3000, "22Idle")
+                        )
                     ),
                     new State("Vulnerable1",
                         new Taunt("You are worthless beings!"),
@@ -1448,7 +1507,6 @@ namespace wServer.logic
                     new State("Success",
                         new AnnounceOnDeath("The Zol, a dark burden, seems to fade away slowly..."),
                         new Shoot(8, count: 10, projectileIndex: 2, coolDown: 9999),
-                        new DropPortalOnDeath("Treasure of Zol Portal", 50, timeout: 120),
                         new Spawn("AH Aldragine Loot Ctrl", givesNoXp: true),
                         new TransferDamageOnDeath("AH Aldragine Loot Ctrl"),
                         new Suicide()

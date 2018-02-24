@@ -55,7 +55,7 @@ namespace wServer.logic
                     new State(
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                     new State("default",
-                        new EntityExistsTransition("Hand of Terradius Activater", 9999, "awaken")
+                        new PlayerWithinTransition(4, "awaken")
                         ),
                     new State("awaken",
                         new SetAltTexture(1),
@@ -67,7 +67,7 @@ namespace wServer.logic
                         new TimedTransition(4500, "taunt2")
                         ),
                     new State("taunt2",
-                        new Taunt("My purpose is to obliterate any entity that has obtained the power of Terradius."),
+                        new Taunt("My purpose is to obliterate any entity that threatens Terradius."),
                         new TimedTransition(4500, "taunt3")
                         ),
                     new State("taunt3",

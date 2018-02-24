@@ -271,6 +271,7 @@ namespace wServer.logic
                     ),
                 new Threshold(0.1,
                     new ItemLoot("Wand of the Bulwark", 0.02),
+                    new ItemLoot("Treacherous Venom", 0.02),
                     new ItemLoot("Snake Skin Armor", 0.1),
                     new ItemLoot("Snake Skin Shield", 0.1),
                     new ItemLoot("Snake Eye Ring", 0.1),

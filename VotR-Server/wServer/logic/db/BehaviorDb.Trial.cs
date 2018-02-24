@@ -210,7 +210,7 @@ namespace wServer.logic
                         new TimedTransition(4000, "taunt2")
                         ),
                     new State("taunt2",
-                        new Taunt("The time for you to face me at last.", "This is the day reckoning, my friend."),
+                        new Taunt("The time for you to face me at last.", "This is the day of reckoning, my friend."),
                         new TimedTransition(4000, "taunt3")
                         ),
                     new State("taunt3",
@@ -301,9 +301,9 @@ namespace wServer.logic
                     new TierLoot(12, ItemType.Weapon, 0.05),
                     new ItemLoot("Onrane", 0.8),
                     new ItemLoot("Gold Cache", 0.7),
-                    new ItemLoot("Warped Worlds Staff", 0.025),
-                    new ItemLoot("Null-Magic Trap", 0.05),
-                    new ItemLoot("Mirage Lance", 0.05)
+                    new ItemLoot("Warped Worlds Staff", 0.01),
+                    new ItemLoot("Null-Magic Trap", 0.025),
+                    new ItemLoot("Mirage Lance", 0.025)
                 )
             )
     ;

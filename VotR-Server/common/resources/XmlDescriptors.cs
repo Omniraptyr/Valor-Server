@@ -374,6 +374,7 @@ namespace common.resources
         LootboxActivate,
         PetStoneActivate,
         DiceActivate,
+        DDiceActivate,
         PLootboxActivate,
         MarkActivate,
         Banner,
@@ -405,6 +406,7 @@ namespace common.resources
         Heal2,
         Magic2,
         SorConstruct,
+        BurstInferno,
     }
 
     public class ActivateEffect

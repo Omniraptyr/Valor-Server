@@ -803,14 +803,14 @@
         <Equipment>0xa14, 0x5829, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="620">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
-        <Attack max="55">10</Attack>
+        <Attack max="100">10</Attack>
         <Defense max="25">0</Defense>
         <Speed max="60">10</Speed>
         <Dexterity max="55">12</Dexterity>
         <HpRegen max="60">10</HpRegen>
         <MpRegen max="100">15</MpRegen>
         <Might max="100">2</Might>
-        <Luck max="100">2</Luck>
+        <Luck max="125">2</Luck>
         <Restoration max="60">10</Restoration>
         <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>

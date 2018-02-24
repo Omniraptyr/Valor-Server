@@ -5798,9 +5798,10 @@
         <StasisImmune/>
         <DazedImmune/>
         <StunImmune/>
+        <Elitedrop/>
         <ArmorBreakImmune/>
-    <MaxHitPoints>800000</MaxHitPoints>
-    <Defense>80</Defense>
+        <MaxHitPoints>850000</MaxHitPoints>
+        <Defense>80</Defense>
         <Projectile id="0">
             <ObjectId>White Bolt</ObjectId>
             <MinDamage>40</MinDamage>
@@ -5861,12 +5862,31 @@
         </Projectile>
         <Projectile id="7">
             <ObjectId>Void Star</ObjectId>
-            <Damage>10</Damage>
+            <Damage>40</Damage>
             <Speed>80</Speed>
             <LifetimeMS>8000</LifetimeMS>
             <Size>140</Size>
             <ConditionEffect duration="6">Slowed</ConditionEffect>
             <MultiHit/>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="8">
+            <ObjectId>Aldragine Zol Spinners</ObjectId>
+            <Damage>180</Damage>
+            <Speed>75</Speed>
+            <LifetimeMS>4000</LifetimeMS>
+            <Size>120</Size>
+            <ConditionEffect duration="6">Exhausted</ConditionEffect>
+            <Boomerang/>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="9">
+            <ObjectId>Paralyze Bullet</ObjectId>
+            <Damage>100</Damage>
+            <Speed>75</Speed>
+            <LifetimeMS>4000</LifetimeMS>
+            <Size>120</Size>
+            <ConditionEffect duration="6">Paralyzed</ConditionEffect>
             <ArmorPiercing/>
         </Projectile>
     </Object>

@@ -251,6 +251,7 @@ namespace wServer.logic
             )
         .Init("Crimson Trap",
             new State(
+                new SetNoXP(),
                   new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State(
                     new PlayerWithinTransition(1, "blowup")

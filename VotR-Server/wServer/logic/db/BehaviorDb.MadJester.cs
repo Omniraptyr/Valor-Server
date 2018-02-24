@@ -542,14 +542,16 @@ namespace wServer.logic
 					new TierLoot(12, ItemType.Armor, 0.05),
 					new TierLoot(12, ItemType.Weapon, 0.05),
 					new TierLoot(6, ItemType.Ring, 0.025),
-					new ItemLoot("Greater Potion of Mana", 1.0),
-					new ItemLoot("Greater Potion of Vitality", 1.0),
-					new ItemLoot("Greater Potion of Dexterity", 1.0),
-					new ItemLoot("Greater Potion of Speed", 1.0),
-					new ItemLoot("Greater Potion of Attack", 1.0),
-					new ItemLoot("Greater Potion of Defense", 1.0),
-					new ItemLoot("Greater Potion of Wisdom", 1.0)
-				)
+                    new ItemLoot("Greater Potion of Life", 0.1),
+                    new ItemLoot("Greater Potion of Mana", 0.1),
+                    new ItemLoot("Greater Potion of Vitality", 0.1),
+                    new ItemLoot("Greater Potion of Dexterity", 0.1),
+                    new ItemLoot("Greater Potion of Speed", 0.1),
+                    new ItemLoot("Greater Potion of Attack", 0.1),
+                    new ItemLoot("Greater Potion of Defense", 0.1),
+                    new ItemLoot("Greater Potion of Wisdom", 0.1),
+                    new ItemLoot("Vial of Power", 1.0)
+                )
 			)
 			.Init("White Mask",
 				new State(
