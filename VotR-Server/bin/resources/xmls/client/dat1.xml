@@ -110220,7 +110220,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <SlotType>9</SlotType>
         <Description>You can't break us. We can only shatter you.</Description>
         <ActivateOnEquip stat="0" amount="300">IncrementStat</ActivateOnEquip>
-        <Activate stat="0" amount="10">IncrStatPerc</Activate>
+        <ActivateOnEquip stat="0" amount="10">IncrStatPerc</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="-100">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <feedPower>1800</feedPower>

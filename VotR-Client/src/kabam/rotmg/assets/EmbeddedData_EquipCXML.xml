@@ -32044,4 +32044,21 @@
         <feedPower>2000</feedPower>
         <DisplayId>Devil Dice</DisplayId>
     </Object>
+    <Object type="0x45d1" id="Oracle's Nightmare">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x60</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>You can't break us. We can only shatter you.</Description>
+        <ActivateOnEquip stat="0" amount="300">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="10">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="-100">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <feedPower>1800</feedPower>
+        <Legendary/>
+        <FameBonus>8</FameBonus>
+    </Object>
 </Objects>
