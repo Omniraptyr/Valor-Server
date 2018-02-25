@@ -356,7 +356,7 @@ namespace wServer.realm.entities
                 switch (meteor)
                 {
                     case 1:
-                        DamageGrenade(target);
+                        DamageGrenade(time, target);
                         break;
                     case 2:
                         break;
@@ -1260,7 +1260,7 @@ namespace wServer.realm.entities
                     enemy => PoisonEnemy(world, enemy as Enemy, eff));
             }));
         }
-        private void DamageGrenade(Position target)
+        private void DamageGrenade(RealmTime time, Position target)
         {
             BroadcastSync(new ShowEffect()
             {
@@ -1283,8 +1283,15 @@ namespace wServer.realm.entities
                     Pos1 = new Position() { X = 3 }
                 }, x, null, PacketPriority.High);
 
-                world.AOE(target, 3, false,
-                    enemy => Damage((Stats[0]+Stats[1])*2, this));
+                this.AOE(3, false, enemy =>
+                {
+                    (enemy as Enemy).Damage(this, time, (Stats[0]+Stats[1])*4, false, new ConditionEffect()
+                    {
+                        Effect = ConditionEffectIndex.Dazed,
+                        DurationMS = 2000
+                    });
+                });
+
             }));
         }
         private void AELightning(RealmTime time, Item item, Position target, ActivateEffect eff)

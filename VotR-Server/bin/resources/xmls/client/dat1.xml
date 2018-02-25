@@ -110477,11 +110477,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Sound>weapon/wand_of_death</Sound>
         <Projectile>
             <ObjectId>Magma Bloop</ObjectId>
-            <Speed>75</Speed>
+            <Speed>70</Speed>
             <LifetimeMS>680</LifetimeMS>
             <MinDamage>98</MinDamage>
-            <MaxDamage>500</MaxDamage>
+            <MaxDamage>566</MaxDamage>
             <PassesCover/>
+			<Wavy/>
 			<Amplitude>0.5</Amplitude>
             <Frequency>0.5</Frequency>
         </Projectile>

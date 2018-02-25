@@ -32015,6 +32015,7 @@
         <Activate duration="6">DDiceActivate</Activate>
         <Activate effect="Surged" duration="6">ConditionEffectSelf</Activate>
         <feedPower>2000</feedPower>
+        <Legendary/>
         <DisplayId>Devil Dice</DisplayId>
     </Object>
     <Object type="0x45d1" id="Oracle's Nightmare">
@@ -32039,7 +32040,7 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x66</Index>
+            <Index>0x67</Index>
         </Texture>
         <SlotType>2</SlotType>
         <Description>A dark whip created by the power of the Abyssal Rune.</Description>
@@ -32088,7 +32089,7 @@
         <BagType>1</BagType>
         <OldSound>daggerSwing</OldSound>
         <feedPower>5</feedPower>
-        <DisplayId>Whip</DisplayId>
+        <DisplayId>Empowered Whip</DisplayId>
     </Object>
     <Object type="0x61d9" id="Whip">
         <Class>Equipment</Class>
@@ -32119,7 +32120,7 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x59</Index>
+            <Index>0x7d</Index>
         </Texture>
         <SlotType>10</SlotType>
         <Description>An ancient rock that comes from the Abyss of Demons.</Description>
@@ -32159,7 +32160,7 @@
         <Legendary/>
         <Legend id="3" stat="27">
             <Name>Meteor</Name>
-            <Description>(Must have BURNING TOME or the SCORCHING SCEPTER equipped) If your ability isn't lower than 6 tiers using your ability has a chance to throw a meteor that deals damage based on both your max health and mana.</Description>
+            <Description>(Must have BURNING TOME or the SCORCHING SCEPTER equipped) If your ability isn't lower than 6 tiers using your ability has a chance to throw a meteor that deals damage based on both your max health and mana. The impact from this meteor also dazes enemies for 2 seconds.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
