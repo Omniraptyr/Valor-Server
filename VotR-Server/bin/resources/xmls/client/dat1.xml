@@ -110124,7 +110124,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <feedPower>200</feedPower>
       <DisplayId>Greater Potion of Protection</DisplayId>
     </Object>
-	      <Object type="0x61ce" id="Ghilact Projectile">
+	      <Object type="0x61c6" id="Ghilact Projectile">
         <Class>Projectile</Class>
         <Texture>
             <File>legendaries8x8Embed</File>
