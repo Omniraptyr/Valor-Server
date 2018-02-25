@@ -20931,8 +20931,8 @@
         <Projectile>
             <ObjectId>Ely Shot</ObjectId>
             <Speed>140</Speed>
-            <MinDamage>74</MinDamage>
-            <MaxDamage>130</MaxDamage>
+            <MinDamage>164</MinDamage>
+            <MaxDamage>224</MaxDamage>
             <LifetimeMS>420</LifetimeMS>
             <Wavy/>
         </Projectile>
