@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -348,7 +348,31 @@ namespace wServer.realm.entities
                 if (item.MpCost > 0)
                     BurstFire(time, item, target);
             }
-            if (Surge >= item.SurgeCost)
+            if (CheckMeteor())
+            {
+                if (item.MpCost > 0) { 
+                Random rnd = new Random();
+                int meteor = rnd.Next(1, 7);
+                switch (meteor)
+                {
+                    case 1:
+                        DamageGrenade(target);
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+
+                }
+            }
+            }
+                if (Surge >= item.SurgeCost)
                 Surge -= item.SurgeCost;
 
 
@@ -518,6 +542,9 @@ namespace wServer.realm.entities
                         break;
                     case ActivateEffects.DDiceActivate:
                         AEDDiceActivate(time, item, target, eff);
+                        break;
+                    case ActivateEffects.AbbyConstruct:
+                        AEAbbyConstruct(time, item, target, eff);
                         break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
@@ -899,7 +926,26 @@ namespace wServer.realm.entities
                 }
             }
         }
-
+        private void AEAbbyConstruct(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            var inv = Inventory;
+                            for (int i = 0; i < inv.Length; i++)
+                            {
+                                if (inv[i] == null) continue;
+                                if (inv[i].ObjectId == "Whip")
+                                {
+                                    inv[i] = Manager.Resources.GameData.Items[0x61d8];
+                                    SaveToCharacter();
+                                    SendInfo("You place the Abyssal Rune on the Whip's handle.");
+                                    break;
+                                }
+                                else
+                                {
+                                    SendError("You do not have a Whip in your inventory.");
+                                }
+                            
+            }
+        }
         private void AETreasureActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var acc = Client.Account;
@@ -1214,7 +1260,33 @@ namespace wServer.realm.entities
                     enemy => PoisonEnemy(world, enemy as Enemy, eff));
             }));
         }
+        private void DamageGrenade(Position target)
+        {
+            BroadcastSync(new ShowEffect()
+            {
+                EffectType = EffectType.Throw,
+                Color = new ARGB(0xf26e2c),
+                TargetObjectId = Id,
+                Pos1 = target
+            }, p => this.DistSqr(p) < RadiusSqr);
 
+            var x = new Placeholder(Manager, 1500);
+            x.Move(target.X, target.Y);
+            Owner.EnterWorld(x);
+            Owner.Timers.Add(new WorldTimer(1500, (world, t) =>
+            {
+                world.BroadcastPacketNearby(new ShowEffect()
+                {
+                    EffectType = EffectType.AreaBlast,
+                    Color = new ARGB(0xf26e2c),
+                    TargetObjectId = x.Id,
+                    Pos1 = new Position() { X = 3 }
+                }, x, null, PacketPriority.High);
+
+                world.AOE(target, 3, false,
+                    enemy => Damage((Stats[0]+Stats[1])*2, this));
+            }));
+        }
         private void AELightning(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             const double coneRange = Math.PI / 4;
@@ -1304,7 +1376,96 @@ namespace wServer.realm.entities
             }
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
         }
+        private void AEBurningLightning(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            const double coneRange = Math.PI / 4;
+            var mouseAngle = Math.Atan2(target.Y - Y, target.X - X);
 
+            // get starting target
+            var startTarget = this.GetNearestEntity(MaxAbilityDist, false, e => e is Enemy &&
+                Math.Abs(mouseAngle - Math.Atan2(e.Y - Y, e.X - X)) <= coneRange);
+
+            // no targets? bolt air animation
+            if (startTarget == null)
+            {
+                var noTargets = new Packet[3];
+                var angles = new double[] { mouseAngle, mouseAngle - coneRange, mouseAngle + coneRange };
+                for (var i = 0; i < 3; i++)
+                {
+                    var x = (int)(MaxAbilityDist * Math.Cos(angles[i])) + X;
+                    var y = (int)(MaxAbilityDist * Math.Sin(angles[i])) + Y;
+                    noTargets[i] = new ShowEffect()
+                    {
+                        EffectType = EffectType.Trail,
+                        TargetObjectId = Id,
+                        Color = new ARGB(0xFF4500),
+                        Pos1 = new Position()
+                        {
+                            X = x,
+                            Y = y
+                        },
+                        Pos2 = new Position() { X = 350 }
+                    };
+                }
+                BroadcastSync(noTargets, p => this.DistSqr(p) < RadiusSqr);
+                return;
+            }
+
+            var current = startTarget;
+            var targets = new Entity[eff.MaxTargets];
+            for (int i = 0; i < targets.Length; i++)
+            {
+                targets[i] = current;
+                var next = current.GetNearestEntity(10, false, e =>
+                {
+                    if (!(e is Enemy) ||
+                        e.HasConditionEffect(ConditionEffects.Invincible) ||
+                        e.HasConditionEffect(ConditionEffects.Stasis) ||
+                        Array.IndexOf(targets, e) != -1)
+                        return false;
+
+                    return true;
+                });
+
+                if (next == null)
+                    break;
+
+                current = next;
+            }
+
+            var pkts = new List<Packet>();
+            for (var i = 0; i < targets.Length; i++)
+            {
+                if (targets[i] == null)
+                    break;
+                
+            var prev = i == 0 ? this : targets[i - 1];
+
+            (targets[i] as Enemy).Damage(this, time, eff.TotalDamage, true);
+
+             if (eff.ConditionEffect != null)
+                    targets[i].ApplyConditionEffect(new ConditionEffect()
+                    {
+                        Effect = eff.ConditionEffect.Value,
+                        DurationMS = (int)(eff.EffectDuration * 1000)
+                    });
+
+
+                pkts.Add(new ShowEffect()
+                {
+                    EffectType = EffectType.Lightning,
+                    TargetObjectId = prev.Id,
+                    Color = new ARGB(0xFF4500),
+                    Pos1 = new Position()
+                    {
+                        X = targets[i].X,
+                        Y = targets[i].Y
+                    },
+                    Pos2 = new Position() { X = 350 }
+                });
+            }
+            BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
+        }
         private void AEDecoy(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var decoy = new Decoy(this, eff.DurationMS, 4);

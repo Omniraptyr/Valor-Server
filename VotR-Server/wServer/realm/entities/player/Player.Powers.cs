@@ -156,6 +156,21 @@ namespace wServer.realm.entities
                 return false;
             }
         }
+        public bool CheckMeteor()
+        {
+            if (Inventory[0] == null)
+            {
+                return false;
+            }
+            if (Inventory[0].ObjectId == "Meteor" && Inventory[1].ObjectId == "Burning Tome" || Inventory[0].ObjectId == "Meteor" && Inventory[1].ObjectId == "Scorching Scepter")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public bool CheckFurious()
         {
             if (Inventory[3] == null)

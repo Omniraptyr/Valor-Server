@@ -201,16 +201,6 @@ namespace wServer.realm.entities
                 if (MP == 0)
                     ApplyConditionEffect(ConditionEffectIndex.NinjaSpeedy, 0);
             }
-            if (HasConditionEffect(ConditionEffects.Protected))
-            {
-                ApplyConditionEffect(ConditionEffectIndex.ParalyzeImmune);
-                ApplyConditionEffect(ConditionEffectIndex.StunImmune);
-            }
-            else
-            {
-                ApplyConditionEffect(ConditionEffectIndex.ParalyzeImmune, 0);
-                ApplyConditionEffect(ConditionEffectIndex.StunImmune, 0);
-            }
             if (HasConditionEffect(ConditionEffects.SamuraiBerserk))
             {
                 MP = Math.Max(0, (int)(MP - 10 * time.ElaspedMsDelta / 1000f));

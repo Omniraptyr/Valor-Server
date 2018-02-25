@@ -51,3 +51,4 @@ C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\bin\RemoteLogger.pdb
 C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.csproj.CoreCompileInputs.cache
 C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.exe
 C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.pdb
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.csprojResolveAssemblyReference.cache

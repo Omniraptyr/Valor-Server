@@ -19,8 +19,7 @@ namespace wServer.logic
                     ),
                 new State("badaura",
                      new SetAltTexture(1),
-                     new Shoot(10, count: 1, projectileIndex: 1, coolDown: 50),
-                     new Shoot(10, count: 1, projectileIndex: 0, coolDown: 50, coolDownOffset: 100),
+                     new Shoot(1, count: 1, projectileIndex: 0, coolDown: 50, coolDownOffset: 100),
                      new TimedTransition(6500, "goodaura")
                     )
                 )

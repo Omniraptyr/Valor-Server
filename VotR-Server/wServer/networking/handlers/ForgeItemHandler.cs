@@ -20,7 +20,7 @@ namespace wServer.networking.handlers
                 0x69e1, 0x1571, 0x49b2, 0x69d8, 0x42f4, 0x42b7, 0x47be, 0x46f2, 0x1483,
                 0x511a, 0x43a2, 0x179c, 0x56b8, 0x56b9, 0x69e6, 0x45ef, 0x42f6, 0x69e9,
                 0x1636, 0x47db, 0x521c, 0x69ec, 0x69de, 0x69ed, 0x45d1 };
-        private readonly ushort[] furyList = { 0x1485, 0x1398, 0x61b6, 0x61cf, 0x45d1, 0x61d2, 0x61d5 };
+        private readonly ushort[] furyList = { 0x1485, 0x1398, 0x61b6, 0x61cf, 0x45d1, 0x61d2, 0x61d5, 0x61db, 0x61da };
         private readonly ushort[] zolList = { 0x585b, 0x49e3, 0x61b5, 0x5437, 0x42f8 };
         private readonly ushort[] stoneList = { 0x61b2, 0x56c5, 0x56c4, 0x61d3 };
 
@@ -41,6 +41,8 @@ namespace wServer.networking.handlers
                             return 0x61b7;
                         case 0x1463:
                             return 0x61c5;
+                        case 0x61d8:
+                            return 0x61d7;
                         case 0x61b4:
                             return stoneList[rnd.Next(stoneList.Length)];
                         default:

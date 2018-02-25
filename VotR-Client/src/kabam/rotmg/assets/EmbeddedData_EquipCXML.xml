@@ -14984,14 +14984,13 @@
         <Projectile>
             <ObjectId>White Flame</ObjectId>
             <Speed>60</Speed>
-            <MinDamage>55</MinDamage>
-            <MaxDamage>205</MaxDamage>
+            <MinDamage>65</MinDamage>
+            <MaxDamage>280</MaxDamage>
             <LifetimeMS>1100</LifetimeMS>
             <Wavy/>
             <MultiHit/>
         </Projectile>
-		<EffectEquip effect="Damaging" delay="45"/>
-        <ActivateOnEquip stat="22" amount="-6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <NumProjectiles>1</NumProjectiles>
         <OldSound>magicShoot</OldSound>
@@ -19872,35 +19871,6 @@
         <feedPower>1800</feedPower>
         <Legendary/>
         <DisplayId>Blade of the Restless Spectre</DisplayId>
-    </Object>
-    <Object type="0x42b4" id="Wand of the Magma Lands">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x1c0</Index>
-        </Texture>
-        <SlotType>8</SlotType>
-        <Description>Molten lava spills from the wand as you conjure energy from this wand, use with caution</Description>
-        <RateOfFire>2.3</RateOfFire>
-        <Sound>weapon/wand_of_death</Sound>
-        <Projectile>
-            <ObjectId>Magma Bloop</ObjectId>
-            <Speed>160</Speed>
-            <LifetimeMS>630</LifetimeMS>
-            <MinDamage>90</MinDamage>
-            <MaxDamage>140</MaxDamage>
-            <MultiHit/>
-            <PassesCover/>
-        </Projectile>
-        <ActivateOnEquip stat="20" amount="8">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
-        <BagType>6</BagType>
-        <FameBonus>8</FameBonus>
-        <OldSound>weapon/wand_of_death</OldSound>
-        <feedPower>1800</feedPower>
-        <Legendary/>
-        <DisplayId>Wand of the Magma Lands</DisplayId>
     </Object>
     <Object type="0x42b5" id="Ring of Scarred Dreams">
         <Class>Equipment</Class>
@@ -29765,7 +29735,7 @@
         <SlotType>7</SlotType>
         <Description>This armor surges the wearer with true determination. Not even the most lethal blow will deter the warrior of grasping victory.</Description>
         <ActivateOnEquip stat="21" amount="28">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="26" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="40">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="-8">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -31777,6 +31747,8 @@
         <ActivateOnEquip stat="22" amount="-5">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
+        <Legendary/>
+		<FameBonus>8</FameBonus>
         <NumProjectiles>1</NumProjectiles>
         <OldSound>magicShoot</OldSound>
     </Object>
@@ -31916,13 +31888,13 @@
             <Speed>150</Speed>
             <LifetimeMS>460</LifetimeMS>
             <MinDamage>200</MinDamage>
-            <MaxDamage>650</MaxDamage>
+            <MaxDamage>700</MaxDamage>
             <ArmorPiercing/>
         </Projectile>
         <ActivateOnEquip stat="114" amount="100">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <Legendary/>
         <OldSound>bladeSwing</OldSound>
         <feedPower>2250</feedPower>
@@ -31931,8 +31903,8 @@
         <Class>Equipment</Class>
         <Item/>
         <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x34c</Index>
+            <File>legendaries8x8Embed</File>
+            <Index>0x65</Index>
         </Texture>
         <SlotType>29</SlotType>
         <Description>Death to the Winged Beast!</Description>
@@ -31941,16 +31913,16 @@
         <Projectile>
             <ObjectId>Dragonslayer Bolt</ObjectId>
             <Speed>100</Speed>
-            <MinDamage>88</MinDamage>
-            <MaxDamage>138</MaxDamage>
+            <MinDamage>108</MinDamage>
+            <MaxDamage>158</MaxDamage>
             <LifetimeMS>360</LifetimeMS>
             <ArmorPiercing/>
             <MultiHit/>
             <Amplitude>0.8</Amplitude>
             <Frequency>0.4</Frequency>
+            <Wavy/>
         </Projectile>
-        <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="10">IncrStatPerc</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="10">IncrStatPerc</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -31972,7 +31944,7 @@
         <Sound>spell/major_heal</Sound>
         <Usable/>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <MpCost>50</MpCost>
         <HpCost>100</HpCost>
         <Activate>BurstInferno</Activate>
@@ -32019,7 +31991,8 @@
         <Activate effect="Damaging" duration="1.5" useWisMod="true">ConditionEffectSelf</Activate>
         <Activate range="9" color="0xFFFF00" totalDamage="2000">SamuraiAbility</Activate>
         <feedPower>1300</feedPower>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
+        <Legendary/>
         <DisplayId>Garugen</DisplayId>
     </Object>
     <Object type="0x61d5" id="Devil Dice">
@@ -32036,7 +32009,7 @@
         <Description>Gamblin' with the devil.</Description>
         <Usable/>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <MpCost>60</MpCost>
         <ActivateOnEquip stat="114" amount="250">IncrementStat</ActivateOnEquip>
         <Activate duration="6">DDiceActivate</Activate>
@@ -32060,5 +32033,165 @@
         <feedPower>1800</feedPower>
         <Legendary/>
         <FameBonus>8</FameBonus>
+    </Object>
+    <Object type="0x61d7" id="Abyssal Whip">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x66</Index>
+        </Texture>
+        <SlotType>2</SlotType>
+        <Description>A dark whip created by the power of the Abyssal Rune.</Description>
+        <RateOfFire>1.25</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Abyssal Shot</ObjectId>
+            <Speed>145</Speed>
+            <MinDamage>185</MinDamage>
+            <MaxDamage>224</MaxDamage>
+            <LifetimeMS>380</LifetimeMS>
+            <ConditionEffect duration="0.3">Slowed</ConditionEffect>
+            <ArmorPiercing/>
+            <MultiHit/>
+        </Projectile>
+        <Steal type="life" amount="8"/>
+        <ActivateOnEquip stat="114" amount="50">IncrStatPerc</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>daggerSwing</OldSound>
+        <feedPower>1850</feedPower>
+        <Legendary/>
+        <NumProjectiles>1</NumProjectiles>
+        <DisplayId>Abyssal Whip</DisplayId>
+    </Object>
+    <Object type="0x61d8" id="Empowered Whip">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x7c</Index>
+        </Texture>
+        <SlotType>2</SlotType>
+        <Tier>0</Tier>
+        <Description>A whip made of some rope. It's handle seems to have odd writing on the handle.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/blunt_dagger</Sound>
+        <Projectile>
+            <ObjectId>Grey Missile</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>10</MinDamage>
+            <MaxDamage>60</MaxDamage>
+            <LifetimeMS>380</LifetimeMS>
+            <Wavy/>
+        </Projectile>
+        <BagType>1</BagType>
+        <OldSound>daggerSwing</OldSound>
+        <feedPower>5</feedPower>
+        <DisplayId>Whip</DisplayId>
+    </Object>
+    <Object type="0x61d9" id="Whip">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x7c</Index>
+        </Texture>
+        <SlotType>2</SlotType>
+        <Tier>0</Tier>
+        <Description>A whip made of some rope.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/blunt_dagger</Sound>
+        <Projectile>
+            <ObjectId>Blade</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>10</MinDamage>
+            <MaxDamage>30</MaxDamage>
+            <LifetimeMS>400</LifetimeMS>
+        </Projectile>
+        <BagType>1</BagType>
+        <OldSound>daggerSwing</OldSound>
+        <feedPower>5</feedPower>
+        <DisplayId>Whip</DisplayId>
+    </Object>
+    <Object type="0x61de" id="Abyssal Rune">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x59</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>An ancient rock that comes from the Abyss of Demons.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="" description="Double-Click with a Whip in your inventory."/>
+        </ExtraTooltipData>
+        <BagType>8</BagType>
+        <Consumable/>
+        <Activate>AbbyConstruct</Activate>
+    </Object>
+    <Object type="0x61db" id="Meteor">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x83</Index>
+        </Texture>
+        <SlotType>8</SlotType>
+        <Description>Molten rock falls from the wand as you conjure meteors from this wand.</Description>
+        <RateOfFire>0.85</RateOfFire>
+        <Sound>weapon/wand_of_death</Sound>
+        <Projectile>
+            <ObjectId>Magma Bloop</ObjectId>
+            <Speed>75</Speed>
+            <LifetimeMS>680</LifetimeMS>
+            <MinDamage>98</MinDamage>
+            <MaxDamage>500</MaxDamage>
+            <PassesCover/>
+			<Amplitude>0.5</Amplitude>
+            <Frequency>0.5</Frequency>
+        </Projectile>
+        <ActivateOnEquip stat="20" amount="25">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>weapon/wand_of_death</OldSound>
+        <feedPower>1800</feedPower>
+        <Legendary/>
+        <Legend id="3" stat="27">
+            <Name>Meteor</Name>
+            <Description>(Must have BURNING TOME or the SCORCHING SCEPTER equipped) If your ability isn't lower than 6 tiers using your ability has a chance to throw a meteor that deals damage based on both your max health and mana.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <DisplayId>Meteor</DisplayId>
+    </Object>
+	    <Object type="0x61da" id="Scorching Scepter">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x81</Index>
+        </Texture>
+        <SlotType>23</SlotType>
+        <Description>A scepter that wields flame at it's command.</Description>
+        <Sound>spell/magic_nova</Sound>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>90</MpCost>
+        <Activate totalDamage="1200" maxTargets="12">BurningLightning</Activate>
+		<Activate effect="Damaging" duration="2.5" useWisMod="true">ConditionEffectSelf</Activate>
+        <feedPower>2000</feedPower>
+        <Steal type="life" amount="2"/>
+		<Legend id="3" stat="27">
+            <Name>Scorch</Name>
+            <Description>The extreme heat of this scepter's energy causes damage to pierce directly through defense.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+		<Legendary/>
+        <DisplayId>Scorching Scepter</DisplayId>
     </Object>
 </Objects>

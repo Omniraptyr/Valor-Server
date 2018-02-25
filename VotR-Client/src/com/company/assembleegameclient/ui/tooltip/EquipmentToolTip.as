@@ -481,6 +481,14 @@ public class EquipmentToolTip extends ToolTip {
                             }, TooltipHelper.getOpenTag(TooltipHelper.NO_DIFF_COLOR), TooltipHelper.getCloseTag())
                         }));
                         break;
+                    case ActivationType.BURNINGLIGHTNING:
+                        this.effects.push(new Effect(TextKey.LIGHTNING, {
+                            "data": new AppendingLineBuilder().pushParams(TextKey.DAMAGE_TO_TARGETS, {
+                                "damage": _local_1.@totalDamage,
+                                "targets": _local_1.@maxTargets
+                            }, TooltipHelper.getOpenTag(TooltipHelper.NO_DIFF_COLOR), TooltipHelper.getCloseTag())
+                        }));
+                        break;
                     case ActivationType.POISON_GRENADE:
                         this.effects.push(new Effect(TextKey.POISON_GRENADE, {"data": ""}));
                         this.effects.push(new Effect(TextKey.POISON_GRENADE_DATA, {

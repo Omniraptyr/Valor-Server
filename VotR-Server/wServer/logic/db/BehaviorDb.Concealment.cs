@@ -92,7 +92,7 @@ namespace wServer.logic
                     new TierLoot(13, ItemType.Armor, 0.04),
                     new TierLoot(6, ItemType.Ring, 0.06),
                     new ItemLoot("Potion of Restoration", 1),
-                    new ItemLoot("Dreadplate Sword", 0.04),
+                    new ItemLoot("Rally of the Dreadnought", 0.04),
                     new ItemLoot("Mythical Basilisk Venom", 0.04),
                     new ItemLoot("Bow of Dreadful Reign", 0.04)
                 )

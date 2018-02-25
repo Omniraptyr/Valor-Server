@@ -309,6 +309,7 @@ namespace common.resources
         StasisBlast,
         Decoy,
         Lightning,
+        BurningLightning,
         PoisonGrenade,
         RemoveNegativeConditions,
         RemoveNegativeConditionsSelf,
@@ -407,6 +408,7 @@ namespace common.resources
         Magic2,
         SorConstruct,
         BurstInferno,
+        AbbyConstruct,
     }
 
     public class ActivateEffect

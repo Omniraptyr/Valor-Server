@@ -76,7 +76,8 @@ namespace wServer.logic
                     new TierLoot(10, ItemType.Armor, 0.05),
                     new TierLoot(10, ItemType.Weapon, 0.05),
                     new TierLoot(4, ItemType.Ring, 0.025),
-                    new ItemLoot("Demon Blade", 0.035)
+                    new ItemLoot("Demon Blade", 0.035),
+                    new ItemLoot("Abyssal Rune", 0.05)
                 )
             )
             .Init("Malphas Missile",
@@ -106,6 +107,7 @@ namespace wServer.logic
                     ),
                 new ItemLoot("Magic Potion", 0.1),
                 new ItemLoot("Health Potion", 0.1),
+                new ItemLoot("Whip", 0.01),
                 new Threshold(0.5,
                     new ItemLoot("Cloak of the Red Agent", 0.01),
                     new ItemLoot("Felwasp Toxin", 0.01)
@@ -119,6 +121,7 @@ namespace wServer.logic
                         ),
                     new Shoot(8, 3, shootAngle: 10, coolDown: 5000)
                     ),
+                new ItemLoot("Whip", 0.01),
                 new ItemLoot("Fire Bow", 0.05),
                 new Threshold(0.5,
                     new ItemLoot("Mithril Armor", 0.01)
@@ -132,6 +135,7 @@ namespace wServer.logic
                         ),
                     new Shoot(8, 3, shootAngle: 10, coolDown: 3000)
                     ),
+                new ItemLoot("Whip", 0.01),
                 new ItemLoot("Fire Sword", 0.025),
                 new ItemLoot("Steel Shield", 0.025)
             )
@@ -144,6 +148,7 @@ namespace wServer.logic
                     new Shoot(8, 3, shootAngle: 10, coolDown: 3400)
                     ),
                 new ItemLoot("Fire Nova Spell", 0.02),
+                new ItemLoot("Whip", 0.01),
                 new Threshold(0.1,
                     new ItemLoot("Wand of Dark Magic", 0.01),
                     new ItemLoot("Avenger Staff", 0.01),
@@ -161,6 +166,7 @@ namespace wServer.logic
                     new Shoot(8, 3, shootAngle: 10, coolDown: 800)
                     ),
                 new ItemLoot("Magic Potion", 0.1),
+                new ItemLoot("Whip", 0.01),
                 new Threshold(0.1,
                     new ItemLoot("Obsidian Dagger", 0.02),
                     new ItemLoot("Steel Helm", 0.02)
@@ -174,6 +180,7 @@ namespace wServer.logic
                         ),
                     new Shoot(8, 3, shootAngle: 10, coolDown: 800)
                     ),
+                new ItemLoot("Whip", 0.01),
                 new ItemLoot("Spirit Salve Tome", 0.02),
                 new Threshold(0.5,
                     new ItemLoot("Glass Sword", 0.01),

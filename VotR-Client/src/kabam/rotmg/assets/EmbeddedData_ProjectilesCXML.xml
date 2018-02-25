@@ -4681,8 +4681,8 @@
     <Object type="0x42b3" id="Magma Bloop">
         <Class>Projectile</Class>
         <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x1c1</Index>
+            <File>legendaries8x8Embed</File>
+            <Index>0x7e</Index>
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
@@ -4691,6 +4691,14 @@
         <Texture>
             <File>d3LofiObjEmbed</File>
             <Index>0x1c4</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x61df" id="Abyssal Shot">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x6a</Index>
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
@@ -6262,7 +6270,7 @@
         <Class>Projectile</Class>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x78</Index>
+            <Index>0x79</Index>
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
@@ -6283,6 +6291,14 @@
             </Texture>
         </RandomTexture>
         <Rotation>100</Rotation>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x61d6" id="Kunai Star">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x65</Index>
+        </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
 </Objects>
