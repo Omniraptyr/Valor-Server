@@ -107301,7 +107301,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <DisplayId>Platinum Argarius</DisplayId>
         <Legendary/>
     </Object>
-    <Object type="0x69d6" id="Moon Crescent Halberd">
+<Object type="0x69d6" id="Moon Crescent Halberd">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -107314,16 +107314,16 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Sound>weapon/mithril_sword</Sound>
         <Projectile>
             <ObjectId>Moon Magic</ObjectId>
-            <Speed>60</Speed>
+            <Speed>80</Speed>
             <MinDamage>320</MinDamage>
             <MaxDamage>580</MaxDamage>
-            <LifetimeMS>380</LifetimeMS>
+            <LifetimeMS>420</LifetimeMS>
             <ArmorPiercing/>
             <MultiHit/>
         </Projectile>
         <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <OldSound>weapon/blunt_sword</OldSound>
@@ -108710,15 +108710,15 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile>
             <ObjectId>Karana Blade</ObjectId>
             <Speed>140</Speed>
-            <MinDamage>205</MinDamage>
+            <MinDamage>185</MinDamage>
             <MaxDamage>235</MaxDamage>
             <LifetimeMS>400</LifetimeMS>
         </Projectile>
-        <ActivateOnEquip stat="22" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="75">IncrStatPerc</ActivateOnEquip>
         <Legendary/>
         <Legend id="3" stat="27">
             <Name>Ghost's Wrath</Name>
-            <Description>When this item is equipped and you are also invisible you deal extra damage based on the amount of wisdom you have.</Description>
+            <Description>When this item is equipped and you are also invisible you deal damage based on the amount of wisdom you have.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
@@ -109115,6 +109115,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <MpCost>125</MpCost>
+		<Legendary/>
         <ActivateOnEquip stat="28" amount="20">IncrementStat</ActivateOnEquip>
         <Activate>BulletNova</Activate>
     </Object>
@@ -109169,6 +109170,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate effect="Berserk" duration="6" range="4">ConditionEffectAura</Activate>
         <Activate effect="Bravery" duration="6">ConditionEffectSelf</Activate>
         <Cooldown>7</Cooldown>
+		<Legendary/>
         <feedPower>1880</feedPower>
         <DisplayId>Helm of Erebus</DisplayId>
     </Object>
@@ -109192,6 +109194,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate effect="Surged" duration="4" useWisMod="true">ConditionEffectSelf</Activate>
         <Cooldown>7</Cooldown>
         <feedPower>1880</feedPower>
+		<Legendary/>
         <DisplayId>The Gilded Helm</DisplayId>
     </Object>
 	<Object type="0x69ee" id="Sor Mini Crystals">
@@ -109733,18 +109736,18 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>1</SlotType>
         <Description>A gigantic mace made of gargoyle stone plates. The pure crush of this mace cripples it's victims.</Description>
-        <RateOfFire>0.25</RateOfFire>
+        <RateOfFire>0.3</RateOfFire>
         <Sound>weapon/mithril_sword</Sound>
         <Projectile>
             <ObjectId>Gargoyle Pulse</ObjectId>
             <Speed>55</Speed>
-            <MinDamage>880</MinDamage>
+            <MinDamage>950</MinDamage>
             <MaxDamage>1400</MaxDamage>
             <LifetimeMS>565</LifetimeMS>
             <ConditionEffect duration="0.44">Paralyzed</ConditionEffect>
         </Projectile>
-        <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="50">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-15">IncrStatPerc</ActivateOnEquip>
         <Legendary/>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -109958,7 +109961,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Soulbound/>
         <Activate>SorConstruct</Activate>
     </Object>
-    <Object type="0x61b8" id="Ancient Stone Maul">
+<Object type="0x61b8" id="Ancient Stone Maul">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -109967,7 +109970,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>1</SlotType>
         <Description>A large maul made of gargoyle stone with an amethyst encrusted handle. </Description>
-        <RateOfFire>0.45</RateOfFire>
+        <RateOfFire>0.65</RateOfFire>
         <Sound>weapon/glass_sword</Sound>
         <Projectile>
             <ObjectId>ASMaul Proj</ObjectId>
@@ -109977,7 +109980,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <LifetimeMS>430</LifetimeMS>
         </Projectile>
         <ActivateOnEquip stat="0" amount="12">IncrStatPerc</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="28" amount="-15">IncrementStat</ActivateOnEquip>
         <NumProjectiles>3</NumProjectiles>
         <BagType>6</BagType>
@@ -110186,11 +110189,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Speed>150</Speed>
             <LifetimeMS>460</LifetimeMS>
             <MinDamage>200</MinDamage>
-            <MaxDamage>700</MaxDamage>
+            <MaxDamage>550</MaxDamage>
             <ArmorPiercing/>
         </Projectile>
         <ActivateOnEquip stat="114" amount="100">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+		<ActivateOnEquip stat="21" amount="-15">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <Legendary/>
@@ -110477,16 +110481,14 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Sound>weapon/wand_of_death</Sound>
         <Projectile>
             <ObjectId>Magma Bloop</ObjectId>
-            <Speed>70</Speed>
+            <Speed>75</Speed>
             <LifetimeMS>680</LifetimeMS>
             <MinDamage>98</MinDamage>
-            <MaxDamage>566</MaxDamage>
+            <MaxDamage>500</MaxDamage>
             <PassesCover/>
-			<Wavy/>
 			<Amplitude>0.5</Amplitude>
             <Frequency>0.5</Frequency>
         </Projectile>
-        <ActivateOnEquip stat="20" amount="25">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <OldSound>weapon/wand_of_death</OldSound>
@@ -110528,5 +110530,68 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Legend>
 		<Legendary/>
         <DisplayId>Scorching Scepter</DisplayId>
+    </Object>
+	<Object type="0x1688" id="Avalanche">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x29</Index>
+        </Texture>
+        <SlotType>12</SlotType>
+        <Description>
+            A seal crafted by a society meant to keep an unthinkable monstrosity behind the doors of this world.
+        </Description>
+        <ExtraTooltipData>
+            <EffectInfo name="" description="-200 HP upon use. This seal hardens you to comeplete stone for 2 seconds and gives allies invulnerability."/>
+        </ExtraTooltipData>
+        <Sound>spell/fire_spray</Sound>
+        <ActivateOnEquip stat="22" amount="-10">IncrementStat</ActivateOnEquip>
+        <Activate effect="Petrify" duration="2">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="0.65" range="4" useWisMod="true">ConditionEffectAura</Activate>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <HpCost>200</HpCost>
+        <MpCost>50</MpCost>
+        <Legendary/>
+        <feedPower>2000</feedPower>
+        <Cooldown>4</Cooldown>
+    </Object>
+	<Object type="0x61dc" id="Moonlight">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1a</Index>
+        </Texture>
+        <SlotType>8</SlotType>
+        <Description>A wand forged from moon rock used to ward off dangerous creatures of the night.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/wand_of_death</Sound>
+        <Projectile>
+            <ObjectId>Moonlight Shot</ObjectId>
+            <Speed>90</Speed>
+            <MinDamage>126</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <LifetimeMS>600</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <ActivateOnEquip stat="21" amount="15">IncrementStat</ActivateOnEquip>
+		<ActivateOnEquip stat="27" amount="15">IncrementStat</ActivateOnEquip>
+		<ActivateOnEquip stat="22" amount="15">IncrementStat</ActivateOnEquip>
+        <Legendary/>
+		<Legend id="3" stat="27">
+            <Name>Lunar </Name>
+            <Description>The amount of health you have </Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+		<NumProjectiles>2</NumProjectiles>
+		<ArcGap>20</ArcGap>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>magicShoot</OldSound>
     </Object>
 </Objects>

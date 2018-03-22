@@ -1283,15 +1283,9 @@ namespace wServer.realm.entities
                     Pos1 = new Position() { X = 3 }
                 }, x, null, PacketPriority.High);
 
-                this.AOE(3, false, enemy =>
-                {
-                    (enemy as Enemy).Damage(this, time, (Stats[0]+Stats[1])*4, false, new ConditionEffect()
-                    {
-                        Effect = ConditionEffectIndex.Dazed,
-                        DurationMS = 2000
-                    });
-                });
 
+                world.AOE(target, 3, false,
+            enemy => DamageEnemy(world, enemy as Enemy));
             }));
         }
         private void AELightning(RealmTime time, Item item, Position target, ActivateEffect eff)
@@ -2172,6 +2166,46 @@ namespace wServer.realm.entities
                     EffectType = EffectType.Dead,
                     TargetObjectId = enemy.Id,
                     Color = new ARGB(0xffddff00)
+                }, p => enemy.DistSqr(p) < RadiusSqr);
+
+                if (x % 4 == 0) // make sure to change this if timer delay is changed
+                {
+                    var thisDmg = perDmg;
+                    if (remainingDmg < thisDmg)
+                        thisDmg = remainingDmg;
+
+                    enemy.Damage(this, t, thisDmg, true);
+                    remainingDmg -= thisDmg;
+                    if (remainingDmg <= 0)
+                        return true;
+                }
+                x++;
+
+                tmr.Reset();
+                return false;
+            };
+
+            tmr = new WorldTimer(250, poisonTick);
+            world.Timers.Add(tmr);
+        }
+        void DamageEnemy(World world, Enemy enemy)
+        {
+            var remainingDmg = (int)StatsManager.GetDefenseDamage(enemy, (Stats[0]+Stats[1])^4, enemy.ObjectDesc.Defense);
+            var perDmg = remainingDmg * 1000 / 1000;
+
+            WorldTimer tmr = null;
+            var x = 0;
+
+            Func<World, RealmTime, bool> poisonTick = (w, t) =>
+            {
+                if (enemy.Owner == null || w == null)
+                    return true;
+
+                w.BroadcastPacketConditional(new ShowEffect()
+                {
+                    EffectType = EffectType.Dead,
+                    TargetObjectId = enemy.Id,
+                    Color = new ARGB(0xFFFFFF)
                 }, p => enemy.DistSqr(p) < RadiusSqr);
 
                 if (x % 4 == 0) // make sure to change this if timer delay is changed

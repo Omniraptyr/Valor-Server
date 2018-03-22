@@ -56,6 +56,62 @@ namespace wServer.realm.commands
                 return true;
             }
         }
+        class DyeCommand : Command
+        {
+            public DyeCommand() : base("setdyeboth", permLevel: 10, alias: "dyeboth") { }
+
+            protected override bool Process(Player player, RealmTime time, string args)
+            {
+                var dyetype = int.Parse(args);
+
+                if (string.IsNullOrEmpty(args))
+                {
+                    player.SendInfo("/dyeboth <amount>");
+                    return false;
+                }
+                if (dyetype != 0)
+                    player.Texture1 = dyetype;
+                if (dyetype != 0)
+                    player.Texture2 = dyetype;
+                return true;
+            }
+        }
+        class DyeACommand : Command
+        {
+            public DyeACommand() : base("setdyea", permLevel: 10, alias: "dyea") { }
+
+            protected override bool Process(Player player, RealmTime time, string args)
+            {
+                var dyetype = int.Parse(args);
+
+                if (string.IsNullOrEmpty(args))
+                {
+                    player.SendInfo("/dyea <amount>");
+                    return false;
+                }
+                if (dyetype != 0)
+                    player.Texture1 = dyetype;
+                return true;
+            }
+        }
+        class DyeBCommand : Command
+        {
+            public DyeBCommand() : base("setdyeb", permLevel: 10, alias: "dyeb") { }
+
+            protected override bool Process(Player player, RealmTime time, string args)
+            {
+                var dyetype = int.Parse(args);
+
+                if (string.IsNullOrEmpty(args))
+                {
+                    player.SendInfo("/dyeb <amount>");
+                    return false;
+                }
+                if (dyetype != 0)
+                    player.Texture2 = dyetype;
+                return true;
+            }
+        }
         class SetOnraneCommand : Command
         {
             public SetOnraneCommand() : base("setonrane", permLevel: 90, alias: "onrane") { }
