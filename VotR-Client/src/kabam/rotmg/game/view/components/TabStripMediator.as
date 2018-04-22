@@ -1,4 +1,4 @@
-﻿package kabam.rotmg.game.view.components {
+﻿﻿package kabam.rotmg.game.view.components {
 import com.company.assembleegameclient.objects.ImageFactory;
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.ui.icons.IconButtonFactory;
@@ -15,6 +15,7 @@ import kabam.rotmg.ui.model.HUDModel;
 import kabam.rotmg.ui.model.TabStripModel;
 import kabam.rotmg.ui.signals.UpdateBackpackTabSignal;
 import kabam.rotmg.ui.signals.UpdateHUDSignal;
+import kabam.rotmg.ui.signals.UpdateMarkTabSignal;
 import kabam.rotmg.ui.view.StatsDockedSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
@@ -31,6 +32,8 @@ public class TabStripMediator extends Mediator {
     public var updateHUD:UpdateHUDSignal;
     [Inject]
     public var updateBackpack:UpdateBackpackTabSignal;
+    [Inject]
+    public var updateMark:UpdateMarkTabSignal;
     [Inject]
     public var notifyActivePetUpdated:NotifyActivePetUpdated;
     [Inject]
@@ -85,6 +88,7 @@ public class TabStripMediator extends Mediator {
     override public function destroy():void {
         this.view.tabSelected.remove(this.onTabSelected);
         this.updateBackpack.remove(this.onUpdateBackPack);
+        this.updateMark.remove(this.onUpdateMark);
         this.view.friendsBtn.removeEventListener(MouseEvent.CLICK, this.onFriendsBtnClicked);
     }
 
@@ -99,6 +103,11 @@ public class TabStripMediator extends Mediator {
         this.view.addTab(this.iconFactory.makeIconBitmap(TabConstants.INVENTORY_ICON_ID), new InventoryTabContent(_arg1));
         if (this.doShowStats) {
             this.view.addTab(this.iconFactory.makeIconBitmap(TabConstants.STATS_ICON_ID), new StatsTabContent(this.view.HEIGHT));
+        }
+        if (_arg1.marksEnabled_ == 1) {
+            this.view.addTab(this.iconFactory.makeIconBitmap(TabConstants.MARKS_ICON_ID), new MarksTabContent(_arg1));
+        }else {
+            this.updateMark.add(this.onUpdateMark);
         }
         if (_arg1.hasBackpack_) {
             this.view.addTab(this.iconFactory.makeIconBitmap(TabConstants.BACKPACK_ICON_ID), new BackpackTabContent(_arg1));
@@ -125,6 +134,15 @@ public class TabStripMediator extends Mediator {
             _local2 = this.hudModel.gameSprite.map.player_;
             this.view.addTab(this.iconFactory.makeIconBitmap(TabConstants.BACKPACK_ICON_ID), new BackpackTabContent(_local2));
             this.updateBackpack.remove(this.onUpdateBackPack);
+        }
+    }
+
+    private function onUpdateMark(_arg1:Boolean):void {
+        var _local2:Player;
+        if (_arg1) {
+            _local2 = this.hudModel.gameSprite.map.player_;
+            this.view.addTab(this.iconFactory.makeIconBitmap(TabConstants.MARKS_ICON_ID), new MarksTabContent(_local2));
+            this.updateMark.remove(this.onUpdateMark);
         }
     }
 

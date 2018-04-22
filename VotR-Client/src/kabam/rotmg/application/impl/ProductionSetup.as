@@ -1,11 +1,11 @@
-﻿package kabam.rotmg.application.impl {
+﻿﻿package kabam.rotmg.application.impl {
 import com.company.assembleegameclient.parameters.Parameters;
 
 import kabam.rotmg.application.api.ApplicationSetup;
 
 public class ProductionSetup implements ApplicationSetup {
-
-    private const SERVER:String = "127.0.0.1:8080";
+//144.217.80.74
+    private const SERVER:String = "144.217.80.74:8080";
     private const UNENCRYPTED:String = ("http://" + SERVER);
     private const ENCRYPTED:String = ("http://" + SERVER);
     private const BUILD_LABEL:String = "<font color='#DDDD00'>VotR 2.0 Beta</font>";

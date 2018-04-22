@@ -1,4 +1,4 @@
-﻿package com.company.assembleegameclient.parameters {
+﻿﻿package com.company.assembleegameclient.parameters {
 import com.company.assembleegameclient.map.Map;
 import com.company.util.KeyCodes;
 import com.company.util.MoreDateUtil;
@@ -11,8 +11,8 @@ import flash.utils.Dictionary;
 
 public class Parameters {
 
-    public static const BUILD_VERSION:String = "18";
-    public static const MINOR_VERSION:String = "C5";
+    public static const BUILD_VERSION:String = "1"+A;
+    public static const MINOR_VERSION:String = ""+B+C;
     public static const FULL_BUILD:String = BUILD_VERSION + "." + MINOR_VERSION;
     public static const ENABLE_ENCRYPTION:Boolean = true;
     public static const PORT:int = 2050;
@@ -36,6 +36,9 @@ public class Parameters {
     public static const MAX_SINK_LEVEL:Number = 18;
     public static const TERMS_OF_USE_URL:String = "http://legal.decagames.io/tos";
     public static const PRIVACY_POLICY_URL:String = "http://legal.decagames.io/privacy";
+    public static const A:String = "9";
+    public static const B:String = "M";
+    public static const C:String = "6";
     public static const USER_GENERATED_CONTENT_TERMS:String = "/UGDTermsofUse.html";
     public static const RANDOM1:String = "B1A5ED";
     public static const RANDOM2:String = "612a806cac78114ba5013cb531";

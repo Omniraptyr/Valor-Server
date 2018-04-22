@@ -139,6 +139,12 @@ public class Player extends Character {
     public var maxHPMax_:int = 0;
     public var maxMPMax_:int = 0;
     public var hasBackpack_:Boolean = false;
+    public var marksEnabled_:int = 0;
+    public var mark_:int = 0;
+    public var node1_:int = 0;
+    public var node2_:int = 0;
+    public var node3_:int = 0;
+    public var node4_:int = 0;
     public var rank_:int = 0;
     public var luckMax_:int = 0;
     public var mightMax_:int = 0;
@@ -818,7 +824,7 @@ public class Player extends Character {
         if (isDazed()) {
             return (MIN_ATTACK_FREQ);
         }
-        var _local1:Number = (MIN_ATTACK_FREQ + ((this.dexterity_ / 75) * (MAX_ATTACK_FREQ - MIN_ATTACK_FREQ)));
+        var _local1:Number = (MIN_ATTACK_FREQ + (((this.dexterity_+MarkRage()) / 75) * (MAX_ATTACK_FREQ - MIN_ATTACK_FREQ)));
         if (isBerserk() || isSamuraiBerserk() || isGrasp()) {
             _local1 = (_local1 * 1.5);
         }
@@ -841,6 +847,13 @@ public class Player extends Character {
     private function relentlessDamageBonus():Number{
         if(isRelentless()){
             return surge_*6;
+        }else{
+            return 0;
+        }
+    }
+    private function MarkRage():Number{
+        if(mark_ == 3){
+            return surge_/4;
         }else{
             return 0;
         }

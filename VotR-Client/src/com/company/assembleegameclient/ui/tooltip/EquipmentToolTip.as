@@ -1,4 +1,4 @@
-﻿package com.company.assembleegameclient.ui.tooltip {
+﻿﻿package com.company.assembleegameclient.ui.tooltip {
 import com.company.assembleegameclient.constants.InventoryOwnerTypes;
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.objects.Player;
@@ -762,7 +762,7 @@ public class EquipmentToolTip extends ToolTip {
         }
         if (this.objectXML.hasOwnProperty("PoZPage"))
         {
-            this.restrictions.push(new Restriction("This item can be read to activate marks on your account..", 0xFF0000, true));
+            this.restrictions.push(new Restriction("This item can be read to activate marks on your character.", 0xFF0000, true));
         }
         if (this.objectXML.hasOwnProperty("Shard"))
         {
