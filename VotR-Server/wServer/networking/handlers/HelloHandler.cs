@@ -43,7 +43,7 @@ namespace wServer.networking.handlers
             var version = client.Manager.Config.serverSettings.version;
             if (!version.Equals(packet.BuildVersion))
             {
-                client.SendFailure(version, Failure.ClientUpdateNeeded);
+                //client.SendFailure(version, Failure.ClientUpdateNeeded);
                 return null;
             }
 
