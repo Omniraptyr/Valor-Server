@@ -55,6 +55,14 @@ namespace wServer.realm.entities
             {
                 ApplyConditionEffect(ConditionEffectIndex.Relentless, 0);
             }
+            if (CheckWoW())
+            {
+                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune);
+            }
+            else
+            {
+                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune, 0);
+            }
             if (CheckForce())
             {
                 ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune);

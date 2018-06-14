@@ -1,4 +1,4 @@
-package kabam.rotmg.market
+package kabam.rotmg.Market
 {
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 import com.company.assembleegameclient.ui.panels.Panel;

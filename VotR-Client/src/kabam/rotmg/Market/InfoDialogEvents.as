@@ -1,4 +1,4 @@
-package kabam.rotmg.market
+package kabam.rotmg.Market
 {
 import flash.display.BitmapData;
 import com.company.assembleegameclient.objects.ObjectLibrary;
@@ -12,7 +12,7 @@ public class InfoDialogEvents extends Mediator
        
       
       [Inject]
-      public var view:kabam.rotmg.market.InfoDialog;
+      public var view:kabam.rotmg.Market.InfoDialog;
       
       [Inject]
       public var model:PetsModel;

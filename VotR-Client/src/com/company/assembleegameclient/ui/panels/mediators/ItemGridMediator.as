@@ -15,9 +15,13 @@ import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTileEve
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
 import com.company.assembleegameclient.util.DisplayHierarchy;
 
-import kabam.rotmg.market.ui.MarketCreateOfferScreen;
+import kabam.rotmg.Market.ui.MarketCreateOfferScreen;
 
-import kabam.rotmg.market.ui.MarketInventorySlot;
+import kabam.rotmg.Market.ui.MarketInventorySlot;
+
+import kabam.rotmg.Market.ui.MarketCreateOfferScreen;
+
+import kabam.rotmg.Market.ui.MarketInventorySlot;
 
 import kabam.rotmg.chat.model.ChatMessage;
 import kabam.rotmg.constants.ItemConstants;

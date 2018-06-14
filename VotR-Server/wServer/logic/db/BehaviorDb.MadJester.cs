@@ -550,7 +550,9 @@ namespace wServer.logic
                     new ItemLoot("Greater Potion of Attack", 0.1),
                     new ItemLoot("Greater Potion of Defense", 0.1),
                     new ItemLoot("Greater Potion of Wisdom", 0.1),
-                    new ItemLoot("Vial of Power", 1.0)
+                    new ItemLoot("Vial of Power", 1.0),
+                    new ItemLoot("Ring of Fortune", 0.01),
+                    new ItemLoot("Razzmatazz Armor", 0.01)
                 )
 			)
 			.Init("White Mask",

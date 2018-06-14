@@ -1,8 +1,8 @@
-package kabam.rotmg.market.ui
+package kabam.rotmg.Market.ui
 {
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.market.ui.MarketActionSignal;
-import kabam.rotmg.market.ui.MarketOverview;
+import kabam.rotmg.Market.ui.MarketActionSignal;
+import kabam.rotmg.Market.ui.MarketOverview;
 import kabam.rotmg.messaging.impl.GameServerConnection;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
@@ -12,10 +12,10 @@ public class MarketMediator extends Mediator
        
       
       [Inject]
-      public var view:kabam.rotmg.market.ui.MarketOverview;
+      public var view:kabam.rotmg.Market.ui.MarketOverview;
       
       [Inject]
-      public var doAction:kabam.rotmg.market.ui.MarketActionSignal;
+      public var doAction:kabam.rotmg.Market.ui.MarketActionSignal;
       
       [Inject]
       public var closeDialogs:CloseDialogsSignal;

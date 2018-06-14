@@ -75396,11 +75396,11 @@ A magnificent legendary blade which only cuts those who deserve death.
         <Equipment>0xc44, 0x5811, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="650">110</MaxHitPoints>
         <MaxMagicPoints max="410">100</MaxMagicPoints>
-        <Attack max="70">10</Attack>
+        <Attack max="75">10</Attack>
         <Defense max="25">0</Defense>
         <Speed max="65">10</Speed>
-        <Dexterity max="60">12</Dexterity>
-        <HpRegen max="50">10</HpRegen>
+        <Dexterity max="65">12</Dexterity>
+        <HpRegen max="60">10</HpRegen>
         <MpRegen max="75">15</MpRegen>
         <Might max="60">2</Might>
         <Luck max="85">2</Luck>
@@ -75437,14 +75437,14 @@ A magnificent legendary blade which only cuts those who deserve death.
         <Equipment>0xa14, 0x5829, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="620">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
-        <Attack max="100">10</Attack>
+        <Attack max="75">10</Attack>
         <Defense max="25">0</Defense>
         <Speed max="60">10</Speed>
         <Dexterity max="55">12</Dexterity>
         <HpRegen max="60">10</HpRegen>
         <MpRegen max="100">15</MpRegen>
         <Might max="100">2</Might>
-        <Luck max="125">2</Luck>
+        <Luck max="150">20</Luck>
         <Restoration max="60">10</Restoration>
         <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
@@ -75456,7 +75456,7 @@ A magnificent legendary blade which only cuts those who deserve death.
         <LevelIncrease min="1" max="2">HpRegen</LevelIncrease>
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="2">Might</LevelIncrease>
-        <LevelIncrease min="0" max="1">Luck</LevelIncrease>
+        <LevelIncrease min="1" max="2">Luck</LevelIncrease>
         <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
         <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20">Assassin</UnlockLevel>
@@ -95799,6 +95799,7 @@ A whole thanksgiving turkey!
         </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+		<ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
         <Description>Zarcod, a fallen kingdom won't be crushed..This banner proves that.</Description>
         <Usable/>
         <BagType>4</BagType>
@@ -104656,7 +104657,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
   </Texture>
   <Rotation>20</Rotation>
   </Object>
-    <Object type="0x56d2" id="Lord Stone Gargoyle">
+  <Object type="0x56d2" id="Lord Stone Gargoyle">
 		<DisplayId>Lord Stone Gargoyle</DisplayId>
 		<Enemy/>
 		<Group>LSG Group</Group>
@@ -104692,7 +104693,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		<NoArticle/>
       	<Projectile id="0">
          <ObjectId>Stone Blast 1</ObjectId>
-         <Speed>70</Speed>
+         <Speed>65</Speed>
          <Damage>80</Damage>
          <Size>120</Size>
          <LifetimeMS>4000</LifetimeMS>
@@ -104702,7 +104703,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       	</Projectile>
       	<Projectile id="1">
          <ObjectId>Gargoyle Shield</ObjectId>
-         <Speed>100</Speed>
+         <Speed>80</Speed>
          <Damage>240</Damage>
          <Size>125</Size>
          <LifetimeMS>2000</LifetimeMS>
@@ -104711,10 +104712,11 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       	</Projectile>
       	<Projectile id="2">
          <ObjectId>Gargoyle Pulse</ObjectId>
-         <Speed>70</Speed>
-         <Damage>520</Damage>
+         <Speed>55</Speed>
+         <MinDamage>240</MinDamage>
+         <MaxDamage>480</MaxDamage>
          <Size>100</Size>
-         <LifetimeMS>7600</LifetimeMS>
+         <LifetimeMS>4600</LifetimeMS>
          <MultiHit/>
          <Amplitude>2</Amplitude>
          <Frequency>6</Frequency>
@@ -104729,7 +104731,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       	</Projectile>
       	<Projectile id="4">
          <ObjectId>Gargoyle Spinner</ObjectId>
-         <Speed>85</Speed>
+         <Speed>75</Speed>
          <MinDamage>75</MinDamage>
          <MaxDamage>100</MaxDamage>
          <Size>100</Size>
@@ -105238,9 +105240,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 	  </Texture>
     <SlotType>9</SlotType>
     <Description>A ring that seems to bring you great fortune.</Description>
-    <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="112" amount="15">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="114" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="70">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
     <BagType>6</BagType>
     <FameBonus>5</FameBonus>
 	<feedPower>800</feedPower>
@@ -105255,9 +105257,10 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <SlotType>6</SlotType>
       <Description>This armor is has that razzle dazzle shine to it.</Description>
       <ActivateOnEquip stat="21" amount="15">IncrementStat</ActivateOnEquip>
-      <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="20" amount="11">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="114" amount="10">IncrementStat</ActivateOnEquip>
-      <ActivateOnEquip stat="112" amount="5">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="112" amount="50">IncrementStat</ActivateOnEquip>
       <BagType>6</BagType>
       <FameBonus>6</FameBonus>
       <feedPower>800</feedPower>
@@ -110272,34 +110275,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Legend>
         <DisplayId>Burning Tome</DisplayId>
     </Object>
-       <Object type="0x42f3" id="Words of Wisdom">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x14f</Index>
-        </Texture>
-        <SlotType>14</SlotType>
-        <Description>A grayish robe with blue gems lined straight in the middle. Each gem harnest power to keep the wearer resilient and strong.</Description>
-        <ActivateOnEquip stat="3" amount="120">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="140">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="14">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="27" amount="12">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="121" amount="40">IncrementStat</ActivateOnEquip>
-        <BagType>6</BagType>
-        <Legendary/>
-        <Legend id="4" stat="27">
-            <Name>Mindwalker</Name>
-            <Description>You are immune to slowed while this item is equipped.</Description>
-            <HP>0</HP>
-            <MP>0</MP>
-            <Surge>0</Surge>
-        </Legend>
-        <FameBonus>8</FameBonus>
-        <feedPower>2000</feedPower>
-        <DisplayId>Words of Wisdom</DisplayId>
-    </Object>
 	     <Object type="0x61d3" id="Garugen">
         <Class>Equipment</Class>
         <Item/>
@@ -110558,40 +110533,114 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <feedPower>2000</feedPower>
         <Cooldown>4</Cooldown>
     </Object>
-	<Object type="0x61dc" id="Moonlight">
+    <Object type="0x61dc" id="Moonlight">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x1a</Index>
+            <Index>0x75</Index>
         </Texture>
         <SlotType>8</SlotType>
         <Description>A wand forged from moon rock used to ward off dangerous creatures of the night.</Description>
-        <RateOfFire>1</RateOfFire>
+        <RateOfFire>0.85</RateOfFire>
         <Sound>weapon/wand_of_death</Sound>
         <Projectile>
             <ObjectId>Moonlight Shot</ObjectId>
             <Speed>90</Speed>
-            <MinDamage>126</MinDamage>
-            <MaxDamage>200</MaxDamage>
+            <MinDamage>124</MinDamage>
+            <MaxDamage>152</MaxDamage>
             <LifetimeMS>600</LifetimeMS>
             <ArmorPiercing/>
         </Projectile>
         <ActivateOnEquip stat="21" amount="15">IncrementStat</ActivateOnEquip>
-		<ActivateOnEquip stat="27" amount="15">IncrementStat</ActivateOnEquip>
-		<ActivateOnEquip stat="22" amount="15">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="15">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="15">IncrementStat</ActivateOnEquip>
         <Legendary/>
-		<Legend id="3" stat="27">
-            <Name>Lunar </Name>
-            <Description>The amount of health you have </Description>
+        <Legend id="3" stat="27">
+            <Name>Lunar Grandeur</Name>
+            <Description>The amount of mana is transferred to bonus outputting damage. When surge is over 30 the Lunar Grandeur passive is buffed and doubles the bonus outputting damage.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
         </Legend>
-		<NumProjectiles>2</NumProjectiles>
-		<ArcGap>20</ArcGap>
+        <NumProjectiles>2</NumProjectiles>
+        <ArcGap>10</ArcGap>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <OldSound>magicShoot</OldSound>
     </Object>
+	<Object type="0x42f3" id="Words of Wisdom">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x14f</Index>
+        </Texture>
+        <SlotType>14</SlotType>
+        <Description>A grayish robe with blue gems lined straight in the middle. Each gem harnest power to keep the wearer resilient and strong.</Description>
+        <ActivateOnEquip stat="3" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="140">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="11">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="14">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="14">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <Legendary/>
+        <Legend id="4" stat="27">
+            <Name>Mindwalker</Name>
+            <Description>You are immune to slowed while this item is equipped.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <FameBonus>8</FameBonus>
+        <feedPower>2000</feedPower>
+        <DisplayId>Words of Wisdom</DisplayId>
+    </Object>
+	<Object type="0x6202" id="Tarot of the Wicked">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+          <File>legendaries8x8Embed</File>
+          <Index>0x90</Index>
+      </Texture>
+      <SlotType>32</SlotType>
+      <Description>A cursed charm that drains the energy from your soul but in return will send opposers to oblivion.</Description>
+      <Sound>spell/fire_spray</Sound>
+      <Projectile>
+         <ObjectId>Wicked Charm Shot</ObjectId>
+         <Speed>70</Speed>
+         <MinDamage>103</MinDamage>
+         <MaxDamage>112</MaxDamage>
+         <LifetimeMS>2000</LifetimeMS>
+         <Size>150</Size>
+         <ConditionEffect duration="4">Weak</ConditionEffect>
+         <ConditionEffect duration="2">Dazed</ConditionEffect>
+         <ArmorPiercing/>
+         <MultiHit/>
+		 <Boomerang/>
+      </Projectile>
+      <ConditionEffect duration="4">Weak</ConditionEffect>
+      <ConditionEffect duration="2">Dazed</ConditionEffect>
+      <ActivateOnEquip stat="3" amount="-20">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="0" amount="-20">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+	  <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
+      <Usable/>
+      <BagType>6</BagType>
+      <FameBonus>6</FameBonus>
+      <MpCost>110</MpCost>
+      <Activate>Shoot</Activate>
+      <feedPower>880</feedPower>
+      <Cooldown>5</Cooldown>
+      <NumProjectiles>8</NumProjectiles>
+      <DisplayId>Tarot of the Wicked</DisplayId>
+   </Object>
+   <Object type="0x6203" id="Wicked Charm Shot">
+	  <Class>Projectile</Class>
+      <Texture>
+          <File>legendaries8x8Embed</File>
+          <Index>0x91</Index>
+      </Texture>
+  </Object>
 </Objects>

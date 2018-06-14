@@ -70,3 +70,13 @@ C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\wServer\obj\Debug\wServer.csproj
 C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\wServer\obj\Debug\wServer.csproj.CoreCompileInputs.cache
 C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\wServer\obj\Debug\wServer.exe
 C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\wServer\obj\Debug\wServer.pdb
+C:\Users\darkd\Desktop\votr\master\VotR-Server\bin\log4net.config
+C:\Users\darkd\Desktop\votr\master\VotR-Server\bin\wServer.json
+C:\Users\darkd\Desktop\votr\master\VotR-Server\bin\wServer.exe.config
+C:\Users\darkd\Desktop\votr\master\VotR-Server\bin\wServer.exe
+C:\Users\darkd\Desktop\votr\master\VotR-Server\bin\wServer.pdb
+C:\Users\darkd\Desktop\votr\master\VotR-Server\wServer\obj\Debug\wServer.csprojAssemblyReference.cache
+C:\Users\darkd\Desktop\votr\master\VotR-Server\wServer\obj\Debug\wServer.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\votr\master\VotR-Server\wServer\obj\Debug\wServer.csproj.CopyComplete
+C:\Users\darkd\Desktop\votr\master\VotR-Server\wServer\obj\Debug\wServer.exe
+C:\Users\darkd\Desktop\votr\master\VotR-Server\wServer\obj\Debug\wServer.pdb

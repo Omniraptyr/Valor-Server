@@ -40,7 +40,7 @@ public class Parameters {
     public static const jtgjtrgg:int = 41;
     public static const USER_GENERATED_CONTENT_TERMS:String = "/UGDTermsofUse.html";
     public static const RANDOM1:String = "B1A5ED";
-    public static const BUILD_VERSION:String = "4"+asfasfzxxc+"."+jtgjtrgg*2;
+    public static const BUILD_VERSION:String = "5"+asfasfzxxc+"."+jtgjtrgg*2;
     public static const RANDOM2:String = "612a806cac78114ba5013cb531";
     public static const RSA_PUBLIC_KEY:String = 
         "-----BEGIN PUBLIC KEY-----\n" + 

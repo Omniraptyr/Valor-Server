@@ -1,4 +1,4 @@
-package kabam.rotmg.market.ui
+package kabam.rotmg.Market.ui
 {
 import com.company.assembleegameclient.util.DisplayHierarchy;
 

@@ -1,9 +1,11 @@
-package kabam.rotmg.market.ui
+package kabam.rotmg.Market.ui
 {
-import kabam.rotmg.market.MarketItemsResultSignal;
-import kabam.rotmg.market.MarketResultSignal;
-import kabam.rotmg.market.ui.MarketActionSignal;
-import kabam.rotmg.market.ui.MarketMediator;
+import kabam.rotmg.Market.MarketItemsResultSignal;
+import kabam.rotmg.Market.MarketResultSignal;
+import kabam.rotmg.Market.MarketItemsResultSignal;
+import kabam.rotmg.Market.MarketResultSignal;
+import kabam.rotmg.Market.ui.MarketActionSignal;
+import kabam.rotmg.Market.ui.MarketMediator;
 
 import org.swiftsuspenders.Injector;
 

@@ -6301,4 +6301,59 @@
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
+	<Object type="0x61fb" id="Lava Circle">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x8f</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+	<Object type="0x61fc" id="Lava Bolt">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x8e</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+	<Object type="0x61fd" id="Red Bastille Blast">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x8d</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+	<Object type="0x61fe" id="Meteor Bastille Blast">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x8c</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+	<Object type="0x61ff" id="Hunter's Fury">
+        <Class>Projectile</Class>
+    	<Texture>
+           <File>lofiObjBig</File>
+      	   <Index>0x1b7</Index>
+        </Texture>
+        <Rotation>60</Rotation>
+    </Object>
+	<Object type="0x6201" id="Moonlight Shot">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x77</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6203" id="Wicked Charm Shot">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x91</Index>
+        </Texture>
+    </Object>
 </Objects>

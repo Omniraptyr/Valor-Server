@@ -47,7 +47,7 @@ namespace wServer.realm
 
         public int GetAttackDamage(int min, int max, bool isAbility = false)
         {
-            var ret = isDoubleDamage() * Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility) * CriticalModifier() + VengeanceDamage() + RelentlessDamage() + KaraDamage();
+            var ret = isDoubleDamage() * Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility) * CriticalModifier() + VengeanceDamage() + RelentlessDamage() + KaraDamage() + MoonLightDamage();
             //Log.Info($"Dmg: {ret}");
             return (int)ret;
         } 
@@ -329,7 +329,22 @@ namespace wServer.realm
             }
         }
 
-       public int isDoubleDamage()
+        public int MoonLightDamage()
+        {
+            if (Owner.CheckMoonlight() && Owner.Surge >= 30)
+            {
+                return Owner.MP*2;
+            }else if (Owner.CheckMoonlight())
+            {
+                return Owner.MP;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public int isDoubleDamage()
         {
             if (Owner.CheckDemo())
             {

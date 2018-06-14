@@ -762,11 +762,11 @@
         <Equipment>0xc44, 0x5811, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="650">110</MaxHitPoints>
         <MaxMagicPoints max="410">100</MaxMagicPoints>
-        <Attack max="70">10</Attack>
+        <Attack max="75">10</Attack>
         <Defense max="25">0</Defense>
         <Speed max="65">10</Speed>
-        <Dexterity max="60">12</Dexterity>
-        <HpRegen max="50">10</HpRegen>
+        <Dexterity max="65">12</Dexterity>
+        <HpRegen max="60">10</HpRegen>
         <MpRegen max="75">15</MpRegen>
         <Might max="60">2</Might>
         <Luck max="85">2</Luck>
@@ -803,14 +803,14 @@
         <Equipment>0xa14, 0x5829, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="620">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
-        <Attack max="100">10</Attack>
+        <Attack max="75">10</Attack>
         <Defense max="25">0</Defense>
         <Speed max="60">10</Speed>
         <Dexterity max="55">12</Dexterity>
         <HpRegen max="60">10</HpRegen>
         <MpRegen max="100">15</MpRegen>
         <Might max="100">2</Might>
-        <Luck max="125">2</Luck>
+        <Luck max="150">20</Luck>
         <Restoration max="60">10</Restoration>
         <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
@@ -822,7 +822,7 @@
         <LevelIncrease min="1" max="2">HpRegen</LevelIncrease>
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="2">Might</LevelIncrease>
-        <LevelIncrease min="0" max="1">Luck</LevelIncrease>
+        <LevelIncrease min="1" max="2">Luck</LevelIncrease>
         <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
         <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20">Assassin</UnlockLevel>

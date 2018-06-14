@@ -1,4 +1,4 @@
-package kabam.rotmg.market
+package kabam.rotmg.Market
 {
    import flash.display.Sprite;
    import kabam.rotmg.pets.view.components.CaretakerQuerySpeechBubble;

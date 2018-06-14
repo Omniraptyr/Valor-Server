@@ -7,7 +7,7 @@
   },
   "serverInfo": {
     "type": "World",
-    "name": "VotR 2 Beta",
+    "name": "VotR Legacy Testing",
     "address": "144.217.80.74",
     "port": "2050",
     "coordinates": {
@@ -19,7 +19,7 @@
   "serverSettings": {
     "logFolder": "./logs",
     "resourceFolder": "./resources",
-    "version": "44.82.Z2",
+    "version": "54.82.Z2",
     "tps": "7",
     "mode": "Single",
     "key": "B1A5ED",

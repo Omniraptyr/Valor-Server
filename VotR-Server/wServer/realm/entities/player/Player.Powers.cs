@@ -126,6 +126,21 @@ namespace wServer.realm.entities
                 return false;
             }
         }
+        public bool CheckWoW()
+        {
+            if (Inventory[2] == null)
+            {
+                return false;
+            }
+            if (Inventory[2].ObjectId == "Words of Wisdom")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public bool CheckDemo()
         {
             if (Inventory[3] == null)
@@ -178,6 +193,21 @@ namespace wServer.realm.entities
                 return false;
             }
             if (Inventory[3].ObjectId == "Furious Gauntlet" && Surge >= 60)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckMoonlight()
+        {
+            if (Inventory[0] == null)
+            {
+                return false;
+            }
+            if (Inventory[0].ObjectId == "Moonlight")
             {
                 return true;
             }
@@ -372,6 +402,17 @@ namespace wServer.realm.entities
                     break;
                 //Rockheart
                 case 11:
+                    if (Surge >= surge_)
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.PetrifyImmune);
+                    }
+                    else
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.PetrifyImmune, 0);
+                    }
+                    break;
+                //Mindwalker
+                case 12:
                     if (Surge >= surge_)
                     {
                         ApplyConditionEffect(ConditionEffectIndex.PetrifyImmune);

@@ -1,4 +1,4 @@
-package kabam.rotmg.market
+package kabam.rotmg.Market
 {
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 import flash.display.Sprite;
@@ -56,7 +56,7 @@ public class InfoDialog extends Sprite
       
       private const background:PopupWindowBackground = _1L_c();
       
-      private const query:kabam.rotmg.market.InfoDialogQuery = _qy();
+      private const query:kabam.rotmg.Market.InfoDialogQuery = _qy();
       
       private const title:TextFieldDisplayConcrete = _1lN_();
       
@@ -106,10 +106,10 @@ public class InfoDialog extends Sprite
          return _loc1_;
       }
       
-      private function _qy() : kabam.rotmg.market.InfoDialogQuery
+      private function _qy() : kabam.rotmg.Market.InfoDialogQuery
       {
-         var _loc1_:kabam.rotmg.market.InfoDialogQuery = null;
-         _loc1_ = new kabam.rotmg.market.InfoDialogQuery();
+         var _loc1_:kabam.rotmg.Market.InfoDialogQuery = null;
+         _loc1_ = new kabam.rotmg.Market.InfoDialogQuery();
          _loc1_.x = 20;
          _loc1_.y = 50;
          this.container.addChild(_loc1_);
