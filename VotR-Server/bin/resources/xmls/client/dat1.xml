@@ -80834,7 +80834,7 @@ This dagger was a myth, will you live to tell the tale?
     <feedPower>450</feedPower>
     <DisplayId>Staff of Uranium</DisplayId>
   </Object>
-  <Object type="0x5043" id="Cyclop's Eye">
+  <Object type="0x5043" id="Cyclops' Eye">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -80842,7 +80842,7 @@ This dagger was a myth, will you live to tell the tale?
             <Index>0xa4</Index>
         </Texture>
         <SlotType>9</SlotType>
-        <Description>A cyclop god's eye got ripped out and you have it or you're wearing it.</Description>
+        <Description>A cyclops god's eye that got ripped out.</Description>
         <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="20">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="12">IncrementStat</ActivateOnEquip>
@@ -80850,7 +80850,7 @@ This dagger was a myth, will you live to tell the tale?
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <feedPower>925</feedPower>
-        <DisplayId>Cyclop's Eye</DisplayId>
+        <DisplayId>Cyclops' Eye</DisplayId>
     </Object>
  <Object type="0x5044" id="Kami Cloth">
     <Class>Equipment</Class>
@@ -108039,7 +108039,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <PassesCover/>
             <ParticleTrail intensity="0.3" lifetimeMS="270">0x0f0ff0</ParticleTrail>
         </Projectile>
-		<EffectEquip effect="Armored" delay="300"/>
+		<EffectEquip effect="Armored" delay="150"/>
         <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
@@ -108425,7 +108425,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>9</SlotType>
         <Description>Utter destruction will follow your path. Unstoppable.</Description>
-        <ActivateOnEquip stat="20" amount="50">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="30">IncrStatPerc</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <feedPower>3000</feedPower>
