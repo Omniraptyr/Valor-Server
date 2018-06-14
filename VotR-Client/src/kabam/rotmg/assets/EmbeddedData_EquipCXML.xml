@@ -28307,156 +28307,156 @@
         <DisplayId>RNG Clown Skin</DisplayId>
     </Object>
     <Object type="0x5829" id="Classic Dice">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x40f</Index>
-        </Texture>
-        <ExtraTooltipData>
-            <EffectInfo name="Duration - 1  " description="Applies a random gambler effect."/>
-        </ExtraTooltipData>
-        <SlotType>33</SlotType>
-        <Tier>0</Tier>
-        <Description>A standard dice that any gambler can utilize.</Description>
-        <Usable/>
-        <BagType>1</BagType>
-        <MpCost>30</MpCost>
-        <Activate duration="1">DiceActivate</Activate>
-        <feedPower>5</feedPower>
-        <DisplayId>Classic Dice</DisplayId>
-    </Object>
-    <Object type="0x583a" id="Power Dice">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x41b</Index>
-        </Texture>
-        <SlotType>33</SlotType>
-        <Tier>1</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Duration - 2  " description="Applies a random gambler effect."/>
-        </ExtraTooltipData>
-        <Description>Seems like a regular dice but seems to glow just a bit.</Description>
-        <Usable/>
-        <BagType>1</BagType>
-        <MpCost>35</MpCost>
-        <ActivateOnEquip stat="114" amount="10">IncrementStat</ActivateOnEquip>
-        <Activate duration="2">DiceActivate</Activate>
-        <feedPower>10</feedPower>
-        <DisplayId>Power Dice</DisplayId>
-    </Object>
-    <Object type="0x583b" id="Violet Dice">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x41c</Index>
-        </Texture>
-        <SlotType>33</SlotType>
-        <Tier>2</Tier>
-        <Description>This dice tends to roll on 6 a lot.</Description>
-        <ExtraTooltipData>
-            <EffectInfo name="Duration - 3  " description="Applies a random gambler effect."/>
-        </ExtraTooltipData>
-        <Usable/>
-        <BagType>1</BagType>
-        <MpCost>35</MpCost>
-        <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
-        <Activate duration="3">DiceActivate</Activate>
-        <feedPower>20</feedPower>
-        <DisplayId>Violet Dice</DisplayId>
-    </Object>
-    <Object type="0x583c" id="Aqua Dice">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x41d</Index>
-        </Texture>
-        <SlotType>33</SlotType>
-        <Tier>3</Tier>
-        <Description>This dice feels pretty watery..</Description>
-        <ExtraTooltipData>
-            <EffectInfo name="Duration - 4  " description="Applies a random gambler effect."/>
-        </ExtraTooltipData>
-        <Usable/>
-        <BagType>2</BagType>
-        <FameBonus>1</FameBonus>
-        <MpCost>40</MpCost>
-        <ActivateOnEquip stat="114" amount="30">IncrementStat</ActivateOnEquip>
-        <Activate duration="4">DiceActivate</Activate>
-        <feedPower>45</feedPower>
-        <DisplayId>Aqua Dice</DisplayId>
-    </Object>
-    <Object type="0x583d" id="Red Dice">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x41e</Index>
-        </Texture>
-        <ExtraTooltipData>
-            <EffectInfo name="Duration - 5  " description="Applies a random gambler effect."/>
-        </ExtraTooltipData>
-        <SlotType>33</SlotType>
-        <Tier>4</Tier>
-        <Description>A warm dice that seems to let you control the spin of it's roll.</Description>
-        <Usable/>
-        <BagType>2</BagType>
-        <FameBonus>2</FameBonus>
-        <MpCost>40</MpCost>
-        <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
-        <Activate duration="5">DiceActivate</Activate>
-        <feedPower>90</feedPower>
-        <DisplayId>Red Dice</DisplayId>
-    </Object>
-    <Object type="0x583e" id="Yellow Dice">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x41f</Index>
-        </Texture>
-        <SlotType>33</SlotType>
-        <Tier>5</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Duration - 6  " description="Applies a random gambler effect."/>
-        </ExtraTooltipData>
-        <Description>It seems to have a mind of it's own.</Description>
-        <Usable/>
-        <BagType>4</BagType>
-        <FameBonus>3</FameBonus>
-        <MpCost>45</MpCost>
-        <ActivateOnEquip stat="114" amount="50">IncrementStat</ActivateOnEquip>
-        <Activate duration="6">DiceActivate</Activate>
-        <feedPower>185</feedPower>
-        <DisplayId>Yellow Dice</DisplayId>
-    </Object>
-    <Object type="0x583f" id="Stone Dice">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x412</Index>
-        </Texture>
-        <SlotType>33</SlotType>
-        <Tier>6</Tier>
-        <Description>A dice created from the stone found from the mountains where the gods abide.</Description>
-        <ExtraTooltipData>
-            <EffectInfo name="Duration - 6  " description="Applies a random gambler effect."/>
-        </ExtraTooltipData>
-        <Usable/>
-        <BagType>4</BagType>
-        <FameBonus>4</FameBonus>
-        <MpCost>55</MpCost>
-        <ActivateOnEquip stat="112" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="60">IncrementStat</ActivateOnEquip>
-        <Activate duration="6">DiceActivate</Activate>
-        <feedPower>380</feedPower>
-        <DisplayId>Stone Dice</DisplayId>
-    </Object>
+      <Class>Equipment</Class>
+      <Item/>
+	  <Texture>
+		  <File>d3LofiObjEmbed</File>
+	      <Index>0x40f</Index>
+	  </Texture>
+	  <ExtraTooltipData>
+         <EffectInfo name="" description="Applies a random gambler effect. (1s) "/>
+      </ExtraTooltipData>
+      <SlotType>33</SlotType>
+      <Tier>0</Tier>
+      <Description>A standard dice that any gambler can utilize.</Description>
+      <Usable/>
+      <BagType>1</BagType>
+      <MpCost>35</MpCost>
+      <Activate duration="1">DiceActivate</Activate>
+      <feedPower>5</feedPower>
+      <DisplayId>Classic Dice</DisplayId>
+   </Object>
+   <Object type="0x583a" id="Power Dice">
+      <Class>Equipment</Class>
+      <Item/>
+	  <Texture>
+		  <File>d3LofiObjEmbed</File>
+	      <Index>0x41b</Index>
+	  </Texture>
+      <SlotType>33</SlotType>
+      <Tier>1</Tier>
+      <ExtraTooltipData>
+         <EffectInfo name="" description="Applies a random gambler effect. (2s)"/>
+      </ExtraTooltipData>
+      <Description>Seems like a regular dice but seems to glow just a bit.</Description>
+      <Usable/>
+      <BagType>1</BagType>
+      <MpCost>45</MpCost>
+      <ActivateOnEquip stat="114" amount="10">IncrementStat</ActivateOnEquip>
+      <Activate duration="2">DiceActivate</Activate>
+      <feedPower>10</feedPower>
+      <DisplayId>Power Dice</DisplayId>
+   </Object>
+   <Object type="0x583b" id="Violet Dice">
+      <Class>Equipment</Class>
+      <Item/>
+	  <Texture>
+		  <File>d3LofiObjEmbed</File>
+	      <Index>0x41c</Index>
+	  </Texture>
+      <SlotType>33</SlotType>
+      <Tier>2</Tier>
+      <Description>This dice tends to roll on 6 a lot.</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="" description="Applies a random gambler effect. (3s)"/>
+      </ExtraTooltipData>
+      <Usable/>
+      <BagType>1</BagType>
+      <MpCost>55</MpCost>
+      <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
+      <Activate duration="3">DiceActivate</Activate>
+      <feedPower>20</feedPower>
+      <DisplayId>Violet Dice</DisplayId>
+   </Object>
+   <Object type="0x583c" id="Aqua Dice">
+      <Class>Equipment</Class>
+      <Item/>
+	  <Texture>
+		  <File>d3LofiObjEmbed</File>
+	      <Index>0x41d</Index>
+	  </Texture>
+      <SlotType>33</SlotType>
+      <Tier>3</Tier>
+      <Description>This dice feels pretty watery..</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="" description="Applies a random gambler effect. (4s)"/>
+      </ExtraTooltipData>
+      <Usable/>
+      <BagType>2</BagType>
+      <FameBonus>1</FameBonus>
+      <MpCost>65</MpCost>
+      <ActivateOnEquip stat="114" amount="30">IncrementStat</ActivateOnEquip>
+      <Activate duration="4">DiceActivate</Activate>
+      <feedPower>45</feedPower>
+      <DisplayId>Aqua Dice</DisplayId>
+   </Object>
+   <Object type="0x583d" id="Red Dice">
+      <Class>Equipment</Class>
+      <Item/>
+	  <Texture>
+		  <File>d3LofiObjEmbed</File>
+	      <Index>0x41e</Index>
+	  </Texture>
+	  <ExtraTooltipData>
+         <EffectInfo name="" description="Applies a random gambler effect. (4.5s)"/>
+      </ExtraTooltipData>
+      <SlotType>33</SlotType>
+      <Tier>4</Tier>
+      <Description>A warm dice that seems to let you control the spin of it's roll.</Description>
+      <Usable/>
+      <BagType>2</BagType>
+      <FameBonus>2</FameBonus>
+      <MpCost>75</MpCost>
+      <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
+      <Activate duration="4.5">DiceActivate</Activate>
+      <feedPower>90</feedPower>
+      <DisplayId>Red Dice</DisplayId>
+   </Object>
+   <Object type="0x583e" id="Yellow Dice">
+      <Class>Equipment</Class>
+      <Item/>
+	  <Texture>
+		  <File>d3LofiObjEmbed</File>
+	      <Index>0x41f</Index>
+	  </Texture>
+      <SlotType>33</SlotType>
+      <Tier>5</Tier>
+      <ExtraTooltipData>
+         <EffectInfo name="" description="Applies a random gambler effect. (5s)"/>
+      </ExtraTooltipData>
+      <Description>It seems to have a mind of it's own.</Description>
+      <Usable/>
+      <BagType>4</BagType>
+      <FameBonus>3</FameBonus>
+      <MpCost>80</MpCost>
+      <ActivateOnEquip stat="114" amount="50">IncrementStat</ActivateOnEquip>
+      <Activate duration="5">DiceActivate</Activate>
+      <feedPower>185</feedPower>
+      <DisplayId>Yellow Dice</DisplayId>
+   </Object>
+   <Object type="0x583f" id="Stone Dice">
+      <Class>Equipment</Class>
+      <Item/>
+	  <Texture>
+		  <File>d3LofiObjEmbed</File>
+	      <Index>0x412</Index>
+	  </Texture>
+      <SlotType>33</SlotType>
+      <Tier>6</Tier>
+      <Description>A dice created from the stone found from the mountains where the gods abide.</Description>
+      <ExtraTooltipData>
+         <EffectInfo name="" description="Applies a random gambler effect. (5.5s)"/>
+      </ExtraTooltipData>
+      <Usable/>
+      <BagType>4</BagType>
+      <FameBonus>4</FameBonus>
+      <MpCost>85</MpCost>
+      <ActivateOnEquip stat="112" amount="10">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="114" amount="60">IncrementStat</ActivateOnEquip>
+      <Activate duration="5.5">DiceActivate</Activate>
+      <feedPower>380</feedPower>
+      <DisplayId>Stone Dice</DisplayId>
+   </Object>
     <Object type="0x5831" id="Night Dice">
         <Class>Equipment</Class>
         <Item/>
@@ -31962,7 +31962,7 @@
             <Index>0x5f</Index>
         </Texture>
         <ExtraTooltipData>
-            <EffectInfo name="Duration - 6  " description="Applies a random devil gambler effect."/>
+            <EffectInfo name="" description="Applies a random devil gambler effect. (3.5s)"/>
         </ExtraTooltipData>
         <SlotType>33</SlotType>
         <Description>Gamblin' with the devil.</Description>
@@ -31970,11 +31970,10 @@
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <MpCost>60</MpCost>
-        <ActivateOnEquip stat="114" amount="250">IncrementStat</ActivateOnEquip>
-        <Activate duration="6">DDiceActivate</Activate>
-        <Activate effect="Surged" duration="6">ConditionEffectSelf</Activate>
+        <ActivateOnEquip stat="114" amount="110">IncrementStat</ActivateOnEquip>
+        <Activate duration="3.5">DDiceActivate</Activate>
+        <Activate effect="Surged" duration="3.5">ConditionEffectSelf</Activate>
         <feedPower>2000</feedPower>
-        <Legendary/>
         <DisplayId>Devil Dice</DisplayId>
     </Object>
     <Object type="0x45d1" id="Oracle's Nightmare">
