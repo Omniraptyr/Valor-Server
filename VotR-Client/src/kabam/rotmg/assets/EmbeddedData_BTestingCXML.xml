@@ -8882,7 +8882,7 @@
             <LifetimeMS>1600</LifetimeMS>
         </Projectile>
     </Object>
-	    <Object type="0x61fa" id="BD Lava Fanatic">
+    <Object type="0x61fa" id="BD Lava Fanatic">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Lava Fanatic</DisplayId>
@@ -8890,11 +8890,11 @@
             <File>chars16x16dEncounters</File>
             <Index>28</Index>
         </AnimatedTexture>
-		<HitSound>monster/demons_hit</HitSound>
-		<DeathSound>monster/demons_death</DeathSound>
+        <HitSound>monster/demons_hit</HitSound>
+        <DeathSound>monster/demons_death</DeathSound>
         <Size>130</Size>
         <MaxHitPoints>8000</MaxHitPoints>
-		<Defense>15</Defense>
+        <Defense>15</Defense>
         <Projectile id="0">
             <ObjectId>Fire Bolt</ObjectId>
             <Damage>140</Damage>
@@ -8902,33 +8902,33 @@
             <ArmorPiercing/>
             <LifetimeMS>2000</LifetimeMS>
         </Projectile>
-		<Projectile id="1">
+        <Projectile id="1">
             <ObjectId>Fire Bolt</ObjectId>
             <Damage>70</Damage>
             <Speed>60</Speed>
             <ArmorPiercing/>
             <LifetimeMS>2000</LifetimeMS>
         </Projectile>
-		<Projectile id="2">
+        <Projectile id="2">
             <ObjectId>Fire Bolt</ObjectId>
             <Damage>35</Damage>
             <Speed>60</Speed>
             <ArmorPiercing/>
             <LifetimeMS>2000</LifetimeMS>
         </Projectile>
-		<Projectile id="3">
-         <ObjectId>White Flame</ObjectId>
-         <Speed>80</Speed>
-         <Damage>50</Damage>
-         <Size>105</Size>
-         <LifetimeMS>500</LifetimeMS>
-         <MultiHit/>
-         <Amplitude>0.6</Amplitude>
-         <Frequency>0.5</Frequency>
-		 <ConditionEffect duration="6">Exhausted</ConditionEffect>
-      </Projectile>
+        <Projectile id="3">
+            <ObjectId>White Flame</ObjectId>
+            <Speed>80</Speed>
+            <Damage>50</Damage>
+            <Size>105</Size>
+            <LifetimeMS>500</LifetimeMS>
+            <MultiHit/>
+            <Amplitude>0.6</Amplitude>
+            <Frequency>0.5</Frequency>
+            <ConditionEffect duration="6">Exhausted</ConditionEffect>
+        </Projectile>
     </Object>
-	<Object type="0x6110" id="BD Stone Urgle">
+    <Object type="0x6110" id="BD Stone Urgle">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Stone Urgle</DisplayId>
@@ -8940,9 +8940,9 @@
         <DeathSound>monster/stone_walls_death</DeathSound>
         <Size>130</Size>
         <MaxHitPoints>10000</MaxHitPoints>
-		<Defense>20</Defense>
+        <Defense>20</Defense>
     </Object>
-	<Object type="0x6111" id="BD Bastille Defender">
+    <Object type="0x6111" id="BD Bastille Defender">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Bastille Defender</DisplayId>
@@ -8950,34 +8950,34 @@
             <File>chars16x16dEncounters</File>
             <Index>30</Index>
         </AnimatedTexture>
-	    <HitSound>monster/night_elves_hit</HitSound>
-		  <DeathSound>monster/night_elves_death</DeathSound>
+        <HitSound>monster/night_elves_hit</HitSound>
+        <DeathSound>monster/night_elves_death</DeathSound>
         <Size>110</Size>
         <MaxHitPoints>6500</MaxHitPoints>
-		<Defense>10</Defense>
-		<Projectile id="0">
+        <Defense>10</Defense>
+        <Projectile id="0">
             <ObjectId>Crypt Blast</ObjectId>
             <Damage>110</Damage>
             <Speed>90</Speed>
             <Wavy/>
             <LifetimeMS>3000</LifetimeMS>
         </Projectile>
-		<Projectile id="1">
+        <Projectile id="1">
             <ObjectId>Crypt Shield</ObjectId>
             <Damage>55</Damage>
-			<Speed>100</Speed>
-			<ConditionEffect duration="4">Stunned</ConditionEffect>
+            <Speed>100</Speed>
+            <ConditionEffect duration="4">Stunned</ConditionEffect>
             <LifetimeMS>3000</LifetimeMS>
         </Projectile>
-		<Projectile id="2">
+        <Projectile id="2">
             <ObjectId>White Ghost Shot</ObjectId>
             <Damage>35</Damage>
-			<Speed>100</Speed>
-			<ConditionEffect duration="6">Blind</ConditionEffect>
+            <Speed>100</Speed>
+            <ConditionEffect duration="6">Blind</ConditionEffect>
             <LifetimeMS>3000</LifetimeMS>
         </Projectile>
     </Object>
-		<Object type="0x6112" id="BD Bastille Brute">
+    <Object type="0x6112" id="BD Bastille Brute">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Bastille Brute</DisplayId>
@@ -8985,33 +8985,33 @@
             <File>chars16x16dEncounters</File>
             <Index>31</Index>
         </AnimatedTexture>
-	    <HitSound>monster/abyss_demons_hit</HitSound>
-		<DeathSound>monster/abyss_demons_death</DeathSound>
+        <HitSound>monster/abyss_demons_hit</HitSound>
+        <DeathSound>monster/abyss_demons_death</DeathSound>
         <Size>130</Size>
         <MaxHitPoints>7000</MaxHitPoints>
-		<Defense>25</Defense>
-		<Projectile id="0">
+        <Defense>25</Defense>
+        <Projectile id="0">
             <ObjectId>Stone Slash</ObjectId>
             <Damage>175</Damage>
             <Speed>70</Speed>
             <LifetimeMS>4000</LifetimeMS>
         </Projectile>
-		<Projectile id="1">
+        <Projectile id="1">
             <ObjectId>Dragon Attack Red Big Fireball</ObjectId>
             <Damage>85</Damage>
-			<Speed>65</Speed>
-			<MultiHit/>
-			<ConditionEffect duration="8">Armor Broken</ConditionEffect>
+            <Speed>65</Speed>
+            <MultiHit/>
+            <ConditionEffect duration="8">Armor Broken</ConditionEffect>
             <LifetimeMS>2000</LifetimeMS>
         </Projectile>
-		<Projectile id="2">
+        <Projectile id="2">
             <ObjectId>Fireball 2</ObjectId>
             <Damage>50</Damage>
-			<Speed>100</Speed>
+            <Speed>100</Speed>
             <LifetimeMS>2000</LifetimeMS>
         </Projectile>
     </Object>
-	<Object type="0x6113" id="BD Winged Beast">
+    <Object type="0x6113" id="BD Winged Beast">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Winged Beast</DisplayId>
@@ -9019,48 +9019,48 @@
             <File>chars16x16dEncounters</File>
             <Index>32</Index>
         </AnimatedTexture>
-	    <HitSound>monster/abyss_demons_hit</HitSound>
-		<DeathSound>monster/abyss_demons_death</DeathSound>
+        <HitSound>monster/abyss_demons_hit</HitSound>
+        <DeathSound>monster/abyss_demons_death</DeathSound>
         <Size>120</Size>
         <MaxHitPoints>3750</MaxHitPoints>
-		<Defense>5</Defense>
-		<Flying/>
-		<StunImmune/>
-		<Projectile id="0">
+        <Defense>5</Defense>
+        <Flying/>
+        <StunImmune/>
+        <Projectile id="0">
             <ObjectId>Meteor Bastille Blast</ObjectId>
             <Damage>25</Damage>
             <Speed>85</Speed>
             <LifetimeMS>4000</LifetimeMS>
-			<MultiHit/>
+            <MultiHit/>
             <Wavy/>
-			<ConditionEffect duration="3">Bleeding</ConditionEffect>
-			<ArmorPiercing/>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+            <ArmorPiercing/>
         </Projectile>
-		<Projectile id="1">
+        <Projectile id="1">
             <ObjectId>Meteor Bastille Blast</ObjectId>
             <Damage>50</Damage>
             <Speed>75</Speed>
             <LifetimeMS>4000</LifetimeMS>
-			<MultiHit/>
-			<ConditionEffect duration="3">Bleeding</ConditionEffect>
-			<ArmorPiercing/>
+            <MultiHit/>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+            <ArmorPiercing/>
         </Projectile>
-		<Projectile id="2">
+        <Projectile id="2">
             <ObjectId>Lava Circle</ObjectId>
             <Damage>85</Damage>
-			<Speed>100</Speed>
-			<ConditionEffect duration="2">Paralyzed</ConditionEffect>
+            <Speed>100</Speed>
+            <ConditionEffect duration="2">Paralyzed</ConditionEffect>
             <LifetimeMS>850</LifetimeMS>
         </Projectile>
-		<Projectile id="3">
+        <Projectile id="3">
             <ObjectId>Big Fireball</ObjectId>
             <Damage>125</Damage>
-			<Speed>100</Speed>
-			<ConditionEffect duration="2">Slowed</ConditionEffect>
+            <Speed>100</Speed>
+            <ConditionEffect duration="2">Slowed</ConditionEffect>
             <LifetimeMS>1200</LifetimeMS>
         </Projectile>
     </Object>
-	<Object type="0x6114" id="BD Lava Golem">
+    <Object type="0x6114" id="BD Lava Golem">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Lava Golem</DisplayId>
@@ -9068,155 +9068,155 @@
             <File>chars16x16dEncounters</File>
             <Index>33</Index>
         </AnimatedTexture>
-		<HitSound>monster/stone_walls_hit</HitSound>
-		<DeathSound>monster/stone_walls_death</DeathSound>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
         <Size>120</Size>
         <MaxHitPoints>3000</MaxHitPoints>
-		<Defense>30</Defense>
-		<Projectile id="0">
+        <Defense>30</Defense>
+        <Projectile id="0">
             <ObjectId>Dragon Attack Red Firewave</ObjectId>
             <Damage>80</Damage>
             <Speed>85</Speed>
-			<Amplitude>0.7</Amplitude>
+            <Amplitude>0.7</Amplitude>
             <Frequency>1.5</Frequency>
             <LifetimeMS>2500</LifetimeMS>
         </Projectile>
-		<Projectile id="1">
+        <Projectile id="1">
             <ObjectId>Red Fire</ObjectId>
             <Damage>60</Damage>
             <Speed>100</Speed>
             <LifetimeMS>4000</LifetimeMS>
-			<MultiHit/>
+            <MultiHit/>
         </Projectile>
     </Object>
-	<Object type="0x6115" id="BD Inferno Mage">
+    <Object type="0x6115" id="BD Inferno Mage">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Inferno Mage</DisplayId>
-		<AnimatedTexture>
-		  <File>chars8x8dHero1</File>
-		  <Index>34</Index>
-		</AnimatedTexture>
-		<HitSound>monster/night_elves_hit</HitSound>
-		<DeathSound>monster/night_elves_death</DeathSound>
+        <AnimatedTexture>
+            <File>chars8x8dHero1</File>
+            <Index>34</Index>
+        </AnimatedTexture>
+        <HitSound>monster/night_elves_hit</HitSound>
+        <DeathSound>monster/night_elves_death</DeathSound>
         <Size>110</Size>
         <MaxHitPoints>1400</MaxHitPoints>
-		<Defense>0</Defense>
-		<Projectile id="0">
+        <Defense>0</Defense>
+        <Projectile id="0">
             <ObjectId>Fire Boomerang</ObjectId>
             <Damage>120</Damage>
             <Speed>40</Speed>
-			<Amplitude>1</Amplitude>
+            <Amplitude>1</Amplitude>
             <Frequency>3</Frequency>
             <LifetimeMS>2500</LifetimeMS>
-			<MultiHit/>
+            <MultiHit/>
         </Projectile>
-		<Projectile id="1">
+        <Projectile id="1">
             <ObjectId>Red Star</ObjectId>
             <Damage>40</Damage>
             <Speed>100</Speed>
             <LifetimeMS>4000</LifetimeMS>
-			<ConditionEffect duration="4">Exhausted</ConditionEffect>
+            <ConditionEffect duration="4">Exhausted</ConditionEffect>
         </Projectile>
-		<Projectile id="2">
+        <Projectile id="2">
             <ObjectId>Red Planet Blast</ObjectId>
             <Damage>140</Damage>
             <Speed>80</Speed>
             <LifetimeMS>4000</LifetimeMS>
         </Projectile>
     </Object>
-	<Object type="0x6116" id="BD Inferno Brawler">
+    <Object type="0x6116" id="BD Inferno Brawler">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Inferno Brawler</DisplayId>
-		<AnimatedTexture>
-		  <File>chars8x8dHero1</File>
-		  <Index>36</Index>
-		</AnimatedTexture>
+        <AnimatedTexture>
+            <File>chars8x8dHero1</File>
+            <Index>36</Index>
+        </AnimatedTexture>
         <HitSound>monster/undead_dwarves_hit</HitSound>
         <DeathSound>monster/undead_dwarves_death</DeathSound>
         <Size>110</Size>
         <MaxHitPoints>1400</MaxHitPoints>
-		<Defense>0</Defense>
-		<Projectile id="0">
+        <Defense>0</Defense>
+        <Projectile id="0">
             <ObjectId>Fire Bolt</ObjectId>
             <Damage>60</Damage>
             <Speed>75</Speed>
             <LifetimeMS>2500</LifetimeMS>
         </Projectile>
-		<Projectile id="1">
+        <Projectile id="1">
             <ObjectId>Fire Shield</ObjectId>
             <Damage>40</Damage>
             <Speed>100</Speed>
             <LifetimeMS>1000</LifetimeMS>
-			<MultiHit/>
-			<ConditionEffect duration="3">Stunned</ConditionEffect>
+            <MultiHit/>
+            <ConditionEffect duration="3">Stunned</ConditionEffect>
         </Projectile>
     </Object>
-	<Object type="0x6117" id="BD Inferno Assassin">
+    <Object type="0x6117" id="BD Inferno Assassin">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Inferno Assassin</DisplayId>
-		<AnimatedTexture>
-		  <File>chars8x8dHero1</File>
-		  <Index>37</Index>
-		</AnimatedTexture>
-		<HitSound>monster/night_elves_hit</HitSound>
-		<DeathSound>monster/night_elves_death</DeathSound>
+        <AnimatedTexture>
+            <File>chars8x8dHero1</File>
+            <Index>37</Index>
+        </AnimatedTexture>
+        <HitSound>monster/night_elves_hit</HitSound>
+        <DeathSound>monster/night_elves_death</DeathSound>
         <Size>100</Size>
         <MaxHitPoints>1600</MaxHitPoints>
-		<Defense>0</Defense>
-		<Projectile id="0">
+        <Defense>0</Defense>
+        <Projectile id="0">
             <ObjectId>White Bolt</ObjectId>
             <MinDamage>35</MinDamage>
-			<MaxDamage>80</MaxDamage>
+            <MaxDamage>80</MaxDamage>
             <Speed>100</Speed>
             <LifetimeMS>1500</LifetimeMS>
         </Projectile>
     </Object>
-	<Object type="0x6118" id="BD Stone Orb">
+    <Object type="0x6118" id="BD Stone Orb">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Stone Orb</DisplayId>
-		<AnimatedTexture>
-		  <File>chars8x8dHero1</File>
-		  <Index>39</Index>
-		</AnimatedTexture>
-		<HitSound>monster/default_hit</HitSound>
-		<DeathSound>spell/fire_spray</DeathSound>
+        <AnimatedTexture>
+            <File>chars8x8dHero1</File>
+            <Index>39</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
         <Size>100</Size>
         <MaxHitPoints>3000</MaxHitPoints>
-		<Defense>20</Defense>
-		<Projectile id="0">
+        <Defense>20</Defense>
+        <Projectile id="0">
             <ObjectId>Stone Slash</ObjectId>
             <MinDamage>90</MinDamage>
-			<MaxDamage>130</MaxDamage>
+            <MaxDamage>130</MaxDamage>
             <Speed>50</Speed>
             <LifetimeMS>4500</LifetimeMS>
-			<MultiHit/>
-			<Amplitude>0.5</Amplitude>
+            <MultiHit/>
+            <Amplitude>0.5</Amplitude>
             <Frequency>1.5</Frequency>
-			<ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
-			<ConditionEffect duration="0.5">Confused</ConditionEffect>
+            <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
+            <ConditionEffect duration="0.5">Confused</ConditionEffect>
         </Projectile>
     </Object>
-	<Object type="0x6119" id="BD Faint Soul">
+    <Object type="0x6119" id="BD Faint Soul">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Faint Soul</DisplayId>
-		<AnimatedTexture>
-		  <File>chars8x8dHero1</File>
-		  <Index>41</Index>
-		</AnimatedTexture>
-		<HitSound>monster/default_hit</HitSound>
-		<DeathSound>spell/fire_spray</DeathSound>
+        <AnimatedTexture>
+            <File>chars8x8dHero1</File>
+            <Index>41</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
         <Size>90</Size>
         <MaxHitPoints>900</MaxHitPoints>
-		<Defense>20</Defense>
-		<Projectile id="0">
+        <Defense>20</Defense>
+        <Projectile id="0">
             <ObjectId>White Flame</ObjectId>
             <MinDamage>20</MinDamage>
-			<MaxDamage>40</MaxDamage>
+            <MaxDamage>40</MaxDamage>
             <Speed>50</Speed>
             <LifetimeMS>800</LifetimeMS>
         </Projectile>

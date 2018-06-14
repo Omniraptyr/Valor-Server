@@ -1,4 +1,4 @@
-﻿﻿package com.company.assembleegameclient.parameters {
+﻿package com.company.assembleegameclient.parameters {
 import com.company.assembleegameclient.map.Map;
 import com.company.util.KeyCodes;
 import com.company.util.MoreDateUtil;
@@ -11,6 +11,8 @@ import flash.utils.Dictionary;
 
 public class Parameters {
 
+    public static const BUILD_VERSION:String = "30";
+    public static const MINOR_VERSION:String = "L2";
     public static const FULL_BUILD:String = BUILD_VERSION + "." + MINOR_VERSION;
     public static const ENABLE_ENCRYPTION:Boolean = true;
     public static const PORT:int = 2050;
@@ -34,22 +36,16 @@ public class Parameters {
     public static const MAX_SINK_LEVEL:Number = 18;
     public static const TERMS_OF_USE_URL:String = "http://legal.decagames.io/tos";
     public static const PRIVACY_POLICY_URL:String = "http://legal.decagames.io/privacy";
-    public static const asfasfzxxc:String = "4";
-    public static const zxvzxvzxvvxz:String = "Z";
-    public static const gdghsaxc:int = 1;
-    public static const jtgjtrgg:int = 41;
     public static const USER_GENERATED_CONTENT_TERMS:String = "/UGDTermsofUse.html";
     public static const RANDOM1:String = "B1A5ED";
-    public static const BUILD_VERSION:String = "5"+asfasfzxxc+"."+jtgjtrgg*2;
     public static const RANDOM2:String = "612a806cac78114ba5013cb531";
-    public static const RSA_PUBLIC_KEY:String = 
-        "-----BEGIN PUBLIC KEY-----\n" + 
+    public static const RSA_PUBLIC_KEY:String =
+        "-----BEGIN PUBLIC KEY-----\n" +
         "MFswDQYJKoZIhvcNAQEBBQADSgAwRwJAeyjMOLhcK4o2AnFRhn8vPteUy5Fux/cX" +
         "N/J+wT/zYIEUINo02frn+Kyxx0RIXJ3CvaHkwmueVL8ytfqo8Ol/OwIDAQAB\n" +
         "-----END PUBLIC KEY-----";
     public static const skinTypes16:Vector.<int> = new <int>[1027, 0x0404, 1029, 1030, 10973];
     public static const itemTypes16:Vector.<int> = new <int>[5473, 5474, 5475, 5476, 10939];
-    public static const MINOR_VERSION:String = ""+zxvzxvzxvvxz+(gdghsaxc*2);
 
     public static var root:DisplayObject;
     public static var data_:Object = null;

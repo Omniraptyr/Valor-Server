@@ -1,4 +1,4 @@
-package kabam.rotmg.Market
+package kabam.rotmg.market
 {
 
 import kabam.rotmg.messaging.impl.data.PlayerShopItem;

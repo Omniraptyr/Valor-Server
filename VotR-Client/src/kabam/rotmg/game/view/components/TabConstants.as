@@ -13,7 +13,6 @@ public class TabConstants {
     public static const STATS_ICON_ID:int = 25;
     public static const BACKPACK_ICON_ID:int = 26;
     public static const PETS_ICON_ID:int = 27;
-    public static const MARKS_ICON_ID:int = 28;
 
 
 }

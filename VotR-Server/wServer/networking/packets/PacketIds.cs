@@ -112,7 +112,6 @@ namespace wServer.networking.packets
         SORFORGEREQUEST = 159,
         FORGEITEM = 160,
         UNBOXREQUEST = 161,
-        UNBOXRESULT = 162,
-        CHECKER = 163
+        UNBOXRESULT = 162
     }
 }

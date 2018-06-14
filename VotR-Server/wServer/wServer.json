@@ -19,7 +19,7 @@
   "serverSettings": {
     "logFolder": "./logs",
     "resourceFolder": "./resources",
-    "version": "54.82.Z2",
+    "version": "30.L2",
     "tps": "7",
     "mode": "Single",
     "key": "B1A5ED",

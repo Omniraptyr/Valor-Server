@@ -78,7 +78,6 @@ import kabam.rotmg.ui.signals.ShowLoadingUISignal;
 import kabam.rotmg.ui.signals.ShowTitleUISignal;
 import kabam.rotmg.ui.signals.UpdateBackpackTabSignal;
 import kabam.rotmg.ui.signals.UpdateHUDSignal;
-import kabam.rotmg.ui.signals.UpdateMarkTabSignal;
 import kabam.rotmg.ui.signals.UpdatePotionInventorySignal;
 import kabam.rotmg.ui.view.AccountScreenMediator;
 import kabam.rotmg.ui.view.AgeVerificationDialog;
@@ -141,7 +140,6 @@ public class UIConfig implements IConfig {
         this.injector.map(PotionInventoryModel).asSingleton();
         this.injector.map(UpdatePotionInventorySignal).asSingleton();
         this.injector.map(UpdateBackpackTabSignal).asSingleton();
-        this.injector.map(UpdateMarkTabSignal).asSingleton();
         this.injector.map(StatsUndockedSignal).asSingleton();
         this.injector.map(StatsDockedSignal).asSingleton();
         this.injector.map(StatsTabHotKeyInputSignal).asSingleton();

@@ -122,12 +122,6 @@ public class StatData {
     public static const PROTECTIONPOINTS = 125;
     public static const PROTECTIONMAX = 126;
     public static const EFFECT = 127;
-    public static const MARKSENABLED = 128;
-    public static const MARK = 129;
-    public static const NODE1 = 130;
-    public static const NODE2 = 131;
-    public static const NODE3 = 132;
-    public static const NODE4 = 133;
 
     // unimplemented
     public static const DAMAGE_MIN:int = 98;

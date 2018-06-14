@@ -1,14 +1,14 @@
-﻿﻿package kabam.rotmg.application.impl {
+﻿package kabam.rotmg.application.impl {
 import com.company.assembleegameclient.parameters.Parameters;
 
 import kabam.rotmg.application.api.ApplicationSetup;
 
 public class ProductionSetup implements ApplicationSetup {
-//144.217.80.74
+
     private const SERVER:String = "144.217.80.74:8080";
     private const UNENCRYPTED:String = ("http://" + SERVER);
     private const ENCRYPTED:String = ("http://" + SERVER);
-    private const BUILD_LABEL:String = "<font color='#FFA500'>VotR Legacy Testing</font>";
+    private const BUILD_LABEL:String = "<font color='#FFA500'>VotR Legacy TESTING</font>";
 
 
     public function getAppEngineUrl(_arg_1:Boolean = false):String {

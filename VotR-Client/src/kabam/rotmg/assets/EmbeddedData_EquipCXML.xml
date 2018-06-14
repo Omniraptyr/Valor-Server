@@ -27510,7 +27510,7 @@
 <Object type="0xffd" id="Armor of the Giants" setType="0x0009" setName="Ancient Colossus Set">
       <Class>Equipment</Class>
       <Item/>
-    <Texture>	
+    <Texture>
       <File>d3LofiObjEmbed</File>
       <Index>0x3d</Index>
     </Texture>

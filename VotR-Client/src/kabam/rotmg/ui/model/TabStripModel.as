@@ -5,7 +5,6 @@ public class TabStripModel {
     public static const STATS:String = "Stats";
     public static const BACKPACK:String = "Backpack";
     public static const PETS:String = "Pets";
-    public static const MARKS:String = "Marks";
 
     public var currentSelection:String;
 

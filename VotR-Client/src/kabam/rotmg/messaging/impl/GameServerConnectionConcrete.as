@@ -73,8 +73,8 @@ import kabam.lib.net.api.MessageMap;
 import kabam.lib.net.api.MessageProvider;
 import kabam.lib.net.impl.Message;
 import kabam.lib.net.impl.SocketServer;
-import kabam.rotmg.Market.MarketItemsResultSignal;
-import kabam.rotmg.Market.MarketResultSignal;
+import kabam.rotmg.market.MarketItemsResultSignal;
+import kabam.rotmg.market.MarketResultSignal;
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.core.view.PurchaseConfirmationDialog;
 import kabam.rotmg.arena.control.ArenaDeathSignal;
@@ -242,7 +242,6 @@ import kabam.rotmg.ui.model.UpdateGameObjectTileVO;
 import kabam.rotmg.ui.signals.ShowHideKeyUISignal;
 import kabam.rotmg.ui.signals.ShowKeySignal;
 import kabam.rotmg.ui.signals.UpdateBackpackTabSignal;
-import kabam.rotmg.ui.signals.UpdateMarkTabSignal;
 import kabam.rotmg.ui.view.NotEnoughGoldDialog;
 import kabam.rotmg.ui.view.TitleView;
 
@@ -275,7 +274,6 @@ public class GameServerConnectionConcrete extends GameServerConnection {
     private var zombify:ZombifySignal;
     private var setGameFocus:SetGameFocusSignal;
     private var updateBackpackTab:UpdateBackpackTabSignal;
-    private var updateMarkTab:UpdateMarkTabSignal;
     private var petFeedResult:PetFeedResultSignal;
     private var closeDialogs:CloseDialogsSignal;
     private var openDialog:OpenDialogSignal;
@@ -302,7 +300,6 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         this.updateGameObjectTileSignal = this.injector.getInstance(UpdateGameObjectTileSignal);
         this.petFeedResult = this.injector.getInstance(PetFeedResultSignal);
         this.updateBackpackTab = StaticInjectorContext.getInjector().getInstance(UpdateBackpackTabSignal);
-        this.updateMarkTab = StaticInjectorContext.getInjector().getInstance(UpdateMarkTabSignal);
         this.updateActivePet = this.injector.getInstance(UpdateActivePet);
         this.petsModel = this.injector.getInstance(PetsModel);
         this.friendModel = this.injector.getInstance(FriendModel);
@@ -1825,27 +1822,6 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                     break;
                 case StatData.EFFECT:
                     _local4.setEffect(_local7.strStatValue_);
-                    break;
-                case StatData.MARKSENABLED:
-                    _local4.marksEnabled_ = _local8;
-                    if (_arg3) {
-                        this.updateMarkTab.dispatch(Boolean(_local8));
-                    }
-                    break;
-                case StatData.MARK:
-                    _local4.mark_ = _local8;
-                    break;
-                case StatData.NODE1:
-                    _local4.node1_ = _local8;
-                    break;
-                case StatData.NODE2:
-                    _local4.node2_ = _local8;
-                    break;
-                case StatData.NODE3:
-                    _local4.node3_ = _local8;
-                    break;
-                case StatData.NODE4:
-                    _local4.node4_ = _local8;
                     break;
             }
         }
