@@ -718,8 +718,9 @@ namespace wServer.realm.entities
             if (owner.Name.Equals("OceanTrench"))
                 OxygenBar = 100;
             if (owner.Name.Equals("Nexus")) {
-                HealthPots = new ItemStacker(this, 254, 0x0A22, 6, 6);
-                MagicPots = new ItemStacker(this, 255, 0x0A23, 6, 6);
+                int amount = Stats[10] / 100 * 3;
+                HealthPots = new ItemStacker(this, 254, 0x0A22, amount, amount);
+                MagicPots = new ItemStacker(this, 255, 0x0A23, amount, amount);
                 SaveToCharacter();
             }
 
@@ -764,7 +765,7 @@ namespace wServer.realm.entities
             Timer timer = new Timer(delay, (int)cei);
             timer.Elapsed += (o, e) => {
                 Client.Player?.ApplyConditionEffect(cei);
-                if (timerList.Exists(t => t == timer)) timerList.Remove(timer); //feels inefficient, prob isn't tho
+                if (timerList.Exists(t => t == timer)) timerList.Remove(timer);
                 timer.Dispose();
             };
             timer.Enabled = true;

@@ -54,7 +54,7 @@ namespace wServer.networking.handlers
                 if (ItemValue() == 0x0) return;
                 Item item = client.Player.Manager.Resources.GameData.Items[ItemValue()];
 
-                client.Player.SendError("You have forged the item \"" + (item.DisplayId == "" ?
+                client.Player.SendError("You have forged the item \"" + (item.DisplayId == null || item.DisplayId == "" ?
                                                                         item.ObjectId
                                                                         : item.DisplayId) + "\"");
                 client.Player.Inventory[packet.SorSlot.SlotId] = item;

@@ -12,7 +12,7 @@ namespace wServer.realm
             _parent = parent;
             _base = Utils.ResizeArray(
                 parent.Owner.Client.Character.Stats, 
-                StatsManager.NumStatTypes);
+                StatsManager.NUM_STAT_TYPES);
             
             ReCalculateValues();
         }

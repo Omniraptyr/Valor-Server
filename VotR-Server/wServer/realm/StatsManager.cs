@@ -6,11 +6,11 @@ namespace wServer.realm
 {
     public class StatsManager
     {
-        internal const int NumStatTypes = 15; // change this to add more stats
-        private const float MinAttackMult = 0.5f;
-        private const float MaxAttackMult = 2f;
-        private const float MinAttackFreq = 0.0015f;
-        private const float MaxAttackFreq = 0.008f;
+        internal const int NUM_STAT_TYPES = 15; // change this to add more stats
+        private const float MIN_ATTACK_MULT = 0.5f;
+        private const float MAX_ATTACK_MULT = 2f;
+        private const float MIN_ATTACK_FREQ = 0.0015f;
+        private const float MAX_ATTACK_FREQ = 0.008f;
 
         internal readonly Player Owner;
         internal readonly BaseStatManager Base;
@@ -26,8 +26,8 @@ namespace wServer.realm
             Base = new BaseStatManager(this);
             Boost = new BoostStatManager(this);
 
-            _stats = new SV<int>[NumStatTypes];
-            for (var i = 0; i < NumStatTypes; i++)
+            _stats = new SV<int>[NUM_STAT_TYPES];
+            for (var i = 0; i < NUM_STAT_TYPES; i++)
                 _stats[i] = new SV<int>(Owner, GetStatType(i), this[i], i != 0 && i!= 1); // make maxHP and maxMP global update
         }
         
@@ -58,9 +58,9 @@ namespace wServer.realm
                 return 1;
 
             if (Owner.HasConditionEffect(ConditionEffects.Weak))
-                return MinAttackMult;
+                return MIN_ATTACK_MULT;
 
-            var mult = MinAttackMult + (this[2] / 75f) * (MaxAttackMult - MinAttackMult);
+            var mult = MIN_ATTACK_MULT + (this[2] / 75f) * (MAX_ATTACK_MULT - MIN_ATTACK_MULT);
             if (Owner.HasConditionEffect(ConditionEffects.Damaging))
                 mult *= 1.5f;
 
@@ -69,35 +69,20 @@ namespace wServer.realm
         public int RelentlessDamage()
         {
             if (Owner.HasConditionEffect(ConditionEffects.Relentless))
-            {
                 return Owner.Surge * 6;
-            }
-            else
-            {
-                return 0;
-            }
+            return 0;
         }
         public int GraspDamage()
         {
             if (Owner.HasConditionEffect(ConditionEffects.GraspofZol))
-            {
                 return 125;
-            }
-            else
-            {
-                return 0;
-            }
+            return 0;
         }
         public int VengeanceDamage()
         {
             if (Owner.HasConditionEffect(ConditionEffects.Vengeance))
-            {
                 return (Owner.Stats[0]-Owner.HP)/2;
-            }
-            else
-            {
-                return 0;
-            }
+            return 0;
         }
         private float CriticalModifier()
         {
@@ -106,7 +91,7 @@ namespace wServer.realm
             var ret = 1.0f;
             if (luckNm <= Owner.Stats[9])
             {
-                ret *= FinalMightMultiplier();
+                ret *= MightMultiplier();
                 Owner.Client.SendPacket(new CriticalDamage()
                 {
                     IsCritical = true,
@@ -125,135 +110,22 @@ namespace wServer.realm
             return ret;
         }
 
-        public float FinalMightMultiplier()
+        public float MightMultiplier()
         {
+            float ret = Math.Min(3.5f, 1.0f + Owner.Stats[8] / 100);
             if (Owner.HasConditionEffect(ConditionEffects.Bravery))
-            {
-                return MightMultiplier() * 2;
-            }
+                return ret * 2;
             else if (Owner.HasConditionEffect(ConditionEffects.GraspofZol))
-            {
-                return MightMultiplier() * 3;
-            }
-            else
-            {
-                return MightMultiplier();
-            }
-        }
-
-        private float MightMultiplier()
-        {
-
-            if (Owner.Stats[8] >= 0 && Owner.Stats[8] <= 10)
-            {
-                return 1.1f;
-            }
-            else if (Owner.Stats[8] >= 11 && Owner.Stats[8] <= 20)
-            {
-                return 1.2f;
-            }
-            else if (Owner.Stats[8] >= 21 && Owner.Stats[8] <= 30)
-            {
-                return 1.3f;
-            }
-            else if (Owner.Stats[8] >= 31 && Owner.Stats[8] <= 40)
-            {
-                return 1.4f;
-            }
-            else if (Owner.Stats[8] >= 41 && Owner.Stats[8] <= 50)
-            {
-                return 1.5f;
-            }
-            else if (Owner.Stats[8] >= 51 && Owner.Stats[8] <= 60)
-            {
-                return 1.6f;
-            }
-            else if (Owner.Stats[8] >= 61 && Owner.Stats[8] <= 70)
-            {
-                return 1.7f;
-            }
-            else if (Owner.Stats[8] >= 71 && Owner.Stats[8] <= 80)
-            {
-                return 1.8f;
-            }
-            else if (Owner.Stats[8] >= 81 && Owner.Stats[8] <= 90)
-            {
-                return 1.9f;
-            }
-            else if (Owner.Stats[8] >= 91 && Owner.Stats[8] <= 100)
-            {
-                return 2.0f;
-            }
-            else if (Owner.Stats[8] >= 101 && Owner.Stats[8] <= 110)
-            {
-                return 2.1f;
-            }
-            else if (Owner.Stats[8] >= 111 && Owner.Stats[8] <= 120)
-            {
-                return 2.2f;
-            }
-            else if (Owner.Stats[8] >= 121 && Owner.Stats[8] <= 130)
-            {
-                return 2.3f;
-            }
-            else if (Owner.Stats[8] >= 131 && Owner.Stats[8] <= 140)
-            {
-                return 2.4f;
-            }
-            else if (Owner.Stats[8] >= 141 && Owner.Stats[8] <= 150)
-            {
-                return 2.5f;
-            }
-            else if (Owner.Stats[8] >= 151 && Owner.Stats[8] <= 160)
-            {
-                return 2.6f;
-            }
-            else if (Owner.Stats[8] >= 161 && Owner.Stats[8] <= 170)
-            {
-                return 2.7f;
-            }
-            else if (Owner.Stats[8] >= 171 && Owner.Stats[8] <= 180)
-            {
-                return 2.8f;
-            }
-            else if (Owner.Stats[8] >= 181 && Owner.Stats[8] <= 190)
-            {
-                return 2.9f;
-            }
-            else if (Owner.Stats[8] >= 191 && Owner.Stats[8] <= 200)
-            {
-                return 3.0f;
-            }
-            else if (Owner.Stats[8] >= 201 && Owner.Stats[8] <= 210)
-            {
-                return 3.1f;
-            }
-            else if (Owner.Stats[8] >= 211 && Owner.Stats[8] <= 220)
-            {
-                return 3.2f;
-            }
-            else if (Owner.Stats[8] >= 221 && Owner.Stats[8] <= 230)
-            {
-                return 3.3f;
-            }
-            else if (Owner.Stats[8] >= 231 && Owner.Stats[8] <= 240)
-            {
-                return 3.4f;
-            }
-            else if (Owner.Stats[8] >= 241 && Owner.Stats[8] <= 250 || Owner.Stats[8] >= 250)
-            {
-                return 3.5f;
-            }
-            return 1.0f;
-
+                return ret * 3;
+            return ret;
         }
 
         public float GetAttackFrequency()
         {
             if (Owner.HasConditionEffect(ConditionEffects.Dazed))
-                return MinAttackFreq;
+                return MIN_ATTACK_FREQ;
 
-            var rof = MinAttackFreq + (this[5] / 75f) * (MaxAttackFreq - MinAttackFreq);
+            var rof = MIN_ATTACK_FREQ + (this[5] / 75f) * (MAX_ATTACK_FREQ - MIN_ATTACK_FREQ);
 
             if (Owner.HasConditionEffect(ConditionEffects.Berserk))
                 rof *= 1.5f;

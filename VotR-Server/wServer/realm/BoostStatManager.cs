@@ -20,7 +20,7 @@ namespace wServer.realm
             _parent = parent;
             _player = parent.Owner;
 
-            _boost = new int[StatsManager.NumStatTypes];
+            _boost = new int[StatsManager.NUM_STAT_TYPES];
             _boostSV = new SV<int>[_boost.Length];
             for (var i = 0; i < _boostSV.Length; i++)
                 _boostSV[i] = new SV<int>(_player, StatsManager.GetBoostStatType(i), _boost[i], i != 0 && i != 1);

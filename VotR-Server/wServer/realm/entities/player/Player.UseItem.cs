@@ -523,7 +523,7 @@ namespace wServer.realm.entities
                         AEMagic2(time, item, target, eff);
                         break;
                     case ActivateEffects.DiceActivate:
-                        AEDiceActivate(time, item, target, eff);
+                        AEDice(time, item, target, eff);
                         break;
                     case ActivateEffects.BigStasisBlast:
                         BigStasisBlast(time, item, target, eff);
@@ -554,29 +554,14 @@ namespace wServer.realm.entities
         }
         private void AEDDiceActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            Random rnd = new Random();
-            int ability = rnd.Next(1, 7);
-            switch (ability)
-            {
-                case 1:
-                    ApplyConditionEffect(ConditionEffectIndex.Bravery, eff.DurationMS);
-                    break;
-                case 2:
-                    ApplyConditionEffect(ConditionEffectIndex.Armored, eff.DurationMS);
-                    break;
-                case 3:
-                    ApplyConditionEffect(ConditionEffectIndex.Berserk, eff.DurationMS);
-                    break;
-                case 4:
-                    ApplyConditionEffect(ConditionEffectIndex.Speedy, eff.DurationMS);
-                    break;
-                case 5:
-                    ApplyConditionEffect(ConditionEffectIndex.Healing, eff.DurationMS);
-                    break;
-                case 6:
-                    ApplyConditionEffect(ConditionEffectIndex.Damaging, eff.DurationMS);
-                    break;
-            }
+            ConditionEffectIndex[] gamblerEffs = {
+                ConditionEffectIndex.Armored,
+                ConditionEffectIndex.Healing,
+                ConditionEffectIndex.Sick
+            };
+            int roll = new Random().Next(0, 3);
+            if (roll != 3)
+                ApplyConditionEffect(gamblerEffs[roll], eff.DurationMS);
         }
         private void AEUnlockEmote(RealmTime time, Item item, ActivateEffect eff)
         {
@@ -1743,31 +1728,15 @@ namespace wServer.realm.entities
             }
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
         }
-        private void AEDiceActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
-        {
-            Random rnd = new Random();
-            int ability = rnd.Next(1, 7);
-            switch (ability)
-            {
-                case 1:
-                    ApplyConditionEffect(ConditionEffectIndex.Bravery, eff.DurationMS);
-                    break;
-                case 2:
-                    ApplyConditionEffect(ConditionEffectIndex.ArmorBroken, eff.DurationMS);
-                    break;
-                case 3:
-                    ApplyConditionEffect(ConditionEffectIndex.Berserk, eff.DurationMS);
-                    break;
-                case 4:
-                    ApplyConditionEffect(ConditionEffectIndex.Speedy, eff.DurationMS);
-                    break;
-                case 5:
-                    ApplyConditionEffect(ConditionEffectIndex.Healing, eff.DurationMS);
-                    break;
-                case 6:
-                    ApplyConditionEffect(ConditionEffectIndex.Damaging, eff.DurationMS);
-                    break;
-            }
+        private void AEDice(RealmTime time, Item item, Position target, ActivateEffect eff) {
+            ConditionEffectIndex[] gamblerEffs = {
+                ConditionEffectIndex.Sick,
+                ConditionEffectIndex.Berserk,
+                ConditionEffectIndex.Damaging
+            };
+            int roll = new Random().Next(0, 3);
+            if (roll != 3)
+                ApplyConditionEffect(gamblerEffs[roll], eff.DurationMS);
         }
     
         private void AEUnlockSkin(RealmTime time, Item item, Position target, ActivateEffect eff)

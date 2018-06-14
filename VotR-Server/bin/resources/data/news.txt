@@ -1,7 +1,7 @@
 [{
 	"slot": 3, 
 	"linkType": 1, 
-	"title": "VotR Wiki", 
+	"title": "Wiki", 
 	"image": "https://cdn.discordapp.com/attachments/368574563002613765/374695719828717568/Untitledhvhjvhjvhvhcgcgc.png", 
 	"priority": 759, 
 	"linkDetail": "", 
@@ -12,10 +12,10 @@
 {
 	"slot": 2, 
 	"linkType": 1, 
-	"title": "Our Discord", 
+	"title": "Discord", 
 	"image": "https://cdn.discordapp.com/attachments/368574563002613765/374695719828717568/Untitledhvhjvhjvhvhcgcgc.png", 
 	"priority": 756, 
-	"linkDetail": "https://discord.gg/JGXFatR", 
+	"linkDetail": "https://discord.gg/thvsHPA", 
 	"platform": "kabam.com,kongregate,steam,rotmg", 
 	"startTime": 1412730000000, 
 	"endTime": 1913417540000
