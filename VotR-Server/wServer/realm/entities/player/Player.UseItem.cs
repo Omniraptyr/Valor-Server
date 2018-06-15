@@ -556,7 +556,7 @@ namespace wServer.realm.entities
         {
             ConditionEffectIndex[] gamblerEffs = {
                 ConditionEffectIndex.Armored,
-                ConditionEffectIndex.Healing,
+                ConditionEffectIndex.Invulnerable,
                 ConditionEffectIndex.Sick
             };
             int roll = new Random().Next(0, 3);

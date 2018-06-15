@@ -28465,19 +28465,19 @@
             <Index>0x411</Index>
         </Texture>
         <ExtraTooltipData>
-            <EffectInfo name="Duration - 5  " description="Applies a random gambler effect."/>
+            <EffectInfo name="" description="Applies a random gambler effect. (5s)"/>
         </ExtraTooltipData>
         <SlotType>33</SlotType>
         <Description>A dice that embraces the power of the night.</Description>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
-        <MpCost>50</MpCost>
+        <MpCost>75</MpCost>
         <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="112" amount="40">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
         <Activate duration="5">DiceActivate</Activate>
-        <Activate effect="Armored" duration="6">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="1">ConditionEffectSelf</Activate>
         <feedPower>880</feedPower>
         <DisplayId>Night Dice</DisplayId>
     </Object>
