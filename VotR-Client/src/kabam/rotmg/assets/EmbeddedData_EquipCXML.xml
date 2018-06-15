@@ -11128,150 +11128,6 @@
         <OldSound>bladeSwing</OldSound>
         <DisplayId>Celestial Blade</DisplayId>
     </Object>
-    <Object type="0xcc9" id="Soft Drink">
-        <Class>Equipment</Class>
-        <Item/>
-        <SlotType>10</SlotType>
-        <Texture>
-            <File>lofiObj2</File>
-            <Index>0x155</Index>
-        </Texture>
-        <Description>{equip.Food_for_your_pet._To_quench_your_petAPOSs_thirstBANG}</Description>
-        <BagType>2</BagType>
-        <feedPower>100</feedPower>
-        <Soulbound/>
-        <DisplayId>{equip.Soft_Drink}</DisplayId>
-    </Object>
-    <Object type="0xccb" id="Fries">
-        <Class>Equipment</Class>
-        <Item/>
-        <SlotType>10</SlotType>
-        <Texture>
-            <File>lofiObj2</File>
-            <Index>0x157</Index>
-        </Texture>
-        <Description>{equip.Food_for_your_pet._Fresh_cut_and_steaming_hotBANG}</Description>
-        <BagType>2</BagType>
-        <feedPower>250</feedPower>
-        <Potion/>
-        <Soulbound/>
-        <DisplayId>{equip.Fries}</DisplayId>
-    </Object>
-    <Object type="0xcc6" id="Great Taco">
-        <Class>Equipment</Class>
-        <Item/>
-        <SlotType>10</SlotType>
-        <Texture>
-            <File>lofiObj2</File>
-            <Index>0x152</Index>
-        </Texture>
-        <Description>{equip.Food_for_your_pet._Contains_fresh_salsaBANG}</Description>
-        <BagType>2</BagType>
-        <feedPower>500</feedPower>
-        <Soulbound/>
-        <DisplayId>{equip.Great_Taco}</DisplayId>
-    </Object>
-    <Object type="0xcc5" id="Power Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <SlotType>10</SlotType>
-        <Texture>
-            <File>lofiObj2</File>
-            <Index>0x151</Index>
-        </Texture>
-        <Description>{equip.Food_for_your_pet._Cheesy_and_delicious.}</Description>
-        <BagType>2</BagType>
-        <feedPower>750</feedPower>
-        <Soulbound/>
-        <DisplayId>{equip.Power_Pizza}</DisplayId>
-    </Object>
-    <Object type="0xcc4" id="Chocolate Cream Sandwich Cookie">
-        <Class>Equipment</Class>
-        <Item/>
-        <SlotType>10</SlotType>
-        <Texture>
-            <File>lofiObj2</File>
-            <Index>0x150</Index>
-        </Texture>
-        <Description>{equip.Food_for_your_pet._Goes_best_with_milkBANG}</Description>
-        <BagType>2</BagType>
-        <feedPower>1111</feedPower>
-        <Soulbound/>
-        <DisplayId>{equip.Chocolate_Cream_Sandwich_Cookie}</DisplayId>
-    </Object>
-    <Object type="0xcca" id="Grapes of Wrath">
-        <Class>Equipment</Class>
-        <Item/>
-        <SlotType>10</SlotType>
-        <Texture>
-            <File>lofiObj2</File>
-            <Index>0x156</Index>
-        </Texture>
-        <Description>{equip.Food_for_your_pet._Super_healthy,_super_delicious,_super_wr}</Description>
-        <BagType>2</BagType>
-        <feedPower>1500</feedPower>
-        <Soulbound/>
-        <DisplayId>{equip.Grapes_of_Wrath}</DisplayId>
-    </Object>
-    <Object type="0xcc8" id="Superburger">
-        <Class>Equipment</Class>
-        <Item/>
-        <SlotType>10</SlotType>
-        <Texture>
-            <File>lofiObj2</File>
-            <Index>0x154</Index>
-        </Texture>
-        <Description>{equip.Food_for_your_pet._A_hearty_classicBANG}</Description>
-        <BagType>2</BagType>
-        <feedPower>2000</feedPower>
-        <Soulbound/>
-        <DisplayId>{equip.Superburger}</DisplayId>
-    </Object>
-    <Object type="0xcc7" id="Double Cheeseburger Deluxe">
-        <Class>Equipment</Class>
-        <Item/>
-        <SlotType>10</SlotType>
-        <Texture>
-            <File>lofiObj2</File>
-            <Index>0x153</Index>
-        </Texture>
-        <Description>{equip.Food_for_your_pet._The_ultimate_deluxe_cheeseburgerBANG}</Description>
-        <BagType>2</BagType>
-        <feedPower>3000</feedPower>
-        <Soulbound/>
-        <DisplayId>{equip.Double_Cheeseburger_Deluxe}</DisplayId>
-    </Object>
-    <Object type="0xccc" id="Ambrosia">
-        <Class>Equipment</Class>
-        <Item/>
-        <SlotType>10</SlotType>
-        <Texture>
-            <File>lofiObj2</File>
-            <Index>0x158</Index>
-        </Texture>
-        <Description>{equip.Food_for_your_pet._The_nectar_of_the_gods_which_holds_great}</Description>
-        <BagType>2</BagType>
-        <feedPower>5000</feedPower>
-        <Potion/>
-        <Soulbound/>
-        <DisplayId>{equip.Ambrosia}</DisplayId>
-    </Object>
-    <Object type="0xccd" id="Forest Maze Key">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>lofiObj3</File>
-            <Index>0x3de</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>{equip.A_key_which_opens_an_entrance_to_the_Forest_Maze.}</Description>
-        <Sound>use_key</Sound>
-        <Consumable/>
-        <Soulbound/>
-        <Activate id="Forest Maze Portal">Create</Activate>
-        <feedPower>115</feedPower>
-        <DisplayId>{equip.Forest_Maze_Key}</DisplayId>
-    </Object>
     <Object type="0xccf" id="Woodland Labyrinth Key">
         <Class>Equipment</Class>
         <Item/>
@@ -19598,80 +19454,6 @@
         <feedPower>230</feedPower>
         <DisplayId>Cornfield of Peril Key</DisplayId>
     </Object>
-    <Object type="0xcd0" id="Cranberries">
-        <Class>Equipment</Class>
-        <Item/>
-        <SlotType>10</SlotType>
-        <Texture>
-            <File>lofiObj2</File>
-            <Index>0x15e</Index>
-        </Texture>
-        <Description>Food for your pet. Tart and tangy.</Description>
-        <BagType>2</BagType>
-        <feedPower>250</feedPower>
-        <Soulbound/>
-        <DisplayId>Cranberries</DisplayId>
-    </Object>
-    <Object type="0xcd1" id="Ear of Corn">
-        <Class>Equipment</Class>
-        <Item/>
-        <SlotType>10</SlotType>
-        <Texture>
-            <File>lofiObj2</File>
-            <Index>0x15d</Index>
-        </Texture>
-        <Description>Food for your pet. Buttery and delicious!</Description>
-        <BagType>2</BagType>
-        <feedPower>350</feedPower>
-        <Soulbound/>
-        <DisplayId>Ear of Corn</DisplayId>
-    </Object>
-    <Object type="0xcd2" id="Sliced Yam">
-        <Class>Equipment</Class>
-        <Item/>
-        <SlotType>10</SlotType>
-        <Texture>
-            <File>lofiObj2</File>
-            <Index>0x15c</Index>
-        </Texture>
-        <Description>Food for your pet. Nice and sweet honeyglazed ham.</Description>
-        <BagType>2</BagType>
-        <feedPower>500</feedPower>
-        <Soulbound/>
-        <DisplayId>Sliced Yam</DisplayId>
-    </Object>
-    <Object type="0xcd3" id="Pumpkin Pie">
-        <Class>Equipment</Class>
-        <Item/>
-        <SlotType>10</SlotType>
-        <Texture>
-            <File>lofiObj2</File>
-            <Index>0x15b</Index>
-        </Texture>
-        <Description>
-            Food for your pet. Straight out of the oven.
-        </Description>
-        <BagType>2</BagType>
-        <feedPower>650</feedPower>
-        <Soulbound/>
-        <DisplayId>Pumpkin Pie</DisplayId>
-    </Object>
-    <Object type="0xcd6" id="Thanksgiving Turkey">
-        <Class>Equipment</Class>
-        <Item/>
-        <SlotType>10</SlotType>
-        <Texture>
-            <File>lofiObj2</File>
-            <Index>0x15f</Index>
-        </Texture>
-        <Description>
-            A whole thanksgiving turkey!
-        </Description>
-        <BagType>2</BagType>
-        <feedPower>1621</feedPower>
-        <Soulbound/>
-        <DisplayId>Thanksgiving Turkey</DisplayId>
-    </Object>
     <Object type="0x5426" id="Sword of Dark Retribution">
         <Class>Equipment</Class>
         <Item/>
@@ -20156,18 +19938,6 @@
         <Activate id="Aldragine's Hideout Portal">Create</Activate>
         <feedPower>230</feedPower>
         <DisplayId>Hideout Key</DisplayId>
-    </Object>
-    <Object type="0x44d5" id="Dragon Pearl">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x215</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>A delicious spice.</Description>
-        <BagType>9</BagType>
-        <Ingredient/>
     </Object>
     <Object type="0x44d7" id="Soundpiercer Shuriken">
         <Class>Equipment</Class>
@@ -23637,12 +23407,6 @@
             <Index>0xd0</Index>
         </Texture>
         <Tier>0</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="4"/>
-            <EffectInfo name="Empowerment Duration:" description="3"/>
-            <EffectInfo name="Radius:" description="2"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <Description>A standard banner made of wool cloth.</Description>
         <ActivateOnEquip stat="20" amount="1">IncrementStat</ActivateOnEquip>
@@ -23653,7 +23417,6 @@
         <Activate range="2" amount="4" duration="3">Banner</Activate>
         <Cooldown>6</Cooldown>
         <feedPower>5</feedPower>
-        <DisplayId>Cloth Banner</DisplayId>
     </Object>
     <Object type="0x5045" id="Nature Banner">
         <Class>Equipment</Class>
@@ -23663,12 +23426,6 @@
             <Index>0xd1</Index>
         </Texture>
         <Tier>1</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="5"/>
-            <EffectInfo name="Empowerment Duration:" description="4"/>
-            <EffectInfo name="Radius:" description="2"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="1">IncrementStat</ActivateOnEquip>
         <Description>A banner meant to inspire the greatness of nature.</Description>
@@ -23679,7 +23436,6 @@
         <Activate range="2" amount="5" duration="4">Banner</Activate>
         <Cooldown>6.5</Cooldown>
         <feedPower>10</feedPower>
-        <DisplayId>Nature Banner</DisplayId>
     </Object>
     <Object type="0x51ac" id="Heroic Banner">
         <Class>Equipment</Class>
@@ -23689,12 +23445,6 @@
             <Index>0xd2</Index>
         </Texture>
         <Tier>2</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="5"/>
-            <EffectInfo name="Empowerment Duration:" description="4"/>
-            <EffectInfo name="Radius:" description="3"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="2">IncrementStat</ActivateOnEquip>
         <Description>A banner used by heroic templars.</Description>
@@ -23705,7 +23455,6 @@
         <Activate range="3" amount="5" duration="4">Banner</Activate>
         <Cooldown>6.5</Cooldown>
         <feedPower>20</feedPower>
-        <DisplayId>Heroic Banner</DisplayId>
     </Object>
     <Object type="0x51ad" id="Vicious Banner">
         <Class>Equipment</Class>
@@ -23715,15 +23464,9 @@
             <Index>0xd3</Index>
         </Texture>
         <Tier>3</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="5"/>
-            <EffectInfo name="Empowerment Duration:" description="5"/>
-            <EffectInfo name="Radius:" description="3"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="2">IncrementStat</ActivateOnEquip>
-        <Description>This banner can cause vicious beast to flee in fear.</Description>
+        <Description>This banner can cause vicious beasts to flee in fear.</Description>
         <Usable/>
         <BagType>2</BagType>
         <MpCost>80</MpCost>
@@ -23732,7 +23475,6 @@
         <Cooldown>7</Cooldown>
         <FameBonus>1</FameBonus>
         <feedPower>45</feedPower>
-        <DisplayId>Vicious Banner</DisplayId>
     </Object>
     <Object type="0x51ae" id="Siege Banner">
         <Class>Equipment</Class>
@@ -23742,12 +23484,6 @@
             <Index>0xd4</Index>
         </Texture>
         <Tier>4</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="5"/>
-            <EffectInfo name="Empowerment Duration:" description="5"/>
-            <EffectInfo name="Radius:" description="3"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="3">IncrementStat</ActivateOnEquip>
         <Description>A banner that declares superiority.</Description>
@@ -23760,7 +23496,6 @@
         <Cooldown>7.5</Cooldown>
         <FameBonus>2</FameBonus>
         <feedPower>90</feedPower>
-        <DisplayId>Siege Banner</DisplayId>
     </Object>
     <Object type="0x51af" id="Banner of Zarcod">
         <Class>Equipment</Class>
@@ -23770,12 +23505,6 @@
             <Index>0xd5</Index>
         </Texture>
         <Tier>5</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="5"/>
-            <EffectInfo name="Empowerment Duration:" description="5"/>
-            <EffectInfo name="Radius:" description="4"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
         <Description>Zarcod, a fallen kingdom won't be crushed..This banner proves that.</Description>
@@ -23788,7 +23517,6 @@
         <Cooldown>8</Cooldown>
         <FameBonus>3</FameBonus>
         <feedPower>185</feedPower>
-        <DisplayId>Banner of Zarcod</DisplayId>
     </Object>
     <Object type="0x51a1" id="Banner of True War">
         <Class>Equipment</Class>
@@ -23798,12 +23526,6 @@
             <Index>0xd6</Index>
         </Texture>
         <Tier>6</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="6"/>
-            <EffectInfo name="Empowerment Duration:" description="5"/>
-            <EffectInfo name="Radius:" description="4"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
         <Description>This banner represents true war and battle.</Description>
@@ -23816,7 +23538,6 @@
         <Cooldown>8</Cooldown>
         <FameBonus>4</FameBonus>
         <feedPower>380</feedPower>
-        <DisplayId>Banner of True War</DisplayId>
     </Object>
     <Object type="0x52ab" id="Shadow Beacon">
         <Class>Equipment</Class>
@@ -23825,12 +23546,6 @@
             <File>lofiObj6</File>
             <Index>0xd7</Index>
         </Texture>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="6"/>
-            <EffectInfo name="Empowerment Duration:" description="5"/>
-            <EffectInfo name="Radius:" description="3"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="-2">IncrementStat</ActivateOnEquip>
@@ -23844,7 +23559,6 @@
         <Cooldown>8</Cooldown>
         <feedPower>760</feedPower>
         <FameBonus>6</FameBonus>
-        <DisplayId>Shadow Beacon</DisplayId>
     </Object>
     <Object type="0x52aa" id="Baby Djinja Skin">
         <Class>Equipment</Class>
@@ -24819,12 +24533,6 @@
             <File>lofiObj6</File>
             <Index>0xd8</Index>
         </Texture>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="6"/>
-            <EffectInfo name="Empowerment Duration:" description="4"/>
-            <EffectInfo name="Radius:" description="4"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="-4">IncrementStat</ActivateOnEquip>
@@ -25809,421 +25517,6 @@
         <BagType>0</BagType>
         <Fuel/>
     </Object>
-    <Object type="0x54bb" id="Wheat">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x392</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>This looks like it could be tasty.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54bc" id="Bread">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x393</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>It can be eaten but you might be able to make it better..</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-        <Consumable/>
-        <Activate amount="35">Heal</Activate>
-    </Object>
-    <Object type="0x54bd" id="Processed Meat">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x391</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Would be a good addition to something..but you can still eat it.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-        <Consumable/>
-        <Activate amount="10">Heal</Activate>
-    </Object>
-    <Object type="0x54be" id="Cheese">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x399</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Moo?</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-        <Consumable/>
-        <Activate amount="5">Heal</Activate>
-    </Object>
-    <Object type="0x54bf" id="Slice of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x390</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Delicious!</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-        <Consumable/>
-        <Activate amount="125">Heal</Activate>
-    </Object>
-    <Object type="0x54c1" id="Full Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a4</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>4 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>4</Doses>
-        <Activate amount="150">Heal</Activate>
-        <SuccessorId>3/4 of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x54c2" id="3/4 of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a5</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>3 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>3</Doses>
-        <Activate amount="150">Heal</Activate>
-        <SuccessorId>Half of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x54c3" id="Half of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a6</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>2 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>2</Doses>
-        <Activate amount="150">Heal</Activate>
-        <SuccessorId>Quarter of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x54c4" id="Quarter of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a7</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>1 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Activate amount="150">Heal</Activate>
-        <Consumable/>
-    </Object>
-    <Object type="0x54c5" id="Karambwan Spike">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a1</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Pointy..</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54c6" id="Karambwan">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a0</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Watch how you eat this.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-        <Consumable/>
-        <Activate amount="300">Magic</Activate>
-    </Object>
-    <Object type="0x54c7" id="Spicy Karambwan">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a0</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Uh oh.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="300">Magic</Activate>
-        <Activate amount="300">Heal</Activate>
-    </Object>
-    <Object type="0x54c8" id="Chocolate Chips">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x395</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>CHOCOLATE!</Description>
-        <BagType>0</BagType>
-        <Activate amount="5">Magic</Activate>
-        <Activate amount="5">Heal</Activate>
-        <Consumable/>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54c9" id="Flour">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x398</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Just a little heavy.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54ca" id="Raw Egg">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x396</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Crack it open and let it slide right down your throat.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="15">Heal</Activate>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54cb" id="Cookie">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x394</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Monster.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="50">Heal</Activate>
-        <Activate amount="50">Magic</Activate>
-    </Object>
-    <Object type="0x54cc" id="Grilled Cheese Sandwich">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a8</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Cheesy food.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="100">Heal</Activate>
-        <Activate amount="25">Magic</Activate>
-    </Object>
-    <Object type="0x54cd" id="Soup Spices">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x39e</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Something is cooking in the kitchen, I just don't know what yet.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54ce" id="Bowl">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x39b</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Something is cooking in the kitchen, still just not sure yet.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54d4" id="Bowl of Soup">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x39a</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Mmm.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <SuccessorId>Bowl</SuccessorId>
-        <Activate amount="120">Heal</Activate>
-        <Activate amount="50">Magic</Activate>
-    </Object>
-    <Object type="0x54cf" id="Spicy Slice of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x390</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Spicy and Delicious!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="140">Heal</Activate>
-        <Activate amount="40">Magic</Activate>
-    </Object>
-    <Object type="0x54d1" id="Pepper">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3af</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>WATER!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="20">Heal</Activate>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54d2" id="Chocolate Cake">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3ac</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Oh boy!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Doses>2</Doses>
-        <Activate amount="200">Heal</Activate>
-        <SuccessorId>Half of Chocolate Cake</SuccessorId>
-    </Object>
-    <Object type="0x54d3" id="Half of Chocolate Cake">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3ad</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Oh boy!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="200">Heal</Activate>
-    </Object>
-    <Object type="0x54d5" id="Tomato">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a2</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Fresh!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Ingredient/>
-        <Activate amount="5">Heal</Activate>
-    </Object>
-    <Object type="0x54d6" id="Lettuce">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a3</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Fresh!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Ingredient/>
-        <Activate amount="5">Heal</Activate>
-    </Object>
-    <Object type="0x54d7" id="Slappy Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x39d</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>THATS ONE BIG ASS BURGER MY HOMEFRY.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Doses>2</Doses>
-        <Activate amount="400">Heal</Activate>
-        <SuccessorId>Half of Slappy Burger</SuccessorId>
-    </Object>
-    <Object type="0x54d8" id="Half of Slappy Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x39f</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>THATS ONE BIG ASS BURGER MY HOMEFRY.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="450">Heal</Activate>
-    </Object>
-    <Object type="0x54de" id="Spicy Soup">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x39a</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Kinda spicy.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <SuccessorId>Bowl</SuccessorId>
-        <Activate amount="180">Heal</Activate>
-        <Activate amount="100">Magic</Activate>
-    </Object>
-    <Object type="0x54da" id="Salad">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b4</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Good salad.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <SuccessorId>Bowl</SuccessorId>
-        <Activate amount="150">Magic</Activate>
-    </Object>
     <Object type="0x54dc" id="Forsaken Shield">
         <Class>Equipment</Class>
         <Item/>
@@ -26266,460 +25559,6 @@
             <Index>0x3be</Index>
         </Texture>
         <AngleCorrection>1</AngleCorrection>
-    </Object>
-    <Object type="0x54df" id="Super Full Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b0</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>4 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>4</Doses>
-        <Activate amount="175">Heal</Activate>
-        <SuccessorId>Super 3/4 of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x54f1" id="Super 3/4 of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b1</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>3 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>3</Doses>
-        <Activate amount="175">Heal</Activate>
-        <SuccessorId>Super Half of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x54f2" id="Super Half of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b2</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>2 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>2</Doses>
-        <Activate amount="175">Heal</Activate>
-        <SuccessorId>Super Quarter of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x54f3" id="Super Quarter of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b3</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>1 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Activate amount="175">Heal</Activate>
-        <Consumable/>
-    </Object>
-    <Object type="0x54f4" id="Middle of Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b5</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>This is the middle buddy.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54f5" id="Crunchi Candy">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b7</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>If you've got the munchi eat the crunchi TM.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-        <Activate amount="100">Heal</Activate>
-        <Consumable/>
-    </Object>
-    <Object type="0x54f6" id="Chocolate Bar">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b8</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Its tastey.</Description>
-        <BagType>0</BagType>
-        <Activate amount="100">Heal</Activate>
-        <Activate amount="100">Magic</Activate>
-        <Consumable/>
-    </Object>
-    <Object type="0x54f7" id="Raw Fish">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b9</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Cook it up.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54f8" id="Cooked Fish">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3ba</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Eat it up.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="100">Heal</Activate>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54f9" id="Spicy Cooked Fish">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3ba</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Touch of spice.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="100">Heal</Activate>
-        <Activate effect="Healing" duration="2">ConditionEffectSelf</Activate>
-    </Object>
-    <Object type="0x54fa" id="Milk">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3bd</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Better bones?</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="25">Heal</Activate>
-        <Activate effect="Armored" duration="2">ConditionEffectSelf</Activate>
-        <Ingredient/>
-    </Object>
-    <Object type="0x55a1" id="Raw Chicken">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c2</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Not safe to eat.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x55a2" id="Cooked Chicken">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c1</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Safe to eat.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="200">Heal</Activate>
-    </Object>
-    <Object type="0x55a3" id="Cracked Coconut">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c0</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Kinda Hard.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Ingredient/>
-        <Activate amount="10">Heal</Activate>
-    </Object>
-    <Object type="0x55a4" id="Coconut Milk">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3bd</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Better bones and nuts?</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="160">Heal</Activate>
-        <Activate effect="Armored" duration="2">ConditionEffectSelf</Activate>
-    </Object>
-    <Object type="0x55a5" id="Bag of Rice">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b6</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Oh yes, it that rice.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x55a6" id="Rice Bowl">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a9</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Good rice bowl.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <SuccessorId>Bowl</SuccessorId>
-        <Activate amount="175">Heal</Activate>
-    </Object>
-    <Object type="0x55a7" id="Sugar">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x397</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Sweet.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x55a8" id="Sweet Rice Bowl">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a9</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Good sweet rice bowl.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <SuccessorId>Bowl</SuccessorId>
-        <Activate effect="Healing" duration="3">ConditionEffectSelf</Activate>
-        <Activate amount="175">Heal</Activate>
-    </Object>
-    <Object type="0x55a9" id="Chicken Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c3</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Yum, Chickin.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Doses>2</Doses>
-        <Activate amount="200">Heal</Activate>
-        <Activate amount="50">Magic</Activate>
-        <Activate effect="Healing" duration="1.5">ConditionEffectSelf</Activate>
-        <SuccessorId>Half of Chicken Burger</SuccessorId>
-    </Object>
-    <Object type="0x55aa" id="Half of Chicken Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c4</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Yum, Chickin.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="200">Heal</Activate>
-        <Activate amount="50">Magic</Activate>
-        <Activate effect="Healing" duration="1.5">ConditionEffectSelf</Activate>
-    </Object>
-    <Object type="0x44d5" id="Dragon Pearl">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x215</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>A delicious spice.</Description>
-        <BagType>9</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x55ab" id="Drago Spicy Karambwan">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a0</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Uh oh.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="600">Magic</Activate>
-        <Activate amount="600">Heal</Activate>
-    </Object>
-    <Object type="0x55ac" id="Ghost Remnant">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c5</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>What will I do with this?</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x55ad" id="Ghost Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c6</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Boo!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Doses>3</Doses>
-        <Activate amount="600">Magic</Activate>
-        <Activate amount="600">Heal</Activate>
-        <SuccessorId>2/3 of Ghost Burger</SuccessorId>
-    </Object>
-    <Object type="0x55ae" id="2/3 of Ghost Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c7</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Boo!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Doses>2</Doses>
-        <Activate amount="600">Magic</Activate>
-        <Activate amount="600">Heal</Activate>
-        <SuccessorId>1/3 of Ghost Burger</SuccessorId>
-    </Object>
-    <Object type="0x55af" id="1/3 of Ghost Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c8</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Boo!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="600">Magic</Activate>
-        <Activate amount="600">Heal</Activate>
-    </Object>
-    <Object type="0x55b1" id="Golden Chocolate Bar">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a0</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>A delecacy.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="1200">Heal</Activate>
-    </Object>
-    <Object type="0x55b2" id="Strange Full Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3ca</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>4 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>4</Doses>
-        <Activate amount="2000">Heal</Activate>
-        <Activate amount="2000">Magic</Activate>
-        <Activate effect="Healing" duration="3">ConditionEffectSelf</Activate>
-        <SuccessorId>Strange 3/4 of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x55b3" id="Strange 3/4 of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3cb</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>3 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>3</Doses>
-        <Activate amount="2000">Heal</Activate>
-        <Activate amount="2000">Magic</Activate>
-        <Activate effect="Healing" duration="3">ConditionEffectSelf</Activate>
-        <SuccessorId>Strange Half of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x55b4" id="Strange Half of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3cc</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>2 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>2</Doses>
-        <Activate amount="2000">Heal</Activate>
-        <Activate amount="2000">Magic</Activate>
-        <Activate effect="Healing" duration="3">ConditionEffectSelf</Activate>
-        <SuccessorId>Strange Quarter of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x55b5" id="Strange Quarter of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3cd</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>1 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Activate amount="2000">Heal</Activate>
-        <Activate amount="2000">Magic</Activate>
-        <Activate effect="Healing" duration="3">ConditionEffectSelf</Activate>
-        <Consumable/>
     </Object>
     <Object type="0x55b6" id="GhostP Proj">
         <Class>Projectile</Class>
