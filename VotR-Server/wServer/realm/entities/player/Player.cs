@@ -718,13 +718,13 @@ namespace wServer.realm.entities
             if (owner.Name.Equals("OceanTrench"))
                 OxygenBar = 100;
             if (owner.Name.Equals("Nexus")) {
-                int amount = Stats[10] / 100 * 3;
+                int amount = (int)Math.Floor(Stats[10] / 100 * 3d);
 
-                if (HealthPots.Count > amount) return;
-                HealthPots = new ItemStacker(this, 254, 0x0A22, amount, amount);
+                if (amount > HealthPots.Count)
+                    HealthPots = new ItemStacker(this, 254, 0x0A22, amount, amount);
 
-                if (MagicPots.Count > amount) return;
-                MagicPots = new ItemStacker(this, 255, 0x0A23, amount, amount);
+                if (amount > MagicPots.Count)
+                    MagicPots = new ItemStacker(this, 255, 0x0A23, amount, amount);
 
                 SaveToCharacter();
             }
