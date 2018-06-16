@@ -66,7 +66,7 @@ namespace wServer.realm
                 t.TotalElapsedMs = b;
                 t.TickCount = count;
                 t.TickDelta = (int)times;
-                t.ElaspedMsDelta = (int)(times * MsPT);
+                t.ElapsedMsDelta = (int)(times * MsPT);
 
                 long c = watch.ElapsedMilliseconds;
 
@@ -99,7 +99,7 @@ namespace wServer.realm
                 long dc = watch.ElapsedMilliseconds - c;
                 
                 TickWorlds1(t);
-                _manager.InterServer.Tick(t.ElaspedMsDelta);
+                _manager.InterServer.Tick(t.ElapsedMsDelta);
 
                 Thread.Sleep(Math.Max(0, MsPT - (int)dc));
                 dt += Math.Max(0, watch.ElapsedMilliseconds - b - MsPT);
@@ -115,16 +115,16 @@ namespace wServer.realm
 
         void TickWorlds2(RealmTime t)    //Discrete simulation
         {
-            long counter = t.ElaspedMsDelta;
+            long counter = t.ElapsedMsDelta;
             long c = t.TickCount - t.TickDelta;
-            long x = t.TotalElapsedMs - t.ElaspedMsDelta;
+            long x = t.TotalElapsedMs - t.ElapsedMsDelta;
             while (counter >= MsPT)
             {
                 c++; x += MsPT;
                 TickWorlds1(new RealmTime()
                 {
                     TickDelta = 1,
-                    ElaspedMsDelta = MsPT,
+                    ElapsedMsDelta = MsPT,
                     TickCount = c,
                     TotalElapsedMs = x
                 });

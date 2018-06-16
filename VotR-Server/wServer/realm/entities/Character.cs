@@ -76,8 +76,7 @@ namespace wServer.realm.entities
         protected override void ExportStats(IDictionary<StatsType, object> stats)
         {
             stats[StatsType.HP] = HP;
-            if (!(this is Player))
-                stats[StatsType.MaximumHP] = MaximumHP;
+            if (!(this is Player)) stats[StatsType.MaximumHP] = MaximumHP;
             base.ExportStats(stats);
         }
     }

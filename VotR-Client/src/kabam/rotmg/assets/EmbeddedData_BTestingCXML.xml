@@ -4940,49 +4940,6 @@
         <StunImmune/>
         <ArmorBreakImmune/>
     </Object>
-    <Object type="0x22ce" id="Aura of Zol">
-        <Group>Platez</Group>
-        <Enemy/>
-        <Class>Character</Class>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x20b</Index>
-        </Texture>
-        <AltTexture id="1">
-            <Texture>
-                <File>d3LofiObjEmbed</File>
-                <Index>0x20c</Index>
-            </Texture>
-        </AltTexture>
-        <HitSound>monster/traps_hit</HitSound>
-        <DeathSound>monster/traps_death</DeathSound>
-        <Size>100</Size>
-        <MaxHitPoints>999999</MaxHitPoints>
-        <Defense>0</Defense>
-        <DrawOnGround/>
-        <NoMiniMap/>
-        <Projectile id="0">
-            <ObjectId>Invisible</ObjectId>
-            <Damage>9999</Damage>
-            <Speed>0</Speed>
-            <Size>80</Size>
-            <LifetimeMS>100</LifetimeMS>
-            <ConditionEffect duration="5">Paralyzed</ConditionEffect>
-        </Projectile>
-        <Projectile id="1">
-            <ObjectId>Invisible</ObjectId>
-            <Damage>9999</Damage>
-            <Speed>0</Speed>
-            <Size>80</Size>
-            <LifetimeMS>100</LifetimeMS>
-        </Projectile>
-        <ParalyzeImmune/>
-        <StasisImmune/>
-        <DazedImmune/>
-        <StunImmune/>
-        <ArmorBreakImmune/>
-        <DisplayId>Aura of Zol</DisplayId>
-    </Object>
     <Object type="0x22e1" id="Stone of Zol">
         <Enemy/>
         <Class>Character</Class>
@@ -5514,6 +5471,7 @@
         <DazedImmune/>
         <StunImmune/>
         <ArmorBreakImmune/>
+		<Quest/>
         <MaxHitPoints>240000</MaxHitPoints>
         <Defense>60</Defense>
         <Projectile id="0">
@@ -5643,6 +5601,7 @@
         <DazedImmune/>
         <StunImmune/>
         <ArmorBreakImmune/>
+		<Quest/>
         <MaxHitPoints>180000</MaxHitPoints>
         <Defense>40</Defense>
         <Projectile id="0">
@@ -5800,6 +5759,7 @@
         <StunImmune/>
         <Elitedrop/>
         <ArmorBreakImmune/>
+		<Quest/>
         <MaxHitPoints>850000</MaxHitPoints>
         <Defense>80</Defense>
         <Projectile id="0">
@@ -7738,48 +7698,6 @@
         <feedPower>275</feedPower>
         <DisplayId>Kantos Cache</DisplayId>
     </Object>
-    <Object type="0x49a3" id="Premium Loot Tier Potion">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x15b</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>A premium potion that boost the tier level of the dropped loot.</Description>
-        <Sound>use_potion</Sound>
-        <ExtraTooltipData>
-            <EffectInfo name="{equip.Duration}" description="1 Hour"/>
-        </ExtraTooltipData>
-        <Consumable/>
-        <Soulbound/>
-        <LTBoosted/>
-        <Timer>3600</Timer>
-        <BagType>2</BagType>
-        <feedPower>250</feedPower>
-        <DisplayId>Premium Loot Tier Potion</DisplayId>
-    </Object>
-    <Object type="0x49a4" id="Premium Loot Drop Potion">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x15a</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>A premium potion that causes enemies to drop more loot.</Description>
-        <ExtraTooltipData>
-            <EffectInfo name="{equip.Duration}" description="1 Hour"/>
-        </ExtraTooltipData>
-        <Sound>use_potion</Sound>
-        <Consumable/>
-        <Soulbound/>
-        <LDBoosted/>
-        <Timer>3600</Timer>
-        <BagType>2</BagType>
-        <feedPower>250</feedPower>
-        <DisplayId>Premium Loot Drop Potion</DisplayId>
-    </Object>
     <Object type="0x49a6" id="Zol Secret Shop Portal">
         <Class>Portal</Class>
         <IntergamePortal/>
@@ -8774,65 +8692,65 @@
         <DisplayId>Sor Mini Crystals</DisplayId>
     </Object>
     <Object type="0x69ef" id="Sorgigas, the Sor Giant">
-        <Group>Sorgigas</Group>
-        <Enemy/>
-        <Class>Character</Class>
-        <Hero/>
-        <Quest/>
-        <God/>
-        <Encounter/>
-        <Lootdrop/>
-        <StasisImmune/>
-        <ParalyzeImmune/>
-        <Level>20</Level>
-        <PerRealmMax>1</PerRealmMax>
-        <AnimatedTexture>
-            <File>d1chars16x16r</File>
-            <Index>9</Index>
-        </AnimatedTexture>
-        <HitSound>monster/ogres_hit</HitSound>
-        <DeathSound>monster/ogres_death</DeathSound>
-        <MaxHitPoints>375000</MaxHitPoints>
-        <Projectile id="0">
-            <ObjectId>Dragon Attack Green Ball</ObjectId>
-            <Speed>70</Speed>
-            <Damage>160</Damage>
-            <Size>100</Size>
-            <MultiHit/>
-            <ArmorPiercing/>
-            <ConditionEffect duration="3">Exhausted</ConditionEffect>
-            <LifetimeMS>2000</LifetimeMS>
-        </Projectile>
-        <Projectile id="1">
-            <ObjectId>Green Missile</ObjectId>
-            <Speed>100</Speed>
-            <Damage>140</Damage>
-            <Size>100</Size>
-            <LifetimeMS>4000</LifetimeMS>
-        </Projectile>
-        <Projectile id="2">
-            <ObjectId>Silver Shield</ObjectId>
-            <Speed>100</Speed>
-            <Damage>80</Damage>
-            <Size>120</Size>
-            <ConditionEffect duration="2">Confused</ConditionEffect>
-            <LifetimeMS>1800</LifetimeMS>
-        </Projectile>
-        <Projectile id="3">
-            <ObjectId>Dragon Attack Green Spin Ball</ObjectId>
-            <Speed>100</Speed>
-            <Damage>200</Damage>
-            <Size>120</Size>
-            <ConditionEffect duration="6">Quiet</ConditionEffect>
-            <Amplitude>1.0</Amplitude>
-            <Frequency>3.0</Frequency>
-            <LifetimeMS>5000</LifetimeMS>
-        </Projectile>
-        <Size>150</Size>
-        <Defense>70</Defense>
-        <XpMult>0.8</XpMult>
-        <DisplayId>Sorgigas, the Sor Giant</DisplayId>
-    </Object>
+      <Group>Sorgigas</Group>
+      <Enemy/>
+      <Class>Character</Class>
+      <Hero/>
+      <Quest/>
+      <God/>
+      <Encounter/>
+	  <Lootdrop/>
+      <StasisImmune/>
+      <ParalyzeImmune/>
+      <Level>20</Level>
+      <PerRealmMax>1</PerRealmMax>
+      <AnimatedTexture>
+        <File>d1chars16x16r</File>
+        <Index>9</Index>
+      </AnimatedTexture>
+      <HitSound>monster/ogres_hit</HitSound>
+      <DeathSound>monster/ogres_death</DeathSound>
+      <MaxHitPoints>125000</MaxHitPoints>
+      <Projectile id="0">
+         <ObjectId>Sor Ball</ObjectId>
+         <Speed>70</Speed>
+         <Damage>160</Damage>
+         <Size>100</Size>
+         <MultiHit/>
+		 <ArmorPiercing/>
+		 <ConditionEffect duration="3">Exhausted</ConditionEffect>
+         <LifetimeMS>2000</LifetimeMS>
+      </Projectile>
+      <Projectile id="1">
+         <ObjectId>Sor Mini Ball 1</ObjectId>
+         <Speed>100</Speed>
+         <Damage>140</Damage>
+         <Size>100</Size>
+         <LifetimeMS>4000</LifetimeMS>
+      </Projectile>
+      <Projectile id="2">
+         <ObjectId>Sor Wave</ObjectId>
+         <Speed>100</Speed>
+         <Damage>80</Damage>
+         <Size>120</Size>
+		 <ConditionEffect duration="2">Confused</ConditionEffect>
+         <LifetimeMS>1800</LifetimeMS>
+      </Projectile>
+	  <Projectile id="3">
+         <ObjectId>Sor Mini Ball 2</ObjectId>
+         <Speed>100</Speed>
+         <Damage>200</Damage>
+         <Size>120</Size>
+		 <ConditionEffect duration="6">Quiet</ConditionEffect>
+		 <Amplitude>1.0</Amplitude>
+         <Frequency>3.0</Frequency>
+         <LifetimeMS>5000</LifetimeMS>
+      </Projectile>
+      <Size>150</Size>
+      <Defense>70</Defense>
+      <XpMult>0.8</XpMult>
+      <DisplayId>Sorgigas, the Sor Giant</DisplayId>
+   </Object>
     <Object type="0x69f1" id="Sor Fiend">
         <Enemy/>
         <Class>Character</Class>
@@ -8844,7 +8762,7 @@
         <HitSound>monster/eggs_death</HitSound>
         <DeathSound>monster/golems_death</DeathSound>
         <Size>115</Size>
-        <MaxHitPoints>8000</MaxHitPoints>
+        <MaxHitPoints>2000</MaxHitPoints>
         <Projectile id="0">
             <ObjectId>Green Magic</ObjectId>
             <Damage>200</Damage>

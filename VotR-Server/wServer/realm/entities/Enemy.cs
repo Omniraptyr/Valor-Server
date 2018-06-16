@@ -129,23 +129,29 @@ namespace wServer.realm.entities
                     ObjectId = projectile.ProjectileOwner.Self.Id
                 }, this, (projectile.ProjectileOwner as Player), PacketPriority.Low);
 
-                if (p != null) {
+                if (p?.stealAmount != null) {
                     if (p.stealAmount[0] != 0 && !p.HasConditionEffect(ConditionEffects.Sick)) {
-                        if (p.stealAmount[0] >= 1 && p.HP < p.Stats[0]) //stats[0] is maxhp
-                            p.HP = ((p.HP + p.stealAmount[0]) > p.Stats[0] ? p.Stats[0] : p.HP + p.stealAmount[0]);
+                        int maxHP = p.Stats[0];
+                        int lifeSteal = p.stealAmount[0];
+
+                        if (lifeSteal >= 1 && p.HP < maxHP)
+                            p.HP = ((p.HP + lifeSteal) > maxHP ? maxHP : p.HP + lifeSteal);
                         else {
                             stealHits[0]++;
-                            if (stealHits[0] >= 1 / p.stealAmount[0])
-                                p.HP = ((p.HP + p.stealAmount[0]) > p.Stats[0] ? p.Stats[0] : p.HP + p.stealAmount[0]);
+                            if (stealHits[0] >= 1 / lifeSteal)
+                                p.HP = ((p.HP + lifeSteal) > maxHP ? maxHP : p.HP + lifeSteal);
                         }
                     }
                     if (p.stealAmount[1] != 0 && !p.HasConditionEffect(ConditionEffects.Quiet)) {
-                        if (p.stealAmount[1] >= 1 && p.MP < p.Stats[1]) //stats[1] is maxmp
-                            p.MP = ((p.MP + p.stealAmount[1]) > p.Stats[1] ? p.Stats[1] : p.MP + p.stealAmount[1]);
+                        int maxMP = p.Stats[1];
+                        int manaLeech = p.stealAmount[1];
+
+                        if (manaLeech >= 1 && p.MP < maxMP)
+                            p.MP = ((p.MP + manaLeech) > maxMP ? maxMP : p.MP + manaLeech);
                         else {
                             stealHits[1]++;
-                            if (stealHits[1] >= 1 / p.stealAmount[1])
-                                p.MP = ((p.MP + p.stealAmount[1]) > p.Stats[1] ? p.Stats[1] : p.MP + p.stealAmount[1]);
+                            if (stealHits[1] >= 1 / manaLeech)
+                                p.MP = ((p.MP + manaLeech) > maxMP ? maxMP : p.MP + manaLeech);
                         }
                     }
                 }
@@ -174,7 +180,7 @@ namespace wServer.realm.entities
                     HP -= (int)bleeding;
                     bleeding -= (int)bleeding;
                 }
-                bleeding += 28 * (time.ElaspedMsDelta / 1000f);
+                bleeding += 28 * (time.ElapsedMsDelta / 1000f);
             }
             base.Tick(time);
         }

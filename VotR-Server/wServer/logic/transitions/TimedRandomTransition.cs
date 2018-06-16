@@ -35,7 +35,7 @@ namespace wServer.logic.transitions
                 return true;
             }
 
-            cool -= time.ElaspedMsDelta;
+            cool -= time.ElapsedMsDelta;
             state = cool;
             return false;
         }

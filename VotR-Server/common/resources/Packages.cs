@@ -10,6 +10,8 @@ using log4net;
 using Newtonsoft.Json;
 using StackExchange.Redis;
 
+#pragma warning disable CS4014
+
 namespace common.resources
 {
     public enum PkgPurchaseResult

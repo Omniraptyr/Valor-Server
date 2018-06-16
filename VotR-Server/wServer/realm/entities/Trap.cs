@@ -47,7 +47,7 @@ namespace wServer.realm.entities
                     return;
                 }
             }
-            t += time.ElaspedMsDelta;
+            t += time.ElapsedMsDelta;
 
             bool monsterNearby = false;
             this.AOE(radius / 2, false, enemy => monsterNearby = true);

@@ -30,7 +30,7 @@ namespace wServer.logic.behaviors
             if (timeElapsed <= duration)
             {
                 child.Tick(host, time);
-                timeElapsed += time.ElaspedMsDelta;
+                timeElapsed += time.ElapsedMsDelta;
             }
             state = timeElapsed;
         }

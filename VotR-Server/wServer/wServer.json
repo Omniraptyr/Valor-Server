@@ -1,14 +1,14 @@
 {
   "dbInfo": {
     "host": "127.0.0.1",
-    "port": "1985",
-    "auth": "", //y5let1de@isaKraze@non8712jok
+    "port": "1985", //1985
+    "auth": "y5let1de@isaKraze@non8712jok", //y5let1de@isaKraze@non8712jok
     "index": "0"
   },
   "serverInfo": {
     "type": "World",
     "name": "VotR Legacy Testing",
-    "address": "127.0.0.1",
+    "address": "144.217.80.74", //144.217.80.74
     "port": "2050",
     "coordinates": {
       "latitude": "0",
@@ -19,8 +19,8 @@
   "serverSettings": {
     "logFolder": "./logs",
     "resourceFolder": "./resources",
-    "version": "30.L2",
-    "tps": "7",
+    "version": "23.E5",
+    "tps": "10",
     "mode": "Single",
     "key": "B1A5ED",
     "maxConnections": "1024",

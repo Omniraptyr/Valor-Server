@@ -718,13 +718,13 @@ namespace wServer.realm.entities
             if (owner.Name.Equals("OceanTrench"))
                 OxygenBar = 100;
             if (owner.Name.Equals("Nexus")) {
-                int amount = (int)Math.Floor(Stats[10] / 100 * 3d);
+                int amount = (int)Math.Floor((Stats[10] / 100d) * 3);
 
                 if (amount > HealthPots.Count)
-                    HealthPots = new ItemStacker(this, 254, 0x0A22, amount, amount);
+                    HealthPots = new ItemStacker(this, 254, 0x0A22, amount, 6);
 
                 if (amount > MagicPots.Count)
-                    MagicPots = new ItemStacker(this, 255, 0x0A23, amount, amount);
+                    MagicPots = new ItemStacker(this, 255, 0x0A23, amount, 6);
 
                 SaveToCharacter();
             }
@@ -853,7 +853,7 @@ namespace wServer.realm.entities
 
         void TickActivateEffects(RealmTime time)
         {
-            var dt = time.ElaspedMsDelta;
+            var dt = time.ElapsedMsDelta;
 
             if (XPBoostTime != 0)
                 if (Level >= 20)
@@ -882,7 +882,7 @@ namespace wServer.realm.entities
                 if (HP == Stats[0] || !CanHpRegen())
                     _hpRegenCounter = 0;
                 else {
-                    _hpRegenCounter += Stats.GetHPRegen() * time.ElaspedMsDelta / 1000f;
+                    _hpRegenCounter += Stats.GetHPRegen() * time.ElapsedMsDelta / 1000f;
                     var regen = (int)_hpRegenCounter;
                     if (regen > 0) {
                         HP = Math.Min(Stats[0], HP + regen);
@@ -896,7 +896,7 @@ namespace wServer.realm.entities
                 if (MP == Stats[1] || !CanMpRegen())
                     _mpRegenCounter = 0;
                 else {
-                    _mpRegenCounter += Stats.GetMPRegen() * time.ElaspedMsDelta / 1000f;
+                    _mpRegenCounter += Stats.GetMPRegen() * time.ElapsedMsDelta / 1000f;
                     var regen = (int)_mpRegenCounter;
                     if (regen > 0) {
                         MP = Math.Min(Stats[1], MP + regen);

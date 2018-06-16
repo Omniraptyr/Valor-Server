@@ -42,7 +42,8 @@ namespace wServer.networking.handlers
             if (player?.Owner == null)
                 return;
 
-            if (slotA != slotB && ((slotA < 12 && slotB < 12) || player.HasBackpack)) {
+            if (slotA != slotB && (slotA < 12 && slotB < 12 
+                || player.HasBackpack && slotA != (255 | 254) && slotB != (255 | 254))) {
                 Player playerA = null, playerB = null;
                 if (a is Player) playerA = a as Player;
                 if (b is Player) playerB = b as Player;

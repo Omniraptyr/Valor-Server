@@ -159,7 +159,7 @@ namespace wServer.realm.entities
         {
             List<Tuple<Player, int>> newState = new List<Tuple<Player, int>>();
             foreach (var i in potentialTrader)
-                newState.Add(new Tuple<Player, int>(i.Key, i.Value - time.ElaspedMsDelta));
+                newState.Add(new Tuple<Player, int>(i.Key, i.Value - time.ElapsedMsDelta));
 
             foreach (var i in newState)
             {

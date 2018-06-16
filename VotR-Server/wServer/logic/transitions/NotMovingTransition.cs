@@ -52,7 +52,7 @@ namespace wServer.logic.transitions
                 return false;
             }
 
-            s.Delay -= time.ElaspedMsDelta;
+            s.Delay -= time.ElapsedMsDelta;
             return false;
         }
     }

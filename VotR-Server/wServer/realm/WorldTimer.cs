@@ -32,7 +32,7 @@ namespace wServer.realm
 
         public bool Tick(World world, RealmTime time)
         {
-            _remain -= time.ElaspedMsDelta;
+            _remain -= time.ElapsedMsDelta;
             
             if (_remain >= 0) 
                 return false;

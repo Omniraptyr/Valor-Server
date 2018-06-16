@@ -23,13 +23,13 @@ public class SubmitMapForm extends Frame {
 
     public static var cancel:Signal;
 
-    var mapName:TextInputField;
-    var descr:TextInputField;
-    var tags:TagsInputField;
-    var mapjm:String;
-    var mapInfo:Object;
-    var account:Account;
-    var checkbox:CheckBoxField;
+    internal var mapName:TextInputField;
+    internal var descr:TextInputField;
+    internal var tags:TagsInputField;
+    internal var mapjm:String;
+    internal var mapInfo:Object;
+    internal var account:Account;
+    internal var checkbox:CheckBoxField;
 
     public function SubmitMapForm(_arg1:String, _arg2:Object, _arg3:Account) {
         super("SubmitMapForm.Title", TextKey.FRAME_CANCEL, TextKey.WEB_CHANGE_PASSWORD_RIGHT, 300);
@@ -86,7 +86,7 @@ public class SubmitMapForm extends Frame {
         _local6.addFile(this.mapInfo.thumbnail, "foo.png", "thumbnail");
         _local6.addVariable("overwrite", ((this.checkbox.isChecked()) ? "on" : "off"));
         var _local7:ApplicationSetup = StaticInjectorContext.getInjector().getInstance(ApplicationSetup);
-        var _local8 = (_local7.getAppEngineUrl(true) + "/ugc/save");
+        var _local8:String = (_local7.getAppEngineUrl(true) + "/ugc/save");
         this.enableButtons();
         var _local9:Object = {
             "name": this.mapName.text(),

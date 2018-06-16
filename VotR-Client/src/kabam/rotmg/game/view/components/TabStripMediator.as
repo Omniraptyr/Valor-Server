@@ -85,7 +85,6 @@ public class TabStripMediator extends Mediator {
     override public function destroy():void {
         this.view.tabSelected.remove(this.onTabSelected);
         this.updateBackpack.remove(this.onUpdateBackPack);
-        this.view.friendsBtn.removeEventListener(MouseEvent.CLICK, this.onFriendsBtnClicked);
     }
 
     private function onFriendsBtnClicked(_arg1:MouseEvent):void {

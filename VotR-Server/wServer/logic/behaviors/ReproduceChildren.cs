@@ -105,7 +105,7 @@ namespace wServer.logic.behaviors
                 spawn.livingChildren.Add(enemyEntity);
             }
             else
-                spawn.RemainingTime -= time.ElaspedMsDelta;
+                spawn.RemainingTime -= time.ElapsedMsDelta;
         }
     }
 }

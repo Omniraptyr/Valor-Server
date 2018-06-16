@@ -1245,10 +1245,8 @@ public class GameObject extends BasicObject {
             this.hpbarPath_ = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS, new Vector.<Number>());
         }
         var _local3:Number = this.maxHP_;
-        if (((!(this.ishpScaleSet)) && ((this.hp_ > this.maxHP_)))) {
+        if (this.hp_ > this.maxHP_) {
             this.maxHP_ = this.hp_;
-            _local3 = this.maxHP_;
-            this.ishpScaleSet = true;
         }
         if (this.hp_ <= _local3) {
             _local7 = ((_local3 - this.hp_) / _local3);

@@ -689,7 +689,7 @@ namespace wServer.realm
             {
                 if (_effects[i] > 0)
                 {
-                    _effects[i] -= time.ElaspedMsDelta;
+                    _effects[i] -= time.ElapsedMsDelta;
                     if (_effects[i] > 0)
                     {
                         newEffects |= (ConditionEffects)((ulong)1 << i);

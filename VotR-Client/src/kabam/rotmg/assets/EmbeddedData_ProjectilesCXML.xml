@@ -5218,16 +5218,10 @@
     </Object>
     <Object type="0x46de" id="Lurking Projectile">
         <Class>Projectile</Class>
-        <RandomTexture>
-            <Texture>
-                <File>d3LofiObjEmbed</File>
-                <Index>0x2c6</Index>
-            </Texture>
-            <Texture>
-                <File>d3LofiObjEmbed</File>
-                <Index>0x2c8</Index>
-            </Texture>
-        </RandomTexture>
+          <Texture>
+              <File>d3LofiObjEmbed</File>
+              <Index>0x2c6</Index>
+          </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
 
@@ -6356,4 +6350,41 @@
             <Index>0x91</Index>
         </Texture>
     </Object>
+	<Object type="0xa22d" id="Sor Ball">
+      <Class>Projectile</Class>
+      <Texture>
+         <File>lofiObjBig</File>
+         <Index>0x1b8</Index>
+      </Texture>
+   </Object>
+   <Object type="0xa22e" id="Sor Wave">
+      <Class>Projectile</Class>
+      <Texture>
+         <File>d3LofiObjEmbed</File>
+         <Index>0x454</Index>
+      </Texture>
+	  <AngleCorrection>2</AngleCorrection>
+   </Object>
+   <Object type="0xa22f" id="Sor Mini Ball 1">
+      <Class>Projectile</Class>
+      <Texture>
+         <File>d3LofiObjEmbed</File>
+         <Index>0x455</Index>
+      </Texture>
+   </Object>
+   <Object type="0xa232" id="Sor Mini Ball 2">
+      <Class>Projectile</Class>
+      <Texture>
+         <File>d3LofiObjEmbed</File>
+         <Index>0x456</Index>
+      </Texture>
+   </Object>
+   <Object type="0xa231" id="Storm Dagger Slash">
+      <Class>Projectile</Class>
+      <Texture>
+         <File>d3LofiObjEmbed</File>
+         <Index>0x457</Index>
+      </Texture>
+	  <AngleCorrection>1</AngleCorrection>
+   </Object>
 </Objects>

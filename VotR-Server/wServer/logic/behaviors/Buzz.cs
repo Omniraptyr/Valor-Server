@@ -45,7 +45,7 @@ namespace wServer.logic.behaviors
 
             if (storage.RemainingTime > 0)
             {
-                storage.RemainingTime -= time.ElaspedMsDelta;
+                storage.RemainingTime -= time.ElapsedMsDelta;
                 Status = CycleStatus.NotStarted;
             }
             else
@@ -61,7 +61,7 @@ namespace wServer.logic.behaviors
                     storage.RemainingDistance = this.dist;
                     Status = CycleStatus.Completed;
                 }
-                float dist = host.GetSpeed(speed) * (time.ElaspedMsDelta / 1000f);
+                float dist = host.GetSpeed(speed) * (time.ElapsedMsDelta / 1000f);
                 host.ValidateAndMove(host.X + storage.Direction.X * dist, host.Y + storage.Direction.Y * dist);
 
                 storage.RemainingDistance -= dist;
