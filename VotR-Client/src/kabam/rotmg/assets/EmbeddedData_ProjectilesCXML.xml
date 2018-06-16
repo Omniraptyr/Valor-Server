@@ -6356,4 +6356,34 @@
             <Index>0x91</Index>
         </Texture>
     </Object>
+	<Object type="0x6204" id="Feral Zol Spinner">
+        <Class>Projectile</Class>
+        <RandomTexture>
+			<Texture>
+				<File>legendaries8x8Embed</File>
+				<Index>0x92</Index>
+			</Texture>
+			<Texture>
+				<File>legendaries8x8Embed</File>
+				<Index>0x93</Index>
+			</Texture>
+        </RandomTexture>
+		<Rotation>100</Rotation>
+    </Object>
+		<Object type="0x6205" id="Zol Inc Blast">
+        <Class>Projectile</Class>
+			<Texture>
+				<File>legendaries8x8Embed</File>
+				<Index>0x94</Index>
+			</Texture>
+		<AngleCorrection>1</AngleCorrection>
+    </Object>
+		<Object type="0x6206" id="Zol Turret Blast">
+        <Class>Projectile</Class>
+			<Texture>
+				<File>legendaries8x8Embed</File>
+				<Index>0x97</Index>
+			</Texture>
+		<Rotation>20</Rotation>
+    </Object>
 </Objects>

@@ -70,7 +70,6 @@ namespace wServer.logic
                     new Spawn("Cyclops King", 5, coolDown: 10000)
                     ),
             new Threshold(0.1,
-                    new ItemLoot("Cyclop's Eye", 0.03),
                     new ItemLoot("50 Gold", 0.1)
                 )
             )

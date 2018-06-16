@@ -1732,7 +1732,7 @@ namespace wServer.realm.entities
             ConditionEffectIndex[] gamblerEffs = {
                 ConditionEffectIndex.Sick,
                 ConditionEffectIndex.Berserk,
-                ConditionEffectIndex.Damaging
+                ConditionEffectIndex.Bravery
             };
             int roll = new Random().Next(0, 3);
             if (roll != 3)
