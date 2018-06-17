@@ -83,8 +83,6 @@ namespace wServer.logic
                     new ItemLoot("Wine Cellar Incantation", 0.048),
                     new ItemLoot("Ouija Board", 0.045),
                     new ItemLoot("Golden Urn", 0.04),
-                    new ItemLoot("Ghost Remnant", 0.1),
-                    new ItemLoot("Cracked Coconut", 0.1),
                     new ItemLoot("Doom Bow", 0.03)
 
                     )
