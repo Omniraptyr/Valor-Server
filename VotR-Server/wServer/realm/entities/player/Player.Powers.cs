@@ -36,6 +36,21 @@ namespace wServer.realm.entities
                 return false;
             }
         }
+        public bool CheckDim()
+        {
+            if (Inventory[1] == null)
+            {
+                return false;
+            }
+            if (Inventory[1].ObjectId == "Dimensional Prism" && Surge >= 25)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public bool CheckAnubis()
         {
             if (Inventory[2] == null)
@@ -58,6 +73,21 @@ namespace wServer.realm.entities
                 return false;
             }
             if (Inventory[2].ObjectId == "Force Between Avex" && HP <= Stats[0]/2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckMerc()
+        {
+            if (Inventory[2] == null)
+            {
+                return false;
+            }
+            if (Inventory[2].ObjectId == "Mercy of Yazanahar" && MP <= Stats[1] / 2)
             {
                 return true;
             }

@@ -23,7 +23,8 @@ namespace wServer.logic.behaviors
                 if (cachedMaxHP == 0) cachedMaxHP = (host as Enemy).MaximumHP;
                  
                 (host as Enemy).MaximumHP = cachedMaxHP + amount * Math.Max(host.Owner.Players.Count - 1, 0);
-                (host as Enemy).HP += Math.Min((host as Enemy).MaximumHP, amount * Math.Max(host.Owner.Players.Count - 1, 0));
+                (host as Enemy).HP += amount * Math.Max(host.Owner.Players.Count - 1, 0);
+                (host as Enemy).HP = Math.Min((host as Enemy).MaximumHP, (host as Enemy).HP);
                 cool = 5000;
             } else cool -= time.ElapsedMsDelta;
 

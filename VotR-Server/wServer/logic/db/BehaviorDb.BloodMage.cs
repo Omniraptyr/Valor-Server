@@ -16,7 +16,7 @@ namespace wServer.logic
             )
         .Init("Stone of Blood 1",
             new State(
-                new ScaleHP(500),
+                //new ScaleHP(500),
                 new State("badaura",
                      new Shoot(10, count: 4, projectileIndex: 0, coolDown: 80)
                     )

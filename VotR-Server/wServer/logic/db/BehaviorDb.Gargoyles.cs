@@ -206,6 +206,7 @@ namespace wServer.logic
 					new TierLoot(12, ItemType.Armor, 0.1),
 					new TierLoot(12, ItemType.Weapon, 0.1),
 					new TierLoot(6, ItemType.Ring, 0.1),
+                    new TierLoot(7, ItemType.Ring, 0.01),
                     new ItemLoot("Shard of the Stone Soul", 0.005),
                     new ItemLoot("Ancient Stone Maul", 0.02),
                     new ItemLoot("Marble Tablet", 0.02)
@@ -213,7 +214,7 @@ namespace wServer.logic
 			)
 			.Init("Stone Gargoyle",
 					new State(
-                        new ScaleHP(5000),
+                       // new ScaleHP(5000),
                         new Grenade(2, 200, coolDown: 5000),
 						new HpLessTransition(0.15, "dying"),
                         new HealGroup(60, "LSG Group", coolDown: 6000),

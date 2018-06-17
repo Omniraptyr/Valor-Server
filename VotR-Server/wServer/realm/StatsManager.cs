@@ -64,6 +64,12 @@ namespace wServer.realm
             if (Owner.HasConditionEffect(ConditionEffects.Damaging))
                 mult *= 1.5f;
 
+            if (Owner.CheckMerc())
+                mult *= 1.15f;
+
+            if (Owner.CheckMerc() && Owner.HasConditionEffect(ConditionEffects.Damaging))
+                mult *= 1.65f;
+
             return mult;
         }
         public int RelentlessDamage()
