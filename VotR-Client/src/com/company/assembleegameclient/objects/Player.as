@@ -894,8 +894,10 @@ public class Player extends Character {
     }
 
     private function isMercy():Boolean{
-        if(ObjectLibrary.typeToDisplayId_[this.equipment_[0]] == "Mercy of Yazanahar" && mp_ <= maxMP_/2){
-            return mp_*2;
+        if(ObjectLibrary.typeToDisplayId_[this.equipment_[2]] == "Mercy of Yazanahar" && mp_ <= maxMP_/2){
+            return true;
+        }else{
+            return false;
         }
     }
     private function makeSkinTexture():void {

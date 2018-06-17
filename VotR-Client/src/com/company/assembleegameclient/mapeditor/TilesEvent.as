@@ -3,7 +3,7 @@ import com.company.util.IntPoint;
 
 import flash.events.Event;
 
-class TilesEvent extends Event {
+internal class TilesEvent extends Event {
 
     public static const TILES_EVENT:String = "TILES_EVENT";
 

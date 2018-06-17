@@ -7,7 +7,7 @@ import com.company.assembleegameclient.ui.tooltip.ToolTip;
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 
-class ObjectElement extends Element {
+internal class ObjectElement extends Element {
 
     public var objXML_:XML;
 

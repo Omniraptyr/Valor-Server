@@ -4571,22 +4571,12 @@
         <Index>0x434</Index>
       </Texture>
   </Ground>
-    <Ground type="0x279e" id="Sor Floor">
-      <RandomTexture>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x30</Index>
-        </Texture>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x31</Index>
-        </Texture>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x32</Index>
-        </Texture>
-      </RandomTexture>
-  </Ground>
+   <Ground type="0x279e" id="Sor Floor">
+      <Texture>
+          <File>legendaries8x8Embed</File>
+          <Index>0x30</Index>
+      </Texture>
+    </Ground>
       <Ground type="0x279f" id="Genisus Floor">
         <Texture>
             <File>legendaries8x8Embed</File>
@@ -4615,4 +4605,18 @@
             </Texture>
         </RandomTexture>
     </Ground>
+	<Ground type="0x27ac" id="Zol Aura">
+      <Texture>
+        <File>d3LofiObjEmbed</File>
+        <Index>0x20c</Index>
+      </Texture>
+      <MinDamage>9999</MinDamage>
+      <MaxDamage>9999</MaxDamage>
+   </Ground>
+   <Ground type="0x27ad" id="Zol Aura Dormant">
+      <Texture>
+        <File>d3LofiObjEmbed</File>
+        <Index>0x20b</Index>
+      </Texture>
+   </Ground>
 </GroundTypes>

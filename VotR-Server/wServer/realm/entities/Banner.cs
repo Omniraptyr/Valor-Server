@@ -61,7 +61,7 @@ namespace wServer.realm.entities
                 Owner.BroadcastPackets(pkts, null);
                 p++;
             }
-            t += time.ElaspedMsDelta;
+            t += time.ElapsedMsDelta;
             base.Tick(time);
         }
     }

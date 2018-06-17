@@ -1,5 +1,5 @@
-﻿using common.resources; using wServer.realm.worlds;
-using wServer.realm.entities; using wServer.realm.worlds;
+﻿using common.resources;
+using wServer.realm.worlds;
 
 namespace wServer.realm.setpieces
 {

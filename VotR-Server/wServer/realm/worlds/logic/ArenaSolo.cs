@@ -158,7 +158,7 @@ namespace wServer.realm.worlds.logic
             if (IsLimbo || Deleted || TotalConnects < 1)
                 return;
             
-            _time += time.ElaspedMsDelta;
+            _time += time.ElapsedMsDelta;
 
             switch (_arenaState)
             {

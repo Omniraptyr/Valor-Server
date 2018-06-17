@@ -14,6 +14,7 @@ namespace wServer.logic
 		private _ MadJester = () => Behav()
 			.Init("Mad Jester",
 				new State(
+                    new ScaleHP(20000),
 					new State("Wait",
 						new ConditionalEffect(ConditionEffectIndex.Invincible, true),
 						new PlayerWithinTransition(5, "Walk")
@@ -557,7 +558,8 @@ namespace wServer.logic
 			)
 			.Init("White Mask",
 				new State(
-					new State("WaitForOrders",
+                    new ScaleHP(10000),
+                    new State("WaitForOrders",
 						new ConditionalEffect(ConditionEffectIndex.Invincible, true)
 					),
 					new State("Comeforth",
@@ -613,7 +615,8 @@ namespace wServer.logic
 			)
 			.Init("Dark Mask",
 				new State(
-					new State("WaitForOrders",
+                    new ScaleHP(10000),
+                    new State("WaitForOrders",
 						new ConditionalEffect(ConditionEffectIndex.Invincible, true)
 					),
 					new State("Comeforth",

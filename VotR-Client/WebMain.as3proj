@@ -5,7 +5,7 @@
     <movie outputType="Application" />
     <movie input="" />
     <movie path="bin-debug\WebMain.swf" />
-    <movie fps="30" />
+    <movie fps="60" />
     <movie width="800" />
     <movie height="600" />
     <movie version="18" />
@@ -87,7 +87,7 @@
   <!-- Other project options -->
   <options>
     <option showHiddenPaths="False" />
-    <option testMovie="Default" />
+    <option testMovie="ExternalPlayer" />
     <option testMovieCommand="" />
   </options>
   <!-- Plugin storage -->

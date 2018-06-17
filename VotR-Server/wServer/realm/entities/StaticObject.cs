@@ -156,7 +156,7 @@ namespace wServer.realm.entities
             if (Vulnerable)
             {
                 if (Dying)
-                    HP -= time.ElaspedMsDelta;
+                    HP -= time.ElapsedMsDelta;
 
                 CheckHP();
             }

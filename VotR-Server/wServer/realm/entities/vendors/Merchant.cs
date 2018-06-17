@@ -98,7 +98,7 @@ namespace wServer.realm.entities.vendors
 
             var a = time.TotalElapsedMs % 20000;
             if (AwaitingReload ||
-                a - time.ElaspedMsDelta <= ReloadOffset && a > ReloadOffset)
+                a - time.ElapsedMsDelta <= ReloadOffset && a > ReloadOffset)
             {
                 if (!AwaitingReload && !Rotate)
                     return;

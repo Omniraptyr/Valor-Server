@@ -11,6 +11,7 @@ namespace wServer.logic
         private _ SorGiant = () => Behav()
             .Init("Sorgigas, the Sor Giant",
                 new State(
+                    new ScaleHP(15000),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new PlayerWithinTransition(12, "taunt")
@@ -210,11 +211,13 @@ namespace wServer.logic
                     new TierLoot(5, ItemType.Ring, 0.05),
                     new TierLoot(12, ItemType.Armor, 0.05),
                     new TierLoot(12, ItemType.Weapon, 0.05),
+                    new TierLoot(7, ItemType.Ring, 0.01),
                     new TierLoot(6, ItemType.Ring, 0.025)
                     )
             )
             .Init("Sor Fiend",
                 new State(
+                    new ScaleHP(1000),
                     new TransformOnDeath("Sor Soul", min: 1, max: 1, probability: 0.5),
                     new SetNoXP(),
                     new Wander(0.2),

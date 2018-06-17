@@ -24,7 +24,7 @@ namespace wServer.logic.behaviors
 
             Status = CycleStatus.InProgress;
             var vect = new Vector2((float) Math.Cos(_direction), (float) Math.Sin(_direction));
-            var dist = host.GetSpeed(_speed) * time.ElaspedMsDelta / 1000f;
+            var dist = host.GetSpeed(_speed) * time.ElapsedMsDelta / 1000f;
             host.ValidateAndMove(host.X + vect.X * dist, host.Y + vect.Y * dist);
 
             // Varanus, is this a proper CycleBehavior? There is no CycleStatus.Completed...

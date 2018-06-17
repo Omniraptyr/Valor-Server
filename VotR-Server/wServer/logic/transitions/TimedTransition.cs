@@ -33,7 +33,7 @@ namespace wServer.logic.transitions
                 cool = this.time;
             }
             else
-                cool -= time.ElaspedMsDelta;
+                cool -= time.ElapsedMsDelta;
 
             state = cool;
             return ret;

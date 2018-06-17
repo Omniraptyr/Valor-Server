@@ -58,8 +58,8 @@ namespace wServer.realm.entities
             if (HP > duration - 2000)
             {
                 this.ValidateAndMove(
-                    X + direction.X * speed * time.ElaspedMsDelta / 1000,
-                    Y + direction.Y * speed * time.ElaspedMsDelta / 1000
+                    X + direction.X * speed * time.ElapsedMsDelta / 1000,
+                    Y + direction.Y * speed * time.ElapsedMsDelta / 1000
                 );
             }
             if (HP < 250 && !exploded)

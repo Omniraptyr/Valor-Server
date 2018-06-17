@@ -5,7 +5,7 @@ import com.company.util.MoreStringUtil;
 
 import flash.utils.Dictionary;
 
-class GroundChooser extends Chooser {
+internal class GroundChooser extends Chooser {
 
     private var cache:Dictionary;
     private var lastSearch:String = "";

@@ -66,12 +66,12 @@ namespace wServer.logic.behaviors
 
             if (s.Direction != Vector2.Zero)
             {
-                float dist = host.GetSpeed(_speed) * (time.ElaspedMsDelta / 1000f);
+                float dist = host.GetSpeed(_speed) * (time.ElapsedMsDelta / 1000f);
                 host.ValidateAndMove(host.X + s.Direction.X * dist, host.Y + s.Direction.Y * dist);
                 Status = CycleStatus.InProgress;
             }
 
-            s.RemainingTime -= time.ElaspedMsDelta;
+            s.RemainingTime -= time.ElapsedMsDelta;
 
             state = s;
         }

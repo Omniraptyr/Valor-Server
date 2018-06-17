@@ -35,7 +35,7 @@ namespace wServer.logic.behaviors
                 Vector2 vect;
                 vect = new Vector2(map.Width / 2 - host.X, map.Height / 2 - host.Y);
                 vect.Normalize();
-                float dist = host.GetSpeed(speed) * (time.ElaspedMsDelta / 1000f);
+                float dist = host.GetSpeed(speed) * (time.ElapsedMsDelta / 1000f);
                 host.ValidateAndMove(host.X + vect.X * dist, host.Y + vect.Y * dist);
 
                 Status = CycleStatus.InProgress;

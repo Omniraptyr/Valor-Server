@@ -23,7 +23,7 @@ public class ObjectTypeToolTip extends ToolTip {
         this.titleText_.x = 0;
         this.titleText_.y = 0;
         addChild(this.titleText_);
-        var _local2 = "";
+        var _local2:String = "";
         if (_arg1.hasOwnProperty("Group")) {
             _local2 = (_local2 + (("Group: " + _arg1.Group) + "\n"));
         }

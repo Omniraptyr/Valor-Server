@@ -650,7 +650,7 @@ namespace wServer.realm.worlds
 
             try
             {
-                _elapsedTime += time.ElaspedMsDelta;
+                _elapsedTime += time.ElapsedMsDelta;
 
                 if (IsLimbo) return;
 

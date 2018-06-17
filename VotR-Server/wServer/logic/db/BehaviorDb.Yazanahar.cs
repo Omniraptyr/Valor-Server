@@ -10,6 +10,7 @@ namespace wServer.logic
 		private _ Yazanahar = () => Behav ()
 			.Init ("Yazanahar",
 				new State (
+                    new ScaleHP(30000),
 					new HpLessTransition(0.20, "death1"),
 					new SetAltTexture (2),
 					new State (
@@ -199,6 +200,7 @@ namespace wServer.logic
                     new ItemLoot("Greater Potion of Defense", 0.1),
                     new ItemLoot("Greater Potion of Wisdom", 0.1),
                     new ItemLoot("Vial of Power", 1.0),
+                    new ItemLoot("Shard of Ancient Assault", 0.005),
                     new TierLoot(11, ItemType.Weapon, 0.1),
 					new TierLoot(6, ItemType.Ability, 0.1),
 					new TierLoot(11, ItemType.Armor, 0.1),
@@ -211,7 +213,8 @@ namespace wServer.logic
 
 			.Init("Split Yazanahar",
 				new State(
-					new ConditionalEffect(ConditionEffectIndex.StasisImmune),
+                    new ScaleHP(5000),
+                    new ConditionalEffect(ConditionEffectIndex.StasisImmune),
 					new State("swag",
 						new Prioritize(
 							new StayCloseToSpawn(0.5, 3),

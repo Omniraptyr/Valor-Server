@@ -503,6 +503,13 @@ public class EquipmentToolTip extends ToolTip {
                     case ActivationType.REMOVE_NEG_COND_SELF:
                         this.effects.push(new Effect(TextKey.REMOVES_NEGATIVE, {}).setColor(TooltipHelper.NO_DIFF_COLOR));
                         break;
+					case ActivationType.BANNER:
+                        this.effects.push(new Effect("Banner lifetime: {lifetime} \n Banner radius: {radius} \n Empowerment duration: {duration} \n", {
+                            "lifetime": _local_1.@amount,
+                            "duration": _local_1.@duration,
+                            "radius": _local_1.@range
+                        }).setColor(TooltipHelper.NO_DIFF_COLOR));
+                        break;
                     case ActivationType.GENERIC_ACTIVATE:
                         _local_9 = 16777103;
                         if (this.curItemXML != null) {

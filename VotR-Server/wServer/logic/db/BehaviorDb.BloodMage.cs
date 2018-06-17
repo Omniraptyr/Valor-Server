@@ -16,6 +16,7 @@ namespace wServer.logic
             )
         .Init("Stone of Blood 1",
             new State(
+                new ScaleHP(500),
                 new State("badaura",
                      new Shoot(10, count: 4, projectileIndex: 0, coolDown: 80)
                     )
@@ -23,6 +24,7 @@ namespace wServer.logic
             )
         .Init("Zaragon, the Blood Mage",
                 new State(
+                    new ScaleHP(5000),
                     new DropPortalOnDeath("The Catacombs Portal", 100),
                     new Orbit(0.3, 3, target: "Blood Boss Anchor"),
                     new HpLessTransition(0.18, "Dead1"),

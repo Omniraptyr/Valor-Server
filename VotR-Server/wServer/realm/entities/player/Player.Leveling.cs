@@ -179,6 +179,9 @@ namespace wServer.realm.entities
             {"Mad Jester",                      Tuple.Create(15, 1, 20)},
             {"Garnet Statue",                   Tuple.Create(15, 1, 20)},
             {"Jade Statue",                     Tuple.Create(15, 1, 20)},
+            {"AH The Sincryer",                 Tuple.Create(15, 1, 20)},
+            {"AH The Vision of Aldragine",      Tuple.Create(15, 1, 20)},
+            {"AH Aldragine",                    Tuple.Create(15, 1, 20)},
             {"Lord Stone Gargoyle",             Tuple.Create(20, 1, 1000)},
             {"Sorgigas, the Sor Giant",         Tuple.Create(20, 1, 1000)},
 
@@ -269,7 +272,7 @@ namespace wServer.realm.entities
                 {
                     ObjectId = Id,
                     Color = new ARGB(0xFFE25F00),
-                    Message = "+" + (newFame - Fame) + "Fame"
+                    Message = "+" + (newFame - Fame) + " fame"
                 }, p => this.DistSqr(p) < RadiusSqr);
             }
 
@@ -378,17 +381,7 @@ namespace wServer.realm.entities
                     switch (drop2)
                     {
                         case 1:
-                            Client.Manager.Database.UpdateLootbox1(acc, 1);
-                            Lootbox1 += 1;
-                            this.ForceUpdate(Lootbox1);
-                            SendHelp("You have obtained a Bronze Lootbox drop! Go to nexus to open it!");
-                            break;
                         case 2:
-                            Client.Manager.Database.UpdateLootbox1(acc, 1);
-                            Lootbox1 += 1;
-                            this.ForceUpdate(Lootbox1);
-                            SendHelp("You have obtained a Bronze Lootbox drop! Go to nexus to open it!");
-                            break;
                         case 3:
                             Client.Manager.Database.UpdateLootbox1(acc, 1);
                             Lootbox1 += 1;
@@ -396,11 +389,6 @@ namespace wServer.realm.entities
                             SendHelp("You have obtained a Bronze Lootbox drop! Go to nexus to open it!");
                             break;
                         case 4:
-                            Client.Manager.Database.UpdateLootbox2(acc, 1);
-                            Lootbox2 += 1;
-                            this.ForceUpdate(Lootbox2);
-                            SendHelp("You have obtained a Silver Lootbox drop! Go to nexus to open it!");
-                            break;
                         case 5:
                             Client.Manager.Database.UpdateLootbox2(acc, 1);
                             Lootbox2 += 1;
@@ -418,7 +406,7 @@ namespace wServer.realm.entities
             }
             if (enemy.ObjectDesc.Elitedrop == true)
             {
-                if (drop <= 75)
+                if (drop <= 25)
                 {
                      Client.Manager.Database.UpdateLootbox4(acc, 1);
                      Lootbox4 += 1;
@@ -430,13 +418,9 @@ namespace wServer.realm.entities
             {
                 Experience += exp;
             }
-            if (HasConditionEffect(ConditionEffects.Exhausted)){
-
-            }
-            else
-            {
+            if (!HasConditionEffect(ConditionEffects.Exhausted))
                 SurgeActivation(time);
-            }
+
             FameCounter.Killed(enemy, killer);
             return CheckLevelUp();
         }

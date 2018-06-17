@@ -50,32 +50,13 @@ namespace wServer.networking.handlers
             var prjDesc = item.Projectiles[0]; //Assume only one
 
             foreach (var pair in prjDesc.CondChance) {
-                if (condHitReq != -1) {
-                    condHitReq--;
-                    continue;
-                }
+                if (pair.Value == 0 || pair.Key == default(ConditionEffect)) return;
 
-                if (pair.Value <= 0 || pair.Key == default(ConditionEffect)) {
-                    condHitReq = -1;
-                    continue;
-                }
-
-                AlreadyZero:
-                if (condHitReq == 0) {
+                if (pair.Value / 100 > new Random().NextDouble()) {
                     var effList = new List<ConditionEffect>(prjDesc.Effects);
                     effList.Add(pair.Key);
                     prjDesc.Effects = effList.ToArray();
-                    condHitReq = -1;
-                    continue;
                 }
-
-                Random r = new Random();
-                double chance = (100 / pair.Value) - 1; //required shots on avg
-                condHitReq = (int)(Math.Truncate(chance) //non-integral part
-                    + (r.NextDouble() < (chance - Math.Truncate(chance)) ? 1 : 0) //integral part as random since there's no decimals in shot measurement
-                    + (Math.Sqrt(-2.0 * Math.Log(r.NextDouble())) *
-                                Math.Sin(2.0 * Math.PI * r.NextDouble())) * (chance / 3)); //gaussian to account for discrepancies
-                if (condHitReq == 0) goto AlreadyZero;
             }
 
             Projectile prj = player.PlayerShootProjectile(

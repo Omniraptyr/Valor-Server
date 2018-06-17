@@ -1,9 +1,9 @@
 ﻿#region
 
-using common.resources; using wServer.realm.worlds;
+using common.resources;
+using wServer.realm.worlds;
 using System;
 using System.Collections.Generic;
-using wServer.realm.entities; using wServer.realm.worlds;
 
 #endregion
 

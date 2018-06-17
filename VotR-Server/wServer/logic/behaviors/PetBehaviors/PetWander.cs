@@ -69,7 +69,7 @@ namespace wServer.logic.behaviors.PetBehaviors
                 Status = CycleStatus.Completed;
             }
 
-            float dist = host.GetSpeed(speed) * (time.ElaspedMsDelta / 1000f);
+            float dist = host.GetSpeed(speed) * (time.ElapsedMsDelta / 1000f);
             host.ValidateAndMove(host.X + storage.Direction.X * dist, host.Y + storage.Direction.Y * dist);
 
             storage.RemainingDistance -= dist;

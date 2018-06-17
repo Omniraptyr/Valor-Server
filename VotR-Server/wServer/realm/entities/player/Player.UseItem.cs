@@ -327,7 +327,10 @@ namespace wServer.realm.entities
         private void Activate(RealmTime time, Item item, Position target)
         {
             ActivateSecondaryPower(SecondaryPowerIdentify());
-            MP -= item.MpCost;
+            if (!CheckDim())
+            {
+                MP -= item.MpCost;
+            }
             if (CheckFurious())
             {
                 if (item.MpCost > 0)
