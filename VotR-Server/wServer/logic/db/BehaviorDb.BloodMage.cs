@@ -24,7 +24,7 @@ namespace wServer.logic
             )
         .Init("Zaragon, the Blood Mage",
                 new State(
-                    //new ScaleHP(5000),
+                    new ScaleHP(5000),
                     new DropPortalOnDeath("The Catacombs Portal", 100),
                     new Orbit(0.3, 3, target: "Blood Boss Anchor"),
                     new HpLessTransition(0.18, "Dead1"),

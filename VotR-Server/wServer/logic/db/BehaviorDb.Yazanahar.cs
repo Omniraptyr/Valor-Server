@@ -10,7 +10,7 @@ namespace wServer.logic
 		private _ Yazanahar = () => Behav ()
 			.Init ("Yazanahar",
 				new State (
-                    //new ScaleHP(30000),
+                    new ScaleHP(30000),
 					new HpLessTransition(0.20, "death1"),
 					new SetAltTexture (2),
 					new State (
@@ -213,7 +213,7 @@ namespace wServer.logic
 
 			.Init("Split Yazanahar",
 				new State(
-                    //new ScaleHP(5000),
+                    new ScaleHP(5000),
                     new ConditionalEffect(ConditionEffectIndex.StasisImmune),
 					new State("swag",
 						new Prioritize(
