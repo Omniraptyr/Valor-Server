@@ -433,6 +433,111 @@ namespace wServer.logic
                     )
                 )
             )
+        .Init("AH Feral of the Zol",
+            new State(
+                new State("fight1",
+                    new Prioritize(
+                        new StayAbove(1, 200),
+                        new Follow(0.4, range: 7),
+                        new Wander(0.4)
+                        ),
+                     new Shoot(10, count: 5, shootAngle: 14, projectileIndex: 0, predictive: 1, coolDown: 3000),
+                     new TimedTransition(3000, "charging")
+                    ),
+                 new State("charging",
+                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                     new Taunt("YOU SHALL BE DEVOURED."),
+                     new Flash(0xFF0000, 0.25, 4),
+                     new Shoot(10, count: 18, projectileIndex: 0, coolDown: 2000),
+                     new Charge(speed: 2, range: 10, coolDown: 4000),
+                     new TimedTransition(4000, "grr")
+                    ),
+                new State("grr",
+                     new StayBack(0.7, distance: 3),
+                     new Shoot(10, count: 8, shootAngle: 20, projectileIndex: 1, coolDown: 400),
+                     new Shoot(10, count: 6, projectileIndex: 0, coolDown: 2000),
+                     new TimedTransition(4000, "fight2")
+                    ),
+                new State("fight2",
+                     new Wander(0.1),
+                     new Shoot(10, count: 3, shootAngle: 8, projectileIndex: 2, coolDown: 100),
+                     new TimedTransition(4000, "heal")
+                    ),
+                new State("heal",
+                     new HealGroup(1, "Self", coolDown: 2000, healAmount: 500),
+                     new Grenade(7, 125, range: 8, coolDown: 1000),
+                     new Shoot(10, count: 4, shootAngle: 40, projectileIndex: 0, coolDown: new Cooldown(1000, 500)),
+                     new TimedTransition(4000, "fight1")
+                    )
+                )
+            )
+         .Init("AH Zol Incarnation",
+         new State(
+            new State(
+                new TimedTransition(8000, "Sneaky"),
+                new State("Fight1",
+                     new Shoot(4, count: 1, projectileIndex: 1, coolDown: 1),
+                     new Prioritize(
+                        new Follow(0.6, range: 7),
+                        new Wander(0.4)
+                     ),
+                     new Shoot(10, count: 7, shootAngle: 18, fixedAngle: 0, projectileIndex: 0, coolDown: 200),
+                     new Shoot(10, count: 7, shootAngle: 18, fixedAngle: 180, projectileIndex: 0, coolDown: 200),
+                     new TimedTransition(2000, "Fight2")
+                    ),
+                new State("Fight2",
+                     new Shoot(4, count: 1, projectileIndex: 1, coolDown: 1),
+                     new Prioritize(
+                        new Follow(0.6, range: 7),
+                        new Wander(0.4)
+                     ),
+                     new Shoot(10, count: 7, shootAngle: 18, fixedAngle: 90, projectileIndex: 0, coolDown: 200),
+                     new Shoot(10, count: 7, shootAngle: 18, fixedAngle: 270, projectileIndex: 0, coolDown: 200),
+                     new TimedTransition(2000, "Fight1")
+                    )
+                 ),
+                new State("Sneaky",
+                     new ChangeSize(10, 0),
+                     new Follow(1, range: 7),
+                     new TimedTransition(4000, "Reveal")
+                    ),
+                new State("Reveal",
+                     new ConditionalEffect(ConditionEffectIndex.Armored),
+                     new Flash(0xFF00FF, 1, 1),
+                     new ChangeSize(10, 130),
+                     new Shoot(10, count: 6, projectileIndex: 1, coolDown: 2000),
+                     new Orbit(1, 3, target: null, orbitClockwise: true),
+                     new TimedTransition(4000, "Fight1")
+                    )
+                )
+            )
+         .Init("AH Ultra Zol Turret",
+            new State(
+                new TransformOnDeath("AH Ultra Zol Turret Disabled", 1, 1, 1),
+                new SetNoXP(),
+                new State("switch1",
+                     new Shoot(8, count: 4, shootAngle: 90, projectileIndex: 0, coolDown: 4000),
+                     new DamageTakenTransition(25000, "switch2")
+                    ),
+                new State("switch2",
+                     new Suicide()
+                    )
+                 )
+              )
+         .Init("AH Ultra Zol Turret Disabled",
+            new State(
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new TransformOnDeath("AH Ultra Zol Turret", 1, 1, 1),
+                new SetNoXP(),
+                new State("switch",
+                     new Flash(0xFF00FF, 1, 1),
+                     new TimedTransition(6000, "die")
+                    ),
+                new State("die",
+                     new Suicide()
+                    )
+                 )
+              )
         .Init("Brute of the Hideout",
                 new State(
                     new State("Default",
@@ -614,7 +719,7 @@ namespace wServer.logic
                         new Suicide()
                         )
                     ),
-                                new MostDamagers(3,
+                    new MostDamagers(3,
                     LootTemplates.SFElite()
                     ),
                     new Threshold(0.05,
@@ -802,6 +907,19 @@ namespace wServer.logic
                 new State("explode",
                      new Shoot(12, count: 3, projectileIndex: 0, coolDown: 2500),
                      new Suicide()
+                    )
+                )
+            )
+       .Init("AH Aura Controller",
+            new State(
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("Deactivate",
+                    new ReplaceTile("Zol Aura", "Zol Aura Dormant", 250),
+                    new TimedTransition(5000, "Activate")
+                    ),
+                new State("Activate",
+                    new ReplaceTile("Zol Aura Dormant", "Zol Aura", 250),
+                    new TimedTransition(5000, "Deactivate")
                     )
                 )
             )

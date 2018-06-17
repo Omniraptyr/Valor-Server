@@ -109939,7 +109939,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		</AnimatedTexture>
         <HitSound>monster/abyss_brutes_hit</HitSound>
         <DeathSound>spell/fire_spray</DeathSound>
-        <MaxHitPoints>9500</MaxHitPoints>
+        <MaxHitPoints>18500</MaxHitPoints>
 		<Defense>45</Defense>
         <Size>140</Size>
         <Projectile id="0">
@@ -109968,7 +109968,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Enemy/>
         <DisplayId>Feral of the Zol</DisplayId>
     </Object>
-		<Object type="0x611d" id="AH Zol incarnation">
+		<Object type="0x611d" id="AH Zol Incarnation">
         <Class>Character</Class>
 		<AnimatedTexture>
 		  <File>d3Chars16x16rEmbed</File>
@@ -109976,15 +109976,15 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		</AnimatedTexture>
 		<HitSound>monster/skeletons_hit</HitSound>
 		<DeathSound>monster/skeletons_death</DeathSound>
-        <MaxHitPoints>6000</MaxHitPoints>
-		<Defense>5</Defense>
+        <MaxHitPoints>8000</MaxHitPoints>
+		<Defense>20</Defense>
         <Size>130</Size>
         <Projectile id="0">
             <ObjectId>Purple Star</ObjectId>
             <Speed>75</Speed>
             <MinDamage>40</MinDamage>
             <MaxDamage>120</MaxDamage>
-            <LifetimeMS>2800</LifetimeMS>
+            <LifetimeMS>800</LifetimeMS>
             <ConditionEffect duration="4">Confused</ConditionEffect>
         </Projectile>
 		<Projectile id="1">
@@ -109995,6 +109995,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <LifetimeMS>3000</LifetimeMS>
 			<ConditionEffect duration="8">Corrupted</ConditionEffect>
             <MultiHit/>
+			<Wavy/>
         </Projectile>
         <Enemy/>
         <DisplayId>Zol Incarnation</DisplayId>
@@ -110024,6 +110025,20 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Parametric/>
             <ConditionEffect duration="6">Corrupted</ConditionEffect>
         </Projectile>
+        <Enemy/>
+        <DisplayId>Zol Turret</DisplayId>
+    </Object>
+    <Object type="0x6124" id="AH Ultra Zol Turret Disabled">
+        <Class>Character</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x96</Index>
+        </Texture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>70</Defense>
+        <Size>110</Size>
         <Enemy/>
         <DisplayId>Zol Turret</DisplayId>
     </Object>
@@ -110124,5 +110139,36 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate maxDistance="20">Teleport</Activate>
         <feedPower>2000</feedPower>
         <DisplayId>Dimensional Prism</DisplayId>
+    </Object>
+	    <Object type="0x6121" id="AH Aura Controller">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6123" id="Aldragine TaskMaster Ultra">
+        <Class>Character</Class>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/dwarves_death</DeathSound>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Size>0</Size>
+        <Defense>0</Defense>
+        <XpMult>0.0</XpMult>
+        <ShadowSize>0</ShadowSize>
+        <DisplayId>Aldragine TaskMaster Ultra</DisplayId>
     </Object>
 </Objects>
