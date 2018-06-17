@@ -22,7 +22,7 @@ public class GroundTypeToolTip extends ToolTip {
         this.titleText_.x = 0;
         this.titleText_.y = 0;
         addChild(this.titleText_);
-        var _local2 = "";
+        var _local2:String = "";
         if (_arg1.hasOwnProperty("Speed")) {
             _local2 = (_local2 + (("Speed: " + Number(_arg1.Speed).toFixed(2)) + "\n"));
         }

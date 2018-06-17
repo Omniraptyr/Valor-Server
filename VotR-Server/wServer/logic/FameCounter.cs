@@ -121,7 +121,7 @@ namespace wServer.logic
         int elapsed = 0;
         public void Tick(RealmTime time)
         {
-            elapsed += time.ElaspedMsDelta;
+            elapsed += time.ElapsedMsDelta;
             if (elapsed > 1000 * 60)
             {
                 elapsed -= 1000 * 60;

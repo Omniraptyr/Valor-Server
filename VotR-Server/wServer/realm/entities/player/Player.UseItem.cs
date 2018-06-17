@@ -327,7 +327,10 @@ namespace wServer.realm.entities
         private void Activate(RealmTime time, Item item, Position target)
         {
             ActivateSecondaryPower(SecondaryPowerIdentify());
-            MP -= item.MpCost;
+            if (!CheckDim())
+            {
+                MP -= item.MpCost;
+            }
             if (CheckFurious())
             {
                 if (item.MpCost > 0)
@@ -1732,7 +1735,7 @@ namespace wServer.realm.entities
             ConditionEffectIndex[] gamblerEffs = {
                 ConditionEffectIndex.Sick,
                 ConditionEffectIndex.Berserk,
-                ConditionEffectIndex.Damaging
+                ConditionEffectIndex.Bravery
             };
             int roll = new Random().Next(0, 3);
             if (roll != 3)

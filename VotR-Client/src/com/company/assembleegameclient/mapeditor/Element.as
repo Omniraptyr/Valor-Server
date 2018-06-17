@@ -75,7 +75,6 @@ public class Element extends Sprite {
         var _local1:uint = 0x363636;
         if (this.selected_) {
             graphics.lineStyle(1, 0xFFFFFF);
-            _local1 = 0x7F7F7F;
         }
         graphics.beginFill(((this.mouseOver_) ? 0x565656 : 0x363636), 1);
         graphics.drawRect(2, 2, (WIDTH - 4), (HEIGHT - 4));

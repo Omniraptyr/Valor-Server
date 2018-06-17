@@ -118,7 +118,7 @@ namespace wServer.realm.entities
             _client.SendPacket(new NewTick
             {
                 TickId = ++TickId,
-                TickTime = time.ElaspedMsDelta,
+                TickTime = time.ElapsedMsDelta,
                 Statuses = _updateStatuses
             });
             AwaitMove(TickId);

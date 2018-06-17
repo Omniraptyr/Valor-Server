@@ -22,7 +22,7 @@ import flash.ui.Keyboard;
 import flash.utils.ByteArray;
 import flash.utils.Dictionary;
 
-class MEMap extends Sprite {
+internal class MEMap extends Sprite {
 
     public static const MAX_ALLOWED_SQUARES:int = 0x0200;
     public static const SQUARE_SIZE:int = 16;
@@ -537,12 +537,12 @@ class MEMap extends Sprite {
         }
         if (_arg3.types_[Layer.OBJECT] != -1) {
             _local6 = ObjectLibrary.getTextureFromType(_arg3.types_[Layer.OBJECT]);
-            if ((((_local6 == null)) || ((_local6 == this.invisibleTexture_)))) {
+            /*if ((((_local6 == null)) || ((_local6 == this.invisibleTexture_)))) {
                 this.objectLayer_.copyTo(_local5, _local5.rect, _local4);
             }
-            else {
+            else {*/
                 this.objectLayer_.copyTo(_local6, _local6.rect, _local4);
-            }
+            //}
         }
         if (_arg3.types_[Layer.REGION] != -1) {
             _local7 = RegionLibrary.getColor(_arg3.types_[Layer.REGION]);

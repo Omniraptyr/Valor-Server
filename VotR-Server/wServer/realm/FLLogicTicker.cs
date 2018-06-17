@@ -46,7 +46,7 @@ namespace wServer.realm
                 t.TotalElapsedMs = watch.ElapsedMilliseconds;
                 t.TickDelta = loopTime / MsPT;
                 t.TickCount += t.TickDelta;
-                t.ElaspedMsDelta = t.TickDelta * MsPT;
+                t.ElapsedMsDelta = t.TickDelta * MsPT;
 
                 if (t.TickDelta > 3)
                     Log.Warn("LAGGED! | ticks:" + t.TickDelta +
@@ -60,7 +60,7 @@ namespace wServer.realm
 
                 var logicTime = (int)(watch.ElapsedMilliseconds - t.TotalElapsedMs);
                 _mre.WaitOne(Math.Max(0, MsPT - logicTime));
-                loopTime += (int)(watch.ElapsedMilliseconds - t.TotalElapsedMs) - t.ElaspedMsDelta;
+                loopTime += (int)(watch.ElapsedMilliseconds - t.TotalElapsedMs) - t.ElapsedMsDelta;
             } while (true);
             Log.Info("Logic loop stopped.");
         }
@@ -85,7 +85,7 @@ namespace wServer.realm
 
             _manager.ConMan.Tick(t);
             _manager.Monitor.Tick(t);
-            _manager.InterServer.Tick(t.ElaspedMsDelta);
+            _manager.InterServer.Tick(t.ElapsedMsDelta);
 
             TickWorlds1(t);
 
@@ -113,9 +113,9 @@ namespace wServer.realm
             if (_worldTask == null || _worldTask.IsCompleted)
             {
                 t.TickDelta = _worldTime.TickDelta;
-                t.ElaspedMsDelta = t.TickDelta * MsPT;
+                t.ElapsedMsDelta = t.TickDelta * MsPT;
 
-                if (t.ElaspedMsDelta < 200) 
+                if (t.ElapsedMsDelta < 200) 
                     return;
 
                 _worldTime.TickDelta = 0;

@@ -1127,7 +1127,6 @@ namespace common.resources
 
         public PlayerDesc(ushort type, XElement elem) : base(type, elem)
         {
-            XElement n;
             SlotTypes = elem.Element("SlotTypes").Value.CommaToArray<int>();
             Equipment = elem.Element("Equipment").Value.CommaToArray<ushort>();
             Stats = new Stat[12];

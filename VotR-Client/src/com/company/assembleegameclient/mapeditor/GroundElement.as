@@ -10,7 +10,7 @@ import flash.display.IGraphicsData;
 import flash.display.Shape;
 import flash.geom.Rectangle;
 
-class GroundElement extends Element {
+internal class GroundElement extends Element {
 
     private static const VIN:Vector.<Number> = new <Number>[0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0];
     private static const SCALE:Number = 0.6;

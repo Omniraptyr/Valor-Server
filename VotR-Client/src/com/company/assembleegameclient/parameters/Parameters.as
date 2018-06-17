@@ -11,8 +11,8 @@ import flash.utils.Dictionary;
 
 public class Parameters {
 
-    public static const BUILD_VERSION:String = "30";
-    public static const MINOR_VERSION:String = "L2";
+    public static const BUILD_VERSION:String = "23";
+    public static const MINOR_VERSION:String = "E5";
     public static const FULL_BUILD:String = BUILD_VERSION + "." + MINOR_VERSION;
     public static const ENABLE_ENCRYPTION:Boolean = true;
     public static const PORT:int = 2050;

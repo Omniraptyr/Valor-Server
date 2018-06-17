@@ -6,29 +6,12 @@ using wServer.logic.transitions;
 
 namespace wServer.logic
 {
-    partial class BehaviorDb
-    {
+    partial class BehaviorDb {
         private _ Aldragine = () => Behav()
-        //step on it the wrong time and rip u
-        .Init("Aura of Zol",
-            new State(
-                new ConditionalEffect(ConditionEffectIndex.Invincible),
-                new State("goodaura",
-                     new SetAltTexture(0),
-                     new TimedTransition(6500, "badaura")
-                    ),
-                new State("badaura",
-                     new SetAltTexture(1),
-                     new Shoot(1, count: 1, projectileIndex: 0, coolDown: 50, coolDownOffset: 100),
-                     new TimedTransition(6500, "goodaura")
-                    )
-                )
-            )
         .Init("Zol Mine",
             new State(
                 new State("1",
                     new Shoot(10, count: 5, shootAngle: 3, projectileIndex: 0, coolDownOffset: 1100, angleOffset: 270, coolDown: 2000),
-
                     new Shoot(10, count: 5, shootAngle: 3, projectileIndex: 1, coolDownOffset: 1100, angleOffset: 90, coolDown: 2000),
                      new DamageTakenTransition(2500, "2")
                     ),
@@ -824,15 +807,23 @@ namespace wServer.logic
             )
         .Init("AH The Vision of Aldragine",
                 new State(
+                    new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new DropPortalOnDeath("Core of the Hideout Portal", 100, timeout: 180),
                     new HpLessTransition(0.15, "spookded"),
-                    new State("default",
-                        new ConditionalEffect(ConditionEffectIndex.Invincible),
-                        new EntitiesNotExistsTransition(12, "callout", "Giant Cube of Zol")
-                        ),
+                new State("Deactivate",
+                    new ReplaceTile("Zol Aura", "Zol Aura Dormant", 250),
+                    new TimedTransition(5000, "Activate"),
+                    new EntitiesNotExistsTransition(12, "callout", "Giant Cube of Zol")
+                    ),
+                new State("Activate",
+                    new ReplaceTile("Zol Aura Dormant", "Zol Aura", 250),
+                    new TimedTransition(5000, "Deactivate"),
+                    new EntitiesNotExistsTransition(12, "callout", "Giant Cube of Zol")
+                    ),
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("callout",
+                        new RemoveConditionalEffect(ConditionEffectIndex.Invincible),
                         new Taunt(true, "He will fulfill the destiny in store. Come. Let me show you his vision.", "Even the ancients, the controllers, and Oryx himself fear us. Share that fear with them.", "Courage can only take you so far."),
                         new PlayerWithinTransition(8, "start")
                         ),

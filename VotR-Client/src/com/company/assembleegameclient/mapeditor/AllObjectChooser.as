@@ -4,7 +4,7 @@ import com.company.util.MoreStringUtil;
 
 import flash.utils.Dictionary;
 
-class AllObjectChooser extends Chooser {
+internal class AllObjectChooser extends Chooser {
 
     private var cache:Dictionary;
     private var lastSearch:String = "";

@@ -406,7 +406,7 @@ public class EditingScreen extends Sprite {
         this.commandQueue_.addCommandList(_local3);
     }
 
-    private function safeRemoveCategoryChildren() {
+    private function safeRemoveCategoryChildren() : void {
         SpriteUtil.safeRemoveChild(this, this.groundChooser_);
         SpriteUtil.safeRemoveChild(this, this.objChooser_);
         SpriteUtil.safeRemoveChild(this, this.enemyChooser_);

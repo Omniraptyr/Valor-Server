@@ -5538,7 +5538,7 @@
         </AltTexture>
         <HitSound>monster/skeletons_hit</HitSound>
         <DeathSound>monster/skeletons_death</DeathSound>
-        <MaxHitPoints>400000</MaxHitPoints>
+        <MaxHitPoints>150000</MaxHitPoints>
         <Projectile id="0">
             <ObjectId>Paralyze Bullet</ObjectId>
             <Speed>35</Speed>
@@ -5637,7 +5637,7 @@
         </AnimatedTexture>
         <HitSound>monster/wooden_walls_hit</HitSound>
         <DeathSound>monster/wooden_walls_death</DeathSound>
-        <MaxHitPoints>100000</MaxHitPoints>
+        <MaxHitPoints>20000</MaxHitPoints>
         <Projectile id="0">
             <ObjectId>WM Ball</ObjectId>
             <Speed>15</Speed>
@@ -5674,7 +5674,7 @@
         </AnimatedTexture>
         <HitSound>monster/wooden_walls_hit</HitSound>
         <DeathSound>monster/wooden_walls_death</DeathSound>
-        <MaxHitPoints>100000</MaxHitPoints>
+        <MaxHitPoints>20000</MaxHitPoints>
         <Projectile id="0">
             <ObjectId>DM Ball</ObjectId>
             <Speed>15</Speed>

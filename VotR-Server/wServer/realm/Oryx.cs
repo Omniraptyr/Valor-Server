@@ -473,7 +473,7 @@ namespace wServer.realm
             new Dictionary<WmapTerrain, Tuple<int, Tuple<string, double>[]>>()
         {
             { WmapTerrain.ShoreSand, Tuple.Create(
-                100, new []
+                1500, new []
                 {
                     Tuple.Create("Pirate", 0.3),
                     Tuple.Create("Piratess", 0.1),
@@ -482,7 +482,7 @@ namespace wServer.realm
                 })
             },
             { WmapTerrain.ShorePlains, Tuple.Create(
-                150, new []
+                1550, new []
                 {
                     Tuple.Create("Bandit Leader", 0.4),
                     Tuple.Create("Red Gelatinous Cube", 0.2),
@@ -491,7 +491,7 @@ namespace wServer.realm
                 })
             },
             { WmapTerrain.LowPlains, Tuple.Create(
-                200, new []
+                1400, new []
                 {
                     Tuple.Create("Hobbit Mage", 0.5),
                     Tuple.Create("Undead Hobbit Mage", 0.4),
@@ -499,7 +499,7 @@ namespace wServer.realm
                 })
             },
             { WmapTerrain.LowForest, Tuple.Create(
-                200, new []
+                1400, new []
                 {
                     Tuple.Create("Elf Wizard", 0.2),
                     Tuple.Create("Goblin Mage", 0.2),
@@ -508,7 +508,7 @@ namespace wServer.realm
                 })
             },
             { WmapTerrain.LowSand, Tuple.Create(
-                200, new []
+                1400, new []
                 {
                     Tuple.Create("Sandsman King", 0.4),
                     Tuple.Create("Giant Crab", 0.2),
@@ -516,7 +516,7 @@ namespace wServer.realm
                 })
             },
             { WmapTerrain.MidPlains, Tuple.Create(
-                150, new []
+                1550, new []
                 {
                     Tuple.Create("Fire Sprite", 0.1),
                     Tuple.Create("Ice Sprite", 0.1),
@@ -534,7 +534,7 @@ namespace wServer.realm
                 })
             },
             { WmapTerrain.MidForest, Tuple.Create(
-                150, new []
+                1550, new []
                 {
                     Tuple.Create("Dwarf King", 0.3),
                     Tuple.Create("Metal Golem", 0.05),
@@ -546,7 +546,7 @@ namespace wServer.realm
                 })
             },
             { WmapTerrain.MidSand, Tuple.Create(
-                300, new []
+                1400, new []
                 {
                     Tuple.Create("Desert Werewolf", 0.25),
                     Tuple.Create("Fire Golem", 0.1),
@@ -557,7 +557,7 @@ namespace wServer.realm
                 })
             },
             { WmapTerrain.HighPlains, Tuple.Create(
-                300, new []
+                900, new []
                 {
                     Tuple.Create("Shield Orc Key", 0.2),
                     Tuple.Create("Urgle", 0.2),
@@ -565,7 +565,7 @@ namespace wServer.realm
                 })
             },
             { WmapTerrain.HighForest, Tuple.Create(
-                300, new []
+                750, new []
                 {
                     Tuple.Create("Ogre King", 0.4),
                     Tuple.Create("Dragon Egg", 0.1),
@@ -574,7 +574,7 @@ namespace wServer.realm
                 })
             },
             { WmapTerrain.HighSand, Tuple.Create(
-                250, new []
+                1000, new []
                 {
                     Tuple.Create("Minotaur", 0.4),
                     Tuple.Create("Flayer God", 0.4),
@@ -582,23 +582,23 @@ namespace wServer.realm
                 })
             },
             { WmapTerrain.Mountains, Tuple.Create(
-                    200, new []
-                    {
-                        Tuple.Create("White Demon", 0.09),
-                        Tuple.Create("Sprite God", 0.08),
-                        Tuple.Create("Medusa", 0.08),
-                        Tuple.Create("Ent God", 0.1),
-                        Tuple.Create("Beholder", 0.09),
-                        Tuple.Create("Flying Brain", 0.09),
-                        Tuple.Create("Slime God", 0.08),
-                        Tuple.Create("Ghost God", 0.07),
-                        Tuple.Create("Rock Bot", 0.05),
-                        Tuple.Create("Djinn", 0.09),
-                        Tuple.Create("Leviathan", 0.07),
-                        Tuple.Create("Arena Headless Horseman", 0.01),
-                        Tuple.Create("Thunder God", 0.025),
-                        Tuple.Create("Angelic Commander", 0.021),
-                    })
+                200, new []
+                {
+                    Tuple.Create("White Demon", 0.09),
+                    Tuple.Create("Sprite God", 0.08),
+                    Tuple.Create("Medusa", 0.08),
+                    Tuple.Create("Ent God", 0.1),
+                    Tuple.Create("Beholder", 0.09),
+                    Tuple.Create("Flying Brain", 0.09),
+                    Tuple.Create("Slime God", 0.08),
+                    Tuple.Create("Ghost God", 0.07),
+                    Tuple.Create("Rock Bot", 0.05),
+                    Tuple.Create("Djinn", 0.09),
+                    Tuple.Create("Leviathan", 0.07),
+                    Tuple.Create("Arena Headless Horseman", 0.01),
+                    Tuple.Create("Thunder God", 0.025),
+                    Tuple.Create("Angelic Commander", 0.021),
+                })
             },
         };
         #endregion

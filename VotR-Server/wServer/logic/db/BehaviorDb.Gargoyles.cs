@@ -10,7 +10,8 @@ namespace wServer.logic
         private _ Gargoyles = () => Behav()
 			.Init("Lord Stone Gargoyle",
 				new State(
-					new State(
+                    new ScaleHP(25000),
+                    new State(
 					new State(
 						new ConditionalEffect(ConditionEffectIndex.Invincible),
 					new State("idle",
@@ -205,15 +206,16 @@ namespace wServer.logic
 					new TierLoot(12, ItemType.Armor, 0.1),
 					new TierLoot(12, ItemType.Weapon, 0.1),
 					new TierLoot(6, ItemType.Ring, 0.1),
+                    new TierLoot(7, ItemType.Ring, 0.01),
                     new ItemLoot("Shard of the Stone Soul", 0.005),
                     new ItemLoot("Ancient Stone Maul", 0.02),
-                    new ItemLoot("Marble Tablet", 0.02),
-                    new ItemLoot("Ancient Stone Sword", 0.05)
+                    new ItemLoot("Marble Tablet", 0.02)
                 )
 			)
 			.Init("Stone Gargoyle",
 					new State(
-						new Grenade(2, 200, coolDown: 5000),
+                        new ScaleHP(5000),
+                        new Grenade(2, 200, coolDown: 5000),
 						new HpLessTransition(0.15, "dying"),
                         new HealGroup(60, "LSG Group", coolDown: 6000),
 					new State("start"
@@ -243,7 +245,8 @@ namespace wServer.logic
 				)
 				.Init("Stone of the Gargoyles",
 					new State(
-						new TransformOnDeath("Baby Stone Gargoyle", 1, 3),
+                        new ScaleHP(1000),
+                        new TransformOnDeath("Baby Stone Gargoyle", 1, 3),
 						new State("1",
 							new Shoot(10, count: 3, shootAngle: 20, projectileIndex: 0, predictive: 1, coolDown: 1000),
 							new HpLessTransition(0.15, "2"),
@@ -265,7 +268,8 @@ namespace wServer.logic
 				)
 				.Init("Baby Stone Gargoyle",
 					new State(
-						new Prioritize(
+                        new ScaleHP(1000),
+                        new Prioritize(
 							new Follow(1, 8, 5),
 							new Wander(0.25)
 						),

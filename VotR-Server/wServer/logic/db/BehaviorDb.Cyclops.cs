@@ -63,14 +63,13 @@ namespace wServer.logic
                         "More wine!"
                         ),
                     new StayCloseToSpawn(1.2, 5),
-                    new Spawn("Cyclops", 5, coolDown: 10000),
-                    new Spawn("Cyclops Warrior", 5, coolDown: 10000),
-                    new Spawn("Cyclops Noble", 5, coolDown: 10000),
-                    new Spawn("Cyclops Prince", 5, coolDown: 10000),
-                    new Spawn("Cyclops King", 5, coolDown: 10000)
+                        new Spawn("Cyclops", 5, coolDown: 10000),
+                        new Spawn("Cyclops Warrior", 5, coolDown: 10000),
+                        new Spawn("Cyclops Noble", 5, coolDown: 10000),
+                        new Spawn("Cyclops Prince", 5, coolDown: 10000),
+                        new Spawn("Cyclops King", 5, coolDown: 10000)
                     ),
             new Threshold(0.1,
-                    new ItemLoot("Cyclop's Eye", 0.03),
                     new ItemLoot("50 Gold", 0.1)
                 )
             )

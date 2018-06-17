@@ -222,7 +222,7 @@ namespace wServer.logic.behaviors
             }
             else
             {
-                cool -= time.ElaspedMsDelta;
+                cool -= time.ElapsedMsDelta;
                 Status = CycleStatus.InProgress;
             }
 

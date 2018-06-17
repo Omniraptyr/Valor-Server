@@ -14,7 +14,7 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;
 
-class Chooser extends Sprite {
+internal class Chooser extends Sprite {
 
     public static const WIDTH:int = 136;
     public static const HEIGHT:int = 430;

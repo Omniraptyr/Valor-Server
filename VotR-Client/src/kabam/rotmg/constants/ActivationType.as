@@ -34,6 +34,7 @@ public class ActivationType {
     public static const FILL:String = "Fill";
     public static const GENERIC_ACTIVATE:String = "GenericActivate";
     public static const BURNINGLIGHTNING:String = "Lightning";
+	public static const BANNER:String = "Banner";
 
 
 }

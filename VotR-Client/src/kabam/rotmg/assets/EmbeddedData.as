@@ -23,7 +23,7 @@ public class EmbeddedData {
     private static const TutorialObjectsCXML:Class = EmbeddedData_TutorialObjectsCXML;
     private static const MonstersCXML:Class = EmbeddedData_MonstersCXML;
     private static const PetsCXML:Class = EmbeddedData_PetsCXML;
-    private static const TempObjectsCXML:Class = EmbeddedData_TempObjectsCXML;
+    private static const TempObjectsCXML:Class = EmbeddedData_TempObjectsXML;
     private static const ShoreCXML:Class = EmbeddedData_ShoreCXML;
     private static const LowCXML:Class = EmbeddedData_LowCXML;
     private static const MidCXML:Class = EmbeddedData_MidCXML;

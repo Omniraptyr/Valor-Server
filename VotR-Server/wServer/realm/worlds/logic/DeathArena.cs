@@ -227,7 +227,7 @@ namespace wServer.realm.worlds.logic
                 return;
             }
 
-            _time += time.ElaspedMsDelta;
+            _time += time.ElapsedMsDelta;
 
             switch (_arenaState)
             {

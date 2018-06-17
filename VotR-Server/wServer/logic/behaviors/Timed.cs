@@ -34,7 +34,7 @@ namespace wServer.logic.behaviors
                 {   behavior.Tick(host, time);
                 Status = CycleStatus.InProgress;
 
-                period -= time.ElaspedMsDelta;
+                period -= time.ElapsedMsDelta;
                 if (period <= 0)
                 {
                     period = this.period;

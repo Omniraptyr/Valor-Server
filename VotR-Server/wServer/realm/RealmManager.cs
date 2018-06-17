@@ -21,7 +21,7 @@ namespace wServer.realm
         public long TickCount;
         public long TotalElapsedMs;
         public int TickDelta;
-        public int ElaspedMsDelta;
+        public int ElapsedMsDelta;
     }
 
     public enum PendingPriority

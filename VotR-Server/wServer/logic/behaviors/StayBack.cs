@@ -44,7 +44,7 @@ namespace wServer.logic.behaviors
                 Vector2 vect;
                 vect = new Vector2(e.X - host.X, e.Y - host.Y);
                 vect.Normalize();
-                float dist = host.GetSpeed(speed) * (time.ElaspedMsDelta / 1000f);
+                float dist = host.GetSpeed(speed) * (time.ElapsedMsDelta / 1000f);
                 host.ValidateAndMove(host.X + (-vect.X) * dist, host.Y + (-vect.Y) * dist);
 
                 if (cooldown <= 0)
@@ -55,7 +55,7 @@ namespace wServer.logic.behaviors
                 else
                 {
                     Status = CycleStatus.InProgress;
-                    cooldown -= time.ElaspedMsDelta;
+                    cooldown -= time.ElapsedMsDelta;
                 }
             }
 

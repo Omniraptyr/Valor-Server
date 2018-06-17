@@ -31,21 +31,11 @@ namespace wServer.realm.entities
         {
             switch (crateName)
             {
-                case 1:
-                    return "Bronze Lootbox";
-                    break;
-                case 2:
-                    return "Silver Lootbox";
-                    break;
-                case 3:
-                    return "Gold Lootbox";
-                    break;
-                case 4:
-                    return "Elite Lootbox";
-                    break;
-                case 5:
-                    return "Premium Lootbox";
-                    break;
+                case 1: return "Bronze Lootbox";
+                case 2: return "Silver Lootbox";
+                case 3: return "Gold Lootbox";
+                case 4: return "Elite Lootbox";
+                case 5: return "Premium Lootbox";
             }
             return "Bronze Lootbox";
         }

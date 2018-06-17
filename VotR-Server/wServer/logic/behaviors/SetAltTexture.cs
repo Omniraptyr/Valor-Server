@@ -59,7 +59,7 @@ namespace wServer.logic.behaviors
             }
             else
             {
-                textState.remainingTime -= time.ElaspedMsDelta;
+                textState.remainingTime -= time.ElapsedMsDelta;
             }
         }
     }
