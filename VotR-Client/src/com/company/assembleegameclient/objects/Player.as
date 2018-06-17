@@ -842,6 +842,13 @@ public class Player extends Character {
         if (isDamaging()) {
             _local1 = (_local1 * 1.5);
         }
+        if(isMercy()){
+            _local1 = (_local1 * 1.15);
+        }
+
+        if(isMercy() && isDamaging()){
+            _local1 = (_local1 * 1.65);
+        }
         return (_local1);
     }
     private function relentlessDamageBonus():Number{
@@ -886,6 +893,11 @@ public class Player extends Character {
         }
     }
 
+    private function isMercy():Boolean{
+        if(ObjectLibrary.typeToDisplayId_[this.equipment_[0]] == "Mercy of Yazanahar" && mp_ <= maxMP_/2){
+            return mp_*2;
+        }
+    }
     private function makeSkinTexture():void {
         var _local1:MaskedImage = this.skin.imageFromAngle(0, AnimatedChar.STAND, 0);
         animatedChar_ = this.skin;
