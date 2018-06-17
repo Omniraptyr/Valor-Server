@@ -10,7 +10,7 @@ namespace wServer.logic
         private _ Gargoyles = () => Behav()
 			.Init("Lord Stone Gargoyle",
 				new State(
-                    //new ScaleHP(25000),
+                    new ScaleHP(25000),
                     new State(
 					new State(
 						new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -245,7 +245,7 @@ namespace wServer.logic
 				)
 				.Init("Stone of the Gargoyles",
 					new State(
-                        //new ScaleHP(1000),
+                        new ScaleHP(1000),
                         new TransformOnDeath("Baby Stone Gargoyle", 1, 3),
 						new State("1",
 							new Shoot(10, count: 3, shootAngle: 20, projectileIndex: 0, predictive: 1, coolDown: 1000),
@@ -268,7 +268,7 @@ namespace wServer.logic
 				)
 				.Init("Baby Stone Gargoyle",
 					new State(
-                        //new ScaleHP(1000),
+                        new ScaleHP(1000),
                         new Prioritize(
 							new Follow(1, 8, 5),
 							new Wander(0.25)
