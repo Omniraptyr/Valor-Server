@@ -47,8 +47,8 @@ namespace wServer.networking.handlers
             if (prj == null)
                 inproperHits++;
 
-            if (inproperHits > 20)
-                client.Disconnect();
+            if (inproperHits > 100)
+                Log.Error(player + " has reached 100 inproper hits, maybe hacking?");
            
             prj?.ForceHit(player, time);
         }

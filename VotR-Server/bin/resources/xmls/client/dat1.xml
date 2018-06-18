@@ -76002,7 +76002,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <RateOfFire>1.8</RateOfFire>
         <Sound>weapon/dirk</Sound>
         <Projectile>
-            <ObjectId>Aqua Slash</ObjectId>
+            <ObjectId>Storm Dagger Slash</ObjectId>
             <Speed>130</Speed>
             <MinDamage>80</MinDamage>
             <MaxDamage>95</MaxDamage>
@@ -76016,6 +76016,14 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <OldSound>daggerSwing</OldSound>
         <FameBonus>6</FameBonus>
     </Object>
+	   <Object type="0xa231" id="Storm Dagger Slash">
+      <Class>Projectile</Class>
+      <Texture>
+         <File>d3LofiObjEmbed</File>
+         <Index>0x457</Index>
+      </Texture>
+	  <AngleCorrection>1</AngleCorrection>
+   </Object>
   <Object type="0x1469" id="Enchanted Sandstone Armor">
     <Class>Equipment</Class>
     <Item/>
@@ -82366,11 +82374,12 @@ This dagger was a myth, will you live to tell the tale?
     <Sound>weapon/long_sword</Sound>
     <Projectile>
       <ObjectId>Garden Slash</ObjectId>
-      <Speed>120</Speed>
-      <MinDamage>140</MinDamage>
-      <MaxDamage>160</MaxDamage>
-      <LifetimeMS>350</LifetimeMS>
+      <Speed>130</Speed>
+      <LifetimeMS>365</LifetimeMS>
+      <MinDamage>135</MinDamage>
+      <MaxDamage>180</MaxDamage>
       <MultiHit/>
+	  <CondChance effect="Bleeding" chance="10" duration="3"/>
     </Projectile>
     <BagType>4</BagType>
     <FameBonus>4</FameBonus>
@@ -92000,7 +92009,7 @@ A whole thanksgiving turkey!
     </RandomTexture>
 	  <AngleCorrection>1</AngleCorrection>
   </Object>
-<Object type="0x46df" id="Wand of Lurking Night">
+<Object type="0x46df" id="Wand of Flowing Water">
     <Class>Equipment</Class>
     <Item/>
     <Texture>
@@ -92025,7 +92034,6 @@ A whole thanksgiving turkey!
     <OldSound>magicShoot</OldSound>
     <feedPower>450</feedPower>
     <Enchantable/>
-    <DisplayId>Wand of Lurking Night</DisplayId>
   </Object>
   <Object type="0x46f1" id="Vulcan Shot">
     <Class>Projectile</Class>

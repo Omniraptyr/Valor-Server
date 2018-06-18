@@ -32,7 +32,6 @@ namespace wServer.realm.entities
 
     public partial class Player : Character, IContainer, IPlayer
     {
-
         new static readonly ILog Log = LogManager.GetLogger(typeof(Player));
 
         private readonly Client _client;
@@ -718,7 +717,7 @@ namespace wServer.realm.entities
             if (owner.Name.Equals("OceanTrench"))
                 OxygenBar = 100;
             if (owner.Name.Equals("Nexus")) {
-                int amount = (int)Math.Floor((Stats[10] / 100d) * 3);
+                int amount = (int)(Math.Min(Math.Floor((Stats[10] / 90d) * 6), 6));
 
                 if (amount > HealthPots.Count)
                     HealthPots = new ItemStacker(this, 254, 0x0A22, amount, 6);
@@ -1439,11 +1438,10 @@ namespace wServer.realm.entities
         {
             var playerDesc = Manager.Resources.GameData.Classes[ObjectType];
             var maxed = playerDesc.Stats.Where((t, i) => Stats.Base[i] >= t.MaxValue).Count();
-            var deathMessage = "{\"key\":\"server.death\",\"tokens\":{\"player\":\"" + Name + "\",\"level\":\"" +
-                               Level + "\",\"enemy\":\"" + killer + "\"}}";
+            var deathMessage = Name + "'s " + maxed + "/12 " + playerDesc.Class + " died with " + Fame + " base fame to " + killer;
 
             // notable deaths
-            if ((maxed >= 6 || Fame >= 1000) && !Client.Account.Admin)
+            if ((maxed >= 8 || Fame >= 1000) && !Client.Account.Admin)
             {
                 foreach (var w in Manager.Worlds.Values)
                     foreach (var p in w.Players.Values)
