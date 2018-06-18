@@ -184,7 +184,7 @@ namespace wServer.realm.entities
 
             if (!stat && HasConditionEffect(ConditionEffects.Bleeding))
             {
-                HP -= (int)(MaximumHP / 650 * time.ElapsedMsDelta / 1000f);
+                HP -= (int)(MaximumHP / 650f * time.ElapsedMsDelta / 1000f);
             }
             base.Tick(time);
         }

@@ -99,6 +99,11 @@ namespace wServer.logic.loot
                     ShowBags(enemy, i.Value, i.Key);
                 else
                     pub.Add(i.Key);
+                foreach (Item item in i.Value) {
+                    if (item.BagType < 6) return;
+                    foreach (var p in enemy.Owner.Players.Values)
+                        p.SendHelp(i.Key.Name + " has just received the " + (item.DisplayId == null ? item.ObjectId : item.DisplayId) + "!");
+                }
             }
             if (pub.Count > 0 && shared.Count > 0)
                 ShowBags(enemy, shared, pub.ToArray());

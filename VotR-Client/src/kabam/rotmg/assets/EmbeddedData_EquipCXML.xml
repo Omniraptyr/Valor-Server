@@ -15058,12 +15058,15 @@
             <File>d3LofiObjEmbed</File>
             <Index>0x436</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Owypo"/>
+        </ExtraTooltipData>
         <SlotType>2</SlotType>
         <Description>A dagger that will slice through diamond.</Description>
         <RateOfFire>1.8</RateOfFire>
         <Sound>weapon/dirk</Sound>
         <Projectile>
-            <ObjectId>Aqua Slash</ObjectId>
+            <ObjectId>Storm Dagger Slash</ObjectId>
             <Speed>130</Speed>
             <MinDamage>80</MinDamage>
             <MaxDamage>95</MaxDamage>
@@ -16906,6 +16909,9 @@
             <File>d3LofiObjEmbed</File>
             <Index>0xa2</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Owypo"/>
+        </ExtraTooltipData>
         <SlotType>17</SlotType>
         <Description>A staff that holds some nice looking, dangerous, radioactive material. I'd advise not eating it.</Description>
         <RateOfFire>1</RateOfFire>
@@ -16952,6 +16958,9 @@
             <File>d3LofiObjEmbed</File>
             <Index>0xa5</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Owypo"/>
+        </ExtraTooltipData>
         <SlotType>14</SlotType>
         <Description>The Kami Kage must have left his other robe in the wardrobe and someone took it. It's yours now.</Description>
         <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
@@ -16970,6 +16979,9 @@
             <File>d3LofiObjEmbed</File>
             <Index>0xa0</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Owypo"/>
+        </ExtraTooltipData>
         <SlotType>1</SlotType>
         <Description>You can't handle this sword.</Description>
         <RateOfFire>1</RateOfFire>
@@ -17793,6 +17805,9 @@
             <File>d3LofiObjEmbed</File>
             <Index>0xdd</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Owypo"/>
+        </ExtraTooltipData>
         <SlotType>24</SlotType>
         <Tier>12</Tier>
         <Description>You can cut your grass with this.</Description>
@@ -17800,11 +17815,12 @@
         <Sound>weapon/long_sword</Sound>
         <Projectile>
             <ObjectId>Garden Slash</ObjectId>
-            <Speed>120</Speed>
-            <MinDamage>140</MinDamage>
-            <MaxDamage>160</MaxDamage>
-            <LifetimeMS>350</LifetimeMS>
+            <Speed>130</Speed>
+            <LifetimeMS>365</LifetimeMS>
+            <MinDamage>135</MinDamage>
+            <MaxDamage>180</MaxDamage>
             <MultiHit/>
+			<CondChance effect="Bleeding" chance="10" duration="3"/>
         </Projectile>
         <BagType>4</BagType>
         <FameBonus>4</FameBonus>
@@ -18634,7 +18650,7 @@
             <Index>0x11c</Index>
         </Texture>
         <SlotType>1</SlotType>
-        <Description>Such hazardous material should be handled very carefully...SIKE</Description>
+        <Description>Such hazardous material should be handled very carefully...</Description>
         <RateOfFire>1</RateOfFire>
         <Sound>weapon/mithril_sword</Sound>
         <Projectile>
@@ -21416,16 +21432,19 @@
         <feedPower>950</feedPower>
         <DisplayId>Stinger Spell</DisplayId>
     </Object>
-    <Object type="0x46df" id="Wand of Lurking Night">
+    <Object type="0x46df" id="Wand of Flowing Water">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
             <File>d3LofiObjEmbed</File>
             <Index>0x2c7</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Owypo"/>
+        </ExtraTooltipData>
         <SlotType>8</SlotType>
         <Tier>12</Tier>
-        <Description>Here it comes, the Twilight.</Description>
+        <Description>The arcane stones in this wand bind the condensed water, resulting in the enemy meeting with an ocean's force each shot.</Description>
         <RateOfFire>1</RateOfFire>
         <Sound>weapon/wand_of_death</Sound>
         <Projectile>
@@ -21441,7 +21460,7 @@
         <OldSound>magicShoot</OldSound>
         <feedPower>450</feedPower>
         <Enchantable/>
-        <DisplayId>Wand of Lurking Night</DisplayId>
+        <DisplayId>Wand of Flowing Water</DisplayId>
     </Object>
     <Object type="0x46f2" id="Vulcanstriker">
         <Class>Equipment</Class>
@@ -22475,6 +22494,9 @@
             <File>lofiObj5</File>
             <Index>0xf9</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Owypo"/>
+        </ExtraTooltipData>
         <SlotType>7</SlotType>
         <Description>Prototype armor made by some very smart aliens. I assure you they know what they're doing. A bit bulky though.</Description>
         <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
@@ -25080,7 +25102,7 @@
             <File>lofiObj3</File>
             <Index>0xe1</Index>
         </Texture>
-        <Description>A measly 5 gold.</Description>
+        <Description>Double-Click this item to gain the gold, or keep it to trade with!</Description>
         <Consumable/>
         <Activate amount="5">TreasureActivate</Activate>
         <Sound>spell/fire_nova</Sound>
@@ -25094,7 +25116,7 @@
             <File>lofiObj3</File>
             <Index>0xe1</Index>
         </Texture>
-        <Description>Save your dimes.</Description>
+        <Description>Double-Click this item to gain the gold, or keep it to trade with!</Description>
         <Consumable/>
         <Activate amount="10">TreasureActivate</Activate>
         <Sound>spell/fire_nova</Sound>
@@ -25108,7 +25130,7 @@
             <File>lofiObj3</File>
             <Index>0xe1</Index>
         </Texture>
-        <Description>50 of 'em my friend.</Description>
+        <Description>Double-Click this item to gain the gold, or keep it to trade with!</Description>
         <Consumable/>
         <Activate amount="50">TreasureActivate</Activate>
         <Sound>spell/fire_nova</Sound>
@@ -25122,7 +25144,7 @@
             <File>lofiObj3</File>
             <Index>0xe1</Index>
         </Texture>
-        <Description>0 to 100.</Description>
+        <Description>Double-Click this item to gain the gold, or keep it to trade with!</Description>
         <Consumable/>
         <Activate amount="100">TreasureActivate</Activate>
         <Sound>spell/fire_nova</Sound>
@@ -25136,7 +25158,7 @@
             <File>lofiObj3</File>
             <Index>0xe1</Index>
         </Texture>
-        <Description>This is 1000 gold!</Description>
+        <Description>Double-Click this item to gain the gold, or keep it to trade with!</Description>
         <Consumable/>
         <Activate amount="1000">TreasureActivate</Activate>
         <Sound>spell/fire_nova</Sound>
@@ -25150,7 +25172,7 @@
             <File>lofiObj3</File>
             <Index>0xe1</Index>
         </Texture>
-        <Description>10k in THA BANK.</Description>
+        <Description>Double-Click this item to gain the gold, or keep it to trade with!</Description>
         <Consumable/>
         <Activate amount="10000">TreasureActivate</Activate>
         <Sound>spell/fire_nova</Sound>
@@ -25164,7 +25186,7 @@
             <File>lofiObj3</File>
             <Index>0xe1</Index>
         </Texture>
-        <Description>One one Five Zeros.</Description>
+        <Description>Double-Click this item to gain the gold, or keep it to trade with!</Description>
         <Consumable/>
         <Activate amount="100000">TreasureActivate</Activate>
         <Sound>spell/fire_nova</Sound>
@@ -25178,7 +25200,7 @@
             <File>lofiObj3</File>
             <Index>0xe1</Index>
         </Texture>
-        <Description>1 Single Gold. 1.</Description>
+        <Description>Double-Click this item to gain the gold, or keep it to trade with!</Description>
         <Consumable/>
         <Activate amount="1">TreasureActivate</Activate>
         <Sound>spell/fire_nova</Sound>
@@ -29671,6 +29693,9 @@
             <File>legendaries8x8Embed</File>
             <Index>0x07</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Mat"/>
+        </ExtraTooltipData>
         <SlotType>10</SlotType>
         <Description>A shard of true power used to spark the true energy of an ascendent crystal. This energy is so powerful that it materializes a new powerful item.</Description>
         <Legendary/>
@@ -29684,6 +29709,9 @@
             <File>legendaries8x8Embed</File>
             <Index>0x08</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Mat"/>
+        </ExtraTooltipData>
         <SlotType>10</SlotType>
         <Description>A shard of true power used to spark the true energy of an ascendent crystal. This energy is so powerful that it materializes a new powerful item.</Description>
         <Legendary/>
@@ -29697,6 +29725,9 @@
             <File>legendaries8x8Embed</File>
             <Index>0x09</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Mat"/>
+        </ExtraTooltipData>
         <SlotType>10</SlotType>
         <Description>A shard of true power used to spark the true energy of an ascendent crystal. This energy is so powerful that it materializes a new powerful item.</Description>
         <Legendary/>
@@ -31437,6 +31468,9 @@
             <File>legendaries8x8Embed</File>
             <Index>0x0d</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Mat"/>
+        </ExtraTooltipData>
         <SlotType>10</SlotType>
         <Description>A shard of true power used to spark the true energy of an ascendent crystal. This energy is so powerful that it materializes a new powerful item.</Description>
         <Legendary/>
@@ -32325,6 +32359,9 @@
             <File>legendaries8x8Embed</File>
             <Index>0x98</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Mat"/>
+        </ExtraTooltipData>
         <SlotType>10</SlotType>
         <Description>A shard of true power used to spark the true energy of an ascendent crystal. This energy is so powerful that it materializes a new powerful item.</Description>
         <Legendary/>
