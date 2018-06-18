@@ -99,11 +99,6 @@ namespace wServer.logic.loot
                     ShowBags(enemy, i.Value, i.Key);
                 else
                     pub.Add(i.Key);
-                foreach (Item item in i.Value) {
-                    if (item.BagType == 6 || item.BagType == 11) continue;
-                    foreach (var p in enemy.Owner.Players.Values)
-                        p.SendHelp(i.Key.Name + " has just received the " + (item.DisplayId == null && !item.DisplayId.Contains("{") ? item.ObjectId : item.DisplayId) + "!");
-                }
             }
             if (pub.Count > 0 && shared.Count > 0)
                 ShowBags(enemy, shared, pub.ToArray());
@@ -121,6 +116,10 @@ namespace wServer.logic.loot
                 if (i.BagType > bagType) bagType = i.BagType;
                 items[idx] = i;
                 idx++;
+
+                /*if (bagType == 6 || bagType == 11)
+                    foreach (var p in enemy.Owner.Players.Values)
+                        p.SendHelp(i.Key.Name + " has just received the " + items[idx].ObjectId + "!");*/
 
                 if (idx == 8)
                 {
