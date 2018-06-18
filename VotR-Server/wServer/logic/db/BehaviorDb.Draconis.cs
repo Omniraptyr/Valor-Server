@@ -911,10 +911,7 @@ namespace wServer.logic
                     new ItemLoot("Midnight Star", 0.04),
                     new ItemLoot("Ivory Ring", 0.055),
                     new ItemLoot("Large Ivory Dragon Scale Cloth", 0.045),
-                    new ItemLoot("Small Ivory Dragon Scale Cloth", 0.047),
-                    //new ItemLoot("The World Tarot Card", 0.05),
-                    //new ItemLoot("Wine Cellar Incantation", 0.02),
-                    new ItemLoot("Dragon Pearl", 0.1)
+                    new ItemLoot("Small Ivory Dragon Scale Cloth", 0.047)
             )
             )
 ;

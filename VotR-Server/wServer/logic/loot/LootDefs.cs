@@ -80,7 +80,9 @@ namespace wServer.logic.loot
         {
             if (playerDat != null) return;
             var dat = manager.Resources.GameData;
-            lootDefs.Add(new LootDef(dat.Items[dat.IdToObjectType[item]], probability));
+            if (dat.IdToObjectType.ContainsKey(item) 
+                && dat.Items.ContainsKey(dat.IdToObjectType[item]))
+                lootDefs.Add(new LootDef(dat.Items[dat.IdToObjectType[item]], probability));
         }
     }
 

@@ -118,7 +118,17 @@ namespace wServer.realm.entities
                 int dmg = (int)StatsManager.GetDefenseDamage(this, projectile.Damage, def);
                 if (!HasConditionEffect(ConditionEffects.Invulnerable))
                     HP -= dmg;
-                ApplyConditionEffect(projectile.ProjDesc.Effects);
+                ConditionEffect[] effs = null;
+                foreach (var pair in projectile.ProjDesc.CondChance) {
+                    if (pair.Value == 0 || pair.Key == default(ConditionEffect)) continue;
+
+                    if ((pair.Value / 100d) > (new Random().NextDouble())) {
+                        var effList = new List<ConditionEffect>(projectile.ProjDesc.Effects);
+                        effList.Add(pair.Key);
+                        effs = effList.ToArray();
+                    }
+                }
+                ApplyConditionEffect(effs ?? projectile.ProjDesc.Effects);
                 Owner.BroadcastPacketNearby(new Damage()
                 {
                     TargetId = this.Id,
@@ -167,7 +177,6 @@ namespace wServer.realm.entities
             return false;
         }
 
-        float bleeding = 0;
         public override void Tick(RealmTime time)
         {
             if (pos == null)
@@ -175,12 +184,7 @@ namespace wServer.realm.entities
 
             if (!stat && HasConditionEffect(ConditionEffects.Bleeding))
             {
-                if (bleeding > 1)
-                {
-                    HP -= (int)bleeding;
-                    bleeding -= (int)bleeding;
-                }
-                bleeding += 28 * (time.ElapsedMsDelta / 1000f);
+                HP -= (int)(MaximumHP / 650 * time.ElapsedMsDelta / 1000f);
             }
             base.Tick(time);
         }

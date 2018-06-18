@@ -3,6 +3,8 @@ using wServer.realm;
 using wServer.realm.entities;
 using wServer.networking.packets;
 using wServer.networking.packets.incoming;
+using System.Collections.Generic;
+using System;
 
 namespace wServer.networking.handlers
 {
@@ -31,6 +33,7 @@ namespace wServer.networking.handlers
             var prj = (player as IProjectileOwner).Projectiles[pkt.BulletId];
             if (prj == null)
                 Log.Debug("prj is dead...");
+
             prj?.ForceHit(entity, time);
 
             if (pkt.Killed)

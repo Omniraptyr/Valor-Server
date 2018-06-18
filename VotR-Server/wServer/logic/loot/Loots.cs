@@ -12,11 +12,11 @@ namespace wServer.logic.loot
         public LootDef(Item item, double probabilty)
         {
             Item = item;
-            Probabilty = probabilty;
+            Probability = probabilty;
         }
 
         public readonly Item Item;
-        public readonly double Probabilty;
+        public readonly double Probability;
     }
 
     public class Loot : List<ILootDef>
@@ -41,7 +41,7 @@ namespace wServer.logic.loot
             int retCount = rand.Next(min, max);
             foreach (var i in consideration)
             {
-                if (rand.NextDouble() < i.Probabilty)
+                if (rand.NextDouble() < i.Probability)
                 {
                     yield return i.Item;
                     retCount--;
@@ -60,7 +60,7 @@ namespace wServer.logic.loot
                 i.Populate(enemy.Manager, enemy, null, rand, consideration);
             foreach (var i in consideration)
             {
-                if (rand.NextDouble() < i.Probabilty)
+                if (rand.NextDouble() < i.Probability)
                     sharedLoots.Add(i.Item);
             }
 
@@ -83,7 +83,7 @@ namespace wServer.logic.loot
                 IList<Item> playerLoot = loots[dat.Item1];
                 foreach (var i in consideration)
                 {
-                    if (rand.NextDouble() < i.Probabilty * lootDropBoost * luckStatBoost)
+                    if (rand.NextDouble() < i.Probability * lootDropBoost * luckStatBoost)
                         playerLoot.Add(i.Item);
                 }
             }

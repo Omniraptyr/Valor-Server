@@ -6,6 +6,7 @@ using wServer.realm.entities;
 using wServer.networking.packets;
 using wServer.networking.packets.incoming;
 using wServer.networking.packets.outgoing;
+using System.Globalization;
 
 namespace wServer.networking.handlers
 {
@@ -29,7 +30,8 @@ namespace wServer.networking.handlers
             client.Manager.Database.ReloadAccount(client.Account);
 
             string name = packet.Name;
-            if (name.Length < 3 || name.Length > 15 || !name.All(char.IsLetter) ||
+            name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(name);
+            if (name.Length < 3 || name.Length > 10 || !name.All(char.IsLetter) ||
                 Database.GuestNames.Contains(name, StringComparer.InvariantCultureIgnoreCase))
                 client.SendPacket(new NameResult()
                 {

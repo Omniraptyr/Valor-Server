@@ -504,7 +504,7 @@ public class EquipmentToolTip extends ToolTip {
                         this.effects.push(new Effect(TextKey.REMOVES_NEGATIVE, {}).setColor(TooltipHelper.NO_DIFF_COLOR));
                         break;
 					case ActivationType.BANNER:
-                        this.effects.push(new Effect("Banner lifetime: {lifetime} \n Banner radius: {radius} \n Empowerment duration: {duration} \n", {
+                        this.effects.push(new Effect("Banner lifetime: {lifetime} \nBanner radius: {radius} \nEmpowerment duration: {duration} \n", {
                             "lifetime": _local_1.@amount,
                             "duration": _local_1.@duration,
                             "radius": _local_1.@range
@@ -593,6 +593,14 @@ public class EquipmentToolTip extends ToolTip {
                         _local_18["data"] = _local_31;
                         this.effects.push(new Effect(_local_2, _local_18));
                         break;
+					case ActivationType.TORII:
+					this.effects.push(new Effect("Spawns {type} Torii \nDisappears after {lifetime} seconds \nApplies '{effect}' in a {radius} sqrs area for {duration} seconds", {
+                            "lifetime": _local_1.@amount,
+                            "duration": _local_1.@duration,
+                            "radius": _local_1.@range,
+							"effect": _local_1.@effect,
+							"type": (_local_1.@players == "true" ? "a defensive" : "an offensive")
+                        }).setColor(TooltipHelper.NO_DIFF_COLOR));
                 }
             }
         }

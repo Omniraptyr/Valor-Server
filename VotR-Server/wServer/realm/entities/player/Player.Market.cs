@@ -16,7 +16,7 @@ namespace wServer.realm.entities
         InvalidPlayerId,
         [Description("Can only market items in Marketplace.")]
         NotMarketPlace,
-        [Description("Marketplace Disabled.")]
+        [Description("Marketplace disabled.")]
         MarketplaceDisabled,
         [Description("Can't market items while trading.")]
         CurrentlyTrading,
@@ -30,9 +30,9 @@ namespace wServer.realm.entities
         AddMarketFailure,
         [Description("Can't market soulbound items.")]
         IsSoulbound,
-        [Description("Can't market nothing...")]
+        [Description("The item you asked to market does not exist.")]
         NullItem,
-        [Description("Not enough fame. There is a 5 fame fee to remove that item.")]
+        [Description("Not enough gold. There is a 50 gold fee to remove that item.")]
         InsufficientFunds,
         [Description("Market item does not exist. Perhaps someone bought it already or you removed it already?")]
         InvalidShopItemId,
