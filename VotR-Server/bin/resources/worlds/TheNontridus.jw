@@ -8,5 +8,5 @@
 "restrictTp":true,
 "showDisplays":false,
 "portals":[0x22c5],
-"maps":["nontridus1.jm"],
+"maps":["nontridus1.jm", "nontridus2.jm"],
 "music":["dark fallout"]}
