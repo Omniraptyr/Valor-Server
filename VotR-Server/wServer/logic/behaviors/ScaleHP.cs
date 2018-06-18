@@ -31,7 +31,7 @@ namespace wServer.logic.behaviors
                 if (lastPlayerNum == -1) 
                     (host as Enemy).HP += amount * Math.Max(playerNum - 1, 0);
                 else 
-                    (host as Enemy).HP += amount * (lastPlayerNum - playerNum)
+                    (host as Enemy).HP += amount * Math.Max(playerNum - 1, 0) 
                         * ((host as Enemy).HP / (host as Enemy).MaximumHP);
              
                 (host as Enemy).HP = Math.Min((host as Enemy).MaximumHP, (host as Enemy).HP);

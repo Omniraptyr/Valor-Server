@@ -15954,10 +15954,6 @@
         <Description>An enormous, flawless amethyst set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
 		<EffectEquip effect="Healing" delay="60"/>
-<<<<<<< HEAD
-		<EffectEquip/>
-=======
->>>>>>> 283fc153ae3a61692e8db7f48ec36963028f924d
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
