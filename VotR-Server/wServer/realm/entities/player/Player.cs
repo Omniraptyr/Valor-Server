@@ -1438,7 +1438,7 @@ namespace wServer.realm.entities
         {
             var playerDesc = Manager.Resources.GameData.Classes[ObjectType];
             var maxed = playerDesc.Stats.Where((t, i) => Stats.Base[i] >= t.MaxValue).Count();
-            var deathMessage = Name + "'s " + maxed + "/12 " + playerDesc.Class + " died with " + Fame + " base fame to " + killer;
+            var deathMessage = Name + "'s " + maxed + "/12 " + playerDesc.ObjectId + " died with " + Fame + " base fame to " + killer;
 
             // notable deaths
             if ((maxed >= 8 || Fame >= 1000) && !Client.Account.Admin)

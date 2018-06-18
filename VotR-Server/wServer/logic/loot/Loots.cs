@@ -100,9 +100,9 @@ namespace wServer.logic.loot
                 else
                     pub.Add(i.Key);
                 foreach (Item item in i.Value) {
-                    if (item.BagType < 6) return;
+                    if (item.BagType == 6 || item.BagType == 11) continue;
                     foreach (var p in enemy.Owner.Players.Values)
-                        p.SendHelp(i.Key.Name + " has just received the " + (item.DisplayId == null ? item.ObjectId : item.DisplayId) + "!");
+                        p.SendHelp(i.Key.Name + " has just received the " + (item.DisplayId == null && !item.DisplayId.Contains("{") ? item.ObjectId : item.DisplayId) + "!");
                 }
             }
             if (pub.Count > 0 && shared.Count > 0)
