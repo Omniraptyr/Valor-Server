@@ -230,7 +230,7 @@ namespace wServer.logic.loot
                 //You have a 25% chance to get ANOTHER attack or wisdom eon
                 new OnlyOne(
                     new ItemLoot("Attack Eon", 0.25),
-                    new ItemLoot("Wisdom Eon", 0/25)
+                    new ItemLoot("Wisdom Eon", 0.25)
                 ),
                 //High chance to get 2 cloth
                 new OnlyOne(
@@ -244,6 +244,103 @@ namespace wServer.logic.loot
                 new OnlyOne(
                     new ItemLoot("Large Aura Cloth", 0.6),
                     new ItemLoot("Small Aura Cloth", 0.6)
+                    ),
+                new OnlyOne(
+                    new ItemLoot("Sword of Dark Retribution", 0.8),
+                    new ItemLoot("Helm of Dark Retribution", 0.8),
+                    new ItemLoot("Armor of Dark Retribution", 0.8),
+                    new ItemLoot("Ring of Dark Retribution", 0.8)
+                    ),
+                new OnlyOne(
+                    new ItemLoot("Sword of Dark Retribution", 0.8),
+                    new ItemLoot("Helm of Dark Retribution", 0.8),
+                    new ItemLoot("Armor of Dark Retribution", 0.8),
+                    new ItemLoot("Ring of Dark Retribution", 0.8)
+                    )
+            };
+        }
+        public static ILootDef[] FabledItemsLootUltra()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Master Eon", 0.01)
+                ),
+                new OnlyOne(
+                    new ItemLoot("1000 Gold", 1),
+                    new ItemLoot("100 Gold", 1)
+                ),
+                //Whole Sor Crystal
+                new OnlyOne(
+                    new ItemLoot("Legendary Sor Crystal", 0.50),
+                    new ItemLoot("Ultimate Onrane Cache", 0.50)
+                ),
+                //certain fabled item
+               new OnlyOne(
+                    new ItemLoot("Kismet Seal", 1),
+                    new ItemLoot("Soundpiercer Shuriken", 1),
+                    new ItemLoot("Doomgrazer", 1),
+                    new ItemLoot("Age of Zol", 1),
+                    new ItemLoot("Wrath of Aldragine", 1),
+                    new ItemLoot("Bane of the Vision", 1),
+                    new ItemLoot("Spirit of the Heart", 1),
+                    new ItemLoot("The Grand Finale", 1),
+                    new ItemLoot("Merit of Rebellion", 1),
+                    new ItemLoot("Enigma Wand", 1),
+                    new ItemLoot("Spear of the Unforgiven", 1),
+                    new ItemLoot("Dagger of Corruption", 1)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Kismet Seal", 0.75),
+                    new ItemLoot("Soundpiercer Shuriken", 0.75),
+                    new ItemLoot("Doomgrazer", 0.75),
+                    new ItemLoot("Age of Zol", 0.75),
+                    new ItemLoot("Wrath of Aldragine", 0.75),
+                    new ItemLoot("Bane of the Vision", 0.75),
+                    new ItemLoot("Spirit of the Heart", 0.75),
+                    new ItemLoot("The Grand Finale", 0.75),
+                    new ItemLoot("Merit of Rebellion", 0.75),
+                    new ItemLoot("Enigma Wand", 0.75),
+                    new ItemLoot("Spear of the Unforgiven", 0.75),
+                    new ItemLoot("Dagger of Corruption", 0.75)
+                ),
+                //Have another chance to get fabled iten
+                new OnlyOne(
+                    new ItemLoot("Kismet Seal", 0.75),
+                    new ItemLoot("Soundpiercer Shuriken", 0.75),
+                    new ItemLoot("Doomgrazer", 0.75),
+                    new ItemLoot("Age of Zol", 0.75),
+                    new ItemLoot("Wrath of Aldragine", 0.75),
+                    new ItemLoot("Bane of the Vision", 0.75),
+                    new ItemLoot("Spirit of the Heart", 0.75),
+                    new ItemLoot("The Grand Finale", 0.75),
+                    new ItemLoot("Merit of Rebellion", 0.75),
+                    new ItemLoot("Enigma Wand", 0.75),
+                    new ItemLoot("Spear of the Unforgiven", 0.75),
+                    new ItemLoot("Dagger of Corruption", 0.75)
+                ),
+                //You have a 100% chance to get attack or wisdom eon
+                new OnlyOne(
+                    new ItemLoot("Attack Eon", 1),
+                    new ItemLoot("Wisdom Eon", 1)
+                ),
+                //You have a 75% chance to get ANOTHER attack or wisdom eon
+                new OnlyOne(
+                    new ItemLoot("Attack Eon", 0.75),
+                    new ItemLoot("Wisdom Eon", 0.75)
+                ),
+                //High chance to get 2 cloth
+                new OnlyOne(
+                    new ItemLoot("Large Zol Cloth", 0.75),
+                    new ItemLoot("Small Zol Cloth", 0.75)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Large Vortex Cloth", 0.75),
+                    new ItemLoot("Small Vortex Cloth", 0.75)
+                    ),
+                new OnlyOne(
+                    new ItemLoot("Large Aura Cloth", 0.75),
+                    new ItemLoot("Small Aura Cloth", 0.75)
                     ),
                 new OnlyOne(
                     new ItemLoot("Sword of Dark Retribution", 0.8),

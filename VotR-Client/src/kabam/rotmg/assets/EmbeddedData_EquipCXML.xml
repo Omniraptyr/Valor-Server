@@ -31204,6 +31204,7 @@
         <Activate duration="5.5">Decoy</Activate>
         <Activate maxDistance="20">Teleport</Activate>
         <feedPower>2000</feedPower>
+        <Legendary/>
         <DisplayId>Dimensional Prism</DisplayId>
     </Object>
 </Objects>
