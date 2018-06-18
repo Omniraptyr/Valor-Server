@@ -17,7 +17,7 @@ namespace wServer.realm.worlds.logic
             base.Init();
 
             if (IsLimbo) return;
-            _tileControl = Enemies.Values.SingleOrDefault(e => e.ObjectType == 0x612a);
+            _tileControl = Enemies.Values.SingleOrDefault(e => e.ObjectType == 0x6121);
 
             if (_tileControl != null)
                 _tileControl.TickStateManually = true;
