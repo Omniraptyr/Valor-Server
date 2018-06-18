@@ -8077,41 +8077,6 @@
       </Texture>
       <AngleCorrection>1</AngleCorrection>
    </Object>
-   <Object type="0xa22d" id="Sor Ball">
-      <Class>Projectile</Class>
-      <Texture>
-         <File>lofiObjBig</File>
-         <Index>0x1b8</Index>
-      </Texture>
-   </Object>
-   <Object type="0xa22e" id="Sor Wave">
-      <Class>Projectile</Class>
-      <Texture>
-         <File>d3LofiObjEmbed</File>
-         <Index>0x454</Index>
-      </Texture>
-   </Object>
-   <Object type="0xa22f" id="Sor Mini Ball 1">
-      <Class>Projectile</Class>
-      <Texture>
-         <File>d3LofiObjEmbed</File>
-         <Index>0x455</Index>
-      </Texture>
-   </Object>
-   <Object type="0xa232" id="Sor Mini Ball 2">
-      <Class>Projectile</Class>
-      <Texture>
-         <File>d3LofiObjEmbed</File>
-         <Index>0x456</Index>
-      </Texture>
-   </Object>
-   <Object type="0xa231" id="Storm Dagger Slash">
-      <Class>Projectile</Class>
-      <Texture>
-         <File>d3LofiObjEmbed</File>
-         <Index>0x457</Index>
-      </Texture>
-   </Object>
 
 
 
@@ -36399,329 +36364,334 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <DisplayId>{equip.XP_Booster_Test}</DisplayId>
    </Object>
    <Object type="0xc44" id="Rusty Katana">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj3</File>
-<Index>0x21c</Index>
-</Texture>
-<SlotType>24</SlotType>
-<Tier>0</Tier>
-<Description>A rusty old katana.</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/blunt_sword</Sound>
-<Projectile>
-<ObjectId>Katana Slash</ObjectId>
-<Speed>130</Speed>
-<LifetimeMS>365</LifetimeMS>
-<MinDamage>25</MinDamage>
-<MaxDamage>70</MaxDamage>
-<MultiHit/>
-</Projectile>
-<BagType>1</BagType>
-<OldSound>bladeSwing</OldSound>
-<feedPower>5</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj3</File>
+        <Index>0x21c</Index>
+    </Texture>
+    <SlotType>24</SlotType>
+    <Tier>0</Tier>
+    <Description>A rusty old katana.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/blunt_sword</Sound>
+    <Projectile>
+        <ObjectId>Katana Slash</ObjectId>
+        <Speed>130</Speed>
+        <LifetimeMS>365</LifetimeMS>
+        <MinDamage>25</MinDamage>
+        <MaxDamage>70</MaxDamage>
+        <MultiHit/>
+        <CondChance effect="Bleeding" chance="5" duration="2"/>
+    </Projectile>
+    <BagType>1</BagType>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>5</feedPower>
 </Object>
 <Object type="0xc45" id="Kendo Stick">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj3</File>
-<Index>0x21d</Index>
-</Texture>
-<SlotType>24</SlotType>
-<Tier>1</Tier>
-<Description>Suitable for practice.</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/blunt_sword</Sound>
-<Projectile>
-<ObjectId>Kendo Slash</ObjectId>
-<Speed>130</Speed>
-<LifetimeMS>365</LifetimeMS>
-<MinDamage>30</MinDamage>
-<MaxDamage>75</MaxDamage>
-<MultiHit/>
-</Projectile>
-<BagType>1</BagType>
-<OldSound>bladeSwing</OldSound>
-<feedPower>7</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj3</File>
+        <Index>0x21d</Index>
+    </Texture>
+    <SlotType>24</SlotType>
+    <Tier>1</Tier>
+    <Description>Suitable for practice.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/blunt_sword</Sound>
+    <Projectile>
+        <ObjectId>Kendo Slash</ObjectId>
+        <Speed>130</Speed>
+        <LifetimeMS>365</LifetimeMS>
+        <MinDamage>30</MinDamage>
+        <MaxDamage>75</MaxDamage>
+        <MultiHit/>
+        <CondChance effect="Bleeding" chance="5.5" duration="2"/>
+    </Projectile>
+    <BagType>1</BagType>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>7</feedPower>
 </Object>
 <Object type="0xc46" id="Plain Katana">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj3</File>
-<Index>0x21e</Index>
-</Texture>
-<SlotType>24</SlotType>
-<Tier>2</Tier>
-<Description>A basic katana.</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/long_sword</Sound>
-<Projectile>
-<ObjectId>Katana Slash</ObjectId>
-<Speed>130</Speed>
-<LifetimeMS>365</LifetimeMS>
-<MinDamage>35</MinDamage>
-<MaxDamage>80</MaxDamage>
-<MultiHit/>
-</Projectile>
-<BagType>1</BagType>
-<OldSound>bladeSwing</OldSound>
-<feedPower>10</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj3</File>
+        <Index>0x21e</Index>
+    </Texture>
+    <SlotType>24</SlotType>
+    <Tier>2</Tier>
+    <Description>A basic katana.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/long_sword</Sound>
+    <Projectile>
+        <ObjectId>Katana Slash</ObjectId>
+        <Speed>130</Speed>
+        <LifetimeMS>365</LifetimeMS>
+        <MinDamage>35</MinDamage>
+        <MaxDamage>80</MaxDamage>
+        <MultiHit/>
+        <CondChance effect="Bleeding" chance="6" duration="2"/>
+    </Projectile>
+    <BagType>1</BagType>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>10</feedPower>
 </Object>
 <Object type="0xc47" id="Thunder Katana">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj3</File>
-<Index>0x21f</Index>
-</Texture>
-<SlotType>24</SlotType>
-<Tier>3</Tier>
-<Description>A striking fine-edged weapon.</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/long_sword</Sound>
-<Projectile>
-<ObjectId>Katana Slash</ObjectId>
-<Speed>130</Speed>
-<LifetimeMS>365</LifetimeMS>
-<MinDamage>45</MinDamage>
-<MaxDamage>85</MaxDamage>
-<MultiHit/>
-</Projectile>
-<BagType>1</BagType>
-<OldSound>bladeSwing</OldSound>
-<feedPower>15</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj3</File>
+        <Index>0x21f</Index>
+    </Texture>
+    <SlotType>24</SlotType>
+    <Tier>3</Tier>
+    <Description>A striking fine-edged weapon.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/long_sword</Sound>
+    <Projectile>
+        <ObjectId>Katana Slash</ObjectId>
+        <Speed>130</Speed>
+        <LifetimeMS>365</LifetimeMS>
+        <MinDamage>45</MinDamage>
+        <MaxDamage>85</MaxDamage>
+        <MultiHit/>
+        <CondChance effect="Bleeding" chance="6.5" duration="2"/>
+    </Projectile>
+    <BagType>1</BagType>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>15</feedPower>
 </Object>
 <Object type="0xc48" id="Line Kutter Katana">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj3</File>
-<Index>0x220</Index>
-</Texture>
-<SlotType>24</SlotType>
-<Tier>4</Tier>
-<Description>A katana capable of cutting a razor-thin line.</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/long_sword</Sound>
-<Projectile>
-<ObjectId>Line Slash</ObjectId>
-<Speed>130</Speed>
-<LifetimeMS>365</LifetimeMS>
-<MinDamage>55</MinDamage>
-<MaxDamage>90</MaxDamage>
-<MultiHit/>
-</Projectile>
-<BagType>1</BagType>
-<OldSound>bladeSwing</OldSound>
-<feedPower>22</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj3</File>
+        <Index>0x220</Index>
+    </Texture>
+    <SlotType>24</SlotType>
+    <Tier>4</Tier>
+    <Description>A katana capable of cutting a razor-thin line.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/long_sword</Sound>
+    <Projectile>
+        <ObjectId>Line Slash</ObjectId>
+        <Speed>130</Speed>
+        <LifetimeMS>365</LifetimeMS>
+        <MinDamage>55</MinDamage>
+        <MaxDamage>90</MaxDamage>
+        <MultiHit/>
+        <CondChance effect="Bleeding" chance="7" duration="2"/>
+    </Projectile>
+    <BagType>1</BagType>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>22</feedPower>
 </Object>
 <Object type="0xc49" id="Night Edge">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj3</File>
-<Index>0x221</Index>
-</Texture>
-<SlotType>24</SlotType>
-<Tier>5</Tier>
-<Description>An ancient katana with a blade of jet black steel.</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/long_sword</Sound>
-<Projectile>
-<ObjectId>Night Slash</ObjectId>
-<Speed>130</Speed>
-<LifetimeMS>365</LifetimeMS>
-<MinDamage>55</MinDamage>
-<MaxDamage>105</MaxDamage>
-<MultiHit/>
-</Projectile>
-<BagType>1</BagType>
-<OldSound>bladeSwing</OldSound>
-<feedPower>32</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj3</File>
+        <Index>0x221</Index>
+    </Texture>
+    <SlotType>24</SlotType>
+    <Tier>5</Tier>
+    <Description>An ancient katana with a blade of jet black steel.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/long_sword</Sound>
+    <Projectile>
+        <ObjectId>Night Slash</ObjectId>
+        <Speed>130</Speed>
+        <LifetimeMS>365</LifetimeMS>
+        <MinDamage>55</MinDamage>
+        <MaxDamage>105</MaxDamage>
+        <MultiHit/>
+        <CondChance effect="Bleeding" chance="7" duration="2"/>
+    </Projectile>
+    <BagType>1</BagType>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>32</feedPower>
 </Object>
 <Object type="0xc4a" id="Sky Edge">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj3</File>
-<Index>0x222</Index>
-</Texture>
-<SlotType>24</SlotType>
-<Tier>6</Tier>
-<Description>
-A beautiful katana, forged and cooled by the mists atop a great mountain.
-</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/long_sword</Sound>
-<Projectile>
-<ObjectId>Sky Slash</ObjectId>
-<Speed>130</Speed>
-<LifetimeMS>365</LifetimeMS>
-<MinDamage>75</MinDamage>
-<MaxDamage>110</MaxDamage>
-<MultiHit/>
-</Projectile>
-<BagType>1</BagType>
-<OldSound>bladeSwing</OldSound>
-<feedPower>47</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj3</File>
+        <Index>0x222</Index>
+    </Texture>
+    <SlotType>24</SlotType>
+    <Tier>6</Tier>
+    <Description>A beautiful katana, forged and cooled by the mists atop a great mountain.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/long_sword</Sound>
+    <Projectile>
+        <ObjectId>Sky Slash</ObjectId>
+        <Speed>130</Speed>
+        <LifetimeMS>365</LifetimeMS>
+        <MinDamage>75</MinDamage>
+        <MaxDamage>110</MaxDamage>
+        <MultiHit/>
+        <CondChance effect="Bleeding" chance="7.5" duration="2"/>
+    </Projectile>
+    <BagType>1</BagType>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>47</feedPower>
 </Object>
 <Object type="0xc4b" id="Buster Katana">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj3</File>
-<Index>0x223</Index>
-</Texture>
-<SlotType>24</SlotType>
-<Tier>7</Tier>
-<Description>A mighty weapon wielded by a hero from long ago.</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/long_sword</Sound>
-<Projectile>
-<ObjectId>Buster Slash</ObjectId>
-<Speed>130</Speed>
-<LifetimeMS>365</LifetimeMS>
-<MinDamage>90</MinDamage>
-<MaxDamage>120</MaxDamage>
-<MultiHit/>
-</Projectile>
-<BagType>2</BagType>
-<OldSound>bladeSwing</OldSound>
-<feedPower>70</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj3</File>
+        <Index>0x223</Index>
+    </Texture>
+    <SlotType>24</SlotType>
+    <Tier>7</Tier>
+    <Description>A mighty weapon wielded by a hero from long ago.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/long_sword</Sound>
+    <Projectile>
+        <ObjectId>Buster Slash</ObjectId>
+        <Speed>130</Speed>
+        <LifetimeMS>365</LifetimeMS>
+        <MinDamage>90</MinDamage>
+        <MaxDamage>120</MaxDamage>
+        <MultiHit/>
+        <CondChance effect="Bleeding" chance="8" duration="2"/>
+    </Projectile>
+    <BagType>2</BagType>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>70</feedPower>
 </Object>
 <Object type="0xc4c" id="Demon Edge">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj3</File>
-<Index>0x224</Index>
-</Texture>
-<SlotType>24</SlotType>
-<Tier>8</Tier>
-<Description>A cruel blade forged in hell flame and blood.</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/long_sword</Sound>
-<Projectile>
-<ObjectId>Demon Slash</ObjectId>
-<Speed>130</Speed>
-<LifetimeMS>365</LifetimeMS>
-<MinDamage>90</MinDamage>
-<MaxDamage>150</MaxDamage>
-<MultiHit/>
-</Projectile>
-<BagType>2</BagType>
-<FameBonus>1</FameBonus>
-<OldSound>bladeSwing</OldSound>
-<feedPower>100</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj3</File>
+        <Index>0x224</Index>
+    </Texture>
+    <SlotType>24</SlotType>
+    <Tier>8</Tier>
+    <Description>A cruel blade forged in hell flame and blood.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/long_sword</Sound>
+    <Projectile>
+        <ObjectId>Demon Slash</ObjectId>
+        <Speed>130</Speed>
+        <LifetimeMS>365</LifetimeMS>
+        <MinDamage>90</MinDamage>
+        <MaxDamage>150</MaxDamage>
+        <MultiHit/>
+        <CondChance effect="Bleeding" chance="8.5" duration="2"/>
+    </Projectile>
+    <BagType>2</BagType>
+    <FameBonus>1</FameBonus>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>100</feedPower>
 </Object>
 <Object type="0xc4d" id="Jewel Eye Katana">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj3</File>
-<Index>0x225</Index>
-</Texture>
-<SlotType>24</SlotType>
-<Tier>9</Tier>
-<Description>
-A mighty katana with a crystal eye embedded in the hilt.
-</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/long_sword</Sound>
-<Projectile>
-<ObjectId>Jewel Slash</ObjectId>
-<Speed>130</Speed>
-<LifetimeMS>365</LifetimeMS>
-<MinDamage>100</MinDamage>
-<MaxDamage>160</MaxDamage>
-<MultiHit/>
-</Projectile>
-<BagType>2</BagType>
-<FameBonus>1</FameBonus>
-<OldSound>bladeSwing</OldSound>
-<feedPower>145</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj3</File>
+        <Index>0x225</Index>
+    </Texture>
+    <SlotType>24</SlotType>
+    <Tier>9</Tier>
+    <Description>A mighty katana with a crystal eye embedded in the hilt.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/long_sword</Sound>
+    <Projectile>
+        <ObjectId>Jewel Slash</ObjectId>
+        <Speed>130</Speed>
+        <LifetimeMS>365</LifetimeMS>
+        <MinDamage>100</MinDamage>
+        <MaxDamage>160</MaxDamage>
+        <MultiHit/>
+        <CondChance effect="Bleeding" chance="9" duration="2"/>
+    </Projectile>
+    <BagType>2</BagType>
+    <FameBonus>1</FameBonus>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>145</feedPower>
 </Object>
 <Object type="0xc4e" id="Ichimonji">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj3</File>
-<Index>0x226</Index>
-</Texture>
-<SlotType>24</SlotType>
-<Tier>10</Tier>
-<Description>
-One of the legendary great blades of the master Ichimonji.
-</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/long_sword</Sound>
-<Projectile>
-<ObjectId>Ichimonji Slash</ObjectId>
-<Speed>130</Speed>
-<LifetimeMS>365</LifetimeMS>
-<MinDamage>110</MinDamage>
-<MaxDamage>165</MaxDamage>
-<MultiHit/>
-</Projectile>
-<BagType>4</BagType>
-<FameBonus>2</FameBonus>
-<OldSound>bladeSwing</OldSound>
-<feedPower>212</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj3</File>
+        <Index>0x226</Index>
+    </Texture>
+    <SlotType>24</SlotType>
+    <Tier>10</Tier>
+    <Description>One of the legendary great blades of the master Ichimonji.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/long_sword</Sound>
+    <Projectile>
+        <ObjectId>Ichimonji Slash</ObjectId>
+        <Speed>130</Speed>
+        <LifetimeMS>365</LifetimeMS>
+        <MinDamage>110</MinDamage>
+        <MaxDamage>165</MaxDamage>
+        <MultiHit/>
+        <CondChance effect="Bleeding" chance="9.5" duration="2"/>
+    </Projectile>
+    <BagType>4</BagType>
+    <FameBonus>2</FameBonus>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>212</feedPower>
 </Object>
 <Object type="0xc4f" id="Muramasa">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj3</File>
-<Index>0x227</Index>
-</Texture>
-<SlotType>24</SlotType>
-<Tier>11</Tier>
-<Description>An evil blade that hungers for blood.</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/long_sword</Sound>
-<Projectile>
-<ObjectId>Muramasa Slash</ObjectId>
-<Speed>130</Speed>
-<LifetimeMS>365</LifetimeMS>
-<MinDamage>120</MinDamage>
-<MaxDamage>175</MaxDamage>
-<MultiHit/>
-</Projectile>
-<BagType>4</BagType>
-<FameBonus>3</FameBonus>
-<OldSound>bladeSwing</OldSound>
-<feedPower>310</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj3</File>
+        <Index>0x227</Index>
+    </Texture>
+    <SlotType>24</SlotType>
+    <Tier>11</Tier>
+    <Description>An evil blade that hungers for blood.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/long_sword</Sound>
+    <Projectile>
+        <ObjectId>Muramasa Slash</ObjectId>
+        <Speed>130</Speed>
+        <LifetimeMS>365</LifetimeMS>
+        <MinDamage>120</MinDamage>
+        <MaxDamage>175</MaxDamage>
+        <MultiHit/>
+        <CondChance effect="Bleeding" chance="10" duration="2"/>
+    </Projectile>
+    <BagType>4</BagType>
+    <FameBonus>3</FameBonus>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>310</feedPower>
 </Object>
 <Object type="0xc50" id="Masamune">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj3</File>
-<Index>0x228</Index>
-</Texture>
-<SlotType>24</SlotType>
-<Tier>12</Tier>
-<Description>
-A magnificent legendary blade which only cuts those who deserve death.
-</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/long_sword</Sound>
-<Projectile>
-<ObjectId>Masamune Slash</ObjectId>
-<Speed>130</Speed>
-<LifetimeMS>365</LifetimeMS>
-<MinDamage>135</MinDamage>
-<MaxDamage>180</MaxDamage>
-<MultiHit/>
-</Projectile>
-<BagType>4</BagType>
-<FameBonus>4</FameBonus>
-<OldSound>bladeSwing</OldSound>
-<feedPower>450</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj3</File>
+        <Index>0x228</Index>
+    </Texture>
+    <SlotType>24</SlotType>
+    <Tier>12</Tier>
+    <Description>A magnificent legendary blade which only cuts those who deserve death.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/long_sword</Sound>
+    <Projectile>
+        <ObjectId>Masamune Slash</ObjectId>
+        <Speed>130</Speed>
+        <LifetimeMS>365</LifetimeMS>
+        <MinDamage>135</MinDamage>
+        <MaxDamage>180</MaxDamage>
+        <MultiHit/>
+        <CondChance effect="Bleeding" chance="10" duration="3"/>
+    </Projectile>
+    <BagType>4</BagType>
+    <FameBonus>4</FameBonus>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>450</feedPower>
 </Object>
    <Object type="0x914" id="Useless Katana">
       <Class>Equipment</Class>
@@ -38060,6 +38030,134 @@ A magnificent legendary blade which only cuts those who deserve death.
         <OldSound>bladeSwing</OldSound>
         <DisplayId>Celestial Blade</DisplayId>
     </Object>
+   <Object type="0xcc9" id="Soft Drink">
+      <Class>Equipment</Class>
+      <Item/>
+      <SlotType>10</SlotType>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x155</Index>
+      </Texture>
+      <Description>{equip.Food_for_your_pet._To_quench_your_petAPOSs_thirstBANG}</Description>
+      <BagType>2</BagType>
+      <feedPower>100</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Soft_Drink}</DisplayId>
+   </Object>
+   <Object type="0xccb" id="Fries">
+      <Class>Equipment</Class>
+      <Item/>
+      <SlotType>10</SlotType>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x157</Index>
+      </Texture>
+      <Description>{equip.Food_for_your_pet._Fresh_cut_and_steaming_hotBANG}</Description>
+      <BagType>2</BagType>
+      <feedPower>250</feedPower>
+      <Potion/>
+      <Soulbound/>
+      <DisplayId>{equip.Fries}</DisplayId>
+   </Object>
+   <Object type="0xcc6" id="Great Taco">
+      <Class>Equipment</Class>
+      <Item/>
+      <SlotType>10</SlotType>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x152</Index>
+      </Texture>
+      <Description>{equip.Food_for_your_pet._Contains_fresh_salsaBANG}</Description>
+      <BagType>2</BagType>
+      <feedPower>500</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Great_Taco}</DisplayId>
+   </Object>
+   <Object type="0xcc5" id="Power Pizza">
+      <Class>Equipment</Class>
+      <Item/>
+      <SlotType>10</SlotType>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x151</Index>
+      </Texture>
+      <Description>{equip.Food_for_your_pet._Cheesy_and_delicious.}</Description>
+      <BagType>2</BagType>
+      <feedPower>750</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Power_Pizza}</DisplayId>
+   </Object>
+   <Object type="0xcc4" id="Chocolate Cream Sandwich Cookie">
+      <Class>Equipment</Class>
+      <Item/>
+      <SlotType>10</SlotType>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x150</Index>
+      </Texture>
+      <Description>{equip.Food_for_your_pet._Goes_best_with_milkBANG}</Description>
+      <BagType>2</BagType>
+      <feedPower>1111</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Chocolate_Cream_Sandwich_Cookie}</DisplayId>
+   </Object>
+   <Object type="0xcca" id="Grapes of Wrath">
+      <Class>Equipment</Class>
+      <Item/>
+      <SlotType>10</SlotType>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x156</Index>
+      </Texture>
+      <Description>{equip.Food_for_your_pet._Super_healthy,_super_delicious,_super_wr}</Description>
+      <BagType>2</BagType>
+      <feedPower>1500</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Grapes_of_Wrath}</DisplayId>
+   </Object>
+   <Object type="0xcc8" id="Superburger">
+      <Class>Equipment</Class>
+      <Item/>
+      <SlotType>10</SlotType>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x154</Index>
+      </Texture>
+      <Description>{equip.Food_for_your_pet._A_hearty_classicBANG}</Description>
+      <BagType>2</BagType>
+      <feedPower>2000</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Superburger}</DisplayId>
+   </Object>
+   <Object type="0xcc7" id="Double Cheeseburger Deluxe">
+      <Class>Equipment</Class>
+      <Item/>
+      <SlotType>10</SlotType>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x153</Index>
+      </Texture>
+      <Description>{equip.Food_for_your_pet._The_ultimate_deluxe_cheeseburgerBANG}</Description>
+      <BagType>2</BagType>
+      <feedPower>3000</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Double_Cheeseburger_Deluxe}</DisplayId>
+   </Object>
+   <Object type="0xccc" id="Ambrosia">
+      <Class>Equipment</Class>
+      <Item/>
+      <SlotType>10</SlotType>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x158</Index>
+      </Texture>
+      <Description>{equip.Food_for_your_pet._The_nectar_of_the_gods_which_holds_great}</Description>
+      <BagType>2</BagType>
+      <feedPower>5000</feedPower>
+      <Potion/>
+      <Soulbound/>
+      <DisplayId>{equip.Ambrosia}</DisplayId>
+   </Object>
    <Object type="0xccd" id="Forest Maze Key">
       <Class>Equipment</Class>
       <Item/>
@@ -75904,7 +76002,7 @@ A magnificent legendary blade which only cuts those who deserve death.
         <RateOfFire>1.8</RateOfFire>
         <Sound>weapon/dirk</Sound>
         <Projectile>
-            <ObjectId>Storm Dagger Slash</ObjectId>
+            <ObjectId>Aqua Slash</ObjectId>
             <Speed>130</Speed>
             <MinDamage>80</MinDamage>
             <MaxDamage>95</MaxDamage>
@@ -76699,145 +76797,113 @@ This dagger was a myth, will you live to tell the tale?
  	 <NumProjectiles>2</NumProjectiles>
     <Activate>Shoot</Activate>
   </Object>
-  <Object type="0x1589" id="Ring of Outstanding Attack">
+	  <Object type="0x1589" id="Ring of Outstanding Attack">
     <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>lofiObj3</File>
-      <Index>0x478</Index>
-    </Texture>
-	<ExtraTooltipData>
-      <EffectInfo name="Sprited by" description="Alemeow"/>
-    </ExtraTooltipData>
+    <Item />
+<Texture>
+<File>lofiObj3</File>
+<Index>0x478</Index>
+</Texture>
     <SlotType>9</SlotType>
     <Tier>7</Tier>
-	<EffectEquip effect="Healing" delay="60"/>
     <Description>An enormous, flawless spinel set in a stunningly beautiful gold ring.</Description>
     <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
     <BagType>2</BagType>
     <FameBonus>5</FameBonus>
   </Object>
-  <Object type="0x1590" id="Ring of Outstanding Health">
+<Object type="0x1590" id="Ring of Outstanding Health">
     <Class>Equipment</Class>
     <Item />
-    <Texture>
-      <File>lofiObj3</File>
-      <Index>0x47e</Index>
-    </Texture>
-	<ExtraTooltipData>
-      <EffectInfo name="Sprited by" description="Alemeow"/>
-    </ExtraTooltipData>
+<Texture>
+<File>lofiObj3</File>
+<Index>0x47e</Index>
+</Texture>
     <SlotType>9</SlotType>
     <Tier>7</Tier>
-	<EffectEquip effect="Healing" delay="60"/>
     <Description>An enormous, flawless topaz set in a stunningly beautiful gold ring.</Description>
     <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
     <BagType>2</BagType>
     <FameBonus>5</FameBonus>
   </Object>
-  <Object type="0x1591" id="Ring of Outstanding Speed">
+<Object type="0x1591" id="Ring of Outstanding Speed">
     <Class>Equipment</Class>
     <Item />
-    <Texture>
-      <File>lofiObj3</File>
-      <Index>0x47a</Index>
-    </Texture>
-	<ExtraTooltipData>
-      <EffectInfo name="Sprited by" description="Alemeow"/>
-    </ExtraTooltipData>
+<Texture>
+<File>lofiObj3</File>
+<Index>0x47a</Index>
+</Texture>
     <SlotType>9</SlotType>
     <Tier>7</Tier>
-	<EffectEquip effect="Healing" delay="60"/>
     <Description>An enormous, flawless emerald set in a stunningly beautiful gold ring.</Description>
     <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
     <BagType>2</BagType>
     <FameBonus>5</FameBonus>
   </Object>
-  <Object type="0x1592" id="Ring of Outstanding Vitality">
+<Object type="0x1592" id="Ring of Outstanding Vitality">
     <Class>Equipment</Class>
     <Item />
-    <Texture>
-      <File>lofiObj3</File>
-      <Index>0x47b</Index>
-    </Texture>
-	<ExtraTooltipData>
-      <EffectInfo name="Sprited by" description="Alemeow"/>
-    </ExtraTooltipData>
+<Texture>
+<File>lofiObj3</File>
+<Index>0x47b</Index>
+</Texture>
     <SlotType>9</SlotType>
     <Tier>7</Tier>
-	<EffectEquip effect="Healing" delay="60"/>
     <Description>An enormous, flawless ruby set in a stunningly beautiful gold ring.</Description>
     <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
     <BagType>2</BagType>
     <FameBonus>5</FameBonus>
   </Object>
-  <Object type="0x1593" id="Ring of Outstanding Wisdom">
+<Object type="0x1593" id="Ring of Outstanding Wisdom">
     <Class>Equipment</Class>
     <Item />
-    <Texture>
-      <File>lofiObj3</File>
-      <Index>0x47c</Index>
-    </Texture>
-	<ExtraTooltipData>
-      <EffectInfo name="Sprited by" description="Alemeow"/>
-    </ExtraTooltipData>
+<Texture>
+<File>lofiObj3</File>
+<Index>0x47c</Index>
+</Texture>
     <SlotType>9</SlotType>
     <Tier>7</Tier>
-	<EffectEquip effect="Healing" delay="60"/>
     <Description>An enormous, flawless sapphire set in a stunningly beautiful gold ring.</Description>
     <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
     <BagType>2</BagType>
     <FameBonus>5</FameBonus>
   </Object>
-  <Object type="0x1594" id="Ring of Outstanding Defense">
+<Object type="0x1594" id="Ring of Outstanding Defense">
     <Class>Equipment</Class>
     <Item />
-    <Texture>
-      <File>lofiObj3</File>
-      <Index>0x479</Index>
-    </Texture>
-	<ExtraTooltipData>
-      <EffectInfo name="Sprited by" description="Alemeow"/>
-    </ExtraTooltipData>
+<Texture>
+<File>lofiObj3</File>
+<Index>0x479</Index>
+</Texture>
     <SlotType>9</SlotType>
     <Tier>7</Tier>
-	<EffectEquip effect="Healing" delay="60"/>
     <Description>An enormous, flawless onyx set in a stunningly beautiful gold ring.</Description>
     <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
     <BagType>2</BagType>
     <FameBonus>5</FameBonus>
   </Object>
-  <Object type="0x1595" id="Ring of Outstanding Dexterity">
+<Object type="0x1595" id="Ring of Outstanding Dexterity">
     <Class>Equipment</Class>
     <Item />
-    <Texture>
-      <File>lofiObj3</File>
-      <Index>0x47d</Index>
-    </Texture>
-	<ExtraTooltipData>
-      <EffectInfo name="Sprited by" description="Alemeow"/>
-    </ExtraTooltipData>
+<Texture>
+<File>lofiObj3</File>
+<Index>0x47d</Index>
+</Texture>
     <SlotType>9</SlotType>
     <Tier>7</Tier>
-	<EffectEquip effect="Healing" delay="60"/>
     <Description>An enormous, flawless citrine set in a stunningly beautiful gold ring.</Description>
     <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
     <BagType>2</BagType>
     <FameBonus>5</FameBonus>
   </Object>
-  <Object type="0x1596" id="Ring of Outstanding Magic">
+<Object type="0x1596" id="Ring of Outstanding Magic">
     <Class>Equipment</Class>
     <Item />
-    <Texture>
-      <File>lofiObj3</File>
-      <Index>0x47f</Index>
-    </Texture>
-	<ExtraTooltipData>
-      <EffectInfo name="Sprited by" description="Alemeow"/>
-    </ExtraTooltipData>
+<Texture>
+<File>lofiObj3</File>
+<Index>0x47f</Index>
+</Texture>
     <SlotType>9</SlotType>
     <Tier>7</Tier>
-	<EffectEquip effect="Healing" delay="60"/>
     <Description>An enormous, flawless amethyst set in a stunningly beautiful gold ring.</Description>
     <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
     <BagType>2</BagType>
@@ -80717,7 +80783,7 @@ This dagger was a myth, will you live to tell the tale?
     <RateOfFire>1</RateOfFire>
     <Sound>weapon/mithril_sword</Sound>
     <Projectile>
-      <ObjectId>Storm Dagger Slash</ObjectId>
+      <ObjectId>Blue Magic</ObjectId>
       <Speed>100</Speed>
       <MinDamage>220</MinDamage>
       <MaxDamage>275</MaxDamage>
@@ -86851,6 +86917,80 @@ This dagger was a myth, will you live to tell the tale?
     <feedPower>230</feedPower>
     <DisplayId>Cornfield of Peril Key</DisplayId>
   </Object>
+<Object type="0xcd0" id="Cranberries">
+<Class>Equipment</Class>
+<Item/>
+<SlotType>10</SlotType>
+<Texture>
+<File>lofiObj2</File>
+<Index>0x15e</Index>
+</Texture>
+<Description>Food for your pet. Tart and tangy.</Description>
+<BagType>2</BagType>
+<feedPower>250</feedPower>
+<Soulbound/>
+<DisplayId>Cranberries</DisplayId>
+</Object>
+<Object type="0xcd1" id="Ear of Corn">
+<Class>Equipment</Class>
+<Item/>
+<SlotType>10</SlotType>
+<Texture>
+<File>lofiObj2</File>
+<Index>0x15d</Index>
+</Texture>
+<Description>Food for your pet. Buttery and delicious!</Description>
+<BagType>2</BagType>
+<feedPower>350</feedPower>
+<Soulbound/>
+<DisplayId>Ear of Corn</DisplayId>
+</Object>
+<Object type="0xcd2" id="Sliced Yam">
+<Class>Equipment</Class>
+<Item/>
+<SlotType>10</SlotType>
+<Texture>
+<File>lofiObj2</File>
+<Index>0x15c</Index>
+</Texture>
+<Description>Food for your pet. Nice and sweet honeyglazed ham.</Description>
+<BagType>2</BagType>
+<feedPower>500</feedPower>
+<Soulbound/>
+<DisplayId>Sliced Yam</DisplayId>
+</Object>
+<Object type="0xcd3" id="Pumpkin Pie">
+<Class>Equipment</Class>
+<Item/>
+<SlotType>10</SlotType>
+<Texture>
+<File>lofiObj2</File>
+<Index>0x15b</Index>
+</Texture>
+<Description>
+Food for your pet. Straight out of the oven.
+</Description>
+<BagType>2</BagType>
+<feedPower>650</feedPower>
+<Soulbound/>
+<DisplayId>Pumpkin Pie</DisplayId>
+</Object>
+<Object type="0xcd6" id="Thanksgiving Turkey">
+<Class>Equipment</Class>
+<Item/>
+<SlotType>10</SlotType>
+<Texture>
+<File>lofiObj2</File>
+<Index>0x15f</Index>
+</Texture>
+<Description>
+A whole thanksgiving turkey!
+</Description>
+<BagType>2</BagType>
+<feedPower>1621</feedPower>
+<Soulbound/>
+<DisplayId>Thanksgiving Turkey</DisplayId>
+</Object>
 <Object type="0x540b" id="ALG Wall">
     <Class>Wall</Class>
     <Texture>
@@ -88622,6 +88762,49 @@ This dagger was a myth, will you live to tell the tale?
     <StunImmune/>
     <ArmorBreakImmune/>
   </Object>
+  <Object type="0x22ce" id="Aura of Zol">
+    <Group>Platez</Group>
+    <Enemy/>
+    <Class>Character</Class>
+     <Texture>
+      <File>d3LofiObjEmbed</File>
+      <Index>0x20b</Index>
+    </Texture>
+    <AltTexture id="1">
+      <Texture>
+        <File>d3LofiObjEmbed</File>
+        <Index>0x20c</Index>
+      </Texture>
+    </AltTexture>
+    <HitSound>monster/traps_hit</HitSound>
+    <DeathSound>monster/traps_death</DeathSound>
+    <Size>100</Size>
+    <MaxHitPoints>999999</MaxHitPoints>
+    <Defense>0</Defense>
+    <DrawOnGround/>
+    <NoMiniMap/>
+    <Projectile id="0">
+      <ObjectId>Invisible</ObjectId>
+      <Damage>9999</Damage>
+      <Speed>0</Speed>
+      <Size>80</Size>
+      <LifetimeMS>100</LifetimeMS>
+      <ConditionEffect duration="5">Paralyzed</ConditionEffect>
+    </Projectile>
+	<Projectile id="1">
+      <ObjectId>Invisible</ObjectId>
+      <Damage>9999</Damage>
+      <Speed>0</Speed>
+      <Size>80</Size>
+      <LifetimeMS>100</LifetimeMS>
+    </Projectile>
+    <ParalyzeImmune/>
+    <StasisImmune/>
+    <DazedImmune/>
+    <StunImmune/>
+    <ArmorBreakImmune/>
+    <DisplayId>Aura of Zol</DisplayId>
+  </Object>
   <Object type="0x22e1" id="Stone of Zol">
     <Enemy/>
     <Class>Character</Class>
@@ -89154,7 +89337,6 @@ This dagger was a myth, will you live to tell the tale?
     <StunImmune/>
 	<Elitedrop/>
     <ArmorBreakImmune/>
-	<Quest/>
     <MaxHitPoints>240000</MaxHitPoints>
     <Defense>60</Defense>
     <Projectile id="0">
@@ -89301,7 +89483,6 @@ This dagger was a myth, will you live to tell the tale?
 	<Elitedrop/>
     <StunImmune/>
     <ArmorBreakImmune/>
-	<Quest/>
     <MaxHitPoints>180000</MaxHitPoints>
     <Defense>40</Defense>
     <Projectile id="0">
@@ -89429,7 +89610,6 @@ This dagger was a myth, will you live to tell the tale?
     <StunImmune/>
 	<Elitedrop/>
     <ArmorBreakImmune/>
-	<Quest/>
     <MaxHitPoints>850000</MaxHitPoints>
     <Defense>80</Defense>
     <Projectile id="0">
@@ -91800,14 +91980,20 @@ This dagger was a myth, will you live to tell the tale?
     <DisplayId>Stinger Spell</DisplayId>
   </Object>
   <Object type="0x46de" id="Lurking Projectile">
-        <Class>Projectile</Class>
-          <Texture>
-              <File>d3LofiObjEmbed</File>
-              <Index>0x2c6</Index>
-          </Texture>
-        <AngleCorrection>1</AngleCorrection>
-    </Object>
-<Object type="0x46df" id="Wand of Flowing Water">
+    <Class>Projectile</Class>
+    <RandomTexture>
+    <Texture>
+      <File>d3LofiObjEmbed</File>
+      <Index>0x2c6</Index>
+    </Texture>
+    <Texture>
+      <File>d3LofiObjEmbed</File>
+      <Index>0x2c8</Index>
+    </Texture>
+    </RandomTexture>
+	  <AngleCorrection>1</AngleCorrection>
+  </Object>
+<Object type="0x46df" id="Wand of Lurking Night">
     <Class>Equipment</Class>
     <Item/>
     <Texture>
@@ -91816,7 +92002,7 @@ This dagger was a myth, will you live to tell the tale?
     </Texture>
     <SlotType>8</SlotType>
     <Tier>12</Tier>
-    <Description>Condensed magical water bound by arcane stones, each cast emits an ocean's force.</Description>
+    <Description>Here it comes, the Twilight.</Description>
     <RateOfFire>1</RateOfFire>
     <Sound>weapon/wand_of_death</Sound>
     <Projectile>
@@ -91831,6 +92017,8 @@ This dagger was a myth, will you live to tell the tale?
     <FameBonus>4</FameBonus>
     <OldSound>magicShoot</OldSound>
     <feedPower>450</feedPower>
+    <Enchantable/>
+    <DisplayId>Wand of Lurking Night</DisplayId>
   </Object>
   <Object type="0x46f1" id="Vulcan Shot">
     <Class>Projectile</Class>
@@ -95475,16 +95663,23 @@ This dagger was a myth, will you live to tell the tale?
             <Index>0xd0</Index>
         </Texture>
         <Tier>0</Tier>
+        <ExtraTooltipData>
+            <EffectInfo name="Banner Lifetime:" description="4"/>
+            <EffectInfo name="Empowerment Duration:" description="3"/>
+            <EffectInfo name="Radius:" description="2"/>
+            <EffectInfo name="" description="Empowers all players near banner."/>
+        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <Description>A standard banner made of wool cloth.</Description>
         <ActivateOnEquip stat="20" amount="1">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>1</BagType>
         <MpCost>70</MpCost>
-        <Activate effect="Surged" duration="3" range="3">ConditionEffectAura</Activate>
+		<Activate effect="Surged" duration="3" range="3">ConditionEffectAura</Activate>
         <Activate range="2" amount="4" duration="3">Banner</Activate>
         <Cooldown>6</Cooldown>
         <feedPower>5</feedPower>
+        <DisplayId>Cloth Banner</DisplayId>
     </Object>
     <Object type="0x5045" id="Nature Banner">
         <Class>Equipment</Class>
@@ -95494,16 +95689,23 @@ This dagger was a myth, will you live to tell the tale?
             <Index>0xd1</Index>
         </Texture>
         <Tier>1</Tier>
+        <ExtraTooltipData>
+            <EffectInfo name="Banner Lifetime:" description="5"/>
+            <EffectInfo name="Empowerment Duration:" description="4"/>
+            <EffectInfo name="Radius:" description="2"/>
+            <EffectInfo name="" description="Empowers all players near banner."/>
+        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="1">IncrementStat</ActivateOnEquip>
         <Description>A banner meant to inspire the greatness of nature.</Description>
         <Usable/>
         <BagType>1</BagType>
         <MpCost>70</MpCost>
-        <Activate effect="Surged" duration="3" range="4">ConditionEffectAura</Activate>
+		<Activate effect="Surged" duration="3" range="4">ConditionEffectAura</Activate>
         <Activate range="2" amount="5" duration="4">Banner</Activate>
         <Cooldown>6.5</Cooldown>
         <feedPower>10</feedPower>
+        <DisplayId>Nature Banner</DisplayId>
     </Object>
     <Object type="0x51ac" id="Heroic Banner">
         <Class>Equipment</Class>
@@ -95513,16 +95715,23 @@ This dagger was a myth, will you live to tell the tale?
             <Index>0xd2</Index>
         </Texture>
         <Tier>2</Tier>
+        <ExtraTooltipData>
+            <EffectInfo name="Banner Lifetime:" description="5"/>
+            <EffectInfo name="Empowerment Duration:" description="4"/>
+            <EffectInfo name="Radius:" description="3"/>
+            <EffectInfo name="" description="Empowers all players near banner."/>
+        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="2">IncrementStat</ActivateOnEquip>
         <Description>A banner used by heroic templars.</Description>
         <Usable/>
         <BagType>1</BagType>
         <MpCost>75</MpCost>
-        <Activate effect="Surged" duration="3" range="4">ConditionEffectAura</Activate>
+		<Activate effect="Surged" duration="3" range="4">ConditionEffectAura</Activate>
         <Activate range="3" amount="5" duration="4">Banner</Activate>
         <Cooldown>6.5</Cooldown>
         <feedPower>20</feedPower>
+        <DisplayId>Heroic Banner</DisplayId>
     </Object>
     <Object type="0x51ad" id="Vicious Banner">
         <Class>Equipment</Class>
@@ -95532,17 +95741,24 @@ This dagger was a myth, will you live to tell the tale?
             <Index>0xd3</Index>
         </Texture>
         <Tier>3</Tier>
+        <ExtraTooltipData>
+            <EffectInfo name="Banner Lifetime:" description="5"/>
+            <EffectInfo name="Empowerment Duration:" description="5"/>
+            <EffectInfo name="Radius:" description="3"/>
+            <EffectInfo name="" description="Empowers all players near banner."/>
+        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="2">IncrementStat</ActivateOnEquip>
-        <Description>This banner can cause vicious beasts to flee in fear.</Description>
+        <Description>This banner can cause vicious beast to flee in fear.</Description>
         <Usable/>
         <BagType>2</BagType>
         <MpCost>80</MpCost>
-        <Activate effect="Surged" duration="3.5" range="4">ConditionEffectAura</Activate>
+		<Activate effect="Surged" duration="3.5" range="4">ConditionEffectAura</Activate>
         <Activate range="3" amount="5" duration="5">Banner</Activate>
         <Cooldown>7</Cooldown>
         <FameBonus>1</FameBonus>
         <feedPower>45</feedPower>
+        <DisplayId>Vicious Banner</DisplayId>
     </Object>
     <Object type="0x51ae" id="Siege Banner">
         <Class>Equipment</Class>
@@ -95552,18 +95768,25 @@ This dagger was a myth, will you live to tell the tale?
             <Index>0xd4</Index>
         </Texture>
         <Tier>4</Tier>
+        <ExtraTooltipData>
+            <EffectInfo name="Banner Lifetime:" description="5"/>
+            <EffectInfo name="Empowerment Duration:" description="5"/>
+            <EffectInfo name="Radius:" description="3"/>
+            <EffectInfo name="" description="Empowers all players near banner."/>
+        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="3">IncrementStat</ActivateOnEquip>
         <Description>A banner that declares superiority.</Description>
         <Usable/>
         <BagType>2</BagType>
         <MpCost>80</MpCost>
-        <Activate effect="Surged" duration="4" range="4">ConditionEffectAura</Activate>
+		<Activate effect="Surged" duration="4" range="4">ConditionEffectAura</Activate>
         <Activate range="3" amount="5" duration="5">Banner</Activate>
         <Activate effect="Invulnerable" duration="0.8">ConditionEffectSelf</Activate>
         <Cooldown>7.5</Cooldown>
-        <FameBonus>2</FameBonus>
+      <FameBonus>2</FameBonus>
         <feedPower>90</feedPower>
+        <DisplayId>Siege Banner</DisplayId>
     </Object>
     <Object type="0x51af" id="Banner of Zarcod">
         <Class>Equipment</Class>
@@ -95573,18 +95796,26 @@ This dagger was a myth, will you live to tell the tale?
             <Index>0xd5</Index>
         </Texture>
         <Tier>5</Tier>
+        <ExtraTooltipData>
+            <EffectInfo name="Banner Lifetime:" description="5"/>
+            <EffectInfo name="Empowerment Duration:" description="5"/>
+            <EffectInfo name="Radius:" description="4"/>
+            <EffectInfo name="" description="Empowers all players near banner."/>
+        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+		<ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
         <Description>Zarcod, a fallen kingdom won't be crushed..This banner proves that.</Description>
         <Usable/>
         <BagType>4</BagType>
         <MpCost>85</MpCost>
-        <Activate effect="Surged" duration="4" range="4">ConditionEffectAura</Activate>
+		<Activate effect="Surged" duration="4" range="4">ConditionEffectAura</Activate>
         <Activate range="4" amount="5" duration="5">Banner</Activate>
         <Activate effect="Invulnerable" duration="1.00">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
         <FameBonus>3</FameBonus>
         <feedPower>185</feedPower>
+        <DisplayId>Banner of Zarcod</DisplayId>
     </Object>
     <Object type="0x51a1" id="Banner of True War">
         <Class>Equipment</Class>
@@ -95594,18 +95825,25 @@ This dagger was a myth, will you live to tell the tale?
             <Index>0xd6</Index>
         </Texture>
         <Tier>6</Tier>
+        <ExtraTooltipData>
+            <EffectInfo name="Banner Lifetime:" description="6"/>
+            <EffectInfo name="Empowerment Duration:" description="5"/>
+            <EffectInfo name="Radius:" description="4"/>
+            <EffectInfo name="" description="Empowers all players near banner."/>
+        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
         <Description>This banner represents true war and battle.</Description>
         <Usable/>
         <BagType>4</BagType>
         <MpCost>90</MpCost>
-        <Activate effect="Surged" duration="4" range="5">ConditionEffectAura</Activate>
+		<Activate effect="Surged" duration="4" range="5">ConditionEffectAura</Activate>
         <Activate range="4" amount="6" duration="5">Banner</Activate>
         <Activate effect="Invulnerable" duration="1.25">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
         <FameBonus>4</FameBonus>
         <feedPower>380</feedPower>
+        <DisplayId>Banner of True War</DisplayId>
     </Object>
     <Object type="0x52ab" id="Shadow Beacon">
         <Class>Equipment</Class>
@@ -95614,6 +95852,12 @@ This dagger was a myth, will you live to tell the tale?
             <File>lofiObj6</File>
             <Index>0xd7</Index>
         </Texture>
+        <ExtraTooltipData>
+            <EffectInfo name="Banner Lifetime:" description="6"/>
+            <EffectInfo name="Empowerment Duration:" description="5"/>
+            <EffectInfo name="Radius:" description="3"/>
+            <EffectInfo name="" description="Empowers all players near banner."/>
+        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="-2">IncrementStat</ActivateOnEquip>
@@ -95627,6 +95871,7 @@ This dagger was a myth, will you live to tell the tale?
         <Cooldown>8</Cooldown>
         <feedPower>760</feedPower>
         <FameBonus>6</FameBonus>
+        <DisplayId>Shadow Beacon</DisplayId>
     </Object>
     <Object type="0x52aa" id="Baby Djinja Skin">
         <Class>Equipment</Class>
@@ -97276,6 +97521,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <File>lofiObj6</File>
             <Index>0xd8</Index>
         </Texture>
+        <ExtraTooltipData>
+            <EffectInfo name="Banner Lifetime:" description="6"/>
+            <EffectInfo name="Empowerment Duration:" description="4"/>
+            <EffectInfo name="Radius:" description="4"/>
+            <EffectInfo name="" description="Empowers all players near banner."/>
+        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="-4">IncrementStat</ActivateOnEquip>
@@ -97332,7 +97583,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
     <HitSound>monster/default_hit</HitSound>
     <DeathSound>monster/ghost_god_death</DeathSound>
     <Size>130</Size>
-    <MaxHitPoints>1200</MaxHitPoints>
+    <MaxHitPoints>2400</MaxHitPoints>
     <Defense>10</Defense>
     <Projectile id="0">
       <ObjectId>Red Gas</ObjectId>
@@ -97366,7 +97617,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       </AnimatedTexture>
       <HitSound>monster/medusa_hit</HitSound>
       <DeathSound>monster/undead_dwarves_hit</DeathSound>
-      <MaxHitPoints>75000</MaxHitPoints>
+      <MaxHitPoints>100000</MaxHitPoints>
       <Projectile id="0">
          <ObjectId>Corruption Bolt</ObjectId>
          <Speed>85</Speed>
@@ -98723,6 +98974,18 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>0</BagType>
         <Fuel/>
     </Object>
+    <Object type="0x54bb" id="Wheat">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x392</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>This looks like it could be tasty.</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+    </Object>
     <Object type="0xa22" id="Health Potion">
       <Class>Equipment</Class>
       <Item/>
@@ -98757,6 +99020,409 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <BagType>0</BagType>
       <feedPower>5</feedPower>
    </Object>
+    <Object type="0x54bc" id="Bread">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x393</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>It can be eaten but you might be able to make it better..</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+        <Consumable/>
+        <Activate amount="35">Heal</Activate>
+    </Object>
+    <Object type="0x54bd" id="Processed Meat">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x391</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Would be a good addition to something..but you can still eat it.</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+        <Consumable/>
+        <Activate amount="10">Heal</Activate>
+    </Object>
+    <Object type="0x54be" id="Cheese">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x399</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Moo?</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+        <Consumable/>
+        <Activate amount="5">Heal</Activate>
+    </Object>
+    <Object type="0x54bf" id="Slice of Pizza">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x390</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Delicious!</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+        <Consumable/>
+        <Activate amount="125">Heal</Activate>
+    </Object>
+    <Object type="0x54c1" id="Full Pizza">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3a4</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>4 slices of deliciousness!</Description>
+        <BagType>0</BagType>
+        <Doses>4</Doses>
+        <Activate amount="150">Heal</Activate>
+        <SuccessorId>3/4 of Pizza</SuccessorId>
+        <Consumable/>
+    </Object>
+    <Object type="0x54c2" id="3/4 of Pizza">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3a5</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>3 slices of deliciousness!</Description>
+        <BagType>0</BagType>
+        <Doses>3</Doses>
+        <Activate amount="150">Heal</Activate>
+        <SuccessorId>Half of Pizza</SuccessorId>
+        <Consumable/>
+    </Object>
+    <Object type="0x54c3" id="Half of Pizza">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3a6</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>2 slices of deliciousness!</Description>
+        <BagType>0</BagType>
+        <Doses>2</Doses>
+        <Activate amount="150">Heal</Activate>
+        <SuccessorId>Quarter of Pizza</SuccessorId>
+        <Consumable/>
+    </Object>
+    <Object type="0x54c4" id="Quarter of Pizza">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3a7</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>1 slices of deliciousness!</Description>
+        <BagType>0</BagType>
+        <Activate amount="150">Heal</Activate>
+        <Consumable/>
+    </Object>
+    <Object type="0x54c5" id="Karambwan Spike">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3a1</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Pointy..</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+    </Object>
+    <Object type="0x54c6" id="Karambwan">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3a0</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Watch how you eat this.</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+        <Consumable/>
+        <Activate amount="300">Magic</Activate>
+    </Object>
+    <Object type="0x54c7" id="Spicy Karambwan">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3a0</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Uh oh.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="300">Magic</Activate>
+        <Activate amount="300">Heal</Activate>
+    </Object>
+    <Object type="0x54c8" id="Chocolate Chips">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x395</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>CHOCOLATE!</Description>
+        <BagType>0</BagType>
+        <Activate amount="5">Magic</Activate>
+        <Activate amount="5">Heal</Activate>
+        <Consumable/>
+        <Ingredient/>
+    </Object>
+    <Object type="0x54c9" id="Flour">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x398</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Just a little heavy.</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+    </Object>
+    <Object type="0x54ca" id="Raw Egg">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x396</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Crack it open and let it slide right down your throat.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="15">Heal</Activate>
+        <Ingredient/>
+    </Object>
+    <Object type="0x54cb" id="Cookie">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x394</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Monster.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="50">Heal</Activate>
+        <Activate amount="50">Magic</Activate>
+    </Object>
+    <Object type="0x54cc" id="Grilled Cheese Sandwich">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3a8</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Cheesy food.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="100">Heal</Activate>
+        <Activate amount="25">Magic</Activate>
+    </Object>
+    <Object type="0x54cd" id="Soup Spices">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x39e</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Something is cooking in the kitchen, I just don't know what yet.</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+    </Object>
+    <Object type="0x54ce" id="Bowl">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x39b</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Something is cooking in the kitchen, still just not sure yet.</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+    </Object>
+    <Object type="0x54d4" id="Bowl of Soup">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x39a</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Mmm.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <SuccessorId>Bowl</SuccessorId>
+        <Activate amount="120">Heal</Activate>
+        <Activate amount="50">Magic</Activate>
+    </Object>
+    <Object type="0x54cf" id="Spicy Slice of Pizza">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x390</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Spicy and Delicious!</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="140">Heal</Activate>
+        <Activate amount="40">Magic</Activate>
+    </Object>
+    <Object type="0x54d1" id="Pepper">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3af</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>WATER!</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="20">Heal</Activate>
+        <Ingredient/>
+    </Object>
+    <Object type="0x54d2" id="Chocolate Cake">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3ac</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Oh boy!</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Doses>2</Doses>
+        <Activate amount="200">Heal</Activate>
+        <SuccessorId>Half of Chocolate Cake</SuccessorId>
+    </Object>
+    <Object type="0x54d3" id="Half of Chocolate Cake">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3ad</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Oh boy!</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="200">Heal</Activate>
+    </Object>
+    <Object type="0x54d5" id="Tomato">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3a2</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Fresh!</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Ingredient/>
+        <Activate amount="5">Heal</Activate>
+    </Object>
+    <Object type="0x54d6" id="Lettuce">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3a3</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Fresh!</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Ingredient/>
+        <Activate amount="5">Heal</Activate>
+    </Object>
+    <Object type="0x54d7" id="Slappy Burger">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x39d</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>THATS ONE BIG ASS BURGER MY HOMEFRY.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Doses>2</Doses>
+        <Activate amount="400">Heal</Activate>
+        <SuccessorId>Half of Slappy Burger</SuccessorId>
+    </Object>
+    <Object type="0x54d8" id="Half of Slappy Burger">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x39f</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>THATS ONE BIG ASS BURGER MY HOMEFRY.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="450">Heal</Activate>
+    </Object>
+    <Object type="0x54de" id="Spicy Soup">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x39a</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Kinda spicy.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <SuccessorId>Bowl</SuccessorId>
+        <Activate amount="180">Heal</Activate>
+        <Activate amount="100">Magic</Activate>
+    </Object>
+    <Object type="0x54da" id="Salad">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3b4</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Good salad.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <SuccessorId>Bowl</SuccessorId>
+        <Activate amount="150">Magic</Activate>
+    </Object>
     <Object type="0x54dc" id="Forsaken Shield">
       <Class>Equipment</Class>
       <Item/>
@@ -98799,6 +99465,460 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Index>0x3be</Index>
       </Texture>
       <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x54df" id="Super Full Pizza">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3b0</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>4 slices of deliciousness!</Description>
+        <BagType>0</BagType>
+        <Doses>4</Doses>
+        <Activate amount="175">Heal</Activate>
+        <SuccessorId>Super 3/4 of Pizza</SuccessorId>
+        <Consumable/>
+    </Object>
+    <Object type="0x54f1" id="Super 3/4 of Pizza">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3b1</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>3 slices of deliciousness!</Description>
+        <BagType>0</BagType>
+        <Doses>3</Doses>
+        <Activate amount="175">Heal</Activate>
+        <SuccessorId>Super Half of Pizza</SuccessorId>
+        <Consumable/>
+    </Object>
+    <Object type="0x54f2" id="Super Half of Pizza">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3b2</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>2 slices of deliciousness!</Description>
+        <BagType>0</BagType>
+        <Doses>2</Doses>
+        <Activate amount="175">Heal</Activate>
+        <SuccessorId>Super Quarter of Pizza</SuccessorId>
+        <Consumable/>
+    </Object>
+    <Object type="0x54f3" id="Super Quarter of Pizza">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3b3</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>1 slices of deliciousness!</Description>
+        <BagType>0</BagType>
+        <Activate amount="175">Heal</Activate>
+        <Consumable/>
+    </Object>
+    <Object type="0x54f4" id="Middle of Burger">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3b5</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>This is the middle buddy.</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+    </Object>
+    <Object type="0x54f5" id="Crunchi Candy">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3b7</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>If you've got the munchi eat the crunchi TM.</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+        <Activate amount="100">Heal</Activate>
+        <Consumable/>
+    </Object>
+    <Object type="0x54f6" id="Chocolate Bar">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3b8</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Its tastey.</Description>
+        <BagType>0</BagType>
+        <Activate amount="100">Heal</Activate>
+        <Activate amount="100">Magic</Activate>
+        <Consumable/>
+    </Object>
+    <Object type="0x54f7" id="Raw Fish">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3b9</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Cook it up.</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+    </Object>
+    <Object type="0x54f8" id="Cooked Fish">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3ba</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Eat it up.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="100">Heal</Activate>
+        <Ingredient/>
+    </Object>
+    <Object type="0x54f9" id="Spicy Cooked Fish">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3ba</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Touch of spice.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="100">Heal</Activate>
+        <Activate effect="Healing" duration="2">ConditionEffectSelf</Activate>
+    </Object>
+    <Object type="0x54fa" id="Milk">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3bd</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Better bones?</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="25">Heal</Activate>
+        <Activate effect="Armored" duration="2">ConditionEffectSelf</Activate>
+        <Ingredient/>
+    </Object>
+    <Object type="0x55a1" id="Raw Chicken">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3c2</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Not safe to eat.</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+    </Object>
+    <Object type="0x55a2" id="Cooked Chicken">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3c1</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Safe to eat.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="200">Heal</Activate>
+    </Object>
+        <Object type="0x55a3" id="Cracked Coconut">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3c0</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Kinda Hard.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Ingredient/>
+        <Activate amount="10">Heal</Activate>
+    </Object>
+    <Object type="0x55a4" id="Coconut Milk">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3bd</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Better bones and nuts?</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="160">Heal</Activate>
+        <Activate effect="Armored" duration="2">ConditionEffectSelf</Activate>
+    </Object>
+    <Object type="0x55a5" id="Bag of Rice">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3b6</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Oh yes, it that rice.</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+    </Object>
+    <Object type="0x55a6" id="Rice Bowl">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3a9</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Good rice bowl.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <SuccessorId>Bowl</SuccessorId>
+        <Activate amount="175">Heal</Activate>
+    </Object>
+    <Object type="0x55a7" id="Sugar">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x397</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Sweet.</Description>
+        <BagType>0</BagType>
+        <Ingredient/>
+    </Object>
+    <Object type="0x55a8" id="Sweet Rice Bowl">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3a9</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Good sweet rice bowl.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <SuccessorId>Bowl</SuccessorId>
+        <Activate effect="Healing" duration="3">ConditionEffectSelf</Activate>
+        <Activate amount="175">Heal</Activate>
+    </Object>
+        <Object type="0x55a9" id="Chicken Burger">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3c3</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Yum, Chickin.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Doses>2</Doses>
+        <Activate amount="200">Heal</Activate>
+        <Activate amount="50">Magic</Activate>
+        <Activate effect="Healing" duration="1.5">ConditionEffectSelf</Activate>
+        <SuccessorId>Half of Chicken Burger</SuccessorId>
+    </Object>
+    <Object type="0x55aa" id="Half of Chicken Burger">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3c4</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Yum, Chickin.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="200">Heal</Activate>
+        <Activate amount="50">Magic</Activate>
+        <Activate effect="Healing" duration="1.5">ConditionEffectSelf</Activate>
+    </Object>
+  <Object type="0x44d5" id="Dragon Pearl">
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+      <File>d3LofiObjEmbed</File>
+      <Index>0x215</Index>
+    </Texture>
+    <SlotType>10</SlotType>
+    <Description>A delicious spice.</Description>
+    <BagType>9</BagType>
+    <Ingredient/>
+  </Object>
+  <Object type="0x55ab" id="Drago Spicy Karambwan">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3a0</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Uh oh.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="600">Magic</Activate>
+        <Activate amount="600">Heal</Activate>
+    </Object>
+  <Object type="0x55ac" id="Ghost Remnant">
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+     <File>d3LofiObjEmbed</File>
+     <Index>0x3c5</Index>
+    </Texture>
+    <SlotType>10</SlotType>
+    <Description>What will I do with this?</Description>
+    <BagType>0</BagType>
+    <Ingredient/>
+  </Object>
+      <Object type="0x55ad" id="Ghost Burger">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3c6</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Boo!</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Doses>3</Doses>
+        <Activate amount="600">Magic</Activate>
+        <Activate amount="600">Heal</Activate>
+        <SuccessorId>2/3 of Ghost Burger</SuccessorId>
+    </Object>
+    <Object type="0x55ae" id="2/3 of Ghost Burger">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3c7</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Boo!</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Doses>2</Doses>
+        <Activate amount="600">Magic</Activate>
+        <Activate amount="600">Heal</Activate>
+        <SuccessorId>1/3 of Ghost Burger</SuccessorId>
+    </Object>
+    <Object type="0x55af" id="1/3 of Ghost Burger">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3c8</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Boo!</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="600">Magic</Activate>
+        <Activate amount="600">Heal</Activate>
+    </Object>
+    <Object type="0x55b1" id="Golden Chocolate Bar">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3a0</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A delecacy.</Description>
+        <BagType>0</BagType>
+        <Consumable/>
+        <Activate amount="1200">Heal</Activate>
+    </Object>
+    <Object type="0x55b2" id="Strange Full Pizza">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3ca</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>4 slices of deliciousness!</Description>
+        <BagType>0</BagType>
+        <Doses>4</Doses>
+        <Activate amount="2000">Heal</Activate>
+        <Activate amount="2000">Magic</Activate>
+        <Activate effect="Healing" duration="3">ConditionEffectSelf</Activate>
+        <SuccessorId>Strange 3/4 of Pizza</SuccessorId>
+        <Consumable/>
+    </Object>
+    <Object type="0x55b3" id="Strange 3/4 of Pizza">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3cb</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>3 slices of deliciousness!</Description>
+        <BagType>0</BagType>
+        <Doses>3</Doses>
+        <Activate amount="2000">Heal</Activate>
+        <Activate amount="2000">Magic</Activate>
+        <Activate effect="Healing" duration="3">ConditionEffectSelf</Activate>
+        <SuccessorId>Strange Half of Pizza</SuccessorId>
+        <Consumable/>
+    </Object>
+    <Object type="0x55b4" id="Strange Half of Pizza">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3cc</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>2 slices of deliciousness!</Description>
+        <BagType>0</BagType>
+        <Doses>2</Doses>
+        <Activate amount="2000">Heal</Activate>
+        <Activate amount="2000">Magic</Activate>
+        <Activate effect="Healing" duration="3">ConditionEffectSelf</Activate>
+        <SuccessorId>Strange Quarter of Pizza</SuccessorId>
+        <Consumable/>
+    </Object>
+    <Object type="0x55b5" id="Strange Quarter of Pizza">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3cd</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>1 slices of deliciousness!</Description>
+        <BagType>0</BagType>
+        <Activate amount="2000">Heal</Activate>
+        <Activate amount="2000">Magic</Activate>
+        <Activate effect="Healing" duration="3">ConditionEffectSelf</Activate>
+        <Consumable/>
     </Object>
      <Object type="0x55b6" id="GhostP Proj">
       <Class>Projectile</Class>
@@ -99271,7 +100391,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		<HitSound>spell/fire_spray</HitSound>
 		<DeathSound>monster/stone_walls_death</DeathSound>
 		<Size>200</Size>
-		<MaxHitPoints>250000</MaxHitPoints>
+		<MaxHitPoints>700000</MaxHitPoints>
 		<Defense>100</Defense>
 		<Quest/>
 		<Flying/>
@@ -99364,7 +100484,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		<HitSound>spell/fire_spray</HitSound>
 		<DeathSound>monster/stone_walls_death</DeathSound>
 		<Size>125</Size>
-		<MaxHitPoints>10000</MaxHitPoints>
+		<MaxHitPoints>25000</MaxHitPoints>
 		<Defense>50</Defense>
 		<NoArticle/>
     	<Projectile id="0">
@@ -103308,7 +104428,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </AltTexture>
         <HitSound>monster/skeletons_hit</HitSound>
         <DeathSound>monster/skeletons_death</DeathSound>
-        <MaxHitPoints>150000</MaxHitPoints>
+        <MaxHitPoints>400000</MaxHitPoints>
         <Projectile id="0">
             <ObjectId>Paralyze Bullet</ObjectId>
             <Speed>35</Speed>
@@ -103407,7 +104527,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </AnimatedTexture>
         <HitSound>monster/wooden_walls_hit</HitSound>
         <DeathSound>monster/wooden_walls_death</DeathSound>
-        <MaxHitPoints>20000</MaxHitPoints>
+        <MaxHitPoints>100000</MaxHitPoints>
         <Projectile id="0">
             <ObjectId>WM Ball</ObjectId>
             <Speed>15</Speed>
@@ -103444,7 +104564,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </AnimatedTexture>
         <HitSound>monster/wooden_walls_hit</HitSound>
         <DeathSound>monster/wooden_walls_death</DeathSound>
-        <MaxHitPoints>20000</MaxHitPoints>
+        <MaxHitPoints>100000</MaxHitPoints>
         <Projectile id="0">
             <ObjectId>DM Ball</ObjectId>
             <Speed>15</Speed>
@@ -103560,7 +104680,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		<HitSound>monster/rocks_hit</HitSound>
 		<DeathSound>monster/bats_death</DeathSound>
 		<Size>180</Size>
-		<MaxHitPoints>200000</MaxHitPoints>
+		<MaxHitPoints>625000</MaxHitPoints>
 		<Defense>200</Defense>
 		<Quest/>
     	<Flying/>
@@ -103651,7 +104771,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		<HitSound>monster/rocks_hit</HitSound>
 		<DeathSound>monster/bats_death</DeathSound>
 		<Size>160</Size>
-		<MaxHitPoints>20000</MaxHitPoints>
+		<MaxHitPoints>60000</MaxHitPoints>
 		<Defense>80</Defense>
 		<Quest/>
     	<Flying/>
@@ -103702,7 +104822,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		<HitSound>monster/rocks_hit</HitSound>
 		<DeathSound>monster/bats_death</DeathSound>
 		<Size>100</Size>
-		<MaxHitPoints>2000</MaxHitPoints>
+		<MaxHitPoints>10000</MaxHitPoints>
 		<Defense>20</Defense>
 		<Quest/>
     	<Flying/>
@@ -103735,7 +104855,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 	    <HitSound>monster/default_hit</HitSound>
 	    <DeathSound>monster/dark_elves_death</DeathSound>
 		<Size>140</Size>
-		<MaxHitPoints>2000</MaxHitPoints>
+		<MaxHitPoints>10000</MaxHitPoints>
 		<Defense>20</Defense>
 		<Quest/>
     	<Flying/>
@@ -103756,274 +104876,148 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <LifetimeMS>8000</LifetimeMS>
       	</Projectile>
 	</Object>
-  <Object type="0x5811" id="Paper Charm">
-      <Class>Equipment</Class>
-      <Item/>
-	  <Texture>
-		  <File>d3LofiObjEmbed</File>
-	      <Index>0x403</Index>
-	  </Texture>
-      <SlotType>32</SlotType>
-      <Tier>0</Tier>
-      <Description>A commodity among those who work in the shrines, this charm is  used to train novices in the arts of exorcism.</Description>
-      <Sound>spell/fire_spray</Sound>
-      <Projectile>
-         <ObjectId>Paper Charm Shot</ObjectId>
-         <Speed>75</Speed>
-         <MinDamage>35</MinDamage>
-         <MaxDamage>40</MaxDamage>
-         <LifetimeMS>1800</LifetimeMS>
-         <Size>150</Size>
-         <ConditionEffect duration="2">Weak</ConditionEffect>
-         <ArmorPiercing/>
-         <Boomerang/>
-      </Projectile>
-      <ConditionEffect duration="2">Weak</ConditionEffect>
-      <Usable/>
-      <BagType>1</BagType>
-      <MpCost>30</MpCost>
-      <Cooldown>5</Cooldown>
-      <Activate>Shoot</Activate>
-      <feedPower>4</feedPower>
-      <DisplayId>Paper Charm</DisplayId>
-   </Object>
-   <Object type="0x5812" id="Arachnid Charm">
-      <Class>Equipment</Class>
-      <Item/>
-	  <Texture>
-		  <File>d3LofiObjEmbed</File>
-	      <Index>0x404</Index>
-	  </Texture>
-      <SlotType>32</SlotType>
-      <Tier>1</Tier>
-      <Description>A charm integral to holy shrines that fear their 8 legged foe, this charm poses the valuable ability to ward off and conjure spiders.</Description>
-      <Sound>spell/fire_spray</Sound>
-      <Projectile>
-         <ObjectId>Arachnid Charm Shot</ObjectId>
-         <Speed>75</Speed>
-         <MinDamage>45</MinDamage>
-         <MaxDamage>60</MaxDamage>
-         <LifetimeMS>1800</LifetimeMS>
-         <Size>150</Size>
-         <ConditionEffect duration="2">Weak</ConditionEffect>
-         <ArmorPiercing/>
-         <Boomerang/>
-      </Projectile>
-      <ConditionEffect duration="2">Weak</ConditionEffect>
-      <Usable/>
-      <BagType>1</BagType>
-      <MpCost>45</MpCost>
-      <Cooldown>4</Cooldown>
-      <NumProjectiles>2</NumProjectiles>
-      <Activate>Shoot</Activate>
-      <feedPower>10</feedPower>
-      <DisplayId>Arachnid Charm</DisplayId>
-   </Object>
-   <Object type="0x5817" id="Forestbound Charm">
-      <Class>Equipment</Class>
-      <Item/>
-	  <Texture>
-		  <File>d3LofiObjEmbed</File>
-	      <Index>0x405</Index>
-	  </Texture>
-      <SlotType>32</SlotType>
-      <Tier>2</Tier>
-      <Description>A warding charm blessed from a forest mage, complete with an enchanted ruby placed in it’s center,  It’s a must have for those who frequent the forest.</Description>
-      <Sound>spell/fire_spray</Sound>
-      <Projectile>
-         <ObjectId>Forestbound Charm Shot</ObjectId>
-         <Speed>75</Speed>
-         <MinDamage>45</MinDamage>
-         <MaxDamage>60</MaxDamage>
-         <LifetimeMS>1800</LifetimeMS>
-         <Size>150</Size>
-         <ConditionEffect duration="2.5">Weak</ConditionEffect>
-         <ArmorPiercing/>
-         <Boomerang/>
-      </Projectile>
-      <ConditionEffect duration="2.5">Weak</ConditionEffect>
-      <ActivateOnEquip stat="21" amount="1">IncrementStat</ActivateOnEquip>
-      <Usable/>
-      <BagType>1</BagType>
-      <MpCost>55</MpCost>
-      <Cooldown>4</Cooldown>
-      <Activate>Shoot</Activate>
-      <NumProjectiles>3</NumProjectiles>
-      <feedPower>20</feedPower>
-      <DisplayId>Forestbound Charm</DisplayId>
-   </Object>
-   <Object type="0x5813" id="Fairywood Charm">
-      <Class>Equipment</Class>
-      <Item/>
-	  <Texture>
-		  <File>d3LofiObjEmbed</File>
-	      <Index>0x406</Index>
-	  </Texture>
-      <SlotType>32</SlotType>
-      <Tier>3</Tier>
-      <Description>A charm engraved from the slab a of magical birch, forbidden from entrance by the fae, it’s wielder will gain their assistance as long as they hold its possession.</Description>
-      <Sound>spell/fire_spray</Sound>
-      <Projectile>
-         <ObjectId>Fairywood Charm Shot</ObjectId>
-         <Speed>75</Speed>
-         <MinDamage>60</MinDamage>
-         <MaxDamage>75</MaxDamage>
-         <LifetimeMS>1800</LifetimeMS>
-         <Size>150</Size>
-         <ConditionEffect duration="3">Weak</ConditionEffect>
-         <ArmorPiercing/>
-         <Boomerang/>
-      </Projectile>
-      <ConditionEffect duration="3">Weak</ConditionEffect>
-      <ActivateOnEquip stat="21" amount="2">IncrementStat</ActivateOnEquip>
-      <Usable/>
-      <BagType>2</BagType>
-      <FameBonus>1</FameBonus>
-      <MpCost>65</MpCost>
-      <Activate>Shoot</Activate>
-      <Cooldown>4</Cooldown>
-      <feedPower>45</feedPower>
-      <NumProjectiles>4</NumProjectiles>
-      <DisplayId>Fairywood Charm</DisplayId>
-   </Object>
-   <Object type="0x5814" id="Golemtamer Charm">
-      <Class>Equipment</Class>
-      <Item/>
-	  <Texture>
-		  <File>d3LofiObjEmbed</File>
-	      <Index>0x407</Index>
-	  </Texture>
-      <SlotType>32</SlotType>
-      <Tier>4</Tier>
-      <Description>A charm carved out from a warped diamond, it holds a deep connection with the world enough to raise golems from it’s earth.</Description>
-      <Sound>spell/fire_spray</Sound>
-      <Projectile>
-         <ObjectId>Golemtamer Charm Shot</ObjectId>
-         <Speed>75</Speed>
-         <MinDamage>75</MinDamage>
-         <MaxDamage>85</MaxDamage>
-         <LifetimeMS>1800</LifetimeMS>
-         <Size>150</Size>
-         <ConditionEffect duration="3.5">Weak</ConditionEffect>
-         <ArmorPiercing/>
-         <Boomerang/>
-      </Projectile>
-      <ConditionEffect duration="3.5">Weak</ConditionEffect>
-      <ActivateOnEquip stat="21" amount="3">IncrementStat</ActivateOnEquip>
-      <Usable/>
-      <BagType>2</BagType>
-      <FameBonus>2</FameBonus>
-      <Cooldown>4</Cooldown>
-      <MpCost>75</MpCost>
-      <Activate>Shoot</Activate>
-      <feedPower>90</feedPower>
-      <NumProjectiles>5</NumProjectiles>
-      <DisplayId>Golemtamer Charm</DisplayId>
-   </Object>
-   <Object type="0x5815" id="Demonic Charm">
-      <Class>Equipment</Class>
-      <Item/>
-	  <Texture>
-		  <File>d3LofiObjEmbed</File>
-	      <Index>0x408</Index>
-	  </Texture>
-      <SlotType>32</SlotType>
-      <Tier>5</Tier>
-      <Description>A charm that despite it’s foreboding name is used to protect those influenced by demons from the far corners of the abyss.</Description>
-      <Sound>spell/fire_spray</Sound>
-      <Projectile>
-         <ObjectId>Demonic Charm Shot</ObjectId>
-         <Speed>75</Speed>
-         <MinDamage>85</MinDamage>
-         <MaxDamage>95</MaxDamage>
-         <LifetimeMS>1800</LifetimeMS>
-         <Size>150</Size>
-         <ConditionEffect duration="3.5">Weak</ConditionEffect>
-         <ArmorPiercing/>
-         <Boomerang/>
-      </Projectile>
-      <ConditionEffect duration="3.5">Weak</ConditionEffect>
-      <ActivateOnEquip stat="21" amount="3">IncrementStat</ActivateOnEquip>
-      <Usable/>
-      <BagType>4</BagType>
-      <FameBonus>3</FameBonus>
-      <MpCost>85</MpCost>
-      <Cooldown>4</Cooldown>
-      <NumProjectiles>6</NumProjectiles>
-      <Activate>Shoot</Activate>
-      <feedPower>185</feedPower>
-      <DisplayId>Demonic Charm</DisplayId>
-   </Object>
-   <Object type="0x5816" id="Sanctified Charm">
-      <Class>Equipment</Class>
-      <Item/>
-	  <Texture>
-		  <File>d3LofiObjEmbed</File>
-	      <Index>0x409</Index>
-	  </Texture>
-      <SlotType>32</SlotType>
-      <Tier>6</Tier>
-      <Description>A charm reserved for those of high nobility, made from blessed cloth and layers of golden feathers.</Description>
-      <Sound>spell/fire_spray</Sound>
-      <Projectile>
-         <ObjectId>Sanctified Charm Shot</ObjectId>
-         <Speed>75</Speed>
-         <MinDamage>100</MinDamage>
-         <MaxDamage>110</MaxDamage>
-         <LifetimeMS>1800</LifetimeMS>
-         <Size>150</Size>
-         <ConditionEffect duration="4">Weak</ConditionEffect>
-         <ArmorPiercing/>
-         <Boomerang/>
-      </Projectile>
-      <ConditionEffect duration="4">Weak</ConditionEffect>
-      <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
-      <Usable/>
-      <BagType>4</BagType>
-      <FameBonus>4</FameBonus>
-      <MpCost>90</MpCost>
-      <Activate>Shoot</Activate>
-      <feedPower>380</feedPower>
-      <NumProjectiles>7</NumProjectiles>
-      <Cooldown>4</Cooldown>
-      <DisplayId>Sanctified Charm</DisplayId>
-   </Object>
-      <Object type="0x5818" id="Necromantic Charm">
-      <Class>Equipment</Class>
-      <Item/>
-	  <Texture>
-		  <File>d3LofiObjEmbed</File>
-	      <Index>0x40a</Index>
-	  </Texture>
-      <SlotType>32</SlotType>
-      <Description>A vile, foul smelling charm used by those who practice the unholy art of raising that which should not be raised.</Description>
-      <Sound>spell/fire_spray</Sound>
-      <Projectile>
-         <ObjectId>Necromantic Charm Shot</ObjectId>
-         <Speed>75</Speed>
-         <MinDamage>90</MinDamage>
-         <MaxDamage>95</MaxDamage>
-         <LifetimeMS>900</LifetimeMS>
-         <Size>150</Size>
-         <ConditionEffect duration="3">Weak</ConditionEffect>
-         <ConditionEffect duration="3">Curse</ConditionEffect>
-         <ArmorPiercing/>
-         <MultiHit/>
-      </Projectile>
-      <ConditionEffect duration="3">Weak</ConditionEffect>
-      <ConditionEffect duration="3">Curse</ConditionEffect>
-      <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
-      <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
-      <Usable/>
-      <BagType>6</BagType>
-      <FameBonus>6</FameBonus>
-      <MpCost>100</MpCost>
-      <Activate>Shoot</Activate>
-      <feedPower>880</feedPower>
-      <Cooldown>5</Cooldown>
-      <NumProjectiles>5</NumProjectiles>
-      <DisplayId>Necromantic Charm</DisplayId>
-   </Object>
+    <Object type="0x5811" id="Paper Charm">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x403</Index>
+        </Texture>
+        <SlotType>32</SlotType>
+        <Tier>0</Tier>
+        <Description>A commodity among those who work in the shrines, this charm is  used to train novices in the arts of exorcism.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Usable/>
+        <BagType>1</BagType>
+        <MpCost>60</MpCost>
+        <Cooldown>5</Cooldown>
+        <Activate range="4" amount="5" players="true" duration="1" effect="Armored" color="0xAD3600" objType="0x6204">Torii</Activate>
+        <feedPower>4</feedPower>
+        <DisplayId>Paper Charm</DisplayId>
+    </Object>
+    <Object type="0x5812" id="Arachnid Charm">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x404</Index>
+        </Texture>
+        <SlotType>32</SlotType>
+        <Tier>1</Tier>
+        <Description>A charm integral to holy shrines that fear their 8 legged foe, this charm poses the valuable ability to ward off and conjure spiders.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Usable/>
+        <BagType>1</BagType>
+        <MpCost>70</MpCost>
+        <Cooldown>5</Cooldown>
+        <Activate range="4" amount="5" players="true" duration="2" effect="Armored" color="0x9B6E5B" objType="0x6205">Torii</Activate>
+    </Object>
+    <Object type="0x5817" id="Forestbound Charm">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x405</Index>
+        </Texture>
+        <SlotType>32</SlotType>
+        <Tier>2</Tier>
+        <Description>A warding charm blessed from a forest mage, complete with an enchanted ruby placed in it?s center,  It?s a must have for those who frequent the forest.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Usable/>
+        <BagType>1</BagType>
+        <MpCost>75</MpCost>
+        <Cooldown>5</Cooldown>
+        <Activate range="4" amount="5" players="true" duration="2.5" effect="Armored" color="0x9B6E5B" objType="0x6206">Torii</Activate>
+    </Object>
+    <Object type="0x5813" id="Fairywood Charm">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x406</Index>
+        </Texture>
+        <SlotType>32</SlotType>
+        <Tier>3</Tier>
+        <Description>A charm engraved from the slab a of magical birch, forbidden from entrance by the fae, it?s wielder will gain their assistance as long as they hold its possession.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Usable/>
+        <BagType>2</BagType>
+        <FameBonus>1</FameBonus>
+        <MpCost>80</MpCost>
+        <Activate range="4" amount="6" players="true" duration="2.5" effect="Armored" color="0xB5009C" objType="0x6207">Torii</Activate>
+        <Cooldown>6</Cooldown>
+    </Object>
+    <Object type="0x5814" id="Golemtamer Charm">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x407</Index>
+        </Texture>
+        <SlotType>32</SlotType>
+        <Tier>4</Tier>
+        <Description>A charm carved out from a warped diamond, it holds a deep connection with the world enough to raise golems from it?s earth.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Usable/>
+        <BagType>2</BagType>
+        <FameBonus>2</FameBonus>
+        <Cooldown>6</Cooldown>
+        <MpCost>85</MpCost>
+        <Activate range="4" amount="6" players="true" duration="3" effect="Armored" color="0x00E0E0" objType="0x6208">Torii</Activate>
+    </Object>
+    <Object type="0x5815" id="Demonic Charm">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x408</Index>
+        </Texture>
+        <SlotType>32</SlotType>
+        <Tier>5</Tier>
+        <Description>A charm that despite it?s foreboding name is used to protect those influenced by demons from the far corners of the abyss.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Usable/>
+        <BagType>4</BagType>
+        <FameBonus>3</FameBonus>
+        <MpCost>90</MpCost>
+        <Cooldown>6</Cooldown>
+        <Activate range="4" amount="6" players="true" duration="3.5" effect="Armored" color="0x720000" objType="0x6209">Torii</Activate>
+    </Object>
+    <Object type="0x5816" id="Sanctified Charm">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x409</Index>
+        </Texture>
+        <SlotType>32</SlotType>
+        <Tier>6</Tier>
+        <Description>A charm reserved for those of high nobility, made from blessed cloth and layers of golden feathers.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Usable/>
+        <BagType>4</BagType>
+        <FameBonus>4</FameBonus>
+        <MpCost>100</MpCost>
+        <Activate range="4" amount="7" players="true" duration="2" effect="Armored" color="0xF4CC00" objType="0x620a">Torii</Activate>	
+		<Cooldown>7</Cooldown>
+    </Object>
+    <Object type="0x5818" id="Necromantic Charm">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x40a</Index>
+        </Texture>
+        <SlotType>32</SlotType>
+        <Description>A vile, foul smelling charm used by those who practice the unholy art of raising that which should not be raised.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>100</MpCost>
+        <Activate range="5" amount="6" players="false" duration="4" effect="Weak" color="0x7FC9FF" objType="0x620b">Torii</Activate>
+        <Cooldown>3</Cooldown>
+    </Object>
   <Object type="0x5819" id="Paper Charm Shot">
   <Class>Projectile</Class>
 	  <Texture>
@@ -108126,7 +109120,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <DeathSound>monster/ogres_death</DeathSound>
       <MaxHitPoints>125000</MaxHitPoints>
       <Projectile id="0">
-         <ObjectId>Sor Ball</ObjectId>
+         <ObjectId>Dragon Attack Green Ball</ObjectId>
          <Speed>70</Speed>
          <Damage>160</Damage>
          <Size>100</Size>
@@ -108136,14 +109130,14 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <LifetimeMS>2000</LifetimeMS>
       </Projectile>
       <Projectile id="1">
-         <ObjectId>Sor Mini Ball 1</ObjectId>
+         <ObjectId>Green Missile</ObjectId>
          <Speed>100</Speed>
          <Damage>140</Damage>
          <Size>100</Size>
          <LifetimeMS>4000</LifetimeMS>
       </Projectile>
       <Projectile id="2">
-         <ObjectId>Sor Wave</ObjectId>
+         <ObjectId>Silver Shield</ObjectId>
          <Speed>100</Speed>
          <Damage>80</Damage>
          <Size>120</Size>
@@ -108151,7 +109145,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <LifetimeMS>1800</LifetimeMS>
       </Projectile>
 	  <Projectile id="3">
-         <ObjectId>Sor Mini Ball 2</ObjectId>
+         <ObjectId>Dragon Attack Green Spin Ball</ObjectId>
          <Speed>100</Speed>
          <Damage>200</Damage>
          <Size>120</Size>
@@ -108536,7 +109530,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <File>d3LofiObjEmbed</File>
             <Index>0x43f</Index>
         </Texture>
-		<ExtraTooltipData>
+		    <ExtraTooltipData>
             <EffectInfo name="Sprited by" description="BubbaBlu"/>
         </ExtraTooltipData>
         <SlotType>11</SlotType>
@@ -108803,7 +109797,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Index>0x59</Index>
         </Texture>
         <SlotType>10</SlotType>
-        <Description>A fragment of what seems to be a green crystal. It glows a light green and might contain some type of hidden power.</Description>
+        <Description>A fragment of what seems to be a green crystal. It glows light green and might contain some type of hidden power.</Description>
         <ExtraTooltipData>
             <EffectInfo name="" description="Double-Click to construct a Sor Crystal."/>
         </ExtraTooltipData>
@@ -108821,7 +109815,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Index>0x5a</Index>
         </Texture>
         <SlotType>10</SlotType>
-        <Description>A fragment of what seems to be a green crystal. It glows a light green and might contain some type of hidden power.</Description>
+        <Description>A fragment of what seems to be a green crystal. It glows light green and might contain some type of hidden power.</Description>
         <ExtraTooltipData>
             <EffectInfo name="" description="Double-Click to construct a Sor Crystal."/>
         </ExtraTooltipData>
@@ -108839,7 +109833,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Index>0x5b</Index>
         </Texture>
         <SlotType>10</SlotType>
-        <Description>A fragment of what seems to be a green crystal. It glows a light green and might contain some type of hidden power.</Description>
+        <Description>A fragment of what seems to be a green crystal. It glows light green and might contain some type of hidden power.</Description>
         <ExtraTooltipData>
             <EffectInfo name="" description="Double-Click to construct a Sor Crystal."/>
         </ExtraTooltipData>
@@ -108961,7 +109955,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Index>0x70</Index>
     </Texture>
     <SlotType>10</SlotType>
-    <Description>A powerful blend of invigorating elixirs.</Description>
+    <Description>A powerful blend of invigorating elixirs. Increases all stats by half a normal potion's worth.</Description>
     <Sound>use_potion</Sound>
     <Activate stat="21" amount="1">IncrementStat</Activate>
     <Activate stat="0" amount="5">IncrementStat</Activate>
@@ -108988,7 +109982,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		</Texture>
       <SlotType>10</SlotType>
       <Tier>4</Tier>
-      <Description>A potion that permanently increases might.</Description>
+      <Description>A potion that permanently increases might by 4.</Description>
       <Sound>use_potion</Sound>
       <Activate stat="112" amount="4">IncrementStat</Activate>
       <Consumable/>
@@ -109006,7 +110000,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		</Texture>
       <SlotType>10</SlotType>
       <Tier>4</Tier>
-      <Description>A potion that permanently increases restoration.</Description>
+      <Description>A potion that permanently increases restoration by 4.</Description>
       <Sound>use_potion</Sound>
       <Activate stat="121" amount="4">IncrementStat</Activate>
       <Consumable/>
@@ -109024,7 +110018,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		</Texture>
       <SlotType>10</SlotType>
       <Tier>4</Tier>
-      <Description>A potion that permanently increases Luck.</Description>
+      <Description>A potion that permanently increases Luck by 4.</Description>
       <Sound>use_potion</Sound>
       <Activate stat="114" amount="4">IncrementStat</Activate>
       <Consumable/>
@@ -109042,7 +110036,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		</Texture>
       <SlotType>10</SlotType>
       <Tier>4</Tier>
-      <Description>A potion that permanently increases Protection.</Description>
+      <Description>A potion that permanently increases Protection by 4.</Description>
       <Sound>use_potion</Sound>
       <Activate stat="122" amount="4">IncrementStat</Activate>
       <Consumable/>
@@ -109202,6 +110196,10 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <ExtraTooltipData>
             <EffectInfo name="" description="Applies a random devil gambler effect. (3.5s)"/>
+			<EffectInfo name="" description="Possible effects:"/>
+			<EffectInfo name="" description=" - Armored"/>
+			<EffectInfo name="" description=" - Invulnerable"/>
+			<EffectInfo name="" description=" - Sick"/>
         </ExtraTooltipData>
         <SlotType>33</SlotType>
         <Description>Gamblin' with the devil.</Description>
@@ -109336,7 +110334,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Index>0x83</Index>
         </Texture>
         <SlotType>8</SlotType>
-        <Description>Molten rock falls from the wand as you conjure meteors from this wand.</Description>
+        <Description>Molten rock falls from the wand as you weave spells.</Description>
         <RateOfFire>0.85</RateOfFire>
         <Sound>weapon/wand_of_death</Sound>
         <Projectile>
@@ -109403,7 +110401,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             A seal crafted by a society meant to keep an unthinkable monstrosity behind the doors of this world.
         </Description>
         <ExtraTooltipData>
-            <EffectInfo name="" description="-200 HP upon use. This seal hardens you to comeplete stone for 2 seconds and gives allies invulnerability."/>
+            <EffectInfo name="" description="-200 HP upon use. This seal hardens you to complete stone for 2 seconds and gives allies invulnerability."/>
         </ExtraTooltipData>
         <Sound>spell/fire_spray</Sound>
         <ActivateOnEquip stat="22" amount="-10">IncrementStat</ActivateOnEquip>
@@ -109443,7 +110441,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Legendary/>
         <Legend id="3" stat="27">
             <Name>Lunar Grandeur</Name>
-            <Description>The amount of mana is transferred to bonus outputting damage. When surge is over 30 the Lunar Grandeur passive is buffed and doubles the bonus outputting damage.</Description>
+            <Description>The amount of mana is transferred to bonus damage. When surge is over 30 you deal twice as much mana-based damage.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
@@ -109473,7 +110471,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Legendary/>
         <Legend id="4" stat="27">
             <Name>Mindwalker</Name>
-            <Description>You are immune to slowed while this item is equipped.</Description>
+            <Description>You are immune to Slowed while this item is equipped.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
@@ -109483,44 +110481,23 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <DisplayId>Words of Wisdom</DisplayId>
     </Object>
 	<Object type="0x6202" id="Tarot of the Wicked">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-          <File>legendaries8x8Embed</File>
-          <Index>0x90</Index>
-      </Texture>
-      <SlotType>32</SlotType>
-      <Description>A cursed charm that drains the energy from your soul but in return will send opposers to oblivion.</Description>
-      <Sound>spell/fire_spray</Sound>
-      <Projectile>
-         <ObjectId>Wicked Charm Shot</ObjectId>
-         <Speed>70</Speed>
-         <MinDamage>103</MinDamage>
-         <MaxDamage>112</MaxDamage>
-         <LifetimeMS>2000</LifetimeMS>
-         <Size>150</Size>
-         <ConditionEffect duration="4">Weak</ConditionEffect>
-         <ConditionEffect duration="2">Dazed</ConditionEffect>
-         <ArmorPiercing/>
-         <MultiHit/>
-		 <Boomerang/>
-      </Projectile>
-      <ConditionEffect duration="4">Weak</ConditionEffect>
-      <ConditionEffect duration="2">Dazed</ConditionEffect>
-      <ActivateOnEquip stat="3" amount="-20">IncrementStat</ActivateOnEquip>
-      <ActivateOnEquip stat="0" amount="-20">IncrementStat</ActivateOnEquip>
-	  <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
-	  <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
-      <Usable/>
-      <BagType>6</BagType>
-      <FameBonus>6</FameBonus>
-      <MpCost>110</MpCost>
-      <Activate>Shoot</Activate>
-      <feedPower>880</feedPower>
-      <Cooldown>5</Cooldown>
-      <NumProjectiles>8</NumProjectiles>
-      <DisplayId>Tarot of the Wicked</DisplayId>
-   </Object>
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x90</Index>
+        </Texture>
+        <SlotType>32</SlotType>
+        <Description>A cursed charm that drains the energy from your soul but in return will send opposers to oblivion.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>130</MpCost>
+        <Activate range="7" amount="3" players="false" duration="5" effect="ArmorBroken" color="0x47003D" objType="0x620c">Torii</Activate>
+        <Cooldown>5</Cooldown>
+		<Legendary/>
+    </Object>
    <Object type="0x6203" id="Wicked Charm Shot">
 	  <Class>Projectile</Class>
       <Texture>
@@ -109528,51 +110505,15 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
           <Index>0x91</Index>
       </Texture>
   </Object>
-      <Object type="0x61fa" id="BD Lava Fanatic">
-        <Enemy/>
-        <Class>Character</Class>
-        <DisplayId>Lava Fanatic</DisplayId>
-        <AnimatedTexture>
-            <File>chars16x16dEncounters</File>
-            <Index>28</Index>
-        </AnimatedTexture>
-        <HitSound>monster/demons_hit</HitSound>
-        <DeathSound>monster/demons_death</DeathSound>
-        <Size>130</Size>
-        <MaxHitPoints>8000</MaxHitPoints>
-        <Defense>15</Defense>
-        <Projectile id="0">
-            <ObjectId>Fire Bolt</ObjectId>
-            <Damage>140</Damage>
-            <Speed>60</Speed>
-            <ArmorPiercing/>
-            <LifetimeMS>2000</LifetimeMS>
-        </Projectile>
-        <Projectile id="1">
-            <ObjectId>Fire Bolt</ObjectId>
-            <Damage>70</Damage>
-            <Speed>60</Speed>
-            <ArmorPiercing/>
-            <LifetimeMS>2000</LifetimeMS>
-        </Projectile>
-        <Projectile id="2">
-            <ObjectId>Fire Bolt</ObjectId>
-            <Damage>35</Damage>
-            <Speed>60</Speed>
-            <ArmorPiercing/>
-            <LifetimeMS>2000</LifetimeMS>
-        </Projectile>
-        <Projectile id="3">
-            <ObjectId>White Flame</ObjectId>
-            <Speed>80</Speed>
-            <Damage>50</Damage>
-            <Size>105</Size>
-            <LifetimeMS>500</LifetimeMS>
-            <MultiHit/>
-            <Amplitude>0.6</Amplitude>
-            <Frequency>0.5</Frequency>
-            <ConditionEffect duration="6">Exhausted</ConditionEffect>
-        </Projectile>
+     <Object type="0x6204" id="T0 Torii">
+      <Class>Character</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c0</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
     </Object>
     <Object type="0x6110" id="BD Stone Urgle">
         <Enemy/>
@@ -109939,7 +110880,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		</AnimatedTexture>
         <HitSound>monster/abyss_brutes_hit</HitSound>
         <DeathSound>spell/fire_spray</DeathSound>
-        <MaxHitPoints>18500</MaxHitPoints>
+        <MaxHitPoints>9500</MaxHitPoints>
 		<Defense>45</Defense>
         <Size>140</Size>
         <Projectile id="0">
@@ -109968,7 +110909,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Enemy/>
         <DisplayId>Feral of the Zol</DisplayId>
     </Object>
-		<Object type="0x611d" id="AH Zol Incarnation">
+		<Object type="0x611d" id="AH Zol incarnation">
         <Class>Character</Class>
 		<AnimatedTexture>
 		  <File>d3Chars16x16rEmbed</File>
@@ -109976,15 +110917,15 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		</AnimatedTexture>
 		<HitSound>monster/skeletons_hit</HitSound>
 		<DeathSound>monster/skeletons_death</DeathSound>
-        <MaxHitPoints>8000</MaxHitPoints>
-		<Defense>20</Defense>
+        <MaxHitPoints>6000</MaxHitPoints>
+		<Defense>5</Defense>
         <Size>130</Size>
         <Projectile id="0">
             <ObjectId>Purple Star</ObjectId>
             <Speed>75</Speed>
             <MinDamage>40</MinDamage>
             <MaxDamage>120</MaxDamage>
-            <LifetimeMS>800</LifetimeMS>
+            <LifetimeMS>2800</LifetimeMS>
             <ConditionEffect duration="4">Confused</ConditionEffect>
         </Projectile>
 		<Projectile id="1">
@@ -109995,7 +110936,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <LifetimeMS>3000</LifetimeMS>
 			<ConditionEffect duration="8">Corrupted</ConditionEffect>
             <MultiHit/>
-			<Wavy/>
         </Projectile>
         <Enemy/>
         <DisplayId>Zol Incarnation</DisplayId>
@@ -110025,20 +110965,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Parametric/>
             <ConditionEffect duration="6">Corrupted</ConditionEffect>
         </Projectile>
-        <Enemy/>
-        <DisplayId>Zol Turret</DisplayId>
-    </Object>
-    <Object type="0x6124" id="AH Ultra Zol Turret Disabled">
-        <Class>Character</Class>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x96</Index>
-        </Texture>
-        <HitSound>monster/default_hit</HitSound>
-        <DeathSound>spell/fire_spray</DeathSound>
-        <MaxHitPoints>9999999</MaxHitPoints>
-        <Defense>70</Defense>
-        <Size>110</Size>
         <Enemy/>
         <DisplayId>Zol Turret</DisplayId>
     </Object>
@@ -110140,658 +111066,4 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <feedPower>2000</feedPower>
         <DisplayId>Dimensional Prism</DisplayId>
     </Object>
-	    <Object type="0x6121" id="AH Aura Controller">
-        <Class>Character</Class>
-        <Enemy/>
-        <StasisImmune/>
-        <NoMiniMap/>
-        <Texture>
-            <File>invisible</File>
-            <Index>0</Index>
-        </Texture>
-        <MaxHitPoints>800000</MaxHitPoints>
-        <Defense>0</Defense>
-        <Size>0</Size>
-        <XpMult>0.0</XpMult>
-    </Object>
-    <Object type="0x6123" id="Aldragine TaskMaster Ultra">
-        <Class>Character</Class>
-        <StasisImmune/>
-        <NoMiniMap/>
-        <Texture>
-            <File>invisible</File>
-            <Index>0</Index>
-        </Texture>
-        <HitSound>monster/skeletons_hit</HitSound>
-        <DeathSound>monster/dwarves_death</DeathSound>
-        <MaxHitPoints>99999</MaxHitPoints>
-        <Size>0</Size>
-        <Defense>0</Defense>
-        <XpMult>0.0</XpMult>
-        <ShadowSize>0</ShadowSize>
-        <DisplayId>Aldragine TaskMaster Ultra</DisplayId>
-    </Object>
-    <Object type="0x6125" id="AH Battlemage of the Zol">
-        <Class>Character</Class>
-        <AnimatedTexture>
-            <File>chars8x8dHero1</File>
-            <Index>35</Index>
-        </AnimatedTexture>
-        <HitSound>monster/skeletons_hit</HitSound>
-        <DeathSound>monster/skeletons_death</DeathSound>
-        <MaxHitPoints>12000</MaxHitPoints>
-        <Defense>30</Defense>
-        <Size>130</Size>
-        <Projectile id="0">
-            <ObjectId>Purple Missile</ObjectId>
-            <Speed>70</Speed>
-            <MinDamage>90</MinDamage>
-            <MaxDamage>125</MaxDamage>
-            <LifetimeMS>2000</LifetimeMS>
-            <Amplitude>1</Amplitude>
-            <Frequency>2</Frequency>
-        </Projectile>
-        <Projectile id="1">
-            <ObjectId>Zol Inc Blast</ObjectId>
-            <Speed>35</Speed>
-            <MinDamage>50</MinDamage>
-            <MaxDamage>300</MaxDamage>
-            <LifetimeMS>900</LifetimeMS>
-            <ConditionEffect duration="4">Blind</ConditionEffect>
-            <Wavy/>
-        </Projectile>
-        <Projectile id="2">
-            <ObjectId>Purple Mystic Shot</ObjectId>
-            <Speed>80</Speed>
-            <MinDamage>40</MinDamage>
-            <MaxDamage>80</MaxDamage>
-            <LifetimeMS>5000</LifetimeMS>
-            <Parametric/>
-            <ConditionEffect duration="2">Armor Broken</ConditionEffect>
-        </Projectile>
-        <Projectile id="3">
-            <ObjectId>Dark Purple Magic</ObjectId>
-            <Speed>126</Speed>
-            <MinDamage>20</MinDamage>
-            <MaxDamage>40</MaxDamage>
-            <LifetimeMS>2000</LifetimeMS>
-            <ConditionEffect duration="4">Hallucinating</ConditionEffect>
-        </Projectile>
-        <Enemy/>
-        <DisplayId>Battlemage of the Zol</DisplayId>
-    </Object>
-	    <Object type="0x6126" id="AH ULTRA The Sincryer">
-        <Enemy/>
-        <DisplayId>Ganus, the Sincryer</DisplayId>
-        <Class>Character</Class>
-        <AnimatedTexture>
-            <File>d3Chars16x16rEmbed</File>
-            <Index>5</Index>
-        </AnimatedTexture>
-        <HitSound>monster/wooden_walls_hit</HitSound>
-        <DeathSound>monster/stone_walls_death</DeathSound>
-        <Size>155</Size>
-        <ParalyzeImmune/>
-        <StasisImmune/>
-        <DazedImmune/>
-        <StunImmune/>
-        <ArmorBreakImmune/>
-        <Quest/>
-		<UElitedrop/>
-        <MaxHitPoints>375000</MaxHitPoints>
-        <Defense>60</Defense>
-        <Projectile id="0">
-            <ObjectId>Blue Energy Bolt</ObjectId>
-            <MinDamage>80</MinDamage>
-            <MaxDamage>120</MaxDamage>
-            <Speed>100</Speed>
-            <LifetimeMS>4000</LifetimeMS>
-            <ConditionEffect duration="3.5">Darkness</ConditionEffect>
-        </Projectile>
-        <Projectile id="1">
-            <ObjectId>Small White Shuriken</ObjectId>
-            <Damage>200</Damage>
-            <Speed>140</Speed>
-            <LifetimeMS>5000</LifetimeMS>
-            <ConditionEffect duration="3">Paralyzed</ConditionEffect>
-            <MultiHit/>
-        </Projectile>
-        <Projectile id="2">
-            <ObjectId>Purple Bolt</ObjectId>
-            <Damage>140</Damage>
-            <Speed>80</Speed>
-            <LifetimeMS>4200</LifetimeMS>
-            <ConditionEffect duration="2.5">Dazed</ConditionEffect>
-            <Boomerang/>
-        </Projectile>
-        <Projectile id="3">
-            <ObjectId>Green Blob</ObjectId>
-            <Damage>60</Damage>
-            <Speed>100</Speed>
-            <LifetimeMS>5250</LifetimeMS>
-            <MultiHit/>
-            <ArmorPiercing/>
-        </Projectile>
-        <Projectile id="4">
-            <ObjectId>Blue Bolt</ObjectId>
-            <Damage>100</Damage>
-            <Speed>70</Speed>
-            <LifetimeMS>3600</LifetimeMS>
-        </Projectile>
-        <Projectile id="5">
-            <ObjectId>Sincryer Energy Arrow</ObjectId>
-            <Damage>200</Damage>
-            <Speed>40</Speed>
-            <ConditionEffect duration="3.5">Unstable</ConditionEffect>
-            <ParticleTrail>0xFF00FF</ParticleTrail>
-            <Wavy/>
-            <ArmorPiercing/>
-            <LifetimeMS>5000</LifetimeMS>
-        </Projectile>
-    </Object>
-	    <Object type="0x6207" id="Sincryer Energy Arrow">
-        <Class>Projectile</Class>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x9a</Index>
-        </Texture>
-        <AngleCorrection>1</AngleCorrection>
-    </Object>
-    <Object type="0x6127" id="AH ULTRA The Vision of Aldragine">
-        <Enemy/>
-        <DisplayId>Nirux, Vision of Aldragine</DisplayId>
-        <Class>Character</Class>
-        <Group>ZolBoss</Group>
-        <AnimatedTexture>
-            <File>d3Chars16x16rEmbed</File>
-            <Index>14</Index>
-        </AnimatedTexture>
-        <HitSound>monster/medusa_hit</HitSound>
-        <DeathSound>monster/medusa_death</DeathSound>
-        <Size>150</Size>
-        <ParalyzeImmune/>
-        <StasisImmune/>
-        <DazedImmune/>
-        <UElitedrop/>
-        <StunImmune/>
-        <ArmorBreakImmune/>
-        <Quest/>
-        <MaxHitPoints>260000</MaxHitPoints>
-        <Defense>40</Defense>
-        <Projectile id="0">
-            <ObjectId>Green Spinner</ObjectId>
-            <MinDamage>40</MinDamage>
-            <MaxDamage>180</MaxDamage>
-            <Speed>100</Speed>
-            <LifetimeMS>6000</LifetimeMS>
-            <ConditionEffect duration="2">Weak</ConditionEffect>
-        </Projectile>
-        <Projectile id="1">
-            <ObjectId>Super Blast Purple</ObjectId>
-            <Speed>55</Speed>
-            <Damage>120</Damage>
-            <Size>120</Size>
-            <MultiHit/>
-            <ArmorPiercing/>
-            <LifetimeMS>10000</LifetimeMS>
-        </Projectile>
-        <Projectile id="2">
-            <ObjectId>Green Magic</ObjectId>
-            <Damage>40</Damage>
-            <Speed>140</Speed>
-            <LifetimeMS>3000</LifetimeMS>
-            <ConditionEffect duration="1.5">Confused</ConditionEffect>
-            <ConditionEffect duration="2.5">Hexed</ConditionEffect>
-            <ConditionEffect duration="6">Slowed</ConditionEffect>
-        </Projectile>
-        <Projectile id="3">
-            <ObjectId>Blue Mystic Shot</ObjectId>
-            <Damage>40</Damage>
-            <Speed>140</Speed>
-            <LifetimeMS>10000</LifetimeMS>
-            <ConditionEffect duration="3">Slowed</ConditionEffect>
-            <ConditionEffect duration="3">Unstable</ConditionEffect>
-            <MultiHit/>
-            <Parametric/>
-        </Projectile>
-        <Projectile id="4">
-            <ObjectId>Green Bolt</ObjectId>
-            <Damage>160</Damage>
-            <Speed>140</Speed>
-            <LifetimeMS>3400</LifetimeMS>
-            <MultiHit/>
-        </Projectile>
-        <Projectile id="5">
-            <ObjectId>Dragon Eye Laser</ObjectId>
-            <Damage>80</Damage>
-            <Speed>50</Speed>
-            <Size>150</Size>
-            <LifetimeMS>6000</LifetimeMS>
-            <MultiHit/>
-            <ConditionEffect duration="6">Paralyzed</ConditionEffect>
-            <Boomerang/>
-        </Projectile>
-    </Object>
-    <Object type="0x6128" id="AH ULTRA The Heart">
-        <Enemy/>
-        <DisplayId>Heart of the Hideout</DisplayId>
-        <Class>Character</Class>
-        <AnimatedTexture>
-            <File>d3Chars16x16rEmbed</File>
-            <Index>11</Index>
-        </AnimatedTexture>
-        <HitSound>monster/default_hit</HitSound>
-        <DeathSound>monster/dark_elves_death</DeathSound>
-        <Size>165</Size>
-        <ParalyzeImmune/>
-        <StasisImmune/>
-        <DazedImmune/>
-        <StunImmune/>
-        <ArmorBreakImmune/>
-        <MaxHitPoints>999999</MaxHitPoints>
-        <Defense>60</Defense>
-        <Projectile id="0">
-            <ObjectId>Void Star</ObjectId>
-            <Damage>180</Damage>
-            <Speed>100</Speed>
-            <Size>140</Size>
-            <LifetimeMS>8000</LifetimeMS>
-            <ConditionEffect duration="2">Weak</ConditionEffect>
-        </Projectile>
-        <Projectile id="1">
-            <ObjectId>Fire Bullet</ObjectId>
-            <Speed>240</Speed>
-            <Damage>99999</Damage>
-            <Size>120</Size>
-            <MultiHit/>
-            <ArmorPiercing/>
-            <LifetimeMS>12000</LifetimeMS>
-        </Projectile>
-    </Object>
-    <Object type="0x6129" id="AH ULTRA Heart Loot Ctrl">
-        <Class>Character</Class>
-        <Enemy/>
-        <StasisImmune/>
-        <NoMiniMap/>
-        <Texture>
-            <File>invisible</File>
-            <Index>0</Index>
-        </Texture>
-        <MaxHitPoints>309600</MaxHitPoints>
-        <Defense>0</Defense>
-        <Size>0</Size>
-        <UElitedrop/>
-        <XpMult>0.0</XpMult>
-    </Object>
-    <Object type="0x612a" id="AH ULTRA Heart Portal Spawner">
-        <Class>Character</Class>
-        <Enemy/>
-        <StasisImmune/>
-        <NoMiniMap/>
-        <Texture>
-            <File>invisible</File>
-            <Index>0</Index>
-        </Texture>
-        <MaxHitPoints>90000</MaxHitPoints>
-        <Defense>0</Defense>
-        <Size>0</Size>
-        <XpMult>0.0</XpMult>
-    </Object>
-	  <Object type="0x612b" id="Ultra Aldragine's Hideout Portal">
-        <Class>Portal</Class>
-        <IntergamePortal/>
-        <DungeonName>Ultra Aldragine's Hideout</DungeonName>
-		  <Texture>
-			 <File>lofiObjBig</File>
-			 <Index>0x1b9</Index>
-		  </Texture>
-        <Animation prob="1" period="1">
-            <Frame time="0.20">
-			  <Texture>
-				 <File>lofiObjBig</File>
-				 <Index>0x1ba</Index>
-			  </Texture>
-            </Frame>
-            <Frame time="0.20">
-			  <Texture>
-				 <File>lofiObjBig</File>
-				 <Index>0x1bb</Index>
-			  </Texture>
-            </Frame>
-        </Animation>
-        <DisplayId>Ultra Aldragine's Hideout Portal</DisplayId>
-    </Object>
-	<Object type="0x612c" id="Ultra Sincryer's Gate Portal">
-    <Class>Portal</Class>
-    <IntergamePortal/>
-    <DungeonName>Ultra Sincryer's Gate</DungeonName>
-		  <Texture>
-			 <File>lofiObjBig</File>
-			 <Index>0x1b9</Index>
-		  </Texture>
-        <Animation prob="1" period="1">
-            <Frame time="0.20">
-			  <Texture>
-				 <File>lofiObjBig</File>
-				 <Index>0x1ba</Index>
-			  </Texture>
-            </Frame>
-            <Frame time="0.20">
-			  <Texture>
-				 <File>lofiObjBig</File>
-				 <Index>0x1bb</Index>
-			  </Texture>
-            </Frame>
-        </Animation>
-    <DisplayId>Ultra Sincryer's Gate Portal</DisplayId>
-  </Object>
-  <Object type="0x612e" id="Ultra The Nontridus Portal">
-    <Class>Portal</Class>
-    <IntergamePortal/>
-    <DungeonName>Ultra The Nontridus</DungeonName>
-		  <Texture>
-			 <File>lofiObjBig</File>
-			 <Index>0x1b9</Index>
-		  </Texture>
-        <Animation prob="1" period="1">
-            <Frame time="0.20">
-			  <Texture>
-				 <File>lofiObjBig</File>
-				 <Index>0x1ba</Index>
-			  </Texture>
-            </Frame>
-            <Frame time="0.20">
-			  <Texture>
-				 <File>lofiObjBig</File>
-				 <Index>0x1bb</Index>
-			  </Texture>
-            </Frame>
-        </Animation>
-    <DisplayId>Ultra The Nontridus Portal</DisplayId>
-  </Object>
-  <Object type="0x612f" id="Ultra Core of the Hideout Portal">
-    <Class>Portal</Class>
-    <IntergamePortal/>
-    <DungeonName>Ultra Core of the Hideout</DungeonName>
-		  <Texture>
-			 <File>lofiObjBig</File>
-			 <Index>0x1b9</Index>
-		  </Texture>
-        <Animation prob="1" period="1">
-            <Frame time="0.20">
-			  <Texture>
-				 <File>lofiObjBig</File>
-				 <Index>0x1ba</Index>
-			  </Texture>
-            </Frame>
-            <Frame time="0.20">
-			  <Texture>
-				 <File>lofiObjBig</File>
-				 <Index>0x1bb</Index>
-			  </Texture>
-            </Frame>
-        </Animation>
-    <DisplayId>Ultra Core of the Hideout Portal</DisplayId>
-  </Object>
-  <Object type="0x6130" id="Ultra Keeping of Aldragine Portal">
-    <Class>Portal</Class>
-    <IntergamePortal/>
-    <DungeonName>Ultra Keeping of Aldragine</DungeonName>
-		  <Texture>
-			 <File>lofiObjBig</File>
-			 <Index>0x1b9</Index>
-		  </Texture>
-        <Animation prob="1" period="1">
-            <Frame time="0.20">
-			  <Texture>
-				 <File>lofiObjBig</File>
-				 <Index>0x1ba</Index>
-			  </Texture>
-            </Frame>
-            <Frame time="0.20">
-			  <Texture>
-				 <File>lofiObjBig</File>
-				 <Index>0x1bb</Index>
-			  </Texture>
-            </Frame>
-        </Animation>
-    <DisplayId>Ultra Keeping of Aldragine Portal</DisplayId>
-  </Object>
-      <Object type="0x6132" id="AH ULTRA Aldragine Clone">
-        <Enemy/>
-        <DisplayId>Aldragine</DisplayId>
-        <Class>Character</Class>
-        <AnimatedTexture>
-            <File>d3Chars16x16rEmbed</File>
-            <Index>6</Index>
-        </AnimatedTexture>
-        <AltTexture id="1">
-            <AnimatedTexture>
-                <File>d3Chars16x16rEmbed</File>
-                <Index>6</Index>
-            </AnimatedTexture>
-            <Effect particle="SwirlingMist" cooldown="2">XMLEffect</Effect>
-        </AltTexture>
-        <HitSound>monster/dragons_hit</HitSound>
-        <DeathSound>monster/golems_death</DeathSound>
-        <Size>220</Size>
-        <ParalyzeImmune/>
-        <StasisImmune/>
-        <DazedImmune/>
-        <StunImmune/>
-        <ArmorBreakImmune/>
-        <MaxHitPoints>100000</MaxHitPoints>
-        <Defense>20</Defense>
-        <Projectile id="0">
-            <ObjectId>Destruction Star</ObjectId>
-            <Damage>1000</Damage>
-            <Speed>35</Speed>
-            <LifetimeMS>12000</LifetimeMS>
-            <Size>180</Size>
-            <MultiHit/>
-            <ArmorPiercing/>
-            <Boomerang/>
-        </Projectile>
-    </Object>
-	    <Object type="0x6131" id="AH ULTRA Aldragine">
-        <Enemy/>
-        <DisplayId>Aldragine</DisplayId>
-        <Class>Character</Class>
-        <AnimatedTexture>
-            <File>d3Chars16x16rEmbed</File>
-            <Index>6</Index>
-        </AnimatedTexture>
-        <AltTexture id="1">
-            <AnimatedTexture>
-                <File>d3Chars16x16rEmbed</File>
-                <Index>6</Index>
-            </AnimatedTexture>
-            <Effect particle="SwirlingMist" cooldown="2">XMLEffect</Effect>
-        </AltTexture>
-        <HitSound>monster/dragons_hit</HitSound>
-        <DeathSound>monster/golems_death</DeathSound>
-        <Size>0</Size>
-        <ParalyzeImmune/>
-        <StasisImmune/>
-        <DazedImmune/>
-        <StunImmune/>
-        <UElitedrop/>
-        <ArmorBreakImmune/>
-        <Quest/>
-        <MaxHitPoints>1000000</MaxHitPoints>
-        <Defense>90</Defense>
-        <Projectile id="0">
-            <ObjectId>White Bolt</ObjectId>
-            <MinDamage>40</MinDamage>
-            <MaxDamage>60</MaxDamage>
-            <Speed>100</Speed>
-            <Size>100</Size>
-            <LifetimeMS>4400</LifetimeMS>
-        </Projectile>
-        <Projectile id="1">
-            <ObjectId>Void Star</ObjectId>
-            <Speed>80</Speed>
-            <Damage>160</Damage>
-            <Size>120</Size>
-            <MultiHit/>
-            <LifetimeMS>7400</LifetimeMS>
-        </Projectile>
-        <Projectile id="2">
-            <ObjectId>Green Energy Missile</ObjectId>
-            <Damage>100</Damage>
-            <Speed>140</Speed>
-            <Size>120</Size>
-            <LifetimeMS>3000</LifetimeMS>
-            <ConditionEffect duration="4">Quiet</ConditionEffect>
-        </Projectile>
-        <Projectile id="3">
-            <ObjectId>Lethal Zol Blast</ObjectId>
-            <Damage>240</Damage>
-            <Speed>70</Speed>
-            <LifetimeMS>6000</LifetimeMS>
-            <Size>170</Size>
-            <ConditionEffect duration="10">Armor Broken</ConditionEffect>
-            <MultiHit/>
-        </Projectile>
-        <Projectile id="4">
-            <ObjectId>Destruction Star</ObjectId>
-            <Damage>1000</Damage>
-            <Speed>35</Speed>
-            <LifetimeMS>12000</LifetimeMS>
-            <Size>180</Size>
-            <MultiHit/>
-            <ArmorPiercing/>
-            <Boomerang/>
-        </Projectile>
-        <Projectile id="5">
-            <ObjectId>Black Bolt</ObjectId>
-            <Damage>100</Damage>
-            <Speed>100</Speed>
-            <LifetimeMS>4600</LifetimeMS>
-            <Size>180</Size>
-            <ConditionEffect duration="6">Slowed</ConditionEffect>
-        </Projectile>
-        <Projectile id="6">
-            <ObjectId>Armor Pierce Bullet</ObjectId>
-            <Damage>120</Damage>
-            <Speed>78</Speed>
-            <LifetimeMS>5000</LifetimeMS>
-            <Size>110</Size>
-            <ArmorPiercing/>
-        </Projectile>
-        <Projectile id="7">
-            <ObjectId>Void Star</ObjectId>
-            <Damage>40</Damage>
-            <Speed>80</Speed>
-            <LifetimeMS>8000</LifetimeMS>
-            <Size>140</Size>
-            <ConditionEffect duration="6">Slowed</ConditionEffect>
-            <MultiHit/>
-            <ArmorPiercing/>
-        </Projectile>
-        <Projectile id="8">
-            <ObjectId>Aldragine Zol Spinners</ObjectId>
-            <Damage>180</Damage>
-            <Speed>75</Speed>
-            <LifetimeMS>4000</LifetimeMS>
-            <Size>120</Size>
-            <ConditionEffect duration="6">Exhausted</ConditionEffect>
-            <Boomerang/>
-            <MultiHit/>
-        </Projectile>
-        <Projectile id="9">
-            <ObjectId>Paralyze Bullet</ObjectId>
-            <Damage>100</Damage>
-            <Speed>75</Speed>
-            <LifetimeMS>4000</LifetimeMS>
-            <Size>120</Size>
-            <ConditionEffect duration="6">Paralyzed</ConditionEffect>
-            <ArmorPiercing/>
-        </Projectile>
-        <Projectile id="10">
-            <ObjectId>Dragon Eye Blast</ObjectId>
-            <MinDamage>90</MinDamage>
-            <MaxDamage>160</MaxDamage>
-            <Speed>50</Speed>
-            <LifetimeMS>6000</LifetimeMS>
-            <Size>120</Size>
-            <ConditionEffect duration="6">Confused</ConditionEffect>
-            <Amplitude>1</Amplitude>
-            <Frequency>2</Frequency>
-        </Projectile>
-    </Object>
-	<Object type="0x6133" id="AH ULTRA Aldragine Loot Ctrl">
-    <Class>Character</Class>
-    <Enemy/>
-    <StasisImmune/>
-    <NoMiniMap/>
-    <Texture>
-      <File>invisible</File>
-      <Index>0</Index>
-    </Texture>
-    <MaxHitPoints>800000</MaxHitPoints>
-    <Defense>0</Defense>
-    <Size>0</Size>
-    <XpMult>0.0</XpMult>
-  </Object>
-  <Object type="0x6134" id="ULTRA Beacon of Zol A">
-	<Enemy/>
-    <Class>Character</Class>
-    <AnimatedTexture>
-      <File>d3Chars16x16rEmbed</File>
-      <Index>0x09</Index>
-    </AnimatedTexture>
-    <HitSound>monster/wooden_walls_hit</HitSound>
-    <DeathSound>monster/wooden_walls_death</DeathSound>
-    <MaxHitPoints>999999</MaxHitPoints>
-<ParalyzeImmune/>
-    <StasisImmune/>
-    <DazedImmune/>
-    <StunImmune/>
-    <ArmorBreakImmune/>
-  </Object>
-  <Object type="0x6135" id="ULTRA Beacon of Zol B">
-  <Enemy/>
-    <Class>Character</Class>
-    <AnimatedTexture>
-      <File>d3Chars16x16rEmbed</File>
-      <Index>10</Index>
-    </AnimatedTexture>
-    <HitSound>monster/wooden_walls_hit</HitSound>
-    <DeathSound>monster/wooden_walls_death</DeathSound>
-    <MaxHitPoints>999999</MaxHitPoints>
-    <ParalyzeImmune/>
-    <StasisImmune/>
-    <DazedImmune/>
-    <StunImmune/>
-    <ArmorBreakImmune/>
-  </Object>
-  <Object type="0x6136" id="AH Ultra Sincryer Gate Opener">
-    <Class>Character</Class>
-    <Enemy/>
-    <StasisImmune/>
-    <NoMiniMap/>
-    <Texture>
-      <File>invisible</File>
-      <Index>0</Index>
-    </Texture>
-    <MaxHitPoints>800000</MaxHitPoints>
-    <Defense>0</Defense>
-    <Size>0</Size>
-    <XpMult>0.0</XpMult>
-  </Object>
-  <Object type="0x6137" id="AH Sincryer Gate Opener">
-    <Class>Character</Class>
-    <Enemy/>
-    <StasisImmune/>
-    <NoMiniMap/>
-    <Texture>
-      <File>invisible</File>
-      <Index>0</Index>
-    </Texture>
-    <MaxHitPoints>800000</MaxHitPoints>
-    <Defense>0</Defense>
-    <Size>0</Size>
-    <XpMult>0.0</XpMult>
-  </Object>
 </Objects>

@@ -853,11 +853,11 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         }
         if (((((_local4) && (!(_arg1.isPaused())))) && (((_local4.hasOwnProperty("Consumable")) || (_local4.hasOwnProperty("InvUse")))))) {
             if (!this.validStatInc(_local3, _arg1)) {
-                this.addTextLine.dispatch(ChatMessage.make("", (_local4.attribute("id") + " not consumed. Already at Max.")));
+                this.addTextLine.dispatch(ChatMessage.make("", (_local4.attribute("id") + " not consumed. Already at max.")));
                 return (false);
             }
             if (isStatPotion(_local3)) {
-                this.addTextLine.dispatch(ChatMessage.make("", (_local4.attribute("id") + " Consumed ++")));
+                this.addTextLine.dispatch(ChatMessage.make("", (_local4.attribute("id") + " Consumed")));
             }
             this.applyUseItem(_arg1, _arg2, _local3, _local4);
             SoundEffectLibrary.play("use_potion");
@@ -875,10 +875,20 @@ public class GameServerConnectionConcrete extends GameServerConnection {
             }
             else {
                 p = this.player;
-            }
-            if ((((((((((((((((((((((itemId == 2591)) || ((itemId == 5465)))) || ((itemId == 9064)))) && ((p.attackMax_ == (p.attack_ - p.attackBoost_))))) || ((((((((itemId == 2592)) || ((itemId == 5466)))) || ((itemId == 9065)))) && ((p.defenseMax_ == (p.defense_ - p.defenseBoost_))))))) || ((((((((itemId == 2593)) || ((itemId == 5467)))) || ((itemId == 9066)))) && ((p.speedMax_ == (p.speed_ - p.speedBoost_))))))) || ((((((((itemId == 2612)) || ((itemId == 5468)))) || ((itemId == 9067)))) && ((p.vitalityMax_ == (p.vitality_ - p.vitalityBoost_))))))) || ((((((((itemId == 2613)) || ((itemId == 5469)))) || ((itemId == 9068)))) && ((p.wisdomMax_ == (p.wisdom_ - p.wisdomBoost_))))))) || ((((((((itemId == 2636)) || ((itemId == 5470)))) || ((itemId == 9069)))) && ((p.dexterityMax_ == (p.dexterity_ - p.dexterityBoost_))))))) || ((((((((itemId == 2793)) || ((itemId == 5471)))) || ((itemId == 9070)))) && ((p.maxHPMax_ == (p.maxHP_ - p.maxHPBoost_))))))) || ((((((((itemId == 2794)) || ((itemId == 5472)))) || ((itemId == 9071)))) && ((p.maxMPMax_ == (p.maxMP_ - p.maxMPBoost_))))))) {
-                return (false);
-            }
+            }			
+			if ((itemId == 2591 || itemId == 5465 || itemId == 9064) && (p.attackMax_ == (p.attack_ - p.attackBoost_) 
+			|| (itemId == 2592 || itemId == 5466 || itemId == 9065) && (p.defenseMax_ == (p.defense_ - p.defenseBoost_))
+			|| (itemId == 2593 || itemId == 5467 || itemId == 9066) && (p.speedMax_ == (p.speed_ - p.speedBoost_)) 
+			|| (itemId == 2612 || itemId == 5468 || itemId == 9067) && (p.vitalityMax_ == (p.vitality_ - p.vitalityBoost_))
+			|| (itemId == 2613 || itemId == 5469 || itemId == 9068) && (p.wisdomMax_ == (p.wisdom_ - p.wisdomBoost_))
+			|| (itemId == 2636 || itemId == 5470 || itemId == 9069) && (p.dexterityMax_ == (p.dexterity_ - p.dexterityBoost_))
+			|| (itemId == 2793 || itemId == 5471 || itemId == 9070) && (p.maxHPMax_ == (p.maxHP_ - p.maxHPBoost_))
+			|| (itemId == 2794 || itemId == 5472 || itemId == 9071) && (p.maxMPMax_ == (p.maxMP_ - p.maxMPBoost_))
+			|| (itemId == 22562 || itemId == 25033 || itemId == 26879) && (p.mightMax_ == p.might_ - p.mightBoost_)
+			|| (itemId == 26877 || itemId == 25034 || itemId == 27042) && (p.restorationMax_ == (p.restoration_ - p.restorationBoost_)) 
+			|| (itemId == 22563 || itemId == 25035 || itemId == 27041) && (p.luckMax_ == p.luck_ - p.luckBoost_)
+			|| (itemId == 26878 || itemId == 25036 || itemId == 27043) && (p.protectionMax_ == p.protection_ - p.protectionBoost_)))
+                return false;
         }
         catch (err:Error) {
             logger.error(("PROBLEM IN STAT INC " + err.getStackTrace()));
@@ -2373,3 +2383,4 @@ public class GameServerConnectionConcrete extends GameServerConnection {
 
 }
 }
+

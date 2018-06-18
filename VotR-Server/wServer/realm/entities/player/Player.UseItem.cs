@@ -549,6 +549,9 @@ namespace wServer.realm.entities
                     case ActivateEffects.AbbyConstruct:
                         AEAbbyConstruct(time, item, target, eff);
                         break;
+                    case ActivateEffects.Torii:
+                        AETorii(time, item, target, eff);
+                        break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
@@ -810,6 +813,28 @@ namespace wServer.realm.entities
                 world.EnterWorld(banner);
             }));
         }
+
+        private void AETorii(RealmTime time, Item item, Position target, ActivateEffect eff) {
+            Torii torii = new Torii(this,
+                eff.Range,
+                eff.Amount,
+                eff.Players,
+                eff.DurationMS,
+                eff.ConditionEffect ?? ConditionEffectIndex.Slowed,
+                eff.Color, 
+                eff.ObjType);
+            torii.Move(target.X, target.Y);
+            Owner.EnterWorld(torii);
+
+            var fakeTorii = Resolve(Manager, eff.ObjType);
+            fakeTorii.Move(target.X, target.Y);
+            Owner.EnterWorld(fakeTorii);
+
+            Owner.Timers.Add(new WorldTimer(eff.Amount * 1000, (world, t) => {
+                Owner.LeaveWorld(fakeTorii);
+            }));
+        }
+
 
         private void AESiphonAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
         {

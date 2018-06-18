@@ -187,6 +187,7 @@
     <Compile Include="logic\db\BehaviorDb.SpriteWorld.cs" />
     <Compile Include="logic\db\BehaviorDb.Stronghold.cs" />
     <Compile Include="logic\db\BehaviorDb.Tomb.cs" />
+    <Compile Include="logic\db\BehaviorDb.Torii.cs" />
     <Compile Include="logic\db\BehaviorDb.Trial.cs" />
     <Compile Include="logic\db\BehaviorDb.Tunnel.cs" />
     <Compile Include="logic\db\BehaviorDb.Tutorial.cs" />
@@ -214,6 +215,7 @@
     <Compile Include="networking\packets\outgoing\KeyInfoResponse.cs" />
     <Compile Include="networking\packets\outgoing\SorForge.cs" />
     <Compile Include="networking\packets\outgoing\UnboxResult.cs" />
+    <Compile Include="realm\entities\Torii.cs" />
     <Compile Include="realm\entities\Banner.cs" />
     <Compile Include="realm\entities\player\Player.Powers.cs" />
     <Compile Include="realm\entities\player\Player.Unboxing.cs" />

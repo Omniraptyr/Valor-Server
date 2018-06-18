@@ -5,8 +5,6 @@ using wServer.networking.packets.incoming;
 using wServer.networking.packets.outgoing;
 using wServer.realm;
 using log4net;
-using System;
-using System.Collections.Generic;
 
 namespace wServer.networking.handlers
 {
@@ -20,8 +18,6 @@ namespace wServer.networking.handlers
             //client.Manager.Logic.AddPendingAction(t => Handle(client.Player, packet, t));
             Handle(client.Player, packet);
         }
-
-        private int condHitReq = -1;
 
         private void Handle(Player player, PlayerShoot packet)
         {
@@ -48,16 +44,6 @@ namespace wServer.networking.handlers
 
             // create projectile and show other players
             var prjDesc = item.Projectiles[0]; //Assume only one
-
-            foreach (var pair in prjDesc.CondChance) {
-                if (pair.Value == 0 || pair.Key == default(ConditionEffect)) return;
-
-                if (pair.Value / 100 > new Random().NextDouble()) {
-                    var effList = new List<ConditionEffect>(prjDesc.Effects);
-                    effList.Add(pair.Key);
-                    prjDesc.Effects = effList.ToArray();
-                }
-            }
 
             Projectile prj = player.PlayerShootProjectile(
                 packet.BulletId, prjDesc, item.ObjectType,

@@ -114,7 +114,6 @@ namespace wServer.logic
                     new TierLoot(13, ItemType.Armor, 0.05),
                     new TierLoot(5, ItemType.Ring, 0.06),
                     new ItemLoot("Turret of Catacombs", 0.4),
-                    new ItemLoot("Overgrowth Lootbox", 1.00),
                     new ItemLoot("Forsaken Shield", 0.04),
                     new ItemLoot("Sword of Dark Necromancy", 0.005),
                     new ItemLoot("Ring of Undeadly Conjury", 0.03),

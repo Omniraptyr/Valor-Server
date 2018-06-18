@@ -91,7 +91,7 @@ namespace wServer.networking.handlers
                                 return;
                             var entity = Entity.Resolve(Manager, objType);
 
-                            entity.Move(16, 64);
+                            entity.Move(8, 38);
                             player.Owner.EnterWorld(entity);
 
                             (entity as Portal).PlayerOpened = true;

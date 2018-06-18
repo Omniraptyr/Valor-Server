@@ -232,7 +232,7 @@ public class TextKey {
     public static const FRIEND_BLOCK_TEXT:String = "Friend.BlockText";
     public static const FRIEND_SENT_INVITATION_TEXT:String = "Friend.SentInvitationText";
     public static const FRIEND_REACH_CAPACITY:String = "Friend.ReachCapacity";
-    public static const FRIEND_BLOCK_BUTTON:String = "Friend.BlockRight";
+    public static const FRIEND_BLOCK_BUTTON:String = "Block";
     public static const FRIEND_BLOCK_BUTTON_DESC:String = "Friend.BlockRightDesc";
     public static const FRIEND_TELEPORT_TITLE:String = "Friend.TeleportTitle";
     public static const FRIEND_TELEPORT_DESC:String = "Friend.TeleportDesc";

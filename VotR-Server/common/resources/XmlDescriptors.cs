@@ -409,6 +409,7 @@ namespace common.resources
         SorConstruct,
         BurstInferno,
         AbbyConstruct,
+        Torii
     }
 
     public class ActivateEffect
@@ -442,6 +443,8 @@ namespace common.resources
         public string Target { get; private set; }
         public string Center { get; private set; }
         public int VisualEffect { get; private set; }
+        public bool Players { get; private set; }
+        public ushort ObjType { get; private set; }
 
         public ActivateEffect(XElement elem)
         {
@@ -539,6 +542,12 @@ namespace common.resources
 
             if (elem.Attribute("visualEffect") != null)
                 VisualEffect = Utils.FromString(elem.Attribute("visualEffect").Value);
+
+            if (elem.Attribute("players") != null)
+                Players = elem.Attribute("players").Value.Equals("true");
+
+            if (elem.Attribute("objType") != null)
+                ObjType = ushort.Parse(elem.Attribute("objType").Value.Substring(2), NumberStyles.AllowHexSpecifier);
         }
     }
     public class Setpiece
