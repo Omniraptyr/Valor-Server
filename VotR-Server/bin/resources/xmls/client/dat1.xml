@@ -76811,104 +76811,126 @@ This dagger was a myth, will you live to tell the tale?
     <BagType>2</BagType>
     <FameBonus>5</FameBonus>
   </Object>
-<Object type="0x1590" id="Ring of Outstanding Health">
-    <Class>Equipment</Class>
-    <Item />
-<Texture>
-<File>lofiObj3</File>
-<Index>0x47e</Index>
-</Texture>
-    <SlotType>9</SlotType>
-    <Tier>7</Tier>
-    <Description>An enormous, flawless topaz set in a stunningly beautiful gold ring.</Description>
-    <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
-    <BagType>2</BagType>
-    <FameBonus>5</FameBonus>
-  </Object>
-<Object type="0x1591" id="Ring of Outstanding Speed">
-    <Class>Equipment</Class>
-    <Item />
-<Texture>
-<File>lofiObj3</File>
-<Index>0x47a</Index>
-</Texture>
-    <SlotType>9</SlotType>
-    <Tier>7</Tier>
-    <Description>An enormous, flawless emerald set in a stunningly beautiful gold ring.</Description>
-    <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
-    <BagType>2</BagType>
-    <FameBonus>5</FameBonus>
-  </Object>
-<Object type="0x1592" id="Ring of Outstanding Vitality">
-    <Class>Equipment</Class>
-    <Item />
-<Texture>
-<File>lofiObj3</File>
-<Index>0x47b</Index>
-</Texture>
-    <SlotType>9</SlotType>
-    <Tier>7</Tier>
-    <Description>An enormous, flawless ruby set in a stunningly beautiful gold ring.</Description>
-    <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
-    <BagType>2</BagType>
-    <FameBonus>5</FameBonus>
-  </Object>
-<Object type="0x1593" id="Ring of Outstanding Wisdom">
-    <Class>Equipment</Class>
-    <Item />
-<Texture>
-<File>lofiObj3</File>
-<Index>0x47c</Index>
-</Texture>
-    <SlotType>9</SlotType>
-    <Tier>7</Tier>
-    <Description>An enormous, flawless sapphire set in a stunningly beautiful gold ring.</Description>
-    <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
-    <BagType>2</BagType>
-    <FameBonus>5</FameBonus>
-  </Object>
-<Object type="0x1594" id="Ring of Outstanding Defense">
-    <Class>Equipment</Class>
-    <Item />
-<Texture>
-<File>lofiObj3</File>
-<Index>0x479</Index>
-</Texture>
-    <SlotType>9</SlotType>
-    <Tier>7</Tier>
-    <Description>An enormous, flawless onyx set in a stunningly beautiful gold ring.</Description>
-    <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
-    <BagType>2</BagType>
-    <FameBonus>5</FameBonus>
-  </Object>
-<Object type="0x1595" id="Ring of Outstanding Dexterity">
-    <Class>Equipment</Class>
-    <Item />
-<Texture>
-<File>lofiObj3</File>
-<Index>0x47d</Index>
-</Texture>
-    <SlotType>9</SlotType>
-    <Tier>7</Tier>
-    <Description>An enormous, flawless citrine set in a stunningly beautiful gold ring.</Description>
-    <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
-    <BagType>2</BagType>
-    <FameBonus>5</FameBonus>
-  </Object>
-<Object type="0x1596" id="Ring of Outstanding Magic">
-    <Class>Equipment</Class>
-    <Item />
-<Texture>
-<File>lofiObj3</File>
-<Index>0x47f</Index>
-</Texture>
-    <SlotType>9</SlotType>
-    <Tier>7</Tier>
-    <Description>An enormous, flawless amethyst set in a stunningly beautiful gold ring.</Description>
-    <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
-    <BagType>2</BagType>
-    <FameBonus>5</FameBonus>
-  </Object>
+<Object type="0x1589" id="Ring of Outstanding Attack">
+        <Class>Equipment</Class>
+        <Item />
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x478</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>7</Tier>
+        <Description>An enormous, flawless spinel set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>2</BagType>
+        <FameBonus>5</FameBonus>
+    </Object>
+    <Object type="0x1590" id="Ring of Outstanding Health">
+        <Class>Equipment</Class>
+        <Item />
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x47e</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>7</Tier>
+        <Description>An enormous, flawless topaz set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
+		<EffectEquip effect="Healing" delay="60"/>
+        <BagType>2</BagType>
+        <FameBonus>5</FameBonus>
+    </Object>
+    <Object type="0x1591" id="Ring of Outstanding Speed">
+        <Class>Equipment</Class>
+        <Item />
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x47a</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>7</Tier>
+        <Description>An enormous, flawless emerald set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+		<EffectEquip effect="Healing" delay="60"/>
+        <BagType>2</BagType>
+        <FameBonus>5</FameBonus>
+    </Object>
+    <Object type="0x1592" id="Ring of Outstanding Vitality">
+        <Class>Equipment</Class>
+        <Item />
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x47b</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>7</Tier>
+        <Description>An enormous, flawless ruby set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
+		<EffectEquip effect="Healing" delay="60"/>
+        <BagType>2</BagType>
+        <FameBonus>5</FameBonus>
+    </Object>
+    <Object type="0x1593" id="Ring of Outstanding Wisdom">
+        <Class>Equipment</Class>
+        <Item />
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x47c</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>7</Tier>
+        <Description>An enormous, flawless sapphire set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
+		<EffectEquip effect="Healing" delay="60"/>
+        <BagType>2</BagType>
+        <FameBonus>5</FameBonus>
+    </Object>
+    <Object type="0x1594" id="Ring of Outstanding Defense">
+        <Class>Equipment</Class>
+        <Item />
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x479</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>7</Tier>
+        <Description>An enormous, flawless onyx set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+		<EffectEquip effect="Healing" delay="60"/>
+        <BagType>2</BagType>
+        <FameBonus>5</FameBonus>
+    </Object>
+    <Object type="0x1595" id="Ring of Outstanding Dexterity">
+        <Class>Equipment</Class>
+        <Item />
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x47d</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>7</Tier>
+        <Description>An enormous, flawless citrine set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
+		<EffectEquip effect="Healing" delay="60"/>
+        <BagType>2</BagType>
+        <FameBonus>5</FameBonus>
+    </Object>
+    <Object type="0x1596" id="Ring of Outstanding Magic">
+        <Class>Equipment</Class>
+        <Item />
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x47f</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>7</Tier>
+        <Description>An enormous, flawless amethyst set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
+		<EffectEquip effect="Healing" delay="60"/>
+		<EffectEquip/>
+        <BagType>2</BagType>
+        <FameBonus>5</FameBonus>
+    </Object>
   <Object type="0x1597" id="Menacing Sword of No Escape">
     <Class>Equipment</Class>
     <Item/>

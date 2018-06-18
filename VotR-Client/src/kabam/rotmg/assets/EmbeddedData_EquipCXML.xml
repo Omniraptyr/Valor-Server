@@ -15821,6 +15821,9 @@
             <File>lofiObj3</File>
             <Index>0x478</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Alemeow & Uio"/>
+        </ExtraTooltipData>
         <SlotType>9</SlotType>
         <Tier>7</Tier>
         <Description>An enormous, flawless spinel set in a stunningly beautiful gold ring.</Description>
@@ -15835,10 +15838,14 @@
             <File>lofiObj3</File>
             <Index>0x47e</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Alemeow & Uio"/>
+        </ExtraTooltipData>
         <SlotType>9</SlotType>
         <Tier>7</Tier>
         <Description>An enormous, flawless topaz set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
+		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -15849,10 +15856,14 @@
             <File>lofiObj3</File>
             <Index>0x47a</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Alemeow & Uio"/>
+        </ExtraTooltipData>
         <SlotType>9</SlotType>
         <Tier>7</Tier>
         <Description>An enormous, flawless emerald set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -15863,10 +15874,14 @@
             <File>lofiObj3</File>
             <Index>0x47b</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Alemeow & Uio"/>
+        </ExtraTooltipData>
         <SlotType>9</SlotType>
         <Tier>7</Tier>
         <Description>An enormous, flawless ruby set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
+		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -15877,10 +15892,14 @@
             <File>lofiObj3</File>
             <Index>0x47c</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Alemeow & Uio"/>
+        </ExtraTooltipData>
         <SlotType>9</SlotType>
         <Tier>7</Tier>
         <Description>An enormous, flawless sapphire set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
+		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -15891,10 +15910,14 @@
             <File>lofiObj3</File>
             <Index>0x479</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Alemeow & Uio"/>
+        </ExtraTooltipData>
         <SlotType>9</SlotType>
         <Tier>7</Tier>
         <Description>An enormous, flawless onyx set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -15905,10 +15928,14 @@
             <File>lofiObj3</File>
             <Index>0x47d</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Alemeow & Uio"/>
+        </ExtraTooltipData>
         <SlotType>9</SlotType>
         <Tier>7</Tier>
         <Description>An enormous, flawless citrine set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
+		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -15919,10 +15946,15 @@
             <File>lofiObj3</File>
             <Index>0x47f</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Alemeow & Uio"/>
+        </ExtraTooltipData>
         <SlotType>9</SlotType>
         <Tier>7</Tier>
         <Description>An enormous, flawless amethyst set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
+		<EffectEquip effect="Healing" delay="60"/>
+		<EffectEquip/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -32261,4 +32293,73 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
+       <Object type="0x55f6" id="Mercy of Yazanahar">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiProjs</File>
+            <Index>0x7b</Index>
+        </Texture>
+        <SlotType>6</SlotType>
+        <Description>A hide enchanted by a similar spell used to enchant Yazanahar.</Description>
+        <ActivateOnEquip stat="20" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="-60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="-10">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2200</feedPower>
+        <Legend id="4" stat="27">
+            <Name>Ancient Assault</Name>
+            <Description>If you currently have 1/2 of your mana your outputting damage is increased by 15%.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <Legendary/>
+        <DisplayId>Mercy of Yazanahar</DisplayId>
+    </Object>
+    <Object type="0x611f" id="Shard of Ancient Assault">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x98</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A shard of true power used to spark the true energy of an ascendent crystal. This energy is so powerful that it materializes a new powerful item.</Description>
+        <Legendary/>
+        <Shard/>
+        <feedPower>1000</feedPower>
+    </Object>
+    <Object type="0x6120" id="Dimensional Prism">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x99</Index>
+        </Texture>
+        <SlotType>22</SlotType>
+        <Description>A timeshard prism that holds an entire inconceivable dimension within itself. The true forms of the beings it summons will drive anyone into insanity.</Description>
+        <ActivateOnEquip stat="28" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="20">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <MpCost>100</MpCost>
+        <Legend id="4" stat="27">
+            <Name>Dimensional Assault</Name>
+            <Description>If you have over 25 surge and you have over 100 mana when you use this ability you do not lose any mana.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <Activate effect="Speedy" duration="2">ConditionEffectSelf</Activate>
+        <Activate duration="5.5">Decoy</Activate>
+        <Activate maxDistance="20">Teleport</Activate>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <DisplayId>Dimensional Prism</DisplayId>
+    </Object>
 </Objects>
