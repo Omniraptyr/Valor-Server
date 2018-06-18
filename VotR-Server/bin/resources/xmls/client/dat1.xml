@@ -75990,6 +75990,14 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
     <FameBonus>4</FameBonus>
     <NumProjectiles>2</NumProjectiles>
   </Object>
+     <Object type="0xa231" id="Storm Dagger Slash">
+      <Class>Projectile</Class>
+      <Texture>
+         <File>d3LofiObjEmbed</File>
+         <Index>0x457</Index>
+      </Texture>
+	  <AngleCorrection>1</AngleCorrection>
+   </Object>
       <Object type="0x1467" id="Dagger of Unearthly Storms">
         <Class>Equipment</Class>
         <Item/>
@@ -76016,14 +76024,6 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <OldSound>daggerSwing</OldSound>
         <FameBonus>6</FameBonus>
     </Object>
-	   <Object type="0xa231" id="Storm Dagger Slash">
-      <Class>Projectile</Class>
-      <Texture>
-         <File>d3LofiObjEmbed</File>
-         <Index>0x457</Index>
-      </Texture>
-	  <AngleCorrection>1</AngleCorrection>
-   </Object>
   <Object type="0x1469" id="Enchanted Sandstone Armor">
     <Class>Equipment</Class>
     <Item/>
@@ -92009,7 +92009,7 @@ A whole thanksgiving turkey!
     </RandomTexture>
 	  <AngleCorrection>1</AngleCorrection>
   </Object>
-<Object type="0x46df" id="Wand of Flowing Water">
+<Object type="0x46df" id="Wand of Lurking Night">
     <Class>Equipment</Class>
     <Item/>
     <Texture>
@@ -92034,6 +92034,7 @@ A whole thanksgiving turkey!
     <OldSound>magicShoot</OldSound>
     <feedPower>450</feedPower>
     <Enchantable/>
+    <DisplayId>Wand of Lurking Night</DisplayId>
   </Object>
   <Object type="0x46f1" id="Vulcan Shot">
     <Class>Projectile</Class>
@@ -98145,7 +98146,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Loot name="50 Fame">Item</Loot>
         </CrateLoot>
     </Object>
-	<Object type="0x53de" id="Cloud Edge">
+    <Object type="0x53de" id="Cloud Edge">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -98159,10 +98160,11 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile id="0">
             <ObjectId>Cloud Edge Slash</ObjectId>
             <Speed>140</Speed>
-            <MinDamage>166</MinDamage>
-            <MaxDamage>278</MaxDamage>
+            <MinDamage>160</MinDamage>
+            <MaxDamage>248</MaxDamage>
             <LifetimeMS>550</LifetimeMS>
             <MultiHit/>
+            <CondChance effect="Bleeding" chance="5" duration="2"/>
             <Boomerang/>
         </Projectile>
         <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
@@ -109641,9 +109643,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <MinDamage>950</MinDamage>
             <MaxDamage>1400</MaxDamage>
             <LifetimeMS>565</LifetimeMS>
-            <ConditionEffect duration="0.44">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="0.5">Paralyzed</ConditionEffect>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="50">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="100">IncrStatPerc</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="-15">IncrStatPerc</ActivateOnEquip>
         <Legendary/>
         <BagType>6</BagType>

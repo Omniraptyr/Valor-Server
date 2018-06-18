@@ -25,7 +25,8 @@ namespace wServer.realm.entities
     {
         public int Id { get; set; }
 
-        public Timer(double interval, int id = -1) : base(interval) {
+        public Timer(double interval, int id = -1) : base(interval)
+        {
             Id = id;
         }
     }
@@ -35,7 +36,7 @@ namespace wServer.realm.entities
         new static readonly ILog Log = LogManager.GetLogger(typeof(Player));
 
         private readonly Client _client;
-        public Client Client => _client;       
+        public Client Client => _client;
 
         //Stats
         private readonly SV<int> _accountId;
@@ -208,7 +209,7 @@ namespace wServer.realm.entities
             get { return _xpBoosted.GetValue(); }
             set { _xpBoosted.SetValue(value); }
         }
-        
+
         private readonly SV<int> _oxygenBar;
         public int OxygenBar
         {
@@ -230,7 +231,7 @@ namespace wServer.realm.entities
             set { _admin.SetValue(value); }
         }
 
-        private readonly SV<int> _tokens; 
+        private readonly SV<int> _tokens;
         public int Tokens
         {
             get { return _tokens.GetValue(); }
@@ -317,7 +318,7 @@ namespace wServer.realm.entities
         public ItemStacker[] Stacks { get; private set; }
 
         public readonly StatsManager Stats;
-        
+
         protected override void ImportStats(StatsType stats, object val)
         {
             var items = Manager.Resources.GameData.Items;
@@ -536,7 +537,7 @@ namespace wServer.realm.entities
             // found in player.update partial
             Sight = new Sight(this);
             _clientEntities = new UpdatedSet(this);
-            
+
             _accountId = new SV<int>(this, StatsType.AccountId, client.Account.AccountId, true);
             _experience = new SV<int>(this, StatsType.Experience, client.Character.Experience, true);
             _experienceGoal = new SV<int>(this, StatsType.ExperienceGoal, 0, true);
@@ -585,7 +586,7 @@ namespace wServer.realm.entities
             LDBoostTime = client.Character.LDBoostTime;
             LTBoostTime = client.Character.LTBoostTime;
 
-            var s = (ushort) client.Character.Skin;
+            var s = (ushort)client.Character.Skin;
             if (gameData.Skins.Keys.Contains(s))
             {
                 SetDefaultSkin(s);
@@ -600,20 +601,20 @@ namespace wServer.realm.entities
                 Guild = guild.Name;
                 GuildRank = client.Account.GuildRank;
             }
-            
-            HealthPots = new ItemStacker(this, 254, 0x0A22, 
+
+            HealthPots = new ItemStacker(this, 254, 0x0A22,
                 client.Character.HealthStackCount, settings.MaxStackablePotions);
-            MagicPots = new ItemStacker(this, 255, 0x0A23, 
+            MagicPots = new ItemStacker(this, 255, 0x0A23,
                 client.Character.MagicStackCount, settings.MaxStackablePotions);
-            Stacks = new ItemStacker[] {HealthPots, MagicPots};
+            Stacks = new ItemStacker[] { HealthPots, MagicPots };
 
             // inventory setup
             DbLink = new DbCharInv(Client.Account, Client.Character.CharId);
-            Inventory = new Inventory(this, 
+            Inventory = new Inventory(this,
                 Utils.ResizeArray(
                     (DbLink as DbCharInv).Items
                         .Select(_ => (_ == 0xffff || !gameData.Items.ContainsKey(_)) ? null : gameData.Items[_])
-                        .ToArray(), 
+                        .ToArray(),
                     settings.InventorySize)
                 );
             if (!saveInventory)
@@ -626,7 +627,7 @@ namespace wServer.realm.entities
             Stats = new StatsManager(this);
 
             // set size of player if using set skin
-            var skin = (ushort) Skin;
+            var skin = (ushort)Skin;
             if (gameData.SkinTypeToEquipSetType.ContainsKey(skin))
             {
                 var setType = gameData.SkinTypeToEquipSetType[skin];
@@ -640,7 +641,7 @@ namespace wServer.realm.entities
             // override size
             if (Client.Account.Size > 0)
                 Size = Client.Account.Size;
-            
+
             Manager.Database.IsMuted(client.IP)
                 .ContinueWith(t =>
                 {
@@ -679,7 +680,7 @@ namespace wServer.realm.entities
                 ObjectId = Id
             });
         }
-        
+
         public override void Init(World owner)
         {
             var x = 0;
@@ -708,7 +709,7 @@ namespace wServer.realm.entities
                     Pet = pet;
                 }
             }
-            
+
             FameCounter = new FameCounter(this);
             FameGoal = GetFameGoal(FameCounter.ClassStats[ObjectType].BestFame);
             ExperienceGoal = GetExpGoal(_client.Character.Level);
@@ -716,7 +717,8 @@ namespace wServer.realm.entities
 
             if (owner.Name.Equals("OceanTrench"))
                 OxygenBar = 100;
-            if (owner.Name.Equals("Nexus")) {
+            if (owner.Name.Equals("Nexus"))
+            {
                 int amount = (int)(Math.Min(Math.Floor((Stats[10] / 90d) * 6), 6));
 
                 if (amount > HealthPots.Count)
@@ -765,7 +767,8 @@ namespace wServer.realm.entities
         private List<Timer> timerList = new List<Timer>();
         public int[] stealAmount = { 0, 0 };
 
-        void TimerHandler(int delay, ConditionEffectIndex cei) {
+        void TimerHandler(int delay, ConditionEffectIndex cei)
+        {
             Timer timer = new Timer(delay, (int)cei);
             timer.Elapsed += (o, e) => {
                 Client.Player?.ApplyConditionEffect(cei);
@@ -776,41 +779,51 @@ namespace wServer.realm.entities
             timerList.Add(timer);
         }
 
-        public void OnEquip(Item item) {
-            if (Client.Player != null && item != null) {
+        public void OnEquip(Item item)
+        {
+            if (Client.Player != null && item != null)
+            {
                 /*foreach (var pair in item.StatReq)
                     if (pair.Value < Stats[pair.Key])
                         Client.Disconnect();*/
 
                 foreach (var pair in item.EffectEquip)
-                    if (pair.Key != string.Empty) {
+                    if (pair.Key != string.Empty)
+                    {
                         TimerHandler(pair.Value * 1000,
                         (ConditionEffectIndex)Enum.Parse(typeof(ConditionEffectIndex), pair.Key.Trim().Replace(" ", ""), true));
                     }
 
                 foreach (var pair in item.Steal)
-                    if (pair.Key != "") {
+                    if (pair.Key != "")
+                    {
                         if (pair.Key == "life") stealAmount[0] += pair.Value;
                         else stealAmount[1] += pair.Value;
                     }
             }
         }
 
-        public void OnUnequip(Item item) {
-            if (Client.Player != null && item != null) {
+        public void OnUnequip(Item item)
+        {
+            if (Client.Player != null && item != null)
+            {
                 foreach (var pair in item.EffectEquip)
-                    if (pair.Key != string.Empty) {
+                    if (pair.Key != string.Empty)
+                    {
                         var cei = (int)Enum.Parse(typeof(ConditionEffectIndex), pair.Key.Trim().Replace(" ", ""), true);
                         foreach (Timer t in timerList)
-                            if (t.Id == cei) {
+                            if (t.Id == cei)
+                            {
                                 t.Dispose();
                                 timerList.Remove(t);
                                 return; //so that it only clears effs after the delay (unless no delay)
                             }
                         Client.Player.ApplyConditionEffect((ConditionEffectIndex)cei, 0);
                     }
-                foreach (var pair in item.Steal) {
-                    if (pair.Key != "") {
+                foreach (var pair in item.Steal)
+                {
+                    if (pair.Key != "")
+                    {
                         if (pair.Key == "life") stealAmount[0] -= pair.Value;
                         else stealAmount[1] -= pair.Value;
                     }
@@ -839,7 +852,7 @@ namespace wServer.realm.entities
             }
 
             base.Tick(time);
-            
+
             SendUpdate(time);
             SendNewTick(time);
 
@@ -857,12 +870,12 @@ namespace wServer.realm.entities
             if (XPBoostTime != 0)
                 if (Level >= 20)
                     XPBoostTime = 0;
-            
+
             if (XPBoostTime > 0)
                 XPBoostTime = Math.Max(XPBoostTime - dt, 0);
             if (XPBoostTime == 0)
                 XPBoosted = false;
-            
+
             if (LDBoostTime > 0)
                 LDBoostTime = Math.Max(LDBoostTime - dt, 0);
 
@@ -877,13 +890,16 @@ namespace wServer.realm.entities
         void HandleRegen(RealmTime time)
         {
             // hp regen
-            if (!HasConditionEffect(ConditionEffects.Corrupted)) {
+            if (!HasConditionEffect(ConditionEffects.Corrupted))
+            {
                 if (HP == Stats[0] || !CanHpRegen())
                     _hpRegenCounter = 0;
-                else {
+                else
+                {
                     _hpRegenCounter += Stats.GetHPRegen() * time.ElapsedMsDelta / 1000f;
                     var regen = (int)_hpRegenCounter;
-                    if (regen > 0) {
+                    if (regen > 0)
+                    {
                         HP = Math.Min(Stats[0], HP + regen);
                         _hpRegenCounter -= regen;
                     }
@@ -891,13 +907,16 @@ namespace wServer.realm.entities
             }
 
             // mp regen
-            if (!HasConditionEffect(ConditionEffects.Corrupted)) {
+            if (!HasConditionEffect(ConditionEffects.Corrupted))
+            {
                 if (MP == Stats[1] || !CanMpRegen())
                     _mpRegenCounter = 0;
-                else {
+                else
+                {
                     _mpRegenCounter += Stats.GetMPRegen() * time.ElapsedMsDelta / 1000f;
                     var regen = (int)_mpRegenCounter;
-                    if (regen > 0) {
+                    if (regen > 0)
+                    {
                         MP = Math.Min(Stats[1], MP + regen);
                         _mpRegenCounter -= regen;
                     }
@@ -937,7 +956,7 @@ namespace wServer.realm.entities
                 SetNewbiePeriod();
                 FameCounter.Teleport();
             }
-            
+
             HandleQuest(time, true, position);
 
             var id = (IsControlling) ? SpectateTarget.Id : Id;
@@ -963,12 +982,15 @@ namespace wServer.realm.entities
             }
         }
 
-        public bool ascendSorCrystal(Player player) {
-            for (int i = 0; i < Inventory.Length; i++) {
+        public bool ascendSorCrystal(Player player)
+        {
+            for (int i = 0; i < Inventory.Length; i++)
+            {
                 if (Inventory[i] == null)
                     continue;
 
-                if (Inventory[i].ObjectId == "Sor Crystal") {
+                if (Inventory[i].ObjectId == "Sor Crystal")
+                {
                     Inventory[i] = Manager.Resources.GameData.Items[0x49e6];
                     SaveToCharacter();
                     SendInfo("Your Sor Crystal has been ascended into a Legendary Sor Crystal!");
@@ -1024,7 +1046,7 @@ namespace wServer.realm.entities
                     SendError("Cannot teleport while paused.");
                     return;
                 }
-                
+
                 if (!(obj is Player))
                 {
                     SendError("Can only teleport to players.");
@@ -1142,7 +1164,7 @@ namespace wServer.realm.entities
             return 20;
 
         }
-       
+
         public bool CheckLegendarySlot()
         {
             for (var i = 0; i < 3; i++)
@@ -1158,7 +1180,7 @@ namespace wServer.realm.entities
         public override bool HitByProjectile(Projectile projectile, RealmTime time)
         {
             ushort dmgAmount;
-            
+
             if (projectile.ProjectileOwner is Player ||
                 IsInvulnerable())
             {
@@ -1176,28 +1198,28 @@ namespace wServer.realm.entities
                 dmgAmount = (ushort)dmg;
             }
             if (!HasConditionEffect(ConditionEffects.Invulnerable))
+            {
+                if (Protection > 0)
                 {
-                    if (Protection > 0)
-                    {
-                        protectionDamage += (int)Stats.GetDefenseDamage(projectile.Damage, true);
-                    }
-                    else
-                    {
-                        HP -= dmg;
-                    }
+                    protectionDamage += (int)Stats.GetDefenseDamage(projectile.Damage, true);
                 }
+                else
+                {
+                    HP -= dmg;
+                }
+            }
             ApplyConditionEffect(projectile.ProjDesc.Effects);
 
-                Owner.BroadcastPacketNearby(new Damage()
-                {
-                    TargetId = this.Id,
-                    Effects = HasConditionEffect(ConditionEffects.Invincible) ? 0 : projectile.ConditionEffects,
-                    DamageAmount = (ushort)dmgAmount,
-                    Kill = HP <= 0,
-                    BulletId = projectile.ProjectileId,
-                    ObjectId = projectile.ProjectileOwner.Self.Id
-               }, this, this, PacketPriority.Low);
-            
+            Owner.BroadcastPacketNearby(new Damage()
+            {
+                TargetId = this.Id,
+                Effects = HasConditionEffect(ConditionEffects.Invincible) ? 0 : projectile.ConditionEffects,
+                DamageAmount = (ushort)dmgAmount,
+                Kill = HP <= 0,
+                BulletId = projectile.ProjectileId,
+                ObjectId = projectile.ProjectileOwner.Self.Id
+            }, this, this, PacketPriority.Low);
+
 
 
             if (HP <= 0)
@@ -1214,8 +1236,8 @@ namespace wServer.realm.entities
             dmg = (int)Stats.GetDefenseDamage(dmg, false);
             if (!HasConditionEffect(ConditionEffects.Invulnerable))
             {
-                if(Protection > 0)
-                   {
+                if (Protection > 0)
+                {
                     protectionDamage += dmg;
                 }
                 else
@@ -1223,7 +1245,7 @@ namespace wServer.realm.entities
                     HP -= dmg;
                 }
             }
-                
+
             Owner.BroadcastPacketNearby(new Damage()
             {
                 TargetId = Id,
@@ -1235,7 +1257,7 @@ namespace wServer.realm.entities
             }, this, this, PacketPriority.Low);
 
             if (HP <= 0)
-                Death(src.ObjectDesc.DisplayId ?? 
+                Death(src.ObjectDesc.DisplayId ??
                       src.ObjectDesc.ObjectId,
                       src);
         }
@@ -1305,7 +1327,7 @@ namespace wServer.realm.entities
 
             foreach (var player in Owner.Players.Values)
                 player.SendInfo("{\"key\":\"{arena.death}\",\"tokens\":{\"player\":\"" + Name + "\",\"enemy\":\"" + killer + "\"}}");
-            
+
             ReconnectToNexus();
             return true;
         }
@@ -1368,8 +1390,8 @@ namespace wServer.realm.entities
             return false;
         }
         bool isAdminsArena()
-        {   
-            if(Owner.Name == "Admins Arena")
+        {
+            if (Owner.Name == "Admins Arena")
             {
                 Random rnd = new Random();
                 int num = rnd.Next(1, 11);
@@ -1452,9 +1474,9 @@ namespace wServer.realm.entities
             var pGuild = Client.Account.GuildId;
 
             // guild case, only for level 20
-            if(pGuild > 0 && Level == 20)
+            if (pGuild > 0 && Level == 20)
             {
-                foreach(var w in Manager.Worlds.Values)
+                foreach (var w in Manager.Worlds.Values)
                 {
                     foreach (var p in w.Players.Values)
                     {
@@ -1471,7 +1493,7 @@ namespace wServer.realm.entities
                     {
                         i.SendInfo(deathMessage);
                     }
-                 }
+                }
             }
             // guild less case
             else
@@ -1480,8 +1502,8 @@ namespace wServer.realm.entities
                 {
                     i.SendInfo(deathMessage);
                 }
-            }         
-                
+            }
+
         }
 
         public void Death(string killer, Entity entity = null, WmapTile tile = null, bool rekt = false)
@@ -1546,7 +1568,7 @@ namespace wServer.realm.entities
 
         public void Reconnect(object portal, World world)
         {
-            ((Portal) portal).WorldInstanceSet -= Reconnect;
+            ((Portal)portal).WorldInstanceSet -= Reconnect;
 
             if (world == null)
                 SendError("Portal Not Implemented!");
@@ -1617,7 +1639,7 @@ namespace wServer.realm.entities
                 Sight.UpdateCount++;
             }
         }
-        
+
         public override void Dispose()
         {
             base.Dispose();
@@ -1635,7 +1657,7 @@ namespace wServer.realm.entities
             if (Client?.Account != null && Client.Account.Hidden)
             {
                 return player.Admin != 0;
-            } 
+            }
             else
             {
                 return true;

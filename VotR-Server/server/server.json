@@ -1,14 +1,9 @@
 {
   "dbInfo": {
     "host": "127.0.0.1",
-    "port": "6379", //1985 - 6379
-<<<<<<< HEAD
+    "port": "1985", //1985 - 6379
     "auth": "y5let1de@isaKraze@non8712jok", //y5let1de@isaKraze@non8712jok - none
     "index": "0"
-=======
-    "auth": "", //y5let1de@isaKraze@non8712jok - none
-    "index": "1"
->>>>>>> c3a22419c07a8d752a592fc66e369f87ac3580d1
   },
   "serverInfo": {
     "type": "Account",

@@ -15058,9 +15058,6 @@
             <File>d3LofiObjEmbed</File>
             <Index>0x436</Index>
         </Texture>
-		<ExtraTooltipData>
-            <EffectInfo name="Sprited by" description="Owypo"/>
-        </ExtraTooltipData>
         <SlotType>2</SlotType>
         <Description>A dagger that will slice through diamond.</Description>
         <RateOfFire>1.8</RateOfFire>
@@ -16909,7 +16906,7 @@
             <File>d3LofiObjEmbed</File>
             <Index>0xa2</Index>
         </Texture>
-		<ExtraTooltipData>
+        <ExtraTooltipData>
             <EffectInfo name="Sprited by" description="Owypo"/>
         </ExtraTooltipData>
         <SlotType>17</SlotType>
@@ -16958,7 +16955,7 @@
             <File>d3LofiObjEmbed</File>
             <Index>0xa5</Index>
         </Texture>
-		<ExtraTooltipData>
+        <ExtraTooltipData>
             <EffectInfo name="Sprited by" description="Owypo"/>
         </ExtraTooltipData>
         <SlotType>14</SlotType>
@@ -16979,7 +16976,7 @@
             <File>d3LofiObjEmbed</File>
             <Index>0xa0</Index>
         </Texture>
-		<ExtraTooltipData>
+        <ExtraTooltipData>
             <EffectInfo name="Sprited by" description="Owypo"/>
         </ExtraTooltipData>
         <SlotType>1</SlotType>
@@ -17805,7 +17802,7 @@
             <File>d3LofiObjEmbed</File>
             <Index>0xdd</Index>
         </Texture>
-		<ExtraTooltipData>
+        <ExtraTooltipData>
             <EffectInfo name="Sprited by" description="Owypo"/>
         </ExtraTooltipData>
         <SlotType>24</SlotType>
@@ -17820,7 +17817,7 @@
             <MinDamage>135</MinDamage>
             <MaxDamage>180</MaxDamage>
             <MultiHit/>
-			<CondChance effect="Bleeding" chance="10" duration="3"/>
+            <CondChance effect="Bleeding" chance="10" duration="3"/>
         </Projectile>
         <BagType>4</BagType>
         <FameBonus>4</FameBonus>
@@ -21439,7 +21436,7 @@
             <File>d3LofiObjEmbed</File>
             <Index>0x2c7</Index>
         </Texture>
-		<ExtraTooltipData>
+        <ExtraTooltipData>
             <EffectInfo name="Sprited by" description="Owypo"/>
         </ExtraTooltipData>
         <SlotType>8</SlotType>
@@ -22494,7 +22491,7 @@
             <File>lofiObj5</File>
             <Index>0xf9</Index>
         </Texture>
-		<ExtraTooltipData>
+        <ExtraTooltipData>
             <EffectInfo name="Sprited by" description="Owypo"/>
         </ExtraTooltipData>
         <SlotType>7</SlotType>
@@ -25543,10 +25540,11 @@
         <Projectile id="0">
             <ObjectId>Cloud Edge Slash</ObjectId>
             <Speed>140</Speed>
-            <MinDamage>166</MinDamage>
-            <MaxDamage>278</MaxDamage>
+            <MinDamage>160</MinDamage>
+            <MaxDamage>248</MaxDamage>
             <LifetimeMS>550</LifetimeMS>
             <MultiHit/>
+            <CondChance effect="Bleeding" chance="5" duration="2"/>
             <Boomerang/>
         </Projectile>
         <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
@@ -27770,18 +27768,18 @@
         </Texture>
         <SlotType>1</SlotType>
         <Description>A gigantic mace made of gargoyle stone plates. The pure crush of this mace cripples it's victims.</Description>
-        <RateOfFire>0.25</RateOfFire>
+        <RateOfFire>0.3</RateOfFire>
         <Sound>weapon/mithril_sword</Sound>
         <Projectile>
             <ObjectId>Gargoyle Pulse</ObjectId>
             <Speed>55</Speed>
-            <MinDamage>880</MinDamage>
+            <MinDamage>950</MinDamage>
             <MaxDamage>1400</MaxDamage>
             <LifetimeMS>565</LifetimeMS>
-            <ConditionEffect duration="0.44">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="0.5">Paralyzed</ConditionEffect>
         </Projectile>
-        <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="100">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-15">IncrStatPerc</ActivateOnEquip>
         <Legendary/>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -29693,7 +29691,7 @@
             <File>legendaries8x8Embed</File>
             <Index>0x07</Index>
         </Texture>
-		<ExtraTooltipData>
+        <ExtraTooltipData>
             <EffectInfo name="Sprited by" description="Mat"/>
         </ExtraTooltipData>
         <SlotType>10</SlotType>
@@ -29709,7 +29707,7 @@
             <File>legendaries8x8Embed</File>
             <Index>0x08</Index>
         </Texture>
-		<ExtraTooltipData>
+        <ExtraTooltipData>
             <EffectInfo name="Sprited by" description="Mat"/>
         </ExtraTooltipData>
         <SlotType>10</SlotType>
@@ -29725,7 +29723,7 @@
             <File>legendaries8x8Embed</File>
             <Index>0x09</Index>
         </Texture>
-		<ExtraTooltipData>
+        <ExtraTooltipData>
             <EffectInfo name="Sprited by" description="Mat"/>
         </ExtraTooltipData>
         <SlotType>10</SlotType>
@@ -31468,7 +31466,7 @@
             <File>legendaries8x8Embed</File>
             <Index>0x0d</Index>
         </Texture>
-		<ExtraTooltipData>
+        <ExtraTooltipData>
             <EffectInfo name="Sprited by" description="Mat"/>
         </ExtraTooltipData>
         <SlotType>10</SlotType>
@@ -32359,12 +32357,12 @@
             <File>legendaries8x8Embed</File>
             <Index>0x98</Index>
         </Texture>
-		<ExtraTooltipData>
-            <EffectInfo name="Sprited by" description="Mat"/>
-        </ExtraTooltipData>
         <SlotType>10</SlotType>
         <Description>A shard of true power used to spark the true energy of an ascendent crystal. This energy is so powerful that it materializes a new powerful item.</Description>
         <Legendary/>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Mat"/>
+        </ExtraTooltipData>
         <Shard/>
         <feedPower>1000</feedPower>
     </Object>

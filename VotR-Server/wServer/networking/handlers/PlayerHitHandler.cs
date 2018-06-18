@@ -19,7 +19,8 @@ namespace wServer.networking.handlers
 
         private void Handle(Client client, RealmTime time, int objectId, byte bulletId)
         {
-            if (timer == null) {
+            if (timer == null)
+            {
                 timer = new Timer(60000);
                 timer.Elapsed += (o, e) => {
                     inproperHits = 0;
@@ -39,7 +40,7 @@ namespace wServer.networking.handlers
                 inproperHits++;
 
             var prj = entity != null ?
-                ((IProjectileOwner) entity).Projectiles[bulletId] :
+                ((IProjectileOwner)entity).Projectiles[bulletId] :
                 player.Owner.Projectiles
                     .Where(p => p.Value.ProjectileOwner.Self.Id == objectId)
                     .SingleOrDefault(p => p.Value.ProjectileId == bulletId).Value;
@@ -49,7 +50,7 @@ namespace wServer.networking.handlers
 
             if (inproperHits > 100)
                 Log.Error(player + " has reached 100 inproper hits, maybe hacking?");
-           
+
             prj?.ForceHit(player, time);
         }
     }

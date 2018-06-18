@@ -1,14 +1,14 @@
 {
   "dbInfo": {
     "host": "127.0.0.1",
-    "port": "6379", //1985 - 6379
+    "port": "1985", //1985 - 6379
     "auth": "y5let1de@isaKraze@non8712jok", //y5let1de@isaKraze@non8712jok - none
     "index": "0"
   },
   "serverInfo": {
     "type": "World",
     "name": "VotR Legacy Testing",
-    "address": "127.0.0.1", //144.217.80.74 - 127.0.0.1
+    "address": "144.217.80.74", //144.217.80.74 - 127.0.0.1
     "port": "2050",
     "coordinates": {
       "latitude": "0",
