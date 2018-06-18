@@ -15954,7 +15954,10 @@
         <Description>An enormous, flawless amethyst set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
 		<EffectEquip effect="Healing" delay="60"/>
+<<<<<<< HEAD
 		<EffectEquip/>
+=======
+>>>>>>> 283fc153ae3a61692e8db7f48ec36963028f924d
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -32189,7 +32192,7 @@
         <Cooldown>5</Cooldown>
 		<Legendary/>
     </Object>
-	<Object type="0x6204" id="T0 Torii">
+	<Object type="0x6304" id="T0 Torii">
       <Class>Character</Class>
       <Texture>
         <File>lofiObjBig</File>
@@ -32199,7 +32202,7 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>999999</MaxHitPoints>
     </Object>
-    <Object type="0x6205" id="T1 Torii">
+    <Object type="0x6305" id="T1 Torii">
       <Class>Character</Class>
       <Texture>
         <File>lofiObjBig</File>
@@ -32209,7 +32212,7 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
-   <Object type="0x6206" id="T2 Torii">
+   <Object type="0x6306" id="T2 Torii">
       <Class>Character</Class>
       <Texture>
         <File>lofiObjBig</File>
@@ -32219,7 +32222,7 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
-   <Object type="0x6207" id="T3 Torii">
+   <Object type="0x6307" id="T3 Torii">
       <Class>Character</Class>
       <Texture>
         <File>lofiObjBig</File>
@@ -32229,7 +32232,7 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
-   <Object type="0x6208" id="T4 Torii">
+   <Object type="0x6308" id="T4 Torii">
       <Class>Character</Class>
       <Texture>
         <File>lofiObjBig</File>
@@ -32239,7 +32242,7 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
-   <Object type="0x6209" id="T5 Torii">
+   <Object type="0x6309" id="T5 Torii">
       <Class>Character</Class>
       <Texture>
         <File>lofiObjBig</File>
@@ -32249,7 +32252,7 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
-   <Object type="0x620a" id="T6 Torii">
+   <Object type="0x630a" id="T6 Torii">
       <Class>Character</Class>
       <Texture>
         <File>lofiObjBig</File>
@@ -32259,7 +32262,7 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
-   <Object type="0x620b" id="Necro Torii">
+   <Object type="0x630b" id="Necro Torii">
       <Class>Character</Class>
       <Texture>
         <File>lofiObjBig</File>
@@ -32269,7 +32272,7 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
-   <Object type="0x620c" id="Wicked Torii">
+   <Object type="0x630c" id="Wicked Torii">
       <Class>GameObject</Class>
       <AltTexture id="1">
          <Texture>

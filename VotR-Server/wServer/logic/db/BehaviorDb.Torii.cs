@@ -9,7 +9,6 @@ namespace wServer.logic
         private _ Torii = () => Behav()
             .Init("Wicked Torii",
                 new State(
-                    new ConditionalEffect(ConditionEffectIndex.Invincible, true),
                     new State("first",
                         new SetAltTexture(1, 3, 330),
                         new TimedTransition(1330, "second")

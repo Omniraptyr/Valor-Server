@@ -76797,6 +76797,7 @@ This dagger was a myth, will you live to tell the tale?
  	 <NumProjectiles>2</NumProjectiles>
     <Activate>Shoot</Activate>
   </Object>
+<<<<<<< HEAD
 	  <Object type="0x1589" id="Ring of Outstanding Attack">
     <Class>Equipment</Class>
     <Item />
@@ -76811,6 +76812,8 @@ This dagger was a myth, will you live to tell the tale?
     <BagType>2</BagType>
     <FameBonus>5</FameBonus>
   </Object>
+=======
+>>>>>>> 283fc153ae3a61692e8db7f48ec36963028f924d
 <Object type="0x1589" id="Ring of Outstanding Attack">
         <Class>Equipment</Class>
         <Item />
@@ -76927,7 +76930,10 @@ This dagger was a myth, will you live to tell the tale?
         <Description>An enormous, flawless amethyst set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
 		<EffectEquip effect="Healing" delay="60"/>
+<<<<<<< HEAD
 		<EffectEquip/>
+=======
+>>>>>>> 283fc153ae3a61692e8db7f48ec36963028f924d
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -104913,7 +104919,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>1</BagType>
         <MpCost>60</MpCost>
         <Cooldown>5</Cooldown>
-        <Activate range="4" amount="5" players="true" duration="1" effect="Armored" color="0xAD3600" objType="0x6204">Torii</Activate>
+        <Activate range="4" amount="5" players="true" duration="1" effect="Armored" color="0xAD3600" objType="0x6304">Torii</Activate>
         <feedPower>4</feedPower>
         <DisplayId>Paper Charm</DisplayId>
     </Object>
@@ -104932,7 +104938,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>1</BagType>
         <MpCost>70</MpCost>
         <Cooldown>5</Cooldown>
-        <Activate range="4" amount="5" players="true" duration="2" effect="Armored" color="0x9B6E5B" objType="0x6205">Torii</Activate>
+        <Activate range="4" amount="5" players="true" duration="2" effect="Armored" color="0x9B6E5B" objType="0x6305">Torii</Activate>
     </Object>
     <Object type="0x5817" id="Forestbound Charm">
         <Class>Equipment</Class>
@@ -104949,7 +104955,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>1</BagType>
         <MpCost>75</MpCost>
         <Cooldown>5</Cooldown>
-        <Activate range="4" amount="5" players="true" duration="2.5" effect="Armored" color="0x9B6E5B" objType="0x6206">Torii</Activate>
+        <Activate range="4" amount="5" players="true" duration="2.5" effect="Armored" color="0x9B6E5B" objType="0x6306">Torii</Activate>
     </Object>
     <Object type="0x5813" id="Fairywood Charm">
         <Class>Equipment</Class>
@@ -104966,7 +104972,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>2</BagType>
         <FameBonus>1</FameBonus>
         <MpCost>80</MpCost>
-        <Activate range="4" amount="6" players="true" duration="2.5" effect="Armored" color="0xB5009C" objType="0x6207">Torii</Activate>
+        <Activate range="4" amount="6" players="true" duration="2.5" effect="Armored" color="0xB5009C" objType="0x6307">Torii</Activate>
         <Cooldown>6</Cooldown>
     </Object>
     <Object type="0x5814" id="Golemtamer Charm">
@@ -104985,7 +104991,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <FameBonus>2</FameBonus>
         <Cooldown>6</Cooldown>
         <MpCost>85</MpCost>
-        <Activate range="4" amount="6" players="true" duration="3" effect="Armored" color="0x00E0E0" objType="0x6208">Torii</Activate>
+        <Activate range="4" amount="6" players="true" duration="3" effect="Armored" color="0x00E0E0" objType="0x6308">Torii</Activate>
     </Object>
     <Object type="0x5815" id="Demonic Charm">
         <Class>Equipment</Class>
@@ -105003,7 +105009,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <FameBonus>3</FameBonus>
         <MpCost>90</MpCost>
         <Cooldown>6</Cooldown>
-        <Activate range="4" amount="6" players="true" duration="3.5" effect="Armored" color="0x720000" objType="0x6209">Torii</Activate>
+        <Activate range="4" amount="6" players="true" duration="3.5" effect="Armored" color="0x720000" objType="0x6309">Torii</Activate>
     </Object>
     <Object type="0x5816" id="Sanctified Charm">
         <Class>Equipment</Class>
@@ -105020,7 +105026,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>4</BagType>
         <FameBonus>4</FameBonus>
         <MpCost>100</MpCost>
-        <Activate range="4" amount="7" players="true" duration="2" effect="Armored" color="0xF4CC00" objType="0x620a">Torii</Activate>	
+        <Activate range="4" amount="7" players="true" duration="2" effect="Armored" color="0xF4CC00" objType="0x630a">Torii</Activate>	
 		<Cooldown>7</Cooldown>
     </Object>
     <Object type="0x5818" id="Necromantic Charm">
@@ -105037,7 +105043,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <MpCost>100</MpCost>
-        <Activate range="5" amount="6" players="false" duration="4" effect="Weak" color="0x7FC9FF" objType="0x620b">Torii</Activate>
+        <Activate range="5" amount="6" players="false" duration="4" effect="Weak" color="0x7FC9FF" objType="0x630b">Torii</Activate>
         <Cooldown>3</Cooldown>
     </Object>
   <Object type="0x5819" id="Paper Charm Shot">
@@ -110516,7 +110522,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <MpCost>130</MpCost>
-        <Activate range="7" amount="3" players="false" duration="5" effect="ArmorBroken" color="0x47003D" objType="0x620c">Torii</Activate>
+        <Activate range="7" amount="3" players="false" duration="5" effect="ArmorBroken" color="0x47003D" objType="0x630c">Torii</Activate>
         <Cooldown>5</Cooldown>
 		<Legendary/>
     </Object>
@@ -110527,7 +110533,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
           <Index>0x91</Index>
       </Texture>
   </Object>
-     <Object type="0x6204" id="T0 Torii">
+     <Object type="0x6304" id="T0 Torii">
       <Class>Character</Class>
       <Texture>
         <File>lofiObjBig</File>
@@ -110537,6 +110543,103 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>999999</MaxHitPoints>
     </Object>
+<<<<<<< HEAD
+=======
+    <Object type="0x6305" id="T1 Torii">
+      <Class>Character</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c1</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
+   <Object type="0x6306" id="T2 Torii">
+      <Class>Character</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c2</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
+   <Object type="0x6307" id="T3 Torii">
+      <Class>Character</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c3</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
+   <Object type="0x6308" id="T4 Torii">
+      <Class>Character</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c4</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
+   <Object type="0x6309" id="T5 Torii">
+      <Class>Character</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c5</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
+   <Object type="0x630a" id="T6 Torii">
+      <Class>Character</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c6</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
+   <Object type="0x630b" id="Necro Torii">
+      <Class>Character</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c7</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
+   <Object type="0x630c" id="Wicked Torii">
+      <Class>GameObject</Class>
+      <AltTexture id="1">
+         <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1c8</Index>
+         </Texture>
+      </AltTexture>
+      <AltTexture id="2">
+         <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1c9</Index>
+         </Texture>
+      </AltTexture>
+      <AltTexture id="3">
+         <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1ca</Index>
+         </Texture>
+      </AltTexture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
+>>>>>>> 283fc153ae3a61692e8db7f48ec36963028f924d
     <Object type="0x6110" id="BD Stone Urgle">
         <Enemy/>
         <Class>Character</Class>
