@@ -45,7 +45,7 @@ namespace wServer.networking.handlers
                                     return;
                             var timeoutTime = gameData.Portals[objType].Timeout;
                             var entity = Entity.Resolve(Manager, objType);
-                                entity.Move(16, 64);
+                                entity.Move(4, 37);
                                 player.Owner.EnterWorld(entity);
 
                                 (entity as Portal).PlayerOpened = true;
@@ -91,7 +91,7 @@ namespace wServer.networking.handlers
                                 return;
                             var entity = Entity.Resolve(Manager, objType);
 
-                            entity.Move(8, 38);
+                            entity.Move(4, 37);
                             player.Owner.EnterWorld(entity);
 
                             (entity as Portal).PlayerOpened = true;

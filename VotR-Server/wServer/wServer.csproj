@@ -559,7 +559,6 @@
     <Compile Include="realm\terrain\JsonMapExporter.cs" />
     <Compile Include="realm\terrain\TerrainTile.cs" />
     <Compile Include="realm\terrain\WorldMapExporter.cs" />
-    <Compile Include="realm\worlds\logic\KeepingUltra.cs" />
     <Compile Include="realm\worlds\logic\Marketplace.cs" />
     <Compile Include="realm\worlds\logic\Castle.cs" />
     <Compile Include="realm\worlds\logic\NontridusUltra.cs" />

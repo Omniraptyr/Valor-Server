@@ -88,12 +88,12 @@ namespace wServer.realm.entities
                 }, this, null, PacketPriority.Low);
 
                 counter.HitBy(from, time, null, dmg);
-               
+
                 if (HP < 0 && Owner != null)
                 {
                     Death(time);
                 }
-                
+
                 return effDmg;
             }
             return 0;
@@ -119,10 +119,12 @@ namespace wServer.realm.entities
                 if (!HasConditionEffect(ConditionEffects.Invulnerable))
                     HP -= dmg;
                 ConditionEffect[] effs = null;
-                foreach (var pair in projectile.ProjDesc.CondChance) {
+                foreach (var pair in projectile.ProjDesc.CondChance)
+                {
                     if (pair.Value == 0 || pair.Key == default(ConditionEffect)) continue;
 
-                    if ((pair.Value / 100d) > (new Random().NextDouble())) {
+                    if ((pair.Value / 100d) > (new Random().NextDouble()))
+                    {
                         var effList = new List<ConditionEffect>(projectile.ProjDesc.Effects);
                         effList.Add(pair.Key);
                         effs = effList.ToArray();
@@ -139,26 +141,31 @@ namespace wServer.realm.entities
                     ObjectId = projectile.ProjectileOwner.Self.Id
                 }, this, (projectile.ProjectileOwner as Player), PacketPriority.Low);
 
-                if (p?.stealAmount != null) {
-                    if (p.stealAmount[0] != 0 && !p.HasConditionEffect(ConditionEffects.Sick)) {
+                if (p?.stealAmount != null)
+                {
+                    if (p.stealAmount[0] != 0 && !p.HasConditionEffect(ConditionEffects.Sick))
+                    {
                         int maxHP = p.Stats[0];
                         int lifeSteal = p.stealAmount[0];
 
                         if (lifeSteal >= 1 && p.HP < maxHP)
                             p.HP = ((p.HP + lifeSteal) > maxHP ? maxHP : p.HP + lifeSteal);
-                        else {
+                        else
+                        {
                             stealHits[0]++;
                             if (stealHits[0] >= 1 / lifeSteal)
                                 p.HP = ((p.HP + lifeSteal) > maxHP ? maxHP : p.HP + lifeSteal);
                         }
                     }
-                    if (p.stealAmount[1] != 0 && !p.HasConditionEffect(ConditionEffects.Quiet)) {
+                    if (p.stealAmount[1] != 0 && !p.HasConditionEffect(ConditionEffects.Quiet))
+                    {
                         int maxMP = p.Stats[1];
                         int manaLeech = p.stealAmount[1];
 
                         if (manaLeech >= 1 && p.MP < maxMP)
                             p.MP = ((p.MP + manaLeech) > maxMP ? maxMP : p.MP + manaLeech);
-                        else {
+                        else
+                        {
                             stealHits[1]++;
                             if (stealHits[1] >= 1 / manaLeech)
                                 p.MP = ((p.MP + manaLeech) > maxMP ? maxMP : p.MP + manaLeech);

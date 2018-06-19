@@ -75990,6 +75990,14 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
     <FameBonus>4</FameBonus>
     <NumProjectiles>2</NumProjectiles>
   </Object>
+     <Object type="0xa231" id="Storm Dagger Slash">
+      <Class>Projectile</Class>
+      <Texture>
+         <File>d3LofiObjEmbed</File>
+         <Index>0x457</Index>
+      </Texture>
+	  <AngleCorrection>1</AngleCorrection>
+   </Object>
       <Object type="0x1467" id="Dagger of Unearthly Storms">
         <Class>Equipment</Class>
         <Item/>
@@ -76016,14 +76024,6 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <OldSound>daggerSwing</OldSound>
         <FameBonus>6</FameBonus>
     </Object>
-	   <Object type="0xa231" id="Storm Dagger Slash">
-      <Class>Projectile</Class>
-      <Texture>
-         <File>d3LofiObjEmbed</File>
-         <Index>0x457</Index>
-      </Texture>
-	  <AngleCorrection>1</AngleCorrection>
-   </Object>
   <Object type="0x1469" id="Enchanted Sandstone Armor">
     <Class>Equipment</Class>
     <Item/>
@@ -92009,7 +92009,7 @@ A whole thanksgiving turkey!
     </RandomTexture>
 	  <AngleCorrection>1</AngleCorrection>
   </Object>
-<Object type="0x46df" id="Wand of Flowing Water">
+<Object type="0x46df" id="Wand of Lurking Night">
     <Class>Equipment</Class>
     <Item/>
     <Texture>
@@ -92034,6 +92034,7 @@ A whole thanksgiving turkey!
     <OldSound>magicShoot</OldSound>
     <feedPower>450</feedPower>
     <Enchantable/>
+    <DisplayId>Wand of Lurking Night</DisplayId>
   </Object>
   <Object type="0x46f1" id="Vulcan Shot">
     <Class>Projectile</Class>
@@ -98145,7 +98146,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Loot name="50 Fame">Item</Loot>
         </CrateLoot>
     </Object>
-	<Object type="0x53de" id="Cloud Edge">
+    <Object type="0x53de" id="Cloud Edge">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -98159,10 +98160,11 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile id="0">
             <ObjectId>Cloud Edge Slash</ObjectId>
             <Speed>140</Speed>
-            <MinDamage>166</MinDamage>
-            <MaxDamage>278</MaxDamage>
+            <MinDamage>160</MinDamage>
+            <MaxDamage>248</MaxDamage>
             <LifetimeMS>550</LifetimeMS>
             <MultiHit/>
+            <CondChance effect="Bleeding" chance="5" duration="2"/>
             <Boomerang/>
         </Projectile>
         <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
@@ -109641,9 +109643,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <MinDamage>950</MinDamage>
             <MaxDamage>1400</MaxDamage>
             <LifetimeMS>565</LifetimeMS>
-            <ConditionEffect duration="0.44">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="0.5">Paralyzed</ConditionEffect>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="50">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="100">IncrStatPerc</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="-15">IncrStatPerc</ActivateOnEquip>
         <Legendary/>
         <BagType>6</BagType>
@@ -110981,74 +110983,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 			<ConditionEffect duration="2">Slowed</ConditionEffect>
         </Projectile>
     </Object>
-	<Object type="0x611c" id="AH Feral of the Zol">
-        <Class>Character</Class>
-		<AnimatedTexture>
-		  <File>d3Chars16x16rEmbed</File>
-		  <Index>54</Index>
-		</AnimatedTexture>
-        <HitSound>monster/abyss_brutes_hit</HitSound>
-        <DeathSound>spell/fire_spray</DeathSound>
-        <MaxHitPoints>9500</MaxHitPoints>
-		<Defense>45</Defense>
-        <Size>140</Size>
-        <Projectile id="0">
-            <ObjectId>Feral Zol Spinner</ObjectId>
-            <Speed>100</Speed>
-            <MinDamage>140</MinDamage>
-            <MaxDamage>200</MaxDamage>
-            <LifetimeMS>2800</LifetimeMS>
-            <ConditionEffect duration="6">Corrupted</ConditionEffect>
-        </Projectile>
-		<Projectile id="1">
-            <ObjectId>Purple Bolt</ObjectId>
-            <Speed>100</Speed>
-            <MinDamage>90</MinDamage>
-            <MaxDamage>100</MaxDamage>
-            <LifetimeMS>1000</LifetimeMS>
-            <MultiHit/>
-        </Projectile>
-		<Projectile id="2">
-            <ObjectId>Purple Magic</ObjectId>
-            <Speed>70</Speed>
-            <Damage>60</Damage>
-            <LifetimeMS>3000</LifetimeMS>
-			<ConditionEffect duration="6">Exhausted</ConditionEffect>
-        </Projectile>
-        <Enemy/>
-        <DisplayId>Feral of the Zol</DisplayId>
-    </Object>
-		<Object type="0x611d" id="AH Zol incarnation">
-        <Class>Character</Class>
-		<AnimatedTexture>
-		  <File>d3Chars16x16rEmbed</File>
-		  <Index>55</Index>
-		</AnimatedTexture>
-		<HitSound>monster/skeletons_hit</HitSound>
-		<DeathSound>monster/skeletons_death</DeathSound>
-        <MaxHitPoints>6000</MaxHitPoints>
-		<Defense>5</Defense>
-        <Size>130</Size>
-        <Projectile id="0">
-            <ObjectId>Purple Star</ObjectId>
-            <Speed>75</Speed>
-            <MinDamage>40</MinDamage>
-            <MaxDamage>120</MaxDamage>
-            <LifetimeMS>2800</LifetimeMS>
-            <ConditionEffect duration="4">Confused</ConditionEffect>
-        </Projectile>
-		<Projectile id="1">
-            <ObjectId>Zol Inc Blast</ObjectId>
-            <Speed>100</Speed>
-            <MinDamage>90</MinDamage>
-            <MaxDamage>170</MaxDamage>
-            <LifetimeMS>3000</LifetimeMS>
-			<ConditionEffect duration="8">Corrupted</ConditionEffect>
-            <MultiHit/>
-        </Projectile>
-        <Enemy/>
-        <DisplayId>Zol Incarnation</DisplayId>
-    </Object>
 	<Object type="0x611e" id="AH Ultra Zol Turret">
         <Class>Character</Class>
 		<Texture>
@@ -111076,36 +111010,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Projectile>
         <Enemy/>
         <DisplayId>Zol Turret</DisplayId>
-    </Object>
-		<Object type="0x6204" id="Feral Zol Spinner">
-        <Class>Projectile</Class>
-        <RandomTexture>
-			<Texture>
-				<File>legendaries8x8Embed</File>
-				<Index>0x92</Index>
-			</Texture>
-			<Texture>
-				<File>legendaries8x8Embed</File>
-				<Index>0x93</Index>
-			</Texture>
-        </RandomTexture>
-		<Rotation>100</Rotation>
-    </Object>
-		<Object type="0x6205" id="Zol Inc Blast">
-        <Class>Projectile</Class>
-			<Texture>
-				<File>legendaries8x8Embed</File>
-				<Index>0x94</Index>
-			</Texture>
-		<AngleCorrection>1</AngleCorrection>
-    </Object>
-		<Object type="0x6206" id="Zol Turret Blast">
-        <Class>Projectile</Class>
-			<Texture>
-				<File>legendaries8x8Embed</File>
-				<Index>0x97</Index>
-			</Texture>
-		<Rotation>20</Rotation>
     </Object>
 	    <Object type="0x55f6" id="Mercy of Yazanahar">
         <Class>Equipment</Class>
@@ -111174,5 +111078,771 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate maxDistance="20">Teleport</Activate>
         <feedPower>2000</feedPower>
         <DisplayId>Dimensional Prism</DisplayId>
+    </Object>
+	    <Object type="0x611c" id="AH Feral of the Zol">
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>54</Index>
+        </AnimatedTexture>
+        <HitSound>monster/abyss_brutes_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <MaxHitPoints>18500</MaxHitPoints>
+        <Defense>45</Defense>
+        <Size>140</Size>
+        <Projectile id="0">
+            <ObjectId>Feral Zol Spinner</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <LifetimeMS>2800</LifetimeMS>
+            <ConditionEffect duration="6">Corrupted</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Purple Bolt</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>90</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <LifetimeMS>1000</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Purple Magic</ObjectId>
+            <Speed>70</Speed>
+            <Damage>60</Damage>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="6">Exhausted</ConditionEffect>
+        </Projectile>
+        <Enemy/>
+        <DisplayId>Feral of the Zol</DisplayId>
+    </Object>
+    <Object type="0x611d" id="AH Zol Incarnation">
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>53</Index>
+        </AnimatedTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <MaxHitPoints>8000</MaxHitPoints>
+        <Defense>20</Defense>
+        <Size>130</Size>
+        <Projectile id="0">
+            <ObjectId>Purple Star</ObjectId>
+            <Speed>75</Speed>
+            <MinDamage>40</MinDamage>
+            <MaxDamage>120</MaxDamage>
+            <LifetimeMS>800</LifetimeMS>
+            <ConditionEffect duration="4">Confused</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Zol Inc Blast</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>90</MinDamage>
+            <MaxDamage>170</MaxDamage>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="8">Corrupted</ConditionEffect>
+            <MultiHit/>
+            <Wavy/>
+        </Projectile>
+        <Enemy/>
+        <DisplayId>Zol Incarnation</DisplayId>
+    </Object>
+    <Object type="0x6124" id="AH Ultra Zol Turret Disabled">
+        <Class>Character</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x96</Index>
+        </Texture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>70</Defense>
+        <Size>110</Size>
+        <Enemy/>
+        <DisplayId>Zol Turret</DisplayId>
+    </Object>
+    <Object type="0x6121" id="AH Aura Controller">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6123" id="Aldragine TaskMaster Ultra">
+        <Class>Character</Class>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/dwarves_death</DeathSound>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Size>0</Size>
+        <Defense>0</Defense>
+        <XpMult>0.0</XpMult>
+        <ShadowSize>0</ShadowSize>
+        <DisplayId>Aldragine TaskMaster Ultra</DisplayId>
+    </Object>
+    <Object type="0x6125" id="AH Battlemage of the Zol">
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars8x8dHero1</File>
+            <Index>35</Index>
+        </AnimatedTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <MaxHitPoints>12000</MaxHitPoints>
+        <Defense>30</Defense>
+        <Size>130</Size>
+        <Projectile id="0">
+            <ObjectId>Purple Missile</ObjectId>
+            <Speed>70</Speed>
+            <MinDamage>90</MinDamage>
+            <MaxDamage>125</MaxDamage>
+            <LifetimeMS>2000</LifetimeMS>
+            <Amplitude>1</Amplitude>
+            <Frequency>2</Frequency>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Zol Inc Blast</ObjectId>
+            <Speed>35</Speed>
+            <MinDamage>50</MinDamage>
+            <MaxDamage>300</MaxDamage>
+            <LifetimeMS>900</LifetimeMS>
+            <ConditionEffect duration="4">Blind</ConditionEffect>
+            <Wavy/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Purple Mystic Shot</ObjectId>
+            <Speed>80</Speed>
+            <MinDamage>40</MinDamage>
+            <MaxDamage>80</MaxDamage>
+            <LifetimeMS>5000</LifetimeMS>
+            <Parametric/>
+            <ConditionEffect duration="2">Armor Broken</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Dark Purple Magic</ObjectId>
+            <Speed>126</Speed>
+            <MinDamage>20</MinDamage>
+            <MaxDamage>40</MaxDamage>
+            <LifetimeMS>2000</LifetimeMS>
+            <ConditionEffect duration="4">Hallucinating</ConditionEffect>
+        </Projectile>
+        <Enemy/>
+        <DisplayId>Battlemage of the Zol</DisplayId>
+    </Object>
+    <Object type="0x6126" id="AH ULTRA The Sincryer">
+        <Enemy/>
+        <DisplayId>Ganus, the Sincryer</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>5</Index>
+        </AnimatedTexture>
+        <HitSound>monster/wooden_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Size>155</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <Quest/>
+        <MaxHitPoints>375000</MaxHitPoints>
+        <Defense>60</Defense>
+        <Projectile id="0">
+            <ObjectId>Blue Energy Bolt</ObjectId>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>120</MaxDamage>
+            <Speed>100</Speed>
+            <LifetimeMS>4000</LifetimeMS>
+            <ConditionEffect duration="3.5">Darkness</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Small White Shuriken</ObjectId>
+            <Damage>200</Damage>
+            <Speed>140</Speed>
+            <LifetimeMS>5000</LifetimeMS>
+            <ConditionEffect duration="3">Paralyzed</ConditionEffect>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Purple Bolt</ObjectId>
+            <Damage>140</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>4200</LifetimeMS>
+            <ConditionEffect duration="2.5">Dazed</ConditionEffect>
+            <Boomerang/>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Green Blob</ObjectId>
+            <Damage>60</Damage>
+            <Speed>100</Speed>
+            <LifetimeMS>5250</LifetimeMS>
+            <MultiHit/>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Blue Bolt</ObjectId>
+            <Damage>100</Damage>
+            <Speed>70</Speed>
+            <LifetimeMS>3600</LifetimeMS>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Sincryer Energy Arrow</ObjectId>
+            <Damage>200</Damage>
+            <Speed>40</Speed>
+            <ConditionEffect duration="3.5">Unstable</ConditionEffect>
+            <ParticleTrail>0xFF00FF</ParticleTrail>
+            <Wavy/>
+            <ArmorPiercing/>
+            <LifetimeMS>5000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x6127" id="AH ULTRA The Vision of Aldragine">
+        <Enemy/>
+        <DisplayId>Nirux, Vision of Aldragine</DisplayId>
+        <Class>Character</Class>
+        <Group>ZolBoss</Group>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>14</Index>
+        </AnimatedTexture>
+        <HitSound>monster/medusa_hit</HitSound>
+        <DeathSound>monster/medusa_death</DeathSound>
+        <Size>150</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <UElitedrop/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <Quest/>
+        <MaxHitPoints>260000</MaxHitPoints>
+        <Defense>40</Defense>
+        <Projectile id="0">
+            <ObjectId>Green Spinner</ObjectId>
+            <MinDamage>40</MinDamage>
+            <MaxDamage>180</MaxDamage>
+            <Speed>100</Speed>
+            <LifetimeMS>6000</LifetimeMS>
+            <ConditionEffect duration="2">Weak</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Super Blast Purple</ObjectId>
+            <Speed>55</Speed>
+            <Damage>120</Damage>
+            <Size>120</Size>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <LifetimeMS>10000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Green Magic</ObjectId>
+            <Damage>40</Damage>
+            <Speed>140</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="1.5">Confused</ConditionEffect>
+            <ConditionEffect duration="2.5">Hexed</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Blue Mystic Shot</ObjectId>
+            <Damage>40</Damage>
+            <Speed>140</Speed>
+            <LifetimeMS>10000</LifetimeMS>
+            <ConditionEffect duration="3">Slowed</ConditionEffect>
+            <ConditionEffect duration="3">Unstable</ConditionEffect>
+            <MultiHit/>
+            <Parametric/>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Green Bolt</ObjectId>
+            <Damage>160</Damage>
+            <Speed>140</Speed>
+            <LifetimeMS>3400</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Dragon Eye Laser</ObjectId>
+            <Damage>80</Damage>
+            <Speed>50</Speed>
+            <Size>150</Size>
+            <LifetimeMS>6000</LifetimeMS>
+            <MultiHit/>
+            <ConditionEffect duration="6">Paralyzed</ConditionEffect>
+            <Boomerang/>
+        </Projectile>
+    </Object>
+    <Object type="0x6128" id="AH ULTRA The Heart">
+        <Enemy/>
+        <DisplayId>Heart of the Hideout</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>11</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>monster/dark_elves_death</DeathSound>
+        <Size>165</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <MaxHitPoints>999999</MaxHitPoints>
+        <Defense>60</Defense>
+        <Projectile id="0">
+            <ObjectId>Void Star</ObjectId>
+            <Damage>180</Damage>
+            <Speed>100</Speed>
+            <Size>140</Size>
+            <LifetimeMS>8000</LifetimeMS>
+            <ConditionEffect duration="2">Weak</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Fire Bullet</ObjectId>
+            <Speed>240</Speed>
+            <Damage>99999</Damage>
+            <Size>120</Size>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <LifetimeMS>12000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x6129" id="AH ULTRA Heart Loot Ctrl">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>309600</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <UElitedrop/>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x612a" id="AH ULTRA Heart Portal Spawner">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>90000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6131" id="AH ULTRA Aldragine">
+        <Enemy/>
+        <DisplayId>Aldragine</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>6</Index>
+        </AnimatedTexture>
+        <AltTexture id="1">
+            <AnimatedTexture>
+                <File>d3Chars16x16rEmbed</File>
+                <Index>6</Index>
+            </AnimatedTexture>
+            <Effect particle="SwirlingMist" cooldown="2">XMLEffect</Effect>
+        </AltTexture>
+        <HitSound>monster/dragons_hit</HitSound>
+        <DeathSound>monster/golems_death</DeathSound>
+        <Size>0</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <UElitedrop/>
+        <ArmorBreakImmune/>
+        <Quest/>
+        <MaxHitPoints>1000000</MaxHitPoints>
+        <Defense>90</Defense>
+        <Projectile id="0">
+            <ObjectId>White Bolt</ObjectId>
+            <MinDamage>40</MinDamage>
+            <MaxDamage>60</MaxDamage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>4400</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Void Star</ObjectId>
+            <Speed>80</Speed>
+            <Damage>160</Damage>
+            <Size>120</Size>
+            <MultiHit/>
+            <LifetimeMS>7400</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Green Energy Missile</ObjectId>
+            <Damage>100</Damage>
+            <Speed>140</Speed>
+            <Size>120</Size>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="4">Quiet</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Lethal Zol Blast</ObjectId>
+            <Damage>240</Damage>
+            <Speed>70</Speed>
+            <LifetimeMS>6000</LifetimeMS>
+            <Size>170</Size>
+            <ConditionEffect duration="10">Armor Broken</ConditionEffect>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Destruction Star</ObjectId>
+            <Damage>1000</Damage>
+            <Speed>35</Speed>
+            <LifetimeMS>12000</LifetimeMS>
+            <Size>180</Size>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <Boomerang/>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Black Bolt</ObjectId>
+            <Damage>100</Damage>
+            <Speed>100</Speed>
+            <LifetimeMS>4600</LifetimeMS>
+            <Size>180</Size>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
+        </Projectile>
+        <Projectile id="6">
+            <ObjectId>Armor Pierce Bullet</ObjectId>
+            <Damage>120</Damage>
+            <Speed>78</Speed>
+            <LifetimeMS>5000</LifetimeMS>
+            <Size>110</Size>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="7">
+            <ObjectId>Void Star</ObjectId>
+            <Damage>40</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>8000</LifetimeMS>
+            <Size>140</Size>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
+            <MultiHit/>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="8">
+            <ObjectId>Aldragine Zol Spinners</ObjectId>
+            <Damage>180</Damage>
+            <Speed>75</Speed>
+            <LifetimeMS>4000</LifetimeMS>
+            <Size>120</Size>
+            <ConditionEffect duration="6">Exhausted</ConditionEffect>
+            <Boomerang/>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="9">
+            <ObjectId>Paralyze Bullet</ObjectId>
+            <Damage>100</Damage>
+            <Speed>75</Speed>
+            <LifetimeMS>4000</LifetimeMS>
+            <Size>120</Size>
+            <ConditionEffect duration="6">Paralyzed</ConditionEffect>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="10">
+            <ObjectId>Dragon Eye Blast</ObjectId>
+            <MinDamage>90</MinDamage>
+            <MaxDamage>160</MaxDamage>
+            <Speed>50</Speed>
+            <LifetimeMS>6000</LifetimeMS>
+            <Size>120</Size>
+            <ConditionEffect duration="6">Confused</ConditionEffect>
+            <Amplitude>1</Amplitude>
+            <Frequency>2</Frequency>
+        </Projectile>
+    </Object>
+    <Object type="0x6132" id="AH ULTRA Aldragine Clone">
+        <Enemy/>
+        <DisplayId>Aldragine</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>6</Index>
+        </AnimatedTexture>
+        <AltTexture id="1">
+            <AnimatedTexture>
+                <File>d3Chars16x16rEmbed</File>
+                <Index>6</Index>
+            </AnimatedTexture>
+            <Effect particle="SwirlingMist" cooldown="2">XMLEffect</Effect>
+        </AltTexture>
+        <HitSound>monster/dragons_hit</HitSound>
+        <DeathSound>monster/golems_death</DeathSound>
+        <Size>220</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <MaxHitPoints>100000</MaxHitPoints>
+        <Defense>20</Defense>
+        <Projectile id="0">
+            <ObjectId>Destruction Star</ObjectId>
+            <Damage>1000</Damage>
+            <Speed>35</Speed>
+            <LifetimeMS>12000</LifetimeMS>
+            <Size>180</Size>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <Boomerang/>
+        </Projectile>
+    </Object>
+    <Object type="0x6133" id="AH ULTRA Aldragine Loot Ctrl">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6134" id="ULTRA Beacon of Zol A">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>0x09</Index>
+        </AnimatedTexture>
+        <HitSound>monster/wooden_walls_hit</HitSound>
+        <DeathSound>monster/wooden_walls_death</DeathSound>
+        <MaxHitPoints>999999</MaxHitPoints>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+    </Object>
+    <Object type="0x6135" id="ULTRA Beacon of Zol B">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>10</Index>
+        </AnimatedTexture>
+        <HitSound>monster/wooden_walls_hit</HitSound>
+        <DeathSound>monster/wooden_walls_death</DeathSound>
+        <MaxHitPoints>999999</MaxHitPoints>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+    </Object>
+    <Object type="0x6136" id="AH Ultra Sincryer Gate Opener">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6137" id="AH Sincryer Gate Opener">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+		<Object type="0x7204" id="Feral Zol Spinner">
+        <Class>Projectile</Class>
+        <RandomTexture>
+			<Texture>
+				<File>legendaries8x8Embed</File>
+				<Index>0x92</Index>
+			</Texture>
+			<Texture>
+				<File>legendaries8x8Embed</File>
+				<Index>0x93</Index>
+			</Texture>
+        </RandomTexture>
+		<Rotation>100</Rotation>
+    </Object>
+		<Object type="0x7205" id="Zol Inc Blast">
+        <Class>Projectile</Class>
+			<Texture>
+				<File>legendaries8x8Embed</File>
+				<Index>0x94</Index>
+			</Texture>
+		<AngleCorrection>1</AngleCorrection>
+    </Object>
+	<Object type="0x7206" id="Zol Turret Blast">
+        <Class>Projectile</Class>
+			<Texture>
+				<File>legendaries8x8Embed</File>
+				<Index>0x97</Index>
+			</Texture>
+		<Rotation>20</Rotation>
+    </Object>
+    <Object type="0x7207" id="Sincryer Energy Arrow">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x9a</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+	<Object type="0x612b" id="Ultra Aldragine's Hideout Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Ultra Aldragine's Hideout</DungeonName>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1b9</Index>
+        </Texture>
+        <Animation prob="1" period="1">
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1ba</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1bb</Index>
+                </Texture>
+            </Frame>
+        </Animation>
+        <DisplayId>Ultra Aldragine's Hideout Portal</DisplayId>
+    </Object>
+    <Object type="0x612c" id="Ultra Sincryer's Gate Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Ultra Sincryer's Gate</DungeonName>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1b9</Index>
+        </Texture>
+        <Animation prob="1" period="1">
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1ba</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1bb</Index>
+                </Texture>
+            </Frame>
+        </Animation>
+        <DisplayId>Ultra Sincryer's Gate Portal</DisplayId>
+    </Object>
+    <Object type="0x612e" id="Ultra The Nontridus Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Ultra The Nontridus</DungeonName>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1b9</Index>
+        </Texture>
+        <Animation prob="1" period="1">
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1ba</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1bb</Index>
+                </Texture>
+            </Frame>
+        </Animation>
+        <DisplayId>Ultra The Nontridus Portal</DisplayId>
+    </Object>
+    <Object type="0x612f" id="Ultra Core of the Hideout Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Ultra Core of the Hideout</DungeonName>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1b9</Index>
+        </Texture>
+        <Animation prob="1" period="1">
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1ba</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1bb</Index>
+                </Texture>
+            </Frame>
+        </Animation>
+        <DisplayId>Ultra Core of the Hideout Portal</DisplayId>
+    </Object>
+    <Object type="0x6130" id="Ultra Keeping of Aldragine Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Ultra Keeping of Aldragine</DungeonName>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1b9</Index>
+        </Texture>
+        <Animation prob="1" period="1">
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1ba</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1bb</Index>
+                </Texture>
+            </Frame>
+        </Animation>
+        <DisplayId>Ultra Keeping of Aldragine Portal</DisplayId>
     </Object>
 </Objects>

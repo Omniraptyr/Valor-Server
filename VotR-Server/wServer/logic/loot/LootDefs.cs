@@ -232,7 +232,7 @@ namespace wServer.logic.loot
                 //You have a 25% chance to get ANOTHER attack or wisdom eon
                 new OnlyOne(
                     new ItemLoot("Attack Eon", 0.25),
-                    new ItemLoot("Wisdom Eon", 0.25)
+                    new ItemLoot("Wisdom Eon", 0/25)
                 ),
                 //High chance to get 2 cloth
                 new OnlyOne(
@@ -260,6 +260,19 @@ namespace wServer.logic.loot
                     new ItemLoot("Ring of Dark Retribution", 0.8)
                     )
             };
+        }
+        public static ILootDef[] RaidTokens()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("The Zol Awakening (Token)", 0.25),
+                    new ItemLoot("Calling of the Titan (Token)", 0.25),
+                    new ItemLoot("A Fallen Light (Token)", 0.25),
+                    new ItemLoot("Sidon's Fall (Token)", 0.25),
+                    new ItemLoot("War of Decades (Token)", 0.25)
+                )
+             };
         }
         public static ILootDef[] FabledItemsLootUltra()
         {
@@ -357,19 +370,6 @@ namespace wServer.logic.loot
                     new ItemLoot("Ring of Dark Retribution", 0.8)
                     )
             };
-        }
-        public static ILootDef[] RaidTokens()
-        {
-            return new ILootDef[]
-            {
-                new OnlyOne(
-                    new ItemLoot("The Zol Awakening (Token)", 0.25),
-                    new ItemLoot("Calling of the Titan (Token)", 0.25),
-                    new ItemLoot("A Fallen Light (Token)", 0.25),
-                    new ItemLoot("Sidon's Fall (Token)", 0.25),
-                    new ItemLoot("War of Decades (Token)", 0.25)
-                )
-             };
         }
         //1/125K
         public static ILootDef[] SFExtremelyLow()

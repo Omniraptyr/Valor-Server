@@ -501,7 +501,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         this.injector.getInstance(ShowQueueSignal).dispatch();
         this.injector.getInstance(UpdateQueueSignal).dispatch(_arg1.position_, _arg1.count_);
     }
-    
+
     private function HandleQueuePing(_arg1:QueuePing):void
     {
         this.injector.getInstance(UpdateQueueSignal).dispatch(_arg1.position_, _arg1.count_);
@@ -875,19 +875,19 @@ public class GameServerConnectionConcrete extends GameServerConnection {
             }
             else {
                 p = this.player;
-            }			
-			if (((itemId == 2591 || itemId == 5465 || itemId == 9064) && (p.attackMax_ == (p.attack_ - p.attackBoost_)))
-			|| ((itemId == 2592 || itemId == 5466 || itemId == 9065) && (p.defenseMax_ == (p.defense_ - p.defenseBoost_)))
-			|| ((itemId == 2593 || itemId == 5467 || itemId == 9066) && (p.speedMax_ == (p.speed_ - p.speedBoost_))) 
-			|| ((itemId == 2612 || itemId == 5468 || itemId == 9067) && (p.vitalityMax_ == (p.vitality_ - p.vitalityBoost_)))
-			|| ((itemId == 2613 || itemId == 5469 || itemId == 9068) && (p.wisdomMax_ == (p.wisdom_ - p.wisdomBoost_)))
-			|| ((itemId == 2636 || itemId == 5470 || itemId == 9069) && (p.dexterityMax_ == (p.dexterity_ - p.dexterityBoost_)))
-			|| ((itemId == 2793 || itemId == 5471 || itemId == 9070) && (p.maxHPMax_ == (p.maxHP_ - p.maxHPBoost_)))
-			|| ((itemId == 2794 || itemId == 5472 || itemId == 9071) && (p.maxMPMax_ == (p.maxMP_ - p.maxMPBoost_)))
-			|| ((itemId == 22562 || itemId == 25033 || itemId == 26879) && (p.mightMax_ == (p.might_ - p.mightBoost_)))
-			|| ((itemId == 26877 || itemId == 25034 || itemId == 27042) && (p.restorationMax_ == (p.restoration_ - p.restorationBoost_))) 
-			|| ((itemId == 22563 || itemId == 25035 || itemId == 27041) && (p.luckMax_ == (p.luck_ - p.luckBoost_)))
-			|| ((itemId == 26878 || itemId == 25036 || itemId == 27043) && (p.protectionMax_ == (p.protection_ - p.protectionBoost_))))
+            }
+            if (((itemId == 2591 || itemId == 5465 || itemId == 9064) && (p.attackMax_ == (p.attack_ - p.attackBoost_)))
+                    || ((itemId == 2592 || itemId == 5466 || itemId == 9065) && (p.defenseMax_ == (p.defense_ - p.defenseBoost_)))
+                    || ((itemId == 2593 || itemId == 5467 || itemId == 9066) && (p.speedMax_ == (p.speed_ - p.speedBoost_)))
+                    || ((itemId == 2612 || itemId == 5468 || itemId == 9067) && (p.vitalityMax_ == (p.vitality_ - p.vitalityBoost_)))
+                    || ((itemId == 2613 || itemId == 5469 || itemId == 9068) && (p.wisdomMax_ == (p.wisdom_ - p.wisdomBoost_)))
+                    || ((itemId == 2636 || itemId == 5470 || itemId == 9069) && (p.dexterityMax_ == (p.dexterity_ - p.dexterityBoost_)))
+                    || ((itemId == 2793 || itemId == 5471 || itemId == 9070) && (p.maxHPMax_ == (p.maxHP_ - p.maxHPBoost_)))
+                    || ((itemId == 2794 || itemId == 5472 || itemId == 9071) && (p.maxMPMax_ == (p.maxMP_ - p.maxMPBoost_)))
+                    || ((itemId == 22562 || itemId == 25033 || itemId == 26879) && (p.mightMax_ == (p.might_ - p.mightBoost_)))
+                    || ((itemId == 26877 || itemId == 25034 || itemId == 27042) && (p.restorationMax_ == (p.restoration_ - p.restorationBoost_)))
+                    || ((itemId == 22563 || itemId == 25035 || itemId == 27041) && (p.luckMax_ == (p.luck_ - p.luckBoost_)))
+                    || ((itemId == 26878 || itemId == 25036 || itemId == 27043) && (p.protectionMax_ == (p.protection_ - p.protectionBoost_))))
                 return false;
         }
         catch (err:Error) {
@@ -2265,20 +2265,20 @@ public class GameServerConnectionConcrete extends GameServerConnection {
     private function handleJsonDialog(_arg1:Failure):void {
         var errorMsg = JSON.parse(_arg1.errorDescription_);
         var dlg:Dialog;
-        
+
         // check for correct client version
         if (Parameters.FULL_BUILD != errorMsg.build) {
             handleIncorrectVersionFailureBasic(errorMsg.build);
             return;
         }
-        
+
         // correct version, display custom json dialog
         dlg = new Dialog(errorMsg.title, errorMsg.description, "Ok", null, null);
         dlg.addEventListener(Dialog.LEFT_BUTTON, this.onDoClientUpdate);
         this.gs_.addChild(dlg);
         this.retryConnection_ = false;
     }
-    
+
     private function handleEmailVerificationNeeded(_arg1:Failure):void {
         this.retryConnection_ = false;
         gs_.closed.dispatch();
@@ -2306,7 +2306,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
     private function handleIncorrectVersionFailure(_arg1:Failure):void {
         handleIncorrectVersionFailureBasic(_arg1.errorDescription_);
     }
-    
+
     private function handleIncorrectVersionFailureBasic(description:String):void {
         var _local2:Dialog = new Dialog(TextKey.CLIENT_UPDATE_TITLE, "", TextKey.CLIENT_UPDATE_LEFT_BUTTON, null, "/clientUpdate");
         _local2.setTextParams(TextKey.CLIENT_UPDATE_DESCRIPTION, {
@@ -2383,4 +2383,3 @@ public class GameServerConnectionConcrete extends GameServerConnection {
 
 }
 }
-
