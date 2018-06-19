@@ -821,6 +821,22 @@ namespace wServer.realm.entities
                 Stats.ReCalculateValues();
                 BMToggle = 1;
             }
+                if (BMToggle == 1)
+                {
+                    ApplyConditionEffect(ConditionEffectIndex.Damaging);
+                }
+                else
+                {
+                    ApplyConditionEffect(ConditionEffectIndex.Damaging, 0);
+                }
+                if (BMToggle == 2)
+                {
+                    ApplyConditionEffect(ConditionEffectIndex.Armored);
+                }
+                else
+                {
+                    ApplyConditionEffect(ConditionEffectIndex.Armored, 0);
+                }
         }
 
         private void AESamuraiAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
