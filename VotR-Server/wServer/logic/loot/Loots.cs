@@ -116,10 +116,10 @@ namespace wServer.logic.loot
                 if (i.BagType > bagType) bagType = i.BagType;
                 items[idx] = i;
                 idx++;
-
-                /*if (bagType == 6 || bagType == 11)
+             
+                if (owners.Count() == 1 && i.BagType == 6 || i.BagType == 11) //bag types 6 and 11 are both sb, assume only one
                     foreach (var p in enemy.Owner.Players.Values)
-                        p.SendHelp(i.Key.Name + " has just received the " + items[idx].ObjectId + "!");*/
+                        p.SendHelp(owners[0].Name + " has just received the " + items[idx].ObjectId + "!");
 
                 if (idx == 8)
                 {

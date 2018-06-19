@@ -1201,8 +1201,7 @@ namespace wServer.realm.entities
 
 
             if (HP <= 0)
-                Death(projectile.ProjectileOwner.Self.ObjectDesc.DisplayId ??
-                      projectile.ProjectileOwner.Self.ObjectDesc.ObjectId,
+                Death(projectile.ProjectileOwner.Self.ObjectDesc.ObjectId,
                       projectile.ProjectileOwner.Self);
 
             return base.HitByProjectile(projectile, time);
@@ -1235,8 +1234,7 @@ namespace wServer.realm.entities
             }, this, this, PacketPriority.Low);
 
             if (HP <= 0)
-                Death(src.ObjectDesc.DisplayId ?? 
-                      src.ObjectDesc.ObjectId,
+                Death(src.ObjectDesc.ObjectId,
                       src);
         }
 

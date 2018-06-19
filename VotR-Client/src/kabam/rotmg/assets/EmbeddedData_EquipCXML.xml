@@ -15243,6 +15243,9 @@
             <File>lofiObj5</File>
             <Index>0xc9</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Uio"/>
+        </ExtraTooltipData>
         <SlotType>3</SlotType>
         <Description>Scorching heat will emit across the battlefield when using this bow. It's been thought that only the sun gods would have such a weapon.</Description>
         <ActivateOnEquip stat="112" amount="10">IncrementStat</ActivateOnEquip>
@@ -22406,6 +22409,9 @@
             <File>lofiObj5</File>
             <Index>0xda</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Zemagaia"/>
+        </ExtraTooltipData>
         <SlotType>6</SlotType>
         <Description>Um..Mr.Alien, mind helping me put this on?</Description>
         <ActivateOnEquip stat="21" amount="15">IncrementStat</ActivateOnEquip>
@@ -22443,6 +22449,9 @@
             <File>lofiObj5</File>
             <Index>0xdc</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Zemagaia"/>
+        </ExtraTooltipData>
         <SlotType>3</SlotType>
         <Description>You even feel like an alien!</Description>
         <RateOfFire>1.7</RateOfFire>
@@ -22911,6 +22920,9 @@
             <File>d3LofiObjEmbed</File>
             <Index>0x328</Index>
         </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Zemagaia"/>
+        </ExtraTooltipData>
         <SlotType>6</SlotType>
         <Description>A hide made of magma rock and the forged by the will of Hades.</Description>
         <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
