@@ -829,4 +829,45 @@
         <UnlockLevel level="20">Shrine Maiden</UnlockLevel>
         <DisplayId>Gambler</DisplayId>
     </Object>
+    <Object type="0x6140" id="Blademaster">
+        <Class>Player</Class>
+        <Description>The Blademaster brawls with dual blades and uses his jacket utilize the powers of both of his ancient blades.</Description>
+        <AnimatedTexture>
+            <File>players</File>
+            <Index>20</Index>
+        </AnimatedTexture>
+        <HitSound>player/rogue_hit</HitSound>
+        <DeathSound>player/rogue_death</DeathSound>
+        <Player/>
+        <BloodProb>1.0</BloodProb>
+        <SlotTypes>34, 35, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Equipment>0x6148, 0x6141, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <MaxHitPoints max="720">150</MaxHitPoints>
+        <MaxMagicPoints max="252">100</MaxMagicPoints>
+        <Attack max="40">10</Attack>
+        <Defense max="15">0</Defense>
+        <Speed max="100">15</Speed>
+        <Dexterity max="100">15</Dexterity>
+        <HpRegen max="40">15</HpRegen>
+        <MpRegen max="50">10</MpRegen>
+        <Might max="80">2</Might>
+        <Luck max="80">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
+        <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
+        <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
+        <LevelIncrease min="0" max="2">Attack</LevelIncrease>
+        <LevelIncrease min="0" max="0">Defense</LevelIncrease>
+        <LevelIncrease min="1" max="3">Speed</LevelIncrease>
+        <LevelIncrease min="1" max="3">Dexterity</LevelIncrease>
+        <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
+        <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
+        <LevelIncrease min="0" max="1">Might</LevelIncrease>
+        <LevelIncrease min="0" max="1">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
+        <UnlockLevel level="20">Rogue</UnlockLevel>
+        <UnlockLevel level="20">Warrior</UnlockLevel>
+        <DisplayId>Blademaster</DisplayId>
+    </Object>
 </Objects>

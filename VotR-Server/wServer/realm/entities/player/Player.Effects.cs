@@ -106,6 +106,24 @@ namespace wServer.realm.entities
                 ApplyConditionEffect(ConditionEffectIndex.Alliance, 0);
             }
 
+            if (BMToggle==1)
+            {
+                ApplyConditionEffect(ConditionEffectIndex.Damaging);
+            }
+            else
+            {
+                ApplyConditionEffect(ConditionEffectIndex.Damaging, 0);
+            }
+
+            if (BMToggle == 2)
+            {
+                ApplyConditionEffect(ConditionEffectIndex.Armored);
+            }
+            else
+            {
+                ApplyConditionEffect(ConditionEffectIndex.Armored, 0);
+            }
+
             ProtectionMax = (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50))+10;
             Protection =    (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50))+10-protectionDamage;
             if(Protection > 0)

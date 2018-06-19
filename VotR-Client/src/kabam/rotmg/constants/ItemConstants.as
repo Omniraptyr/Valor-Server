@@ -36,6 +36,8 @@ public class ItemConstants {
     public static const TURRET_TYPE:int = 31;
     public static const CHARM_TYPE:int = 32;
     public static const DICE_TYPE:int = 33;
+    public static const DUALBLADES_TYPE:int = 34;
+    public static const JACKET_TYPE:int = 35;
 
 
     public static function itemTypeToName(_arg_1:int):String {
@@ -108,6 +110,10 @@ public class ItemConstants {
                 return ("Charm");
             case DICE_TYPE:
                 return ("Dice");
+            case DUALBLADES_TYPE:
+                return ("Dual Blades");
+            case JACKET_TYPE:
+                return ("Jacket");
         }
         return ("EquipmentType.InvalidType");
     }

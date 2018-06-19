@@ -6327,6 +6327,14 @@
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
+    <Object type="0x7207" id="Sincryer Energy Arrow">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x9a</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
 	<Object type="0x61ff" id="Hunter's Fury">
         <Class>Projectile</Class>
     	<Texture>
@@ -6409,12 +6417,100 @@
 			</Texture>
 		<AngleCorrection>1</AngleCorrection>
     </Object>
-		<Object type="0x7206" id="Zol Turret Blast">
+	<Object type="0x7206" id="Zol Turret Blast">
         <Class>Projectile</Class>
 			<Texture>
 				<File>legendaries8x8Embed</File>
 				<Index>0x97</Index>
 			</Texture>
 		<Rotation>20</Rotation>
+    </Object>
+    <Object type="0x7206" id="Zol Turret Blast">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x97</Index>
+        </Texture>
+        <Rotation>20</Rotation>
+    </Object>
+    <Object type="0x6155" id="Bronze Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xb0</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6156" id="Silver Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xb1</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6157" id="Iron Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xb3</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6158" id="Darkness Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xb6</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6159" id="Mithril Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xb7</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x615a" id="Ele Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xb8</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x615b" id="Ragetalon Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xb9</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x615c" id="Eme Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xba</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x615d" id="Master Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xbc</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x615e" id="Jacket Razor 1">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x9b</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
     </Object>
 </Objects>
