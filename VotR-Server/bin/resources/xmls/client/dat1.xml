@@ -111845,4 +111845,688 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Animation>
         <DisplayId>Ultra Keeping of Aldragine Portal</DisplayId>
     </Object>
+	    <Object type="0x615e" id="Jacket Razor 1">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x9b</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+	    <Object type="0x6141" id="Leather Jacket">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj6</File>
+            <Index>0xf0</Index>
+        </Texture>
+        <SlotType>35</SlotType>
+        <Tier>0</Tier>
+        <Description>A jacket once worn by the very first of Blademasters.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Offensive Stance" description=""/>
+            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="Defensive Stance" description=""/>
+            <EffectInfo name="" description="Armored and +40 maximum health"/>
+        </ExtraTooltipData>
+        <Projectile>
+            <ObjectId>Jacket Razor 1</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>20</MinDamage>
+            <MaxDamage>30</MaxDamage>
+            <LifetimeMS>600</LifetimeMS>
+            <Size>100</Size>
+            <MultiHit/>
+            <Boomerang/>
+        </Projectile>
+        <BagType>1</BagType>
+        <MpCost>35</MpCost>
+        <SurgeCost>5</SurgeCost>
+        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
+        <Activate amount="40" stat="0" noStack="false">JacketAbility</Activate>
+        <Cooldown>2</Cooldown>
+    </Object>
+    <Object type="0x6142" id="Darkness Jacket">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj6</File>
+            <Index>0xf1</Index>
+        </Texture>
+        <SlotType>35</SlotType>
+        <Tier>1</Tier>
+        <Description>A jacket that envelops the wearer with the protection of darkness.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Offensive Stance" description=""/>
+            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="Defensive Stance" description=""/>
+            <EffectInfo name="" description="Armored and +60 maximum health"/>
+        </ExtraTooltipData>
+        <Projectile>
+            <ObjectId>Jacket Razor 1</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>30</MinDamage>
+            <MaxDamage>40</MaxDamage>
+            <LifetimeMS>600</LifetimeMS>
+            <Size>100</Size>
+            <MultiHit/>
+            <Boomerang/>
+        </Projectile>
+        <BagType>1</BagType>
+        <MpCost>40</MpCost>
+        <SurgeCost>5</SurgeCost>
+        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
+        <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
+        <Cooldown>2</Cooldown>
+    </Object>
+    <Object type="0x6143" id="Iron Jacket">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj6</File>
+            <Index>0xf2</Index>
+        </Texture>
+        <SlotType>35</SlotType>
+        <Tier>2</Tier>
+        <Description>A very uncomfortable, but strong, jacket.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Offensive Stance" description=""/>
+            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="Defensive Stance" description=""/>
+            <EffectInfo name="" description="Armored and +60 maximum health"/>
+        </ExtraTooltipData>
+        <Projectile>
+            <ObjectId>Jacket Razor 1</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>50</MinDamage>
+            <MaxDamage>60</MaxDamage>
+            <LifetimeMS>600</LifetimeMS>
+            <Size>100</Size>
+            <MultiHit/>
+            <Boomerang/>
+        </Projectile>
+        <BagType>1</BagType>
+        <MpCost>50</MpCost>
+        <SurgeCost>5</SurgeCost>
+        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
+        <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
+        <Cooldown>2</Cooldown>
+    </Object>
+    <Object type="0x6144" id="Lightweight Jacket">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj6</File>
+            <Index>0xf3</Index>
+        </Texture>
+        <SlotType>35</SlotType>
+        <Tier>3</Tier>
+        <Description>A jacket that makes the user feel as light as a feather.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Offensive Stance" description=""/>
+            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="Defensive Stance" description=""/>
+            <EffectInfo name="" description="Armored and +60 maximum health"/>
+        </ExtraTooltipData>
+        <Projectile>
+            <ObjectId>Jacket Razor 1</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>70</MinDamage>
+            <MaxDamage>80</MaxDamage>
+            <LifetimeMS>600</LifetimeMS>
+            <Size>100</Size>
+            <MultiHit/>
+            <Boomerang/>
+        </Projectile>
+        <BagType>2</BagType>
+        <MpCost>60</MpCost>
+        <SurgeCost>5</SurgeCost>
+        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
+        <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
+        <Cooldown>2</Cooldown>
+    </Object>
+    <Object type="0x6145" id="Murderous Jacket">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj6</File>
+            <Index>0xf4</Index>
+        </Texture>
+        <SlotType>35</SlotType>
+        <Tier>4</Tier>
+        <Description>A blood-stained jacket that has aided skilled Blademasters in the art of slaughter.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Offensive Stance" description=""/>
+            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="Defensive Stance" description=""/>
+            <EffectInfo name="" description="Armored and +80 maximum health"/>
+        </ExtraTooltipData>
+        <Projectile>
+            <ObjectId>Jacket Razor 1</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>75</MinDamage>
+            <MaxDamage>85</MaxDamage>
+            <LifetimeMS>600</LifetimeMS>
+            <Size>100</Size>
+            <MultiHit/>
+            <Boomerang/>
+        </Projectile>
+        <BagType>2</BagType>
+        <MpCost>60</MpCost>
+        <SurgeCost>5</SurgeCost>
+        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
+        <Activate amount="80" stat="0" noStack="false">JacketAbility</Activate>
+        <Cooldown>2</Cooldown>
+    </Object>
+    <Object type="0x6146" id="Invincibilty Jacket">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj6</File>
+            <Index>0xf5</Index>
+        </Texture>
+        <SlotType>35</SlotType>
+        <Tier>5</Tier>
+        <Description>An enchanted jacket made by ancient Blademasters that protects the user from serious harm.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Offensive Stance" description=""/>
+            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="Defensive Stance" description=""/>
+            <EffectInfo name="" description="Armored and +100 maximum health"/>
+        </ExtraTooltipData>
+        <Projectile>
+            <ObjectId>Jacket Razor 1</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>75</MinDamage>
+            <MaxDamage>85</MaxDamage>
+            <LifetimeMS>600</LifetimeMS>
+            <Size>100</Size>
+            <MultiHit/>
+            <ConditionEffect duration="2">Weak</ConditionEffect>
+            <Boomerang/>
+        </Projectile>
+        <BagType>4</BagType>
+        <MpCost>65</MpCost>
+        <SurgeCost>5</SurgeCost>
+        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
+        <Activate amount="100" stat="0" noStack="false">JacketAbility</Activate>
+        <Cooldown>2</Cooldown>
+    </Object>
+    <Object type="0x6147" id="Jacket of Sorrows">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj6</File>
+            <Index>0xf6</Index>
+        </Texture>
+        <SlotType>35</SlotType>
+        <Tier>6</Tier>
+        <Description>A jacket with the tears of children sewn into its collar.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Offensive Stance" description=""/>
+            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="Defensive Stance" description=""/>
+            <EffectInfo name="" description="Armored and +120 maximum health"/>
+        </ExtraTooltipData>
+        <Projectile>
+            <ObjectId>Jacket Razor 1</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>90</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <LifetimeMS>600</LifetimeMS>
+            <Size>100</Size>
+            <MultiHit/>
+            <ConditionEffect duration="2">Weak</ConditionEffect>
+            <Boomerang/>
+        </Projectile>
+        <BagType>4</BagType>
+        <MpCost>65</MpCost>
+        <SurgeCost>5</SurgeCost>
+        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
+        <Activate amount="120" stat="0" noStack="false">JacketAbility</Activate>
+        <Cooldown>2</Cooldown>
+    </Object>
+    <Object type="0x6148" id="Bronze Daggers">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xa0</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Tier>0</Tier>
+        <Description>Twin bronze daggers, nothing special.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/blunt_dagger</Sound>
+        <Projectile>
+            <ObjectId>Bronze Blade Proj</ObjectId>
+            <Speed>180</Speed>
+            <MinDamage>30</MinDamage>
+            <MaxDamage>80</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <BagType>1</BagType>
+        <NumProjectiles>1</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
+    </Object>
+    <Object type="0x6149" id="Invert Blades">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xa1</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Tier>1</Tier>
+        <Description>Twin steel blades with hilts of opposit colours, somehow making them more deadly.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/dirk</Sound>
+        <Projectile>
+            <ObjectId>Silver Blade Proj</ObjectId>
+            <Speed>180</Speed>
+            <MinDamage>35</MinDamage>
+            <MaxDamage>90</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <BagType>1</BagType>
+        <NumProjectiles>1</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
+    </Object>
+    <Object type="0x614a" id="Dusky Blades">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xa2</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Tier>2</Tier>
+        <Description>Twin rosy blades, imbued with the power of roses.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/dirkr</Sound>
+        <Projectile>
+            <ObjectId>Silver Blade Proj</ObjectId>
+            <Speed>180</Speed>
+            <MinDamage>45</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <BagType>1</BagType>
+        <NumProjectiles>1</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
+    </Object>
+    <Object type="0x614b" id="Duo Blades">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xa3</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Tier>3</Tier>
+        <Description>Twin blades forged together, perfectly harmonized with each other.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/dirk</Sound>
+        <Projectile>
+            <ObjectId>Iron Blade Proj</ObjectId>
+            <Speed>180</Speed>
+            <MinDamage>60</MinDamage>
+            <MaxDamage>110</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <BagType>1</BagType>
+        <NumProjectiles>1</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
+    </Object>
+    <Object type="0x614c" id="Silver Blades">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xa4</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Tier>4</Tier>
+        <Description>Twin silver blades, forged for the Great Werewolf Hunters of the Wandering Planes.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/dirk</Sound>
+        <Projectile>
+            <ObjectId>Iron Blade Proj</ObjectId>
+            <Speed>180</Speed>
+            <MinDamage>70</MinDamage>
+            <MaxDamage>125</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <BagType>1</BagType>
+        <NumProjectiles>1</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
+    </Object>
+    <Object type="0x614d" id="Half Blades">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xa5</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Tier>5</Tier>
+        <Description>Twin blades, forged from one broken legendary dagger.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/dirk</Sound>
+        <Projectile>
+            <ObjectId>Iron Blade Proj</ObjectId>
+            <Speed>180</Speed>
+            <MinDamage>70</MinDamage>
+            <MaxDamage>140</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <BagType>1</BagType>
+        <NumProjectiles>1</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
+    </Object>
+    <Object type="0x614e" id="Obsidian Blades">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xa6</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Tier>6</Tier>
+        <Description>Twin blades made from the finest of obsidian, allowing them to fire twice as fast as a standard pair of blades.</Description>
+        <RateOfFire>2</RateOfFire>
+        <Sound>weapon/obsidian_dagger</Sound>
+        <Projectile>
+            <ObjectId>Darkness Blade Proj</ObjectId>
+            <Speed>200</Speed>
+            <MinDamage>70</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <BagType>1</BagType>
+        <NumProjectiles>1</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
+    </Object>
+    <Object type="0x614f" id="Mithril Blades">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xa7</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Tier>7</Tier>
+        <Description>Twin blades forged from the and magical metal mithril and crested with nuggets of gold.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/mithril_dagger</Sound>
+        <Projectile>
+            <ObjectId>Mithril Blade Proj</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>150</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <BagType>2</BagType>
+        <NumProjectiles>1</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
+    </Object>
+    <Object type="0x6150" id="Infinity Blades">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xa8</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Tier>8</Tier>
+        <Description>Two blades, one made of solid water, and the other made of solid fire.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Ele Blade Proj</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>90</MinDamage>
+            <MaxDamage>160</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <BagType>2</BagType>
+        <NumProjectiles>1</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
+    </Object>
+    <Object type="0x6151" id="Rage Claw Blades">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xa9</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Tier>9</Tier>
+        <Description>Two blades, a Ragetalon and Agateclaw. When used together, they vibrate and seem to sing.</Description>
+        <RateOfFire>1.5</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Ragetalon Blade Proj</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>115</MinDamage>
+            <MaxDamage>170</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <BagType>2</BagType>
+        <FameBonus>1</FameBonus>
+        <NumProjectiles>1</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
+    </Object>
+    <Object type="0x6152" id="Emerald Malevolence Blades">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xaa</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Tier>10</Tier>
+        <Description>Two blades that when brought together, seem to channel each other's energy.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Eme Blade Proj</ObjectId>
+            <Speed>200</Speed>
+            <MinDamage>120</MinDamage>
+            <MaxDamage>175</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <BagType>4</BagType>
+        <FameBonus>2</FameBonus>
+        <NumProjectiles>1</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
+    </Object>
+    <Object type="0x6153" id="Eldricht Blades">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xab</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Tier>11</Tier>
+        <Description>Twin blades that were forged in the Woods of Kor.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Ele Blade Proj</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>130</MinDamage>
+            <MaxDamage>190</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <BagType>4</BagType>
+        <FameBonus>3</FameBonus>
+        <NumProjectiles>1</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
+    </Object>
+    <Object type="0x6154" id="Master Blades">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xac</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Tier>12</Tier>
+        <Description>Twin blades forged from a single bar of magical gold.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Master Blade Proj</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <BagType>4</BagType>
+        <FameBonus>4</FameBonus>
+        <NumProjectiles>1</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
+    </Object>
+	    <Object type="0x6155" id="Bronze Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xb0</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6156" id="Silver Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xb1</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6157" id="Iron Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xb3</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6158" id="Darkness Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xb6</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6159" id="Mithril Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xb7</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x615a" id="Ele Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xb8</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x615b" id="Ragetalon Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xb9</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x615c" id="Eme Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xba</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x615d" id="Master Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xbc</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+	<Object type="0x6140" id="Blademaster">
+        <Class>Player</Class>
+        <Description>The Blademaster brawls with dual blades and uses his jacket utilize the powers of both of his ancient blades.</Description>
+        <AnimatedTexture>
+            <File>players</File>
+            <Index>20</Index>
+        </AnimatedTexture>
+        <HitSound>player/rogue_hit</HitSound>
+        <DeathSound>player/rogue_death</DeathSound>
+        <Player/>
+        <BloodProb>1.0</BloodProb>
+        <SlotTypes>34, 35, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Equipment>0x6148, 0x6141, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <MaxHitPoints max="720">150</MaxHitPoints>
+        <MaxMagicPoints max="252">100</MaxMagicPoints>
+        <Attack max="40">10</Attack>
+        <Defense max="15">0</Defense>
+        <Speed max="100">15</Speed>
+        <Dexterity max="100">15</Dexterity>
+        <HpRegen max="40">15</HpRegen>
+        <MpRegen max="50">10</MpRegen>
+        <Might max="80">2</Might>
+        <Luck max="80">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="30">4</Protection>
+        <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
+        <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
+        <LevelIncrease min="0" max="2">Attack</LevelIncrease>
+        <LevelIncrease min="0" max="0">Defense</LevelIncrease>
+        <LevelIncrease min="1" max="3">Speed</LevelIncrease>
+        <LevelIncrease min="1" max="3">Dexterity</LevelIncrease>
+        <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
+        <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
+        <LevelIncrease min="0" max="1">Might</LevelIncrease>
+        <LevelIncrease min="0" max="1">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
+        <UnlockLevel level="20">Gambler</UnlockLevel>
+        <UnlockLevel level="20">Templar</UnlockLevel>
+		<DisplayId>Blademaster</DisplayId>
+    </Object>
 </Objects>

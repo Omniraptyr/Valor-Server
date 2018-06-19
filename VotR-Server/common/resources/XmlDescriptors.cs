@@ -409,7 +409,8 @@ namespace common.resources
         SorConstruct,
         BurstInferno,
         AbbyConstruct,
-        Torii
+        Torii,
+        JacketAbility
     }
 
     public class ActivateEffect
