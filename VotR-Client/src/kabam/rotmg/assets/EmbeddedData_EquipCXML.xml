@@ -7930,7 +7930,6 @@
         <DisplayId>{equip.Green_Drake_Egg}</DisplayId>
     </Object>
     <Object type="0xaf3" id="Yellow Drake Egg">
-        Bleeding
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -24594,7 +24593,6 @@
         <ActivateOnEquip stat="3" amount="-40">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>1</BagType>
-        <SurgeCost>20</SurgeCost>
         <MultiPhase/>
         <Activate range="1" amount="50" duration="3">SiphonAbility</Activate>
         <feedPower>5</feedPower>
@@ -24622,7 +24620,6 @@
         </ExtraTooltipData>
         <ActivateOnEquip stat="3" amount="-20">IncrementStat</ActivateOnEquip>
         <BagType>1</BagType>
-        <SurgeCost>20</SurgeCost>
         <MultiPhase/>
         <Activate range="1" amount="100" duration="4">SiphonAbility</Activate>
         <feedPower>10</feedPower>
@@ -24651,7 +24648,6 @@
         <ActivateOnEquip stat="3" amount="100">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>1</BagType>
-        <SurgeCost>20</SurgeCost>
         <MultiPhase/>
         <Activate range="1" amount="200" duration="4">SiphonAbility</Activate>
         <feedPower>20</feedPower>
@@ -24680,7 +24676,6 @@
         <ActivateOnEquip stat="3" amount="125">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>1</BagType>
-        <SurgeCost>15</SurgeCost>
         <MultiPhase/>
         <Steal type="mana" amount="1"/>
         <Activate range="2" amount="300" duration="4">SiphonAbility</Activate>
@@ -24711,7 +24706,6 @@
         <ActivateOnEquip stat="3" amount="150">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>4</BagType>
-        <SurgeCost>15</SurgeCost>
         <MultiPhase/>
         <Steal type="mana" amount="2"/>
         <Activate range="2" amount="400" duration="4">SiphonAbility</Activate>
@@ -24742,7 +24736,6 @@
         <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>4</BagType>
-        <SurgeCost>10</SurgeCost>
         <MultiPhase/>
         <Steal type="mana" amount="4"/>
         <Activate range="3" amount="500" duration="5">SiphonAbility</Activate>
@@ -24773,7 +24766,6 @@
         <ActivateOnEquip stat="3" amount="300">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>4</BagType>
-        <SurgeCost>5</SurgeCost>
         <MultiPhase/>
         <Steal type="mana" amount="4"/>
         <Activate range="3" amount="600" duration="6">SiphonAbility</Activate>
@@ -24832,7 +24824,6 @@
         <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>6</BagType>
-        <SurgeCost>5</SurgeCost>
         <MultiPhase/>
         <Steal type="life" amount="2"/>
         <Activate range="5" amount="500" duration="6">SiphonAbility</Activate>
@@ -26921,18 +26912,18 @@
         </Texture>
         <SlotType>1</SlotType>
         <Description>A gigantic mace made of gargoyle stone plates. The pure crush of this mace cripples it's victims.</Description>
-        <RateOfFire>0.25</RateOfFire>
+        <RateOfFire>0.3</RateOfFire>
         <Sound>weapon/mithril_sword</Sound>
         <Projectile>
             <ObjectId>Gargoyle Pulse</ObjectId>
             <Speed>55</Speed>
-            <MinDamage>880</MinDamage>
+            <MinDamage>950</MinDamage>
             <MaxDamage>1400</MaxDamage>
             <LifetimeMS>565</LifetimeMS>
-            <ConditionEffect duration="0.44">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="0.5">Paralyzed</ConditionEffect>
         </Projectile>
-        <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="100">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-15">IncrStatPerc</ActivateOnEquip>
         <Legendary/>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -27115,9 +27106,8 @@
             <Speed>100</Speed>
             <Damage>50</Damage>
             <Size>80</Size>
-            <LifetimeMS>600</LifetimeMS>
+            <LifetimeMS>400</LifetimeMS>
             <ArmorPiercing/>
-            <ConditionEffect duration="2.5">Blind</ConditionEffect>
             <ConditionEffect duration="2.5">Darkness</ConditionEffect>
         </Projectile>
     </Object>
@@ -30104,7 +30094,7 @@
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
-    <Object type="0x69e8" id="Furious Gauntlet">
+    <Object type="0x69e8" id="Starmind Gauntlet">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -30112,16 +30102,15 @@
             <Index>0x2a</Index>
         </Texture>
         <SlotType>9</SlotType>
-        <Description>No fear shall be shown.</Description>
-        <ActivateOnEquip stat="121" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="18">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="26" amount="25">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
+        <Description>A gauntlet that empowers the power of your thoughts and lends you the power of the celestial gods.</Description>
+        <ActivateOnEquip stat="122" amount="50">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-300">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="25">IncrStatPerc</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <feedPower>2000</feedPower>
         <Legendary/>
+        <Steal type="mana" amount="5"/>
         <Legend id="3" stat="27">
             <Name>Undermind</Name>
             <Description>If your ability's tier is not lower than 6 and you have over 60 surge you activate a blast around you that inflicts weak.</Description>
@@ -30129,7 +30118,7 @@
             <MP>0</MP>
             <Surge>0</Surge>
         </Legend>
-        <DisplayId>Furious Gauntlet</DisplayId>
+        <DisplayId>Starmind Gauntlet</DisplayId>
     </Object>
     <Object type="0x1485" id="Waraxe of Judgement">
         <Class>Equipment</Class>
@@ -31445,7 +31434,7 @@
         <Legendary/>
         <DisplayId>Dimensional Prism</DisplayId>
     </Object>
-    <Object type="0x6141" id="Leather Jacket">
+   <Object type="0x6141" id="Leather Jacket">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -31487,6 +31476,7 @@
             <EffectInfo name="" description="+10 defense and +60 maximum health"/>
         </ExtraTooltipData>
         <BagType>1</BagType>
+        <MpCost>40</MpCost>
         <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
@@ -31920,5 +31910,105 @@
         <FameBonus>4</FameBonus>
         <NumProjectiles>1</NumProjectiles>
         <OldSound>daggerSwing</OldSound>
+    </Object>
+    <Object type="0x615f" id="Jacket of True Darkness">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj6</File>
+            <Index>0xf7</Index>
+        </Texture>
+        <SlotType>35</SlotType>
+        <Description>This jacket seems to have a shadowy fog that surrounds itself.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Offensive Stance" description=""/>
+            <EffectInfo name="" description="+15 attack"/>
+            <EffectInfo name="Defensive Stance" description=""/>
+            <EffectInfo name="" description="+10 defense and +100 maximum health"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <MpCost>60</MpCost>
+        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
+        <Activate amount="100" stat="0" noStack="false">JacketAbility</Activate>
+        <Cooldown>2</Cooldown>
+    </Object>
+    <Object type="0x6160" id="Otherworldly Blades">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xad</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Description>These blades seem to have come from a distant galaxy..</Description>
+        <RateOfFire>0.75</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Otherworldly Blade Proj</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>165</MinDamage>
+            <MaxDamage>220</MaxDamage>
+            <LifetimeMS>330</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <NumProjectiles>1</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
+    </Object>
+    <Object type="0x6162" id="Bifierce Shots">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xbe</Index>
+        </Texture>
+        <AngleCorrection>0</AngleCorrection>
+    </Object>
+    <Object type="0x6163" id="The Bifierce">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xae</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Description>Forsaken blades that were left behind from the War of Decades.</Description>
+        <RateOfFire>1.25</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Legend id="3" stat="27">
+            <Name>Blademaster's Fury</Name>
+            <Description>Using your ability while being under half health will return 1 surge to your surge pool.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <ActivateOnEquip stat="22" amount="5">IncrStatPerc</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>daggerSwing</OldSound>
+        <DisplayId>The Bifierce</DisplayId>
+    </Object>
+	<Object type="0x630d" id="Gamebreaker">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xc0</Index>
+        </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Bituloss"/>
+        </ExtraTooltipData>
+        <SlotType>9</SlotType>
+        <Description> </Description>
+        <EffectEquip effect="Stasis" delay="0"/>
+		<EffectEquip effect="Invulnerable" delay="0"/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <Legendary/>
     </Object>
 </Objects>

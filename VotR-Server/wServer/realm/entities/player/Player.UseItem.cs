@@ -777,70 +777,21 @@ namespace wServer.realm.entities
 		
 		private void AEJacketAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            var prjs = new Projectile[8];
-            var prjDesc = item.Projectiles[0]; //Assume only one
-            var batch = new Packet[9];
-            for (var i = 0; i < 8; i++)
-            {
-                var proj = CreateProjectile(prjDesc, item.ObjectType,
-                    Random.Next(prjDesc.MinDamage, prjDesc.MaxDamage),
-                    time.TotalElapsedMs, new Position() { X = X, Y = Y }, (float)(i * (Math.PI * 2) / 8));
-                Owner.EnterWorld(proj);
-                FameCounter.Shoot(proj);
-                batch[i] = new ServerPlayerShoot()
-                {
-                    BulletId = proj.ProjectileId,
-                    OwnerId = Id,
-                    ContainerType = item.ObjectType,
-                    StartingPos = new Position() { X = X, Y = Y },
-                    Angle = proj.Angle,
-                    Damage = (short)proj.Damage
-                };
-                prjs[i] = proj;
-            }
-            batch[8] = new ShowEffect()
-            {
-                Pos1 = new Position() { X = X, Y = Y },
-                TargetObjectId = Id,
-            };
-
-            foreach (var plr in Owner.Players.Values
-                        .Where(p => p.DistSqr(this) < RadiusSqr))
-            {
-                plr.Client.SendPackets(batch);
-            }
-            if (BMToggle == 0)
-            {
+            if (BMToggle == 0) {
                 BMToggle = 1;
-            }
-            else if(BMToggle == 1)
-            {
+            } else if (BMToggle == 1) {
+                Stats.Boost.ActivateBoost[0].Pop(10, false);
+                Stats.Boost.ActivateBoost[1].Push(15, false);
                 Stats.Boost.ActivateBoost[eff.Stats].Push(eff.Amount, eff.NoStack);
                 Stats.ReCalculateValues();
                 BMToggle = 2;
-            }
-            else if(BMToggle == 2)
-            {
+            } else if (BMToggle == 2) {
+                Stats.Boost.ActivateBoost[0].Push(10, false);
+                Stats.Boost.ActivateBoost[1].Pop(15, false);
                 Stats.Boost.ActivateBoost[eff.Stats].Pop(eff.Amount, eff.NoStack);
                 Stats.ReCalculateValues();
                 BMToggle = 1;
             }
-                if (BMToggle == 1)
-                {
-                    ApplyConditionEffect(ConditionEffectIndex.Damaging);
-                }
-                else
-                {
-                    ApplyConditionEffect(ConditionEffectIndex.Damaging, 0);
-                }
-                if (BMToggle == 2)
-                {
-                    ApplyConditionEffect(ConditionEffectIndex.Armored);
-                }
-                else
-                {
-                    ApplyConditionEffect(ConditionEffectIndex.Armored, 0);
-                }
         }
 
         private void AESamuraiAbility(RealmTime time, Item item, Position target, ActivateEffect eff)

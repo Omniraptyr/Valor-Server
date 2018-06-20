@@ -13,6 +13,7 @@ namespace wServer.networking.packets
     public abstract class Packet
     {
         public static Dictionary<PacketId, Packet> Packets = new Dictionary<PacketId, Packet>();
+        public static Dictionary<PacketId, int> packetCount = new Dictionary<PacketId, int>();
 
         public Client Owner { get; private set; }
 
@@ -22,8 +23,9 @@ namespace wServer.networking.packets
                 if (typeof(Packet).IsAssignableFrom(i) && !i.IsAbstract)
                 {
                     Packet pkt = (Packet)Activator.CreateInstance(i);
-                    if (!(pkt is OutgoingMessage))
+                    if (!(pkt is OutgoingMessage)) {
                         Packets.Add(pkt.ID, pkt);
+                    }
                 }
         }
         public abstract PacketId ID { get; }

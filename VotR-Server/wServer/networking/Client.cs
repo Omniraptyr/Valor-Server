@@ -148,8 +148,7 @@ namespace wServer.networking
 
         internal void ProcessPacket(Packet pkt)
         {
-            using (TimedLock.Lock(DcLock))
-            {
+            lock (DcLock) {
                 if (State == ProtocolState.Disconnected)
                     return;
 
@@ -226,7 +225,7 @@ namespace wServer.networking
 
         public void Disconnect(string reason = "")
         {
-            using (TimedLock.Lock(DcLock))
+            lock (DcLock)
             {
                 if (State == ProtocolState.Disconnected)
                     return;
@@ -267,8 +266,9 @@ namespace wServer.networking
             if (!acc.Hidden && acc.AccountIdOverrider == 0)
                 acc.RefreshLastSeen();
             acc.FlushAsync();
-            Manager.Database.SaveCharacter(acc, Character, Player.FameCounter.ClassStats, true)
-                .ContinueWith(t => Manager.Database.ReleaseLock(acc));
+
+            Manager.Database.SaveCharacter(acc, Character, Player.FameCounter.ClassStats, true).GetAwaiter();
+            Manager.Database.ReleaseLock(acc);
         }
 
         public void Dispose()
