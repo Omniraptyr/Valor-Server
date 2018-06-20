@@ -32,7 +32,9 @@ namespace wServer.logic
 						new State ("default3",
 							new ConditionalEffect(ConditionEffectIndex.Invincible),
 							new Taunt ("Stand back..Let me show you what I am made of...", "Flee. NOW! Before you end up another worthless spirit."),
-							new NoPlayerWithinTransition (8, "startup")
+                            new Flash(0xff0000, 0.5, 10),
+							new NoPlayerWithinTransition (8, "startup"),
+                            new TimedTransition(5000, "startup")
 						)
 					),
 					new State ("startup",
@@ -161,7 +163,7 @@ namespace wServer.logic
 						),
 						new State("tttt",
 							new Order(6, "Yazanahar Helper 2", "Explode"),
-							new Taunt("Havent died yet have you?!", "Your lives WILL be crushed!", "Forward you come, the graves you will be."),
+							new Taunt("Haven't died yet have you?", "You WILL be crushed!", "Forward you come, the graves you will be."),
 							new ConditionalEffect(ConditionEffectIndex.Armored),
 							new TimedTransition(4000, "swagche")
 						),
@@ -200,14 +202,14 @@ namespace wServer.logic
                     new ItemLoot("Greater Potion of Defense", 0.1),
                     new ItemLoot("Greater Potion of Wisdom", 0.1),
                     new ItemLoot("Vial of Power", 1.0),
-                    new ItemLoot("Shard of Ancient Assault", 0.005),
-                    new TierLoot(11, ItemType.Weapon, 0.1),
+                    new ItemLoot("Shard of Ancient Assault", 0.01),
+                    new TierLoot(12, ItemType.Weapon, 0.05),
 					new TierLoot(6, ItemType.Ability, 0.1),
-					new TierLoot(11, ItemType.Armor, 0.1),
-					new TierLoot(5, ItemType.Ring, 0.05),
-					new TierLoot(12, ItemType.Armor, 0.05),
-					new TierLoot(12, ItemType.Weapon, 0.05),
-					new TierLoot(6, ItemType.Ring, 0.025)
+					new TierLoot(13, ItemType.Armor, 0.05),
+					new TierLoot(6, ItemType.Ring, 0.1),
+					new TierLoot(12, ItemType.Armor, 0.1),
+					new TierLoot(11, ItemType.Weapon, 0.1),
+					new TierLoot(7, ItemType.Ring, 0.05)
 				)
 			)
 

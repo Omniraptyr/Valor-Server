@@ -338,35 +338,10 @@ public class Projectile extends BasicObject {
             return;
         }
         var _local4:BitmapData = this.texture_;
-        if (Parameters.projColorType_ != 0) {
-            switch (Parameters.projColorType_) {
-                case 1:
-                    _local6 = 16777100;
-                    _local7 = 0xFFFFFF;
-                    break;
-                case 2:
-                    _local6 = 16777100;
-                    _local7 = 16777100;
-                    break;
-                case 3:
-                    _local6 = 0xFF0000;
-                    _local7 = 0xFF0000;
-                    break;
-                case 4:
-                    _local6 = 0xFF;
-                    _local7 = 0xFF;
-                    break;
-                case 5:
-                    _local6 = 0xFFFFFF;
-                    _local7 = 0xFFFFFF;
-                    break;
-                case 6:
-                    _local6 = 0;
-                    _local7 = 0;
-                    break;
-            }
-            _local4 = TextureRedrawer.redraw(_local4, 120, true, _local7);
-        }
+		
+        if (Parameters.data_.outlineProj)
+            _local4 = TextureRedrawer.redraw(_local4, 100, true, 0xFFFFFF, true, 50);
+			
         var _local5:Number = (((this.props_.rotation_ == 0)) ? 0 : (_arg3 / this.props_.rotation_));
         this.staticVector3D_.x = x_;
         this.staticVector3D_.y = y_;

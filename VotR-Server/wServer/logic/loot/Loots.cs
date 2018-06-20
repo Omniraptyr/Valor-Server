@@ -192,9 +192,16 @@ namespace wServer.logic.loot
             for (int j = 0; j < 8; j++)
                 container.Inventory[j] = items[j];
             container.BagOwners = owners;
-            container.Move(
-                enemy.X + (float)((rand.NextDouble() * 2 - 1) * 0.5),
-                enemy.Y + (float)((rand.NextDouble() * 2 - 1) * 0.5));
+            float enX = enemy.X + (float)((rand.NextDouble() * 2 - 1) * 0.5);
+            float enY = enemy.Y + (float)((rand.NextDouble() * 2 - 1) * 0.5);
+
+            ReCheck:
+            if (container.TileOccupied(enX, enY) || container.TileFullOccupied(enX, enY)) {
+                enX = enemy.X + (float)((rand.NextDouble() * 2 - 1) * 0.5);
+                enY = enemy.Y + (float)((rand.NextDouble() * 2 - 1) * 0.5);
+                goto ReCheck;
+            }
+            container.Move(enX, enY);
             container.Size = 80;
             enemy.Owner.EnterWorld(container);
         }

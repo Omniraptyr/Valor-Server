@@ -5698,4 +5698,108 @@
         <Defense>60</Defense>
         <XpMult>0.2</XpMult>
     </Object>
+	<Object type="0x6304" id="T0 Torii">
+      <Class>GameObject</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c0</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+    </Object>
+    <Object type="0x6305" id="T1 Torii">
+      <Class>GameObject</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c1</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
+   <Object type="0x6306" id="T2 Torii">
+      <Class>GameObject</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c2</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
+   <Object type="0x6307" id="T3 Torii">
+      <Class>GameObject</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c3</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
+   <Object type="0x6308" id="T4 Torii">
+      <Class>GameObject</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c4</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
+   <Object type="0x6309" id="T5 Torii">
+      <Class>GameObject</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c5</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
+   <Object type="0x630a" id="T6 Torii">
+      <Class>GameObject</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c6</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
+   <Object type="0x630b" id="Necro Torii">
+      <Class>GameObject</Class>
+      <Texture>
+        <File>lofiObjBig</File>
+        <Index>0x1c7</Index>
+      </Texture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
+   <Object type="0x630c" id="Wicked Torii">
+      <Class>GameObject</Class>
+      <AltTexture id="1">
+         <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1c8</Index>
+         </Texture>
+      </AltTexture>
+      <AltTexture id="2">
+         <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1c9</Index>
+         </Texture>
+      </AltTexture>
+      <AltTexture id="3">
+         <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1ca</Index>
+         </Texture>
+      </AltTexture>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>999999</MaxHitPoints>
+   </Object>
 </Objects>

@@ -211,7 +211,7 @@ namespace wServer.realm
                 // try again...
                 if (!client.Manager.Database.AcquireLock(acc))
                 {
-                    client.SendFailure("Account in Use (" +
+                    client.SendFailure("Account in use (" +
                         client.Manager.Database.GetLockTime(acc)?.ToString("%s") + " seconds until timeout)");
                     return;
                 }

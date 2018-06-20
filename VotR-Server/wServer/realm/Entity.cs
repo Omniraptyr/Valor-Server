@@ -564,7 +564,7 @@ namespace wServer.realm
         {
             if (Owner != null && !(this is Projectile) && !(this is Pet) && (!(this is StaticObject) || (this as StaticObject).Hittestable))
                 ((this is Enemy || this is StaticObject && !(this is Decoy)) ? Owner.EnemiesCollision : Owner.PlayersCollision)
-                    .Move(this, x, y);
+                    .Move(this, Math.Min(x, Owner.Map.Width), Math.Min(y, Owner.Map.Height));
             X = x; Y = y;
         }
 

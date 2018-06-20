@@ -11,7 +11,7 @@ import flash.utils.Dictionary;
 
 public class Parameters {
 
-    public static const BUILD_VERSION:String = "30";
+    public static const BUILD_VERSION:String = "27";
     public static const MINOR_VERSION:String = "E9";
     public static const FULL_BUILD:String = BUILD_VERSION + "." + MINOR_VERSION;
     public static const ENABLE_ENCRYPTION:Boolean = true;
@@ -51,7 +51,6 @@ public class Parameters {
     public static var data_:Object = null;
     public static var GPURenderError:Boolean = false;
     public static var blendType_:int = 1;
-    public static var projColorType_:int = 0;
     public static var drawProj_:Boolean = true;
     public static var screenShotMode_:Boolean = false;
     public static var screenShotSlimMode_:Boolean = false;
@@ -231,36 +230,7 @@ public class Parameters {
         setDefault("chatFriend", false);
         setDefault("friendStarRequirement", 0);
         setDefault("HPBar", false);
-        if (!data_.hasOwnProperty("needsSurvey")) {
-            data_.needsSurvey = data_.needsTutorial;
-            switch (int((Math.random() * 5))) {
-                case 0:
-                    data_.surveyDate = 0;
-                    data_.playTimeLeftTillSurvey = (5 * 60);
-                    data_.surveyGroup = "5MinPlaytime";
-                    return;
-                case 1:
-                    data_.surveyDate = 0;
-                    data_.playTimeLeftTillSurvey = (10 * 60);
-                    data_.surveyGroup = "10MinPlaytime";
-                    return;
-                case 2:
-                    data_.surveyDate = 0;
-                    data_.playTimeLeftTillSurvey = (30 * 60);
-                    data_.surveyGroup = "30MinPlaytime";
-                    return;
-                case 3:
-                    data_.surveyDate = (new Date().time + ((((1000 * 60) * 60) * 24) * 7));
-                    data_.playTimeLeftTillSurvey = (2 * 60);
-                    data_.surveyGroup = "1WeekRealtime";
-                    return;
-                case 4:
-                    data_.surveyDate = (new Date().time + ((((1000 * 60) * 60) * 24) * 14));
-                    data_.playTimeLeftTillSurvey = (2 * 60);
-                    data_.surveyGroup = "2WeekRealtime";
-                    return;
-            }
-        }
+        setDefault("outlineProj", true);
     }
 
 

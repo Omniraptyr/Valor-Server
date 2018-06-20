@@ -4619,4 +4619,21 @@
         <Index>0x20b</Index>
       </Texture>
    </Ground>
+   <Ground type="0x27ae" id="CC Bricks">
+      <Texture>
+        <File>d3LofiObjEmbed</File>
+        <Index>0x458</Index>
+      </Texture>
+   </Ground>
+   <Ground type="0x27af" id="CC Lava">
+      <Texture>
+        <File>d3LofiObjEmbed</File>
+        <Index>0x459</Index>
+      </Texture>
+	  <MinDamage>70</MinDamage>
+      <MaxDamage>80</MaxDamage>
+	  <Animate dx=".33" dy=".33">Flow</Animate>
+      <Sink/>
+      <Speed>.666</Speed>
+   </Ground>
 </GroundTypes>

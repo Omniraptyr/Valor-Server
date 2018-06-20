@@ -95262,20 +95262,10 @@ A whole thanksgiving turkey!
   </Object>
   <Object type="0x49f4" id="Crimson Caverns Wall">
       <Class>CaveWall</Class>
-      <RandomTexture>
-         <Texture>
-       		<File>d3LofiObjEmbed</File>
-       		<Index>0x31d</Index>
-    	 </Texture>
-         <Texture>
-       		<File>d3LofiObjEmbed</File>
-       		<Index>0x31c</Index>
-    	 </Texture>
-         <Texture>
-       		<File>d3LofiObjEmbed</File>
-       		<Index>0x31b</Index>
-    	 </Texture>
-      </RandomTexture>
+        <Texture>
+          <File>d3LofiObjEmbed</File>
+       	  <Index>0x31d</Index>
+        </Texture>
       <ShadowSize>0</ShadowSize>
       <Static/>
       <FullOccupy/>
@@ -98991,18 +98981,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>0</BagType>
         <Fuel/>
     </Object>
-    <Object type="0x54bb" id="Wheat">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x392</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>This looks like it could be tasty.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
     <Object type="0xa22" id="Health Potion">
       <Class>Equipment</Class>
       <Item/>
@@ -99037,409 +99015,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <BagType>0</BagType>
       <feedPower>5</feedPower>
    </Object>
-    <Object type="0x54bc" id="Bread">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x393</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>It can be eaten but you might be able to make it better..</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-        <Consumable/>
-        <Activate amount="35">Heal</Activate>
-    </Object>
-    <Object type="0x54bd" id="Processed Meat">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x391</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Would be a good addition to something..but you can still eat it.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-        <Consumable/>
-        <Activate amount="10">Heal</Activate>
-    </Object>
-    <Object type="0x54be" id="Cheese">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x399</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Moo?</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-        <Consumable/>
-        <Activate amount="5">Heal</Activate>
-    </Object>
-    <Object type="0x54bf" id="Slice of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x390</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Delicious!</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-        <Consumable/>
-        <Activate amount="125">Heal</Activate>
-    </Object>
-    <Object type="0x54c1" id="Full Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a4</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>4 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>4</Doses>
-        <Activate amount="150">Heal</Activate>
-        <SuccessorId>3/4 of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x54c2" id="3/4 of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a5</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>3 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>3</Doses>
-        <Activate amount="150">Heal</Activate>
-        <SuccessorId>Half of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x54c3" id="Half of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a6</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>2 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>2</Doses>
-        <Activate amount="150">Heal</Activate>
-        <SuccessorId>Quarter of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x54c4" id="Quarter of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a7</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>1 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Activate amount="150">Heal</Activate>
-        <Consumable/>
-    </Object>
-    <Object type="0x54c5" id="Karambwan Spike">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a1</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Pointy..</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54c6" id="Karambwan">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a0</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Watch how you eat this.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-        <Consumable/>
-        <Activate amount="300">Magic</Activate>
-    </Object>
-    <Object type="0x54c7" id="Spicy Karambwan">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a0</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Uh oh.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="300">Magic</Activate>
-        <Activate amount="300">Heal</Activate>
-    </Object>
-    <Object type="0x54c8" id="Chocolate Chips">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x395</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>CHOCOLATE!</Description>
-        <BagType>0</BagType>
-        <Activate amount="5">Magic</Activate>
-        <Activate amount="5">Heal</Activate>
-        <Consumable/>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54c9" id="Flour">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x398</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Just a little heavy.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54ca" id="Raw Egg">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x396</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Crack it open and let it slide right down your throat.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="15">Heal</Activate>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54cb" id="Cookie">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x394</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Monster.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="50">Heal</Activate>
-        <Activate amount="50">Magic</Activate>
-    </Object>
-    <Object type="0x54cc" id="Grilled Cheese Sandwich">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a8</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Cheesy food.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="100">Heal</Activate>
-        <Activate amount="25">Magic</Activate>
-    </Object>
-    <Object type="0x54cd" id="Soup Spices">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x39e</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Something is cooking in the kitchen, I just don't know what yet.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54ce" id="Bowl">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x39b</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Something is cooking in the kitchen, still just not sure yet.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54d4" id="Bowl of Soup">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x39a</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Mmm.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <SuccessorId>Bowl</SuccessorId>
-        <Activate amount="120">Heal</Activate>
-        <Activate amount="50">Magic</Activate>
-    </Object>
-    <Object type="0x54cf" id="Spicy Slice of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x390</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Spicy and Delicious!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="140">Heal</Activate>
-        <Activate amount="40">Magic</Activate>
-    </Object>
-    <Object type="0x54d1" id="Pepper">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3af</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>WATER!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="20">Heal</Activate>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54d2" id="Chocolate Cake">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3ac</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Oh boy!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Doses>2</Doses>
-        <Activate amount="200">Heal</Activate>
-        <SuccessorId>Half of Chocolate Cake</SuccessorId>
-    </Object>
-    <Object type="0x54d3" id="Half of Chocolate Cake">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3ad</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Oh boy!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="200">Heal</Activate>
-    </Object>
-    <Object type="0x54d5" id="Tomato">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a2</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Fresh!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Ingredient/>
-        <Activate amount="5">Heal</Activate>
-    </Object>
-    <Object type="0x54d6" id="Lettuce">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a3</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Fresh!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Ingredient/>
-        <Activate amount="5">Heal</Activate>
-    </Object>
-    <Object type="0x54d7" id="Slappy Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x39d</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>THATS ONE BIG ASS BURGER MY HOMEFRY.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Doses>2</Doses>
-        <Activate amount="400">Heal</Activate>
-        <SuccessorId>Half of Slappy Burger</SuccessorId>
-    </Object>
-    <Object type="0x54d8" id="Half of Slappy Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x39f</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>THATS ONE BIG ASS BURGER MY HOMEFRY.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="450">Heal</Activate>
-    </Object>
-    <Object type="0x54de" id="Spicy Soup">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x39a</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Kinda spicy.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <SuccessorId>Bowl</SuccessorId>
-        <Activate amount="180">Heal</Activate>
-        <Activate amount="100">Magic</Activate>
-    </Object>
-    <Object type="0x54da" id="Salad">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b4</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Good salad.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <SuccessorId>Bowl</SuccessorId>
-        <Activate amount="150">Magic</Activate>
-    </Object>
     <Object type="0x54dc" id="Forsaken Shield">
       <Class>Equipment</Class>
       <Item/>
@@ -99482,481 +99057,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Index>0x3be</Index>
       </Texture>
       <AngleCorrection>1</AngleCorrection>
-    </Object>
-    <Object type="0x54df" id="Super Full Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b0</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>4 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>4</Doses>
-        <Activate amount="175">Heal</Activate>
-        <SuccessorId>Super 3/4 of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x54f1" id="Super 3/4 of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b1</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>3 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>3</Doses>
-        <Activate amount="175">Heal</Activate>
-        <SuccessorId>Super Half of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x54f2" id="Super Half of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b2</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>2 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>2</Doses>
-        <Activate amount="175">Heal</Activate>
-        <SuccessorId>Super Quarter of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x54f3" id="Super Quarter of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b3</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>1 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Activate amount="175">Heal</Activate>
-        <Consumable/>
-    </Object>
-    <Object type="0x54f4" id="Middle of Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b5</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>This is the middle buddy.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54f5" id="Crunchi Candy">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b7</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>If you've got the munchi eat the crunchi TM.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-        <Activate amount="100">Heal</Activate>
-        <Consumable/>
-    </Object>
-    <Object type="0x54f6" id="Chocolate Bar">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b8</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Its tastey.</Description>
-        <BagType>0</BagType>
-        <Activate amount="100">Heal</Activate>
-        <Activate amount="100">Magic</Activate>
-        <Consumable/>
-    </Object>
-    <Object type="0x54f7" id="Raw Fish">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b9</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Cook it up.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54f8" id="Cooked Fish">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3ba</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Eat it up.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="100">Heal</Activate>
-        <Ingredient/>
-    </Object>
-    <Object type="0x54f9" id="Spicy Cooked Fish">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3ba</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Touch of spice.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="100">Heal</Activate>
-        <Activate effect="Healing" duration="2">ConditionEffectSelf</Activate>
-    </Object>
-    <Object type="0x54fa" id="Milk">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3bd</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Better bones?</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="25">Heal</Activate>
-        <Activate effect="Armored" duration="2">ConditionEffectSelf</Activate>
-        <Ingredient/>
-    </Object>
-    <Object type="0x55a1" id="Raw Chicken">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c2</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Not safe to eat.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x55a2" id="Cooked Chicken">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c1</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Safe to eat.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="200">Heal</Activate>
-    </Object>
-        <Object type="0x55a3" id="Cracked Coconut">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c0</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Kinda Hard.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Ingredient/>
-        <Activate amount="10">Heal</Activate>
-    </Object>
-    <Object type="0x55a4" id="Coconut Milk">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3bd</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Better bones and nuts?</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="160">Heal</Activate>
-        <Activate effect="Armored" duration="2">ConditionEffectSelf</Activate>
-    </Object>
-    <Object type="0x55a5" id="Bag of Rice">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3b6</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Oh yes, it that rice.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x55a6" id="Rice Bowl">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a9</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Good rice bowl.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <SuccessorId>Bowl</SuccessorId>
-        <Activate amount="175">Heal</Activate>
-    </Object>
-    <Object type="0x55a7" id="Sugar">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x397</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Sweet.</Description>
-        <BagType>0</BagType>
-        <Ingredient/>
-    </Object>
-    <Object type="0x55a8" id="Sweet Rice Bowl">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a9</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Good sweet rice bowl.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <SuccessorId>Bowl</SuccessorId>
-        <Activate effect="Healing" duration="3">ConditionEffectSelf</Activate>
-        <Activate amount="175">Heal</Activate>
-    </Object>
-        <Object type="0x55a9" id="Chicken Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c3</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Yum, Chickin.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Doses>2</Doses>
-        <Activate amount="200">Heal</Activate>
-        <Activate amount="50">Magic</Activate>
-        <Activate effect="Healing" duration="1.5">ConditionEffectSelf</Activate>
-        <SuccessorId>Half of Chicken Burger</SuccessorId>
-    </Object>
-    <Object type="0x55aa" id="Half of Chicken Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c4</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Yum, Chickin.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="200">Heal</Activate>
-        <Activate amount="50">Magic</Activate>
-        <Activate effect="Healing" duration="1.5">ConditionEffectSelf</Activate>
-    </Object>
-  <Object type="0x44d5" id="Dragon Pearl">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>d3LofiObjEmbed</File>
-      <Index>0x215</Index>
-    </Texture>
-    <SlotType>10</SlotType>
-    <Description>A delicious spice.</Description>
-    <BagType>9</BagType>
-    <Ingredient/>
-  </Object>
-  <Object type="0x55ab" id="Drago Spicy Karambwan">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a0</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Uh oh.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="600">Magic</Activate>
-        <Activate amount="600">Heal</Activate>
-    </Object>
-  <Object type="0x55ac" id="Ghost Remnant">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-     <File>d3LofiObjEmbed</File>
-     <Index>0x3c5</Index>
-    </Texture>
-    <SlotType>10</SlotType>
-    <Description>What will I do with this?</Description>
-    <BagType>0</BagType>
-    <Ingredient/>
-  </Object>
-      <Object type="0x55ad" id="Ghost Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c6</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Boo!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Doses>3</Doses>
-        <Activate amount="600">Magic</Activate>
-        <Activate amount="600">Heal</Activate>
-        <SuccessorId>2/3 of Ghost Burger</SuccessorId>
-    </Object>
-    <Object type="0x55ae" id="2/3 of Ghost Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c7</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Boo!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Doses>2</Doses>
-        <Activate amount="600">Magic</Activate>
-        <Activate amount="600">Heal</Activate>
-        <SuccessorId>1/3 of Ghost Burger</SuccessorId>
-    </Object>
-    <Object type="0x55af" id="1/3 of Ghost Burger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3c8</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>Boo!</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="600">Magic</Activate>
-        <Activate amount="600">Heal</Activate>
-    </Object>
-    <Object type="0x55b1" id="Golden Chocolate Bar">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3a0</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>A delecacy.</Description>
-        <BagType>0</BagType>
-        <Consumable/>
-        <Activate amount="1200">Heal</Activate>
-    </Object>
-    <Object type="0x55b2" id="Strange Full Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3ca</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>4 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>4</Doses>
-        <Activate amount="2000">Heal</Activate>
-        <Activate amount="2000">Magic</Activate>
-        <Activate effect="Healing" duration="3">ConditionEffectSelf</Activate>
-        <SuccessorId>Strange 3/4 of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x55b3" id="Strange 3/4 of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3cb</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>3 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>3</Doses>
-        <Activate amount="2000">Heal</Activate>
-        <Activate amount="2000">Magic</Activate>
-        <Activate effect="Healing" duration="3">ConditionEffectSelf</Activate>
-        <SuccessorId>Strange Half of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x55b4" id="Strange Half of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3cc</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>2 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Doses>2</Doses>
-        <Activate amount="2000">Heal</Activate>
-        <Activate amount="2000">Magic</Activate>
-        <Activate effect="Healing" duration="3">ConditionEffectSelf</Activate>
-        <SuccessorId>Strange Quarter of Pizza</SuccessorId>
-        <Consumable/>
-    </Object>
-    <Object type="0x55b5" id="Strange Quarter of Pizza">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x3cd</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>1 slices of deliciousness!</Description>
-        <BagType>0</BagType>
-        <Activate amount="2000">Heal</Activate>
-        <Activate amount="2000">Magic</Activate>
-        <Activate effect="Healing" duration="3">ConditionEffectSelf</Activate>
-        <Consumable/>
-    </Object>
-     <Object type="0x55b6" id="GhostP Proj">
-      <Class>Projectile</Class>
-      <Texture>
-        <File>d3LofiObjEmbed</File>
-        <Index>0x3ce</Index>
-      </Texture>
-      <AngleCorrection>1</AngleCorrection>
-    </Object>
-    <Object type="0x55b7" id="Ghost Pepper">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-          <File>d3LofiObjEmbed</File>
-          <Index>0x3cf</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Description>BOO-M!</Description>
-        <BagType>0</BagType>
-        <Activate effect="Invisible" duration="4">ConditionEffectSelf</Activate>
-        <Consumable/>
     </Object>
     <Object type="0x55b9" id="Mechanic">
         <Class>Player</Class>
@@ -110523,7 +109623,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       </Texture>
   </Object>
      <Object type="0x6304" id="T0 Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c0</Index>
@@ -110533,7 +109633,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <MaxHitPoints>999999</MaxHitPoints>
     </Object>
     <Object type="0x6305" id="T1 Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c1</Index>
@@ -110543,7 +109643,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
    <Object type="0x6306" id="T2 Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c2</Index>
@@ -110553,7 +109653,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
    <Object type="0x6307" id="T3 Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c3</Index>
@@ -110563,7 +109663,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
    <Object type="0x6308" id="T4 Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c4</Index>
@@ -110573,7 +109673,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
    <Object type="0x6309" id="T5 Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c5</Index>
@@ -110583,7 +109683,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
    <Object type="0x630a" id="T6 Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c6</Index>
@@ -110593,7 +109693,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
    <Object type="0x630b" id="Necro Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c7</Index>
@@ -111853,7 +110953,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
-	    <Object type="0x6141" id="Leather Jacket">
+	<Object type="0x6141" id="Leather Jacket">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -111867,24 +110967,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+15 attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +40 maximum health"/>
+            <EffectInfo name="" description="+10 defense and +40 maximum health"/>
         </ExtraTooltipData>
-        <Projectile>
-            <ObjectId>Jacket Razor 1</ObjectId>
-            <Speed>150</Speed>
-            <MinDamage>20</MinDamage>
-            <MaxDamage>30</MaxDamage>
-            <LifetimeMS>600</LifetimeMS>
-            <Size>100</Size>
-            <MultiHit/>
-            <Boomerang/>
-        </Projectile>
         <BagType>1</BagType>
         <MpCost>35</MpCost>
-        <SurgeCost>5</SurgeCost>
-        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="40" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
@@ -111902,24 +110990,11 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+15 attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +60 maximum health"/>
+            <EffectInfo name="" description="+10 defense and +60 maximum health"/>
         </ExtraTooltipData>
-        <Projectile>
-            <ObjectId>Jacket Razor 1</ObjectId>
-            <Speed>150</Speed>
-            <MinDamage>30</MinDamage>
-            <MaxDamage>40</MaxDamage>
-            <LifetimeMS>600</LifetimeMS>
-            <Size>100</Size>
-            <MultiHit/>
-            <Boomerang/>
-        </Projectile>
         <BagType>1</BagType>
-        <MpCost>40</MpCost>
-        <SurgeCost>5</SurgeCost>
-        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
@@ -111937,24 +111012,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+15 attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +60 maximum health"/>
+            <EffectInfo name="" description="+10 defense and +60 maximum health"/>
         </ExtraTooltipData>
-        <Projectile>
-            <ObjectId>Jacket Razor 1</ObjectId>
-            <Speed>150</Speed>
-            <MinDamage>50</MinDamage>
-            <MaxDamage>60</MaxDamage>
-            <LifetimeMS>600</LifetimeMS>
-            <Size>100</Size>
-            <MultiHit/>
-            <Boomerang/>
-        </Projectile>
         <BagType>1</BagType>
         <MpCost>50</MpCost>
-        <SurgeCost>5</SurgeCost>
-        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
@@ -111972,24 +111035,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+15 attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +60 maximum health"/>
+            <EffectInfo name="" description="+10 defense and +60 maximum health"/>
         </ExtraTooltipData>
-        <Projectile>
-            <ObjectId>Jacket Razor 1</ObjectId>
-            <Speed>150</Speed>
-            <MinDamage>70</MinDamage>
-            <MaxDamage>80</MaxDamage>
-            <LifetimeMS>600</LifetimeMS>
-            <Size>100</Size>
-            <MultiHit/>
-            <Boomerang/>
-        </Projectile>
         <BagType>2</BagType>
         <MpCost>60</MpCost>
-        <SurgeCost>5</SurgeCost>
-        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
@@ -112007,24 +111058,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+15 attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +80 maximum health"/>
+            <EffectInfo name="" description="+10 defense and +80 maximum health"/>
         </ExtraTooltipData>
-        <Projectile>
-            <ObjectId>Jacket Razor 1</ObjectId>
-            <Speed>150</Speed>
-            <MinDamage>75</MinDamage>
-            <MaxDamage>85</MaxDamage>
-            <LifetimeMS>600</LifetimeMS>
-            <Size>100</Size>
-            <MultiHit/>
-            <Boomerang/>
-        </Projectile>
         <BagType>2</BagType>
         <MpCost>60</MpCost>
-        <SurgeCost>5</SurgeCost>
-        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="80" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
@@ -112042,25 +111081,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+15 attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +100 maximum health"/>
+            <EffectInfo name="" description="+10 defense and +100 maximum health"/>
         </ExtraTooltipData>
-        <Projectile>
-            <ObjectId>Jacket Razor 1</ObjectId>
-            <Speed>150</Speed>
-            <MinDamage>75</MinDamage>
-            <MaxDamage>85</MaxDamage>
-            <LifetimeMS>600</LifetimeMS>
-            <Size>100</Size>
-            <MultiHit/>
-            <ConditionEffect duration="2">Weak</ConditionEffect>
-            <Boomerang/>
-        </Projectile>
         <BagType>4</BagType>
         <MpCost>65</MpCost>
-        <SurgeCost>5</SurgeCost>
-        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="100" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
@@ -112078,25 +111104,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+15 attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +120 maximum health"/>
+            <EffectInfo name="" description="+10 defense and +120 maximum health"/>
         </ExtraTooltipData>
-        <Projectile>
-            <ObjectId>Jacket Razor 1</ObjectId>
-            <Speed>150</Speed>
-            <MinDamage>90</MinDamage>
-            <MaxDamage>100</MaxDamage>
-            <LifetimeMS>600</LifetimeMS>
-            <Size>100</Size>
-            <MultiHit/>
-            <ConditionEffect duration="2">Weak</ConditionEffect>
-            <Boomerang/>
-        </Projectile>
         <BagType>4</BagType>
         <MpCost>65</MpCost>
-        <SurgeCost>5</SurgeCost>
-        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="120" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>

@@ -485,7 +485,7 @@ namespace wServer.logic.loot
         public void Populate(RealmManager manager, Enemy enemy, Tuple<Player, int> playerDat,
                              Random rand, IList<LootDef> lootDefs)
         {
-            if (playerDat != null && playerDat.Item2 / (double)enemy.ObjectDesc.MaxHP >= threshold)
+            if (playerDat != null && playerDat.Item2 / (double)enemy.ObjectDesc.MaxHP >= threshold / Math.Max(enemy.Owner.Players.Count() / 2, 1))
             {
                 foreach (var i in children)
                     i.Populate(manager, enemy, null, rand, lootDefs);

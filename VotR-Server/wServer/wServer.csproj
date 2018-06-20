@@ -124,7 +124,6 @@
     <Compile Include="logic\db\BehaviorDb.BloodMage.cs" />
     <Compile Include="logic\db\BehaviorDb.CandyLand.cs" />
     <Compile Include="logic\db\BehaviorDb.Catacombs.cs" />
-    <Compile Include="logic\db\BehaviorDb.Cheese.cs" />
     <Compile Include="logic\db\BehaviorDb.Concealment.cs" />
     <Compile Include="logic\db\BehaviorDb.CrawlingDepths.cs" />
     <Compile Include="logic\db\BehaviorDb.Crystal.cs" />
@@ -133,7 +132,6 @@
     <Compile Include="logic\db\BehaviorDb.DavyJones.cs" />
     <Compile Include="logic\db\BehaviorDb.DeadwaterDocks.cs" />
     <Compile Include="logic\db\BehaviorDb.Deathmage.cs" />
-    <Compile Include="logic\db\BehaviorDb.Dojo.cs" />
     <Compile Include="logic\db\BehaviorDb.Draconis.cs" />
     <Compile Include="logic\db\BehaviorDb.ElementalRuins.cs" />
     <Compile Include="logic\db\BehaviorDb.EntAncient.cs" />
