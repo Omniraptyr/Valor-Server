@@ -328,6 +328,10 @@ namespace wServer.realm.entities
 
         private void Activate(RealmTime time, Item item, Position target)
         {
+            if(CheckBifierce() == true)
+            {
+                Surge++;
+            }
             ActivateSecondaryPower(SecondaryPowerIdentify());
             if (!CheckDim())
             {

@@ -51,6 +51,21 @@ namespace wServer.realm.entities
                 return false;
             }
         }
+        public bool CheckBifierce()
+        {
+            if (Inventory[0] == null)
+            {
+                return false;
+            }
+            if (Inventory[0].ObjectId == "The Bifierce" && HP <= Stats[0]/2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public bool CheckAnubis()
         {
             if (Inventory[2] == null)

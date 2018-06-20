@@ -111873,6 +111873,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Projectile>
         <BagType>1</BagType>
         <MpCost>35</MpCost>
+        <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="40" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
@@ -111907,6 +111908,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Projectile>
         <BagType>1</BagType>
         <MpCost>40</MpCost>
+        <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
@@ -111941,6 +111943,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Projectile>
         <BagType>1</BagType>
         <MpCost>50</MpCost>
+        <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
@@ -111975,6 +111978,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Projectile>
         <BagType>2</BagType>
         <MpCost>60</MpCost>
+        <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
@@ -112009,6 +112013,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Projectile>
         <BagType>2</BagType>
         <MpCost>60</MpCost>
+        <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="80" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
@@ -112044,6 +112049,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Projectile>
         <BagType>4</BagType>
         <MpCost>65</MpCost>
+        <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="100" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
@@ -112079,6 +112085,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Projectile>
         <BagType>4</BagType>
         <MpCost>65</MpCost>
+        <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="120" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
@@ -112512,7 +112519,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <UnlockLevel level="20">Templar</UnlockLevel>
 		<DisplayId>Blademaster</DisplayId>
     </Object>
-	<Object type="0x615f" id="Jacket of True Darkness">
+    <Object type="0x615f" id="Jacket of True Darkness">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -112544,6 +112551,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <MpCost>60</MpCost>
+        <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="100" stat="0" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
@@ -112580,5 +112588,47 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Index>0xbd</Index>
         </Texture>
         <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6162" id="Bifierce Shots">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xbe</Index>
+        </Texture>
+        <AngleCorrection>0</AngleCorrection>
+    </Object>
+    <Object type="0x6163" id="The Bifierce">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xae</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Description>Forsaken blades that were left behind from the War of Decades.</Description>
+        <RateOfFire>1.25</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Bifierce Shots</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>195</MinDamage>
+            <MaxDamage>265</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <MultiHit/>
+            <CondChance effect="Dazed" chance="1" duration="4"/>
+        </Projectile>
+        <Legend id="3" stat="27">
+            <Name>Blademaster's Fury</Name>
+            <Description>Using your ability while being under half health will return 1 surge to your surge pool.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <ActivateOnEquip stat="22" amount="5">IncrStatPerc</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <NumProjectiles>1</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
+        <DisplayId>The Bifierce</DisplayId>
     </Object>
 </Objects>
