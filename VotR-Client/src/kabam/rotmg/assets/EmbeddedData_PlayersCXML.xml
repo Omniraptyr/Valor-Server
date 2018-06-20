@@ -866,8 +866,8 @@
         <LevelIncrease min="0" max="1">Luck</LevelIncrease>
         <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
         <LevelIncrease min="0" max="1">Protection</LevelIncrease>
-        <UnlockLevel level="20">Rogue</UnlockLevel>
-        <UnlockLevel level="20">Warrior</UnlockLevel>
+        <UnlockLevel level="20">Gambler</UnlockLevel>
+        <UnlockLevel level="20">Templar</UnlockLevel>
         <DisplayId>Blademaster</DisplayId>
     </Object>
 </Objects>

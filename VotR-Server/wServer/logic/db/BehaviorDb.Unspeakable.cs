@@ -180,7 +180,8 @@ namespace wServer.logic
                     new TierLoot(10, ItemType.Armor, 0.05),
                     new TierLoot(10, ItemType.Weapon, 0.05),
                     new TierLoot(4, ItemType.Ring, 0.025),
-                    new ItemLoot("Ghilact Dagger", 0.04)
+                    new ItemLoot("Ghilact Dagger", 0.04),
+                    new ItemLoot("Jacket of True Darkness", 0.01)
                 )
             )
 
@@ -377,6 +378,7 @@ namespace wServer.logic
                 new ItemLoot("Greater Potion of Dexterity", 0.5),
                 new ItemLoot("Greater Potion of Vitality", 0.5),
 		    	new ItemLoot("Night Dice", 0.02),
+                new ItemLoot("Jacket of True Darkness", 0.025),
                 new ItemLoot("Broadsword of Bloodshed", 0.02),
                 new ItemLoot("Evil Shield of the Dark Knight", 0.02),
                 new ItemLoot("Amulet of the Dark Knight", 0.02),

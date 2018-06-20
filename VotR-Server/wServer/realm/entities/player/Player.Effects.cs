@@ -105,6 +105,12 @@ namespace wServer.realm.entities
             {
                 ApplyConditionEffect(ConditionEffectIndex.Alliance, 0);
             }
+
+            if (HasConditionEffect(ConditionEffects.Protected) && HasConditionEffect(ConditionEffects.Corrupted))
+            {
+                ApplyConditionEffect(ConditionEffectIndex.Corrupted, 0);
+            }
+
             var playerDesc = Manager.Resources.GameData.Classes[ObjectType];
 
 
