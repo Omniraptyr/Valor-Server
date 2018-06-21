@@ -414,7 +414,14 @@ namespace wServer.realm.entities
                      SendHelp("You have obtained a Elite Lootbox drop! Go to nexus to open it!");
                 }
             }
-            if (exp != 0)
+            if (enemy.ObjectDesc.UElitedrop == true)
+            {
+                Client.Manager.Database.UpdateLootbox4(acc, 1);
+                Lootbox4 += 1;
+                this.ForceUpdate(Lootbox4);
+                SendHelp("You have obtained a Elite Lootbox drop! Go to nexus to open it!");
+            }
+                if (exp != 0)
             {
                 Experience += exp;
             }

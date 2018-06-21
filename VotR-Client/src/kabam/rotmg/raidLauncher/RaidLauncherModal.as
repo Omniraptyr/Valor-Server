@@ -54,7 +54,8 @@ public class RaidLauncherModal extends EmptyFrame {
     public var launchButton:DeprecatedTextButton;
     public var ultraCheckbox:CheckBoxField;
     private var triggeredOnStartup:Boolean;
-
+    public var launchButton2:DeprecatedTextButton;
+    public var ultraCheckbox2:CheckBoxField;
     public function RaidLauncherModal(_arg1:Boolean = false) {
         this.triggeredOnStartup = _arg1;
         this.fontModel = StaticInjectorContext.getInjector().getInstance(FontModel);
@@ -121,17 +122,17 @@ public class RaidLauncherModal extends EmptyFrame {
         _local3.height = 80;
         _local3.y = 30;
         _local3.alpha = 1.00;
-       /* var _local5:DisplayObject = new raid2launchFlagEmbed();
+        var _local5:DisplayObject = new raid2launchFlagEmbed();
         _local5.width = 440;
         _local5.height = 80;
         _local5.y = 150;
-        _local5.alpha = 0.75;*/
+        _local5.alpha = 0.75;
         var _local4:PopupWindowBackground = new PopupWindowBackground();
         _local4.draw(modalWidth, modalHeight, PopupWindowBackground.TYPE_TRANSPARENT_WITH_HEADER);
         _local1.addChild(_local2);
         _local1.addChild(_local3);
         _local1.addChild(_local4);
-        //_local1.addChild(_local5);
+        _local1.addChild(_local5);
         this.launchButton = new DeprecatedTextButton(12, "Launch");
         this.launchButton.y = 118
         this.launchButton.x = this.launchButton.x + 10
@@ -142,6 +143,17 @@ public class RaidLauncherModal extends EmptyFrame {
         this.ultraCheckbox.x = this.launchButton.x + 80
         _local1.addChild(this.ultraCheckbox);
         this.launchButton.addEventListener(MouseEvent.CLICK, this.onMouseClick)
+
+        this.launchButton2 = new DeprecatedTextButton(12, "Launch");
+        this.launchButton2.y = 236
+        this.launchButton2.x = this.launchButton2.x + 10
+        this.launchButton2.setEnabled(true);
+        _local1.addChild(this.launchButton2);
+        this.ultraCheckbox2 = new CheckBoxField("Ultra", false)
+        this.ultraCheckbox2.y = this.launchButton2.y
+        this.ultraCheckbox2.x = this.launchButton2.x + 80
+        _local1.addChild(this.ultraCheckbox2);
+        this.launchButton2.addEventListener(MouseEvent.CLICK, this.onMouseClick)
         return (_local1);
     }
     private function onMouseClick(e:MouseEvent):void {

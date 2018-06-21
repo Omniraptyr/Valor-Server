@@ -1750,7 +1750,7 @@ namespace wServer.logic
                         new TimedTransition(6000, "Success")
                         ),
                     new State("Failure",
-                        new Shoot(60, count: 56, projectileIndex: 1, coolDown: 99999),
+                        new KillPlayer("The Zol sends you to the abyss.", coolDown: 1000, rekt: false, killAll: true),
                         new Suicide()
                         ),
                     new State("Success",
@@ -1912,7 +1912,7 @@ namespace wServer.logic
                         new TimedTransition(6000, "Success")
                         ),
                     new State("Failure",
-                        new Shoot(60, count: 56, projectileIndex: 1, coolDown: 99999),
+                        new KillPlayer("The Zol sends you to the abyss.", coolDown: 1000, rekt: false, killAll: true),
                         new Suicide()
                         ),
                     new State("Success",

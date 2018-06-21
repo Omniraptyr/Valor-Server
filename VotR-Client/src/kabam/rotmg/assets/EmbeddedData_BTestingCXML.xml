@@ -9959,4 +9959,18 @@
         <Size>0</Size>
         <XpMult>0.0</XpMult>
     </Object>
+    <Object type="0x6164" id="The Baphomet">
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1bc</Index>
+        </Texture>
+        <HitSound>monster/abyss_brutes_hit</HitSound>
+        <DeathSound>monster/abyss_brutes_death</DeathSound>
+        <Size>150</Size>
+        <ShadowSize>60</ShadowSize>
+        <MaxHitPoints>180000</MaxHitPoints>
+        <Flying/>
+        <Defense>40</Defense>
+    </Object>
 </Objects>

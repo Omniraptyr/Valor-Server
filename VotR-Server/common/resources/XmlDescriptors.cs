@@ -1184,6 +1184,7 @@ namespace common.resources
         public bool Quest { get; private set; }
         public bool Lootdrop { get; private set; }
         public bool Elitedrop { get; private set; }
+        public bool UElitedrop { get; private set; }
         public int? Level { get; private set; }
         public bool ArmorBreakImmune { get; private set; }
         public bool CurseImmune { get; private set; }
@@ -1267,6 +1268,7 @@ namespace common.resources
             Quest = elem.Element("Quest") != null;
             Lootdrop = elem.Element("Lootdrop") != null;
             Elitedrop = elem.Element("Elitedrop") != null;
+            UElitedrop = elem.Element("UElitedrop") != null;
             if ((n = elem.Element("Level")) != null)
                 Level = Utils.FromString(n.Value);
             else
