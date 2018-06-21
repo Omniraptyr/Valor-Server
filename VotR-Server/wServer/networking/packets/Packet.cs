@@ -13,6 +13,7 @@ namespace wServer.networking.packets
     public abstract class Packet
     {
         public static Dictionary<PacketId, Packet> Packets = new Dictionary<PacketId, Packet>();
+        public static Dictionary<PacketId, int> packetCount = new Dictionary<PacketId, int>();
 
         public Client Owner { get; private set; }
 
@@ -23,7 +24,9 @@ namespace wServer.networking.packets
                 {
                     Packet pkt = (Packet)Activator.CreateInstance(i);
                     if (!(pkt is OutgoingMessage))
+                    {
                         Packets.Add(pkt.ID, pkt);
+                    }
                 }
         }
         public abstract PacketId ID { get; }
@@ -47,7 +50,7 @@ namespace wServer.networking.packets
             var s = new MemoryStream();
             Write(new NWriter(s));
 
-            var bodyLength = (int) s.Position;
+            var bodyLength = (int)s.Position;
             var packetLength = bodyLength + 5;
 
             if (packetLength > buff.Length - offset)
@@ -61,7 +64,7 @@ namespace wServer.networking.packets
                 BitConverter.GetBytes(IPAddress.HostToNetworkOrder(packetLength)), 0,
                 buff, offset, 4);
 
-            buff[offset + 4] = (byte) ID;
+            buff[offset + 4] = (byte)ID;
             return packetLength;
         }
 

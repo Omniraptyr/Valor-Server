@@ -80,7 +80,7 @@ namespace wServer.logic.loot
         {
             if (playerDat != null) return;
             var dat = manager.Resources.GameData;
-            if (dat.IdToObjectType.ContainsKey(item) 
+            if (dat.IdToObjectType.ContainsKey(item)
                 && dat.Items.ContainsKey(dat.IdToObjectType[item]))
                 lootDefs.Add(new LootDef(dat.Items[dat.IdToObjectType[item]], probability));
         }
@@ -98,7 +98,7 @@ namespace wServer.logic.loot
     public class TierLoot : ILootDef
     {
         public static readonly int[] WeaponT = new int[] { 1, 2, 3, 8, 17, 24, 29, 34 };
-        public static readonly int[] AbilityT = new int[] { 4, 5, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 27, 28, 30, 32, 33, 35};
+        public static readonly int[] AbilityT = new int[] { 4, 5, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 27, 28, 30, 32, 33, 35 };
         public static readonly int[] ArmorT = new int[] { 6, 7, 14, };
         public static readonly int[] RingT = new int[] { 9 };
         public static readonly int[] PotionT = new int[] { 10 };
@@ -485,7 +485,7 @@ namespace wServer.logic.loot
         public void Populate(RealmManager manager, Enemy enemy, Tuple<Player, int> playerDat,
                              Random rand, IList<LootDef> lootDefs)
         {
-            if (playerDat != null && playerDat.Item2 / (double)enemy.ObjectDesc.MaxHP >= threshold)
+            if (playerDat != null && playerDat.Item2 / (double)enemy.ObjectDesc.MaxHP >= threshold / Math.Max(enemy.Owner.Players.Count() / 2, 1))
             {
                 foreach (var i in children)
                     i.Populate(manager, enemy, null, rand, lootDefs);

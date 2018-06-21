@@ -16,7 +16,7 @@ namespace wServer.realm
         private const int EffectCount = 63;
 
         protected static readonly ILog Log = LogManager.GetLogger(typeof(Entity));
-        
+
         public RealmManager Manager { get; }
         public World Owner { get; private set; }
         public int Id { get; internal set; }
@@ -96,12 +96,12 @@ namespace wServer.realm
             }
             private set { _y.SetValue(value); }
         }
-        
+
         Entity IProjectileOwner.Self => this;
         private readonly Projectile[] _projectiles;
         Projectile[] IProjectileOwner.Projectiles => _projectiles;
         protected byte projectileId;
-        
+
         public bool TickStateManually { get; set; }
         public State CurrentState { get; private set; }
         private bool _stateEntry;
@@ -115,7 +115,7 @@ namespace wServer.realm
                 return _states;
             }
         }
-        
+
         protected Entity(RealmManager manager, ushort objType)
         {
             _name = new SV<string>(this, StatsType.Name, "");
@@ -194,7 +194,7 @@ namespace wServer.realm
         {
             var stats = new Dictionary<StatsType, object>();
             ExportStats(stats);
-            
+
             return new ObjectStats()
             {
                 Id = Id,
@@ -367,9 +367,9 @@ namespace wServer.realm
             float fx = 0;
             float fy = 0;
 
-            var isFarX = (X % .5f == 0 && x != X) || (int) (X / .5f) != (int) (x / .5f);
-            var isFarY = (Y % .5f == 0 && y != Y) || (int) (Y / .5f) != (int) (y / .5f);
-            
+            var isFarX = (X % .5f == 0 && x != X) || (int)(X / .5f) != (int)(x / .5f);
+            var isFarY = (Y % .5f == 0 && y != Y) || (int)(Y / .5f) != (int)(y / .5f);
+
             if ((!isFarX && !isFarY) || RegionUnblocked(x, y))
             {
                 pos.X = x;
@@ -379,25 +379,25 @@ namespace wServer.realm
 
             if (isFarX)
             {
-                fx = (x > X) ? (int) (x * 2) / 2f : (int) (X * 2) / 2f;
-                if ((int) fx > (int) X)
+                fx = (x > X) ? (int)(x * 2) / 2f : (int)(X * 2) / 2f;
+                if ((int)fx > (int)X)
                     fx = fx - 0.01f;
             }
 
             if (isFarY)
             {
-                fy = (y > Y) ? (int) (y * 2) / 2f : (int) (Y * 2) / 2f;
-                if ((int) fy > (int) Y)
+                fy = (y > Y) ? (int)(y * 2) / 2f : (int)(Y * 2) / 2f;
+                if ((int)fy > (int)Y)
                     fy = fy - 0.01f;
             }
-			
+
             if (!isFarX)
             {
                 pos.X = x;
                 pos.Y = fy;
                 return;
             }
-			
+
             if (!isFarY)
             {
                 pos.X = fx;
@@ -439,7 +439,7 @@ namespace wServer.realm
                     return;
                 }
             }
-			
+
             pos.X = fx;
             pos.Y = fy;
         }
@@ -448,15 +448,15 @@ namespace wServer.realm
         {
             if (TileOccupied(x, y))
                 return false;
-			
-            var xFrac = x - (int) x;
-            var yFrac = y - (int) y;
+
+            var xFrac = x - (int)x;
+            var yFrac = y - (int)y;
 
             if (xFrac < 0.5)
             {
                 if (TileFullOccupied(x - 1, y))
                     return false;
-                
+
                 if (yFrac < 0.5)
                 {
                     if (TileFullOccupied(x, y - 1) || TileFullOccupied(x - 1, y - 1))
@@ -476,7 +476,7 @@ namespace wServer.realm
             {
                 if (TileFullOccupied(x + 1, y))
                     return false;
-                    
+
                 if (yFrac < 0.5)
                 {
                     if (TileFullOccupied(x, y - 1) || TileFullOccupied(x + 1, y - 1))
@@ -506,11 +506,11 @@ namespace wServer.realm
 
             return true;
         }
-        
+
         public bool TileOccupied(float x, float y)
         {
-            var x_ = (int) x;
-            var y_ = (int) y;
+            var x_ = (int)x;
+            var y_ = (int)y;
 
             var map = Owner.Map;
 
@@ -522,7 +522,7 @@ namespace wServer.realm
             var tileDesc = Manager.Resources.GameData.Tiles[tile.TileId];
             if (tileDesc?.NoWalk == true)
                 return true;
-            
+
             if (tile.ObjType != 0)
             {
                 var objDesc = Manager.Resources.GameData.ObjectDescs[tile.ObjType];
@@ -535,8 +535,8 @@ namespace wServer.realm
 
         public bool TileFullOccupied(float x, float y)
         {
-            var xx = (int) x;
-            var yy = (int) y;
+            var xx = (int)x;
+            var yy = (int)y;
 
             if (!Owner.Map.Contains(xx, yy))
                 return true;
@@ -564,7 +564,7 @@ namespace wServer.realm
         {
             if (Owner != null && !(this is Projectile) && !(this is Pet) && (!(this is StaticObject) || (this as StaticObject).Hittestable))
                 ((this is Enemy || this is StaticObject && !(this is Decoy)) ? Owner.EnemiesCollision : Owner.PlayersCollision)
-                    .Move(this, x, y);
+                    .Move(this, Math.Min(x, Owner.Map.Width), Math.Min(y, Owner.Map.Height));
             X = x; Y = y;
         }
 
@@ -678,7 +678,7 @@ namespace wServer.realm
 
             return ObjectDesc.Enemy || ObjectDesc.Player;
         }
-        
+
         void ProcessConditionEffects(RealmTime time)
         {
             if (_effects == null || !_tickingEffects) return;
@@ -704,7 +704,7 @@ namespace wServer.realm
                 {
                     newEffects |= (ConditionEffects)((ulong)1 << i);
                 }
-                    
+
             }
 
             ConditionEffects = newEffects;

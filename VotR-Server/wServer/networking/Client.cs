@@ -30,7 +30,7 @@ namespace wServer.networking
         static readonly ILog Log = LogManager.GetLogger(typeof(Client));
 
         public RealmManager Manager { get; private set; }
-        
+
         static readonly byte[] ServerKey = new byte[] { 0x61, 0x2a, 0x80, 0x6c, 0xac, 0x78, 0x11, 0x4b, 0xa5, 0x01, 0x3c, 0xb5, 0x31 };
         static byte[] _clientKey = new byte[] { 0x81, 0x1f, 0x50, 0x39, 0x1f, 0xb4, 0x55, 0x89, 0x9c, 0xa9, 0xd7, 0x4b, 0x72 };
 
@@ -63,7 +63,7 @@ namespace wServer.networking
 
         internal readonly object DcLock = new object();
 
-        public Client(Server server, RealmManager manager, 
+        public Client(Server server, RealmManager manager,
             SocketAsyncEventArgs send, SocketAsyncEventArgs receive,
             byte[] clientKey)
         {
@@ -73,7 +73,7 @@ namespace wServer.networking
 
             ReceiveKey = new RC4(_clientKey);
             SendKey = new RC4(ServerKey);
-            
+
             _handler = new CommHandler(this, send, receive);
         }
 
@@ -148,7 +148,7 @@ namespace wServer.networking
 
         internal void ProcessPacket(Packet pkt)
         {
-            using (TimedLock.Lock(DcLock))
+            lock (DcLock)
             {
                 if (State == ProtocolState.Disconnected)
                     return;
@@ -184,7 +184,7 @@ namespace wServer.networking
             Manager.ConMan.AddReconnect(Account.AccountId, pkt);
             SendPacket(pkt);
         }
-        
+
         public async void SendFailure(string text, int errorId = 0)
         {
             SendPacket(new Failure()
@@ -226,7 +226,7 @@ namespace wServer.networking
 
         public void Disconnect(string reason = "")
         {
-            using (TimedLock.Lock(DcLock))
+            lock (DcLock)
             {
                 if (State == ProtocolState.Disconnected)
                     return;
@@ -262,13 +262,14 @@ namespace wServer.networking
                 Manager.Database.ReleaseLock(acc);
                 return;
             }
-            
+
             Player.SaveToCharacter();
             if (!acc.Hidden && acc.AccountIdOverrider == 0)
                 acc.RefreshLastSeen();
             acc.FlushAsync();
-            Manager.Database.SaveCharacter(acc, Character, Player.FameCounter.ClassStats, true)
-                .ContinueWith(t => Manager.Database.ReleaseLock(acc));
+
+            Manager.Database.SaveCharacter(acc, Character, Player.FameCounter.ClassStats, true).GetAwaiter();
+            Manager.Database.ReleaseLock(acc);
         }
 
         public void Dispose()

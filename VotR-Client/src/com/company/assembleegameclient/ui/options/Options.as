@@ -237,12 +237,12 @@ public class Options extends Sprite {
             case TextKey.OPTIONS_SOUND:
                 this.addSoundOptions();
                 return;
-            /*case TextKey.OPTIONS_MISC:
-                this.addMiscOptions();
-                return;
-            case TextKey.OPTIONS_FRIEND:
-                this.addFriendOptions();
-                return;*/
+                /*case TextKey.OPTIONS_MISC:
+                    this.addMiscOptions();
+                    return;
+                case TextKey.OPTIONS_FRIEND:
+                    this.addFriendOptions();
+                    return;*/
             case "Experimental":
                 this.addExperimentalOptions();
                 return;
@@ -471,6 +471,7 @@ public class Options extends Sprite {
         this.addOptionAndPosition(new ChoiceOption("particleEffect", makeHighLowLabels(), [true, false], "Toggle Particle Effect", "This toggles whether to show particle effects", null));
         this.addOptionAndPosition(new ChoiceOption("uiQuality", makeHighLowLabels(), [true, false], "Toggle UI Quality", "This allows you to pick the ui quality", onUIQualityToggle));
         this.addOptionAndPosition(new ChoiceOption("HPBar", makeOnOffLabels(), [true, false], "HP Bar", "This toggles whether to show the hp bar", null));
+        this.addOptionAndPosition(new ChoiceOption("outlineProj", makeOnOffLabels(), [true, false], "Toggle Projectile Outline", "This toggles whether to outline projectiles", null));
     }
 
     private function onShowQuestPortraitsChange():void {

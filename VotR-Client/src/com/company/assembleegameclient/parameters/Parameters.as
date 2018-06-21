@@ -40,10 +40,10 @@ public class Parameters {
     public static const RANDOM1:String = "B1A5ED";
     public static const RANDOM2:String = "612a806cac78114ba5013cb531";
     public static const RSA_PUBLIC_KEY:String =
-        "-----BEGIN PUBLIC KEY-----\n" +
-        "MFswDQYJKoZIhvcNAQEBBQADSgAwRwJAeyjMOLhcK4o2AnFRhn8vPteUy5Fux/cX" +
-        "N/J+wT/zYIEUINo02frn+Kyxx0RIXJ3CvaHkwmueVL8ytfqo8Ol/OwIDAQAB\n" +
-        "-----END PUBLIC KEY-----";
+            "-----BEGIN PUBLIC KEY-----\n" +
+            "MFswDQYJKoZIhvcNAQEBBQADSgAwRwJAeyjMOLhcK4o2AnFRhn8vPteUy5Fux/cX" +
+            "N/J+wT/zYIEUINo02frn+Kyxx0RIXJ3CvaHkwmueVL8ytfqo8Ol/OwIDAQAB\n" +
+            "-----END PUBLIC KEY-----";
     public static const skinTypes16:Vector.<int> = new <int>[1027, 0x0404, 1029, 1030, 10973];
     public static const itemTypes16:Vector.<int> = new <int>[5473, 5474, 5475, 5476, 10939];
 
@@ -51,7 +51,6 @@ public class Parameters {
     public static var data_:Object = null;
     public static var GPURenderError:Boolean = false;
     public static var blendType_:int = 1;
-    public static var projColorType_:int = 0;
     public static var drawProj_:Boolean = true;
     public static var screenShotMode_:Boolean = false;
     public static var screenShotSlimMode_:Boolean = false;
@@ -231,36 +230,7 @@ public class Parameters {
         setDefault("chatFriend", false);
         setDefault("friendStarRequirement", 0);
         setDefault("HPBar", false);
-        if (!data_.hasOwnProperty("needsSurvey")) {
-            data_.needsSurvey = data_.needsTutorial;
-            switch (int((Math.random() * 5))) {
-                case 0:
-                    data_.surveyDate = 0;
-                    data_.playTimeLeftTillSurvey = (5 * 60);
-                    data_.surveyGroup = "5MinPlaytime";
-                    return;
-                case 1:
-                    data_.surveyDate = 0;
-                    data_.playTimeLeftTillSurvey = (10 * 60);
-                    data_.surveyGroup = "10MinPlaytime";
-                    return;
-                case 2:
-                    data_.surveyDate = 0;
-                    data_.playTimeLeftTillSurvey = (30 * 60);
-                    data_.surveyGroup = "30MinPlaytime";
-                    return;
-                case 3:
-                    data_.surveyDate = (new Date().time + ((((1000 * 60) * 60) * 24) * 7));
-                    data_.playTimeLeftTillSurvey = (2 * 60);
-                    data_.surveyGroup = "1WeekRealtime";
-                    return;
-                case 4:
-                    data_.surveyDate = (new Date().time + ((((1000 * 60) * 60) * 24) * 14));
-                    data_.playTimeLeftTillSurvey = (2 * 60);
-                    data_.surveyGroup = "2WeekRealtime";
-                    return;
-            }
-        }
+        setDefault("outlineProj", true);
     }
 
 

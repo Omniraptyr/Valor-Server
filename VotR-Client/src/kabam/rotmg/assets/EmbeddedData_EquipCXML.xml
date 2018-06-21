@@ -28130,7 +28130,7 @@
         <BagType>4</BagType>
         <FameBonus>4</FameBonus>
         <MpCost>100</MpCost>
-        <Activate range="4" amount="7" players="true" duration="2" effect="Armored" color="0xF4CC00" objType="0x620a">Torii</Activate>	
+        <Activate range="4" amount="7" players="true" duration="2" effect="Armored" color="0xF4CC00" objType="0x620a">Torii</Activate>
 		<Cooldown>7</Cooldown>
     </Object>
     <Object type="0x5818" id="Necromantic Charm">
@@ -32203,7 +32203,7 @@
 		<Legendary/>
     </Object>
 	<Object type="0x6304" id="T0 Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c0</Index>
@@ -32213,7 +32213,7 @@
       <MaxHitPoints>999999</MaxHitPoints>
     </Object>
     <Object type="0x6305" id="T1 Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c1</Index>
@@ -32223,7 +32223,7 @@
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
    <Object type="0x6306" id="T2 Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c2</Index>
@@ -32233,7 +32233,7 @@
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
    <Object type="0x6307" id="T3 Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c3</Index>
@@ -32243,7 +32243,7 @@
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
    <Object type="0x6308" id="T4 Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c4</Index>
@@ -32253,7 +32253,7 @@
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
    <Object type="0x6309" id="T5 Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c5</Index>
@@ -32263,7 +32263,7 @@
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
    <Object type="0x630a" id="T6 Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c6</Index>
@@ -32273,7 +32273,7 @@
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
    <Object type="0x630b" id="Necro Torii">
-      <Class>Character</Class>
+      <Class>GameObject</Class>
       <Texture>
         <File>lofiObjBig</File>
         <Index>0x1c7</Index>

@@ -484,33 +484,6 @@ public class MapUserInput {
                     break;
             }
         }
-        if (this.areFKeysAvailable) {
-            switch (_arg1.keyCode) {
-                case KeyCodes.F6:
-                    TextureRedrawer.clearCache();
-                    Parameters.projColorType_ = ((Parameters.projColorType_ + 1) % 7);
-                    this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, ("Projectile Color Type: " + Parameters.projColorType_)));
-                    break;
-                case KeyCodes.F7:
-                    for each (_local10 in this.gs_.map.squares_) {
-                        if (_local10 != null) {
-                            _local10.faces_.length = 0;
-                        }
-                    }
-                    Parameters.blendType_ = ((Parameters.blendType_ + 1) % 2);
-                    this.addTextLine.dispatch(ChatMessage.make(Parameters.CLIENT_CHAT_NAME, ("Blend type: " + Parameters.blendType_)));
-                    break;
-                case KeyCodes.F8:
-                    Parameters.data_.surveyDate = 0;
-                    Parameters.data_.needsSurvey = true;
-                    Parameters.data_.playTimeLeftTillSurvey = 5;
-                    Parameters.data_.surveyGroup = "testing";
-                    break;
-                case KeyCodes.F9:
-                    Parameters.drawProj_ = !(Parameters.drawProj_);
-                    break;
-            }
-        }
         this.setPlayerMovement();
     }
 
@@ -567,7 +540,7 @@ public class MapUserInput {
     }
 
     private function useItem(slot:int):void {
-       if (this.tabStripModel.currentSelection == TabStripModel.BACKPACK) {
+        if (this.tabStripModel.currentSelection == TabStripModel.BACKPACK) {
             slot = slot + GeneralConstants.NUM_INVENTORY_SLOTS;
         }
         var slotIndex:int =
@@ -582,7 +555,7 @@ public class MapUserInput {
         }
         else {
             GameServerConnection.instance.useItem_new(this.gs_.map.player_, slot);
-   }
+        }
     }
 
     private function togglePerformanceStats():void {

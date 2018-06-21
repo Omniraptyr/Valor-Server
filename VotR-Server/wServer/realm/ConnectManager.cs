@@ -211,7 +211,7 @@ namespace wServer.realm
                 // try again...
                 if (!client.Manager.Database.AcquireLock(acc))
                 {
-                    client.SendFailure("Account in Use (" +
+                    client.SendFailure("Account in use (" +
                         client.Manager.Database.GetLockTime(acc)?.ToString("%s") + " seconds until timeout)");
                     return;
                 }
@@ -308,7 +308,7 @@ namespace wServer.realm
                 acc.RefreshLastSeen();
                 acc.FlushAsync();
             }
-            
+
             // send out map info
             var mapSize = Math.Max(world.Map.Width, world.Map.Height);
             client.SendPacket(new MapInfo()
@@ -343,7 +343,7 @@ namespace wServer.realm
                     .Select(i => i.ToString())
                     .ToArray()
             });
-            
+
             client.State = ProtocolState.Handshaked;
             _connecting.TryAdd(client, DateTime.Now.AddSeconds(ConnectingTTL));
         }
