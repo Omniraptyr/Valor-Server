@@ -112637,4 +112637,20 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Flying/>
         <Defense>40</Defense>
     </Object>
+	    <Object type="0x53a1" id="Lost Scripture">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x370</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A page ripped from the lost book named the Acul. This book was locked behind the Depths guarded by the ancient Yazanahar.</Description>
+        <BagType>11</BagType>
+        <Legendary/>
+        <PoZPage/>
+        <Activate>MarksActivate</Activate>
+        <InvUse/>
+		<DisplayId>Lost Scripture</DisplayId>
+    </Object>
 </Objects>

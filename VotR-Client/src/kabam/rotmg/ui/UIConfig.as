@@ -114,7 +114,7 @@ import kabam.rotmg.ui.view.TitleView;
 import kabam.rotmg.ui.view.UnFocusAble;
 import kabam.rotmg.ui.view.components.PotionSlotMediator;
 import kabam.rotmg.ui.view.components.PotionSlotView;
-
+import kabam.rotmg.ui.signals.UpdateMarkTabSignal;
 import org.swiftsuspenders.Injector;
 
 import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
@@ -145,6 +145,7 @@ public class UIConfig implements IConfig {
         this.injector.map(StatsTabHotKeyInputSignal).asSingleton();
         this.injector.map(IconButtonFactory).asSingleton();
         this.injector.map(ImageFactory).asSingleton();
+        this.injector.map(UpdateMarkTabSignal).asSingleton();
         this.commandMap.map(ShowLoadingUISignal).toCommand(ShowLoadingUICommand);
         this.commandMap.map(ShowTitleUISignal).toCommand(ShowTitleUICommand);
         this.commandMap.map(ChooseNameSignal).toCommand(ChooseNameCommand);

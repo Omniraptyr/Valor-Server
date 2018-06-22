@@ -141,6 +141,12 @@ namespace wServer.realm
         ProtectionPoints = 125,
         ProtectionPointsMax = 126,
         Effect = 127,
+        MarksEnabled = 128,
+        Mark = 129,
+        Node1 = 130,
+        Node2 = 131,
+        Node3 = 132,
+        Node4 = 133,
 
         None = 255
     }

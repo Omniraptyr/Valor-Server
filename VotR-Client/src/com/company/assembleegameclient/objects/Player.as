@@ -139,7 +139,7 @@ public class Player extends Character {
     public var maxHPMax_:int = 0;
     public var maxMPMax_:int = 0;
     public var hasBackpack_:Boolean = false;
-    public var marksEnabled_:int = 0;
+    public var marksEnabled_:Boolean = false;
     public var mark_:int = 0;
     public var node1_:int = 0;
     public var node2_:int = 0;

@@ -768,6 +768,42 @@ namespace common
             set { SetValue<string>("effect", value); }
         }
 
+        public bool MarksEnabled
+        {
+            get { return GetValue<bool>("marksEnabled"); }
+            set { SetValue<bool>("marksEnabled", value); }
+        }
+
+        public int Mark
+        {
+            get { return GetValue<int>("mark"); }
+            set { SetValue<int>("mark", value); }
+        }
+
+        public int Node1
+        {
+            get { return GetValue<int>("node1"); }
+            set { SetValue<int>("node1", value); }
+        }
+
+        public int Node2
+        {
+            get { return GetValue<int>("node2"); }
+            set { SetValue<int>("node2", value); }
+        }
+
+        public int Node3
+        {
+            get { return GetValue<int>("node3"); }
+            set { SetValue<int>("node3", value); }
+        }
+
+        public int Node4
+        {
+            get { return GetValue<int>("node4"); }
+            set { SetValue<int>("node4", value); }
+        }
+
         public int Skin
         {
             get { return GetValue<int>("skin"); }

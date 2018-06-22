@@ -561,6 +561,9 @@ namespace wServer.realm.entities
 					case ActivateEffects.JacketAbility:
                         AEJacketAbility(time, item, target, eff);
                         break;
+                    case ActivateEffects.MarksActivate:
+                        AEMarksActivate(time, item, target, eff);
+                        break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
@@ -740,6 +743,33 @@ namespace wServer.realm.entities
             else
             {
                 SendError("You must be a donator to use this item!");
+            }
+        }
+
+        private void AEMarksActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            if (true)
+            {
+                for (int i = 0; i < Inventory.Length; i++)
+                {
+                    if (Inventory[i] == null) continue;
+                    if (Inventory[i].ObjectId == "Lost Scripture")
+                    {
+                        Inventory[i] = null;
+                        SaveToCharacter();
+
+                        break;
+                    }
+                    else
+                    {
+                        SendError("You do not have a Lost Scripture in your inventory.");
+                    }
+                }
+                
+            }
+            else
+            {
+                SendError("You must have at least 20 stars before you can activate marks on this character.");
             }
         }
 

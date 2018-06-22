@@ -377,7 +377,7 @@ namespace common.resources
         DiceActivate,
         DDiceActivate,
         PLootboxActivate,
-        MarkActivate,
+        MarksActivate,
         Banner,
         SorMachine,
         SiphonAbility,

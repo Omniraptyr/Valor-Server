@@ -32115,7 +32115,8 @@
         <Legendary/>
         <PoZPage/>
         <Activate>MarksActivate</Activate>
-        <Consumable/>
+        <InvUse/>
+        <DisplayId>The Bifierce</DisplayId>
     </Object>
     <Object type="0x61dc" id="Moonlight">
         <Class>Equipment</Class>

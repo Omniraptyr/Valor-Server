@@ -299,11 +299,13 @@ namespace wServer.realm.entities
                 HP = Stats[0];
                 MP = Stats[1];
 
+                var playerDesc = Manager.Resources.GameData.Classes[ObjectType];
+
                 if (Level == 20)
                 {
                     foreach (var i in Owner.Players.Values)
                     {
-                        i.SendInfo(Name + " achieved level 20");
+                        i.SendInfo(Name + " achieved level 20 as a " + playerDesc.ObjectId + " !");
                     }
                 }
                 else
@@ -421,9 +423,12 @@ namespace wServer.realm.entities
                 this.ForceUpdate(Lootbox4);
                 SendHelp("You have obtained a Elite Lootbox drop! Go to nexus to open it!");
             }
-                if (exp != 0)
+            if (exp != 0)
             {
-                Experience += exp;
+                foreach (var i in Owner.PlayersCollision.HitTest(X, Y, 16).Where(e => e is Player))
+                {
+                    Experience += exp;
+                }
             }
             if (!HasConditionEffect(ConditionEffects.Exhausted))
                 SurgeActivation(time);

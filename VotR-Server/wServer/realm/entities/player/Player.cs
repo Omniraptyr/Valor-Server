@@ -137,6 +137,48 @@ namespace wServer.realm.entities
             set { _texture2.SetValue(value); }
         }
 
+        private readonly SV<bool> _marksEnabled;
+        public bool MarksEnabled
+        {
+            get { return _marksEnabled.GetValue(); }
+            set { _marksEnabled.SetValue(value); }
+        }
+
+        private readonly SV<int> _mark;
+        public int Mark
+        {
+            get { return _mark.GetValue(); }
+            set { _mark.SetValue(value); }
+        }
+
+        private readonly SV<int> _node1;
+        public int Node1
+        {
+            get { return _node1.GetValue(); }
+            set { _node1.SetValue(value); }
+        }
+
+        private readonly SV<int> _node2;
+        public int Node2
+        {
+            get { return _node2.GetValue(); }
+            set { _node2.SetValue(value); }
+        }
+
+        private readonly SV<int> _node3;
+        public int Node3
+        {
+            get { return _node3.GetValue(); }
+            set { _node3.SetValue(value); }
+        }
+
+        private readonly SV<int> _node4;
+        public int Node4
+        {
+            get { return _node4.GetValue(); }
+            set { _node4.SetValue(value); }
+        }
+
         private readonly SV<string> _effect;
         public string Effect
         {
@@ -339,7 +381,13 @@ namespace wServer.realm.entities
                 case StatsType.NameChosen: NameChosen = (int)val != 0; break;
                 case StatsType.Texture1: Texture1 = (int)val; break;
                 case StatsType.Texture2: Texture2 = (int)val; break;
-                case StatsType.Effect: Effect = (string)val; break;
+                case StatsType.Effect: XmlEffect = (string)val; break;
+                case StatsType.MarksEnabled: MarksEnabled = (int)val == 1; break;
+                case StatsType.Mark: Mark = (int)val; break;
+                case StatsType.Node1: Node1 = (int)val; break;
+                case StatsType.Node2: Node2 = (int)val; break;
+                case StatsType.Node3: Node3 = (int)val; break;
+                case StatsType.Node4: Node4 = (int)val; break;
                 case StatsType.Skin: Skin = (int)val; break;
                 case StatsType.Glow: Glow = (int)val; break;
                 case StatsType.MP: MP = (int)val; break;
@@ -423,6 +471,12 @@ namespace wServer.realm.entities
             stats[StatsType.Texture2] = Texture2;
             stats[StatsType.Texture2] = Texture2;
             stats[StatsType.Effect] = XmlEffect == "" ? PlayerEffects.GetXML(Effect) : XmlEffect;
+            stats[StatsType.MarksEnabled] = (MarksEnabled) ? 1 : 0;
+            stats[StatsType.Mark] = Mark;
+            stats[StatsType.Node1] = Node1;
+            stats[StatsType.Node2] = Node2;
+            stats[StatsType.Node3] = Node3;
+            stats[StatsType.Node4] = Node4;
             stats[StatsType.Skin] = Skin;
             stats[StatsType.Glow] = Glow;
             stats[StatsType.MP] = MP;
@@ -514,6 +568,13 @@ namespace wServer.realm.entities
             chr.Tex1 = Texture1;
             chr.Tex2 = Texture2;
             chr.Skin = _originalSkin;
+            chr.Effect = XmlEffect;
+            chr.MarksEnabled = MarksEnabled;
+            chr.Mark = Mark;
+            chr.Node1 = Node1;
+            chr.Node2 = Node2;
+            chr.Node3 = Node3;
+            chr.Node4 = Node4;
             chr.FameStats = FameCounter.Stats.Write();
             chr.LastSeen = DateTime.Now;
             chr.HealthStackCount = HealthPots.Count;
@@ -557,6 +618,12 @@ namespace wServer.realm.entities
             _glow = new SV<int>(this, StatsType.Glow, 0);
             _mp = new SV<int>(this, StatsType.MP, client.Character.MP);
             _hasBackpack = new SV<bool>(this, StatsType.HasBackpack, client.Character.HasBackpack, true);
+            _marksEnabled = new SV<bool>(this, StatsType.MarksEnabled, client.Character.MarksEnabled, true);
+            _mark = new SV<int>(this, StatsType.Mark, 0);
+            _node1 = new SV<int>(this, StatsType.Node1, 0);
+            _node2 = new SV<int>(this, StatsType.Node2, 0);
+            _node3 = new SV<int>(this, StatsType.Node3, 0);
+            _node4 = new SV<int>(this, StatsType.Node4, 0);
             _xpBoosted = new SV<bool>(this, StatsType.XPBoost, client.Character.XPBoostTime != 0, true);
             _oxygenBar = new SV<int>(this, StatsType.OxygenBar, -1, true);
             _rank = new SV<int>(this, StatsType.Rank, client.Account.Rank);
