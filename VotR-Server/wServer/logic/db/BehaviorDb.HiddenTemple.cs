@@ -234,19 +234,11 @@ namespace wServer.logic
                             new TimedTransition(250, "Quadforce1")
                         )
                     )
-                 ),
-                new Threshold(0.01,
-                 new ItemLoot("Wig's Secret Magic Juice", 0.02)
                  )
                )
               .Init("Temple Boss",
                 new State(
-                    new ConditionalEffect(ConditionEffectIndex.StunImmune),
-                    new ConditionalEffect(ConditionEffectIndex.ParalyzeImmune),
-                    new ConditionalEffect(ConditionEffectIndex.ArmorBreakImmune),
-                    new ConditionalEffect(ConditionEffectIndex.DazedImmune),
-                    new ConditionalEffect(ConditionEffectIndex.CurseImmune),
-                    new TransformOnDeath("Anubis Test Chest", 1, 1, 1),
+                    new AnnounceOnDeath("Anubis was banished from his own tomb!"),
                     new HpLessTransition(0.12, "rage"),
                     new State("default",
                         new Taunt(1.00, "Fall into your own doom."),
@@ -259,7 +251,7 @@ namespace wServer.logic
                         new TimedTransition(1000, "mainphase")
                         ),
                    new State("mainphase",
-                      new Shoot(10, count: 7, projectileIndex: 5, coolDown: 5000),
+                      new Shoot(10, count: 6, projectileIndex: 5, coolDown: 5000),
                       new TimedTransition(10875, "killthem"),
                        new State("2",
                         new Taunt(1.00, "The other ancients have no real power. I will destoy you."),
@@ -267,7 +259,7 @@ namespace wServer.logic
                              new Follow(0.30, 8, 1),
                              new StayBack(0.3, 5)
                             ),
-                        new Shoot(10, count: 9, shootAngle: 18, projectileIndex: 3, coolDown: 3000),
+                        new Shoot(10, count: 4, shootAngle: 18, projectileIndex: 3, coolDown: 3000),
                         new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 1000),
                         new TimedTransition(3250, "1")
                         ),
@@ -277,7 +269,7 @@ namespace wServer.logic
                              new StayBack(0.4, 5)
                             ),
                         new Shoot(10, count: 7, shootAngle: 46, projectileIndex: 0, coolDown: 3600),
-                        new Shoot(10, count: 12, projectileIndex: 1, coolDown: 3000),
+                        new Shoot(10, count: 5, projectileIndex: 1, coolDown: 3000),
                         new Shoot(10, count: 1, projectileIndex: 2, coolDown: 1500),
                         new TimedTransition(5250, "2")
                          )
@@ -289,7 +281,7 @@ namespace wServer.logic
                             new Orbit(0.8, 2, target: null)
                             ),
                         new Shoot(10, count: 3, shootAngle: 20, predictive: 1, coolDown: 1750),
-                        new Shoot(10, count: 10, projectileIndex: 4, coolDown: 2000),
+                        new Shoot(10, count: 4, projectileIndex: 4, coolDown: 2000),
                         new TimedTransition(4500, "rush")
                         ),
                     new State("rush",
@@ -300,7 +292,7 @@ namespace wServer.logic
                             ),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Shoot(10, count: 1, projectileIndex: 6, coolDown: 2),
-                        new Shoot(10, count: 16, shootAngle: 30, projectileIndex: 7, coolDown: 2000),
+                        new Shoot(10, count: 7, shootAngle: 30, projectileIndex: 7, coolDown: 2000),
                         new TimedTransition(4500, "heal")
                         ),
                     new State("heal",
@@ -321,20 +313,36 @@ namespace wServer.logic
                     new State("vuln",
                         new Flash(0xFFFFFF, 1, 1),
                         new Taunt(1.00, "The temple can only uphold my power for so long.....", "I can't hold on to my energy...it can't last forever...", "aregh...."),
-                        new ConditionalEffect(ConditionEffectIndex.ArmorBroken),
                         new TimedTransition(6000, "starting")
                         ),
                     new State("rage",
                         new Taunt(1.00, "I WON'T ALLOW YOU TO RAID MY TEMPLE AND DESTROY ME!"),
                         new Follow(1.5, 8, 1),
                         new Flash(0xFF0000, 1, 1),
-                        new Shoot(10, count: 10, shootAngle: 28, projectileIndex: 0, coolDown: 2750),
+                        new Shoot(10, count: 2, shootAngle: 28, projectileIndex: 0, coolDown: 2750),
                         new Shoot(10, count: 6, projectileIndex: 3, coolDown: 3000),
                         new Shoot(10, count: 1, projectileIndex: 2, coolDown: 1000),
-                        new Shoot(10, count: 12, shootAngle: 35, projectileIndex: 1, coolDown: 2250),
-                        new Grenade(5, 200, 9, coolDown: 3500)
+                        new Shoot(10, count: 4, shootAngle: 35, projectileIndex: 1, coolDown: 2250),
+                        new Grenade(5, 100, 9, coolDown: 3500)
                         )
-                    )
+                    ),
+                    new MostDamagers(3,
+                    LootTemplates.GStatIncreasePotionsLoot2()
+                    ),
+                new Threshold(0.025,
+                    new ItemLoot("Sor Fragment Cache", 0.75),
+                    new ItemLoot("Onrane Cache", 0.75),
+                    new ItemLoot("Onrane", 1.00),
+                    new ItemLoot("Sor Fragment 1", 0.50),
+                    new ItemLoot("Sor Fragment 2", 0.50),
+                    new ItemLoot("Sor Fragment 3", 0.50),
+                    new ItemLoot("Lost Scripture", 0.50),
+                    new ItemLoot("Robe of Overgrowth", 0.50),
+                    new TierLoot(6, ItemType.Ability, 0.7),
+                    new TierLoot(12, ItemType.Armor, 0.07),
+                    new TierLoot(12, ItemType.Weapon, 0.07),
+                    new TierLoot(6, ItemType.Ring, 0.07)
+                )
             )
 
          .Init("Anubis Test Chest",

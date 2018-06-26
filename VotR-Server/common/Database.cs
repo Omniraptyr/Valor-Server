@@ -944,6 +944,22 @@ namespace common
 
             return task;
         }
+        public Task UpdateAlertToken(DbAccount acc, int amount, ITransaction transaction = null)
+        {
+            var trans = transaction ?? _db.CreateTransaction();
+
+            var task = trans.HashIncrementAsync(acc.Key, "raidToken", amount)
+                .ContinueWith(t =>
+                {
+                    if (!t.IsCanceled)
+                        acc.RaidToken = (int)t.Result;
+                });
+
+            if (transaction == null)
+                trans.Execute();
+
+            return task;
+        }
 
         public Task UpdateLootbox1(DbAccount acc, int amount, ITransaction transaction = null)
         {

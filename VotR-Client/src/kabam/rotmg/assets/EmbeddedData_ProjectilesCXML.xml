@@ -6521,4 +6521,81 @@
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
+    <Object type="0x6165" id="Coral Magic">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xc8</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6166" id="Coral Blast">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xc9</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6167" id="Super Coral Blast">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xca</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6168" id="Coral Star">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xcb</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x6169" id="Coral Wheel">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xcc</Index>
+        </Texture>
+        <Rotation>40</Rotation>
+    </Object>
+    <Object type="0x616a" id="Coral Boomerang">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xcd</Index>
+        </Texture>
+        <Rotation>40</Rotation>
+    </Object>
+    <Object type="0x616b" id="Ocean Wave">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xce</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x617e" id="Coral Rock">
+        <Class>Projectile</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x9c</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x9d</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x9e</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x9f</Index>
+            </Texture>
+        </RandomTexture>
+    </Object>
 </Objects>

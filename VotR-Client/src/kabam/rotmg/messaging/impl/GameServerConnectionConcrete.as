@@ -73,6 +73,7 @@ import kabam.lib.net.api.MessageMap;
 import kabam.lib.net.api.MessageProvider;
 import kabam.lib.net.impl.Message;
 import kabam.lib.net.impl.SocketServer;
+import kabam.rotmg.game.signals.UpdateAlertStatusDisplaySignal;
 import kabam.rotmg.market.MarketItemsResultSignal;
 import kabam.rotmg.market.MarketResultSignal;
 import kabam.rotmg.account.core.Account;
@@ -171,6 +172,7 @@ import kabam.rotmg.messaging.impl.incoming.pets.DeletePetMessage;
 import kabam.rotmg.messaging.impl.incoming.pets.HatchPetMessage;
 import kabam.rotmg.messaging.impl.outgoing.AcceptTrade;
 import kabam.rotmg.messaging.impl.outgoing.ActivePetUpdateRequest;
+import kabam.rotmg.messaging.impl.outgoing.AlertNotice;
 import kabam.rotmg.messaging.impl.outgoing.AoeAck;
 import kabam.rotmg.messaging.impl.outgoing.Buy;
 import kabam.rotmg.messaging.impl.outgoing.CancelTrade;
@@ -263,6 +265,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
     private var retryConnection_:Boolean = true;
     private var rand_:Random = null;
     private var giftChestUpdateSignal:GiftStatusUpdateSignal;
+    private var alertStatusUpdateSignal:UpdateAlertStatusDisplaySignal;
     private var death:Death;
     private var retryTimer_:Timer;
     private var delayBeforeReconnect:int = 2;
@@ -296,6 +299,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
     public function GameServerConnectionConcrete(_arg1:AGameSprite, _arg2:Server, _arg3:int, _arg4:Boolean, _arg5:int, _arg6:int, _arg7:ByteArray, _arg8:String, _arg9:Boolean) {
         this.injector = StaticInjectorContext.getInjector();
         this.giftChestUpdateSignal = this.injector.getInstance(GiftStatusUpdateSignal);
+        this.alertStatusUpdateSignal = this.injector.getInstance(UpdateAlertStatusDisplaySignal);
         this.addTextLine = this.injector.getInstance(AddTextLineSignal);
         this.addSpeechBalloon = this.injector.getInstance(AddSpeechBalloonSignal);
         this.updateGroundTileSignal = this.injector.getInstance(UpdateGroundTileSignal);
@@ -434,6 +438,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(LAUNCH_RAID).toMessage(LaunchRaid);
         _local1.map(SORFORGEREQUEST).toMessage(SorForgeRequest);
         _local1.map(FORGEITEM).toMessage(ForgeItem);
+        _local1.map(ALERTNOTICE).toMessage(AlertNotice);
         _local1.map(UNBOXREQUEST).toMessage(UnboxRequest);
         _local1.map(MARKET_COMMAND).toMessage(MarketCommand);
         _local1.map(FAILURE).toMessage(Failure).toMethod(this.onFailure);

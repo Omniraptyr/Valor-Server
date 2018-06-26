@@ -43,7 +43,7 @@ namespace wServer.realm.commands
             {
                 Host = "",
                 Port = 2050,
-                GameId = World.Tutorial,
+                GameId = World.PetYard,
                 Name = "Tutorial"
             });
             return true;

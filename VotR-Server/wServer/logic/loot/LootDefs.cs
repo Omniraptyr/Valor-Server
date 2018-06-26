@@ -177,6 +177,26 @@ namespace wServer.logic.loot
              };
         }
 
+        public static ILootDef[] GStatIncreasePotionsLoot2()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Greater Potion of Defense", 1),
+                    new ItemLoot("Greater Potion of Attack", 1),
+                    new ItemLoot("Greater Potion of Speed", 1),
+                    new ItemLoot("Greater Potion of Vitality", 1),
+                    new ItemLoot("Greater Potion of Wisdom", 1),
+                    new ItemLoot("Greater Potion of Dexterity", 1),
+                    new ItemLoot("Greater Potion of Restoration", 1),
+                    new ItemLoot("Greater Potion of Protection", 1),
+                    new ItemLoot("Greater Potion of Might", 1),
+                    new ItemLoot("Greater Potion of Luck", 1),
+                    new ItemLoot("Greater Potion of Life", 1),
+                    new ItemLoot("Greater Potion of Mana", 1)
+                )
+             };
+        }
 
         public static ILootDef[] GoldLoot()
         {

@@ -282,7 +282,7 @@ namespace wServer.realm
                 if (Owner.HasConditionEffect(ConditionEffects.Quiet))
                     return 0;
                 if (Owner.HasConditionEffect(ConditionEffects.Empowered))
-                    return 22f + 0.06f * wis;
+                    return 24f + 0.06f * wis;
                 if (Owner.HasConditionEffect(ConditionEffects.ManaRecovery))
                     return 26f + 0.06f * wis;
 

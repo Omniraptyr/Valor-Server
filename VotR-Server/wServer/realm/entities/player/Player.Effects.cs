@@ -17,16 +17,16 @@ namespace wServer.realm.entities
         bool surgewither;
         void HandleEffects(RealmTime time)
         {
-                if (CheckAxe())
-                {
-                    Stats.Boost.ActivateBoost[3].Push(10, false);
-                    Stats.ReCalculateValues();
-                }
-                else
-                {
-                    Stats.Boost.ActivateBoost[3].Pop(10, false);
-                    Stats.ReCalculateValues();
-                }
+            if (CheckAxe())
+            {
+                Stats.Boost.ActivateBoost[3].Push(10, false);
+                Stats.ReCalculateValues();
+            }
+            else
+            {
+                Stats.Boost.ActivateBoost[3].Pop(10, false);
+                Stats.ReCalculateValues();
+            }
             if (CheckSunMoon())
             {
                 Stats.Boost.ActivateBoost[1].Push(100, false);
@@ -110,7 +110,16 @@ namespace wServer.realm.entities
             {
                 ApplyConditionEffect(ConditionEffectIndex.Corrupted, 0);
             }
-
+            if (HasConditionEffect(ConditionEffects.Protected))
+            {
+                ApplyConditionEffect(ConditionEffectIndex.ParalyzeImmune);
+                ApplyConditionEffect(ConditionEffectIndex.StunImmune);
+            }
+            else
+            {
+                ApplyConditionEffect(ConditionEffectIndex.ParalyzeImmune, 0);
+                ApplyConditionEffect(ConditionEffectIndex.StunImmune, 0);
+            }
             var playerDesc = Manager.Resources.GameData.Classes[ObjectType];
 
 

@@ -51,6 +51,7 @@ namespace wServer.logic
             )
         .Init("Hand of Terradius",
                 new State(
+                    new AnnounceOnDeath("One of Terradius's henchmen are down..3 more to go.."),
                     new HpLessTransition(0.11, "Die"),
                     new State(
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -214,17 +215,23 @@ namespace wServer.logic
                         new Suicide()
                         )
                     ),
+                new MostDamagers(3,
+                    LootTemplates.GStatIncreasePotionsLoot2()
+                    ),
                 new Threshold(0.025,
-                    new ItemLoot("Greater Potion of Life", 1.0),
-                    new TierLoot(11, ItemType.Weapon, 0.1),
+                    new ItemLoot("Sor Fragment Cache", 0.75),
+                    new ItemLoot("Onrane Cache", 0.75),
+                    new ItemLoot("Onrane", 1.00),
+                    new ItemLoot("Sor Fragment 1", 0.50),
+                    new ItemLoot("Sor Fragment 2", 0.50),
+                    new ItemLoot("Sor Fragment 3", 0.50),
+                    new ItemLoot("Lost Scripture", 0.50),
+                    new ItemLoot("Mirror Dagger", 0.25),
+                    new ItemLoot("Adroit Armor", 0.25),
                     new TierLoot(6, ItemType.Ability, 0.1),
-                    new TierLoot(11, ItemType.Armor, 0.1),
-                    new TierLoot(12, ItemType.Armor, 0.05),
-                    new TierLoot(12, ItemType.Weapon, 0.05),
-                    new TierLoot(4, ItemType.Ring, 0.025),
-                    new ItemLoot("Onrane", 0.75),
-                    new ItemLoot("Sapphire Sword", 0.085),
-                    new ItemLoot("The Cataclysmic Veil", 0.01)
+                    new TierLoot(12, ItemType.Armor, 0.1),
+                    new TierLoot(12, ItemType.Weapon, 0.1),
+                    new TierLoot(6, ItemType.Ring, 0.1)
                 )
             )
         .Init("Terradius Servant A",

@@ -782,7 +782,7 @@ namespace wServer.realm.entities
             ExperienceGoal = GetExpGoal(_client.Character.Level);
             Stars = GetStars();
 
-            if (owner.Name.Equals("OceanTrench"))
+            if (owner.Name.Equals("OceanTrench") || owner.Name.Equals("KrakenLair"))
                 OxygenBar = 100;
             if (owner.Name.Equals("Nexus"))
             {
@@ -910,6 +910,7 @@ namespace wServer.realm.entities
             {
                 HandleRegen(time);
                 HandleEffects(time);
+                HandleKrakenGround(time);
                 HandleOceanTrenchGround(time);
                 TickActivateEffects(time);
                 FameCounter.Tick(time);
@@ -1456,6 +1457,18 @@ namespace wServer.realm.entities
             }
             return false;
         }
+        bool isAlertArea()
+        {
+            var amount = ((int)Credits / 100) * 10;
+            if (Owner.Name == "KrakenLair" || Owner.Name == "TheHollows" || Owner.Name == "HiddenTempleBoss")
+            {
+                Client.Manager.Database.UpdateCredit(Client.Account, -amount);
+                Credits = Client.Account.Credits - amount;
+                ReconnectToNexus();
+                return true;
+            }
+            return false;
+        }
         bool isAdminsArena()
         {
             if (Owner.Name == "Admins Arena")
@@ -1592,6 +1605,8 @@ namespace wServer.realm.entities
             if (NonPermaKillEnemy(entity, killer))
                 return;
             if (TestWorld(killer))
+                return;
+            if (isAlertArea())
                 return;
             if (isAdminsArena())
                 return;

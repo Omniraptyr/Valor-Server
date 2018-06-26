@@ -1,4 +1,5 @@
 ﻿package kabam.rotmg.game {
+import com.company.assembleegameclient.game.AlertStatusModel;
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.game.GiftStatusModel;
 import com.company.assembleegameclient.game.LootboxModel;
@@ -25,6 +26,7 @@ import kabam.lib.net.impl.SocketServerModel;
 import kabam.rotmg.application.api.ApplicationSetup;
 import kabam.rotmg.chat.ChatConfig;
 import kabam.rotmg.core.signals.AppInitDataReceivedSignal;
+import kabam.rotmg.game.commands.AlertStatusUpdateCommand;
 import kabam.rotmg.game.commands.GiftStatusUpdateCommand;
 import kabam.rotmg.game.commands.LootboxUpdateCommand;
 import kabam.rotmg.game.commands.MarkShopUpdateCommand;
@@ -48,10 +50,13 @@ import kabam.rotmg.game.signals.PlayGameSignal;
 import kabam.rotmg.game.signals.SetTextBoxVisibilitySignal;
 import kabam.rotmg.game.signals.SetWorldInteractionSignal;
 import kabam.rotmg.game.signals.TextPanelMessageUpdateSignal;
+import kabam.rotmg.game.signals.UpdateAlertStatusDisplaySignal;
 import kabam.rotmg.game.signals.UpdateGiftStatusDisplaySignal;
 import kabam.rotmg.game.signals.UpdateLootboxButtonSignal;
 import kabam.rotmg.game.signals.UseBuyPotionSignal;
 import kabam.rotmg.game.signals.UpdateMarkShopButtonSignal;
+import kabam.rotmg.game.view.AlertStatusDisplay;
+import kabam.rotmg.game.view.AlertStatusMediator;
 import kabam.rotmg.game.view.CreditDisplay;
 import kabam.rotmg.game.view.CreditDisplayMediator;
 import kabam.rotmg.game.view.GameSpriteMediator;
@@ -117,6 +122,7 @@ public class GameConfig implements IConfig {
         this.injector.map(AddSpeechBalloonSignal).asSingleton();
         this.injector.map(ChatFilter).asSingleton();
         this.injector.map(GiftStatusModel).asSingleton();
+        this.injector.map(AlertStatusModel).asSingleton();
         this.injector.map(MarkShopModel).asSingleton();
         this.injector.map(LootboxModel).asSingleton();
         this.injector.map(TabStripModel).asSingleton();
@@ -144,6 +150,7 @@ public class GameConfig implements IConfig {
         this.mediatorMap.map(SorForgerUI).toMediator(SorForgerUIMediator);
         this.commandMap.map(AppInitDataReceivedSignal).toCommand(ParsePotionDataCommand);
         this.commandMap.map(GiftStatusUpdateSignal).toCommand(GiftStatusUpdateCommand);
+        this.commandMap.map(UpdateAlertStatusDisplaySignal).toCommand(AlertStatusUpdateCommand);
         this.commandMap.map(UpdateMarkShopButtonSignal).toCommand(MarkShopUpdateCommand);
         this.commandMap.map(UpdateLootboxButtonSignal).toCommand(LootboxUpdateCommand);
         this.commandMap.map(UseBuyPotionSignal).toCommand(UseBuyPotionCommand);
@@ -166,6 +173,7 @@ public class GameConfig implements IConfig {
     }
 
     private function makeGiftStatusDisplayMappings():void {
+        this.mediatorMap.map(AlertStatusDisplay).toMediator(AlertStatusMediator);
         this.mediatorMap.map(GiftStatusDisplay).toMediator(GiftStatusDisplayMediator);
         this.mediatorMap.map(GameSprite).toMediator(GameSpriteMediator);
         this.mediatorMap.map(CreditDisplay).toMediator(CreditDisplayMediator);

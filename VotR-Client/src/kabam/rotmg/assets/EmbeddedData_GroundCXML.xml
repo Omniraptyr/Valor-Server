@@ -4622,4 +4622,95 @@
         <Index>0x20b</Index>
       </Texture>
    </Ground>
+    <Ground type="0x2802" id="Kraken Floor">
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc0</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc1</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc2</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc3</Index>
+            </Texture>
+        </RandomTexture>
+    </Ground>
+    <Ground type="0x27af" id="Kraken Floor Vent">
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc4</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc5</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc6</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc7</Index>
+            </Texture>
+        </RandomTexture>
+    </Ground>
+    <Ground type="0x2800" id="Kraken Pool">
+        <Texture>
+            <File>lofiEnvironment</File>
+            <Index>0x72</Index>
+        </Texture>
+        <Animate dx="0.5" dy="0.5">Wave</Animate>
+        <Sink/>
+        <BlendPriority>2</BlendPriority>
+        <Speed>.444</Speed>
+        <CompositePriority>2</CompositePriority>
+    </Ground>
+    <Ground type="0x2801" id="Kraken Floor 1">
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc0</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc1</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc2</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc3</Index>
+            </Texture>
+        </RandomTexture>
+    </Ground>
+    <Ground type="0x2803" id="Kraken Floor 2">
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc0</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc1</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc2</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xc3</Index>
+            </Texture>
+        </RandomTexture>
+    </Ground>
 </GroundTypes>

@@ -7,7 +7,7 @@
   },
   "serverInfo": {
     "type": "World",
-    "name": "VotR Legacy Testing",
+    "name": "Valor TESTING",
     "address": "144.217.80.74", //144.217.80.74 - 127.0.0.1
     "port": "2050",
     "coordinates": {
@@ -19,7 +19,7 @@
   "serverSettings": {
     "logFolder": "./logs",
     "resourceFolder": "./resources",
-    "version": "31.E9",
+    "version": "32.E9",
     "tps": "10",
     "mode": "Single",
     "key": "B1A5ED",

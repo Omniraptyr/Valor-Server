@@ -1025,7 +1025,7 @@
         <DeathSound>monster/abyss_brutes_death</DeathSound>
         <Size>0</Size>
         <StasisImmune/>
-        <MaxHitPoints>25750</MaxHitPoints>
+        <MaxHitPoints>2000</MaxHitPoints>
         <Defense>70</Defense>
         <Projectile id="0">
             <ObjectId>Fire Magic</ObjectId>
@@ -1198,15 +1198,15 @@
         </AnimatedTexture>
         <HitSound>monster/medusa_hit</HitSound>
         <DeathSound>monster/medusa_death</DeathSound>
-        <MaxHitPoints>270000</MaxHitPoints>
+        <MaxHitPoints>42500</MaxHitPoints>
         <Size>145</Size>
-        <Defense>60</Defense>
+        <Defense>10</Defense>
         <XpMult>1</XpMult>
         <God/>
         <NoArticle/>
         <Projectile id="0">
             <ObjectId>Temple Star</ObjectId>
-            <Damage>270</Damage>
+            <Damage>160</Damage>
             <Speed>100</Speed>
             <LifetimeMS>8500</LifetimeMS>
             <Boomerang/>
@@ -1221,7 +1221,7 @@
         </Projectile>
         <Projectile id="2">
             <ObjectId>Red Arrow</ObjectId>
-            <Damage>120</Damage>
+            <Damage>80</Damage>
             <Speed>80</Speed>
             <LifetimeMS>9000</LifetimeMS>
             <Size>140</Size>
@@ -1230,7 +1230,7 @@
         </Projectile>
         <Projectile id="3">
             <ObjectId>Grey Boomerang</ObjectId>
-            <Damage>175</Damage>
+            <Damage>25</Damage>
             <Speed>80</Speed>
             <LifetimeMS>3750</LifetimeMS>
             <Boomerang/>
@@ -1238,8 +1238,8 @@
         </Projectile>
         <Projectile id="4">
             <ObjectId>Ancient Temple Slash</ObjectId>
-            <MinDamage>335</MinDamage>
-            <MaxDamage>390</MaxDamage>
+            <MinDamage>160</MinDamage>
+            <MaxDamage>200</MaxDamage>
             <Speed>135</Speed>
             <LifetimeMS>2500</LifetimeMS>
         </Projectile>
@@ -1260,14 +1260,14 @@
         </Projectile>
         <Projectile id="7">
             <ObjectId>Red Fire</ObjectId>
-            <Damage>150</Damage>
+            <Damage>70</Damage>
             <Speed>90</Speed>
             <ConditionEffect duration="3.25">Unstable</ConditionEffect>
             <LifetimeMS>2000</LifetimeMS>
         </Projectile>
         <Projectile id="8">
             <ObjectId>Steel Claw</ObjectId>
-            <Damage>65</Damage>
+            <Damage>55</Damage>
             <Speed>120</Speed>
             <ConditionEffect duration="1.75">Quiet</ConditionEffect>
             <LifetimeMS>3250</LifetimeMS>
@@ -8036,16 +8036,12 @@
         <HitSound>monster/minion_of_oryx_death</HitSound>
         <DeathSound>monster/traps_death</DeathSound>
         <Size>100</Size>
-        <ParalyzeImmune/>
-        <StasisImmune/>
-        <DazedImmune/>
-        <StunImmune/>
-        <MaxHitPoints>120000</MaxHitPoints>
-        <Defense>40</Defense>
+        <MaxHitPoints>57500</MaxHitPoints>
+        <Defense>35</Defense>
         <Projectile id="0">
             <ObjectId>Hollow Bolt</ObjectId>
-            <MinDamage>80</MinDamage>
-            <MaxDamage>140</MaxDamage>
+            <MinDamage>20</MinDamage>
+            <MaxDamage>60</MaxDamage>
             <Speed>100</Speed>
             <Size>120</Size>
             <MultiHit/>
@@ -8053,7 +8049,7 @@
         </Projectile>
         <Projectile id="1">
             <ObjectId>Hollow Blue Ball</ObjectId>
-            <MinDamage>80</MinDamage>
+            <MinDamage>50</MinDamage>
             <MaxDamage>80</MaxDamage>
             <Speed>100</Speed>
             <Size>120</Size>
@@ -8062,8 +8058,8 @@
         </Projectile>
         <Projectile id="2">
             <ObjectId>Hollow Blue Shield</ObjectId>
-            <MinDamage>180</MinDamage>
-            <MaxDamage>220</MaxDamage>
+            <MinDamage>120</MinDamage>
+            <MaxDamage>140</MaxDamage>
             <Speed>100</Speed>
             <Size>120</Size>
             <LifetimeMS>1800</LifetimeMS>
@@ -8073,19 +8069,18 @@
         </Projectile>
         <Projectile id="3">
             <ObjectId>Hollow Blue Blast</ObjectId>
-            <MinDamage>375</MinDamage>
-            <MaxDamage>450</MaxDamage>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>400</MaxDamage>
             <Speed>65</Speed>
             <Size>140</Size>
             <LifetimeMS>5000</LifetimeMS>
             <ArmorPiercing/>
-            <MultiHit/>
             <ConditionEffect duration="1.2">Slowed</ConditionEffect>
         </Projectile>
         <Projectile id="4">
             <ObjectId>Grey Boomerang</ObjectId>
-            <MinDamage>100</MinDamage>
-            <MaxDamage>180</MaxDamage>
+            <MinDamage>20</MinDamage>
+            <MaxDamage>120</MaxDamage>
             <Speed>60</Speed>
             <Size>140</Size>
             <LifetimeMS>4000</LifetimeMS>
@@ -8096,7 +8091,7 @@
         <Projectile id="5">
             <ObjectId>Blue Boomerang</ObjectId>
             <MinDamage>20</MinDamage>
-            <MaxDamage>200</MaxDamage>
+            <MaxDamage>100</MaxDamage>
             <Speed>100</Speed>
             <Size>140</Size>
             <LifetimeMS>3800</LifetimeMS>
@@ -8120,12 +8115,12 @@
         <StasisImmune/>
         <DazedImmune/>
         <StunImmune/>
-        <MaxHitPoints>4000</MaxHitPoints>
+        <MaxHitPoints>400</MaxHitPoints>
         <Defense>20</Defense>
         <Projectile id="0">
             <ObjectId>Hollow Projectile</ObjectId>
             <MinDamage>60</MinDamage>
-            <MaxDamage>140</MaxDamage>
+            <MaxDamage>70</MaxDamage>
             <Speed>100</Speed>
             <Size>100</Size>
             <MultiHit/>
@@ -8133,8 +8128,8 @@
         </Projectile>
         <Projectile id="1">
             <ObjectId>Darkness Bolt</ObjectId>
-            <MinDamage>120</MinDamage>
-            <MaxDamage>120</MaxDamage>
+            <MinDamage>20</MinDamage>
+            <MaxDamage>40</MaxDamage>
             <Speed>50</Speed>
             <Size>120</Size>
             <LifetimeMS>3000</LifetimeMS>
@@ -9972,5 +9967,679 @@
         <MaxHitPoints>180000</MaxHitPoints>
         <Flying/>
         <Defense>40</Defense>
+    </Object>
+    <Object type="0x616c" id="The Kraken">
+        <Enemy/>
+        <DisplayId>The Kraken</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1cb</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cc</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="2">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="3">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1bd</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/slimes_death</DeathSound>
+        <Size>160</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <UElitedrop/>
+        <Quest/>
+        <MaxHitPoints>50000</MaxHitPoints>
+        <Defense>5</Defense>
+        <Projectile id="0">
+            <ObjectId>Coral Magic</ObjectId>
+            <Damage>60</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Coral Blast</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Super Coral Blast</ObjectId>
+            <Damage>126</Damage>
+            <Speed>70</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ArmorPiercing/>
+            <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Coral Star</ObjectId>
+            <Damage>50</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="3">Confused</ConditionEffect>
+            <ConditionEffect duration="3">Blind</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Coral Wheel</ObjectId>
+            <Damage>200</Damage>
+            <Speed>65</Speed>
+            <Size>125</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="4">Slowed</ConditionEffect>
+            <ConditionEffect duration="4">Dazed</ConditionEffect>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Coral Boomerang</ObjectId>
+            <Damage>100</Damage>
+            <Speed>100</Speed>
+            <Size>125</Size>
+            <LifetimeMS>5000</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+    </Object>
+    <Object type="0x616d" id="Kraken Tentacle">
+        <Enemy/>
+        <DisplayId>Kraken Tentacle</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1be</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1bf</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/dwarves_death</HitSound>
+        <DeathSound>monster/flayers_hit</DeathSound>
+        <Size>130</Size>
+        <MaxHitPoints>20000</MaxHitPoints>
+        <Defense>20</Defense>
+        <Projectile id="0">
+            <ObjectId>Coral Rock</ObjectId>
+            <Damage>80</Damage>
+            <Speed>70</Speed>
+            <Size>100</Size>
+            <ConditionEffect duration="0.75">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="1">Dazed</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Ocean Wave</ObjectId>
+            <Damage>100</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>100</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+    </Object>
+    <Object type="0x616e" id="The Kraken A">
+        <Enemy/>
+        <DisplayId>The Kraken</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1cb</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cc</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="2">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="3">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1bd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="4">
+            <Texture>
+                <File>invisible</File>
+                <Index>0</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/slimes_death</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <Quest/>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>50</Defense>
+        <Projectile id="0">
+            <ObjectId>Coral Magic</ObjectId>
+            <Damage>60</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Coral Blast</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Super Coral Blast</ObjectId>
+            <Damage>126</Damage>
+            <Speed>70</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ArmorPiercing/>
+            <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Coral Star</ObjectId>
+            <Damage>50</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="3">Confused</ConditionEffect>
+            <ConditionEffect duration="3">Blind</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Coral Wheel</ObjectId>
+            <Damage>200</Damage>
+            <Speed>65</Speed>
+            <Size>125</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="4">Slowed</ConditionEffect>
+            <ConditionEffect duration="4">Dazed</ConditionEffect>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Coral Boomerang</ObjectId>
+            <Damage>100</Damage>
+            <Speed>100</Speed>
+            <Size>125</Size>
+            <LifetimeMS>5000</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+    </Object>
+    <Object type="0x616f" id="The Kraken B">
+        <Enemy/>
+        <DisplayId>The Kraken</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1cb</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cc</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="2">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="3">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1bd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="4">
+            <Texture>
+                <File>invisible</File>
+                <Index>0</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/slimes_death</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <Quest/>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>50</Defense>
+        <Projectile id="0">
+            <ObjectId>Coral Magic</ObjectId>
+            <Damage>60</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Coral Blast</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Super Coral Blast</ObjectId>
+            <Damage>126</Damage>
+            <Speed>70</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ArmorPiercing/>
+            <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Coral Star</ObjectId>
+            <Damage>50</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="3">Confused</ConditionEffect>
+            <ConditionEffect duration="3">Blind</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Coral Wheel</ObjectId>
+            <Damage>200</Damage>
+            <Speed>65</Speed>
+            <Size>125</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="4">Slowed</ConditionEffect>
+            <ConditionEffect duration="4">Dazed</ConditionEffect>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Coral Boomerang</ObjectId>
+            <Damage>100</Damage>
+            <Speed>100</Speed>
+            <Size>125</Size>
+            <LifetimeMS>5000</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+    </Object>
+    <Object type="0x6170" id="The Kraken C">
+        <Enemy/>
+        <DisplayId>The Kraken</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1cb</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cc</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="2">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="3">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1bd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="4">
+            <Texture>
+                <File>invisible</File>
+                <Index>0</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/slimes_death</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <Quest/>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>50</Defense>
+        <Projectile id="0">
+            <ObjectId>Coral Magic</ObjectId>
+            <Damage>60</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Coral Blast</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Super Coral Blast</ObjectId>
+            <Damage>126</Damage>
+            <Speed>70</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ArmorPiercing/>
+            <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Coral Star</ObjectId>
+            <Damage>50</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="3">Confused</ConditionEffect>
+            <ConditionEffect duration="3">Blind</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Coral Wheel</ObjectId>
+            <Damage>200</Damage>
+            <Speed>65</Speed>
+            <Size>125</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="4">Slowed</ConditionEffect>
+            <ConditionEffect duration="4">Dazed</ConditionEffect>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Coral Boomerang</ObjectId>
+            <Damage>100</Damage>
+            <Speed>100</Speed>
+            <Size>125</Size>
+            <LifetimeMS>5000</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+    </Object>
+    <Object type="0x6171" id="The Kraken D">
+        <Enemy/>
+        <DisplayId>The Kraken</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1cb</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cc</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="2">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="3">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1bd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="4">
+            <Texture>
+                <File>invisible</File>
+                <Index>0</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/slimes_death</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <Quest/>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>50</Defense>
+        <Projectile id="0">
+            <ObjectId>Coral Magic</ObjectId>
+            <Damage>60</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Coral Blast</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Super Coral Blast</ObjectId>
+            <Damage>126</Damage>
+            <Speed>70</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ArmorPiercing/>
+            <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Coral Star</ObjectId>
+            <Damage>50</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="3">Confused</ConditionEffect>
+            <ConditionEffect duration="3">Blind</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Coral Wheel</ObjectId>
+            <Damage>200</Damage>
+            <Speed>65</Speed>
+            <Size>125</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="4">Slowed</ConditionEffect>
+            <ConditionEffect duration="4">Dazed</ConditionEffect>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Coral Boomerang</ObjectId>
+            <Damage>100</Damage>
+            <Speed>100</Speed>
+            <Size>125</Size>
+            <LifetimeMS>5000</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+    </Object>
+    <Object type="0x6172" id="Kraken Spawner A">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6173" id="Kraken Spawner B">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6174" id="Kraken Spawner C">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6175" id="Kraken Spawner D">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6176" id="Kraken Spawner">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6177" id="Kraken Vent Controller">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6178" id="Kraken A Lifeorb">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6179" id="Kraken B Lifeorb">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x617a" id="Kraken C Lifeorb">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x617b" id="Kraken D Lifeorb">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x617c" id="Kraken Tentacle 2">
+        <Enemy/>
+        <DisplayId>Kraken Tentacle</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1be</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1bf</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/dwarves_death</HitSound>
+        <DeathSound>monster/flayers_hit</DeathSound>
+        <Size>125</Size>
+        <MaxHitPoints>2000</MaxHitPoints>
+        <Defense>10</Defense>
+        <Projectile id="0">
+            <ObjectId>Coral Rock</ObjectId>
+            <Damage>120</Damage>
+            <Speed>80</Speed>
+            <Size>100</Size>
+            <ConditionEffect duration="1.5">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="1.5">Dazed</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Ocean Wave</ObjectId>
+            <Damage>160</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>150</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
     </Object>
 </Objects>

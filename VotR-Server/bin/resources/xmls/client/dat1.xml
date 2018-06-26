@@ -76692,24 +76692,24 @@ This dagger was a myth, will you live to tell the tale?
   	<ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
     <BagType>4</BagType>
   </Object>
-  <Object type="0x1580" id="Skull of Glowing Plagues">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>lofiObj3</File>
-      <Index>0x578</Index>
-    </Texture>
-    <SlotType>19</SlotType>
-    <Description>Pestilence is an auroa around this skull, the user is bound to die. (Skull boost surrounding players' life.)</Description>
-    <ActivateOnEquip stat="28" amount="2">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="21" amount="2">IncrementStat</ActivateOnEquip>
-    <Usable/>
-    <BagType>4</BagType>
-    <FameBonus>6</FameBonus>
-    <MpCost>155</MpCost>
-    <Activate radius="2" totalDamage="155">VampireBlast</Activate>
-	<Activate stat="0" amount="100" duration="15" range="6.5">StatBoostAura</Activate>
-  </Object>
+    <Object type="0x1580" id="Skull of Glowing Plagues">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x578</Index>
+        </Texture>
+        <SlotType>19</SlotType>
+        <Description>Pestilence is an auroa around this skull, the user is bound to die. (Skull boost surrounding players' life.)</Description>
+        <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>4</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>100</MpCost>
+        <Steal type="life" amount="2"/>
+        <Activate radius="2" totalDamage="160">VampireBlast</Activate>
+        <Activate stat="0" amount="110" duration="15" range="6.5">StatBoostAura</Activate>
+    </Object>
   <Object type="0x1581" id="Ring of Pestilence">
     <Class>Equipment</Class>
     <Item/>
@@ -79532,10 +79532,13 @@ This dagger was a myth, will you live to tell the tale?
     </Texture>
     <SlotType>14</SlotType>
     <Description>A robe that has been enchanted with the deep magics of nature, and earth.</Description>
-    <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="21" amount="18">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="27" amount="2">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
+	<ActivateOnEquip stat="0" amount="20">IncrementStat</ActivateOnEquip>
+	<ActivateOnEquip stat="3" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+	<ActivateOnEquip stat="27" amount="8">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="17">IncrementStat</ActivateOnEquip>
+	<ActivateOnEquip stat="121" amount="40">IncrementStat</ActivateOnEquip>
+	<Steal type="mana" amount="4"/>
     <BagType>6</BagType>
     <FameBonus>6</FameBonus>
     <feedPower>1000</feedPower>
@@ -79571,20 +79574,24 @@ This dagger was a myth, will you live to tell the tale?
         <feedPower>1200</feedPower>
         <DisplayId>Staff of Dark Malediction</DisplayId>
     </Object>
- <Object type="0x179a" id="Adroit Armor">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>d3LofiObjEmbed</File>
-      <Index>0x6d</Index>
-    </Texture>
-    <SlotType>7</SlotType>
-    <Description>Articulated armor built by an ancient empire renowned for its acrobatic soldiers.</Description>
-    <ActivateOnEquip stat="21" amount="21">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
-    <BagType>6</BagType>
-    <FameBonus>6</FameBonus>
-  </Object>
+    <Object type="0x179a" id="Adroit Armor">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x6d</Index>
+        </Texture>
+        <SlotType>6</SlotType>
+        <Description>Articulated armor built by an ancient empire renowned for its acrobatic soldiers.</Description>
+        <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="19">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="14">IncrementStat</ActivateOnEquip>
+        <Steal type="mana" amount="2"/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+    </Object>
   <Object type="0x179b" id="Wig's Secret Magic Juice">
     <Class>Equipment</Class>
     <Item/>
@@ -80368,7 +80375,7 @@ This dagger was a myth, will you live to tell the tale?
    <DeathSound>monster/abyss_brutes_death</DeathSound>
     <Size>0</Size>
     <StasisImmune/>
-    <MaxHitPoints>25750</MaxHitPoints>
+    <MaxHitPoints>2000</MaxHitPoints>
     <Defense>70</Defense>
     <Projectile id="0">
       <ObjectId>Fire Magic</ObjectId>
@@ -80529,93 +80536,93 @@ This dagger was a myth, will you live to tell the tale?
 
 
 <Object type="0x156e" id="Temple Boss">
-    <Group>Tomb Bosses</Group>
-    <Enemy/>
-    <Class>Character</Class>
-    <DisplayId>Anubis</DisplayId>
-    <Quest/>
-    <Level>1</Level>
-     <AnimatedTexture>
-      <File>chars16x16dMountains1</File>
-      <Index>21</Index>
-    </AnimatedTexture>
-    <HitSound>monster/medusa_hit</HitSound>
-    <DeathSound>monster/medusa_death</DeathSound>
-    <MaxHitPoints>270000</MaxHitPoints>
-    <Size>145</Size>
-    <Defense>60</Defense>
-    <XpMult>1</XpMult>
-    <God/>
-    <NoArticle/>
-    <Projectile id="0">
-      <ObjectId>Temple Star</ObjectId>
-      <Damage>270</Damage>
-      <Speed>100</Speed>
-      <LifetimeMS>8500</LifetimeMS>
-    <Boomerang/>
-    <Amplitude>2.25</Amplitude>
-    </Projectile>
-    <Projectile id="1">
-      <ObjectId>Silver Shield</ObjectId>
-      <Damage>50</Damage>
-      <Speed>80</Speed>
-      <LifetimeMS>3750</LifetimeMS>
-    <ConditionEffect duration="5">Stunned</ConditionEffect>
-    </Projectile>
-    <Projectile id="2">
-      <ObjectId>Red Arrow</ObjectId>
-      <Damage>120</Damage>
-      <Speed>80</Speed>
-      <LifetimeMS>9000</LifetimeMS>
-      <Size>140</Size>
-      <ParticleTrail>0xff0000</ParticleTrail>
-    <ConditionEffect duration="2.5">Paralyzed</ConditionEffect>
-    </Projectile>
-    <Projectile id="3">
-      <ObjectId>Grey Boomerang</ObjectId>
-      <Damage>175</Damage>
-      <Speed>80</Speed>
-      <LifetimeMS>3750</LifetimeMS>
-      <Boomerang/>
-      <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
-    </Projectile>
-    <Projectile id="4">
-      <ObjectId>Ancient Temple Slash</ObjectId>
-      <MinDamage>335</MinDamage>
-      <MaxDamage>390</MaxDamage>
-      <Speed>135</Speed>
-      <LifetimeMS>2500</LifetimeMS>
-    </Projectile>
-    <Projectile id="5">
-      <ObjectId>Brown Magic</ObjectId>
-      <MinDamage>10</MinDamage>
-      <MaxDamage>80</MaxDamage>
-      <Speed>100</Speed>
-      <ConditionEffect duration="0.5">Slowed</ConditionEffect>
-      <LifetimeMS>2750</LifetimeMS>
-    </Projectile>
-    <Projectile id="6">
-      <ObjectId>Dark Gray Spinner</ObjectId>
-      <Damage>75</Damage>
-      <Speed>90</Speed>
-      <ConditionEffect duration="3.25">Darkness</ConditionEffect>
-      <LifetimeMS>2000</LifetimeMS>
-    </Projectile>
-    <Projectile id="7">
-      <ObjectId>Red Fire</ObjectId>
-      <Damage>150</Damage>
-      <Speed>90</Speed>
-      <ConditionEffect duration="3.25">Unstable</ConditionEffect>
-      <LifetimeMS>2000</LifetimeMS>
-    </Projectile>
-    <Projectile id="8">
-      <ObjectId>Steel Claw</ObjectId>
-      <Damage>65</Damage>
-      <Speed>120</Speed>
-      <ConditionEffect duration="1.75">Quiet</ConditionEffect>
-      <LifetimeMS>3250</LifetimeMS>
-    </Projectile>
-  </Object>
+        <Group>Tomb Bosses</Group>
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Anubis</DisplayId>
+        <Quest/>
+        <Level>1</Level>
+        <AnimatedTexture>
+            <File>chars16x16dMountains1</File>
+            <Index>21</Index>
+        </AnimatedTexture>
+        <HitSound>monster/medusa_hit</HitSound>
+        <DeathSound>monster/medusa_death</DeathSound>
+        <MaxHitPoints>42500</MaxHitPoints>
+        <Size>145</Size>
+        <Defense>10</Defense>
+        <XpMult>1</XpMult>
+        <God/>
+        <NoArticle/>
+        <Projectile id="0">
+            <ObjectId>Temple Star</ObjectId>
+            <Damage>160</Damage>
+            <Speed>100</Speed>
+            <LifetimeMS>8500</LifetimeMS>
+            <Boomerang/>
+            <Amplitude>2.25</Amplitude>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Silver Shield</ObjectId>
+            <Damage>50</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>3750</LifetimeMS>
+            <ConditionEffect duration="5">Stunned</ConditionEffect>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Red Arrow</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>9000</LifetimeMS>
+            <Size>140</Size>
+            <ParticleTrail>0xff0000</ParticleTrail>
+            <ConditionEffect duration="2.5">Paralyzed</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Grey Boomerang</ObjectId>
+            <Damage>25</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>3750</LifetimeMS>
+            <Boomerang/>
+            <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Ancient Temple Slash</ObjectId>
+            <MinDamage>160</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <Speed>135</Speed>
+            <LifetimeMS>2500</LifetimeMS>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Brown Magic</ObjectId>
+            <MinDamage>10</MinDamage>
+            <MaxDamage>80</MaxDamage>
+            <Speed>100</Speed>
+            <ConditionEffect duration="0.5">Slowed</ConditionEffect>
+            <LifetimeMS>2750</LifetimeMS>
+        </Projectile>
+        <Projectile id="6">
+            <ObjectId>Dark Gray Spinner</ObjectId>
+            <Damage>75</Damage>
+            <Speed>90</Speed>
+            <ConditionEffect duration="3.25">Darkness</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="7">
+            <ObjectId>Red Fire</ObjectId>
+            <Damage>70</Damage>
+            <Speed>90</Speed>
+            <ConditionEffect duration="3.25">Unstable</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="8">
+            <ObjectId>Steel Claw</ObjectId>
+            <Damage>55</Damage>
+            <Speed>120</Speed>
+            <ConditionEffect duration="1.75">Quiet</ConditionEffect>
+            <LifetimeMS>3250</LifetimeMS>
+        </Projectile>
+    </Object>
 <Object type="0x156f" id="Anubis Sarcophagus">
     <Group>Anubis Sarcophagus</Group>
     <Enemy/>
@@ -82326,21 +82333,22 @@ This dagger was a myth, will you live to tell the tale?
     <feedPower>880</feedPower>
     <DisplayId>Higher Sigil Tome</DisplayId>
   </Object>
-  <Object type="0x509b" id="Eternity Armor">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>d3LofiObjEmbed</File>
-      <Index>0xdb</Index>
-    </Texture>
-    <SlotType>7</SlotType>
-    <FameBonus>6</FameBonus>
-    <Description>Nigh-unbreakable golemsteel armor enchanted to withstand nearly any strike.</Description>
-    <BagType>6</BagType>
-    <ActivateOnEquip stat="21" amount="23">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="3" amount="20">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
-  </Object>
+    <Object type="0x509b" id="Eternity Armor">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0xdb</Index>
+        </Texture>
+        <SlotType>7</SlotType>
+        <FameBonus>6</FameBonus>
+        <Description>Nigh-unbreakable golemsteel armor enchanted to withstand nearly any strike.</Description>
+        <BagType>6</BagType>
+        <ActivateOnEquip stat="21" amount="18">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="60">IncrementStat</ActivateOnEquip>
+    </Object>
 <Object type="0x509c" id="Derp Armor">
     <Class>Equipment</Class>
     <Item/>
@@ -86597,32 +86605,33 @@ This dagger was a myth, will you live to tell the tale?
     </Texture>
     <Rotation>80</Rotation>
   </Object>
-  <Object type="0x57ad" id="Mirror Dagger">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>d3LofiObjEmbed</File>
-      <Index>0x180</Index>
-    </Texture>
-    <SlotType>2</SlotType>
-    <Description>2 sides of the problem is that it's a total issue to have twice the stupidity!</Description>
-    <RateOfFire>1.10</RateOfFire>
-    <Sound>weapon/fire_dagger</Sound>
-    <Projectile>
-      <ObjectId>Mirror Shot</ObjectId>
-      <Speed>140</Speed>
-      <MinDamage>100</MinDamage>
-      <MaxDamage>150</MaxDamage>
-      <LifetimeMS>400</LifetimeMS>
-    </Projectile>
-    <BagType>6</BagType>
-    <FameBonus>6</FameBonus>
-    <NumProjectiles>2</NumProjectiles>
-    <ArcGap>180</ArcGap>
-    <OldSound>daggerSwing</OldSound>
-    <feedPower>900</feedPower>
-    <DisplayId>Mirror Dagger</DisplayId>
-  </Object>
+    <Object type="0x57ad" id="Mirror Dagger">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x180</Index>
+        </Texture>
+        <SlotType>2</SlotType>
+        <Description>2 sides of the problem is that it's a total issue to have twice the stupidity!</Description>
+        <RateOfFire>1.25</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Mirror Shot</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>122</MinDamage>
+            <MaxDamage>190</MaxDamage>
+            <LifetimeMS>400</LifetimeMS>
+        </Projectile>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <NumProjectiles>4</NumProjectiles>
+        <ArcGap>90</ArcGap>
+        <OldSound>daggerSwing</OldSound>
+        <feedPower>900</feedPower>
+        <DisplayId>Mirror Dagger</DisplayId>
+    </Object>
   <Object type="0x57ae" id="Phenomenon Disc">
     <Class>Equipment</Class>
     <Item/>
@@ -94851,128 +94860,123 @@ A whole thanksgiving turkey!
     <DisplayId>Terradius Crystal</DisplayId>
   </Object>
   <Object type="0x49bb" id="Hand of Terradius">
-    <Enemy/>
-    <DisplayId>Hand of Terradius</DisplayId>
-    <Class>Character</Class>
-    <AnimatedTexture>
-       <File>chars16x16dMountains2</File>
-       <Index>4</Index>
-    </AnimatedTexture>
-    <AltTexture id="1">
-      <AnimatedTexture>
-          <File>chars16x16dMountains2</File>
-          <Index>5</Index>
-      </AnimatedTexture>
-      </AltTexture>
-    <HitSound>monster/minion_of_oryx_death</HitSound>
-    <DeathSound>monster/traps_death</DeathSound>
-    <Size>100</Size>
-    <ParalyzeImmune/>
-    <StasisImmune/>
-    <DazedImmune/>
-    <StunImmune/>
-    <MaxHitPoints>120000</MaxHitPoints>
-    <Defense>40</Defense>
-    <Projectile id="0">
-      <ObjectId>Hollow Bolt</ObjectId>
-      <MinDamage>80</MinDamage>
-      <MaxDamage>140</MaxDamage>
-      <Speed>100</Speed>      
-      <Size>120</Size>
-      <MultiHit/>
-      <LifetimeMS>2000</LifetimeMS>
-    </Projectile>
-    <Projectile id="1">
-      <ObjectId>Hollow Blue Ball</ObjectId>
-      <MinDamage>80</MinDamage>
-      <MaxDamage>80</MaxDamage>
-      <Speed>100</Speed>      
-      <Size>120</Size>
-      <LifetimeMS>2000</LifetimeMS>
-      <ConditionEffect duration="1">Paralyzed</ConditionEffect>
-    </Projectile>
-    <Projectile id="2">
-      <ObjectId>Hollow Blue Shield</ObjectId>
-      <MinDamage>180</MinDamage>
-      <MaxDamage>220</MaxDamage>
-      <Speed>100</Speed>      
-      <Size>120</Size>
-      <LifetimeMS>1800</LifetimeMS>
-      <ArmorPiercing/>
-      <MultiHit/>
-      <ConditionEffect duration="1.5">Stunned</ConditionEffect>
-    </Projectile>
-    <Projectile id="3">
-      <ObjectId>Hollow Blue Blast</ObjectId>
-      <MinDamage>375</MinDamage>
-      <MaxDamage>450</MaxDamage>
-      <Speed>65</Speed>      
-      <Size>140</Size>
-      <LifetimeMS>5000</LifetimeMS>
-      <ArmorPiercing/>
-      <MultiHit/>
-    <ConditionEffect duration="1.2">Slowed</ConditionEffect>
-    </Projectile>
-    <Projectile id="4">
-      <ObjectId>Grey Boomerang</ObjectId>
-      <MinDamage>100</MinDamage>
-      <MaxDamage>180</MaxDamage>
-      <Speed>60</Speed>      
-      <Size>140</Size>
-      <LifetimeMS>4000</LifetimeMS>
-      <Wavy/>
-      <MultiHit/>
-      <Boomerang/>
-    </Projectile>
-    <Projectile id="5">
-      <ObjectId>Blue Boomerang</ObjectId>
-      <MinDamage>20</MinDamage>
-      <MaxDamage>200</MaxDamage>
-      <Speed>100</Speed>      
-      <Size>140</Size>
-      <LifetimeMS>3800</LifetimeMS>
-      <ConditionEffect duration="3">Quiet</ConditionEffect>
-      <MultiHit/>
-      <Boomerang/>
-    </Projectile>
-  </Object>
- <Object type="0x49bc" id="Terradius Servant A">
-    <Enemy/>
-    <DisplayId>Terradius Servant</DisplayId>
-    <Class>Character</Class>
-    <AnimatedTexture>
-       <File>chars16x16dMountains2</File>
-       <Index>6</Index>
-    </AnimatedTexture>
-    <HitSound>monster/flaming_skulls_hit</HitSound>
-    <DeathSound>monster/beholder_death</DeathSound>
-    <Size>140</Size>
-    <ParalyzeImmune/>
-    <StasisImmune/>
-    <DazedImmune/>
-    <StunImmune/>
-    <MaxHitPoints>4000</MaxHitPoints>
-    <Defense>20</Defense>
-    <Projectile id="0">
-      <ObjectId>Hollow Projectile</ObjectId>
-      <MinDamage>60</MinDamage>
-      <MaxDamage>140</MaxDamage>
-      <Speed>100</Speed>      
-      <Size>100</Size>
-      <MultiHit/>
-      <LifetimeMS>3000</LifetimeMS>
-    </Projectile>
-    <Projectile id="1">
-      <ObjectId>Darkness Bolt</ObjectId>
-      <MinDamage>120</MinDamage>
-      <MaxDamage>120</MaxDamage>
-      <Speed>50</Speed>      
-      <Size>120</Size>
-      <LifetimeMS>3000</LifetimeMS>
-      <Boomerang/>
-      <ConditionEffect duration="2">Bleeding</ConditionEffect>
-    </Projectile>
-  </Object>
+        <Enemy/>
+        <DisplayId>Hand of Terradius</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars16x16dMountains2</File>
+            <Index>4</Index>
+        </AnimatedTexture>
+        <AltTexture id="1">
+            <AnimatedTexture>
+                <File>chars16x16dMountains2</File>
+                <Index>5</Index>
+            </AnimatedTexture>
+        </AltTexture>
+        <HitSound>monster/minion_of_oryx_death</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>57500</MaxHitPoints>
+        <Defense>35</Defense>
+        <Projectile id="0">
+            <ObjectId>Hollow Bolt</ObjectId>
+            <MinDamage>20</MinDamage>
+            <MaxDamage>60</MaxDamage>
+            <Speed>100</Speed>
+            <Size>120</Size>
+            <MultiHit/>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Hollow Blue Ball</ObjectId>
+            <MinDamage>50</MinDamage>
+            <MaxDamage>80</MaxDamage>
+            <Speed>100</Speed>
+            <Size>120</Size>
+            <LifetimeMS>2000</LifetimeMS>
+            <ConditionEffect duration="1">Paralyzed</ConditionEffect>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Hollow Blue Shield</ObjectId>
+            <MinDamage>120</MinDamage>
+            <MaxDamage>140</MaxDamage>
+            <Speed>100</Speed>
+            <Size>120</Size>
+            <LifetimeMS>1800</LifetimeMS>
+            <ArmorPiercing/>
+            <MultiHit/>
+            <ConditionEffect duration="1.5">Stunned</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Hollow Blue Blast</ObjectId>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>400</MaxDamage>
+            <Speed>65</Speed>
+            <Size>140</Size>
+            <LifetimeMS>5000</LifetimeMS>
+            <ArmorPiercing/>
+            <ConditionEffect duration="1.2">Slowed</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Grey Boomerang</ObjectId>
+            <MinDamage>20</MinDamage>
+            <MaxDamage>120</MaxDamage>
+            <Speed>60</Speed>
+            <Size>140</Size>
+            <LifetimeMS>4000</LifetimeMS>
+            <Wavy/>
+            <MultiHit/>
+            <Boomerang/>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Blue Boomerang</ObjectId>
+            <MinDamage>20</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <Speed>100</Speed>
+            <Size>140</Size>
+            <LifetimeMS>3800</LifetimeMS>
+            <ConditionEffect duration="3">Quiet</ConditionEffect>
+            <MultiHit/>
+            <Boomerang/>
+        </Projectile>
+    </Object>
+    <Object type="0x49bc" id="Terradius Servant A">
+        <Enemy/>
+        <DisplayId>Terradius Servant</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars16x16dMountains2</File>
+            <Index>6</Index>
+        </AnimatedTexture>
+        <HitSound>monster/flaming_skulls_hit</HitSound>
+        <DeathSound>monster/beholder_death</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <MaxHitPoints>400</MaxHitPoints>
+        <Defense>20</Defense>
+        <Projectile id="0">
+            <ObjectId>Hollow Projectile</ObjectId>
+            <MinDamage>60</MinDamage>
+            <MaxDamage>70</MaxDamage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <MultiHit/>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Darkness Bolt</ObjectId>
+            <MinDamage>20</MinDamage>
+            <MaxDamage>40</MaxDamage>
+            <Speed>50</Speed>
+            <Size>120</Size>
+            <LifetimeMS>3000</LifetimeMS>
+            <Boomerang/>
+            <ConditionEffect duration="2">Bleeding</ConditionEffect>
+        </Projectile>
+    </Object>
   <Object type="0x49bd" id="Hand of Terradius Crystal">
     <Enemy/>
     <DisplayId>Hand of Terradius Crystal</DisplayId>
@@ -95150,9 +95154,8 @@ A whole thanksgiving turkey!
         </Texture>
         <SlotType>9</SlotType>
         <Description>A ring with a gemstone placed in it made out of pure crystalized Zol Energy.</Description>
-        <ActivateOnEquip stat="26" amount="50">IncrStatPerc</ActivateOnEquip>
-        <ActivateOnEquip stat="27" amount="50">IncrStatPerc</ActivateOnEquip>
-        <Steal type="mana" amount="2"/>
+        <ActivateOnEquip stat="26" amount="200">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="100">IncrStatPerc</ActivateOnEquip>
         <FameBonus>8</FameBonus>
         <feedPower>1650</feedPower>
         <Legendary/>
@@ -107935,7 +107938,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate>Shoot</Activate>
         <NumProjectiles>4</NumProjectiles>
     </Object>
-	    <Object type="0x542b" id="Soul Buster">
+    <Object type="0x542b" id="Soul Buster">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -107949,8 +107952,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile>
             <ObjectId>Black Arrow</ObjectId>
             <Speed>120</Speed>
-            <MinDamage>400</MinDamage>
-            <MaxDamage>600</MaxDamage>
+            <MinDamage>300</MinDamage>
+            <MaxDamage>400</MaxDamage>
             <LifetimeMS>550</LifetimeMS>
         </Projectile>
         <BagType>6</BagType>
@@ -110052,7 +110055,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
-    <Object type="0x61cd" id="Kunai">
+     <Object type="0x61cd" id="Kunai">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -110063,21 +110066,20 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Description>
             A throwable ninja knife that pierces through air with ease.
         </Description>
-        <RateOfFire>0.75</RateOfFire>
+        <RateOfFire>0.70</RateOfFire>
         <Sound>weapon/long_sword</Sound>
         <Projectile>
             <ObjectId>Kunai Star</ObjectId>
             <Speed>150</Speed>
             <LifetimeMS>460</LifetimeMS>
             <MinDamage>200</MinDamage>
-            <MaxDamage>550</MaxDamage>
+            <MaxDamage>400</MaxDamage>
             <ArmorPiercing/>
         </Projectile>
         <ActivateOnEquip stat="114" amount="100">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
-		<ActivateOnEquip stat="21" amount="-15">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <Legendary/>
         <OldSound>bladeSwing</OldSound>
         <feedPower>2250</feedPower>
@@ -111835,7 +111837,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
-	    <Object type="0x6141" id="Leather Jacket">
+	        <Object type="0x6141" id="Leather Jacket">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -111849,9 +111851,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +40 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -111867,7 +111869,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <MpCost>35</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="40" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6142" id="Darkness Jacket">
@@ -111884,9 +111886,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +60 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -111902,7 +111904,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <MpCost>40</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6143" id="Iron Jacket">
@@ -111919,9 +111921,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +60 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -111933,11 +111935,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <MultiHit/>
             <Boomerang/>
         </Projectile>
+        <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
         <BagType>1</BagType>
         <MpCost>50</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6144" id="Lightweight Jacket">
@@ -111954,9 +111957,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +60 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -111968,11 +111971,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <MultiHit/>
             <Boomerang/>
         </Projectile>
+        <ActivateOnEquip stat="22" amount="3">IncrementStat</ActivateOnEquip>
         <BagType>2</BagType>
         <MpCost>60</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6145" id="Murderous Jacket">
@@ -111989,9 +111993,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +80 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -112003,11 +112007,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <MultiHit/>
             <Boomerang/>
         </Projectile>
+        <ActivateOnEquip stat="22" amount="5">IncrementStat</ActivateOnEquip>
         <BagType>2</BagType>
         <MpCost>60</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="80" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6146" id="Invincibilty Jacket">
@@ -112024,9 +112029,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +100 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -112039,11 +112044,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <ConditionEffect duration="2">Weak</ConditionEffect>
             <Boomerang/>
         </Projectile>
+        <ActivateOnEquip stat="22" amount="5">IncrementStat</ActivateOnEquip>
         <BagType>4</BagType>
         <MpCost>65</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="100" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6147" id="Jacket of Sorrows">
@@ -112060,9 +112066,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +120 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -112075,11 +112081,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <ConditionEffect duration="2">Weak</ConditionEffect>
             <Boomerang/>
         </Projectile>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>4</BagType>
         <MpCost>65</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="120" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6148" id="Bronze Daggers">
@@ -112524,9 +112531,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +100 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Grey Boomerang</ObjectId>
@@ -112539,13 +112546,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <ConditionEffect duration="4">Weak</ConditionEffect>
             <Boomerang/>
         </Projectile>
-        <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <MpCost>60</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="100" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
 	    <Object type="0x6160" id="Otherworldly Blades">
@@ -112637,7 +112643,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Flying/>
         <Defense>40</Defense>
     </Object>
-	    <Object type="0x53a1" id="Lost Scripture">
+    <Object type="0x53a1" id="Lost Scripture">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -112645,12 +112651,789 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Index>0x370</Index>
         </Texture>
         <SlotType>10</SlotType>
-        <Description>A page ripped from the lost book named the Acul. This book was locked behind the Depths guarded by the ancient Yazanahar.</Description>
+        <Description>A page ripped from the lost book named the Acul.</Description>
         <BagType>11</BagType>
         <Legendary/>
         <PoZPage/>
-        <Activate>MarksActivate</Activate>
-        <InvUse/>
-		<DisplayId>Lost Scripture</DisplayId>
+        <DisplayId>Lost Scripture</DisplayId>
+    </Object>
+	    <Object type="0x616c" id="The Kraken">
+        <Enemy/>
+        <DisplayId>The Kraken</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1cb</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cc</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="2">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="3">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1bd</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/slimes_death</DeathSound>
+        <Size>160</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+		<StunImmune/>
+		<UElitedrop/>
+        <Quest/>
+        <MaxHitPoints>50000</MaxHitPoints>
+        <Defense>5</Defense>
+        <Projectile id="0">
+            <ObjectId>Coral Magic</ObjectId>
+            <Damage>60</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Coral Blast</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Super Coral Blast</ObjectId>
+            <Damage>126</Damage>
+            <Speed>70</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ArmorPiercing/>
+            <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Coral Star</ObjectId>
+            <Damage>50</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="3">Confused</ConditionEffect>
+            <ConditionEffect duration="3">Blind</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Coral Wheel</ObjectId>
+            <Damage>200</Damage>
+            <Speed>65</Speed>
+            <Size>125</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="4">Slowed</ConditionEffect>
+            <ConditionEffect duration="4">Dazed</ConditionEffect>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Coral Boomerang</ObjectId>
+            <Damage>100</Damage>
+            <Speed>100</Speed>
+            <Size>125</Size>
+            <LifetimeMS>5000</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+    </Object>
+    <Object type="0x616f" id="The Kraken B">
+        <Enemy/>
+        <DisplayId>The Kraken</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1cb</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cc</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="2">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="3">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1bd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="4">
+            <Texture>
+                <File>invisible</File>
+                <Index>0</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/slimes_death</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <Quest/>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>50</Defense>
+        <Projectile id="0">
+            <ObjectId>Coral Magic</ObjectId>
+            <Damage>60</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Coral Blast</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Super Coral Blast</ObjectId>
+            <Damage>126</Damage>
+            <Speed>70</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ArmorPiercing/>
+            <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Coral Star</ObjectId>
+            <Damage>50</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="3">Confused</ConditionEffect>
+            <ConditionEffect duration="3">Blind</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Coral Wheel</ObjectId>
+            <Damage>200</Damage>
+            <Speed>65</Speed>
+            <Size>125</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="4">Slowed</ConditionEffect>
+            <ConditionEffect duration="4">Dazed</ConditionEffect>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Coral Boomerang</ObjectId>
+            <Damage>100</Damage>
+            <Speed>100</Speed>
+            <Size>125</Size>
+            <LifetimeMS>5000</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+    </Object>
+    <Object type="0x6170" id="The Kraken C">
+        <Enemy/>
+        <DisplayId>The Kraken</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1cb</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cc</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="2">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="3">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1bd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="4">
+            <Texture>
+                <File>invisible</File>
+                <Index>0</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/slimes_death</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <Quest/>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>50</Defense>
+        <Projectile id="0">
+            <ObjectId>Coral Magic</ObjectId>
+            <Damage>60</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Coral Blast</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Super Coral Blast</ObjectId>
+            <Damage>126</Damage>
+            <Speed>70</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ArmorPiercing/>
+            <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Coral Star</ObjectId>
+            <Damage>50</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="3">Confused</ConditionEffect>
+            <ConditionEffect duration="3">Blind</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Coral Wheel</ObjectId>
+            <Damage>200</Damage>
+            <Speed>65</Speed>
+            <Size>125</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="4">Slowed</ConditionEffect>
+            <ConditionEffect duration="4">Dazed</ConditionEffect>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Coral Boomerang</ObjectId>
+            <Damage>100</Damage>
+            <Speed>100</Speed>
+            <Size>125</Size>
+            <LifetimeMS>5000</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+    </Object>
+    <Object type="0x6171" id="The Kraken D">
+        <Enemy/>
+        <DisplayId>The Kraken</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1cb</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cc</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="2">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="3">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1bd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="4">
+            <Texture>
+                <File>invisible</File>
+                <Index>0</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/slimes_death</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <Quest/>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>50</Defense>
+        <Projectile id="0">
+            <ObjectId>Coral Magic</ObjectId>
+            <Damage>60</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Coral Blast</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Super Coral Blast</ObjectId>
+            <Damage>126</Damage>
+            <Speed>70</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ArmorPiercing/>
+            <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Coral Star</ObjectId>
+            <Damage>50</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="3">Confused</ConditionEffect>
+            <ConditionEffect duration="3">Blind</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Coral Wheel</ObjectId>
+            <Damage>200</Damage>
+            <Speed>65</Speed>
+            <Size>125</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="4">Slowed</ConditionEffect>
+            <ConditionEffect duration="4">Dazed</ConditionEffect>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Coral Boomerang</ObjectId>
+            <Damage>100</Damage>
+            <Speed>100</Speed>
+            <Size>125</Size>
+            <LifetimeMS>5000</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+    </Object>
+    <Object type="0x6172" id="Kraken Spawner A">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6173" id="Kraken Spawner B">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6174" id="Kraken Spawner C">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6175" id="Kraken Spawner D">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6176" id="Kraken Spawner">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6177" id="Kraken Vent Controller">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+	    <Object type="0x6178" id="Kraken A Lifeorb">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6179" id="Kraken B Lifeorb">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x617a" id="Kraken C Lifeorb">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x617b" id="Kraken D Lifeorb">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x616d" id="Kraken Tentacle">
+        <Enemy/>
+        <DisplayId>Kraken Tentacle</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1be</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1bf</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/dwarves_death</HitSound>
+        <DeathSound>monster/flayers_hit</DeathSound>
+        <Size>125</Size>
+        <ParalyzeImmune/>
+        <MaxHitPoints>20000</MaxHitPoints>
+        <Defense>20</Defense>
+        <Projectile id="0">
+            <ObjectId>Coral Rock</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>100</Size>
+            <ConditionEffect duration="0.75">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="1">Dazed</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Ocean Wave</ObjectId>
+            <Damage>100</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>100</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+    </Object>
+	    <Object type="0x6165" id="Coral Magic">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xc8</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6166" id="Coral Blast">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xc9</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6167" id="Super Coral Blast">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xca</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6168" id="Coral Star">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xcb</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x6169" id="Coral Wheel">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xcc</Index>
+        </Texture>
+        <Rotation>40</Rotation>
+    </Object>
+    <Object type="0x616a" id="Coral Boomerang">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xcd</Index>
+        </Texture>
+        <Rotation>40</Rotation>
+    </Object>
+    <Object type="0x616b" id="Ocean Wave">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xce</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x617e" id="Coral Rock">
+        <Class>Projectile</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x9c</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x9d</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x9e</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x9f</Index>
+            </Texture>
+        </RandomTexture>
+    </Object>
+	<Object type="0x617c" id="Kraken Tentacle 2">
+        <Enemy/>
+        <DisplayId>Kraken Tentacle</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1be</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1bf</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/dwarves_death</HitSound>
+        <DeathSound>monster/flayers_hit</DeathSound>
+        <Size>125</Size>
+        <MaxHitPoints>2000</MaxHitPoints>
+        <Defense>10</Defense>
+        <Projectile id="0">
+            <ObjectId>Coral Rock</ObjectId>
+            <Damage>120</Damage>
+            <Speed>80</Speed>
+            <Size>100</Size>
+            <ConditionEffect duration="1.5">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="1.5">Dazed</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Ocean Wave</ObjectId>
+            <Damage>160</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>150</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+    </Object>
+	<Object type="0x616e" id="The Kraken A">
+        <Enemy/>
+        <DisplayId>The Kraken</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1cb</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cc</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="2">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1cd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="3">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1bd</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="4">
+            <Texture>
+                <File>invisible</File>
+                <Index>0</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/slimes_death</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <Quest/>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>50</Defense>
+        <Projectile id="0">
+            <ObjectId>Coral Magic</ObjectId>
+            <Damage>60</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Coral Blast</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Super Coral Blast</ObjectId>
+            <Damage>126</Damage>
+            <Speed>70</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ArmorPiercing/>
+            <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Coral Star</ObjectId>
+            <Damage>50</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="3">Confused</ConditionEffect>
+            <ConditionEffect duration="3">Blind</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Coral Wheel</ObjectId>
+            <Damage>200</Damage>
+            <Speed>65</Speed>
+            <Size>125</Size>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="4">Slowed</ConditionEffect>
+            <ConditionEffect duration="4">Dazed</ConditionEffect>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Coral Boomerang</ObjectId>
+            <Damage>100</Damage>
+            <Speed>100</Speed>
+            <Size>125</Size>
+            <LifetimeMS>5000</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+    </Object>
+	    <Object type="0x617e" id="Banner of the Furious Kraken">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xaf</Index>
+        </Texture>
+        <SlotType>28</SlotType>
+        <ActivateOnEquip stat="26" amount="20">IncrementStat</ActivateOnEquip>
+        <Description>Pirates value this banner for it's true grandeur.</Description>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Banner Lifetime:" description="6"/>
+            <EffectInfo name="Empowerment Duration:" description="6"/>
+            <EffectInfo name="Radius:" description="4"/>
+            <EffectInfo name="" description="Empowers all players near banner."/>
+        </ExtraTooltipData>
+        <BagType>6</BagType>
+        <MpCost>85</MpCost>
+        <Activate stat="3" amount="65" duration="4">StatBoostSelf</Activate>
+        <Activate range="4" amount="6" duration="6">Banner</Activate>
+        <Activate effect="Invulnerable" duration="3">ConditionEffectSelf</Activate>
+        <Cooldown>8</Cooldown>
+        <feedPower>900</feedPower>
+        <FameBonus>6</FameBonus>
+        <DisplayId>Banner of the Furious Kraken</DisplayId>
     </Object>
 </Objects>

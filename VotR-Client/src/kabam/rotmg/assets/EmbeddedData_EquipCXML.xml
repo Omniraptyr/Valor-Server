@@ -15717,14 +15717,14 @@
         </Texture>
         <SlotType>19</SlotType>
         <Description>Pestilence is an auroa around this skull, the user is bound to die. (Skull boost surrounding players' life.)</Description>
-        <ActivateOnEquip stat="28" amount="2">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="2">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>4</BagType>
         <FameBonus>6</FameBonus>
-        <MpCost>155</MpCost>
-        <Activate radius="2" totalDamage="155">VampireBlast</Activate>
-        <Activate stat="0" amount="100" duration="15" range="6.5">StatBoostAura</Activate>
+        <MpCost>100</MpCost>
+        <Steal type="life" amount="2"/>
+        <Activate radius="2" totalDamage="160">VampireBlast</Activate>
+        <Activate stat="0" amount="110" duration="15" range="6.5">StatBoostAura</Activate>
     </Object>
     <Object type="0x1581" id="Ring of Pestilence">
         <Class>Equipment</Class>
@@ -15733,6 +15733,9 @@
             <File>lofiObj3</File>
             <Index>0x582</Index>
         </Texture>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Zemagaia"/>
+        </ExtraTooltipData>
         <SlotType>9</SlotType>
         <Description>A ring that will cause sickness and death.</Description>
         <ActivateOnEquip stat="26" amount="6">IncrementStat</ActivateOnEquip>
@@ -15749,10 +15752,13 @@
             <Index>0x580</Index>
         </Texture>
         <SlotType>17</SlotType>
-        <Description>Unholy death is only bound the be the cause of using this staff.</Description>
+        <Description>Unholy death is only bound to be the cause of using this staff.</Description>
         <ActivateOnEquip stat="26" amount="-3">IncrementStat</ActivateOnEquip>
         <RateOfFire>0.74</RateOfFire>
         <Sound>weapon/wand_of_death</Sound>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Zemagaia"/>
+        </ExtraTooltipData>
         <Projectile>
             <ObjectId>Pesti Proj</ObjectId>
             <Speed>130</Speed>
@@ -17772,9 +17778,10 @@
         <FameBonus>6</FameBonus>
         <Description>Nigh-unbreakable golemsteel armor enchanted to withstand nearly any strike.</Description>
         <BagType>6</BagType>
-        <ActivateOnEquip stat="21" amount="23">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="18">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="20">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="60">IncrementStat</ActivateOnEquip>
     </Object>
     <Object type="0x509c" id="Derp Armor">
         <Class>Equipment</Class>
@@ -18124,6 +18131,24 @@
         <FameBonus>6</FameBonus>
         <feedPower>1000</feedPower>
         <DisplayId>Lorespire Robe</DisplayId>
+    </Object>
+    <Object type="0x179a" id="Adroit Armor">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x6d</Index>
+        </Texture>
+        <SlotType>6</SlotType>
+        <Description>Articulated armor built by an ancient empire renowned for its acrobatic soldiers.</Description>
+        <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="19">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="14">IncrementStat</ActivateOnEquip>
+        <Steal type="mana" amount="2"/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
     </Object>
     <Object type="0x5139" id="Sheath of the Holy Revival">
         <Class>Equipment</Class>
@@ -19404,19 +19429,20 @@
         </Texture>
         <SlotType>2</SlotType>
         <Description>2 sides of the problem is that it's a total issue to have twice the stupidity!</Description>
-        <RateOfFire>1.10</RateOfFire>
+        <RateOfFire>1.25</RateOfFire>
         <Sound>weapon/fire_dagger</Sound>
         <Projectile>
             <ObjectId>Mirror Shot</ObjectId>
             <Speed>140</Speed>
-            <MinDamage>100</MinDamage>
-            <MaxDamage>150</MaxDamage>
+            <MinDamage>122</MinDamage>
+            <MaxDamage>190</MaxDamage>
             <LifetimeMS>400</LifetimeMS>
         </Projectile>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
-        <NumProjectiles>2</NumProjectiles>
-        <ArcGap>180</ArcGap>
+        <NumProjectiles>4</NumProjectiles>
+        <ArcGap>90</ArcGap>
         <OldSound>daggerSwing</OldSound>
         <feedPower>900</feedPower>
         <DisplayId>Mirror Dagger</DisplayId>
@@ -19537,6 +19563,27 @@
         <FameBonus>6</FameBonus>
         <feedPower>1000</feedPower>
         <DisplayId>Flamebred Robe</DisplayId>
+    </Object>
+    <Object type="0x178b" id="Robe of Overgrowth">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x64</Index>
+        </Texture>
+        <SlotType>14</SlotType>
+        <Description>A robe that has been enchanted with the deep magics of nature, and earth.</Description>
+        <ActivateOnEquip stat="0" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="17">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="40">IncrementStat</ActivateOnEquip>
+        <Steal type="mana" amount="4"/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <feedPower>1000</feedPower>
+        <DisplayId>Robe of Overgrowth</DisplayId>
     </Object>
     <Object type="0x57b1" id="Blackguard Seal">
         <Class>Equipment</Class>
@@ -19834,8 +19881,8 @@
         <Projectile>
             <ObjectId>Black Arrow</ObjectId>
             <Speed>120</Speed>
-            <MinDamage>400</MinDamage>
-            <MaxDamage>600</MaxDamage>
+            <MinDamage>300</MinDamage>
+            <MaxDamage>400</MaxDamage>
             <LifetimeMS>550</LifetimeMS>
         </Projectile>
         <BagType>6</BagType>
@@ -20232,6 +20279,9 @@
             <EffectInfo name="" description="{equip.Drain_10_MP/sec}"/>
             <EffectInfo name="{equip.When_Key_Released}" description=""/>
         </ExtraTooltipData>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Zemagaia"/>
+        </ExtraTooltipData>
         <Projectile>
             <ObjectId>Ninja Star Soundpiercer</ObjectId>
             <Speed>200</Speed>
@@ -20306,6 +20356,9 @@
             <File>d3LofiObjEmbed</File>
             <Index>0x21b</Index>
         </Texture>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="Zemagaia"/>
+        </ExtraTooltipData>
         <SlotType>14</SlotType>
         <Description>The wrath wasn't certain before..now we know why.</Description>
         <ActivateOnEquip stat="0" amount="180">IncrementStat</ActivateOnEquip>
@@ -24867,6 +24920,12 @@
         <ActivateOnEquip stat="22" amount="-4">IncrementStat</ActivateOnEquip>
         <Description>A red banner that stands for no mortal.</Description>
         <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Banner Lifetime:" description="6"/>
+            <EffectInfo name="Empowerment Duration:" description="4"/>
+            <EffectInfo name="Radius:" description="4"/>
+            <EffectInfo name="" description="Empowers all players near banner."/>
+        </ExtraTooltipData>
         <BagType>6</BagType>
         <MpCost>90</MpCost>
         <Activate range="4" amount="6" duration="4">Banner</Activate>
@@ -24906,9 +24965,8 @@
         </Texture>
         <SlotType>9</SlotType>
         <Description>A ring with a gemstone placed in it made out of pure crystalized Zol Energy.</Description>
-        <ActivateOnEquip stat="26" amount="50">IncrStatPerc</ActivateOnEquip>
-        <ActivateOnEquip stat="27" amount="50">IncrStatPerc</ActivateOnEquip>
-        <Steal type="mana" amount="2"/>
+        <ActivateOnEquip stat="26" amount="200">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="100">IncrStatPerc</ActivateOnEquip>
         <FameBonus>8</FameBonus>
         <feedPower>1650</feedPower>
         <Legendary/>
@@ -31782,14 +31840,14 @@
         <Description>
             A throwable ninja knife that pierces through air with ease.
         </Description>
-        <RateOfFire>0.75</RateOfFire>
+        <RateOfFire>0.70</RateOfFire>
         <Sound>weapon/long_sword</Sound>
         <Projectile>
             <ObjectId>Kunai Star</ObjectId>
             <Speed>150</Speed>
             <LifetimeMS>460</LifetimeMS>
             <MinDamage>200</MinDamage>
-            <MaxDamage>700</MaxDamage>
+            <MaxDamage>400</MaxDamage>
             <ArmorPiercing/>
         </Projectile>
         <ActivateOnEquip stat="114" amount="100">IncrementStat</ActivateOnEquip>
@@ -32110,13 +32168,11 @@
             <Index>0x370</Index>
         </Texture>
         <SlotType>10</SlotType>
-        <Description>A page ripped from the lost book named the Acul. This book was locked behind the Depths guarded by the ancient Yazanahar.</Description>
+        <Description>A page ripped from the lost book named the Acul.</Description>
         <BagType>11</BagType>
         <Legendary/>
         <PoZPage/>
-        <Activate>MarksActivate</Activate>
-        <InvUse/>
-        <DisplayId>The Bifierce</DisplayId>
+        <DisplayId>Lost Scripture</DisplayId>
     </Object>
     <Object type="0x61dc" id="Moonlight">
         <Class>Equipment</Class>
@@ -32393,9 +32449,9 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +40 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -32411,7 +32467,7 @@
         <MpCost>35</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="40" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6142" id="Darkness Jacket">
@@ -32428,9 +32484,9 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +60 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -32446,7 +32502,7 @@
         <MpCost>40</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6143" id="Iron Jacket">
@@ -32463,9 +32519,9 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +60 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -32477,11 +32533,12 @@
             <MultiHit/>
             <Boomerang/>
         </Projectile>
+        <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
         <BagType>1</BagType>
         <MpCost>50</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6144" id="Lightweight Jacket">
@@ -32498,9 +32555,9 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +60 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -32512,11 +32569,12 @@
             <MultiHit/>
             <Boomerang/>
         </Projectile>
+        <ActivateOnEquip stat="22" amount="3">IncrementStat</ActivateOnEquip>
         <BagType>2</BagType>
         <MpCost>60</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="60" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6145" id="Murderous Jacket">
@@ -32533,9 +32591,9 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +80 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -32547,11 +32605,12 @@
             <MultiHit/>
             <Boomerang/>
         </Projectile>
+        <ActivateOnEquip stat="22" amount="5">IncrementStat</ActivateOnEquip>
         <BagType>2</BagType>
         <MpCost>60</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="80" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6146" id="Invincibilty Jacket">
@@ -32568,9 +32627,9 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +100 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -32583,11 +32642,12 @@
             <ConditionEffect duration="2">Weak</ConditionEffect>
             <Boomerang/>
         </Projectile>
+        <ActivateOnEquip stat="22" amount="5">IncrementStat</ActivateOnEquip>
         <BagType>4</BagType>
         <MpCost>65</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="100" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6147" id="Jacket of Sorrows">
@@ -32604,9 +32664,9 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +120 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -32619,11 +32679,12 @@
             <ConditionEffect duration="2">Weak</ConditionEffect>
             <Boomerang/>
         </Projectile>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>4</BagType>
         <MpCost>65</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="120" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6148" id="Bronze Daggers">
@@ -32955,9 +33016,9 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="Damaging"/>
+            <EffectInfo name="" description="+10 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="Armored and +100 maximum health"/>
+            <EffectInfo name="" description="+15 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Grey Boomerang</ObjectId>
@@ -32970,13 +33031,12 @@
             <ConditionEffect duration="4">Weak</ConditionEffect>
             <Boomerang/>
         </Projectile>
-        <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <MpCost>60</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="100" stat="0" noStack="false">JacketAbility</Activate>
+        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6160" id="Otherworldly Blades">
@@ -33046,5 +33106,32 @@
         <OldSound>daggerSwing</OldSound>
         <DisplayId>The Bifierce</DisplayId>
         <Legendary/>
+    </Object>
+    <Object type="0x617e" id="Banner of the Furious Kraken">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xaf</Index>
+        </Texture>
+        <SlotType>28</SlotType>
+        <ActivateOnEquip stat="26" amount="20">IncrementStat</ActivateOnEquip>
+        <Description>Pirates value this banner for it's true grandeur.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="Banner Lifetime:" description="6"/>
+            <EffectInfo name="Empowerment Duration:" description="6"/>
+            <EffectInfo name="Radius:" description="4"/>
+            <EffectInfo name="" description="Empowers all players near banner."/>
+        </ExtraTooltipData>
+        <Usable/>
+        <BagType>6</BagType>
+        <MpCost>85</MpCost>
+        <Activate stat="3" amount="65" duration="4">StatBoostSelf</Activate>
+        <Activate range="4" amount="6" duration="6">Banner</Activate>
+        <Activate effect="Invulnerable" duration="3">ConditionEffectSelf</Activate>
+        <Cooldown>8</Cooldown>
+        <feedPower>900</feedPower>
+        <FameBonus>6</FameBonus>
+        <DisplayId>Banner of the Furious Kraken</DisplayId>
     </Object>
 </Objects>

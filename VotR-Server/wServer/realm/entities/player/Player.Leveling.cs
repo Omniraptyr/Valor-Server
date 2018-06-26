@@ -364,6 +364,7 @@ namespace wServer.realm.entities
         {
             var acc = Client.Account;
             Random rnd = new Random();
+            int drop3 = rnd.Next(1, 10001);
             int drop = rnd.Next(1, 101);
             var time = new RealmTime();
             int drop2 = rnd.Next(1, 7);
@@ -376,7 +377,15 @@ namespace wServer.realm.entities
                     Message = "{\"key\":\"server.quest_complete\"}"
                 }, p => this.DistSqr(p) < RadiusSqr);
             }
-            if(enemy.ObjectDesc.Lootdrop == true)
+            if (drop3 == 1)
+            {
+                if(RaidToken == 0)
+                {
+                    Client.Manager.Database.UpdateAlertToken(acc, 1);
+                    SendHelp("A challenge awaits you..go to nexus to handle your alert!");
+                }
+            }
+            if (enemy.ObjectDesc.Lootdrop == true)
             {
                 if (drop <= 10)
                 {

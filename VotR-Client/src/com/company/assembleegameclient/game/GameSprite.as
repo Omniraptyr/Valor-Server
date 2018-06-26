@@ -43,6 +43,7 @@ import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.dialogs.model.DialogsModel;
 import kabam.rotmg.dialogs.model.PopupNamesConfig;
+import kabam.rotmg.game.view.AlertStatusDisplay;
 import kabam.rotmg.game.view.CreditDisplay;
 import kabam.rotmg.game.view.GiftStatusDisplay;
 import kabam.rotmg.game.view.LootboxModalButton;
@@ -85,6 +86,7 @@ public class GameSprite extends AGameSprite {
     public var guildText_:GuildText;
     public var creditDisplay_:CreditDisplay;
     public var giftStatusDisplay:GiftStatusDisplay;
+    public var alertStatusDisplay:AlertStatusDisplay;
     public var markShopButton:MarkShopModalButton;
     public var lootBoxButton:LootboxModalButton;
     public var newsModalButton:NewsModalButton;
@@ -270,6 +272,7 @@ public class GameSprite extends AGameSprite {
         this.showMarkShopButton();
         this.showLootboxButton();
         this.showGiftStatusDisplay();
+        this.showAlertStatusDisplay();
         // this.showNewsUpdate();
         // this.showNewsTicker();
     }
@@ -300,6 +303,13 @@ public class GameSprite extends AGameSprite {
         this.giftStatusDisplay.y = (this.displaysPosY + 2);
         this.displaysPosY = (this.displaysPosY + UIUtils.NOTIFICATION_SPACE);
         addChild(this.giftStatusDisplay);
+    }
+
+    private function showAlertStatusDisplay():void {
+            this.alertStatusDisplay = new AlertStatusDisplay();
+            this.alertStatusDisplay.x = (this.markShopButton.x);
+            this.alertStatusDisplay.y = (this.markShopButton.y + 32);
+            addChild(this.alertStatusDisplay);
     }
 
     private function showMarkShopButton():void {

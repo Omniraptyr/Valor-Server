@@ -418,6 +418,7 @@ namespace common.resources
         public ActivateEffects Effect { get; private set; }
         public int Stats { get; private set; }
         public int Amount { get; private set; }
+        public int Amount2 { get; private set; }
         public float Range { get; private set; }
         public float DurationSec { get; private set; }
         public int DurationMS { get; private set; }
@@ -455,6 +456,9 @@ namespace common.resources
 
             if (elem.Attribute("amount") != null)
                 Amount = Utils.FromString(elem.Attribute("amount").Value);
+
+            if (elem.Attribute("amount2") != null)
+                Amount2 = Utils.FromString(elem.Attribute("amount2").Value);
 
             if (elem.Attribute("range") != null)
                 Range = float.Parse(elem.Attribute("range").Value);

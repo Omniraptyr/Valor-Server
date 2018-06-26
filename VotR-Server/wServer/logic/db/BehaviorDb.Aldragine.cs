@@ -1244,7 +1244,8 @@ namespace wServer.logic
                 new Threshold(0.15,
                 new ItemLoot("Gold Cache", 0.35),
                 new ItemLoot("Onrane", 1),
-                new ItemLoot("Onrane Cache", 0.08)
+                new ItemLoot("Onrane Cache", 0.08),
+                new ItemLoot("Robe of Wrath", 0.25)
                 )
             )
         .Init("Construct of Zol",

@@ -807,6 +807,20 @@ namespace wServer.realm.entities
 		
 		private void AEJacketAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+
+
+            if(BMToggle == 0)
+            {
+                Stats.Boost.ActivateBoost[2].Push(eff.Amount, eff.NoStack);
+                Stats.Boost.ActivateBoost[3].Pop(eff.Amount2, eff.NoStack);
+                BMToggle = 1;
+            }
+            else
+            {
+                Stats.Boost.ActivateBoost[3].Push(eff.Amount2, eff.NoStack);
+                Stats.Boost.ActivateBoost[2].Pop(eff.Amount, eff.NoStack);
+                BMToggle = 0;
+            }
             var prjs = new Projectile[8];
             var prjDesc = item.Projectiles[0]; //Assume only one
             var batch = new Packet[9];
@@ -839,38 +853,7 @@ namespace wServer.realm.entities
             {
                 plr.Client.SendPackets(batch);
             }
-            if (BMToggle == 0)
-            {
-                BMToggle = 1;
-            }
-            else if(BMToggle == 1)
-            {
-                Stats.Boost.ActivateBoost[eff.Stats].Push(eff.Amount, eff.NoStack);
-                Stats.ReCalculateValues();
-                BMToggle = 2;
-            }
-            else if(BMToggle == 2)
-            {
-                Stats.Boost.ActivateBoost[eff.Stats].Pop(eff.Amount, eff.NoStack);
-                Stats.ReCalculateValues();
-                BMToggle = 1;
-            }
-                if (BMToggle == 1)
-                {
-                    ApplyConditionEffect(ConditionEffectIndex.Damaging);
-                }
-                else
-                {
-                    ApplyConditionEffect(ConditionEffectIndex.Damaging, 0);
-                }
-                if (BMToggle == 2)
-                {
-                    ApplyConditionEffect(ConditionEffectIndex.Armored);
-                }
-                else
-                {
-                    ApplyConditionEffect(ConditionEffectIndex.Armored, 0);
-                }
+
         }
 
         private void AESamuraiAbility(RealmTime time, Item item, Position target, ActivateEffect eff)

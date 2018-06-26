@@ -45,7 +45,7 @@ namespace wServer.logic
                         new ConditionalEffect(ConditionEffectIndex.StunImmune),
                         new RemoveEntity(99, "Stone of Blood 1"),
                         new Shoot(8.4, count: 6, shootAngle: 10, projectileIndex: 0, coolDown: 200),
-                        new Shoot(8.4, count: 3, shootAngle: 10, projectileIndex: 0, predictive: 2, coolDown: 200, coolDownOffset: 2687),
+                        new Shoot(8.4, count: 3, shootAngle: 10, projectileIndex: 0, predictive: 2, coolDown: 200, coolDownOffset: 3000),
                         new Shoot(8.4, count: 1, projectileIndex: 1, coolDown: 2000),
                         new TimedTransition(8000, "Sentry2")
                         ),
@@ -59,28 +59,28 @@ namespace wServer.logic
                         new Flash(0x00FFFF, 1, 2),
                         new ConditionalEffect(ConditionEffectIndex.StunImmune),
                         new Shoot(8.4, count: 18, projectileIndex: 0, coolDown: 3000),
-                        new Shoot(8.4, count: 5, shootAngle: 5, projectileIndex: 2, coolDown: 1),
+                        new Shoot(8.4, count: 5, shootAngle: 5, projectileIndex: 2, coolDown: 200),
                         new TimedTransition(8000, "Sentry4")
                         ),
                     new State("Sentry4",
                         new ConditionalEffect(ConditionEffectIndex.Armored),
                         new Grenade(3, 180, range: 7),
-                        new Shoot(8.4, count: 12, projectileIndex: 2, coolDown: 1000),
-                        new Shoot(8.4, count: 3, shootAngle: 16, projectileIndex: 2, coolDown: 1),
+                        new Shoot(8.4, count: 12, projectileIndex: 2, coolDown: 2000),
+                        new Shoot(8.4, count: 3, shootAngle: 16, projectileIndex: 2, coolDown: 200),
                         new TimedTransition(8000, "Sentry5")
                         ),
                     new State("Sentry5",
                         new Flash(0x00FFFF, 1, 2),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new Shoot(8.4, count: 10, projectileIndex: 0, coolDown: 1000),
-                        new Shoot(8.4, count: 1, projectileIndex: 1, coolDown: 100),
+                        new Shoot(8.4, count: 10, projectileIndex: 0, coolDown: 2000),
+                        new Shoot(8.4, count: 1, projectileIndex: 1, coolDown: 200),
                         new TimedTransition(5000, "spiral1")
                         ),
                      new State("spiral1",
                          new Flash(0x00FFFF, 1, 2),
                          new ConditionalEffect(ConditionEffectIndex.Armored),
                          new ConditionalEffect(ConditionEffectIndex.StunImmune),
-                        new Shoot(8.4, count: 2, shootAngle: 60, projectileIndex: 1, coolDown: 1),
+                        new Shoot(8.4, count: 2, shootAngle: 60, projectileIndex: 1, coolDown: 600),
                         new TimedTransition(7000, "Sentry1"),
                         new State("Quadforce1",
                             new Shoot(0, projectileIndex: 4, count: 5, shootAngle: 60, fixedAngle: 0, coolDown: 300),
@@ -115,7 +115,7 @@ namespace wServer.logic
                             new TimedTransition(75, "Quadforce1")
                         )
                     )
-                        ),
+                   ),
                     new State("Dead1",
                         new RemoveEntity(99, "Blood Boss Anchor"),
                         new Taunt("Finally, rest."),

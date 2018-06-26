@@ -29,7 +29,7 @@ import kabam.rotmg.ui.UIUtils;
 public class MarkDisplay extends Sprite implements TooltipAble {
 
     public static const IMAGE_NAME:String = "marks10x10";
-    public static const IMAGE_ID:int = 31;
+    public static const IMAGE_ID:int = 15;
 
     public var hoverTooltipDelegate:HoverTooltipDelegate;
     private var bitmap:Bitmap;

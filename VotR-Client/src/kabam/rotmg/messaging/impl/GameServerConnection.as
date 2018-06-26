@@ -125,6 +125,7 @@ public class GameServerConnection {
     public static const FORGEITEM:int = 160;
     public static const UNBOXREQUEST:int = 161;
     public static const UNBOXRESULT:int = 162;
+    public static const ALERTNOTICE:int = 163;
 
     public static var instance:GameServerConnection;
 
