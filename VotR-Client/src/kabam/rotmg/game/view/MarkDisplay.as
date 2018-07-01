@@ -58,11 +58,11 @@ public class MarkDisplay extends Sprite implements TooltipAble {
         }
         if(player.mark_== 3){
             this.nodeTexture = TextureRedrawer.redraw(AssetLibrary.getImageFromSet("marks10x10", 18), 92, true, 0);
-            this.tooltip = new TextToolTip(0x363636, 0x660000, "Rage", "Having surge increases your rate of fire.", 200);
+            this.tooltip = new TextToolTip(0x363636, 0x660000, "Rage", "Having surge increases your outputting damage.", 200);
         }
         if(player.mark_== 4){
             this.nodeTexture = TextureRedrawer.redraw(AssetLibrary.getImageFromSet("marks10x10", 19), 92, true, 0);
-            this.tooltip = new TextToolTip(0x363636, 0x660000, "Clairvoyence", "The whole map is revealed without having to discover it.", 200);
+            this.tooltip = new TextToolTip(0x363636, 0x660000, "Energy Eye", "You gain 2 extra surge on killing enemies and having at least 25 surge increases HP/MP regen.", 200);
         }
         if(player.mark_== 5){
             this.nodeTexture = TextureRedrawer.redraw(AssetLibrary.getImageFromSet("marks10x10", 20), 92, true, 0);
@@ -70,11 +70,11 @@ public class MarkDisplay extends Sprite implements TooltipAble {
         }
         if(player.mark_== 6){
             this.nodeTexture = TextureRedrawer.redraw(AssetLibrary.getImageFromSet("marks10x10", 21), 92, true, 0);
-            this.tooltip = new TextToolTip(0x363636, 0x660000, "Templar's Gift", "Your mana and health is decreased 25% but upon receiving more than 75 surge you are invulnerable.", 200);
+            this.tooltip = new TextToolTip(0x363636, 0x660000, "Unity", "All stats except mana and health are raised by 5%.", 200);
         }
         if(player.mark_== 7){
             this.nodeTexture = TextureRedrawer.redraw(AssetLibrary.getImageFromSet("marks10x10", 22), 92, true, 0);
-            this.tooltip = new TextToolTip(0x363636, 0x660000, "Shadowwalk", "When invisible you gain 20% extra dexterity, attack and luck.", 200);
+            this.tooltip = new TextToolTip(0x363636, 0x660000, "Zol Beast", "When invisible you gain 20% extra dexterity, attack and luck.", 200);
         }
         if(player.mark_== 8){
             this.nodeTexture = TextureRedrawer.redraw(AssetLibrary.getImageFromSet("marks10x10", 23), 92, true, 0);
@@ -90,11 +90,11 @@ public class MarkDisplay extends Sprite implements TooltipAble {
         }
         if(player.mark_== 11){
             this.nodeTexture = TextureRedrawer.redraw(AssetLibrary.getImageFromSet("marks10x10", 26), 92, true, 0);
-            this.tooltip = new TextToolTip(0x363636, 0x660000, "Reaper", "Killing certain amounts of enemies grants bonus outputting damage.", 200);
+            this.tooltip = new TextToolTip(0x363636, 0x660000, "Reaper", "Killing certain amounts of enemies grants bonus", 200);
         }
         if(player.mark_== 12){
             this.nodeTexture = TextureRedrawer.redraw(AssetLibrary.getImageFromSet("marks10x10", 27), 92, true, 0);
-            this.tooltip = new TextToolTip(0x363636, 0x660000, "Zen", "Using abilities has a chance to heal either mana or health by 20.", 200);
+            this.tooltip = new TextToolTip(0x363636, 0x660000, "Zen", "Using abilities heal you 50 health and 10 mana.", 200);
         }
         this.background = UIUtils.makeHUDBackground(60, 60);
         this.bitmap = new Bitmap(this.nodeTexture);

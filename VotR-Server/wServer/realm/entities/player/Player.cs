@@ -619,11 +619,11 @@ namespace wServer.realm.entities
             _mp = new SV<int>(this, StatsType.MP, client.Character.MP);
             _hasBackpack = new SV<bool>(this, StatsType.HasBackpack, client.Character.HasBackpack, true);
             _marksEnabled = new SV<bool>(this, StatsType.MarksEnabled, client.Character.MarksEnabled, true);
-            _mark = new SV<int>(this, StatsType.Mark, 0);
-            _node1 = new SV<int>(this, StatsType.Node1, 0);
-            _node2 = new SV<int>(this, StatsType.Node2, 0);
-            _node3 = new SV<int>(this, StatsType.Node3, 0);
-            _node4 = new SV<int>(this, StatsType.Node4, 0);
+            _mark = new SV<int>(this, StatsType.Mark, client.Character.Mark);
+            _node1 = new SV<int>(this, StatsType.Node1, client.Character.Node1);
+            _node2 = new SV<int>(this, StatsType.Node2, client.Character.Node2);
+            _node3 = new SV<int>(this, StatsType.Node3, client.Character.Node3);
+            _node4 = new SV<int>(this, StatsType.Node4, client.Character.Node4);
             _xpBoosted = new SV<bool>(this, StatsType.XPBoost, client.Character.XPBoostTime != 0, true);
             _oxygenBar = new SV<int>(this, StatsType.OxygenBar, -1, true);
             _rank = new SV<int>(this, StatsType.Rank, client.Account.Rank);
@@ -750,9 +750,13 @@ namespace wServer.realm.entities
 
         public override void Init(World owner)
         {
+            
+
             var x = 0;
             var y = 0;
             var spawnRegions = owner.GetSpawnPoints();
+
+            MarksActivate();
             if (spawnRegions.Any())
             {
                 var rand = new System.Random();
@@ -898,10 +902,12 @@ namespace wServer.realm.entities
             }
         }
 
+        
         public override void Tick(RealmTime time)
         {
             if (!KeepAlive(time))
                 return;
+
 
             CheckTradeTimeout(time);
             HandleQuest(time);
@@ -930,6 +936,8 @@ namespace wServer.realm.entities
                 return;
             }
         }
+
+
 
         void TickActivateEffects(RealmTime time)
         {
@@ -1457,6 +1465,24 @@ namespace wServer.realm.entities
             }
             return false;
         }
+
+        bool SecondChance()
+        {
+            Random rnd = new Random();
+            int chance = rnd.Next(1, 5);
+            if (Mark == 5)
+            {
+                if (chance == 1)
+                {
+
+                    foreach (var player in Owner.Players.Values)
+                        player.SendInfo($"{Name} suddenly vanishes..");
+                    ReconnectToNexus();
+                    return true;
+                }
+            }
+            return false;
+        }
         bool isAlertArea()
         {
             var amount = ((int)Credits / 100) * 10;
@@ -1609,6 +1635,8 @@ namespace wServer.realm.entities
             if (isAlertArea())
                 return;
             if (isAdminsArena())
+                return;
+            if (SecondChance())
                 return;
             if (Resurrection())
                 return;

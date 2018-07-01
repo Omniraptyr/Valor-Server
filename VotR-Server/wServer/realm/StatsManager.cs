@@ -47,7 +47,7 @@ namespace wServer.realm
 
         public int GetAttackDamage(int min, int max, bool isAbility = false)
         {
-            var ret = isDoubleDamage() * Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility) * CriticalModifier() + VengeanceDamage() + RelentlessDamage() + KaraDamage() + MoonLightDamage();
+            var ret = isDoubleDamage() * Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility) * CriticalModifier() + VengeanceDamage() + RelentlessDamage() + KaraDamage() + MoonLightDamage() + RageDamage();
             //Log.Info($"Dmg: {ret}");
             return (int)ret;
         } 
@@ -78,6 +78,14 @@ namespace wServer.realm
                 return Owner.Surge * 6;
             return 0;
         }
+
+        public int RageDamage()
+        {
+            if (Owner.Mark == 3)
+                return Owner.Surge * 3;
+            return 0;
+        }
+
         public int GraspDamage()
         {
             if (Owner.HasConditionEffect(ConditionEffects.GraspofZol))
@@ -282,9 +290,11 @@ namespace wServer.realm
                 if (Owner.HasConditionEffect(ConditionEffects.Quiet))
                     return 0;
                 if (Owner.HasConditionEffect(ConditionEffects.Empowered))
-                    return 24f + 0.06f * wis;
-                if (Owner.HasConditionEffect(ConditionEffects.ManaRecovery))
                     return 26f + 0.06f * wis;
+                if (Owner.HasConditionEffect(ConditionEffects.ManaRecovery))
+                    return 24f + 0.06f * wis;
+                if (Owner.Mark == 4 && Owner.Surge >= 25)
+                    return 18f + 0.06f * wis;
 
                 return 0.5f + this[7] * .06f;
             }

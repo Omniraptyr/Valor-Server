@@ -22,7 +22,7 @@ public class SorForgePanel extends Panel {
     var sorIcon:BitmapData = TextureRedrawer.resize(AssetLibrary.getImageFromSet("d3LofiObjEmbed", 817), null, 100, true, 0, 0);
     private var icon:Bitmap;
     private var title:String = "Sor Forge";
-    private var cookText:String = "Forge";
+    private var buttonText:String = "Forge";
     private var objectType:int;
     var forgeButton:DeprecatedTextButton;
 
@@ -33,7 +33,7 @@ public class SorForgePanel extends Panel {
         this.titleText.x = 48;
         this.titleText.y = 28;
         addChild(this.titleText);
-        this.forgeButton = new DeprecatedTextButton(16, this.cookText);
+        this.forgeButton = new DeprecatedTextButton(16, this.buttonText);
         this.forgeButton.textChanged.addOnce(this.alignButton);
         addChild(this.forgeButton);
     }

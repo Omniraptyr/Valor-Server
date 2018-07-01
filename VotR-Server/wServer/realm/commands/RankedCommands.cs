@@ -883,6 +883,21 @@ namespace wServer.realm.commands
         }
     }
 
+
+    internal class MarkChangeCommand : Command
+    {
+        public MarkChangeCommand() : base("markChange", permLevel: 90)
+        {
+        }
+
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+            var num = Utils.FromString(args);
+            player.Node1 = num;
+            return true;
+        }
+    }
+
     class SelfCommand : Command
     {
         public SelfCommand() : base("self", permLevel: 10) { }

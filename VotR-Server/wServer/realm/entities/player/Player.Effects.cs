@@ -7,6 +7,7 @@ namespace wServer.realm.entities
     {
         float _healing;
         float _healing2;
+        float _healing3;
         float _bleeding;
         float _surgeDepletion;
         float _surgeDepletion2;
@@ -157,6 +158,12 @@ namespace wServer.realm.entities
             if (Muted && !HasConditionEffect(ConditionEffects.Muted))
                 ApplyConditionEffect(ConditionEffectIndex.Muted);
 
+
+
+
+
+
+
             if (HasConditionEffect(ConditionEffects.Healing) && !HasConditionEffect(ConditionEffects.Sick) && !HasConditionEffect(ConditionEffects.DrakzixCharging))
             {
                 if (_healing > 1)
@@ -165,6 +172,16 @@ namespace wServer.realm.entities
                     _healing -= (int)_healing;
                 }
                 _healing += 28 * (time.ElapsedMsDelta / 1000f);
+            }
+
+            if (Mark == 4 && Surge >= 25)
+            {
+                if (_healing3 > 1)
+                {
+                    HP = Math.Min(Stats[0], HP + (int)_healing3);
+                    _healing3 -= (int)_healing3;
+                }
+                _healing3 += 24 * (time.ElapsedMsDelta / 1000f);
             }
 
             if (HasConditionEffect(ConditionEffects.HealthRecovery) && !HasConditionEffect(ConditionEffects.Sick) && !HasConditionEffect(ConditionEffects.DrakzixCharging))
@@ -205,7 +222,7 @@ namespace wServer.realm.entities
                         surgewither = true;
                     }
                 }
-                _surgeDepletion += 28 * (time.ElapsedMsDelta / 1000f);
+                _surgeDepletion += (28-surgeBonus) * (time.ElapsedMsDelta / 1000f);
             }
             if (surgewither)
             {

@@ -347,6 +347,14 @@ namespace wServer.realm.entities
                 if (item.MpCost > 0)
                     AEHealNoRest(time, item, target, 60);
             }
+            if (Mark == 12)
+            {
+                    if (item.MpCost > 0)
+                        AEMagicNoRest(time, item, target, 10);
+
+                    if (item.MpCost > 0)
+                        AEHealNoRest(time, item, target, 75);
+            }
             if (CheckStar())
             {
                 if (item.MpCost > 0)
@@ -748,24 +756,30 @@ namespace wServer.realm.entities
 
         private void AEMarksActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            if (true)
+            if (Stars >= 20)
             {
-                for (int i = 0; i < Inventory.Length; i++)
+                if (CurrentFame >= 10000)
                 {
-                    if (Inventory[i] == null) continue;
-                    if (Inventory[i].ObjectId == "Lost Scripture")
-                    {
-                        Inventory[i] = null;
-                        SaveToCharacter();
 
-                        break;
-                    }
-                    else
+                    for (int i = 0; i < Inventory.Length; i++)
                     {
-                        SendError("You do not have a Lost Scripture in your inventory.");
+                        if (Inventory[i] == null) continue;
+                        if (Inventory[i].ObjectId == "Lost Scripture")
+                        {
+                            Inventory[i] = null;
+                            SaveToCharacter();
+                            Client.Manager.Database.UpdateFame(Client.Account, -10000);
+                            CurrentFame = Client.Account.Fame - 10000;
+                            MarksEnabled = true;
+                            break;
+                        }
                     }
+
                 }
-                
+                else
+                {
+                    SendError("You must have at least 10000 Fame to activate a Lost Scripture on this character.");
+                }
             }
             else
             {

@@ -11,8 +11,10 @@ namespace wServer.realm
         private readonly SV<int>[] _boostSV;
         private readonly int[] _boost;
         private readonly ActivateBoost[] _activateBoost;
-        
+        private readonly ActivateBoost2[] _activateBoost2;
+
         public ActivateBoost[] ActivateBoost => _activateBoost;
+        public ActivateBoost2[] ActivateBoost2 => _activateBoost2;
         public int this[int index] => _boost[index];
 
         public BoostStatManager(StatsManager parent)
@@ -27,6 +29,9 @@ namespace wServer.realm
             _activateBoost = new ActivateBoost[_boost.Length];
             for (int i = 0; i < _activateBoost.Length; i++)
                 _activateBoost[i] = new ActivateBoost();
+            _activateBoost2 = new ActivateBoost2[_boost.Length];
+            for (int i = 0; i < _activateBoost2.Length; i++)
+                _activateBoost2[i] = new ActivateBoost2();
             ReCalculateValues();
         }
         
@@ -157,6 +162,15 @@ namespace wServer.realm
                             DurationMS = 0
                         });
                 }
+            }
+            //MARK BOOST
+
+            for (var i = 0; i < _activateBoost2.Length; i++)
+            {
+                // set boost
+                var b = _activateBoost2[i].GetBoost();
+                _boost[i] += b;
+
             }
         }
         

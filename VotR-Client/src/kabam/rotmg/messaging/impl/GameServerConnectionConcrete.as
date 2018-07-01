@@ -198,6 +198,7 @@ import kabam.rotmg.messaging.impl.outgoing.JoinGuild;
 import kabam.rotmg.messaging.impl.outgoing.KeyInfoRequest;
 import kabam.rotmg.messaging.impl.outgoing.LaunchRaid;
 import kabam.rotmg.messaging.impl.outgoing.Load;
+import kabam.rotmg.messaging.impl.outgoing.MarkRequest;
 import kabam.rotmg.messaging.impl.outgoing.MarketCommand;
 import kabam.rotmg.messaging.impl.outgoing.Move;
 import kabam.rotmg.messaging.impl.outgoing.OtherHit;
@@ -439,6 +440,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(SORFORGEREQUEST).toMessage(SorForgeRequest);
         _local1.map(FORGEITEM).toMessage(ForgeItem);
         _local1.map(ALERTNOTICE).toMessage(AlertNotice);
+        _local1.map(MARKREQUEST).toMessage(MarkRequest);
         _local1.map(UNBOXREQUEST).toMessage(UnboxRequest);
         _local1.map(MARKET_COMMAND).toMessage(MarketCommand);
         _local1.map(FAILURE).toMessage(Failure).toMethod(this.onFailure);

@@ -643,6 +643,7 @@ namespace wServer.realm
                     return new Pet(manager, id);
                 case "SorForger":
                 case "EnchantingGround":
+                case "MarksGround":
                 default:
                     Log.WarnFormat("Not supported type: {0}", type);
                     return new Entity(manager, id);

@@ -86,9 +86,9 @@ public class NodeDisplay1 extends Sprite implements TooltipAble {
             this.nodeTexture = TextureRedrawer.redraw(AssetLibrary.getImageFromSet("marks10x10", 9), 46, true, 0);
             this.tooltip = new TextToolTip(0x363636, 0x660000, "Node of Power", "Raises the time it takes for your surge to deplete.", 200);
         }
-        if(player.node1_== 11){
+        if(player.node3_== 11){
             this.nodeTexture = TextureRedrawer.redraw(AssetLibrary.getImageFromSet("marks10x10", 10), 46, true, 0);
-            this.tooltip = new TextToolTip(0x363636, 0x660000, "Node of Unity", "Raises all stats by 2 except health and mana.", 200);
+            this.tooltip = new TextToolTip(0x363636, 0x660000, "Node of Aid", "Raises your OVERALL restoration by 5%.", 200);
         }
         super();
         mouseChildren = false;

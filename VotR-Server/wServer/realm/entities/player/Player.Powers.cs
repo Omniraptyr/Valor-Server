@@ -350,6 +350,67 @@ namespace wServer.realm.entities
             } 
         }
 
+        public bool ResolveSlot0()
+        {
+            if (Inventory[0] == null)
+            {
+                return false;
+            }
+            if (Inventory[0].Legendary == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool ResolveSlot1()
+        {
+            if (Inventory[1] == null)
+            {
+                return false;
+            }
+            if (Inventory[1].Legendary == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool ResolveSlot2()
+        {
+            if (Inventory[2] == null)
+            {
+                return false;
+            }
+            if (Inventory[2].Legendary == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool ResolveSlot3()
+        {
+            if (Inventory[3] == null)
+            {
+                return false;
+            }
+            if (Inventory[3].Legendary == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public bool CheckForLeggies()
         {
             for (var i = 0; i < 3; i++)
@@ -424,7 +485,7 @@ namespace wServer.realm.entities
                     break;
                 //Grasp of Zol
                 case 9:
-                    if (Owner.Name == "Aldragine's Hideout" || Owner.Name == "Nontridus" || Owner.Name == "The Nontridus" || Owner.Name == "Sincryer's Gate" || Owner.Name == "Core of the Hideout" || Owner.Name == "Keeping of Aldragine" || Owner.Name == "Zol Secret Shop")
+                    if (Owner.Name == "Aldragine's Hideout" || Owner.Name == "Nontridus" || Owner.Name == "TheNontridus" || Owner.Name == "Sincryer's Gate" || Owner.Name == "Core of the Hideout" || Owner.Name == "Keeping of Aldragine" || Owner.Name == "Zol Secret Shop")
 
                     {
                         ApplyConditionEffect(ConditionEffectIndex.GraspofZol);

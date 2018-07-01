@@ -113,6 +113,7 @@ namespace wServer.networking.packets
         FORGEITEM = 160,
         UNBOXREQUEST = 161,
         UNBOXRESULT = 162,
-        ALERTNOTICE = 163
+        ALERTNOTICE = 163,
+        MARKREQUEST = 164
     }
 }

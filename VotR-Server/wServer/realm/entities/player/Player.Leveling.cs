@@ -338,7 +338,14 @@ namespace wServer.realm.entities
             }
             return 0;
         }
-
+        public int EnergyEyeBonus()
+        {
+            if (Mark == 4)
+            {
+                return 2;
+            }
+            return 0;
+        }
         public void SurgeActivation(RealmTime time)
         {   
             if (Surge <= 100)
@@ -346,20 +353,57 @@ namespace wServer.realm.entities
                 SurgeCounter =  100;
                 if (HasConditionEffect(ConditionEffects.Surged))
                 {
-                    Surge += 4*SurgeBonus();
+                    Surge += 4*SurgeBonus() + EnergyEyeBonus();
                 }
                 else
                 {
-                    Surge += 2*SurgeBonus();
+                    Surge += 2*SurgeBonus() + EnergyEyeBonus();
                 }
                 isSurgeGone = true;
                 surgewither = false;
             }
-            if (Surge == 100)
+            if (Surge == protRestore())
             {
                 protectionDamage = 0;
             }
         }
+        public int protRestore()
+        {
+            if (Stats[11] >= 0 && Stats[11] <= 40)
+            {
+                return 100;
+            }
+            else if (Stats[11] >= 41 && Stats[11] <= 50)
+            {
+                return 90;
+            }
+            else if (Stats[11] >= 51 && Stats[11] <= 60)
+            {
+                return 75;
+            }
+            else if (Stats[11] >= 61 && Stats[11] <= 70)
+            {
+                return 60;
+            }
+            else if (Stats[11] >= 71 && Stats[11] <= 80)
+            {
+                return 55;
+            }
+            else if (Stats[11] >= 81 && Stats[11] <= 90)
+            {
+                return 50;
+            }
+            else if (Stats[11] >= 101 && Stats[11] <= 130)
+            {
+                return 45;
+            }
+            else if (Stats[11] > 139)
+            {
+                return 40;
+            }
+            return 100;
+        }
+
         public bool EnemyKilled(Enemy enemy, int exp, bool killer)
         {
             var acc = Client.Account;

@@ -308,7 +308,7 @@ public class GameSprite extends AGameSprite {
     private function showAlertStatusDisplay():void {
             this.alertStatusDisplay = new AlertStatusDisplay();
             this.alertStatusDisplay.x = (this.markShopButton.x);
-            this.alertStatusDisplay.y = (this.markShopButton.y + 32);
+            this.alertStatusDisplay.y = (this.markShopButton.y + 64);
             addChild(this.alertStatusDisplay);
     }
 

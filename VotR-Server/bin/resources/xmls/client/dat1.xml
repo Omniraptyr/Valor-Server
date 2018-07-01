@@ -112630,18 +112630,13 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <DisplayId>The Bifierce</DisplayId>
     </Object>
     <Object type="0x6164" id="The Baphomet">
-        <Class>Character</Class>
+        <Class>MarksGround</Class>
         <Texture>
             <File>lofiObjBig</File>
             <Index>0x1bb</Index>
         </Texture>
-        <HitSound>monster/abyss_brutes_hit</HitSound>
-        <DeathSound>monster/abyss_brutes_death</DeathSound>
-        <Size>150</Size>
-        <ShadowSize>60</ShadowSize>
-        <MaxHitPoints>180000</MaxHitPoints>
-        <Flying/>
-        <Defense>40</Defense>
+        <Size>120</Size>
+        <Static/>
     </Object>
     <Object type="0x53a1" id="Lost Scripture">
         <Class>Equipment</Class>
@@ -112655,9 +112650,11 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>11</BagType>
         <Legendary/>
         <PoZPage/>
+        <InvUse/>
+        <Activate>MarksActivate</Activate>
         <DisplayId>Lost Scripture</DisplayId>
     </Object>
-	    <Object type="0x616c" id="The Kraken">
+		<Object type="0x616c" id="The Kraken">
         <Enemy/>
         <DisplayId>The Kraken</DisplayId>
         <Class>Character</Class>
@@ -113409,7 +113406,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Boomerang/>
         </Projectile>
     </Object>
-	    <Object type="0x617e" id="Banner of the Furious Kraken">
+    <Object type="0x617f" id="Banner of the Furious Kraken">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -113419,17 +113416,17 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="26" amount="20">IncrementStat</ActivateOnEquip>
         <Description>Pirates value this banner for it's true grandeur.</Description>
-        <Usable/>
         <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="6"/>
-            <EffectInfo name="Empowerment Duration:" description="6"/>
-            <EffectInfo name="Radius:" description="4"/>
+            <EffectInfo name="Banner Lifetime" description="6"/>
+            <EffectInfo name="Empowerment Duration" description="6"/>
+            <EffectInfo name="Radius" description="4"/>
             <EffectInfo name="" description="Empowers all players near banner."/>
         </ExtraTooltipData>
+        <Usable/>
         <BagType>6</BagType>
         <MpCost>85</MpCost>
-        <Activate stat="3" amount="65" duration="4">StatBoostSelf</Activate>
         <Activate range="4" amount="6" duration="6">Banner</Activate>
+        <Activate stat="3" amount="75" duration="4" range="4.5" noStack="true" useWisMod="true">StatBoostAura</Activate>
         <Activate effect="Invulnerable" duration="3">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
         <feedPower>900</feedPower>

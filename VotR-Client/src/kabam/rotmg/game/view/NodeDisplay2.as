@@ -90,7 +90,7 @@ public class NodeDisplay2 extends Sprite implements TooltipAble {
         }
         if(player.node2_== 11){
             this.nodeTexture = TextureRedrawer.redraw(AssetLibrary.getImageFromSet("marks10x10", 10), 46, true, 0);
-            this.tooltip = new TextToolTip(0x363636, 0x660000, "Node of Unity", "Raises all stats by 2 except health and mana.", 200);
+            this.tooltip = new TextToolTip(0x363636, 0x660000, "Node of Aid", "Raises your OVERALL restoration by 5%.", 200);
         }
         this.background = UIUtils.makeHUDBackground(30, 30);
         this.bitmap = new Bitmap(this.nodeTexture);
