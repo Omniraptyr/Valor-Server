@@ -23,7 +23,7 @@ namespace wServer.networking.handlers
 
         public void MarkUpdate(Player player, int markId, int buyAmount)
         {
-            if (player.MarksEnabled == false)
+            if (player.MarksEnabled == true)
             {
 
                 if (player.Onrane >= buyAmount)
