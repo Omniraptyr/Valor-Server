@@ -28,8 +28,7 @@ namespace wServer.networking.handlers
 
                 if (player.Onrane >= buyAmount)
                 {
-                    if(markId <= 11 && isNodeFull(player) == true)
-                    {
+                    
 
                     
                         player.Client.Manager.Database.UpdateOnrane(player.Client.Account, -buyAmount);
@@ -111,16 +110,11 @@ namespace wServer.networking.handlers
                                 player.SendHelp("You have activated this mark/node!");
                                 break;
                         }
-                    }
-                    else
-                    {
-                        player.SendError("Your node slots are full!");
-                    }
 
                 }
                 else
                 {
-                    player.SendError("You do not have enough onrane or your node slots are full.");
+                    player.SendError("You do not have enough onrane.");
                 }
             }
             else
@@ -153,31 +147,6 @@ namespace wServer.networking.handlers
             else
             {
                 player.SendError("All of your node slots are full!");
-            }
-
-        }
-
-        public bool isNodeFull(Player player)
-        {
-            if (player.Node1 == 0)
-            {
-                return false;
-            }
-            else if (player.Node2 == 0)
-            {
-                return false;
-            }
-            else if (player.Node3 == 0)
-            {
-                return false;
-            }
-            else if (player.Node4 == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
             }
 
         }
