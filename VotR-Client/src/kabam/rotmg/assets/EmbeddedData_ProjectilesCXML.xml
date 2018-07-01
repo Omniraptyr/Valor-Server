@@ -6577,7 +6577,7 @@
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
-    <Object type="0x617e" id="Coral Rock">
+    <Object type="0x6181" id="Coral Rock">
         <Class>Projectile</Class>
         <RandomTexture>
             <Texture>

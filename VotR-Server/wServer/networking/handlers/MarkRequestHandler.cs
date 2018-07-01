@@ -28,7 +28,7 @@ namespace wServer.networking.handlers
 
                 if (player.Onrane >= buyAmount)
                 {
-                    if(markId <= 11 && isNodeFull(player))
+                    if(markId <= 11 && isNodeFull(player) == false)
                     {
 
                     

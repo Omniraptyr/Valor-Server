@@ -80553,6 +80553,7 @@ This dagger was a myth, will you live to tell the tale?
         <Defense>10</Defense>
         <XpMult>1</XpMult>
         <God/>
+		<UElitedrop/>
         <NoArticle/>
         <Projectile id="0">
             <ObjectId>Temple Star</ObjectId>
@@ -94878,6 +94879,7 @@ A whole thanksgiving turkey!
         <Size>100</Size>
         <MaxHitPoints>57500</MaxHitPoints>
         <Defense>35</Defense>
+		<UElitedrop/>
         <Projectile id="0">
             <ObjectId>Hollow Bolt</ObjectId>
             <MinDamage>20</MinDamage>
@@ -110212,6 +110214,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate duration="3.5">DDiceActivate</Activate>
         <Activate effect="Surged" duration="3.5">ConditionEffectSelf</Activate>
         <feedPower>2000</feedPower>
+        <Legendary/>
         <DisplayId>Devil Dice</DisplayId>
     </Object>
     <Object type="0x45d1" id="Oracle's Nightmare">
@@ -111837,7 +111840,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
-	        <Object type="0x6141" id="Leather Jacket">
+	<Object type="0x6141" id="Leather Jacket">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -111851,9 +111854,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="+10 Attack"/>
+            <EffectInfo name="" description="+20 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="+15 Defense"/>
+            <EffectInfo name="" description="+25 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -111869,7 +111872,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <MpCost>35</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
+        <Activate amount="20" amount2="25" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6142" id="Darkness Jacket">
@@ -111886,9 +111889,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="+10 Attack"/>
+            <EffectInfo name="" description="+20 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="+15 Defense"/>
+            <EffectInfo name="" description="+25 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -111904,7 +111907,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <MpCost>40</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
+        <Activate amount="20" amount2="25" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6143" id="Iron Jacket">
@@ -111921,9 +111924,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="+10 Attack"/>
+            <EffectInfo name="" description="+20 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="+15 Defense"/>
+            <EffectInfo name="" description="+25 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -111940,7 +111943,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <MpCost>50</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
+        <Activate amount="20" amount2="25" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6144" id="Lightweight Jacket">
@@ -111957,9 +111960,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="+10 Attack"/>
+            <EffectInfo name="" description="+20 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="+15 Defense"/>
+            <EffectInfo name="" description="+25 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -111976,7 +111979,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <MpCost>60</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
+        <Activate amount="20" amount2="25" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6145" id="Murderous Jacket">
@@ -111993,9 +111996,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="+10 Attack"/>
+            <EffectInfo name="" description="+20 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="+15 Defense"/>
+            <EffectInfo name="" description="+25 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -112012,7 +112015,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <MpCost>60</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
+        <Activate amount="20" amount2="25" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6146" id="Invincibilty Jacket">
@@ -112029,9 +112032,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="+10 Attack"/>
+            <EffectInfo name="" description="+20 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="+15 Defense"/>
+            <EffectInfo name="" description="+25 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -112049,7 +112052,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <MpCost>65</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
+        <Activate amount="20" amount2="25" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6147" id="Jacket of Sorrows">
@@ -112066,9 +112069,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="+10 Attack"/>
+            <EffectInfo name="" description="+20 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="+15 Defense"/>
+            <EffectInfo name="" description="+25 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Jacket Razor 1</ObjectId>
@@ -112086,7 +112089,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <MpCost>65</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
+        <Activate amount="20" amount2="25" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
     <Object type="0x6148" id="Bronze Daggers">
@@ -112531,9 +112534,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Offensive Stance" description=""/>
-            <EffectInfo name="" description="+10 Attack"/>
+            <EffectInfo name="" description="+20 Attack"/>
             <EffectInfo name="Defensive Stance" description=""/>
-            <EffectInfo name="" description="+15 Defense"/>
+            <EffectInfo name="" description="+25 Defense"/>
         </ExtraTooltipData>
         <Projectile>
             <ObjectId>Grey Boomerang</ObjectId>
@@ -112551,7 +112554,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <MpCost>60</MpCost>
         <SurgeCost>1</SurgeCost>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
-        <Activate amount="10" amount2="15" noStack="false">JacketAbility</Activate>
+        <Activate amount="20" amount2="25" noStack="false">JacketAbility</Activate>
         <Cooldown>2</Cooldown>
     </Object>
 	    <Object type="0x6160" id="Otherworldly Blades">
@@ -113255,7 +113258,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
-    <Object type="0x617e" id="Coral Rock">
+    <Object type="0x6181" id="Coral Rock">
         <Class>Projectile</Class>
         <RandomTexture>
             <Texture>
