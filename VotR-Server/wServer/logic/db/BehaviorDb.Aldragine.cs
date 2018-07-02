@@ -837,7 +837,7 @@ namespace wServer.logic
                     new MostDamagers(3,
                     LootTemplates.SFElite()
                     ),
-                    new Threshold(0.05,
+                    new Threshold2(0.10, 10000,
                        new TierLoot(12, ItemType.Weapon, 0.08),
                        new TierLoot(5, ItemType.Ability, 0.07),
                        new TierLoot(6, ItemType.Ability, 0.05),
@@ -994,7 +994,7 @@ namespace wServer.logic
                     new MostDamagers(3,
                        LootTemplates.SFElite()
                     ),
-                    new Threshold(0.05,
+                    new Threshold2(0.12, 10000,
                        new TierLoot(12, ItemType.Weapon, 0.08),
                        new TierLoot(5, ItemType.Ability, 0.07),
                        new TierLoot(6, ItemType.Ability, 0.05),
@@ -1177,7 +1177,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SFGigas()
                     ),
-                new Threshold(0.05,
+                new Threshold2(0.07, 10000,
                     new TierLoot(12, ItemType.Weapon, 0.08),
                     new TierLoot(5, ItemType.Ability, 0.07),
                     new TierLoot(6, ItemType.Ability, 0.05),
@@ -1210,7 +1210,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.FabledItemsLootUltra()
                 ),
-                new Threshold(0.05,
+                new Threshold2(0.07, 12000,
                     new TierLoot(12, ItemType.Weapon, 0.08),
                     new TierLoot(5, ItemType.Ability, 0.07),
                     new TierLoot(6, ItemType.Ability, 0.05),
@@ -1241,7 +1241,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SFElite()
                     ),
-                new Threshold(0.15,
+                new Threshold(0.15, 
                 new ItemLoot("Gold Cache", 0.35),
                 new ItemLoot("Onrane", 1),
                 new ItemLoot("Onrane Cache", 0.08),
@@ -1419,7 +1419,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SFGigas()
                     ),
-                    new Threshold(0.05,
+                    new Threshold2(0.10, 10000,
                         new TierLoot(12, ItemType.Weapon, 0.08),
                         new TierLoot(5, ItemType.Ability, 0.07),
                         new TierLoot(6, ItemType.Ability, 0.05),
@@ -1585,7 +1585,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SFGigas()
                     ),
-                    new Threshold(0.05,
+                    new Threshold2(0.10, 12500,
                         new TierLoot(12, ItemType.Weapon, 0.08),
                         new TierLoot(5, ItemType.Ability, 0.07),
                         new TierLoot(6, ItemType.Ability, 0.05),

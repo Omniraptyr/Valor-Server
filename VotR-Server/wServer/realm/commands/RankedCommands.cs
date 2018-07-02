@@ -872,13 +872,24 @@ namespace wServer.realm.commands
 
     internal class SkinEffectCommand : Command
     {
-        public SkinEffectCommand() : base("skinEff",  permLevel: 90)
+        public SkinEffectCommand() : base("skinEff", permLevel: 90)
         {
         }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
             player.XmlEffect = args;
+            return true;
+        }
+    }
+
+
+    class SuppScoreCommand : Command
+    {
+        public SuppScoreCommand() : base("sscore", permLevel: 90) { }
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+            player.SendInfo(player.SupportScore + "");
             return true;
         }
     }

@@ -160,6 +160,7 @@ public class Parameters {
         setDefaultKey("toggleHPBar", KeyCodes.H);
         setDefault("playerObjectType", 782);
         setDefault("playMusic", true);
+        setDefault("showTierTag",true);
         setDefault("playSFX", true);
         setDefault("playPewPew", true);
         setDefault("centerOnPlayer", true);

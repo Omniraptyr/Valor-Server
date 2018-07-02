@@ -26,12 +26,15 @@ import flash.ui.Mouse;
 import flash.ui.MouseCursor;
 import flash.ui.MouseCursorData;
 
+import kabam.rotmg.core.StaticInjectorContext;
+
 import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 import kabam.rotmg.ui.UIUtils;
+import kabam.rotmg.ui.signals.ToggleShowTierTagSignal;
 
 public class Options extends Sprite {
 
@@ -455,6 +458,7 @@ public class Options extends Sprite {
         this.addOptionAndPosition(new ChoiceOption("showTradePopup", makeOnOffLabels(), [true, false], TextKey.OPTIONS_SHOW_TRADE_REQUEST_PANEL, TextKey.OPTIONS_SHOW_TRADE_REQUEST_PANEL_DESC, null));
         this.addOptionAndPosition(new ChoiceOption("showGuildInvitePopup", makeOnOffLabels(), [true, false], TextKey.OPTIONS_SHOW_GUILD_INVITE_PANEL, TextKey.OPTIONS_SHOW_GUILD_INVITE_PANEL_DESC, null));
         this.addOptionAndPosition(new ChoiceOption("cursorSelect", makeCursorSelectLabels(), [MouseCursor.AUTO, "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"], "Custom Cursor", "Click here to change the mouse cursor. May help with aiming.", refreshCursor));
+        this.addOptionAndPosition(new ChoiceOption("lootPreview",makeOnOffLabels(),[true,false],"Loot Preview","Shows previews of equipment over bags",null));
         if (!Parameters.GPURenderError) {
             _local1 = TextKey.OPTIONS_HARDWARE_ACC_DESC;
             _local2 = 0xFFFFFF;
@@ -472,6 +476,12 @@ public class Options extends Sprite {
         this.addOptionAndPosition(new ChoiceOption("uiQuality", makeHighLowLabels(), [true, false], "Toggle UI Quality", "This allows you to pick the ui quality", onUIQualityToggle));
         this.addOptionAndPosition(new ChoiceOption("HPBar", makeOnOffLabels(), [true, false], "HP Bar", "This toggles whether to show the hp bar", null));
         this.addOptionAndPosition(new ChoiceOption("outlineProj", makeOnOffLabels(), [true, false], "Toggle Projectile Outline", "This toggles whether to outline projectiles", null));
+        this.addOptionAndPosition(new ChoiceOption("showTierTag",makeOnOffLabels(),[true,false],"Show Tier level","Show Tier level on gear",this.onToggleTierTag));
+    }
+
+    private function onToggleTierTag() : void
+    {
+        StaticInjectorContext.getInjector().getInstance(ToggleShowTierTagSignal).dispatch(Parameters.data_.showTierTag);
     }
 
     private function onShowQuestPortraitsChange():void {

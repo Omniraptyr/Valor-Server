@@ -100,7 +100,7 @@ namespace wServer.logic
                                 new MostDamagers(3,
                     LootTemplates.SFLow()
                     ),
-                new Threshold(0.025,
+                new Threshold(0.02,
                     new ItemLoot("Potion of Defense", 1.0),
                     new ItemLoot("Potion of Dexterity", 1.0),
                     new ItemLoot("Potion of Might", 1.0),
@@ -346,7 +346,7 @@ namespace wServer.logic
                                 new MostDamagers(3,
                     LootTemplates.SFLow()
                     ),
-                new Threshold(0.025,
+                new Threshold2(0.04, 5250,
                     new ItemLoot("Onrane", 0.3),
                     new ItemLoot("Potion of Might", 1.0),
                     new ItemLoot("Potion of Life", 1.0),
@@ -536,7 +536,7 @@ namespace wServer.logic
                                 new MostDamagers(3,
                     LootTemplates.SFLow()
                     ),
-                new Threshold(0.025,
+                new Threshold2(0.06, 11000,
                     new ItemLoot("Gold Cache", 1.0),
                     new ItemLoot("Onrane", 1.0),
                     new ItemLoot("Potion of Might", 1.0),

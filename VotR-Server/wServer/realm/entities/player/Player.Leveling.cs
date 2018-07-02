@@ -463,12 +463,19 @@ namespace wServer.realm.entities
             {
                 if (drop <= 25)
                 {
-                     Client.Manager.Database.UpdateLootbox4(acc, 1);
-                     Lootbox4 += 1;
-                     this.ForceUpdate(Lootbox4);
-                     SendHelp("You have obtained a Elite Lootbox drop! Go to nexus to open it!");
+                    Client.Manager.Database.UpdateLootbox4(acc, 1);
+                    Lootbox4 += 1;
+                    this.ForceUpdate(Lootbox4);
+                    SendHelp("You have obtained a Elite Lootbox drop! Go to nexus to open it!");
                 }
             }
+
+            if (enemy.ObjectDesc.ResetSS == true)
+            {
+                foreach (var player in Owner.Players.Values)
+                    player.SupportScore = 0;
+            }
+
             if (enemy.ObjectDesc.UElitedrop == true)
             {
                 Client.Manager.Database.UpdateLootbox4(acc, 1);

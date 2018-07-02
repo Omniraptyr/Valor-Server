@@ -1,14 +1,19 @@
 ﻿package com.company.assembleegameclient.objects {
 import com.company.assembleegameclient.objects.animation.AnimationsData;
 import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.util.ConditionEffect;
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
 import com.company.util.AssetLibrary;
 import com.company.util.ConversionUtil;
+import com.company.util.PointUtil;
 
 import flash.display.BitmapData;
+import flash.geom.Matrix;
 import flash.utils.Dictionary;
 import flash.utils.getDefinitionByName;
+
+import kabam.rotmg.assets.EmbeddedData;
 
 import kabam.rotmg.constants.GeneralConstants;
 import kabam.rotmg.constants.ItemConstants;
@@ -24,6 +29,7 @@ public class ObjectLibrary {
     public static const typeToDisplayId_:Dictionary = new Dictionary();
     public static const typeToTextureData_:Dictionary = new Dictionary();
     public static const typeToTopTextureData_:Dictionary = new Dictionary();
+    public static const setLibrary_:Dictionary = new Dictionary();
     public static const typeToAnimationsData_:Dictionary = new Dictionary();
     public static const petXMLDataLibrary_:Dictionary = new Dictionary();
     public static const skinSetXMLDataLibrary_:Dictionary = new Dictionary();
@@ -204,7 +210,21 @@ public class ObjectLibrary {
         }
         return (AssetLibrary.getImageFromSet(IMAGE_SET_NAME, IMAGE_ID));
     }
-
+    public static function getSetXMLFromType(_arg_1:int) : XML
+    {
+        var _local_2:XML = null;
+        var _local_3:int = 0;
+        if(setLibrary_[_arg_1] != undefined)
+        {
+            return setLibrary_[_arg_1];
+        }
+        for each(_local_2 in EmbeddedData.skinsEquipmentSetsXML.EquipmentSet)
+        {
+            _local_3 = int(_local_2.@type);
+            setLibrary_[_local_3] = _local_2;
+        }
+        return setLibrary_[_arg_1];
+    }
     public static function getRedrawnTextureFromType(_arg_1:int, _arg_2:int, _arg_3:Boolean, _arg_4:Boolean = true, _arg_5:Number = 5):BitmapData {
         var _local_6:BitmapData = getBitmapData(_arg_1);
         if (Parameters.itemTypes16.indexOf(_arg_1) != -1) {
@@ -226,7 +246,56 @@ public class ObjectLibrary {
         _local_6 = GlowRedrawer.outlineGlow(_local_6, 0);
         return (_local_6);
     }
+    public static function getItemIcon(_arg_1:int) : BitmapData
+    {
+        var _local_6:int = 0;
+        var _local_9:int = 0;
+        var _local_7:* = null;
+        var _local_3:* = null;
+        var _local_2:* = null;
+        var _local_8:* = null;
+        var _local_10:* = null;
+        var _local_4:* = null;
+        var _local_5:Matrix = new Matrix();
+        if(_arg_1 == -1)
+        {
+            _local_7 = scaleBitmapData(AssetLibrary.getImageFromSet("lofiInterface",7),2);
+            _local_5.translate(4,4);
+            _local_3 = new BitmapData(22,22,true,0);
+            _local_3.draw(_local_7,_local_5);
+            return _local_3;
+        }
+        _local_2 = xmlLibrary_[_arg_1];
+        _local_8 = typeToTextureData_[_arg_1];
+        _local_10 = Boolean(_local_8)?_local_8.mask_:null;
+        _local_6 = "Tex1" in _local_2?int(_local_2.Tex1):int(0);
+        _local_9 = "Tex2" in _local_2?int(_local_2.Tex2):int(0);
+        _local_4 = getTextureFromType(_arg_1);
+        if((_local_6 != 0 || _local_9 != 0) && (_arg_1 != 317 && _arg_1 != 318))
+        {
+            _local_4 = TextureRedrawer.retextureNoSizeChange(_local_4,_local_10,_local_6,_local_9);
+            _local_5.scale(0.2,0.2);
+        }
+        _local_7 = scaleBitmapData(_local_4,2);
+        _local_5.translate(4,4);
+        _local_3 = new BitmapData(22,22,true,0);
+        _local_3.draw(_local_7,_local_5);
+        _local_3 = GlowRedrawer.outlineGlow(_local_3,0);
+        _local_3.applyFilter(_local_3,_local_3.rect,PointUtil.ORIGIN);
+        return _local_3;
+    }
 
+    public static function scaleBitmapData(_arg_1:BitmapData, _arg_2:Number) : BitmapData
+    {
+        _arg_2 = Math.abs(_arg_2);
+        var _local_4:int = int(_arg_1.width * _arg_2) || int(1);
+        var _local_6:int = int(_arg_1.height * _arg_2) || int(1);
+        var _local_3:BitmapData = new BitmapData(_local_4,_local_6,true,0);
+        var _local_5:Matrix = new Matrix();
+        _local_5.scale(_arg_2,_arg_2);
+        _local_3.draw(_arg_1,_local_5);
+        return _local_3;
+    }
     public static function getSizeFromType(_arg1:int):int {
         var _local2:XML = xmlLibrary_[_arg1];
         if (!_local2.hasOwnProperty("Size")) {

@@ -1,9 +1,11 @@
 ﻿package com.company.assembleegameclient.ui.tooltip {
 import com.company.assembleegameclient.constants.InventoryOwnerTypes;
+import com.company.assembleegameclient.misc.UILabel;
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.ui.LineBreakDesign;
+import com.company.assembleegameclient.util.TierUtil;
 import com.company.util.BitmapUtil;
 import com.company.util.KeyCodes;
 
@@ -26,7 +28,7 @@ public class EquipmentToolTip extends ToolTip {
 
     private var icon:Bitmap;
     public var titleText:TextFieldDisplayConcrete;
-    private var tierText:TextFieldDisplayConcrete;
+    private var tierText:UILabel;
     private var descText:TextFieldDisplayConcrete;
     private var line1:LineBreakDesign;
     private var effectsText:TextFieldDisplayConcrete;
@@ -170,37 +172,9 @@ public class EquipmentToolTip extends ToolTip {
     }
 
     private function addTierText():void {
-        var _local_1 = (this.isPet() == false);
-        var _local_2 = (this.objectXML.hasOwnProperty("Consumable") == false);
-        var _local_3 = (this.objectXML.hasOwnProperty("Treasure") == false);
-        var _local_4:Boolean = this.objectXML.hasOwnProperty("Tier");
-        if (((((_local_1) && (_local_2))) && (_local_3))) {
-            this.tierText = new TextFieldDisplayConcrete().setSize(16).setColor(0xFFFFFF).setTextWidth(30).setBold(true);
-            if (_local_4) {
-                this.tierText.setStringBuilder(new LineBuilder().setParams(TextKey.TIER_ABBR, {"tier": this.objectXML.Tier}));
-            }
-            else {
-                if (this.objectXML.hasOwnProperty("@setType")) {
-                    this.tierText.setColor(0xFF9900);
-                    this.tierText.setStringBuilder(new StaticStringBuilder("ST"));
-                }
-                else if (this.objectXML.hasOwnProperty("Legendary"))
-                {
-                    this.tierText.setColor(0xFFFF00);
-                    this.titleText.setColor(0xFFFF00);
-                    this.tierText.setStringBuilder(new StaticStringBuilder("L"));
-                }
-                else if (this.objectXML.hasOwnProperty("Fabled"))
-                {
-                    this.tierText.setColor(0xFF0000);
-                    this.titleText.setColor(0xFF0000);
-                    this.tierText.setStringBuilder(new StaticStringBuilder("FB"));
-                }
-                else {
-                    this.tierText.setColor(9055202);
-                    this.tierText.setStringBuilder(new LineBuilder().setParams(TextKey.UNTIERED_ABBR));
-                }
-            }
+        this.tierText = TierUtil.getTierTag(this.objectXML,16);
+        if(this.tierText)
+        {
             addChild(this.tierText);
         }
     }
@@ -359,13 +333,13 @@ public class EquipmentToolTip extends ToolTip {
                     }).setColor(TooltipHelper.NO_DIFF_COLOR));
                 }
             }
-			for each (_local_5 in _local_1.CondChance) {
-            this.effects.push(new Effect("{condChance}% to inflict " +
-                "{condEff} for {condDuration} seconds", {"condChance": this.objectXML.Projectile.CondChance.@chance,
+            for each (_local_5 in _local_1.CondChance) {
+                this.effects.push(new Effect("{condChance}% to inflict " +
+                        "{condEff} for {condDuration} seconds", {"condChance": this.objectXML.Projectile.CondChance.@chance,
                     "condEff": this.objectXML.Projectile.CondChance.@effect,
                     "condDuration": this.objectXML.Projectile.CondChance.@duration
                 }));
-        }
+            }
         }
     }
 
@@ -503,7 +477,7 @@ public class EquipmentToolTip extends ToolTip {
                     case ActivationType.REMOVE_NEG_COND_SELF:
                         this.effects.push(new Effect(TextKey.REMOVES_NEGATIVE, {}).setColor(TooltipHelper.NO_DIFF_COLOR));
                         break;
-					case ActivationType.BANNER:
+                    case ActivationType.BANNER:
                         this.effects.push(new Effect("Banner lifetime: {lifetime} \nBanner radius: {radius} \nEmpowerment duration: {duration} \n", {
                             "lifetime": _local_1.@amount,
                             "duration": _local_1.@duration,
@@ -593,13 +567,13 @@ public class EquipmentToolTip extends ToolTip {
                         _local_18["data"] = _local_31;
                         this.effects.push(new Effect(_local_2, _local_18));
                         break;
-					case ActivationType.TORII:
-					this.effects.push(new Effect("Spawns {type} Torii \nDisappears after {lifetime} seconds \nApplies '{effect}' in a {radius} sqrs area for {duration} seconds", {
+                    case ActivationType.TORII:
+                        this.effects.push(new Effect("Spawns {type} Torii \nDisappears after {lifetime} seconds \nApplies '{effect}' in a {radius} sqrs area for {duration} seconds", {
                             "lifetime": _local_1.@amount,
                             "duration": _local_1.@duration,
                             "radius": _local_1.@range,
-							"effect": _local_1.@effect,
-							"type": (_local_1.@players == "true" ? "a defensive" : "an offensive")
+                            "effect": _local_1.@effect,
+                            "type": (_local_1.@players == "true" ? "a defensive" : "an offensive")
                         }).setColor(TooltipHelper.NO_DIFF_COLOR));
                 }
             }
@@ -630,7 +604,7 @@ public class EquipmentToolTip extends ToolTip {
         return (null);
     }
 
-   private function addActivateOnEquipTagsToEffectsList():void {
+    private function addActivateOnEquipTagsToEffectsList():void {
         var _local1:XML;
         var _local2:Boolean = true;
         for each (_local1 in this.objectXML.ActivateOnEquip) {
@@ -645,7 +619,7 @@ public class EquipmentToolTip extends ToolTip {
                 this.effects.push(new Effect(TextKey.INCREMENT_STAT, this.getComparedStatText(_local1, true)).setReplacementsColor(this.getComparedStatColor(_local1)));
             }
         }
-        
+
         for each (_local1 in this.objectXML.Steal) {
             if (_local2) {
                 this.effects.push(new Effect(TextKey.ON_EQUIP, ""));
@@ -658,15 +632,15 @@ public class EquipmentToolTip extends ToolTip {
                 this.effects.push(new Effect("+" + this.objectXML.Steal.@amount + " Mana Leech", {})
                         .setColor(9055202));
         }
-        
+
         for each (_local1 in this.objectXML.EffectEquip) {
             if (_local2) {
                 this.effects.push(new Effect(TextKey.ON_EQUIP, ""));
                 _local2 = false;
             }
-			var delay:String = (this.objectXML.EffectEquip.@delay % (10 | 15) == 0 && this.objectXML.EffectEquip.@delay > 60) ?
-			               this.objectXML.EffectEquip.@delay / 60 + " minutes" :
-						   this.objectXML.EffectEquip.@delay + " seconds";
+            var delay:String = (this.objectXML.EffectEquip.@delay % (10 | 15) == 0 && this.objectXML.EffectEquip.@delay > 60) ?
+                    this.objectXML.EffectEquip.@delay / 60 + " minutes" :
+                    this.objectXML.EffectEquip.@delay + " seconds";
             this.effects.push(new Effect("Grants '" + this.objectXML.EffectEquip.@effect
                     + (this.objectXML.EffectEquip.@delay == 0 ? "'"
                             : "' after " + delay), "")
@@ -758,6 +732,7 @@ public class EquipmentToolTip extends ToolTip {
         if (this.objectXML.hasOwnProperty("Legendary"))
         {
             this.restrictions.push(new Restriction("This legendary item is extremely rare.", 0xFFFF00, true));
+            this.titleText.setColor(0xFFFF00);
         }
         if (this.objectXML.hasOwnProperty("Outfit"))
         {
@@ -766,14 +741,7 @@ public class EquipmentToolTip extends ToolTip {
         if (this.objectXML.hasOwnProperty("Fabled"))
         {
             this.restrictions.push(new Restriction("This item can only be found in Fabled Dungeons.", 0x9F0000, true));
-        }
-        if (this.objectXML.hasOwnProperty("Fuel"))
-        {
-            this.restrictions.push(new Restriction("Use this item as fuel in order to cook food.", 0x000000, true));
-        }
-        if (this.objectXML.hasOwnProperty("Ingredient"))
-        {
-            this.restrictions.push(new Restriction("This item is used for creating food.", 0x000000, true));
+            this.titleText.setColor(0xFF0000);
         }
         if (this.objectXML.hasOwnProperty("PoZPage"))
         {

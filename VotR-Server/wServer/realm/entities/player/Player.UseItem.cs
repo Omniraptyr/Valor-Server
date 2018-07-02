@@ -22,6 +22,8 @@ namespace wServer.realm.entities
 
         public int BMToggle = 0;
 
+        public int SupportScore = 0;
+
         public static readonly ConditionEffect[] NegativeEffs2 = new ConditionEffect[]
         {
             new ConditionEffect()
@@ -934,6 +936,7 @@ namespace wServer.realm.entities
             fakeTorii.Move(target.X, target.Y);
             Owner.EnterWorld(fakeTorii);
 
+            addSupportScore(500+((eff.DurationMS/1000) * 20), false);
             Owner.Timers.Add(new WorldTimer(eff.Amount * 1000, (world, t) => {
                 Owner.LeaveWorld(fakeTorii);
             }));
@@ -1629,6 +1632,8 @@ namespace wServer.realm.entities
                         Color = new ARGB(0xffff0000),
                         Message = "Stasis"
                     });
+                    
+                    addSupportScore(400, false);
                 }
             });
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
@@ -1671,6 +1676,8 @@ namespace wServer.realm.entities
                         Color = new ARGB(0xffff0000),
                         Message = "Stasis"
                     });
+
+                    addSupportScore(400, false);
                 }
             });
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
@@ -1733,6 +1740,7 @@ namespace wServer.realm.entities
                 if (!player.HasConditionEffect(ConditionEffects.Sick) || !player.HasConditionEffect(ConditionEffects.Corrupted))
                 {
                     players.Add(player as Player);
+                    addSupportScore(totalDmg*5, false);
                     ActivateHealHp(player as Player, totalDmg, pkts);
                 }
             });
@@ -1755,6 +1763,19 @@ namespace wServer.realm.entities
             }
 
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
+        }
+
+        private void addSupportScore(int score, bool special)
+        {
+            if (special)
+            {
+                SupportScore += score * 2;
+            }
+            else
+            {
+                SupportScore += score;
+            }
+            
         }
 
         private void AETeleport(RealmTime time, Item item, Position target, ActivateEffect eff)
@@ -1822,6 +1843,8 @@ namespace wServer.realm.entities
                 {
                     if (!player.HasConditionEffect(ConditionEffects.Sick) || !player.HasConditionEffect(ConditionEffects.Corrupted))
                         ActivateHealHp(player as Player, amount + (RestorationHeal() / 4), pkts);
+
+                     addSupportScore(amount, false);
                 });
             pkts.Add(new ShowEffect()
             {
@@ -1906,6 +1929,19 @@ namespace wServer.realm.entities
                     Effect = eff.ConditionEffect.Value,
                     DurationMS = duration
                 });
+
+                if (eff.ConditionEffect.Value == ConditionEffectIndex.Healing || eff.ConditionEffect.Value == ConditionEffectIndex.Surged || eff.ConditionEffect.Value == ConditionEffectIndex.Armored)
+                {
+                    addSupportScore(duration / 1000 * 60, false);
+                }
+                if (eff.ConditionEffect.Value == ConditionEffectIndex.Speedy)
+                {
+                    addSupportScore(duration / 1000 * 40, false);
+                }
+                if (eff.ConditionEffect.Value == ConditionEffectIndex.Berserk || eff.ConditionEffect.Value == ConditionEffectIndex.Damaging)
+                {
+                    addSupportScore(duration / 1000 * 20, false);
+                }
             });
             var color = 0xffffffff;
             if (eff.ConditionEffect.Value == ConditionEffectIndex.Damaging)
@@ -1974,6 +2010,8 @@ namespace wServer.realm.entities
                     conditions |= (ConditionEffects)(1 << (Byte)condition.Value);
                     if (!condition.HasValue || player.HasConditionEffect(conditions))
                     {
+                        addSupportScore(400, false);
+
                         player.ApplyConditionEffect(new ConditionEffect()
                         {
                             Effect = eff.ConditionEffect.Value,
@@ -2018,6 +2056,10 @@ namespace wServer.realm.entities
 
             this.AOE(range, true, player =>
             {
+                if (idx == 0)
+                    addSupportScore(amount*3, false);
+                
+
                 ((Player)player).Stats.Boost.ActivateBoost[idx].Push(amount, eff.NoStack);
                 ((Player)player).Stats.ReCalculateValues();
 
@@ -2150,6 +2192,12 @@ namespace wServer.realm.entities
                             Effect = eff.ConditionEffect.Value,
                             DurationMS = duration
                         });
+
+                        if (eff.ConditionEffect.Value == ConditionEffectIndex.Curse)
+                        {
+                            addSupportScore(200, false);
+                        }
+
                     }
                 });
 

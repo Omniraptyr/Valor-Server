@@ -76,6 +76,7 @@ import kabam.rotmg.ui.signals.ShowHideKeyUISignal;
 import kabam.rotmg.ui.signals.ShowKeySignal;
 import kabam.rotmg.ui.signals.ShowLoadingUISignal;
 import kabam.rotmg.ui.signals.ShowTitleUISignal;
+import kabam.rotmg.ui.signals.ToggleShowTierTagSignal;
 import kabam.rotmg.ui.signals.UpdateBackpackTabSignal;
 import kabam.rotmg.ui.signals.UpdateHUDSignal;
 import kabam.rotmg.ui.signals.UpdatePotionInventorySignal;
@@ -145,6 +146,7 @@ public class UIConfig implements IConfig {
         this.injector.map(StatsTabHotKeyInputSignal).asSingleton();
         this.injector.map(IconButtonFactory).asSingleton();
         this.injector.map(ImageFactory).asSingleton();
+        this.injector.map(ToggleShowTierTagSignal).asSingleton();
         this.injector.map(UpdateMarkTabSignal).asSingleton();
         this.commandMap.map(ShowLoadingUISignal).toCommand(ShowLoadingUICommand);
         this.commandMap.map(ShowTitleUISignal).toCommand(ShowTitleUICommand);

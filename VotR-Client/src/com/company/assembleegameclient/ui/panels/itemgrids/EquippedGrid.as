@@ -2,6 +2,7 @@
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile;
+import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
 import com.company.util.ArrayIterator;
 import com.company.util.IIterator;
 
@@ -49,7 +50,14 @@ public class EquippedGrid extends ItemGrid {
             }
         }
     }
-
+    public function toggleTierTags(_arg_1:Boolean) : void
+    {
+        var _local_2:ItemTile = null;
+        for each(_local_2 in this.tiles)
+        {
+            _local_2.toggleTierTag(_arg_1);
+        }
+    }
 
 }
 }

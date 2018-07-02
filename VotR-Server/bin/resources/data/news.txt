@@ -23,8 +23,8 @@
 {
 	"slot": 1, 
 	"linkType": 1, 
-	"title": "Bastille of Drannol", 
-	"image": "https://cdn.discordapp.com/attachments/368574563002613765/374695677722099712/zzzzzsasas.png", 
+	"title": "July 7th..", 
+	"image": "https://i.imgur.com/zASpGBS.png", 
 	"priority": 757, 
 	"linkDetail": "", 
 	"platform": "kabam.com,kongregate,steam,rotmg", 

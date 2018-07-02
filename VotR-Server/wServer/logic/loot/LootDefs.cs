@@ -511,7 +511,34 @@ namespace wServer.logic.loot
                     i.Populate(manager, enemy, null, rand, lootDefs);
             }
         }
+    }
 
+
+    public class Threshold2 : ILootDef
+    {
+        private Player player;
+
+        private double threshold;
+        private int supportScore;
+        private ILootDef[] children;
+
+
+        public Threshold2(double threshold, int supportScore, params ILootDef[] children)
+        {
+            this.threshold = threshold;
+            this.supportScore = supportScore;
+            this.children = children;
+        }
+
+        public void Populate(RealmManager manager, Enemy enemy, Tuple<Player, int> playerDat,
+                             Random rand, IList<LootDef> lootDefs)
+        {
+            if (playerDat != null && playerDat.Item2 / (double)enemy.ObjectDesc.MaxHP >= threshold / Math.Max(enemy.Owner.Players.Count() / 2, 1) || playerDat != null && playerDat.Item2 / (double)enemy.ObjectDesc.MaxHP >= 0.01 / Math.Max(enemy.Owner.Players.Count() / 2, 1) && player.SupportScore >= supportScore)
+            {
+                foreach (var i in children)
+                    i.Populate(manager, enemy, null, rand, lootDefs);
+            }
+        }
     }
 
 }

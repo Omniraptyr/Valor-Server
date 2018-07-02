@@ -59082,6 +59082,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <Class>Character</Class>
       <Flying/>
       <Quest/>
+	  <ResetSS/>
       <God/>
       <StasisImmune/>
       <AnimatedTexture>

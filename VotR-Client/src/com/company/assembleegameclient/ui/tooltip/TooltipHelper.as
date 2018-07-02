@@ -1,38 +1,81 @@
-﻿package com.company.assembleegameclient.ui.tooltip {
-public class TooltipHelper {
+﻿package com.company.assembleegameclient.ui.tooltip
+{
+public class TooltipHelper
+{
 
-    public static const BETTER_COLOR:uint = 0xFF00;
-    public static const WORSE_COLOR:uint = 0xFF0000;
+    public static const BETTER_COLOR:uint = 65280;
+
+    public static const WORSE_COLOR:uint = 16711680;
+
     public static const NO_DIFF_COLOR:uint = 16777103;
 
+    public static const WIS_BONUS_COLOR:uint = 4219875;
 
-    public static function wrapInFontTag(_arg1:String, _arg2:String):String {
-        return ((((('<font color="' + _arg2) + '">') + _arg1) + "</font>"));
+    public static const UNTIERED_COLOR:uint = 9055202;
+
+    public static const SET_COLOR:uint = 16750848;
+
+    public static const LEGENDARY_COLOR:uint = 16776960;
+
+    public static const FABLED_COLOR:uint = 9109504;
+
+    public function TooltipHelper()
+    {
+        super();
     }
 
-    public static function getOpenTag(_arg1:uint):String {
-        return ((('<font color="#' + _arg1.toString(16)) + '">'));
+    public static function wrapInFontTag(_arg_1:String, _arg_2:String) : String
+    {
+        return "<font color=\"" + _arg_2 + "\">" + _arg_1 + "</font>";
     }
 
-    public static function getCloseTag():String {
-        return ("</font>");
+    public static function getOpenTag(_arg_1:uint) : String
+    {
+        return "<font color=\"#" + _arg_1.toString(16) + "\">";
     }
 
-    public static function getFormattedRangeString(_arg1:Number):String {
-        var _local2:Number = (_arg1 - int(_arg1));
-        return ((((int((_local2 * 10))) == 0) ? int(_arg1).toString() : _arg1.toFixed(1)));
+    public static function getCloseTag() : String
+    {
+        return "</font>";
     }
 
-    public static function getTextColor(_arg1:Number):uint {
-        if (_arg1 < 0) {
-            return (WORSE_COLOR);
+    public static function getFormattedRangeString(_arg_1:Number) : String
+    {
+        var _local_2:Number = _arg_1 - int(_arg_1);
+        return int(_local_2 * 10) == 0?int(_arg_1).toString():_arg_1.toFixed(1);
+    }
+
+    public static function compareAndGetPlural(_arg_1:Number, _arg_2:Number, _arg_3:String, _arg_4:Boolean = true, _arg_5:Boolean = true) : String
+    {
+        return wrapInFontTag(getPlural(_arg_1,_arg_3),"#" + getTextColor((!!_arg_4?_arg_1 - _arg_2:_arg_2 - _arg_1) * int(_arg_5)).toString(16));
+    }
+
+    public static function compare(_arg_1:Number, _arg_2:Number, _arg_3:Boolean = true, _arg_4:String = "", _arg_5:Boolean = false, _arg_6:Boolean = true) : String
+    {
+        return wrapInFontTag((!!_arg_5?Math.abs(_arg_1):_arg_1) + _arg_4,"#" + getTextColor((!!_arg_3?_arg_1 - _arg_2:_arg_2 - _arg_1) * int(_arg_6)).toString(16));
+    }
+
+    public static function getPlural(_arg_1:Number, _arg_2:String) : String
+    {
+        var _local_3:String = _arg_1 + " " + _arg_2;
+        if(_arg_1 != 1)
+        {
+            return _local_3 + "s";
         }
-        if (_arg1 > 0) {
-            return (BETTER_COLOR);
-        }
-        return (NO_DIFF_COLOR);
+        return _local_3;
     }
 
-
+    public static function getTextColor(_arg_1:Number) : uint
+    {
+        if(_arg_1 < 0)
+        {
+            return WORSE_COLOR;
+        }
+        if(_arg_1 > 0)
+        {
+            return BETTER_COLOR;
+        }
+        return NO_DIFF_COLOR;
+    }
 }
 }

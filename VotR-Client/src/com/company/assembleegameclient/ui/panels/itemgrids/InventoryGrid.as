@@ -2,6 +2,7 @@
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InventoryTile;
+import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
 
 public class InventoryGrid extends ItemGrid {
 
@@ -51,7 +52,14 @@ public class InventoryGrid extends ItemGrid {
             }
         }
     }
-
+    public function toggleTierTags(_arg_1:Boolean) : void
+    {
+        var _local_2:ItemTile = null;
+        for each(_local_2 in this.tiles)
+        {
+            _local_2.toggleTierTag(_arg_1);
+        }
+    }
 
 }
 }

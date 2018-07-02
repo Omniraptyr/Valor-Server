@@ -5,6 +5,7 @@ import com.company.util.PointUtil;
 
 import flash.display.BitmapData;
 import flash.display.Shader;
+import flash.display.ShaderData;
 import flash.filters.BitmapFilterQuality;
 import flash.filters.GlowFilter;
 import flash.filters.ShaderFilter;
@@ -67,7 +68,25 @@ public class TextureRedrawer {
         }
         return false;
     }
+    public static function retextureNoSizeChange(_arg_1:BitmapData, _arg_2:BitmapData, _arg_3:int, _arg_4:int) : BitmapData
 
+    {   var shader:Shader = new Shader(textureShaderData_);
+        var _local_7:Matrix = new Matrix();
+        _local_7.scale(5,5);
+        var _local_6:BitmapData = new BitmapData(_arg_1.width * 5,_arg_1.height * 5,true,0);
+        _local_6.draw(_arg_1,_local_7);
+        var _local_8:BitmapData = getTexture(_arg_3 >= 0?int(_arg_3):int(0),colorTexture1);
+        var _local_9:BitmapData = getTexture(_arg_4 >= 0?int(_arg_4):int(0),colorTexture2);
+        var _local_5:ShaderData = shader.data;
+        _local_5.src.input = _local_6;
+        _local_5.mask.input = _arg_2;
+        _local_5.texture1.input = _local_8;
+        _local_5.texture2.input = _local_9;
+        _local_5.texture1Size.value = [_arg_3 == 0?0:_local_8.width];
+        _local_5.texture2Size.value = [_arg_4 == 0?0:_local_9.width];
+        _local_6.applyFilter(_local_6,_local_6.rect,PointUtil.ORIGIN,new ShaderFilter(shader));
+        return _local_6;
+    }
     public static function resize(tex:BitmapData, mask:BitmapData, size:int, padBottom:Boolean, op1:int, op2:int, sMult:Number = 5):BitmapData {
         if (mask != null && (op1 != 0 || op2 != 0)) {
             tex = retexture(tex, mask, op1, op2);
