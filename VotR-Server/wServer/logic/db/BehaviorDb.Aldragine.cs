@@ -6,7 +6,8 @@ using wServer.logic.transitions;
 
 namespace wServer.logic
 {
-    partial class BehaviorDb {
+    partial class BehaviorDb
+    {
         private _ Aldragine = () => Behav()
         .Init("Zol Mine",
             new State(
@@ -837,7 +838,7 @@ namespace wServer.logic
                     new MostDamagers(3,
                     LootTemplates.SFElite()
                     ),
-                    new Threshold2(0.10, 10000,
+                    new Threshold(0.05,
                        new TierLoot(12, ItemType.Weapon, 0.08),
                        new TierLoot(5, ItemType.Ability, 0.07),
                        new TierLoot(6, ItemType.Ability, 0.05),
@@ -994,7 +995,7 @@ namespace wServer.logic
                     new MostDamagers(3,
                        LootTemplates.SFElite()
                     ),
-                    new Threshold2(0.12, 10000,
+                    new Threshold(0.05,
                        new TierLoot(12, ItemType.Weapon, 0.08),
                        new TierLoot(5, ItemType.Ability, 0.07),
                        new TierLoot(6, ItemType.Ability, 0.05),
@@ -1020,7 +1021,6 @@ namespace wServer.logic
                      new MostDamagers(3,
                          LootTemplates.FabledItemsLoot2()
                      ),
-
                      new Threshold(0.05,
                      new TierLoot(12, ItemType.Weapon, 0.08),
                      new TierLoot(5, ItemType.Ability, 0.07),
@@ -1177,7 +1177,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SFGigas()
                     ),
-                new Threshold2(0.07, 10000,
+                new Threshold(0.05,
                     new TierLoot(12, ItemType.Weapon, 0.08),
                     new TierLoot(5, ItemType.Ability, 0.07),
                     new TierLoot(6, ItemType.Ability, 0.05),
@@ -1210,7 +1210,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.FabledItemsLootUltra()
                 ),
-                new Threshold2(0.07, 12000,
+                new Threshold(0.05,
                     new TierLoot(12, ItemType.Weapon, 0.08),
                     new TierLoot(5, ItemType.Ability, 0.07),
                     new TierLoot(6, ItemType.Ability, 0.05),
@@ -1241,7 +1241,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SFElite()
                     ),
-                new Threshold(0.15, 
+                new Threshold(0.15,
                 new ItemLoot("Gold Cache", 0.35),
                 new ItemLoot("Onrane", 1),
                 new ItemLoot("Onrane Cache", 0.08),
@@ -1419,7 +1419,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SFGigas()
                     ),
-                    new Threshold2(0.10, 10000,
+                    new Threshold(0.05,
                         new TierLoot(12, ItemType.Weapon, 0.08),
                         new TierLoot(5, ItemType.Ability, 0.07),
                         new TierLoot(6, ItemType.Ability, 0.05),
@@ -1585,7 +1585,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SFGigas()
                     ),
-                    new Threshold2(0.10, 12500,
+                    new Threshold(0.05,
                         new TierLoot(12, ItemType.Weapon, 0.08),
                         new TierLoot(5, ItemType.Ability, 0.07),
                         new TierLoot(6, ItemType.Ability, 0.05),
@@ -1757,7 +1757,7 @@ namespace wServer.logic
                     new State("Success",
                         //new DropPortalOnDeath("Keeping of Aldragine Portal", 100, timeout: 180),
                         //new InvisiToss("AH Loot Chest 3", 2, 270, coolDown: 9999999),
-                        new Spawn("AH Heart Loot Ctrl", givesNoXp: true),                        
+                        new Spawn("AH Heart Loot Ctrl", givesNoXp: true),
                         new TransferDamageOnDeath("AH Heart Loot Ctrl"),
                         new Suicide()
                         )
@@ -1925,7 +1925,7 @@ namespace wServer.logic
                         )
                     )
                 )
-        .Init("AH Aldragine",               
+        .Init("AH Aldragine",
                 new State(
                     new HpLessTransition(0.13, "ded"),
                     new State("default",
@@ -2039,18 +2039,18 @@ namespace wServer.logic
                         new Flash(0x0F00F0, 1, 2),
                         new Shoot(8, count: 1, shootAngle: 6, projectileIndex: 6, coolDown: 3200),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-						new TossObject("Stone of Zol", range: 9, angle: 90, coolDown: 99999),
-						new TossObject("Stone of Zol", range: 8, angle: 270, coolDown: 99999),
-						new TossObject("Stone of Zol", range: 8, angle: 180, coolDown: 99999),
-						new TossObject("Stone of Zol", range: 8, angle: 0, coolDown: 99999),
+                        new TossObject("Stone of Zol", range: 9, angle: 90, coolDown: 99999),
+                        new TossObject("Stone of Zol", range: 8, angle: 270, coolDown: 99999),
+                        new TossObject("Stone of Zol", range: 8, angle: 180, coolDown: 99999),
+                        new TossObject("Stone of Zol", range: 8, angle: 0, coolDown: 99999),
                         new TimedTransition(2000, "KillStones2")
                         ),
                     new State(
-						new Taunt(0.50, "Your time is ticking, warriors!", "Unstoppable."),
+                        new Taunt(0.50, "Your time is ticking, warriors!", "Unstoppable."),
                         new TimedTransition(15000, "Failed"),
                     new State("KillStones2",
-						new Shoot(8, count: 3, shootAngle: 6, projectileIndex: 6, coolDown: 400),
-						new Shoot(8, count: 6, shootAngle: 6, projectileIndex: 7, predictive: 1, coolDown: 400, coolDownOffset: 800),
+                        new Shoot(8, count: 3, shootAngle: 6, projectileIndex: 6, coolDown: 400),
+                        new Shoot(8, count: 6, shootAngle: 6, projectileIndex: 7, predictive: 1, coolDown: 400, coolDownOffset: 800),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new HealSelf(coolDown: 2500, amount: 3000),
                         new Flash(0x0F00F0, 1, 2),
@@ -2171,16 +2171,16 @@ namespace wServer.logic
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new TossObject("Stone of Zol", range: 9, angle: 90, coolDown: 99999),
                         new TossObject("Stone of Zol", range: 8, angle: 270, coolDown: 99999),
-						new TossObject("Stone of Zol", range: 8, angle: 180, coolDown: 99999),
-						new TossObject("Stone of Zol", range: 8, angle: 0, coolDown: 99999),
+                        new TossObject("Stone of Zol", range: 8, angle: 180, coolDown: 99999),
+                        new TossObject("Stone of Zol", range: 8, angle: 0, coolDown: 99999),
                         new TimedTransition(2000, "KillStones2B")
                         ),
                     new State(
-						new Taunt(0.50, "Your time is ticking, warriors!", "Unstoppable."),
+                        new Taunt(0.50, "Your time is ticking, warriors!", "Unstoppable."),
                         new TimedTransition(15000, "Failed"),
                     new State("KillStones2B",
-							new Shoot(8, count: 3, shootAngle: 6, projectileIndex: 6, coolDown: 400),
-							new Shoot(8, count: 6, shootAngle: 6, projectileIndex: 7, predictive: 1, coolDown: 400, coolDownOffset: 800),
+                            new Shoot(8, count: 3, shootAngle: 6, projectileIndex: 6, coolDown: 400),
+                            new Shoot(8, count: 6, shootAngle: 6, projectileIndex: 7, predictive: 1, coolDown: 400, coolDownOffset: 800),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new HealSelf(coolDown: 1500, amount: 3000),
                         new Flash(0x0F00F0, 1, 2),

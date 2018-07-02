@@ -100,7 +100,7 @@ namespace wServer.logic
                                 new MostDamagers(3,
                     LootTemplates.SFLow()
                     ),
-                new Threshold(0.02,
+                new Threshold(0.025,
                     new ItemLoot("Potion of Defense", 1.0),
                     new ItemLoot("Potion of Dexterity", 1.0),
                     new ItemLoot("Potion of Might", 1.0),
@@ -346,7 +346,7 @@ namespace wServer.logic
                                 new MostDamagers(3,
                     LootTemplates.SFLow()
                     ),
-                new Threshold2(0.04, 5250,
+                new Threshold(0.025,
                     new ItemLoot("Onrane", 0.3),
                     new ItemLoot("Potion of Might", 1.0),
                     new ItemLoot("Potion of Life", 1.0),
@@ -536,7 +536,7 @@ namespace wServer.logic
                                 new MostDamagers(3,
                     LootTemplates.SFLow()
                     ),
-                new Threshold2(0.06, 11000,
+                new Threshold(0.025,
                     new ItemLoot("Gold Cache", 1.0),
                     new ItemLoot("Onrane", 1.0),
                     new ItemLoot("Potion of Might", 1.0),
@@ -560,7 +560,7 @@ namespace wServer.logic
                     new ItemLoot("Staff of the Withering", 0.035),
                     new ItemLoot("Gold Cache", 0.8),
                     new ItemLoot("Daring Windrage Robe", 0.04),
-					new ItemLoot("Necromantic Charm", 0.04),
+                    new ItemLoot("Necromantic Charm", 0.04),
                     new ItemLoot("Skull of Glowing Plagues", 0.035),
                     new ItemLoot("Ring of Pestilence", 0.025)
 

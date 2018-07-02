@@ -223,7 +223,7 @@ namespace wServer.logic
                         new TimedTransition(6000, "fight1")
                         )
                     ),
-                new Threshold2(0.025, 5000,
+                new Threshold(0.025,
                     new ItemLoot("Potion of Protection", 1.0),
                     new ItemLoot("Greater Potion of Wisdom", 0.6),
                     new TierLoot(10, ItemType.Weapon, 0.1),
@@ -354,7 +354,7 @@ namespace wServer.logic
                         new TimedTransition(4000, "Commence")
                         )
                     ),
-                new Threshold2(0.03, 4500,
+                new Threshold(0.03,
                     new ItemLoot("Potion of Might", 1.0),
                     new ItemLoot("Potion of Vitality", 1.0),
                     new TierLoot(10, ItemType.Weapon, 0.2),
