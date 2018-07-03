@@ -21,32 +21,32 @@ namespace wServer.realm.entities
         {
             if (CheckAxe())
             {
-                Stats.Boost.ActivateBoost[0].Push(Convert.ToInt32(Stats[0] * 2), false);
+                Stats.Boost.ActivateBoost[0].Push(Convert.ToInt32(Stats[0] * 2), true);
                 Stats.ReCalculateValues();
             }
             else
             {
-                Stats.Boost.ActivateBoost[0].Pop(Convert.ToInt32(Stats[0] * 2), false);
+                Stats.Boost.ActivateBoost[0].Pop(Convert.ToInt32(Stats[0] * 2), true);
                 Stats.ReCalculateValues();
             }
             if (CheckSunMoon())
             {
-                Stats.Boost.ActivateBoost[1].Push(100, false);
+                Stats.Boost.ActivateBoost[1].Push(100, true);
                 Stats.ReCalculateValues();
             }
             else
             {
-                Stats.Boost.ActivateBoost[1].Pop(100, false);
+                Stats.Boost.ActivateBoost[1].Pop(100, true);
                 Stats.ReCalculateValues();
             }
             if (CheckAnubis())
             {
-                Stats.Boost.ActivateBoost[1].Push(60, false);
+                Stats.Boost.ActivateBoost[1].Push(60, true);
                 Stats.ReCalculateValues();
             }
             else
             {
-                Stats.Boost.ActivateBoost[1].Pop(60, false);
+                Stats.Boost.ActivateBoost[1].Pop(60, true);
                 Stats.ReCalculateValues();
             }
             if (CheckMocking())
