@@ -21,12 +21,12 @@ namespace wServer.realm.entities
         {
             if (CheckAxe())
             {
-                Stats.Boost.ActivateBoost[0].Push(Stats[0], true);
+                Stats.Boost.ActivateBoost[0].Push(300, true);
                 Stats.ReCalculateValues();
             }
             else
             {
-                Stats.Boost.ActivateBoost[0].Pop(Stats[0], true);
+                Stats.Boost.ActivateBoost[0].Pop(300, true);
                 Stats.ReCalculateValues();
             }
             if (CheckSunMoon())
