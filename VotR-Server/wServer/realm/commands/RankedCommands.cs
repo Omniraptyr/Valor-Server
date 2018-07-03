@@ -1895,7 +1895,6 @@ namespace wServer.realm.commands
                 player.SendError("Cannot use /quake in Nexus.");
                 return false;
             }
-
             var worldNameProper =
                 player.Manager.Resources.Worlds.Data.FirstOrDefault(
                     p => p.Key.Equals(worldName, StringComparison.InvariantCultureIgnoreCase)).Key;

@@ -190,6 +190,7 @@
     <Compile Include="logic\db\BehaviorDb.Tomb.cs" />
     <Compile Include="logic\db\BehaviorDb.Torii.cs" />
     <Compile Include="logic\db\BehaviorDb.Trial.cs" />
+    <Compile Include="logic\db\BehaviorDb.Truvix.cs" />
     <Compile Include="logic\db\BehaviorDb.Tunnel.cs" />
     <Compile Include="logic\db\BehaviorDb.Tutorial.cs" />
     <Compile Include="logic\db\BehaviorDb.UndeadLair.cs" />
@@ -498,6 +499,7 @@
     <Compile Include="realm\setpieces\Temple.cs" />
     <Compile Include="realm\setpieces\TempleA.cs" />
     <Compile Include="realm\setpieces\TempleB.cs" />
+    <Compile Include="realm\setpieces\TimePiece.cs" />
     <Compile Include="realm\setpieces\Tower.cs" />
     <Compile Include="realm\setpieces\Unknown.cs" />
     <Compile Include="realm\setpieces\Yazanahar.cs" />

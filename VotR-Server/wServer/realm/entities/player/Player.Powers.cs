@@ -282,7 +282,7 @@ namespace wServer.realm.entities
             {
                 return false;
             }
-            if (Inventory[0].ObjectId == "Waraxe of Judgement" && Surge >= 40)
+            if (Inventory[0].ObjectId == "Waraxe of Judgement" && Surge >= 25)
             {
                 return true;
             }

@@ -1396,6 +1396,87 @@ namespace wServer.realm.entities
             Owner.EnterWorld(obj);
         }
 
+        public double thresholdBoost()
+        {
+            if (SupportScore >= 1000 && SupportScore <= 2000)
+            {
+                return .15;
+            }
+            else if (SupportScore >= 2001 && SupportScore <= 3000)
+            {
+                return .16;
+            }
+            else if (SupportScore >= 4001 && SupportScore <= 5000)
+            {
+                return .17;
+            }
+            else if (SupportScore >= 5001 && SupportScore <= 6000)
+            {
+                return .18;
+            }
+            else if (SupportScore >= 6001 && SupportScore <= 7000)
+            {
+                return .19;
+            }
+            else if (SupportScore >= 7001 && SupportScore <= 8000)
+            {
+                return .20;
+            }
+            else if (SupportScore >= 8001 && SupportScore <= 9000)
+            {
+                return .25;
+            }
+            else if (SupportScore >= 9001 && SupportScore <= 10000)
+            {
+                return .30;
+            }
+            else if (SupportScore >= 10001 && SupportScore <= 11000)
+            {
+                return .35;
+            }
+            else if (SupportScore >= 11001 && SupportScore <= 12000)
+            {
+                return .40;
+            }
+            else if (SupportScore >= 12001 && SupportScore <= 13001)
+            {
+                return .45;
+            }
+            else if (SupportScore >= 14001 && SupportScore <= 15000)
+            {
+                return .50;
+            }
+            else if (SupportScore >= 14001 && SupportScore <= 15000)
+            {
+                return .55;
+            }
+            else if (SupportScore >= 15001 && SupportScore <= 16000)
+            {
+                return .56;
+            }
+            else if (SupportScore >= 16001 && SupportScore <= 17000)
+            {
+                return .57;
+            }
+            else if (SupportScore >= 17001 && SupportScore <= 18000)
+            {
+                return .58;
+            }
+            else if (SupportScore >= 18001 && SupportScore <= 19000)
+            {
+                return .59;
+            }
+            else if (SupportScore >= 19001 && SupportScore <= 20000)
+            {
+                return .60;
+            }
+            else if (SupportScore > 20000)
+            {
+                return .70;
+            }
+            return 0;
+        }
+
         private bool Arena(string killer)
         {
             if (!(Owner is Arena) && !(Owner is ArenaSolo))

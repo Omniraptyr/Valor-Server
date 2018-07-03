@@ -8,6 +8,7 @@ namespace wServer.realm.entities
         float _healing;
         float _healing2;
         float _healing3;
+        float _healing4;
         float _bleeding;
         float _surgeDepletion;
         float _surgeDepletion2;
@@ -20,12 +21,12 @@ namespace wServer.realm.entities
         {
             if (CheckAxe())
             {
-                Stats.Boost.ActivateBoost[3].Push(10, false);
+                Stats.Boost.ActivateBoost[0].Push(Convert.ToInt32(Stats[0] * 2), false);
                 Stats.ReCalculateValues();
             }
             else
             {
-                Stats.Boost.ActivateBoost[3].Pop(10, false);
+                Stats.Boost.ActivateBoost[0].Pop(Convert.ToInt32(Stats[0] * 2), false);
                 Stats.ReCalculateValues();
             }
             if (CheckSunMoon())
@@ -182,6 +183,16 @@ namespace wServer.realm.entities
                     _healing3 -= (int)_healing3;
                 }
                 _healing3 += 24 * (time.ElapsedMsDelta / 1000f);
+            }
+
+            if (CheckAxe())
+            {
+                if (_healing4 > 1)
+                {
+                    HP = Math.Min(Stats[0], HP + (int)_healing4);
+                    _healing4 -= (int)_healing4;
+                }
+                _healing4 += 24 * (time.ElapsedMsDelta / 1000f);
             }
 
             if (HasConditionEffect(ConditionEffects.HealthRecovery) && !HasConditionEffect(ConditionEffects.Sick) && !HasConditionEffect(ConditionEffects.DrakzixCharging))

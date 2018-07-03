@@ -10637,4 +10637,192 @@
             <ArmorPiercing/>
         </Projectile>
     </Object>
+    <Object type="0x6185" id="Truvix, the Lord Wanderer">
+        <Enemy/>
+        <Class>Character</Class>
+        <Hero/>
+        <Quest/>
+        <God/>
+        <Encounter/>
+        <ResetSS/>
+        <StasisImmune/>
+        <Level>20</Level>
+        <PerRealmMax>1</PerRealmMax>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>55</Index>
+        </AnimatedTexture>
+        <HitSound>monster/oryx_hit</HitSound>
+        <DeathSound>monster/golems_death</DeathSound>
+        <MaxHitPoints>150000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Blue Boomerang</ObjectId>
+            <Speed>70</Speed>
+            <Damage>85</Damage>
+            <Size>100</Size>
+            <Boomerang/>
+            <ConditionEffect duration="3">Quiet</ConditionEffect>
+            <ConditionEffect duration="3">Dazed</ConditionEffect>
+            <LifetimeMS>1600</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Genisus Bolt B</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>25</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <Size>100</Size>
+            <LifetimeMS>2400</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Genisus Bolt A</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>160</MaxDamage>
+            <Size>100</Size>
+            <ConditionEffect duration="8">Quiet</ConditionEffect>
+            <MultiHit/>
+            <LifetimeMS>2400</LifetimeMS>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Ice Magic</ObjectId>
+            <Speed>100</Speed>
+            <Damage>85</Damage>
+            <Size>100</Size>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
+            <Amplitude>0.5</Amplitude>
+            <Frequency>2</Frequency>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Blue Bolt</ObjectId>
+            <Speed>100</Speed>
+            <Damage>40</Damage>
+            <Size>100</Size>
+            <LifetimeMS>2400</LifetimeMS>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>White Flame</ObjectId>
+            <Speed>65</Speed>
+            <Damage>175</Damage>
+            <Size>150</Size>
+            <ConditionEffect duration="3">Petrify</ConditionEffect>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
+        <Size>135</Size>
+        <Defense>50</Defense>
+        <XpMult>0.8</XpMult>
+        <DisplayId>Truvix, the Lord Wanderer</DisplayId>
+    </Object>
+    <Object type="0x6186" id="Genisus Tower">
+        <Class>GameObject</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1ce</Index>
+        </Texture>
+        <HitSound>monster/trees_hit</HitSound>
+        <DeathSound>monster/tress_death</DeathSound>
+        <MinSize>100</MinSize>
+        <MaxSize>160</MaxSize>
+        <SizeStep>5</SizeStep>
+        <XpMult>0.0</XpMult>
+        <OccupySquare/>
+    </Object>
+    <Object type="0x6187" id="Genisus Inhibitor">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>56</Index>
+        </AnimatedTexture>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <MaxHitPoints>20000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Blue Scale</ObjectId>
+            <Speed>50</Speed>
+            <Damage>60</Damage>
+            <Size>100</Size>
+            <ConditionEffect duration="2">Petrify</ConditionEffect>
+            <ArmorPiercing/>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
+        <Size>135</Size>
+        <Defense>10</Defense>
+        <DisplayId>Genisus Inhibitor</DisplayId>
+    </Object>
+    <Object type="0x6188" id="Truvix Follower">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>0x09</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <MaxHitPoints>1000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Blue Magic</ObjectId>
+            <Speed>80</Speed>
+            <Damage>75</Damage>
+            <Size>100</Size>
+            <ConditionEffect duration="2">Slowed</ConditionEffect>
+            <MultiHit/>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Blue Star</ObjectId>
+            <Speed>60</Speed>
+            <Damage>30</Damage>
+            <Size>100</Size>
+            <ConditionEffect duration="2">Quiet</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Size>110</Size>
+        <Defense>5</Defense>
+        <DisplayId>Truvix Follower</DisplayId>
+    </Object>
+    <Object type="0x6189" id="Truvix Bladesman">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>10</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <MaxHitPoints>500</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Blade</ObjectId>
+            <Speed>80</Speed>
+            <Damage>40</Damage>
+            <Size>100</Size>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+            <LifetimeMS>1000</LifetimeMS>
+        </Projectile>
+        <Size>110</Size>
+        <Defense>0</Defense>
+        <DisplayId>Truvix Bladesman</DisplayId>
+    </Object>
+    <Object type="0x6190" id="Truvix Bomb">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>0x08</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <MaxHitPoints>20000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Genisus Shield</ObjectId>
+            <Speed>60</Speed>
+            <Damage>100</Damage>
+            <Size>100</Size>
+            <LifetimeMS>1000</LifetimeMS>
+            <ConditionEffect duration="4">Unstable</ConditionEffect>
+        </Projectile>
+        <Size>110</Size>
+        <Defense>5</Defense>
+        <DisplayId>Truvix Bomb</DisplayId>
+    </Object>
 </Objects>

@@ -15832,7 +15832,6 @@
         <SlotType>9</SlotType>
         <Tier>7</Tier>
         <Description>An enormous, flawless spinel set in a stunningly beautiful gold ring.</Description>
-        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -15849,7 +15848,6 @@
         <SlotType>9</SlotType>
         <Tier>7</Tier>
         <Description>An enormous, flawless topaz set in a stunningly beautiful gold ring.</Description>
-        <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
 		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
@@ -15868,7 +15866,6 @@
         <Tier>7</Tier>
         <Description>An enormous, flawless emerald set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
-		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -15886,7 +15883,6 @@
         <Tier>7</Tier>
         <Description>An enormous, flawless ruby set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
-		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -15904,7 +15900,6 @@
         <Tier>7</Tier>
         <Description>An enormous, flawless sapphire set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
-		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -15922,7 +15917,6 @@
         <Tier>7</Tier>
         <Description>An enormous, flawless onyx set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
-		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -15940,7 +15934,6 @@
         <Tier>7</Tier>
         <Description>An enormous, flawless citrine set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
-		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -15958,7 +15951,6 @@
         <Tier>7</Tier>
         <Description>An enormous, flawless amethyst set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
-		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -16301,22 +16293,6 @@
         <ActivateOnEquip stat="28" amount="3">IncrementStat</ActivateOnEquip>
         <BagType>4</BagType>
         <FameBonus>8</FameBonus>
-    </Object>
-    <Object type="0x1623" id="Prime Chaos Ring">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>lofiObj3</File>
-            <Index>0x59f</Index>
-        </Texture>
-        <SlotType>9</SlotType>
-        <Description>A powerful ring, will cause the wearer to become chaotic.</Description>
-        <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="3">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="3">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="-2">IncrementStat</ActivateOnEquip>
-        <BagType>4</BagType>
     </Object>
     <Object type="0x1624" id="Bastion of Wrath">
         <Class>Equipment</Class>
@@ -26996,25 +26972,6 @@
         <Cooldown>6</Cooldown>
         <OldSound>use_potion</OldSound>
     </Object>
-    <Object type="0x55d6" id="Turret of Catacombs">
-        <Class>Equipment</Class>
-        <Item />
-        <Texture>
-            <File>lofiObj6</File>
-            <Index>0xf7</Index>
-        </Texture>
-        <SlotType>31</SlotType>
-        <Description>A blueprint for the ancient turrets of the catacombs.</Description>
-        <Sound>spell/light_heal</Sound>
-        <Usable />
-        <BagType>6</BagType>
-        <Activate objectId="TowerCata" duration="25">BuildTower</Activate>
-        <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
-        <MpCost>125</MpCost>
-        <Cooldown>6</Cooldown>
-        <OldSound>use_potion</OldSound>
-    </Object>
     <Object type="0x55d9" id="TowerCata">
         <Class>Character</Class>
         <Model>Tower</Model>
@@ -27023,47 +26980,6 @@
             <Index>0xfd</Index>
         </Texture>
         <NoMiniMap />
-    </Object>
-<Object type="0x55f1" id="Legendary Premium Lootbox">
-        <Class>Equipment</Class>
-        <Item />
-         <Texture>
-      <File>d3LofiObjEmbed</File>
-      <Index>0x13b</Index>
-    </Texture>
-        <SlotType>10</SlotType>
-        <Description>Drops all legendary gear! LIMITED TIME!</Description>
-        <BagType>8</BagType>
-        <Lootbox/>
-        <Activate LootboxName="Legendary Premium Lootbox" amount="0">LootboxActivate</Activate>
-        <InvUse/>
-        <CrateLoot chance="1.00">
-            <Loot name="Legendary Sor Crystal">Item</Loot>
-            <Loot name="Ultimate Onrane Cache">Item</Loot>
-            <Loot name="The Realmtracer">Item</Loot>
-            <Loot name="Words of Wisdom">Item</Loot>
-            <Loot name="Page of Zaragon">Item</Loot>
-            <Loot name="Scepter of the Other">Item</Loot>
-            <Loot name="Wand of the Magma Lands">Item</Loot>
-            <Loot name="Vulcanstriker">Item</Loot>
-            <Loot name="The 2-K">Item</Loot>
-            <Loot name="Vardon's Resilience">Item</Loot>
-            <Loot name="Dagger of Tindailius">Item</Loot>
-            <Loot name="Bracelet of Tranquility">Item</Loot>
-            <Loot name="Waraxe of Judgement">Item</Loot>
-            <Loot name="The Atium">Item</Loot>
-            <Loot name="Living Corrupted Ambition">Item</Loot>
-            <Loot name="Force Between Avex">Item</Loot>
-            <Loot name="Tundracian Frozen Armor">Item</Loot>
-            <Loot name="March of the Army">Item</Loot>
-            <Loot name="Never Before Seen">Item</Loot>
-            <Loot name="Solace and Calamity">Item</Loot>
-            <Loot name="Revenant Prism">Item</Loot>
-            <Loot name="Darkness Rise Armor">Item</Loot>
-            <Loot name="Zeal of the Far-Ranger">Item</Loot>
-            <Loot name="Remorse of Murak'ul">Item</Loot>
-            <Loot name="Master Eon">Item</Loot>
-        </CrateLoot>
     </Object>
     <Object type="0x42fc" id="Stargazer">
         <Class>Equipment</Class>
@@ -29658,6 +29574,39 @@
             <ConditionEffect duration="4">Paralyzed</ConditionEffect>
         </Projectile>
     </Object>
+    <Object type="0x1485" id="Waraxe of Judgement">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj5</File>
+            <Index>0xaf</Index>
+        </Texture>
+        <SlotType>1</SlotType>
+        <Description>The opposers will be judged without mercy.</Description>
+        <RateOfFire>.70</RateOfFire>
+        <Sound>weapon/mithril_sword</Sound>
+        <Projectile>
+            <ObjectId>Waraxe Shot</ObjectId>
+            <Speed>75</Speed>
+            <MinDamage>220</MinDamage>
+            <MaxDamage>220</MaxDamage>
+            <LifetimeMS>325</LifetimeMS>
+        </Projectile>
+        <ActivateOnEquip stat="22" amount="-25">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <Legendary/>
+        <Legend id="2" stat="21">
+            <Name>Warcry</Name>
+            <Description>When your Surge is at least 25 you gain a bonus 200% bonus health and your health regenerates faster.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>25</Surge>
+        </Legend>
+        <feedPower>1800</feedPower>
+        <FameBonus>9</FameBonus>
+        <NumProjectiles>5</NumProjectiles>
+        <OldSound>bladeSwing</OldSound>
+    </Object>
     <Object type="0x64aa" id="Oath of the Ages">
         <Class>Equipment</Class>
         <Item/>
@@ -29685,10 +29634,10 @@
         <Steal type="mana" amount="2"/>
         <Legend id="8" stat="27">
             <Name>Mana Focus</Name>
-            <Description>When your surge is at least 30 you regenerate mana faster.</Description>
+            <Description>When your surge is at least 10 you regenerate mana faster.</Description>
             <HP>0</HP>
             <MP>0</MP>
-            <Surge>30</Surge>
+            <Surge>10</Surge>
         </Legend>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -29714,8 +29663,9 @@
         </Texture>
         <SlotType>7</SlotType>
         <Description>This armor surges the wearer with true determination. Not even the most lethal blow will deter the warrior of grasping victory.</Description>
+        <ActivateOnEquip stat="0" amount="300">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="28">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="26" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="100">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="-8">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -29723,7 +29673,7 @@
         <Legendary/>
         <Legend id="1" stat="26">
             <Name>Lifeline</Name>
-            <Description>Having less than 1/3rd of your maximum health pool adds a massive health regeneration boost.</Description>
+            <Description>Having less than 1/3rd of your maximum health pool gives you a massive health regeneration boost.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
@@ -30210,6 +30160,7 @@
         <FameBonus>8</FameBonus>
         <feedPower>2000</feedPower>
         <Legendary/>
+        <EffectEquip effect="Surged" delay="120"/>
         <Legend id="3" stat="27">
             <Name>Insurgency</Name>
             <Description>The surge you gain is doubled while this item is equipped.</Description>
@@ -30964,11 +30915,13 @@
         <Projectile>
             <ObjectId>Karana Blade</ObjectId>
             <Speed>140</Speed>
-            <MinDamage>175</MinDamage>
-            <MaxDamage>195</MaxDamage>
+            <MinDamage>240</MinDamage>
+            <MaxDamage>255</MaxDamage>
             <LifetimeMS>400</LifetimeMS>
         </Projectile>
-        <ActivateOnEquip stat="22" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="40">IncrementStat</ActivateOnEquip>
         <Legendary/>
         <Legend id="3" stat="27">
             <Name>Ghost's Wrath</Name>
@@ -31017,40 +30970,6 @@
             <Surge>0</Surge>
         </Legend>
         <DisplayId>Starmind Gauntlet</DisplayId>
-    </Object>
-    <Object type="0x1485" id="Waraxe of Judgement">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>lofiObj5</File>
-            <Index>0xaf</Index>
-        </Texture>
-        <SlotType>1</SlotType>
-        <Description>The opposers will be judged without mercy.</Description>
-        <RateOfFire>.70</RateOfFire>
-        <Sound>weapon/mithril_sword</Sound>
-        <Projectile>
-            <ObjectId>Waraxe Shot</ObjectId>
-            <Speed>75</Speed>
-            <MinDamage>225</MinDamage>
-            <MaxDamage>225</MaxDamage>
-            <LifetimeMS>325</LifetimeMS>
-        </Projectile>
-        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="-20">IncrementStat</ActivateOnEquip>
-        <BagType>6</BagType>
-        <Legendary/>
-        <Legend id="2" stat="21">
-            <Name>Warcry</Name>
-            <Description>When your Surge is at least 40 you gain a bonus defense.</Description>
-            <HP>0</HP>
-            <MP>0</MP>
-            <Surge>40</Surge>
-        </Legend>
-        <feedPower>1800</feedPower>
-        <FameBonus>9</FameBonus>
-        <NumProjectiles>5</NumProjectiles>
-        <OldSound>bladeSwing</OldSound>
     </Object>
     <Object type="0x69e9" id="Sun and Moon Expansion">
         <Class>Equipment</Class>
@@ -31389,7 +31308,6 @@
         <Activate effect="Damaging" duration="4" range="4.5" color="0xff0080" target="player" center="player"
                   visualEffect="0" useWisMod="true">GenericActivate
         </Activate>
-        <Activate effect="Armored" duration="1.4" useWisMod="false">ConditionEffectSelf</Activate>
         <feedPower>1000</feedPower>
         <DisplayId>Prime Chaotic Seal</DisplayId>
     </Object>
@@ -31407,25 +31325,29 @@
             <ObjectId>Blue Bolt</ObjectId>
             <Speed>150</Speed>
             <MinDamage>200</MinDamage>
-            <MaxDamage>550</MaxDamage>
-            <LifetimeMS>1000</LifetimeMS>
+            <MaxDamage>270</MaxDamage>
+            <LifetimeMS>2000</LifetimeMS>
             <Size>150</Size>
-            <ConditionEffect duration="3">Curse</ConditionEffect>
-            <MultiHit/>
+            <ConditionEffect duration="2">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="2">Curse</ConditionEffect>
+            <Boomerang/>
             <ArmorPiercing/>
             <PassesCover/>
             <ParticleTrail/>
         </Projectile>
         <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="2">IncrementStat</ActivateOnEquip>
-        <ConditionEffect duration="3">Curse</ConditionEffect>
+        <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
+        <ConditionEffect duration="2">Paralyzed</ConditionEffect>
+        <ConditionEffect duration="2">Paralyzed</ConditionEffect>
+        <Steal type="mana" amount="3"/>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <MpCost>65</MpCost>
         <Activate>Shoot</Activate>
+        <NumProjectiles>3</NumProjectiles>
         <feedPower>880</feedPower>
         <DisplayId>Ascendant Quiver</DisplayId>
     </Object>
@@ -33136,5 +33058,23 @@
         <feedPower>900</feedPower>
         <FameBonus>6</FameBonus>
         <DisplayId>Banner of the Furious Kraken</DisplayId>
+    </Object>
+    <Object type="0x6182" id="Truestone Ring">
+        <DisplayId>Truestone Ring</DisplayId>
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x59f</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>A ring created from Truestone.</Description>
+        <EffectEquip effect="Surged" delay="120"/>
+        <ActivateOnEquip stat="122" amount="35">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="180">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="2">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <feedPower>900</feedPower>
     </Object>
 </Objects>

@@ -22758,6 +22758,7 @@
       <DontFaceAttacks/>
       <StasisImmune/>
       <Hero/>
+	  <ResetSS/>
       <Quest/>
       <God/>
       <Level>20</Level>
@@ -23492,6 +23493,7 @@
       <StasisImmune/>
 	  <Lootdrop/>
       <Hero/>
+	  <ResetSS/>
       <Quest/>
       <Encounter/>
       <Level>20</Level>
@@ -23574,6 +23576,7 @@
 	  <Lootdrop/>
       <Hero/>
       <Quest/>
+	  <ResetSS/>
       <God/>
       <Encounter/>
       <StasisImmune/>
@@ -23645,6 +23648,7 @@
       <Hero/>
       <Quest/>
       <God/>
+	  <ResetSS/>
 	  <Lootdrop/>
       <Encounter/>
       <StasisImmune/>
@@ -23937,6 +23941,7 @@
       <God/>
 	  <Lootdrop/>
       <Encounter/>
+	  <ResetSS/>
       <StasisImmune/>
       <Level>20</Level>
       <PerRealmMax>1</PerRealmMax>
@@ -59082,7 +59087,6 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <Class>Character</Class>
       <Flying/>
       <Quest/>
-	  <ResetSS/>
       <God/>
       <StasisImmune/>
       <AnimatedTexture>
@@ -62571,6 +62575,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <Flying/>
       <Hero/>
       <Quest/>
+	  <ResetSS/>
       <God/>
       <Level>19</Level>
       <XpMult>1.2</XpMult>
@@ -62670,6 +62675,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <MaxHitPoints>650</MaxHitPoints>
       <Defense>15</Defense>
       <Hero/>
+	  <ResetSS/>
       <Quest/>
       <Level>13</Level>
       <XpMult>5</XpMult>
@@ -62777,6 +62783,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <Defense>8</Defense>
       <Hero/>
       <Quest/>
+	  <ResetSS/>
       <God/>
       <Level>16</Level>
       <XpMult>1</XpMult>
@@ -63039,6 +63046,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <Flying/>
       <Hero/>
       <Quest/>
+	  <ResetSS/>
       <Level>17</Level>
       <XpMult>1</XpMult>
       <Projectile id="0">
@@ -69004,6 +69012,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <Defense>7</Defense>
       <Hero/>
       <Quest/>
+	  <ResetSS/>
       <Level>15</Level>
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
@@ -69136,6 +69145,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <MaxHitPoints>300000</MaxHitPoints>
       <Defense>7</Defense>
       <Hero/>
+	  <ResetSS/>
       <Quest/>
       <Level>9</Level>
       <XpMult>0.0</XpMult>
@@ -69171,6 +69181,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <MaxHitPoints>1100</MaxHitPoints>
       <Defense>7</Defense>
       <Hero/>
+	  <ResetSS/>
       <Quest/>
       <Level>9</Level>
       <XpMult>1.5</XpMult>
@@ -69256,6 +69267,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <MaxHitPoints>300000</MaxHitPoints>
       <Defense>7</Defense>
       <Hero/>
+	  <ResetSS/>
       <Quest/>
       <Level>11</Level>
       <XpMult>0.0</XpMult>
@@ -76831,7 +76843,6 @@ This dagger was a myth, will you live to tell the tale?
         <Tier>7</Tier>
         <Description>An enormous, flawless topaz set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
-		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -76846,7 +76857,6 @@ This dagger was a myth, will you live to tell the tale?
         <Tier>7</Tier>
         <Description>An enormous, flawless emerald set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
-		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -76861,7 +76871,6 @@ This dagger was a myth, will you live to tell the tale?
         <Tier>7</Tier>
         <Description>An enormous, flawless ruby set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
-		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -76876,7 +76885,6 @@ This dagger was a myth, will you live to tell the tale?
         <Tier>7</Tier>
         <Description>An enormous, flawless sapphire set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
-		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -76891,7 +76899,6 @@ This dagger was a myth, will you live to tell the tale?
         <Tier>7</Tier>
         <Description>An enormous, flawless onyx set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
-		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -76906,7 +76913,6 @@ This dagger was a myth, will you live to tell the tale?
         <Tier>7</Tier>
         <Description>An enormous, flawless citrine set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
-		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -76921,7 +76927,6 @@ This dagger was a myth, will you live to tell the tale?
         <Tier>7</Tier>
         <Description>An enormous, flawless amethyst set in a stunningly beautiful gold ring.</Description>
         <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
-		<EffectEquip effect="Healing" delay="60"/>
         <BagType>2</BagType>
         <FameBonus>5</FameBonus>
     </Object>
@@ -83087,9 +83092,10 @@ This dagger was a myth, will you live to tell the tale?
 		<Defense>30</Defense>
 		<Quest/>
 		<God/>
+		<ResetSS/>
 		<StasisImmune/>
-    <ParalyzeImmune/>
-    <DazedImmune/>
+		<ParalyzeImmune/>
+		<DazedImmune/>
 		<Level>1</Level>
 		<XpMult>100</XpMult>
 		<NoArticle/>
@@ -84848,8 +84854,9 @@ This dagger was a myth, will you live to tell the tale?
     <DeathSound>monster/skull_shrine_death</DeathSound>
     <Size>100</Size>
     <MaxHitPoints>98500</MaxHitPoints>
-  <ParalyzeImmune/>
+    <ParalyzeImmune/>
     <StasisImmune/>
+	<ResetSS/>
     <DazedImmune/>
     <StunImmune/>
     <Defense>45</Defense>
@@ -84920,6 +84927,7 @@ This dagger was a myth, will you live to tell the tale?
 		<Defense>85</Defense>
 		<Quest/>
 		<God/>
+		<ResetSS/>
     <ParalyzeImmune/>
     <DazedImmune/>
     <StunImmune/>
@@ -84973,7 +84981,7 @@ This dagger was a myth, will you live to tell the tale?
 		<MultiHit/>
 		</Projectile>
 	</Object>
-<Object type="0x5206" id="Doomages">
+	<Object type="0x5206" id="Doomages">
 		<DisplayId>Doomages, Beast of the Catacombs</DisplayId>
 		<Enemy/>
 		<AnimatedTexture>
@@ -84987,6 +84995,7 @@ This dagger was a myth, will you live to tell the tale?
 		<MaxHitPoints>189500</MaxHitPoints>
 		<Defense>140</Defense>
 		<StasisImmune/>
+		<ResetSS/>
 		<Level>20</Level>
 		<XpMult>250</XpMult>
 	    <Projectile id="0">
@@ -94378,6 +94387,7 @@ A whole thanksgiving turkey!
     <MaxHitPoints>100000</MaxHitPoints>
     <Defense>30</Defense>
     <Quest/>
+	<ResetSS/>
     <Flying/>
     <Z>0.2</Z>
     <Level>20</Level>
@@ -94415,7 +94425,7 @@ A whole thanksgiving turkey!
       <Size>115</Size>
     </Projectile>
   </Object>
-<Object type="0x48dd" id="Stronghold Days Outfit">
+  <Object type="0x48dd" id="Stronghold Days Outfit">
     <Class>Dye</Class>
     <DisplayId>Stronghold Days Outfit</DisplayId>
     <Item/>
@@ -97619,6 +97629,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <God/>
       <Encounter/>
 	  <Lootdrop/>
+	  <ResetSS/>
       <StasisImmune/>
       <ParalyzeImmune/>
       <Level>20</Level>
@@ -98714,6 +98725,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
     <Defense>40</Defense>
     <Size>130</Size>
     <Hero/>
+	<ResetSS/>
     <Level>20</Level>
     <Quest/>
     <ShadowSize>0</ShadowSize>
@@ -100127,25 +100139,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
     <Cooldown>6</Cooldown>
     <OldSound>use_potion</OldSound>
   </Object>
-    <Object type="0x55d6" id="Turret of Catacombs">
-    <Class>Equipment</Class>
-    <Item />
-    <Texture>
-     <File>lofiObj6</File>
-     <Index>0xf7</Index>
-    </Texture>
-    <SlotType>31</SlotType>
-    <Description>A blueprint for the ancient turrets of the catacombs.</Description>
-    <Sound>spell/light_heal</Sound>
-    <Usable />
-    <BagType>6</BagType>
-    <Activate objectId="TowerCata" duration="25">BuildTower</Activate>
-    <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
-    <MpCost>125</MpCost>
-    <Cooldown>6</Cooldown>
-    <OldSound>use_potion</OldSound>
-  </Object>
     <Object type="0x55c8" id="Tower1">
         <Class>Character</Class>
         <Model>Tower</Model>
@@ -100407,6 +100400,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		<MaxHitPoints>700000</MaxHitPoints>
 		<Defense>100</Defense>
 		<Quest/>
+		<ResetSS/>
 		<Flying/>
 		<God/>
 		<Lootdrop/>
@@ -104229,6 +104223,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Flying/>
         <Hero/>
         <Quest/>
+		<ResetSS/>
         <God/>
         <Level>20</Level>
         <StasisImmune/>
@@ -104391,6 +104386,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Class>Character</Class>
         <StasisImmune/>
         <StunImmune/>
+		<ResetSS/>
 		<Lootdrop/>
         <ParalyzeImmune/>
         <AnimatedTexture>
@@ -104696,8 +104692,10 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		<MaxHitPoints>625000</MaxHitPoints>
 		<Defense>200</Defense>
 		<Quest/>
+		<ResetSS/>
     	<Flying/>
 		<Lootdrop/>
+		<ResetSS/>
     	<Z>0.2</Z>
     	<Level>20</Level>
 		<God/>
@@ -106496,7 +106494,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Legend>
         <Legendary/>
     </Object>
-    <Object type="0x64aa" id="Oath of the Ages">
+        <Object type="0x64aa" id="Oath of the Ages">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -106523,10 +106521,10 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Steal type="mana" amount="2"/>
         <Legend id="8" stat="27">
             <Name>Mana Focus</Name>
-            <Description>When your surge is at least 30 you regenerate mana faster.</Description>
+            <Description>When your surge is at least 10 you regenerate mana faster.</Description>
             <HP>0</HP>
             <MP>0</MP>
-            <Surge>30</Surge>
+            <Surge>10</Surge>
         </Legend>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -106552,8 +106550,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>7</SlotType>
         <Description>This armor surges the wearer with true determination. Not even the most lethal blow will deter the warrior of grasping victory.</Description>
+        <ActivateOnEquip stat="0" amount="300">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="28">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="26" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="100">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="-8">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -106561,7 +106560,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Legendary/>
         <Legend id="1" stat="26">
             <Name>Lifeline</Name>
-            <Description>Having less than 1/3rd of your maximum health pool adds a massive health regeneration boost.</Description>
+            <Description>Having less than 1/3rd of your maximum health pool gives you a massive health regeneration boost.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
@@ -107022,32 +107021,33 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <feedPower>300</feedPower>
       <DisplayId>Ring of Exalted Might</DisplayId>
    </Object>
-      <Object type="0x69cd" id="Insurgency Amulet">
-      <Class>Equipment</Class>
-      <Item/>
+    <Object type="0x69cd" id="Insurgency Amulet">
+        <Class>Equipment</Class>
+        <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
             <Index>0x0f</Index>
         </Texture>
-      <SlotType>9</SlotType>
-      <Description>Boundless energies fill this gemstone..</Description>
-	  <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
-      <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
-	  <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
-	  <ActivateOnEquip stat="28" amount="8">IncrementStat</ActivateOnEquip>
-      <BagType>6</BagType>
-      <FameBonus>8</FameBonus>
-      <feedPower>2000</feedPower>
-	  <Legendary/>
-      <Legend id="3" stat="27">
+        <SlotType>9</SlotType>
+        <Description>Boundless energies fill this gemstone..</Description>
+        <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="8">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2000</feedPower>
+        <Legendary/>
+        <EffectEquip effect="Surged" delay="120"/>
+        <Legend id="3" stat="27">
             <Name>Insurgency</Name>
             <Description>The surge you gain is doubled while this item is equipped.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
-      </Legend>
-      <DisplayId>Insurgency Amulet</DisplayId>
-   </Object>
+        </Legend>
+        <DisplayId>Insurgency Amulet</DisplayId>
+    </Object>
        <Object type="0x69ce" id="Gravestone 14">
         <Class>GameObject</Class>
         <ShowName/>
@@ -108584,7 +108584,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <DisplayId>Jade's Judgment</DisplayId>
         <Legendary/>
     </Object>
-	<Object type="0x69e6" id="Karana's Secret">
+    <Object type="0x69e6" id="Karana's Secret">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -108598,11 +108598,13 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile>
             <ObjectId>Karana Blade</ObjectId>
             <Speed>140</Speed>
-            <MinDamage>185</MinDamage>
-            <MaxDamage>235</MaxDamage>
+            <MinDamage>240</MinDamage>
+            <MaxDamage>255</MaxDamage>
             <LifetimeMS>400</LifetimeMS>
         </Projectile>
-        <ActivateOnEquip stat="27" amount="75">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="40">IncrementStat</ActivateOnEquip>
         <Legendary/>
         <Legend id="3" stat="27">
             <Name>Ghost's Wrath</Name>
@@ -108799,7 +108801,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Legendary/>
         <Activate>BulletNova</Activate>
     </Object>
-	    <Object type="0x1485" id="Waraxe of Judgement">
+    <Object type="0x1485" id="Waraxe of Judgement">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -108813,20 +108815,19 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile>
             <ObjectId>Waraxe Shot</ObjectId>
             <Speed>75</Speed>
-            <MinDamage>225</MinDamage>
-            <MaxDamage>225</MaxDamage>
+            <MinDamage>220</MinDamage>
+            <MaxDamage>220</MaxDamage>
             <LifetimeMS>325</LifetimeMS>
         </Projectile>
-        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="-20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-25">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <Legendary/>
         <Legend id="2" stat="21">
             <Name>Warcry</Name>
-            <Description>When your Surge is at least 40 you gain a bonus defense.</Description>
+            <Description>When your Surge is at least 25 you gain a bonus 200% bonus health and your health regenerates faster.</Description>
             <HP>0</HP>
             <MP>0</MP>
-            <Surge>40</Surge>
+            <Surge>25</Surge>
         </Legend>
         <feedPower>1800</feedPower>
         <FameBonus>9</FameBonus>
@@ -109112,6 +109113,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <Quest/>
       <God/>
       <Encounter/>
+	  <ResetSS/>
 	  <Lootdrop/>
       <StasisImmune/>
       <ParalyzeImmune/>
@@ -109465,7 +109467,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
         <Activate>BulletNova</Activate>
     </Object>
-    <Object type="0x61ae" id="Prime Chaotic Seal">
+        <Object type="0x61ae" id="Prime Chaotic Seal">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -109488,7 +109490,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate effect="Damaging" duration="4" range="4.5" color="0xff0080" target="player" center="player"
                   visualEffect="0" useWisMod="true">GenericActivate
         </Activate>
-        <Activate effect="Armored" duration="1.4" useWisMod="false">ConditionEffectSelf</Activate>
         <feedPower>1000</feedPower>
         <DisplayId>Prime Chaotic Seal</DisplayId>
     </Object>
@@ -109506,25 +109507,29 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <ObjectId>Blue Bolt</ObjectId>
             <Speed>150</Speed>
             <MinDamage>200</MinDamage>
-            <MaxDamage>550</MaxDamage>
-            <LifetimeMS>1000</LifetimeMS>
+            <MaxDamage>270</MaxDamage>
+            <LifetimeMS>2000</LifetimeMS>
             <Size>150</Size>
-            <ConditionEffect duration="3">Curse</ConditionEffect>
-            <MultiHit/>
+            <ConditionEffect duration="2">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="2">Curse</ConditionEffect>
+            <Boomerang/>
             <ArmorPiercing/>
             <PassesCover/>
             <ParticleTrail/>
         </Projectile>
         <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="2">IncrementStat</ActivateOnEquip>
-        <ConditionEffect duration="3">Curse</ConditionEffect>
+        <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
+        <ConditionEffect duration="2">Paralyzed</ConditionEffect>
+        <ConditionEffect duration="2">Paralyzed</ConditionEffect>
+        <Steal type="mana" amount="3"/>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <MpCost>65</MpCost>
         <Activate>Shoot</Activate>
+        <NumProjectiles>3</NumProjectiles>
         <feedPower>880</feedPower>
         <DisplayId>Ascendant Quiver</DisplayId>
     </Object>
@@ -113436,5 +113441,235 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <feedPower>900</feedPower>
         <FameBonus>6</FameBonus>
         <DisplayId>Banner of the Furious Kraken</DisplayId>
+    </Object>
+	    <Object type="0x6185" id="Truvix, the Lord Wanderer">
+        <Enemy/>
+        <Class>Character</Class>
+        <Hero/>
+        <Quest/>
+        <God/>
+        <Encounter/>
+        <ResetSS/>
+        <StasisImmune/>
+        <Level>20</Level>
+        <PerRealmMax>1</PerRealmMax>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>55</Index>
+        </AnimatedTexture>
+        <HitSound>monster/oryx_hit</HitSound>
+        <DeathSound>monster/golems_death</DeathSound>
+        <MaxHitPoints>150000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Blue Boomerang</ObjectId>
+            <Speed>70</Speed>
+            <Damage>85</Damage>
+            <Size>100</Size>
+            <Boomerang/>
+            <ConditionEffect duration="3">Quiet</ConditionEffect>
+            <ConditionEffect duration="3">Dazed</ConditionEffect>
+            <LifetimeMS>1600</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Genisus Bolt B</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>25</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <Size>100</Size>
+            <LifetimeMS>2400</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Genisus Bolt A</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>160</MaxDamage>
+            <Size>100</Size>
+            <ConditionEffect duration="8">Quiet</ConditionEffect>
+            <MultiHit/>
+            <LifetimeMS>2400</LifetimeMS>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Ice Magic</ObjectId>
+            <Speed>100</Speed>
+            <Damage>85</Damage>
+            <Size>100</Size>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
+            <Amplitude>0.5</Amplitude>
+            <Frequency>2</Frequency>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Blue Bolt</ObjectId>
+            <Speed>100</Speed>
+            <Damage>40</Damage>
+            <Size>100</Size>
+            <LifetimeMS>2400</LifetimeMS>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>White Flame</ObjectId>
+            <Speed>65</Speed>
+            <Damage>175</Damage>
+            <Size>150</Size>
+            <ConditionEffect duration="3">Petrify</ConditionEffect>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
+        <Size>135</Size>
+        <Defense>50</Defense>
+        <XpMult>0.8</XpMult>
+        <DisplayId>Truvix, the Lord Wanderer</DisplayId>
+    </Object>
+    <Object type="0x6186" id="Genisus Tower">
+        <Class>GameObject</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1ce</Index>
+        </Texture>
+        <HitSound>monster/trees_hit</HitSound>
+        <DeathSound>monster/tress_death</DeathSound>
+        <MinSize>100</MinSize>
+        <MaxSize>160</MaxSize>
+        <SizeStep>5</SizeStep>
+        <XpMult>0.0</XpMult>
+        <OccupySquare/>
+    </Object>
+    <Object type="0x6187" id="Genisus Inhibitor">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>56</Index>
+        </AnimatedTexture>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <MaxHitPoints>20000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Blue Scale</ObjectId>
+            <Speed>50</Speed>
+            <Damage>60</Damage>
+            <Size>100</Size>
+            <ConditionEffect duration="2">Petrify</ConditionEffect>
+            <ArmorPiercing/>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
+        <Size>135</Size>
+        <Defense>10</Defense>
+        <DisplayId>Genisus Inhibitor</DisplayId>
+    </Object>
+    <Object type="0x6188" id="Truvix Follower">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>0x09</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <MaxHitPoints>1000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Blue Magic</ObjectId>
+            <Speed>80</Speed>
+            <Damage>75</Damage>
+            <Size>100</Size>
+            <ConditionEffect duration="2">Slowed</ConditionEffect>
+            <MultiHit/>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Blue Star</ObjectId>
+            <Speed>60</Speed>
+            <Damage>30</Damage>
+            <Size>100</Size>
+            <ConditionEffect duration="2">Quiet</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Size>110</Size>
+        <Defense>5</Defense>
+        <DisplayId>Truvix Follower</DisplayId>
+    </Object>
+    <Object type="0x6189" id="Truvix Bladesman">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>10</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <MaxHitPoints>500</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Blade</ObjectId>
+            <Speed>80</Speed>
+            <Damage>40</Damage>
+            <Size>100</Size>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+            <LifetimeMS>1000</LifetimeMS>
+        </Projectile>
+        <Size>110</Size>
+        <Defense>0</Defense>
+        <DisplayId>Truvix Bladesman</DisplayId>
+    </Object>
+    <Object type="0x6190" id="Truvix Bomb">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>0x08</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <MaxHitPoints>20000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Genisus Shield</ObjectId>
+            <Speed>60</Speed>
+            <Damage>100</Damage>
+            <Size>100</Size>
+            <LifetimeMS>1000</LifetimeMS>
+			<ConditionEffect duration="4">Unstable</ConditionEffect>
+        </Projectile>
+        <Size>110</Size>
+        <Defense>5</Defense>
+        <DisplayId>Truvix Bomb</DisplayId>
+    </Object>
+    <Object type="0x6182" id="Truestone Ring">
+        <DisplayId>Truestone Ring</DisplayId>
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x59f</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>A ring created from Truestone.</Description>
+        <EffectEquip effect="Surged" delay="120"/>
+        <ActivateOnEquip stat="122" amount="35">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="180">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="2">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <feedPower>900</feedPower>
+    </Object>
+	    <Object type="0x6183" id="Genisus Bolt A">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xde</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6184" id="Genisus Bolt B">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xdd</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x619a" id="Genisus Shield">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xcf</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
     </Object>
 </Objects>

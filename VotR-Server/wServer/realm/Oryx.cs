@@ -51,7 +51,8 @@ namespace wServer.realm
             Tuple.Create("Mad Jester", (ISetPiece) new MadJester()),
             Tuple.Create("Encounter Altar", (ISetPiece) new GarnetJade()),
             Tuple.Create("Lord Stone Gargoyle", (ISetPiece) new Gargland()),
-            
+            Tuple.Create("Truvix, the Lord Wanderer", (ISetPiece) new TimePiece()),
+
 
         };
 
@@ -397,6 +398,15 @@ namespace wServer.realm
                     },
                     Killed = new string[] {
                         "You have released power beyond your comprehension, {PLAYER}."
+                    }
+                }),
+           Tuple.Create("Truvix, the Lord Wanderer", new TauntData
+                {
+                    Spawn = new string[] {
+                        "A lost wanderer somehow escaped his prison.."
+                    },
+                    Killed = new string[] {
+                        "Time is beyond your control, {PLAYER}!"
                     }
                 }),
             Tuple.Create("Zombie Horde", new TauntData()
