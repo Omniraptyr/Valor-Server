@@ -252,7 +252,6 @@ namespace wServer.logic
                     new ItemLoot("Sor Fragment 1", 0.50),
                     new ItemLoot("Sor Fragment 2", 0.50),
                     new ItemLoot("Sor Fragment 3", 0.50),
-                    new ItemLoot("Lost Scripture", 0.50),
                     new ItemLoot("Banner of the Furious Kraken", 0.50),
                     new TierLoot(6, ItemType.Ability, 0.7),
                     new TierLoot(12, ItemType.Armor, 0.07),

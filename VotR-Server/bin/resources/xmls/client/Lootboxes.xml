@@ -330,6 +330,8 @@
 			<Loot name="Legendary Sor Crystal">Item</Loot>
         </CrateLoot>
         <CrateLoot chance="0.34">
+			<Loot name="Lost Scripture">Item</Loot>
+			<Loot name="Lost Scripture #2">Item</Loot>
 			<Loot name="Ultimate Onrane Cache">Item</Loot>
 			<Loot name="1000 Gold">Item</Loot>
 			<Loot name="10000 Gold">Item</Loot>

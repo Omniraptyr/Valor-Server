@@ -112,8 +112,8 @@ namespace wServer.logic
                     LootTemplates.SFLow()
                     ),
                 new Threshold(0.01,
-                    new ItemLoot("Greater Potion of Vitality", 0.6),
-                    new ItemLoot("Greater Potion of Speed", 0.6),
+                    new ItemLoot("Potion of Vitality", 0.6),
+                    new ItemLoot("Potion of Speed", 0.6),
                     new TierLoot(11, ItemType.Weapon, 0.1),
                     new TierLoot(12, ItemType.Armor, 0.1),
                     new TierLoot(6, ItemType.Ability, 0.05),

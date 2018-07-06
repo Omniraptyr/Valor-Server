@@ -499,6 +499,8 @@ namespace wServer.realm.commands
         }
     }
 
+
+
     class ToggleEffCommand : Command
     {
         public ToggleEffCommand() : base("eff", permLevel: 90) { }
@@ -895,16 +897,28 @@ namespace wServer.realm.commands
     }
 
 
-    internal class MarkChangeCommand : Command
+    internal class EnableMarkCommand : Command
     {
-        public MarkChangeCommand() : base("markChange", permLevel: 90)
+        public EnableMarkCommand() : base("enableMark", permLevel: 90)
         {
         }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
-            var num = Utils.FromString(args);
-            player.Node1 = num;
+            player.MarksEnabled = true;
+            return true;
+        }
+    }
+
+    internal class MarkTestingCommand : Command
+    {
+        public MarkTestingCommand() : base("marktest", permLevel: 90)
+        {
+        }
+
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+            player.SendInfo("" + player.attackPercentage);
             return true;
         }
     }

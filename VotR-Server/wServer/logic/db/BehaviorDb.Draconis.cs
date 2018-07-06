@@ -901,8 +901,8 @@ namespace wServer.logic
                     LootTemplates.SFLow()
                     ),
                 new Threshold(0.15,
-                    new ItemLoot("Greater Potion of Dexterity", 0.3),
-                    new ItemLoot("Greater Potion of Wisdom", 0.3),
+                    new ItemLoot("Potion of Dexterity", 0.3),
+                    new ItemLoot("Potion of Wisdom", 0.3),
                     new TierLoot(12, ItemType.Weapon, 0.065),
                     new TierLoot(12, ItemType.Weapon, 0.055),
                     new TierLoot(6, ItemType.Ability, 0.065),

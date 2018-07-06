@@ -167,12 +167,12 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Greater Potion of Defense", 1),
-                    new ItemLoot("Greater Potion of Attack", 1),
-                    new ItemLoot("Greater Potion of Speed", 1),
-                    new ItemLoot("Greater Potion of Vitality", 1),
-                    new ItemLoot("Greater Potion of Wisdom", 1),
-                    new ItemLoot("Greater Potion of Dexterity", 1)
+                    new ItemLoot("Potion of Defense", 1),
+                    new ItemLoot("Potion of Attack", 1),
+                    new ItemLoot("Potion of Speed", 1),
+                    new ItemLoot("Potion of Vitality", 1),
+                    new ItemLoot("Potion of Wisdom", 1),
+                    new ItemLoot("Potion of Dexterity", 1)
                 )
              };
         }
@@ -496,7 +496,7 @@ namespace wServer.logic.loot
     {
         private double threshold;
         private ILootDef[] children;
-        
+
 
         public Threshold(double threshold, params ILootDef[] children)
         {
@@ -505,11 +505,10 @@ namespace wServer.logic.loot
 
         }
 
-        double thresholdDifficulty = 0.015;
         public void Populate(RealmManager manager, Enemy enemy, Tuple<Player, int> playerDat,
                              Random rand, IList<LootDef> lootDefs)
         { 
-            if (playerDat != null && playerDat.Item2 / (double)enemy.ObjectDesc.MaxHP >= ((threshold+thresholdDifficulty) - (threshold * playerDat.Item1.thresholdBoost())) / Math.Max(enemy.Owner.Players.Count() / 2, 1))
+            if (playerDat != null && playerDat.Item2 / (double)enemy.ObjectDesc.MaxHP >= (threshold - (threshold * playerDat.Item1.thresholdBoost())) / Math.Max(enemy.Owner.Players.Count() / 2, 1))
             {
                 foreach (var i in children)
                     i.Populate(manager, enemy, null, rand, lootDefs);

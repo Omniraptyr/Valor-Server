@@ -183,6 +183,20 @@ public class Player extends Character {
     private var effString_:String = "";
     private var unusualEffects_:Vector.<ParticleEffect> = null;
 
+
+    public var pwHealth_:int = 0;
+    public var pwMana_:int = 0;
+    public var pwAttack_:int = 0;
+    public var pwDexterity_:int = 0;
+    public var pwSpeed_:int = 0;
+    public var pwDefense_:int = 0;
+    public var pwWisdom_:int = 0;
+    public var pwVitality_:int = 0;
+    public var pwProtection_:int = 0;
+    public var pwRestoration_:int = 0;
+    public var pwMight_:int = 0;
+    public var pwLuck_:int = 0;
+
     public function Player(_arg1:XML) {
         this.ip_ = new IntPoint();
         var _local2:Injector = StaticInjectorContext.getInjector();

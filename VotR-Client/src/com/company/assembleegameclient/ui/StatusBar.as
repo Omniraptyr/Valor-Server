@@ -26,6 +26,7 @@ public class StatusBar extends Sprite {
     public var max_:int = -1;
     public var boost_:int = -1;
     public var maxMax_:int = -1;
+    public var pval_:int = -1;
     private var labelText_:TextFieldDisplayConcrete;
     private var labelTextStringBuilder_:LineBuilder;
     private var valueText_:TextFieldDisplayConcrete;
@@ -102,17 +103,18 @@ public class StatusBar extends Sprite {
         dispatchEvent(new Event("MULTIPLIER_OUT"));
     }
 
-    public function draw(_arg1:int, _arg2:int, _arg3:int, _arg4:int = -1):void {
+    public function draw(_arg1:int, _arg2:int, _arg3:int, _arg4:int = -1, _arg5:int = -1):void {
         if (_arg2 > 0) {
             _arg1 = Math.min(_arg2, Math.max(0, _arg1));
         }
-        if ((((((((_arg1 == this.val_)) && ((_arg2 == this.max_)))) && ((_arg3 == this.boost_)))) && ((_arg4 == this.maxMax_)))) {
+        if ((((((((_arg1 == this.val_)) && ((_arg2 == this.max_)))) && ((_arg3 == this.boost_)))) && ((_arg4 == this.maxMax_)) && ((_arg5 == this.pval_)))) {
             return;
         }
         this.val_ = _arg1;
         this.max_ = _arg2;
         this.boost_ = _arg3;
         this.maxMax_ = _arg4;
+        this.pval_ = _arg5;
         this.internalDraw();
     }
     public function setLabelText(_arg1:String, _arg2:Object = null):void {
@@ -145,6 +147,12 @@ public class StatusBar extends Sprite {
         graphics.clear();
         this.colorSprite.graphics.clear();
         var _local1:uint = 0xFFFFFF;
+        if(this.pval_ >= 50){
+            _local1 = 0x4169E1;
+        }else if((((this.maxMax_ > 0)) && (((this.max_ - this.boost_) >= this.maxMax_)))){
+            _local1 = 0xFCDF00;
+        }
+
         if ((((this.maxMax_ > 0)) && (((this.max_ - this.boost_) == this.maxMax_)))) {
             _local1 = 0xFCDF00;
         }

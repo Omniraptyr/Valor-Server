@@ -202,9 +202,9 @@ namespace wServer.logic
                     new ItemLoot("Staff of Uranium", 0.25)
                 ),
                 new Threshold(0.05,
-                    new ItemLoot("Greater Potion of Vitality", 0.5),
-                    new ItemLoot("Greater Potion of Dexterity", 0.5),
-                    new ItemLoot("Greater Potion of Wisdom", 0.5),
+                    new ItemLoot("Potion of Vitality", 0.5),
+                    new ItemLoot("Potion of Dexterity", 0.5),
+                    new ItemLoot("Potion of Wisdom", 0.5),
                     new TierLoot(11, ItemType.Weapon, 0.1),
                     new TierLoot(6, ItemType.Ability, 0.1),
                     new TierLoot(11, ItemType.Armor, 0.1),

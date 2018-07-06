@@ -411,6 +411,7 @@ namespace wServer.realm.entities
             Random rnd = new Random();
             int drop3 = rnd.Next(1, 10001);
             int drop = rnd.Next(1, 101);
+            int drop4 = rnd.Next(1, 5);
             var time = new RealmTime();
             int drop2 = rnd.Next(1, 7);
             if (enemy == questEntity)
@@ -462,7 +463,7 @@ namespace wServer.realm.entities
             }
             if (enemy.ObjectDesc.Elitedrop == true)
             {
-                if (drop <= 25)
+                if (drop4 <= 3)
                 {
                     Client.Manager.Database.UpdateLootbox4(acc, 1);
                     Lootbox4 += 1;

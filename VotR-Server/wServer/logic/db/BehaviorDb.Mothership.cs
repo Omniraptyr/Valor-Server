@@ -261,7 +261,7 @@ namespace wServer.logic
                     LootTemplates.SFLow()
                     ),
                 new Threshold(0.025,
-                    new ItemLoot("Greater Potion of Defense", 1.0),
+                    new ItemLoot("Potion of Defense", 1.0),
                     new TierLoot(8, ItemType.Weapon, 0.2),
                     new TierLoot(9, ItemType.Weapon, 0.03),
                     new TierLoot(10, ItemType.Weapon, 0.02),

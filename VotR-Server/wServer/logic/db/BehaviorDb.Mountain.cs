@@ -662,7 +662,7 @@ namespace wServer.logic
                     new TierLoot(5, ItemType.Ability, 0.2)
                     ),
                 new Threshold(0.15,
-                    new ItemLoot("Greater Potion of Speed", 1)
+                    new ItemLoot("Potion of Speed", 1)
                     )
             )
             .Init("Lucky Ent God",
@@ -691,7 +691,7 @@ namespace wServer.logic
                     new TierLoot(5, ItemType.Ability, 0.2)
                     ),
                 new Threshold(0.15,
-                    new ItemLoot("Greater Potion of Defense", 1)
+                    new ItemLoot("Potion of Defense", 1)
                     )
             )
             ;

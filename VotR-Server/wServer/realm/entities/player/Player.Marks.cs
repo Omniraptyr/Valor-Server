@@ -8,156 +8,181 @@ namespace wServer.realm.entities
     {
 
         int surgeBonus = 0;
+        public double attackPercentage;
+        public double defensePercentage;
+        public double wisdomPercentage;
+        public double vitalityPercentage;
+        public double speedPercentage;
+        public double mightPercentage;
+        public double luckPercentage;
+        public double restorationPercentage;
+        public  double protectionPercentage;
+        public double dexterityPercentage;
+
 
         public void MarksActivate()
         {
+
+
             switch (Node1)
             {
                 case 1:
-                    Stats.Boost.ActivateBoost2[3].Push(Convert.ToInt32(Stats[3] * 0.05), false);
+                    defensePercentage += 0.05;
                     break;
                 case 2:
-                    Stats.Boost.ActivateBoost2[6].Push(Convert.ToInt32(Stats[6] * 0.05), false);
+                    vitalityPercentage += 0.05;
                     break;
                 case 3:
-                    Stats.Boost.ActivateBoost2[2].Push(Convert.ToInt32(Stats[2] * 0.05), false);
+                    attackPercentage += 0.05;
                     break;
                 case 4:
-                    Stats.Boost.ActivateBoost2[7].Push(Convert.ToInt32(Stats[7] * 0.05), false);
+                    wisdomPercentage += 0.05;
                     break;
                 case 5:
-                    Stats.Boost.ActivateBoost2[11].Push(Convert.ToInt32(Stats[11] * 0.05), false);
+                    protectionPercentage += 0.05;
                     break;
                 case 6:
-                    Stats.Boost.ActivateBoost2[5].Push(Convert.ToInt32(Stats[5] * 0.05), false);
+                    dexterityPercentage += 0.05;
                     break;
                 case 7:
-                    Stats.Boost.ActivateBoost2[4].Push(Convert.ToInt32(Stats[4] * 0.05), false);
+                    speedPercentage += 0.05;
                     break;
                 case 8:
-                    Stats.Boost.ActivateBoost2[8].Push(Convert.ToInt32(Stats[8] * 0.05), false);
+                    mightPercentage += 0.05;
                     break;
                 case 9:
-                    Stats.Boost.ActivateBoost2[9].Push(Convert.ToInt32(Stats[9] * 0.05), false);
+                    luckPercentage += 0.05;
                     break;
                 case 10:
                     surgeBonus += 4;
                     break;
                 case 11:
-                    Stats.Boost.ActivateBoost2[10].Push(Convert.ToInt32(Stats[10] * 0.05), false);
+                    luckPercentage += 0.05;
                     break;
             }
 
             switch (Node2)
             {
                 case 1:
-                    Stats.Boost.ActivateBoost2[3].Push(Convert.ToInt32(Stats[3] * 0.05), false);
+                    defensePercentage += 0.05;
                     break;
                 case 2:
-                    Stats.Boost.ActivateBoost2[6].Push(Convert.ToInt32(Stats[6] * 0.05), false);
+                    vitalityPercentage += 0.05;
                     break;
                 case 3:
-                    Stats.Boost.ActivateBoost2[2].Push(Convert.ToInt32(Stats[2] * 0.05), false);
+                    attackPercentage += 0.05;
                     break;
                 case 4:
-                    Stats.Boost.ActivateBoost2[7].Push(Convert.ToInt32(Stats[7] * 0.05), false);
+                    wisdomPercentage += 0.05;
                     break;
                 case 5:
-                    Stats.Boost.ActivateBoost2[11].Push(Convert.ToInt32(Stats[11] * 0.05), false);
+                    protectionPercentage += 0.05;
                     break;
                 case 6:
-                    Stats.Boost.ActivateBoost2[5].Push(Convert.ToInt32(Stats[5] * 0.05), false);
+                    dexterityPercentage += 0.05;
                     break;
                 case 7:
-                    Stats.Boost.ActivateBoost2[4].Push(Convert.ToInt32(Stats[4] * 0.05), false);
+                    speedPercentage += 0.05;
                     break;
                 case 8:
-                    Stats.Boost.ActivateBoost2[8].Push(Convert.ToInt32(Stats[8] * 0.05), false);
+                    mightPercentage += 0.05;
                     break;
                 case 9:
-                    Stats.Boost.ActivateBoost2[9].Push(Convert.ToInt32(Stats[9] * 0.05), false);
+                    luckPercentage += 0.05;
                     break;
                 case 10:
                     surgeBonus += 4;
                     break;
                 case 11:
-                    Stats.Boost.ActivateBoost2[10].Push(Convert.ToInt32(Stats[10] * 0.05), false);
+                    luckPercentage += 0.05;
                     break;
             }
 
             switch (Node3)
             {
                 case 1:
-                    Stats.Boost.ActivateBoost2[3].Push(Convert.ToInt32(Stats[3] * 0.05), false);
+                    defensePercentage += 0.05;
                     break;
                 case 2:
-                    Stats.Boost.ActivateBoost2[6].Push(Convert.ToInt32(Stats[6] * 0.05), false);
+                    vitalityPercentage += 0.05;
                     break;
                 case 3:
-                    Stats.Boost.ActivateBoost2[2].Push(Convert.ToInt32(Stats[2] * 0.05), false);
+                    attackPercentage += 0.05;
                     break;
                 case 4:
-                    Stats.Boost.ActivateBoost2[7].Push(Convert.ToInt32(Stats[7] * 0.05), false);
+                    wisdomPercentage += 0.05;
                     break;
                 case 5:
-                    Stats.Boost.ActivateBoost2[11].Push(Convert.ToInt32(Stats[11] * 0.05), false);
+                    protectionPercentage += 0.05;
                     break;
                 case 6:
-                    Stats.Boost.ActivateBoost2[5].Push(Convert.ToInt32(Stats[5] * 0.05), false);
+                    dexterityPercentage += 0.05;
                     break;
                 case 7:
-                    Stats.Boost.ActivateBoost2[4].Push(Convert.ToInt32(Stats[4] * 0.05), false);
+                    speedPercentage += 0.05;
                     break;
                 case 8:
-                    Stats.Boost.ActivateBoost2[8].Push(Convert.ToInt32(Stats[8] * 0.05), false);
+                    mightPercentage += 0.05;
                     break;
                 case 9:
-                    Stats.Boost.ActivateBoost2[9].Push(Convert.ToInt32(Stats[9] * 0.05), false);
+                    luckPercentage += 0.05;
                     break;
                 case 10:
                     surgeBonus += 4;
                     break;
                 case 11:
-                    Stats.Boost.ActivateBoost2[10].Push(Convert.ToInt32(Stats[10] * 0.05), false);
+                    luckPercentage += 0.05;
                     break;
             }
+
 
             switch (Node4)
             {
                 case 1:
-                    Stats.Boost.ActivateBoost2[3].Push(Convert.ToInt32(Stats[3] * 0.05), false);
+                    defensePercentage += 0.05;
                     break;
                 case 2:
-                    Stats.Boost.ActivateBoost2[6].Push(Convert.ToInt32(Stats[6] * 0.05), false);
+                    vitalityPercentage += 0.05;
                     break;
                 case 3:
-                    Stats.Boost.ActivateBoost2[2].Push(Convert.ToInt32(Stats[2] * 0.05), false);
+                    attackPercentage += 0.05;
                     break;
                 case 4:
-                    Stats.Boost.ActivateBoost2[7].Push(Convert.ToInt32(Stats[7] * 0.05), false);
+                    wisdomPercentage += 0.05;
                     break;
                 case 5:
-                    Stats.Boost.ActivateBoost2[11].Push(Convert.ToInt32(Stats[11] * 0.05), false);
+                    protectionPercentage += 0.05;
                     break;
                 case 6:
-                    Stats.Boost.ActivateBoost2[5].Push(Convert.ToInt32(Stats[5] * 0.05), false);
+                    dexterityPercentage += 0.05;
                     break;
                 case 7:
-                    Stats.Boost.ActivateBoost2[4].Push(Convert.ToInt32(Stats[4] * 0.05), false);
+                    speedPercentage += 0.05;
                     break;
                 case 8:
-                    Stats.Boost.ActivateBoost2[8].Push(Convert.ToInt32(Stats[8] * 0.05), false);
+                    mightPercentage += 0.05;
                     break;
                 case 9:
-                    Stats.Boost.ActivateBoost2[9].Push(Convert.ToInt32(Stats[9] * 0.05), false);
+                    luckPercentage += 0.05;
                     break;
                 case 10:
                     surgeBonus += 4;
                     break;
                 case 11:
-                    Stats.Boost.ActivateBoost2[10].Push(Convert.ToInt32(Stats[10] * 0.05), false);
+                    luckPercentage += 0.05;
                     break;
             }
+            Stats.Boost.ActivateBoost2[3].Push(Convert.ToInt32(Stats[3] * defensePercentage), false);
+            Stats.Boost.ActivateBoost2[6].Push(Convert.ToInt32(Stats[6] * vitalityPercentage), false);
+            Stats.Boost.ActivateBoost2[2].Push(Convert.ToInt32(Stats[2] * attackPercentage), false);
+            Stats.Boost.ActivateBoost2[7].Push(Convert.ToInt32(Stats[7] * wisdomPercentage), false);
+            Stats.Boost.ActivateBoost2[11].Push(Convert.ToInt32(Stats[11] * protectionPercentage), false);
+            Stats.Boost.ActivateBoost2[5].Push(Convert.ToInt32(Stats[5] * dexterityPercentage), false);
+            Stats.Boost.ActivateBoost2[4].Push(Convert.ToInt32(Stats[4] * speedPercentage), false);
+            Stats.Boost.ActivateBoost2[8].Push(Convert.ToInt32(Stats[8] * mightPercentage), false);
+            Stats.Boost.ActivateBoost2[9].Push(Convert.ToInt32(Stats[9] * luckPercentage), false);
+            Stats.Boost.ActivateBoost2[10].Push(Convert.ToInt32(Stats[10] * luckPercentage), false);
+
 
             switch (Mark)
             {

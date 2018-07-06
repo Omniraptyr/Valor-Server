@@ -225,7 +225,7 @@ namespace wServer.logic
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Potion of Protection", 1.0),
-                    new ItemLoot("Greater Potion of Wisdom", 0.6),
+                    new ItemLoot("Potion of Wisdom", 0.6),
                     new TierLoot(10, ItemType.Weapon, 0.1),
                     new TierLoot(4, ItemType.Ability, 0.2),
                     new TierLoot(10, ItemType.Armor, 0.1),

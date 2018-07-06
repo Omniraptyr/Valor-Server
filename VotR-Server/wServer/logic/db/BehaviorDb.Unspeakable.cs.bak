@@ -24,7 +24,7 @@ namespace wServer.logic
                     new Suicide()
                     )
                 ),
-                new ItemLoot("Minor Magic Potion", 0.05),
+                new ItemLoot("Magic Potion", 0.05),
                 new Threshold(0.5,
                     new ItemLoot("Mithril Armor", 0.01)
                     )
@@ -167,6 +167,9 @@ namespace wServer.logic
                         new TimedTransition(2000, "fight1")
                         )
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                 new Threshold(0.025,
                     new ItemLoot("Potion of Defense", 1.0),
                     new ItemLoot("Potion of Speed", 1.0),
@@ -177,7 +180,8 @@ namespace wServer.logic
                     new TierLoot(10, ItemType.Armor, 0.05),
                     new TierLoot(10, ItemType.Weapon, 0.05),
                     new TierLoot(4, ItemType.Ring, 0.025),
-                    new ItemLoot("Ghilact Dagger", 0.03)
+                    new ItemLoot("Ghilact Dagger", 0.04),
+                    new ItemLoot("Jacket of True Darkness", 0.01)
                 )
             )
 
@@ -361,6 +365,9 @@ namespace wServer.logic
                     ),
                     new State("UnsetEffect")
                 ),
+                                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
                 new Threshold(0.11,
 				new ItemLoot("Potion of Luck", 1),
                 new ItemLoot("Greater Potion of Mana", 1),
@@ -371,6 +378,7 @@ namespace wServer.logic
                 new ItemLoot("Greater Potion of Dexterity", 0.5),
                 new ItemLoot("Greater Potion of Vitality", 0.5),
 		    	new ItemLoot("Night Dice", 0.02),
+                new ItemLoot("Jacket of True Darkness", 0.025),
                 new ItemLoot("Broadsword of Bloodshed", 0.02),
                 new ItemLoot("Evil Shield of the Dark Knight", 0.02),
                 new ItemLoot("Amulet of the Dark Knight", 0.02),

@@ -1864,6 +1864,44 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                 case StatData.NODE4:
                     _local4.node4_ = _local8;
                     break;
+
+
+                case StatData.PWMAX_HP_STAT:
+                    _local4.pwHealth_ = _local8;
+                    break;
+                case StatData.PWMAX_MP_STAT:
+                    _local4.pwMana_ = _local8;
+                    break;
+                case StatData.PWATTACK_STAT:
+                    _local4.pwAttack_ = _local8;
+                    break;
+                case StatData.PWDEFENSE_STAT:
+                    _local4.pwDefense_ = _local8;
+                    break;
+                case StatData.PWDEXTERITY_STAT:
+                    _local4.pwDexterity_ = _local8;
+                    break;
+                case StatData.PWSPEED_STAT:
+                    _local4.pwSpeed_ = _local8;
+                    break;
+                case StatData.PWVITALITY_STAT:
+                    _local4.pwVitality_ = _local8;
+                    break;
+                case StatData.PWWISDOM_STAT:
+                    _local4.pwWisdom_ = _local8;
+                    break;
+                case StatData.PWMIGHT_STAT:
+                    _local4.pwMight_ = _local8;
+                    break;
+                case StatData.PWLUCK_STAT:
+                    _local4.pwLuck_ = _local8;
+                    break;
+                case StatData.PWRESTORATION_STAT:
+                    _local4.pwRestoration_ = _local8;
+                    break;
+                case StatData.PWPROTECTION_STAT:
+                    _local4.pwProtection_ = _local8;
+                    break;
             }
         }
     }

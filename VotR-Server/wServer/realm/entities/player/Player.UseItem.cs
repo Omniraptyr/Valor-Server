@@ -574,6 +574,12 @@ namespace wServer.realm.entities
                     case ActivateEffects.MarksActivate:
                         AEMarksActivate(time, item, target, eff);
                         break;
+                    case ActivateEffects.AscensionActivate:
+                        AEAscensionActivate(time, item, target, eff);
+                        break;
+                    case ActivateEffects.PowerStat:
+                        AEPowerStat(time, item, target, eff);
+                        break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
@@ -770,8 +776,8 @@ namespace wServer.realm.entities
                         {
                             Inventory[i] = null;
                             SaveToCharacter();
-                            Client.Manager.Database.UpdateFame(Client.Account, -10000);
-                            CurrentFame = Client.Account.Fame - 10000;
+                            Client.Manager.Database.UpdateFame(Client.Account, -5000);
+                            CurrentFame = Client.Account.Fame - 5000;
                             MarksEnabled = true;
                             break;
                         }
@@ -780,12 +786,59 @@ namespace wServer.realm.entities
                 }
                 else
                 {
-                    SendError("You must have at least 10000 Fame to activate a Lost Scripture on this character.");
+                    SendError("You must have at least 5000 Fame to activate a Lost Scripture on this character.");
                 }
             }
             else
             {
                 SendError("You must have at least 20 stars before you can activate marks on this character.");
+            }
+        }
+
+        private void AEAscensionActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            if (Stars >= 20)
+            {
+                if (CurrentFame >= 10000)
+                {
+
+                    for (int i = 0; i < Inventory.Length; i++)
+                    {
+                        if (Inventory[i] == null) continue;
+                        if (Inventory[i].ObjectId == "Lost Scripture 2")
+                        {
+                            Inventory[i] = null;
+                            SaveToCharacter();
+                            Client.Manager.Database.UpdateFame(Client.Account, -5000);
+                            CurrentFame = Client.Account.Fame - 5000;
+                            AscensionEnabled = true;
+                            break;
+                        }
+                    }
+
+                }
+                else
+                {
+                    SendError("You must have at least 5000 Fame to activate a Lost Scripture on this character.");
+                }
+            }
+            else
+            {
+                SendError("You must have at least 20 stars before you can activate marks on this character.");
+            }
+        }
+
+        private void AEInsigniaActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            if (CurrentFame >= 1000)
+            {
+                Client.Manager.Database.UpdateFame(Client.Account, -1000);
+                CurrentFame = Client.Account.Fame - 1000;
+                this.ForceUpdate(CurrentFame);
+                Client.Manager.Database.UpdateCredit(Client.Account, 200);
+                Credits = Client.Account.Credits + 200;
+                this.ForceUpdate(Credits);
+                SendInfo("You have converted 1000 fame to 200 gold!");
             }
         }
 
@@ -1322,7 +1375,68 @@ namespace wServer.realm.entities
                 Stats.ReCalculateValues();
             }
         }
+        private void AEPowerStat(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            if(AscensionEnabled == true)
+            {
+                switch (eff.Amount)
+                {
+                    case 0:
+                        if (PWHealth < 50)
+                            PWHealth += 5;
+                        break;
+                    case 1:
+                        if (PWMana < 50)
+                            PWMana += 5;
+                        break;
+                    case 2:
+                        if (PWAttack < 10)
+                            PWAttack += 1;
+                        break;
+                    case 3:
+                        if (PWDefense < 10)
+                            PWDefense += 1;
+                        break;
+                    case 4:
+                        if (PWSpeed < 10)
+                            PWSpeed += 1;
+                        break;
+                    case 5:
+                        if (PWDexterity < 10)
+                            PWDexterity += 1;
+                        break;
+                    case 6:
+                        if (PWVitality < 10)
+                            PWVitality += 1;
+                        break;
+                    case 7:
+                        if (PWWisdom < 10)
+                            PWWisdom += 1;
+                        break;
+                    case 8:
+                        if (PWMight < 10)
+                            PWMight += 1;
+                        break;
+                    case 9:
+                        if (PWLuck < 10)
+                            PWLuck += 1;
+                        break;
+                    case 10:
+                        if (PWRestoration < 10)
+                            PWRestoration += 1;
+                        break;
+                    case 11:
+                        if (PWProtection < 10)
+                            PWProtection += 1;
+                        break;
+                }
 
+            }
+            else
+            {
+                SendInfo("A character that isn't ascended can't use Vials.");
+            }
+        }
         private void AEFixedStat(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var idx = StatsManager.GetStatIndex((StatsType)eff.Stats);

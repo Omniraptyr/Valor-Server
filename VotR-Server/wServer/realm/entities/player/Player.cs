@@ -144,6 +144,13 @@ namespace wServer.realm.entities
             set { _marksEnabled.SetValue(value); }
         }
 
+        private readonly SV<bool> _ascensionEnabled;
+        public bool AscensionEnabled
+        {
+            get { return _ascensionEnabled.GetValue(); }
+            set { _ascensionEnabled.SetValue(value); }
+        }
+
         private readonly SV<int> _mark;
         public int Mark
         {
@@ -237,6 +244,80 @@ namespace wServer.realm.entities
             get { return _surgeCounter.GetValue(); }
             set { _surgeCounter.SetValue(value); }
         }
+
+        private readonly SV<int> _pwHealth;
+        public int PWHealth
+        {
+            get { return _pwHealth.GetValue(); }
+            set { _pwHealth.SetValue(value); }
+        }
+        private readonly SV<int> _pwMana;
+        public int PWMana
+        {
+            get { return _pwMana.GetValue(); }
+            set { _pwMana.SetValue(value); }
+        }
+        private readonly SV<int> _pwAttack;
+        public int PWAttack
+        {
+            get { return _pwAttack.GetValue(); }
+            set { _pwAttack.SetValue(value); }
+        }
+        private readonly SV<int> _pwDefense;
+        public int PWDefense
+        {
+            get { return _pwDefense.GetValue(); }
+            set { _pwDefense.SetValue(value); }
+        }
+        private readonly SV<int> _pwSpeed;
+        public int PWSpeed
+        {
+            get { return _pwSpeed.GetValue(); }
+            set { _pwSpeed.SetValue(value); }
+        }
+        private readonly SV<int> _pwVitality;
+        public int PWVitality
+        {
+            get { return _pwVitality.GetValue(); }
+            set { _pwVitality.SetValue(value); }
+        }
+        private readonly SV<int> _pwWisdom;
+        public int PWWisdom
+        {
+            get { return _pwWisdom.GetValue(); }
+            set { _pwWisdom.SetValue(value); }
+        }
+        private readonly SV<int> _pwDexterity;
+        public int PWDexterity
+        {
+            get { return _pwDexterity.GetValue(); }
+            set { _pwDexterity.SetValue(value); }
+        }
+        private readonly SV<int> _pwMight;
+        public int PWMight
+        {
+            get { return _pwMight.GetValue(); }
+            set { _pwMight.SetValue(value); }
+        }
+        private readonly SV<int> _pwLuck;
+        public int PWLuck
+        {
+            get { return _pwLuck.GetValue(); }
+            set { _pwLuck.SetValue(value); }
+        }
+        private readonly SV<int> _pwRestoration;
+        public int PWRestoration
+        {
+            get { return _pwRestoration.GetValue(); }
+            set { _pwRestoration.SetValue(value); }
+        }
+        private readonly SV<int> _pwProtection;
+        public int PWProtection
+        {
+            get { return _pwProtection.GetValue(); }
+            set { _pwProtection.SetValue(value); }
+        }
+
 
         private readonly SV<bool> _hasBackpack;
         public bool HasBackpack
@@ -383,6 +464,7 @@ namespace wServer.realm.entities
                 case StatsType.Texture2: Texture2 = (int)val; break;
                 case StatsType.Effect: XmlEffect = (string)val; break;
                 case StatsType.MarksEnabled: MarksEnabled = (int)val == 1; break;
+                case StatsType.AscensionEnabled: AscensionEnabled = (int)val == 1; break;
                 case StatsType.Mark: Mark = (int)val; break;
                 case StatsType.Node1: Node1 = (int)val; break;
                 case StatsType.Node2: Node2 = (int)val; break;
@@ -448,6 +530,18 @@ namespace wServer.realm.entities
                 case StatsType.SurgeCounter: SurgeCounter = (int)val; break;
                 case StatsType.ProtectionPoints: Protection = (int)val; break;
                 case StatsType.ProtectionPointsMax: ProtectionMax = (int)val; break;
+                case StatsType.PWMaximumHP: PWHealth = (int)val; break;
+                case StatsType.PWMaximumMP: PWMana = (int)val; break;
+                case StatsType.PWAttack: PWAttack = (int)val; break;
+                case StatsType.PWDefense: PWDefense = (int)val; break;
+                case StatsType.PWSpeed: PWSpeed = (int)val; break;
+                case StatsType.PWDexterity: PWDexterity = (int)val; break;
+                case StatsType.PWVitality: PWVitality = (int)val; break;
+                case StatsType.PWWisdom: PWWisdom = (int)val; break;
+                case StatsType.PWMight: PWMight = (int)val; break;
+                case StatsType.PWLuck: PWLuck = (int)val; break;
+                case StatsType.PWRestoration: PWRestoration = (int)val; break;
+                case StatsType.PWProtection: PWProtection = (int)val; break;
             }
         }
 
@@ -472,6 +566,7 @@ namespace wServer.realm.entities
             stats[StatsType.Texture2] = Texture2;
             stats[StatsType.Effect] = XmlEffect == "" ? PlayerEffects.GetXML(Effect) : XmlEffect;
             stats[StatsType.MarksEnabled] = (MarksEnabled) ? 1 : 0;
+            stats[StatsType.AscensionEnabled] = (AscensionEnabled) ? 1 : 0;
             stats[StatsType.Mark] = Mark;
             stats[StatsType.Node1] = Node1;
             stats[StatsType.Node2] = Node2;
@@ -552,6 +647,18 @@ namespace wServer.realm.entities
             stats[StatsType.Lootbox3] = Lootbox3;
             stats[StatsType.Lootbox4] = Lootbox4;
             stats[StatsType.Lootbox5] = Lootbox5;
+            stats[StatsType.PWMaximumHP] = PWHealth;
+            stats[StatsType.PWMaximumMP] = PWMana;
+            stats[StatsType.PWAttack] = PWAttack;
+            stats[StatsType.PWDefense] = PWDefense;
+            stats[StatsType.PWSpeed] = PWSpeed;
+            stats[StatsType.PWDexterity] = PWDexterity;
+            stats[StatsType.PWVitality] = PWVitality;
+            stats[StatsType.PWWisdom] = PWWisdom;
+            stats[StatsType.PWMight] = PWMight;
+            stats[StatsType.PWLuck] = PWLuck;
+            stats[StatsType.PWRestoration] = PWRestoration;
+            stats[StatsType.PWProtection] = PWProtection;
             stats[StatsType.ProtectionPoints] = Protection;
             stats[StatsType.ProtectionPointsMax] = ProtectionMax;
         }
@@ -570,6 +677,7 @@ namespace wServer.realm.entities
             chr.Skin = _originalSkin;
             chr.Effect = XmlEffect;
             chr.MarksEnabled = MarksEnabled;
+            chr.AscensionEnabled = AscensionEnabled;
             chr.Mark = Mark;
             chr.Node1 = Node1;
             chr.Node2 = Node2;
@@ -585,6 +693,19 @@ namespace wServer.realm.entities
             chr.LTBoostTime = LTBoostTime;
             chr.PetId = Pet?.PetId ?? 0;
             chr.Items = Inventory.GetItemTypes();
+
+            chr.PWHealth = PWHealth;
+            chr.PWMana = PWMana;
+            chr.PWAttack = PWAttack;
+            chr.PWDefense = PWDefense;
+            chr.PWSpeed = PWSpeed;
+            chr.PWDexterity = PWDexterity;
+            chr.PWVitality = PWVitality;
+            chr.PWWisdom = PWWisdom;
+            chr.PWMight = PWMight;
+            chr.PWLuck = PWLuck;
+            chr.PWRestoration = PWRestoration;
+            chr.PWProtection = PWProtection;
         }
 
         public Player(Client client, bool saveInventory = true)
@@ -619,6 +740,7 @@ namespace wServer.realm.entities
             _mp = new SV<int>(this, StatsType.MP, client.Character.MP);
             _hasBackpack = new SV<bool>(this, StatsType.HasBackpack, client.Character.HasBackpack, true);
             _marksEnabled = new SV<bool>(this, StatsType.MarksEnabled, client.Character.MarksEnabled, true);
+            _ascensionEnabled = new SV<bool>(this, StatsType.AscensionEnabled, client.Character.AscensionEnabled, true);
             _mark = new SV<int>(this, StatsType.Mark, client.Character.Mark);
             _node1 = new SV<int>(this, StatsType.Node1, client.Character.Node1);
             _node2 = new SV<int>(this, StatsType.Node2, client.Character.Node2);
@@ -642,6 +764,26 @@ namespace wServer.realm.entities
             _lootbox3 = new SV<int>(this, StatsType.Lootbox3, client.Account.Lootbox3, true);
             _lootbox4 = new SV<int>(this, StatsType.Lootbox4, client.Account.Lootbox4, true);
             _lootbox5 = new SV<int>(this, StatsType.Lootbox5, client.Account.Lootbox5, true);
+
+
+            _pwHealth = new SV<int>(this, StatsType.PWMaximumHP, client.Character.PWHealth);
+            _pwMana = new SV<int>(this, StatsType.PWMaximumMP, client.Character.PWMana);
+            _pwAttack = new SV<int>(this, StatsType.PWAttack, client.Character.PWAttack);
+            _pwDefense = new SV<int>(this, StatsType.PWDefense, client.Character.PWDefense);
+            _pwSpeed = new SV<int>(this, StatsType.PWSpeed, client.Character.PWSpeed);
+            _pwDexterity = new SV<int>(this, StatsType.PWDexterity, client.Character.PWDexterity);
+            _pwVitality = new SV<int>(this, StatsType.PWVitality, client.Character.PWVitality);
+            _pwWisdom = new SV<int>(this, StatsType.PWWisdom, client.Character.PWWisdom);
+            _pwMight = new SV<int>(this, StatsType.PWMight, client.Character.PWMight);
+            _pwLuck = new SV<int>(this, StatsType.PWLuck, client.Character.PWLuck);
+            _pwMight = new SV<int>(this, StatsType.PWMight, client.Character.PWMight);
+            _pwRestoration = new SV<int>(this, StatsType.PWRestoration, client.Character.PWRestoration);
+            _pwProtection = new SV<int>(this, StatsType.PWProtection, client.Character.PWProtection);
+
+
+
+
+
 
 
             Name = client.Account.Name;
@@ -976,7 +1118,14 @@ namespace wServer.realm.entities
                     var regen = (int)_hpRegenCounter;
                     if (regen > 0)
                     {
-                        HP = Math.Min(Stats[0], HP + regen);
+                        if (Mark == 2)
+                        {
+                            HP = Math.Min(Stats[0]+Convert.ToInt32(Stats[0] * 0.25), HP + regen);
+                        }
+                        else
+                        {
+                            HP = Math.Min(Stats[0], HP + regen);
+                        }
                         _hpRegenCounter -= regen;
                     }
                 }
@@ -993,7 +1142,15 @@ namespace wServer.realm.entities
                     var regen = (int)_mpRegenCounter;
                     if (regen > 0)
                     {
-                        MP = Math.Min(Stats[1], MP + regen);
+                        if(Mark == 1)
+                        {
+                            MP = Math.Min(Stats[1]+Convert.ToInt32(Stats[1] * 0.25), MP + regen);
+                        }
+                        else
+                        {
+                            MP = Math.Min(Stats[1], MP + regen);
+                        }
+                        
                         _mpRegenCounter -= regen;
                     }
                 }

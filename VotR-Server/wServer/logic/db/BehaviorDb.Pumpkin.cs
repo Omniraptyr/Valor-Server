@@ -66,7 +66,7 @@ namespace wServer.logic
                         )
                     ),
                 new Threshold(0.025,
-                    new ItemLoot("Greater Potion of Mana", 1.0),
+                    new ItemLoot("Potion of Mana", 1.0),
                     new TierLoot(10, ItemType.Weapon, 0.06),
                     new TierLoot(11, ItemType.Weapon, 0.05),
                     new TierLoot(12, ItemType.Weapon, 0.04),

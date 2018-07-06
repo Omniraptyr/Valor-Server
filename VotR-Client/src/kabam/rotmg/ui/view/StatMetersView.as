@@ -32,7 +32,6 @@ public class StatMetersView extends Sprite {
         this.mpBar_.y = 24 + 12;
 	    this.protectionBar.y = this.surgeBar_.y = 36 + 18;
 		this.surgeBar_.x = 176 / 2 + 2;
-        //this.surgeBar_.y = 48 + 8;
         this.expBar_.visible = true;
         this.fameBar_.visible = false;
         addChild(this.expBar_);
@@ -89,8 +88,8 @@ public class StatMetersView extends Sprite {
             }
             this.fameBar_.draw(_arg1.currFame_, _arg1.nextClassQuestFame_, 0);
         }
-        this.hpBar_.draw(_arg1.hp_, _arg1.maxHP_, _arg1.maxHPBoost_, _arg1.maxHPMax_);
-        this.mpBar_.draw(_arg1.mp_, _arg1.maxMP_, _arg1.maxMPBoost_, _arg1.maxMPMax_);
+        this.hpBar_.draw(_arg1.hp_, _arg1.maxHP_, _arg1.maxHPBoost_, _arg1.maxHPMax_, _arg1.pwHealth_);
+        this.mpBar_.draw(_arg1.mp_, _arg1.maxMP_, _arg1.maxMPBoost_, _arg1.maxMPMax_, _arg1.pwMana_);
         this.surgeBar_.draw(_arg1.surge_, 100, 0);
         this.protectionBar.draw(_arg1.protectionPoints_, _arg1.protectionPointsMax_, 0);
     }

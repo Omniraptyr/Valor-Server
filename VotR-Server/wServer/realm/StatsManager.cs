@@ -16,9 +16,10 @@ namespace wServer.realm
         internal readonly BaseStatManager Base;
         internal readonly BoostStatManager Boost;
 
+
         private readonly SV<int>[] _stats;
 
-        public int this[int index] => Base[index] + Boost[index];
+        public int this[int index] => Base[index] + Boost[index] + PWNum(index);
 
         public StatsManager(Player owner)
         {
@@ -26,11 +27,12 @@ namespace wServer.realm
             Base = new BaseStatManager(this);
             Boost = new BoostStatManager(this);
 
+
             _stats = new SV<int>[NUM_STAT_TYPES];
             for (var i = 0; i < NUM_STAT_TYPES; i++)
-                _stats[i] = new SV<int>(Owner, GetStatType(i), this[i], i != 0 && i!= 1); // make maxHP and maxMP global update
+                _stats[i] = new SV<int>(Owner, GetStatType(i), this[i], i != 0 && i != 1); // make maxHP and maxMP global update
         }
-        
+
         public void ReCalculateValues(InventoryChangedEventArgs e = null)
         {
             Base.ReCalculateValues(e);
@@ -50,7 +52,7 @@ namespace wServer.realm
             var ret = isDoubleDamage() * Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility) * CriticalModifier() + VengeanceDamage() + RelentlessDamage() + KaraDamage() + MoonLightDamage() + RageDamage();
             //Log.Info($"Dmg: {ret}");
             return (int)ret;
-        } 
+        }
 
         public float GetAttackMult(bool isAbility)
         {
@@ -95,7 +97,7 @@ namespace wServer.realm
         public int VengeanceDamage()
         {
             if (Owner.HasConditionEffect(ConditionEffects.Vengeance))
-                return (Owner.Stats[0]-Owner.HP)/2;
+                return (Owner.Stats[0] - Owner.HP) / 2;
             return 0;
         }
         private float CriticalModifier()
@@ -178,7 +180,7 @@ namespace wServer.realm
                 ret = 0;
             return ret;
         }
-        
+
         public float GetDefenseDamage(int dmg, bool noDef)
         {
             var def = this[3];
@@ -202,8 +204,8 @@ namespace wServer.realm
                 ret = 0;
             return ret;
         }
-       
-       public int KaraDamage()
+
+        public int KaraDamage()
         {
             if (Owner.CheckKar() && Owner.HasConditionEffect(ConditionEffects.Invisible))
             {
@@ -219,8 +221,9 @@ namespace wServer.realm
         {
             if (Owner.CheckMoonlight() && Owner.Surge >= 30)
             {
-                return Owner.MP*2;
-            }else if (Owner.CheckMoonlight())
+                return Owner.MP * 2;
+            }
+            else if (Owner.CheckMoonlight())
             {
                 return Owner.MP;
             }
@@ -267,7 +270,8 @@ namespace wServer.realm
             {
                 return 0;
             }
-            else{
+            else
+            {
                 var vit = this[6];
                 if (Owner.HasConditionEffect(ConditionEffects.Sick))
                     vit = 0;
@@ -285,7 +289,7 @@ namespace wServer.realm
             }
             else
             {
-                
+
                 int wis = this[7];
                 if (Owner.HasConditionEffect(ConditionEffects.Quiet))
                     return 0;
@@ -319,7 +323,8 @@ namespace wServer.realm
                 case 12: return "DamageMin";
                 case 13: return "DamageMax";
                 case 14: return "FortuneBoost";
-            } return null;
+            }
+            return null;
         }
 
         public static int GetStatIndex(string name)
@@ -341,7 +346,8 @@ namespace wServer.realm
                 case "DamageMin": return 12;
                 case "DamageMax": return 13;
                 case "FortuneBoost": return 14;
-            } return -1;
+            }
+            return -1;
         }
 
         public static int GetStatIndex(StatsType stat)
@@ -458,6 +464,72 @@ namespace wServer.realm
                     return StatsType.FortuneBonus;
                 default:
                     return StatsType.None;
+            }
+        }
+
+        public static StatsType GetPowerStatType(int stat)
+        {
+            switch (stat)
+            {
+                case 0:
+                    return StatsType.PWMaximumHP;
+                case 1:
+                    return StatsType.PWMaximumMP;
+                case 2:
+                    return StatsType.PWAttack;
+                case 3:
+                    return StatsType.PWDefense;
+                case 4:
+                    return StatsType.PWSpeed;
+                case 5:
+                    return StatsType.PWDexterity;
+                case 6:
+                    return StatsType.PWVitality;
+                case 7:
+                    return StatsType.PWWisdom;
+                case 8:
+                    return StatsType.PWMight;
+                case 9:
+                    return StatsType.PWLuck;
+                case 10:
+                    return StatsType.PWRestoration;
+                case 11:
+                    return StatsType.PWProtection;
+                default:
+                    return StatsType.None;
+            }
+        }
+
+        public int PWNum(int stat)
+        {
+            switch (stat)
+            {
+                case 0:
+                    return Owner.PWHealth;
+                case 1:
+                    return Owner.PWMana;
+                case 2:
+                    return Owner.PWAttack;
+                case 3:
+                    return Owner.PWDefense;
+                case 4:
+                    return Owner.PWSpeed;
+                case 5:
+                    return Owner.PWDexterity;
+                case 6:
+                    return Owner.PWVitality;
+                case 7:
+                    return Owner.PWWisdom;
+                case 8:
+                    return Owner.PWMight;
+                case 9:
+                    return Owner.PWLuck;
+                case 10:
+                    return Owner.PWRestoration;
+                case 11:
+                    return Owner.PWProtection;
+                default:
+                    return 0;
             }
         }
     }

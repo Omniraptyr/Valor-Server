@@ -267,7 +267,7 @@ namespace wServer.logic
                     LootTemplates.SFLow()
                     ),
                 new MostDamagers(3,
-                    new ItemLoot("Greater Potion of Speed", 1)
+                    new ItemLoot("Potion of Speed", 1)
                     ),
                 new Threshold(0.1,
                     new ItemLoot("Wand of the Bulwark", 0.02),

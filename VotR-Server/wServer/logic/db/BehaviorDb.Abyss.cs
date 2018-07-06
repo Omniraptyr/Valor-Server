@@ -67,6 +67,8 @@ namespace wServer.logic
                     LootTemplates.SFLow()
                     ),
                 new Threshold(0.025,
+                    new ItemLoot("Demon Blade", 0.045),
+                    new ItemLoot("Abyssal Rune", 0.05),
                     new ItemLoot("Potion of Vitality", 1.0),
                     new ItemLoot("Potion of Defense", 1.0),
                     new TierLoot(9, ItemType.Weapon, 0.1),
@@ -75,9 +77,7 @@ namespace wServer.logic
                     new TierLoot(3, ItemType.Ring, 0.05),
                     new TierLoot(10, ItemType.Armor, 0.05),
                     new TierLoot(10, ItemType.Weapon, 0.05),
-                    new TierLoot(4, ItemType.Ring, 0.025),
-                    new ItemLoot("Demon Blade", 0.035),
-                    new ItemLoot("Abyssal Rune", 0.05)
+                    new TierLoot(4, ItemType.Ring, 0.025)
                 )
             )
             .Init("Malphas Missile",

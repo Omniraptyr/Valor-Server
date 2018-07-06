@@ -847,8 +847,8 @@ namespace wServer.logic
                        new ItemLoot("Onrane Cache", 0.25),
                        new ItemLoot("The Stronghold Key", 0.06),
                        new ItemLoot("Gold Cache", 0.025),
-                       new ItemLoot("Greater Potion of Life", 1),
-                       new ItemLoot("Greater Potion of Mana", 1)
+                       new ItemLoot("Potion of Life", 1),
+                       new ItemLoot("Potion of Mana", 1)
                        )
             )
            .Init("AH ULTRA The Sincryer",
@@ -1004,8 +1004,8 @@ namespace wServer.logic
                        new ItemLoot("Onrane Cache", 0.40),
                        new ItemLoot("The Stronghold Key", 0.06),
                        new ItemLoot("Gold Cache", 0.050),
-                       new ItemLoot("Greater Potion of Life", 1),
-                       new ItemLoot("Greater Potion of Mana", 1),
+                       new ItemLoot("Potion of Life", 1),
+                       new ItemLoot("Potion of Mana", 1),
                        new ItemLoot("Kismet Seal", 0.1),
                        new ItemLoot("Sword of Dark Retribution", 1)
                        )
@@ -1030,8 +1030,8 @@ namespace wServer.logic
                      new ItemLoot("Onrane Cache", 0.25),
                      new ItemLoot("The Stronghold Key", 0.06),
                      new ItemLoot("Gold Cache", 0.025),
-                     new ItemLoot("Greater Potion of Life", 1),
-                     new ItemLoot("Greater Potion of Mana", 1)
+                     new ItemLoot("Potion of Life", 1),
+                     new ItemLoot("Potion of Mana", 1)
                      )
                  )*/
             /*.Init("AH Loot Chest 2",
@@ -1054,11 +1054,11 @@ namespace wServer.logic
                     new ItemLoot("Onrane Cache", 1),
                     new ItemLoot("The Stronghold Key", 0.07),
                     new ItemLoot("Gold Cache", 0.5),
-                    new ItemLoot("Greater Potion of Life", 1),
-                    new ItemLoot("Greater Potion of Defense", 1),
-                    new ItemLoot("Greater Potion of Attack", 0.6),
-                    new ItemLoot("Greater Potion of Dexterity", 0.5),
-                    new ItemLoot("Greater Potion of Vitality", 0.5)
+                    new ItemLoot("Potion of Life", 1),
+                    new ItemLoot("Potion of Defense", 1),
+                    new ItemLoot("Potion of Attack", 0.6),
+                    new ItemLoot("Potion of Dexterity", 0.5),
+                    new ItemLoot("Potion of Vitality", 0.5)
                     )
                 )*/
             .Init("AH Heart Portal Spawner",
@@ -1105,12 +1105,12 @@ namespace wServer.logic
                 new ItemLoot("Gold Cache", 1),
                 new ItemLoot("Wisdom Eon", 0.01),
                 new ItemLoot("Defense Eon", 0.01),
-                new ItemLoot("Greater Potion of Life", 1),
-                new ItemLoot("Greater Potion of Defense", 1),
-                new ItemLoot("Greater Potion of Attack", 0.6),
-                new ItemLoot("Greater Potion of Dexterity", 0.5),
-                new ItemLoot("Greater Potion of Vitality", 0.5),
-                new ItemLoot("Greater Potion of Speed", 0.5)
+                new ItemLoot("Potion of Life", 1),
+                new ItemLoot("Potion of Defense", 1),
+                new ItemLoot("Potion of Attack", 0.6),
+                new ItemLoot("Potion of Dexterity", 0.5),
+                new ItemLoot("Potion of Vitality", 0.5),
+                new ItemLoot("Potion of Speed", 0.5)
                 )
             )
            .Init("AH ULTRA Heart Loot Ctrl",
@@ -1141,12 +1141,12 @@ namespace wServer.logic
                 new ItemLoot("Gold Cache", 1),
                 new ItemLoot("Wisdom Eon", 0.05),
                 new ItemLoot("Defense Eon", 0.05),
-                new ItemLoot("Greater Potion of Life", 1),
-                new ItemLoot("Greater Potion of Defense", 1),
-                new ItemLoot("Greater Potion of Attack", 1),
-                new ItemLoot("Greater Potion of Dexterity", 1),
-                new ItemLoot("Greater Potion of Vitality", 1),
-                new ItemLoot("Greater Potion of Speed", 0.5)
+                new ItemLoot("Potion of Life", 1),
+                new ItemLoot("Potion of Defense", 1),
+                new ItemLoot("Potion of Attack", 1),
+                new ItemLoot("Potion of Dexterity", 1),
+                new ItemLoot("Potion of Vitality", 1),
+                new ItemLoot("Potion of Speed", 0.5)
                 )
             )
             /*.Init("AH TZol Portal Spawner",
@@ -1187,13 +1187,13 @@ namespace wServer.logic
                     new ItemLoot("Ultimate Onrane Cache", 1),
                     new ItemLoot("The Stronghold Key", 0.75),
                     new ItemLoot("10000 Gold", 0.50),
-                    new ItemLoot("Greater Potion of Life", 1),
-                    new ItemLoot("Greater Potion of Defense", 1),
-                    new ItemLoot("Greater Potion of Attack", 0.6),
-                    new ItemLoot("Greater Potion of Dexterity", 0.5),
-                    new ItemLoot("Greater Potion of Vitality", 0.5),
-                    new ItemLoot("Greater Potion of Speed", 0.5),
-                    new ItemLoot("Greater Potion of Mana", 0.5)
+                    new ItemLoot("Potion of Life", 1),
+                    new ItemLoot("Potion of Defense", 1),
+                    new ItemLoot("Potion of Attack", 0.6),
+                    new ItemLoot("Potion of Dexterity", 0.5),
+                    new ItemLoot("Potion of Vitality", 0.5),
+                    new ItemLoot("Potion of Speed", 0.5),
+                    new ItemLoot("Potion of Mana", 0.5)
                 )
             )
         .Init("AH ULTRA Aldragine Loot Ctrl",
@@ -1221,13 +1221,13 @@ namespace wServer.logic
                     new ItemLoot("Ultimate Onrane Cache", 1),
                     new ItemLoot("The Stronghold Key", 0.75),
                     new ItemLoot("10000 Gold", 1.00),
-                    new ItemLoot("Greater Potion of Life", 1),
-                    new ItemLoot("Greater Potion of Defense", 1),
-                    new ItemLoot("Greater Potion of Attack", 1),
-                    new ItemLoot("Greater Potion of Dexterity", 1),
-                    new ItemLoot("Greater Potion of Vitality", 1),
-                    new ItemLoot("Greater Potion of Speed", 1),
-                    new ItemLoot("Greater Potion of Mana", 1)
+                    new ItemLoot("Potion of Life", 1),
+                    new ItemLoot("Potion of Defense", 1),
+                    new ItemLoot("Potion of Attack", 1),
+                    new ItemLoot("Potion of Dexterity", 1),
+                    new ItemLoot("Potion of Vitality", 1),
+                    new ItemLoot("Potion of Speed", 1),
+                    new ItemLoot("Potion of Mana", 1)
                 )
             )
         .Init("AH Secret Chest",
@@ -1428,11 +1428,11 @@ namespace wServer.logic
                         new ItemLoot("Onrane Cache", 1),
                         new ItemLoot("The Stronghold Key", 0.07),
                         new ItemLoot("Gold Cache", 0.5),
-                        new ItemLoot("Greater Potion of Life", 1),
-                        new ItemLoot("Greater Potion of Defense", 1),
-                        new ItemLoot("Greater Potion of Attack", 0.6),
-                        new ItemLoot("Greater Potion of Dexterity", 0.5),
-                        new ItemLoot("Greater Potion of Vitality", 0.5)
+                        new ItemLoot("Potion of Life", 1),
+                        new ItemLoot("Potion of Defense", 1),
+                        new ItemLoot("Potion of Attack", 0.6),
+                        new ItemLoot("Potion of Dexterity", 0.5),
+                        new ItemLoot("Potion of Vitality", 0.5)
                 )
             )
         .Init("AH ULTRA The Vision of Aldragine",
@@ -1594,11 +1594,11 @@ namespace wServer.logic
                         new ItemLoot("Onrane Cache", 1),
                         new ItemLoot("The Stronghold Key", 0.07),
                         new ItemLoot("Gold Cache", 0.7),
-                        new ItemLoot("Greater Potion of Life", 1),
-                        new ItemLoot("Greater Potion of Defense", 1),
-                        new ItemLoot("Greater Potion of Attack", 1),
-                        new ItemLoot("Greater Potion of Dexterity", 1),
-                        new ItemLoot("Greater Potion of Vitality", 1)
+                        new ItemLoot("Potion of Life", 1),
+                        new ItemLoot("Potion of Defense", 1),
+                        new ItemLoot("Potion of Attack", 1),
+                        new ItemLoot("Potion of Dexterity", 1),
+                        new ItemLoot("Potion of Vitality", 1)
                 )
             )
         .Init("AH The Heart",

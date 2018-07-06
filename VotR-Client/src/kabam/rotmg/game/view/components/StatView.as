@@ -20,8 +20,10 @@ public class StatView extends Sprite {
     public var valText_:TextFieldDisplayConcrete;
     public var redOnZero_:Boolean;
     public var val_:int = -1;
+    public var pval_:int = -1;
     public var boost_:int = -1;
     public var valColor_:uint = 0xB3B3B3;
+    public var powerColor_:uint = 0x4169E1;
     public var toolTip_:TextToolTip;
     public var mouseOver:NativeSignal;
     public var mouseOut:NativeSignal;
@@ -62,29 +64,35 @@ public class StatView extends Sprite {
         }
     }
 
-    public function draw(_arg1:int, _arg2:int, _arg3:int):void {
+    public function draw(_arg1:int, _arg2:int, _arg3:int, _arg4:int):void {
         var _local4:uint;
-        if ((((_arg1 == this.val_)) && ((_arg2 == this.boost_)))) {
+        if ((((_arg1 == this.val_)) && ((_arg2 == this.boost_)) && ((_arg4 == this.pval_)))) {
             return;
         }
         this.val_ = _arg1;
         this.boost_ = _arg2;
-        if ((_arg1 - _arg2) >= _arg3) {
-            _local4 = 0xFCDF00;
-        }
-        else {
-            if (((((this.redOnZero_) && ((this.val_ <= 0)))) || ((this.boost_ < 0)))) {
-                _local4 = 16726072;
+        this.pval_ = _arg4;
+        if (_arg4 >= 10) {
+            _local4 = 0x4169E1;
+        }else{
+            if ((_arg1 - _arg2) >= _arg3) {
+                _local4 = 0xFCDF00;
             }
             else {
-                if (this.boost_ > 0) {
-                    _local4 = 6206769;
+                if (((((this.redOnZero_) && ((this.val_ <= 0)))) || ((this.boost_ < 0)))) {
+                    _local4 = 16726072;
                 }
                 else {
-                    _local4 = 0xB3B3B3;
+                    if (this.boost_ > 0) {
+                        _local4 = 6206769;
+                    }
+                    else {
+                        _local4 = 0xB3B3B3;
+                    }
                 }
             }
         }
+
         if (this.valColor_ != _local4) {
             this.valColor_ = _local4;
             this.valText_.setColor(this.valColor_);

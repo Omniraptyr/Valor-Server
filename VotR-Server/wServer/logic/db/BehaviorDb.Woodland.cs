@@ -182,7 +182,7 @@ namespace wServer.logic
                     new TierLoot(13, ItemType.Armor, 0.05),
                     new TierLoot(12, ItemType.Weapon, 0.05),
                     new TierLoot(5, ItemType.Ring, 0.025),
-                    new ItemLoot("Greater Potion of Vitality", 1),
+                    new ItemLoot("Potion of Vitality", 1),
                     new ItemLoot("Leaf Bow", 0.03)
 
                  )

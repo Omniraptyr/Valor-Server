@@ -225,7 +225,6 @@ namespace wServer.logic
                     new ItemLoot("Sor Fragment 1", 0.50),
                     new ItemLoot("Sor Fragment 2", 0.50),
                     new ItemLoot("Sor Fragment 3", 0.50),
-                    new ItemLoot("Lost Scripture", 0.50),
                     new ItemLoot("Mirror Dagger", 0.25),
                     new ItemLoot("Adroit Armor", 0.25),
                     new TierLoot(6, ItemType.Ability, 0.1),

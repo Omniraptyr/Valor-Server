@@ -79,16 +79,16 @@ public class StatsView extends Sprite {
     }
 
     private function drawStats(_arg1:Player):void {
-        this.stats_[ATTACK].draw(_arg1.attack_, _arg1.attackBoost_, _arg1.attackMax_);
-        this.stats_[DEFENSE].draw(_arg1.defense_, _arg1.defenseBoost_, _arg1.defenseMax_);
-        this.stats_[SPEED].draw(_arg1.speed_, _arg1.speedBoost_, _arg1.speedMax_);
-        this.stats_[DEXTERITY].draw(_arg1.dexterity_, _arg1.dexterityBoost_, _arg1.dexterityMax_);
-        this.stats_[VITALITY].draw(_arg1.vitality_, _arg1.vitalityBoost_, _arg1.vitalityMax_);
-        this.stats_[WISDOM].draw(_arg1.wisdom_, _arg1.wisdomBoost_, _arg1.wisdomMax_);
-        this.stats_[MIGHT].draw(_arg1.might_, _arg1.mightBoost_, _arg1.mightMax_);
-        this.stats_[LUCK].draw(_arg1.luck_, _arg1.luckBoost_, _arg1.luckMax_);
-        this.stats_[RESTORATION].draw(_arg1.restoration_, _arg1.restorationBoost_, _arg1.restorationMax_);
-        this.stats_[PROTECTION].draw(_arg1.protection_, _arg1.protectionBoost_, _arg1.protectionMax_);
+        this.stats_[ATTACK].draw(_arg1.attack_, _arg1.attackBoost_, _arg1.attackMax_, _arg1.pwAttack_);
+        this.stats_[DEFENSE].draw(_arg1.defense_, _arg1.defenseBoost_, _arg1.defenseMax_, _arg1.pwDefense_);
+        this.stats_[SPEED].draw(_arg1.speed_, _arg1.speedBoost_, _arg1.speedMax_, _arg1.pwSpeed_);
+        this.stats_[DEXTERITY].draw(_arg1.dexterity_, _arg1.dexterityBoost_, _arg1.dexterityMax_, _arg1.pwDexterity_);
+        this.stats_[VITALITY].draw(_arg1.vitality_, _arg1.vitalityBoost_, _arg1.vitalityMax_, _arg1.pwVitality_);
+        this.stats_[WISDOM].draw(_arg1.wisdom_, _arg1.wisdomBoost_, _arg1.wisdomMax_, _arg1.pwWisdom_);
+        this.stats_[MIGHT].draw(_arg1.might_, _arg1.mightBoost_, _arg1.mightMax_, _arg1.pwMight_);
+        this.stats_[LUCK].draw(_arg1.luck_, _arg1.luckBoost_, _arg1.luckMax_, _arg1.pwLuck_);
+        this.stats_[RESTORATION].draw(_arg1.restoration_, _arg1.restorationBoost_, _arg1.restorationMax_, _arg1.pwRestoration_);
+        this.stats_[PROTECTION].draw(_arg1.protection_, _arg1.protectionBoost_, _arg1.protectionMax_, _arg1.pwProtection_);
     }
 
     public function dock():void {

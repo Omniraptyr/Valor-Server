@@ -128,7 +128,19 @@ public class StatData {
     public static const NODE2 = 131;
     public static const NODE3 = 132;
     public static const NODE4 = 133;
-
+    public static const PWMAX_HP_STAT:int = 134;
+    public static const PWMAX_MP_STAT:int = 135;
+    public static const PWATTACK_STAT:int = 136;
+    public static const PWDEFENSE_STAT:int = 137;
+    public static const PWSPEED_STAT:int = 138;
+    public static const PWVITALITY_STAT:int = 139;
+    public static const PWWISDOM_STAT:int = 140;
+    public static const PWDEXTERITY_STAT:int = 141;
+    public static const PWMIGHT_STAT = 142;
+    public static const PWLUCK_STAT = 143;
+    public static const PWRESTORATION_STAT = 144;
+    public static const PWPROTECTION_STAT = 145;
+    public static const ASCENSIONENABLED = 146;
     // unimplemented
     public static const DAMAGE_MIN:int = 98;
     public static const DAMAGE_MAX:int = 99;
