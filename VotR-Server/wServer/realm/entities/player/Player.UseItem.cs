@@ -766,7 +766,7 @@ namespace wServer.realm.entities
         {
             if (Stars >= 20)
             {
-                if (CurrentFame >= 10000)
+                if (CurrentFame >= 5000)
                 {
 
                     for (int i = 0; i < Inventory.Length; i++)
@@ -799,13 +799,13 @@ namespace wServer.realm.entities
         {
             if (Stars >= 20)
             {
-                if (CurrentFame >= 10000)
+                if (CurrentFame >= 5000)
                 {
 
                     for (int i = 0; i < Inventory.Length; i++)
                     {
                         if (Inventory[i] == null) continue;
-                        if (Inventory[i].ObjectId == "Lost Scripture 2")
+                        if (Inventory[i].ObjectId == "Lost Scripture #2")
                         {
                             Inventory[i] = null;
                             SaveToCharacter();

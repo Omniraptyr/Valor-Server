@@ -16525,10 +16525,10 @@
         <SlotType>18</SlotType>
         <Description>Fast-acting and infamously lethal poison pressed from the Haloflower seed.</Description>
         <Usable/>
-        <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="15">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
-        <MpCost>130</MpCost>
-        <Activate radius="2.5" totalDamage="1500" duration="1">PoisonGrenade</Activate>
+        <MpCost>110</MpCost>
+        <Activate radius="2.5" totalDamage="2000" duration="4">PoisonGrenade</Activate>
         <feedPower>1800</feedPower>
         <FameBonus>8</FameBonus>
         <Legendary/>
@@ -19316,32 +19316,6 @@
         <OldSound>bladeSwing</OldSound>
         <feedPower>900</feedPower>
         <DisplayId>Swiftsword</DisplayId>
-    </Object>
-    <Object type="0x57a5" id="Royalty Bow">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x175</Index>
-        </Texture>
-        <SlotType>3</SlotType>
-        <Description>You will have this bow as long as you do what the king orders you to do.</Description>
-        <RateOfFire>1.50</RateOfFire>
-        <Sound>weapon/golden_bow</Sound>
-        <Projectile>
-            <ObjectId>Orangish Arrow</ObjectId>
-            <Speed>120</Speed>
-            <MinDamage>30</MinDamage>
-            <MaxDamage>160</MaxDamage>
-            <LifetimeMS>560</LifetimeMS>
-            <MultiHit/>
-        </Projectile>
-        <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
-        <NumProjectiles>3</NumProjectiles>
-        <OldSound>weapon/golden_bow</OldSound>
-        <feedPower>1300</feedPower>
-        <DisplayId>Royalty Bow</DisplayId>
     </Object>
     <Object type="0x57a6" id="Royalty Armor">
         <Class>Equipment</Class>
@@ -23547,18 +23521,21 @@
         <Projectile>
             <ObjectId>Fire Bolt</ObjectId>
             <Speed>150</Speed>
-            <MinDamage>620</MinDamage>
-            <MaxDamage>780</MaxDamage>
+            <MinDamage>400</MinDamage>
+            <MaxDamage>600</MaxDamage>
             <LifetimeMS>1000</LifetimeMS>
             <Size>150</Size>
             <ArmorPiercing/>
-            <MultiHit/>
+            <ConditionEffect duration="3.5">Paralyzed</ConditionEffect>
             <PassesCover/>
-            <ParticleTrail>0xff000</ParticleTrail>>
+            <ParticleTrail>0xff000</ParticleTrail>
         </Projectile>
-        <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
+        <ConditionEffect duration="3.5">Paralyzed</ConditionEffect>
+        <Fabled/>
+        <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
         <Usable/>
-        <BagType>4</BagType>
+        <BagType>11</BagType>
         <MpCost>100</MpCost>
         <Activate>Shoot</Activate>
     </Object>
@@ -24832,15 +24809,15 @@
         <Projectile>
             <ObjectId>Corruption Bolt</ObjectId>
             <Speed>100</Speed>
-            <MinDamage>30</MinDamage>
-            <MaxDamage>60</MaxDamage>
+            <MinDamage>125</MinDamage>
+            <MaxDamage>175</MaxDamage>
             <LifetimeMS>580</LifetimeMS>
-            <ConditionEffect duration="2.4">Curse</ConditionEffect>
+            <ArmorPiercing/>
         </Projectile>
-        <ActivateOnEquip stat="28" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="15">IncrementStat</ActivateOnEquip>
         <Usable/>
-        <BagType>6</BagType>
-        <FameBonus>8</FameBonus>
+        <BagType>11</BagType>
+        <FameBonus>6</FameBonus>
         <MpCost>100</MpCost>
         <Activate>BulletNova</Activate>
         <feedPower>1600</feedPower>
@@ -31093,7 +31070,6 @@
         <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>6</BagType>
-        <SurgeCost>5</SurgeCost>
         <MultiPhase/>
         <Steal type="mana" amount="5"/>
         <Activate effect="Speedy" duration="2" useWisMod="true">ConditionEffectSelf</Activate>
@@ -31322,11 +31298,10 @@
             <ObjectId>Blue Bolt</ObjectId>
             <Speed>150</Speed>
             <MinDamage>200</MinDamage>
-            <MaxDamage>270</MaxDamage>
+            <MaxDamage>250</MaxDamage>
             <LifetimeMS>2000</LifetimeMS>
             <Size>150</Size>
-            <ConditionEffect duration="2">Paralyzed</ConditionEffect>
-            <ConditionEffect duration="2">Curse</ConditionEffect>
+            <ConditionEffect duration="2.5">Paralyzed</ConditionEffect>
             <Boomerang/>
             <ArmorPiercing/>
             <PassesCover/>
@@ -31336,9 +31311,8 @@
         <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
-        <ConditionEffect duration="2">Paralyzed</ConditionEffect>
-        <ConditionEffect duration="2">Paralyzed</ConditionEffect>
-        <Steal type="mana" amount="3"/>
+        <ConditionEffect duration="2.5">Paralyzed</ConditionEffect>
+        <Steal type="mana" amount="2"/>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
@@ -31348,14 +31322,14 @@
         <feedPower>880</feedPower>
         <DisplayId>Ascendant Quiver</DisplayId>
     </Object>
-	  <Object type="0x61b0" id="Marble Tablet">
+    <Object type="0x61b0" id="Marble Tablet">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
             <File>d3LofiObjEmbed</File>
             <Index>0x43f</Index>
         </Texture>
-		    <ExtraTooltipData>
+        <ExtraTooltipData>
             <EffectInfo name="Sprited by" description="BubbaBlu"/>
         </ExtraTooltipData>
         <SlotType>11</SlotType>
@@ -31367,7 +31341,7 @@
             <MinDamage>100</MinDamage>
             <MaxDamage>150</MaxDamage>
             <LifetimeMS>1000</LifetimeMS>
-			<ConditionEffect duration="2">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="1.5">Paralyzed</ConditionEffect>
             <MultiHit/>
         </Projectile>
         <Usable/>
@@ -31824,9 +31798,8 @@
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <MpCost>50</MpCost>
-        <HpCost>100</HpCost>
         <Activate>BurstInferno</Activate>
-        <Activate effect="Sick" duration="3" useWisMod="true">ConditionEffectSelf</Activate>
+        <Activate effect="Sick" duration="3" useWisMod="false">ConditionEffectSelf</Activate>
         <Activate effect="Armored" duration="3" range="6" useWisMod="true">ConditionEffectAura</Activate>
         <feedPower>2000</feedPower>
         <Legendary/>
@@ -33328,5 +33301,224 @@
         <Soulbound/>
         <Activate>InsigniaActivate</Activate>
         <DisplayId>Insignia of Influence</DisplayId>
+    </Object>
+    <Object type="0x615f" id="Vigorous Jacket">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj6</File>
+            <Index>0xf7</Index>
+        </Texture>
+        <SlotType>35</SlotType>
+        <Description>This jacket seems to have a shadowy fog that surrounds itself.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Offensive Stance" description=""/>
+            <EffectInfo name="" description="+20 Attack"/>
+            <EffectInfo name="Defensive Stance" description=""/>
+            <EffectInfo name="" description="+25 Defense"/>
+        </ExtraTooltipData>
+        <Projectile>
+            <ObjectId>Fire Boomerang</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>300</MaxDamage>
+            <LifetimeMS>600</LifetimeMS>
+            <Size>100</Size>
+            <ArmorPiercing/>
+            <ConditionEffect duration="5">Weak</ConditionEffect>
+            <Boomerang/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <MpCost>65</MpCost>
+        <SurgeCost>1</SurgeCost>
+        <Activate maxDistance="5">Teleport</Activate>
+        <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
+        <Activate amount="20" amount2="25" noStack="false">JacketAbility</Activate>
+        <Cooldown>2</Cooldown>
+    </Object>
+    <Object type="0x6210" id="Toxin of the Vicious">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x256</Index>
+        </Texture>
+        <SlotType>18</SlotType>
+        <Description>A rare venom that could corrode a Sor Crystal.</Description>
+        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="15">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-5">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>11</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>90</MpCost>
+        <Activate radius="8" totalDamage="1100" duration="6">PoisonGrenade</Activate>
+        <feedPower>750</feedPower>
+        <Fabled/>
+        <DisplayId>Treacherous Venom</DisplayId>
+    </Object>
+    <Object type="0x6211" id="Percussion Shield">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x257</Index>
+        </Texture>
+        <SlotType>5</SlotType>
+        <Description>A gilded gong modified to be a terrifically noisy shield.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Projectile>
+            <ObjectId>Silver Shield</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>109</MinDamage>
+            <MaxDamage>118</MaxDamage>
+            <LifetimeMS>200</LifetimeMS>
+            <Size>140</Size>
+            <ConditionEffect duration="2.5">Stunned</ConditionEffect>
+            <CondChance effect="Paralyzed" chance="5" duration="6"/>
+            <MultiHit/>
+            <PassesCover/>
+            <ParticleTrail intensity="0.3" lifetimeMS="270">0x0f0ff0</ParticleTrail>
+        </Projectile>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="16">IncrementStat</ActivateOnEquip>
+        <ConditionEffect duration="2.5">Stunned</ConditionEffect>
+        <Usable/>
+        <BagType>11</BagType>
+        <FameBonus>6</FameBonus>
+        <Fabled/>
+        <MpCost>110</MpCost>
+        <feedPower>1800</feedPower>
+        <Activate>Shoot</Activate>
+        <NumProjectiles>9</NumProjectiles>
+    </Object>
+    <Object type="0x6212" id="Banner of Revenge">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj6</File>
+            <Index>0xd7</Index>
+        </Texture>
+        <ExtraTooltipData>
+            <EffectInfo name="Banner Lifetime:" description="5"/>
+            <EffectInfo name="Empowerment Duration:" description="5"/>
+            <EffectInfo name="Radius:" description="6"/>
+            <EffectInfo name="" description="Empowers all players near banner."/>
+        </ExtraTooltipData>
+        <SlotType>28</SlotType>
+        <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="8">IncrementStat</ActivateOnEquip>
+        <Description>The banner used to leave the mark of the fallen warrior that dared challenge the Eternal Beast.</Description>
+        <Usable/>
+        <BagType>11</BagType>
+        <MpCost>90</MpCost>
+        <Activate effect="Surged" duration="4" range="5">ConditionEffectAura</Activate>
+        <Activate range="6" amount="5" duration="5">Banner</Activate>
+        <Activate effect="Invulnerable" duration="3.5">ConditionEffectSelf</Activate>
+        <Activate effect="Damaging" duration="4">ConditionEffectSelf</Activate>
+        <Cooldown>8</Cooldown>
+        <FameBonus>6</FameBonus>
+        <Fabled/>
+        <feedPower>380</feedPower>
+        <DisplayId>Banner of True War</DisplayId>
+    </Object>
+    <Object type="0x6213" id="Royalty Bow">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x175</Index>
+        </Texture>
+        <SlotType>3</SlotType>
+        <Description>Orders are orders.</Description>
+        <RateOfFire>1.25</RateOfFire>
+        <Sound>weapon/golden_bow</Sound>
+        <Projectile>
+            <ObjectId>Orangish Arrow</ObjectId>
+            <Speed>120</Speed>
+            <MinDamage>55</MinDamage>
+            <MaxDamage>160</MaxDamage>
+            <LifetimeMS>560</LifetimeMS>
+            <CondChance effect="Slowed" chance="1" duration="6"/>
+            <MultiHit/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="20">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <NumProjectiles>4</NumProjectiles>
+        <OldSound>weapon/golden_bow</OldSound>
+        <feedPower>1300</feedPower>
+        <Fabled/>
+        <DisplayId>Royalty Bow</DisplayId>
+    </Object>
+    <Object type="0x6214" id="Heatblast Trap">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj6</File>
+            <Index>0x16</Index>
+        </Texture>
+        <SlotType>20</SlotType>
+        <Description>A trap that sends a blast of heat to the victim and burns their defenses right off.</Description>
+        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>11</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>100</MpCost>
+        <Activate radius="8" totalDamage="750" condDuration="6">Trap</Activate>
+        <feedPower>380</feedPower>
+        <Fabled/>
+        <DisplayId>Heatblast Trap</DisplayId>
+    </Object>
+    <Object type="0x6215" id="Titanic Bracelet">
+        <Class>Equipment</Class>
+        <Item />
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x47e</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>A symbol for a true titan.</Description>
+        <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+        <BagType>11</BagType>
+        <Fabled/>
+        <FameBonus>6</FameBonus>
+    </Object>
+    <Object type="0x58ee" id="Evisceration Claws">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x429</Index>
+        </Texture>
+        <SlotType>8</SlotType>
+        <Description>Magical claws conjured by the lords who casted the spell that imprisoned the Eternal Beast.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/wand_of_death</Sound>
+        <Projectile>
+            <ObjectId>Typhoon Magic</ObjectId>
+            <Speed>180</Speed>
+            <LifetimeMS>1000</LifetimeMS>
+            <MinDamage>124</MinDamage>
+            <MaxDamage>132</MaxDamage>
+            <Boomerang/>
+        </Projectile>
+        <ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="12">IncrementStat</ActivateOnEquip>
+        <Steal type="mana" amount="2"/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>magicShoot</OldSound>
+        <feedPower>950</feedPower>
     </Object>
 </Objects>

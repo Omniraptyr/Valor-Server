@@ -106435,7 +106435,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <ConditionEffect duration="4">Paralyzed</ConditionEffect>
     </Projectile>
   </Object>
-      <Object type="0x54d9" id="Unoch's Defiance">
+    <Object type="0x54d9" id="Unoch's Defiance">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -106454,7 +106454,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <EffectInfo name="{equip.When_Key_Released}" description=""/>
             <EffectInfo name="" description="Target enemies are inflicted damage according to amount of health drained, current mana, overall wisdom stat, and this item's base damage."/>
         </ExtraTooltipData>
-        <ActivateOnEquip stat="3" amount="600">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="440">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>6</BagType>
@@ -109505,11 +109506,10 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <ObjectId>Blue Bolt</ObjectId>
             <Speed>150</Speed>
             <MinDamage>200</MinDamage>
-            <MaxDamage>270</MaxDamage>
+            <MaxDamage>250</MaxDamage>
             <LifetimeMS>2000</LifetimeMS>
             <Size>150</Size>
-            <ConditionEffect duration="2">Paralyzed</ConditionEffect>
-            <ConditionEffect duration="2">Curse</ConditionEffect>
+            <ConditionEffect duration="2.5">Paralyzed</ConditionEffect>
             <Boomerang/>
             <ArmorPiercing/>
             <PassesCover/>
@@ -109519,9 +109519,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
-        <ConditionEffect duration="2">Paralyzed</ConditionEffect>
-        <ConditionEffect duration="2">Paralyzed</ConditionEffect>
-        <Steal type="mana" amount="3"/>
+        <ConditionEffect duration="2.5">Paralyzed</ConditionEffect>
+        <Steal type="mana" amount="2"/>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
@@ -109550,7 +109549,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <MinDamage>100</MinDamage>
             <MaxDamage>150</MaxDamage>
             <LifetimeMS>1000</LifetimeMS>
-			<ConditionEffect duration="2">Paralyzed</ConditionEffect>
+			<ConditionEffect duration="1.5">Paralyzed</ConditionEffect>
             <MultiHit/>
         </Projectile>
         <Usable/>
@@ -110144,9 +110143,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <MpCost>50</MpCost>
-        <HpCost>100</HpCost>
         <Activate>BurstInferno</Activate>
-        <Activate effect="Sick" duration="3" useWisMod="true">ConditionEffectSelf</Activate>
+        <Activate effect="Sick" duration="3" useWisMod="false">ConditionEffectSelf</Activate>
         <Activate effect="Armored" duration="3" range="6" useWisMod="true">ConditionEffectAura</Activate>
         <feedPower>2000</feedPower>
         <Legendary/>
