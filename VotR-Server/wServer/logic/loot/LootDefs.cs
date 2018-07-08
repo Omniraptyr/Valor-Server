@@ -463,6 +463,28 @@ namespace wServer.logic.loot
                 )
              };
         }
+
+
+        public static ILootDef[] FabledItemsLoot2B()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Bloodwell", 0.75),
+                    new ItemLoot("Lavos Armor", 0.75),
+                    new ItemLoot("Quiver of the Onslaught", 0.75),
+                    new ItemLoot("Stonepraise Tome", 0.75),
+                    new ItemLoot("Realitytaker Orb", 0.75),
+                    new ItemLoot("Evisceration Claws", 0.75),
+                    new ItemLoot("Titanic Bracelet", 0.75),
+                    new ItemLoot("Heatblast Trap", 0.75),
+                    new ItemLoot("Royalty Bow", 0.75),
+                    new ItemLoot("Banner of Revenge", 0.75),
+                    new ItemLoot("Percussion Shield", 0.75),
+                    new ItemLoot("Toxin of the Vicious", 0.75)
+                )
+            };
+        }
         //Sincryer (Hideout) Fabled Dungeon
         public static ILootDef[] FabledItemsLoot2()
         {
@@ -491,8 +513,11 @@ namespace wServer.logic.loot
             };
         }
     }
-    
-    public class Threshold : ILootDef
+
+
+
+
+public class Threshold : ILootDef
     {
         private double threshold;
         private ILootDef[] children;

@@ -111,6 +111,7 @@
     <Compile Include="logic\behaviors\ReplaceTile.cs" />
     <Compile Include="logic\behaviors\ScaleHP.cs" />
     <Compile Include="logic\behaviors\SetNoXP.cs" />
+    <Compile Include="logic\db\BehaviorDb.Drannol.cs" />
     <Compile Include="logic\db\BehaviorDb.Kraken.cs" />
     <Compile Include="logic\db\BehaviorDb.Shatters.cs" />
     <Compile Include="logic\db\BehaviorDb.SorGiant.cs" />

@@ -4713,4 +4713,16 @@
             </Texture>
         </RandomTexture>
     </Ground>
+    <Ground type="0x2804" id="BD Hunter Den Floor">
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x39</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x38</Index>
+            </Texture>
+        </RandomTexture>
+    </Ground>
 </GroundTypes>

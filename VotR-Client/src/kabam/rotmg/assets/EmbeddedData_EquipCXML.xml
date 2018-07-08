@@ -14988,7 +14988,7 @@
         <Projectile>
             <ObjectId>White Flame</ObjectId>
             <Speed>60</Speed>
-            <MinDamage>20</MinDamage>
+            <MinDamage>80</MinDamage>
             <MaxDamage>200</MaxDamage>
             <LifetimeMS>1100</LifetimeMS>
             <Wavy/>
@@ -16533,25 +16533,6 @@
         <FameBonus>8</FameBonus>
         <Legendary/>
     </Object>
-    <Object type="0x1637" id="Realitytaker Orb">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>lofiProjs</File>
-            <Index>0x95</Index>
-        </Texture>
-        <SlotType>21</SlotType>
-        <Description>A darksome, garnet orb that steals weeks of life from those who peer into its core.</Description>
-        <ActivateOnEquip stat="28" amount="1">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="26" amount="2">IncrementStat</ActivateOnEquip>
-        <Usable/>
-        <BagType>4</BagType>
-        <FameBonus>6</FameBonus>
-        <MpCost>150</MpCost>
-        <feedPower>700</feedPower>
-        <FameBonus>4</FameBonus>
-        <Activate effect="Dazed" duration="3.5" range="3" color="0x0000ff" target="enemy" center="mouse" visualEffect="0" useWisMod="false">GenericActivate</Activate>
-    </Object>
     <Object type="0x1638" id="Helm of the Macrotitans">
         <Class>Equipment</Class>
         <Item/>
@@ -17673,22 +17654,6 @@
         <feedPower>1650</feedPower>
         <Fabled/>
         <DisplayId>Kismet Seal</DisplayId>
-    </Object>
-    <Object type="0x5094" id="Lavos Armor">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0xd4</Index>
-        </Texture>
-        <SlotType>7</SlotType>
-        <Description>An armor that is slightly heated because of the lava that is sealed inside of it's plates.</Description>
-        <ActivateOnEquip stat="21" amount="22">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="1">IncrementStat</ActivateOnEquip>
-        <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
-        <feedPower>1000</feedPower>
     </Object>
     <Object type="0x5095" id="Frost Wand">
         <Class>Equipment</Class>
@@ -29470,7 +29435,7 @@
         <Class>Character</Class>
         <AnimatedTexture>
             <File>chars8x8dHero1</File>
-            <Index>51</Index>
+            <Index>53</Index>
         </AnimatedTexture>
         <HitSound>monster/dwarf_god_death</HitSound>
         <DeathSound>monster/ogres_hit</DeathSound>
@@ -31589,8 +31554,8 @@
         <Projectile>
             <ObjectId>White Flame</ObjectId>
             <Speed>60</Speed>
-            <MinDamage>60</MinDamage>
-            <MaxDamage>265</MaxDamage>
+            <MinDamage>85</MinDamage>
+            <MaxDamage>280</MaxDamage>
             <LifetimeMS>1100</LifetimeMS>
             <Wavy/>
             <MultiHit/>
@@ -33302,7 +33267,7 @@
         <Activate>InsigniaActivate</Activate>
         <DisplayId>Insignia of Influence</DisplayId>
     </Object>
-    <Object type="0x615f" id="Vigorous Jacket">
+    <Object type="0x621b" id="Vigorous Jacket">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -33310,7 +33275,7 @@
             <Index>0xf7</Index>
         </Texture>
         <SlotType>35</SlotType>
-        <Description>This jacket seems to have a shadowy fog that surrounds itself.</Description>
+        <Description>This is a jacket.</Description>
         <Sound>spell/fire_nova</Sound>
         <Usable/>
         <ExtraTooltipData>
@@ -33330,7 +33295,7 @@
             <ConditionEffect duration="5">Weak</ConditionEffect>
             <Boomerang/>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <MpCost>65</MpCost>
         <SurgeCost>1</SurgeCost>
@@ -33344,7 +33309,7 @@
         <Item/>
         <Texture>
             <File>d3LofiObjEmbed</File>
-            <Index>0x256</Index>
+            <Index>0x257</Index>
         </Texture>
         <SlotType>18</SlotType>
         <Description>A rare venom that could corrode a Sor Crystal.</Description>
@@ -33358,14 +33323,14 @@
         <Activate radius="8" totalDamage="1100" duration="6">PoisonGrenade</Activate>
         <feedPower>750</feedPower>
         <Fabled/>
-        <DisplayId>Treacherous Venom</DisplayId>
+        <DisplayId>Toxin of the Vicious</DisplayId>
     </Object>
     <Object type="0x6211" id="Percussion Shield">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
             <File>d3LofiObjEmbed</File>
-            <Index>0x257</Index>
+            <Index>0x258</Index>
         </Texture>
         <SlotType>5</SlotType>
         <Description>A gilded gong modified to be a terrifically noisy shield.</Description>
@@ -33400,7 +33365,7 @@
         <Item/>
         <Texture>
             <File>lofiObj6</File>
-            <Index>0xd7</Index>
+            <Index>0xd9</Index>
         </Texture>
         <ExtraTooltipData>
             <EffectInfo name="Banner Lifetime:" description="5"/>
@@ -33423,7 +33388,7 @@
         <FameBonus>6</FameBonus>
         <Fabled/>
         <feedPower>380</feedPower>
-        <DisplayId>Banner of True War</DisplayId>
+        <DisplayId>Banner of Revenge</DisplayId>
     </Object>
     <Object type="0x6213" id="Royalty Bow">
         <Class>Equipment</Class>
@@ -33461,8 +33426,8 @@
         <Class>Equipment</Class>
         <Item/>
         <Texture>
-            <File>lofiObj6</File>
-            <Index>0x16</Index>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x178</Index>
         </Texture>
         <SlotType>20</SlotType>
         <Description>A trap that sends a blast of heat to the victim and burns their defenses right off.</Description>
@@ -33482,8 +33447,8 @@
         <Class>Equipment</Class>
         <Item />
         <Texture>
-            <File>lofiObj3</File>
-            <Index>0x47e</Index>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x263</Index>
         </Texture>
         <SlotType>9</SlotType>
         <Description>A symbol for a true titan.</Description>
@@ -33493,32 +33458,127 @@
         <Fabled/>
         <FameBonus>6</FameBonus>
     </Object>
-    <Object type="0x58ee" id="Evisceration Claws">
+    <Object type="0x6216" id="Evisceration Claws">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
             <File>d3LofiObjEmbed</File>
-            <Index>0x429</Index>
+            <Index>0x2e</Index>
         </Texture>
         <SlotType>8</SlotType>
         <Description>Magical claws conjured by the lords who casted the spell that imprisoned the Eternal Beast.</Description>
         <RateOfFire>1</RateOfFire>
         <Sound>weapon/wand_of_death</Sound>
         <Projectile>
-            <ObjectId>Typhoon Magic</ObjectId>
+            <ObjectId>Blue Boomerang</ObjectId>
             <Speed>180</Speed>
-            <LifetimeMS>1000</LifetimeMS>
+            <LifetimeMS>1100</LifetimeMS>
             <MinDamage>124</MinDamage>
             <MaxDamage>132</MaxDamage>
             <Boomerang/>
+            <ArmorPiercing/>
         </Projectile>
-        <ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
         <Steal type="mana" amount="2"/>
         <BagType>6</BagType>
+        <Fabled/>
         <FameBonus>6</FameBonus>
         <OldSound>magicShoot</OldSound>
         <feedPower>950</feedPower>
+    </Object>
+    <Object type="0x6217" id="Bloodwell">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj6</File>
+            <Index>0xe8</Index>
+        </Texture>
+        <SlotType>30</SlotType>
+        <Description>A siphon that seems to fill your life essence to maximum heights.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <ExtraTooltipData>
+            <EffectInfo name="Radius" description="3"/>
+            <EffectInfo name="Base Damage" description="650"/>
+            <EffectInfo name="Mana Recovery" description="6"/>
+            <EffectInfo name="{equip.While_Key_Held}" description=""/>
+            <EffectInfo name="" description="Drain 100 hp/s"/>
+            <EffectInfo name="{equip.When_Key_Released}" description=""/>
+            <EffectInfo name="" description="Target enemies are inflicted damage according to amount of health drained, current mana, overall wisdom stat, and this item's base damage."/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="0" amount="1000">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="-25">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>11</BagType>
+        <MultiPhase/>
+        <Activate range="3" amount="650" duration="6">SiphonAbility</Activate>
+        <feedPower>380</feedPower>
+        <FameBonus>6</FameBonus>
+        <Fabled/>
+        <DisplayId>Bloodwell</DisplayId>
+    </Object>
+    <Object type="0x6218" id="Realitytaker Orb">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiProjs</File>
+            <Index>0x95</Index>
+        </Texture>
+        <SlotType>21</SlotType>
+        <Description>A darksome, garnet orb that steals weeks of life from those who peer into its core.</Description>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>11</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>100</MpCost>
+        <feedPower>700</feedPower>
+        <FameBonus>6</FameBonus>
+        <Fabled/>
+        <Activate stat="0" amount="80" duration="6" noStack="true" useWisMod="true">StatBoostSelf</Activate>
+        <Activate effect="Berserk" duration="4" useWisMod="true">ConditionEffectSelf</Activate>
+        <Activate effect="Dazed" duration="7" range="5" color="0x808080" target="enemy" center="mouse" visualEffect="8"
+                  useWisMod="true">GenericActivate
+        </Activate>
+    </Object>
+    <Object type="0x6219" id="Lavos Armor">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0xd4</Index>
+        </Texture>
+        <SlotType>7</SlotType>
+        <Description>An armor that is slightly heated because of the lava that is sealed inside of it's plates.</Description>
+        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="26">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>11</BagType>
+        <Fabled/>
+        <FameBonus>6</FameBonus>
+        <feedPower>1000</feedPower>
+    </Object>
+    <Object type="0x621a" id="Stonepraise Tome">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x256</Index>
+        </Texture>
+        <SlotType>4</SlotType>
+        <Description>A tome that will bless you with the skin of stone.</Description>
+        <Sound>spell/major_heal</Sound>
+        <Usable/>
+        <BagType>11</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>100</MpCost>
+        <Activate effect="Healing" duration="8" range="6" useWisMod="true">ConditionEffectAura</Activate>
+        <Activate range="4.5" amount="100" useWisMod="true">HealNova</Activate>
+        <Activate effect="Invulnerable" duration="0.5" useWisMod="true">ConditionEffectSelf</Activate>
+        <feedPower>380</feedPower>
+        <Fabled/>
+        <DisplayId>Stonepraise Tome</DisplayId>
     </Object>
 </Objects>

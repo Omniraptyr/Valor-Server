@@ -167,7 +167,7 @@ namespace wServer.logic
                     LootTemplates.StatIncreasePotionsLoot()
                 ),
                 new MostDamagers(1,
-                    new ItemLoot("Kageboshi", 0.025)
+                    new ItemLoot("Kageboshi", 0.04)
                 )
             )
 			#endregion
@@ -316,7 +316,7 @@ namespace wServer.logic
                     LootTemplates.StatIncreasePotionsLoot()
                 ),
                 new MostDamagers(1,
-                    new ItemLoot("Wand of the Fallen", 0.025)
+                    new ItemLoot("Wand of the Fallen", 0.04)
                 )
             )
 			#endregion
