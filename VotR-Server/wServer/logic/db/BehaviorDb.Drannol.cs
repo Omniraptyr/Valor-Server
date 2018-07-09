@@ -306,7 +306,7 @@ namespace wServer.logic
                         new Follow(1, 1),
                         new Wander(0.25)
                         ),
-                        new Shoot(10, count: 3, shootAngle: 12, projectileIndex: 0, coolDown: new Cooldown(800, 2000))
+                        new Shoot(10, count: 3, shootAngle: 12, projectileIndex: 0, coolDown: new Cooldown(800, 2000), coolDownOffset: 1400)
                         )
                     )
                 )
