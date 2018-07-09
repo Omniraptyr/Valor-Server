@@ -153,7 +153,7 @@ namespace wServer.logic
                     ),
                 new State("spawn",
                     new Spawn("BD Lava Bat", 1, 1, coolDown: 99999),
-                    new TimedTransition(14000, "idle")
+                    new TimedTransition(20000, "idle")
                     )
                 )
             )
@@ -306,7 +306,7 @@ namespace wServer.logic
                         new Follow(1, 1),
                         new Wander(0.25)
                         ),
-                        new Shoot(10, count: 5, shootAngle: 12, projectileIndex: 0, coolDown: new Cooldown(800, 2000))
+                        new Shoot(10, count: 3, shootAngle: 12, projectileIndex: 0, coolDown: new Cooldown(800, 2000))
                         )
                     )
                 )
@@ -916,7 +916,7 @@ namespace wServer.logic
 
             .Init("BD Berikao, the Dark Hunter",
                 new State(
-                    new ScaleHP(25000),
+                    new ScaleHP(30000),
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("default",
@@ -1139,7 +1139,6 @@ namespace wServer.logic
                     new TierLoot(6, ItemType.Ability, 0.05),
                     new TierLoot(13, ItemType.Armor, 0.06),
                     new TierLoot(7, ItemType.Ring, 0.08),
-                    new ItemLoot("10000 Gold", 0.50),
                     new ItemLoot("Greater Potion of Life", 1),
                     new ItemLoot("Greater Potion of Defense", 1),
                     new ItemLoot("Greater Potion of Attack", 0.6),

@@ -114623,6 +114623,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ParalyzeImmune/>
         <StasisImmune/>
         <DazedImmune/>
+		<NoMiniMap/>
         <ArmorBreakImmune/>
         <ShadowSize>0</ShadowSize>
         <Quest/>
@@ -114667,7 +114668,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ArmorBreakImmune/>
         <ShadowSize>0</ShadowSize>
         <Quest/>
-        <MaxHitPoints>250000</MaxHitPoints>
+        <MaxHitPoints>800000</MaxHitPoints>
         <Defense>20</Defense>
         <Projectile id="0">
             <ObjectId>Large Blue Shuriken</ObjectId>
@@ -114804,6 +114805,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Size>140</Size>
         <ParalyzeImmune/>
         <StasisImmune/>
+		<NoMiniMap/>
         <DazedImmune/>
         <ArmorBreakImmune/>
         <ShadowSize>0</ShadowSize>

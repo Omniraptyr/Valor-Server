@@ -704,7 +704,7 @@ namespace wServer.logic
             )
         .Init("AH The Sincryer",
                 new State(
-                    new ScaleHP(25000),
+                    new ScaleHP(30000),
                     new HpLessTransition(0.14, "spookded"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
