@@ -4746,4 +4746,10 @@
             </Texture>
         </RandomTexture>
     </Ground>
+    <Ground type="0x2807" id="BD Raid2 Puzzle">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xf4</Index>
+        </Texture>
+    </Ground>
 </GroundTypes>

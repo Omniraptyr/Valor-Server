@@ -10,6 +10,7 @@ namespace wServer.logic
         private _ RockDragon = () => Behav()
             .Init("Dragon Head", //6Alt Texture | 0->3 Proj
                 new State(
+                    new DropPortalOnDeath("Lair of Draconis Portal", 0.5),
                     new TransferDamageOnDeath("Dragon Head Spawner"),
                     new State("Invul",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),

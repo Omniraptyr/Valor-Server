@@ -480,6 +480,7 @@
     <Compile Include="realm\setpieces\ISetPiece.cs" />
     <Compile Include="realm\setpieces\KageKami.cs" />
     <Compile Include="realm\setpieces\LavaFissure.cs" />
+    <Compile Include="realm\setpieces\LavaOne.cs" />
     <Compile Include="realm\setpieces\LavaSafe.cs" />
     <Compile Include="realm\setpieces\LavaSquare.cs" />
     <Compile Include="realm\setpieces\LichyTemple.cs" />
@@ -495,6 +496,7 @@
     <Compile Include="realm\setpieces\Puke.cs" />
     <Compile Include="realm\setpieces\Pyre.cs" />
     <Compile Include="realm\setpieces\RockDragon.cs" />
+    <Compile Include="realm\setpieces\ScorchOne.cs" />
     <Compile Include="realm\setpieces\SetPieces.cs" />
     <Compile Include="realm\setpieces\SkullShrine.cs" />
     <Compile Include="realm\setpieces\SorGiant.cs" />

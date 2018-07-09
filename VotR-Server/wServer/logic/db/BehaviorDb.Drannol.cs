@@ -158,6 +158,240 @@ namespace wServer.logic
                 )
             )
 
+            .Init("BD Tilespawner",
+            new State(
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("idle",
+                     new PlayerWithinTransition(2, "tile1")
+                    ),
+                new State("tile1",
+                    new ApplySetpiece("ScorchOne"),
+                    new NoPlayerWithinTransition(2, "tile2")
+                    ),
+                new State("tile2",
+                    new ApplySetpiece("LavaOne"),
+                    new PlayerWithinTransition(2, "tile1")
+                    )
+                )
+            )
+
+
+
+                .Init("BD Puzzling Orange Deactivated",
+            new State(
+                new SetNoXP(),
+                new TransformOnDeath("BD Puzzling Orange Activated", 1, 1, 1),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("first",
+                     new PlayerWithinTransition(1, "suicide2")
+                    ),
+                new State("suicide2",
+                     new Suicide()
+                    )
+                )
+            )
+        .Init("BD Puzzling Orange Activated",
+            new State(
+                new SetNoXP(),
+                new TransformOnDeath("BD Puzzling Orange Deactivated", 1, 1, 1),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("first",
+                     new NoPlayerWithinTransition(1, "suicide2")
+                    ),
+                new State("suicide2",
+                     new Suicide()
+                    )
+                )
+            )
+
+
+                        .Init("BD Puzzling Purple Deactivated",
+            new State(
+                new SetNoXP(),
+                new TransformOnDeath("BD Puzzling Purple Activated", 1, 1, 1),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("first",
+                     new PlayerWithinTransition(1, "suicide2")
+                    ),
+                new State("suicide2",
+                     new Suicide()
+                    )
+                )
+            )
+        .Init("BD Puzzling Purple Activated",
+            new State(
+                new SetNoXP(),
+                new TransformOnDeath("BD Puzzling Purple Deactivated", 1, 1, 1),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("first",
+                     new NoPlayerWithinTransition(1, "suicide2")
+                    ),
+                new State("suicide2",
+                     new Suicide()
+                    )
+                )
+            )
+
+                                .Init("BD Puzzling Blue Deactivated",
+            new State(
+                new SetNoXP(),
+                new TransformOnDeath("BD Puzzling Blue Activated", 1, 1, 1),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("first",
+                     new PlayerWithinTransition(1, "suicide2")
+                    ),
+                new State("suicide2",
+                     new Suicide()
+                    )
+                )
+            )
+        .Init("BD Puzzling Blue Activated",
+            new State(
+                new SetNoXP(),
+                new TransformOnDeath("BD Puzzling Blue Deactivated", 1, 1, 1),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("first",
+                     new NoPlayerWithinTransition(1, "suicide2")
+                    ),
+                new State("suicide2",
+                     new Suicide()
+                    )
+                )
+            )
+
+                                        .Init("BD Puzzling Green Deactivated",
+            new State(
+                new SetNoXP(),
+                new TransformOnDeath("BD Puzzling Green Activated", 1, 1, 1),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("first",
+                     new PlayerWithinTransition(1, "suicide2")
+                    ),
+                new State("suicide2",
+                     new Suicide()
+                    )
+                )
+            )
+
+        .Init("BD Puzzling Green Activated",
+            new State(
+                new SetNoXP(),
+                new TransformOnDeath("BD Puzzling Green Deactivated", 1, 1, 1),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("first",
+                     new NoPlayerWithinTransition(1, "suicide2")
+                    ),
+                new State("suicide2",
+                     new Suicide()
+                    )
+                )
+            )
+
+
+         .Init("BD Puzzle 1 Controller",
+            new State(
+                new SetNoXP(),
+                new RemoveObjectOnDeath("BD Wall Relic 1", 99),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("1",
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "2time")
+                    ),
+                new State("2time",
+                     new Taunt("Mhm."),
+                     new TimedTransition(4000, "2")
+                    ),
+                new State("2",
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "3time"),
+                     //else
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0")
+                    ),
+                new State("3time",
+                     new Taunt("That's right.", "Correct."),
+                     new TimedTransition(4000, "3")
+                    ),
+                new State("3",
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "4time"),
+                     //else
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0")
+                    ),
+                new State("4time",
+                    new Taunt("You must know your stuff.."),
+                     new TimedTransition(4000, "4")
+                    ),
+                new State("4",
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "5"),
+                     //else
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0")
+                    ),
+                new State("5",
+                    new Suicide()
+                    ),
+                new State("0",
+                     new Taunt("Something isn't right here..", "That doesn't quite match this barrier spell, now does it?", "Can't be right..", "Mrn..no.", "Doesn't quite add up."),
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "2time")
+                    )
+                )
+            )
+
+
+                 .Init("BD Puzzle 2 Controller",
+            new State(
+                new SetNoXP(),
+                new RemoveObjectOnDeath("BD Wall Relic 2", 99),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("1",
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "2time")
+                    ),
+                new State("2time",
+                     new Taunt("Mhm."),
+                     new TimedTransition(4000, "2")
+                    ),
+                new State("2",
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "3time"),
+                     //else
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0")
+                    ),
+                new State("3time",
+                     new Taunt("That's right.", "Correct."),
+                     new TimedTransition(4000, "3")
+                    ),
+                new State("3",
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "4time"),
+                     //else
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0")
+                    ),
+                new State("4time",
+                    new Taunt("You must know your stuff.."),
+                     new TimedTransition(4000, "4")
+                    ),
+                new State("4",
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "5"),
+                     //else
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0")
+                    ),
+                new State("5",
+                    new Suicide()
+                    ),
+                new State("0",
+                     new Taunt("Something isn't right here..", "That doesn't quite match this barrier spell, now does it?", "Can't be right..", "Mrn..no.", "Doesn't quite add up."),
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "2time")
+                    )
+                )
+            )
+
+
             .Init("BD Logic 1",
             new State(
                 new ConditionalEffect(ConditionEffectIndex.Invincible)
@@ -276,6 +510,57 @@ namespace wServer.logic
                         new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 0, coolDown: 400, shootLowHp: true)
                         )
                 )
+            )
+                    .Init("BD Twisted Sentry",
+            new State(
+                new State("Main",
+                    new State("idle",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new PlayerWithinTransition(3, "charging")
+                        ),
+                    new State("charging",
+                        new ConditionalEffect(ConditionEffectIndex.StasisImmune),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new ChangeSize(1, 140),
+                        new TimedTransition(4200, "shoot")
+                        ),
+                    new State("shoot",
+                        new Shoot(10, count: 1, projectileIndex: 0, coolDown: 2000)
+                        )
+                    )
+                )
+            )
+
+            .Init("BD Twisted Sentry Treasure",
+            new State(
+                new State("Main",
+                    new State("idle",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new PlayerWithinTransition(3, "charging")
+                        ),
+                    new State("charging",
+                        new ConditionalEffect(ConditionEffectIndex.StasisImmune),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new ChangeSize(1, 140),
+                        new TimedTransition(4200, "shoot")
+                        ),
+                    new State("shoot",
+                        new Shoot(10, count: 1, projectileIndex: 0, coolDown: 2000)
+                        )
+                    )
+                ),
+                    new Threshold(0.05,
+                       new TierLoot(11, ItemType.Weapon, 0.08),
+                       new TierLoot(4, ItemType.Ability, 0.07),
+                       new TierLoot(6, ItemType.Ability, 0.05),
+                       new TierLoot(13, ItemType.Armor, 0.06),
+                       new TierLoot(6, ItemType.Ring, 0.06),
+                       new ItemLoot("Onrane Cache", 0.025),
+                       new ItemLoot("Onrane", 0.045),
+                       new ItemLoot("100 Gold", 0.050),
+                       new ItemLoot("Potion of Dexterity", 0.5),
+                       new ItemLoot("Potion of Speed", 0.5)
+                       )
             )
             .Init("BD Axeman of Drannol",
             new State(
@@ -1018,7 +1303,6 @@ namespace wServer.logic
                         new TimedTransition(4000, "fight2")
                         ),
                     new State("fight2",
-                        new ConditionalEffect(ConditionEffectIndex.Armored),
                         new Swirl(0.5, 2),
                         new Shoot(10, count: 7, shootAngle: 6, projectileIndex: 0, coolDown: 1000),
                         new Shoot(10, count: 14, projectileIndex: 2, predictive: 0.5, coolDown: 1000),
@@ -1043,7 +1327,6 @@ namespace wServer.logic
                         new TimedTransition(8000, "fight2b")
                         ),
                     new State("fight2b",
-                        new ConditionalEffect(ConditionEffectIndex.Armored),
                         new Follow(0.4, 8, 1),
                         new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 1, coolDown: 400),
                         new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 1, coolDown: 400),
@@ -1062,7 +1345,6 @@ namespace wServer.logic
                         ),
                     new State("phase2",
                         new SetAltTexture(0, 1, 10, true),
-                        new ConditionalEffect(ConditionEffectIndex.Armored),
                         new TimedTransition(4000, "phase3")
                         ),
                     new State("phase3",
@@ -1140,22 +1422,22 @@ namespace wServer.logic
                     LootTemplates.FabledItemsLoot2B()
                 ),
                 new MostDamagers(3,
+                    LootTemplates.GStatIncreasePotionsLoot2()
+                ),
+                new MostDamagers(3,
                     LootTemplates.SFLow()
                     ),
-                new Threshold(0.05,
-                    new TierLoot(12, ItemType.Weapon, 0.08),
-                    new TierLoot(5, ItemType.Ability, 0.07),
-                    new TierLoot(6, ItemType.Ability, 0.05),
-                    new TierLoot(13, ItemType.Armor, 0.06),
-                    new TierLoot(7, ItemType.Ring, 0.08),
-                    new ItemLoot("Greater Potion of Life", 1),
-                    new ItemLoot("Greater Potion of Defense", 1),
-                    new ItemLoot("Greater Potion of Attack", 0.6),
-                    new ItemLoot("Greater Potion of Dexterity", 0.5),
-                    new ItemLoot("Greater Potion of Vitality", 0.5),
-                    new ItemLoot("Greater Potion of Speed", 0.5),
-                    new ItemLoot("Greater Potion of Mana", 0.5)
-                )
+                    new Threshold(0.05,
+                       new TierLoot(12, ItemType.Weapon, 0.08),
+                       new TierLoot(5, ItemType.Ability, 0.07),
+                       new TierLoot(6, ItemType.Ability, 0.05),
+                       new TierLoot(13, ItemType.Armor, 0.06),
+                       new TierLoot(7, ItemType.Ring, 0.06),
+                       new ItemLoot("Onrane Cache", 0.40),
+                       new ItemLoot("Gold Cache", 0.050),
+                       new ItemLoot("Potion of Life", 1),
+                       new ItemLoot("Potion of Protection", 1)
+                       )
             );
     }
 }

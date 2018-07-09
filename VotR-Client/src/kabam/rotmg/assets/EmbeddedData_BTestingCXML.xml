@@ -10938,12 +10938,10 @@
         <Defense>10</Defense>
         <Projectile id="0">
             <ObjectId>Red Star</ObjectId>
-            <Damage>60</Damage>
+            <Damage>50</Damage>
             <Speed>100</Speed>
-            <LifetimeMS>800</LifetimeMS>
-            <ArmorPiercing/>
-            <MultiHit/>
-            <ConditionEffect duration="6">Unstable</ConditionEffect>
+            <LifetimeMS>200</LifetimeMS>
+            <ConditionEffect duration="4">Slowed</ConditionEffect>
         </Projectile>
     </Object>
     <Object type="0x6361" id="BD Lava Bat Spawner">
@@ -11216,11 +11214,10 @@
         <ParalyzeImmune/>
         <StasisImmune/>
         <DazedImmune/>
-        <ArmorBreakImmune/>
         <ShadowSize>0</ShadowSize>
         <Quest/>
-        <MaxHitPoints>1500000</MaxHitPoints>
-        <Defense>25</Defense>
+        <MaxHitPoints>500000</MaxHitPoints>
+        <Defense>5</Defense>
         <Projectile id="0">
             <ObjectId>Large Blue Shuriken</ObjectId>
             <MinDamage>120</MinDamage>
@@ -11420,5 +11417,388 @@
         <Defense>0</Defense>
         <Size>0</Size>
         <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x638e" id="BD Wall Relic 1">
+        <Class>Wall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x233</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x234</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x235</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x231</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x6389" id="BD Wall Relic 2">
+        <Class>Wall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x233</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x234</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x235</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x231</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x638a" id="BD Wall Relic 3">
+        <Class>Wall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x233</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x234</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x235</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x231</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x638b" id="BD Wall Relic 4">
+        <Class>Wall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x233</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x234</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x235</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x231</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x638c" id="BD Wall Relic Stable Wall">
+        <Class>Wall</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xf5</Index>
+        </Texture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xf4</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x638d" id="BD Wall Relic Destruct Wall">
+        <Class>Wall</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xf5</Index>
+        </Texture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xf4</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/wooden_walls_hit</HitSound>
+        <DeathSound>monster/wooden_walls_death</DeathSound>
+        <MaxHitPoints>3000</MaxHitPoints>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <Enemy/>
+        <XpMult>0.0</XpMult>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x638f" id="BD Tilespawner">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6390" id="BD Puzzle 1 Controller">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <AnimatedTexture>
+            <File>chars8x8dHero1</File>
+            <Index>50</Index>
+        </AnimatedTexture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>120</Size>
+        <DisplayId>The Lorekeeper</DisplayId>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6391" id="BD Puzzle 2 Controller">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <AnimatedTexture>
+            <File>chars8x8dHero1</File>
+            <Index>50</Index>
+        </AnimatedTexture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>120</Size>
+        <XpMult>0.0</XpMult>
+        <DisplayId>The Lorekeeper</DisplayId>
+    </Object>
+    <Object type="0x6392" id="BD Puzzling Orange Deactivated">
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xf0</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>0</Defense>
+        <DrawOnGround/>
+        <NoMiniMap/>
+        <DisplayId>BD Puzzling Orange Deactivated</DisplayId>
+    </Object>
+    <Object type="0x6393" id="BD Puzzling Blue Deactivated">
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xf1</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>0</Defense>
+        <DrawOnGround/>
+        <NoMiniMap/>
+        <DisplayId>BD Puzzling Blue Deactivated</DisplayId>
+    </Object>
+    <Object type="0x6394" id="BD Puzzling Green Deactivated">
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xf2</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>0</Defense>
+        <DrawOnGround/>
+        <NoMiniMap/>
+        <DisplayId>BD Puzzling Green Deactivated</DisplayId>
+    </Object>
+    <Object type="0x6395" id="BD Puzzling Purple Deactivated">
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xf3</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>0</Defense>
+        <DrawOnGround/>
+        <NoMiniMap/>
+        <DisplayId>BD Puzzling Purple Deactivated</DisplayId>
+    </Object>
+
+
+    <Object type="0x6396" id="BD Puzzling Orange Activated">
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xe9</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>0</Defense>
+        <DrawOnGround/>
+        <NoMiniMap/>
+        <DisplayId>BD Puzzling Orange Activated</DisplayId>
+    </Object>
+    <Object type="0x6397" id="BD Puzzling Blue Activated">
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xea</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>0</Defense>
+        <DrawOnGround/>
+        <NoMiniMap/>
+        <DisplayId>BD Puzzling Blue Activated</DisplayId>
+    </Object>
+    <Object type="0x6398" id="BD Puzzling Green Activated">
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xeb</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>0</Defense>
+        <DrawOnGround/>
+        <NoMiniMap/>
+        <DisplayId>BD Puzzling Green Activated</DisplayId>
+    </Object>
+    <Object type="0x6399" id="BD Puzzling Purple Activated">
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xec</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>0</Defense>
+        <DrawOnGround/>
+        <NoMiniMap/>
+        <DisplayId>BD Puzzling Purple Activated</DisplayId>
+    </Object>
+    <Object type="0x639a" id="BD Twisted Sentry">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Twisted Sentry</DisplayId>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>8</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>0</Size>
+        <NoMiniMap/>
+        <ShadowSize>0</ShadowSize>
+        <MaxHitPoints>17500</MaxHitPoints>
+        <Defense>20</Defense>
+        <Projectile id="0">
+            <ObjectId>Dragon Attack Red Big Fireball</ObjectId>
+            <Damage>300</Damage>
+            <Size>100</Size>
+            <Speed>35</Speed>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x639b" id="BD Twisted Sentry Treasure">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Treasure Sentry</DisplayId>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>8</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>0</Size>
+        <NoMiniMap/>
+        <ShadowSize>0</ShadowSize>
+        <MaxHitPoints>17500</MaxHitPoints>
+        <Defense>20</Defense>
+        <Projectile id="0">
+            <ObjectId>Dragon Attack Red Big Fireball</ObjectId>
+            <Damage>300</Damage>
+            <Size>100</Size>
+            <Speed>35</Speed>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
     </Object>
 </Objects>

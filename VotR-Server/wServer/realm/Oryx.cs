@@ -52,6 +52,7 @@ namespace wServer.realm
             Tuple.Create("Encounter Altar", (ISetPiece) new GarnetJade()),
             Tuple.Create("Lord Stone Gargoyle", (ISetPiece) new Gargland()),
             Tuple.Create("Truvix, the Lord Wanderer", (ISetPiece) new TimePiece()),
+            Tuple.Create("Dragon Head", (ISetPiece) new RockDragon()),
 
 
         };
