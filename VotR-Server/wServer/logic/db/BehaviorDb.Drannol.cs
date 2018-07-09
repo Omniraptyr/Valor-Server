@@ -209,7 +209,8 @@ namespace wServer.logic
                 new TransformOnDeath("Torch of the Hunter A", 1, 1, 1),
                 new State("Main",
                     new State("idle",
-                        new ConditionalEffect(ConditionEffectIndex.Invincible)
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new EntityExistsTransition("BD Logic 1", 999, "vuln")
                         ),
                     new State("vuln",
                         new HealSelf(coolDown: 8000)
@@ -1118,7 +1119,6 @@ namespace wServer.logic
                         new SetAltTexture(0, 1, 10, true),
                         new Taunt("Let the fun begin...", "LIGHTS OFF!"),
                         new ReturnToSpawn(2),
-                        new Order(999, "Torch of the Hunter B", "vuln"),
                         new TimedTransition(5000, "shadowswait")
                         ),
                     new State("shadowswait",
