@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Ultra Sincryer's Gate",
+"sbName":"Ultra Sincryer's Gate",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x612c],
+"maps":["sincryersgateultra.jm"],
+"music":["sincryer"]}

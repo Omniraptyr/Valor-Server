@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"NontridusUltra",
+"sbName":"Ultra The Nontridus",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x612e],
+"maps":["nontridusultra.jm"],
+"music":["dark fallout"]}

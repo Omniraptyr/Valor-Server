@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Ultra Core of the Hideout",
+"sbName":"Ultra Core of the Hideout",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x612f],
+"maps":["coreultra.jm"],
+"music":["coreofthehideout"]}

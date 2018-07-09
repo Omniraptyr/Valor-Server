@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Hunter Cave",
+"sbName":"Hunter's Cave",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[],
+"maps":["HuntersCave.jm"],
+"music":["bastille"]}
