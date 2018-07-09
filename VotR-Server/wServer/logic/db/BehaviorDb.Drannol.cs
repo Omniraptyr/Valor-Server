@@ -521,11 +521,11 @@ namespace wServer.logic
                     new State("charging",
                         new ConditionalEffect(ConditionEffectIndex.StasisImmune),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new ChangeSize(1, 140),
-                        new TimedTransition(4200, "shoot")
+                        new ChangeSize(10, 150),
+                        new TimedTransition(2000, "shoot")
                         ),
                     new State("shoot",
-                        new Shoot(10, count: 1, projectileIndex: 0, coolDown: 2000)
+                        new Shoot(10, count: 3, shootAngle: 20, projectileIndex: 0, coolDown: 1000)
                         )
                     )
                 )
@@ -541,11 +541,11 @@ namespace wServer.logic
                     new State("charging",
                         new ConditionalEffect(ConditionEffectIndex.StasisImmune),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new ChangeSize(1, 140),
-                        new TimedTransition(4200, "shoot")
+                       new ChangeSize(10, 150),
+                        new TimedTransition(2000, "shoot")
                         ),
                     new State("shoot",
-                        new Shoot(10, count: 1, projectileIndex: 0, coolDown: 2000)
+                        new Shoot(10, count: 3, shootAngle: 20, projectileIndex: 0, coolDown: 1000)
                         )
                     )
                 ),
@@ -1230,6 +1230,8 @@ namespace wServer.logic
                         new TimedTransition(2000, "fight1")
                         )
                      ),
+                    new State(
+                        new HpLessTransition(0.035, "Bshadows"),
                     new State("fight1",
                         new RemoveEntity(60, "BD Logic 2"),
                         new Flash(0x00FFFF, 1, 1),
@@ -1392,7 +1394,7 @@ namespace wServer.logic
                         new Shoot(10, count: 4, projectileIndex: 0, predictive: 1, coolDown: 2000),
                         new Shoot(10, projectileIndex: 2, coolDownOffset: 800, coolDown: 2000),
                         new TimedTransition(4000, "shadows")
-                        ),
+                     ),
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("shadows",
@@ -1415,8 +1417,196 @@ namespace wServer.logic
                         new Spawn("BD Logic 2", 1, 1, coolDown: 99999),
                         new Order(999, "Torch of the Hunter A", "die"),
                         new TimedTransition(4000, "fight1")
+                                )
                             )
-                        )
+                        ),
+                    new State(
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                    new State("Bshadows",
+                        new HealSelf(coolDown: 9999, amount: 250000),
+                        new ConditionEffectRegion(ConditionEffectIndex.Darkness, 999, -1),
+                        new SetAltTexture(0, 1, 10, true),
+                        new Taunt("More SLAUGHTER!", "and the Death Begins..."),
+                        new ReturnToSpawn(2),
+                        new TimedTransition(5000, "Bshadowswait")
+                        ),
+                    new State("Bshadowswait",
+                        new SetAltTexture(0),
+                        new Spawn("BD Logic 1", 1, 1, coolDown: 99999),
+                        new EntitiesNotExistsTransition(9999, "Bshadowswait2", "Torch of the Hunter B")
+                        ),
+                    new State("Bshadowswait2",
+                        new SetAltTexture(1),
+                        new ConditionEffectRegion(ConditionEffectIndex.Darkness, 999, 0),
+                        new RemoveEntity(60, "BD Logic 1"),
+                        new Spawn("BD Logic 2", 1, 1, coolDown: 99999),
+                        new Order(999, "Torch of the Hunter A", "die"),
+                        new TimedTransition(4000, "Bfight1")
+                            )
+                        ),
+                    new State("Bfight1",
+                        new RemoveEntity(60, "BD Logic 2"),
+                        new Flash(0x00FFFF, 1, 1),
+                        new Prioritize(
+                            new StayCloseToSpawn(0.8, 3),
+                            new Wander(0.5)
+                        ),
+                        new TossObject("BD Bastille Brute", range: 10, coolDown: 6000, probability: 0.75),
+                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 1, coolDown: 800, coolDownOffset: 500),
+                        new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 1, coolDown: 800, coolDownOffset: 1000),
+                        new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 1, coolDown: 800, coolDownOffset: 1500),
+                        new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 1, coolDown: 800, coolDownOffset: 800),
+
+
+
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 45, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 135, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 225, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 315, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new TimedTransition(4000, "Bfight1a")
+                        ),
+                     new State("Bfight1a",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Flash(0x00FFFF, 1, 1),
+                        new Prioritize(
+                            new StayCloseToSpawn(0.8, 3),
+                            new Wander(0.5)
+                        ),
+                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 1, coolDown: 800, coolDownOffset: 500),
+                        new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 1, coolDown: 800, coolDownOffset: 1000),
+                        new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 1, coolDown: 800, coolDownOffset: 1500),
+                        new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 1, coolDown: 800, coolDownOffset: 800),
+
+
+
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 45, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 135, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 225, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 315, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new TimedTransition(4000, "Bfight1b")
+                        ),
+                     new State("Bfight1b",
+                        new Flash(0x00FFFF, 1, 1),
+                        new Prioritize(
+                            new StayCloseToSpawn(0.8, 3),
+                            new Wander(0.5)
+                        ),
+                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 1, coolDown: 800, coolDownOffset: 500),
+                        new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 1, coolDown: 800, coolDownOffset: 1000),
+                        new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 1, coolDown: 800, coolDownOffset: 1500),
+                        new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 1, coolDown: 800, coolDownOffset: 800),
+
+
+
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 45, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 135, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 225, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 315, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new TimedTransition(4000, "Bfight2")
+                        ),
+                    new State("Bfight2",
+                        new Swirl(0.5, 2),
+                        new Shoot(10, count: 7, shootAngle: 6, projectileIndex: 0, coolDown: 1000),
+                        new Shoot(10, count: 14, projectileIndex: 2, predictive: 0.5, coolDown: 1000),
+                        new Shoot(10, count: 4, projectileIndex: 4, predictive: 0.5, coolDown: 2000),
+                        new Shoot(10, count: 4, shootAngle: 30, projectileIndex: 4, predictive: 0.5, coolDown: 2000, coolDownOffset: 800),
+                        new TimedTransition(5000, "Bfight2a")
+                        ),
+                    new State("Bfight2a",
+                        new Prioritize(
+                            new StayCloseToSpawn(0.8, 3),
+                            new Wander(0.5)
+                        ),
+                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 0, coolDown: 400),
+                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 0, coolDown: 400),
+                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 0, coolDown: 400),
+                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 0, coolDown: 400),
+
+                        new Shoot(10, count: 6, shootAngle: 10, fixedAngle: 0, projectileIndex: 1, coolDown: 1000, coolDownOffset: 500),
+                        new Shoot(10, count: 6, shootAngle: 10, fixedAngle: 90, projectileIndex: 1, coolDown: 800, coolDownOffset: 1000),
+                        new Shoot(10, count: 6, shootAngle: 10, fixedAngle: 180, projectileIndex: 1, coolDown: 800, coolDownOffset: 1500),
+                        new Shoot(10, count: 6, shootAngle: 10, fixedAngle: 270, projectileIndex: 1, coolDown: 800, coolDownOffset: 800),
+                        new TimedTransition(8000, "Bfight2b")
+                        ),
+                    new State("Bfight2b",
+                        new Follow(0.4, 8, 1),
+                        new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 1, coolDown: 400),
+                        new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 1, coolDown: 400),
+                        new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 1, coolDown: 400),
+                        new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 1, coolDown: 400),
+
+                        new Shoot(10, count: 7, shootAngle: 18, fixedAngle: 0, projectileIndex: 0, coolDown: 1000, coolDownOffset: 500),
+                        new TimedTransition(8000, "Bphase")
+                        ),
+                    new State("Bphase",
+                        new HealSelf(coolDown: 1000, amount: 40000),
+                        new Taunt("Run, fools. You can't stand a chance in the darkness."),
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new ReturnToSpawn(2),
+                        new TimedTransition(3000, "Bphase2")
+                        ),
+                    new State("Bphase2",
+                        new SetAltTexture(0, 1, 10, true),
+                        new TimedTransition(4000, "Bphase3")
+                        ),
+                    new State("Bphase3",
+                        new Prioritize(
+                            new Follow(1.5),
+                            new Wander(0.1)
+                            ),
+                        new SetAltTexture(0),
+                        new PlayerWithinTransition(3, "Bphase2", seeInvis: true)
+                        ),
+                    new State("Bphase2",
+                        new Taunt(0.75, "I see you, fool..your legacy ends here."),
+                        new SetAltTexture(0, 1, 10, true),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new TimedTransition(2000, "Bjump")
+                        ),
+                    new State("Bjump",
+                        new SetAltTexture(1),
+                        new Charge(2, range: 10, coolDown: 4000),
+                        new Shoot(10, count: 22, projectileIndex: 0, coolDown: 4000),
+                        new PlayerWithinTransition(1, "Brunback")
+                        ),
+                    new State("Brunback",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new ReturnToSpawn(2),
+                        new TimedTransition(3000, "Bfight3")
+                        ),
+                    new State("Bfight3",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Prioritize(
+                            new StayCloseToSpawn(0.8, 3),
+                            new Wander(0.5)
+                        ),
+                        new Shoot(10, count: 5, shootAngle: 10, projectileIndex: 3, predictive: 1, coolDown: 2000),
+                        new Shoot(10, projectileIndex: 0, predictive: 1, coolDown: 2000),
+                        new Shoot(10, projectileIndex: 2, coolDownOffset: 800, coolDown: 2000),
+                        new TimedTransition(4000, "Bfight4")
+                        ),
+                    new State("Bfight4",
+                        new Prioritize(
+                            new StayCloseToSpawn(0.8, 3),
+                            new Wander(0.5)
+                        ),
+                        new Shoot(10, count: 7, shootAngle: 10, projectileIndex: 4, predictive: 1, coolDown: 2000),
+                        new Shoot(10, count: 4, projectileIndex: 0, predictive: 1, coolDown: 2000),
+                        new Shoot(10, projectileIndex: 2, coolDownOffset: 800, coolDown: 2000),
+                        new TimedTransition(4000, "Bshadows")
+                     )
                     ),
                 new MostDamagers(3,
                     LootTemplates.FabledItemsLoot2B()
