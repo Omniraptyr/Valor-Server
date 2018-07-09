@@ -110634,6 +110634,14 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Speed>100</Speed>
             <LifetimeMS>2000</LifetimeMS>
         </Projectile>
+		<Projectile id="3">
+            <ObjectId>Stone Slash</ObjectId>
+            <Damage>160</Damage>
+            <Speed>70</Speed>
+            <LifetimeMS>4000</LifetimeMS>
+            <Boomerang/>
+            <ArmorPiercing/>
+        </Projectile>
     </Object>
 <Object type="0x6113" id="BD Winged Beast">
         <Enemy/>
@@ -110893,10 +110901,11 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Defense>20</Defense>
         <Projectile id="0">
             <ObjectId>White Flame</ObjectId>
-            <MinDamage>20</MinDamage>
-            <MaxDamage>40</MaxDamage>
+            <MinDamage>60</MinDamage>
+            <MaxDamage>75</MaxDamage>
             <Speed>50</Speed>
             <LifetimeMS>800</LifetimeMS>
+            <ConditionEffect duration="2">Stunned</ConditionEffect>
         </Projectile>
     </Object>
 	<Object type="0x611a" id="BD Warrior of Drannol">
@@ -113915,15 +113924,15 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate>InsigniaActivate</Activate>
         <DisplayId>Insignia of Influence</DisplayId>
     </Object>
-	<Object type="0x621b" id="Vigorous Jacket">
+    <Object type="0x621b" id="The Master's Betrayal">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
             <File>lofiObj6</File>
-            <Index>0xf7</Index>
+            <Index>0xf8</Index>
         </Texture>
         <SlotType>35</SlotType>
-        <Description>This is a jacket.</Description>
+        <Description>The protege has surpassed the master.</Description>
         <Sound>spell/fire_nova</Sound>
         <Usable/>
         <ExtraTooltipData>
@@ -113935,15 +113944,17 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile>
             <ObjectId>Fire Boomerang</ObjectId>
             <Speed>150</Speed>
-            <MinDamage>200</MinDamage>
-            <MaxDamage>300</MaxDamage>
+            <MinDamage>325</MinDamage>
+            <MaxDamage>400</MaxDamage>
             <LifetimeMS>600</LifetimeMS>
             <Size>100</Size>
             <ArmorPiercing/>
+            <MultiHit/>
             <ConditionEffect duration="5">Weak</ConditionEffect>
             <Boomerang/>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <MpCost>65</MpCost>
         <SurgeCost>1</SurgeCost>
@@ -114592,7 +114603,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Size>0</Size>
         <XpMult>0.0</XpMult>
     </Object>
-    <Object type="0x637b" id="BD Berikao, the Dark Hunter HUNTING">
+    <Object type="0x637b" id="BD Berikao, the Dark Hunter HUNTING 1">
         <Enemy/>
         <DisplayId>Berikao, the Dark Hunter</DisplayId>
         <Class>Character</Class>
@@ -114619,11 +114630,11 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Defense>10</Defense>
         <Projectile id="0">
             <ObjectId>Hunter's Fury</ObjectId>
-            <MinDamage>120</MinDamage>
-            <MaxDamage>180</MaxDamage>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>160</MaxDamage>
             <Speed>100</Speed>
-            <LifetimeMS>1600</LifetimeMS>
-            <ConditionEffect duration="10">Bleeding</ConditionEffect>
+            <LifetimeMS>400</LifetimeMS>
+            <ConditionEffect duration="16">Bleeding</ConditionEffect>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Large White Shuriken</ObjectId>
@@ -114658,7 +114669,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Quest/>
         <MaxHitPoints>250000</MaxHitPoints>
         <Defense>20</Defense>
-		<NoMiniMap/>
         <Projectile id="0">
             <ObjectId>Large Blue Shuriken</ObjectId>
             <MinDamage>120</MinDamage>
@@ -114700,5 +114710,200 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Speed>100</Speed>
             <LifetimeMS>2000</LifetimeMS>
         </Projectile>
+    </Object>
+	<Object type="0x637d" id="Destructible Raid2 Wall">
+    <Class>Wall</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x31</Index>
+        </Texture>
+    <Top>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x32</Index>
+        </Texture>
+    </Top>
+    <HitSound>monster/wooden_walls_hit</HitSound>
+    <DeathSound>monster/wooden_walls_death</DeathSound>
+    <MaxHitPoints>3250</MaxHitPoints>
+    <Static/>
+    <FullOccupy/>
+    <OccupySquare/>
+    <EnemyOccupySquare/>
+    <Enemy/>
+    <XpMult>0.0</XpMult>
+    <BlocksSight/>
+    <DisplayId>Destructible Raid2 Wall</DisplayId>
+  </Object>
+    <Object type="0x637e" id="Bastille Trap">
+        <Group>Bastille Trap</Group>
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xbf</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>0</Defense>
+        <DrawOnGround/>
+        <NoMiniMap/>
+        <DisplayId>Bastille Trap</DisplayId>
+    </Object>
+    <Object type="0x6381" id="Drannol Mini Holder">
+        <Class>GameObject</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xe2</Index>
+        </Texture>
+        <HitSound>monster/trees_hit</HitSound>
+        <DeathSound>monster/tress_death</DeathSound>
+        <MinSize>130</MinSize>
+        <MaxSize>160</MaxSize>
+        <SizeStep>5</SizeStep>
+        <XpMult>0.0</XpMult>
+        <OccupySquare/>
+    </Object>
+	    <Object type="0x6380" id="Drannol Nexus Wall">
+        <Class>CaveWall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xe3</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xe4</Index>
+            </Texture>
+        </RandomTexture>
+        <ShadowSize>0</ShadowSize>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <Connects/>
+    </Object>
+	    <Object type="0x6382" id="BD Berikao, the Dark Hunter HUNTING 2">
+        <Enemy/>
+        <DisplayId>Berikao, the Dark Hunter</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <AltTexture id="1">
+            <AnimatedTexture>
+                <File>d1chars16x16r</File>
+                <Index>6</Index>
+            </AnimatedTexture>
+        </AltTexture>
+        <HitSound>monster/abyss_brutes_hit</HitSound>
+        <DeathSound>monster/abyss_brutes_death</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <ArmorBreakImmune/>
+        <ShadowSize>0</ShadowSize>
+        <Quest/>
+        <MaxHitPoints>999999</MaxHitPoints>
+        <Defense>10</Defense>
+        <Projectile id="0">
+            <ObjectId>Hunter's Fury</ObjectId>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>160</MaxDamage>
+            <Speed>100</Speed>
+            <LifetimeMS>400</LifetimeMS>
+            <ConditionEffect duration="16">Bleeding</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Large White Shuriken</ObjectId>
+            <Damage>40</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>5000</LifetimeMS>
+            <ConditionEffect duration="8">Paralyzed</ConditionEffect>
+        </Projectile>
+    </Object>
+	<Object type="0x6383" id="BD Tookytesttask2">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+		<Object type="0x61ff" id="Hunter's Fury">
+        <Class>Projectile</Class>
+    	<Texture>
+           <File>lofiObjBig</File>
+      	   <Index>0x1b7</Index>
+        </Texture>
+        <Rotation>60</Rotation>
+    </Object>
+	    <Object type="0x6384" id="BD Logic 1">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6385" id="BD Logic 2">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>0</Size>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x6386" id="Implacable Ram">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x379</Index>
+        </Texture>
+        <SlotType>29</SlotType>
+        <Description>A massive battering ram used to smash down sturdy castle doors.</Description>
+        <RateOfFire>0.75</RateOfFire>
+        <Sound>weapon/mithril_sword</Sound>
+        <Projectile>
+            <ObjectId>Silver Shield</ObjectId>
+            <Speed>90</Speed>
+            <MinDamage>92</MinDamage>
+            <MaxDamage>120</MaxDamage>
+            <LifetimeMS>370</LifetimeMS>
+            <ArmorPiercing/>
+            <CondChance effect="Stunned" chance="3" duration="2.5"/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-6">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <Fabled/>
+        <FameBonus>6</FameBonus>
+        <OldSound>weapon/blunt_sword</OldSound>
+        <feedPower>900</feedPower>
+        <NumProjectiles>6</NumProjectiles>
+        <DisplayId>Implacable Ram</DisplayId>
     </Object>
 </Objects>

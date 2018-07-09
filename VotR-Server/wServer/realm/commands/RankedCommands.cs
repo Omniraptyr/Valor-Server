@@ -910,15 +910,15 @@ namespace wServer.realm.commands
         }
     }
 
-    internal class MarkTestingCommand : Command
+    internal class AscendCommand : Command
     {
-        public MarkTestingCommand() : base("marktest", permLevel: 90)
+        public AscendCommand() : base("ascend", permLevel: 90)
         {
         }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
-            player.SendInfo("" + player.attackPercentage);
+            player.AscensionEnabled = true;
             return true;
         }
     }

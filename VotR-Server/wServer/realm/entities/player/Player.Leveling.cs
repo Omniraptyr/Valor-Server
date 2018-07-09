@@ -363,7 +363,7 @@ namespace wServer.realm.entities
                 isSurgeGone = true;
                 surgewither = false;
             }
-            if (Surge == protRestore())
+            if (Surge >= protRestore())
             {
                 protectionDamage = 0;
             }

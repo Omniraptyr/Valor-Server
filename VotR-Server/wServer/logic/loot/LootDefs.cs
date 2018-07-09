@@ -481,7 +481,8 @@ namespace wServer.logic.loot
                     new ItemLoot("Royalty Bow", 0.75),
                     new ItemLoot("Banner of Revenge", 0.75),
                     new ItemLoot("Percussion Shield", 0.75),
-                    new ItemLoot("Toxin of the Vicious", 0.75)
+                    new ItemLoot("Toxin of the Vicious", 0.75),
+                    new ItemLoot("Implacable Ram", 0.75)
                 )
             };
         }

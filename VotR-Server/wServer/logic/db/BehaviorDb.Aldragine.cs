@@ -704,6 +704,7 @@ namespace wServer.logic
             )
         .Init("AH The Sincryer",
                 new State(
+                    new ScaleHP(25000),
                     new HpLessTransition(0.14, "spookded"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -853,6 +854,7 @@ namespace wServer.logic
             )
            .Init("AH ULTRA The Sincryer",
                 new State(
+                    new ScaleHP(25000),
                     new HpLessTransition(0.14, "spookded"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -1079,7 +1081,6 @@ namespace wServer.logic
             )
            .Init("AH Heart Loot Ctrl",
                 new State(
-                    new TransformOnDeath("AH Heart Portal Spawner"),
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                     new State("Idle",
                         new EntityNotExistsTransition("AH The Heart", 50, "Loot")
@@ -1115,7 +1116,6 @@ namespace wServer.logic
             )
            .Init("AH ULTRA Heart Loot Ctrl",
                 new State(
-                    new TransformOnDeath("AH ULTRA Heart Portal Spawner"),
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                     new State("Idle",
                         new EntityNotExistsTransition("AH The Heart", 50, "Loot")
@@ -1279,6 +1279,7 @@ namespace wServer.logic
             )
         .Init("AH The Vision of Aldragine",
                 new State(
+                    new ScaleHP(25000),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new DropPortalOnDeath("Core of the Hideout Portal", 100, timeout: 180),
                     new HpLessTransition(0.15, "spookded"),
@@ -1437,6 +1438,7 @@ namespace wServer.logic
             )
         .Init("AH ULTRA The Vision of Aldragine",
                 new State(
+                    new ScaleHP(25000),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new DropPortalOnDeath("Ultra Core of the Hideout Portal", 100, timeout: 180),
                     new HpLessTransition(0.15, "spookded"),
@@ -1686,6 +1688,11 @@ namespace wServer.logic
                         new InvisiToss("Giant Cube of Zol", 6, 155, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 245, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 335, coolDown: 34000, coolDownOffset: 6000),
+                        //Start Spawning Slimes
+                        new InvisiToss("AH Big Purple Slime", 8, 65, coolDown: 25000, coolDownOffset: 6000),
+                        new InvisiToss("AH Big Purple Slime", 8, 155, coolDown: 25000, coolDownOffset: 6000),
+                        new InvisiToss("AH Big Purple Slime", 8, 245, coolDown: 25000, coolDownOffset: 6000),
+                        new InvisiToss("AH Big Purple Slime", 8, 335, coolDown: 25000, coolDownOffset: 6000),
                         new TimedTransition(74000, "ReadyFinalBurst")
                       ),
                       new State("ReadyFinalBurst",
@@ -1726,6 +1733,11 @@ namespace wServer.logic
                         new InvisiToss("Giant Cube of Zol", 6, 155, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 245, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 335, coolDown: 34000, coolDownOffset: 6000),
+                        //Start Spawning Slimes
+                        new InvisiToss("AH Big Purple Slime", 8, 65, coolDown: 25000, coolDownOffset: 6000),
+                        new InvisiToss("AH Big Purple Slime", 8, 155, coolDown: 25000, coolDownOffset: 6000),
+                        new InvisiToss("AH Big Purple Slime", 8, 245, coolDown: 25000, coolDownOffset: 6000),
+                        new InvisiToss("AH Big Purple Slime", 8, 335, coolDown: 25000, coolDownOffset: 6000),
                         new TimedTransition(74000, "Done")
                         )
                       ),
@@ -1755,7 +1767,7 @@ namespace wServer.logic
                         new Suicide()
                         ),
                     new State("Success",
-                        //new DropPortalOnDeath("Keeping of Aldragine Portal", 100, timeout: 180),
+                        new DropPortalOnDeath("Keeping of Aldragine Portal", 1, timeout: 180),
                         //new InvisiToss("AH Loot Chest 3", 2, 270, coolDown: 9999999),
                         new Spawn("AH Heart Loot Ctrl", givesNoXp: true),
                         new TransferDamageOnDeath("AH Heart Loot Ctrl"),
@@ -1848,6 +1860,11 @@ namespace wServer.logic
                         new InvisiToss("Giant Cube of Zol", 6, 155, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 245, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 335, coolDown: 34000, coolDownOffset: 6000),
+                        //Start Spawning Slimes
+                        new InvisiToss("AH Big Purple Slime", 8, 65, coolDown: 25000, coolDownOffset: 6000),
+                        new InvisiToss("AH Big Purple Slime", 8, 155, coolDown: 25000, coolDownOffset: 6000),
+                        new InvisiToss("AH Big Purple Slime", 8, 245, coolDown: 25000, coolDownOffset: 6000),
+                        new InvisiToss("AH Big Purple Slime", 8, 335, coolDown: 25000, coolDownOffset: 6000),
                         new TimedTransition(74000, "ReadyFinalBurst")
                       ),
                       new State("ReadyFinalBurst",
@@ -1874,10 +1891,10 @@ namespace wServer.logic
                         new InvisiToss("Zol Sorcerer", 5, 180, coolDown: 9999999),
                         new InvisiToss("Zol Sorcerer", 5, 270, coolDown: 9999999),
                         //Start Spawning Servants shortly after
-                        new InvisiToss("Corrupted Stone Giant B", 10, 45, coolDown: 60000, coolDownOffset: 2600),
-                        new InvisiToss("Corrupted Stone Giant B", 10, 135, coolDown: 60000, coolDownOffset: 2600),
-                        new InvisiToss("Corrupted Stone Giant B", 10, 225, coolDown: 60000, coolDownOffset: 2600),
-                        new InvisiToss("Corrupted Stone Giant B", 10, 315, coolDown: 60000, coolDownOffset: 2600),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 45, coolDown: 32000, coolDownOffset: 2600),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 135, coolDown: 32000, coolDownOffset: 2600),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 225, coolDown: 32000, coolDownOffset: 2600),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 315, coolDown: 32000, coolDownOffset: 2600),
                         // Spawn demons
                         new InvisiToss("Demon of the Dark", 8, 45, coolDown: 25000, coolDownOffset: 2600),
                         new InvisiToss("Demon of the Dark", 8, 135, coolDown: 25000, coolDownOffset: 2600),
@@ -1888,6 +1905,11 @@ namespace wServer.logic
                         new InvisiToss("Giant Cube of Zol", 6, 155, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 245, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 335, coolDown: 34000, coolDownOffset: 6000),
+                        //Start Spawning Slimes
+                        new InvisiToss("AH Feral of the Zol", 8, 65, coolDown: 25000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 155, coolDown: 25000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 245, coolDown: 25000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 335, coolDown: 25000, coolDownOffset: 6000),
                         new TimedTransition(74000, "Done")
                         )
                       ),
@@ -1917,7 +1939,7 @@ namespace wServer.logic
                         new Suicide()
                         ),
                     new State("Success",
-                        //new DropPortalOnDeath("Keeping of Aldragine Portal", 100, timeout: 180),
+                        new DropPortalOnDeath("Keeping of Aldragine Portal", 1, timeout: 180),
                         //new InvisiToss("AH Loot Chest 3", 2, 270, coolDown: 9999999),
                         new Spawn("AH ULTRA Heart Loot Ctrl", givesNoXp: true),
                         new TransferDamageOnDeath("AH ULTRA Heart Loot Ctrl"),
@@ -1927,6 +1949,7 @@ namespace wServer.logic
                 )
         .Init("AH Aldragine",
                 new State(
+                    new ScaleHP(25000),
                     new HpLessTransition(0.13, "ded"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -2309,6 +2332,7 @@ namespace wServer.logic
                 )
         .Init("AH ULTRA Aldragine",
                 new State(
+                    new ScaleHP(25000),
                     new HpLessTransition(0.13, "ded"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),

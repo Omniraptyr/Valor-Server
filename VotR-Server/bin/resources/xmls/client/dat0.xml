@@ -4722,4 +4722,25 @@
 			</Texture>
         </RandomTexture>
     </Ground>
+	    <Ground type="0x2805" id="Safe Lava">
+        <Texture>
+            <File>lofiEnvironment</File>
+            <Index>0x70</Index>
+        </Texture>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.666</Speed>
+    </Ground>
+    <Ground type="0x2806" id="Drannol Nexus Tile 1">
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xe0</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0xe1</Index>
+            </Texture>
+        </RandomTexture>
+    </Ground>
 </GroundTypes>
