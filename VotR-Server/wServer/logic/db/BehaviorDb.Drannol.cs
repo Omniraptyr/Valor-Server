@@ -204,13 +204,19 @@ namespace wServer.logic
                 )
             )
 
-
             .Init("Torch of the Hunter B",
             new State(
-                new TransformOnDeath("Torch of the Hunter A", 1, 1, 1)
+                new TransformOnDeath("Torch of the Hunter A", 1, 1, 1),
+                new State("Main",
+                    new State("idle",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible)
+                        ),
+                    new State("vuln",
+                        new HealSelf(coolDown: 8000)
+                        )
+                    )
                 )
             )
-
                         .Init("Torch of the Hunter A",
             new State(
                 new TransformOnDeath("Torch of the Hunter B", 1, 1, 1),
@@ -803,7 +809,7 @@ namespace wServer.logic
                             )
                         ),
                     new State("Reveal",
-                        new Follow(0.3, 8, 1),
+                        new Follow(0.6, 8, 1),
                         new Flash(0xFF0000, 0.25, 4),
                         new Taunt(0.75, "You are mine..", "Right..where..I want you..", "There you are.."),
                         new SetAltTexture(0, 1, 10, true),
@@ -813,10 +819,11 @@ namespace wServer.logic
                         new TimedTransition(3800, "jump")
                         ),
                    new State("jump",
+                       new Taunt(0.75, "Heheheh..", "Bloodshed is so..gorgeous.."),
                         new SetAltTexture(1),
-                        new Charge(5, range: 10, coolDown: 1000),
+                        new Charge(7, range: 16, coolDown: 1000),
                         new Shoot(10, count: 10, shootAngle: 12, projectileIndex: 0, coolDown: 1000),
-                        new TimedTransition(1600, "Unreveal")
+                        new TimedTransition(3200, "Unreveal")
                         ),
                    new State("Unreveal",
                         new SetAltTexture(0, 1, 10, true),
@@ -887,7 +894,7 @@ namespace wServer.logic
                         )
                     ),
                     new State("Reveal",
-                        new Follow(0.3, 8, 1),
+                        new Follow(0.6, 8, 1),
                         new Flash(0xFF0000, 0.25, 4),
                         new Taunt(0.75, "You are mine..", "Right..where..I want you..", "There you are.."),
                         new SetAltTexture(0, 1, 10, true),
@@ -897,10 +904,11 @@ namespace wServer.logic
                         new TimedTransition(3800, "jump")
                         ),
                    new State("jump",
+                       new Taunt(0.75, "Heheheh..", "Bloodshed is so..gorgeous.."),
                         new SetAltTexture(1),
-                        new Charge(5, range: 10, coolDown: 1000),
+                        new Charge(7, range: 16, coolDown: 1000),
                         new Shoot(10, count: 10, shootAngle: 12, projectileIndex: 0, coolDown: 1000),
-                        new TimedTransition(1600, "Unreveal")
+                        new TimedTransition(3200, "Unreveal")
                         ),
                    new State("Unreveal",
                         new SetAltTexture(0, 1, 10, true),
@@ -916,7 +924,6 @@ namespace wServer.logic
 
             .Init("BD Berikao, the Dark Hunter",
                 new State(
-                    new ScaleHP(30000),
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("default",
@@ -1046,7 +1053,7 @@ namespace wServer.logic
                         new TimedTransition(8000, "phase")
                         ),
                     new State("phase",
-                        new HealSelf(coolDown: 1000, amount: 22500),
+                        new HealSelf(coolDown: 1000, amount: 40000),
                         new Taunt("Run, fools. You can't stand a chance in the darkness."),
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new ReturnToSpawn(2),
@@ -1085,9 +1092,9 @@ namespace wServer.logic
                     new State("fight3",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Prioritize(
-                            new Follow(0.5),
-                            new Wander(0.1)
-                            ),
+                            new StayCloseToSpawn(0.8, 3),
+                            new Wander(0.5)
+                        ),
                         new Shoot(10, count: 5, shootAngle: 10, projectileIndex: 3, predictive: 1, coolDown: 2000),
                         new Shoot(10, projectileIndex: 0, predictive: 1, coolDown: 2000),
                         new Shoot(10, projectileIndex: 2, coolDownOffset: 800, coolDown: 2000),
@@ -1095,9 +1102,9 @@ namespace wServer.logic
                         ),
                     new State("fight4",
                         new Prioritize(
-                            new Follow(0.5),
-                            new Wander(0.1)
-                            ),
+                            new StayCloseToSpawn(0.8, 3),
+                            new Wander(0.5)
+                        ),
                         new Shoot(10, count: 7, shootAngle: 10, projectileIndex: 4, predictive: 1, coolDown: 2000),
                         new Shoot(10, count: 4, projectileIndex: 0, predictive: 1, coolDown: 2000),
                         new Shoot(10, projectileIndex: 2, coolDownOffset: 800, coolDown: 2000),
@@ -1106,10 +1113,12 @@ namespace wServer.logic
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("shadows",
+                        new HealSelf(coolDown: 9999, amount: 60000),
                         new ConditionEffectRegion(ConditionEffectIndex.Darkness, 999, -1),
                         new SetAltTexture(0, 1, 10, true),
                         new Taunt("Let the fun begin...", "LIGHTS OFF!"),
                         new ReturnToSpawn(2),
+                        new Order(999, "Torch of the Hunter B", "vuln"),
                         new TimedTransition(5000, "shadowswait")
                         ),
                     new State("shadowswait",

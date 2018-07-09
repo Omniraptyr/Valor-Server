@@ -10901,8 +10901,8 @@
         <DazedImmune/>
         <StunImmune/>
         <ArmorBreakImmune/>
-        <MaxHitPoints>25000</MaxHitPoints>
-        <Defense>5</Defense>
+        <MaxHitPoints>100000</MaxHitPoints>
+        <Defense>25</Defense>
     </Object>
     <Object type="0x636e" id="Torch of the Hunter B">
         <Enemy/>
@@ -10920,8 +10920,8 @@
         <DazedImmune/>
         <StunImmune/>
         <ArmorBreakImmune/>
-        <MaxHitPoints>10000</MaxHitPoints>
-        <Defense>5</Defense>
+        <MaxHitPoints>100000</MaxHitPoints>
+        <Defense>25</Defense>
     </Object>
     <Object type="0x636f" id="BD Lava Bat">
         <Enemy/>
@@ -11174,6 +11174,7 @@
         <ParalyzeImmune/>
         <StasisImmune/>
         <DazedImmune/>
+        <NoMiniMap/>
         <ArmorBreakImmune/>
         <ShadowSize>0</ShadowSize>
         <Quest/>
@@ -11181,11 +11182,11 @@
         <Defense>10</Defense>
         <Projectile id="0">
             <ObjectId>Hunter's Fury</ObjectId>
-            <MinDamage>120</MinDamage>
+            <MinDamage>160</MinDamage>
             <MaxDamage>180</MaxDamage>
             <Speed>100</Speed>
             <LifetimeMS>400</LifetimeMS>
-            <ConditionEffect duration="10">Bleeding</ConditionEffect>
+            <ConditionEffect duration="16">Bleeding</ConditionEffect>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Large White Shuriken</ObjectId>
@@ -11218,8 +11219,8 @@
         <ArmorBreakImmune/>
         <ShadowSize>0</ShadowSize>
         <Quest/>
-        <MaxHitPoints>250000</MaxHitPoints>
-        <Defense>20</Defense>
+        <MaxHitPoints>1500000</MaxHitPoints>
+        <Defense>25</Defense>
         <Projectile id="0">
             <ObjectId>Large Blue Shuriken</ObjectId>
             <MinDamage>120</MinDamage>
@@ -11356,6 +11357,7 @@
         <ParalyzeImmune/>
         <StasisImmune/>
         <DazedImmune/>
+        <NoMiniMap/>
         <ArmorBreakImmune/>
         <ShadowSize>0</ShadowSize>
         <Quest/>
@@ -11363,11 +11365,11 @@
         <Defense>10</Defense>
         <Projectile id="0">
             <ObjectId>Hunter's Fury</ObjectId>
-            <MinDamage>120</MinDamage>
+            <MinDamage>160</MinDamage>
             <MaxDamage>180</MaxDamage>
             <Speed>100</Speed>
             <LifetimeMS>400</LifetimeMS>
-            <ConditionEffect duration="10">Bleeding</ConditionEffect>
+            <ConditionEffect duration="16">Bleeding</ConditionEffect>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Large White Shuriken</ObjectId>

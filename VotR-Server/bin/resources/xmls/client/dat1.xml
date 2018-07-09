@@ -114318,8 +114318,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <DazedImmune/>
         <StunImmune/>
         <ArmorBreakImmune/>
-        <MaxHitPoints>10000</MaxHitPoints>
-        <Defense>5</Defense>
+        <MaxHitPoints>100000</MaxHitPoints>
+        <Defense>25</Defense>
     </Object>
 <Object type="0x636f" id="BD Lava Bat">
         <Enemy/>
@@ -114668,8 +114668,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ArmorBreakImmune/>
         <ShadowSize>0</ShadowSize>
         <Quest/>
-        <MaxHitPoints>800000</MaxHitPoints>
-        <Defense>20</Defense>
+        <MaxHitPoints>1500000</MaxHitPoints>
+        <Defense>25</Defense>
         <Projectile id="0">
             <ObjectId>Large Blue Shuriken</ObjectId>
             <MinDamage>120</MinDamage>
@@ -114907,5 +114907,41 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <feedPower>900</feedPower>
         <NumProjectiles>6</NumProjectiles>
         <DisplayId>Implacable Ram</DisplayId>
+    </Object>
+	    <Object type="0x6388" id="Darkin Shot">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xe8</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+	    <Object type="0x6387" id="Darkin Blades">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xe7</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Description>Dual blades made enchanted by the demons that haunt the Bastille of Drannol.</Description>
+        <RateOfFire>0.8</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Darkin Shot</ObjectId>
+            <Speed>100</Speed>
+            <Size>90</Size>
+            <MinDamage>94</MinDamage>
+            <MaxDamage>120</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <Amplitude>1.35</Amplitude>
+            <Frequency>0.49</Frequency>
+            <ArmorPiercing/>
+        </Projectile>
+        <BagType>11</BagType>
+        <FameBonus>6</FameBonus>
+        <Fabled/>
+        <NumProjectiles>2</NumProjectiles>
+        <OldSound>daggerSwing</OldSound>
     </Object>
 </Objects>
