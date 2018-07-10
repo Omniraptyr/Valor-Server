@@ -1251,6 +1251,23 @@ namespace wServer.realm.entities
             }
             return true;
         }
+        public bool startRaid2(Player player)
+        {
+            for (int i = 0; i < Inventory.Length; i++)
+            {
+                if (Inventory[i] == null)
+                    continue;
+
+                if (Inventory[i].ObjectId == "Calling of the Titan (Token)")
+                {
+                    Inventory[i] = null;
+                    SaveToCharacter();
+                    SendInfo("Your Titan Token has been used!");
+                    return false;
+                };
+            }
+            return true;
+        }
         public void Teleport(RealmTime time, int objId, bool ignoreRestrictions = false)
         {
             var obj = Owner.GetEntity(objId);

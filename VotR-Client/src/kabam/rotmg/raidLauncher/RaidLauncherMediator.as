@@ -40,6 +40,7 @@ public class RaidLauncherMediator extends Mediator {
 
     override public function initialize():void {
         this.view.launchButton.addEventListener(MouseEvent.CLICK, this.onButtonLaunch);
+        this.view.launchButton2.addEventListener(MouseEvent.CLICK, this.onButtonLaunch2);
     }
 
     override public function destroy():void {
@@ -51,6 +52,15 @@ public class RaidLauncherMediator extends Mediator {
         _local_1 = (this.messages.require(GameServerConnection.LAUNCH_RAID) as LaunchRaid);
         _local_1.raidId_ = 1;
         _local_1.ultra_ = this.view.ultraCheckbox.isChecked();
+        this.socketServer.sendMessage(_local_1);
+        this.closeDialogs.dispatch()
+    }
+
+    protected function onButtonLaunch2(_arg_1:MouseEvent):void {
+        var _local_1:LaunchRaid;
+        _local_1 = (this.messages.require(GameServerConnection.LAUNCH_RAID) as LaunchRaid);
+        _local_1.raidId_ = 2;
+        _local_1.ultra_ = this.view.ultraCheckbox2.isChecked();
         this.socketServer.sendMessage(_local_1);
         this.closeDialogs.dispatch()
     }

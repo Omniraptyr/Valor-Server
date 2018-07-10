@@ -81,7 +81,7 @@ namespace wServer.logic
                     LootTemplates.SFLow()
                     ),
                 new Threshold(0.05,
-                    new ItemLoot("Shield of Ogmur", 0.03),
+                    new ItemLoot("Shield of Ogmur", 0.04),
                     new TierLoot(8, ItemType.Weapon, 0.3),
                     new TierLoot(9, ItemType.Weapon, 0.275),
                     new TierLoot(10, ItemType.Weapon, 0.225),

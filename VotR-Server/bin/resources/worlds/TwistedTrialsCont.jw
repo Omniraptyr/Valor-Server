@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Twisted Trials Cont",
+"sbName":"Twisted Trials Cont",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x63b5],
+"maps":["twistedtrialscont.jm"],
+"music":["bastille2"]}

@@ -54,6 +54,8 @@ public class RaidLauncherModal extends EmptyFrame {
     public var launchButton:DeprecatedTextButton;
     public var ultraCheckbox:CheckBoxField;
     private var triggeredOnStartup:Boolean;
+
+
     public var launchButton2:DeprecatedTextButton;
     public var ultraCheckbox2:CheckBoxField;
     public function RaidLauncherModal(_arg1:Boolean = false) {

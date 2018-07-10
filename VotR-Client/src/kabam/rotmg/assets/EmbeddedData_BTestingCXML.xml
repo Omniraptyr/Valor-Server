@@ -11894,7 +11894,7 @@
         <Defense>60</Defense>
         <Projectile id="0">
             <ObjectId>Silver Shield</ObjectId>
-            <MinDamage>60</MinDamage>
+            <MinDamage>100</MinDamage>
             <MaxDamage>130</MaxDamage>
             <Speed>65</Speed>
             <ConditionEffect duration="6">Stunned</ConditionEffect>
@@ -11919,11 +11919,161 @@
         <Defense>60</Defense>
         <Projectile id="0">
             <ObjectId>Twisted Boomerang</ObjectId>
-            <MinDamage>140</MinDamage>
-            <MaxDamage>220</MaxDamage>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>300</MaxDamage>
             <Speed>40</Speed>
             <ConditionEffect duration="4">Bleeding</ConditionEffect>
             <LifetimeMS>3000</LifetimeMS>
         </Projectile>
+    </Object>
+    <Object type="0x63a8" id="BD Puzzle 3 Controller">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <AnimatedTexture>
+            <File>chars8x8dHero1</File>
+            <Index>50</Index>
+        </AnimatedTexture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>120</Size>
+        <XpMult>0.0</XpMult>
+        <DisplayId>The Lorekeeper</DisplayId>
+    </Object>
+    <Object type="0x63a9" id="BD Portal Spawner 1">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>120</Size>
+        <XpMult>0.0</XpMult>
+        <DisplayId>BD Portal Spawner 1</DisplayId>
+    </Object>
+    <Object type="0x63aa" id="BD Portal Spawner 2">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>120</Size>
+        <XpMult>0.0</XpMult>
+        <DisplayId>BD Portal Spawner 2</DisplayId>
+    </Object>
+    <Object type="0x63ab" id="BD Portal Spawner 3">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>120</Size>
+        <XpMult>0.0</XpMult>
+        <DisplayId>BD Portal Spawner 3</DisplayId>
+    </Object>
+    <Object type="0x63ac" id="BD Portal Spawner 4">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>120</Size>
+        <XpMult>0.0</XpMult>
+        <DisplayId>BD Portal Spawner 4</DisplayId>
+    </Object>
+    <Object type="0x63ad" id="BD Portal Spawner 5">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>120</Size>
+        <XpMult>0.0</XpMult>
+        <DisplayId>BD Portal Spawner 5</DisplayId>
+    </Object>
+    <Object type="0x63ae" id="Bastille of Drannol Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Bastille of Drannol</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x221</Index>
+        </Texture>
+        <DisplayId>Bastille of Drannol</DisplayId>
+    </Object>
+    <Object type="0x63af" id="Hunter Cave Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Hunter Cave</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x221</Index>
+        </Texture>
+        <DisplayId>Hunter Cave</DisplayId>
+    </Object>
+    <Object type="0x63b2" id="Twisted Trials Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Twisted Trials</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x221</Index>
+        </Texture>
+        <DisplayId>Twisted Trials</DisplayId>
+    </Object>
+    <Object type="0x63b3" id="Twisted Domain Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Twisted Domain</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x221</Index>
+        </Texture>
+        <DisplayId>Twisted Domain</DisplayId>
+    </Object>
+    <Object type="0x63b4" id="Drannol Secret Shop">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Drannol Secret Shop</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x221</Index>
+        </Texture>
+        <DisplayId>Drannol Secret Shop</DisplayId>
+    </Object>
+    <Object type="0x63b5" id="Twisted Trials Cont. Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Twisted Trials Cont</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x221</Index>
+        </Texture>
+        <DisplayId>Twisted Trials Cont </DisplayId>
     </Object>
 </Objects>

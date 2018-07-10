@@ -138,6 +138,14 @@ namespace wServer.realm.entities.vendors
             new ShopItem("Shard of the Unknown", 300)*/
         };
 
+        private static readonly List<ISellableItem> Drannol = new List<ISellableItem>
+        {
+            new ShopItem("Aegis of the Devourer", 130),
+            new ShopItem("Drannol's Fury", 120),
+            new ShopItem("Grasp of Elysium", 140),
+            new ShopItem("Fortification Shield", 160)
+        };
+
         private static readonly List<ISellableItem> Special = new List<ISellableItem>
         {
             new ShopItem("Backpack", 5000),
@@ -154,6 +162,7 @@ namespace wServer.realm.entities.vendors
             { TileRegion.Store_7, new Tuple<List<ISellableItem>, CurrencyType, int>(Consumables, CurrencyType.Fame, 0) },
             { TileRegion.Store_8, new Tuple<List<ISellableItem>, CurrencyType, int>(Special, CurrencyType.Gold, 0) },
             { TileRegion.Store_15, new Tuple<List<ISellableItem>, CurrencyType, int>(Aldragine, CurrencyType.Onrane, 20) },
+            { TileRegion.Store_16, new Tuple<List<ISellableItem>, CurrencyType, int>(Drannol, CurrencyType.Onrane, 20) },
         };
         
         public static void Init(RealmManager manager)

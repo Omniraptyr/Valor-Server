@@ -14,37 +14,34 @@ namespace wServer.networking.handlers
             client.Manager.Logic.AddPendingAction(t => Handle(client.Player, t, packet));
         }
 
-        void Handle(Player player, RealmTime time, LaunchRaid packet)
+        public void launchRaid(Player player, int gold, bool ultra, int raidId)
         {
-            
             var Manager = player.Manager;
             var gameData = Manager.Resources.GameData;
-            
-            
-
-            var acc = player.Client.Account;
-                if (player.Manager._isRaidLaunched == false)
+            if (player.Credits >= gold)
+            {
+                switch (raidId)
                 {
-                    if (packet.Ultra == false)
-                    {
-                        if (player.startRaid1(player) == false)
+
+                    case 1:
+                        if (ultra == false)
                         {
-                            if (player.Credits >= 6000)
+                            if (player.startRaid1(player) == false)
                             {
-                                player.Client.Manager.Database.UpdateCredit(player.Client.Account, -6000);
-                                player.Credits = player.Client.Account.Credits - 6000;
+                                player.Client.Manager.Database.UpdateCredit(player.Client.Account, -gold);
+                                player.Credits = player.Client.Account.Credits - gold;
                                 player.ForceUpdate(player.Credits);
                                 player.Manager.Chat.RaidAnnounce("The Zol Awakening Raid has been launched!");
-                            ushort objType;
-                            
+                                ushort objType;
 
-                            Manager._isRaidLaunched = true;
-                            
-                            if (!gameData.IdToObjectType.TryGetValue("Aldragine's Hideout Portal", out objType) ||
-                                    !gameData.Portals.ContainsKey(objType))
+
+                                Manager._isRaidLaunched = true;
+
+                                if (!gameData.IdToObjectType.TryGetValue("Aldragine's Hideout Portal", out objType) ||
+                                        !gameData.Portals.ContainsKey(objType))
                                     return;
-                            var timeoutTime = gameData.Portals[objType].Timeout;
-                            var entity = Entity.Resolve(Manager, objType);
+                                var timeoutTime = gameData.Portals[objType].Timeout;
+                                var entity = Entity.Resolve(Manager, objType);
                                 entity.Move(4, 37);
                                 player.Owner.EnterWorld(entity);
 
@@ -63,24 +60,15 @@ namespace wServer.networking.handlers
                                     Message = player.Name + " has launched the Zol Awakening Raid!"
                                 }, null, PacketPriority.Low);
                             }
+                            else
+                            {
+                                player.SendError("You need the correct token in your inventory to launch this raid.");
+                            }
+                        }
                         else
                         {
-                            player.SendError("You need at least 6000 gold to launch this raid.");
-                        }
-                        }
-                        else
-                        {
-                            player.SendError("You don't have the token for this Raid.");
-                        }
-                    }
-                    else
-                    {
-                    if (player.startRaid1(player) == false)
-                    {
-                        if (player.Credits >= 7500)
-                        {
-                            player.Client.Manager.Database.UpdateCredit(player.Client.Account, -7500);
-                            player.Credits = player.Client.Account.Credits - 7500;
+                            player.Client.Manager.Database.UpdateCredit(player.Client.Account, -gold);
+                            player.Credits = player.Client.Account.Credits - gold;
                             player.ForceUpdate(player.Credits);
                             player.Manager.Chat.RaidAnnounce("The Ultra Zol Awakening Raid has been launched!");
 
@@ -109,21 +97,103 @@ namespace wServer.networking.handlers
                                 Message = player.Name + " has launched the Ultra Zol Awakening Raid!"
                             }, null, PacketPriority.Low);
                         }
+                        break;
+
+                    case 2:
+                        if(player.Stars >= 20)
+                        {
+                            if (player.startRaid2(player) == false)
+                            {
+                                player.Client.Manager.Database.UpdateCredit(player.Client.Account, -gold);
+                                player.Credits = player.Client.Account.Credits - gold;
+                                player.ForceUpdate(player.Credits);
+                                player.Manager.Chat.RaidAnnounce("The Calling of the Titan Raid has been launched!");
+                                ushort objType;
+
+
+                                Manager._isRaidLaunched = true;
+
+                                if (!gameData.IdToObjectType.TryGetValue("Bastille of Drannol Portal", out objType) ||
+                                        !gameData.Portals.ContainsKey(objType))
+                                    return;
+                                var timeoutTime = gameData.Portals[objType].Timeout;
+                                var entity = Entity.Resolve(Manager, objType);
+                                entity.Move(4, 37);
+                                player.Owner.EnterWorld(entity);
+
+                                (entity as Portal).PlayerOpened = true;
+                                (entity as Portal).Opener = player.Name;
+
+                                player.Owner.Timers.Add(new WorldTimer(timeoutTime * 1000, (world, t) => world.LeaveWorld(entity)));
+                                player.Owner.Timers.Add(new WorldTimer(60000, (w, t) =>
+                                {
+                                    Manager._isRaidLaunched = false;
+                                }));
+                                player.Owner.BroadcastPacket(new Notification
+                                {
+                                    Color = new ARGB(0xFF00FF00),
+                                    ObjectId = player.Id,
+                                    Message = player.Name + " has launched the Calling of the Titan Raid!"
+                                }, null, PacketPriority.Low);
+                            }
+                            else
+                            {
+                                player.SendError("You need the correct token in your inventory to launch this raid.");
+                            }
+                        }
                         else
                         {
-                            player.SendError("You need at least 7500 gold to launch the ultra version of this raid.");
+                            player.SendError("You need at least 20 stars to launch this raid.");
                         }
-                    }
-                    else
-                    {
-                        player.SendError("You don't have the token for this Raid.");
-                    }
+                       
+                        break;
                 }
-                }
-                else
+            }
+            else
+            {
+                player.SendError("You need at least " + gold + " to launch this raid.");
+            }
+        
+    }
+        void Handle(Player player, RealmTime time, LaunchRaid packet)
+        {
+            
+            
+            
+            
+            
+
+            var acc = player.Client.Account;
+            if (player.Manager._isRaidLaunched == false)
+            {
+
+                switch (packet.RaidId)
                 {
-                    player.SendError("A raid has already been launched earlier.");
+                    case 1:
+                        if(packet.Ultra == false)
+                        {
+                            launchRaid(player, 6000, false, 1);
+                        }
+                        else
+                        {
+                            launchRaid(player, 7500, true, 1);
+                        }
+                        break;
+                    case 2:
+                        if (packet.Ultra == false)
+                        {
+                            launchRaid(player, 6000, false, 2);
+                        }
+                        break;
                 }
+
+
+            }
+
+            else
+            {
+                player.SendError("A raid has already been launched earlier.");
+            }
         }
     }
 

@@ -52,6 +52,8 @@ namespace wServer.logic
                         new TimedTransition(6000, "fight2")
                         ),
                     new State("fight2",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new HealSelf(9999, 12500),
                         new Prioritize(
                             new Follow(0.7, 8, 1),
                             new Wander(0.05)
@@ -103,14 +105,15 @@ namespace wServer.logic
                             new Orbit(0.8, 2, 10, null),
                             new Wander(0.05)
                         ),
+                        new HealSelf(9999, 2500),
                         new Shoot(10, 2, shootAngle: 4, projectileIndex: 5, coolDown: 2400),
-                        new TossObject("Truvix Bomb", 4, 0, coolDown: 9999999),
+                        new TossObject("Truvix Bomb", 3, 0, coolDown: 9999999),
                         new TossObject("Truvix Bomb", 6, 45, coolDown: 9999999),
-                        new TossObject("Truvix Bomb", 4, 90, coolDown: 9999999),
+                        new TossObject("Truvix Bomb", 3, 90, coolDown: 9999999),
                         new TossObject("Truvix Bomb", 6, 135, coolDown: 9999999),
-                        new TossObject("Truvix Bomb", 4, 180, coolDown: 9999999),
+                        new TossObject("Truvix Bomb", 3, 180, coolDown: 9999999),
                         new TossObject("Truvix Bomb", 6, 225, coolDown: 9999999),
-                        new TossObject("Truvix Bomb", 4, 270, coolDown: 9999999),
+                        new TossObject("Truvix Bomb", 3, 270, coolDown: 9999999),
                         new TossObject("Truvix Bomb", 6, 315, coolDown: 9999999),
                         new ConditionalEffect(ConditionEffectIndex.Armored),
                         new TimedTransition(10000, "battle4")
@@ -141,8 +144,6 @@ namespace wServer.logic
                     LootTemplates.SFLow()
                     ),
                 new Threshold(0.015,
-                    new ItemLoot("Potion of Life", 0.1),
-                    new ItemLoot("Potion of Mana", 0.1),
                     new ItemLoot("Potion of Vitality", 0.1),
                     new ItemLoot("Potion of Attack", 0.1),
                     new TierLoot(11, ItemType.Weapon, 1),
@@ -154,7 +155,7 @@ namespace wServer.logic
                     new TierLoot(6, ItemType.Ring, 0.1),
                     new ItemLoot("Truestone Ring", 0.01),
                     new ItemLoot("Prime Chaotic Seal", 0.01),
-                    new ItemLoot("Ascendant Quiver", 0.01)
+                    new ItemLoot("Ascendant Quiver", 0.005)
                 )
             )
             .Init("Genisus Inhibitor",
@@ -208,7 +209,7 @@ namespace wServer.logic
                         ),
                     new State("Explode",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
-                        new Shoot(100, projectileIndex: 0, count: 6),
+                        new Shoot(100, projectileIndex: 0, count: 10),
                         new Suicide()
                         )
                     )

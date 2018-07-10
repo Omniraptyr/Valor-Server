@@ -483,7 +483,8 @@ namespace wServer.logic.loot
                     new ItemLoot("Percussion Shield", 0.75),
                     new ItemLoot("Toxin of the Vicious", 0.75),
                     new ItemLoot("Implacable Ram", 0.75),
-                    new ItemLoot("Darkin Blades", 0.75)
+                    new ItemLoot("Darkin Blades", 0.75),
+                    new ItemLoot("The Twisted Cloak", 0.75)
                 )
             };
         }

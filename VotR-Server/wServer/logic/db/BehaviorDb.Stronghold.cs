@@ -170,9 +170,6 @@ namespace wServer.logic
                 new TierLoot(10, ItemType.Weapon, 0.04),
                 new TierLoot(11, ItemType.Weapon, 0.03),
                 new ItemLoot("Potion of Attack", 1),
-                new ItemLoot("Lotus Star", 0.02),
-
-                new ItemLoot("Armor of the Iron Golem", 0.001),
                 new ItemLoot("Wine Cellar Incantation", 0.01)
                 )
             )
@@ -193,8 +190,6 @@ namespace wServer.logic
                 new TierLoot(10, ItemType.Weapon, 0.04),
                 new TierLoot(11, ItemType.Weapon, 0.03),
                 new ItemLoot("Potion of Vitality", 1),
-                new ItemLoot("Revenant Prism", 0.02),
-                new ItemLoot("Armor of the Iron Golem", 0.001),
                 new ItemLoot("Wine Cellar Incantation", 0.01)
                 )
             )
@@ -215,9 +210,6 @@ namespace wServer.logic
                 new TierLoot(10, ItemType.Weapon, 0.04),
                 new TierLoot(11, ItemType.Weapon, 0.03),
                 new ItemLoot("Potion of Dexterity", 1),
-                new ItemLoot("Skycrusher Trap", 0.02),
-
-                new ItemLoot("Armor of the Iron Golem", 0.001),
                 new ItemLoot("Wine Cellar Incantation", 0.01)
                 )
             )

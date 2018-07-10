@@ -107088,7 +107088,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Index>0x17</Index>
         </Texture>
     </Object>
-	    <Object type="0x46d9" id="Aegis of the Devourer">
+    <Object type="0x46d9" id="Aegis of the Devourer">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -107097,10 +107097,10 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>7</SlotType>
         <Description>The devourer must not be awakened once again or our world will tear and shatter to pieces.</Description>
-        <ActivateOnEquip stat="0" amount="90">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="28">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="240">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="25">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="-40">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <feedPower>2000</feedPower>
@@ -107114,7 +107114,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Surge>0</Surge>
         </Legend>
     </Object>
-	    <Object type="0x42fa" id="Platinum Argarius">
+	<Object type="0x42fa" id="Platinum Argarius">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -107125,14 +107125,14 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Description>Shiny, tough armor with sapphire lined in the middle of it's plates. This armor is used by the most worthy.</Description>
         <ActivateOnEquip stat="21" amount="45">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="100">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <feedPower>1850</feedPower>
         <DisplayId>Platinum Argarius</DisplayId>
         <Legendary/>
     </Object>
-<Object type="0x69d6" id="Moon Crescent Halberd">
+    <Object type="0x69d6" id="Moon Crescent Halberd">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -107145,16 +107145,16 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Sound>weapon/mithril_sword</Sound>
         <Projectile>
             <ObjectId>Moon Magic</ObjectId>
-            <Speed>80</Speed>
-            <MinDamage>320</MinDamage>
+            <Speed>60</Speed>
+            <MinDamage>400</MinDamage>
             <MaxDamage>580</MaxDamage>
-            <LifetimeMS>420</LifetimeMS>
+            <LifetimeMS>480</LifetimeMS>
             <ArmorPiercing/>
             <MultiHit/>
         </Projectile>
         <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <OldSound>weapon/blunt_sword</OldSound>
@@ -107274,7 +107274,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Surge>20</Surge>
         </Legend>
     </Object>
-	    <Object type="0x48fb" id="Spiritclaw">
+    <Object type="0x48fb" id="Spiritclaw">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -107293,19 +107293,18 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <LifetimeMS>330</LifetimeMS>
             <ArmorPiercing/>
             <MultiHit/>
+            <ConditionEffect duration="0.25">Weak</ConditionEffect>
         </Projectile>
         <ActivateOnEquip stat="3" amount="80">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="-14">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="-15">IncrementStat</ActivateOnEquip>
         <BagType>11</BagType>
         <FameBonus>12</FameBonus>
         <OldSound>bladeSwing</OldSound>
         <feedPower>2000</feedPower>
         <Legendary/>
         <Legend id="9" stat="27">
-            <Name>Grasp of Zol</Name>
-            <Description>Being in the presence of the Zol charges this ancient blade. While being in the Zol Awakening Raid you get a rate of fire AND damage boost.</Description>
+            <Name>Ancient Blade</Name>
+            <Description>This blade corrupts enemies and leaves them weakened after a blow.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
@@ -107976,7 +107975,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Legendary/>
         <DisplayId>Exile's Resolve</DisplayId>
     </Object>
-	    <Object type="0x49e4" id="Hide of Garutious">
+    <Object type="0x49e4" id="Hide of Garutious">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -107986,7 +107985,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <SlotType>6</SlotType>
         <Description>A hide from the fierce beast Garutious.</Description>
         <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="28" amount="20">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
@@ -108261,7 +108260,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Legend>
         <DisplayId>Bracelet of the Demolished</DisplayId>
     </Object>
-	        <Object type="0x43a2" id="Grasp of Elysium">
+	<Object type="0x43a2" id="Grasp of Elysium">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -108367,18 +108366,18 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile>
             <ObjectId>War Missile</ObjectId>
             <Speed>110</Speed>
-            <MinDamage>111</MinDamage>
-            <MaxDamage>118</MaxDamage>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>200</MaxDamage>
             <LifetimeMS>370</LifetimeMS>
             <Amplitude>0.15</Amplitude>
             <Frequency>2</Frequency>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="1">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="1">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="1">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="26" amount="1">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <NumProjectiles>12</NumProjectiles>
@@ -109574,6 +109573,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <ConditionEffect duration="0.6">Paralyzed</ConditionEffect>
         </Projectile>
         <ActivateOnEquip stat="0" amount="100">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-10">IncrementStat</ActivateOnEquip>
         <Legendary/>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -111000,7 +111000,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Enemy/>
         <DisplayId>Zol Turret</DisplayId>
     </Object>
-	    <Object type="0x55f6" id="Mercy of Yazanahar">
+	<Object type="0x55f6" id="Mercy of Yazanahar">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -114663,6 +114663,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ParalyzeImmune/>
         <StasisImmune/>
         <DazedImmune/>
+		<Elitedrop/>
         <ShadowSize>0</ShadowSize>
         <Quest/>
         <MaxHitPoints>500000</MaxHitPoints>
@@ -115385,6 +115386,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Size>160</Size>
         <ParalyzeImmune/>
         <StasisImmune/>
+		<Elitedrop/>
         <DazedImmune/>
         <SlowedImmune/>
         <ShadowSize>0</ShadowSize>
@@ -115453,7 +115455,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Defense>60</Defense>
         <Projectile id="0">
             <ObjectId>Silver Shield</ObjectId>
-            <MinDamage>60</MinDamage>
+            <MinDamage>100</MinDamage>
             <MaxDamage>130</MaxDamage>
             <Speed>65</Speed>
             <ConditionEffect duration="6">Stunned</ConditionEffect>
@@ -115478,11 +115480,253 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Defense>60</Defense>
         <Projectile id="0">
             <ObjectId>Twisted Boomerang</ObjectId>
-            <MinDamage>140</MinDamage>
-            <MaxDamage>220</MaxDamage>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>300</MaxDamage>
             <Speed>40</Speed>
             <ConditionEffect duration="4">Bleeding</ConditionEffect>
             <LifetimeMS>3000</LifetimeMS>
         </Projectile>
+    </Object>
+	<Object type="0x63a5" id="The Twisted Cloak">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xfb</Index>
+        </Texture>
+        <SlotType>13</SlotType>
+        <Description>A cloak that must've fell off the twisted vanguard ages ago..</Description>
+        <Sound>spell/fire_nova</Sound>
+        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="40">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>100</MpCost>
+        <Activate effect="Invisible" duration="5.5">ConditionEffectSelf</Activate>
+        <Activate effect="Damaging" duration="2.75" useWisMod="true">ConditionEffectSelf</Activate>
+        <Cooldown>6.5</Cooldown>
+        <feedPower>1000</feedPower>
+        <DisplayId>The Twisted Cloak</DisplayId>
+    </Object>
+	<Object type="0x63a6" id="Drannol's Fury">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x06</Index>
+        </Texture>
+        <SlotType>6</SlotType>
+        <Description>A special hide created from the hide of the Eternal Beast.</Description>
+		<ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="24">IncrementStat</ActivateOnEquip>
+		<ActivateOnEquip stat="121" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="8">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2200</feedPower>
+        <Legend id="4" stat="27">
+            <Name>Rage of Drannol</Name>
+            <Description>Anytime you take damage you receive a rate of fire buff.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <Legendary/>
+        <DisplayId>Drannol's Fury</DisplayId>
+    </Object>
+    <Object type="0x63a7" id="Fortification Shield">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xe5</Index>
+        </Texture>
+        <SlotType>5</SlotType>
+        <Description>An enormous tower-shield whose design is taken from the entry doors of the Grand Citadel.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Projectile>
+            <ObjectId>Silver Shield</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>300</MaxDamage>
+            <LifetimeMS>200</LifetimeMS>
+            <Size>140</Size>
+            <ConditionEffect duration="6">Armor Broken</ConditionEffect>
+            <MultiHit/>
+            <PassesCover/>
+            <ParticleTrail/>
+        </Projectile>
+        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-15">IncrementStat</ActivateOnEquip>
+        <ConditionEffect duration="6">Armor Broken</ConditionEffect>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>125</MpCost>
+        <Activate>Shoot</Activate>
+        <NumProjectiles>12</NumProjectiles>
+        <feedPower>2200</feedPower>
+        <Legendary/>
+        <Legend id="4" stat="27">
+            <Name>Titan's Wrath</Name>
+            <Description>Anytime you take damage you have a 10% chance to recover most of the damage taken.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <DisplayId>Fortification Shield</DisplayId>
+    </Object>
+	    <Object type="0x63a8" id="BD Puzzle 3 Controller">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <AnimatedTexture>
+            <File>chars8x8dHero1</File>
+            <Index>50</Index>
+        </AnimatedTexture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>120</Size>
+        <XpMult>0.0</XpMult>
+        <DisplayId>The Lorekeeper</DisplayId>
+    </Object>
+    <Object type="0x63a9" id="BD Portal Spawner 1">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>120</Size>
+        <XpMult>0.0</XpMult>
+        <DisplayId>BD Portal Spawner 1</DisplayId>
+    </Object>
+    <Object type="0x63aa" id="BD Portal Spawner 2">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>120</Size>
+        <XpMult>0.0</XpMult>
+        <DisplayId>BD Portal Spawner 2</DisplayId>
+    </Object>
+    <Object type="0x63ab" id="BD Portal Spawner 3">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>120</Size>
+        <XpMult>0.0</XpMult>
+        <DisplayId>BD Portal Spawner 3</DisplayId>
+    </Object>
+    <Object type="0x63ac" id="BD Portal Spawner 4">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>120</Size>
+        <XpMult>0.0</XpMult>
+        <DisplayId>BD Portal Spawner 4</DisplayId>
+    </Object>
+    <Object type="0x63ad" id="BD Portal Spawner 5">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Size>120</Size>
+        <XpMult>0.0</XpMult>
+        <DisplayId>BD Portal Spawner 5</DisplayId>
+    </Object>
+    <Object type="0x63ae" id="Bastille of Drannol Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Bastille of Drannol</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x401</Index>
+        </Texture>
+        <DisplayId>Bastille of Drannol</DisplayId>
+    </Object>
+    <Object type="0x63af" id="Hunter Cave Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Hunter Cave</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x401</Index>
+        </Texture>
+        <DisplayId>Hunter Cave</DisplayId>
+    </Object>
+    <Object type="0x63b2" id="Twisted Trials Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Twisted Trials</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x401</Index>
+        </Texture>
+        <DisplayId>Twisted Trials</DisplayId>
+    </Object>
+    <Object type="0x63b3" id="Twisted Domain Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Twisted Domain</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x401</Index>
+        </Texture>
+        <DisplayId>Twisted Domain</DisplayId>
+    </Object>
+    <Object type="0x63b4" id="Drannol Secret Shop">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Drannol Secret Shop</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x401</Index>
+        </Texture>
+        <DisplayId>Drannol Secret Shop</DisplayId>
+    </Object>
+    <Object type="0x63b5" id="Twisted Trials Cont. Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Twisted Trials Cont</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x401</Index>
+        </Texture>
+        <DisplayId>Twisted Trials Cont </DisplayId>
     </Object>
 </Objects>

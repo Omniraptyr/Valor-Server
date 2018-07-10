@@ -7,6 +7,6 @@
 "blocking":1,
 "restrictTp":true,
 "showDisplays":false,
-"portals":[],
-"maps":["bastille1.jm"],
+"portals":[0x63ae],
+"maps":["bastille1.jm", "bastille2.jm"],
 "music":["bastille"]}

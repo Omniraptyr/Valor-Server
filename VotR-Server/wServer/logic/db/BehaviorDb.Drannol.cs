@@ -132,15 +132,15 @@ namespace wServer.logic
             )
 
 
-                .Init("BD Tookytesttask",
+                .Init("BD Portal Spawner 1",
             new State(
-
+                new DropPortalOnDeath("Hunter Cave Portal", 1, 120),
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("idle",
                      new EntitiesNotExistsTransition(9999, "activate", "Spiritorb Holder Default Purple", "Spiritorb Holder Default Green", "Spiritorb Holder Default Blue", "Spiritorb Holder Default Orange")
                     ),
                 new State("activate",
-                     new Taunt(true, "Good job!")
+                     new Suicide()
                     )
                 )
             )
@@ -287,12 +287,12 @@ namespace wServer.logic
                 )
             )
 
-                .Init("Twisted Shield",
+         .Init("Twisted Shield",
             new State(
                 new SetNoXP(),
                 new Orbit(0.8, 3, 10, target: "Revil, the Twisted Vanguard"),
                 new State("first",
-                    new DamageTakenTransition(15000, "heal")
+                    new DamageTakenTransition(20000, "heal")
                     ),
                 new State("heal",
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -319,7 +319,7 @@ namespace wServer.logic
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
                      new TimedTransition(2000, "2")
                     ),
                 new State("2",
@@ -337,7 +337,7 @@ namespace wServer.logic
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
                      new TimedTransition(2000, "3")
                     ),
                 new State("3",
@@ -355,7 +355,7 @@ namespace wServer.logic
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
                      new TimedTransition(2000, "4")
                     ),
                 new State("4",
@@ -411,16 +411,15 @@ namespace wServer.logic
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
                      new TimedTransition(2000, "3")
                     ),
                 new State("3",
+                    new EntityExistsTransition("BD Puzzling Green Activated", 30, "4time"),
                      //else
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
-
-                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "4time")
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0")
                     ),
                 new State("4time",
                     new Taunt("You must know your stuff.."),
@@ -447,6 +446,24 @@ namespace wServer.logic
                 new State("0",
                      new Taunt("Something isn't right here..", "That doesn't quite match this barrier spell, now does it?", "Can't be right..", "Mrn..no.", "Doesn't quite add up."),
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "2time")
+                    )
+                )
+            )
+
+           .Init("BD Puzzle 3 Controller",
+            new State(
+                new SetNoXP(),
+                new RemoveObjectOnDeath("BD Wall Relic 3", 99),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("1",
+                     new EntitiesNotExistsTransition(28, "goodtogo", "BD Puzzling Blue Deactivated", "BD Puzzling Green Deactivated", "BD Puzzling Purple Deactivated", "BD Puzzling Orange Deactivated")
+                    ),
+                new State("goodtogo",
+                     new Taunt("Very well...Goodluck on your journey.", "How far you've made it..you have passsed."),
+                     new TimedTransition(4000, "die")
+                    ),
+                new State("die",
+                     new Suicide()
                     )
                 )
             )
@@ -507,7 +524,7 @@ namespace wServer.logic
                         new EntityExistsTransition("BD Logic 1", 999, "vuln")
                         ),
                     new State("vuln",
-                        new HealSelf(coolDown: 8000)
+                        new HealSelf(coolDown: 5600)
                         )
                     )
                 )
@@ -586,7 +603,7 @@ namespace wServer.logic
                         ),
                     new State("shoot",
                         new HealSelf(coolDown: 4000),
-                        new Shoot(10, count: 5, shootAngle: 20, projectileIndex: 0, coolDown: 1000)
+                        new Shoot(10, count: 3, shootAngle: 20, projectileIndex: 0, coolDown: 1800)
                         )
                     )
                 )
@@ -1188,6 +1205,8 @@ namespace wServer.logic
                     new SetNoXP(),
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                     new State("Seek",
+                        new PlayerWithinTransition(3, "Die"),
+                    new State("Seek1",
                        new Sequence(
                             new Timed(2000,
                                 new Prioritize(
@@ -1206,29 +1225,20 @@ namespace wServer.logic
                                     )
                                 )
                             ),
-                        new PlayerWithinTransition(4, "Die")
+                        new TimedTransition(5000, "Seek2")
                         ),
+                    new State("Seek2",
+                        new Orbit(1.5, 6, 10, "Revil, the Twisted Vanguard"),
+                        new TimedTransition(5000, "Seek1")
+                        )
+                    ),
                     new State("Die",
-                        new Sequence(
-                            new Timed(2000,
-                                new Prioritize(
-                                    new Follow(0.5, 8, 1),
-                                    new Wander(0.7)
-                                    )),
-                            new Timed(2000,
-                                new Prioritize(
-                                    new Charge(1.4, 6, coolDown: 1150),
-                                    new Swirl(1, 4, targeted: false)
-                                    )),
-                            new Timed(1000,
-                                new Prioritize(
-                                    new Orbit(0.55, 5),
-                                    new Wander(0.8)
-                                    )
-                                )
+                        new Prioritize(
+                            new Follow(1.5, 10, 2),
+                            new Wander(1)
                             ),
-                        new Shoot(10, count: 12, projectileIndex: 0, coolDown: 1000),
-                        new NoPlayerWithinTransition(4, "Seek")
+                        new Shoot(10, count: 14, projectileIndex: 0, coolDown: 1000),
+                        new TimedTransition(4000, "Seek1")
                         )
                   )
             )
@@ -1571,8 +1581,10 @@ namespace wServer.logic
                         ),
                     new State(
                     new State("suicide",
+                        new RemoveEntity(999, "Twisted Axe"),
+                        new RemoveEntity(999, "Twisted Shield"),
                         new Flash(0xFFFFFF, 1, 2),
-                        new Taunt("I.....underestimated......you......"),
+                        new Taunt("I.....underestimated......you......", "Heheh..haven't had a battle like this in a while..thank you."),
                         new ReturnToSpawn(2),
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new TimedTransition(6000, "rip")
@@ -1608,14 +1620,17 @@ namespace wServer.logic
                        new TierLoot(7, ItemType.Ring, 0.06),
                        new ItemLoot("Onrane Cache", 0.90),
                        new ItemLoot("Gold Cache", 0.050),
-                       new ItemLoot("10000 Gold", 0.025),
                        new ItemLoot("Potion of Life", 1),
-                       new ItemLoot("Greater Potion of Protection", 1)
+                       new ItemLoot("Greater Potion of Protection", 1),
+                       new ItemLoot("Potion of Vitality", 1),
+                       new ItemLoot("Potion of Defense", 1),
+                       new ItemLoot("Potion of Attack", 1)
                        )
             )
 
             .Init("BD Berikao, the Dark Hunter",
                 new State(
+                    new DropPortalOnDeath("Twisted Trials Portal", 1, 120),
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("default",
@@ -2223,7 +2238,8 @@ namespace wServer.logic
                        new ItemLoot("Onrane Cache", 0.40),
                        new ItemLoot("Gold Cache", 0.050),
                        new ItemLoot("Potion of Life", 1),
-                       new ItemLoot("Potion of Protection", 1)
+                       new ItemLoot("Potion of Protection", 1),
+                       new ItemLoot("Potion of Attack", 1)
                        )
             );
     }

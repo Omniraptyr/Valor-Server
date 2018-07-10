@@ -88,12 +88,6 @@ namespace wServer.realm
             return 0;
         }
 
-        public int GraspDamage()
-        {
-            if (Owner.HasConditionEffect(ConditionEffects.GraspofZol))
-                return 125;
-            return 0;
-        }
         public int VengeanceDamage()
         {
             if (Owner.HasConditionEffect(ConditionEffects.Vengeance))
@@ -131,8 +125,6 @@ namespace wServer.realm
             float ret = Math.Min(3.5f, 1.0f + Owner.Stats[8] / 100);
             if (Owner.HasConditionEffect(ConditionEffects.Bravery))
                 return ret * 2;
-            else if (Owner.HasConditionEffect(ConditionEffects.GraspofZol))
-                return ret * 3;
             return ret;
         }
 

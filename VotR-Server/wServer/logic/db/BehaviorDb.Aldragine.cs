@@ -1891,10 +1891,10 @@ namespace wServer.logic
                         new InvisiToss("Zol Sorcerer", 5, 180, coolDown: 9999999),
                         new InvisiToss("Zol Sorcerer", 5, 270, coolDown: 9999999),
                         //Start Spawning Servants shortly after
-                        new InvisiToss("Corrupted Stone Giant B", 10, 45, coolDown: 32000, coolDownOffset: 2600),
-                        new InvisiToss("Corrupted Stone Giant B", 10, 135, coolDown: 32000, coolDownOffset: 2600),
-                        new InvisiToss("Corrupted Stone Giant B", 10, 225, coolDown: 32000, coolDownOffset: 2600),
-                        new InvisiToss("Corrupted Stone Giant B", 10, 315, coolDown: 32000, coolDownOffset: 2600),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 45, coolDown: 25000, coolDownOffset: 2600),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 135, coolDown: 25000, coolDownOffset: 2600),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 225, coolDown: 25000, coolDownOffset: 2600),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 315, coolDown: 25000, coolDownOffset: 2600),
                         // Spawn demons
                         new InvisiToss("Demon of the Dark", 8, 45, coolDown: 25000, coolDownOffset: 2600),
                         new InvisiToss("Demon of the Dark", 8, 135, coolDown: 25000, coolDownOffset: 2600),
@@ -1906,10 +1906,10 @@ namespace wServer.logic
                         new InvisiToss("Giant Cube of Zol", 6, 245, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 335, coolDown: 34000, coolDownOffset: 6000),
                         //Start Spawning Slimes
-                        new InvisiToss("AH Feral of the Zol", 8, 65, coolDown: 25000, coolDownOffset: 6000),
-                        new InvisiToss("AH Feral of the Zol", 8, 155, coolDown: 25000, coolDownOffset: 6000),
-                        new InvisiToss("AH Feral of the Zol", 8, 245, coolDown: 25000, coolDownOffset: 6000),
-                        new InvisiToss("AH Feral of the Zol", 8, 335, coolDown: 25000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 65, coolDown: 12000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 155, coolDown: 12000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 245, coolDown: 12000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 335, coolDown: 12000, coolDownOffset: 6000),
                         new TimedTransition(74000, "Done")
                         )
                       ),
@@ -1939,7 +1939,7 @@ namespace wServer.logic
                         new Suicide()
                         ),
                     new State("Success",
-                        new DropPortalOnDeath("Keeping of Aldragine Portal", 1, timeout: 180),
+                        new DropPortalOnDeath("Ultra Keeping of Aldragine Portal", 1, timeout: 180),
                         //new InvisiToss("AH Loot Chest 3", 2, 270, coolDown: 9999999),
                         new Spawn("AH ULTRA Heart Loot Ctrl", givesNoXp: true),
                         new TransferDamageOnDeath("AH ULTRA Heart Loot Ctrl"),
@@ -2439,6 +2439,15 @@ namespace wServer.logic
                         new TimedTransition(4000, "ClonezA")
                         ),
                     new State("ClonezA",
+                        new TossObject("AH Battlemage of the Zol", 6, 0, coolDown: 9999999),
+                        new TossObject("AH Battlemage of the Zol", 6, 45, coolDown: 9999999),
+                        new TossObject("AH Battlemage of the Zol", 6, 90, coolDown: 9999999),
+                        new TossObject("AH Battlemage of the Zol", 6, 135, coolDown: 9999999),
+                        new TossObject("AH Battlemage of the Zol", 6, 180, coolDown: 9999999),
+                        new TossObject("AH Battlemage of the Zol", 6, 225, coolDown: 9999999),
+                        new TossObject("AH Battlemage of the Zol", 6, 270, coolDown: 9999999),
+                        new TossObject("AH Battlemage of the Zol", 6, 315, coolDown: 9999999),
+
                         new InvisiToss("AH ULTRA Aldragine Clone", 4, 0, coolDown: 9999999),
                         new InvisiToss("AH ULTRA Aldragine Clone", 4, 180, coolDown: 9999999),
                         new TimedTransition(4000, "ClonezAAttack")
@@ -2583,6 +2592,14 @@ namespace wServer.logic
                         new TimedTransition(4000, "ClonezB")
                         ),
                     new State("ClonezB",
+                        new TossObject("AH Battlemage of the Zol", 6, 0, coolDown: 9999999),
+                        new TossObject("AH Battlemage of the Zol", 6, 45, coolDown: 9999999),
+                        new TossObject("AH Battlemage of the Zol", 6, 90, coolDown: 9999999),
+                        new TossObject("AH Battlemage of the Zol", 6, 135, coolDown: 9999999),
+                        new TossObject("AH Battlemage of the Zol", 6, 180, coolDown: 9999999),
+                        new TossObject("AH Battlemage of the Zol", 6, 225, coolDown: 9999999),
+                        new TossObject("AH Battlemage of the Zol", 6, 270, coolDown: 9999999),
+                        new TossObject("AH Battlemage of the Zol", 6, 315, coolDown: 9999999),
                         new InvisiToss("AH ULTRA Aldragine Clone", 4, 0, coolDown: 9999999),
                         new InvisiToss("AH ULTRA Aldragine Clone", 4, 180, coolDown: 9999999),
                         new TimedTransition(4000, "ClonezBAttack")

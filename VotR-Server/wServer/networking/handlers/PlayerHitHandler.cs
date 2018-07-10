@@ -3,7 +3,8 @@ using wServer.networking.packets;
 using wServer.networking.packets.incoming;
 using wServer.realm;
 using wServer.realm.entities;
-
+using common.resources;
+using System;
 namespace wServer.networking.handlers
 {
     class PlayerHitHandler : PacketHandlerBase<PlayerHit>
@@ -45,6 +46,20 @@ namespace wServer.networking.handlers
                     .Where(p => p.Value.ProjectileOwner.Self.Id == objectId)
                     .SingleOrDefault(p => p.Value.ProjectileId == bulletId).Value;
 
+
+
+            if (player.CheckDRage() == true)
+            {
+                //Drannol Rage Passive
+                player.ApplyConditionEffect(ConditionEffectIndex.GraspofZol, 1000);
+            }
+            Random rnd = new Random();
+            int chance = rnd.Next(1, 11);
+            if (player.CheckFRage() == true && chance == 1)
+            {
+                //Titan's Wrath
+                player.HP += prj.ProjDesc.MinDamage / 2;
+            }
             if (prj == null)
                 inproperHits++;
 

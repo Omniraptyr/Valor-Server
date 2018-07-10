@@ -551,8 +551,8 @@ namespace wServer.logic
                     new ItemLoot("Potion of Attack", 0.1),
                     new ItemLoot("Potion of Defense", 0.1),
                     new ItemLoot("Potion of Wisdom", 0.1),
-                    new ItemLoot("Ring of Fortune", 0.01),
-                    new ItemLoot("Razzmatazz Armor", 0.01)
+                    new ItemLoot("Ring of Fortune", 0.04),
+                    new ItemLoot("Razzmatazz Armor", 0.04)
                 )
 			)
 			.Init("White Mask",

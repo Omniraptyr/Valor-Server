@@ -71,16 +71,20 @@ namespace wServer.realm.entities
                             Color = new ARGB(effColor),
                             TargetObjectId = Id,
                             Pos1 = new Position { X = player.X, Y = player.Y }
-                        }, null);
+                        }, null, PacketPriority.Low);
                 }
                 if (enemies.Count > 0) {
                     foreach (Enemy enemy in enemies)
-                        Owner.BroadcastPacket(new ShowEffect() {
-                            EffectType = EffectType.Trail,
-                            Color = new ARGB(effColor),
-                            TargetObjectId = Id,
-                            Pos1 = new Position { X = enemy.X, Y = enemy.Y }
-                        }, null);
+                        if(enemy.ObjectType != 0x22c8 || enemy.ObjectType != 0x22cb || enemy.ObjectType != 0x22cc || enemy.ObjectType != 0x638f || enemy.ObjectType != 0x6392 || enemy.ObjectType != 0x6393 || enemy.ObjectType != 0x6394 || enemy.ObjectType != 0x6395 || enemy.ObjectType != 0x6396 || enemy.ObjectType != 0x6397 || enemy.ObjectType != 0x6398 || enemy.ObjectType != 0x6399)
+                        {
+                            Owner.BroadcastPacket(new ShowEffect()
+                            {
+                                EffectType = EffectType.Trail,
+                                Color = new ARGB(effColor),
+                                TargetObjectId = Id,
+                                Pos1 = new Position { X = enemy.X, Y = enemy.Y }
+                            }, null, PacketPriority.Low);
+                        }
                 }
                 reqTime = 500;
             };

@@ -21,6 +21,36 @@ namespace wServer.realm.entities
                 return false;
             }
         }
+        public bool CheckDRage()
+        {
+            if (Inventory[2] == null)
+            {
+                return false;
+            }
+            if (Inventory[2].ObjectId == "Drannol's Fury")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckFRage()
+        {
+            if (Inventory[1] == null)
+            {
+                return false;
+            }
+            if (Inventory[1].ObjectId == "Fortification Shield")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public bool CheckSunMoon()
         {
             if (Inventory[1] == null)
@@ -483,17 +513,7 @@ namespace wServer.realm.entities
                         ApplyConditionEffect(ConditionEffectIndex.ManaRecovery, 0);
                     }
                     break;
-                //Grasp of Zol
                 case 9:
-                    if (Owner.Name == "Aldragine's Hideout" || Owner.Name == "Nontridus" || Owner.Name == "TheNontridus" || Owner.Name == "Sincryer's Gate" || Owner.Name == "Core of the Hideout" || Owner.Name == "Keeping of Aldragine" || Owner.Name == "Zol Secret Shop")
-
-                    {
-                        ApplyConditionEffect(ConditionEffectIndex.GraspofZol);
-                    }
-                    else
-                    {
-                        ApplyConditionEffect(ConditionEffectIndex.GraspofZol, 0);
-                    }
                     break;
                 //Swiftness
                 case 10:
