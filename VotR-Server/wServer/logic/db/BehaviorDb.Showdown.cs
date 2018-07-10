@@ -185,7 +185,7 @@ namespace wServer.logic
                   )
             )
 
-                                    .Init("HadesTarget",
+              .Init("HadesTarget",
                 new State(
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("Seek",

@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Twisted Domain",
+"sbName":"Twisted Domain",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[],
+"maps":["TwistedVanguard.jm"],
+"music":["vanguard"]}

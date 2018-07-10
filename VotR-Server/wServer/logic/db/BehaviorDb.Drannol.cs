@@ -287,6 +287,21 @@ namespace wServer.logic
                 )
             )
 
+                .Init("Twisted Shield",
+            new State(
+                new SetNoXP(),
+                new Orbit(0.8, 3, 10, target: "Revil, the Twisted Vanguard"),
+                new State("first",
+                    new DamageTakenTransition(15000, "heal")
+                    ),
+                new State("heal",
+                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                    new HealGroup(20, "Revil", coolDown: 9999, healAmount: 20000),
+                    new TimedTransition(1000, "first")
+                    )
+                )
+            )
+
 
          .Init("BD Puzzle 1 Controller",
             new State(
@@ -298,36 +313,57 @@ namespace wServer.logic
                     ),
                 new State("2time",
                      new Taunt("Mhm."),
-                     new TimedTransition(4000, "2")
+                     new TimedTransition(4000, "2cooldown")
+                    ),
+                new State("2cooldown",
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new TimedTransition(2000, "2")
                     ),
                 new State("2",
-                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "3time"),
                      //else
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0")
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "3time")
                     ),
                 new State("3time",
                      new Taunt("That's right.", "Correct."),
-                     new TimedTransition(4000, "3")
+                     new TimedTransition(4000, "3cooldown")
+                    ),
+                new State("3cooldown",
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new TimedTransition(2000, "3")
                     ),
                 new State("3",
-                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "4time"),
                      //else
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0")
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "4time")
                     ),
                 new State("4time",
                     new Taunt("You must know your stuff.."),
-                     new TimedTransition(4000, "4")
+                     new TimedTransition(4000, "4cooldown")
+                    ),
+                new State("4cooldown",
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new TimedTransition(2000, "4")
                     ),
                 new State("4",
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "5"),
                      //else
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0")
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "5")
                     ),
                 new State("5",
                     new Suicide()
@@ -350,36 +386,60 @@ namespace wServer.logic
                     ),
                 new State("2time",
                      new Taunt("Mhm."),
-                     new TimedTransition(4000, "2")
+                     new TimedTransition(4000, "2cooldown")
+                    ),
+                new State("2cooldown",
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new TimedTransition(2000, "2")
                     ),
                 new State("2",
-                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "3time"),
                      //else
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0")
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "3time")
                     ),
                 new State("3time",
                      new Taunt("That's right.", "Correct."),
-                     new TimedTransition(4000, "3")
+                     new TimedTransition(4000, "3cooldown")
+                    ),
+                new State("3cooldown",
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new TimedTransition(2000, "3")
                     ),
                 new State("3",
-                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "4time"),
                      //else
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0")
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "4time")
                     ),
                 new State("4time",
                     new Taunt("You must know your stuff.."),
-                     new TimedTransition(4000, "4")
+                     new TimedTransition(4000, "4cooldown")
+                    ),
+                new State("4cooldown",
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new TimedTransition(2000, "4")
                     ),
                 new State("4",
-                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "5"),
                      //else
                      new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0")
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
+
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "5")
                     ),
                 new State("5",
                     new Suicide()
@@ -521,11 +581,12 @@ namespace wServer.logic
                     new State("charging",
                         new ConditionalEffect(ConditionEffectIndex.StasisImmune),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new ChangeSize(10, 150),
+                        new ChangeSize(60, 150),
                         new TimedTransition(2000, "shoot")
                         ),
                     new State("shoot",
-                        new Shoot(10, count: 3, shootAngle: 20, projectileIndex: 0, coolDown: 1000)
+                        new HealSelf(coolDown: 4000),
+                        new Shoot(10, count: 5, shootAngle: 20, projectileIndex: 0, coolDown: 1000)
                         )
                     )
                 )
@@ -541,11 +602,12 @@ namespace wServer.logic
                     new State("charging",
                         new ConditionalEffect(ConditionEffectIndex.StasisImmune),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                       new ChangeSize(10, 150),
+                       new ChangeSize(60, 150),
                         new TimedTransition(2000, "shoot")
                         ),
                     new State("shoot",
-                        new Shoot(10, count: 3, shootAngle: 20, projectileIndex: 0, coolDown: 1000)
+                        new HealSelf(coolDown: 4000),
+                        new Shoot(10, count: 5, shootAngle: 20, projectileIndex: 0, coolDown: 1000)
                         )
                     )
                 ),
@@ -1121,6 +1183,55 @@ namespace wServer.logic
                         )
                 )
             )
+              .Init("Twisted Axe",
+                new State(
+                    new SetNoXP(),
+                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                    new State("Seek",
+                       new Sequence(
+                            new Timed(2000,
+                                new Prioritize(
+                                    new Follow(0.5, 8, 1),
+                                    new Wander(0.7)
+                                    )),
+                            new Timed(2000,
+                                new Prioritize(
+                                    new Charge(1.4, 6, coolDown: 1150),
+                                    new Swirl(1, 4, targeted: false)
+                                    )),
+                            new Timed(1000,
+                                new Prioritize(
+                                    new Orbit(0.55, 5),
+                                    new Wander(0.8)
+                                    )
+                                )
+                            ),
+                        new PlayerWithinTransition(4, "Die")
+                        ),
+                    new State("Die",
+                        new Sequence(
+                            new Timed(2000,
+                                new Prioritize(
+                                    new Follow(0.5, 8, 1),
+                                    new Wander(0.7)
+                                    )),
+                            new Timed(2000,
+                                new Prioritize(
+                                    new Charge(1.4, 6, coolDown: 1150),
+                                    new Swirl(1, 4, targeted: false)
+                                    )),
+                            new Timed(1000,
+                                new Prioritize(
+                                    new Orbit(0.55, 5),
+                                    new Wander(0.8)
+                                    )
+                                )
+                            ),
+                        new Shoot(10, count: 12, projectileIndex: 0, coolDown: 1000),
+                        new NoPlayerWithinTransition(4, "Seek")
+                        )
+                  )
+            )
 
             .Init("BD Tookytesttask2",
             new State(
@@ -1207,6 +1318,301 @@ namespace wServer.logic
                 )
             )
 
+                                .Init("Revil, the Twisted Vanguard",
+                new State(
+                    new State("default",
+                        new BackAndForth(0.3, 6),
+                        new DamageTakenTransition(60000, "huh")
+                        ),
+                    new State(
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                    new State("huh",
+                        new Taunt("Centuries...I have resided here waiting for a friendly challenge.."),
+                        new TimedTransition(4000, "taunt1")
+                        ),
+                    new State("taunt1",
+                        new Taunt("but it seems you have a more..malicious intent dealing with me."),
+                        new TimedTransition(4000, "taunt2")
+                        ),
+                    new State("taunt2",
+                        new Taunt("I haven't fought for so long...", "My courage hasn't failed me for centuries..let's just hope it doesn't fail me now."),
+                        new TimedTransition(4000, "taunt3")
+                        ),
+                    new State("taunt3",
+                        new SetAltTexture(1),
+                        new HealSelf(coolDown: 9999, amount: 80000),
+                        new Taunt("Very Well.", "Let us begin."),
+                        new BackAndForth(0.2, 3),
+                        new Flash(0xFF0000, 0.5, 2),
+                        new TimedTransition(4000, "top")
+                        )
+                    ),
+                    new State(
+                        new HpLessTransition(0.2, "suicide"),
+                    new State("top",
+                        new Taunt("WANZYU."),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new TimedTransition(3000, "chaseWanzyu")
+                        ),
+                    new State("chaseWanzyu",
+                        new Flash(0xFF00FF, 0.5, 6),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Prioritize(
+                            new Follow(1.2, 10, 2),
+                            new Wander(1)
+                            ),
+                        new Shoot(10, 4, projectileIndex: 2, shootAngle: 6, coolDown: 1000),
+                        new Shoot(10, 8, projectileIndex: 4, shootAngle: 6, coolDown: 4000),
+                        new EntityExistsTransition("BD Puzzling Purple Activated", 999, "returntop")
+                        ),
+                    new State("returntop",
+                        new ReturnToSpawn(2),
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new TimedTransition(6000, "fight1")
+                        ),
+                    new State("fight1",
+                        new Grenade(3, 500, range: 3, coolDown: 1000),
+                        new TimedTransition(14000, "return1"),
+                    new State("fight1a",
+                       new Prioritize(
+                            new Follow(0.5, acquireRange: 15, range: 8),
+                            new Wander(1)
+                            ),
+                        new Shoot(10, 4, projectileIndex: 3, shootAngle: 12, coolDown: 1000),
+                        new TimedTransition(1000, "fight1b")
+                        ),
+                    new State("fight1b",
+                        new Prioritize(
+                            new Follow(0.5, acquireRange: 15, range: 8),
+                            new Wander(1)
+                            ),
+                        new Shoot(10, 8, projectileIndex: 3, shootAngle: 12, coolDown: 1000),
+                        new TimedTransition(1000, "fight1c")
+                        ),
+                    new State("fight1c",
+                        new Prioritize(
+                            new Follow(1.8, acquireRange: 15, range: 8),
+                            new Wander(1)
+                            ),
+                        new TimedTransition(4000, "fightblast")
+                        ),
+                     new State("fightblast",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 2, coolDown: 99999),
+                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 2, coolDown: 99999),
+                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 2, coolDown: 99999),
+                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 2, coolDown: 99999),
+                        new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 2, coolDown: 99999),
+                        new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 2, coolDown: 99999),
+                        new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 2, coolDown: 99999),
+                        new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 2, coolDown: 99999),
+                        new TimedTransition(4000, "delay")
+                        ),
+                     new State("delay",
+                        new Taunt(0.10, "Just like old times.."),
+                        new TimedTransition(4000, "fight1a")
+                        )
+                    ),
+                    new State("return1",
+                        new ReturnToSpawn(2),
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new TimedTransition(6000, "fight2")
+                        ),
+                    new State("fight2",
+                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 2, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 2, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 2, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 2, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 2, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 2, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 2, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 2, coolDown: 2000),
+                        new Shoot(10, count: 3, projectileIndex: 0, coolDown: 800),
+                        new Taunt(0.25, "Farewell, challenger.."),
+                        new Grenade(4, 120, range: 5, coolDown: 4000),
+                        new TimedTransition(14000, "yell"),
+                        new Shoot(10, count: 7, shootAngle: 10, projectileIndex: 1, predictive: 0.1, coolDown: 99999),
+                        new State("fight2a",
+                            new Shoot(10, count: 3, shootAngle: 4, fixedAngle: 0, projectileIndex: 3, coolDown: 99999),
+                            new TimedTransition(400, "fight2b")
+                            ),
+                        new State("fight2b",
+                            new Shoot(10, count: 3, shootAngle: 4, fixedAngle: 40, projectileIndex: 3, coolDown: 99999),
+                            new TimedTransition(400, "fight2c")
+                            ),
+                        new State("fight2c",
+                            new Shoot(10, count: 3, shootAngle: 4, fixedAngle: 80, projectileIndex: 3, coolDown: 99999),
+                            new TimedTransition(400, "fight2d")
+                            ),
+                        new State("fight2d",
+                            new Shoot(10, count: 3, shootAngle: 4, fixedAngle: 120, projectileIndex: 3, coolDown: 99999),
+                            new TimedTransition(400, "fight2e")
+                            ),
+                        new State("fight2e",
+                            new Shoot(10, count: 3, shootAngle: 4, fixedAngle: 160, projectileIndex: 3, coolDown: 99999),
+                            new TimedTransition(400, "fight2f")
+                            ),
+                        new State("fight2f",
+                            new Shoot(10, count: 3, shootAngle: 4, fixedAngle: 200, projectileIndex: 3, coolDown: 99999),
+                            new TimedTransition(400, "fight2g")
+                            ),
+                        new State("fight2g",
+                            new Shoot(10, count: 3, shootAngle: 4, fixedAngle: 240, projectileIndex: 3, coolDown: 99999),
+                            new TimedTransition(400, "fight2h")
+                            ),
+                       new State("fight2h",
+                            new Shoot(10, count: 3, shootAngle: 4, fixedAngle: 280, projectileIndex: 3, coolDown: 99999),
+                            new TimedTransition(400, "fight2i")
+                            ),
+                       new State("fight2i",
+                            new Shoot(10, count: 3, shootAngle: 4, fixedAngle: 320, projectileIndex: 3, coolDown: 99999),
+                            new TimedTransition(400, "fight2j")
+                            ),
+                       new State("fight2j",
+                            new Shoot(10, count: 3, shootAngle: 4, fixedAngle: 360, projectileIndex: 3, coolDown: 99999),
+                            new TimedTransition(400, "fight2a")
+                            )
+                        ),
+                    new State("yell",
+                        new Taunt("TAREG."),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new TimedTransition(5000, "chasetareg")
+                        ),
+                    new State("chasetareg",
+                        new Flash(0x0000FF, 0.5, 6),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Prioritize(
+                            new Follow(1.2, 10, 2),
+                            new Wander(1)
+                            ),
+                        new Shoot(10, 4, projectileIndex: 2, shootAngle: 6, coolDown: 1000),
+                        new Shoot(10, 8, projectileIndex: 4, shootAngle: 6, coolDown: 4000),
+                        new EntityExistsTransition("BD Puzzling Blue Activated", 999, "return2")
+                        ),
+                    new State("return2",
+                        new ReturnToSpawn(2),
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new TimedTransition(6000, "fight3")
+                        ),
+                    new State("fight3",
+                        new Shoot(10, count: 4, shootAngle: 6, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 1, coolDown: 2000, coolDownOffset: 400),
+                        new Shoot(10, count: 8, shootAngle: 6, projectileIndex: 0, coolDown: 2000, coolDownOffset: 1500),
+                        new Orbit(0.6, 5, 10),
+                        new Taunt(0.10, "Let's see how you HANDLE this..Heheh....."),
+                        new TossObject("Twisted Axe", range: 8, coolDown: 99999),
+                        new SetAltTexture(2),
+                        new ConditionalEffect(ConditionEffectIndex.Armored),
+                        new TimedTransition(24000, "yell2")
+                        ),
+                    new State("yell2",
+                        new SetAltTexture(1),
+                        new RemoveEntity(999, "Twisted Axe"),
+                        new Taunt("IGAUR."),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new TimedTransition(5000, "chaseIgaur")
+                        ),
+                    new State("chaseIgaur",
+                        new Flash(0x00FF00, 0.5, 6),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Prioritize(
+                            new Follow(1.2, 10, 2),
+                            new Wander(1)
+                            ),
+                        new Shoot(10, 4, projectileIndex: 2, shootAngle: 6, coolDown: 1000),
+                        new Shoot(10, 8, projectileIndex: 4, shootAngle: 6, coolDown: 4000),
+                        new EntityExistsTransition("BD Puzzling Green Activated", 999, "return3")
+                        ),
+                     new State("return3",
+                        new Taunt(0.1, "You put up a fight..didn't expect this."),
+                        new ReturnToSpawn(2),
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new TimedTransition(6000, "fight4")
+                        ),
+                    new State("fight4",
+                        new SetAltTexture(0),
+                        new TossObject("Twisted Shield", range: 4, angle: 90, coolDown: 99999),
+                        new TossObject("Twisted Axe", range: 4, angle: 90, coolDown: 99999),
+                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 2, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 2, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 2, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 2, coolDown: 2000),
+                        new Shoot(10, count: 3, fixedAngle: 0, projectileIndex: 0, coolDown: 1000),
+                        new Shoot(10, count: 3, fixedAngle: 180, projectileIndex: 0, coolDown: 1000),
+                        new Shoot(10, 8, projectileIndex: 1, shootAngle: 14, coolDown: 4000),
+                        new TimedTransition(20000, "yell3")
+                        ),
+                    new State("yell3",
+                        new SetAltTexture(1),
+                        new RemoveEntity(999, "Twisted Axe"),
+                        new RemoveEntity(999, "Twisted Shield"),
+                        new Taunt("NIVITET."),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new TimedTransition(5000, "chaseNivitet")
+                        ),
+                    new State("chaseNivitet",
+                        new Flash(0xFFA500, 0.5, 6),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Prioritize(
+                            new Follow(1.2, 10, 2),
+                            new Wander(1)
+                            ),
+                        new Shoot(10, 4, projectileIndex: 2, shootAngle: 6, coolDown: 1000),
+                        new Shoot(10, 8, projectileIndex: 4, shootAngle: 6, coolDown: 4000),
+                        new EntityExistsTransition("BD Puzzling Orange Activated", 999, "done")
+                        ),
+                    new State("done",
+                        new Wander(0.1),
+                        new TossObject("BD Winged Beast", 8, coolDown: 2000),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 2, coolDown: 2000),
+                        new Shoot(10, count: 2, shootAngle: 8, projectileIndex: 3, coolDown: 400),
+                        new ConditionalEffect(ConditionEffectIndex.Armored),
+                        new TimedTransition(6000, "top")
+                        ),
+                    new State(
+                    new State("suicide",
+                        new Flash(0xFFFFFF, 1, 2),
+                        new Taunt("I.....underestimated......you......"),
+                        new ReturnToSpawn(2),
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new TimedTransition(6000, "rip")
+                            ),
+                    new State("rip",
+                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 2, coolDown: 99999),
+                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 2, coolDown: 99999),
+                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 2, coolDown: 99999),
+                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 2, coolDown: 99999),
+                        new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 2, coolDown: 99999),
+                        new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 2, coolDown: 99999),
+                        new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 2, coolDown: 99999),
+                        new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 2, coolDown: 99999),
+                        new Suicide()
+                            )
+                        )
+                        )
+                    ),
+                new MostDamagers(3,
+                    LootTemplates.FabledItemsLoot2B()
+                ),
+                new MostDamagers(3,
+                    LootTemplates.GStatIncreasePotionsLoot2()
+                ),
+                new MostDamagers(3,
+                    LootTemplates.SFLow()
+                    ),
+                    new Threshold(0.05,
+                       new TierLoot(12, ItemType.Weapon, 0.08),
+                       new TierLoot(5, ItemType.Ability, 0.07),
+                       new TierLoot(6, ItemType.Ability, 0.05),
+                       new TierLoot(13, ItemType.Armor, 0.06),
+                       new TierLoot(7, ItemType.Ring, 0.06),
+                       new ItemLoot("Onrane Cache", 0.90),
+                       new ItemLoot("Gold Cache", 0.050),
+                       new ItemLoot("10000 Gold", 0.025),
+                       new ItemLoot("Potion of Life", 1),
+                       new ItemLoot("Greater Potion of Protection", 1)
+                       )
+            )
 
             .Init("BD Berikao, the Dark Hunter",
                 new State(
@@ -1444,6 +1850,8 @@ namespace wServer.logic
                         new TimedTransition(4000, "Bfight1")
                             )
                         ),
+                    new State(
+                        new HpLessTransition(0.035, "Cshadows"),
                     new State("Bfight1",
                         new RemoveEntity(60, "BD Logic 2"),
                         new Flash(0x00FFFF, 1, 1),
@@ -1606,7 +2014,196 @@ namespace wServer.logic
                         new Shoot(10, count: 4, projectileIndex: 0, predictive: 1, coolDown: 2000),
                         new Shoot(10, projectileIndex: 2, coolDownOffset: 800, coolDown: 2000),
                         new TimedTransition(4000, "Bshadows")
-                     )
+                            
+                        )
+                     ),
+                    new State(
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                    new State("Cshadows",
+                        new HealSelf(coolDown: 9999, amount: 10000),
+                        new ConditionEffectRegion(ConditionEffectIndex.Darkness, 999, -1),
+                        new SetAltTexture(0, 1, 10, true),
+                        new Taunt("One last hunt..."),
+                        new ReturnToSpawn(2),
+                        new TimedTransition(5000, "Cshadowswait")
+                        ),
+                    new State("Cshadowswait",
+                        new SetAltTexture(0),
+                        new Spawn("BD Logic 1", 1, 1, coolDown: 99999),
+                        new EntitiesNotExistsTransition(9999, "Cshadowswait2", "Torch of the Hunter B")
+                        ),
+                    new State("Cshadowswait2",
+                        new SetAltTexture(1),
+                        new ConditionEffectRegion(ConditionEffectIndex.Darkness, 999, 0),
+                        new RemoveEntity(60, "BD Logic 1"),
+                        new Spawn("BD Logic 2", 1, 1, coolDown: 99999),
+                        new Order(999, "Torch of the Hunter A", "die"),
+                        new TimedTransition(4000, "Cfight1")
+                            )
+                        ),
+                    new State("Cfight1",
+                        new RemoveEntity(60, "BD Logic 2"),
+                        new Flash(0x00FFFF, 1, 1),
+                        new Prioritize(
+                            new StayCloseToSpawn(0.8, 3),
+                            new Wander(0.5)
+                        ),
+                        new TossObject("BD Bastille Brute", range: 10, coolDown: 6000, probability: 0.75),
+                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 1, coolDown: 800, coolDownOffset: 500),
+                        new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 1, coolDown: 800, coolDownOffset: 1000),
+                        new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 1, coolDown: 800, coolDownOffset: 1500),
+                        new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 1, coolDown: 800, coolDownOffset: 800),
+
+
+
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 45, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 135, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 225, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 315, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new TimedTransition(4000, "Cfight1a")
+                        ),
+                     new State("Cfight1a",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Flash(0x00FFFF, 1, 1),
+                        new Prioritize(
+                            new StayCloseToSpawn(0.8, 3),
+                            new Wander(0.5)
+                        ),
+                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 1, coolDown: 800, coolDownOffset: 500),
+                        new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 1, coolDown: 800, coolDownOffset: 1000),
+                        new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 1, coolDown: 800, coolDownOffset: 1500),
+                        new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 1, coolDown: 800, coolDownOffset: 800),
+
+
+
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 45, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 135, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 225, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 315, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new TimedTransition(4000, "Cfight1b")
+                        ),
+                     new State("Cfight1b",
+                        new Flash(0x00FFFF, 1, 1),
+                        new Prioritize(
+                            new StayCloseToSpawn(0.8, 3),
+                            new Wander(0.5)
+                        ),
+                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 1, coolDown: 800),
+                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 1, coolDown: 800, coolDownOffset: 500),
+                        new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 1, coolDown: 800, coolDownOffset: 1000),
+                        new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 1, coolDown: 800, coolDownOffset: 1500),
+                        new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 1, coolDown: 800, coolDownOffset: 800),
+
+
+
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 45, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 135, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 225, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(10, count: 2, shootAngle: 40, fixedAngle: 315, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
+                        new TimedTransition(4000, "Cfight2")
+                        ),
+                    new State("Cfight2",
+                        new Swirl(0.5, 2),
+                        new Shoot(10, count: 7, shootAngle: 6, projectileIndex: 0, coolDown: 1000),
+                        new Shoot(10, count: 14, projectileIndex: 2, predictive: 0.5, coolDown: 1000),
+                        new Shoot(10, count: 4, projectileIndex: 4, predictive: 0.5, coolDown: 2000),
+                        new Shoot(10, count: 4, shootAngle: 30, projectileIndex: 4, predictive: 0.5, coolDown: 2000, coolDownOffset: 800),
+                        new TimedTransition(5000, "Cfight2a")
+                        ),
+                    new State("Cfight2a",
+                        new Prioritize(
+                            new StayCloseToSpawn(0.8, 3),
+                            new Wander(0.5)
+                        ),
+                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 0, coolDown: 400),
+                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 0, coolDown: 400),
+                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 0, coolDown: 400),
+                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 0, coolDown: 400),
+
+                        new Shoot(10, count: 6, shootAngle: 10, fixedAngle: 0, projectileIndex: 1, coolDown: 1000, coolDownOffset: 500),
+                        new Shoot(10, count: 6, shootAngle: 10, fixedAngle: 90, projectileIndex: 1, coolDown: 800, coolDownOffset: 1000),
+                        new Shoot(10, count: 6, shootAngle: 10, fixedAngle: 180, projectileIndex: 1, coolDown: 800, coolDownOffset: 1500),
+                        new Shoot(10, count: 6, shootAngle: 10, fixedAngle: 270, projectileIndex: 1, coolDown: 800, coolDownOffset: 800),
+                        new TimedTransition(8000, "Cfight2b")
+                        ),
+                    new State("Cfight2b",
+                        new Follow(0.4, 8, 1),
+                        new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 1, coolDown: 400),
+                        new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 1, coolDown: 400),
+                        new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 1, coolDown: 400),
+                        new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 1, coolDown: 400),
+
+                        new Shoot(10, count: 7, shootAngle: 18, fixedAngle: 0, projectileIndex: 0, coolDown: 1000, coolDownOffset: 500),
+                        new TimedTransition(8000, "Cphase")
+                        ),
+                    new State("Cphase",
+                        new HealSelf(coolDown: 1000, amount: 40000),
+                        new Taunt("Run, fools. You can't stand a chance in the darkness."),
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new ReturnToSpawn(2),
+                        new TimedTransition(3000, "Cphase2")
+                        ),
+                    new State("Cphase2",
+                        new SetAltTexture(0, 1, 10, true),
+                        new TimedTransition(4000, "Cphase3")
+                        ),
+                    new State("Cphase3",
+                        new Prioritize(
+                            new Follow(1.5),
+                            new Wander(0.1)
+                            ),
+                        new SetAltTexture(0),
+                        new PlayerWithinTransition(3, "Cphase2", seeInvis: true)
+                        ),
+                    new State("Cphase2",
+                        new Taunt(0.75, "I see you, fool..your legacy ends here."),
+                        new SetAltTexture(0, 1, 10, true),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new TimedTransition(2000, "Cjump")
+                        ),
+                    new State("Cjump",
+                        new SetAltTexture(1),
+                        new Charge(2, range: 10, coolDown: 4000),
+                        new Shoot(10, count: 22, projectileIndex: 0, coolDown: 4000),
+                        new PlayerWithinTransition(1, "Crunback")
+                        ),
+                    new State("Crunback",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new ReturnToSpawn(2),
+                        new TimedTransition(3000, "Cfight3")
+                        ),
+                    new State("Cfight3",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Prioritize(
+                            new StayCloseToSpawn(0.8, 3),
+                            new Wander(0.5)
+                        ),
+                        new Shoot(10, count: 5, shootAngle: 10, projectileIndex: 3, predictive: 1, coolDown: 2000),
+                        new Shoot(10, projectileIndex: 0, predictive: 1, coolDown: 2000),
+                        new Shoot(10, projectileIndex: 2, coolDownOffset: 800, coolDown: 2000),
+                        new TimedTransition(4000, "Cfight4")
+                        ),
+                    new State("Cfight4",
+                        new Prioritize(
+                            new StayCloseToSpawn(0.8, 3),
+                            new Wander(0.5)
+                        ),
+                        new Shoot(10, count: 7, shootAngle: 10, projectileIndex: 4, predictive: 1, coolDown: 2000),
+                        new Shoot(10, count: 4, projectileIndex: 0, predictive: 1, coolDown: 2000),
+                        new Shoot(10, projectileIndex: 2, coolDownOffset: 800, coolDown: 2000),
+                        new TimedTransition(4000, "Cshadows")
+                        )
                     ),
                 new MostDamagers(3,
                     LootTemplates.FabledItemsLoot2B()

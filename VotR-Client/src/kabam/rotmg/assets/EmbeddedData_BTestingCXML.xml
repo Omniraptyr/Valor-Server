@@ -11801,4 +11801,129 @@
             <LifetimeMS>4000</LifetimeMS>
         </Projectile>
     </Object>
+    <Object type="0x63a1" id="Revil, the Twisted Vanguard">
+        <Enemy/>
+        <Group>Revil</Group>
+        <DisplayId>Revil, the Twisted Vanguard</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>16</Index>
+        </AnimatedTexture>
+        <AltTexture id="1">
+            <AnimatedTexture>
+                <File>d1chars16x16r</File>
+                <Index>15</Index>
+            </AnimatedTexture>
+        </AltTexture>
+        <AltTexture id="2">
+            <AnimatedTexture>
+                <File>d1chars16x16r</File>
+                <Index>18</Index>
+            </AnimatedTexture>
+        </AltTexture>
+        <HitSound>monster/oryx_hit</HitSound>
+        <DeathSound>monster/abyss_brutes_death</DeathSound>
+        <Size>160</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <ShadowSize>0</ShadowSize>
+        <Quest/>
+        <MaxHitPoints>1750000</MaxHitPoints>
+        <Defense>40</Defense>
+        <Projectile id="0">
+            <ObjectId>Twisted Shot 1</ObjectId>
+            <MinDamage>120</MinDamage>
+            <MaxDamage>140</MaxDamage>
+            <Speed>60</Speed>
+            <ConditionEffect duration="2">Dazed</ConditionEffect>
+            <LifetimeMS>2500</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Twisted Shot 2</ObjectId>
+            <MinDamage>60</MinDamage>
+            <MaxDamage>80</MaxDamage>
+            <Speed>60</Speed>
+            <ConditionEffect duration="6">Armor Broken</ConditionEffect>
+            <LifetimeMS>1000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>White Flame</ObjectId>
+            <MinDamage>160</MinDamage>
+            <MaxDamage>225</MaxDamage>
+            <Speed>30</Speed>
+            <LifetimeMS>6000</LifetimeMS>
+            <MultiHit/>
+            <Amplitude>1.2</Amplitude>
+            <Frequency>1</Frequency>
+            <ConditionEffect duration="3">Slowed</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Twisted Cone</ObjectId>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>120</MaxDamage>
+            <Speed>90</Speed>
+            <LifetimeMS>6000</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Twisted Boomerang 2</ObjectId>
+            <MinDamage>45</MinDamage>
+            <MaxDamage>90</MaxDamage>
+            <Speed>110</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+    </Object>
+    <Object type="0x63a3" id="Twisted Shield">
+        <Enemy/>
+        <DisplayId>Twisted Shield</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>17</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <SlowedImmune/>
+        <MaxHitPoints>99999999</MaxHitPoints>
+        <Defense>60</Defense>
+        <Projectile id="0">
+            <ObjectId>Silver Shield</ObjectId>
+            <MinDamage>60</MinDamage>
+            <MaxDamage>130</MaxDamage>
+            <Speed>65</Speed>
+            <ConditionEffect duration="6">Stunned</ConditionEffect>
+            <LifetimeMS>2500</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x63a4" id="Twisted Axe">
+        <Enemy/>
+        <DisplayId>Twisted Axe</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>19</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <SlowedImmune/>
+        <MaxHitPoints>99999999</MaxHitPoints>
+        <Defense>60</Defense>
+        <Projectile id="0">
+            <ObjectId>Twisted Boomerang</ObjectId>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>220</MaxDamage>
+            <Speed>40</Speed>
+            <ConditionEffect duration="4">Bleeding</ConditionEffect>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+    </Object>
 </Objects>
