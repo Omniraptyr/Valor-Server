@@ -67,35 +67,42 @@ namespace wServer.networking.handlers
                         }
                         else
                         {
-                            player.Client.Manager.Database.UpdateCredit(player.Client.Account, -gold);
-                            player.Credits = player.Client.Account.Credits - gold;
-                            player.ForceUpdate(player.Credits);
-                            player.Manager.Chat.RaidAnnounce("The Ultra Zol Awakening Raid has been launched!");
-
-                            Manager._isRaidLaunched = true;
-                            ushort objType;
-                            if (!gameData.IdToObjectType.TryGetValue("Ultra Aldragine's Hideout Portal", out objType) ||
-                                !gameData.Portals.ContainsKey(objType))
-                                return;
-                            var entity = Entity.Resolve(Manager, objType);
-
-                            entity.Move(4, 37);
-                            player.Owner.EnterWorld(entity);
-
-                            (entity as Portal).PlayerOpened = true;
-                            (entity as Portal).Opener = player.Name;
-                            var timeoutTime = gameData.Portals[objType].Timeout;
-                            player.Owner.Timers.Add(new WorldTimer(timeoutTime * 1000, (world, t) => world.LeaveWorld(entity)));
-                            player.Owner.Timers.Add(new WorldTimer(60000, (w, t) =>
+                            if (player.startRaid1(player) == false)
                             {
-                                Manager._isRaidLaunched = false;
-                            }));
-                            player.Owner.BroadcastPacket(new Notification
+                                player.Client.Manager.Database.UpdateCredit(player.Client.Account, -gold);
+                                player.Credits = player.Client.Account.Credits - gold;
+                                player.ForceUpdate(player.Credits);
+                                player.Manager.Chat.RaidAnnounce("The Ultra Zol Awakening Raid has been launched!");
+
+                                Manager._isRaidLaunched = true;
+                                ushort objType;
+                                if (!gameData.IdToObjectType.TryGetValue("Ultra Aldragine's Hideout Portal", out objType) ||
+                                    !gameData.Portals.ContainsKey(objType))
+                                    return;
+                                var entity = Entity.Resolve(Manager, objType);
+
+                                entity.Move(4, 37);
+                                player.Owner.EnterWorld(entity);
+
+                                (entity as Portal).PlayerOpened = true;
+                                (entity as Portal).Opener = player.Name;
+                                var timeoutTime = gameData.Portals[objType].Timeout;
+                                player.Owner.Timers.Add(new WorldTimer(timeoutTime * 1000, (world, t) => world.LeaveWorld(entity)));
+                                player.Owner.Timers.Add(new WorldTimer(60000, (w, t) =>
+                                {
+                                    Manager._isRaidLaunched = false;
+                                }));
+                                player.Owner.BroadcastPacket(new Notification
+                                {
+                                    Color = new ARGB(0xFF00FF00),
+                                    ObjectId = player.Id,
+                                    Message = player.Name + " has launched the Ultra Zol Awakening Raid!"
+                                }, null, PacketPriority.Low);
+                            }
+                            else
                             {
-                                Color = new ARGB(0xFF00FF00),
-                                ObjectId = player.Id,
-                                Message = player.Name + " has launched the Ultra Zol Awakening Raid!"
-                            }, null, PacketPriority.Low);
+                                player.SendError("You need the correct token in your inventory to launch this raid.");
+                            }
                         }
                         break;
 

@@ -312,18 +312,19 @@ namespace wServer.logic
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "2time")
                     ),
                 new State("2time",
-                     new Taunt("Mhm."),
+                     new Taunt("Mhm.", "Hmmm, seems to be right."),
                      new TimedTransition(4000, "2cooldown")
                     ),
                 new State("2cooldown",
-                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "01"),
                      new TimedTransition(2000, "2")
                     ),
                 new State("2",
                      //else
+                     new Flash(0xFFFFFF, 1, 1),
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
@@ -334,14 +335,15 @@ namespace wServer.logic
                      new TimedTransition(4000, "3cooldown")
                     ),
                 new State("3cooldown",
-                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "01"),
                      new TimedTransition(2000, "3")
                     ),
                 new State("3",
                      //else
+                     new Flash(0xFFFFFF, 1, 1),
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
@@ -352,14 +354,15 @@ namespace wServer.logic
                      new TimedTransition(4000, "4cooldown")
                     ),
                 new State("4cooldown",
-                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "01"),
                      new TimedTransition(2000, "4")
                     ),
                 new State("4",
                      //else
+                     new Flash(0xFFFFFF, 1, 1),
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
@@ -370,6 +373,10 @@ namespace wServer.logic
                     ),
                 new State("0",
                      new Taunt("Something isn't right here..", "That doesn't quite match this barrier spell, now does it?", "Can't be right..", "Mrn..no.", "Doesn't quite add up."),
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "2time")
+                    ),
+                new State("01",
+                     new Taunt("Perhaps slow down.", "Patience."),
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "2time")
                     )
                 )
@@ -385,18 +392,19 @@ namespace wServer.logic
                      new EntityExistsTransition("BD Puzzling Purple Activated", 30, "2time")
                     ),
                 new State("2time",
-                     new Taunt("Mhm."),
+                     new Taunt("Mhm.", "Hmmm, seems to be right."),
                      new TimedTransition(4000, "2cooldown")
                     ),
                 new State("2cooldown",
-                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "01"),
                      new TimedTransition(2000, "2")
                     ),
                 new State("2",
                      //else
+                     new Flash(0xFFFFFF, 1, 1),
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
@@ -408,13 +416,14 @@ namespace wServer.logic
                      new TimedTransition(4000, "3cooldown")
                     ),
                 new State("3cooldown",
-                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "01"),
                      new TimedTransition(2000, "3")
                     ),
                 new State("3",
+                    new Flash(0xFFFFFF, 1, 1),
                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "4time"),
                      //else
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
@@ -426,14 +435,15 @@ namespace wServer.logic
                      new TimedTransition(4000, "4cooldown")
                     ),
                 new State("4cooldown",
-                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
-                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "01"),
                      new TimedTransition(2000, "4")
                     ),
                 new State("4",
                      //else
+                     new Flash(0xFFFFFF, 1, 1),
                      new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
                      new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
@@ -445,6 +455,10 @@ namespace wServer.logic
                     ),
                 new State("0",
                      new Taunt("Something isn't right here..", "That doesn't quite match this barrier spell, now does it?", "Can't be right..", "Mrn..no.", "Doesn't quite add up."),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "2time")
+                    ),
+                new State("01",
+                     new Taunt("Perhaps slow down.", "Patience."),
                      new EntityExistsTransition("BD Puzzling Purple Activated", 30, "2time")
                     )
                 )
