@@ -445,7 +445,7 @@ namespace wServer.logic
                     ),
                 new State("0",
                      new Taunt("Something isn't right here..", "That doesn't quite match this barrier spell, now does it?", "Can't be right..", "Mrn..no.", "Doesn't quite add up."),
-                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "2time")
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "2time")
                     )
                 )
             )
