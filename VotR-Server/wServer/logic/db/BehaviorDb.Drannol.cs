@@ -1631,7 +1631,7 @@ namespace wServer.logic
                         new TimedTransition(6000, "getit3")
                             ),
                     new State("getit3",
-                        new Flash(0xFF0000, 0.2, 4),
+                        new Flash(0xFF0000, 0.2, 8),
                         new HealSelf(coolDown: 9999, amount: 1750000),
                         new ChangeMusic("vanguarddying"),
                         new ChangeSize(60, 190),
@@ -1699,7 +1699,12 @@ namespace wServer.logic
                         new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 2, coolDown: 2000),
                         new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 2, coolDown: 2000),
                         new Shoot(10, count: 3, projectileIndex: 0, coolDown: 800),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 8000),
                         new Taunt(0.25, "Farewell, challenger.."),
+                        new Prioritize(
+                            new Charge(2, 10, coolDown: 3000),
+                            new Wander(1)
+                            ),
                         new Grenade(4, 120, range: 5, coolDown: 4000),
                         new TimedTransition(14000, "byell"),
                         new Shoot(10, count: 7, shootAngle: 10, projectileIndex: 1, predictive: 0.1, coolDown: 99999),

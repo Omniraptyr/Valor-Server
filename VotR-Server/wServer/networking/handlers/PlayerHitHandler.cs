@@ -51,7 +51,7 @@ namespace wServer.networking.handlers
             if (player.CheckDRage() == true)
             {
                 //Drannol Rage Passive
-                player.ApplyConditionEffect(ConditionEffectIndex.GraspofZol, 1000);
+                player.ApplyConditionEffect(ConditionEffectIndex.GraspofZol, 1500);
             }
             Random rnd = new Random();
             int chance = rnd.Next(1, 11);
