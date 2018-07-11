@@ -1721,17 +1721,20 @@ namespace wServer.realm.entities
                     Color = new ARGB(0xffffffff)
                 }
             };
-
+            
             Owner.AOE(target, 3, false, enemy =>
             {
-                if (enemy.HasConditionEffect(ConditionEffects.StasisImmune))
+                if (enemy.ObjectType != 0x638f)
                 {
-                    pkts.Add(new Notification()
+                    if (enemy.HasConditionEffect(ConditionEffects.StasisImmune))
                     {
-                        ObjectId = enemy.Id,
-                        Color = new ARGB(0xff00ff00),
-                        Message = "Immune"
-                    });
+                        pkts.Add(new Notification()
+                        {
+                            ObjectId = enemy.Id,
+                            Color = new ARGB(0xff00ff00),
+                            Message = "Immune"
+                        });
+                    }
                 }
                 else if (!enemy.HasConditionEffect(ConditionEffects.Stasis))
                 {

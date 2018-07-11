@@ -2739,7 +2739,7 @@ namespace wServer.logic
                         new TimedTransition(6000, "Success")
                         ),
                     new State("Success",
-                        new AnnounceOnDeath("The Zol, a dark burden, seems to fade away slowly..."),
+                        new AnnounceOnDeath("The Zol, a dark burden, seems to fade away slowly...once again.."),
                         new Shoot(8, count: 10, projectileIndex: 2, coolDown: 9999),
                         new Spawn("AH ULTRA Aldragine Loot Ctrl", givesNoXp: true),
                         new TransferDamageOnDeath("AH ULTRA Aldragine Loot Ctrl"),
