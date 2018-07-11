@@ -1616,8 +1616,12 @@ namespace wServer.logic
                         new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 2, coolDown: 99999),
                         new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 2, coolDown: 99999),
                         new Suicide()
-                            ),
-                   new State("getit",
+                            )
+                            )
+                          ),
+                    new State(
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                    new State("getit",
                         new Taunt("I see what must be done....", "This battle has took long enough..you have truly finished me off....."),
                         new TimedTransition(6000, "getit2")
                             ),
@@ -1634,8 +1638,7 @@ namespace wServer.logic
                         new Taunt("I will show no mercy..."),
                         new TimedTransition(6000, "bfight1")
                         )
-                            )
-                          ),
+                      ),
                      new State(
                         new HpLessTransition(0.2, "reallydie"),
                     new State("bfight1",
