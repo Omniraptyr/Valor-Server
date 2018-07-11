@@ -5003,7 +5003,7 @@
         <Projectile id="0">
             <ObjectId>Green Bolt</ObjectId>
             <Speed>100</Speed>
-            <Damage>100</Damage>
+            <Damage>200</Damage>
             <Size>100</Size>
             <LifetimeMS>4500</LifetimeMS>
             <MultiHit/>
@@ -5011,7 +5011,7 @@
         <Projectile id="1">
             <ObjectId>Purple Magic</ObjectId>
             <Speed>100</Speed>
-            <Damage>60</Damage>
+            <Damage>180</Damage>
             <Size>100</Size>
             <LifetimeMS>4500</LifetimeMS>
             <ConditionEffect duration="2">Darkness</ConditionEffect>
@@ -5020,7 +5020,7 @@
         <Projectile id="2">
             <ObjectId>Green Bolt</ObjectId>
             <Speed>100</Speed>
-            <Damage>200</Damage>
+            <Damage>180</Damage>
             <Size>100</Size>
             <LifetimeMS>6000</LifetimeMS>
             <MultiHit/>
@@ -5387,21 +5387,21 @@
         <Defense>40</Defense>
         <Projectile id="0">
             <ObjectId>White Bolt</ObjectId>
-            <Damage>80</Damage>
+            <Damage>100</Damage>
             <Speed>100</Speed>
             <LifetimeMS>2500</LifetimeMS>
-            <ConditionEffect duration="2">Bleeding</ConditionEffect>
+            <ConditionEffect duration="2">Petrify</ConditionEffect>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Fire Bolt</ObjectId>
-            <Damage>160</Damage>
+            <Damage>280</Damage>
             <Speed>100</Speed>
             <LifetimeMS>3000</LifetimeMS>
-            <ConditionEffect duration="2">Bleeding</ConditionEffect>
+            <ConditionEffect duration="2.5">Petrify</ConditionEffect>
         </Projectile>
         <Projectile id="2">
             <ObjectId>Grey Missile</ObjectId>
-            <Damage>180</Damage>
+            <Damage>200</Damage>
             <Speed>70</Speed>
             <LifetimeMS>5000</LifetimeMS>
         </Projectile>
@@ -5452,16 +5452,16 @@
         </Projectile>
         <Projectile id="1">
             <ObjectId>Purple Boomerang</ObjectId>
-            <Damage>180</Damage>
+            <Damage>240</Damage>
             <Speed>50</Speed>
             <LifetimeMS>6000</LifetimeMS>
-            <ConditionEffect duration="1.6">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="2">Paralyzed</ConditionEffect>
             <MultiHit/>
             <Boomerang/>
         </Projectile>
         <Projectile id="2">
             <ObjectId>Blue Magic</ObjectId>
-            <Damage>120</Damage>
+            <Damage>180</Damage>
             <Speed>65</Speed>
             <LifetimeMS>4000</LifetimeMS>
             <ConditionEffect duration="2">Hallucinating</ConditionEffect>
@@ -5485,7 +5485,7 @@
         <Defense>10</Defense>
         <Projectile id="0">
             <ObjectId>Fire Bolt</ObjectId>
-            <Damage>280</Damage>
+            <Damage>400</Damage>
             <Speed>35</Speed>
             <LifetimeMS>2200</LifetimeMS>
             <ArmorPiercing/>

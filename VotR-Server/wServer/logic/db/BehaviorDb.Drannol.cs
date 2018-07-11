@@ -1856,7 +1856,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.FabledItemsLoot2B()
+                    LootTemplates.FabledItemsLoots2B()
                 ),
                 new MostDamagers(3,
                     LootTemplates.GStatIncreasePotionsLoot2()

@@ -57,11 +57,15 @@ namespace wServer.realm.entities
                             DurationMS = duration
                         });
                     } else {
-                        enemies.Add(entity as Enemy);
-                        entity.ApplyConditionEffect(new ConditionEffect {
-                            Effect = effect,
-                            DurationMS = duration
-                        });
+                        if(entity.ObjectType != 0x638f)
+                        {
+                            enemies.Add(entity as Enemy);
+                            entity.ApplyConditionEffect(new ConditionEffect
+                            {
+                                Effect = effect,
+                                DurationMS = duration
+                            });
+                        }
                     }
                 });
                 if (players.Count > 0) {

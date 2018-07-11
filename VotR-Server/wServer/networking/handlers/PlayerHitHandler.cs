@@ -51,10 +51,10 @@ namespace wServer.networking.handlers
             if (player.CheckDRage() == true)
             {
                 //Drannol Rage Passive
-                player.ApplyConditionEffect(ConditionEffectIndex.GraspofZol, 1500);
+                player.ApplyConditionEffect(ConditionEffectIndex.GraspofZol, 2000+(player.Surge*20));
             }
             Random rnd = new Random();
-            int chance = rnd.Next(1, 11);
+            int chance = rnd.Next(1, 6);
             if (player.CheckFRage() == true && chance == 1)
             {
                 //Titan's Wrath
