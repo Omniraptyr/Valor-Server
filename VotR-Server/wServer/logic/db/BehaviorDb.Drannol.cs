@@ -1633,6 +1633,7 @@ namespace wServer.logic
                         new ChangeSize(60, 190),
                         new Taunt("I will show no mercy..."),
                         new TimedTransition(6000, "bfight1")
+                        )
                             )
                           ),
                      new State(
@@ -1844,7 +1845,6 @@ namespace wServer.logic
                         new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 2, coolDown: 99999),
                         new Suicide()
                             )
-                        )
                         )
                     ),
                 new MostDamagers(3,
