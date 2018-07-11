@@ -68,7 +68,7 @@ namespace wServer.realm.entities
         }
         public bool CheckForItems(string item1)
         {
-            if (Inventory[4] == null)
+            if (Inventory[4] == null || Inventory[5] == null || Inventory[6] == null || Inventory[7] == null || Inventory[8] == null || Inventory[9] == null || Inventory[10] == null || Inventory[11] == null)
             {
                 return false;
             }
