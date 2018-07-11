@@ -66,6 +66,21 @@ namespace wServer.realm.entities
                 return false;
             }
         }
+        public bool CheckForItems(string item1)
+        {
+            if (Inventory[4] == null)
+            {
+                return false;
+            }
+            if (Inventory[4].ObjectId == item1 || Inventory[5].ObjectId == item1 || Inventory[6].ObjectId == item1 || Inventory[7].ObjectId == item1 || Inventory[8].ObjectId == item1 || Inventory[9].ObjectId == item1 || Inventory[10].ObjectId == item1 || Inventory[11].ObjectId == item1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public bool CheckDim()
         {
             if (Inventory[1] == null)

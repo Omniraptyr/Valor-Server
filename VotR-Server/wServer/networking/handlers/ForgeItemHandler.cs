@@ -40,7 +40,10 @@ namespace wServer.networking.handlers
                             if (client.Player.Inventory[i] == null) continue;
                             if (client.Player.Inventory[i].ObjectId == "Shard of Cosmic Collapse")
                             {
-                                ItemValue = cosmicList[rnd.Next(cosmicList.Length)];
+                                if (client.Player.CheckForItems("Shard of Cosmic Collapse"))
+                                {
+                                    ItemValue = cosmicList[rnd.Next(cosmicList.Length)];
+                                }
                                 break;
                             }
                         }
@@ -51,7 +54,10 @@ namespace wServer.networking.handlers
                             if (client.Player.Inventory[i] == null) continue;
                             if (client.Player.Inventory[i].ObjectId == "Shard of Eternal Fury")
                             {
-                                ItemValue = furyList[rnd.Next(furyList.Length)];
+                                if (client.Player.CheckForItems("Shard of Eternal Fury"))
+                                {
+                                    ItemValue = furyList[rnd.Next(furyList.Length)];
+                                }
                                 break;
                             }
                         }
@@ -62,7 +68,10 @@ namespace wServer.networking.handlers
                             if (client.Player.Inventory[i] == null) continue;
                             if (client.Player.Inventory[i].ObjectId == "Shard of Zol Corruption")
                             {
-                                ItemValue = zolList[rnd.Next(zolList.Length)];
+                                if (client.Player.CheckForItems("Shard of Zol Corruption"))
+                                {
+                                    ItemValue = zolList[rnd.Next(zolList.Length)];
+                                }
                                 break;
                             }
                         }
@@ -73,7 +82,10 @@ namespace wServer.networking.handlers
                             if (client.Player.Inventory[i] == null) continue;
                             if (client.Player.Inventory[i].ObjectId == "Sword of Dark Necromancy")
                             {
-                                ItemValue = 0x47bd;
+                                if (client.Player.CheckForItems("Sword of Dark Necromancy"))
+                                {
+                                    ItemValue = 0x47bd;
+                                }
                                 break;
                             }
                         }
@@ -84,7 +96,10 @@ namespace wServer.networking.handlers
                             if (client.Player.Inventory[i] == null) continue;
                             if (client.Player.Inventory[i].ObjectId == "Hunter Necklace")
                             {
-                                ItemValue = 0x61b7;
+                                if (client.Player.CheckForItems("Hunter Necklace"))
+                                {
+                                    ItemValue = 0x61b7;
+                                }
                                 break;
                             }
                         }
@@ -95,7 +110,10 @@ namespace wServer.networking.handlers
                             if (client.Player.Inventory[i] == null) continue;
                             if (client.Player.Inventory[i].ObjectId == "Warped Worlds Staff")
                             {
-                                ItemValue = 0x61c5;
+                                if (client.Player.CheckForItems("Warped Worlds Staff"))
+                                {
+                                    ItemValue = 0x61c5;
+                                }
                                 break;
                             }
                         }
@@ -106,7 +124,10 @@ namespace wServer.networking.handlers
                             if (client.Player.Inventory[i] == null) continue;
                             if (client.Player.Inventory[i].ObjectId == "Empowered Whip")
                             {
-                                ItemValue = 0x61c5;
+                                if (client.Player.CheckForItems("Empowered Whip"))
+                                {
+                                    ItemValue = 0x61c5;
+                                }
                                 break;
                             }
                         }
@@ -117,7 +138,10 @@ namespace wServer.networking.handlers
                             if (client.Player.Inventory[i] == null) continue;
                             if (client.Player.Inventory[i].ObjectId == "Shard of the Stone Soul")
                             {
-                                ItemValue = stoneList[rnd.Next(stoneList.Length)];
+                                if (client.Player.CheckForItems("Shard of the Stone Soul"))
+                                {
+                                    ItemValue = stoneList[rnd.Next(stoneList.Length)];
+                                }
                                 break;
                             }
                         }
@@ -128,7 +152,10 @@ namespace wServer.networking.handlers
                             if (client.Player.Inventory[i] == null) continue;
                             if (client.Player.Inventory[i].ObjectId == "Shard of Ancient Assault")
                             {
-                                ItemValue = ancientList[rnd.Next(ancientList.Length)];
+                                if (client.Player.CheckForItems("Shard of Ancient Assault"))
+                                {
+                                    ItemValue = ancientList[rnd.Next(ancientList.Length)];
+                                }
                                 break;
                             }
                         }
@@ -163,7 +190,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Potion of Life")
                                 {
-                                    ItemValue = 0x236E;
+                                    if (client.Player.CheckForItems("Potion of Life"))
+                                    {
+                                        ItemValue = 0x236E;
+                                    }
                                     break;
                                 }
                             }
@@ -180,7 +210,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Potion of Mana")
                                 {
-                                    ItemValue = 0x236F;
+                                    if (client.Player.CheckForItems("Potion of Mana"))
+                                    {
+                                        ItemValue = 0x236F;
+                                    }
                                     break;
                                 }
                             }
@@ -195,7 +228,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Potion of Attack")
                                 {
-                                    ItemValue = 0x2368;
+                                    if (client.Player.CheckForItems("Potion of Attack"))
+                                    {
+                                        ItemValue = 0x2368;
+                                    }
                                     break;
                                 }
                             }
@@ -210,7 +246,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Potion of Defense")
                                 {
-                                    ItemValue = 0x2369;
+                                    if (client.Player.CheckForItems("Potion of Defense"))
+                                    {
+                                        ItemValue = 0x2369;
+                                    }
                                     break;
                                 }
                             }
@@ -225,7 +264,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Potion of Speed")
                                 {
-                                    ItemValue = 0x236A;
+                                    if (client.Player.CheckForItems("Potion of Speed"))
+                                    {
+                                        ItemValue = 0x236A;
+                                    }
                                     break;
                                 }
                             }
@@ -240,7 +282,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Potion of Vitality")
                                 {
-                                    ItemValue = 0x236B;
+                                    if (client.Player.CheckForItems("Potion of Vitality"))
+                                    {
+                                        ItemValue = 0x236B;
+                                    }
                                     break;
                                 }
                             }
@@ -255,7 +300,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Potion of Wisdom")
                                 {
-                                    ItemValue = 0x236C;
+                                    if (client.Player.CheckForItems("Potion of Wisdom"))
+                                    {
+                                        ItemValue = 0x236C;
+                                    }
                                     break;
                                 }
                             }
@@ -270,7 +318,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Potion of Dexterity")
                                 {
-                                    ItemValue = 0x236D;
+                                    if (client.Player.CheckForItems("Potion of Dexterity"))
+                                    {
+                                        ItemValue = 0x236D;
+                                    }
                                     break;
                                 }
                             }
@@ -285,7 +336,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Potion of Might")
                                 {
-                                    ItemValue = 0x61C9;
+                                    if (client.Player.CheckForItems("Potion of Might"))
+                                    {
+                                        ItemValue = 0x61C9;
+                                    }
                                     break;
                                 }
                             }
@@ -300,7 +354,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Potion of Luck")
                                 {
-                                    ItemValue = 0x61cb;
+                                    if (client.Player.CheckForItems("Potion of Luck"))
+                                    {
+                                        ItemValue = 0x61cb;
+                                    }
                                     break;
                                 }
                             }
@@ -315,7 +372,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Potion of Restoration")
                                 {
-                                    ItemValue = 0x61ca;
+                                    if (client.Player.CheckForItems("Potion of Restoration"))
+                                    {
+                                        ItemValue = 0x61ca;
+                                    }
                                     break;
                                 }
                             }
@@ -330,7 +390,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Potion of Protection")
                                 {
-                                    ItemValue = 0x61cc;
+                                    if (client.Player.CheckForItems("Potion of Protection"))
+                                    {
+                                        ItemValue = 0x61cc;
+                                    }
                                     break;
                                 }
                             }
@@ -349,7 +412,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Greater Potion of Life")
                                 {
-                                    ItemValue = 0x62a5;
+                                    if (client.Player.CheckForItems("Greater Potion of Life"))
+                                    {
+                                        ItemValue = 0x62a5;
+                                    }
                                     break;
                                 }
                             }
@@ -371,7 +437,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Greater Potion of Mana")
                                 {
-                                    ItemValue = 0x619c;
+                                    if (client.Player.CheckForItems("Greater Potion of Mana"))
+                                    {
+                                        ItemValue = 0x619c;
+                                    }
                                     break;
                                 }
                             }
@@ -395,7 +464,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Greater Potion of Attack")
                                 {
-                                    ItemValue = 0x619f;
+                                    if (client.Player.CheckForItems("Greater Potion of Attack"))
+                                    {
+                                        ItemValue = 0x619f;
+                                    }
                                     break;
                                 }
                             }
@@ -417,7 +489,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Greater Potion of Defense")
                                 {
-                                    ItemValue = 0x62a3;
+                                    if (client.Player.CheckForItems("Greater Potion of Defense"))
+                                    {
+                                        ItemValue = 0x62a3;
+                                    }
                                     break;
                                 }
                             }
@@ -441,7 +516,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Greater Potion of Speed")
                                 {
-                                    ItemValue = 0x62a1;
+                                    if (client.Player.CheckForItems("Greater Potion of Speed"))
+                                    {
+                                        ItemValue = 0x62a1;
+                                    }
                                     break;
                                 }
                             }
@@ -463,7 +541,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Greater Potion of Vitality")
                                 {
-                                    ItemValue = 0x62a0;
+                                    if (client.Player.CheckForItems("Greater Potion of Vitality"))
+                                    {
+                                        ItemValue = 0x62a0;
+                                    }
                                     break;
                                 }
                             }
@@ -487,7 +568,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Greater Potion of Wisdom")
                                 {
-                                    ItemValue = 0x619e;
+                                    if (client.Player.CheckForItems("Greater Potion of Wisdom"))
+                                    {
+                                        ItemValue = 0x619e;
+                                    }
                                     break;
                                 }
                             }
@@ -509,7 +593,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Greater Potion of Dexterity")
                                 {
-                                    ItemValue = 0x62a4;
+                                    if (client.Player.CheckForItems("Greater Potion of Dexterity"))
+                                    {
+                                        ItemValue = 0x62a4;
+                                    }
                                     break;
                                 }
                             }
@@ -532,7 +619,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Greater Potion of Might")
                                 {
-                                    ItemValue = 0x62a6;
+                                    if (client.Player.CheckForItems("Greater Potion of Might"))
+                                    {
+                                        ItemValue = 0x62a6;
+                                    }
                                     break;
                                 }
                             }
@@ -555,7 +645,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Greater Potion of Luck")
                                 {
-                                    ItemValue = 0x62a7;
+                                    if (client.Player.CheckForItems("Greater Potion of Luck"))
+                                    {
+                                        ItemValue = 0x62a7;
+                                    }
                                     break;
                                 }
                             }
@@ -577,7 +670,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Greater Potion of Restoration")
                                 {
-                                    ItemValue = 0x619d;
+                                    if (client.Player.CheckForItems("Greater Potion of Restoration"))
+                                    {
+                                        ItemValue = 0x619d;
+                                    }
                                     break;
                                 }
                             }
@@ -600,7 +696,10 @@ namespace wServer.networking.handlers
                                 if (client.Player.Inventory[i] == null) continue;
                                 if (client.Player.Inventory[i].ObjectId == "Greater Potion of Protection")
                                 {
-                                    ItemValue = 0x62a2;
+                                    if (client.Player.CheckForItems("Greater Potion of Protection"))
+                                    {
+                                        ItemValue = 0x62a2;
+                                    }
                                     break;
                                 }
                             }
