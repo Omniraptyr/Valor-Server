@@ -144,7 +144,7 @@ namespace wServer.realm.entities.vendors
             new ShopItem("Drannol's Fury", 120),
             new ShopItem("Grasp of Elysium", 140),
             new ShopItem("Fortification Shield", 160),
-            new ShopItem("Never Before Seen", 160)
+            new ShopItem("Never Before Seen", 120)
         };
 
         private static readonly List<ISellableItem> Special = new List<ISellableItem>

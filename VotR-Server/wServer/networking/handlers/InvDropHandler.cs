@@ -22,6 +22,10 @@ namespace wServer.networking.handlers
 
         private void Handle(Player player, ObjectSlot slot)
         {
+            //sor forger dupe fix
+            if (player.Owner.Name == "Station")
+                return;
+
             if (player?.Owner == null || player.tradeTarget != null)
                 return;
 

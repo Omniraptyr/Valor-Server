@@ -49,6 +49,8 @@ namespace wServer.realm.entities
                 Stats.Boost.ActivateBoost[1].Pop(60, false);
                 Stats.ReCalculateValues();
             }
+
+
             if (CheckMocking())
             {
                 ApplyConditionEffect(ConditionEffectIndex.Relentless);

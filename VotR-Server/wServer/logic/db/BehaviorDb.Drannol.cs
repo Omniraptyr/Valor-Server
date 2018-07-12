@@ -464,20 +464,89 @@ namespace wServer.logic
                 )
             )
 
-           .Init("BD Puzzle 3 Controller",
+
+                         .Init("BD Puzzle 3 Controller",
             new State(
                 new SetNoXP(),
                 new RemoveObjectOnDeath("BD Wall Relic 3", 99),
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("1",
-                     new EntitiesNotExistsTransition(28, "goodtogo", "BD Puzzling Blue Deactivated", "BD Puzzling Green Deactivated", "BD Puzzling Purple Deactivated", "BD Puzzling Orange Deactivated")
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "2time")
+                    ),
+                new State("2time",
+                     new Taunt("Mhm.", "Hmmm, seems to be right."),
+                     new TimedTransition(4000, "2cooldown")
+                    ),
+                new State("2cooldown",
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "01"),
+                     new TimedTransition(2000, "2")
+                    ),
+                new State("2",
+                     //else
+                     new Flash(0xFFFFFF, 1, 1),
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "3time")
+                    ),
+                new State("3time",
+                     new Taunt("That's right.", "Correct."),
+                     new TimedTransition(4000, "3cooldown")
+                    ),
+                new State("3cooldown",
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "01"),
+                     new TimedTransition(2000, "3")
+                    ),
+                new State("3",
+                    new Flash(0xFFFFFF, 1, 1),
+                    new EntityExistsTransition("BD Puzzling Purple Activated", 30, "4time"),
+                     //else
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0")
+                    ),
+                new State("4time",
+                    new Taunt("You must know your stuff.."),
+                     new TimedTransition(4000, "4cooldown")
+                    ),
+                new State("4cooldown",
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "01"),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "01"),
+                     new TimedTransition(2000, "4")
+                    ),
+                new State("4",
+                     //else
+                     new Flash(0xFFFFFF, 1, 1),
+                     new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Green Activated", 30, "0"),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "0"),
+
+                     new EntityExistsTransition("BD Puzzling Blue Activated", 30, "goodtogo")
                     ),
                 new State("goodtogo",
+                     new Flash(0xFFFFFF, 0.2, 5),
                      new Taunt("Very well...Goodluck on your journey.", "How far you've made it..you have passsed."),
                      new TimedTransition(4000, "die")
                     ),
                 new State("die",
                      new Suicide()
+                    ),
+                new State("0",
+                     new Taunt("Something isn't right here..", "That doesn't quite match this barrier spell, now does it?", "Can't be right..", "Mrn..no.", "Doesn't quite add up."),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "2time")
+                    ),
+                new State("01",
+                     new Taunt("Perhaps slow down.", "Patience."),
+                     new EntityExistsTransition("BD Puzzling Orange Activated", 30, "2time")
                     )
                 )
             )

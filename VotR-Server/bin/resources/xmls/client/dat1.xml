@@ -109725,13 +109725,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
-        <MpCost>110</MpCost>
-        <Legendary/>
+        <MpCost>120</MpCost>
         <feedPower>2000</feedPower>
-        <Activate stat="0" amount="90" duration="4" range="4.5" noStack="true" useWisMod="true">StatBoostAura</Activate>
-        <Activate effect="Damaging" duration="10" range="7.5">ConditionEffectAura</Activate>
-        <Activate effect="Invulnerable" duration="1.4" useWisMod="true">ConditionEffectSelf</Activate>
-        <Activate effect="Armored" duration="4.25">ConditionEffectSelf</Activate>
+        <Legendary/>
+        <Activate stat="0" amount="100" duration="4" range="4.5" noStack="true" useWisMod="true">StatBoostAura</Activate>
+        <Activate effect="Damaging" duration="8" range="7.5">ConditionEffectAura</Activate>
+        <Activate effect="Armored" duration="3" useWisMod="true">ConditionEffectSelf</Activate>
         <Cooldown>3</Cooldown>
     </Object>
 	<Object type="0x61c1" id="Sor Fragment 1">
@@ -110564,8 +110563,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <HitSound>monster/default_hit</HitSound>
         <DeathSound>monster/stone_walls_death</DeathSound>
         <Size>130</Size>
-        <MaxHitPoints>10000</MaxHitPoints>
-        <Defense>20</Defense>
+        <MaxHitPoints>25000</MaxHitPoints>
+        <Defense>40</Defense>
     </Object>
     <Object type="0x6111" id="BD Bastille Defender">
         <Enemy/>
@@ -110876,14 +110875,15 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Defense>20</Defense>
         <Projectile id="0">
             <ObjectId>Stone Slash</ObjectId>
-            <MinDamage>90</MinDamage>
-            <MaxDamage>130</MaxDamage>
+            <MinDamage>160</MinDamage>
+            <MaxDamage>180</MaxDamage>
             <Speed>50</Speed>
             <LifetimeMS>4500</LifetimeMS>
             <MultiHit/>
             <Amplitude>0.5</Amplitude>
             <Frequency>1.5</Frequency>
-            <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
+            <ConditionEffect duration="3">Armor Broken</ConditionEffect>
+            <ConditionEffect duration="1.5">Drunk</ConditionEffect>
             <ConditionEffect duration="0.5">Confused</ConditionEffect>
         </Projectile>
     </Object>
@@ -111011,8 +111011,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <SlotType>6</SlotType>
         <Description>A hide enchanted by a similar spell used to enchant Yazanahar.</Description>
         <ActivateOnEquip stat="20" amount="60">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="3" amount="-60">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="-100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="-40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-140">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="-10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -113952,14 +113952,15 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Size>100</Size>
             <ArmorPiercing/>
             <MultiHit/>
-            <ConditionEffect duration="5">Weak</ConditionEffect>
+            <ConditionEffect duration="6">Weak</ConditionEffect>
             <Boomerang/>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="400">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <MpCost>65</MpCost>
         <SurgeCost>1</SurgeCost>
+        <Legendary/>
         <Activate maxDistance="5">Teleport</Activate>
         <Activate effect="Invincible" duration="1.25">ConditionEffectSelf</Activate>
         <Activate amount="20" amount2="25" noStack="false">JacketAbility</Activate>
@@ -114197,9 +114198,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <feedPower>700</feedPower>
         <FameBonus>6</FameBonus>
         <Fabled/>
-        <Activate stat="0" amount="80" duration="6" noStack="true" useWisMod="true">StatBoostSelf</Activate>
+        <Activate stat="0" amount="80" duration="6" noStack="true" useWisMod="false">StatBoostSelf</Activate>
         <Activate effect="Berserk" duration="4" useWisMod="true">ConditionEffectSelf</Activate>
-        <Activate effect="Dazed" duration="7" range="5" color="0x808080" target="enemy" center="mouse" visualEffect="8"
+        <Activate effect="Dazed" duration="2" range="5" color="0x808080" target="enemy" center="mouse" visualEffect="8"
                   useWisMod="true">GenericActivate
         </Activate>
     </Object>
@@ -115745,14 +115746,14 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Sound>weapon/mithril_sword</Sound>
         <Projectile>
             <ObjectId>Twisted Boomerang</ObjectId>
-            <Speed>55</Speed>
-            <MinDamage>275</MinDamage>
+            <Speed>45</Speed>
+            <MinDamage>250</MinDamage>
             <MaxDamage>400</MaxDamage>
-            <LifetimeMS>1000</LifetimeMS>
-			<Boomerang/>
+            <LifetimeMS>1900</LifetimeMS>
+            <Boomerang/>
             <CondChance effect="Bleeding" chance="5" duration="6"/>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="-50">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-60">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <Fabled/>
@@ -115774,5 +115775,15 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>11</BagType>
         <Fabled/>
         <FameBonus>6</FameBonus>
+    </Object>
+	    <Object type="0x63b6" id="Station Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Station</DungeonName>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xf4</Index>
+        </Texture>
+        <DisplayId>Station</DisplayId>
     </Object>
 </Objects>

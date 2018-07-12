@@ -1,0 +1,13 @@
+{"id":-16,
+"isLimbo":false,
+"persist":true,
+"name":"Station",
+"sbName":"Station",
+"difficulty":0,
+"background":0,
+"blocking":0,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x63b6],
+"maps":["forging.jm"],
+"music":["meadow"]}

@@ -1064,38 +1064,29 @@ namespace wServer.realm.entities
                 if (inv[c] == null) continue;
                 if (inv[c].ObjectId == "Sor Fragment 1")
                 {
+                    inv[c] = null;
                     for (int d = 0; d < inv.Length; d++)
                     {
                         if (inv[d] == null) continue;
                         if (inv[d].ObjectId == "Sor Fragment 2")
                         {
+                            inv[d] = null;
                             for (int i = 0; i < inv.Length; i++)
                             {
                                 if (inv[i] == null) continue;
                                 if (inv[i].ObjectId == "Sor Fragment 3")
                                 {
-                                    inv[i] = Manager.Resources.GameData.Items[0x49e5];
-                                    inv[d] = null;
-                                    inv[c] = null;
+                                    Manager.Database.AddGift(Client.Account, 0x49e5);
+                                    inv[i] = null;
+                                    
+                                    
                                     SaveToCharacter();
-                                    SendInfo("You have successfully constructed a Sor Crystal!");
-                                    break;
-                                }
-                                else
-                                {
-                                    SendError("You do not have a Sor Fragment 3 in your inventory.");
+                                    SendInfo("You have successfully constructed a Sor Crystal! Check your gift chest!");
+
                                 }
                             }
                         }
-                        else
-                        {
-                            SendError("You do not have a Sor Fragment 2 in your inventory.");
-                        }
                     }
-                }
-                else
-                {
-                    SendError("You do not have a Sor Fragment 1 in your inventory.");
                 }
             }
         }
