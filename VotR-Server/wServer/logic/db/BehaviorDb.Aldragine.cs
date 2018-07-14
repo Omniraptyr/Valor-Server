@@ -13,8 +13,14 @@ namespace wServer.logic
             new State(
                 new TransformOnDeath("Servant of Darkness", 1, 4, probability: 0.75),
                 new State("1",
-                    new Shoot(10, count: 8, shootAngle: 3, projectileIndex: 0, coolDownOffset: 2000, angleOffset: 270, coolDown: 2000),
-                    new Shoot(10, count: 8, shootAngle: 3, projectileIndex: 1, coolDownOffset: 2000, angleOffset: 90, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 0, coolDown: 4000, coolDownOffset: 4000),
+                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 0, coolDown: 4000, coolDownOffset: 4000),
+                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 0, coolDown: 4000, coolDownOffset: 4000),
+                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 0, coolDown: 4000, coolDownOffset: 4000),
+                        new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 1, coolDown: 4000, coolDownOffset: 4000),
+                        new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 1, coolDown: 4000, coolDownOffset: 4000),
+                        new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 1, coolDown: 4000, coolDownOffset: 4000),
+                        new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 1, coolDown: 4000, coolDownOffset: 4000),
                      new DamageTakenTransition(2500, "2")
                     ),
                 new State("2",
@@ -25,7 +31,7 @@ namespace wServer.logic
                     ),
                 new State("3",
                      new SetAltTexture(1),
-                     new Shoot(10, count: 18, projectileIndex: 2, coolDown: 2000),
+                     new Shoot(10, count: 8, projectileIndex: 2, coolDown: 2000),
                      new Suicide()
                     )
                 )
