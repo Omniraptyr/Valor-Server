@@ -13,8 +13,8 @@ namespace wServer.logic
             new State(
                 new TransformOnDeath("Servant of Darkness", 1, 4, probability: 0.75),
                 new State("1",
-                    new Shoot(10, count: 10, shootAngle: 3, projectileIndex: 0, coolDownOffset: 1100, angleOffset: 270, coolDown: 2000),
-                    new Shoot(10, count: 10, shootAngle: 3, projectileIndex: 1, coolDownOffset: 1100, angleOffset: 90, coolDown: 2000),
+                    new Shoot(10, count: 8, shootAngle: 3, projectileIndex: 0, coolDownOffset: 2000, angleOffset: 270, coolDown: 2000),
+                    new Shoot(10, count: 8, shootAngle: 3, projectileIndex: 1, coolDownOffset: 2000, angleOffset: 90, coolDown: 2000),
                      new DamageTakenTransition(2500, "2")
                     ),
                 new State("2",
@@ -411,30 +411,28 @@ namespace wServer.logic
               new State("omw2",
                   new Flash(0x00FF00, 0.2, 8),
                     new Taunt(0.25, "Time to demonstrate my new powers..", "Come here you fool...", "I've been burdened by you fools for too long..DIE!"),
-                     new TimedTransition(4000, "fight2")
+                     new TimedTransition(8000, "fight2")
                     ),
                 new State(
                     new Prioritize(
-                        new Follow(2, 8, 1),
+                        new Follow(1, 8, 1),
                         new Wander(0.4)
                         ),
-                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 1, coolDown: 2000),
-                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 1, coolDown: 2000),
-                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 1, coolDown: 2000),
-                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 1, coolDown: 2000),
-                        new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 1, coolDown: 2000),
-                        new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 1, coolDown: 2000),
-                        new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 1, coolDown: 2000),
-                        new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 1, coolDown: 4000, coolDownOffset: 4000),
+                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 1, coolDown: 4000, coolDownOffset: 4000),
+                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 1, coolDown: 4000, coolDownOffset: 4000),
+                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 1, coolDown: 4000, coolDownOffset: 4000),
+                        new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 1, coolDown: 4000, coolDownOffset: 4000),
+                        new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 1, coolDown: 4000, coolDownOffset: 4000),
+                        new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 1, coolDown: 4000, coolDownOffset: 4000),
+                        new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 1, coolDown: 4000, coolDownOffset: 4000),
 
-                        new Shoot(10, count: 5, shootAngle: 12, projectileIndex: 0, coolDown: 800),
+                        new Shoot(10, count: 3, shootAngle: 12, projectileIndex: 0, coolDown: 2000, coolDownOffset: 4000),
                 new State("fight2",
                      new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                      new TimedTransition(6000, "fight3")
                     ),
                 new State("fight3",
-                    new Shoot(10, count: 7, projectileIndex: 0, coolDown: 3000),
-                    new HealSelf(coolDown: 2000, amount: 10000),
                      new TimedTransition(6000, "fight2")
                         )
                     )
