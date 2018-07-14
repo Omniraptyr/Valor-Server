@@ -52,6 +52,11 @@ import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
                 _local_10 = TooltipHelper.FABLED_COLOR;
                 _local_11 = "FB";
             }
+            else if (_arg_1.hasOwnProperty("QuestItem"))
+            {
+                _local_10 = TooltipHelper.QUEST_COLOR;
+                _local_11 = "QT";
+            }
             else
             {
                _local_10 = TooltipHelper.UNTIERED_COLOR;

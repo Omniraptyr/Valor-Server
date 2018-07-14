@@ -4749,4 +4749,16 @@
             <Index>0xf4</Index>
         </Texture>
     </Ground>
+	    <Ground type="0x2808" id="Sincryer's Floor">
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x207</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x208</Index>
+            </Texture>
+        </RandomTexture>
+    </Ground>
 </GroundTypes>

@@ -5146,15 +5146,15 @@
         <HitSound>monster/medusa_hit</HitSound>
         <DeathSound>monster/undead_dwarves_hit</DeathSound>
         <Size>125</Size>
-        <MaxHitPoints>6400</MaxHitPoints>
-        <Defense>30</Defense>
+        <MaxHitPoints>8000</MaxHitPoints>
+        <Defense>35</Defense>
         <Projectile id="0">
             <ObjectId>Fire Bolt</ObjectId>
-            <Speed>100</Speed>
+            <Speed>145</Speed>
             <Damage>60</Damage>
             <Size>100</Size>
             <LifetimeMS>6000</LifetimeMS>
-            <ConditionEffect duration="2">Quiet</ConditionEffect>
+            <ConditionEffect duration="6">Quiet</ConditionEffect>
             <MultiHit/>
         </Projectile>
         <Projectile id="1">
@@ -5172,6 +5172,7 @@
             <Size>120</Size>
             <LifetimeMS>5000</LifetimeMS>
             <ConditionEffect duration="3">Confused</ConditionEffect>
+            <ConditionEffect duration="0.5">Speedy</ConditionEffect>
         </Projectile>
         <DisplayId>Demon of the Dark</DisplayId>
     </Object>
@@ -5244,19 +5245,19 @@
         <HitSound>monster/golems_hit</HitSound>
         <DeathSound>monster/golems_death</DeathSound>
         <Size>135</Size>
-        <MaxHitPoints>24000</MaxHitPoints>
-        <Defense>40</Defense>
+        <MaxHitPoints>60000</MaxHitPoints>
+        <Defense>55</Defense>
         <Projectile id="0">
             <ObjectId>Bark Bolt</ObjectId>
             <Speed>70</Speed>
-            <Damage>240</Damage>
+            <Damage>360</Damage>
             <Size>130</Size>
             <LifetimeMS>4600</LifetimeMS>
         </Projectile>
         <Projectile id="1">
             <ObjectId>LavaBombBlast</ObjectId>
             <Speed>80</Speed>
-            <Damage>140</Damage>
+            <Damage>400</Damage>
             <Size>130</Size>
             <LifetimeMS>2000</LifetimeMS>
             <MultiHit/>
@@ -5279,15 +5280,15 @@
         <HitSound>monster/golems_hit</HitSound>
         <DeathSound>monster/golems_death</DeathSound>
         <Size>135</Size>
-        <MaxHitPoints>99999</MaxHitPoints>
+        <MaxHitPoints>150000</MaxHitPoints>
         <Defense>60</Defense>
         <Projectile id="0">
             <ObjectId>Silver Shield</ObjectId>
             <Speed>100</Speed>
-            <Damage>50</Damage>
+            <Damage>145</Damage>
             <Size>120</Size>
             <LifetimeMS>4000</LifetimeMS>
-            <ConditionEffect duration="6">Bleeding</ConditionEffect>
+            <ConditionEffect duration="6">Quiet</ConditionEffect>
         </Projectile>
         <DisplayId>Corrupted Stone Giant</DisplayId>
     </Object>
@@ -5492,7 +5493,7 @@
         </Projectile>
         <Projectile id="1">
             <ObjectId>Darkness Bolt</ObjectId>
-            <Damage>50</Damage>
+            <Damage>150</Damage>
             <Speed>100</Speed>
             <LifetimeMS>3000</LifetimeMS>
             <ConditionEffect duration="1.5">Slowed</ConditionEffect>
@@ -5592,7 +5593,7 @@
         <StunImmune/>
         <ArmorBreakImmune/>
         <Quest/>
-        <MaxHitPoints>240000</MaxHitPoints>
+        <MaxHitPoints>600000</MaxHitPoints>
         <Defense>60</Defense>
         <Projectile id="0">
             <ObjectId>Blue Energy Bolt</ObjectId>
@@ -5600,7 +5601,7 @@
             <MaxDamage>120</MaxDamage>
             <Speed>100</Speed>
             <LifetimeMS>4000</LifetimeMS>
-            <ConditionEffect duration="3.5">Darkness</ConditionEffect>
+            <ConditionEffect duration="4">Quiet</ConditionEffect>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Small White Shuriken</ObjectId>
@@ -9544,15 +9545,16 @@
         <StunImmune/>
         <ArmorBreakImmune/>
         <Quest/>
-        <MaxHitPoints>375000</MaxHitPoints>
-        <Defense>60</Defense>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>70</Defense>
         <Projectile id="0">
             <ObjectId>Blue Energy Bolt</ObjectId>
-            <MinDamage>80</MinDamage>
-            <MaxDamage>120</MaxDamage>
+            <MinDamage>160</MinDamage>
+            <MaxDamage>200</MaxDamage>
             <Speed>100</Speed>
             <LifetimeMS>4000</LifetimeMS>
-            <ConditionEffect duration="3.5">Darkness</ConditionEffect>
+            <MultiHit/>
+            <ConditionEffect duration="8">Quiet</ConditionEffect>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Small White Shuriken</ObjectId>
@@ -12086,5 +12088,86 @@
             <Index>0xed</Index>
         </Texture>
         <DisplayId>Station</DisplayId>
+    </Object>
+    <Object type="0x63a4" id="Twisted Axe">
+        <Enemy/>
+        <DisplayId>Twisted Axe</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>19</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <SlowedImmune/>
+        <MaxHitPoints>99999999</MaxHitPoints>
+        <Defense>60</Defense>
+        <Projectile id="0">
+            <ObjectId>Twisted Boomerang</ObjectId>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>300</MaxDamage>
+            <Speed>40</Speed>
+            <ConditionEffect duration="4">Bleeding</ConditionEffect>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x63b9" id="AH Sincryer Orb">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Zol Orb</DisplayId>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1ae</Index>
+        </Texture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>130</Size>
+        <MaxHitPoints>32500</MaxHitPoints>
+        <Defense>50</Defense>
+        <Projectile id="0">
+            <ObjectId>AH Sincryer Ball Proj</ObjectId>
+            <MinDamage>190</MinDamage>
+            <MaxDamage>230</MaxDamage>
+            <Speed>70</Speed>
+            <LifetimeMS>4500</LifetimeMS>
+            <Amplitude>0.5</Amplitude>
+            <Frequency>2</Frequency>
+            <ConditionEffect duration="6">Quiet</ConditionEffect>
+        </Projectile>
+    </Object>
+    <Object type="0x63bc" id="Corrupted Entity">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>11</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <MaxHitPoints>75000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>AH Corrupted Proj</ObjectId>
+            <Speed>60</Speed>
+            <Damage>300</Damage>
+            <Size>125</Size>
+            <ConditionEffect duration="6">Quiet</ConditionEffect>
+            <LifetimeMS>7000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Grey Boomerang</ObjectId>
+            <Speed>80</Speed>
+            <Damage>160</Damage>
+            <Size>125</Size>
+            <ConditionEffect duration="3">Petrify</ConditionEffect>
+            <MultiHit/>
+            <Boomerang/>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
+        <Size>0</Size>
+        <Defense>50</Defense>
+        <DisplayId>Corrupted Entity</DisplayId>
     </Object>
 </Objects>

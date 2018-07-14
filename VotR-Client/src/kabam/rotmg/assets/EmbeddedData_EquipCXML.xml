@@ -33786,4 +33786,30 @@
         <Fabled/>
         <FameBonus>6</FameBonus>
     </Object>
+    <Object type="0x63bd" id="Pickaxe">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xef</Index>
+        </Texture>
+        <SlotType>1</SlotType>
+        <ExtraTooltipData>
+            <EffectInfo name="Quest" description="Mining Mayhem"/>
+        </ExtraTooltipData>
+        <Description>Used for mining.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/blunt_sword</Sound>
+        <Projectile>
+            <ObjectId>Blade</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>45</MinDamage>
+            <MaxDamage>60</MaxDamage>
+            <LifetimeMS>200</LifetimeMS>
+        </Projectile>
+        <QuestItem/>
+        <BagType>1</BagType>
+        <OldSound>bladeSwing</OldSound>
+        <DisplayId>Pickaxe</DisplayId>
+    </Object>
 </Objects>

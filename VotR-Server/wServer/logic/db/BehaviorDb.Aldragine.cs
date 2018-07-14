@@ -11,9 +11,10 @@ namespace wServer.logic
         private _ Aldragine = () => Behav()
         .Init("Zol Mine",
             new State(
+                new TransformOnDeath("Servant of Darkness", 1, 4, probability: 0.75),
                 new State("1",
-                    new Shoot(10, count: 5, shootAngle: 3, projectileIndex: 0, coolDownOffset: 1100, angleOffset: 270, coolDown: 2000),
-                    new Shoot(10, count: 5, shootAngle: 3, projectileIndex: 1, coolDownOffset: 1100, angleOffset: 90, coolDown: 2000),
+                    new Shoot(10, count: 10, shootAngle: 3, projectileIndex: 0, coolDownOffset: 1100, angleOffset: 270, coolDown: 2000),
+                    new Shoot(10, count: 10, shootAngle: 3, projectileIndex: 1, coolDownOffset: 1100, angleOffset: 90, coolDown: 2000),
                      new DamageTakenTransition(2500, "2")
                     ),
                 new State("2",
@@ -24,7 +25,7 @@ namespace wServer.logic
                     ),
                 new State("3",
                      new SetAltTexture(1),
-                     new Shoot(10, count: 6, projectileIndex: 2, coolDown: 2000),
+                     new Shoot(10, count: 18, projectileIndex: 2, coolDown: 2000),
                      new Suicide()
                     )
                 )
@@ -306,8 +307,8 @@ namespace wServer.logic
                         new Follow(1.5, 8, 1),
                         new Wander(0.2)
                         ),
-                     new Shoot(10, count: 5, shootAngle: 22, projectileIndex: 1, coolDown: 5000, coolDownOffset: 3000),
-                     new Shoot(10, count: 3, projectileIndex: 0, coolDown: 6000, coolDownOffset: 3000),
+                     new Shoot(10, count: 8, shootAngle: 22, projectileIndex: 1, coolDown: 5000, coolDownOffset: 3000),
+                     new Shoot(10, count: 9, projectileIndex: 0, coolDown: 6000, coolDownOffset: 3000),
                      new TimedTransition(5000, "fight2")
                     ),
                 new State("fight2",
@@ -337,6 +338,14 @@ namespace wServer.logic
             new Threshold(0.5,
                 new ItemLoot("Mithril Shield", 0.01),
                 new ItemLoot("Agateclaw Dagger", 0.01)
+                )
+            )
+          .Init("AH Sincryer Orb",
+            new State(
+                new State(
+                    new Flash(0x00FF00, 0.25, 6),
+                    new Shoot(10, count: 10, projectileIndex: 0, coolDown: 1000, coolDownOffset: 3000)
+                    )
                 )
             )
         .Init("Servant of Darkness",
@@ -386,6 +395,47 @@ namespace wServer.logic
                 new State("fight3",
                      new Shoot(10, count: 4, projectileIndex: 2, coolDown: 600),
                      new TimedTransition(4000, "fight2")
+                        )
+                    )
+                )
+            )
+            .Init("Corrupted Entity",
+            new State(
+                new SetNoXP(),
+                new State("omw",
+                    new Taunt(0.25, "Yesss....YESSSS......", "I FEEL SO..POWERFUL!", "MY VEINS...THE ZOL COURSES WITHIN THEM!", "Old companions...I AM YOUR NEW MASTER!", "...."),
+                     new ConditionalEffect(ConditionEffectIndex.Invincible),
+                     new ChangeSize(60, 150),
+                     new TimedTransition(6000, "fight")
+                    ),
+              new State("omw",
+                  new Flash(0x00FF00, 0.2, 8),
+                    new Taunt(0.25, "Time to demonstrate my new powers..", "Come here you fool...", "I've been burdened by you fools for too long..DIE!"),
+                     new TimedTransition(4000, "fight")
+                    ),
+                new State(
+                    new Prioritize(
+                        new Follow(2, 8, 1),
+                        new Wander(0.4)
+                        ),
+                        new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 1, coolDown: 2000),
+
+                        new Shoot(10, count: 5, shootAngle: 12, projectileIndex: 0, coolDown: 800),
+                new State("fight2",
+                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                     new TimedTransition(6000, "fight3")
+                    ),
+                new State("fight3",
+                    new Shoot(10, count: 7, projectileIndex: 0, coolDown: 3000),
+                    new HealSelf(coolDown: 2000, amount: 10000),
+                     new TimedTransition(6000, "fight2")
                         )
                     )
                 )
@@ -821,8 +871,22 @@ namespace wServer.logic
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Taunt("Al lar kall zanus du era!", "Rul ah ka tera nol zan!"),
                         new Shoot(30, count: 34, projectileIndex: 0, coolDown: 1000),
-                        new Order(999, "A Plate 1", "ZolCry"),
-                        new TimedTransition(8000, "go")
+                        new ReplaceTile("Zol Aura Dormant", "Zol Aura", 250),
+                        new TimedTransition(8000, "gofirst")
+                        ),
+                    new State("gofirst",
+                        new HealSelf(coolDown: 1000, amount: 10000),
+                        new ConditionalEffect(ConditionEffectIndex.Armored),
+                        new Prioritize(
+                            new Follow(1.2),
+                            new Wander(0.2)
+                            ),
+                        new TossObject("AH Sincryer Orb", range: 10, coolDown: 1000),
+                        new ReplaceTile("Zol Aura", "Zol Aura Dormant", 250),
+                        new Shoot(8, count: 4, projectileIndex: 4, coolDown: 400),
+                        new Shoot(8, count: 6, projectileIndex: 4, coolDown: 1400),
+                        new Shoot(12, count: 18, projectileIndex: 0, coolDown: 2500),
+                        new TimedTransition(5000, "go")
                         ),
                     new State("spookded",
                         new Flash(0x00FF00, 1, 3),
@@ -979,8 +1043,22 @@ namespace wServer.logic
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Taunt("Al lar kall zanus du era!", "Rul ah ka tera nol zan!"),
                         new Shoot(30, count: 34, projectileIndex: 0, coolDown: 1000),
-                        new Order(999, "A Plate 1", "ZolCry"),
-                        new TimedTransition(8000, "go")
+                        new ReplaceTile("Zol Aura Dormant", "Zol Aura", 250),
+                        new TimedTransition(8000, "gofirst")
+                        ),
+                    new State("gofirst",
+                        new HealSelf(coolDown: 1000, amount: 10000),
+                        new ConditionalEffect(ConditionEffectIndex.Armored),
+                        new Prioritize(
+                            new Follow(1.2),
+                            new Wander(0.2)
+                            ),
+                        new TossObject("AH Sincryer Orb", range: 10, coolDown: 1000),
+                        new ReplaceTile("Zol Aura", "Zol Aura Dormant", 250),
+                        new Shoot(8, count: 4, projectileIndex: 4, coolDown: 400),
+                        new Shoot(8, count: 6, projectileIndex: 4, coolDown: 1400),
+                        new Shoot(12, count: 18, projectileIndex: 0, coolDown: 2500),
+                        new TimedTransition(5000, "go")
                         )
                     ),
                     new State("spookded",
@@ -1250,7 +1328,7 @@ namespace wServer.logic
             )
         .Init("Construct of Zol",
             new State(
-                new TransformOnDeath("Niolru", 3, 4, 1),
+                new TransformOnDeath("Niolru", 4, 6, 1),
                 new Orbit(0.2, 6, 20, "AH The Vision of Aldragine"),
                 new Orbit(0.2, 6, 20, "AH Ultra The Vision of Aldragine"),
                 new State("1",
@@ -1743,8 +1821,8 @@ namespace wServer.logic
                       ),
                     new State("Failed",
                         new Taunt(true, "THERE IS NO REMORSE. YOU ARE BANISHED.", "YOU HAVE NOT BEEN FORGIVEN. REIGN.", "WE DO NOT FORGIVE. YOU WON'T ADVANCE. YOU WILL BE LEFT TO BE DOOMED."),
-                        new Flash(0xFF0000, 2, 3),
-                        new TimedTransition(16000, "Failure")
+                        new Flash(0xFF0000, 0.25, 3),
+                        new TimedTransition(8000, "Failure")
                         ),
                     new State("Done",
                         //Delete all spooks
@@ -1763,7 +1841,7 @@ namespace wServer.logic
                         new TimedTransition(6000, "Success")
                         ),
                     new State("Failure",
-                        new KillPlayer("The Zol sends you to the abyss.", coolDown: 1000, rekt: false, killAll: true),
+                        new Shoot(40, count: 46, projectileIndex: 5, coolDown: 500),
                         new Suicide()
                         ),
                     new State("Success",
@@ -1915,8 +1993,8 @@ namespace wServer.logic
                       ),
                     new State("Failed",
                         new Taunt(true, "THERE IS NO REMORSE. YOU ARE BANISHED.", "YOU HAVE NOT BEEN FORGIVEN. REIGN.", "WE DO NOT FORGIVE. YOU WON'T ADVANCE. YOU WILL BE LEFT TO BE DOOMED."),
-                        new Flash(0xFF0000, 2, 3),
-                        new TimedTransition(16000, "Failure")
+                        new Flash(0xFF0000, 0.25, 3),
+                        new TimedTransition(8000, "Failure")
                         ),
                     new State("Done",
                         //Delete all spooks
@@ -1935,7 +2013,7 @@ namespace wServer.logic
                         new TimedTransition(6000, "Success")
                         ),
                     new State("Failure",
-                        new KillPlayer("The Zol sends you to the abyss.", coolDown: 1000, rekt: false, killAll: true),
+                        new Shoot(40, count: 46, projectileIndex: 5, coolDown: 500),
                         new Suicide()
                         ),
                     new State("Success",

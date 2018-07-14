@@ -1869,6 +1869,8 @@ namespace wServer.realm.entities
 
         public void Death(string killer, Entity entity = null, WmapTile tile = null, bool rekt = false)
         {
+            int[] x = null;
+                int[] y = null;
             if (_client.State == ProtocolState.Disconnected || _dead)
                 return;
 
@@ -1900,6 +1902,7 @@ namespace wServer.realm.entities
             Manager.Database.Death(Manager.Resources.GameData, _client.Account,
                 _client.Character, FameCounter.Stats, killer);
 
+            ZolReborn("Corrupted Entity");
             GenerateGravestone();
             AnnounceDeath(killer);
 
@@ -1911,6 +1914,8 @@ namespace wServer.realm.entities
                 ZombieId = -1
             });
 
+
+
             Owner.Timers.Add(new WorldTimer(1000, (w, t) =>
             {
                 if (_client.Player != this)
@@ -1919,7 +1924,15 @@ namespace wServer.realm.entities
                 _client.Disconnect();
             }));
         }
-
+        public void ZolReborn(string entity)
+        {
+            if (Owner.Name == "Aldragine's Hideout" || Owner.Name == "Ultra Aldragine's Hideout" || Owner.Name == "Sincryer's Gate" || Owner.Name == "Ultra Sincryer's Gate" || Owner.Name == "Nontridus" || Owner.Name == "NontridusUltra" || Owner.Name == "Core of the Hideout" || Owner.Name == "Ultra Core of the Hideout" || Owner.Name == "Keeping of Aldragine" || Owner.Name == "KeepingUltra")
+            {
+                Entity en = Entity.Resolve(Owner.Manager, entity);
+                en.Move((int)X, (int)Y);
+                Owner.EnterWorld(en);
+            }
+        }
         public void Reconnect(World world)
         {
             Client.Reconnect(new Reconnect()

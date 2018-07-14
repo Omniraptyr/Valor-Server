@@ -6670,4 +6670,20 @@
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
+    <Object type="0x63ba" id="AH Sincryer Ball Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1ac</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x63bb" id="AH Corrupted Proj">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1af</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
 </Objects>

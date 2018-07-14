@@ -1933,7 +1933,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SFLow()
                     ),
-                    new Threshold(0.05,
+                    new Threshold(0.04,
                        new TierLoot(12, ItemType.Weapon, 0.08),
                        new TierLoot(5, ItemType.Ability, 0.07),
                        new TierLoot(6, ItemType.Ability, 0.05),
@@ -1961,7 +1961,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.FabledItemsLoot2B()
                 ),
-                new Threshold(0.05,
+                new Threshold(0.04,
                     new TierLoot(12, ItemType.Weapon, 0.08),
                     new TierLoot(5, ItemType.Ability, 0.07),
                     new TierLoot(6, ItemType.Ability, 0.05),

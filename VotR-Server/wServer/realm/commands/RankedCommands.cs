@@ -404,7 +404,7 @@ namespace wServer.realm.commands
     }
 
 
-    class ClearSpawnsCommand : Command
+class ClearSpawnsCommand : Command
     {
         public ClearSpawnsCommand() : base("clearspawn", permLevel: 90, alias: "cs") { }
 
