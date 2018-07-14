@@ -406,12 +406,12 @@ namespace wServer.logic
                     new Taunt(0.25, "Yesss....YESSSS......", "I FEEL SO..POWERFUL!", "MY VEINS...THE ZOL COURSES WITHIN THEM!", "Old companions...I AM YOUR NEW MASTER!", "...."),
                      new ConditionalEffect(ConditionEffectIndex.Invincible),
                      new ChangeSize(60, 150),
-                     new TimedTransition(6000, "fight")
+                     new TimedTransition(6000, "omw2")
                     ),
-              new State("omw",
+              new State("omw2",
                   new Flash(0x00FF00, 0.2, 8),
                     new Taunt(0.25, "Time to demonstrate my new powers..", "Come here you fool...", "I've been burdened by you fools for too long..DIE!"),
-                     new TimedTransition(4000, "fight")
+                     new TimedTransition(4000, "fight2")
                     ),
                 new State(
                     new Prioritize(
