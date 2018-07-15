@@ -758,6 +758,7 @@ namespace wServer.logic
             )
         .Init("AH The Sincryer",
                 new State(
+                    new DropPortalOnDeath("The Nontridus Portal", 100, timeout: 180),
                     new ScaleHP(30000),
                     new HpLessTransition(0.14, "spookded"),
                     new State("default",
@@ -922,6 +923,7 @@ namespace wServer.logic
             )
            .Init("AH ULTRA The Sincryer",
                 new State(
+                    new DropPortalOnDeath("Ultra The Nontridus Portal", 100, timeout: 180),
                     new ScaleHP(25000),
                     new HpLessTransition(0.14, "spookded"),
                     new State("default",
