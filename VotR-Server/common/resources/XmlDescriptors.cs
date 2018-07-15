@@ -368,6 +368,7 @@ namespace common.resources
         VorvBox,
         GPBox,
         RandomGold,
+        EffectRandom,
         MayhemBox,
         SunshineBox,
         BlizzardBox,

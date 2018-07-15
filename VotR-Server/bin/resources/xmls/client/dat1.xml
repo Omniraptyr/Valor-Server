@@ -88678,7 +88678,7 @@ A whole thanksgiving turkey!
         <Projectile id="0">
             <ObjectId>Green Bolt</ObjectId>
             <Speed>100</Speed>
-            <Damage>200</Damage>
+            <Damage>100</Damage>
             <Size>100</Size>
             <LifetimeMS>4500</LifetimeMS>
             <MultiHit/>
@@ -88686,7 +88686,7 @@ A whole thanksgiving turkey!
         <Projectile id="1">
             <ObjectId>Purple Magic</ObjectId>
             <Speed>100</Speed>
-            <Damage>180</Damage>
+            <Damage>90</Damage>
             <Size>100</Size>
             <LifetimeMS>4500</LifetimeMS>
             <ConditionEffect duration="2">Darkness</ConditionEffect>
@@ -88695,7 +88695,7 @@ A whole thanksgiving turkey!
         <Projectile id="2">
             <ObjectId>Green Bolt</ObjectId>
             <Speed>100</Speed>
-            <Damage>180</Damage>
+            <Damage>90</Damage>
             <Size>100</Size>
             <LifetimeMS>6000</LifetimeMS>
             <MultiHit/>
@@ -115828,7 +115828,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
-	<Object type="0x63bc" id="Corrupted Entity">
+    <Object type="0x63bc" id="Corrupted Entity">
         <Enemy/>
         <Class>Character</Class>
         <AnimatedTexture>
@@ -115837,11 +115837,11 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </AnimatedTexture>
         <HitSound>monster/default_hit</HitSound>
         <DeathSound>spell/fire_spray</DeathSound>
-        <MaxHitPoints>75000</MaxHitPoints>
+        <MaxHitPoints>10000</MaxHitPoints>
         <Projectile id="0">
             <ObjectId>AH Corrupted Proj</ObjectId>
             <Speed>60</Speed>
-            <Damage>300</Damage>
+            <Damage>200</Damage>
             <Size>125</Size>
             <ConditionEffect duration="6">Quiet</ConditionEffect>
             <LifetimeMS>7000</LifetimeMS>
@@ -115849,9 +115849,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile id="1">
             <ObjectId>Grey Boomerang</ObjectId>
             <Speed>80</Speed>
-            <Damage>160</Damage>
+            <Damage>100</Damage>
             <Size>125</Size>
-            <ConditionEffect duration="3">Petrify</ConditionEffect>
+            <ConditionEffect duration="3">Slowed</ConditionEffect>
             <MultiHit/>
             <Boomerang/>
             <LifetimeMS>4000</LifetimeMS>
@@ -115885,5 +115885,25 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>1</BagType>
         <OldSound>bladeSwing</OldSound>
         <DisplayId>Pickaxe</DisplayId>
+    </Object>
+    <Object type="0x63be" id="Random Effect Chip">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xfe</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Gives your character a random skin effect.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="" description="Donator Only"/>
+        </ExtraTooltipData>
+        <Sound>use_potion</Sound>
+        <BagType>5</BagType>
+        <feedPower>250</feedPower>
+        <Soulbound/>
+        <Consumable/>
+        <Activate>EffectRandom</Activate>
+        <DisplayId>Random Effect Chip</DisplayId>
     </Object>
 </Objects>

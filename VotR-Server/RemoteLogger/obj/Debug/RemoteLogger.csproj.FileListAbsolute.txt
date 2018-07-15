@@ -68,4 +68,3 @@ C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Debug\RemoteLogge
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.csproj.CopyComplete
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.exe
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.pdb
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.csprojAssemblyReference.cache

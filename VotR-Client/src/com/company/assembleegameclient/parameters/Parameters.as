@@ -11,8 +11,8 @@ import flash.utils.Dictionary;
 
 public class Parameters {
 
-    public static const BUILD_VERSION:String = "38";
-    public static const MINOR_VERSION:String = "E9";
+    public static const BUILD_VERSION:String = "39";
+    public static const MINOR_VERSION:String = "E1";
     public static const FULL_BUILD:String = BUILD_VERSION + "." + MINOR_VERSION;
     public static const ENABLE_ENCRYPTION:Boolean = true;
     public static const PORT:int = 2050;
@@ -192,6 +192,7 @@ public class Parameters {
         setDefault("clickForGold", false);
         setDefault("contextualPotionBuy", true);
         setDefault("inventorySwap", true);
+        setDefault("hideLockList",false);
         setDefault("particleEffect", false);
         setDefault("uiQuality", true);
         setDefault("disableEnemyParticles", false);

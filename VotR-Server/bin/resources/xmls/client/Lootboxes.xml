@@ -347,4 +347,9 @@
 			<Loot name="Gold Cache">Item</Loot>
         </CrateLoot>
   </Lootcase>
+  <Lootcase type="0x0005" id="Premium Lootbox">
+        <CrateLoot chance="1.00">
+			<Loot name="Random Effect Chip">Item</Loot>
+        </CrateLoot>
+  </Lootcase>
 </Lootboxes>

@@ -115,13 +115,13 @@ namespace common
             else
                 _db.KeyDelete("classStats.0");
 
-            /*// make sure guests have all skins if they are supposed to
-            if (newAccounts.SkinsUnlocked)
+            // make sure donors have all skins if they are supposed to
+            if (acnt.Rank >= 10)
             {
                 acnt.Skins = (from skin in _resources.GameData.Skins.Values
                     where !skin.NoSkinSelect
                     select skin.Type).ToArray();
-            }*/
+            }
 
             return acnt;
         }
@@ -149,7 +149,7 @@ namespace common
             stats.FlushAsync();
 
             // make sure account has all skins if they are supposed to
-            if (_resources.Settings.Accounts.SkinsUnlocked)
+            if (acc.Rank >= 10)
             {
                 acc.Skins = (from skin in _resources.GameData.Skins.Values
                     where !skin.NoSkinSelect
@@ -395,7 +395,7 @@ namespace common
                 LastSeen = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds
             };
 
-            if (newAccounts.SkinsUnlocked)
+            if (acc.Rank >= 10)
             {
                 acc.Skins = (from skin in _resources.GameData.Skins.Values
                     where !skin.NoSkinSelect

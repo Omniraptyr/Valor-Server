@@ -675,7 +675,7 @@ namespace wServer.realm.entities
             chr.Tex1 = Texture1;
             chr.Tex2 = Texture2;
             chr.Skin = _originalSkin;
-            chr.Effect = XmlEffect;
+            chr.Effect = Effect;
             chr.MarksEnabled = MarksEnabled;
             chr.AscensionEnabled = AscensionEnabled;
             chr.Mark = Mark;

@@ -5003,7 +5003,7 @@
         <Projectile id="0">
             <ObjectId>Green Bolt</ObjectId>
             <Speed>100</Speed>
-            <Damage>200</Damage>
+            <Damage>100</Damage>
             <Size>100</Size>
             <LifetimeMS>4500</LifetimeMS>
             <MultiHit/>
@@ -5011,7 +5011,7 @@
         <Projectile id="1">
             <ObjectId>Purple Magic</ObjectId>
             <Speed>100</Speed>
-            <Damage>180</Damage>
+            <Damage>90</Damage>
             <Size>100</Size>
             <LifetimeMS>4500</LifetimeMS>
             <ConditionEffect duration="2">Darkness</ConditionEffect>
@@ -5020,7 +5020,7 @@
         <Projectile id="2">
             <ObjectId>Green Bolt</ObjectId>
             <Speed>100</Speed>
-            <Damage>180</Damage>
+            <Damage>90</Damage>
             <Size>100</Size>
             <LifetimeMS>6000</LifetimeMS>
             <MultiHit/>
@@ -12147,11 +12147,11 @@
         </AnimatedTexture>
         <HitSound>monster/default_hit</HitSound>
         <DeathSound>spell/fire_spray</DeathSound>
-        <MaxHitPoints>75000</MaxHitPoints>
+        <MaxHitPoints>10000</MaxHitPoints>
         <Projectile id="0">
             <ObjectId>AH Corrupted Proj</ObjectId>
             <Speed>60</Speed>
-            <Damage>300</Damage>
+            <Damage>200</Damage>
             <Size>125</Size>
             <ConditionEffect duration="6">Quiet</ConditionEffect>
             <LifetimeMS>7000</LifetimeMS>
@@ -12159,9 +12159,9 @@
         <Projectile id="1">
             <ObjectId>Grey Boomerang</ObjectId>
             <Speed>80</Speed>
-            <Damage>160</Damage>
+            <Damage>100</Damage>
             <Size>125</Size>
-            <ConditionEffect duration="3">Petrify</ConditionEffect>
+            <ConditionEffect duration="3">Slowed</ConditionEffect>
             <MultiHit/>
             <Boomerang/>
             <LifetimeMS>4000</LifetimeMS>

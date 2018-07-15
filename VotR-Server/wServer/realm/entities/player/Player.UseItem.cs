@@ -580,6 +580,9 @@ namespace wServer.realm.entities
                     case ActivateEffects.PowerStat:
                         AEPowerStat(time, item, target, eff);
                         break;
+                    case ActivateEffects.EffectRandom:
+                        AEEffectRandom(time, item, target, eff);
+                        break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
@@ -826,6 +829,66 @@ namespace wServer.realm.entities
             {
                 SendError("You must have at least 20 stars before you can activate marks on this character.");
             }
+        }
+
+
+        private void AEEffectRandom(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            Random rnd = new Random();
+            int Chance = Random.Next(0, 10);
+            switch (Chance)
+            {
+                case 0:
+                    Effect = "Rising Bubbles";
+                    SendInfo("You now activated the rising bubbles effect! Reload to see it in action!");
+                    break;
+
+                case 1:
+                    Effect = "Ring of Fire";
+                    SendInfo("You now activated the ring of fire effect! Reload to see it in action!");
+                    break;
+
+                case 2:
+                    Effect = "Dusty Disaster";
+                    SendInfo("You now activated the dusty disaster effect! Reload to see it in action!");
+                    break;
+
+                case 3:
+                    Effect = "Glamourous Gems";
+                    SendInfo("You now activated the glamorous gems effect! Reload to see it in action!");
+                    break;
+
+                case 4:
+                    Effect = "Lovestruck";
+                    SendInfo("You now activated the lovestruck effect! Reload to see it in action!");
+                    break;
+
+                case 5:
+                    Effect = "Realm Riches";
+                    SendInfo("You now activated the realm riches effect! Reload to see it in action!");
+                    break;
+
+                case 6:
+                    Effect = "Rainbow Rain";
+                    SendInfo("You now activated the rainbow rain effect! Reload to see it in action!");
+                    break;
+
+                case 7:
+                    Effect = "Ducky Days";
+                    SendInfo("You now activated the ducky days effect! Reload to see it in action!");
+                    break;
+
+                case 8:
+                    Effect = "Ascended";
+                    SendInfo("You now activated the ascended effect! Reload to see it in action!");
+                    break;
+
+                case 9:
+                    Effect = "Tinted Trails";
+                    SendInfo("You now activated the tinted trails effect! Reload to see it in action!");
+                    break;
+            }
+            SaveToCharacter();
         }
 
         private void AEInsigniaActivate(RealmTime time, Item item, Position target, ActivateEffect eff)

@@ -880,7 +880,8 @@ class ClearSpawnsCommand : Command
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
-            player.XmlEffect = args;
+            player.Effect = args;
+            player.SaveToCharacter();
             return true;
         }
     }

@@ -340,7 +340,7 @@ public class Projectile extends BasicObject {
         var _local4:BitmapData = this.texture_;
 
         if (Parameters.data_.outlineProj)
-            _local4 = TextureRedrawer.redraw(_local4, 100, true, 0xFFFFFF, true, 50);
+            _local4 = TextureRedrawer.redraw(_local4, 100, true, 0x000000, true, 50);
 
         var _local5:Number = (((this.props_.rotation_ == 0)) ? 0 : (_arg3 / this.props_.rotation_));
         this.staticVector3D_.x = x_;

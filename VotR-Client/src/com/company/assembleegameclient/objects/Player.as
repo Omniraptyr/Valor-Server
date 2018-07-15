@@ -806,17 +806,29 @@ public class Player extends Character {
         GraphicsFillExtra.setSoftwareDrawSolid(this.breathBackFill_, true);
     }
 
-    override public function draw(_arg1:Vector.<IGraphicsData>, _arg2:Camera, _arg3:int):void {
-        super.draw(_arg1, _arg2, _arg3);
-        if (this != map_.player_) {
-            if (!Parameters.screenShotMode_) {
-                drawName(_arg1, _arg2);
+    override public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int) : void
+    {
+        if(Parameters.data_.hideLockList)
+        {
+            if(this != map_.player_)
+            {
+                if(!this.starred_)
+                {
+                    return;
+                }
             }
         }
-        else {
-            if (this.breath_ >= 0) {
-                this.drawBreathBar(_arg1, _arg3);
+        super.draw(_arg_1,_arg_2,_arg_3);
+        if(this != map_.player_)
+        {
+            if(!Parameters.screenShotMode_)
+            {
+                drawName(_arg_1, _arg_2);
             }
+        }
+        else if(this.breath_ >= 0)
+        {
+            this.drawBreathBar(_arg_1,_arg_3);
         }
     }
 

@@ -14988,7 +14988,7 @@
         <Projectile>
             <ObjectId>White Flame</ObjectId>
             <Speed>60</Speed>
-            <MinDamage>80</MinDamage>
+            <MinDamage>100</MinDamage>
             <MaxDamage>200</MaxDamage>
             <LifetimeMS>1100</LifetimeMS>
             <Wavy/>
@@ -27327,6 +27327,48 @@
         <Legendary/>
         <DisplayId>Stargazer</DisplayId>
     </Object>
+    <Object type="0x49a3" id="Premium Loot Tier Potion">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x15b</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A premium potion that boost the tier level of the dropped loot.</Description>
+        <Sound>use_potion</Sound>
+        <ExtraTooltipData>
+            <EffectInfo name="{equip.Duration}" description="1 Hour"/>
+        </ExtraTooltipData>
+        <Consumable/>
+        <Soulbound/>
+        <LTBoosted/>
+        <Timer>3600</Timer>
+        <BagType>2</BagType>
+        <feedPower>250</feedPower>
+        <DisplayId>Premium Loot Tier Potion</DisplayId>
+    </Object>
+    <Object type="0x49a4" id="Premium Loot Drop Potion">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x15a</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A premium potion that causes enemies to drop more loot.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="{equip.Duration}" description="1 Hour"/>
+        </ExtraTooltipData>
+        <Sound>use_potion</Sound>
+        <Consumable/>
+        <Soulbound/>
+        <LDBoosted/>
+        <Timer>3600</Timer>
+        <BagType>2</BagType>
+        <feedPower>250</feedPower>
+        <DisplayId>Premium Loot Drop Potion</DisplayId>
+    </Object>
     <Object type="0x32c2" id="Sincryer's Demise">
         <Class>Equipment</Class>
         <Item/>
@@ -31371,16 +31413,11 @@
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
-        <MpCost>150</MpCost>
+        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
+        <MpCost>125</MpCost>
         <Activate effect="Armored" duration="2" range="4" useWisMod="false">ConditionEffectAura</Activate>
         <Activate range="6" amount="260" useWisMod="true">HealNova</Activate>
-        <Activate effect="Cursed" duration="2" range="2" color="0xff0080" target="enemy" center="player"
-                  visualEffect="0" useWisMod="true">GenericActivate
-        </Activate>
-        <Activate effect="Paralyzed" duration="2" range="2" color="0xff0080" target="enemy" center="player"
-                  visualEffect="0" useWisMod="true">GenericActivate
-        </Activate>
+        <Activate effect="Paralyzed" duration="2" range="4.5" color="0xff0080" target="enemy" center="player" visualEffect="0" useWisMod="true">GenericActivate</Activate>
         <feedPower>2000</feedPower>
         <Legendary/>
         <DisplayId>The Nuruaj</DisplayId>
@@ -31538,15 +31575,15 @@
         <Projectile>
             <ObjectId>White Flame</ObjectId>
             <Speed>60</Speed>
-            <MinDamage>85</MinDamage>
-            <MaxDamage>280</MaxDamage>
+            <MinDamage>133</MinDamage>
+            <MaxDamage>300</MaxDamage>
             <LifetimeMS>1100</LifetimeMS>
             <Wavy/>
             <MultiHit/>
         </Projectile>
-        <ActivateOnEquip stat="27" amount="5">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="5">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <Legendary/>
         <FameBonus>8</FameBonus>
@@ -33811,5 +33848,25 @@
         <BagType>1</BagType>
         <OldSound>bladeSwing</OldSound>
         <DisplayId>Pickaxe</DisplayId>
+    </Object>
+    <Object type="0x63be" id="Random Effect Chip">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xfe</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Gives your character a random skin effect.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="" description="Donator Only"/>
+        </ExtraTooltipData>
+        <Sound>use_potion</Sound>
+        <BagType>5</BagType>
+        <feedPower>250</feedPower>
+        <Soulbound/>
+        <Consumable/>
+        <Activate>EffectRandom</Activate>
+        <DisplayId>Random Effect Chip</DisplayId>
     </Object>
 </Objects>

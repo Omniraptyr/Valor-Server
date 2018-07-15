@@ -33,6 +33,24 @@ namespace common.resources
                     "bitmapIndex=\"0x0\" " +
                     "bitmapIndexMax=\"0x3\" " +
                     "attached=\"true\">CustomParticles</Effect>" },
+                { "Ascended",
+                    "<Effect rate=\"5\" " +
+                    "life=\"1\" " +
+                    "lifeVariance=\".1\" " +
+                    "speed=\"0\" " +
+                    "speedVariance=\"0.5\" " +
+                    "size=\"50\" " +
+                    "rise=\"-1.6\" " +
+                    "riseVariance=\".1\" " +
+                    "rangeX=\"0.6\" " +
+                    "rangeY=\"0.6\" " +
+                    "zOffset=\"2\" " +
+                    "fadeIn=\"0.1\" " +
+                    "fadeOut=\"0.9\" " +
+                    "bitmapFile=\"d3LofiObjEmbed\" " +
+                    "bitmapIndex=\"0x331\" " +
+                    "bitmapIndexMax=\"0x331\" " +
+                    "attached=\"true\">CustomParticles</Effect>" },
             {"Glamourous Gems",
                     "<Effect rate=\"5\" " +
                     "life=\"0.4\" " +

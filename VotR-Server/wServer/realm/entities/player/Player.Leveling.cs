@@ -427,18 +427,31 @@ namespace wServer.realm.entities
             {
                 if(RaidToken == 0)
                 {
-                    Client.Manager.Database.UpdateAlertToken(acc, 1);
-                    SendHelp("A challenge awaits you..go to nexus to handle your alert!");
+                    if(enemy.ObjectType != 0x0dc0 || enemy.ObjectType != 0x0dc1)
+                    {
+                        Client.Manager.Database.UpdateAlertToken(acc, 1);
+                        SendHelp("A challenge awaits you..go to nexus to handle your alert!");
+                    }
                 }
             }
             if (enemy.ObjectDesc.Lootdrop == true)
             {
-                if (drop <= 10)
+                if (drop <= 15)
                 {
                     switch (drop2)
                     {
                         case 1:
+                            Client.Manager.Database.UpdateLootbox1(acc, 1);
+                            Lootbox1 += 1;
+                            this.ForceUpdate(Lootbox1);
+                            SendHelp("You have obtained a Bronze Lootbox drop! Go to nexus to open it!");
+                            break;
                         case 2:
+                            Client.Manager.Database.UpdateLootbox1(acc, 1);
+                            Lootbox1 += 1;
+                            this.ForceUpdate(Lootbox1);
+                            SendHelp("You have obtained a Bronze Lootbox drop! Go to nexus to open it!");
+                            break;
                         case 3:
                             Client.Manager.Database.UpdateLootbox1(acc, 1);
                             Lootbox1 += 1;
@@ -446,6 +459,11 @@ namespace wServer.realm.entities
                             SendHelp("You have obtained a Bronze Lootbox drop! Go to nexus to open it!");
                             break;
                         case 4:
+                            Client.Manager.Database.UpdateLootbox2(acc, 1);
+                            Lootbox2 += 1;
+                            this.ForceUpdate(Lootbox2);
+                            SendHelp("You have obtained a Silver Lootbox drop! Go to nexus to open it!");
+                            break;
                         case 5:
                             Client.Manager.Database.UpdateLootbox2(acc, 1);
                             Lootbox2 += 1;

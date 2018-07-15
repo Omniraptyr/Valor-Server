@@ -1,6 +1,7 @@
 ﻿package com.company.assembleegameclient.ui.panels.itemgrids {
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile;
 import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
 import com.company.util.ArrayIterator;

@@ -350,7 +350,7 @@ namespace wServer.logic
             new State(
                 new State(
                     new Flash(0x00FF00, 0.25, 6),
-                    new Shoot(10, count: 10, projectileIndex: 0, coolDown: 1000, coolDownOffset: 3000)
+                    new Shoot(10, count: 6, projectileIndex: 0, coolDown: 1000, coolDownOffset: 3000)
                     )
                 )
             )
