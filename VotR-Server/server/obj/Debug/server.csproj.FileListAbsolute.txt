@@ -80,10 +80,10 @@ C:\Users\darkd\Desktop\votr\master\VotR-Server\server\obj\Debug\server.csproj.Co
 C:\Users\darkd\Desktop\votr\master\VotR-Server\server\obj\Debug\server.csproj.CopyComplete
 C:\Users\darkd\Desktop\votr\master\VotR-Server\server\obj\Debug\server.exe
 C:\Users\darkd\Desktop\votr\master\VotR-Server\server\obj\Debug\server.pdb
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\server.exe
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\log4net.config
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\server.json
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\server.exe.config
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\server.exe
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\server.pdb
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\server\obj\Debug\server.csprojAssemblyReference.cache
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\server\obj\Debug\server.csproj.CoreCompileInputs.cache

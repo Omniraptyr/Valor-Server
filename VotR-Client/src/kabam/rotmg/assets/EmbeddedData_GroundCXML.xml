@@ -4764,4 +4764,32 @@
             </Texture>
         </RandomTexture>
     </Ground>
+    <Ground type="0x2809" id="BD The Steps">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xff</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x280a" id="Weaker Hot Lava">
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x483</Index>
+        </Texture>
+        <MinDamage>15</MinDamage>
+        <MaxDamage>20</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.777</Speed>
+    </Ground>
+    <Ground type="0x280b" id="Super Hot Lava">
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x483</Index>
+        </Texture>
+        <MinDamage>80</MinDamage>
+        <MaxDamage>120</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.222</Speed>
+    </Ground>
 </GroundTypes>

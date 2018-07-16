@@ -884,8 +884,8 @@ namespace wServer.realm.entities
                     break;
 
                 case 9:
-                    Effect = "Tinted Trails";
-                    SendInfo("You now activated the tinted trails effect! Reload to see it in action!");
+                    Effect = "how do i get ornane?";
+                    SendInfo("You now activated the how do i get ornane? effect! Reload to see it in action!");
                     break;
             }
             SaveToCharacter();
@@ -1091,7 +1091,7 @@ namespace wServer.realm.entities
 
             Owner.AOE(target, eff.Range, false, enemy =>
             {
-                (enemy as Enemy).Damage(this, time, ((((MP * 2) + (wisBoost ^ 2)) * (drained / 2)) / 4) + eff.Amount, false,
+                (enemy as Enemy).Damage(this, time, ((((MP * 2) + (wisBoost ^ 2)) * (drained)) / 4) + eff.Amount, false,
                     new ConditionEffect[0]);
             });
             BroadcastSync(pkts, p => this.Dist(p) < 25);

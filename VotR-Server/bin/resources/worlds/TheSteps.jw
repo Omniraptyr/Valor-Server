@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"The Steps",
+"sbName":"The Steps",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[],
+"maps":["thesteps.jm"],
+"music":["oldcity"]}

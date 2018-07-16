@@ -290,12 +290,19 @@ namespace wServer.logic
          .Init("Twisted Shield",
             new State(
                 new SetNoXP(),
+                new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 0, coolDown: 2000),
+                new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 0, coolDown: 2000),
+                new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 0, coolDown: 2000),
+                new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 0, coolDown: 2000),
+                new Shoot(10, count: 1, fixedAngle: 0, projectileIndex: 0, coolDown: 2000),
+                new Shoot(10, count: 1, fixedAngle: 90, projectileIndex: 0, coolDown: 2000),
+                new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 0, coolDown: 2000),
+                new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 0, coolDown: 2000),
                 new Orbit(0.8, 3, 10, target: "Revil, the Twisted Vanguard"),
                 new State("first",
                     new DamageTakenTransition(20000, "heal")
                     ),
                 new State("heal",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                     new HealGroup(20, "Revil", coolDown: 9999, healAmount: 20000),
                     new TimedTransition(1000, "first")
                     )
@@ -562,7 +569,7 @@ namespace wServer.logic
                 new ConditionalEffect(ConditionEffectIndex.Invincible)
                 )
             )
-                            .Init("Spiritorb Holder Default Green",
+            .Init("Spiritorb Holder Default Green",
             new State(
                 new TransformOnDeath("Spiritorb Holder Green", 1, 1, 1),
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -1624,6 +1631,10 @@ namespace wServer.logic
                         new TimedTransition(6000, "fight4")
                         ),
                     new State("fight4",
+                        new Prioritize(
+                            new Charge(1, 10, coolDown: 3000),
+                            new Orbit(0.4, 5)
+                            ),
                         new SetAltTexture(0),
                         new TossObject("Twisted Shield", range: 4, angle: 90, coolDown: 99999),
                         new TossObject("Twisted Axe", range: 4, angle: 90, coolDown: 99999),
@@ -1876,6 +1887,10 @@ namespace wServer.logic
                         ),
                     new State("bfight4",
                         new SetAltTexture(0),
+                        new Prioritize(
+                            new Charge(1, 10, coolDown: 3000),
+                            new Orbit(0.4, 5)
+                            ),
                         new TossObject("Twisted Shield", range: 4, angle: 90, coolDown: 99999),
                         new TossObject("Twisted Shield", range: 4, angle: 270, coolDown: 99999),
                         new TossObject("Twisted Axe", range: 4, angle: 90, coolDown: 99999),
@@ -2379,7 +2394,6 @@ namespace wServer.logic
                         new Shoot(10, count: 4, projectileIndex: 0, predictive: 1, coolDown: 2000),
                         new Shoot(10, projectileIndex: 2, coolDownOffset: 800, coolDown: 2000),
                         new TimedTransition(4000, "Bshadows")
-                            
                         )
                      ),
                     new State(
@@ -2594,6 +2608,81 @@ namespace wServer.logic
                        new ItemLoot("Greater Potion of Protection", 1),
                        new ItemLoot("Greater Potion of Luck", 1)
                        )
-            );
+            )
+
+
+                 .Init("Lin",
+            new State(
+                new SetNoXP(),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("taunt1",
+                     new Taunt("No one has ever has made it this far....I congratulate you.."),
+                     new TimedTransition(4000, "taunt2")
+                    ),
+                new State("taunt2",
+                     new Taunt("However...."),
+                     new TimedTransition(6000, "taunt3")
+                    ),
+                new State("taunt3",
+                     new Taunt("Your hands are the hands of a murderer.."),
+                     new TimedTransition(6000, "taunt4")
+                    ),
+                new State("taunt4",
+                     new Flash(0xFF0000, 0.25, 8),
+                     new Taunt("YOU'VE KILLED REVIL! NOW, YOU WILL PAY!"),
+                     new TimedTransition(6000, "break")
+                    ),
+                new State("break",
+                     new RemoveObjectOnDeath("BD Wall Relic 4", 99),
+                     new ReplaceTile("BD The Steps", "Weaker Hot Lava", 99),
+                     new Suicide()
+                    )
+                )
+            )
+
+            .Init("BD Platform Helper",
+            new State(
+                new SetNoXP(),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("go1",
+                     new Taunt("going"),
+                     new TimedTransition(8000, "go2")
+                    ),
+                new State(
+                    new MoveTo(speed: 0.2f, x: 16, y: 278),
+                new State("go2",
+                     new ApplySetpiece("SafePlatform"),
+                     new TimedTransition(1000, "go3")
+                    ),
+                new State("go3",
+                     new ApplySetpiece("SafePlatform"),
+                     new TimedTransition(1000, "go2")
+                        )
+                    )
+                )
+            )
+
+                    .Init("BD Platform Helper 2",
+            new State(
+                new SetNoXP(),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("go1",
+                     new Taunt("going"),
+                     new TimedTransition(8000, "go2")
+                    ),
+                new State(
+                    new MoveTo(speed: 0.2f, x: 16, y: 278),
+                new State("go2",
+                     new ApplySetpiece("BadPlatform"),
+                     new TimedTransition(1000, "go3")
+                    ),
+                new State("go3",
+                     new ApplySetpiece("BadPlatform"),
+                     new TimedTransition(1000, "go2")
+                        )
+                    )
+                )
+            )
+;
     }
 }

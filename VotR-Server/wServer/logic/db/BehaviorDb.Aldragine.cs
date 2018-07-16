@@ -417,7 +417,7 @@ namespace wServer.logic
               new State("omw2",
                   new Flash(0x00FF00, 0.2, 8),
                     new Taunt(0.25, "Time to demonstrate my new powers..", "Come here you fool...", "I've been burdened by you fools for too long..DIE!"),
-                     new TimedTransition(8000, "fight2")
+                     new TimedTransition(2000, "fight2")
                     ),
                 new State(
                     new Prioritize(
@@ -433,13 +433,14 @@ namespace wServer.logic
                         new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 1, coolDown: 4000, coolDownOffset: 4000),
                         new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 1, coolDown: 4000, coolDownOffset: 4000),
 
-                        new Shoot(10, count: 3, shootAngle: 12, projectileIndex: 0, coolDown: 2000, coolDownOffset: 4000),
+                        new Shoot(10, count: 5, shootAngle: 12, projectileIndex: 0, coolDown: 2000, coolDownOffset: 4000),
                 new State("fight2",
                      new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                     new TimedTransition(6000, "fight3")
+                     new TimedTransition(4000, "fight3")
                     ),
                 new State("fight3",
-                     new TimedTransition(6000, "fight2")
+                     new HealSelf(2000),
+                     new TimedTransition(4000, "fight2")
                         )
                     )
                 )

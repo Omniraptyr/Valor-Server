@@ -111,10 +111,9 @@ namespace wServer.realm.entities
 
             if (_hit.Add(entity))
                 entity.HitByProjectile(this, time);
-            
+
             _used = true;
         }
-
         public void AddPlayerStartTime(Player player, int serverTime, int clientTime)
         {
             _startTime.TryAdd(player, new Tuple<int, int>(serverTime, clientTime));

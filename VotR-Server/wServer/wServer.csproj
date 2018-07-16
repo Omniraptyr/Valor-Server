@@ -459,6 +459,7 @@
     <Compile Include="realm\BaseStatManager.cs" />
     <Compile Include="realm\setpieces\AbyssDeath.cs" />
     <Compile Include="realm\setpieces\Avatar.cs" />
+    <Compile Include="realm\setpieces\BadPlatform.cs" />
     <Compile Include="realm\setpieces\BastilleLava.cs" />
     <Compile Include="realm\setpieces\BloodGod.cs" />
     <Compile Include="realm\setpieces\BottledEvil.cs" />
@@ -496,6 +497,7 @@
     <Compile Include="realm\setpieces\Puke.cs" />
     <Compile Include="realm\setpieces\Pyre.cs" />
     <Compile Include="realm\setpieces\RockDragon.cs" />
+    <Compile Include="realm\setpieces\SafePlatform.cs" />
     <Compile Include="realm\setpieces\ScorchOne.cs" />
     <Compile Include="realm\setpieces\SetPieces.cs" />
     <Compile Include="realm\setpieces\SkullShrine.cs" />

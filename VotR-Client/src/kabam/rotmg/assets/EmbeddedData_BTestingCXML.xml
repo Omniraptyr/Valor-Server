@@ -12170,4 +12170,181 @@
         <Defense>50</Defense>
         <DisplayId>Corrupted Entity</DisplayId>
     </Object>
+    <Object type="0x63bf" id="BD Steps Tower">
+        <Class>GameObject</Class>
+        <Model>Tower</Model>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x12e</Index>
+        </Texture>
+        <DisplayId>BD Steps Tower</DisplayId>
+    </Object>
+    <Object type="0x63c1" id="Lin">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>12</Index>
+        </AnimatedTexture>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>99</Defense>
+        <Size>120</Size>
+        <DisplayId>...</DisplayId>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x63c2" id="Scorching Wrath Run">
+        <Enemy/>
+        <Group>Scorching Wrath</Group>
+        <DisplayId>Scorching Wrath</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>20</Index>
+        </AnimatedTexture>
+        <HitSound>monster/skull_shrine_hit</HitSound>
+        <DeathSound>monster/skull_shrine_death</DeathSound>
+        <Size>0</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <ShadowSize>0</ShadowSize>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>40</Defense>
+        <Projectile id="0">
+            <ObjectId>LavaBombBlast</ObjectId>
+            <MinDamage>10</MinDamage>
+            <MaxDamage>300</MaxDamage>
+            <Speed>100</Speed>
+            <MultiHit/>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Fire Bullet</ObjectId>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <Speed>80</Speed>
+            <Size>140</Size>
+            <Boomerang/>
+            <ConditionEffect duration="1.5">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="3">Armor Broken</ConditionEffect>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x63c3" id="Scorching Wrath Helper">
+        <Enemy/>
+        <Group>Scorching Wrath</Group>
+        <DisplayId>Scorching Wrath</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/skull_shrine_hit</HitSound>
+        <DeathSound>monster/skull_shrine_death</DeathSound>
+        <Size>0</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <ShadowSize>0</ShadowSize>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>40</Defense>
+        <Projectile id="0">
+            <ObjectId>LavaBombBlast</ObjectId>
+            <MinDamage>10</MinDamage>
+            <MaxDamage>300</MaxDamage>
+            <Speed>100</Speed>
+            <MultiHit/>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Fire Bullet</ObjectId>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <Speed>80</Speed>
+            <Size>140</Size>
+            <Boomerang/>
+            <ConditionEffect duration="1.5">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="3">Armor Broken</ConditionEffect>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x63c4" id="Scorching Wrath Helper 2">
+        <Enemy/>
+        <Group>Scorching Wrath</Group>
+        <DisplayId>Scorching Wrath</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/skull_shrine_hit</HitSound>
+        <DeathSound>monster/skull_shrine_death</DeathSound>
+        <Size>0</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <ShadowSize>0</ShadowSize>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>40</Defense>
+        <Projectile id="0">
+            <ObjectId>LavaBombBlast</ObjectId>
+            <MinDamage>10</MinDamage>
+            <MaxDamage>300</MaxDamage>
+            <Speed>100</Speed>
+            <MultiHit/>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Fire Bullet</ObjectId>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <Speed>80</Speed>
+            <Size>140</Size>
+            <Boomerang/>
+            <ConditionEffect duration="1.5">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="3">Armor Broken</ConditionEffect>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x63c5" id="BD Platform Helper">
+        <Enemy/>
+        <Group></Group>
+        <DisplayId>BD Platform</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/skull_shrine_hit</HitSound>
+        <DeathSound>monster/skull_shrine_death</DeathSound>
+        <Size>0</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <ShadowSize>0</ShadowSize>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>20</Defense>
+    </Object>
+    <Object type="0x63c6" id="BD Platform Helper 2">
+        <Enemy/>
+        <Group></Group>
+        <DisplayId>BD Platform</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/skull_shrine_hit</HitSound>
+        <DeathSound>monster/skull_shrine_death</DeathSound>
+        <Size>0</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <ShadowSize>0</ShadowSize>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>20</Defense>
+    </Object>
 </Objects>
