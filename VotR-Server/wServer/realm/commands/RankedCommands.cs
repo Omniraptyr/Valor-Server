@@ -1239,7 +1239,7 @@ class ClearSpawnsCommand : Command
 
     class ReSkinCommand : Command
     {
-        public ReSkinCommand() : base("reskin", permLevel: 70) { }
+        public ReSkinCommand() : base("reskin", permLevel: 10) { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {

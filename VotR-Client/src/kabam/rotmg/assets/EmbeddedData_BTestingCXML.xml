@@ -12174,8 +12174,8 @@
         <Class>GameObject</Class>
         <Model>Tower</Model>
         <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x12e</Index>
+            <File>legendaries8x8Embed</File>
+            <Index>0x100</Index>
         </Texture>
         <DisplayId>BD Steps Tower</DisplayId>
     </Object>
@@ -12191,6 +12191,7 @@
         <MaxHitPoints>9999999</MaxHitPoints>
         <Defense>99</Defense>
         <Size>120</Size>
+        <NoMiniMap/>
         <DisplayId>...</DisplayId>
         <XpMult>0.0</XpMult>
     </Object>
@@ -12208,6 +12209,7 @@
         <Size>0</Size>
         <ParalyzeImmune/>
         <StasisImmune/>
+        <NoMiniMap/>
         <ShadowSize>0</ShadowSize>
         <MaxHitPoints>9999999</MaxHitPoints>
         <Defense>40</Defense>
@@ -12224,10 +12226,9 @@
             <ObjectId>Fire Bullet</ObjectId>
             <MinDamage>140</MinDamage>
             <MaxDamage>200</MaxDamage>
-            <Speed>80</Speed>
-            <Size>140</Size>
+            <Speed>45</Speed>
+            <Size>160</Size>
             <Boomerang/>
-            <ConditionEffect duration="1.5">Paralyzed</ConditionEffect>
             <ConditionEffect duration="3">Armor Broken</ConditionEffect>
             <ConditionEffect duration="3">Bleeding</ConditionEffect>
             <LifetimeMS>6000</LifetimeMS>
@@ -12247,30 +12248,10 @@
         <Size>0</Size>
         <ParalyzeImmune/>
         <StasisImmune/>
+        <NoMiniMap/>
         <ShadowSize>0</ShadowSize>
         <MaxHitPoints>9999999</MaxHitPoints>
         <Defense>40</Defense>
-        <Projectile id="0">
-            <ObjectId>LavaBombBlast</ObjectId>
-            <MinDamage>10</MinDamage>
-            <MaxDamage>300</MaxDamage>
-            <Speed>100</Speed>
-            <MultiHit/>
-            <ConditionEffect duration="6">Slowed</ConditionEffect>
-            <LifetimeMS>6000</LifetimeMS>
-        </Projectile>
-        <Projectile id="1">
-            <ObjectId>Fire Bullet</ObjectId>
-            <MinDamage>140</MinDamage>
-            <MaxDamage>200</MaxDamage>
-            <Speed>80</Speed>
-            <Size>140</Size>
-            <Boomerang/>
-            <ConditionEffect duration="1.5">Paralyzed</ConditionEffect>
-            <ConditionEffect duration="3">Armor Broken</ConditionEffect>
-            <ConditionEffect duration="3">Bleeding</ConditionEffect>
-            <LifetimeMS>6000</LifetimeMS>
-        </Projectile>
     </Object>
     <Object type="0x63c4" id="Scorching Wrath Helper 2">
         <Enemy/>
@@ -12286,30 +12267,10 @@
         <Size>0</Size>
         <ParalyzeImmune/>
         <StasisImmune/>
+        <NoMiniMap/>
         <ShadowSize>0</ShadowSize>
         <MaxHitPoints>9999999</MaxHitPoints>
         <Defense>40</Defense>
-        <Projectile id="0">
-            <ObjectId>LavaBombBlast</ObjectId>
-            <MinDamage>10</MinDamage>
-            <MaxDamage>300</MaxDamage>
-            <Speed>100</Speed>
-            <MultiHit/>
-            <ConditionEffect duration="6">Slowed</ConditionEffect>
-            <LifetimeMS>6000</LifetimeMS>
-        </Projectile>
-        <Projectile id="1">
-            <ObjectId>Fire Bullet</ObjectId>
-            <MinDamage>140</MinDamage>
-            <MaxDamage>200</MaxDamage>
-            <Speed>80</Speed>
-            <Size>140</Size>
-            <Boomerang/>
-            <ConditionEffect duration="1.5">Paralyzed</ConditionEffect>
-            <ConditionEffect duration="3">Armor Broken</ConditionEffect>
-            <ConditionEffect duration="3">Bleeding</ConditionEffect>
-            <LifetimeMS>6000</LifetimeMS>
-        </Projectile>
     </Object>
     <Object type="0x63c5" id="BD Platform Helper">
         <Enemy/>
@@ -12325,6 +12286,7 @@
         <Size>0</Size>
         <ParalyzeImmune/>
         <StasisImmune/>
+        <NoMiniMap/>
         <ShadowSize>0</ShadowSize>
         <MaxHitPoints>9999999</MaxHitPoints>
         <Defense>20</Defense>
@@ -12343,8 +12305,154 @@
         <Size>0</Size>
         <ParalyzeImmune/>
         <StasisImmune/>
+        <NoMiniMap/>
         <ShadowSize>0</ShadowSize>
         <MaxHitPoints>9999999</MaxHitPoints>
         <Defense>20</Defense>
+    </Object>
+    <Object type="0x63c7" id="Scorching Fanatic">
+        <Enemy/>
+        <Group>Scorching Fanatic</Group>
+        <DisplayId>Scorching Fanatic</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars8x8dHero1</File>
+            <Index>57</Index>
+        </AnimatedTexture>
+        <HitSound>monster/mummies_hit</HitSound>
+        <DeathSound>monster/abyss_brutes_death</DeathSound>
+        <Size>120</Size>
+        <ShadowSize>0</ShadowSize>
+        <MaxHitPoints>2000</MaxHitPoints>
+        <Defense>0</Defense>
+        <Projectile id="0">
+            <ObjectId>Directed Explosion</ObjectId>
+            <MinDamage>125</MinDamage>
+            <MaxDamage>150</MaxDamage>
+            <Speed>100</Speed>
+            <ArmorPiercing/>
+            <ConditionEffect duration="3">Unstable</ConditionEffect>
+            <LifetimeMS>1600</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x63c8" id="Scorching Wrath Real">
+        <Enemy/>
+        <Group>Scorching Wrath</Group>
+        <DisplayId>Scorching Wrath</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>20</Index>
+        </AnimatedTexture>
+        <HitSound>monster/skull_shrine_hit</HitSound>
+        <DeathSound>monster/skull_shrine_death</DeathSound>
+        <Size>150</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <NoMiniMap/>
+        <ShadowSize>0</ShadowSize>
+        <MaxHitPoints>800000</MaxHitPoints>
+        <Defense>40</Defense>
+        <Projectile id="0">
+            <ObjectId>LavaBombBlast</ObjectId>
+            <MinDamage>90</MinDamage>
+            <MaxDamage>150</MaxDamage>
+            <Speed>100</Speed>
+            <MultiHit/>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Fire Bullet</ObjectId>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <Speed>60</Speed>
+            <Size>160</Size>
+            <ConditionEffect duration="6">Bleeding</ConditionEffect>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Directed Explosion</ObjectId>
+            <MinDamage>40</MinDamage>
+            <MaxDamage>60</MaxDamage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <ArmorPiercing/>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Lava Circle</ObjectId>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <Boomerang/>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Meteor Bastille Blast</ObjectId>
+            <MinDamage>20</MinDamage>
+            <MaxDamage>50</MaxDamage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x63c9" id="Scorching Wrath Helper Anchor">
+        <Enemy/>
+        <Group>Scorching Wrath</Group>
+        <DisplayId>Scorching Wrath</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/skull_shrine_hit</HitSound>
+        <DeathSound>monster/skull_shrine_death</DeathSound>
+        <Size>0</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <ShadowSize>0</ShadowSize>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>40</Defense>
+    </Object>
+    <Object type="0x63cc" id="Lin2">
+        <Class>Character</Class>
+        <Enemy/>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>12</Index>
+        </AnimatedTexture>
+        <MaxHitPoints>9999999</MaxHitPoints>
+        <Defense>99</Defense>
+        <Size>120</Size>
+        <NoMiniMap/>
+        <DisplayId>Lin</DisplayId>
+        <XpMult>0.0</XpMult>
+    </Object>
+    <Object type="0x63ce" id="The Steps Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>The Steps</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x221</Index>
+        </Texture>
+        <DisplayId>The Steps</DisplayId>
+    </Object>
+    <Object type="0x63cf" id="The Steps 2 Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>The Steps 2</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x221</Index>
+        </Texture>
+        <DisplayId>The Steps 2</DisplayId>
     </Object>
 </Objects>

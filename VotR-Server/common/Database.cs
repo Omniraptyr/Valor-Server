@@ -15,7 +15,7 @@ namespace common
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(Database));
 
-        private const int _lockTTL = 600;
+        private const int _lockTTL = 60;
 
         public int DatabaseIndex { get; }
 

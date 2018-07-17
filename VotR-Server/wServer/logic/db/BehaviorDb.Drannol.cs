@@ -772,6 +772,26 @@ namespace wServer.logic
                     )
                 )
             )
+
+            .Init("Scorching Fanatic",
+            new State(
+                new State("Main",
+                    new Taunt( 0.25, "Aragah..", "Oogith..", "Blagaha!"),
+                    new State("fight1",
+                    new Prioritize(
+                        new Follow(1.6, 1),
+                        new Wander(0.25)
+                        ),
+                        new PlayerWithinTransition(2, "blowup")
+                        ),
+                  new State("blowup",
+                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                    new Shoot(10, count: 12, projectileIndex: 0, coolDown: 9999),
+                    new Suicide()
+                        )
+                    )
+                )
+            )
                 .Init("Bastille Trap",
             new State(
                 new SetNoXP(),
@@ -1420,6 +1440,7 @@ namespace wServer.logic
 
                                 .Init("Revil, the Twisted Vanguard",
                 new State(
+                    new DropPortalOnDeath("The Steps Portal", 1, 120),
                     new ChangeMusicOnDeath("oldcity"),
                     new State("default",
                         new BackAndForth(0.3, 6),
@@ -2615,6 +2636,9 @@ namespace wServer.logic
             new State(
                 new SetNoXP(),
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("waiting",
+                     new PlayerWithinTransition(3, "taunt1")
+                    ),
                 new State("taunt1",
                      new Taunt("No one has ever has made it this far....I congratulate you.."),
                      new TimedTransition(4000, "taunt2")
@@ -2633,6 +2657,7 @@ namespace wServer.logic
                      new TimedTransition(6000, "break")
                     ),
                 new State("break",
+                    new Order(90, "Scorching Wrath Run", "taunt1"),
                      new RemoveObjectOnDeath("BD Wall Relic 4", 99),
                      new ReplaceTile("BD The Steps", "Weaker Hot Lava", 99),
                      new Suicide()
@@ -2640,13 +2665,47 @@ namespace wServer.logic
                 )
             )
 
+            .Init("Scorching Wrath Run",
+            new State(
+                new SetNoXP(),
+                new State("0",
+                    new ConditionalEffect(ConditionEffectIndex.Invincible)
+                    ),
+                new State(
+                    new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("taunt1",
+                     new ChangeSize(60, 150),
+                     new TimedTransition(4000, "taunt2")
+                    ),
+                new State("taunt2",
+                     new Taunt("Your ashes will decorate these ruins.."),
+                     new TimedTransition(4000, "go2")
+                    )
+                ),
+                new State(
+                    new Taunt("SURVIVE MY FURY!"),
+                    new ConditionalEffect(ConditionEffectIndex.Invincible),
+                    new TimedTransition(60000, "finish"),
+                    new Orbit(2, 5, target: "BD Platform Helper"),
+                new State("go2",
+                   new Shoot(10, count: 1, shootAngle: 12, projectileIndex: 1, predictive: 0.1, coolDown: 2000)
+                        )
+                    ),
+                new State("finish",
+                     new Order(90, "BD Platform Helper 2", "dead"),
+                     new Order(90, "BD Platform Helper", "dead"),
+                     new Suicide()
+                    )
+                )
+            )
+
             .Init("BD Platform Helper",
             new State(
+                new DropPortalOnDeath("The Steps 2 Portal", 1, 120),
                 new SetNoXP(),
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("go1",
-                     new Taunt("going"),
-                     new TimedTransition(8000, "go2")
+                    new TimedTransition(36000, "go2")
                     ),
                 new State(
                     new MoveTo(speed: 0.2f, x: 16, y: 278),
@@ -2658,6 +2717,40 @@ namespace wServer.logic
                      new ApplySetpiece("SafePlatform"),
                      new TimedTransition(1000, "go2")
                         )
+                    ),
+                new State("dead",
+                    new Suicide()
+                    )
+                )
+            )
+
+
+            .Init("Scorching Wrath Helper 2",
+            new State(
+                new SetNoXP(),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("idle"
+                    ),
+                new State("spawn",
+                    new Spawn("BD Bastille Brute", 1, 1, coolDown: 99999)
+                    ),
+                new State("dead",
+                    new Suicide()
+                    )
+                )
+            )
+
+                    .Init("Scorching Wrath Helper",
+            new State(
+                new SetNoXP(),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("idle"
+                    ),
+                new State("spawn",
+                    new Spawn("Scorching Fanatic", 1, 1, coolDown: 99999)
+                    ),
+                new State("dead",
+                    new Suicide()
                     )
                 )
             )
@@ -2667,8 +2760,7 @@ namespace wServer.logic
                 new SetNoXP(),
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("go1",
-                     new Taunt("going"),
-                     new TimedTransition(8000, "go2")
+                    new TimedTransition(36000, "go2")
                     ),
                 new State(
                     new MoveTo(speed: 0.2f, x: 16, y: 278),
@@ -2680,6 +2772,184 @@ namespace wServer.logic
                      new ApplySetpiece("BadPlatform"),
                      new TimedTransition(1000, "go2")
                         )
+                    ),
+                new State("dead",
+                    new Suicide()
+                    )
+                )
+            )
+            .Init("Scorching Wrath Real",
+                new State(
+                new State(
+                    new TransformOnDeath("Lin2", 1, 1),
+                    new ConditionalEffect(ConditionEffectIndex.Invincible),
+                    new State("default",
+                        new PlayerWithinTransition(8, "taunt")
+                        ),
+                    new State("taunt",
+                        new Taunt("What have you done..Revil did nothing to you.."),
+                        new TimedTransition(6000, "taunt2")
+                        ),
+                    new State("taunt2",
+                        new Taunt("My vengeance will be sweet.."),
+                        new TimedTransition(6000, "windup")
+                        )
+                    ),
+                    new State("windup",
+                        new RemoveEntity(99, "Scorching Fanatic"),
+                        new RemoveEntity(99, "BD Bastille Brute"),
+                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new TimedTransition(4000, "fight1")
+                        ),
+                    new State(
+                        new HpLessTransition(0.25, "rage"),
+                    new State(
+                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: false),
+                        new Shoot(10, 6, projectileIndex: 0, shootAngle: 14, coolDown: 2000),
+                        new TimedTransition(14000, "fight2"),
+                    new State("fight1",
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 0, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 180, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "fight1a")
+                        ),
+                    new State("fight1a",
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 20, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 200, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "fight1b")
+                        ),
+                    new State("fight1b",
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 40, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 220, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "fight1c")
+                        ),
+                    new State("fight1c",
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 60, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 240, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "fight1d")
+                        ),
+                    new State("fight1d",
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 80, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 260, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "fight1e")
+                        ),
+                    new State("fight1e",
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 100, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 1, projectileIndex: 2, fixedAngle: 280, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "fight1f")
+                        ),
+                    new State("fight1f",
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 120, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 300, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "fight1g")
+                        ),
+                    new State("fight1g",
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 140, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 320, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "fight1h")
+                        ),
+                    new State("fight1h",
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 160, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 340, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "fight1h")
+                        ),
+                    new State("fight1h",
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 160, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 360, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "fight1j")
+                        ),
+                    new State("fight1j",
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 180, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 4, projectileIndex: 2, fixedAngle: 0, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "fight1")
+                        )
+                    ),
+                    new State("fight2",
+                        new Order(99, "Scorching Wrath Helper", "spawn"),
+                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
+                        new Shoot(10, 3, projectileIndex: 1, shootAngle: 14, coolDown: 2000),
+                        new Shoot(10, 10, projectileIndex: 2, coolDown: 2000, coolDownOffset: 1000),
+                        new TimedTransition(8000, "fight3")
+                        ),
+                    new State(
+                        new Taunt(0.5, "My wrath will burn your soul to ashes!"),
+                        new ConditionalEffect(ConditionEffectIndex.ArmorBroken),
+                        new Order(99, "Scorching Wrath Helper 2", "spawn"),
+                        new Order(99, "Scorching Wrath Helper", "idle"),
+                        new Orbit(2, 2, 10, target: "Scorching Wrath Helper Anchor 2", orbitClockwise: false),
+                        new Shoot(10, projectileIndex: 4, predictive: 0.1, coolDown: 400),
+                        new TimedTransition(10000, "fight4"),
+                    new State("fight3",
+                        new Shoot(10, 6, projectileIndex: 3, fixedAngle: 90, coolDown: 400, shootAngle: 18),
+                        new Shoot(10, 6, projectileIndex: 3, fixedAngle: 270, coolDown: 400, shootAngle: 18),
+                        new TimedTransition(10000, "fightb")
+                        ),
+                    new State("fightb",
+                        new Shoot(10, 6, projectileIndex: 3, fixedAngle: 0, coolDown: 400, shootAngle: 18),
+                        new Shoot(10, 6, projectileIndex: 3, fixedAngle: 180, coolDown: 400, shootAngle: 18),
+                        new TimedTransition(10000, "fight3")
+                        )
+                    ),
+                    new State("fight4",
+                        new Order(99, "Scorching Wrath Helper", "spawn"),
+                        new Order(99, "Scorching Wrath Helper 2", "idle"),
+                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
+                        new Shoot(10, 10, projectileIndex: 0, coolDown: 2000),
+                        new Shoot(10, 2, projectileIndex: 0, coolDown: 1000, shootAngle: 20),
+                        new TimedTransition(8000, "fight1")
+                            )
+                        ),
+                   new State("rage",
+                       new Taunt(0.5, "DIE!!!"),
+                       new Flash(0xFF0000, 0.2, 8),
+                       new Prioritize(
+                            new Follow(1.5, 16, 1),
+                            new Wander(0.25)
+                            ),
+                        new Shoot(10, 12, projectileIndex: 3, coolDown: 2000),
+                        new Shoot(10, 7, projectileIndex: 1, coolDown: 2000, shootAngle: 10)
+                        )
+                    ),
+                new MostDamagers(3,
+                    LootTemplates.FabledItemsLoots2B()
+                ),
+                new MostDamagers(3,
+                    LootTemplates.SFGigas()
+                    ),
+                new Threshold(0.05,
+                new TierLoot(12, ItemType.Weapon, 0.08),
+                new TierLoot(5, ItemType.Ability, 0.07),
+                new TierLoot(6, ItemType.Ability, 0.05),
+                new TierLoot(13, ItemType.Armor, 0.06),
+                new TierLoot(7, ItemType.Ring, 0.08),
+                new ItemLoot("Onrane Cache", 1),
+                new ItemLoot("Onrane", 0.1),
+                new ItemLoot("Gold Cache", 1),
+                new ItemLoot("Vitality Eon", 0.1),
+                new ItemLoot("Defense Eon", 0.1),
+                new ItemLoot("Greater Potion of Protection", 1),
+                new ItemLoot("Greater Potion of Vitality", 1),
+                new ItemLoot("Greater Potion of Defense", 1),
+                new ItemLoot("Potion of Life", 1),
+                new ItemLoot("Potion of Defense", 1),
+                new ItemLoot("Potion of Attack", 0.6),
+                new ItemLoot("Potion of Dexterity", 0.5),
+                new ItemLoot("Potion of Luck", 0.5),
+                new ItemLoot("Potion of Restoration", 0.5)
+                    )
+                )
+           .Init("Lin2",
+            new State(
+                new TransformOnDeath("Scorching Fanatic", 2, 8),
+                new SetNoXP(),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("waiting",
+                    new Flash(0xFFFFFF, 0.2, 12),
+                    new Taunt("I can finally be at peace with him.."),
+                    new TimedTransition(6000, "taunt1")
+                    ),
+                new State("taunt1",
+                     new Suicide()
                     )
                 )
             )

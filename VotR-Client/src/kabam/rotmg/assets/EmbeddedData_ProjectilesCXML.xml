@@ -6686,4 +6686,12 @@
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
+    <Object type="0x63d2" id="Claw Shots">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x102</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
 </Objects>
