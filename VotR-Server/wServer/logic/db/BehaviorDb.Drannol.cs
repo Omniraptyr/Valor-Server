@@ -2880,7 +2880,7 @@ namespace wServer.logic
                         ),
                     new State("fight2",
                         new Order(99, "Scorching Wrath Helper", "spawn"),
-                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
+                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: false),
                         new Shoot(10, 3, projectileIndex: 1, shootAngle: 14, coolDown: 2000),
                         new Shoot(10, 10, projectileIndex: 2, coolDown: 2000, coolDownOffset: 1000),
                         new TimedTransition(8000, "fight3")
@@ -2890,7 +2890,7 @@ namespace wServer.logic
                         new ConditionalEffect(ConditionEffectIndex.ArmorBroken),
                         new Order(99, "Scorching Wrath Helper 2", "spawn"),
                         new Order(99, "Scorching Wrath Helper", "idle"),
-                        new Orbit(2, 4, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: false),
+                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
                         new Shoot(10, count: 3, shootAngle: 10, projectileIndex: 4, predictive: 0.1, coolDown: 400),
                         new TimedTransition(10000, "fight4"),
                     new State("fight3",
@@ -2915,13 +2915,13 @@ namespace wServer.logic
                         new TossObject("BD Lava Bat", 4, 315, coolDown: 9999999),
                         new Order(99, "BD Lava Bat", "spawn"),
                         new Order(99, "BD Lava Bat", "idle"),
-                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
+                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: false),
                         new Shoot(10, 10, projectileIndex: 0, coolDown: 2000),
                         new Shoot(10, 2, projectileIndex: 0, coolDown: 1000, shootAngle: 20),
                         new TimedTransition(8000, "fight5")
                             ),
                     new State("fight5",
-                        new Orbit(2, 10, 12, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
+                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
                         new Shoot(10, 10, projectileIndex: 0, coolDown: 2000),
                         new Shoot(10, count: 6, shootAngle: 10, projectileIndex: 1, coolDown: 400),
                         new TimedTransition(8000, "fight1")
@@ -2932,7 +2932,7 @@ namespace wServer.logic
                        new Taunt(0.5, "DIE!!!"),
                        new Flash(0xFF0000, 0.2, 8),
                        new Prioritize(
-                            new Follow(1.8, 16, 1),
+                            new Follow(2, 16, 1),
                             new Wander(0.25)
                             ),
                         new Shoot(10, 12, projectileIndex: 3, coolDown: 1000),
@@ -2941,7 +2941,7 @@ namespace wServer.logic
                         new TimedTransition(10000, "bfight1")
                         ),
                    new State(
-                        new Orbit(2.3, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: false),
+                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
                         new Shoot(10, 6, projectileIndex: 0, shootAngle: 14, coolDown: 2000),
                         new TimedTransition(14000, "bwindup2"),
                     new State("bfight1",
@@ -3004,13 +3004,13 @@ namespace wServer.logic
                         new Taunt("THE BRUTES WILL DEVOUR YOUR BURNT CORPSES!"),
                         new Flash(0x0000FF, 0.2, 6),
                         new HealSelf(coolDown: 1000, amount: 1000),
-                        new Orbit(2.3, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
+                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: false),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new TimedTransition(4000, "bfight2")
                         ),
                     new State("bfight2",
                         new Order(99, "Scorching Wrath Helper", "spawn"),
-                        new Orbit(2.3, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
+                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
                         new Shoot(10, 3, projectileIndex: 1, shootAngle: 14, coolDown: 2000),
                         new Shoot(10, 10, projectileIndex: 2, coolDown: 2000, coolDownOffset: 1000),
                         new TimedTransition(8000, "bfight3")
@@ -3020,7 +3020,7 @@ namespace wServer.logic
                         new ConditionalEffect(ConditionEffectIndex.ArmorBroken),
                         new Order(99, "Scorching Wrath Helper 2", "spawn"),
                         new Order(99, "Scorching Wrath Helper", "idle"),
-                        new Orbit(2.3, 4, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: false),
+                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: false),
                         new Shoot(10, count: 3, shootAngle: 10, projectileIndex: 4, predictive: 0.1, coolDown: 400),
                         new TimedTransition(10000, "bfight4"),
                     new State("bfight3",
@@ -3052,7 +3052,7 @@ namespace wServer.logic
                             ),
                     new State("bfight5",
                         new Taunt("...."),
-                        new Orbit(1.6, 10, 12, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
+                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: false),
                         new Shoot(10, 10, projectileIndex: 0, coolDown: 2000),
                         new Shoot(10, count: 6, shootAngle: 10, projectileIndex: 1, coolDown: 400),
                         new TimedTransition(8000, "bfight1")
