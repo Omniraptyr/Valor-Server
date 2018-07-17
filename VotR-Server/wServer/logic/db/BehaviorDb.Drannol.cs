@@ -638,6 +638,11 @@ namespace wServer.logic
                 new ConditionalEffect(ConditionEffectIndex.Invincible)
                 )
             )
+            .Init("Scorching Wrath Helper Anchor",
+            new State(
+                new ConditionalEffect(ConditionEffectIndex.Invincible)
+                )
+            )
 
             .Init("BD Warrior of Drannol",
             new State(
@@ -779,14 +784,14 @@ namespace wServer.logic
                     new Taunt( 0.25, "Aragah..", "Oogith..", "Blagaha!"),
                     new State("fight1",
                     new Prioritize(
-                        new Follow(1.6, 8, 1),
+                        new Follow(0.6, 8, 1),
                         new Wander(0.25)
                         ),
                         new PlayerWithinTransition(2, "blowup")
                         ),
                   new State("blowup",
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Shoot(10, count: 12, projectileIndex: 0, coolDown: 9999),
+                    new Shoot(10, count: 6, projectileIndex: 0, coolDown: 9999),
                     new Suicide()
                         )
                     )
@@ -2732,7 +2737,7 @@ namespace wServer.logic
                 new State("idle"
                     ),
                 new State("spawn",
-                    new Spawn("BD Bastille Brute", 1, 1, coolDown: 99999)
+                    new Spawn("Scorching Fanatic", 1, 1, coolDown: 99999)
                     ),
                 new State("dead",
                     new Suicide()
@@ -2940,7 +2945,7 @@ namespace wServer.logic
                 )
            .Init("Lin2",
             new State(
-                new TransformOnDeath("Scorching Fanatic", 2, 8),
+                new TransformOnDeath("Scorching Fanatic", 2, 3),
                 new SetNoXP(),
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("waiting",
