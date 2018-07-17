@@ -116109,6 +116109,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Size>150</Size>
         <ParalyzeImmune/>
         <StasisImmune/>
+		<Elitedrop/>
         <StunImmune/>
         <ArmorBreakImmune/>
         <NoMiniMap/>
