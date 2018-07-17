@@ -779,7 +779,7 @@ namespace wServer.logic
                     new Taunt( 0.25, "Aragah..", "Oogith..", "Blagaha!"),
                     new State("fight1",
                     new Prioritize(
-                        new Follow(1.6, 1),
+                        new Follow(1.6, 8, 1),
                         new Wander(0.25)
                         ),
                         new PlayerWithinTransition(2, "blowup")
