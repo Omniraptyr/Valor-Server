@@ -781,7 +781,6 @@ namespace wServer.logic
             .Init("Scorching Fanatic",
             new State(
                 new State("Main",
-                    new TransformOnDeath("BD Faint Soul", 1, 4),
                     new Taunt( 0.25, "Aragah..", "Oogith..", "Blagaha!"),
                     new State("fight1",
                     new Prioritize(
@@ -2694,7 +2693,7 @@ namespace wServer.logic
                     new TimedTransition(60000, "finish"),
                     new Orbit(2, 5, target: "BD Platform Helper"),
                 new State("go2",
-                   new Shoot(10, count: 1, shootAngle: 12, projectileIndex: 1, predictive: 0.1, coolDown: 1000)
+                   new Shoot(10, count: 1, shootAngle: 12, projectileIndex: 1, predictive: 0.1, coolDown: 800)
                         )
                     ),
                 new State("finish",
@@ -2922,7 +2921,6 @@ namespace wServer.logic
                         new TimedTransition(8000, "fight5")
                             ),
                     new State("fight5",
-                        new Grenade(4, 200, range: 8, fixedAngle: null, coolDown: 1000, effect: ConditionEffectIndex.ArmorBroken, effectDuration: 6000, color: 65535),
                         new Orbit(2, 10, 12, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
                         new Shoot(10, 10, projectileIndex: 0, coolDown: 2000),
                         new Shoot(10, count: 6, shootAngle: 10, projectileIndex: 1, coolDown: 400),
@@ -2937,7 +2935,6 @@ namespace wServer.logic
                             new Follow(1.8, 16, 1),
                             new Wander(0.25)
                             ),
-                        new Grenade(3, 100, range: 8, fixedAngle: null, coolDown: 600, effect: ConditionEffectIndex.ArmorBroken, effectDuration: 6000, color: 65535),
                         new Shoot(10, 12, projectileIndex: 3, coolDown: 1000),
                         new Shoot(10, 7, projectileIndex: 1, coolDown: 1000, shootAngle: 10),
                         new Shoot(10, count: 3, shootAngle: 10, projectileIndex: 4, predictive: 0.1, coolDown: 800),
@@ -3055,7 +3052,6 @@ namespace wServer.logic
                             ),
                     new State("bfight5",
                         new Taunt("...."),
-                        new Grenade(4, 200, range: 8, fixedAngle: null, coolDown: 1000, effect: ConditionEffectIndex.ArmorBroken, effectDuration: 6000, color: 65535),
                         new Orbit(1.6, 10, 12, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
                         new Shoot(10, 10, projectileIndex: 0, coolDown: 2000),
                         new Shoot(10, count: 6, shootAngle: 10, projectileIndex: 1, coolDown: 400),
