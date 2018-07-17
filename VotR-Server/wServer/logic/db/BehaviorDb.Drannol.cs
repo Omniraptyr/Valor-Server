@@ -2801,9 +2801,9 @@ namespace wServer.logic
                         )
                     ),
                     new State("windup",
-                        new HealSelf(coolDown: 2000, amount: 10000),
                         new RemoveEntity(99, "Scorching Fanatic"),
                         new RemoveEntity(99, "BD Bastille Brute"),
+                        new RemoveEntity(99, "BD Lava Bat"),
                         new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new TimedTransition(4000, "fight1")
@@ -2811,6 +2811,9 @@ namespace wServer.logic
                     new State(
                         new HpLessTransition(0.25, "rage"),
                     new State(
+                        new RemoveEntity(99, "Scorching Fanatic"),
+                        new RemoveEntity(99, "BD Bastille Brute"),
+                        new RemoveEntity(99, "BD Lava Bat"),
                         new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: false),
                         new Shoot(10, 6, projectileIndex: 0, shootAngle: 14, coolDown: 2000),
                         new TimedTransition(14000, "windup2"),
@@ -2924,7 +2927,11 @@ namespace wServer.logic
                         new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
                         new Shoot(10, 10, projectileIndex: 0, coolDown: 2000),
                         new Shoot(10, count: 6, shootAngle: 10, projectileIndex: 1, coolDown: 400),
-                        new TimedTransition(8000, "fight1")
+                        new TimedTransition(8000, "killable")
+                            ),
+                    new State("killable",
+                        new ConditionalEffect(ConditionEffectIndex.ArmorBroken),
+                        new TimedTransition(4000, "fight1")
                             )
                         ),
                    new State("rage",
@@ -2946,8 +2953,11 @@ namespace wServer.logic
                         new TimedTransition(6000, "bfight1")
                         ),
                    new State(
-                       new Grenade(2, 80, range: 10, coolDown: 400, effect: ConditionEffectIndex.ArmorBroken, effectDuration: 4000, color: 0x00FFFF),
+                       new Grenade(2, 325, range: 10, coolDown: 400, effect: ConditionEffectIndex.Paralyzed, effectDuration: 2000, color: 0x00FFFF),
                    new State(
+                        new RemoveEntity(99, "Scorching Fanatic"),
+                        new RemoveEntity(99, "BD Bastille Brute"),
+                        new RemoveEntity(99, "BD Lava Bat"),
                         new Orbit(2.5, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
                         new Shoot(10, 6, projectileIndex: 0, shootAngle: 14, coolDown: 2000),
                         new TimedTransition(14000, "bwindup2"),
@@ -3010,7 +3020,6 @@ namespace wServer.logic
                     new State("bwindup2",
                         new Taunt("THE BRUTES WILL DEVOUR YOUR BURNT CORPSES!"),
                         new Flash(0x0000FF, 0.2, 6),
-                        new HealSelf(coolDown: 1000, amount: 1000),
                         new Orbit(2.5, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: false),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new TimedTransition(4000, "bfight2")
@@ -3062,7 +3071,11 @@ namespace wServer.logic
                         new Orbit(2.5, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: false),
                         new Shoot(10, 10, projectileIndex: 0, coolDown: 2000),
                         new Shoot(10, count: 6, shootAngle: 10, projectileIndex: 1, coolDown: 400),
-                        new TimedTransition(8000, "bfight1")
+                        new TimedTransition(8000, "bkillable")
+                            ),
+                    new State("bkillable",
+                        new ConditionalEffect(ConditionEffectIndex.ArmorBroken),
+                        new TimedTransition(4000, "bfight1")
                             )
                        )
                     ),
