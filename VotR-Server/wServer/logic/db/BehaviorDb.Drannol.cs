@@ -781,6 +781,7 @@ namespace wServer.logic
             .Init("Scorching Fanatic",
             new State(
                 new State("Main",
+                    new TransformOnDeath("BD Faint Soul", 1, 4),
                     new Taunt( 0.25, "Aragah..", "Oogith..", "Blagaha!"),
                     new State("fight1",
                     new Prioritize(
@@ -2693,7 +2694,7 @@ namespace wServer.logic
                     new TimedTransition(60000, "finish"),
                     new Orbit(2, 5, target: "BD Platform Helper"),
                 new State("go2",
-                   new Shoot(10, count: 1, shootAngle: 12, projectileIndex: 1, predictive: 0.1, coolDown: 2000)
+                   new Shoot(10, count: 1, shootAngle: 12, projectileIndex: 1, predictive: 0.1, coolDown: 1000)
                         )
                     ),
                 new State("finish",
@@ -2713,7 +2714,7 @@ namespace wServer.logic
                     new TimedTransition(36000, "go2")
                     ),
                 new State(
-                    new MoveTo(speed: 0.2f, x: 16, y: 278),
+                    new MoveTo(speed: 0.3f, x: 16, y: 278),
                 new State("go2",
                      new ApplySetpiece("SafePlatform"),
                      new TimedTransition(1000, "go3")
@@ -2768,7 +2769,7 @@ namespace wServer.logic
                     new TimedTransition(36000, "go2")
                     ),
                 new State(
-                    new MoveTo(speed: 0.2f, x: 16, y: 278),
+                    new MoveTo(speed: 0.3f, x: 16, y: 278),
                 new State("go2",
                      new ApplySetpiece("BadPlatform"),
                      new TimedTransition(1000, "go3")
@@ -2921,7 +2922,7 @@ namespace wServer.logic
                         new TimedTransition(8000, "fight5")
                             ),
                     new State("fight5",
-                        new Grenade(4, 140, range: 8, fixedAngle: null, coolDown: 1000, effect: ConditionEffectIndex.ArmorBroken, effectDuration: 6000, color: 65535),
+                        new Grenade(4, 200, range: 8, fixedAngle: null, coolDown: 1000, effect: ConditionEffectIndex.ArmorBroken, effectDuration: 6000, color: 65535),
                         new Orbit(2, 10, 12, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
                         new Shoot(10, 10, projectileIndex: 0, coolDown: 2000),
                         new Shoot(10, count: 6, shootAngle: 10, projectileIndex: 1, coolDown: 400),
@@ -2929,16 +2930,137 @@ namespace wServer.logic
                             )
                         ),
                    new State("rage",
+                       new HealSelf(coolDown: 99999, amount: 80000),
                        new Taunt(0.5, "DIE!!!"),
                        new Flash(0xFF0000, 0.2, 8),
                        new Prioritize(
-                            new Follow(1.5, 16, 1),
+                            new Follow(1.8, 16, 1),
                             new Wander(0.25)
                             ),
+                        new Grenade(3, 100, range: 8, fixedAngle: null, coolDown: 600, effect: ConditionEffectIndex.ArmorBroken, effectDuration: 6000, color: 65535),
                         new Shoot(10, 12, projectileIndex: 3, coolDown: 1000),
                         new Shoot(10, 7, projectileIndex: 1, coolDown: 1000, shootAngle: 10),
-                        new Shoot(10, count: 3, shootAngle: 10, projectileIndex: 4, predictive: 0.1, coolDown: 800)
+                        new Shoot(10, count: 3, shootAngle: 10, projectileIndex: 4, predictive: 0.1, coolDown: 800),
+                        new TimedTransition(10000, "bfight1")
+                        ),
+                   new State(
+                        new Orbit(2.3, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: false),
+                        new Shoot(10, 6, projectileIndex: 0, shootAngle: 14, coolDown: 2000),
+                        new TimedTransition(14000, "bwindup2"),
+                    new State("bfight1",
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 0, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 180, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "bfight1a")
+                        ),
+                    new State("bfight1a",
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 20, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 200, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "bfight1b")
+                        ),
+                    new State("bfight1b",
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 40, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 220, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "bfight1c")
+                        ),
+                    new State("bfight1c",
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 60, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 240, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "bfight1d")
+                        ),
+                    new State("bfight1d",
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 80, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 260, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "bfight1e")
+                        ),
+                    new State("bfight1e",
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 100, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 280, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "bfight1f")
+                        ),
+                    new State("bfight1f",
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 120, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 300, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "bfight1g")
+                        ),
+                    new State("bfight1g",
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 140, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 320, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "bfight1h")
+                        ),
+                    new State("bfight1h",
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 160, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 340, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "bfight1h")
+                        ),
+                    new State("bfight1h",
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 160, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 360, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "bfight1j")
+                        ),
+                    new State("bfight1j",
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 180, shootAngle: 8, coolDown: 1000),
+                        new Shoot(10, 6, projectileIndex: 2, fixedAngle: 0, shootAngle: 8, coolDown: 1000),
+                        new TimedTransition(1000, "bfight1")
                         )
+                    ),
+                    new State("bwindup2",
+                        new Taunt("THE BRUTES WILL DEVOUR YOUR BURNT CORPSES!"),
+                        new Flash(0x0000FF, 0.2, 6),
+                        new HealSelf(coolDown: 1000, amount: 1000),
+                        new Orbit(2.3, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new TimedTransition(4000, "bfight2")
+                        ),
+                    new State("bfight2",
+                        new Order(99, "Scorching Wrath Helper", "spawn"),
+                        new Orbit(2.3, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
+                        new Shoot(10, 3, projectileIndex: 1, shootAngle: 14, coolDown: 2000),
+                        new Shoot(10, 10, projectileIndex: 2, coolDown: 2000, coolDownOffset: 1000),
+                        new TimedTransition(8000, "bfight3")
+                        ),
+                    new State(
+                        new Taunt(0.5, "My wrath will burn your soul to ashes!"),
+                        new ConditionalEffect(ConditionEffectIndex.ArmorBroken),
+                        new Order(99, "Scorching Wrath Helper 2", "spawn"),
+                        new Order(99, "Scorching Wrath Helper", "idle"),
+                        new Orbit(2.3, 4, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: false),
+                        new Shoot(10, count: 3, shootAngle: 10, projectileIndex: 4, predictive: 0.1, coolDown: 400),
+                        new TimedTransition(10000, "bfight4"),
+                    new State("bfight3",
+                        new Shoot(10, 6, projectileIndex: 3, fixedAngle: 90, coolDown: 400, shootAngle: 18),
+                        new Shoot(10, 6, projectileIndex: 3, fixedAngle: 270, coolDown: 400, shootAngle: 18),
+                        new TimedTransition(10000, "bfightb")
+                        ),
+                    new State("bfightb",
+                        new Shoot(10, 6, projectileIndex: 3, fixedAngle: 0, coolDown: 400, shootAngle: 18),
+                        new Shoot(10, 6, projectileIndex: 3, fixedAngle: 180, coolDown: 400, shootAngle: 18),
+                        new TimedTransition(10000, "bfight3")
+                        )
+                    ),
+                    new State("bfight4",
+                        new TossObject("BD Warrior of Drannol", 4, 0, coolDown: 9999999),
+                        new TossObject("BD Warrior of Drannol", 4, 45, coolDown: 9999999),
+                        new TossObject("BD Warrior of Drannol", 4, 90, coolDown: 9999999),
+                        new TossObject("BD Warrior of Drannol", 4, 135, coolDown: 9999999),
+                        new TossObject("BD Warrior of Drannol", 4, 180, coolDown: 9999999),
+                        new TossObject("BD Warrior of Drannol", 4, 225, coolDown: 9999999),
+                        new TossObject("BD Warrior of Drannol", 4, 270, coolDown: 9999999),
+                        new TossObject("BD Warrior of Drannol", 4, 315, coolDown: 9999999),
+                        new Order(99, "BD Lava Bat", "spawn"),
+                        new Order(99, "BD Lava Bat", "idle"),
+                        new Orbit(2, 8, 10, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
+                        new Shoot(10, 10, projectileIndex: 0, coolDown: 2000),
+                        new Shoot(10, 2, projectileIndex: 0, coolDown: 1000, shootAngle: 20),
+                        new TimedTransition(8000, "bfight5")
+                            ),
+                    new State("bfight5",
+                        new Taunt("...."),
+                        new Grenade(4, 200, range: 8, fixedAngle: null, coolDown: 1000, effect: ConditionEffectIndex.ArmorBroken, effectDuration: 6000, color: 65535),
+                        new Orbit(1.6, 10, 12, target: "Scorching Wrath Helper Anchor", orbitClockwise: true),
+                        new Shoot(10, 10, projectileIndex: 0, coolDown: 2000),
+                        new Shoot(10, count: 6, shootAngle: 10, projectileIndex: 1, coolDown: 400),
+                        new TimedTransition(8000, "bfight1")
+                            )
                     ),
                 new MostDamagers(3,
                     LootTemplates.FabledItemsLoots2B()

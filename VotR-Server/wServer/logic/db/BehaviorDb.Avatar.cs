@@ -1534,7 +1534,7 @@ namespace wServer.logic
                       )
                    )
                 ),
-                                new MostDamagers(3,
+               new MostDamagers(3,
                     LootTemplates.SFLow()
                     ),
                 new Threshold(0.05,
