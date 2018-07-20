@@ -119,7 +119,6 @@ namespace wServer.realm.worlds.logic
         protected override void Init()
         {
             base.Init();
-            LockPortal();
             if (IsLimbo) return;
 
             InitArena();
