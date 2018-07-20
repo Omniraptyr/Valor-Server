@@ -340,6 +340,13 @@ namespace wServer.realm.entities
             set { _oxygenBar.SetValue(value); }
         }
 
+        private readonly SV<int> _rageBar;
+        public int RageBar
+        {
+            get { return _rageBar.GetValue(); }
+            set { _rageBar.SetValue(value); }
+        }
+
         private readonly SV<int> _rank;
         public int Rank
         {
@@ -633,6 +640,7 @@ namespace wServer.realm.entities
             stats[StatsType.LDBoostTime] = LDBoostTime / 1000;
             stats[StatsType.LTBoostTime] = LTBoostTime / 1000;
             stats[StatsType.OxygenBar] = OxygenBar;
+            stats[StatsType.RageBar] = RageBar;
             stats[StatsType.Rank] = Rank;
             stats[StatsType.Admin] = Admin;
             stats[StatsType.Tokens] = Tokens;
@@ -748,6 +756,7 @@ namespace wServer.realm.entities
             _node4 = new SV<int>(this, StatsType.Node4, client.Character.Node4);
             _xpBoosted = new SV<bool>(this, StatsType.XPBoost, client.Character.XPBoostTime != 0, true);
             _oxygenBar = new SV<int>(this, StatsType.OxygenBar, -1, true);
+            _rageBar = new SV<int>(this, StatsType.RageBar, -1, true);
             _rank = new SV<int>(this, StatsType.Rank, client.Account.Rank);
             _admin = new SV<int>(this, StatsType.Admin, client.Account.Admin ? 1 : 0);
             _tokens = new SV<int>(this, StatsType.Tokens, client.Account.Tokens, true);
@@ -930,6 +939,8 @@ namespace wServer.realm.entities
 
             if (owner.Name.Equals("OceanTrench") || owner.Name.Equals("KrakenLair"))
                 OxygenBar = 100;
+            if (owner.Name.Equals("SummoningPoint"))
+                RageBar = 100;
             if (owner.Name.Equals("Nexus"))
             {
                 int amount = (int)(Math.Min(Math.Floor((Stats[10] / 90d) * 6), 6));

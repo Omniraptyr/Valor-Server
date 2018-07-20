@@ -19,14 +19,14 @@
   "serverSettings": {
     "logFolder": "./logs",
     "resourceFolder": "./resources",
-    "version": "39.E3",
+    "version": "39.E4",
     "tps": "10",
     "mode": "Single",
     "key": "B1A5ED",
     "maxConnections": "1024",
     "maxPlayers": "100",
     "maxPlayersWithPriority": "120",
-    "enablePets": "false",
+    "enablePets": "true",
     "enableMarket": "true"
   }
 }

@@ -12,7 +12,7 @@ import flash.utils.Dictionary;
 public class Parameters {
 
     public static const BUILD_VERSION:String = "39";
-    public static const MINOR_VERSION:String = "E3";
+    public static const MINOR_VERSION:String = "E4";
     public static const FULL_BUILD:String = BUILD_VERSION + "." + MINOR_VERSION;
     public static const ENABLE_ENCRYPTION:Boolean = true;
     public static const PORT:int = 2050;
@@ -21,6 +21,7 @@ public class Parameters {
     public static const NAME_CHOSEN_COLOR:uint = 0xFCDF00;
     public static const PLAYER_ROTATE_SPEED:Number = 0.003;
     public static const BREATH_THRESH:int = 20;
+    public static const RAGE_THRESH:int = 80;
     public static const SERVER_CHAT_NAME:String = "";
     public static const CLIENT_CHAT_NAME:String = "*Client*";
     public static const ERROR_CHAT_NAME:String = "*Error*";

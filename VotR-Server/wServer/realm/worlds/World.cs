@@ -291,7 +291,9 @@ namespace wServer.realm.worlds
             }
         }
 
-        private void DisposeEntities<T, TU>(ConcurrentDictionary<T, TU> dictionary)
+
+
+        public void DisposeEntities<T, TU>(ConcurrentDictionary<T, TU> dictionary)
         {
             var entities = dictionary.Values.ToArray();
             foreach (var entity in entities)

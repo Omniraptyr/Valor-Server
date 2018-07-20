@@ -5391,14 +5391,14 @@
             <Damage>100</Damage>
             <Speed>100</Speed>
             <LifetimeMS>2500</LifetimeMS>
-            <ConditionEffect duration="2">Petrify</ConditionEffect>
+            <ConditionEffect duration="2">Weak</ConditionEffect>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Fire Bolt</ObjectId>
             <Damage>280</Damage>
             <Speed>100</Speed>
             <LifetimeMS>3000</LifetimeMS>
-            <ConditionEffect duration="2.5">Petrify</ConditionEffect>
+            <ConditionEffect duration="2.5">Weak</ConditionEffect>
         </Projectile>
         <Projectile id="2">
             <ObjectId>Grey Missile</ObjectId>

@@ -6694,4 +6694,70 @@
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
+    <!-- Remote -->
+    <!-- Projectiles -->
+    <Object type="0x364" id="Unholy Wand Proj">
+        <Class>Projectile</Class>
+        <RemoteTexture>
+            <Instance>production</Instance>
+            <Id>UnholyWandProj</Id>
+        </RemoteTexture>
+    </Object>
+    <Object type="0x12D" id="Syringe">
+        <Class>Projectile</Class>
+        <RemoteTexture>
+            <Instance>production</Instance>
+            <Id>Syringe</Id>
+        </RemoteTexture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x138" id="BedlamProjectile360">
+        <Class>Projectile</Class>
+        <RemoteTexture>
+            <Instance>production</Instance>
+            <Id>BedlamProjectile360</Id>
+        </RemoteTexture>
+    </Object>
+    <Object type="0x777A" id="AsylumFly">
+        <Class>Projectile</Class>
+        <RemoteTexture>
+            <Instance>production</Instance>
+            <Id>AsylumFly</Id>
+        </RemoteTexture>
+        <AngleCorrection>1</AngleCorrection>
+        <Size>80</Size>
+    </Object>
+    <Object type="0x777E" id="AsylumMaggotsProj">
+        <Class>Projectile</Class>
+        <RemoteTexture>
+            <Instance>production</Instance>
+            <Id>AsylumMaggotsProj</Id>
+        </RemoteTexture>
+        <Rotation>80</Rotation>
+        <Size>130</Size>
+    </Object>
+    <Object type="0x777F" id="Asylum Spike2">
+        <Class>Projectile</Class>
+        <RemoteTexture>
+            <Instance>production</Instance>
+            <Id>Asylum Spike2</Id>
+        </RemoteTexture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x778A" id="AsylumGuard Attack">
+        <Class>Projectile</Class>
+        <RemoteTexture>
+            <Instance>production</Instance>
+            <Id>AsylumGuard Attack</Id>
+        </RemoteTexture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6039" id="WonderlandNew4">
+        <Class>Projectile</Class>
+        <RemoteTexture>
+            <Instance>production</Instance>
+            <Id>WonderlandNew4</Id>
+        </RemoteTexture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
 </Objects>

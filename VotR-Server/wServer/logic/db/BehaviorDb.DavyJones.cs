@@ -79,38 +79,7 @@ namespace wServer.logic
                     )
                     )
             )
-            .Init("GhostShip PurpleDoor Rt",
-                new State(
-                    new State("Idle",
-                        new EntityNotExistsTransition("Purple Key", 500, "Cycle")
 
-                    ),
-                    new State("Cycle",
-                        new PlayerWithinTransition(2, "Cycle2")
-
-                    ),
-                    new State("Cycle2",
-                        new Decay(1000)
-                    )
-               //248, 305
-               )
-            )
-            .Init("GhostShip PurpleDoor Lf",
-                new State(
-                    new State("Idle",
-                        new EntityNotExistsTransition("Purple Key", 500, "Cycle")
-
-                    ),
-                    new State("Cycle",
-                        new PlayerWithinTransition(2, "Cycle2")
-
-                    ),
-                    new State("Cycle2",
-                        new Decay(1000)
-                    )
-               //248, 305
-               )
-            )
             .Init("Lost Soul",
                 new State(
                     new State("Default",
@@ -152,150 +121,63 @@ namespace wServer.logic
                     )
                 )
             )
-            .Init("GhostShip GreenDoor Rt",
-                new State(
-                    new State("Idle",
-                        new EntityNotExistsTransition("Green Key", 500, "Cycle")
 
-                    ),
-                    new State("Cycle",
-                        new PlayerWithinTransition(2, "Cycle2")
-
-                    ),
-                    new State("Cycle2",
-                        new Decay(1000)
-                    )
-               //248, 305
-               )
-            )
-            .Init("GhostShip GreenDoor Lf",
-                new State(
-                    new State("Idle",
-                        new EntityNotExistsTransition("Green Key", 500, "Cycle")
-
-                    ),
-                    new State("Cycle",
-                        new PlayerWithinTransition(2, "Cycle2")
-
-                    ),
-                    new State("Cycle2",
-                        new Decay(1000)
-                    )
-               //248, 305
-               )
-            )
-            .Init("GhostShip YellowDoor Rt",
-                new State(
-                    new State("Idle",
-                        new EntityNotExistsTransition("Yellow Key", 500, "Cycle")
-
-                    ),
-                    new State("Cycle",
-                        new PlayerWithinTransition(2, "Cycle2")
-
-                    ),
-                    new State("Cycle2",
-                        new Decay(1000)
-                    )
-               //248, 305
-               )
-            )
-            .Init("GhostShip YellowDoor Lf",
-                new State(
-                    new State("Idle",
-                        new EntityNotExistsTransition("Yellow Key", 500, "Cycle")
-
-                    ),
-                    new State("Cycle",
-                        new PlayerWithinTransition(2, "Cycle2")
-
-                    ),
-                    new State("Cycle2",
-                        new Decay(1000)
-                    )
-               //248, 305
-               )
-            )
-            .Init("GhostShip RedDoor Rt",
-                new State(
-                    new State("Idle",
-                        new EntityNotExistsTransition("Red Key", 500, "Cycle")
-
-                    ),
-                    new State("Cycle",
-                        new PlayerWithinTransition(2, "Cycle2")
-
-                    ),
-                    new State("Cycle2",
-                        new Decay(1000)
-                    )
-               //248, 305
-               )
-            )
-            .Init("GhostShip RedDoor Lf",
-                new State(
-                    new State("Idle",
-                        new EntityNotExistsTransition("Red Key", 500, "Cycle")
-
-                    ),
-                    new State("Cycle",
-                        new PlayerWithinTransition(2, "Cycle2")
-
-                    ),
-                    new State("Cycle2",
-                        new Decay(1000)
-                    )
-               //248, 305
-               )
-            )
             .Init("Purple Key",
                 new State(
+                        new RemoveObjectOnDeath("GhostShip PurpleDoor Lf", 99),
+                        new RemoveObjectOnDeath("GhostShip PurpleDoor Rt", 99),
                     new State("Idle",
                         new PlayerWithinTransition(1, "Cycle")
 
                     ),
                     new State("Cycle",
                         new Taunt(true, "Purple Key has been found!"),
-                        new Decay(200)
+                        new Suicide()
 
                     )
                 )
             )
             .Init("Red Key",
                 new State(
+                        new RemoveObjectOnDeath("GhostShip RedDoor Lf", 99),
+                        new RemoveObjectOnDeath("GhostShip RedDoor Rt", 99),
                     new State("Idle",
                         new PlayerWithinTransition(1, "Cycle")
 
                     ),
                     new State("Cycle",
                         new Taunt(true, "Red Key has been found!"),
-                        new Decay(200)
+                        new Suicide()
 
                     )
                 )
             )
             .Init("Green Key",
                 new State(
+                                            new RemoveObjectOnDeath("GhostShip GreenDoor Lf", 99),
+                        new RemoveObjectOnDeath("GhostShip GreenDoor Rt", 99),
                     new State("Idle",
                         new PlayerWithinTransition(1, "Cycle")
 
                     ),
                     new State("Cycle",
                         new Taunt(true, "Green Key has been found!"),
-                        new Decay(200)
+                        new Suicide()
 
                     )
                 )
             )
             .Init("Yellow Key",
                 new State(
+                        new RemoveObjectOnDeath("GhostShip YellowDoor Lf", 99),
+                        new RemoveObjectOnDeath("GhostShip YellowDoor Rt", 99),
                     new State("Idle",
                         new PlayerWithinTransition(1, "Cycle")
 
                     ),
                     new State("Cycle",
                         new Taunt(true, "Yellow Key has been found!"),
-                        new Decay(200)
+                        new Suicide()
 
                     )
                 )

@@ -141,6 +141,7 @@ public class StatData {
     public static const PWRESTORATION_STAT = 144;
     public static const PWPROTECTION_STAT = 145;
     public static const ASCENSIONENABLED = 146;
+    public static const RAGE_STAT = 147;
     // unimplemented
     public static const DAMAGE_MIN:int = 98;
     public static const DAMAGE_MAX:int = 99;
@@ -192,6 +193,8 @@ public class StatData {
                 return (TextKey.STAT_MODEL_RESTORATION_LONG);
             case PROTECTION_STAT:
                 return (TextKey.STAT_MODEL_PROTECTION_LONG);
+            case FORTUNE:
+                return (TextKey.STAT_MODEL_FORTUNE_LONG);
         }
         return (TextKey.STAT_DATA_UNKNOWN_STAT);
     }

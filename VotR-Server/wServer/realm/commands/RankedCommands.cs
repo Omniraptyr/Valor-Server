@@ -886,6 +886,19 @@ class ClearSpawnsCommand : Command
         }
     }
 
+    internal class RageDebugCommand : Command
+    {
+        public RageDebugCommand() : base("rc", permLevel: 90)
+        {
+        }
+
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+            var amount2 = int.Parse(args);
+            player.RageBar = amount2;
+            return true;
+        }
+    }
 
     class SuppScoreCommand : Command
     {
@@ -1303,7 +1316,16 @@ class ClearSpawnsCommand : Command
             return true;
         }
     }
+    class SwagCommand : Command
+    {
+        public SwagCommand() : base("swag", permLevel: 80) { }
 
+        protected override bool Process(Player player, RealmTime time, string args)
+        { 
+            player.SendInfo("ye " + player.Stats[14]);
+            return true;
+        }
+    }
     /*class ResetServerFame : Command
     {
         public ResetServerFame() : base("resetFame", permLevel: 100) { }

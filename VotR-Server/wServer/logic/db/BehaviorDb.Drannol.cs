@@ -2785,8 +2785,9 @@ namespace wServer.logic
             )
             .Init("Scorching Wrath Real",
                 new State(
-                new State(
                     new TransformOnDeath("Lin2", 1, 1),
+                new State(
+                    
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("default",
                         new PlayerWithinTransition(8, "taunt")
@@ -2935,6 +2936,7 @@ namespace wServer.logic
                             )
                         ),
                    new State("rage",
+                       new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                        new HealSelf(coolDown: 99999, amount: 80000),
                        new Taunt(0.5, "DIE!!!"),
                        new Flash(0xFF0000, 0.2, 8),
@@ -2943,7 +2945,7 @@ namespace wServer.logic
                             new Wander(0.25)
                             ),
                         new Shoot(10, 12, projectileIndex: 3, coolDown: 1000),
-                        new Shoot(10, 7, projectileIndex: 1, coolDown: 1000, shootAngle: 10),
+                        new Shoot(10, 8, projectileIndex: 1, coolDown: 400, shootAngle: 10),
                         new Shoot(10, count: 3, shootAngle: 10, projectileIndex: 4, predictive: 0.1, coolDown: 800),
                         new TimedTransition(10000, "return")
                         ),

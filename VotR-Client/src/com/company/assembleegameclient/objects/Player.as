@@ -103,6 +103,7 @@ public class Player extends Character {
     public var guildRank_:int = -1;
     public var isFellowGuild_:Boolean = false;
     public var breath_:int = -1;
+    public var rage_:int = -1;
     public var maxMP_:int = 200;
     public var mp_:Number = 0;
     public var nextLevelExp_:int = 1000;
@@ -176,6 +177,11 @@ public class Player extends Character {
     private var breathBackPath_:GraphicsPath = null;
     private var breathFill_:GraphicsSolidFill = null;
     private var breathPath_:GraphicsPath = null;
+
+    private var rageBackFill_:GraphicsSolidFill = null;
+    private var rageBackPath_:GraphicsPath = null;
+    private var rageFill_:GraphicsSolidFill = null;
+    private var ragePath_:GraphicsPath = null;
     private var hallucinatingMaskedImage_:MaskedImage = null;
     private var slideVec_:Vector3D;
     public var surge_:Number = 0;
@@ -806,6 +812,45 @@ public class Player extends Character {
         GraphicsFillExtra.setSoftwareDrawSolid(this.breathBackFill_, true);
     }
 
+    protected function drawRageBar(_arg1:Vector.<IGraphicsData>, _arg2:int):void {
+        var _local7:Number;
+        var _local8:Number;
+        if (this.ragePath_ == null) {
+            this.rageBackFill_ = new GraphicsSolidFill();
+            this.rageBackPath_ = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS, new Vector.<Number>());
+            this.rageFill_ = new GraphicsSolidFill(16747520);
+            this.ragePath_ = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS, new Vector.<Number>());
+        }
+        if (this.rage_ >= Parameters.RAGE_THRESH) {
+            _local7 = ((Parameters.RAGE_THRESH - this.rage_) / Parameters.RAGE_THRESH);
+            this.rageBackFill_.color = MoreColorUtil.lerpColor(0x545454, 0xFFA500, (Math.abs(Math.sin((_arg2 / 300))) * _local7));
+        }
+        else {
+            this.rageBackFill_.color = 0x545454;
+        }
+        var _local3:int = 20;
+        var _local4:int = 8;
+        var _local5:int = 6;
+        var _local6:Vector.<Number> = (this.rageBackPath_.data as Vector.<Number>);
+        _local6.length = 0;
+        _local6.push((posS_[0] - _local3), (posS_[1] + _local4), (posS_[0] + _local3), (posS_[1] + _local4), (posS_[0] + _local3), ((posS_[1] + _local4) + _local5), (posS_[0] - _local3), ((posS_[1] + _local4) + _local5));
+        _arg1.push(this.rageBackFill_);
+        _arg1.push(this.rageBackPath_);
+        _arg1.push(GraphicsUtil.END_FILL);
+        if (this.rage_ > 0) {
+            _local8 = (((this.rage_ / 100) * 2) * _local3);
+            this.ragePath_.data.length = 0;
+            _local6 = (this.ragePath_.data as Vector.<Number>);
+            _local6.length = 0;
+            _local6.push((posS_[0] - _local3), (posS_[1] + _local4), ((posS_[0] - _local3) + _local8), (posS_[1] + _local4), ((posS_[0] - _local3) + _local8), ((posS_[1] + _local4) + _local5), (posS_[0] - _local3), ((posS_[1] + _local4) + _local5));
+            _arg1.push(this.rageFill_);
+            _arg1.push(this.ragePath_);
+            _arg1.push(GraphicsUtil.END_FILL);
+        }
+        GraphicsFillExtra.setSoftwareDrawSolid(this.rageFill_, true);
+        GraphicsFillExtra.setSoftwareDrawSolid(this.rageBackFill_, true);
+    }
+
     override public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int) : void
     {
         if(Parameters.data_.hideLockList)
@@ -829,6 +874,10 @@ public class Player extends Character {
         else if(this.breath_ >= 0)
         {
             this.drawBreathBar(_arg_1,_arg_3);
+        }
+        else if(this.rage_ >= 1)
+        {
+            this.drawRageBar(_arg_1,_arg_3);
         }
     }
 

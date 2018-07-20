@@ -134,14 +134,6 @@ namespace wServer.realm.worlds.logic
                 x.Move(i.X + 0.5f, i.Y + 0.5f);
                 EnterWorld(x);
             }
-
-            // devon roach
-            if (_client.Account.Name.Equals("Devon"))
-            {
-                var e = new Enemy(Manager, 0x12C);
-                e.Move(38, 68);
-                EnterWorld(e);
-            }
         }
 
         public override void Tick(RealmTime time)

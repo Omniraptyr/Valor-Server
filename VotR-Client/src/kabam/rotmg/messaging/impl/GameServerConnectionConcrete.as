@@ -1902,6 +1902,9 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                 case StatData.PWPROTECTION_STAT:
                     _local4.pwProtection_ = _local8;
                     break;
+                case StatData.RAGE_STAT:
+                    _local4.rage_ = _local8;
+                    break;
             }
         }
     }

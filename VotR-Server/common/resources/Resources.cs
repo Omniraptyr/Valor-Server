@@ -162,7 +162,7 @@ namespace common.resources
         private static byte[] FetchTexture(string dir, string[] texType)
         {
             // check for texture locally first
-            string fLoc = dir + "/_" + texType[1] + ".png";
+            string fLoc = dir + "/" + texType[1] + ".png";
             if (File.Exists(fLoc))
                 return File.ReadAllBytes(fLoc);
 
@@ -186,7 +186,7 @@ namespace common.resources
         private static byte[] FetchMask(string dir, string[] texType)
         {
             // check for texture locally first
-            string fLoc = dir + "/_" + texType[1] + "_mask.png";
+            string fLoc = dir + "/" + texType[1] + "_mask.png";
             if (File.Exists(fLoc))
                 return File.ReadAllBytes(fLoc);
 

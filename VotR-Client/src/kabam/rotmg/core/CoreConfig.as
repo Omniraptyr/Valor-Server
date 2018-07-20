@@ -6,6 +6,8 @@ import kabam.lib.json.SoftwareJsonParser;
 import kabam.lib.tasks.TaskMonitor;
 import kabam.rotmg.account.core.signals.CharListDataSignal;
 import kabam.rotmg.application.api.ApplicationSetup;
+import kabam.rotmg.assets.services.RequestEmbeddedAssetsTask;
+import kabam.rotmg.assets.services.RequestEmbeddedDataTask;
 import kabam.rotmg.chat.control.SpamFilter;
 import kabam.rotmg.core.commands.ConfigurePaymentsWindowCommand;
 import kabam.rotmg.core.commands.ConfigureSpamFilterCommand;
@@ -75,6 +77,7 @@ public class CoreConfig implements IConfig {
         this.configureViews();
         this.startup.addSignal(SetupDomainSecuritySignal, -1000);
         this.startup.addTask(RequestAppInitTask);
+        this.startup.addTask(RequestEmbeddedAssetsTask);
         this.context.lifecycle.afterInitializing(this.init);
     }
 
@@ -102,6 +105,7 @@ public class CoreConfig implements IConfig {
         this.injector.map(PurchaseCharacterClassTask);
         this.injector.map(PurchaseCharacterErrorTask);
         this.injector.map(RequestAppInitTask);
+        this.injector.map(RequestEmbeddedAssetsTask);
     }
 
     private function configureSignals():void {

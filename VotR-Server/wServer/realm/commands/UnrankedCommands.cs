@@ -571,7 +571,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class ArenaCommand : Command
+  /*  class ArenaCommand : Command
     {
         public ArenaCommand() : base("arena") { }
 
@@ -603,7 +603,7 @@ namespace wServer.realm.commands
             });
             return true;
         }
-    }
+    }*/
 
 
     class DailyQuestCommand : Command
@@ -623,7 +623,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class SoloArenaCommand : Command
+  /*  class SoloArenaCommand : Command
     {
         public SoloArenaCommand() : base("sa") { }
 
@@ -638,7 +638,7 @@ namespace wServer.realm.commands
             });
             return true;
         }
-    }
+    }*/
 
     class GhallCommand : Command
     {

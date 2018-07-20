@@ -1343,4 +1343,26 @@
         <UnlockSpecial>The Danger Zone Event Prize</UnlockSpecial>
         <DisplayId>RNG Clown</DisplayId>
     </Object>
+    <Object type="0x63d3" id="Uber Shrek Skin">
+        <Skin/>
+        <Class>Skin</Class>
+        <AnimatedTexture>
+            <File>playerskins16</File>
+            <Index>11</Index>
+        </AnimatedTexture>
+        <PlayerClassType>0x031d</PlayerClassType>
+        <UnlockSpecial>Set Skin</UnlockSpecial>
+        <NoSkinSelect/>
+        <DisplayId>Uber Shrek Skin</DisplayId>
+    </Object>
+    <Object type="0x7008" id="Cult Sorcerer">
+        <Skin />
+        <Class>Skin</Class>
+        <AnimatedTexture>
+            <File>playerskins</File>
+            <Index>87</Index>
+        </AnimatedTexture>
+        <PlayerClassType>0x0325</PlayerClassType>
+        <DisplayId>Cult Sorcerer</DisplayId>
+    </Object>
 </Objects>

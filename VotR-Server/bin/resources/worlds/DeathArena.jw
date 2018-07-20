@@ -1,0 +1,13 @@
+{"id":-14,
+"isLimbo":false,
+"persist":true,
+"name":"DeathArena",
+"sbName":"Oryx's Arena",
+"difficulty":0,
+"background":0,
+"blocking":0,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x144],
+"maps":["arena.jm"],
+"music":["meadow"]}

@@ -710,6 +710,7 @@ public class TextKey {
     public static const STAT_MODEL_MIGHT_DESCRIPTION:String = "StatModel.attack.description";
     public static const STAT_MODEL_LUCK_SHORT:String = "LUC";
     public static const STAT_MODEL_LUCK_LONG:String = "Luck";
+    public static const STAT_MODEL_FORTUNE_LONG:String = "Fortune";
     public static const STAT_MODEL_LUCK_DESCRIPTION:String = "StatModel.attack.description";
     public static const STAT_MODEL_RESTORATION_SHORT:String = "RES";
     public static const STAT_MODEL_RESTORATION_LONG:String = "Restoration";

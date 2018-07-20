@@ -64,6 +64,7 @@ import kabam.rotmg.game.view.CreditDisplayMediator;
 import kabam.rotmg.game.view.GameSpriteMediator;
 import kabam.rotmg.game.view.GiftStatusDisplay;
 import kabam.rotmg.game.view.GiftStatusDisplayMediator;
+import kabam.rotmg.game.view.GlobalArenaInformation;
 import kabam.rotmg.game.view.LootboxMediator;
 import kabam.rotmg.game.view.LootboxModalButton;
 import kabam.rotmg.game.view.LootboxesDisplay;
@@ -135,6 +136,7 @@ public class GameConfig implements IConfig {
         this.injector.map(ExitGameSignal).asSingleton();
         this.injector.map(QueueStatusTextSignal).asSingleton();
         this.injector.map(SocketServerModel).asSingleton();
+        this.injector.map(GlobalArenaInformation).asSingleton();
         this.makeTextPanelMappings();
         this.makeGiftStatusDisplayMappings();
         this.mediatorMap.map(SorForgePanel).toMediator(SorForgePanelMediator);

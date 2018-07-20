@@ -34,6 +34,7 @@ namespace wServer.logic.loot
 
         public IEnumerable<Item> GetLoots(RealmManager manager, int min, int max)   //For independent loots(e.g. chests)
         {
+
             var consideration = new List<LootDef>();
             foreach (var i in this)
                 i.Populate(manager, null, null, rand, consideration);
@@ -92,16 +93,20 @@ namespace wServer.logic.loot
         }
         private void AddBagsToWorld(Enemy enemy, IList<Item> shared, IDictionary<Player, IList<Item>> soulbound)
         {
-            List<Player> pub = new List<Player>();  //only people not getting soulbound
-            foreach (var i in soulbound)
+            if (enemy.Owner.Name != "DeathArena" || enemy.Owner.Name != "Admins Arena")
             {
-                if (i.Value.Count > 0)
-                    ShowBags(enemy, i.Value, i.Key);
-                else
-                    pub.Add(i.Key);
+                List<Player> pub = new List<Player>();  //only people not getting soulbound
+                foreach (var i in soulbound)
+                {
+                    if (i.Value.Count > 0)
+                        ShowBags(enemy, i.Value, i.Key);
+                    else
+                        pub.Add(i.Key);
+                }
+                if (pub.Count > 0 && shared.Count > 0)
+                    ShowBags(enemy, shared, pub.ToArray());
             }
-            if (pub.Count > 0 && shared.Count > 0)
-                ShowBags(enemy, shared, pub.ToArray());
+
         }
 
         private void ShowBags(Enemy enemy, IEnumerable<Item> loots, params Player[] owners)

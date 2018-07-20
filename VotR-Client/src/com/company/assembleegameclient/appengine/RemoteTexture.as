@@ -16,7 +16,7 @@ import robotlegs.bender.framework.api.ILogger;
 
 public class RemoteTexture {
 
-    private static const URL_PATTERN:String = "/picture/get";
+    private static const URL_PATTERN:String = "/textures";
     private static const ERROR_PATTERN:String = "Remote Texture Error: {ERROR} (id:{ID}, instance:{INSTANCE})";
     private static const START_TIME:int = int(new Date().getTime());
 

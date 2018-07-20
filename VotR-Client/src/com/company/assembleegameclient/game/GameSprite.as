@@ -44,8 +44,10 @@ import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.dialogs.model.DialogsModel;
 import kabam.rotmg.dialogs.model.PopupNamesConfig;
 import kabam.rotmg.game.view.AlertStatusDisplay;
+import kabam.rotmg.game.view.ArenaDisplay;
 import kabam.rotmg.game.view.CreditDisplay;
 import kabam.rotmg.game.view.GiftStatusDisplay;
+import kabam.rotmg.game.view.GlobalArenaInformation;
 import kabam.rotmg.game.view.LootboxModalButton;
 import kabam.rotmg.game.view.NewsModalButton;
 import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
@@ -109,6 +111,7 @@ public class GameSprite extends AGameSprite {
     private var currentPackage:DisplayObject;
     private var packageY:Number;
     public var chatPlayerMenu:PlayerMenu;
+    public var arenaDisplay:ArenaDisplay;
 
     public function GameSprite(_arg1:Server, _arg2:int, _arg3:Boolean, _arg4:int, _arg5:int, _arg6:ByteArray, _arg7:PlayerModel, _arg8:String, _arg9:Boolean) {
         this.showPackage = new Signal();
@@ -124,6 +127,7 @@ public class GameSprite extends AGameSprite {
         this.chatBox_.list.addEventListener(MouseEvent.MOUSE_UP, this.onChatUp);
         addChild(this.chatBox_);
         this.idleWatcher_ = new IdleWatcher();
+        (StaticInjectorContext.getInjector().getInstance(GlobalArenaInformation) as GlobalArenaInformation).reset();
     }
 
     public static function dispatchMapLoaded(_arg1:MapInfo):void {
@@ -201,7 +205,7 @@ public class GameSprite extends AGameSprite {
         if (this.evalIsNotInCombatMapArea()) {
             this.showSafeAreaDisplays();
         }
-        if (map.name_ == "Arena") {
+        if (map.name_ == "Arena" || map.name_ == "DeathArena") {
             this.showTimer();
             this.showWaveCounter();
         }
@@ -273,6 +277,7 @@ public class GameSprite extends AGameSprite {
         this.showLootboxButton();
         this.showGiftStatusDisplay();
         this.showAlertStatusDisplay();
+        this.addArenaDisplay();
         // this.showNewsUpdate();
         // this.showNewsTicker();
     }
@@ -305,11 +310,20 @@ public class GameSprite extends AGameSprite {
         addChild(this.giftStatusDisplay);
     }
 
+    private function addArenaDisplay():void {
+        this.arenaDisplay = new ArenaDisplay(this);
+        this.arenaDisplay.x = 6;
+        this.arenaDisplay.y = (this.displaysPosY + 2);
+        this.displaysPosY = (this.displaysPosY + UIUtils.NOTIFICATION_SPACE);
+        addChild(this.arenaDisplay);
+    }
+
     private function showAlertStatusDisplay():void {
-            this.alertStatusDisplay = new AlertStatusDisplay();
-            this.alertStatusDisplay.x = (this.markShopButton.x);
-            this.alertStatusDisplay.y = (this.markShopButton.y + 64);
-            addChild(this.alertStatusDisplay);
+        this.alertStatusDisplay = new AlertStatusDisplay();
+        this.alertStatusDisplay.x = 6;
+        this.alertStatusDisplay.y = (this.displaysPosY + 2);
+        this.displaysPosY = (this.displaysPosY + UIUtils.NOTIFICATION_SPACE);
+        addChild(this.alertStatusDisplay);
     }
 
     private function showMarkShopButton():void {

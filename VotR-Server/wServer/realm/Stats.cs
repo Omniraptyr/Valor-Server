@@ -160,6 +160,7 @@ namespace wServer.realm
         PWRestoration = 144,
         PWProtection = 145,
         AscensionEnabled = 146,
+        RageBar = 147,
 
         None = 255
     }
