@@ -231,7 +231,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SFLow()
+                    LootTemplates.SF2()
                     ),
                 new Threshold(0.05,
                     new ItemLoot("Crystal Wand", 0.045),

@@ -89,6 +89,7 @@ public class Player extends Character {
     public var kantos_:int = 0;
     public var might_:int = 0;
     public var luck_:int = 0;
+    public var sorStorage_:int = 0;
     public var protection_:int = 0;
     public var restoration_:int = 0;
     public var mightBoost_:int = 0;

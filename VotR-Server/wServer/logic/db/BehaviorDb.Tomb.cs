@@ -84,8 +84,8 @@ namespace wServer.logic
                         new Shoot(50, 3, 10, 0, coolDown: 4750, coolDownOffset: 500)
                         )
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFLow()
+                 new MostDamagers(3,
+                    LootTemplates.SF4()
                     ),
                     new Threshold(0.32,
                         new ItemLoot("Potion of Life", 1)
@@ -321,8 +321,8 @@ namespace wServer.logic
                                                 new HpLessTransition(0.10, "Rage")
                                         )
                                 ),
-                                                new MostDamagers(3,
-                    LootTemplates.SFLow()
+                 new MostDamagers(3,
+                    LootTemplates.SF4()
                     ),
                                 new Threshold(0.01,
                                         new ItemLoot("Potion of Life", 1),
@@ -547,8 +547,8 @@ namespace wServer.logic
                                                 new HpLessTransition(0.10, "Rage")
                                         )
                                 ),
-                                                new MostDamagers(3,
-                    LootTemplates.SFLow()
+                 new MostDamagers(3,
+                    LootTemplates.SF4()
                     ),
                                 new Threshold(0.01,
                                         new ItemLoot("Potion of Life", 1),

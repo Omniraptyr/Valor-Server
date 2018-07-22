@@ -324,14 +324,18 @@ public class EquipmentToolTip extends ToolTip {
             if (this.objectXML.Projectile.hasOwnProperty("ArmorPiercing")) {
                 this.effects.push(new Effect(TextKey.ARMOR_PIERCING, {}).setColor(TooltipHelper.NO_DIFF_COLOR));
             }
-            for each (_local_5 in _local_1.ConditionEffect) {
-                if (this.comparisonResults.processedTags[_local_5.toXMLString()] == null) {
-                    this.effects.push(new Effect(TextKey.SHOT_EFFECT, {"effect": ""}));
-                    this.effects.push(new Effect(TextKey.EFFECT_FOR_DURATION, {
-                        "effect": this.objectXML.Projectile.ConditionEffect,
-                        "duration": this.objectXML.Projectile.ConditionEffect.@duration
-                    }).setColor(TooltipHelper.NO_DIFF_COLOR));
-                }
+            if (this.objectXML.Projectile.hasOwnProperty("Boomerang")) {
+                this.effects.push(new Effect("Shots boomerang", {}).setColor(TooltipHelper.NO_DIFF_COLOR));
+            }
+            if (this.objectXML.Projectile.hasOwnProperty("Parametric")) {
+                this.effects.push(new Effect("Shots are parametric", {}).setColor(TooltipHelper.NO_DIFF_COLOR));
+            }
+            for each(_local_5 in _local_1.ConditionEffect)
+            {
+                this.effects.push(new Effect(TextKey.EFFECT_FOR_DURATION,{
+                    "effect":_local_5,
+                    "duration":_local_5.@duration
+                }).setColor(TooltipHelper.NO_DIFF_COLOR));
             }
             for each (_local_5 in _local_1.CondChance) {
                 this.effects.push(new Effect("{condChance}% to inflict " +
@@ -567,6 +571,7 @@ public class EquipmentToolTip extends ToolTip {
                         _local_18["data"] = _local_31;
                         this.effects.push(new Effect(_local_2, _local_18));
                         break;
+
                     case ActivationType.TORII:
                         this.effects.push(new Effect("Spawns {type} Torii \nDisappears after {lifetime} seconds \nApplies '{effect}' in a {radius} sqrs area for {duration} seconds", {
                             "lifetime": _local_1.@amount,
@@ -575,8 +580,16 @@ public class EquipmentToolTip extends ToolTip {
                             "effect": _local_1.@effect,
                             "type": (_local_1.@players == "true" ? "a defensive" : "an offensive")
                         }).setColor(TooltipHelper.NO_DIFF_COLOR));
+                        break;
+                    case ActivationType.SORACTIVATE:
+                        this.effects.push(new Effect("+{amount} Sor Fragments", {
+                            "amount": _local_1.@amount
+                        }).setColor(TooltipHelper.NO_DIFF_COLOR));
+                        break;
                 }
+
             }
+
         }
     }
 
@@ -690,6 +703,7 @@ public class EquipmentToolTip extends ToolTip {
             }
         }
     }
+
 
     private function addAbilityItemRestrictions():void {
         this.restrictions.push(new Restriction(TextKey.KEYCODE_TO_USE, 0xFFFFFF, false));

@@ -111,7 +111,7 @@ namespace wServer.logic
                             ))
                         ),
                                 new MostDamagers(3,
-                    LootTemplates.SFLow()
+                    LootTemplates.SF2()
                     ),
                         new Threshold(0.03,
                                   new TierLoot(10, ItemType.Weapon, 0.06),

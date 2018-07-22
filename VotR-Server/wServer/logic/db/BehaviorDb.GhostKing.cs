@@ -248,8 +248,8 @@ namespace wServer.logic
                     new Flash(0xff000000, 0.4, 100),
                     new BackAndForth(0.5, 3)
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                new MostDamagers(3,
+                    LootTemplates.SF1()
                     ),
                 new Threshold(0.18,
                 new ItemLoot("Deathwanderer", 0.02)

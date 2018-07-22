@@ -142,6 +142,8 @@ public class StatData {
     public static const PWPROTECTION_STAT = 145;
     public static const ASCENSIONENABLED = 146;
     public static const RAGE_STAT = 147;
+    public static const SOR_STORAGE = 148;
+
     // unimplemented
     public static const DAMAGE_MIN:int = 98;
     public static const DAMAGE_MAX:int = 99;

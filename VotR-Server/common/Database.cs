@@ -101,6 +101,7 @@ namespace common
                 Lootbox3 = newAccounts.Lootbox3,
                 Lootbox4 = newAccounts.Lootbox4,
                 Lootbox5 = newAccounts.Lootbox5,
+                SorStorage = newAccounts.SorStorage,
                 PassResetToken = ""
             };
 
@@ -391,6 +392,7 @@ namespace common
                 Lootbox3 = newAccounts.Lootbox3,
                 Lootbox4 = newAccounts.Lootbox4,
                 Lootbox5 = newAccounts.Lootbox5,
+                SorStorage = newAccounts.SorStorage,
                 PassResetToken = "",
                 LastSeen = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds
             };
@@ -953,6 +955,24 @@ namespace common
                 {
                     if (!t.IsCanceled)
                         acc.RaidToken = (int)t.Result;
+                });
+
+            if (transaction == null)
+                trans.Execute();
+
+            return task;
+        }
+
+
+        public Task UpdateSorStorage(DbAccount acc, int amount, ITransaction transaction = null)
+        {
+            var trans = transaction ?? _db.CreateTransaction();
+
+            var task = trans.HashIncrementAsync(acc.Key, "sorStorage", amount)
+                .ContinueWith(t =>
+                {
+                    if (!t.IsCanceled)
+                        acc.SorStorage = (int)t.Result;
                 });
 
             if (transaction == null)

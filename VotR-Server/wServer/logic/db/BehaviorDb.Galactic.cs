@@ -223,6 +223,9 @@ namespace wServer.logic
                         new TimedTransition(6000, "fight1")
                         )
                     ),
+                 new MostDamagers(3,
+                    LootTemplates.SF1()
+                    ),
                 new Threshold(0.025,
                     new ItemLoot("Potion of Protection", 1.0),
                     new ItemLoot("Potion of Wisdom", 0.6),
@@ -354,6 +357,9 @@ namespace wServer.logic
                         new TimedTransition(4000, "Commence")
                         )
                     ),
+                                new MostDamagers(3,
+                    LootTemplates.SF2()
+                    ),
                 new Threshold(0.03,
                     new ItemLoot("Potion of Might", 1.0),
                     new ItemLoot("Potion of Vitality", 1.0),
@@ -367,7 +373,7 @@ namespace wServer.logic
                     new TierLoot(9, ItemType.Weapon, 0.055),
                     new ItemLoot("Some Alien Equipment", 0.75),
                     new ItemLoot("Gold Cache", 0.05),
-                    new ItemLoot("The ET Experience", 0.035),
+                    new ItemLoot("The ET Experience", 0.01),
                     new ItemLoot("Otherworldly Blades", 0.01),
                     new ItemLoot("Blade of the Nightbringer", 0.035)
                 )

@@ -186,6 +186,9 @@ namespace wServer.logic
                             )
                         )
                     ),
+                new MostDamagers(3,
+                        LootTemplates.SF0()
+                    ),
                 new Threshold(0.15,
                 new TierLoot(2, ItemType.Ring, 0.15),
                 new TierLoot(3, ItemType.Ring, 0.04),

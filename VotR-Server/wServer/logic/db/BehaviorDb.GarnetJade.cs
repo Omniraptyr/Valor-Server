@@ -160,8 +160,8 @@ namespace wServer.logic
 						new TimedTransition(1500, "ChooseRandomV2")
 					)
 				),
-                                new MostDamagers(3,
-                    LootTemplates.SFLow()
+               new MostDamagers(3,
+                        LootTemplates.SF1()
                     ),
                new MostDamagers(5,
                     LootTemplates.StatIncreasePotionsLoot()
@@ -309,8 +309,8 @@ namespace wServer.logic
 						new TimedTransition(1500, "ChooseRandomV2")
 					)
 				),
-                                new MostDamagers(3,
-                    LootTemplates.SFLow()
+               new MostDamagers(3,
+                        LootTemplates.SF1()
                     ),
                 new MostDamagers(5,
                     LootTemplates.StatIncreasePotionsLoot()

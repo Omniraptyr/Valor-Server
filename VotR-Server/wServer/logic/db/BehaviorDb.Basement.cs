@@ -301,8 +301,8 @@ namespace wServer.logic
                         new Suicide()
                         )
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFLow()
+                new MostDamagers(3,
+                    LootTemplates.SF1()
                     ),
                 new Threshold(0.025,
                     new TierLoot(10, ItemType.Weapon, 0.1),
@@ -316,7 +316,7 @@ namespace wServer.logic
                     new ItemLoot("Onrane", 0.05),
                     new ItemLoot("Shoot Faster Potion", 0.8),
                     new ItemLoot("Dirk of Benevolence", 0.04),
-                    new ItemLoot("Bow of the Lonesome Wraith", 0.04),
+                    new ItemLoot("Bow of the Lonesome Wraith", 0.02),
                     new ItemLoot("Wand of Fractured Time", 0.04),
                     new ItemLoot("Siphon of Courage", 0.04)
                 )

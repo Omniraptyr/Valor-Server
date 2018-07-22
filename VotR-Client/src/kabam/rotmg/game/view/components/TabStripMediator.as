@@ -104,6 +104,7 @@ public class TabStripMediator extends Mediator {
         if (this.doShowStats) {
             this.view.addTab(this.iconFactory.makeIconBitmap(TabConstants.STATS_ICON_ID), new StatsTabContent(this.view.HEIGHT));
         }
+        this.view.addTab(this.iconFactory.makeIconBitmap(TabConstants.SOR_ICON_ID), new SorTabContent(_arg1));
         if (_arg1.marksEnabled_ == true) {
             this.view.addTab(this.iconFactory.makeIconBitmap(TabConstants.MARKS_ICON_ID), new MarksTabContent(_arg1));
         }else {

@@ -298,7 +298,7 @@ namespace wServer.networking.server
                 var wtr = new NWriter(s);
                 wtr.WriteNullTerminatedString(
                     @"<cross-domain-policy>" +
-                    @"<allow-access-from domain=""*"" to-ports=""*"" />" +
+                    @"<allow-access-from domain=""*.votrproject.com"" to-ports=""*"" />" +
                     @"</cross-domain-policy>");
                 wtr.Write((byte)'\r');
                 wtr.Write((byte)'\n');

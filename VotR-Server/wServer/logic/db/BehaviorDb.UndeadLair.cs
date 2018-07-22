@@ -69,8 +69,8 @@ namespace wServer.logic
                         new TimedTransition(10000, "transition1")
                         )
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFLow()
+                 new MostDamagers(3,
+                    LootTemplates.SF0()
                     ),
                 new Threshold(0.025,
                     new TierLoot(7, ItemType.Weapon, 0.1),

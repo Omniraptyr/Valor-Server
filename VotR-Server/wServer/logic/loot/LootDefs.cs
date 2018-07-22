@@ -278,7 +278,10 @@ namespace wServer.logic.loot
                     new ItemLoot("Helm of Dark Retribution", 0.8),
                     new ItemLoot("Armor of Dark Retribution", 0.8),
                     new ItemLoot("Ring of Dark Retribution", 0.8)
-                    )
+                    ),
+                new OnlyOne(
+                    new ItemLoot("Tiny Sor Fragment", 0.1)
+                )
             };
         }
         public static ILootDef[] RaidTokens()
@@ -388,7 +391,10 @@ namespace wServer.logic.loot
                     new ItemLoot("Helm of Dark Retribution", 0.8),
                     new ItemLoot("Armor of Dark Retribution", 0.8),
                     new ItemLoot("Ring of Dark Retribution", 0.8)
-                    )
+                    ),
+               new OnlyOne(
+                    new ItemLoot("Tiny Sor Fragment", 0.1)
+                )
             };
         }
         //1/125K
@@ -397,9 +403,7 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Sor Fragment 1", 0.000008),
-                    new ItemLoot("Sor Fragment 2", 0.000008),
-                    new ItemLoot("Sor Fragment 3", 0.000008)
+                    new ItemLoot("Tiny Sor Fragment", 0.000008)
                 )
              };
         }
@@ -409,9 +413,7 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Sor Fragment 1", 0.00002),
-                    new ItemLoot("Sor Fragment 2", 0.00002),
-                    new ItemLoot("Sor Fragment 3", 0.00002)
+                    new ItemLoot("Tiny Sor Fragment", 0.00002)
                 )
              };
         }
@@ -421,9 +423,7 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Sor Fragment 1", 0.02),
-                    new ItemLoot("Sor Fragment 2", 0.02),
-                    new ItemLoot("Sor Fragment 3", 0.02)
+                    new ItemLoot("Tiny Sor Fragment", 0.02)
                 )
              };
         }
@@ -433,9 +433,7 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Sor Fragment 1", 0.01),
-                    new ItemLoot("Sor Fragment 2", 0.01),
-                    new ItemLoot("Sor Fragment 3", 0.01)
+                    new ItemLoot("Tiny Sor Fragment", 0.01)
                 )
              };
         }
@@ -445,9 +443,7 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Sor Fragment 1", 0.001),
-                    new ItemLoot("Sor Fragment 2", 0.001),
-                    new ItemLoot("Sor Fragment 3", 0.001)
+                    new ItemLoot("Tiny Sor Fragment", 0.001)
                 )
              };
         }
@@ -457,9 +453,7 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Sor Fragment 1", 0.04),
-                    new ItemLoot("Sor Fragment 2", 0.04),
-                    new ItemLoot("Sor Fragment 3", 0.04)
+                    new ItemLoot("Tiny Sor Fragment", 0.04)
                 )
              };
         }
@@ -489,6 +483,9 @@ namespace wServer.logic.loot
                     new ItemLoot("Twisted Amulet", 0.75),
                     new ItemLoot("The Twisted Axe", 0.75),
                     new ItemLoot("Corruption Spell", 0.75)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Tiny Sor Fragment", 0.1)
                 )
             };
         }
@@ -517,6 +514,60 @@ namespace wServer.logic.loot
                     new ItemLoot("The Twisted Axe", 0.75),
                     new ItemLoot("Hunter Necklace", 0.75),
                     new ItemLoot("Corruption Spell", 0.75)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Tiny Sor Fragment", 0.1)
+                )
+            };
+        }
+
+        public static ILootDef[] SF0()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Two Tiny Sor Fragments", 0.01),
+                    new ItemLoot("Tiny Sor Fragment", 0.02)
+                )
+            };
+        }
+        public static ILootDef[] SF1()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Two Tiny Sor Fragments", 0.02),
+                    new ItemLoot("Tiny Sor Fragment", 0.04)
+                )
+            };
+        }
+        public static ILootDef[] SF2()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Two Tiny Sor Fragments", 0.03),
+                    new ItemLoot("Tiny Sor Fragment", 0.06)
+                )
+            };
+        }
+        public static ILootDef[] SF3()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Two Tiny Sor Fragments", 0.04),
+                    new ItemLoot("Tiny Sor Fragment", 0.08)
+                )
+            };
+        }
+        public static ILootDef[] SF4()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Two Tiny Sor Fragments", 0.05),
+                    new ItemLoot("Tiny Sor Fragment", 0.1)
                 )
             };
         }
@@ -544,7 +595,10 @@ namespace wServer.logic.loot
                     new ItemLoot("Helm of Dark Retribution", 0.8),
                     new ItemLoot("Armor of Dark Retribution", 0.8),
                     new ItemLoot("Ring of Dark Retribution", 0.8)
-                    )
+                    ),
+                new OnlyOne(
+                    new ItemLoot("Tiny Sor Fragment", 0.1)
+                )
             };
         }
     }

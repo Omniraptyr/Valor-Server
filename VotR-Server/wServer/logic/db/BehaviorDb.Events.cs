@@ -34,8 +34,8 @@ namespace wServer.logic
                     new ConditionalEffect(ConditionEffectIndex.StunImmune)
                    )
                 ),
-                            new MostDamagers(3,
-                    LootTemplates.SFLow()
+                new MostDamagers(3,
+                        LootTemplates.SF0()
                     ),
               new MostDamagers(3,
                      LootTemplates.StatIncreasePotionsLoot()
@@ -193,8 +193,8 @@ namespace wServer.logic
                         new Suicide()
                         )
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFLow()
+                    new MostDamagers(3,
+                        LootTemplates.SF1()
                     ),
                 new Threshold(0.05,
                     new ItemLoot("Potion of Dexterity", 1),

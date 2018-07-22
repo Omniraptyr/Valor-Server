@@ -312,8 +312,8 @@ namespace wServer.logic
                         new ConditionalEffect(ConditionEffectIndex.Armored)
                         )
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFLow()
+                new MostDamagers(3,
+                    LootTemplates.SF1()
                     ),
                 new MostDamagers(3,
                     new ItemLoot("Potion of Restoration", 1.00)

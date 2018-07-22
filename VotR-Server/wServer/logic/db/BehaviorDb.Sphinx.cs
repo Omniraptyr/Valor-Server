@@ -85,8 +85,8 @@ namespace wServer.logic
                         new TimedTransition(1900, "Attack1")
                         )
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFLow()
+                new MostDamagers(3,
+                    LootTemplates.SF2()
                     ),
                  new MostDamagers(3,
                     LootTemplates.StatIncreasePotionsLoot()

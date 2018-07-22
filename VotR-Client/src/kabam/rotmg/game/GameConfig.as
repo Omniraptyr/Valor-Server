@@ -79,6 +79,8 @@ import kabam.rotmg.game.view.MarkShopModalButton;
 import kabam.rotmg.game.view.SellableObjectPanelMediator;
 import kabam.rotmg.game.view.TextPanel;
 import kabam.rotmg.game.view.TextPanelMediator;
+import kabam.rotmg.game.view.components.SorTabContent;
+import kabam.rotmg.game.view.components.SorTabContentMediator;
 import kabam.rotmg.game.view.components.StatMediator;
 import kabam.rotmg.game.view.components.StatView;
 import kabam.rotmg.game.view.components.StatsMediator;
@@ -157,6 +159,7 @@ public class GameConfig implements IConfig {
         this.mediatorMap.map(StatsView).toMediator(StatsMediator);
         this.mediatorMap.map(TabStripView).toMediator(TabStripMediator);
         this.mediatorMap.map(RaidLauncherModal).toMediator(RaidLauncherMediator);
+        this.mediatorMap.map(SorTabContent).toMediator(SorTabContentMediator);
         this.mediatorMap.map(SorForgeModal).toMediator(SorForgeMediator);
         this.mediatorMap.map(SorForgerUI).toMediator(SorForgerUIMediator);
         this.commandMap.map(AppInitDataReceivedSignal).toCommand(ParsePotionDataCommand);

@@ -583,6 +583,9 @@ namespace wServer.realm.entities
                     case ActivateEffects.EffectRandom:
                         AEEffectRandom(time, item, target, eff);
                         break;
+                    case ActivateEffects.SorActivate:
+                        AESorActivate(time, item, target, eff);
+                        break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
@@ -1121,37 +1124,22 @@ namespace wServer.realm.entities
 
         private void AESorConstruct(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            var inv = Inventory;
-            for (int c = 0; c < inv.Length; c++)
-            {
-                if (inv[c] == null) continue;
-                if (inv[c].ObjectId == "Sor Fragment 1")
-                {
-                    inv[c] = null;
-                    for (int d = 0; d < inv.Length; d++)
-                    {
-                        if (inv[d] == null) continue;
-                        if (inv[d].ObjectId == "Sor Fragment 2")
-                        {
-                            inv[d] = null;
-                            for (int i = 0; i < inv.Length; i++)
-                            {
-                                if (inv[i] == null) continue;
-                                if (inv[i].ObjectId == "Sor Fragment 3")
-                                {
-                                    Manager.Database.AddGift(Client.Account, 0x49e5);
-                                    inv[i] = null;
-                                    
-                                    
-                                    SaveToCharacter();
-                                    SendInfo("You have successfully constructed a Sor Crystal! Check your gift chest!");
+            var acc = Client.Account;
+            Client.Manager.Database.UpdateSorStorage(acc, 10);
+            SorStorage += 10;
+            this.ForceUpdate(SorStorage);
 
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            SendInfo("You redeemed your old sor fragment!");
+        }
+
+        private void AESorActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            var acc = Client.Account;
+            Client.Manager.Database.UpdateSorStorage(acc, eff.Amount);
+            SorStorage += eff.Amount;
+            this.ForceUpdate(SorStorage);
+
+            SendInfo("You have gained " + eff.Amount + " sor fragments! You currently have " + SorStorage + " sor fragments in storage.");
         }
         private void AEAbbyConstruct(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
@@ -1196,69 +1184,54 @@ namespace wServer.realm.entities
             var acc = Client.Account;
             Client.Manager.Database.UpdateOnrane(acc, eff.Amount);
             Onrane += eff.Amount;
-            this.ForceUpdate(Credits);
+            this.ForceUpdate(Onrane);
 
         }
 
+
         private void AEActivateFragment(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            ushort[] fragmentList = { 0x61c3, 0x61c2, 0x61c1 };
             var acc = Client.Account;
             Random rnd = new Random();
-            int Chance = Random.Next(0, 8);
+            int Chance = Random.Next(0, 6);
+            int amount = 0;
             switch (Chance)
             {
                 case 0:
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    SendInfo("You received 1 Sor Fragment.");
+                    amount = 5;
+                    SendInfo("You received " + amount + " Sor Fragments.");
                     break;
 
                 case 1:
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    SendInfo("You received 2 Sor Fragments.");
+                    amount = 5;
+                    SendInfo("You received " + amount + " Sor Fragments.");
                     break;
 
                 case 2:
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    SendInfo("You received 3 Sor Fragments.");
+                    amount = 5;
+                    SendInfo("You received " + amount + " Sor Fragments.");
                     break;
 
                 case 3:
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
+                    amount = 10;
+                    SendInfo("You received " + amount + " Sor Fragments.");
                     SendInfo("You received 4 Sor Fragments.");
                     break;
 
                 case 4:
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    SendInfo("Astonishing! You've received 5 Sor Fragments!");
+                    amount = 10;
+                    SendInfo("You received " + amount + " Sor Fragments.");
                     break;
 
                 case 5:
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    SendInfo("You received 1 Sor Fragment.");
-                    break;
-
-                case 6:
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    SendInfo("You received 1 Sor Fragment.");
-                    break;
-
-                case 7:
-                    Manager.Database.AddGift(acc, fragmentList[rnd.Next(fragmentList.Length)]);
-                    SendInfo("You received 1 Sor Fragment.");
+                    amount = 15;
+                    SendInfo("You received " + amount + " Sor Fragments.");
                     break;
             }
-
+            Client.Manager.Database.UpdateSorStorage(acc, amount);
+            SorStorage += amount;
+            this.ForceUpdate(this.SorStorage);
+            SendInfo("You currently have " + SorStorage + " sor fragments in storage.");
         }
 
         private void AERandomOnrane(RealmTime time, Item item, Position target, ActivateEffect eff)
@@ -1546,6 +1519,9 @@ namespace wServer.realm.entities
 
                 world.AOE(target, eff.Radius, false,
                     enemy => PoisonEnemy(world, enemy as Enemy, eff));
+
+                world.AOE(target, eff.Radius, false,
+                    enemy => (enemy as Enemy).Damage(this, time, eff.ImpactDamage, false));
             }));
         }
         private void DamageGrenade(RealmTime time, Position target)

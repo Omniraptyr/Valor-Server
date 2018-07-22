@@ -161,6 +161,7 @@ namespace wServer.realm
         PWProtection = 145,
         AscensionEnabled = 146,
         RageBar = 147,
+        SorStorage = 148,
 
         None = 255
     }

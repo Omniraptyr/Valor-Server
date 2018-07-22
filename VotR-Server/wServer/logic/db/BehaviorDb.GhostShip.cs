@@ -240,8 +240,8 @@ namespace wServer.logic
                         )
 
                ),
-                                new MostDamagers(3,
-                    LootTemplates.SFLow()
+                 new MostDamagers(3,
+                    LootTemplates.SF1()
                     ),
                 new ItemLoot("Ghost Pirate Rum", 1.0),
 

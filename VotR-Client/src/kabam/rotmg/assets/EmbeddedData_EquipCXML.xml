@@ -7296,7 +7296,7 @@
         <Usable/>
         <BagType>1</BagType>
         <MpCost>30</MpCost>
-        <Activate radius="2.5" totalDamage="150" duration="5">PoisonGrenade</Activate>
+        <Activate radius="2.5" totalDamage="150" duration="5" impactDamage="40">PoisonGrenade</Activate>
         <feedPower>5</feedPower>
         <DisplayId>{equip.Centipede_Poison}</DisplayId>
     </Object>
@@ -7313,7 +7313,7 @@
         <Usable/>
         <BagType>1</BagType>
         <MpCost>45</MpCost>
-        <Activate radius="3" totalDamage="250" duration="5.5">PoisonGrenade</Activate>
+        <Activate radius="3" totalDamage="250" duration="5.5" impactDamage="60">PoisonGrenade</Activate>
         <feedPower>10</feedPower>
         <DisplayId>{equip.Spider_Venom}</DisplayId>
     </Object>
@@ -7330,7 +7330,7 @@
         <Usable/>
         <BagType>1</BagType>
         <MpCost>65</MpCost>
-        <Activate radius="3.5" totalDamage="400" duration="6">PoisonGrenade</Activate>
+        <Activate radius="3.5" totalDamage="400" duration="6" impactDamage="90">PoisonGrenade</Activate>
         <feedPower>20</feedPower>
         <DisplayId>{equip.Pit_Viper_Poison}</DisplayId>
     </Object>
@@ -7348,7 +7348,7 @@
         <BagType>2</BagType>
         <FameBonus>1</FameBonus>
         <MpCost>80</MpCost>
-        <Activate radius="4" totalDamage="550" duration="6.5">PoisonGrenade</Activate>
+        <Activate radius="4" totalDamage="550" duration="6.5" impactDamage="120">PoisonGrenade</Activate>
         <feedPower>45</feedPower>
         <DisplayId>{equip.Stingray_Poison}</DisplayId>
     </Object>
@@ -7366,7 +7366,7 @@
         <BagType>2</BagType>
         <FameBonus>2</FameBonus>
         <MpCost>95</MpCost>
-        <Activate radius="4.5" totalDamage="700" duration="7">PoisonGrenade</Activate>
+        <Activate radius="4.5" totalDamage="700" duration="7" impactDamage="160">PoisonGrenade</Activate>
         <feedPower>90</feedPower>
         <DisplayId>{equip.Felwasp_Toxin}</DisplayId>
     </Object>
@@ -7384,7 +7384,7 @@
         <BagType>4</BagType>
         <FameBonus>3</FameBonus>
         <MpCost>110</MpCost>
-        <Activate radius="5" totalDamage="900" duration="7.5">PoisonGrenade</Activate>
+        <Activate radius="5" totalDamage="900" duration="7.5" impactDamage="180">PoisonGrenade</Activate>
         <feedPower>185</feedPower>
         <DisplayId>{equip.Nightwing_Venom}</DisplayId>
     </Object>
@@ -7404,7 +7404,7 @@
         <BagType>4</BagType>
         <FameBonus>4</FameBonus>
         <MpCost>110</MpCost>
-        <Activate radius="5" totalDamage="900" duration="7.5">PoisonGrenade</Activate>
+        <Activate radius="5" totalDamage="900" duration="7.5" impactDamage="200">PoisonGrenade</Activate>
         <feedPower>380</feedPower>
         <DisplayId>{equip.Baneserpent_Poison}</DisplayId>
     </Object>
@@ -13731,12 +13731,13 @@
             <ObjectId>Pfiffel Esben Shot</ObjectId>
             <Speed>100</Speed>
             <Size>90</Size>
-            <MinDamage>60</MinDamage>
-            <MaxDamage>95</MaxDamage>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>100</MaxDamage>
             <LifetimeMS>720</LifetimeMS>
             <Amplitude>1.35</Amplitude>
             <Frequency>0.49</Frequency>
             <MultiHit/>
+            <ConditionEffect duration="0.3">Slowed</ConditionEffect>
         </Projectile>
         <ActivateOnEquip stat="20" amount="1">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="3">IncrementStat</ActivateOnEquip>
@@ -14988,7 +14989,7 @@
         <Projectile>
             <ObjectId>White Flame</ObjectId>
             <Speed>60</Speed>
-            <MinDamage>100</MinDamage>
+            <MinDamage>155</MinDamage>
             <MaxDamage>200</MaxDamage>
             <LifetimeMS>1100</LifetimeMS>
             <Wavy/>
@@ -16508,8 +16509,8 @@
         <Usable/>
         <ActivateOnEquip stat="20" amount="15">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
-        <MpCost>110</MpCost>
-        <Activate radius="2.5" totalDamage="2000" duration="4">PoisonGrenade</Activate>
+        <MpCost>90</MpCost>
+        <Activate radius="3" totalDamage="2000" duration="4" impactDamage="400">PoisonGrenade</Activate>
         <feedPower>1800</feedPower>
         <FameBonus>8</FameBonus>
         <Legendary/>
@@ -17626,11 +17627,16 @@
         <Sound>spell/light_heal</Sound>
         <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
         <Usable/>
-        <BagType>6</BagType>
+        <BagType>11</BagType>
         <FameBonus>8</FameBonus>
         <MpCost>90</MpCost>
-        <Activate effect="Armored" duration="1.5">ConditionEffectSelf</Activate>
-        <Activate effect="Damaging" duration="8.5" range="6" useWisMod="true">ConditionEffectAura</Activate>
+        <Activate stat="3" amount="100" duration="6" range="4.5" noStack="true" useWisMod="true">StatBoostAura</Activate>
+        <Activate effect="Healing" duration="3" range="4.5" color="0xff0080" target="player" center="player"
+                  visualEffect="5" useWisMod="true">GenericActivate
+        </Activate>
+        <Activate effect="Damaging" duration="6" range="4.5" color="0xff0080" target="player" center="player"
+                  visualEffect="0" useWisMod="true">GenericActivate
+        </Activate>
         <Cooldown>5</Cooldown>
         <feedPower>1650</feedPower>
         <Fabled/>
@@ -17644,16 +17650,18 @@
             <Index>0xd5</Index>
         </Texture>
         <SlotType>8</SlotType>
-        <Description>I left the wand in the fridge.</Description>
+        <Description>I left the wand in the fridge. These are the results</Description>
         <RateOfFire>1</RateOfFire>
         <Sound>weapon/wand_of_death</Sound>
         <Projectile>
             <ObjectId>Frosted Magic</ObjectId>
-            <Speed>65</Speed>
-            <LifetimeMS>660</LifetimeMS>
-            <MinDamage>110</MinDamage>
-            <MaxDamage>180</MaxDamage>
+            <Speed>70</Speed>
+            <LifetimeMS>1000</LifetimeMS>
+            <MinDamage>145</MinDamage>
+            <MaxDamage>185</MaxDamage>
         </Projectile>
+        <ActivateOnEquip stat="3" amount="-20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-8">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <OldSound>magicShoot</OldSound>
@@ -20355,7 +20363,7 @@
         <MpEndCost>100</MpEndCost>
         <MultiPhase/>
         <Activate effect="Damaging" duration="1">ConditionEffectSelf</Activate>
-        <Activate effect="Speedy" duration="3.5" range="3">ConditionEffectAura</Activate>
+        <Activate effect="Speedy" duration="3.5">ConditionEffectSelf</Activate>
         <Activate range="9" color="0x96CDCD" totalDamage="825">SamuraiAbility</Activate>
         <feedPower>1650</feedPower>
         <FameBonus>8</FameBonus>
@@ -21558,16 +21566,15 @@
         </Texture>
         <SlotType>3</SlotType>
         <Description>Forever.</Description>
-        <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="-5">IncrementStat</ActivateOnEquip>
-        <RateOfFire>1.15</RateOfFire>
+        <ActivateOnEquip stat="0" amount="-100">IncrementStat</ActivateOnEquip>
+        <RateOfFire>0.6</RateOfFire>
         <Sound>weapon/golden_bow</Sound>
         <Projectile>
             <ObjectId>Weary Arrow</ObjectId>
-            <Speed>160</Speed>
-            <MinDamage>85</MinDamage>
-            <MaxDamage>95</MaxDamage>
-            <LifetimeMS>445</LifetimeMS>
+            <Speed>60</Speed>
+            <MinDamage>180</MinDamage>
+            <MaxDamage>220</MaxDamage>
+            <LifetimeMS>865</LifetimeMS>
             <Amplitude>1.0</Amplitude>
             <Frequency>2</Frequency>
             <MultiHit/>
@@ -22040,7 +22047,7 @@
         <MpCost>100</MpCost>
         <Activate effect="Healing" duration="6" range="5" useWisMod="true">ConditionEffectAura</Activate>
         <Activate range="6" amount="320" useWisMod="true">HealNova</Activate>
-        <Activate effect="Speedy" duration="1" range="2.5" useWisMod="true">ConditionEffectAura</Activate>
+        <Activate effect="Speedy" duration="1" useWisMod="true">ConditionEffectSelf</Activate>
         <Activate effect="Invulnerable" duration="1">ConditionEffectSelf</Activate>
         <feedPower>1800</feedPower>
         <Cooldown>1.4</Cooldown>
@@ -23092,13 +23099,14 @@
         <Projectile>
             <ObjectId>Zeal Arrow</ObjectId>
             <Speed>150</Speed>
-            <MinDamage>560</MinDamage>
-            <MaxDamage>780</MaxDamage>
+            <MinDamage>800</MinDamage>
+            <MaxDamage>900</MaxDamage>
             <LifetimeMS>1250</LifetimeMS>
             <Size>150</Size>
             <ArmorPiercing/>
             <PassesCover/>
             <ConditionEffect duration="6">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="6">Curse</ConditionEffect>
             <ParticleTrail>0xFF0000</ParticleTrail>
         </Projectile>
         <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
@@ -23107,6 +23115,7 @@
         <ActivateOnEquip stat="0" amount="-80">IncrementStat</ActivateOnEquip>
         <Usable/>
         <ConditionEffect duration="6">Paralyzed</ConditionEffect>
+        <ConditionEffect duration="6">Curse</ConditionEffect>
         <BagType>6</BagType>
         <MpCost>140</MpCost>
         <Activate>Shoot</Activate>
@@ -23615,12 +23624,6 @@
             <Index>0xd0</Index>
         </Texture>
         <Tier>0</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="4"/>
-            <EffectInfo name="Empowerment Duration:" description="3"/>
-            <EffectInfo name="Radius:" description="2"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <Description>A standard banner made of wool cloth.</Description>
         <ActivateOnEquip stat="20" amount="1">IncrementStat</ActivateOnEquip>
@@ -23641,12 +23644,6 @@
             <Index>0xd1</Index>
         </Texture>
         <Tier>1</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="5"/>
-            <EffectInfo name="Empowerment Duration:" description="4"/>
-            <EffectInfo name="Radius:" description="2"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="1">IncrementStat</ActivateOnEquip>
         <Description>A banner meant to inspire the greatness of nature.</Description>
@@ -23667,12 +23664,6 @@
             <Index>0xd2</Index>
         </Texture>
         <Tier>2</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="5"/>
-            <EffectInfo name="Empowerment Duration:" description="4"/>
-            <EffectInfo name="Radius:" description="3"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="2">IncrementStat</ActivateOnEquip>
         <Description>A banner used by heroic templars.</Description>
@@ -23693,12 +23684,6 @@
             <Index>0xd3</Index>
         </Texture>
         <Tier>3</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="5"/>
-            <EffectInfo name="Empowerment Duration:" description="5"/>
-            <EffectInfo name="Radius:" description="3"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="2">IncrementStat</ActivateOnEquip>
         <Description>This banner can cause vicious beast to flee in fear.</Description>
@@ -23720,12 +23705,6 @@
             <Index>0xd4</Index>
         </Texture>
         <Tier>4</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="5"/>
-            <EffectInfo name="Empowerment Duration:" description="5"/>
-            <EffectInfo name="Radius:" description="3"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="3">IncrementStat</ActivateOnEquip>
         <Description>A banner that declares superiority.</Description>
@@ -23748,13 +23727,8 @@
             <Index>0xd5</Index>
         </Texture>
         <Tier>5</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="5"/>
-            <EffectInfo name="Empowerment Duration:" description="5"/>
-            <EffectInfo name="Radius:" description="4"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
+        <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
         <Description>Zarcod, a fallen kingdom won't be crushed..This banner proves that.</Description>
         <Usable/>
@@ -23776,12 +23750,6 @@
             <Index>0xd6</Index>
         </Texture>
         <Tier>6</Tier>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="6"/>
-            <EffectInfo name="Empowerment Duration:" description="5"/>
-            <EffectInfo name="Radius:" description="4"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
         <Description>This banner represents true war and battle.</Description>
@@ -23803,12 +23771,6 @@
             <File>lofiObj6</File>
             <Index>0xd7</Index>
         </Texture>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="6"/>
-            <EffectInfo name="Empowerment Duration:" description="5"/>
-            <EffectInfo name="Radius:" description="3"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="-2">IncrementStat</ActivateOnEquip>
@@ -24794,12 +24756,6 @@
         <ActivateOnEquip stat="22" amount="-4">IncrementStat</ActivateOnEquip>
         <Description>A red banner that stands for no mortal.</Description>
         <Usable/>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="6"/>
-            <EffectInfo name="Empowerment Duration:" description="4"/>
-            <EffectInfo name="Radius:" description="4"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <BagType>6</BagType>
         <MpCost>90</MpCost>
         <Activate range="4" amount="6" duration="4">Banner</Activate>
@@ -27661,7 +27617,7 @@
         <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <MpCost>90</MpCost>
-        <Activate radius="6" totalDamage="720" duration="5">PoisonGrenade</Activate>
+        <Activate radius="6" totalDamage="720" duration="5" impactDamage="180">PoisonGrenade</Activate>
         <Activate effect="Berserk" duration="2" useWisMod="true">ConditionEffectSelf</Activate>
         <FameBonus>8</FameBonus>
         <feedPower>900</feedPower>
@@ -30668,22 +30624,21 @@
         </Texture>
         <SlotType>3</SlotType>
         <Description>This weapon has power akin to the explosion of a planet.</Description>
-        <RateOfFire>2</RateOfFire>
+        <RateOfFire>1.5</RateOfFire>
         <Sound>weapon/golden_bow</Sound>
         <Projectile>
             <ObjectId>Galactic Wave</ObjectId>
             <Speed>160</Speed>
-            <MinDamage>100</MinDamage>
-            <MaxDamage>174</MaxDamage>
-            <LifetimeMS>479</LifetimeMS>
+            <MinDamage>162</MinDamage>
+            <MaxDamage>246</MaxDamage>
+            <LifetimeMS>490</LifetimeMS>
             <MultiHit/>
             <ArmorPiercing/>
             <Wavy/>
         </Projectile>
-        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="65">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="112" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <Legendary/>
@@ -31483,7 +31438,6 @@
         </ExtraTooltipData>
         <BagType>8</BagType>
         <InvUse/>
-        <Fragment/>
         <Soulbound/>
         <Activate>SorConstruct</Activate>
     </Object>
@@ -31501,7 +31455,6 @@
         </ExtraTooltipData>
         <BagType>8</BagType>
         <InvUse/>
-        <Fragment/>
         <Soulbound/>
         <Activate>SorConstruct</Activate>
     </Object>
@@ -31519,7 +31472,6 @@
         </ExtraTooltipData>
         <BagType>8</BagType>
         <InvUse/>
-        <Fragment/>
         <Soulbound/>
         <Activate>SorConstruct</Activate>
     </Object>
@@ -31556,7 +31508,7 @@
         <Projectile>
             <ObjectId>White Flame</ObjectId>
             <Speed>60</Speed>
-            <MinDamage>133</MinDamage>
+            <MinDamage>200</MinDamage>
             <MaxDamage>300</MaxDamage>
             <LifetimeMS>1100</LifetimeMS>
             <Wavy/>
@@ -31586,8 +31538,8 @@
         <BagType>6</BagType>
         <FameBonus>5</FameBonus>
         <MpCost>75</MpCost>
-        <Activate effect="Slowed" duration="10" range="3" color="0xffffff" target="enemy" center="mouse" visualEffect="5" useWisMod="true">GenericActivate</Activate>
-        <Activate radius="6" totalDamage="450" duration="10" color="0xFF69B4">PoisonGrenade</Activate>
+        <Activate effect="Slowed" duration="4" range="3" color="0xffffff" target="enemy" center="mouse" visualEffect="5" useWisMod="true">GenericActivate</Activate>
+        <Activate radius="6" totalDamage="450" duration="10" color="0xFF69B4" impactDamage="300">PoisonGrenade</Activate>
         <feedPower>750</feedPower>
         <DisplayId>Treacherous Venom</DisplayId>
     </Object>
@@ -32993,12 +32945,6 @@
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="26" amount="20">IncrementStat</ActivateOnEquip>
         <Description>Pirates value this banner for it's true grandeur.</Description>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime" description="6"/>
-            <EffectInfo name="Empowerment Duration" description="6"/>
-            <EffectInfo name="Radius" description="4"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <Usable/>
         <BagType>6</BagType>
         <MpCost>85</MpCost>
@@ -33344,7 +33290,7 @@
         <Item/>
         <Texture>
             <File>d3LofiObjEmbed</File>
-            <Index>0x257</Index>
+            <Index>0x256</Index>
         </Texture>
         <SlotType>18</SlotType>
         <Description>A rare venom that could corrode a Sor Crystal.</Description>
@@ -33355,7 +33301,7 @@
         <BagType>11</BagType>
         <FameBonus>6</FameBonus>
         <MpCost>90</MpCost>
-        <Activate radius="8" totalDamage="1100" duration="6">PoisonGrenade</Activate>
+        <Activate radius="8" totalDamage="1100" duration="6" impactDamage="500">PoisonGrenade</Activate>
         <feedPower>750</feedPower>
         <Fabled/>
         <DisplayId>Toxin of the Vicious</DisplayId>
@@ -33402,12 +33348,6 @@
             <File>lofiObj6</File>
             <Index>0xd9</Index>
         </Texture>
-        <ExtraTooltipData>
-            <EffectInfo name="Banner Lifetime:" description="5"/>
-            <EffectInfo name="Empowerment Duration:" description="5"/>
-            <EffectInfo name="Radius:" description="6"/>
-            <EffectInfo name="" description="Empowers all players near banner."/>
-        </ExtraTooltipData>
         <SlotType>28</SlotType>
         <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="28" amount="8">IncrementStat</ActivateOnEquip>
@@ -33923,5 +33863,70 @@
         </Texture>
         <ShadowSize>0</ShadowSize>
         <DisplayId>Oryx's Arena Portal</DisplayId>
+    </Object>
+    <Object type="0x63e1" id="Small Sor Fragment">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x59</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A fragment of what seems to be a green crystal. It glows light green and might contain some type of hidden power.</Description>
+        <BagType>8</BagType>
+        <Consumable/>
+        <Activate amount="5">SorActivate</Activate>
+    </Object>
+    <Object type="0x63e2" id="Tiny Sor Fragment">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x103</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A fragment of what seems to be a green crystal. It glows light green and might contain some type of hidden power.</Description>
+        <BagType>8</BagType>
+        <Consumable/>
+        <Activate amount="1">SorActivate</Activate>
+    </Object>
+    <Object type="0x63e3" id="Two Tiny Sor Fragments">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x104</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Two fragments of what seems to be a green crystal. It glows light green and might contain some type of hidden power.</Description>
+        <BagType>8</BagType>
+        <Consumable/>
+        <Activate amount="2">SorActivate</Activate>
+    </Object>
+    <Object type="0x63e4" id="Medium Sor Fragment">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x60</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A fragment of what seems to be a green crystal. It glows light green and might contain some type of hidden power.</Description>
+        <BagType>8</BagType>
+        <Consumable/>
+        <Activate amount="10">SorActivate</Activate>
+    </Object>
+    <Object type="0x63e5" id="Large Sor Fragment">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x61</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A large fragment of what seems to be a green crystal. It glows light green and might contain some type of hidden power.</Description>
+        <BagType>8</BagType>
+        <Consumable/>
+        <Activate amount="15">SorActivate</Activate>
     </Object>
 </Objects>

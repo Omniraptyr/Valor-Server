@@ -116,6 +116,13 @@ namespace wServer.realm.entities
             set { _credits.SetValue(value); }
         }
 
+        private readonly SV<int> _sorStorage;
+        public int SorStorage
+        {
+            get { return _sorStorage.GetValue(); }
+            set { _sorStorage.SetValue(value); }
+        }
+
         private readonly SV<bool> _nameChosen;
         public bool NameChosen
         {
@@ -549,6 +556,7 @@ namespace wServer.realm.entities
                 case StatsType.PWLuck: PWLuck = (int)val; break;
                 case StatsType.PWRestoration: PWRestoration = (int)val; break;
                 case StatsType.PWProtection: PWProtection = (int)val; break;
+                case StatsType.SorStorage: SorStorage = (int)val; break;
             }
         }
 
@@ -669,6 +677,7 @@ namespace wServer.realm.entities
             stats[StatsType.PWProtection] = PWProtection;
             stats[StatsType.ProtectionPoints] = Protection;
             stats[StatsType.ProtectionPointsMax] = ProtectionMax;
+            stats[StatsType.SorStorage] = SorStorage;
         }
 
         public void SaveToCharacter()
@@ -773,7 +782,7 @@ namespace wServer.realm.entities
             _lootbox3 = new SV<int>(this, StatsType.Lootbox3, client.Account.Lootbox3, true);
             _lootbox4 = new SV<int>(this, StatsType.Lootbox4, client.Account.Lootbox4, true);
             _lootbox5 = new SV<int>(this, StatsType.Lootbox5, client.Account.Lootbox5, true);
-
+            _sorStorage = new SV<int>(this, StatsType.SorStorage, client.Account.SorStorage, true);
 
             _pwHealth = new SV<int>(this, StatsType.PWMaximumHP, client.Character.PWHealth);
             _pwMana = new SV<int>(this, StatsType.PWMaximumMP, client.Character.PWMana);

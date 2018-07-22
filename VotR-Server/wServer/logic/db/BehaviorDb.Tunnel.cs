@@ -212,6 +212,9 @@ namespace wServer.logic
                            new Suicide()
                            )
                        ),
+                    new MostDamagers(3,
+                        LootTemplates.SF1()
+                    ),
                      new MostDamagers(3,
                          new ItemLoot("Potion of Restoration", 1)
                      ),

@@ -41,7 +41,13 @@ public class GeneralProjectileComparison extends SlotComparison {
             comparisonStringBuilder.pushParams(TextKey.PASSES_COVER, {}, TooltipHelper.getOpenTag(NO_DIFF_COLOR), TooltipHelper.getCloseTag());
         }
         if (this.projXML.hasOwnProperty("ArmorPiercing")) {
-            comparisonStringBuilder.pushParams(TextKey.ARMOR_PIERCING, {}, TooltipHelper.getOpenTag(NO_DIFF_COLOR), TooltipHelper.getCloseTag());
+            comparisonStringBuilder.pushParams(TextKey.ARMOR_PIERCING, {}, TooltipHelper.getOpenTag(UNTIERED_COLOR), TooltipHelper.getCloseTag());
+        }
+        if (this.projXML.hasOwnProperty("Boomerang")) {
+            comparisonStringBuilder.pushParams("Shots boomerang", {}, TooltipHelper.getOpenTag(NO_DIFF_COLOR), TooltipHelper.getCloseTag());
+        }
+        if (this.projXML.hasOwnProperty("Parametric")) {
+            comparisonStringBuilder.pushParams("Shots are parametric", {}, TooltipHelper.getOpenTag(NO_DIFF_COLOR), TooltipHelper.getCloseTag());
         }
 		for each (_local4 in this.projXML.ConditionEffect) {
             comparisonStringBuilder.pushParams("Shot Effect:\n{condition}"

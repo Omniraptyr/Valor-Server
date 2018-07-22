@@ -142,6 +142,9 @@ namespace wServer.logic
                         new Suicide()
                         )
                     ),
+                new MostDamagers(3,
+                    LootTemplates.SF1()
+                    ),
                 new Threshold(0.15,
                 new TierLoot(12, ItemType.Weapon, 0.045),
                 new TierLoot(11, ItemType.Weapon, 0.05),
@@ -245,8 +248,8 @@ namespace wServer.logic
                 new ItemLoot("Skull of Hades", 0.03),
                 new ItemLoot("Hellslicer", 0.04),
                 new ItemLoot("The Eye of Peril", 0.04),
-                new ItemLoot("Sinburn Hide", 0.03),
-                new ItemLoot("Wildfire Crossbow", 0.03)
+                new ItemLoot("Sinburn Hide", 0.01),
+                new ItemLoot("Wildfire Crossbow", 0.01)
                 )
             )
         .Init("Crimson Trap",

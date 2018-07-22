@@ -193,7 +193,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SFCrystal()
+                    LootTemplates.SF4()
                     ),
                 new Threshold(0.01,
                     new ItemLoot("Amethyst Lair Armor", 0.25),

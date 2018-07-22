@@ -147,6 +147,9 @@ namespace wServer.logic
                         new TimedTransition(6000, "blastcannonballs")
                         )
                     ),
+                new MostDamagers(3,
+                        LootTemplates.SF1()
+                    ),
                 new Threshold(0.025,
                     new ItemLoot("Potion of Speed", 1.0),
                     new ItemLoot("Potion of Dexterity", 1.0),

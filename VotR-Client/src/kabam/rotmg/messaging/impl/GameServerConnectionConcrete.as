@@ -208,6 +208,7 @@ import kabam.rotmg.messaging.impl.outgoing.PlayerHit;
 import kabam.rotmg.messaging.impl.outgoing.PlayerShoot;
 import kabam.rotmg.messaging.impl.outgoing.PlayerText;
 import kabam.rotmg.messaging.impl.outgoing.Pong;
+import kabam.rotmg.messaging.impl.outgoing.QoLAction;
 import kabam.rotmg.messaging.impl.outgoing.QueuePong;
 import kabam.rotmg.messaging.impl.outgoing.RequestTrade;
 import kabam.rotmg.messaging.impl.outgoing.Reskin;
@@ -440,6 +441,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(SORFORGEREQUEST).toMessage(SorForgeRequest);
         _local1.map(FORGEITEM).toMessage(ForgeItem);
         _local1.map(ALERTNOTICE).toMessage(AlertNotice);
+        _local1.map(QOLACTION).toMessage(QoLAction);
         _local1.map(MARKREQUEST).toMessage(MarkRequest);
         _local1.map(UNBOXREQUEST).toMessage(UnboxRequest);
         _local1.map(MARKET_COMMAND).toMessage(MarketCommand);
@@ -1904,6 +1906,9 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                     break;
                 case StatData.RAGE_STAT:
                     _local4.rage_ = _local8;
+                    break;
+                case StatData.SOR_STORAGE:
+                    _local4.sorStorage_ = _local8;
                     break;
             }
         }

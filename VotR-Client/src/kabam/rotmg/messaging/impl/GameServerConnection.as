@@ -127,6 +127,7 @@ public class GameServerConnection {
     public static const UNBOXRESULT:int = 162;
     public static const ALERTNOTICE:int = 163;
     public static const MARKREQUEST:int = 164;
+    public static const QOLACTION:int = 165;
 
     public static var instance:GameServerConnection;
 

@@ -210,6 +210,7 @@
     <Compile Include="networking\handlers\ForgeItemHandler.cs" />
     <Compile Include="networking\handlers\LaunchRaidHandler.cs" />
     <Compile Include="networking\handlers\MarkRequestHandler.cs" />
+    <Compile Include="networking\handlers\QoLActionHandler.cs" />
     <Compile Include="networking\handlers\SorForgeRequestHandler.cs" />
     <Compile Include="networking\handlers\UnboxRequestHandler.cs" />
     <Compile Include="networking\packets\incoming\AlertNotice.cs" />
@@ -219,6 +220,7 @@
     <Compile Include="networking\packets\incoming\GoToQuestRoom.cs" />
     <Compile Include="networking\packets\incoming\KeyInfoRequest.cs" />
     <Compile Include="networking\packets\incoming\MarkRequest.cs" />
+    <Compile Include="networking\packets\incoming\QoLAction.cs" />
     <Compile Include="networking\packets\incoming\ReskinPet.cs" />
     <Compile Include="networking\packets\incoming\SorForgeRequest.cs" />
     <Compile Include="networking\packets\incoming\UnboxRequest.cs" />

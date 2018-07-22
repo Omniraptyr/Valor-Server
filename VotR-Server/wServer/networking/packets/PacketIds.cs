@@ -114,6 +114,7 @@ namespace wServer.networking.packets
         UNBOXREQUEST = 161,
         UNBOXRESULT = 162,
         ALERTNOTICE = 163,
-        MARKREQUEST = 164
+        MARKREQUEST = 164,
+        QOLACTION = 165
     }
 }

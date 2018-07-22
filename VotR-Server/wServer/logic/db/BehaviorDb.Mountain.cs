@@ -46,8 +46,9 @@ namespace wServer.logic
                         ),
                     new DropPortalOnDeath("Haunted Cemetery Portal", .4)
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                new Threshold(0.07,
+                    new ItemLoot("Potion of Defense", 0.2),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             .Init("White Demon",
@@ -76,7 +77,8 @@ namespace wServer.logic
                     ),
                 new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Attack", 0.2)
+                    new ItemLoot("Potion of Attack", 0.2),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             .Init("Sprite God",
@@ -105,7 +107,8 @@ namespace wServer.logic
                     ),
                 new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Attack", 0.2)
+                    new ItemLoot("Potion of Attack", 0.2),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             .Init("Angelic Commander",
@@ -143,7 +146,8 @@ namespace wServer.logic
                     ),
                 new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Speed", 0.2)
+                    new ItemLoot("Potion of Speed", 0.2),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             .Init("Sprite Child",
@@ -183,7 +187,8 @@ namespace wServer.logic
                     ),
                 new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Speed", 0.2)
+                    new ItemLoot("Potion of Speed", 0.2),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
            .Init("Thunder God",
@@ -212,7 +217,8 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ability, 0.1),
                     new TierLoot(3, ItemType.Ability, 0.17),
                     new TierLoot(9, ItemType.Armor, 0.25),
-                    new ItemLoot("Potion of Defense", 0.33)
+                    new ItemLoot("Potion of Defense", 0.33),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                 )
             )
             .Init("Ent God",
@@ -240,7 +246,8 @@ namespace wServer.logic
                     ),
                 new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Defense", 0.2)
+                    new ItemLoot("Potion of Defense", 0.2),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             .Init("Beholder",
@@ -270,7 +277,8 @@ namespace wServer.logic
                     ),
                 new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Defense", 0.2)
+                    new ItemLoot("Potion of Defense", 0.2),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             .Init("Flying Brain",
@@ -299,7 +307,8 @@ namespace wServer.logic
                     ),
                 new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Attack", 0.2)
+                    new ItemLoot("Potion of Attack", 0.2),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             .Init("Slime God",
@@ -328,7 +337,8 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ability, 0.04)
                     ),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Defense", 0.2)
+                    new ItemLoot("Potion of Defense", 0.2),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             .Init("Ghost God",
@@ -357,7 +367,8 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ability, 0.04)
                     ),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Speed", 0.2)
+                    new ItemLoot("Potion of Speed", 0.2),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
            .Init("Construct of the Concealment",
@@ -383,7 +394,8 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ability, 0.05),
                     new TierLoot(3, ItemType.Ability, 0.1),
                     new TierLoot(9, ItemType.Armor, 0.055),
-                    new ItemLoot("Potion of Wisdom", 0.25)
+                    new ItemLoot("Potion of Wisdom", 0.25),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             .Init("Rock Bot",
@@ -417,7 +429,8 @@ namespace wServer.logic
                     new ItemLoot("Purple Drake Egg", 0.01)
                     ),
                 new Threshold(0.04,
-                    new ItemLoot("Potion of Attack", 0.07)
+                    new ItemLoot("Potion of Attack", 0.07),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             .Init("Paper Bot",
@@ -455,7 +468,8 @@ namespace wServer.logic
                     new TierLoot(3, ItemType.Ability, 0.1)
                     ),
                 new Threshold(0.04,
-                    new ItemLoot("Potion of Attack", 0.07)
+                    new ItemLoot("Potion of Attack", 0.07),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             .Init("Steel Bot",
@@ -494,7 +508,8 @@ namespace wServer.logic
                     new TierLoot(3, ItemType.Ability, 0.1)
                     ),
                 new Threshold(0.04,
-                    new ItemLoot("Potion of Attack", 0.07)
+                    new ItemLoot("Potion of Attack", 0.07),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             .Init("Djinn",
@@ -551,7 +566,8 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ability, 0.04)
                     ),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Speed", 0.2)
+                    new ItemLoot("Potion of Speed", 0.2),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             .Init("Leviathan",
@@ -605,7 +621,8 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ability, 0.04)
                     ),
                 new Threshold(0.07,
-                    new ItemLoot("Potion of Defense", 0.2)
+                    new ItemLoot("Potion of Defense", 0.2),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             .Init("Lucky Djinn",
@@ -662,7 +679,8 @@ namespace wServer.logic
                     new TierLoot(5, ItemType.Ability, 0.2)
                     ),
                 new Threshold(0.15,
-                    new ItemLoot("Potion of Speed", 1)
+                    new ItemLoot("Potion of Speed", 1),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             .Init("Lucky Ent God",
@@ -691,7 +709,8 @@ namespace wServer.logic
                     new TierLoot(5, ItemType.Ability, 0.2)
                     ),
                 new Threshold(0.15,
-                    new ItemLoot("Potion of Defense", 1)
+                    new ItemLoot("Potion of Defense", 1),
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
             ;

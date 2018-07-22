@@ -1972,7 +1972,7 @@ namespace wServer.logic
                     LootTemplates.GStatIncreasePotionsLoot2()
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SFLow()
+                    LootTemplates.SF3()
                     ),
                     new Threshold(0.04,
                        new TierLoot(12, ItemType.Weapon, 0.08),
@@ -2617,7 +2617,7 @@ namespace wServer.logic
                     LootTemplates.GStatIncreasePotionsLoot2()
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SFLow()
+                    LootTemplates.SF3()
                     ),
                     new Threshold(0.05,
                        new TierLoot(12, ItemType.Weapon, 0.08),
@@ -3085,7 +3085,7 @@ namespace wServer.logic
                     LootTemplates.FabledItemsLoots2B()
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SFGigas()
+                    LootTemplates.SF4()
                     ),
                 new Threshold(0.05,
                 new TierLoot(12, ItemType.Weapon, 0.08),

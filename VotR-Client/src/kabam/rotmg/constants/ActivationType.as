@@ -36,6 +36,7 @@ public class ActivationType {
     public static const BURNINGLIGHTNING:String = "Lightning";
 	public static const BANNER:String = "Banner";
 	public static const TORII:String = "Torii";
+    public static const SORACTIVATE:String = "SorActivate";
 
 
 }

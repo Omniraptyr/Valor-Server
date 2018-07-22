@@ -81,6 +81,9 @@ namespace wServer.logic
                 new MostDamagers(1,
                     new ItemLoot("Potion of Defense", 1.0)
                 ),
+                new MostDamagers(3,
+                    LootTemplates.SF1()
+                    ),
                 new Threshold(0.022,
                     new TierLoot(10, ItemType.Weapon, 0.06),
                     new TierLoot(11, ItemType.Weapon, 0.05),

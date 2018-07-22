@@ -48,7 +48,7 @@ public class MarksTabContent extends Sprite {
         addChild(this.background);
         this.init(_arg1);
         this.positionChildren();
-        this.showNodeDisplay1();
+        this.showNodeDisplay();
     }
     private function addChildren():void {
         this.background.addChild(this.nodetext);
@@ -57,7 +57,7 @@ public class MarksTabContent extends Sprite {
     private function init(_arg1:Player):void {
         this.background.name = TabStripModel.MARKS;
     }
-    private function showNodeDisplay1():void {
+    private function showNodeDisplay():void {
         this.markDisplay = new MarkDisplay(player);
         this.markDisplay.x = this.marktext.x;
         this.markDisplay.y = this.marktext.y + 25;

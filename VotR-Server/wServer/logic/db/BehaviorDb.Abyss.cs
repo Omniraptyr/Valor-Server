@@ -64,12 +64,13 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SFLow()
+                    LootTemplates.SF0()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Demon Blade", 0.045),
                     new ItemLoot("Abyssal Rune", 0.05),
                     new ItemLoot("Potion of Vitality", 1.0),
+                    new ItemLoot("Potion of Restoration", 0.33),
                     new ItemLoot("Potion of Defense", 1.0),
                     new TierLoot(9, ItemType.Weapon, 0.1),
                     new TierLoot(4, ItemType.Ability, 0.1),

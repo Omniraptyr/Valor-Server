@@ -108,8 +108,8 @@ namespace wServer.logic
                         new TimedTransition(5000, "ShotgunPhase")
                         )
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFLow()
+                new MostDamagers(3,
+                    LootTemplates.SF0()
                     ),
                 new Threshold(0.01,
                     new ItemLoot("Potion of Vitality", 0.6),

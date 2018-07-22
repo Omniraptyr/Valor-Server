@@ -411,6 +411,12 @@ namespace common
             set { SetValue<int>("raidToken", value); }
         }
 
+        public int SorStorage
+        {
+            get { return GetValue<int>("sorStorage"); }
+            set { SetValue<int>("sorStorage", value); }
+        }
+
         public int Lootbox1
         {
             get { return GetValue<int>("lootBox1"); }

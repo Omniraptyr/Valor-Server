@@ -83,6 +83,7 @@ namespace common.resources
         public int Lootbox3 { get; private set; }
         public int Lootbox4 { get; private set; }
         public int Lootbox5 { get; private set; }
+        public int SorStorage { get; private set; }
         public NewAccounts(XElement e)
         {
             elem = e;
@@ -102,6 +103,7 @@ namespace common.resources
             PetYardType = GetIntValue("PetYardType");
             VaultCount = GetIntValue("VaultCount");
             MaxCharSlot = GetIntValue("MaxCharSlot");
+            SorStorage = GetIntValue("SorStorage");
         }
     }
 

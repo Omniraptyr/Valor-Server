@@ -140,8 +140,8 @@ namespace wServer.logic
                         new TossObject("Truvix Bomb", range: 6, coolDown: 5000)
                         )
                     ),
-               new MostDamagers(3,
-                    LootTemplates.SFLow()
+                new MostDamagers(3,
+                    LootTemplates.SF2()
                     ),
                 new Threshold(0.015,
                     new ItemLoot("Potion of Vitality", 0.1),

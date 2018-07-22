@@ -530,7 +530,7 @@ namespace wServer.logic
 					)
 				),
                  new MostDamagers(3,
-                    LootTemplates.SFLow()
+                    LootTemplates.SF3()
                     ),
                  new MostDamagers(3,
                     LootTemplates.StatIncreasePotionsLoot()
