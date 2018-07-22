@@ -280,7 +280,7 @@ namespace wServer.logic.loot
                     new ItemLoot("Ring of Dark Retribution", 0.8)
                     ),
                 new OnlyOne(
-                    new ItemLoot("Tiny Sor Fragment", 0.1)
+                    new ItemLoot("Medium Sor Fragment", 0.1)
                 )
             };
         }
@@ -393,7 +393,7 @@ namespace wServer.logic.loot
                     new ItemLoot("Ring of Dark Retribution", 0.8)
                     ),
                new OnlyOne(
-                    new ItemLoot("Tiny Sor Fragment", 0.1)
+                    new ItemLoot("Large Sor Fragment", 0.1)
                 )
             };
         }
@@ -485,7 +485,7 @@ namespace wServer.logic.loot
                     new ItemLoot("Corruption Spell", 0.75)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Tiny Sor Fragment", 0.1)
+                    new ItemLoot("Small Sor Fragment", 0.1)
                 )
             };
         }
@@ -516,7 +516,7 @@ namespace wServer.logic.loot
                     new ItemLoot("Corruption Spell", 0.75)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Tiny Sor Fragment", 0.1)
+                    new ItemLoot("Small Sor Fragment", 0.1)
                 )
             };
         }
@@ -597,7 +597,7 @@ namespace wServer.logic.loot
                     new ItemLoot("Ring of Dark Retribution", 0.8)
                     ),
                 new OnlyOne(
-                    new ItemLoot("Tiny Sor Fragment", 0.1)
+                    new ItemLoot("Two Tiny Sor Fragments", 0.1)
                 )
             };
         }

@@ -109668,6 +109668,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>8</BagType>
         <InvUse/>
         <Soulbound/>
+		<Consumable/>
         <Activate>SorConstruct</Activate>
     </Object>
     <Object type="0x61c2" id="Sor Fragment 2">
@@ -109685,6 +109686,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>8</BagType>
         <InvUse/>
         <Soulbound/>
+		<Consumable/>
         <Activate>SorConstruct</Activate>
     </Object>
     <Object type="0x61c3" id="Sor Fragment 3">
@@ -109702,6 +109704,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>8</BagType>
         <InvUse/>
         <Soulbound/>
+		<Consumable/>
         <Activate>SorConstruct</Activate>
     </Object>
 <Object type="0x61b8" id="Ancient Stone Maul">
