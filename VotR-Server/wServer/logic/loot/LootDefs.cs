@@ -526,7 +526,8 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.01),
+                    new ItemLoot("Two Tiny Sor Fragments", 0.02),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.02),
                     new ItemLoot("Tiny Sor Fragment", 0.02)
                 )
             };
@@ -536,7 +537,8 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.02),
+                    new ItemLoot("Two Tiny Sor Fragments", 0.04),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.04),
                     new ItemLoot("Tiny Sor Fragment", 0.04)
                 )
             };
@@ -546,7 +548,8 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.03),
+                    new ItemLoot("Two Tiny Sor Fragments", 0.06),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.06),
                     new ItemLoot("Tiny Sor Fragment", 0.06)
                 )
             };
@@ -556,7 +559,8 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.04),
+                    new ItemLoot("Two Tiny Sor Fragments", 0.08),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.08),
                     new ItemLoot("Tiny Sor Fragment", 0.08)
                 )
             };
@@ -566,7 +570,8 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.05),
+                    new ItemLoot("Two Tiny Sor Fragments", 0.1),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.1),
                     new ItemLoot("Tiny Sor Fragment", 0.1)
                 )
             };

@@ -472,7 +472,8 @@ public class EquipmentToolTip extends ToolTip {
                         this.effects.push(new Effect(TextKey.POISON_GRENADE_DATA, {
                             "damage": _local_1.@totalDamage,
                             "duration": _local_1.@duration,
-                            "radius": _local_1.@radius
+                            "radius": _local_1.@radius,
+                            "impactDamage": _local_1.@impactDamage
                         }).setColor(TooltipHelper.NO_DIFF_COLOR));
                         break;
                     case ActivationType.REMOVE_NEG_COND:

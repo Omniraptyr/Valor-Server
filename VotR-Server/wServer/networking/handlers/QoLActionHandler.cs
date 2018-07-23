@@ -48,6 +48,8 @@ namespace wServer.networking.handlers
                         player.ForceUpdate(player.CurrentFame);
 
                         player.Fame -= player.Fame;
+                        player.ForceUpdate(player.Fame);
+                        player.SaveToCharacter();
                     }
                     else
                     {

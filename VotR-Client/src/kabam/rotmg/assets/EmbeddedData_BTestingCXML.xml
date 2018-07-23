@@ -12455,4 +12455,110 @@
         </Texture>
         <DisplayId>The Steps 2</DisplayId>
     </Object>
+    <Object type="0x63e7" id="Drannol, the Eternal Beast">
+        <Enemy/>
+        <Group>Drannol</Group>
+        <DisplayId>Drannol, the Eternal Beast</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>raiding32x32Embed</File>
+            <Index>0x00</Index>
+        </AnimatedTexture>
+        <HitSound>monster/oryx_hit</HitSound>
+        <DeathSound>monster/abyss_brutes_death</DeathSound>
+        <Size>160</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <Elitedrop/>
+        <DazedImmune/>
+        <SlowedImmune/>
+        <ShadowSize>0</ShadowSize>
+        <Quest/>
+        <MaxHitPoints>99999999</MaxHitPoints>
+        <Defense>99</Defense>
+        <Projectile id="0">
+            <ObjectId>Dirt Quake</ObjectId>
+            <MinDamage>240</MinDamage>
+            <MaxDamage>300</MaxDamage>
+            <Speed>40</Speed>
+            <ConditionEffect duration="8">Slowed</ConditionEffect>
+            <ConditionEffect duration="8">Unstable</ConditionEffect>
+            <LifetimeMS>600</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Eternal Wave</ObjectId>
+            <Damage>140</Damage>
+            <Speed>80</Speed>
+            <ConditionEffect duration="6">Armor Broken</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Eternal Slash</ObjectId>
+            <Damage>160</Damage>
+            <Speed>60</Speed>
+            <LifetimeMS>1800</LifetimeMS>
+            <MultiHit/>
+            <Wavy/>
+            <ConditionEffect duration="3">Slowed</ConditionEffect>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Directed Explosion</ObjectId>
+            <MinDamage>60</MinDamage>
+            <MaxDamage>80</MaxDamage>
+            <Speed>80</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Fire Boomerang</ObjectId>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <Speed>35</Speed>
+            <LifetimeMS>8000</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Fire Bullet</ObjectId>
+            <MinDamage>160</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <Speed>35</Speed>
+            <LifetimeMS>8000</LifetimeMS>
+            <Boomerang/>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="6">
+            <ObjectId>Eternal Wave</ObjectId>
+            <Damage>280</Damage>
+            <Speed>80</Speed>
+            <ConditionEffect duration="6">Armor Broken</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="7">
+            <ObjectId>Eternal Slash</ObjectId>
+            <Damage>320</Damage>
+            <Speed>60</Speed>
+            <LifetimeMS>1800</LifetimeMS>
+            <MultiHit/>
+            <Wavy/>
+            <ConditionEffect duration="3">Slowed</ConditionEffect>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+        </Projectile>
+        <Projectile id="8">
+            <ObjectId>Eternal Wave</ObjectId>
+            <Damage>560</Damage>
+            <Speed>80</Speed>
+            <ConditionEffect duration="6">Armor Broken</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="9">
+            <ObjectId>Eternal Slash</ObjectId>
+            <Damage>640</Damage>
+            <Speed>60</Speed>
+            <LifetimeMS>1800</LifetimeMS>
+            <MultiHit/>
+            <Wavy/>
+            <ConditionEffect duration="3">Slowed</ConditionEffect>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+        </Projectile>
+    </Object>
 </Objects>

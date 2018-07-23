@@ -1094,7 +1094,7 @@ namespace wServer.realm.entities
 
             Owner.AOE(target, eff.Range, false, enemy =>
             {
-                (enemy as Enemy).Damage(this, time, ((((MP * 2) + (wisBoost ^ 2)) * (drained)) / 4) + eff.Amount, false,
+                (enemy as Enemy).Damage(this, time, ((((MP * 2) + (wisBoost ^ 2)) * (drained / 2)) / 4) + eff.Amount, false,
                     new ConditionEffect[0]);
             });
             BroadcastSync(pkts, p => this.Dist(p) < 25);
@@ -1519,6 +1519,7 @@ namespace wServer.realm.entities
 
                 world.AOE(target, eff.Radius, false,
                     enemy => PoisonEnemy(world, enemy as Enemy, eff));
+
 
                 world.AOE(target, eff.Radius, false,
                     enemy => (enemy as Enemy).Damage(this, time, eff.ImpactDamage, false));

@@ -126,7 +126,7 @@ namespace wServer.networking.handlers
                             {
                                 if (client.Player.CheckForItems("Empowered Whip"))
                                 {
-                                    ItemValue = 0x61c5;
+                                    ItemValue = 0x61d7;
                                 }
                                 break;
                             }

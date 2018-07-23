@@ -37,7 +37,7 @@ namespace wServer.logic
                         new TimedTransition(4000, "spooksters")
                         )
                     ),
-                               new MostDamagers(3,
+                new MostDamagers(3,
                         LootTemplates.SF1()
                     ),
                 new Threshold(0.025,

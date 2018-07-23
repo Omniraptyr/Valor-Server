@@ -37,8 +37,8 @@ namespace wServer.logic.behaviors
 
             if (cool <= 0)
             {
-                if (host.HasConditionEffect(ConditionEffects.Stunned)) return;
-
+                if (host.HasConditionEffect(ConditionEffects.Sick))
+                    return;
                 foreach (var entity in host.GetNearestEntitiesByGroup(range, group).OfType<Enemy>())
                 {
                     int newHp = entity.ObjectDesc.MaxHP;

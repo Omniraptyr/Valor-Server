@@ -22,6 +22,7 @@ public class CharacterDetailsView extends Sprite {
 
     public static const NEXUS_BUTTON:String = "NEXUS_BUTTON";
     public static const OPTIONS_BUTTON:String = "OPTIONS_BUTTON";
+    public static const QUEST_BUTTON:String = "QUEST_BUTTON";
     public static const IMAGE_SET_NAME:String = "lofiInterfaceBig";
     public static const NEXUS_IMAGE_ID:int = 6;
     public static const OPTIONS_IMAGE_ID:int = 5;
@@ -32,9 +33,11 @@ public class CharacterDetailsView extends Sprite {
     public var imageFactory:ImageFactory;
     private var portrait_:Bitmap;
     private var button:IconButton;
+    private var questButton:IconButton;
     private var nameText_:TextFieldDisplayConcrete;
     private var nexusClicked:NativeSignal;
     private var optionsClicked:NativeSignal;
+    private var questClicked:NativeSignal;
     private var boostPanelButton:BoostPanelButton;
     private var expTimer:ExperienceBoostTimerPopup;
 
@@ -45,6 +48,7 @@ public class CharacterDetailsView extends Sprite {
         this.nameText_ = new TextFieldDisplayConcrete().setSize(20).setColor(0xB3B3B3);
         this.nexusClicked = new NativeSignal(this.button, MouseEvent.CLICK);
         this.optionsClicked = new NativeSignal(this.button, MouseEvent.CLICK);
+        this.questClicked = new NativeSignal(this.questButton, MouseEvent.CLICK);
         super();
     }
 
@@ -67,9 +71,16 @@ public class CharacterDetailsView extends Sprite {
                 this.optionsClicked.add(this.onOptionsClick);
             }
         }
+        this.questButton = this.iconButtonFactory.create(this.imageFactory.getImageFromSet("lofiInterfaceBig", 30), "", "Quest Log", "questlog");
+        this.questClicked = new NativeSignal(this.questButton, MouseEvent.CLICK, MouseEvent);
+        this.questClicked.add(this.onQuestClick);
+
         this.button.x = 172;
         this.button.y = 4;
         addChild(this.button);
+        this.questButton.x = 140;
+        this.questButton.y = 4;
+        addChild(this.questButton);
     }
 
     private function createPortrait():void {
@@ -115,6 +126,9 @@ public class CharacterDetailsView extends Sprite {
                 this.nameText_.x = 36;
             }
         }
+    }
+
+    private function onQuestClick(_arg1:MouseEvent):void {
     }
 
     private function onNexusClick(_arg1:MouseEvent):void {

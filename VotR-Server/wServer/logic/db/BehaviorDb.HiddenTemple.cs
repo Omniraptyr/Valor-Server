@@ -251,12 +251,12 @@ namespace wServer.logic
                         new TimedTransition(1000, "mainphase")
                         ),
                    new State("mainphase",
-                      new Shoot(10, count: 6, projectileIndex: 5, coolDown: 5000),
+                      new Shoot(40, count: 6, projectileIndex: 5, coolDown: 5000),
                       new TimedTransition(10875, "killthem"),
                        new State("2",
                         new Taunt(1.00, "The other ancients have no real power. I will destoy you."),
                         new Prioritize(
-                             new Follow(0.30, 8, 1),
+                             new Follow(0.80, 8, 1),
                              new StayBack(0.3, 5)
                             ),
                         new Shoot(10, count: 4, shootAngle: 18, projectileIndex: 3, coolDown: 3000),
@@ -268,9 +268,9 @@ namespace wServer.logic
                              new Swirl(0.4, 4),
                              new StayBack(0.4, 5)
                             ),
-                        new Shoot(10, count: 7, shootAngle: 46, projectileIndex: 0, coolDown: 3600),
-                        new Shoot(10, count: 5, projectileIndex: 1, coolDown: 3000),
-                        new Shoot(10, count: 1, projectileIndex: 2, coolDown: 1500),
+                        new Shoot(40, count: 7, shootAngle: 46, projectileIndex: 0, coolDown: 3600),
+                        new Shoot(40, count: 5, projectileIndex: 1, coolDown: 3000),
+                        new Shoot(40, count: 1, projectileIndex: 2, coolDown: 1500),
                         new TimedTransition(5250, "2")
                          )
                         ),
@@ -280,8 +280,8 @@ namespace wServer.logic
                             new Wander(0.32),
                             new Orbit(0.8, 2, target: null)
                             ),
-                        new Shoot(10, count: 3, shootAngle: 20, predictive: 1, coolDown: 1750),
-                        new Shoot(10, count: 4, projectileIndex: 4, coolDown: 2000),
+                        new Shoot(40, count: 3, shootAngle: 20, predictive: 1, coolDown: 1750),
+                        new Shoot(40, count: 4, projectileIndex: 4, coolDown: 2000),
                         new TimedTransition(4500, "rush")
                         ),
                     new State("rush",
@@ -291,23 +291,23 @@ namespace wServer.logic
                             new Wander(0.32)
                             ),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new Shoot(10, count: 1, projectileIndex: 6, coolDown: 2),
-                        new Shoot(10, count: 7, shootAngle: 30, projectileIndex: 7, coolDown: 2000),
+                        new Shoot(40, count: 1, projectileIndex: 6, coolDown: 2),
+                        new Shoot(40, count: 7, shootAngle: 30, projectileIndex: 7, coolDown: 2000),
                         new TimedTransition(4500, "heal")
                         ),
                     new State("heal",
                         new ReturnToSpawn(speed: 0.4),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new Shoot(10, count: 4, shootAngle: 4, projectileIndex: 5, coolDown: 100),
-                        new Shoot(10, count: 7, projectileIndex: 8, coolDown: 100),
+                        new Shoot(40, count: 4, shootAngle: 4, projectileIndex: 5, coolDown: 100),
+                        new Shoot(40, count: 7, projectileIndex: 8, coolDown: 100),
                         new TimedTransition(7000, "battle")
                         ),
                     new State("battle",
                         new Wander(0.4),
                         new HealSelf(coolDown: 3000, amount: 1000),
-                        new Shoot(10, count: 6, shootAngle: 20, projectileIndex: 4, coolDown: 2000),
-                        new Shoot(10, count: 4, shootAngle: 4, projectileIndex: 0, coolDown: 2575),
-                        new Shoot(10, count: 2, projectileIndex: 3, coolDown: 700),
+                        new Shoot(40, count: 6, shootAngle: 20, projectileIndex: 4, coolDown: 2000),
+                        new Shoot(40, count: 4, shootAngle: 4, projectileIndex: 0, coolDown: 2575),
+                        new Shoot(40, count: 2, projectileIndex: 3, coolDown: 700),
                         new TimedTransition(5700, "vuln")
                         ),
                     new State("vuln",
@@ -319,10 +319,10 @@ namespace wServer.logic
                         new Taunt(1.00, "I WON'T ALLOW YOU TO RAID MY TEMPLE AND DESTROY ME!"),
                         new Follow(1.5, 8, 1),
                         new Flash(0xFF0000, 1, 1),
-                        new Shoot(10, count: 2, shootAngle: 28, projectileIndex: 0, coolDown: 2750),
-                        new Shoot(10, count: 6, projectileIndex: 3, coolDown: 3000),
-                        new Shoot(10, count: 1, projectileIndex: 2, coolDown: 1000),
-                        new Shoot(10, count: 4, shootAngle: 35, projectileIndex: 1, coolDown: 2250),
+                        new Shoot(40, count: 2, shootAngle: 28, projectileIndex: 0, coolDown: 2750),
+                        new Shoot(40, count: 6, projectileIndex: 3, coolDown: 3000),
+                        new Shoot(40, count: 1, projectileIndex: 2, coolDown: 1000),
+                        new Shoot(40, count: 4, shootAngle: 35, projectileIndex: 1, coolDown: 2250),
                         new Grenade(5, 100, 9, coolDown: 3500)
                         )
                     ),

@@ -33,7 +33,8 @@ namespace wServer.logic.behaviors
 
             if (cool <= 0)
             {
-                if (host.HasConditionEffect(ConditionEffects.Stunned)) 
+
+                if (host.HasConditionEffect(ConditionEffects.Sick))
                     return;
 
                 var entity = host as Character;

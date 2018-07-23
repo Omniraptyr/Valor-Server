@@ -33290,7 +33290,7 @@
         <Item/>
         <Texture>
             <File>d3LofiObjEmbed</File>
-            <Index>0x256</Index>
+            <Index>0x257</Index>
         </Texture>
         <SlotType>18</SlotType>
         <Description>A rare venom that could corrode a Sor Crystal.</Description>
@@ -33908,7 +33908,7 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x60</Index>
+            <Index>0x5a</Index>
         </Texture>
         <SlotType>10</SlotType>
         <Description>A fragment of what seems to be a green crystal. It glows light green and might contain some type of hidden power.</Description>
@@ -33921,12 +33921,25 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x61</Index>
+            <Index>0x5b</Index>
         </Texture>
         <SlotType>10</SlotType>
         <Description>A large fragment of what seems to be a green crystal. It glows light green and might contain some type of hidden power.</Description>
         <BagType>8</BagType>
         <Consumable/>
         <Activate amount="15">SorActivate</Activate>
+    </Object>
+    <Object type="0x63e6" id="Three Tiny Sor Fragments">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x105</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Three fragments of what seems to be a green crystal. It glows light green and might contain some type of hidden power.</Description>
+        <BagType>8</BagType>
+        <Consumable/>
+        <Activate amount="3">SorActivate</Activate>
     </Object>
 </Objects>
