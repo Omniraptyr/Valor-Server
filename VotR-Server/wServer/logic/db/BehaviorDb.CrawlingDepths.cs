@@ -124,7 +124,8 @@ namespace wServer.logic
                                   new TierLoot(13, ItemType.Armor, 0.04),
                                   new TierLoot(5, ItemType.Ring, 0.05),
                                   new ItemLoot("Potion of Mana", 1),
-                                  new ItemLoot("Doku No Ken", 0.03)
+                                  new ItemLoot("Doku No Ken", 0.03),
+                                  new ItemLoot("SottlerWeap", 0.01)
                                   )
                         )
            .Init("Crawling Depths Egg Sac",

@@ -153,6 +153,7 @@ namespace wServer.logic
                     new TierLoot(12, ItemType.Armor, 0.1),
                     new TierLoot(12, ItemType.Weapon, 0.1),
                     new TierLoot(6, ItemType.Ring, 0.1),
+                    new ItemLoot("Guardian Sword", 0.001),
                     new ItemLoot("Truestone Ring", 0.01),
                     new ItemLoot("Prime Chaotic Seal", 0.01),
                     new ItemLoot("Ascendant Quiver", 0.005)

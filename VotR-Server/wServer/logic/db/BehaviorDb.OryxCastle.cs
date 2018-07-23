@@ -149,7 +149,7 @@ namespace wServer.logic
                 new Threshold(0.1,
                     new ItemLoot("Ancient Stone Sword", 0.02),
                     new ItemLoot("Potion of Defense", 1),
-
+                    new ItemLoot("Gauntlet Chaos", 0.001),
                     new TierLoot(8, ItemType.Weapon, 0.1),
                     new TierLoot(7, ItemType.Armor, 0.1),
                     new TierLoot(3, ItemType.Ring, 0.1)
@@ -295,6 +295,7 @@ namespace wServer.logic
                 ),
                  new Threshold(0.1,
                     new ItemLoot("Ancient Stone Sword", 0.02),
+                    new ItemLoot("Gauntlet Mayhem", 0.001),
                     new ItemLoot("Potion of Defense", 1),
                     new TierLoot(8, ItemType.Weapon, 0.1),
                     new TierLoot(7, ItemType.Armor, 0.1),

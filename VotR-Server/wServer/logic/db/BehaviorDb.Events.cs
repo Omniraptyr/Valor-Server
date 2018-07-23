@@ -55,7 +55,8 @@ namespace wServer.logic
                     new TierLoot(11, ItemType.Armor, 0.01),
                     new TierLoot(4, ItemType.Ability, 0.1),
                     new TierLoot(5, ItemType.Ability, 0.03),
-                    new ItemLoot("Dagger of Brimstone", 0.04),
+                    new ItemLoot("Flaming Boomerang", 0.001),
+                    new ItemLoot("Dagger of Brimstone", 0.005),
                     new ItemLoot("Orb of Conflict", 0.03)
                     )
             )
@@ -83,6 +84,7 @@ namespace wServer.logic
 
             .Init("Hermit God",
                 new State(
+                    new DropPortalOnDeath("Ocean Trench Portal", 1, null, 5, 5),
                     new InvisiToss("Hermit God Drop", 6, 0, 90000001, coolDownOffset: 0),
                     new CopyDamageOnDeath("Hermit God Drop"),
                     //new DropPortalOnDeath("Ocean Trench Portal", 100, XAdjustment: 5, YAdjustment: 5),

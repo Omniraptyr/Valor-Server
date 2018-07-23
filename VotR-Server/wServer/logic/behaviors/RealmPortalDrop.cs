@@ -11,6 +11,11 @@ namespace wServer.logic.behaviors
 
                 parent.Death += (e, s) =>
                 {
+                    var owner = s.Host.Owner;
+
+                    if (owner.Name.Contains("DeathArena") || s.Host.Spawned)
+                        return;
+
                     Entity en = s.Host.GetNearestEntity(100, 0x5e4b);
                     Entity portal = Entity.Resolve(s.Host.Manager, "Realm Portal");
 

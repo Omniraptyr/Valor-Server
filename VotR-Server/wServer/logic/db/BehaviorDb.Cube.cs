@@ -40,6 +40,7 @@ namespace wServer.logic
                      new TierLoot(11, ItemType.Armor, 0.01),
                      new TierLoot(11, ItemType.Weapon, 0.01),
                      new TierLoot(5, ItemType.Ring, 0.01),
+                     new ItemLoot("Skull of the Cubes", 0.03),
                      new ItemLoot("Kepi of Uncontrollable Darkness", 0.03),
                      new ItemLoot("Dirk of Cronus", 0.03)
                  )

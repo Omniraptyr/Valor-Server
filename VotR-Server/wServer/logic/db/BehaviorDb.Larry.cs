@@ -97,7 +97,7 @@ namespace wServer.logic
                         )
                     ),
                 new Threshold(0.025,
-                    new ItemLoot("Larry Gun", 0.6),
+                    new ItemLoot("Larry Gun", 0.0001),
                     new ItemLoot("Sword of Orange Fever", 0.6),
                     new ItemLoot("Papercutter", 0.6),
                     new ItemLoot("No Sunflowers", 0.6),

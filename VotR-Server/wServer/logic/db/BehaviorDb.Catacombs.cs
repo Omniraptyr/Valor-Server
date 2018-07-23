@@ -343,7 +343,7 @@ namespace wServer.logic
                         )
                     ),
                                 new MostDamagers(3,
-                    LootTemplates.SFLow()
+                    LootTemplates.SF3()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Onrane", 0.3),

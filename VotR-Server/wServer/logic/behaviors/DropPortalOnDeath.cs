@@ -10,12 +10,17 @@ namespace wServer.logic.behaviors
         private readonly ushort _target;
         private readonly float _probability;
         private readonly int? _timeout;
+        private readonly float xAdjustment;
+        private readonly float yAdjustment;
 
-        public DropPortalOnDeath(string target, double probability = 1, int? timeout = null)
+        public DropPortalOnDeath(string target, double probability = 1, int? timeout = null, float XAdjustment = 0, float YAdjustment = 0)
         {
             _target = GetObjType(target);
             _probability = (float) probability;
-            _timeout = timeout; // a value of 0 means never timeout, 
+            _timeout = timeout;
+            xAdjustment = XAdjustment;
+            yAdjustment = YAdjustment;
+            // a value of 0 means never timeout, 
             // null means use xml timeout, 
             // a value means override xml timeout with that value (in seconds)
         }
@@ -26,7 +31,7 @@ namespace wServer.logic.behaviors
             {
                 var owner = e.Host.Owner;
 
-                if (owner.Name.Contains("Arena") || e.Host.Spawned) 
+                if (owner.Name.Contains("DeathArena") || e.Host.Spawned) 
                     return;
                 
                 if (e.Host.CurrentState.Is(parent) &&
@@ -39,7 +44,7 @@ namespace wServer.logic.behaviors
                        : _timeout.Value;
 
                     var entity = Entity.Resolve(manager, _target);
-                    entity.Move(e.Host.X, e.Host.Y);
+                    entity.Move(e.Host.X + + xAdjustment, e.Host.Y + + yAdjustment);
                     owner.EnterWorld(entity);
 
                     if (timeoutTime != 0)

@@ -252,7 +252,11 @@ namespace wServer.logic
                     LootTemplates.SF1()
                     ),
                 new Threshold(0.18,
-                new ItemLoot("Deathwanderer", 0.02)
+                new ItemLoot("Deathwanderer", 0.001),
+                new ItemLoot("Sadist Blade of the King", 0.001),
+                new ItemLoot("Armor of Masochism", 0.001),
+                new ItemLoot("The Kings Crown", 0.001),
+                new ItemLoot("Ring of Ashen Matrimony", 0.001)
                     ),
                 new TierLoot(2, ItemType.Ring, 0.25),
                 new TierLoot(3, ItemType.Ring, 0.08),

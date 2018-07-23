@@ -114,15 +114,20 @@ namespace wServer.logic
                 new Threshold(0.01,
                     new ItemLoot("Potion of Vitality", 0.6),
                     new ItemLoot("Potion of Speed", 0.6),
+                    new ItemLoot("Potion of Protection", 0.33),
                     new TierLoot(11, ItemType.Weapon, 0.1),
                     new TierLoot(12, ItemType.Armor, 0.1),
                     new TierLoot(6, ItemType.Ability, 0.05),
                     new TierLoot(5, ItemType.Ring, 0.05),
                     new TierLoot(13, ItemType.Armor, 0.05),
                     new TierLoot(12, ItemType.Weapon, 0.05),
+                    new ItemLoot("Orb of Heavenly Sight", 0.03),
+                    new ItemLoot("Staff of Noble Magic", 0.03),
+                    new ItemLoot("Heaven Monk's Apparel", 0.03),
+                    new ItemLoot("Necklace of Crystalline Celestial Forces", 0.03),
                     new ItemLoot("Sheath of the Holy Revival", 0.03),
-                    new ItemLoot("Spectrum Robe", 0.03),
-                    new ItemLoot("Eternity Armor", 0.03)
+                    new ItemLoot("Spectrum Robe", 0.02),
+                    new ItemLoot("Eternity Armor", 0.02)
                 )
             )
 

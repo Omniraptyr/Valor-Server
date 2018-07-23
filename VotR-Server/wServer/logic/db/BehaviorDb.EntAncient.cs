@@ -187,7 +187,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                        LootTemplates.SF0()
+                        LootTemplates.SF1()
                     ),
                 new Threshold(0.15,
                 new TierLoot(2, ItemType.Ring, 0.15),
@@ -199,6 +199,10 @@ namespace wServer.logic
                 new TierLoot(1, ItemType.Ability, 0.95),
                 new TierLoot(2, ItemType.Ability, 0.25),
                 new TierLoot(3, ItemType.Ability, 0.05),
+                new ItemLoot("Ent Ancients Log", 0.001),
+                new ItemLoot("Corpse of an Ent Ancient", 0.001),
+                new ItemLoot("Ripe Apple", 0.001),
+                new ItemLoot("Clump of Bark", 0.001),
                 new ItemLoot("Magic Potion", 0.7),
                 new ItemLoot("50 Gold", 0.038),
                 new ItemLoot("Health Potion", 0.7)

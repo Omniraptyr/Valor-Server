@@ -679,6 +679,10 @@ namespace wServer.logic
                     new TierLoot(5, ItemType.Ability, 0.2)
                     ),
                 new Threshold(0.15,
+                                                        new ItemLoot("Lucky Sword", 0.002),
+                new ItemLoot("Lucky Armor", 0.002),
+                new ItemLoot("Lucky Seal", 0.002),
+                new ItemLoot("Lucky Ring", 0.002),
                     new ItemLoot("Potion of Speed", 1),
                     new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
@@ -709,6 +713,10 @@ namespace wServer.logic
                     new TierLoot(5, ItemType.Ability, 0.2)
                     ),
                 new Threshold(0.15,
+                                    new ItemLoot("Lucky Sword", 0.002),
+                new ItemLoot("Lucky Armor", 0.002),
+                new ItemLoot("Lucky Seal", 0.002),
+                new ItemLoot("Lucky Ring", 0.002),
                     new ItemLoot("Potion of Defense", 1),
                     new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )

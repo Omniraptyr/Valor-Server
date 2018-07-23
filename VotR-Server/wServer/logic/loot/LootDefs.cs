@@ -526,24 +526,13 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.02),
-                    new ItemLoot("Three Tiny Sor Fragments", 0.02),
-                    new ItemLoot("Tiny Sor Fragment", 0.02)
-                )
-            };
-        }
-        public static ILootDef[] SF1()
-        {
-            return new ILootDef[]
-            {
-                new OnlyOne(
                     new ItemLoot("Two Tiny Sor Fragments", 0.04),
                     new ItemLoot("Three Tiny Sor Fragments", 0.04),
                     new ItemLoot("Tiny Sor Fragment", 0.04)
                 )
             };
         }
-        public static ILootDef[] SF2()
+        public static ILootDef[] SF1()
         {
             return new ILootDef[]
             {
@@ -554,7 +543,7 @@ namespace wServer.logic.loot
                 )
             };
         }
-        public static ILootDef[] SF3()
+        public static ILootDef[] SF2()
         {
             return new ILootDef[]
             {
@@ -565,7 +554,7 @@ namespace wServer.logic.loot
                 )
             };
         }
-        public static ILootDef[] SF4()
+        public static ILootDef[] SF3()
         {
             return new ILootDef[]
             {
@@ -573,6 +562,17 @@ namespace wServer.logic.loot
                     new ItemLoot("Two Tiny Sor Fragments", 0.1),
                     new ItemLoot("Three Tiny Sor Fragments", 0.1),
                     new ItemLoot("Tiny Sor Fragment", 0.1)
+                )
+            };
+        }
+        public static ILootDef[] SF4()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Two Tiny Sor Fragments", 0.12),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.12),
+                    new ItemLoot("Tiny Sor Fragment", 0.12)
                 )
             };
         }

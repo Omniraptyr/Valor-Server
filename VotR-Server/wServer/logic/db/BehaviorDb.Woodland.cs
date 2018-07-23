@@ -183,7 +183,11 @@ namespace wServer.logic
                     new TierLoot(12, ItemType.Weapon, 0.05),
                     new TierLoot(5, ItemType.Ring, 0.025),
                     new ItemLoot("Potion of Vitality", 1),
-                    new ItemLoot("Leaf Bow", 0.03)
+                    new ItemLoot("Potion of Might", 0.33),
+                    new ItemLoot("Hairy Karambit", 0.03),
+                    new ItemLoot("Toad Bile Cannister", 0.03),
+                    new ItemLoot("Skinned Toad Hide", 0.03),
+                    new ItemLoot("Frog's Eye Ring", 0.03)
 
                  )
             )

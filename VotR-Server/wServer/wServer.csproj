@@ -512,6 +512,7 @@
     <Compile Include="realm\setpieces\Temple.cs" />
     <Compile Include="realm\setpieces\TempleA.cs" />
     <Compile Include="realm\setpieces\TempleB.cs" />
+    <Compile Include="realm\setpieces\TestChicken.cs" />
     <Compile Include="realm\setpieces\TimePiece.cs" />
     <Compile Include="realm\setpieces\Tower.cs" />
     <Compile Include="realm\setpieces\Unknown.cs" />

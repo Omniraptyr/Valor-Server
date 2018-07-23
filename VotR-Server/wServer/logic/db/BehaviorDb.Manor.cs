@@ -54,6 +54,8 @@ namespace wServer.logic
                     new ItemLoot("Wine Cellar Incantation", 0.01),
                     new ItemLoot("Chasuble of Holy Light", 0.01),
                     new ItemLoot("St. Abraham's Wand", 0.01),
+                    new ItemLoot("Unholy Quiver", 0.001),
+                    new ItemLoot("Unholy Wand", 0.001),
                     new ItemLoot("Tome of Purification", 0.001),
                     new ItemLoot("Ring of Divine Faith", 0.01),
                     new ItemLoot("Bone Dagger", 0.08)

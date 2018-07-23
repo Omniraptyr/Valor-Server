@@ -1547,8 +1547,11 @@ namespace wServer.logic
                     new TierLoot(12, ItemType.Armor, 0.06),
                     new TierLoot(13, ItemType.Armor, 0.03),
                     new TierLoot(5, ItemType.Ring, 0.05),
-                    new ItemLoot("Tablet of the King's Avatar", 0.04),
-                    new ItemLoot("Blade of Offerings", 0.02),
+                    new ItemLoot("Staff of the Great Climbing", 0.001),
+                    new ItemLoot("AvatarRobe", 0.001),
+                    new ItemLoot("AvatarRing", 0.001),
+                    new ItemLoot("Tablet of the King's Avatar", 0.01),
+                    new ItemLoot("Blade of Offerings", 0.01),
                     new ItemLoot("Cultist Armor", 0.02),
                     new ItemLoot("Mysterious Stone", 0.02),
                     new ItemLoot("Shield of the Phantom", 0.02)

@@ -168,13 +168,14 @@ namespace wServer.logic
             )
             ),
                            new MostDamagers(3,
-                    LootTemplates.SFLow()
+                    LootTemplates.SF4()
                     ),
              new Threshold(0.01,
-              new ItemLoot("Coral Bow", 0.045),
+                 new ItemLoot("ShrimpQuiver", 0.04),
+              new ItemLoot("Coral Bow", 0.04),
               new ItemLoot("Coral Venom Trap", 0.045),
               new ItemLoot("Wine Cellar Incantation", 0.05),
-              new ItemLoot("Coral Silk Armor", 0.09),
+              new ItemLoot("Coral Silk Armor", 0.04),
               new ItemLoot("Coral Ring", 0.55),
               new ItemLoot("Golden Conch", 0.05),
               new ItemLoot("Golden Cockle", 0.05),
@@ -233,7 +234,11 @@ namespace wServer.logic
                      ),
                      new Shoot(5, count: 3, shootAngle: 120, coolDown: 500),
                      new Shoot(3, count: 1, projectileIndex: 1, shootAngle: 0, coolDown: 1500)
-             ))
+             ),
+                              new Threshold(0.2,
+              new ItemLoot("Wavebreaker", 0.0001)
+              )
+            )
             .Init("Giant Squid",
                  new State(
                      new Prioritize(

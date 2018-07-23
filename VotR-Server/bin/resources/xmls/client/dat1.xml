@@ -115619,7 +115619,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Defense>0</Defense>
         <Size>120</Size>
         <XpMult>0.0</XpMult>
-        <DisplayId>BD Portal Spawner 5</DisplayId>
+        <DisplayId>Janus, the Doorwarden</DisplayId>
     </Object>
     <Object type="0x63ae" id="Bastille of Drannol Portal">
         <Class>Portal</Class>

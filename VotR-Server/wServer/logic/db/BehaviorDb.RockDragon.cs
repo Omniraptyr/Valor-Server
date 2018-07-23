@@ -93,7 +93,12 @@ namespace wServer.logic
                     new ItemLoot("Potion of Wisdom", .1),
                     new ItemLoot("Potion of Speed", .1),
                     new ItemLoot("Potion of Dexterity", .1),
-                    new ItemLoot("Ray Katana", .01)
+                    new ItemLoot("Ray Katana", .01),
+                    new ItemLoot("FireStorm", .01),
+                    new ItemLoot("Ring of Boiling Lava", 0.005),
+                    new ItemLoot("Seal of Splashing Lava", 0.005),
+                    new ItemLoot("Flaming Sword of Fury", 0.005),
+                    new ItemLoot("Steel Armor of Magma", 0.005)
                     )
             )
             #region Segment

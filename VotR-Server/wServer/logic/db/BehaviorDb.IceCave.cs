@@ -268,7 +268,11 @@ namespace wServer.logic
                 new TierLoot(13, ItemType.Armor, 0.015),
                 new TierLoot(12, ItemType.Armor, 0.02),
                     new ItemLoot("Potion of Mana", 1),
-                    new ItemLoot("Staff of Esben", 0.04),
+                    new ItemLoot("Staff of Esben", 0.03),
+                    new ItemLoot("Winter Bow", 0.005),
+                    new ItemLoot("Winter Armor", 0.005),
+                    new ItemLoot("Winter Trap", 0.005),
+                    new ItemLoot("Winter Ring", 0.005),
                     new ItemLoot("Frost Wand", 0.04),
                     new ItemLoot("Skullish Remains of Esben", 0.04)
                 )

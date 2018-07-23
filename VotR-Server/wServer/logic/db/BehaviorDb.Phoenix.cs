@@ -99,7 +99,11 @@ namespace wServer.logic
                         new TimedTransition(4500, "xxx")
                         )
                     ),
-                new ItemLoot("Wine Cellar Incantation", 0.002)
+                   new Threshold(0.10,
+                       new ItemLoot("Phoenix Ring", 0.02),
+                    new ItemLoot("Phoenix Wand", 0.02),
+                    new ItemLoot("Wine Cellar Incantation", 0.005)
+                )
             )
             ;
     }

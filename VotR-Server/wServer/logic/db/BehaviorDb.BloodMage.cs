@@ -131,6 +131,7 @@ namespace wServer.logic
                     LootTemplates.SF2()
                     ),
                 new Threshold(0.05,
+                    new ItemLoot("Bloodbath Dagger", 0.01),
                     new ItemLoot("God Blood Robes", 0.005),
                     new ItemLoot("Banner of the Blood Mountains", 0.005),
                     new ItemLoot("Titan Blood Armor", 0.005),

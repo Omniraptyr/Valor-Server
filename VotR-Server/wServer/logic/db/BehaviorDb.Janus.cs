@@ -186,6 +186,20 @@ namespace wServer.logic
                 )
             )
 
+          .Init("BD Portal Spawner 5",
+            new State(
+                new RemoveObjectOnDeath("Blue Torch Wall", 99),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("idle",
+                     new EntitiesNotExistsTransition(9999, "activate", "Suit of Armor")
+                    ),
+                new State("activate",
+                     new Taunt(true, "You thrash His Lordship's castle, kill his brothers and challenge us. Come, come if you dare."),
+                     new Suicide()
+                    )
+                )
+            )
+
         .Init("md Janus the Doorwarden",
                 new State(
                     new HpLessTransition(0.15, "ragetime"),
@@ -284,6 +298,7 @@ namespace wServer.logic
                 new Threshold(0.02,
                     new ItemLoot("Potion of Speed", 1.0),
                     new ItemLoot("Potion of Vitality", 1.0),
+                    new ItemLoot("Potion of Might", 1.0),
                     new TierLoot(9, ItemType.Weapon, 0.1),
                     new TierLoot(5, ItemType.Ability, 0.1),
                     new TierLoot(9, ItemType.Armor, 0.1),
@@ -291,6 +306,10 @@ namespace wServer.logic
                     new TierLoot(10, ItemType.Weapon, 0.05),
                     new TierLoot(5, ItemType.Ring, 0.025),
                     new ItemLoot("Thousand Shot", 0.03),
+                    new ItemLoot("Bow of Janus rage", 0.03),
+                    new ItemLoot("Eye of Janus", 0.03),
+                    new ItemLoot("Key of Janus", 0.03),
+                    new ItemLoot("Warden Armor", 0.03),
                     new ItemLoot("Wine Cellar Incantation", 0.01)
                 )
             )
