@@ -71,7 +71,7 @@ namespace wServer.logic.behaviors
                         Color = new ARGB(color),
                         TargetObjectId = host.Id,
                         Pos1 = target
-                    }, host, null, PacketPriority.Low);
+                    }, host, null, PacketPriority.Normal);
                     host.Owner.Timers.Add(new WorldTimer(1500, (world, t) =>
                     {
                         world.BroadcastPacketNearby(new Aoe()
