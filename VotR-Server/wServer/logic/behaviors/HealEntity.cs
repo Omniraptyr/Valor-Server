@@ -35,18 +35,26 @@ namespace wServer.logic.behaviors
         {
             var cool = (int)state;
 
+            int? increasedHP = _amount;
+
             if (cool <= 0)
             {
 
-                if (host.HasConditionEffect(ConditionEffects.Sick))
+                if (host.HasConditionEffect(ConditionEffects.Stunned))
                     return;
+
+                if (host.HasConditionEffect(ConditionEffects.Sick))
+                {
+                    increasedHP = _amount / 2;
+                }
+                    
 
                 foreach (var entity in host.GetNearestEntitiesByName(_range, _name).OfType<Enemy>())
                 {
                     int newHp = entity.ObjectDesc.MaxHP;
-                    if (_amount != null)
+                    if (increasedHP != null)
                     {
-                        var newHealth = (int)_amount + entity.HP;
+                        var newHealth = (int)increasedHP + entity.HP;
                         if (newHp > newHealth)
                             newHp = newHealth;
                     }

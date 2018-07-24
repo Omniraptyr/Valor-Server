@@ -309,7 +309,7 @@
         <Speed max="75">15</Speed>
         <Dexterity max="75">15</Dexterity>
         <HpRegen max="40">15</HpRegen>
-        <MpRegen max="60">10</MpRegen>
+        <MpRegen max="75">10</MpRegen>
         <Might max="80">2</Might>
         <Luck max="60">2</Luck>
         <Restoration max="60">10</Restoration>

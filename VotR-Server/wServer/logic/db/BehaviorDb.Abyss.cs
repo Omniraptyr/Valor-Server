@@ -72,7 +72,7 @@ namespace wServer.logic
                     new ItemLoot("Armor from the Bowels of Hell", 0.01),
                     new ItemLoot("The Ring of Flaming Power", 0.01),
                     new ItemLoot("Demon Blade", 0.03),
-                    new ItemLoot("Abyssal Rune", 0.05),
+                    new ItemLoot("Abyssal Rune", 0.025),
                     new ItemLoot("Potion of Vitality", 1.0),
                     new ItemLoot("Potion of Restoration", 0.33),
                     new ItemLoot("Potion of Defense", 1.0),

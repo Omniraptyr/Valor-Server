@@ -6,18 +6,23 @@ public class ThrowEffect extends ParticleEffect {
     public var start_:Point;
     public var end_:Point;
     public var color_:int;
+    public var duration_:int;
 
-    public function ThrowEffect(_arg1:Point, _arg2:Point, _arg3:int) {
+    public function ThrowEffect(_arg1:Point, _arg2:Point, _arg3:int, _arg4:int = 1000) {
         this.start_ = _arg1;
         this.end_ = _arg2;
         this.color_ = _arg3;
+        this.duration_ = _arg4;
     }
 
     override public function runNormalRendering(_arg1:int, _arg2:int):Boolean {
         x_ = this.start_.x;
         y_ = this.start_.y;
         var _local3 = 200;
-        var _local4:ThrowParticle = new ThrowParticle(_local3, this.color_, 1500, this.start_, this.end_);
+        var _local4:ThrowParticle = new ThrowParticle(_local3, this.color_, this.duration_, this.start_, this.end_);
+        if(this.duration_ == 0){
+            _local4 = new ThrowParticle(_local3, this.color_, 1500, this.start_, this.end_);
+        }
         map_.addObj(_local4, x_, y_);
         return (false);
     }
@@ -26,7 +31,7 @@ public class ThrowEffect extends ParticleEffect {
         x_ = this.start_.x;
         y_ = this.start_.y;
         var _local3:int = 10;
-        var _local4:ThrowParticle = new ThrowParticle(_local3, this.color_, 1500, this.start_, this.end_);
+        var _local4:ThrowParticle = new ThrowParticle(_local3, this.color_, this.duration_, this.start_, this.end_);
         map_.addObj(_local4, x_, y_);
         return (false);
     }

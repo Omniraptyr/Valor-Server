@@ -5,7 +5,7 @@
 "difficulty":5,
 "background":0,
 "blocking":1,
-"restrictTp":false,
+"restrictTp":true,
 "showDisplays":false,
 "portals":[0x521a],
 "maps":["catacombs.jm"],

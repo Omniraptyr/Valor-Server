@@ -280,31 +280,32 @@ namespace wServer.realm.entities
                                 db.RemoveGift(Client.Account, item.ObjectType, trans);
                         var task = trans.ExecuteAsync();
                         task.ContinueWith(t =>
+                        {
+                            var success = !t.IsCanceled && t.Result;
+                            if (!success || !Inventory.Execute(cInv)) // can result in the loss of an item if inv trans fails...
                             {
-                                var success = !t.IsCanceled && t.Result;
-                                if (!success || !Inventory.Execute(cInv)) // can result in the loss of an item if inv trans fails...
+                                entity.ForceUpdate(slot);
+                                return;
+                            }
+
+                            if (slotType > 0)
+                            {
+                                FameCounter.UseAbility();
+                            }
+                            else
+                            {
+                                if (item.ActivateEffects.Any(eff => eff.Effect == ActivateEffects.Heal ||
+                                                                    eff.Effect == ActivateEffects.HealNova ||
+                                                                    eff.Effect == ActivateEffects.Magic ||
+                                                                    eff.Effect == ActivateEffects.MagicNova))
                                 {
-                                    entity.ForceUpdate(slot);
-                                    return;
+                                    FameCounter.DrinkPot();
                                 }
-
-                                if (slotType > 0)
-                                {
-                                    FameCounter.UseAbility();
-                                } else
-                                {
-                                    if (item.ActivateEffects.Any(eff => eff.Effect == ActivateEffects.Heal ||
-                                                                        eff.Effect == ActivateEffects.HealNova ||
-                                                                        eff.Effect == ActivateEffects.Magic ||
-                                                                        eff.Effect == ActivateEffects.MagicNova))
-                                    {
-                                        FameCounter.DrinkPot();
-                                    }
-                                }
+                            }
 
 
-                                Activate(time, item, pos);
-                            });
+                            Activate(time, item, pos);
+                        });
                         task.ContinueWith(e =>
                             Log.Error(e.Exception.InnerException.ToString()),
                             TaskContinuationOptions.OnlyOnFaulted);
@@ -330,7 +331,7 @@ namespace wServer.realm.entities
 
         private void Activate(RealmTime time, Item item, Position target)
         {
-            if(CheckBifierce() == true)
+            if (CheckBifierce() == true)
             {
                 Surge++;
             }
@@ -351,11 +352,11 @@ namespace wServer.realm.entities
             }
             if (Mark == 12)
             {
-                    if (item.MpCost > 0)
-                        AEMagicNoRest(time, item, target, 10);
+                if (item.MpCost > 0)
+                    AEMagicNoRest(time, item, target, 10);
 
-                    if (item.MpCost > 0)
-                        AEHealNoRest(time, item, target, 75);
+                if (item.MpCost > 0)
+                    AEHealNoRest(time, item, target, 75);
             }
             if (CheckStar())
             {
@@ -369,29 +370,30 @@ namespace wServer.realm.entities
             }
             if (CheckMeteor())
             {
-                if (item.MpCost > 0) { 
-                Random rnd = new Random();
-                int meteor = rnd.Next(1, 7);
-                switch (meteor)
+                if (item.MpCost > 0)
                 {
-                    case 1:
-                        DamageGrenade(time, target);
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        break;
-                    case 6:
-                        break;
+                    Random rnd = new Random();
+                    int meteor = rnd.Next(1, 7);
+                    switch (meteor)
+                    {
+                        case 1:
+                            DamageGrenade(time, target);
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                        case 4:
+                            break;
+                        case 5:
+                            break;
+                        case 6:
+                            break;
 
+                    }
                 }
             }
-            }
-                if (Surge >= item.SurgeCost)
+            if (Surge >= item.SurgeCost)
                 Surge -= item.SurgeCost;
 
 
@@ -568,7 +570,7 @@ namespace wServer.realm.entities
                     case ActivateEffects.Torii:
                         AETorii(time, item, target, eff);
                         break;
-					case ActivateEffects.JacketAbility:
+                    case ActivateEffects.JacketAbility:
                         AEJacketAbility(time, item, target, eff);
                         break;
                     case ActivateEffects.MarksActivate:
@@ -939,12 +941,12 @@ namespace wServer.realm.entities
 
             ApplyConditionEffect(ConditionEffectIndex.NinjaSpeedy, 0);
         }
-		
-		private void AEJacketAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
+
+        private void AEJacketAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
 
 
-            if(BMToggle == 0)
+            if (BMToggle == 0)
             {
                 Stats.Boost.ActivateBoost[2].Push(eff.Amount, eff.NoStack);
                 Stats.Boost.ActivateBoost[3].Pop(eff.Amount2, eff.NoStack);
@@ -1039,14 +1041,15 @@ namespace wServer.realm.entities
             }));
         }
 
-        private void AETorii(RealmTime time, Item item, Position target, ActivateEffect eff) {
+        private void AETorii(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
             Torii torii = new Torii(this,
                 eff.Range,
                 eff.Amount,
                 eff.Players,
                 eff.DurationMS,
                 eff.ConditionEffect ?? ConditionEffectIndex.Slowed,
-                eff.Color, 
+                eff.Color,
                 eff.ObjType);
             torii.Move(target.X, target.Y);
             Owner.EnterWorld(torii);
@@ -1055,7 +1058,7 @@ namespace wServer.realm.entities
             fakeTorii.Move(target.X, target.Y);
             Owner.EnterWorld(fakeTorii);
 
-            addSupportScore(500+((eff.DurationMS/1000) * 20), false);
+            addSupportScore(500 + ((eff.DurationMS / 1000) * 20), false);
             Owner.Timers.Add(new WorldTimer(eff.Amount * 1000, (world, t) => {
                 Owner.LeaveWorld(fakeTorii);
             }));
@@ -1144,21 +1147,21 @@ namespace wServer.realm.entities
         private void AEAbbyConstruct(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var inv = Inventory;
-                            for (int i = 0; i < inv.Length; i++)
-                            {
-                                if (inv[i] == null) continue;
-                                if (inv[i].ObjectId == "Whip")
-                                {
-                                    inv[i] = Manager.Resources.GameData.Items[0x61d8];
-                                    SaveToCharacter();
-                                    SendInfo("You place the Abyssal Rune on the Whip's handle.");
-                                    break;
-                                }
-                                else
-                                {
-                                    SendError("You do not have a Whip in your inventory.");
-                                }
-                            
+            for (int i = 0; i < inv.Length; i++)
+            {
+                if (inv[i] == null) continue;
+                if (inv[i].ObjectId == "Whip")
+                {
+                    inv[i] = Manager.Resources.GameData.Items[0x61d8];
+                    SaveToCharacter();
+                    SendInfo("You place the Abyssal Rune on the Whip's handle.");
+                    break;
+                }
+                else
+                {
+                    SendError("You do not have a Whip in your inventory.");
+                }
+
             }
         }
         private void AETreasureActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
@@ -1193,8 +1196,8 @@ namespace wServer.realm.entities
         {
             var acc = Client.Account;
             Random rnd = new Random();
-            int Chance = Random.Next(0, 6);
             int amount = 0;
+            int Chance = Random.Next(0, 6);
             switch (Chance)
             {
                 case 0:
@@ -1404,7 +1407,7 @@ namespace wServer.realm.entities
         }
         private void AEPowerStat(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            if(AscensionEnabled == true)
+            if (AscensionEnabled == true)
             {
                 switch (eff.Amount)
                 {
@@ -1496,18 +1499,25 @@ namespace wServer.realm.entities
 
         private void AEPoisonGrenade(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            var impDamage = eff.ImpactDamage;
+            if (eff.UseWisMod)
+            {
+                impDamage = (int)UseWisMod(eff.ImpactDamage, 0);
+            }
+            
             BroadcastSync(new ShowEffect()
             {
                 EffectType = EffectType.Throw,
                 Color = new ARGB(0xffddff00),
                 TargetObjectId = Id,
-                Pos1 = target
+                Pos1 = target,
+                Duration = eff.ThrowTime / 1000
             }, p => this.DistSqr(p) < RadiusSqr);
 
-            var x = new Placeholder(Manager, 1500);
+            var x = new Placeholder(Manager, eff.ThrowTime);
             x.Move(target.X, target.Y);
             Owner.EnterWorld(x);
-            Owner.Timers.Add(new WorldTimer(1500, (world, t) =>
+            Owner.Timers.Add(new WorldTimer(eff.ThrowTime, (world, t) =>
             {
                 world.BroadcastPacketNearby(new ShowEffect()
                 {
@@ -1522,9 +1532,15 @@ namespace wServer.realm.entities
 
 
                 world.AOE(target, eff.Radius, false,
-                    enemy => (enemy as Enemy).Damage(this, time, eff.ImpactDamage, false));
+                    enemy => (enemy as Enemy).Damage(this, time, impDamage, false));
+
+
+                world.AOE(target, eff.Radius, false,
+                     enemy => (enemy as Enemy).ApplyConditionEffect(ConditionEffectIndex.Sick, eff.DurationMSAlt));
+
             }));
         }
+
         private void DamageGrenade(RealmTime time, Position target)
         {
             BroadcastSync(new ShowEffect()
@@ -1704,12 +1720,12 @@ namespace wServer.realm.entities
             {
                 if (targets[i] == null)
                     break;
-                
-            var prev = i == 0 ? this : targets[i - 1];
 
-            (targets[i] as Enemy).Damage(this, time, eff.TotalDamage, true);
+                var prev = i == 0 ? this : targets[i - 1];
 
-             if (eff.ConditionEffect != null)
+                (targets[i] as Enemy).Damage(this, time, eff.TotalDamage, true);
+
+                if (eff.ConditionEffect != null)
                     targets[i].ApplyConditionEffect(new ConditionEffect()
                     {
                         Effect = eff.ConditionEffect.Value,
@@ -1752,7 +1768,7 @@ namespace wServer.realm.entities
                     Color = new ARGB(0xffffffff)
                 }
             };
-            
+
             Owner.AOE(target, 3, false, enemy =>
             {
                 if (enemy.ObjectType != 0x638f)
@@ -1780,7 +1796,7 @@ namespace wServer.realm.entities
                         Color = new ARGB(0xffff0000),
                         Message = "Stasis"
                     });
-                    
+
                     addSupportScore(400, false);
                 }
             });
@@ -1888,7 +1904,7 @@ namespace wServer.realm.entities
                 if (!player.HasConditionEffect(ConditionEffects.Sick) || !player.HasConditionEffect(ConditionEffects.Corrupted))
                 {
                     players.Add(player as Player);
-                    addSupportScore(totalDmg*5, false);
+                    addSupportScore(totalDmg * 5, false);
                     ActivateHealHp(player as Player, totalDmg, pkts);
                 }
             });
@@ -1923,7 +1939,7 @@ namespace wServer.realm.entities
             {
                 SupportScore += score;
             }
-            
+
         }
 
         private void AETeleport(RealmTime time, Item item, Position target, ActivateEffect eff)
@@ -1988,12 +2004,12 @@ namespace wServer.realm.entities
 
             var pkts = new List<Packet>();
             this.AOE(range, true, player =>
-                {
-                    if (!player.HasConditionEffect(ConditionEffects.Sick) || !player.HasConditionEffect(ConditionEffects.Corrupted))
-                        ActivateHealHp(player as Player, amount + (RestorationHeal() / 4), pkts);
+            {
+                if (!player.HasConditionEffect(ConditionEffects.Sick) || !player.HasConditionEffect(ConditionEffects.Corrupted))
+                    ActivateHealHp(player as Player, amount + (RestorationHeal() / 4), pkts);
 
-                     addSupportScore(amount, false);
-                });
+                addSupportScore(amount, false);
+            });
             pkts.Add(new ShowEffect()
             {
                 EffectType = EffectType.AreaBlast,
@@ -2031,7 +2047,8 @@ namespace wServer.realm.entities
             }
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
         }
-        private void AEDice(RealmTime time, Item item, Position target, ActivateEffect eff) {
+        private void AEDice(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
             ConditionEffectIndex[] gamblerEffs = {
                 ConditionEffectIndex.Sick,
                 ConditionEffectIndex.Berserk,
@@ -2041,7 +2058,7 @@ namespace wServer.realm.entities
             if (roll != 3)
                 ApplyConditionEffect(gamblerEffs[roll], eff.DurationMS);
         }
-    
+
         private void AEUnlockSkin(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var acc = Client.Account;
@@ -2152,21 +2169,21 @@ namespace wServer.realm.entities
         private void AEClearConditionEffectAura(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             this.AOE(eff.Range, true, player =>
+            {
+                var condition = eff.CheckExistingEffect;
+                ConditionEffects conditions = 0;
+                conditions |= (ConditionEffects)(1 << (Byte)condition.Value);
+                if (!condition.HasValue || player.HasConditionEffect(conditions))
                 {
-                    var condition = eff.CheckExistingEffect;
-                    ConditionEffects conditions = 0;
-                    conditions |= (ConditionEffects)(1 << (Byte)condition.Value);
-                    if (!condition.HasValue || player.HasConditionEffect(conditions))
-                    {
-                        addSupportScore(400, false);
+                    addSupportScore(400, false);
 
-                        player.ApplyConditionEffect(new ConditionEffect()
-                        {
-                            Effect = eff.ConditionEffect.Value,
-                            DurationMS = 0
-                        });
-                    }
-                });
+                    player.ApplyConditionEffect(new ConditionEffect()
+                    {
+                        Effect = eff.ConditionEffect.Value,
+                        DurationMS = 0
+                    });
+                }
+            });
         }
 
         private void AEConditionEffectSelf(RealmTime time, Item item, Position target, ActivateEffect eff)
@@ -2205,8 +2222,8 @@ namespace wServer.realm.entities
             this.AOE(range, true, player =>
             {
                 if (idx == 0)
-                    addSupportScore(amount*3, false);
-                
+                    addSupportScore(amount * 3, false);
+
 
                 ((Player)player).Stats.Boost.ActivateBoost[idx].Push(amount, eff.NoStack);
                 ((Player)player).Stats.ReCalculateValues();
@@ -2332,7 +2349,7 @@ namespace wServer.realm.entities
             if (eff.ConditionEffect != null)
                 Owner.AOE((eff.Center.Equals("mouse")) ? target : new Position { X = X, Y = Y }, range, targetPlayer, entity =>
                 {
-                    if(!entity.HasConditionEffect(ConditionEffects.Stasis) &&
+                    if (!entity.HasConditionEffect(ConditionEffects.Stasis) &&
                        !entity.HasConditionEffect(ConditionEffects.Invincible))
                     {
                         entity.ApplyConditionEffect(new ConditionEffect()
@@ -2366,13 +2383,14 @@ namespace wServer.realm.entities
                 EffectType = EffectType.Throw,
                 Color = new ARGB(0xffddff00),
                 TargetObjectId = Id,
-                Pos1 = target
+                Pos1 = target,
+                Duration = 1
             }, p => this.DistSqr(p) < RadiusSqr);
 
-            var x = new Placeholder(Manager, 1500);
+            var x = new Placeholder(Manager, 1000);
             x.Move(target.X, target.Y);
             Owner.EnterWorld(x);
-            Owner.Timers.Add(new WorldTimer(1500, (world, t) =>
+            Owner.Timers.Add(new WorldTimer(1000, (world, t) =>
             {
                 world.BroadcastPacketNearby(new ShowEffect()
                 {
@@ -2390,10 +2408,10 @@ namespace wServer.realm.entities
         static void ActivateHealHp(Player player, int amount, List<Packet> pkts)
         {
             if (player.HasConditionEffect(ConditionEffects.DrakzixCharging))
-            return;
+                return;
 
             if (player.HasConditionEffect(ConditionEffects.Corrupted))
-            return;
+                return;
 
             var maxHp = player.Stats[0];
             var newHp = Math.Min(maxHp, player.HP + amount);
@@ -2426,9 +2444,9 @@ namespace wServer.realm.entities
                 return;
             var maxMp = player.Stats[1];
             var newMp = Math.Min(maxMp, player.MP + amount);
-            if (newMp == player.MP) 
+            if (newMp == player.MP)
                 return;
-            
+
             pkts.Add(new ShowEffect()
             {
                 EffectType = EffectType.Potion,
@@ -2447,7 +2465,7 @@ namespace wServer.realm.entities
 
         void PoisonEnemy(World world, Enemy enemy, ActivateEffect eff)
         {
-            var remainingDmg = (int)StatsManager.GetDefenseDamage(enemy, eff.TotalDamage, enemy.ObjectDesc.Defense);
+            var remainingDmg = (int)StatsManager.GetDefenseDamage(enemy, eff.TotalDamage, 0);
             var perDmg = remainingDmg * 1000 / eff.DurationMS;
 
             WorldTimer tmr = null;
@@ -2458,12 +2476,12 @@ namespace wServer.realm.entities
                 if (enemy.Owner == null || w == null)
                     return true;
 
-                w.BroadcastPacketConditional(new ShowEffect()
-                {
-                    EffectType = EffectType.Dead,
-                    TargetObjectId = enemy.Id,
-                    Color = new ARGB(0xffddff00)
-                }, p => enemy.DistSqr(p) < RadiusSqr);
+                /* w.BroadcastPacketConditional(new ShowEffect()
+                  {
+                      EffectType = EffectType.Dead,
+                      TargetObjectId = enemy.Id,
+                      Color = new ARGB(0xffddff00)
+                  }, p => enemy.DistSqr(p) < RadiusSqr);*/
 
                 if (x % 4 == 0) // make sure to change this if timer delay is changed
                 {
@@ -2487,7 +2505,7 @@ namespace wServer.realm.entities
         }
         void DamageEnemy(World world, Enemy enemy)
         {
-            var remainingDmg = (int)StatsManager.GetDefenseDamage(enemy, (Stats[0]+Stats[1])^4, enemy.ObjectDesc.Defense);
+            var remainingDmg = (int)StatsManager.GetDefenseDamage(enemy, (Stats[0] + Stats[1]) ^ 4, enemy.ObjectDesc.Defense);
             var perDmg = remainingDmg * 1000 / 1000;
 
             WorldTimer tmr = null;

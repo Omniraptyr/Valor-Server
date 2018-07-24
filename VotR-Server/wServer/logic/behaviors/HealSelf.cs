@@ -34,8 +34,15 @@ namespace wServer.logic.behaviors
             if (cool <= 0)
             {
 
-                if (host.HasConditionEffect(ConditionEffects.Sick))
+                if (host.HasConditionEffect(ConditionEffects.Stunned))
                     return;
+
+                int? increasedHP = _amount;
+
+                if (host.HasConditionEffect(ConditionEffects.Sick))
+                {
+                    increasedHP = _amount / 2;
+                }
 
                 var entity = host as Character;
 
@@ -43,9 +50,9 @@ namespace wServer.logic.behaviors
                     return;
 
                 int newHp = entity.ObjectDesc.MaxHP;
-                if (_amount != null)
+                if (increasedHP != null)
                 {
-                    var newHealth = (int)_amount + entity.HP;
+                    var newHealth = (int)increasedHP + entity.HP;
                     if (newHp > newHealth)
                         newHp = newHealth;
                 }

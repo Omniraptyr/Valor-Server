@@ -140,8 +140,8 @@ namespace wServer.logic
             )
             .Init("Red Key",
                 new State(
-                        new RemoveObjectOnDeath("GhostShip RedDoor Lf", 99),
-                        new RemoveObjectOnDeath("GhostShip RedDoor Rt", 99),
+                        new RemoveObjectOnDeath("GhostShip RedDoor Lf", 999),
+                        new RemoveObjectOnDeath("GhostShip RedDoor Rt", 999),
                     new State("Idle",
                         new PlayerWithinTransition(1, "Cycle")
 

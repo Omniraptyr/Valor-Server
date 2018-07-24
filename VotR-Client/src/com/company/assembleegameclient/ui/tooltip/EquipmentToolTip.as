@@ -322,7 +322,7 @@ public class EquipmentToolTip extends ToolTip {
                 this.effects.push(new Effect(TextKey.PASSES_COVER, {}).setColor(TooltipHelper.NO_DIFF_COLOR));
             }
             if (this.objectXML.Projectile.hasOwnProperty("ArmorPiercing")) {
-                this.effects.push(new Effect(TextKey.ARMOR_PIERCING, {}).setColor(TooltipHelper.NO_DIFF_COLOR));
+                this.effects.push(new Effect(TextKey.ARMOR_PIERCING, {}).setColor(TooltipHelper.UNTIERED_COLOR));
             }
             if (this.objectXML.Projectile.hasOwnProperty("Boomerang")) {
                 this.effects.push(new Effect("Shots boomerang", {}).setColor(TooltipHelper.NO_DIFF_COLOR));
@@ -473,7 +473,9 @@ public class EquipmentToolTip extends ToolTip {
                             "damage": _local_1.@totalDamage,
                             "duration": _local_1.@duration,
                             "radius": _local_1.@radius,
-                            "impactDamage": _local_1.@impactDamage
+                            "impactDamage": _local_1.@impactDamage,
+                            "throwTime": _local_1.@throwTime,
+                            "durationAlt": _local_1.@durationAlt
                         }).setColor(TooltipHelper.NO_DIFF_COLOR));
                         break;
                     case ActivationType.REMOVE_NEG_COND:
@@ -983,6 +985,9 @@ public class EquipmentToolTip extends ToolTip {
                                 _local_3.@duration = this.modifyWisModStat(_local_3.@duration);
                                 _local_3.@range = this.modifyWisModStat(_local_3.@range);
                                 break;
+                            case ActivationType.POISON_GRENADE:
+                                _local_3.@impactDamage = this.modifyWisModStat(_local_3.@impactDamage, 0);
+                                break;
                         }
                     }
                 }
@@ -1012,10 +1017,8 @@ public class EquipmentToolTip extends ToolTip {
             }
         }
         return (_local_3);
+       }
     }
-
-
-}
 }//package com.company.assembleegameclient.ui.tooltip
 
 import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;

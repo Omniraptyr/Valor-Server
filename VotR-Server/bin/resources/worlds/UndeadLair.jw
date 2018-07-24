@@ -8,5 +8,5 @@
 "restrictTp":false,
 "showDisplays":false,
 "portals":[0x071a],
-"maps":["UDL2.wmap"],
+"maps":["UDL1.jm", "UDL2.jm", "UDL3.jm", "UDL4.jm", "UDL5.jm", "UDL6.jm", "UDL7.jm", "UDL8.jm", "UDL9.jm", "UDL10.jm", "UDL11.jm", "UDL12.jm", "UDL13.jm", "UDL14.jm", "UDL15.jm", "UDL16.jm", "UDL17.jm", "UDL18.jm", "UDL19.jm", "UDL20.jm", "UDL21.jm", "UDL22.jm", "UDL23.jm", "UDL24.jm", "UDL25.jm", "UDL26.jm", "UDL27.jm", "UDL28.jm", "UDL29.jm", "UDL30.jm"],
 "music":["udl"]}

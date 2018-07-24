@@ -12,11 +12,13 @@ public class PoisonComparison extends SlotComparison {
         var activate:XMLList;
         var otherActivate:XMLList;
         var impactDamage:int;
+        var throwTime:int;
         var damage:int;
         var otherDamage:int;
         var radius:Number;
         var otherRadius:Number;
         var duration:Number;
+        var durationAlt:Number;
         var otherDuration:Number;
         var avg:Number;
         var otherAvg:Number;
@@ -30,7 +32,9 @@ public class PoisonComparison extends SlotComparison {
             radius = Number(activate[0].@radius);
             otherRadius = Number(otherActivate[0].@radius);
             impactDamage = Number(activate[0].@impactDamage);
+            throwTime = Number(activate[0].@throwTime);
             duration = Number(activate[0].@duration);
+            durationAlt = Number(activate[0].@durationAlt);
             otherDuration = Number(otherActivate[0].@duration);
             avg = (((0.33 * damage) + (0.33 * radius)) + (0.33 * duration));
             otherAvg = (((0.33 * otherDamage) + (0.33 * otherRadius)) + (0.33 * otherDuration));
@@ -38,7 +42,9 @@ public class PoisonComparison extends SlotComparison {
                 "damage": damage.toString(),
                 "duration": duration.toString(),
                 "radius": radius.toString(),
-                "impactDamage": impactDamage.toString()
+                "impactDamage": impactDamage.toString(),
+                "throwTime": throwTime.toString(),
+                "durationAlt": durationAlt.toString()
             }).setPrefix(TooltipHelper.getOpenTag(getTextColor((avg - otherAvg)))).setPostfix(TooltipHelper.getCloseTag());
             comparisonStringBuilder.pushParams(TextKey.POISON_GRENADE, {"data": dataLineBuilder});
             processedTags[activate[0].toXMLString()] = true;

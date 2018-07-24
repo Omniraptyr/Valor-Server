@@ -1434,7 +1434,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                 _local3 = _local2.goDict_[_arg1.targetObjectId_];
                 _local5 = (((_local3) != null) ? new Point(_local3.x_, _local3.y_) : _arg1.pos2_.toPoint());
                 if (((!((_local3 == null))) && (!(this.canShowEffect(_local3))))) break;
-                _local4 = new ThrowEffect(_local5, _arg1.pos1_.toPoint(), _arg1.color_);
+                _local4 = new ThrowEffect(_local5, _arg1.pos1_.toPoint(), _arg1.color_, _arg1.duration_ * 1000);
                 _local2.addObj(_local4, _local5.x, _local5.y);
                 return;
             case ShowEffect.NOVA_EFFECT_TYPE:

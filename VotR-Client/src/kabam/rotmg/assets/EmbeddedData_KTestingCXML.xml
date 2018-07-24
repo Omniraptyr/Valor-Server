@@ -4663,11 +4663,14 @@
         <SlotType>18</SlotType>
         <Description>If the old men of the swamp are to be believed, this small jar of toad bile promotes good health.</Description>
         <ActivateOnEquip stat="27" amount="5">IncrementStat</ActivateOnEquip>
+        <ExtraTooltipData>
+            <EffectInfo name="" description="Heals players on impact."/>
+        </ExtraTooltipData>
         <Usable />
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
-        <MpCost>120</MpCost>
-        <Activate radius="5" totalDamage="500" duration="5">PoisonGrenade</Activate>
+        <MpCost>110</MpCost>
+        <Activate radius="5" totalDamage="500" duration="5" impactDamage="100" throwTime="1" useWisMod="true" durationAlt="2">PoisonGrenade</Activate>
         <Activate radius="9" totalDamage="300" duration="3">HealingGrenade</Activate>
         <feedPower>450</feedPower>
         <DisplayId>Toad Bile Cannister</DisplayId>

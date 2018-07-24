@@ -1658,15 +1658,15 @@ namespace wServer.realm.entities
             }
             else if (SupportScore >= 18001 && SupportScore <= 19000)
             {
-                return .59;
+                return .69;
             }
             else if (SupportScore >= 19001 && SupportScore <= 20000)
             {
-                return .60;
+                return .70;
             }
             else if (SupportScore > 20000)
             {
-                return .70;
+                return .80;
             }
             return 0;
         }

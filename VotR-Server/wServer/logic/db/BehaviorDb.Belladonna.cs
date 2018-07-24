@@ -339,9 +339,7 @@ namespace wServer.logic
                     new ItemLoot("Staff of Adoration", 0.1),
                     new ItemLoot("Wand of Budding Romance", 0.1),
                     new ItemLoot("Heartfind Dagger", 0.1),
-                    new ItemLoot("Vinesword", 0.1),
-                    new ItemLoot("Bashing Bride Skin", 0.02),
-                    new ItemLoot("Eligible Bachelor Skin", 0.02)
+                    new ItemLoot("Vinesword", 0.1)
                 )
             );
     }

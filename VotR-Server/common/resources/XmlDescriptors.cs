@@ -428,6 +428,7 @@ namespace common.resources
         public float DurationSec { get; private set; }
         public int DurationMS { get; private set; }
         public int DurationMS2 { get; private set; }
+        public int DurationMSAlt { get; private set; }
         public ConditionEffectIndex? ConditionEffect { get; private set; }
         public ConditionEffectIndex? CheckExistingEffect { get; private set; }
         public float EffectDuration { get; private set; }
@@ -435,6 +436,7 @@ namespace common.resources
         public float Radius { get; private set; }
         public int TotalDamage { get; private set; }
         public int ImpactDamage { get; private set; }
+        public int ThrowTime { get; private set; }
         public string ObjectId { get; private set; }
         public string ObjectId2 { get; private set; }
         public int AngleOffset { get; private set; }
@@ -473,8 +475,12 @@ namespace common.resources
                 DurationSec = float.Parse(elem.Attribute("duration").Value);
                 DurationMS = (int) (DurationSec * 1000);
             }
+
             if (elem.Attribute("duration2") != null)
                 DurationMS = (int)(float.Parse(elem.Attribute("duration2").Value) * 1000);
+
+            if (elem.Attribute("durationAlt") != null)
+                DurationMSAlt = (int)(float.Parse(elem.Attribute("durationAlt").Value) * 1000);
 
             if (elem.Attribute("effect") != null)
             {
@@ -509,6 +515,9 @@ namespace common.resources
 
             if (elem.Attribute("impactDamage") != null)
                 ImpactDamage = Utils.FromString(elem.Attribute("impactDamage").Value);
+
+            if (elem.Attribute("throwTime") != null)
+                ThrowTime = (int)(float.Parse(elem.Attribute("throwTime").Value) * 1000);
 
             if (elem.Attribute("objectId") != null)
                 ObjectId = elem.Attribute("objectId").Value;
