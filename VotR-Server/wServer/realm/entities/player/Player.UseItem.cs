@@ -1007,7 +1007,7 @@ namespace wServer.realm.entities
                 List<Packet> pkts = new List<Packet>();
                 this.AOE(eff.Range / 2, false, enemy =>
                 {
-                    (enemy as Enemy).Damage(this, time,
+                    ((Enemy)enemy).Damage(this, time,
                         (int)Stats.GetAttackDamage(eff.TotalDamage, eff.TotalDamage),
                         false, new ConditionEffect[0]);
                 });
@@ -1067,7 +1067,6 @@ namespace wServer.realm.entities
 
         private void AESiphonAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            int wisBoost = Stats[7] ^ 2;
             int drained = DrainedHP;
             int mpAvailable = MP;
             if (!HasConditionEffect(ConditionEffects.DrakzixCharging))
@@ -1093,11 +1092,10 @@ namespace wServer.realm.entities
                 Pos1 = target,
                 Pos2 = new Position { X = target.X + eff.Range, Y = target.Y }
             });
-            List<Enemy> enemies = new List<Enemy>();
-
             Owner.AOE(target, eff.Range, false, enemy =>
             {
-                (enemy as Enemy).Damage(this, time, ((((MP * 2) + (wisBoost ^ 2)) * (drained / 2)) / 4) + eff.Amount, false,
+
+                ((Enemy)enemy).Damage(this, time, ((((MP * 2)) * (drained / 2)) / 4) + eff.Amount, false,
                     new ConditionEffect[0]);
             });
             BroadcastSync(pkts, p => this.Dist(p) < 25);
@@ -1500,6 +1498,7 @@ namespace wServer.realm.entities
         private void AEPoisonGrenade(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var impDamage = eff.ImpactDamage;
+
             if (eff.UseWisMod)
             {
                 impDamage = (int)UseWisMod(eff.ImpactDamage, 0);
@@ -1527,16 +1526,15 @@ namespace wServer.realm.entities
                     Pos1 = new Position() { X = eff.Radius }
                 }, x, null, PacketPriority.High);
 
-                world.AOE(target, eff.Radius, false,
-                    enemy => PoisonEnemy(world, enemy as Enemy, eff));
-
-
-                world.AOE(target, eff.Radius, false,
-                    enemy => (enemy as Enemy).Damage(this, time, impDamage, false));
-
-
-                world.AOE(target, eff.Radius, false,
-                     enemy => (enemy as Enemy).ApplyConditionEffect(ConditionEffectIndex.Sick, eff.DurationMSAlt));
+                world.AOE(target, eff.Radius, false, entity => {
+                    PoisonEnemy(world, (Enemy)entity, eff);
+                    ((Enemy)entity).Damage(this, time, impDamage, false);
+                    entity.ApplyConditionEffect(new ConditionEffect
+                    {
+                        Effect = ConditionEffectIndex.Sick,
+                        DurationMS = eff.DurationMSAlt
+                    });
+                });
 
             }));
         }
@@ -2465,7 +2463,15 @@ namespace wServer.realm.entities
 
         void PoisonEnemy(World world, Enemy enemy, ActivateEffect eff)
         {
-            var remainingDmg = (int)StatsManager.GetDefenseDamage(enemy, eff.TotalDamage, 0);
+
+            var totalDamage = eff.TotalDamage;
+
+            if (eff.UseWisMod)
+            {
+                totalDamage = (int)UseWisMod(eff.TotalDamage, 0);
+            }
+
+            var remainingDmg = (int)StatsManager.GetDefenseDamage(enemy, totalDamage, 0);
             var perDmg = remainingDmg * 1000 / eff.DurationMS;
 
             WorldTimer tmr = null;

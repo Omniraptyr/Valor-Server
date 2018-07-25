@@ -276,8 +276,8 @@ namespace wServer.logic
                     new TierLoot(11, ItemType.Armor, 0.01),
                     new TierLoot(4, ItemType.Ability, 0.1),
                     new TierLoot(5, ItemType.Ability, 0.03),
-                    new ItemLoot("Surge Cloak", 0.01),
-                    new ItemLoot("V-X Spark Armor", 0.01)
+                    new ItemLoot("Surge Cloak", 0.005),
+                    new ItemLoot("V-X Spark Armor", 0.005)
                 )
             )
             ;

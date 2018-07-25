@@ -153,6 +153,7 @@ namespace wServer.logic
             )
             .Init("Sumo Master",
                 new State(
+                    new DropPortalOnDeath("The Dojo Portal", 0.3),
                     new State("sleeping1",
                         new SetAltTexture(0),
                         new TimedTransition(1000, "sleeping2"),

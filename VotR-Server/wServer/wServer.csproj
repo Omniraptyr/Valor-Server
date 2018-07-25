@@ -231,6 +231,7 @@
     <Compile Include="networking\packets\outgoing\UnboxResult.cs" />
     <Compile Include="realm\ActivateBoost2.cs" />
     <Compile Include="realm\entities\player\Player.Marks.cs" />
+    <Compile Include="realm\entities\player\Player.VACBan.cs" />
     <Compile Include="realm\entities\Torii.cs" />
     <Compile Include="realm\entities\Banner.cs" />
     <Compile Include="realm\entities\player\Player.Powers.cs" />

@@ -29975,7 +29975,6 @@ This strange weapon was used by ancient battle mages to deter invaders. The secr
       <BagType>4</BagType>
       <OldSound>daggerSwing</OldSound>
       <feedPower>150</feedPower>
-      <Soulbound/>
       <DisplayId>{equip.Poison_Fang_Dagger}</DisplayId>
    </Object>
    <Object type="0xa18" id="Mithril Dagger">
@@ -34227,7 +34226,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <Description>{equip.Magically_concentrated_venom_of_the_carnivorous_leaping_tre}</Description>
         <Usable/>
         <BagType>1</BagType>
-        <MpCost>45</MpCost>
+        <MpCost>35</MpCost>
         <Activate radius="3" totalDamage="300" duration="5.5" impactDamage="60" throwTime="1" useWisMod="true" durationAlt="2">PoisonGrenade</Activate>
         <feedPower>10</feedPower>
         <DisplayId>{equip.Spider_Venom}</DisplayId>
@@ -34244,7 +34243,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <Description>{equip.Deadly_magical_poison_taken_from_the_two_headed_pit_snakes_}</Description>
         <Usable/>
         <BagType>1</BagType>
-        <MpCost>65</MpCost>
+        <MpCost>55</MpCost>
         <Activate radius="3.5" totalDamage="450" duration="6" impactDamage="90" throwTime="1" useWisMod="true" durationAlt="2">PoisonGrenade</Activate>
         <feedPower>20</feedPower>
         <DisplayId>{equip.Pit_Viper_Poison}</DisplayId>
@@ -34262,7 +34261,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <Usable/>
         <BagType>2</BagType>
         <FameBonus>1</FameBonus>
-        <MpCost>75</MpCost>
+        <MpCost>65</MpCost>
         <Activate radius="4" totalDamage="600" duration="6.5" impactDamage="120" throwTime="1" useWisMod="true" durationAlt="2">PoisonGrenade</Activate>
         <feedPower>45</feedPower>
         <DisplayId>{equip.Stingray_Poison}</DisplayId>
@@ -34280,7 +34279,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <Usable/>
         <BagType>2</BagType>
         <FameBonus>2</FameBonus>
-        <MpCost>85</MpCost>
+        <MpCost>75</MpCost>
         <Activate radius="4.5" totalDamage="750" duration="7" impactDamage="160" throwTime="1" useWisMod="true" durationAlt="3">PoisonGrenade</Activate>
         <feedPower>90</feedPower>
         <DisplayId>{equip.Felwasp_Toxin}</DisplayId>
@@ -34298,7 +34297,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <Usable/>
         <BagType>4</BagType>
         <FameBonus>3</FameBonus>
-        <MpCost>100</MpCost>
+        <MpCost>80</MpCost>
         <Activate radius="5" totalDamage="950" duration="7.5" impactDamage="180" throwTime="1" useWisMod="true" durationAlt="3">PoisonGrenade</Activate>
         <feedPower>185</feedPower>
         <DisplayId>{equip.Nightwing_Venom}</DisplayId>
@@ -34318,7 +34317,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <Usable/>
         <BagType>4</BagType>
         <FameBonus>4</FameBonus>
-        <MpCost>100</MpCost>
+        <MpCost>85</MpCost>
         <Activate radius="5" totalDamage="950" duration="7.5" impactDamage="200" throwTime="1" useWisMod="true" durationAlt="4">PoisonGrenade</Activate>
         <feedPower>380</feedPower>
         <DisplayId>{equip.Baneserpent_Poison}</DisplayId>
@@ -74986,15 +74985,15 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <Equipment>0xa14, 0xaa3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="680">130</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
-        <Attack max="60">12</Attack>
+        <Attack max="65">12</Attack>
         <Defense max="25">0</Defense>
         <Speed max="75">15</Speed>
         <Dexterity max="75">15</Dexterity>
-        <HpRegen max="40">15</HpRegen>
+        <HpRegen max="50">15</HpRegen>
         <MpRegen max="75">10</MpRegen>
         <Might max="80">2</Might>
-        <Luck max="60">2</Luck>
-		<Restoration max="60">10</Restoration>
+        <Luck max="80">2</Luck>
+        <Restoration max="60">10</Restoration>
         <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
@@ -75006,7 +75005,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
-		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
         <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0300">Rogue</UnlockLevel>
         <UnlockLevel level="20" type="0x030e">Wizard</UnlockLevel>
@@ -85197,51 +85196,60 @@ This dagger was a myth, will you live to tell the tale?
       <MultiHit/>
 		</Projectile>
 	</Object>
-<Object type="0x522e" id="Arnkz the Mega Samurai">
-		<DisplayId>Arnkz the Mega Samurai</DisplayId>
-		<Enemy/>
-    <Texture>
-      <File>lofiObjBig</File>
-      <Index>0x18e</Index>
-    </Texture>
-		<Class>Character</Class>
-		<HitSound>monster/pirate_king_hit</HitSound>
-		<DeathSound>monster/beholder_death</DeathSound>
-		<Size>175</Size>
-		<MaxHitPoints>10000</MaxHitPoints>
-		<Defense>30</Defense>
-		<Level>1</Level>
-		<XpMult>0.6</XpMult>
-		<NoArticle/>
-    <Quest/>
-	  <Projectile id="0">
-			<ObjectId>Black Missile</ObjectId>
-			<Damage>120</Damage>
-			<Speed>100</Speed>
-			<LifetimeMS>2300</LifetimeMS>
-      <ConditionEffect duration="4">Weak</ConditionEffect>
-		</Projectile>
-    <Projectile id="1">
-			<ObjectId>Blue Bolt</ObjectId>
-			<Damage>80</Damage>
-			<Speed>100</Speed>
-			<LifetimeMS>2050</LifetimeMS>
-		</Projectile>
-	    <Projectile id="2">
-			<ObjectId>Black Magic</ObjectId>
-			<MinDamage>100</MinDamage>
-      <MaxDamage>120</MaxDamage>
-			<Speed>100</Speed>
-			<LifetimeMS>2950</LifetimeMS>
-		</Projectile>
-    <Projectile id="3">
-			<ObjectId>Gray Spinner</ObjectId>
-			<Damage>60</Damage>
-			<Speed>100</Speed>
-			<LifetimeMS>2250</LifetimeMS>
-      <ConditionEffect duration="2">Bleeding</ConditionEffect>
-    </Projectile>
-	</Object>
+    <Object type="0x522e" id="Arnkz the Mega Samurai">
+        <DisplayId>Arnkz the Mega Samurai</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x18e</Index>
+        </Texture>
+        <Class>Character</Class>
+        <HitSound>monster/pirate_king_hit</HitSound>
+        <DeathSound>monster/beholder_death</DeathSound>
+        <Size>175</Size>
+        <MaxHitPoints>10000</MaxHitPoints>
+        <Defense>30</Defense>
+        <Level>1</Level>
+        <XpMult>0.1</XpMult>
+        <NoArticle/>
+        <Quest/>
+        <Projectile id="0">
+            <ObjectId>Black Missile</ObjectId>
+            <Damage>120</Damage>
+            <Speed>100</Speed>
+            <LifetimeMS>1400</LifetimeMS>
+            <ConditionEffect duration="2">Weak</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Blue Bolt</ObjectId>
+            <Damage>80</Damage>
+            <Speed>100</Speed>
+            <LifetimeMS>2050</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Black Magic</ObjectId>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>120</MaxDamage>
+            <Speed>100</Speed>
+            <LifetimeMS>2950</LifetimeMS>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Gray Spinner</ObjectId>
+            <Damage>60</Damage>
+            <Speed>100</Speed>
+            <LifetimeMS>2250</LifetimeMS>
+            <ConditionEffect duration="2">Bleeding</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Black Bolt</ObjectId>
+            <Speed>70</Speed>
+            <Damage>160</Damage>
+            <Size>100</Size>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="1.5">Slowed</ConditionEffect>
+            <ArmorPiercing/>
+        </Projectile>
+    </Object>
   <Object type="0x5221" id="Ultimate Nunchucks">
     <Class>Equipment</Class>
     <Item/>
@@ -107767,7 +107775,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate effect="Damaging" duration="2">ConditionEffectSelf</Activate>
         <Activate maxDistance="20">Teleport</Activate>
         <Activate stat="26" amount="5" duration="6" noStack="true" useWisMod="false">StatBoostSelf</Activate>
-        <Cooldown>8</Cooldown>
+        <Cooldown>9</Cooldown>
     </Object>
 	<Object type="0x1571" id="Hallowed Shield">
         <Class>Equipment</Class>
@@ -108176,7 +108184,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <SlotType>9</SlotType>
         <Description>Utter destruction will follow your path. Unstoppable.</Description>
         <ActivateOnEquip stat="20" amount="25">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="-20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-100">IncrementStat</ActivateOnEquip>
+		<ActivateOnEquip stat="22" amount="-5">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <feedPower>3000</feedPower>
@@ -110936,7 +110945,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Description>A hide enchanted by a similar spell used to enchant Yazanahar.</Description>
         <ActivateOnEquip stat="20" amount="50">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="-60">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="-100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-200">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="-10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -120628,8 +120637,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
     <Projectile>
       <ObjectId>SoLLproj</ObjectId>
       <Speed>80</Speed>
-      <MinDamage>65</MinDamage>
-      <MaxDamage>65</MaxDamage>
+      <MinDamage>100</MinDamage>
+      <MaxDamage>100</MaxDamage>
       <LifetimeMS>800</LifetimeMS>
       <Size>100</Size>
       <MultiHit />
@@ -120659,7 +120668,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
     <Usable />
     <BagType>6</BagType>
     <FameBonus>6</FameBonus>
-    <MpCost>110</MpCost>
+    <MpCost>90</MpCost>
     <Activate radius="5" totalDamage="500" duration="5" impactDamage="100" throwTime="1" useWisMod="true" durationAlt="2">PoisonGrenade</Activate>
     <Activate radius="9" totalDamage="300" duration="3">HealingGrenade</Activate>
     <feedPower>450</feedPower>
@@ -120805,35 +120814,34 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
     <feedPower>0</feedPower>
     <DisplayId>Clump of Bark</DisplayId>
   </Object>
-  <Object type="0x277" id="FireStorm">
-    <Class>Equipment</Class>
-    <Item />
-    <RemoteTexture>
-      <Instance>production</Instance>
-      <Id>FireStorm</Id>
-    </RemoteTexture>
-    <SlotType>2</SlotType>
-    <Description>Theres a fire, not really a storm but it sounds cooler.</Description>
-    <RateOfFire>1.08</RateOfFire>
-    <Sound>weapon/blunt_dagger</Sound>
-    <Projectile>
-      <ObjectId>FireStormProj</ObjectId>
-      <Speed>145</Speed>
-      <MinDamage>90</MinDamage>
-      <MaxDamage>145</MaxDamage>
-      <LifetimeMS>400</LifetimeMS>
-      <Amplitude>0.3</Amplitude>
-      <Frequency>0.5</Frequency>
-      <Size>100</Size>
-    </Projectile>
-    <NumProjectiles>3</NumProjectiles>
-    <ArcGap>10</ArcGap>
-    <BagType>6</BagType>
-    <FameBonus>5</FameBonus>
-    <feedPower>0</feedPower>
-    <Soulbound />
-    <DisplayId>FireStorm</DisplayId>
-  </Object>
+    <Object type="0x277" id="FireStorm">
+        <Class>Equipment</Class>
+        <Item />
+        <RemoteTexture>
+            <Instance>production</Instance>
+            <Id>FireStorm</Id>
+        </RemoteTexture>
+        <SlotType>2</SlotType>
+        <Description>Theres a fire, not really a storm but it sounds cooler.</Description>
+        <RateOfFire>1.08</RateOfFire>
+        <Sound>weapon/blunt_dagger</Sound>
+        <Projectile>
+            <ObjectId>FireStormProj</ObjectId>
+            <Speed>145</Speed>
+            <MinDamage>90</MinDamage>
+            <MaxDamage>145</MaxDamage>
+            <LifetimeMS>400</LifetimeMS>
+            <Amplitude>0.3</Amplitude>
+            <Frequency>0.5</Frequency>
+            <Size>100</Size>
+        </Projectile>
+        <NumProjectiles>3</NumProjectiles>
+        <ArcGap>10</ArcGap>
+        <BagType>6</BagType>
+        <FameBonus>5</FameBonus>
+        <feedPower>0</feedPower>
+        <DisplayId>FireStorm</DisplayId>
+    </Object>
   <Object type="0x278" id="Mega Blaster">
     <Class>Equipment</Class>
     <Item />
@@ -122681,8 +122689,10 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <MinDamage>140</MinDamage>
             <MaxDamage>200</MaxDamage>
             <Speed>35</Speed>
-            <LifetimeMS>8000</LifetimeMS>
+            <LifetimeMS>4000</LifetimeMS>
             <Boomerang/>
+			<Amplitude>2</Amplitude>
+			<Frequency>1</Frequency>
         </Projectile>
         <Projectile id="5">
             <ObjectId>Fire Bullet</ObjectId>
@@ -122771,7 +122781,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate effect="Healing" duration="6">ConditionEffectSelf</Activate>
         <Activate effect="Healing" duration="6" range="5" color="0xAA00FF" target="player" center="mouse" visualEffect="0" useWisMod="false">GenericActivate</Activate>
     </Object>
-	    <Object type="0x63ec" id="Eidolon Venom">
+    <Object type="0x63ec" id="Eidolon Toxin">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -122787,8 +122797,142 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <MpCost>70</MpCost>
-        <Activate radius="6" totalDamage="500" duration="6" impactDamage="1200" throwTime="3" useWisMod="true" durationAlt="3">PoisonGrenade</Activate>
+        <Activate radius="6" totalDamage="400" duration="6" impactDamage="1500" throwTime="3" useWisMod="true" durationAlt="3">PoisonGrenade</Activate>
         <feedPower>900</feedPower>
-        <DisplayId>Eidolon Venom</DisplayId>
+        <DisplayId>Eidolon Toxin</DisplayId>
     </Object>
+	<Object type="0x63eb" id="Spiritorb Holder Default Yellow">
+        <Enemy/>
+        <DisplayId>Spiritorb Holder Default Yellow</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1d6</Index>
+        </Texture>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Size>130</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <MaxHitPoints>25000</MaxHitPoints>
+        <Defense>5</Defense>
+    </Object>
+    <Object type="0x63ed" id="Spiritorb Holder Yellow">
+        <Enemy/>
+        <DisplayId>Spiritorb Holder Yellow</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1d4</Index>
+        </Texture>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Size>130</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <MaxHitPoints>25000</MaxHitPoints>
+        <Defense>5</Defense>
+    </Object>
+    <Object type="0x63ef" id="Spiritorb Holder Sentry">
+        <Enemy/>
+        <DisplayId>Spiritorb Sentry</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1d9</Index>
+        </Texture>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Size>130</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <Projectile id="0">
+            <ObjectId>Grey Boomerang</ObjectId>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <Speed>140</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <Boomerang/>
+            <ConditionEffect duration="6">Sick</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>White Flame</ObjectId>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>300</MaxDamage>
+            <Speed>80</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+        <MaxHitPoints>25000</MaxHitPoints>
+        <Defense>5</Defense>
+    </Object>
+	<Object type="0x63f1" id="Hidden Technique">
+      <Class>Equipment</Class>
+      <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x109</Index>
+        </Texture>
+      <SlotType>2</SlotType>
+      <Description>Watch as I demonstrate true talent!</Description>
+      <RateOfFire>1.25</RateOfFire>
+      <Sound>weapon/poison_fang_dagger</Sound>
+      <Projectile>
+         <ObjectId>Hidden Technique Bolt</ObjectId>
+         <Speed>140</Speed>
+         <MinDamage>50</MinDamage>
+         <MaxDamage>100</MaxDamage>
+         <LifetimeMS>420</LifetimeMS>
+		 <MultiHit/>
+      </Projectile>
+	  <Steal type="life" amount="1"/>
+      <BagType>4</BagType>
+      <OldSound>daggerSwing</OldSound>
+      <feedPower>150</feedPower>
+      <DisplayId>Hidden Technique</DisplayId>
+   </Object>
+   <Object type="0x63f3" id="Hidden Technique Bolt">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x10a</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+   <Object type="0x63f2" id="Arnkz Student">
+      <Group>Pirates</Group>
+      <Enemy/>
+      <Class>Character</Class>
+      <AnimatedTexture>
+		  <File>chars8x8rHero2</File>
+		  <Index>34</Index>
+      </AnimatedTexture>
+      <HitSound>monster/night_elves_hit</HitSound>
+      <DeathSound>monster/night_elves_death</DeathSound>
+      <Size>100</Size>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Defense>5</Defense>
+      <Projectile id="0">
+         <ObjectId>Blade</ObjectId>
+         <Damage>60</Damage>
+         <Speed>40</Speed>
+         <LifetimeMS>800</LifetimeMS>
+      </Projectile>
+	  <Projectile id="1">
+         <ObjectId>White Bolt</ObjectId>
+         <Damage>70</Damage>
+         <Speed>80</Speed>
+         <LifetimeMS>80</LifetimeMS>
+		 <ConditionEffect duration="2">Bleeding</ConditionEffect>
+      </Projectile>
+      <DisplayId>Arnkz Student</DisplayId>
+   </Object>
 </Objects>

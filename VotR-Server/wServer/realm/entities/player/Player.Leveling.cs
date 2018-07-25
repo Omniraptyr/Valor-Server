@@ -411,7 +411,7 @@ namespace wServer.realm.entities
             var acc = Client.Account;
             Random rnd = new Random();
             int drop3 = rnd.Next(1, 10001);
-            int drop = rnd.Next(1, 101);
+            int drop = rnd.Next(1, 10);
             int drop4 = rnd.Next(1, 5);
             var time = new RealmTime();
             int drop2 = rnd.Next(1, 7);
@@ -437,7 +437,7 @@ namespace wServer.realm.entities
             }
             if (enemy.ObjectDesc.Lootdrop == true)
             {
-                if (drop <= 15)
+                if (drop <= 2)
                 {
                     switch (drop2)
                     {

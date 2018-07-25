@@ -4638,8 +4638,8 @@
         <Projectile>
             <ObjectId>SoLLproj</ObjectId>
             <Speed>80</Speed>
-            <MinDamage>65</MinDamage>
-            <MaxDamage>65</MaxDamage>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>100</MaxDamage>
             <LifetimeMS>800</LifetimeMS>
             <Size>100</Size>
             <MultiHit />
@@ -4669,7 +4669,7 @@
         <Usable />
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
-        <MpCost>110</MpCost>
+        <MpCost>90</MpCost>
         <Activate radius="5" totalDamage="500" duration="5" impactDamage="100" throwTime="1" useWisMod="true" durationAlt="2">PoisonGrenade</Activate>
         <Activate radius="9" totalDamage="300" duration="3">HealingGrenade</Activate>
         <feedPower>450</feedPower>
@@ -4841,7 +4841,6 @@
         <BagType>6</BagType>
         <FameBonus>5</FameBonus>
         <feedPower>0</feedPower>
-        <Soulbound />
         <DisplayId>FireStorm</DisplayId>
     </Object>
     <Object type="0x278" id="Mega Blaster">

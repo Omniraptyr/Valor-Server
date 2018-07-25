@@ -161,11 +161,7 @@ namespace wServer.realm.entities
             if (Muted && !HasConditionEffect(ConditionEffects.Muted))
                 ApplyConditionEffect(ConditionEffectIndex.Muted);
 
-
-
-
-
-
+            
 
             if (HasConditionEffect(ConditionEffects.Healing) && !HasConditionEffect(ConditionEffects.Sick) && !HasConditionEffect(ConditionEffects.DrakzixCharging))
             {

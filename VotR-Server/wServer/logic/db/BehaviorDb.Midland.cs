@@ -46,7 +46,7 @@ namespace wServer.logic
             )
             .Init("Orc King",
                 new State(
-                    new DropPortalOnDeath("Spider Den Portal",0.1),
+                    new DropPortalOnDeath("Spider Den Portal",0.8),
                     new Shoot(3),
                     new Spawn("Orc Queen", maxChildren: 2, coolDown: 60000, givesNoXp: false),
                     new Prioritize(
@@ -298,6 +298,7 @@ namespace wServer.logic
             )
             .Init("Swarm",
                 new State(
+                    new DropPortalOnDeath("The Dojo Portal", 0.5),
                     new State("circle",
                         new Prioritize(
                             new StayAbove(0.4, 60),
@@ -494,7 +495,7 @@ namespace wServer.logic
             )
             .Init("Werelion",
                 new State(
-                    new DropPortalOnDeath("Spider Den Portal", 0.1),
+                    new DropPortalOnDeath("Spider Den Portal", 0.8),
                     new Spawn("Weretiger", maxChildren: 1, coolDown: 23000, givesNoXp: false),
                     new Spawn("Wereleopard", maxChildren: 2, coolDown: 9000, givesNoXp: false),
                     new Spawn("Werepanther", maxChildren: 3, coolDown: 15000, givesNoXp: false),
@@ -594,6 +595,7 @@ namespace wServer.logic
             )
             .Init("Horned Drake",
                 new State(
+                    new DropPortalOnDeath("The Dojo Portal", 0.5),
                     new Spawn("Drake Baby", maxChildren: 1, initialSpawn: 1, coolDown: 50000, givesNoXp: false),
                     new State("idle",
                         new StayAbove(0.8, 60),
@@ -677,6 +679,7 @@ namespace wServer.logic
             )
             .Init("Nomadic Shaman",
                 new State(
+                    new DropPortalOnDeath("The Dojo Portal", 0.2),
                     new Prioritize(
                         new StayAbove(0.8, 55),
                         new Wander(0.7)

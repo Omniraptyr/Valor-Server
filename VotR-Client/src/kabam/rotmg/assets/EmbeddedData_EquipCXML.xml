@@ -3031,7 +3031,6 @@
         <BagType>4</BagType>
         <OldSound>daggerSwing</OldSound>
         <feedPower>150</feedPower>
-        <Soulbound/>
         <DisplayId>{equip.Poison_Fang_Dagger}</DisplayId>
     </Object>
     <Object type="0xa18" id="Mithril Dagger">
@@ -7312,7 +7311,7 @@
         <Description>{equip.Magically_concentrated_venom_of_the_carnivorous_leaping_tre}</Description>
         <Usable/>
         <BagType>1</BagType>
-        <MpCost>45</MpCost>
+        <MpCost>35</MpCost>
         <Activate radius="3" totalDamage="300" duration="5.5" impactDamage="60" throwTime="1" useWisMod="true" durationAlt="2">PoisonGrenade</Activate>
         <feedPower>10</feedPower>
         <DisplayId>{equip.Spider_Venom}</DisplayId>
@@ -7329,7 +7328,7 @@
         <Description>{equip.Deadly_magical_poison_taken_from_the_two_headed_pit_snakes_}</Description>
         <Usable/>
         <BagType>1</BagType>
-        <MpCost>65</MpCost>
+        <MpCost>55</MpCost>
         <Activate radius="3.5" totalDamage="450" duration="6" impactDamage="90" throwTime="1" useWisMod="true" durationAlt="2">PoisonGrenade</Activate>
         <feedPower>20</feedPower>
         <DisplayId>{equip.Pit_Viper_Poison}</DisplayId>
@@ -7347,7 +7346,7 @@
         <Usable/>
         <BagType>2</BagType>
         <FameBonus>1</FameBonus>
-        <MpCost>75</MpCost>
+        <MpCost>65</MpCost>
         <Activate radius="4" totalDamage="600" duration="6.5" impactDamage="120" throwTime="1" useWisMod="true" durationAlt="2">PoisonGrenade</Activate>
         <feedPower>45</feedPower>
         <DisplayId>{equip.Stingray_Poison}</DisplayId>
@@ -7365,7 +7364,7 @@
         <Usable/>
         <BagType>2</BagType>
         <FameBonus>2</FameBonus>
-        <MpCost>85</MpCost>
+        <MpCost>75</MpCost>
         <Activate radius="4.5" totalDamage="750" duration="7" impactDamage="160" throwTime="1" useWisMod="true" durationAlt="3">PoisonGrenade</Activate>
         <feedPower>90</feedPower>
         <DisplayId>{equip.Felwasp_Toxin}</DisplayId>
@@ -7383,7 +7382,7 @@
         <Usable/>
         <BagType>4</BagType>
         <FameBonus>3</FameBonus>
-        <MpCost>100</MpCost>
+        <MpCost>80</MpCost>
         <Activate radius="5" totalDamage="950" duration="7.5" impactDamage="180" throwTime="1" useWisMod="true" durationAlt="3">PoisonGrenade</Activate>
         <feedPower>185</feedPower>
         <DisplayId>{equip.Nightwing_Venom}</DisplayId>
@@ -7403,7 +7402,7 @@
         <Usable/>
         <BagType>4</BagType>
         <FameBonus>4</FameBonus>
-        <MpCost>100</MpCost>
+        <MpCost>85</MpCost>
         <Activate radius="5" totalDamage="950" duration="7.5" impactDamage="200" throwTime="1" useWisMod="true" durationAlt="4">PoisonGrenade</Activate>
         <feedPower>380</feedPower>
         <DisplayId>{equip.Baneserpent_Poison}</DisplayId>
@@ -26919,7 +26918,7 @@
         <Description>A hide enchanted by a similar spell used to enchant Yazanahar.</Description>
         <ActivateOnEquip stat="20" amount="50">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="-60">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="-100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-200">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="-10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -30760,7 +30759,8 @@
         <SlotType>9</SlotType>
         <Description>Utter destruction will follow your path. Unstoppable.</Description>
         <ActivateOnEquip stat="20" amount="25">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="-20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="-5">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <feedPower>3000</feedPower>
@@ -32162,7 +32162,7 @@
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>999999</MaxHitPoints>
    </Object>
-       <Object type="0x55f6" id="Mercy of Yazanahar">
+    <Object type="0x55f6" id="Mercy of Yazanahar">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -32171,9 +32171,9 @@
         </Texture>
         <SlotType>6</SlotType>
         <Description>A hide enchanted by a similar spell used to enchant Yazanahar.</Description>
-        <ActivateOnEquip stat="20" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="50">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="-60">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="-60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-200">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="-10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -33943,7 +33943,7 @@
         <Consumable/>
         <Activate amount="3">SorActivate</Activate>
     </Object>
-    <Object type="0x63ec" id="Eidolon Venom">
+    <Object type="0x63ec" id="Eidolon Toxin">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -33959,8 +33959,33 @@
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <MpCost>70</MpCost>
-        <Activate radius="6" totalDamage="500" duration="6" impactDamage="1200" throwTime="3" useWisMod="true" durationAlt="3">PoisonGrenade</Activate>
+        <Activate radius="6" totalDamage="400" duration="6" impactDamage="1500" throwTime="3" useWisMod="true" durationAlt="3">PoisonGrenade</Activate>
         <feedPower>900</feedPower>
-        <DisplayId>Eidolon Venom</DisplayId>
+        <DisplayId>Eidolon Toxin</DisplayId>
+    </Object>
+    <Object type="0x63f1" id="Hidden Technique">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x109</Index>
+        </Texture>
+        <SlotType>2</SlotType>
+        <Description>Watch as I demonstrate true talent!</Description>
+        <RateOfFire>1.25</RateOfFire>
+        <Sound>weapon/poison_fang_dagger</Sound>
+        <Projectile>
+            <ObjectId>Hidden Technique Bolt</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>50</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <LifetimeMS>420</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <Steal type="life" amount="1"/>
+        <BagType>4</BagType>
+        <OldSound>daggerSwing</OldSound>
+        <feedPower>150</feedPower>
+        <DisplayId>Hidden Technique</DisplayId>
     </Object>
 </Objects>

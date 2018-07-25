@@ -987,6 +987,7 @@ public class EquipmentToolTip extends ToolTip {
                                 break;
                             case ActivationType.POISON_GRENADE:
                                 _local_3.@impactDamage = this.modifyWisModStat(_local_3.@impactDamage, 0);
+                                _local_3.@totalDamage = this.modifyWisModStat(_local_3.@totalDamage, 0);
                                 break;
                         }
                     }

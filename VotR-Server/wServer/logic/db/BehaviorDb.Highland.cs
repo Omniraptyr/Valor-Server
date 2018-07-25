@@ -691,7 +691,7 @@ namespace wServer.logic
             )
             .Init("Urgle",
                 new State(
-                    new DropPortalOnDeath("Spider Den Portal", 0.1),
+                    new DropPortalOnDeath("Spider Den Portal", 0.9),
                     new Prioritize(
                         new StayCloseToSpawn(0.8, 3),
                         new Wander(0.5)

@@ -84,7 +84,8 @@ namespace wServer.logic
                        new Shoot(8.4, count: 20, projectileIndex: 0),
                        new Suicide()
                     )
-                ))
+                )
+            )
               .Init("Shrine of Urios",
                   new State(
                     new State("JacobIsBad",

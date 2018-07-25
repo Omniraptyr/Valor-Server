@@ -3341,15 +3341,15 @@
         <MaxHitPoints>10000</MaxHitPoints>
         <Defense>30</Defense>
         <Level>1</Level>
-        <XpMult>100</XpMult>
+        <XpMult>0.1</XpMult>
         <NoArticle/>
         <Quest/>
         <Projectile id="0">
             <ObjectId>Black Missile</ObjectId>
             <Damage>120</Damage>
             <Speed>100</Speed>
-            <LifetimeMS>2300</LifetimeMS>
-            <ConditionEffect duration="4">Weak</ConditionEffect>
+            <LifetimeMS>1400</LifetimeMS>
+            <ConditionEffect duration="2">Weak</ConditionEffect>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Blue Bolt</ObjectId>
@@ -3369,7 +3369,17 @@
             <Damage>60</Damage>
             <Speed>100</Speed>
             <LifetimeMS>2250</LifetimeMS>
+            <Boomerang/>
             <ConditionEffect duration="2">Bleeding</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Black Bolt</ObjectId>
+            <Speed>70</Speed>
+            <Damage>160</Damage>
+            <Size>100</Size>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="1.5">Slowed</ConditionEffect>
+            <ArmorPiercing/>
         </Projectile>
     </Object>
     <!-- Bergelmir, the Frost Guardian -->
@@ -7912,7 +7922,7 @@
         <Activate effect="Damaging" duration="2">ConditionEffectSelf</Activate>
         <Activate maxDistance="20">Teleport</Activate>
         <Activate stat="26" amount="5" duration="6" noStack="true" useWisMod="false">StatBoostSelf</Activate>
-        <Cooldown>8</Cooldown>
+        <Cooldown>9</Cooldown>
     </Object>
     <Object type="0x49b3" id="Hollows Wall">
         <Class>Wall</Class>
@@ -12514,8 +12524,10 @@
             <MinDamage>140</MinDamage>
             <MaxDamage>200</MaxDamage>
             <Speed>35</Speed>
-            <LifetimeMS>8000</LifetimeMS>
+            <LifetimeMS>4000</LifetimeMS>
             <Boomerang/>
+            <Amplitude>2</Amplitude>
+            <Frequency>1</Frequency>
         </Projectile>
         <Projectile id="5">
             <ObjectId>Fire Bullet</ObjectId>
@@ -12560,5 +12572,106 @@
             <ConditionEffect duration="3">Slowed</ConditionEffect>
             <ConditionEffect duration="3">Bleeding</ConditionEffect>
         </Projectile>
+    </Object>
+    <Object type="0x63eb" id="Spiritorb Holder Default Yellow">
+        <Enemy/>
+        <DisplayId>Spiritorb Holder Default Yellow</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1d6</Index>
+        </Texture>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Size>130</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <MaxHitPoints>25000</MaxHitPoints>
+        <Defense>5</Defense>
+    </Object>
+    <Object type="0x63ed" id="Spiritorb Holder Yellow">
+        <Enemy/>
+        <DisplayId>Spiritorb Holder Yellow</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1d4</Index>
+        </Texture>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Size>130</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <MaxHitPoints>25000</MaxHitPoints>
+        <Defense>5</Defense>
+    </Object>
+    <Object type="0x63ef" id="Spiritorb Holder Sentry">
+        <Enemy/>
+        <DisplayId>Spiritorb Sentry</DisplayId>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1d9</Index>
+        </Texture>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Size>130</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <Projectile id="0">
+            <ObjectId>Grey Boomerang</ObjectId>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <Speed>140</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <Boomerang/>
+            <ConditionEffect duration="6">Sick</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>White Flame</ObjectId>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>300</MaxDamage>
+            <Speed>80</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+        <MaxHitPoints>25000</MaxHitPoints>
+        <Defense>5</Defense>
+    </Object>
+    <Object type="0x63f2" id="Arnkz Student">
+        <Group>Pirates</Group>
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars8x8rHero2</File>
+            <Index>34</Index>
+        </AnimatedTexture>
+        <HitSound>monster/night_elves_hit</HitSound>
+        <DeathSound>monster/night_elves_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>250</MaxHitPoints>
+        <Defense>5</Defense>
+        <Projectile id="0">
+            <ObjectId>Blade</ObjectId>
+            <Damage>60</Damage>
+            <Speed>40</Speed>
+            <LifetimeMS>800</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>White Bolt</ObjectId>
+            <Damage>70</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>80</LifetimeMS>
+            <ConditionEffect duration="2">Bleeding</ConditionEffect>
+        </Projectile>
+        <DisplayId>Arnkz Student</DisplayId>
     </Object>
 </Objects>
