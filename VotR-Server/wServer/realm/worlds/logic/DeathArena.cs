@@ -356,6 +356,19 @@ namespace wServer.realm.worlds.logic
                 _arenaState = ArenaState.Ended;
                 LockPortal();
             }
+
+            if (!Enemies.Any(e => e.Value.ObjectDesc.Enemy && !e.Value.Spawned))
+            {
+                _wave++;
+                _restTime = _time;
+                _arenaState = ArenaState.Rest;
+
+                if (_bossLevel + 1 < _changeBossLevel.Length &&
+                    _changeBossLevel[_bossLevel + 1] <= _wave)
+                    _bossLevel++;
+
+                Rest(time, true);
+            }
         }
 
         private void Start(RealmTime time)
@@ -406,12 +419,9 @@ namespace wServer.realm.worlds.logic
             _arenaState = ArenaState.Fight;
         }
 
+
         private void Fight(RealmTime time)
         {
-            if(Players.Count == 0)
-            {
-                _arenaState = ArenaState.Awaiting;
-            }
             if (Players.Count(p => !p.Value.Client.Account.Admin) <= 1)
             {
                 var plr = Players.Values.SingleOrDefault(p => !p.Client.Account.Admin);
@@ -428,20 +438,22 @@ namespace wServer.realm.worlds.logic
                         Text = "Oryx Arena"
                     });
 
-                if (!Enemies.Any(e => e.Value.ObjectDesc.Enemy && !e.Value.Spawned))
-                {
-                    _wave++;
-                    _restTime = _time;
-                    _arenaState = ArenaState.Rest;
-
-                    if (_bossLevel + 1 < _changeBossLevel.Length &&
-                        _changeBossLevel[_bossLevel + 1] <= _wave)
-                        _bossLevel++;
-
-                    Rest(time, true);
-                }
+                _arenaState = ArenaState.Awaiting;
+                return;
             }
 
+            if (!Enemies.Any(e => e.Value.ObjectDesc.Enemy && !e.Value.Spawned))
+            {
+                _wave++;
+                _restTime = _time;
+                _arenaState = ArenaState.Rest;
+
+                if (_bossLevel + 1 < _changeBossLevel.Length &&
+                    _changeBossLevel[_bossLevel + 1] <= _wave)
+                    _bossLevel++;
+
+                Rest(time, true);
+            }
         }
 
         private void HandleWaveRewards()

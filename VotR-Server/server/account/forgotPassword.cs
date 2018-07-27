@@ -28,7 +28,7 @@ namespace server.account
                 Write(context, "<Error>Email not recognized</Error>");
                 return;
             }
-            string reply = "You account password for Valor has been changed! Please use the randomly generated password below to login to your account and change the password to your liking." + Environment.NewLine + CreatePassword(12);
+            string reply = "You account password on the email " + accEmail + " for Valor has been changed! Please use the randomly generated password below to login to your account and change the password to your liking." + Environment.NewLine + CreatePassword(12);
 
             string email = "support@valormg.com";
             string pass = "teameffort101!";
