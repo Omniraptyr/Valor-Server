@@ -1527,7 +1527,7 @@ namespace wServer.realm.entities
                     Pos1 = new Position() { X = eff.Radius }
                 }, x, null, PacketPriority.High);
 
-                world.AOE(target, eff.Radius, false, entity => {
+              /*  world.AOE(target, eff.Radius, false, entity => {
                     foreach (Enemy enemy in Owner.Enemies.Values.Where(e => this.DistSqr(this) < RadiusSqr))
                     {
                         enemy.Damage(this, time, impDamage, false);
@@ -1538,8 +1538,17 @@ namespace wServer.realm.entities
                         DurationMS = eff.DurationMSAlt
                     });
                     PoisonEnemy(world, (Enemy)entity, eff);
-                });
+                });*/
 
+                world.AOE(target, eff.Radius, false, entity => {
+                    PoisonEnemy(world, (Enemy)entity, eff);
+                    ((Enemy)entity).Damage(this, time, impDamage, false);
+                    entity.ApplyConditionEffect(new ConditionEffect
+                    {
+                        Effect = ConditionEffectIndex.Sick,
+                        DurationMS = eff.DurationMSAlt
+                    });
+                });
             }));
         }
 

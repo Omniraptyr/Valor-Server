@@ -186,6 +186,7 @@ namespace wServer.realm.entities
             {"Sorgigas, the Sor Giant",         Tuple.Create(20, 15, 1000)},
             {"Truvix, the Lord Wanderer",       Tuple.Create(20, 15, 1000)},
             {"Test Egg",                        Tuple.Create(20, 15, 1000)},
+            {"The Horrific",                        Tuple.Create(20, 15, 1000)},
 
             // special events
             { "Megaman",                        Tuple.Create(50,20, 20) },
