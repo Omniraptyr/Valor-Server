@@ -68,7 +68,7 @@ namespace wServer.realm.entities
                         }
                     }
                 });
-                if (players.Count > 0) {
+               /* if (players.Count > 0) {
                     foreach (Player player in players)
                         Owner.BroadcastPacket(new ShowEffect() {
                             EffectType = EffectType.Trail,
@@ -89,7 +89,7 @@ namespace wServer.realm.entities
                                 Pos1 = new Position { X = enemy.X, Y = enemy.Y }
                             }, null, PacketPriority.Low);
                         }
-                }
+                }*/
                 reqTime = 500;
             };
             reqTime -= time.ElapsedMsDelta;
