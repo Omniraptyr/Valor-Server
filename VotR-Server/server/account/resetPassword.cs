@@ -43,8 +43,8 @@ namespace server.account
             // send email with pass
             var apikey = Program.Config.serverSettings.sendGridApiKey;
             var sg = new SendGrid.SendGridAPIClient(apikey);
-            var from = new Email("noreply@nillysrealm.com", "Nilly's Realm");
-            var subject = "New Password on Nilly's Realm";
+            var from = new Email("support@valormg.com", "Valor");
+            var subject = "New Password on Valor";
             var to = new Email(acc.UUID);
             var content = new Content("text/plain", Program.Resources.ChangePass.GetResetEmail(password));
             var mail = new Mail(from, subject, to, content);

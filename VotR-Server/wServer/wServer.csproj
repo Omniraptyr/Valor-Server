@@ -104,6 +104,7 @@
     <Compile Include="logic\behaviors\CopyDamageOnDeath.cs" />
     <Compile Include="logic\behaviors\DropPortalOnDeath.cs" />
     <Compile Include="logic\behaviors\InvisiToss.cs" />
+    <Compile Include="logic\behaviors\MoveTo2.cs" />
     <Compile Include="logic\behaviors\OnDeathBehavior.cs" />
     <Compile Include="logic\behaviors\RealmPortalDrop.cs" />
     <Compile Include="logic\behaviors\RemoveEntity.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="logic\behaviors\SetNoXP.cs" />
     <Compile Include="logic\db\BehaviorDb.Asylum.cs" />
     <Compile Include="logic\db\BehaviorDb.Drannol.cs" />
+    <Compile Include="logic\db\BehaviorDb.Horrific.cs" />
     <Compile Include="logic\db\BehaviorDb.Kraken.cs" />
     <Compile Include="logic\db\BehaviorDb.Larry.cs" />
     <Compile Include="logic\db\BehaviorDb.QueenOfHearts.cs" />
@@ -507,6 +509,7 @@
     <Compile Include="realm\setpieces\ScorchOne.cs" />
     <Compile Include="realm\setpieces\SetPieces.cs" />
     <Compile Include="realm\setpieces\SkullShrine.cs" />
+    <Compile Include="realm\setpieces\TheHorrific.cs" />
     <Compile Include="realm\setpieces\SorGiant.cs" />
     <Compile Include="realm\setpieces\Sphinx.cs" />
     <Compile Include="realm\setpieces\SpriteSafe.cs" />

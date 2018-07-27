@@ -25,16 +25,16 @@ namespace wServer.logic
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
                     ),
                 new State("MoveToJanus",
-                    new MoveTo(speed: 0.5f, x: 0, y: 6),
+                    new MoveTo2(0, 6, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet8")
                     ),
                 new State("Bullet8",
                     new Shoot(10, count: 8, projectileIndex: 1, coolDown: new Cooldown(1500, 500)),
-                    new HealSelf(coolDown: 9999, amount: 2000),
+                    new HealEntity(20, "md Janus the Doorwarden", 2000, coolDown: 9999),
                     new EntitiesNotExistsTransition(9999, "MoveAwayJanus", "md dwGenerator")
                     ),
                 new State("MoveAwayJanus",
-                    new MoveTo(speed: 0.5f, x: 0, y: -6),
+                    new MoveTo2(0, -6, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet15")
                     )
                 )
@@ -47,16 +47,16 @@ namespace wServer.logic
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
                     ),
                 new State("MoveToJanus",
-                    new MoveTo(speed: 0.5f, x: 0, y: -6),
+                    new MoveTo2(0, -6, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet8")
                     ),
                 new State("Bullet8",
                     new Shoot(10, count: 8, projectileIndex: 1, coolDown: new Cooldown(1500, 500)),
-                    new HealSelf(coolDown: 9999, amount: 2000),
+                    new HealEntity(20, "md Janus the Doorwarden", 2000, coolDown: 9999),
                     new EntitiesNotExistsTransition(9999, "MoveAwayJanus", "md dwGenerator")
                     ),
                 new State("MoveAwayJanus",
-                    new MoveTo(speed: 0.5f, x: 0, y: 6),
+                    new MoveTo2(0, 6, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet15")
                     )
                 )
@@ -69,16 +69,16 @@ namespace wServer.logic
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
                     ),
                 new State("MoveToJanus",
-                    new MoveTo(speed: 0.5f,  x: -6, y: 0),
+                    new MoveTo2(-6, 0, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet8")
                     ),
                 new State("Bullet8",
                     new Shoot(10, count: 8, projectileIndex: 1, coolDown: new Cooldown(1500, 500)),
-                    new HealSelf(coolDown: 9999, amount: 2000),
+                    new HealEntity(20, "md Janus the Doorwarden", 2000, coolDown: 9999),
                     new EntitiesNotExistsTransition(9999, "MoveAwayJanus", "md dwGenerator")
                     ),
                 new State("MoveAwayJanus",
-                    new MoveTo(speed: 0.5f, x: 6, y: 0),
+                    new MoveTo2(6, 0, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet15")
                     )
                 )
@@ -91,16 +91,16 @@ namespace wServer.logic
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
                     ),
                 new State("MoveToJanus",
-                    new MoveTo(speed: 0.5f, x: 6, y: 0),
+                    new MoveTo2(6, 0, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet8")
                     ),
                 new State("Bullet8",
                     new Shoot(10, count: 8, projectileIndex: 1, coolDown: new Cooldown(1500, 500)),
-                    new HealSelf(coolDown: 9999, amount: 2000),
+                    new HealEntity(20, "md Janus the Doorwarden", 2000, coolDown: 9999),
                     new EntitiesNotExistsTransition(9999, "MoveAwayJanus", "md dwGenerator")
                     ),
                 new State("MoveAwayJanus",
-                    new MoveTo(speed: 0.5f, x: -6, y: 0),
+                    new MoveTo2(-6, 0, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet15")
                     )
                 )
@@ -113,16 +113,16 @@ namespace wServer.logic
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
                     ),
                 new State("MoveToJanus",
-                    new MoveTo(speed: 0.5f, x: 6, y: 6),
+                    new MoveTo2(6, 6, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet8")
                     ),
                 new State("Bullet8",
                     new Shoot(10, count: 8, projectileIndex: 1, coolDown: new Cooldown(1500, 500)),
-                    new HealSelf(coolDown: 9999, amount: 2000),
+                    new HealEntity(20, "md Janus the Doorwarden", 2000, coolDown: 9999),
                     new EntitiesNotExistsTransition(9999, "MoveAwayJanus", "md dwGenerator")
                     ),
                 new State("MoveAwayJanus",
-                    new MoveTo(speed: 0.5f, x: -6, y: -6),
+                    new MoveTo2(-6, -6, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet15")
                     )
                 )
@@ -135,16 +135,16 @@ namespace wServer.logic
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
                     ),
                 new State("MoveToJanus",
-                    new MoveTo(speed: 0.5f, x: -6, y: -6),
+                    new MoveTo2(-6, -6, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet8")
                     ),
                 new State("Bullet8",
                     new Shoot(10, count: 8, projectileIndex: 1, coolDown: new Cooldown(1000, 100)),
-                    new HealSelf(coolDown: 9999, amount: 2000),
+                    new HealEntity(20, "md Janus the Doorwarden", 2000, coolDown: 9999),
                     new EntitiesNotExistsTransition(9999, "MoveAwayJanus", "md dwGenerator")
                     ),
                 new State("MoveAwayJanus",
-                    new MoveTo(speed: 0.5f, x: 6, y: 6),
+                    new MoveTo2(6, 6, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet15")
                     )
                 )
@@ -157,16 +157,16 @@ namespace wServer.logic
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
                     ),
                 new State("MoveToJanus",
-                    new MoveTo(speed: 0.5f, x: 6, y: -6),
+                    new MoveTo2(6, -6, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet8")
                     ),
                 new State("Bullet8",
                     new Shoot(10, count: 8, projectileIndex: 1, coolDown: new Cooldown(1500, 500)),
-                    new HealSelf(coolDown: 9999, amount: 2000),
+                    new HealEntity(20, "md Janus the Doorwarden", 2000, coolDown: 9999),
                     new EntitiesNotExistsTransition(9999, "MoveAwayJanus", "md dwGenerator")
                     ),
                 new State("MoveAwayJanus",
-                    new MoveTo(speed: 0.5f, x :-6, y: 6),
+                    new MoveTo2(-6, 6, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet15")
                     )
                 )
@@ -179,16 +179,16 @@ namespace wServer.logic
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
                     ),
                 new State("MoveToJanus",
-                    new MoveTo(speed: 0.5f, x: -6, y: 6),
+                    new MoveTo2(-6, 6, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet8")
                     ),
                 new State("Bullet8",
                     new Shoot(10, count: 8, projectileIndex: 1, coolDown: new Cooldown(1500, 500)),
-                    new HealSelf(coolDown: 9999, amount: 2000),
+                    new HealEntity(20, "md Janus the Doorwarden", 2000, coolDown: 9999),
                     new EntitiesNotExistsTransition(9999, "MoveAwayJanus", "md dwGenerator")
                     ),
                 new State("MoveAwayJanus",
-                    new MoveTo(speed: 0.5f, x: 6, y: -6),
+                    new MoveTo2(6, -6, speed: 0.5, isMapPosition: false, once: true),
                     new TimedTransition(2000, "Bullet15")
                     )
                 )

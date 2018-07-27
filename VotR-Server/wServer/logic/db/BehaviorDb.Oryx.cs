@@ -74,6 +74,9 @@ namespace wServer.logic
                     new ItemLoot("Potion of Defense", 0.3),
                     new ItemLoot("Potion of Wisdom", 0.3)
                 ),
+                new Threshold(0.20,
+                    new ItemLoot("Oryx's Arena Key", 0.05)
+                ),
                 new Threshold(0.1,
                     new TierLoot(10, ItemType.Weapon, 0.07),
                     new TierLoot(11, ItemType.Weapon, 0.06),
@@ -214,9 +217,14 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SF4()
                     ),
+                new Threshold(0.20,
+                    new ItemLoot("Oryx's Arena Key", 0.025)
+                ),
                 new Threshold(0.05,
                     new ItemLoot("Potion of Attack", 0.3),
-                    new ItemLoot("Potion of Defense", 0.3)
+                    new ItemLoot("Potion of Defense", 0.3),
+                    new ItemLoot("The Zol Awakening (Token)", 0.001),
+                    new ItemLoot("Calling of the Titan (Token)", 0.001)
                 ),
                 new Threshold(0.1,
                     new TierLoot(10, ItemType.Weapon, 0.07),

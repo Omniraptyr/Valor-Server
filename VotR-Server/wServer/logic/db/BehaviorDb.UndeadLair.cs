@@ -80,7 +80,6 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ability, 0.05),
                     new TierLoot(4, ItemType.Ring, 0.025),
                     new ItemLoot("Potion of Wisdom", 1),
-                    new ItemLoot("Wine Cellar Incantation", 0.048),
                     new ItemLoot("Ouija Board", 0.045),
                     new ItemLoot("Golden Urn", 0.04),
                     new ItemLoot("Doom Bow", 0.005),

@@ -93,8 +93,6 @@ namespace wServer.logic.loot
         }
         private void AddBagsToWorld(Enemy enemy, IList<Item> shared, IDictionary<Player, IList<Item>> soulbound)
         {
-            if (enemy.Owner.Name != "DeathArena" || enemy.Owner.Name != "Admins Arena")
-            {
                 List<Player> pub = new List<Player>();  //only people not getting soulbound
                 foreach (var i in soulbound)
                 {
@@ -105,8 +103,6 @@ namespace wServer.logic.loot
                 }
                 if (pub.Count > 0 && shared.Count > 0)
                     ShowBags(enemy, shared, pub.ToArray());
-            }
-
         }
 
         private void ShowBags(Enemy enemy, IEnumerable<Item> loots, params Player[] owners)

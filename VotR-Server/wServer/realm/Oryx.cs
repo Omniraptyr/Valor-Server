@@ -54,6 +54,7 @@ namespace wServer.realm
             Tuple.Create("Truvix, the Lord Wanderer", (ISetPiece) new TimePiece()),
             Tuple.Create("Dragon Head", (ISetPiece) new RockDragon()),
             Tuple.Create("Test Egg", (ISetPiece) new TestChicken()),
+            Tuple.Create("The Horrific", (ISetPiece) new TheHorrific()),
 
 
         };
@@ -190,6 +191,19 @@ namespace wServer.realm
                     "{PLAYER}, you wretched dog! You killed my Cube God!",
                     "{PLAYER}, you may have destroyed my Cube God but you will never defeat me!",
                     "I have many more Cube Gods, {PLAYER}!",
+                }
+            }),
+            Tuple.Create("The Horrific", new TauntData()
+            {
+                Spawn = new string[] {
+                    "Frightening..what is this abomination doing in my realm?",
+                    "My Horrific will suck the life out of you fools!"
+                },
+                NumberOfEnemies = new string[] {
+                    "Disgusting warriors! My {COUNT} Horrifics will shred you to bits!"
+                },
+                Killed = new string[] {
+                    "How could you just slay my Horrific Creature with such ease, {PLAYER}?"
                 }
             }),
             Tuple.Create("Test Egg", new TauntData()

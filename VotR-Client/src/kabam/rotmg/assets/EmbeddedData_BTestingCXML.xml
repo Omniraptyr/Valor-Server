@@ -12629,11 +12629,10 @@
         <ArmorBreakImmune/>
         <Projectile id="0">
             <ObjectId>Grey Boomerang</ObjectId>
-            <MinDamage>80</MinDamage>
-            <MaxDamage>100</MaxDamage>
-            <Speed>140</Speed>
-            <LifetimeMS>2000</LifetimeMS>
-            <Boomerang/>
+            <MinDamage>30</MinDamage>
+            <MaxDamage>40</MaxDamage>
+            <Speed>35</Speed>
+            <LifetimeMS>8000</LifetimeMS>
             <ConditionEffect duration="6">Sick</ConditionEffect>
         </Projectile>
         <Projectile id="1">
@@ -12673,5 +12672,144 @@
             <ConditionEffect duration="2">Bleeding</ConditionEffect>
         </Projectile>
         <DisplayId>Arnkz Student</DisplayId>
+    </Object>
+    <Object type="0x63f9" id="Elite Skeleton">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars8x8rHero1</File>
+            <Index>33</Index>
+        </AnimatedTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>2500</MaxHitPoints>
+        <Defense>10</Defense>
+        <Projectile id="0">
+            <ObjectId>Blue Bolt</ObjectId>
+            <Damage>140</Damage>
+            <Speed>60</Speed>
+            <LifetimeMS>1600</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Silver Shield</ObjectId>
+            <Damage>80</Damage>
+            <Speed>40</Speed>
+            <LifetimeMS>1000</LifetimeMS>
+            <ConditionEffect duration="6">Sick</ConditionEffect>
+            <ConditionEffect duration="2">Slowed</ConditionEffect>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Blade</ObjectId>
+            <Damage>20</Damage>
+            <Speed>40</Speed>
+            <LifetimeMS>1000</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <DisplayId>Elite Skeleton</DisplayId>
+    </Object>
+    <Object type="0x64a5" id="The Horrific">
+        <Enemy/>
+        <Group>The Horrific</Group>
+        <DisplayId>The Horrific</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>21</Index>
+        </AnimatedTexture>
+        <HitSound>monster/dark_elves_hit</HitSound>
+        <DeathSound>monster/dark_elves_death</DeathSound>
+        <Size>160</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <SlowedImmune/>
+        <ShadowSize>0</ShadowSize>
+        <Quest/>
+        <MaxHitPoints>200000</MaxHitPoints>
+        <Defense>60</Defense>
+        <Projectile id="0">
+            <ObjectId>Horrific Blast</ObjectId>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <Speed>90</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <Wavy/>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Horrific Spinner</ObjectId>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <Speed>50</Speed>
+            <MultiHit/>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Horrific Sick Blast</ObjectId>
+            <Damage>120</Damage>
+            <Speed>70</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <MultiHit/>
+            <ConditionEffect duration="6">Sick</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Horrific Drunk Blast</ObjectId>
+            <Damage>80</Damage>
+            <Speed>100</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <ConditionEffect duration="2">Drunk</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>White Ball</ObjectId>
+            <Damage>100</Damage>
+            <Speed>50</Speed>
+            <LifetimeMS>3600</LifetimeMS>
+            <ArmorPiercing/>
+            <ConditionEffect duration="0.8">Confused</ConditionEffect>
+        </Projectile>
+    </Object>
+    <Object type="0x64a6" id="Terrorizer">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars8x8rHero1</File>
+            <Index>34</Index>
+        </AnimatedTexture>
+        <HitSound>monster/abyss_brutes_hit</HitSound>
+        <DeathSound>monster/slimes_death</DeathSound>
+        <MaxHitPoints>3000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Fire Bolt</ObjectId>
+            <Speed>50</Speed>
+            <Damage>120</Damage>
+            <Size>100</Size>
+            <ConditionEffect duration="2">Unstable</ConditionEffect>
+            <LifetimeMS>1000</LifetimeMS>
+        </Projectile>
+        <Size>110</Size>
+        <Defense>20</Defense>
+        <DisplayId>Terrorizer</DisplayId>
+    </Object>
+    <Object type="0x64a7" id="Horrifying Abomination">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars8x8rHero1</File>
+            <Index>35</Index>
+        </AnimatedTexture>
+        <HitSound>monster/abyss_brutes_hit</HitSound>
+        <DeathSound>monster/slimes_death</DeathSound>
+        <MaxHitPoints>4000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Green Bolt</ObjectId>
+            <Speed>80</Speed>
+            <Damage>100</Damage>
+            <Size>100</Size>
+            <MultiHit/>
+            <LifetimeMS>400</LifetimeMS>
+        </Projectile>
+        <Size>110</Size>
+        <DisplayId>Horrifying Abomination</DisplayId>
     </Object>
 </Objects>

@@ -290,10 +290,10 @@ namespace wServer.logic.loot
             {
                 new OnlyOne(
                     new ItemLoot("The Zol Awakening (Token)", 0.25),
-                    new ItemLoot("Calling of the Titan (Token)", 0.25),
-                    new ItemLoot("A Fallen Light (Token)", 0.25),
-                    new ItemLoot("Sidon's Fall (Token)", 0.25),
-                    new ItemLoot("War of Decades (Token)", 0.25)
+                    new ItemLoot("Calling of the Titan (Token)", 0.25)
+                   // new ItemLoot("A Fallen Light (Token)", 0.25),
+                  //  new ItemLoot("Sidon's Fall (Token)", 0.25),
+                 //   new ItemLoot("War of Decades (Token)", 0.25)
                 )
              };
         }
@@ -529,6 +529,9 @@ namespace wServer.logic.loot
                     new ItemLoot("Two Tiny Sor Fragments", 0.07),
                     new ItemLoot("Three Tiny Sor Fragments", 0.07),
                     new ItemLoot("Tiny Sor Fragment", 0.07)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Wine Cellar Incantation", 0.0005)
                 )
             };
         }
@@ -540,6 +543,9 @@ namespace wServer.logic.loot
                     new ItemLoot("Two Tiny Sor Fragments", 0.08),
                     new ItemLoot("Three Tiny Sor Fragments", 0.08),
                     new ItemLoot("Tiny Sor Fragment", 0.08)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Wine Cellar Incantation", 0.0005)
                 )
             };
         }
@@ -551,6 +557,9 @@ namespace wServer.logic.loot
                     new ItemLoot("Two Tiny Sor Fragments", 0.09),
                     new ItemLoot("Three Tiny Sor Fragments", 0.09),
                     new ItemLoot("Tiny Sor Fragment", 0.09)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Wine Cellar Incantation", 0.0005)
                 )
             };
         }
@@ -562,6 +571,9 @@ namespace wServer.logic.loot
                     new ItemLoot("Two Tiny Sor Fragments", 0.12),
                     new ItemLoot("Three Tiny Sor Fragments", 0.12),
                     new ItemLoot("Tiny Sor Fragment", 0.12)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Wine Cellar Incantation", 0.0005)
                 )
             };
         }
@@ -573,6 +585,9 @@ namespace wServer.logic.loot
                     new ItemLoot("Two Tiny Sor Fragments", 0.14),
                     new ItemLoot("Three Tiny Sor Fragments", 0.14),
                     new ItemLoot("Tiny Sor Fragment", 0.14)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Wine Cellar Incantation", 0.0005)
                 )
             };
         }
@@ -626,7 +641,8 @@ public class Threshold : ILootDef
 
         public void Populate(RealmManager manager, Enemy enemy, Tuple<Player, int> playerDat,
                              Random rand, IList<LootDef> lootDefs)
-        { 
+        {
+
             if (playerDat != null && playerDat.Item2 / (double)enemy.ObjectDesc.MaxHP >= (threshold - (threshold * playerDat.Item1.thresholdBoost())) / Math.Max(enemy.Owner.Players.Count() / 2, 1))
             {
                 foreach (var i in children)

@@ -161,13 +161,13 @@ namespace wServer.logic
 					)
 				),
                new MostDamagers(3,
-                        LootTemplates.SF1()
+                        LootTemplates.SF2()
                     ),
                new MostDamagers(5,
                     LootTemplates.StatIncreasePotionsLoot()
                 ),
                 new MostDamagers(1,
-                    new ItemLoot("Kageboshi", 0.04)
+                    new ItemLoot("Kageboshi", 0.005)
                 )
             )
 			#endregion
@@ -310,13 +310,13 @@ namespace wServer.logic
 					)
 				),
                new MostDamagers(3,
-                        LootTemplates.SF1()
+                        LootTemplates.SF2()
                     ),
                 new MostDamagers(5,
                     LootTemplates.StatIncreasePotionsLoot()
                 ),
                 new MostDamagers(1,
-                    new ItemLoot("Wand of the Fallen", 0.04)
+                    new ItemLoot("Wand of the Fallen", 0.005)
                 )
             )
 			#endregion

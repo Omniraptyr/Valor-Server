@@ -959,17 +959,12 @@ namespace wServer.logic
                                                ),
                                            new State("talk1",
                                                new SetAltTexture(2),
-                                           new Taunt(1.00, "Hello, rookie adventurer. I bet you want some swaggy items? Well, let me tell you. It won't be easy."),
-                                           new TimedTransition(5000, "talk2")
-                                               ),
-                                        new State("talk2",
-                                            new SetAltTexture(1),
-                                           new Taunt(1.00, "Now, I've prepared plenty of FUN plans for you. I'm sure you'll enjoy them."),
+                                           new Taunt(1.00, "Welcome to my domain. I challenge you, warrior, to defeat my undead hordes and claim your prize..."),
                                            new TimedTransition(5000, "talk3")
                                                ),
                                         new State("talk3",
                                             new SetAltTexture(1),
-                                           new Taunt(1.00, "Well. Say READY when you want to start."),
+                                           new Taunt(1.00, "Prepare yourself, Say Ready when you wish the battle to begin!"),
                                             new PlayerTextTransition("1", "Ready", 99, false, true)
                                                ),
                                            new State("1",
@@ -986,7 +981,7 @@ namespace wServer.logic
                                                ),
                                                   new State("3",
                                                new SetAltTexture(1),
-                                           new Taunt(1.00, "Round 2, coming right up!"),
+                                           new Taunt(1.00, "Only seconds until the next wave."),
                                            new TimedTransition(5000, "4")
                                                ),
                                           new State("4",
@@ -1003,7 +998,7 @@ namespace wServer.logic
                                                ),
                                         new State("6",
                                                new SetAltTexture(1),
-                                           new Taunt(1.00, "Very impressive. Who knew you had such great power?!"),
+                                           new Taunt(1.00, "Only seconds until the next wave."),
                                            new TimedTransition(5000, "7")
                                                ),
                                         new State("7",
@@ -1020,7 +1015,7 @@ namespace wServer.logic
                                                ),
                                          new State("9",
                                                new SetAltTexture(1),
-                                           new Taunt(1.00, "HA! I saw that. You almost died."),
+                                           new Taunt(1.00, "Only seconds until the next wave."),
                                            new TimedTransition(5000, "10")
                                                ),
                                          new State("10",
@@ -1037,7 +1032,7 @@ namespace wServer.logic
                                                ),
                                         new State("12",
                                            new SetAltTexture(1),
-                                           new Taunt(1.00, "Alright, now you're making me mad. You belong in the ground along with all those other warriors."),
+                                           new Taunt(1.00, "Only seconds until the next wave."),
                                            new TimedTransition(5000, "13")
                                                ),
                                         new State("13",
@@ -1062,21 +1057,11 @@ namespace wServer.logic
                                        new State(
                                            new ConditionalEffect(ConditionEffectIndex.Invincible),
                                            new State("Greeting",
-                                               new PlayerWithinTransition(2, "talk1")
-                                               ),
-                                           new State("talk1",
-                                               new SetAltTexture(2),
-                                           new Taunt(1.00, "You really got this far? Wow. Now aren't you the real MVP."),
-                                           new TimedTransition(5000, "talk2")
-                                               ),
-                                        new State("talk2",
-                                            new SetAltTexture(1),
-                                           new Taunt(1.00, "Did you know I'm sexy though? Yeah. That's right."),
-                                           new TimedTransition(5000, "talk3")
+                                               new PlayerWithinTransition(2, "talk3")
                                                ),
                                         new State("talk3",
                                             new SetAltTexture(1),
-                                           new Taunt(1.00, "Anyways, tell me when you're ready so I can get you killed."),
+                                           new Taunt(1.00, "Prepare yourself, Say Ready when you wish the battle to begin!"),
                                            new PlayerTextTransition("1", "Ready", 99, false, true)
                                                ),
                                            new State("1",
@@ -1093,7 +1078,7 @@ namespace wServer.logic
                                                ),
                                                   new State("3",
                                                new SetAltTexture(2),
-                                           new Taunt(1.00, "Bruh. Bruh...BRUH. BRUUUUH!!"),
+                                           new Taunt(1.00, "Only seconds until the next wave."),
                                            new TimedTransition(5000, "4")
                                                ),
                                           new State("4",
@@ -1110,7 +1095,7 @@ namespace wServer.logic
                                                ),
                                         new State("6",
                                                new SetAltTexture(2),
-                                           new Taunt(1.00, "Corny cheese chuckers blocking the heckers."),
+                                           new Taunt(1.00, "Only seconds until the next wave."),
                                            new TimedTransition(5000, "7")
                                                ),
                                         new State("7",
@@ -1127,7 +1112,7 @@ namespace wServer.logic
                                                ),
                                          new State("9",
                                                new SetAltTexture(2),
-                                           new Taunt(1.00, "getrektscrub."),
+                                           new Taunt(1.00, "Only seconds until the next wave."),
                                            new TimedTransition(5000, "10")
                                                ),
                                          new State("10",
@@ -1144,7 +1129,7 @@ namespace wServer.logic
                                                ),
                                         new State("12",
                                            new SetAltTexture(2),
-                                           new Taunt(1.00, "Brick and cones may break your bones but I really like snow cones."),
+                                           new Taunt(1.00, "Only seconds until the next wave."),
                                            new TimedTransition(5000, "13")
                                                ),
                                         new State("13",
@@ -1165,7 +1150,7 @@ namespace wServer.logic
                                            )
                                    )
 
-                               .Init("Area 3 Controller",
+                .Init("Area 3 Controller",
                 new State(
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("Greeting",
@@ -1173,17 +1158,12 @@ namespace wServer.logic
                         ),
                     new State("talk1",
                         new SetAltTexture(2),
-                    new Taunt(1.00, "You suck soooo bad."),
-                    new TimedTransition(5000, "talk2")
-                        ),
-                 new State("talk2",
-                     new SetAltTexture(1),
-                    new Taunt(1.00, "You can't defeat me. You are bad."),
+                    new Taunt(1.00, "You've made it this far.."),
                     new TimedTransition(5000, "talk3")
                         ),
                  new State("talk3",
                      new SetAltTexture(1),
-                    new Taunt(1.00, "You're beginning to annoy me."),
+                    new Taunt(1.00, "Prepare yourself, Say Ready when you wish the battle to begin!"),
                     new PlayerTextTransition("1", "Ready", 99, false, true)
                         ),
                     new State("1",
@@ -1200,7 +1180,7 @@ namespace wServer.logic
                         ),
                            new State("3",
                         new SetAltTexture(2),
-                    new Taunt(1.00, "Are you afraid? Are you afraid of my spooky spooking spooksters of spookville in spookcity?"),
+                    new Taunt(1.00, "Only seconds until the next wave."),
                     new TimedTransition(5000, "4")
                         ),
                    new State("4",
@@ -1217,7 +1197,7 @@ namespace wServer.logic
                         ),
                  new State("6",
                         new SetAltTexture(2),
-                    new Taunt(1.00, "Hmph."),
+                    new Taunt(1.00, "Only seconds until the next wave."),
                     new TimedTransition(5000, "7")
                         ),
                  new State("7",
@@ -1234,7 +1214,7 @@ namespace wServer.logic
                         ),
                   new State("9",
                         new SetAltTexture(2),
-                    new Taunt(1.00, "You really are getting on my nerves."),
+                    new Taunt(1.00, "Only seconds until the next wave."),
                     new TimedTransition(5000, "10")
                         ),
                   new State("10",
@@ -1251,7 +1231,7 @@ namespace wServer.logic
                         ),
                  new State("12",
                     new SetAltTexture(2),
-                    new Taunt(1.00, "You make me mad. GET RID OF 'EM, CARETAKER!"),
+                    new Taunt(1.00, "Only seconds until the next wave."),
                     new TimedTransition(5000, "13")
                         ),
                  new State("13",
@@ -1268,7 +1248,6 @@ namespace wServer.logic
                         new DropPortalOnDeath("Haunted Cemetery Final Rest Portal", 100, timeout: 9999),
                         new Suicide()
                         )
-
                     )
             )
 
@@ -1280,17 +1259,12 @@ namespace wServer.logic
                         ),
                     new State("talk1",
                         new SetAltTexture(2),
-                    new Taunt(1.00, "Yep. You are definitely a nuissance."),
-                    new TimedTransition(5000, "talk2")
-                        ),
-                 new State("talk2",
-                     new SetAltTexture(1),
-                    new Taunt(1.00, "I'm going to end this once and for all. MYSELF!"),
+                    new Taunt(1.00, "The final battle is imminent."),
                     new TimedTransition(5000, "talk3")
                         ),
                  new State("talk3",
                      new SetAltTexture(1),
-                    new Taunt(1.00, "BUT! There'll be an award if you beat me... Go ahead. Say READY!"),
+                    new Taunt(1.00, "Prepare yourself, Say Ready when you wish the battle to begin!"),
                     new PlayerTextTransition("1", "Ready", 99, false, true)
                         ),
                     new State("1",
@@ -1307,7 +1281,7 @@ namespace wServer.logic
                         ),
                            new State("3",
                         new SetAltTexture(2),
-                    new Taunt(1.00, "Take a breath! Feel the fresh air! It will be one of your last times to do so."),
+                    new Taunt(1.00, "Only seconds until the next wave."),
                     new TimedTransition(5000, "4")
                         ),
                    new State("4",
@@ -1324,7 +1298,7 @@ namespace wServer.logic
                         ),
                  new State("6",
                         new SetAltTexture(2),
-                    new Taunt(1.00, "Press the nexus button to leave. Just a suggestion."),
+                    new Taunt(1.00, "Only seconds until the next wave."),
                     new TimedTransition(5000, "7")
                         ),
                  new State("7",
@@ -1341,7 +1315,7 @@ namespace wServer.logic
                         ),
                   new State("9",
                         new SetAltTexture(2),
-                    new Taunt(1.00, "Make sure you check out my soundcloud, before I kill you."),
+                    new Taunt(1.00, "Only seconds until the next wave."),
                     new TimedTransition(5000, "10")
                         ),
                   new State("10",
@@ -1358,7 +1332,7 @@ namespace wServer.logic
                         ),
                  new State("12",
                     new SetAltTexture(2),
-                    new Taunt(1.00, "HUUGHAAGHGAHAA!!"),
+                    new Taunt(1.00, "Only seconds until the next wave."),
                     new TimedTransition(5000, "13")
                         ),
                  new State("13",

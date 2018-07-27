@@ -4,12 +4,16 @@ using Anna.Request;
 using common;
 using log4net;
 using SendGrid.Helpers.Mail;
+using System.Net.Mail;
+using System.Text;
 
 namespace server.account
 {
     class forgotPassword : RequestHandler
     {
         private static readonly ILog PassLog = LogManager.GetLogger("PassLog");
+
+        string newPassword = "";
 
         public override void HandleRequest(RequestContext context, NameValueCollection query)
         {
@@ -24,33 +28,50 @@ namespace server.account
                 Write(context, "<Error>Email not recognized</Error>");
                 return;
             }
-                
-            string email = "admin@votrproject.com";
-            string pass = "]ChjCKUiHzR1n";
-          /*  try
+            string reply = "You account password for Valor has been changed! Please use the randomly generated password below to login to your account and change the password to your liking." + Environment.NewLine + CreatePassword(12);
+
+            string email = "support@valormg.com";
+            string pass = "teameffort101!";
+            try
             {
-                SmtpClient client = new SmtpClient
-                {
-                    Host = "mail.privateemail.com",
-                    Port = 587,
-                    EnableSsl = true,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    Credentials = new System.Net.NetworkCredential(email, pass),
-                    Timeout = 10000,
-                };
-                MailMessage mm = new MailMessage(your_iD, "recepient@gmail.com", "Password Reset Protocol - Votr", "Please confirm that'd you like to reset your password for the associated email by replying!");
+                SmtpClient client = new SmtpClient();
+                client.Port = 587;
+                client.Host = "mail.privateemail.com";
+                client.EnableSsl = true;
+                client.Timeout = 10000;
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.UseDefaultCredentials = false;
+                client.Credentials = new System.Net.NetworkCredential(email, pass);
+
+                MailMessage mm = new MailMessage("support@valormg.com", "cntwenty4@gmail.com", "Password Reset Protocol - Valor", reply);
+                mm.BodyEncoding = UTF8Encoding.UTF8;
+                mm.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+
                 client.Send(mm);
             }
             catch (Exception e)
             {
                 Write(context, "<Error>Password could not be reset</Error>");
-                PassLog.Warn($"Password could not reset requested. IP: {context.Request.ClientIP()}, Account: {acc.Name} ({acc.AccountId})");
-                
-            }*/
+                throw (e);
 
-            
-            Write(context, "<Success />");
+            }
+            Database.ChangePassword(query["guid"], newPassword);
+            Write(context, "<Success/>");
             PassLog.Info($"Password reset requested. IP: {context.Request.ClientIP()}, Account: {acc.Name} ({acc.AccountId})");
+        }
+
+
+        public string CreatePassword(int length)
+        {
+            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            StringBuilder res = new StringBuilder();
+            Random rnd = new Random();
+            while (0 < length--)
+            {
+                res.Append(valid[rnd.Next(valid.Length)]);
+            }
+            newPassword = res.ToString();
+            return res.ToString();
         }
     }
 }

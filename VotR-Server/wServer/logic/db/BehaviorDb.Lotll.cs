@@ -9,7 +9,7 @@ namespace wServer.logic
     partial class BehaviorDb
     {
         private _ Lotll = () => Behav()
-.Init("Lord of the Lost Lands",
+        .Init("Lord of the Lost Lands",
                 new State(
                     new HpLessTransition(0.15, "IMDONELIKESOOOODONE!"),
                     new State("timetogeticey",

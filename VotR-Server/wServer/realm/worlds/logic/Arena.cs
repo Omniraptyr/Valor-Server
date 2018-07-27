@@ -62,12 +62,13 @@ namespace wServer.realm.worlds.logic
             {
                 "Thessal the Mermaid Goddess", "Crystal Prisoner", "Tomb Support",
                 "Tomb Defender", "Tomb Attacker", "Oryx the Mad God 2", "Grand Sphinx",
-                "Queen of Hearts"
+                "Queen of Hearts", "TestChicken 2"
             },
             new string[]
             {
                 "Thessal the Mermaid Goddess", "Crystal Prisoner", "Tomb Support",
-                "Tomb Defender", "Tomb Attacker", "Oryx the Mad God 2"
+                "Tomb Defender", "Tomb Attacker", "Oryx the Mad God 2",
+                "Phoenix Wright", "TestChicken 2"
             }
         };
 
@@ -76,8 +77,8 @@ namespace wServer.realm.worlds.logic
             { 5, new string[] {"Spider Den Key", "Pirate Cave Key", "Forest Maze Key"} },
             { 10, new string[] {"Snake Pit Key", "Sprite World Key", "Undead Lair Key", "Abyss of Demons Key", "Lab Key", "Beachzone Key"} },
             { 20, new string[] {"Bella's Key", "Tomb of the Ancients Key", "Shaitan's Key", "The Crawling Depths Key", "Candy Key"} },
-            { 25, new string[] { "Bella's Key" } },
-            { 30, new string[] {"Asylum Key"}},
+            { 25, new string[] {"Loot Drop Potion" } },
+            { 30, new string[] {"Jeebs' Arena Key", "Shatters Key", "Asylum Key"}},
             { 50, new string[] {"Backpack"} }
         };
 

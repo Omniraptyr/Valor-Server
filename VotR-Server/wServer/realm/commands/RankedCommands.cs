@@ -939,7 +939,7 @@ class ClearSpawnsCommand : Command
 
     class SelfCommand : Command
     {
-        public SelfCommand() : base("self", permLevel: 10) { }
+        public SelfCommand() : base("self", permLevel: 80) { }
 
         protected override bool Process(Player player, RealmTime time, string name)
         {
@@ -965,7 +965,7 @@ class ClearSpawnsCommand : Command
     }
     class SpectateCommand : Command
     {
-        public SpectateCommand() : base("spectate", permLevel: 10) { }
+        public SpectateCommand() : base("spectate", permLevel: 80) { }
 
         protected override bool Process(Player player, RealmTime time, string name)
         {
@@ -1062,6 +1062,7 @@ class ClearSpawnsCommand : Command
             return true;
         }
     }
+
     class SummonCommand : Command
     {
         public SummonCommand() : base("summon", permLevel: 90) { }
@@ -1171,7 +1172,7 @@ class ClearSpawnsCommand : Command
         // An external program is used to monitor the world server existance.
         // If !exist it automatically restarts it.
 
-        public RebootCommand() : base("reboot", permLevel: 80) { }
+        public RebootCommand() : base("reboot", permLevel: 90) { }
         
         protected override bool Process(Player player, RealmTime time, string name)
         {
@@ -1271,6 +1272,11 @@ class ClearSpawnsCommand : Command
 
             var skin = (ushort)Utils.FromString(args);
 
+            if (skin == 1025 || skin == 65303 || skin == 29786 || skin == 29788 || skin == 65296 || skin == 1026 || skin == 29787 || skin == 8614 || skin == 6122)
+            {
+                player.SendError("Error setting skin. Can't set skin to a Set Tier Skin.");
+                return false;
+            }
             if (skin != 0 && !skins.Contains(skin))
             {
                 player.SendError("Error setting skin. Either the skin type doesn't exist or the skin is for another class.");
@@ -1913,7 +1919,7 @@ class ClearSpawnsCommand : Command
 
     class QuakeCommand : Command
     {
-        public QuakeCommand() : base("quake", permLevel: 80) { }
+        public QuakeCommand() : base("quake", permLevel: 90) { }
 
         protected override bool Process(Player player, RealmTime time, string worldName)
         {
@@ -2043,7 +2049,7 @@ class ClearSpawnsCommand : Command
 
     class LinkCommand : Command
     {
-        public LinkCommand() : base("link", permLevel: 50) { }
+        public LinkCommand() : base("link", permLevel: 90) { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
@@ -2069,7 +2075,7 @@ class ClearSpawnsCommand : Command
 
     class UnLinkCommand : Command
     {
-        public UnLinkCommand() : base("unlink", permLevel: 50) { }
+        public UnLinkCommand() : base("unlink", permLevel: 90) { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
@@ -2308,7 +2314,7 @@ class ClearSpawnsCommand : Command
 
     class RenameCommand : Command
     {
-        public RenameCommand() : base("rename", permLevel: 90) { }
+        public RenameCommand() : base("rename", permLevel: 80) { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
@@ -2433,7 +2439,7 @@ class ClearSpawnsCommand : Command
 
     class WargCommand : Command
     {
-        public WargCommand() : base("warg", permLevel: 90) { }
+        public WargCommand() : base("warg", permLevel: 100) { }
 
         protected override bool Process(Player player, RealmTime time, string name)
         {
@@ -2481,7 +2487,7 @@ class ClearSpawnsCommand : Command
 
     class CompactLOHCommand : Command
     {
-        public CompactLOHCommand() : base("compactLOH", permLevel: 80, listCommand: false) { }
+        public CompactLOHCommand() : base("compactLOH", permLevel: 100, listCommand: false) { }
 
         protected override bool Process(Player player, RealmTime time, string name)
         {

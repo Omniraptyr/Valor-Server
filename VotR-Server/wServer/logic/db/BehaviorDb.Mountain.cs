@@ -81,6 +81,20 @@ namespace wServer.logic
                     new ItemLoot("Tiny Sor Fragment", 0.0001)
                     )
             )
+            .Init("White Demon of the Abyss",
+                new State(
+                    new Prioritize(
+                        new StayAbove(1, 200),
+                        new Follow(1, range: 7),
+                        new Wander(0.4)
+                        ),
+                    new Shoot(10, count: 3, shootAngle: 20, predictive: 1, coolDown: 500),
+                    new Reproduce(densityMax: 3)
+                    ),
+                new Threshold(0.07,
+                    new ItemLoot("Potion of Attack", 0.2)
+                    )
+             )
             .Init("Sprite God",
                 new State(
                     new Prioritize(

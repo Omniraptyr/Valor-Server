@@ -3268,7 +3268,7 @@ namespace wServer.logic
                       ),
                       new State("Return1",
                         new HealSelf(coolDown: 500),
-                        new Taunt("ARGH!"),
+                        new Taunt("I grow stronger!"),
                         new MoveTo(1, 44, 40),
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new TimedTransition(4000, "DT3")

@@ -205,12 +205,12 @@ namespace wServer.logic
                     new ItemLoot("Potion of Vitality", 0.5),
                     new ItemLoot("Potion of Dexterity", 0.5),
                     new ItemLoot("Potion of Wisdom", 0.5),
-                    new TierLoot(11, ItemType.Weapon, 0.1),
+                    new TierLoot(10, ItemType.Weapon, 0.1),
                     new TierLoot(6, ItemType.Ability, 0.1),
-                    new TierLoot(11, ItemType.Armor, 0.1),
+                    new TierLoot(10, ItemType.Armor, 0.1),
                     new TierLoot(5, ItemType.Ring, 0.05),
-                    new TierLoot(12, ItemType.Armor, 0.05),
-                    new TierLoot(12, ItemType.Weapon, 0.05),
+                    new TierLoot(11, ItemType.Armor, 0.05),
+                    new TierLoot(11, ItemType.Weapon, 0.05),
                     new TierLoot(7, ItemType.Ring, 0.01),
                     new TierLoot(6, ItemType.Ring, 0.025)
                     )

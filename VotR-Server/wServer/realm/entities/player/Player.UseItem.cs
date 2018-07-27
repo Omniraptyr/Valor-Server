@@ -605,6 +605,7 @@ namespace wServer.realm.entities
             if (roll != 3)
                 ApplyConditionEffect(gamblerEffs[roll], eff.DurationMS);
         }
+
         private void AEUnlockEmote(RealmTime time, Item item, ActivateEffect eff)
         {
             if (Client.Player.Owner == null || Client.Player.Owner is Test)
@@ -1527,13 +1528,16 @@ namespace wServer.realm.entities
                 }, x, null, PacketPriority.High);
 
                 world.AOE(target, eff.Radius, false, entity => {
-                    PoisonEnemy(world, (Enemy)entity, eff);
-                    ((Enemy)entity).Damage(this, time, impDamage, false);
+                    foreach (Enemy enemy in Owner.Enemies.Values.Where(e => this.DistSqr(this) < RadiusSqr))
+                    {
+                        enemy.Damage(this, time, impDamage, false);
+                    }
                     entity.ApplyConditionEffect(new ConditionEffect
                     {
                         Effect = ConditionEffectIndex.Sick,
                         DurationMS = eff.DurationMSAlt
                     });
+                    PoisonEnemy(world, (Enemy)entity, eff);
                 });
 
             }));

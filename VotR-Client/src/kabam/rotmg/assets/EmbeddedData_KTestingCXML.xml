@@ -5701,7 +5701,7 @@
         <Description>Fame, fortune, Death... Know what you're getting into before unlocking that door.</Description>
         <Sound>use_key</Sound>
         <Consumable />
-        <BagType>4</BagType>
+        <BagType>6</BagType>
         <Activate dungeonName="DeathArena" lockedName="Locked Oryx's Arena Portal">UnlockPortal</Activate>
         <feedPower>500</feedPower>
         <DisplayId>Oryx's Arena Key</DisplayId>
@@ -6175,5 +6175,15 @@
         <Activate id="Asylum Portal">Create</Activate>
         <feedPower>0</feedPower>
         <DisplayId>Asylum Key</DisplayId>
+    </Object>
+    <Object type="0x63f4" id="Wine Cellar Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <Texture>
+            <File>lofiEnvironment</File>
+            <Index>0x7b</Index>
+        </Texture>
+        <ShadowSize>0</ShadowSize>
+        <DisplayId>Wine Cellar Portal</DisplayId>
     </Object>
 </Objects>

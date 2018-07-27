@@ -18,6 +18,7 @@ namespace wServer.logic
                     )
                 ),
             new Threshold(0.01,
+                    new ItemLoot("Multi-Quiver", 0.1),
                     new ItemLoot("Speed Sprout", 1.00)
                 )
             )

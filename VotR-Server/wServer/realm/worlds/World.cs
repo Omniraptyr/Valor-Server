@@ -663,6 +663,7 @@ namespace wServer.realm.worlds
                     return;
                 }
 
+
                 for (var i = Timers.Count - 1; i >= 0; i--)
                     try
                     {

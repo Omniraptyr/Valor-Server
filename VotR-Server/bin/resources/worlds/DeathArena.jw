@@ -1,6 +1,6 @@
-{"id":-14,
+{"id":0,
 "isLimbo":false,
-"persist":true,
+"persist":false,
 "name":"DeathArena",
 "sbName":"Oryx's Arena",
 "difficulty":0,

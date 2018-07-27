@@ -204,7 +204,7 @@ namespace wServer.logic
                         )
                     )
             )
-  .Init("Lil' Ghost Pirate",
+            .Init("Lil' Ghost Pirate",
                 new State(
                     new ChangeSize(30, 120),
                     new Shoot(10, count: 1, projectileIndex: 0, coolDown: 2000),

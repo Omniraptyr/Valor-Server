@@ -168,7 +168,7 @@ namespace wServer.logic
                         )
                     ),
                                 new MostDamagers(3,
-                    LootTemplates.SFLow()
+                    LootTemplates.SF0()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Potion of Defense", 1.0),
@@ -366,7 +366,7 @@ namespace wServer.logic
                     new State("UnsetEffect")
                 ),
                                 new MostDamagers(3,
-                    LootTemplates.SFLow()
+                    LootTemplates.SF3()
                     ),
                 new Threshold(0.11,
 				new ItemLoot("Potion of Luck", 1),

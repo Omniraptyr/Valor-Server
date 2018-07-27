@@ -88,6 +88,7 @@ namespace wServer.logic
                     LootTemplates.SF4()
                     ),
                     new Threshold(0.32,
+                        new ItemLoot("Onrane", 0.05),
                         new ItemLoot("Potion of Life", 1)
                     ),
                     new Threshold(0.1,
@@ -325,6 +326,7 @@ namespace wServer.logic
                     LootTemplates.SF4()
                     ),
                                 new Threshold(0.01,
+                                        new ItemLoot("Onrane", 0.05),
                                         new ItemLoot("Potion of Life", 1),
                                         new ItemLoot("Potion of Vitality", 0.8),
                                         new ItemLoot("Ring of the Sphinx", 0.1)
@@ -551,6 +553,7 @@ namespace wServer.logic
                     LootTemplates.SF4()
                     ),
                                 new Threshold(0.01,
+                                        new ItemLoot("Onrane", 0.05),
                                         new ItemLoot("Potion of Life", 1),
                                         new ItemLoot("Potion of Attack", 0.8),
                                         new ItemLoot("Ring of the Nile", 0.1),

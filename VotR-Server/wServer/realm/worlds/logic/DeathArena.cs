@@ -39,7 +39,7 @@ namespace wServer.realm.worlds.logic
         private readonly string[] _randomEnemies =
         {
             "Djinn", "Beholder", "White Demon of the Abyss", "Flying Brain", "Slime God",
-            "Native Sprite God", "Ent God", "Medusa", "Ghost God", "Leviathan", "Mini Bot"
+            "Native Sprite God", "Ent God", "Medusa", "Ghost God", "Leviathan", "Elite Skeleton"
         };
 
         // _bossLevel defines the wave at which the random bosses change
@@ -66,29 +66,30 @@ namespace wServer.realm.worlds.logic
             },
             new string[]
             {
-                "Tomb Support", "Tomb Defender", "Tomb Attacker", "Oryx the Mad God 2", 
+                "Tomb Support", "Tomb Defender", "Tomb Attacker", "Oryx the Mad God 2",
                 "Grand Sphinx", "Queen of Hearts", "Thessal the Mermaid Goddess", "Gigacorn",
-                "Crystal Prisoner", "Lord of the Lost Lands", "Epic Larva"
+                "Crystal Prisoner", "Lord of the Lost Lands", "Epic Larva", "TF The Fallen", "Larry Gigsman, the Superhuman"
             },
             new string[]
             {
-                "Thessal the Mermaid Goddess", "Tomb Support", "Tomb Defender", "Tomb Attacker", 
-                "Queen of Hearts", "Grand Sphinx", "Oryx the Mad God 2", "Cube God", "Skull Shrine"
+                "Thessal the Mermaid Goddess", "Tomb Support", "Tomb Defender", "Tomb Attacker",
+                "Queen of Hearts", "Grand Sphinx", "Oryx the Mad God 2", "Cube God", "Skull Shrine",
+                "TF The Fallen", "Larry Gigsman, the Superhuman"
             },
             new string[]
             {
-                "Oryx the Mad God 2", "Cube God", "Skull Shrine"
+                "Oryx the Mad God 2", "Cube God", "Skull Shrine", "TF The Fallen", "Larry Gigsman, the Superhuman"
             }
         };
 
         private readonly new Dictionary<int, string[]> _waveRewards = new Dictionary<int, string[]>
         {
-            { 5, new string[] {"Spider Den Key", "Pirate Cave Key", "Forest Maze Key"} },
-            { 10, new string[] {"Snake Pit Key", "Sprite World Key", "Undead Lair Key", "Abyss of Demons Key", "Lab Key", "Beachzone Key"} },
-            { 20, new string[] {"Bella's Key", "Tomb of the Ancients Key", "Shaitan's Key", "The Crawling Depths Key", "Candy Key"} },
-            { 25, new string[] { "Bella's Key" } },
-            { 30, new string[] {"Onrane"}},
-            { 50, new string[] {"Onrane Cache"} }
+            { 5,  new string[] {"Tomb of the Ancients Key", "Sprite World Key", "Undead Lair Key", "Abyss of Demons Key", "Lab Key", "Cornfield of Peril Key" } },
+            { 10, new string[] {"10 Gold", "1 Gold"} },
+            { 20, new string[] {"Potion of Speed", "Potion of Defense", "Potion of Wisdom", "Wine Cellar Incantation" } },
+            { 25, new string[] {"100 Gold", "Gold Cache", "Wine Cellar Incantation"} },
+            { 30, new string[] {"Onrane", "100 Gold", "Wine Cellar Incantation"}},
+            { 50, new string[] {"Onrane Cache", "Gold Cache", "Wine Cellar Incantation" } }
         };
 
         private ArenaState _arenaState;
@@ -113,12 +114,12 @@ namespace wServer.realm.worlds.logic
             WorldLoot.Add(new ItemLoot("Oryx's Arena Key", 0));
             _arenaState = ArenaState.NotStarted;
             _wave = 1;
-           
         }
 
         protected override void Init()
         {
             base.Init();
+
             if (IsLimbo) return;
 
             InitArena();
@@ -142,6 +143,43 @@ namespace wServer.realm.worlds.logic
                 }
         }
 
+        public string ArenaStateCheck()
+        {
+            if(_arenaState == ArenaState.Ended)
+            {
+                return "Ended";
+            }
+            if (_arenaState == ArenaState.Start)
+            {
+                return "Start";
+            }
+            if (_arenaState == ArenaState.CountDown)
+            {
+                return "Counting";
+            }
+            if (_arenaState == ArenaState.Fight)
+            {
+                return "Fight";
+            }
+            if (_arenaState == ArenaState.Rest)
+            {
+                return "Rest";
+            }
+            if (_arenaState == ArenaState.Spawn)
+            {
+                return "Spawn";
+            }
+            if (_arenaState == ArenaState.Awaiting)
+            {
+                return "Waiting";
+            }
+            if (_arenaState == ArenaState.NotStarted)
+            {
+                return "Not Started";
+            }
+            return "Error.";
+        }
+
         public override bool AllowedAccess(Client client)
         {
             return true;
@@ -162,7 +200,7 @@ namespace wServer.realm.worlds.logic
             }
 
             var arena = Manager.AddWorld(
-                new DeathArena(manager.Resources.Worlds["DeathArena"], client) { IsLimbo = false });
+                new DeathArena(manager.Resources.Worlds[Name], client) { IsLimbo = false });
             Manager.Monitor.UpdateWorldInstance(World.DeathArena, arena);
             return arena;
         }
@@ -258,61 +296,57 @@ namespace wServer.realm.worlds.logic
 
         private void Countdown(RealmTime time)
         {
-            if (Players.Count >= 1)
+            if (_countDown == CountDownState.Notify60)
             {
-                if (_countDown == CountDownState.Notify60)
-                {
-                    _countDown = CountDownState.Notify30;
+                _countDown = CountDownState.Notify30;
 
-                    foreach (var w in Manager.Worlds.Values)
-                        foreach (var p in w.Players.Values)
-                            if (p.Owner == this)
-                                p.SendInfo("Game starting in 60 seconds.");
-                            else
-                            {
-                                //p.SendError("<ANNOUNCEMENT> Oryx's Arena closing in 1 min. Type /oa to join.");
-                                if (p.Owner is Nexus || p.Owner is Vault)
-                                {
-                                    p.Client.SendPacket(new GlobalNotification
-                                    {
-                                        Type = GlobalNotification.ADD_ARENA,
-                                        Text = "{\"name\":\"Oryx Arena\",\"open\":true}"
-                                    });
-                                }
-                            }
-                }
-
-                if (_countDown == CountDownState.Notify30 && _time > 30000)
-                {
-                    _countDown = CountDownState.StartGame;
-
-                    foreach (var w in Manager.Worlds.Values)
-                        foreach (var p in w.Players.Values)
-                            if (p.Owner == this)
-                                p.SendInfo("Game starting in 30 seconds.");
-                           // else
-                              //  p.SendError("<ANNOUNCEMENT> Oryx's Arena closing in 30 seconds. Type /oa to join.");
-                }
-
-                if (_countDown == CountDownState.StartGame && _time > 60000)
-                {
-                    _countDown = CountDownState.Done;
-                    _arenaState = ArenaState.Start;
-                    _time = 0;
-                    _startingPlayers = Players.Count;
-                    _difficulty = Players.Count(p => p.Value.Level >= 15);
-
-                    Manager.Monitor.ClosePortal(World.DeathArena);
-
-                    foreach (var p in Manager.Worlds.Values.SelectMany(w => w.Players.Values).Where(p => p.Owner is Nexus || p.Owner is Vault))
-                        p.Client.SendPacket(new GlobalNotification
+                foreach (var w in Manager.Worlds.Values)
+                    foreach (var p in w.Players.Values)
+                        if (p.Owner == this)
+                            p.SendInfo("Game starting in 60 seconds.");
+                        else
                         {
-                            Type = GlobalNotification.ADD_ARENA,
-                            Text = "{\"name\":\"Oryx Arena\",\"open\":false}"
-                        });
-                }
+                            p.SendError("<ANNOUNCEMENT> Oryx's Arena closing in 1 min. Head to the nexus to join!");
+                            if (p.Owner is Nexus || p.Owner is Vault)
+                            {
+                                p.Client.SendPacket(new GlobalNotification
+                                {
+                                    Type = GlobalNotification.ADD_ARENA,
+                                    Text = "{\"name\":\"Oryx Arena\",\"open\":true}"
+                                });
+                            }
+                        }
             }
 
+            if (_countDown == CountDownState.Notify30 && _time > 30000)
+            {
+                _countDown = CountDownState.StartGame;
+
+                foreach (var w in Manager.Worlds.Values)
+                    foreach (var p in w.Players.Values)
+                        if (p.Owner == this)
+                            p.SendInfo("Game starting in 30 seconds.");
+                        else
+                            p.SendError("<ANNOUNCEMENT> Oryx's Arena closing in 30 seconds. Head to the nexus to join!");
+            }
+
+            if (_countDown == CountDownState.StartGame && _time > 60000)
+            {
+                _countDown = CountDownState.Done;
+                _arenaState = ArenaState.Start;
+                _time = 0;
+                _startingPlayers = Players.Count;
+                _difficulty = Players.Count(p => p.Value.Level >= 15);
+
+                Manager.Monitor.ClosePortal(World.DeathArena);
+
+                foreach (var p in Manager.Worlds.Values.SelectMany(w => w.Players.Values).Where(p => p.Owner is Nexus || p.Owner is Vault))
+                    p.Client.SendPacket(new GlobalNotification
+                    {
+                        Type = GlobalNotification.ADD_ARENA,
+                        Text = "{\"name\":\"Oryx Arena\",\"open\":false}"
+                    });
+            }
         }
 
         private void WaitForPlayersToLeave(RealmTime time)
@@ -332,14 +366,6 @@ namespace wServer.realm.worlds.logic
 
         private void Rest(RealmTime time, bool recover = false)
         {
-            if (Players.Count == 0)
-            {
-                _countDown = CountDownState.Notify60;
-                _arenaState = ArenaState.CountDown;
-                _wave = 1;
-                _time = 0;
-                LockPortal();
-            }
             if (recover)
             {
                 foreach (var plr in Players.Values)
@@ -375,14 +401,6 @@ namespace wServer.realm.worlds.logic
 
         private void Spawn(RealmTime time)
         {
-            if (Players.Count == 0)
-            {
-                _countDown = CountDownState.Notify60;
-                _arenaState = ArenaState.CountDown;
-                _wave = 1;
-                _time = 0;
-                LockPortal();
-            }
             SpawnEnemies();
             SpawnBosses();
             _arenaState = ArenaState.Fight;
@@ -390,21 +408,17 @@ namespace wServer.realm.worlds.logic
 
         private void Fight(RealmTime time)
         {
-            if (Players.Count == 0)
+            if(Players.Count == 0)
             {
-                _countDown = CountDownState.Notify60;
-                _arenaState = ArenaState.CountDown;
-                _wave = 1;
-                _time = 0;
-                LockPortal();
+                _arenaState = ArenaState.Awaiting;
             }
             if (Players.Count(p => !p.Value.Client.Account.Admin) <= 1)
             {
                 var plr = Players.Values.SingleOrDefault(p => !p.Client.Account.Admin);
                 if (plr != null)
                     Manager.Chat.Announce(
-                        "Death eludes " + plr.Name + 
-                        ". Congratulations. (Wave: " + _wave + 
+                        "Death eludes " + plr.Name +
+                        ". Congratulations. (Wave: " + _wave +
                         ", Starting Players: " + _startingPlayers + ")");
 
                 foreach (var p in Manager.Worlds.Values.SelectMany(w => w.Players.Values).Where(p => p.Owner is Nexus))
@@ -413,19 +427,21 @@ namespace wServer.realm.worlds.logic
                         Type = GlobalNotification.DELETE_ARENA,
                         Text = "Oryx Arena"
                     });
-            }
-            if (!Enemies.Any(e => e.Value.ObjectDesc.Enemy && !e.Value.Spawned))
-            {
-                _wave++;
-                _restTime = _time;
-                _arenaState = ArenaState.Rest;
 
-                if (_bossLevel + 1 < _changeBossLevel.Length &&
-                    _changeBossLevel[_bossLevel + 1] <= _wave)
-                    _bossLevel++;
+                if (!Enemies.Any(e => e.Value.ObjectDesc.Enemy && !e.Value.Spawned))
+                {
+                    _wave++;
+                    _restTime = _time;
+                    _arenaState = ArenaState.Rest;
 
-                Rest(time, true);
+                    if (_bossLevel + 1 < _changeBossLevel.Length &&
+                        _changeBossLevel[_bossLevel + 1] <= _wave)
+                        _bossLevel++;
+
+                    Rest(time, true);
+                }
             }
+
         }
 
         private void HandleWaveRewards()
@@ -467,22 +483,17 @@ namespace wServer.realm.worlds.logic
                 }
                 else
                 {
-                    player.SendError("[Oryx's Arena] We were unable to give you a reward, your inventory is full :(");
+                    player.SendError("[Oryx's Arena] We were unable to give you a reward, your inventory is full ");
                 }
             }
         }
 
         private void LockPortal()
         {
-            Manager.Monitor.RemovePortal(World.DeathArena);
-            var portal = new Portal(Manager, 0x023D, null)
-            {
-                Name = "Oryx's Arena",
-                WorldInstance = Manager.Worlds[World.DeathArena]
-            };
             var nexus = Manager.GetWorld(World.Nexus) as Nexus;
-            var pos = nexus.GetRegionPosition(TileRegion.Arena_Edge_Spawn);
-            Manager.Monitor.AddPortal(World.DeathArena, portal, pos, false);
+            Entity en = Entity.Resolve(Manager, "Locked Oryx's Arena Portal");
+            en.Move(33, 9);
+            nexus.EnterWorld(en);
         }
 
         public override int EnterWorld(Entity entity)
@@ -491,8 +502,8 @@ namespace wServer.realm.worlds.logic
 
             var p = entity as Player;
             if (p != null)
-                p.SendInfo("Welcome to Oryx's Arena. Take caution, you can die here.");
-            
+                p.SendInfo("Welcome to Oryx's Arena. Take caution, you can die here. " + ArenaStateCheck() + " " + _time + " " + _wave);
+
             return ret;
         }
     }
