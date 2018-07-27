@@ -764,8 +764,7 @@ namespace wServer.logic
                                             new State("arena3wave4",
                                            new Spawn("Arena Risen Mage", initialSpawn: 1, maxChildren: 1, coolDown: 90000),
                                            new Spawn("Arena Risen Brawler", initialSpawn: 1, maxChildren: 1, coolDown: 90000),
-                                           new Spawn("Arena Risen Archer", initialSpawn: 1, maxChildren: 1, coolDown: 90000),
-                                           new Spawn("Arena Risen Mummy", initialSpawn: 1, maxChildren: 2, coolDown: 90000)
+                                           new Spawn("Arena Risen Archer", initialSpawn: 1, maxChildren: 1, coolDown: 90000)
                                                ),
                                            new State("arena4wave1",
                                            new Spawn("Classic Ghost", initialSpawn: 1, maxChildren: 2, coolDown: 90000),

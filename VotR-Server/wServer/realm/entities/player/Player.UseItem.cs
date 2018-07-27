@@ -1358,6 +1358,10 @@ namespace wServer.realm.entities
 
         private void AECreate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if(Owner.Name == "DeathArena")
+            {
+                SendError("Can't use keys here.");
+            }
             var gameData = Manager.Resources.GameData;
 
             ushort objType;

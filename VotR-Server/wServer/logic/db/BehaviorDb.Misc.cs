@@ -56,12 +56,19 @@ namespace wServer.logic
                             new Wander(0.4)
                             ),
                         new Shoot(8, count: 4, shootAngle: 8, projectileIndex: 0, coolDown: 800),
+                        new TimedTransition(3000, "Default3")
+                        ),
+                      new State("Default3",
+                        new Taunt(0.05, "You don't belong here.."),
+                        new HealSelf(1000),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new TimedTransition(3000, "Default")
                         )
                     )
             )
                 .Init("TF Sector",
             new State(
+                new EntitiesNotExistsTransition(99, "die", "TF The Fallen"),
                 new Orbit(0.35, 8, 20, "TF The Fallen"),
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("recker",
@@ -101,8 +108,11 @@ namespace wServer.logic
                     ),
                 new State("GoDumb",
                          new Shoot(8.4, count: 8, shootAngle: 24, projectileIndex: 0, coolDown: 2500),
-                         new Grenade(3, 75, range: 8, coolDown: 4000),
+                         new Grenade(3, 160, range: 8, coolDown: 1000),
                          new TimedTransition(8000, "recker")
+                    ),
+                new State("die",
+                        new Suicide()
                     )
                 )
             )
@@ -134,6 +144,8 @@ namespace wServer.logic
                         new TimedTransition(8000, "fight2")
                         ),
                     new State("fight2",
+                        new HealSelf(2000, amount: 6000),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Shoot(8.4, count: 8, shootAngle: 16, projectileIndex: 2, coolDown: 2000),
                         new Shoot(8.4, count: 4, shootAngle: 16, predictive: 4, projectileIndex: 0, coolDown: 2000),
                         new TimedTransition(8000, "fight3")

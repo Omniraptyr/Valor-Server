@@ -38,8 +38,8 @@ namespace wServer.realm.worlds.logic
         // random enemies used for all levels
         private readonly string[] _randomEnemies =
         {
-            "Djinn", "Beholder", "White Demon of the Abyss", "Flying Brain", "Slime God",
-            "Native Sprite God", "Ent God", "Medusa", "Ghost God", "Leviathan", "Elite Skeleton"
+            "Djinn", "Beholder", "White Demon of the Abyss", "Flying Brain", "Slime God", "Arena Risen Mummy",
+            "Native Sprite God", "Ent God", "Medusa", "Ghost God", "Leviathan", "Elite Skeleton", "Niolru", "Angelic Commander", "shtrs Stone Mage"
         };
 
         // _bossLevel defines the wave at which the random bosses change
@@ -62,12 +62,12 @@ namespace wServer.realm.worlds.logic
             {
                 "Thessal the Mermaid Goddess", "Crystal Prisoner", "Lord of the Lost Lands",
                 "Septavius the Ghost God", "Limon the Sprite God", "Dr Terrible", "Gigacorn",
-                "Archdemon Malphas", "Epic Larva"
+                "Archdemon Malphas", "Epic Larva", "Jade Statue", "Garnet Statue", "BedlamGod"
             },
             new string[]
             {
                 "Tomb Support", "Tomb Defender", "Tomb Attacker", "Oryx the Mad God 2",
-                "Grand Sphinx", "Queen of Hearts", "Thessal the Mermaid Goddess", "Gigacorn",
+                "Grand Sphinx", "Queen of Hearts", "Thessal the Mermaid Goddess", "Gigacorn", "BedlamGod",
                 "Crystal Prisoner", "Lord of the Lost Lands", "Epic Larva", "TF The Fallen", "Larry Gigsman, the Superhuman"
             },
             new string[]
@@ -78,18 +78,18 @@ namespace wServer.realm.worlds.logic
             },
             new string[]
             {
-                "Oryx the Mad God 2", "Cube God", "Skull Shrine", "TF The Fallen", "Larry Gigsman, the Superhuman"
+                "Oryx the Mad God 2", "Cube God", "Skull Shrine", "TF The Fallen", "Larry Gigsman, the Superhuman", "BedlamGod"
             }
         };
 
         private readonly new Dictionary<int, string[]> _waveRewards = new Dictionary<int, string[]>
         {
             { 5,  new string[] {"Tomb of the Ancients Key", "Sprite World Key", "Undead Lair Key", "Abyss of Demons Key", "Lab Key", "Cornfield of Peril Key" } },
-            { 10, new string[] {"10 Gold", "1 Gold"} },
-            { 20, new string[] {"Potion of Speed", "Potion of Defense", "Potion of Wisdom", "Wine Cellar Incantation" } },
-            { 25, new string[] {"100 Gold", "Gold Cache", "Wine Cellar Incantation"} },
-            { 30, new string[] {"Onrane", "100 Gold", "Wine Cellar Incantation"}},
-            { 50, new string[] {"Onrane Cache", "Gold Cache", "Wine Cellar Incantation" } }
+            { 10, new string[] {"10 Gold", "1 Gold", "100 Gold", "Onrane"} },
+            { 20, new string[] { "Onrane", "Wine Cellar Incantation" } },
+            { 25, new string[] {"100 Gold", "Onrane", "Gold Cache", "Wine Cellar Incantation"} },
+            { 30, new string[] {"Onrane", "100 Gold", "Onrane Cache", "Wine Cellar Incantation" }},
+            { 50, new string[] {"Onrane Cache", "Medium Sor Fragment", "Wine Cellar Incantation" } }
         };
 
         private ArenaState _arenaState;
@@ -100,6 +100,7 @@ namespace wServer.realm.worlds.logic
         private long _time;
         private int _startingPlayers;
         private int _difficulty;
+        private bool _isOpen;
 
         private List<IntPoint> _outerSpawn;
         private List<IntPoint> _centralSpawn;
@@ -111,6 +112,7 @@ namespace wServer.realm.worlds.logic
             : base(proto)
         {
             Instance = this;
+            _isOpen = true;
             WorldLoot.Add(new ItemLoot("Oryx's Arena Key", 0));
             _arenaState = ArenaState.NotStarted;
             _wave = 1;
@@ -182,7 +184,7 @@ namespace wServer.realm.worlds.logic
 
         public override bool AllowedAccess(Client client)
         {
-            return true;
+            return _isOpen;
         }
 
         public override World GetInstance(Client client)
@@ -373,6 +375,7 @@ namespace wServer.realm.worlds.logic
 
         private void Start(RealmTime time)
         {
+            _isOpen = false;
             _arenaState = ArenaState.Rest;
             Rest(time, true);
         }
