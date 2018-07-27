@@ -422,27 +422,7 @@ namespace wServer.realm.worlds.logic
 
         private void Fight(RealmTime time)
         {
-            if (Players.Count(p => !p.Value.Client.Account.Admin) <= 1)
-            {
-                var plr = Players.Values.SingleOrDefault(p => !p.Client.Account.Admin);
-                if (plr != null)
-                    Manager.Chat.Announce(
-                        "Death eludes " + plr.Name +
-                        ". Congratulations. (Wave: " + _wave +
-                        ", Starting Players: " + _startingPlayers + ")");
-
-                foreach (var p in Manager.Worlds.Values.SelectMany(w => w.Players.Values).Where(p => p.Owner is Nexus))
-                    p.Client.SendPacket(new GlobalNotification
-                    {
-                        Type = GlobalNotification.DELETE_ARENA,
-                        Text = "Oryx Arena"
-                    });
-
-                _arenaState = ArenaState.Awaiting;
-                return;
-            }
-
-            if (!Enemies.Any(e => e.Value.ObjectDesc.Enemy && !e.Value.Spawned))
+            if (!Enemies.Any(e => e.Value.ObjectDesc.Enemy && !e.Value.Spawned && !e.Value.Name.Contains("Torii")))
             {
                 _wave++;
                 _restTime = _time;
