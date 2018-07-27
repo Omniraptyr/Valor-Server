@@ -43,7 +43,7 @@ namespace server.account
                 client.UseDefaultCredentials = false;
                 client.Credentials = new System.Net.NetworkCredential(email, pass);
 
-                MailMessage mm = new MailMessage("support@valormg.com", "cntwenty4@gmail.com", "Password Reset Protocol - Valor", reply);
+                MailMessage mm = new MailMessage("support@valormg.com", accEmail, "Password Reset Protocol - Valor", reply);
                 mm.BodyEncoding = UTF8Encoding.UTF8;
                 mm.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
 
