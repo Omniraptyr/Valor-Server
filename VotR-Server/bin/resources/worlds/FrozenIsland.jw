@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"FrozenIsland",
+"sbName":"Frozen Island",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[],
+"maps":["icechamber.jm"],
+"music":["icecave"]}

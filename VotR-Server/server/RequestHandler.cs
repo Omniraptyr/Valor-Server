@@ -140,9 +140,7 @@ namespace server
             {"/account/registerDiscord", new account.registerDiscord()},
             {"/account/unregisterDiscord", new account.unregisterDiscord()},
             {"/dailyLogin/fetchCalendar", new dailyLogin.fetchCalendar()},
-            {"/inGameNews/getNews", new inGameNews.getNews()},
-            {"/friends/getList", new friends.getList()},
-            {"/friends/getRequests", new friends.getRequests()}
+            {"/inGameNews/getNews", new inGameNews.getNews()}
         };
     }
 }

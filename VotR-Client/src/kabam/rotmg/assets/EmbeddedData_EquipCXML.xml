@@ -5956,7 +5956,6 @@
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <MpCost>120</MpCost>
-        <SurgeCost>20</SurgeCost>
         <Activate effect="Healing" duration="5" range="5" useWisMod="true">ConditionEffectAura</Activate>
         <Activate effect="Damaging" duration="5" range="5" useWisMod="true">ConditionEffectAura</Activate>
         <Activate effect="Invulnerable" duration="1.2" useWisMod="false">ConditionEffectSelf</Activate>
@@ -10374,8 +10373,7 @@
             <EffectInfo name="{equip.Duration}" description="{equip.30_min}"/>
         </ExtraTooltipData>
         <Consumable/>
-        <Soulbound/>
-        <LTBoosted/>
+        <Activate duration="3600">LTBoost</Activate>
         <Timer>1800</Timer>
         <BagType>2</BagType>
         <feedPower>150</feedPower>
@@ -10396,8 +10394,7 @@
         <Sound>use_potion</Sound>
         <Consumable/>
         <Soulbound/>
-        <LDBoosted/>
-        <Timer>1800</Timer>
+        <Activate duration="3600">LDBoost</Activate>
         <BagType>2</BagType>
         <feedPower>150</feedPower>
         <DisplayId>{equip.Loot_Drop_Potion}</DisplayId>
@@ -11001,9 +10998,8 @@
         <Sound>use_potion</Sound>
         <Consumable/>
         <Soulbound/>
-        <LDBoosted/>
-        <LTBoosted/>
-        <Timer>1200</Timer>
+        <Activate duration="1200">LDBoost</Activate>
+        <Activate duration="3600">LTBoost</Activate>
         <BagType>2</BagType>
         <feedPower>100</feedPower>
         <DisplayId>{equip.Lucky_Clover}</DisplayId>
@@ -16508,9 +16504,10 @@
         <Description>Fast-acting and infamously lethal poison pressed from the Haloflower seed.</Description>
         <Usable/>
         <ActivateOnEquip stat="20" amount="15">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="-10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <MpCost>90</MpCost>
-        <Activate radius="3" totalDamage="2000" duration="4" impactDamage="400" throwTime="1">PoisonGrenade</Activate>
+        <Activate radius="6" totalDamage="2250" duration="4" impactDamage="800" throwTime="2" useWisMod="true" durationAlt="6">PoisonGrenade</Activate>
         <feedPower>1800</feedPower>
         <FameBonus>8</FameBonus>
         <Legendary/>
@@ -18147,24 +18144,6 @@
         <Activate amount="250">TreasureActivate</Activate>
         <feedPower>600</feedPower>
         <DisplayId>Small Mysterious Crystal</DisplayId>
-    </Object>
-    <Object type="0x514f" id="Frozen Halo Armor">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x101</Index>
-        </Texture>
-        <SlotType>7</SlotType>
-        <Description>An ancient frozen armor that has a ring of unbreakable ice attached to it.</Description>
-        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="3" amount="80">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="27" amount="3">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="3">IncrementStat</ActivateOnEquip>
-        <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
-        <feedPower>1000</feedPower>
-        <DisplayId>Frozen Halo Armor</DisplayId>
     </Object>
     <Object type="0x5150" id="Relic Armor">
         <Class>Equipment</Class>
@@ -20666,38 +20645,33 @@
         <feedPower>550</feedPower>
         <DisplayId>Fatefixer Star</DisplayId>
     </Object>
-    <Object type="0x45d7" id="Told Before Time">
+    <Object type="0x48c9" id="The ET Experience">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
-            <File>d3LofiObjEmbed</File>
-            <Index>0x26b</Index>
+            <File>lofiObj5</File>
+            <Index>0xdc</Index>
         </Texture>
         <SlotType>3</SlotType>
-        <Description>A hard iron futuristic bow that shoots energy projectiles at unbelievable speeds.</Description>
-        <RateOfFire>1</RateOfFire>
-        <Sound>weapon/golden_bow</Sound>
+        <Description>You even feel like an alien!</Description>
+        <RateOfFire>1.7</RateOfFire>
+        <Sound>weapon/heavy_crossbow</Sound>
         <Projectile>
-            <ObjectId>Told Tim</ObjectId>
-            <Speed>120</Speed>
-            <MinDamage>340</MinDamage>
-            <MaxDamage>480</MaxDamage>
-            <LifetimeMS>760</LifetimeMS>
-            <MultiHit/>
-            <PassesCover/>
-            <ParticleTrail intensity="0.1" lifetimeMS="180">0xffffff</ParticleTrail>
+            <ObjectId>ETEXP Blast</ObjectId>
+            <Speed>180</Speed>
+            <MinDamage>120</MinDamage>
+            <MaxDamage>205</MaxDamage>
+            <LifetimeMS>500</LifetimeMS>
+            <CondChance effect="Armored" chance="0.1" duration="3"/>
         </Projectile>
-        <ActivateOnEquip stat="112" amount="40">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="27" amount="4">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="2">IncrementStat</ActivateOnEquip>
-        <BagType>11</BagType>
-        <FameBonus>8</FameBonus>
-        <Legendary/>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="20">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <feedPower>1000</feedPower>
+        <NumProjectiles>1</NumProjectiles>
         <OldSound>weapon/missile_wand</OldSound>
-        <DisplayId>Told Before Time</DisplayId>
-        <feedPower>1850</feedPower>
+        <DisplayId>The ET Experience</DisplayId>
     </Object>
     <Object type="0x45d8" id="The Odyssey">
         <Class>Equipment</Class>
@@ -27278,8 +27252,7 @@
         </ExtraTooltipData>
         <Consumable/>
         <Soulbound/>
-        <LTBoosted/>
-        <Timer>3600</Timer>
+        <Activate duration="3600">LTBoost</Activate>
         <BagType>2</BagType>
         <feedPower>250</feedPower>
         <DisplayId>Premium Loot Tier Potion</DisplayId>
@@ -27299,8 +27272,7 @@
         <Sound>use_potion</Sound>
         <Consumable/>
         <Soulbound/>
-        <LDBoosted/>
-        <Timer>3600</Timer>
+        <Activate duration="3600">LDBoost</Activate>
         <BagType>2</BagType>
         <feedPower>250</feedPower>
         <DisplayId>Premium Loot Drop Potion</DisplayId>
@@ -28330,6 +28302,7 @@
         <SlotType>9</SlotType>
         <Description>Cha-ching.</Description>
         <ActivateOnEquip stat="114" amount="250">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="102" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <feedPower>5000</feedPower>
         <Legendary/>
@@ -31133,6 +31106,13 @@
         <FullOccupy/>
         <OccupySquare/>
         <EnemyOccupySquare/>
+        <MaxHitPoints>2000</MaxHitPoints>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <Enemy/>
+        <XpMult>0.0</XpMult>
         <BlocksSight/>
     </Object>
     <Object type="0x61ac" id="Genisus Landmine">
@@ -31170,21 +31150,21 @@
         <Description>Command the power of the genisus by will by using this spell.</Description>
         <Sound>spell/magic_nova</Sound>
         <Projectile>
-            <ObjectId>Blue Scale</ObjectId>
+            <ObjectId>Blue Boomerang</ObjectId>
             <Speed>160</Speed>
-            <MinDamage>45</MinDamage>
-            <MaxDamage>200</MaxDamage>
-            <LifetimeMS>1000</LifetimeMS>
-            <Amplitude>2</Amplitude>
-            <Frequency>6</Frequency>
+            <MinDamage>75</MinDamage>
+            <MaxDamage>220</MaxDamage>
+            <LifetimeMS>2000</LifetimeMS>
             <MultiHit/>
+            <Boomerang/>
         </Projectile>
+        <Steal type="mana" amount="1"/>
         <Usable/>
         <BagType>6</BagType>
-        <FameBonus>8</FameBonus>
-        <MpCost>110</MpCost>
-        <ActivateOnEquip stat="6" amount="8">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <FameBonus>6</FameBonus>
+        <MpCost>120</MpCost>
+        <ActivateOnEquip stat="3" amount="-40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="30">IncrementStat</ActivateOnEquip>
         <Activate>BulletNova</Activate>
     </Object>
     <Object type="0x61ae" id="Prime Chaotic Seal">
@@ -31276,7 +31256,7 @@
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
-        <MpCost>85</MpCost>
+        <MpCost>100</MpCost>
         <Steal type="life" amount="1"/>
         <ActivateOnEquip stat="0" amount="12">IncrStatPerc</ActivateOnEquip>
         <Activate>BulletNova</Activate>
@@ -34122,5 +34102,68 @@
         <Activate>Shoot</Activate>
         <feedPower>380</feedPower>
         <DisplayId>Multi-Quiver</DisplayId>
+    </Object>
+    <Object type="0x64b1" id="Huffy Hat">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x119</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>Huff and puff.</Description>
+        <ActivateOnEquip stat="102" amount="12">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <feedPower>700</feedPower>
+        <DisplayId>Huffy Hat</DisplayId>
+    </Object>
+    <Object type="0x64b4" id="Frozen Chestguard">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x101</Index>
+        </Texture>
+        <SlotType>7</SlotType>
+        <Description>An ancient frozen armor that has a ring of unbreakable ice attached to it.</Description>
+        <ActivateOnEquip stat="21" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="-5">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <feedPower>1000</feedPower>
+        <DisplayId>Frozen Chestguard</DisplayId>
+    </Object>
+    <Object type="0x45d7" id="Told Before Time">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x26b</Index>
+        </Texture>
+        <SlotType>3</SlotType>
+        <Description>A hard iron futuristic bow that shoots energy projectiles at unbelievable speeds.</Description>
+        <RateOfFire>0.9</RateOfFire>
+        <Sound>weapon/golden_bow</Sound>
+        <Projectile>
+            <ObjectId>Told Tim</ObjectId>
+            <Speed>120</Speed>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>205</MaxDamage>
+            <LifetimeMS>760</LifetimeMS>
+            <Wavy/>
+            <PassesCover/>
+        </Projectile>
+        <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="112" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="80">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>weapon/missile_wand</OldSound>
+        <DisplayId>Told Before Time</DisplayId>
+        <feedPower>1850</feedPower>
     </Object>
 </Objects>

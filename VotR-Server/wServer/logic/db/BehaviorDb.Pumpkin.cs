@@ -76,8 +76,7 @@ namespace wServer.logic
                     new TierLoot(12, ItemType.Armor, 0.05),
                     new TierLoot(13, ItemType.Armor, 0.04),
                     new TierLoot(5, ItemType.Ring, 0.05),
-                    new ItemLoot("Skull Helm", 0.01),
-                    new ItemLoot("Colossal Skull", 0.01)
+                    new ItemLoot("Skull Helm", 0.01)
 
                 )
             );

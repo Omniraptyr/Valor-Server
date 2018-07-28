@@ -37275,8 +37275,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
          <EffectInfo name="{equip.Duration}" description="{equip.30_min}"/>
       </ExtraTooltipData>
       <Consumable/>
-      <Soulbound/>
-      <LTBoosted/>
+	  <Activate duration="3600">LTBoost</Activate>
       <Timer>1800</Timer>
       <BagType>2</BagType>
       <feedPower>150</feedPower>
@@ -37297,8 +37296,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <Sound>use_potion</Sound>
       <Consumable/>
       <Soulbound/>
-      <LDBoosted/>
-      <Timer>1800</Timer>
+	  <Activate duration="3600">LDBoost</Activate>
       <BagType>2</BagType>
       <feedPower>150</feedPower>
       <DisplayId>{equip.Loot_Drop_Potion}</DisplayId>
@@ -37887,28 +37885,27 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <feedPower>5</feedPower>
       <DisplayId>{equip.Draconis_Potion}</DisplayId>
    </Object>
-   <Object type="0xcc2" id="Lucky Clover">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>lofiObj3</File>
-         <Index>0x3d9</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>{equip.A_lucky_shamrock_that_will_make_enemies_drop_more_and_bette}</Description>
-      <ExtraTooltipData>
-         <EffectInfo name="{equip.Duration}" description="{equip.20_min}"/>
-      </ExtraTooltipData>
-      <Sound>use_potion</Sound>
-      <Consumable/>
-      <Soulbound/>
-      <LDBoosted/>
-      <LTBoosted/>
-      <Timer>1200</Timer>
-      <BagType>2</BagType>
-      <feedPower>100</feedPower>
-      <DisplayId>{equip.Lucky_Clover}</DisplayId>
-   </Object>
+    <Object type="0xcc2" id="Lucky Clover">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x3d9</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>{equip.A_lucky_shamrock_that_will_make_enemies_drop_more_and_bette}</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="{equip.Duration}" description="{equip.20_min}"/>
+        </ExtraTooltipData>
+        <Sound>use_potion</Sound>
+        <Consumable/>
+        <Soulbound/>
+        <Activate duration="1200">LDBoost</Activate>
+        <Activate duration="3600">LTBoost</Activate>
+        <BagType>2</BagType>
+        <feedPower>100</feedPower>
+        <DisplayId>{equip.Lucky_Clover}</DisplayId>
+    </Object>
    <Object type="0xcc3" id="Saint Patty's Brew">
       <Class>Equipment</Class>
       <Item/>
@@ -94562,48 +94559,46 @@ A whole thanksgiving turkey!
     <feedPower>275</feedPower> 
     <DisplayId>Kantos Cache</DisplayId>
   </Object>
-  <Object type="0x49a3" id="Premium Loot Tier Potion">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-        <File>d3LofiObjEmbed</File>
-        <Index>0x15b</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A premium potion that boost the tier level of the dropped loot.</Description>
-      <Sound>use_potion</Sound>
-      <ExtraTooltipData>
-         <EffectInfo name="{equip.Duration}" description="1 Hour"/>
-      </ExtraTooltipData>
-      <Consumable/>
-      <Soulbound/>
-      <LTBoosted/>
-      <Timer>3600</Timer>
-      <BagType>2</BagType>
-      <feedPower>250</feedPower>
-      <DisplayId>Premium Loot Tier Potion</DisplayId>
-   </Object>
-   <Object type="0x49a4" id="Premium Loot Drop Potion">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-        <File>d3LofiObjEmbed</File>
-        <Index>0x15a</Index>
-      </Texture>
-      <SlotType>10</SlotType>
-      <Description>A premium potion that causes enemies to drop more loot.</Description>
-      <ExtraTooltipData>
-         <EffectInfo name="{equip.Duration}" description="1 Hour"/>
-      </ExtraTooltipData>
-      <Sound>use_potion</Sound>
-      <Consumable/>
-      <Soulbound/>
-      <LDBoosted/>
-      <Timer>3600</Timer>
-      <BagType>2</BagType>
-      <feedPower>250</feedPower>
-      <DisplayId>Premium Loot Drop Potion</DisplayId>
-   </Object>
+    <Object type="0x49a3" id="Premium Loot Tier Potion">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x15b</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A premium potion that boost the tier level of the dropped loot.</Description>
+        <Sound>use_potion</Sound>
+        <ExtraTooltipData>
+            <EffectInfo name="{equip.Duration}" description="1 Hour"/>
+        </ExtraTooltipData>
+        <Consumable/>
+        <Soulbound/>
+        <Activate duration="3600">LTBoost</Activate>
+        <BagType>2</BagType>
+        <feedPower>250</feedPower>
+        <DisplayId>Premium Loot Tier Potion</DisplayId>
+    </Object>
+    <Object type="0x49a4" id="Premium Loot Drop Potion">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x15a</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A premium potion that causes enemies to drop more loot.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="{equip.Duration}" description="1 Hour"/>
+        </ExtraTooltipData>
+        <Sound>use_potion</Sound>
+        <Consumable/>
+        <Soulbound/>
+        <Activate duration="3600">LDBoost</Activate>
+        <BagType>2</BagType>
+        <feedPower>250</feedPower>
+        <DisplayId>Premium Loot Drop Potion</DisplayId>
+    </Object>
   <Object type="0x49a5" id="Onrane">
     <Class>Equipment</Class>
     <Item/>
@@ -108160,7 +108155,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <feedPower>2000</feedPower>
         <DisplayId>Dranbiel Garbs</DisplayId>
     </Object>
-	    <Object type="0x5839" id="Jackpot">
+	<Object type="0x5839" id="Jackpot">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -108170,6 +108165,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <SlotType>9</SlotType>
         <Description>Cha-ching.</Description>
         <ActivateOnEquip stat="114" amount="250">IncrementStat</ActivateOnEquip>
+		<ActivateOnEquip stat="102" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <feedPower>5000</feedPower>
         <Legendary/>
@@ -108796,9 +108792,10 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Description>Fast-acting and infamously lethal poison pressed from the Haloflower seed.</Description>
         <Usable/>
         <ActivateOnEquip stat="20" amount="15">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="-10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <MpCost>90</MpCost>
-        <Activate radius="3" totalDamage="2000" duration="4" impactDamage="400" throwTime="1">PoisonGrenade</Activate>
+        <Activate radius="6" totalDamage="2250" duration="4" impactDamage="800" throwTime="2" useWisMod="true" durationAlt="6">PoisonGrenade</Activate>
         <feedPower>1800</feedPower>
         <FameBonus>8</FameBonus>
         <Legendary/>
@@ -109289,7 +109286,14 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <FullOccupy/>
         <OccupySquare/>
         <EnemyOccupySquare/>
-        <BlocksSight/>
+		    <MaxHitPoints>2000</MaxHitPoints>
+    <Static/>
+    <FullOccupy/>
+    <OccupySquare/>
+    <EnemyOccupySquare/>
+    <Enemy/>
+    <XpMult>0.0</XpMult>
+    <BlocksSight/>
     </Object>
     <Object type="0x61ac" id="Genisus Landmine">
         <Enemy/>
@@ -109326,21 +109330,21 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Description>Command the power of the genisus by will by using this spell.</Description>
         <Sound>spell/magic_nova</Sound>
         <Projectile>
-            <ObjectId>Blue Scale</ObjectId>
+            <ObjectId>Blue Boomerang</ObjectId>
             <Speed>160</Speed>
-            <MinDamage>45</MinDamage>
-            <MaxDamage>200</MaxDamage>
-            <LifetimeMS>1000</LifetimeMS>
-            <Amplitude>2</Amplitude>
-            <Frequency>6</Frequency>
+            <MinDamage>75</MinDamage>
+            <MaxDamage>220</MaxDamage>
+            <LifetimeMS>2000</LifetimeMS>
             <MultiHit/>
+            <Boomerang/>
         </Projectile>
+        <Steal type="mana" amount="1"/>
         <Usable/>
         <BagType>6</BagType>
-        <FameBonus>8</FameBonus>
-        <MpCost>110</MpCost>
-        <ActivateOnEquip stat="6" amount="8">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <FameBonus>6</FameBonus>
+        <MpCost>120</MpCost>
+        <ActivateOnEquip stat="3" amount="-40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="30">IncrementStat</ActivateOnEquip>
         <Activate>BulletNova</Activate>
     </Object>
         <Object type="0x61ae" id="Prime Chaotic Seal">
@@ -109368,6 +109372,35 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Activate>
         <feedPower>1000</feedPower>
         <DisplayId>Prime Chaotic Seal</DisplayId>
+    </Object>
+	<Object type="0x45d7" id="Told Before Time">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x26b</Index>
+        </Texture>
+        <SlotType>3</SlotType>
+        <Description>A hard iron futuristic bow that shoots energy projectiles at unbelievable speeds.</Description>
+        <RateOfFire>0.9</RateOfFire>
+        <Sound>weapon/golden_bow</Sound>
+        <Projectile>
+            <ObjectId>Told Tim</ObjectId>
+            <Speed>120</Speed>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>205</MaxDamage>
+            <LifetimeMS>760</LifetimeMS>
+            <Wavy/>
+            <PassesCover/>
+        </Projectile>
+        <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="112" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="80">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>weapon/missile_wand</OldSound>
+        <DisplayId>Told Before Time</DisplayId>
+        <feedPower>1850</feedPower>
     </Object>
     <Object type="0x61af" id="Ascendant Quiver">
         <Class>Equipment</Class>
@@ -109407,14 +109440,14 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <feedPower>880</feedPower>
         <DisplayId>Ascendant Quiver</DisplayId>
     </Object>
-	  <Object type="0x61b0" id="Marble Tablet">
+    <Object type="0x61b0" id="Marble Tablet">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
             <File>d3LofiObjEmbed</File>
             <Index>0x43f</Index>
         </Texture>
-		    <ExtraTooltipData>
+        <ExtraTooltipData>
             <EffectInfo name="Sprited by" description="BubbaBlu"/>
         </ExtraTooltipData>
         <SlotType>11</SlotType>
@@ -109426,13 +109459,13 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <MinDamage>100</MinDamage>
             <MaxDamage>150</MaxDamage>
             <LifetimeMS>1000</LifetimeMS>
-			<ConditionEffect duration="1.5">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="1.5">Paralyzed</ConditionEffect>
             <MultiHit/>
         </Projectile>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
-        <MpCost>85</MpCost>
+        <MpCost>100</MpCost>
         <Steal type="life" amount="1"/>
         <ActivateOnEquip stat="0" amount="12">IncrStatPerc</ActivateOnEquip>
         <Activate>BulletNova</Activate>
@@ -123030,7 +123063,13 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <DazedImmune/>
         <SlowedImmune/>
         <ShadowSize>0</ShadowSize>
-        <Quest/>
+          <Hero/>
+		  <Quest/>
+		  <God/>
+		  <Lootdrop/>
+		  <Encounter/>
+		  <StasisImmune/>
+		  <Level>20</Level>
         <MaxHitPoints>200000</MaxHitPoints>
         <Defense>60</Defense>
         <Projectile id="0">
@@ -123258,4 +123297,235 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <feedPower>380</feedPower>
       <DisplayId>Multi-Quiver</DisplayId>
    </Object>
+   <Object type="0x64b1" id="Huffy Hat">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+          <File>legendaries8x8Embed</File>
+          <Index>0x119</Index>
+      </Texture>
+      <SlotType>9</SlotType>
+      <Description>Huff.</Description>
+      <ActivateOnEquip stat="102" amount="12">IncrementStat</ActivateOnEquip>
+      <BagType>6</BagType>
+      <FameBonus>6</FameBonus>
+      <feedPower>700</feedPower>
+      <DisplayId>Huffy Hat</DisplayId>
+   </Object>
+    <Object type="0x64b4" id="Frozen Chestguard">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x101</Index>
+        </Texture>
+        <SlotType>7</SlotType>
+        <Description>An ancient frozen armor that has a ring of unbreakable ice attached to it.</Description>
+        <ActivateOnEquip stat="21" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="-5">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <feedPower>1000</feedPower>
+        <DisplayId>Frozen Chestguard</DisplayId>
+    </Object>
+    <Object type="0x64b2" id="Guardian of the Genisus">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>23</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <MaxHitPoints>2000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Blue Boomerang</ObjectId>
+            <Speed>100</Speed>
+            <Damage>60</Damage>
+            <Size>125</Size>
+            <LifetimeMS>600</LifetimeMS>
+            <ConditionEffect duration="3">Stunned</ConditionEffect>
+            <Boomerang/>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Purple Boomerang</ObjectId>
+            <Speed>100</Speed>
+            <Damage>75</Damage>
+            <Size>125</Size>
+            <LifetimeMS>1600</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Directed Explosion</ObjectId>
+            <Speed>80</Speed>
+            <Damage>125</Damage>
+            <Size>125</Size>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <LifetimeMS>400</LifetimeMS>
+        </Projectile>
+        <Size>120</Size>
+        <Defense>5</Defense>
+        <DisplayId>Guardian of the Genisus</DisplayId>
+    </Object>
+    <Object type="0x64b6" id="Genisus Lifeform">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+        <HitSound>monster/ghost_god_hit</HitSound>
+        <DeathSound>monster/beholder_death</DeathSound>
+        <MaxHitPoints>1250</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Purple Bolt</ObjectId>
+            <Speed>100</Speed>
+            <Damage>90</Damage>
+            <Size>125</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Blue Star</ObjectId>
+            <Speed>100</Speed>
+            <Damage>40</Damage>
+            <Size>125</Size>
+            <LifetimeMS>2000</LifetimeMS>
+            <ConditionEffect duration="2">Blind</ConditionEffect>
+            <ConditionEffect duration="0.5">Petrify</ConditionEffect>
+            <Wavy/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Blue Magic</ObjectId>
+            <Speed>75</Speed>
+            <Damage>200</Damage>
+            <Size>140</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Size>120</Size>
+        <Defense>10</Defense>
+        <DisplayId>Genisus Lifeform</DisplayId>
+    </Object>
+    <Object type="0x64b5" id="Genisus Core">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>22</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <MaxHitPoints>7500</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Dragon Attack Blue Fireball</ObjectId>
+            <Speed>10</Speed>
+            <Damage>160</Damage>
+            <Size>125</Size>
+            <LifetimeMS>4000</LifetimeMS>
+            <ConditionEffect duration="6">Quiet</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Directed Explosion</ObjectId>
+            <Speed>20</Speed>
+            <Damage>200</Damage>
+            <Size>125</Size>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
+        <Size>120</Size>
+        <Defense>20</Defense>
+        <DisplayId>Guardian of the Genisus</DisplayId>
+    </Object>
+    <Object type="0x64b9" id="Codename G-24, Nitrostorm">
+        <Enemy/>
+        <DisplayId>Codename G-24, Nitrostorm</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>21</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>160</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <SlowedImmune/>
+        <ShadowSize>0</ShadowSize>
+        <Hero/>
+        <Quest/>
+        <God/>
+        <Encounter/>
+        <StasisImmune/>
+        <Level>20</Level>
+        <MaxHitPoints>160000</MaxHitPoints>
+        <Defense>10</Defense>
+        <Projectile id="0">
+            <ObjectId>Small White Shuriken</ObjectId>
+            <MinDamage>60</MinDamage>
+            <MaxDamage>90</MaxDamage>
+            <Speed>40</Speed>
+            <LifetimeMS>4000</LifetimeMS>
+            <Boomerang/>
+            <MultiHit/>
+            <ConditionEffect duration="0.3">Petrify</ConditionEffect>
+            <Amplitude>2</Amplitude>
+            <Frequency>1</Frequency>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>White Superblast</ObjectId>
+            <MinDamage>90</MinDamage>
+            <MaxDamage>110</MaxDamage>
+            <Speed>90</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Blue Scale</ObjectId>
+            <Damage>120</Damage>
+            <Speed>50</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <Amplitude>0.7</Amplitude>
+            <Frequency>1.5</Frequency>
+            <ConditionEffect duration="6">Quiet</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>White Ball</ObjectId>
+            <Damage>60</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <Parametric/>
+        </Projectile>
+    </Object>
+    <Object type="0x64c1" id="G-10 Testing">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars8x8rHero2</File>
+            <Index>35</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <MaxHitPoints>1400</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Blue Bolt</ObjectId>
+            <Speed>60</Speed>
+            <Damage>80</Damage>
+            <Size>125</Size>
+            <LifetimeMS>800</LifetimeMS>
+            <ConditionEffect duration="2">Slowed</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>White Ball</ObjectId>
+            <Speed>100</Speed>
+            <Damage>120</Damage>
+            <Size>100</Size>
+            <LifetimeMS>200</LifetimeMS>
+            <ConditionEffect duration="2">Quiet</ConditionEffect>
+        </Projectile>
+        <Size>110</Size>
+        <Defense>0</Defense>
+        <DisplayId>G-10 Testing</DisplayId>
+    </Object>
 </Objects>

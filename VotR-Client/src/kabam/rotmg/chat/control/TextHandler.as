@@ -11,7 +11,6 @@ import kabam.rotmg.chat.view.ChatListItemFactory;
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.fortune.services.FortuneModel;
-import kabam.rotmg.friends.model.FriendModel;
 import kabam.rotmg.game.model.AddSpeechBalloonVO;
 import kabam.rotmg.game.model.GameModel;
 import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
@@ -48,8 +47,6 @@ public class TextHandler {
     public var openDialogSignal:OpenDialogSignal;
     [Inject]
     public var hudModel:HUDModel;
-    [Inject]
-    public var friendModel:FriendModel;
 
 
     public function execute(_arg1:Text):void {
@@ -60,7 +57,7 @@ public class TextHandler {
         if ((((((((_arg1.numStars_ < Parameters.data_.chatStarRequirement)) && (!((_arg1.name_ == this.model.player.name_))))) && (!(_local2)))) && (!(this.isSpecialRecipientChat(_arg1.recipient_))))) {
             return;
         }
-        if (((((!((_arg1.recipient_ == ""))) && (Parameters.data_.chatFriend))) && (!(this.friendModel.isMyFriend(_arg1.recipient_))))) {
+        if (((((!((_arg1.recipient_ == ""))) && (Parameters.data_.chatFriend))))) {
             return;
         }
         if (((((((!(Parameters.data_.chatAll)) && (!((_arg1.name_ == this.model.player.name_))))) && (!(_local2)))) && (!(this.isSpecialRecipientChat(_arg1.recipient_))))) {

@@ -39,7 +39,7 @@ namespace wServer.realm.worlds.logic
         private readonly string[] _randomEnemies =
         {
             "Djinn", "Beholder", "White Demon of the Abyss", "Flying Brain", "Slime God", "Arena Risen Mummy",
-            "Native Sprite God", "Ent God", "Medusa", "Ghost God", "Leviathan", "Elite Skeleton", "Angelic Commander", "shtrs Stone Mage"
+            "Native Sprite God", "Ent God", "Medusa", "Ghost God", "Leviathan", "Elite Skeleton", "Angelic Commander", "Urgle"
         };
 
         // _bossLevel defines the wave at which the random bosses change
@@ -56,13 +56,13 @@ namespace wServer.realm.worlds.logic
             new string[]
             {
                 "Stheno the Snake Queen", "Archdemon Malphas", "Septavius the Ghost God",
-                "Limon the Sprite God", "Dr Terrible", "Gigacorn"
+                "Limon the Sprite God", "Dr Terrible", "swmp Swamp Spirit"
             },
             new string[]
             {
                 "Thessal the Mermaid Goddess", "Crystal Prisoner", "Lord of the Lost Lands",
-                "Septavius the Ghost God", "Limon the Sprite God", "Dr Terrible", "Gigacorn",
-                "Archdemon Malphas", "Epic Larva", "Jade Statue", "Garnet Statue", "swmp Swamp Spirit"
+                "Septavius the Ghost God", "Limon the Sprite God", "Dr Terrible", "swmp Swamp Spirit",
+                "Archdemon Malphas", "Epic Larva"
             },
             new string[]
             {

@@ -162,6 +162,7 @@ namespace wServer.realm
         AscensionEnabled = 146,
         RageBar = 147,
         SorStorage = 148,
+        Striked = 149,
 
         None = 255
     }

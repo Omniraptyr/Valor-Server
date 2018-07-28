@@ -172,6 +172,7 @@ namespace wServer.realm.entities
                     luckPercentage += 0.05;
                     break;
             }
+
             Stats.Boost.ActivateBoost2[3].Push(Convert.ToInt32(Stats[3] * defensePercentage), false);
             Stats.Boost.ActivateBoost2[6].Push(Convert.ToInt32(Stats[6] * vitalityPercentage), false);
             Stats.Boost.ActivateBoost2[2].Push(Convert.ToInt32(Stats[2] * attackPercentage), false);

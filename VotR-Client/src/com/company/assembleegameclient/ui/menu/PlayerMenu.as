@@ -10,9 +10,6 @@ import flash.events.MouseEvent;
 
 import kabam.rotmg.chat.control.ShowChatInputSignal;
 import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.friends.controller.FriendActionSignal;
-import kabam.rotmg.friends.model.FriendConstant;
-import kabam.rotmg.friends.model.FriendRequestVO;
 import kabam.rotmg.text.model.TextKey;
 
 public class PlayerMenu extends Menu {
@@ -34,9 +31,6 @@ public class PlayerMenu extends Menu {
         this.yOffset = (this.yOffset - 25);
         _local5 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 21), 0xFFFFFF, TextKey.PLAYERMENU_PM);
         _local5.addEventListener(MouseEvent.CLICK, this.onPrivateMessage);
-        addOption(_local5);
-        _local5 = new MenuOption(AssetLibrary.getImageFromSet("lotfInterfaceBig", 10), 0xFFFFFF, TextKey.FRIEND_ADD_TITLE);
-        _local5.addEventListener(MouseEvent.CLICK, this.onAddFriend);
         addOption(_local5);
         if (_arg3) {
             _local5 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 21), 0xFFFFFF, TextKey.PLAYERMENU_GUILDCHAT);
@@ -116,9 +110,6 @@ public class PlayerMenu extends Menu {
             _local3.addEventListener(MouseEvent.CLICK, this.onUnignore);
             addOption(_local3);
         }
-        _local3 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 18), 0xFFFFFF, "Add as Friend");
-        _local3.addEventListener(MouseEvent.CLICK, this.onAddFriend);
-        addOption(_local3);
     }
 
     private function onKickMultiBox(_arg1:Event):void {
@@ -152,11 +143,6 @@ public class PlayerMenu extends Menu {
         remove();
     }
 
-    private function onAddFriend(_arg1:Event):void {
-        var _local2:FriendActionSignal = StaticInjectorContext.getInjector().getInstance(FriendActionSignal);
-        _local2.dispatch(new FriendRequestVO(FriendConstant.INVITE, this.playerName_));
-        remove();
-    }
 
     private function onTradeMessage(_arg1:Event):void {
         var _local2:ShowChatInputSignal = StaticInjectorContext.getInjector().getInstance(ShowChatInputSignal);

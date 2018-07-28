@@ -25,7 +25,6 @@ import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.core.view.Layers;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.friends.view.FriendListView;
 import kabam.rotmg.game.model.PotionInventoryModel;
 import kabam.rotmg.game.model.UseBuyPotionVO;
 import kabam.rotmg.game.signals.AddTextLineSignal;
@@ -442,15 +441,6 @@ public class MapUserInput {
                 this.gs_.gsc_.escape();
                 Parameters.data_.needsRandomRealm = false;
                 Parameters.save();
-                break;
-            case Parameters.data_.friendList:
-                Parameters.data_.friendListDisplayFlag = !(Parameters.data_.friendListDisplayFlag);
-                if (Parameters.data_.friendListDisplayFlag) {
-                    this.openDialogSignal.dispatch(new FriendListView());
-                }
-                else {
-                    this.closeDialogSignal.dispatch();
-                }
                 break;
             case Parameters.data_.options:
                 this.clearInput();

@@ -33,7 +33,6 @@ import kabam.rotmg.errors.ErrorConfig;
 import kabam.rotmg.external.ExternalConfig;
 import kabam.rotmg.fame.FameConfig;
 import kabam.rotmg.fortune.FortuneConfig;
-import kabam.rotmg.friends.FriendConfig;
 import kabam.rotmg.game.GameConfig;
 import kabam.rotmg.language.LanguageConfig;
 import kabam.rotmg.legends.LegendsConfig;
@@ -155,7 +154,6 @@ public class WebMain extends Sprite {
                 .configure(ExternalConfig)
                 .configure(MysteryBoxConfig)
                 .configure(FortuneConfig)
-                .configure(FriendConfig)
                 .configure(QueueConfig)
                 .configure(this);
         this.context.logLevel = LogLevel.DEBUG;

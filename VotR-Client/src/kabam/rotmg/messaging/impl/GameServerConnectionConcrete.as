@@ -98,7 +98,6 @@ import kabam.rotmg.death.control.HandleDeathSignal;
 import kabam.rotmg.death.control.ZombifySignal;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.friends.model.FriendModel;
 import kabam.rotmg.game.focus.control.SetGameFocusSignal;
 import kabam.rotmg.game.model.GameModel;
 import kabam.rotmg.game.model.PotionInventoryModel;
@@ -296,7 +295,6 @@ public class GameServerConnectionConcrete extends GameServerConnection {
     private var model:GameModel;
     private var updateActivePet:UpdateActivePet;
     private var petsModel:PetsModel;
-    private var friendModel:FriendModel;
 
     public function GameServerConnectionConcrete(_arg1:AGameSprite, _arg2:Server, _arg3:int, _arg4:Boolean, _arg5:int, _arg6:int, _arg7:ByteArray, _arg8:String, _arg9:Boolean) {
         this.injector = StaticInjectorContext.getInjector();
@@ -311,7 +309,6 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         this.updateMarkTab = StaticInjectorContext.getInjector().getInstance(UpdateMarkTabSignal);
         this.updateActivePet = this.injector.getInstance(UpdateActivePet);
         this.petsModel = this.injector.getInstance(PetsModel);
-        this.friendModel = this.injector.getInstance(FriendModel);
         this.closeDialogs = this.injector.getInstance(CloseDialogsSignal);
         changeMapSignal = this.injector.getInstance(ChangeMapSignal);
         this.openDialog = this.injector.getInstance(OpenDialogSignal);
@@ -339,7 +336,6 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         key_ = _arg7;
         mapJSON_ = _arg8;
         isFromArena_ = _arg9;
-        this.friendModel.setCurrentServer(server_);
         this.getPetUpdater();
         instance = this;
     }
@@ -1249,7 +1245,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         if (!Parameters.data_.chatTrade) {
             return;
         }
-        if (((Parameters.data_.tradeWithFriends) && (!(this.friendModel.isMyFriend(_arg1.name_))))) {
+        if (((Parameters.data_.tradeWithFriends))) {
             return;
         }
         if (Parameters.data_.showTradePopup) {
@@ -1993,7 +1989,6 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                     _local7.handleExpUp((_local7.exp_ - _local9));
                 }
             }
-            this.friendModel.updateFriendVO(_local7.getName(), _local7);
         }
     }
 

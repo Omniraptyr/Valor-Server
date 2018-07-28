@@ -7,7 +7,6 @@ import flash.events.MouseEvent;
 
 import kabam.rotmg.assets.services.IconFactory;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.friends.view.FriendListView;
 import kabam.rotmg.pets.controller.NotifyActivePetUpdated;
 import kabam.rotmg.pets.data.PetsModel;
 import kabam.rotmg.pets.view.components.PetsTabContentView;
@@ -89,11 +88,6 @@ public class TabStripMediator extends Mediator {
         this.view.tabSelected.remove(this.onTabSelected);
         this.updateBackpack.remove(this.onUpdateBackPack);
         this.updateMark.remove(this.onUpdateMark);
-        this.view.friendsBtn.removeEventListener(MouseEvent.CLICK, this.onFriendsBtnClicked);
-    }
-
-    private function onFriendsBtnClicked(_arg1:MouseEvent):void {
-        this.openDialog.dispatch(new FriendListView());
     }
 
     private function addTabs(_arg1:Player):void {

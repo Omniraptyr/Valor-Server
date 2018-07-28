@@ -144,8 +144,6 @@
     <Compile Include="credits\getoffers.cs" />
     <Compile Include="dailyLogin\fetchCalendar.cs" />
     <Compile Include="fame\list.cs" />
-    <Compile Include="friends\getList.cs" />
-    <Compile Include="friends\getRequests.cs" />
     <Compile Include="guild\getBoard.cs" />
     <Compile Include="guild\listMembers.cs" />
     <Compile Include="guild\setBoard.cs" />

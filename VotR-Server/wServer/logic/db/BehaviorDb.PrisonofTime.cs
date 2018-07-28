@@ -231,15 +231,13 @@ namespace wServer.logic
                         )
                     ),
                 new Threshold(0.025,
-                    new ItemLoot("Mlaziz Potion", 1.0),
-                    new ItemLoot("Potion of Might", 1.0),
+                    new ItemLoot("Potion of Luck", 1.0),
                     new TierLoot(10, ItemType.Weapon, 0.1),
                     new TierLoot(5, ItemType.Ability, 0.1),
                     new TierLoot(10, ItemType.Armor, 0.1),
                     new TierLoot(4, ItemType.Ring, 0.05),
                     new TierLoot(11, ItemType.Armor, 0.05),
                     new TierLoot(11, ItemType.Weapon, 0.05),
-                    new ItemLoot("Told Before Time", 0.005),
                     new ItemLoot("Temper Orb", 0.02)
                 )
             )

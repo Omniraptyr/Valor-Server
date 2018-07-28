@@ -11,6 +11,7 @@ namespace wServer.logic
         private _ Truvix = () => Behav()
             .Init("Truvix, the Lord Wanderer",
                 new State(
+                    new DropPortalOnDeath("The Genisus Portal", 0.50),
                     new OrderOnDeath(60, "Genisus Inhibitor", "dead"),
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),

@@ -114,6 +114,9 @@
     <Compile Include="logic\behaviors\SetNoXP.cs" />
     <Compile Include="logic\db\BehaviorDb.Asylum.cs" />
     <Compile Include="logic\db\BehaviorDb.Drannol.cs" />
+    <Compile Include="logic\db\BehaviorDb.FrostChamber.cs" />
+    <Compile Include="logic\db\BehaviorDb.FrozenIsland.cs" />
+    <Compile Include="logic\db\BehaviorDb.Genisus.cs" />
     <Compile Include="logic\db\BehaviorDb.Horrific.cs" />
     <Compile Include="logic\db\BehaviorDb.Kraken.cs" />
     <Compile Include="logic\db\BehaviorDb.Larry.cs" />

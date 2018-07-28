@@ -84,6 +84,7 @@ namespace common.resources
         public int Lootbox4 { get; private set; }
         public int Lootbox5 { get; private set; }
         public int SorStorage { get; private set; }
+        public bool Striked { get; private set; }
         public NewAccounts(XElement e)
         {
             elem = e;
@@ -104,6 +105,7 @@ namespace common.resources
             VaultCount = GetIntValue("VaultCount");
             MaxCharSlot = GetIntValue("MaxCharSlot");
             SorStorage = GetIntValue("SorStorage");
+            Striked = GetBoolValue("Striked");
         }
     }
 

@@ -49,7 +49,25 @@ namespace wServer.realm.entities.vendors
                 return;
             }
             
-            PurchaseItem(player);
+            AwaitingPurchase(player);
+        }
+
+
+        public int RandomTime()
+        {
+            int _min = 2000;
+            int _max = 7000;
+            Random _rdm = new Random();
+            return _rdm.Next(_min, _max);
+        }
+
+        private void AwaitingPurchase(Player player)
+        {
+            player.SendInfo("Item currently being bought...please wait..");
+            player.Owner.Timers.Add(new WorldTimer(RandomTime(), (world_, t) =>
+            {
+                PurchaseItem(player);
+            }));
         }
 
         private async void PurchaseItem(Player player)

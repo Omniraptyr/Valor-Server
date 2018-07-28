@@ -449,6 +449,12 @@ namespace common
             set { SetValue<int>("totalCredits", value); }
         }
 
+        public bool Striked
+        {
+            get { return GetValue<bool>("striked"); }
+            set { SetValue<bool>("striked", value); }
+        }
+
         public int Fame
         {
             get { return GetValue<int>("fame"); }

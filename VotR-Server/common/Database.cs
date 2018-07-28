@@ -102,6 +102,7 @@ namespace common
                 Lootbox4 = newAccounts.Lootbox4,
                 Lootbox5 = newAccounts.Lootbox5,
                 SorStorage = newAccounts.SorStorage,
+                Striked = newAccounts.Striked,
                 PassResetToken = ""
             };
 
@@ -393,6 +394,7 @@ namespace common
                 Lootbox4 = newAccounts.Lootbox4,
                 Lootbox5 = newAccounts.Lootbox5,
                 SorStorage = newAccounts.SorStorage,
+                Striked = newAccounts.Striked,
                 PassResetToken = "",
                 LastSeen = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds
             };

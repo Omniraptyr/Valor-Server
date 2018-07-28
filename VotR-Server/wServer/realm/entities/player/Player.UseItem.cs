@@ -1543,15 +1543,19 @@ namespace wServer.realm.entities
                     });
                     PoisonEnemy(world, (Enemy)entity, eff);
                 });*/
-
+                
                 world.AOE(target, eff.Radius, false, entity => {
                     PoisonEnemy(world, (Enemy)entity, eff);
                     ((Enemy)entity).Damage(this, time, impDamage, false);
-                    entity.ApplyConditionEffect(new ConditionEffect
+                    if (entity.ObjectType != 0x638f)
                     {
-                        Effect = ConditionEffectIndex.Sick,
-                        DurationMS = eff.DurationMSAlt
-                    });
+                        entity.ApplyConditionEffect(new ConditionEffect
+                        {
+                            Effect = ConditionEffectIndex.Sick,
+                            DurationMS = eff.DurationMSAlt
+                        });
+                    }
+                   
                 });
             }));
         }

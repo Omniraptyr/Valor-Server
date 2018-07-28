@@ -151,6 +151,13 @@ namespace wServer.realm.entities
             set { _marksEnabled.SetValue(value); }
         }
 
+        private readonly SV<bool> _striked;
+        public bool Striked
+        {
+            get { return _striked.GetValue(); }
+            set { _striked.SetValue(value); }
+        }
+
         private readonly SV<bool> _ascensionEnabled;
         public bool AscensionEnabled
         {
@@ -557,6 +564,7 @@ namespace wServer.realm.entities
                 case StatsType.PWRestoration: PWRestoration = (int)val; break;
                 case StatsType.PWProtection: PWProtection = (int)val; break;
                 case StatsType.SorStorage: SorStorage = (int)val; break;
+                case StatsType.Striked: Striked = (int)val == 1; break;
             }
         }
 
@@ -678,6 +686,7 @@ namespace wServer.realm.entities
             stats[StatsType.ProtectionPoints] = Protection;
             stats[StatsType.ProtectionPointsMax] = ProtectionMax;
             stats[StatsType.SorStorage] = SorStorage;
+            stats[StatsType.Striked] = Striked;
         }
 
         public void SaveToCharacter()
@@ -797,6 +806,7 @@ namespace wServer.realm.entities
             _pwMight = new SV<int>(this, StatsType.PWMight, client.Character.PWMight);
             _pwRestoration = new SV<int>(this, StatsType.PWRestoration, client.Character.PWRestoration);
             _pwProtection = new SV<int>(this, StatsType.PWProtection, client.Character.PWProtection);
+            _striked = new SV<bool>(this, StatsType.Striked, client.Account.Striked);
 
 
 

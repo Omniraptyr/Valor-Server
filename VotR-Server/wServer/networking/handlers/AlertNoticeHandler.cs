@@ -33,11 +33,11 @@ namespace wServer.networking.handlers
                 if(player.Client.Account.Credits >= 1000)
                 {
                     Random rnd = new Random();
-                    int drop3 = rnd.Next(1, 4);
+                    int drop3 = rnd.Next(1, 5);
 
                     player.Client.Manager.Database.UpdateAlertToken(player.Client.Account, -1);
 
-                    player.SendHelp("Launching...");
+                    player.SendHelp("Launching alert...good luck!");
                     World world;
                     ProtoWorld choosin = player.Owner.Manager.Resources.Worlds["KrakenLair"];
 
@@ -51,6 +51,9 @@ namespace wServer.networking.handlers
                             break;
                         case 3:
                             choosin = player.Owner.Manager.Resources.Worlds["KrakenLair"];
+                            break;
+                        case 4:
+                            choosin = player.Owner.Manager.Resources.Worlds["FrozenIsland"];
                             break;
                     }
          
