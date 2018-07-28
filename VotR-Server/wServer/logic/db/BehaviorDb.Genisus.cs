@@ -344,7 +344,7 @@ namespace wServer.logic
                 )
             .Init("Guardian of the Genisus",
             new State(
-                new EntityExistsTransition("Codename G-24, Nitrostorm", 99, "Orbit"),
+                new EntityExistsTransition("Codename G-24, Nitrostorm", 10, "Orbit"),
                 new State("Main",
                     new State("fight1",
                         new Prioritize(
