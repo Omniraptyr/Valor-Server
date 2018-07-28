@@ -85,7 +85,7 @@ namespace wServer.realm.worlds.logic
         private readonly new Dictionary<int, string[]> _waveRewards = new Dictionary<int, string[]>
         {
             { 5,  new string[] {"Tomb of the Ancients Key", "Sprite World Key", "Undead Lair Key", "Abyss of Demons Key", "Lab Key", "Cornfield of Peril Key" } },
-            { 10, new string[] {"10 Gold", "1 Gold", "100 Gold", "Onrane"} },
+            { 10, new string[] {"100 Gold", "Onrane"} },
             { 20, new string[] { "Onrane", "Wine Cellar Incantation" } },
             { 25, new string[] {"100 Gold", "Onrane", "Gold Cache", "Wine Cellar Incantation"} },
             { 30, new string[] {"Onrane", "100 Gold", "Onrane Cache", "Wine Cellar Incantation" }},

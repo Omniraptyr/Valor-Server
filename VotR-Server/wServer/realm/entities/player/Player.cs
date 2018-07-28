@@ -1771,7 +1771,7 @@ namespace wServer.realm.entities
         bool isAlertArea()
         {
             var amount = ((int)Credits / 100) * 10;
-            if (Owner.Name == "KrakenLair" || Owner.Name == "TheHollows" || Owner.Name == "HiddenTempleBoss")
+            if (Owner.Name == "KrakenLair" || Owner.Name == "TheHollows" || Owner.Name == "HiddenTempleBoss" || Owner.Name == "FrozenIsland")
             {
                 Client.Manager.Database.UpdateCredit(Client.Account, -amount);
                 Credits = Client.Account.Credits - amount;
