@@ -135,7 +135,6 @@ namespace wServer.logic
             )
         .Init("Galleom of Time",
                 new State(
-                    new RealmPortalDrop(),
                     new HpLessTransition(0.12, "Rage"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),

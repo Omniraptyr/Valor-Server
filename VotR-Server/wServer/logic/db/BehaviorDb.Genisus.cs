@@ -153,9 +153,17 @@ namespace wServer.logic
                           new TimedTransition(7000, "begin")
                         )
                      ),
+                  new State("rage",
+                        new Taunt("Ready to..."),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new ReturnToSpawn(2),
+                        new Flash(0x0000FF, 0.25, 4),
+                        new TimedTransition(4000, "toon")
+                        ),
                      new State(
+                         new Flash(0xFF0000, 0.25, 4),
                         new Taunt("ELIMINATE!"),
-                        new HealSelf(coolDown: 99999, amount: 20000),
+                        new HealSelf(coolDown: 999999, amount: 20000),
                         new Prioritize(
                             new Charge(1, range: 4, coolDown: 1000),
                             new Follow(1, 8, 1),
@@ -168,15 +176,14 @@ namespace wServer.logic
                         new TossObject("Genisus Lifeform", 4, 135, coolDown: 9999999),
                         new TossObject("Genisus Lifeform", 4, 225, coolDown: 9999999),
                         new TossObject("Genisus Lifeform", 4, 315, coolDown: 9999999),
-                        new TimedTransition(8000, "return"),
-                    new State("rage",
+                    new State("toon",
                             new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                             new TimedTransition(600, "rageb")
                             ),
                     new State("rageb",
                         new ConditionalEffect(ConditionEffectIndex.Armored),
                             new Shoot(10, 8, projectileIndex: 0, coolDown: 600),
-                            new TimedTransition(600, "rage")
+                            new TimedTransition(600, "toon")
                             )
                         )
                     ),
@@ -186,6 +193,7 @@ namespace wServer.logic
                 new Threshold(0.025,
                     new ItemLoot("Flashburst Spell", 0.0075),
                     new ItemLoot("Told Before Time", 0.0075),
+                    new ItemLoot("Onrane", 0.05),
                     new ItemLoot("Potion of Luck", 1.0),
                     new ItemLoot("Potion of Protection", 1.0),
                     new ItemLoot("Potion of Dexterity", 0.33),
