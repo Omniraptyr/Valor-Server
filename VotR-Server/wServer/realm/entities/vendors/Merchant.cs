@@ -22,7 +22,8 @@ namespace wServer.realm.entities.vendors
             get { return _count.GetValue(); }
             set { _count.SetValue(value); }
         }
-        public int TimeLeft {
+        public int TimeLeft
+        {
             get { return _timeLeft.GetValue(); }
             set { _timeLeft.SetValue(value); }
         }
@@ -56,11 +57,11 @@ namespace wServer.realm.entities.vendors
             switch (stats)
             {
                 case StatsType.MerchantMerchandiseType:
-                    Item = (ushort) val; break;
+                    Item = (ushort)val; break;
                 case StatsType.MerchantRemainingCount:
-                    Count = (int) val; break;
+                    Count = (int)val; break;
                 case StatsType.MerchantRemainingMinute:
-                    TimeLeft = (int) val; break;
+                    TimeLeft = (int)val; break;
             }
             base.ImportStats(stats, val);
         }
@@ -133,7 +134,7 @@ namespace wServer.realm.entities.vendors
                 return;
             }
             BeingPurchased = true;
-            
+
             var result = ValidateCustomer(player);
             if (result != BuyResult.Ok)
             {
@@ -141,7 +142,7 @@ namespace wServer.realm.entities.vendors
                 BeingPurchased = false;
                 return;
             }
-            
+
             PurchaseItem(player);
         }
 
@@ -170,9 +171,11 @@ namespace wServer.realm.entities.vendors
             var invTrans = player.Inventory.CreateTransaction();
             var item = Manager.Resources.GameData.Items[Item];
             var slot = invTrans.GetAvailableInventorySlot(item);
-            player.Manager.Database.AddGift(player.Client.Account, Item, tran);
-                
-            
+            if (slot == -1)
+            {
+                player.Manager.Database.AddGift(player.Client.Account, Item, tran);
+                return null;
+            }
 
             invTrans[slot] = item;
             return invTrans;
@@ -191,8 +194,6 @@ namespace wServer.realm.entities.vendors
             player.Credits = acc.Credits;
             player.CurrentFame = acc.Fame;
             player.Tokens = acc.Tokens;
-            player.Onrane = acc.Onrane;
-            player.Kantos = acc.Kantos;
 
             if (invTrans != null)
                 Inventory.Execute(invTrans);

@@ -10,7 +10,7 @@ namespace wServer.realm.entities.vendors
     public class PlayerMerchant : Merchant
     {
         public PlayerShopItem PlayerShopItem { get; set; }
-        
+
         public PlayerMerchant(RealmManager manager, ushort objType)
             : base(manager, objType)
         {
@@ -40,7 +40,7 @@ namespace wServer.realm.entities.vendors
                 return;
             }
             BeingPurchased = true;
-            
+
             var result = ValidateCustomer(player);
             if (result != BuyResult.Ok)
             {
@@ -52,51 +52,48 @@ namespace wServer.realm.entities.vendors
             PurchaseItem(player);
         }
 
-
-        public int RandomTime()
-        {
-            int _min = 2000;
-            int _max = 7000;
-            Random _rdm = new Random();
-            return _rdm.Next(_min, _max);
-        }
-
         private async void PurchaseItem(Player player)
         {
-                var db = Manager.Database;
-                // acquire price, id and seller here so that the wrong price is not sent to seller after update
-                var sellerId = PlayerShopItem.AccountId;
-                var price = PlayerShopItem.Price;
-                var type = PlayerShopItem.ItemId;
-                var trans = db.Conn.CreateTransaction();
-                var t1 = db.UpdateCurrency(player.Client.Account, -Price, Currency, trans);
-                db.AddToTreasury(Tax, trans);
-                var invTrans = TransactionItem(player, trans);
-                Manager.Market.Remove(PlayerShopItem, trans);
-                var seller = Manager.Clients.FirstOrDefault(
-                    c => c.Key.Account?.AccountId == sellerId).Key;
-                Task t2 = Task.FromResult(0);
-                if (seller?.Account != null)
-                    t2 = Manager.Database.UpdateCurrency(seller.Account, Price - Tax, Currency, trans);
-                else
-                    Manager.Database.UpdateCurrency(sellerId, Price - Tax, Currency, trans);
-                var t3 = trans.ExecuteAsync();
-                await Task.WhenAll(t1, t2, t3);
-                var success = !t3.IsCanceled && t3.Result;
-                TransactionItemComplete(player, invTrans, success);
-                if (success)
-                {
-                    /*if (seller?.Player != null && seller.Account != null)
-                        seller.Player.CurrentFame = seller.Account.Fame;*/
+           
+            var db = Manager.Database;
+            // acquire price, id and seller here so that the wrong price is not sent to seller after update
+            var sellerId = PlayerShopItem.AccountId;
+            var seller = Manager.Clients.FirstOrDefault(
+                c => c.Key.Account?.AccountId == sellerId).Key;
+            if (seller.Player.Owner.Name == "Vault")
+            {
+                player.SendError("Can't process your purchase at this time.");
+                return;
+            }
+            var price = PlayerShopItem.Price;
+            var type = PlayerShopItem.ItemId;
+            var trans = db.Conn.CreateTransaction();
+            var t1 = db.UpdateCurrency(player.Client.Account, -Price, Currency, trans);
+            db.AddToTreasury(Tax, trans);
+            var invTrans = TransactionItem(player, trans);
+            Manager.Market.Remove(PlayerShopItem, trans);
+            Task t2 = Task.FromResult(0);
+            if (seller?.Account != null)
+                t2 = Manager.Database.UpdateCurrency(seller.Account, Price - Tax, Currency, trans);
+            else
+                Manager.Database.UpdateCurrency(sellerId, Price - Tax, Currency, trans);
+            var t3 = trans.ExecuteAsync();
+            await Task.WhenAll(t1, t2, t3);
+            var success = !t3.IsCanceled && t3.Result;
+            TransactionItemComplete(player, invTrans, success);
+            if (success)
+            {
+                /*if (seller?.Player != null && seller.Account != null)
+                    seller.Player.CurrentFame = seller.Account.Fame;*/
 
-                    var itemDesc = Manager.Resources.GameData.Items[type];
-                    Manager.Chat.SendInfo(sellerId, $"Your {itemDesc.DisplayName} has sold for {price} gold.");
-                    Reload();
-                    BeingPurchased = false;
-                    AwaitingReload = false;
-                    return;
-                }
+                var itemDesc = Manager.Resources.GameData.Items[type];
+                Manager.Chat.SendInfo(sellerId, $"Your {itemDesc.DisplayName} has sold for {price} gold.");
+                Reload();
                 BeingPurchased = false;
+                AwaitingReload = false;
+                return;
+            }
+            BeingPurchased = false;
         }
 
 
@@ -115,11 +112,11 @@ namespace wServer.realm.entities.vendors
             });
 
             Log.InfoFormat("[{0}]User {1} has bought {2} for {3} {4} from {5}.",
-                DateTime.Now, 
-                player.Name, 
-                Manager.Resources.GameData.Items[Item].DisplayName, 
-                Price, 
-                Currency.ToString(), 
+                DateTime.Now,
+                player.Name,
+                Manager.Resources.GameData.Items[Item].DisplayName,
+                Price,
+                Currency.ToString(),
                 Manager.Database.ResolveIgn(PlayerShopItem.AccountId));
         }
     }
