@@ -910,6 +910,16 @@ class ClearSpawnsCommand : Command
         }
     }
 
+    class CheckerMan : Command
+    {
+        public CheckerMan() : base("bp", permLevel: 90) { }
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+            player.protectionDamage = player.ProtectionMax;
+            return true;
+        }
+    }
+
 
     internal class EnableMarkCommand : Command
     {

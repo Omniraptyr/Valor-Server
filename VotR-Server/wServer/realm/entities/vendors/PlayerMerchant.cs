@@ -48,8 +48,8 @@ namespace wServer.realm.entities.vendors
                 BeingPurchased = false;
                 return;
             }
-            
-            AwaitingPurchase(player);
+
+            PurchaseItem(player);
         }
 
 
@@ -61,51 +61,42 @@ namespace wServer.realm.entities.vendors
             return _rdm.Next(_min, _max);
         }
 
-        private void AwaitingPurchase(Player player)
-        {
-            player.SendInfo("Item currently being bought...please wait..");
-            player.Owner.Timers.Add(new WorldTimer(RandomTime(), (world_, t) =>
-            {
-                PurchaseItem(player);
-            }));
-        }
-
         private async void PurchaseItem(Player player)
         {
-            var db = Manager.Database;
-            // acquire price, id and seller here so that the wrong price is not sent to seller after update
-            var sellerId = PlayerShopItem.AccountId;
-            var price = PlayerShopItem.Price;
-            var type = PlayerShopItem.ItemId;
-            var trans = db.Conn.CreateTransaction();
-            var t1 = db.UpdateCurrency(player.Client.Account, -Price, Currency, trans);
-            db.AddToTreasury(Tax, trans);
-            var invTrans = TransactionItem(player, trans);
-            Manager.Market.Remove(PlayerShopItem, trans);
-            var seller = Manager.Clients.FirstOrDefault(
-                c => c.Key.Account?.AccountId == sellerId).Key;
-            Task t2 = Task.FromResult(0);
-            if (seller?.Account != null)
-                t2 = Manager.Database.UpdateCurrency(seller.Account, Price - Tax, Currency, trans);
-            else
-                Manager.Database.UpdateCurrency(sellerId, Price - Tax, Currency, trans);
-            var t3 = trans.ExecuteAsync();
-            await Task.WhenAll(t1, t2, t3);
-            var success = !t3.IsCanceled && t3.Result;
-            TransactionItemComplete(player, invTrans, success);
-            if (success)
-            {
-                /*if (seller?.Player != null && seller.Account != null)
-                    seller.Player.CurrentFame = seller.Account.Fame;*/
+                var db = Manager.Database;
+                // acquire price, id and seller here so that the wrong price is not sent to seller after update
+                var sellerId = PlayerShopItem.AccountId;
+                var price = PlayerShopItem.Price;
+                var type = PlayerShopItem.ItemId;
+                var trans = db.Conn.CreateTransaction();
+                var t1 = db.UpdateCurrency(player.Client.Account, -Price, Currency, trans);
+                db.AddToTreasury(Tax, trans);
+                var invTrans = TransactionItem(player, trans);
+                Manager.Market.Remove(PlayerShopItem, trans);
+                var seller = Manager.Clients.FirstOrDefault(
+                    c => c.Key.Account?.AccountId == sellerId).Key;
+                Task t2 = Task.FromResult(0);
+                if (seller?.Account != null)
+                    t2 = Manager.Database.UpdateCurrency(seller.Account, Price - Tax, Currency, trans);
+                else
+                    Manager.Database.UpdateCurrency(sellerId, Price - Tax, Currency, trans);
+                var t3 = trans.ExecuteAsync();
+                await Task.WhenAll(t1, t2, t3);
+                var success = !t3.IsCanceled && t3.Result;
+                TransactionItemComplete(player, invTrans, success);
+                if (success)
+                {
+                    /*if (seller?.Player != null && seller.Account != null)
+                        seller.Player.CurrentFame = seller.Account.Fame;*/
 
-                var itemDesc = Manager.Resources.GameData.Items[type];
-                Manager.Chat.SendInfo(sellerId, $"Your {itemDesc.DisplayName} has sold for {price} gold.");
-                Reload();
+                    var itemDesc = Manager.Resources.GameData.Items[type];
+                    Manager.Chat.SendInfo(sellerId, $"Your {itemDesc.DisplayName} has sold for {price} gold.");
+                    Reload();
+                    BeingPurchased = false;
+                    AwaitingReload = false;
+                    return;
+                }
                 BeingPurchased = false;
-                AwaitingReload = false;
-                return;
-            }
-            BeingPurchased = false;
         }
 
 

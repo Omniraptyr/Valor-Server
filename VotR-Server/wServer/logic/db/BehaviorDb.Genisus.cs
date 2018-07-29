@@ -38,6 +38,7 @@ namespace wServer.logic
                         new TimedTransition(3000, "check1")
                         ),
                     new State("check1",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Grenade(2, 60, range: 12, coolDown: 2000, effect: ConditionEffectIndex.Quiet, effectDuration: 2000),
                         new EntityNotExistsTransition("Genisus Core", 999, "fight1")
                         ),
@@ -126,6 +127,7 @@ namespace wServer.logic
                         new TimedTransition(3000, "check2")
                         ),
                     new State("check2",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Grenade(2, 60, range: 12, coolDown: 2000, effect: ConditionEffectIndex.Quiet, effectDuration: 2000),
                         new EntityNotExistsTransition("Guardian of the Genisus", 10, "force1")
                         ),

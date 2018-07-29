@@ -1,6 +1,5 @@
 ﻿using System;
 using common.resources;
-
 namespace wServer.realm.entities
 {
     partial class Player
@@ -14,11 +13,19 @@ namespace wServer.realm.entities
         float _surgeDepletion2;
         int _newbieTime;
         int _canTpCooldownTime;
-        int protectionDamage = 0;
         bool isSurgeGone;
         bool surgewither;
+       // public Projectile enemyprj;
+        public int protectionDamage = 0;
         void HandleEffects(RealmTime time)
         {
+
+          //  if(enemyprj != null)
+          //  {
+          //      CheckEnemyProjectile(enemyprj);
+          //  }
+            
+
             if (CheckAxe())
             {
                 Stats.Boost.ActivateBoost[0].Push(300, true);

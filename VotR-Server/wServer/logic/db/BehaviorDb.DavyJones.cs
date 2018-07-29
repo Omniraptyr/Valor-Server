@@ -42,6 +42,9 @@ namespace wServer.logic
                         new EntityNotExistsTransition("Ghost Lanturn On", 10, "Floating")
                         )
                     ),
+                new MostDamagers(3,
+                        LootTemplates.SF2()
+                    ),
                 new Threshold(0.15,
                 new TierLoot(3, ItemType.Ring, 0.2),
                 new TierLoot(7, ItemType.Armor, 0.2),

@@ -47,7 +47,6 @@ namespace wServer.networking.handlers
                     .SingleOrDefault(p => p.Value.ProjectileId == bulletId).Value;
 
 
-            //player.CheckEnemyProjectile(prj);
 
             if (player.CheckDRage() == true)
             {

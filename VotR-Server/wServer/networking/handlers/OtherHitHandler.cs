@@ -9,6 +9,7 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, OtherHit packet)
         {
+
         }
     }
 }

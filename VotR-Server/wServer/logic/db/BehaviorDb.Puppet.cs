@@ -267,7 +267,7 @@ namespace wServer.logic
                     new State("UnsetEffect")
                 ),
                                 new MostDamagers(3,
-                    LootTemplates.SFLow()
+                    LootTemplates.SF1()
                     ),
                 new Threshold(0.15,
                 new TierLoot(10, ItemType.Weapon, 0.045),

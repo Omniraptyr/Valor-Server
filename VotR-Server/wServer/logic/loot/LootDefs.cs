@@ -531,7 +531,10 @@ namespace wServer.logic.loot
                     new ItemLoot("Tiny Sor Fragment", 0.07)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Wine Cellar Incantation", 0.0005)
+                    new ItemLoot("Wine Cellar Incantation", 0.005)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Shine", 0.005)
                 )
             };
         }
@@ -545,7 +548,10 @@ namespace wServer.logic.loot
                     new ItemLoot("Tiny Sor Fragment", 0.08)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Wine Cellar Incantation", 0.0005)
+                    new ItemLoot("Wine Cellar Incantation", 0.005)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Shine", 0.005)
                 )
             };
         }
@@ -559,7 +565,10 @@ namespace wServer.logic.loot
                     new ItemLoot("Tiny Sor Fragment", 0.09)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Wine Cellar Incantation", 0.0005)
+                    new ItemLoot("Wine Cellar Incantation", 0.005)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Shine", 0.005)
                 )
             };
         }
@@ -573,7 +582,10 @@ namespace wServer.logic.loot
                     new ItemLoot("Tiny Sor Fragment", 0.12)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Wine Cellar Incantation", 0.0005)
+                    new ItemLoot("Wine Cellar Incantation", 0.005)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Shine", 0.005)
                 )
             };
         }
@@ -587,7 +599,10 @@ namespace wServer.logic.loot
                     new ItemLoot("Tiny Sor Fragment", 0.14)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Wine Cellar Incantation", 0.0005)
+                    new ItemLoot("Wine Cellar Incantation", 0.005)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Shine", 0.005)
                 )
             };
         }

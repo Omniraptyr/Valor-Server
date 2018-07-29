@@ -77,7 +77,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.StatIncreasePotionsLoot()
                 ),
-                                new MostDamagers(3,
+                new MostDamagers(3,
                     LootTemplates.SF2()
                     ),
                 new Threshold(0.05,

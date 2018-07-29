@@ -234,6 +234,7 @@ namespace wServer.logic
                     LootTemplates.SF2()
                     ),
                 new Threshold(0.05,
+                    new ItemLoot("Crystal Dagger", 0.045),
                     new ItemLoot("Crystal Wand", 0.045),
                     new ItemLoot("Crystal Sword", 0.045),
                     new ItemLoot("Small Mysterious Crystal", 0.05)

@@ -27,9 +27,7 @@ namespace wServer.logic
                 new State(
                     new Swirl(0.4),
                     new Shoot(10, count: 4, shootAngle: 16, projectileIndex: 0, coolDown: 3800)
-                    ),
-                new ItemLoot("Charcoal", 0.1),
-                new ItemLoot("Wheat", 0.1)
+                    )
             )
         .Init("Frozen Soul",
                 new State(
@@ -37,16 +35,13 @@ namespace wServer.logic
                     new Taunt(0.50, "Uaag!", "Tasty mortals!", "Delicious souls!", "Come here.."),
                     new Shoot(10, count: 1, projectileIndex: 0, coolDown: new Cooldown(1800, 600)),
                     new Shoot(10, count: 0, projectileIndex: 0, predictive: 1, coolDown: new Cooldown(2200, 600), coolDownOffset: 600)
-                    ),
-                new ItemLoot("Charcoal", 0.1),
-                new ItemLoot("Wheat", 0.1)
+                    )
             )
         .Init("Frozen Shield",
                 new State(
                     new ConditionalEffect(ConditionEffectIndex.Armored),
                     new State("Circle",
                         new Orbit(0.35, 3, 20, "Bergelmir, the Frost Guardian"),
-                        new HealEntity(4, "Bergelmir, the Frost Guardian", 1000, coolDown: 1800),
                         new Shoot(8, count: 7, projectileIndex: 0, coolDown: 4000, coolDownOffset: 600)
                         )
                     )
@@ -76,6 +71,7 @@ namespace wServer.logic
                 )
         .Init("Bergelmir, the Frost Guardian",
                 new State(
+                    new AnnounceOnDeath("The Frost Guardian seems to finally melt away..."),
                     new ConditionalEffect(ConditionEffectIndex.SlowedImmune),
                     new RealmPortalDrop(),
                     new State("idle",
@@ -206,7 +202,6 @@ namespace wServer.logic
                     new State("HealStart",
                         new Order(99, "Frozen Sphere Turret", "Active2"),
                         new Taunt("Regaining my strength by eating ice cubes is fun!", "It's like the Ice Age all over again!"),
-                        new HealSelf(coolDown: 2000, amount: 9000),
                         new TimedTransition(8000, "ProtectionPhase")
                         ),
                     new State(

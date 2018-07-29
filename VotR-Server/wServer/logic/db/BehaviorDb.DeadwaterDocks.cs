@@ -148,7 +148,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                        LootTemplates.SF1()
+                        LootTemplates.SF2()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Potion of Speed", 1.0),

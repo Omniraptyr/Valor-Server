@@ -19,7 +19,6 @@ namespace wServer.realm.entities
         {
             if (projectile.GetPosition(90000).X >= X && projectile.GetPosition(90000).Y >= Y)
             {
-
                 Console.WriteLine("Hmm?");
             }
         }

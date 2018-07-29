@@ -171,8 +171,8 @@ namespace wServer.logic
                         new Shoot(8.4, count: 1, fixedAngle: 235, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000),
                         new Shoot(8.4, count: 1, fixedAngle: 315, projectileIndex: 0, coolDown: 2000, coolDownOffset: 3000)
                         )),
-                   new MostDamagers(3,
-                    LootTemplates.SF0()
+                new MostDamagers(3,
+                        LootTemplates.SF2()
                     ),
                    new Threshold(0.03,
                     new TierLoot(10, ItemType.Weapon, 0.1),

@@ -76008,19 +76008,19 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         </Texture>
         <SlotType>2</SlotType>
         <Description>A dagger that will slice through diamond.</Description>
-        <RateOfFire>1.8</RateOfFire>
+        <RateOfFire>1.75</RateOfFire>
         <Sound>weapon/dirk</Sound>
         <Projectile>
             <ObjectId>Storm Dagger Slash</ObjectId>
             <Speed>130</Speed>
-            <MinDamage>80</MinDamage>
+            <MinDamage>90</MinDamage>
             <MaxDamage>95</MaxDamage>
-            <LifetimeMS>370</LifetimeMS>
+            <LifetimeMS>400</LifetimeMS>
             <MultiHit/>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="80">IncrementStat</ActivateOnEquip>
+		<ActivateOnEquip stat="112" amount="80">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <OldSound>daggerSwing</OldSound>
         <FameBonus>6</FameBonus>
@@ -80900,8 +80900,8 @@ This dagger was a myth, will you live to tell the tale?
         <Projectile>
             <ObjectId>Ghilact Projectile</ObjectId>
             <Speed>140</Speed>
-            <MinDamage>95</MinDamage>
-            <MaxDamage>165</MaxDamage>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>150</MaxDamage>
             <LifetimeMS>463</LifetimeMS>
             <MultiHit/>
             <ArmorPiercing/>
@@ -107337,7 +107337,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <MpCost>130</MpCost>
         <Activate radius="1.5" totalDamage="1250">VampireBlast</Activate>
     </Object>
-	    <Object type="0x1686" id="Magic Throwing Cards">
+    <Object type="0x1686" id="Magic Throwing Cards">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -107351,19 +107351,17 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile>
             <ObjectId>MagicT Shot</ObjectId>
             <Speed>140</Speed>
-            <MinDamage>55</MinDamage>
-            <MaxDamage>150</MaxDamage>
+            <MinDamage>85</MinDamage>
+            <MaxDamage>85</MaxDamage>
             <LifetimeMS>500</LifetimeMS>
             <MultiHit/>
             <Wavy/>
         </Projectile>
-        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
-        <Legendary/>
         <feedPower>1600</feedPower>
-        <NumProjectiles>3</NumProjectiles>
+        <NumProjectiles>4</NumProjectiles>
         <OldSound>weapon/fire_dagger</OldSound>
     </Object>
 	<Object type="0x42fc" id="Stargazer">
@@ -123527,5 +123525,112 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Size>110</Size>
         <Defense>0</Defense>
         <DisplayId>G-10 Testing</DisplayId>
+    </Object>
+	<Object type="0x64c3" id="Ring of Unbound Restoration">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x4a0</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>6</Tier>
+        <Description>A huge flawless corundom set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="121" amount="30">IncrementStat</ActivateOnEquip>
+        <BagType>4</BagType>
+        <FameBonus>5</FameBonus>
+        <feedPower>300</feedPower>
+        <DisplayId>Ring of Unbound Restoration</DisplayId>
+    </Object>
+    <Object type="0x64c4" id="Ring of Unbound Protection">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x4a1</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>6</Tier>
+        <Description>A huge flawless diamond set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="122" amount="9">IncrementStat</ActivateOnEquip>
+        <BagType>4</BagType>
+        <FameBonus>5</FameBonus>
+        <feedPower>300</feedPower>
+        <DisplayId>Ring of Unbound Protection</DisplayId>
+    </Object>
+    <Object type="0x64c5" id="Ring of Unbound Luck">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x4a2</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>6</Tier>
+        <Description>A huge flawless sphene set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="114" amount="9">IncrementStat</ActivateOnEquip>
+        <BagType>4</BagType>
+        <FameBonus>5</FameBonus>
+        <feedPower>300</feedPower>
+        <DisplayId>Ring of Unbound Luck</DisplayId>
+    </Object>
+    <Object type="0x64c6" id="Ring of Unbound Might">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x4a3</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Tier>6</Tier>
+        <Description>A huge flawless garnet set in a stunningly beautiful gold ring.</Description>
+        <ActivateOnEquip stat="112" amount="11">IncrementStat</ActivateOnEquip>
+        <BagType>4</BagType>
+        <FameBonus>5</FameBonus>
+        <feedPower>300</feedPower>
+        <DisplayId>Ring of Unbound Might</DisplayId>
+    </Object>
+    <Object type="0x64c7" id="Shine">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x11a</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>A badge to recognize your valor and your will to fight against Sidon.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="" description="Use this item reroll legendaries for a fee of 75K Gold to any legendary throughout any shard."/>
+        </ExtraTooltipData>
+        <Sound>use_potion</Sound>
+        <BagType>8</BagType>
+        <feedPower>250</feedPower>
+        <Soulbound/>
+        <Legendary/>
+        <DisplayId>Shine</DisplayId>
+    </Object>
+	<Object type="0x64c8" id="Crystal Dagger">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x11b</Index>
+        </Texture>
+        <SlotType>2</SlotType>
+        <Description>A dagger made of crystal.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Aqua Slash</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>95</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <LifetimeMS>490</LifetimeMS>
+        </Projectile>
+        <BagType>6</BagType>
+        <FameBonus>5</FameBonus>
+        <OldSound>daggerSwing</OldSound>
+        <feedPower>450</feedPower>
+        <DisplayId>Crystal Dagger</DisplayId>
     </Object>
 </Objects>

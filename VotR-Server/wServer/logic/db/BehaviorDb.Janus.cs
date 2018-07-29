@@ -19,7 +19,7 @@ namespace wServer.logic
             )
         .Init("md LightKey",
             new State(
-                new ConditionalEffect(ConditionEffectIndex.Invincible),
+               // new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("Bullet15",
                     new Shoot(10, count: 15, projectileIndex: 0, coolDown: 800),
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
@@ -41,7 +41,7 @@ namespace wServer.logic
             )
         .Init("md LightKey 2",
             new State(
-                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                //new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("Bullet15",
                     new Shoot(10, count: 15, projectileIndex: 0, coolDown: 800),
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
@@ -63,7 +63,7 @@ namespace wServer.logic
             )
         .Init("md LightKey 3",
             new State(
-                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                //new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("Bullet15",
                     new Shoot(10, count: 15, projectileIndex: 0, coolDown: 800),
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
@@ -85,7 +85,7 @@ namespace wServer.logic
             )
         .Init("md LightKey 4",
             new State(
-                new ConditionalEffect(ConditionEffectIndex.Invincible),
+              //  new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("Bullet15",
                     new Shoot(10, count: 15, projectileIndex: 0, coolDown: 800),
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
@@ -107,7 +107,7 @@ namespace wServer.logic
             )
         .Init("md DarkKey",
             new State(
-                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                //new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("Bullet15",
                     new Shoot(10, count: 15, projectileIndex: 0, coolDown: 800),
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
@@ -129,7 +129,7 @@ namespace wServer.logic
             )
         .Init("md DarkKey 2",
             new State(
-                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                //new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("Bullet15",
                     new Shoot(10, count: 15, projectileIndex: 0, coolDown: 800),
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
@@ -151,7 +151,7 @@ namespace wServer.logic
             )
         .Init("md DarkKey 3",
             new State(
-                new ConditionalEffect(ConditionEffectIndex.Invincible),
+              //  new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("Bullet15",
                     new Shoot(10, count: 15, projectileIndex: 0, coolDown: 800),
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
@@ -173,7 +173,7 @@ namespace wServer.logic
             )
         .Init("md DarkKey 4",
             new State(
-                new ConditionalEffect(ConditionEffectIndex.Invincible),
+               // new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("Bullet15",
                     new Shoot(10, count: 15, projectileIndex: 0, coolDown: 800),
                     new EntityExistsTransition("md dwGenerator", 9999, "MoveToJanus")
@@ -212,6 +212,9 @@ namespace wServer.logic
                 new State(
                     new HpLessTransition(0.15, "ragetime"),
                     new State("idle",
+                        new EntitiesNotExistsTransition(9999, "activate", "BD Portal Spawner 5")
+                        ),
+                    new State("activate",
                         new PlayerWithinTransition(8, "taunt")
                         ),
                     new State("taunt",

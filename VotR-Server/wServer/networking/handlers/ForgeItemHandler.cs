@@ -1,6 +1,7 @@
 ﻿using wServer.networking.packets;
 using wServer.networking.packets.incoming;
 using System;
+using System.Linq;
 using common.resources;
 
 namespace wServer.networking.handlers
@@ -24,6 +25,34 @@ namespace wServer.networking.handlers
         private readonly ushort[] stoneList = { 0x61b2, 0x56c5, 0x56c4, 0x61d3 };
         private readonly ushort[] ancientList = { 0x1636, 0x55f6, 0x6120 };
 
+        private string[] allLegendaries = { "0x69CD", "0x47CB", "0x46D8", "0x42C5", "0x42C7", "0x54D9", "0x46D5", "0x64AA",
+                "0x48FA", "0x69D1", "0x69D4", "0x42FA", "0x69D6", "0x69DC", "0x1644", "0x69DB", "0x42FC",
+                "0x46D7", "0x54B6", "0x53DE", "0x48FD", "0x69DA", "0x69E8", "0x169F", "0x47F5", "0x47F8",
+                "0x47F3", "0x5839", "0x69E3", "0x69E4", "0x1399", "0x49F6", "0x49E4", "0x45D3",
+                "0x69E1", "0x1571", "0x49B2", "0x69D8", "0x42F4", "0x42B7", "0x47BE", "0x46F2", "0x1483",
+                "0x511A", "0x179C", "0x56B8", "0x56B9", "0x69E6", "0x45EF", "0x42F6", "0x69E9", "0x521C", "0x69EC", "0x69DE", "0x69ED", "0x45D1",
+                "0x1485", "0x1398", "0x61B6", "0x61Cf", "0x45D1", "0x61D2", "0x61D5", "0x61Db", "0x61Da", "0x52DF", "0x63D1", "0x1633", "0x57B9",
+                "0x585B", "0x49E3", "0x61B5", "0x5437", "0x42F8", "0x1688", "0x42f3", "0x6202", "0x6163", "0x542B", "0x61B2", "0x56C5", "0x56C4", "0x61D3",
+                "0x1636", "0x55F6", "0x6120" };
+
+        private ushort[] allLegendaries2 = { 0x69cd, 0x47cb, 0x46d8, 0x42c5, 0x42c7, 0x54d9, 0x46d5, 0x64aa,
+                0x48fa, 0x69d1, 0x69d4, 0x42fa, 0x69d6, 0x69dc, 0x1644, 0x69db, 0x42fc,
+                0x46d7, 0x54b6, 0x53de, 0x48fd, 0x69da, 0x69e8, 0x169f, 0x47f5, 0x47f8,
+                0x47f3, 0x5839, 0x69e3, 0x69e4, 0x1399, 0x49f6, 0x49e4, 0x45d3,
+                0x69e1, 0x1571, 0x49b2, 0x69d8, 0x42f4, 0x42b7, 0x47be, 0x46f2, 0x1483,
+                0x511a, 0x179c, 0x56b8, 0x56b9, 0x69e6, 0x45ef, 0x42f6, 0x69e9, 0x521c, 0x69ec, 0x69de, 0x69ed, 0x45d1,
+                0x1485, 0x1398, 0x61b6, 0x61cf, 0x45d1, 0x61d2, 0x61d5, 0x61db, 0x61da, 0x52df, 0x63d1, 0x1633, 0x57b9,
+                0x585b, 0x49e3, 0x61b5, 0x5437, 0x42f8, 0x1688, 0x42f3, 0x6202, 0x6163, 0x542b, 0x61b2, 0x56c5, 0x56c4, 0x61d3,
+                0x1636, 0x55f6, 0x6120 };
+
+        public static bool InArray(string[] array, int value)
+        {
+            string hexValue = value.ToString("X");
+            if (array.Contains("0x" + hexValue))
+                return true;
+
+            return false;
+        }
 
 
         private void Handle(Client client, ForgeItem packet)
@@ -35,130 +64,38 @@ namespace wServer.networking.handlers
                 switch (packet.ShardSlot.ObjectType)
                 {
                     case 0x68fa:
-                        for (int i = 0; i < client.Player.Inventory.Length; i++)
-                        {
-                            if (client.Player.Inventory[i] == null) continue;
-                            if (client.Player.Inventory[i].ObjectId == "Shard of Cosmic Collapse")
-                            {
-                                if (client.Player.CheckForItems("Shard of Cosmic Collapse"))
-                                {
-                                    ItemValue = cosmicList[rnd.Next(cosmicList.Length)];
-                                }
-                                break;
-                            }
-                        }
-                            break;
+                        ItemValue = cosmicList[rnd.Next(cosmicList.Length)];
+                        break;
                     case 0x68fb:
-                        for (int i = 0; i < client.Player.Inventory.Length; i++)
-                        {
-                            if (client.Player.Inventory[i] == null) continue;
-                            if (client.Player.Inventory[i].ObjectId == "Shard of Eternal Fury")
-                            {
-                                if (client.Player.CheckForItems("Shard of Eternal Fury"))
-                                {
-                                    ItemValue = furyList[rnd.Next(furyList.Length)];
-                                }
-                                break;
-                            }
-                        }
+                        ItemValue = furyList[rnd.Next(furyList.Length)];
+
                         break;
                     case 0x68fc:
-                        for (int i = 0; i < client.Player.Inventory.Length; i++)
-                        {
-                            if (client.Player.Inventory[i] == null) continue;
-                            if (client.Player.Inventory[i].ObjectId == "Shard of Zol Corruption")
-                            {
-                                if (client.Player.CheckForItems("Shard of Zol Corruption"))
-                                {
-                                    ItemValue = zolList[rnd.Next(zolList.Length)];
-                                }
-                                break;
-                            }
-                        }
+                        ItemValue = zolList[rnd.Next(zolList.Length)];
+
                         break;
                     case 0x47c4:
-                        for (int i = 0; i < client.Player.Inventory.Length; i++)
-                        {
-                            if (client.Player.Inventory[i] == null) continue;
-                            if (client.Player.Inventory[i].ObjectId == "Sword of Dark Necromancy")
-                            {
-                                if (client.Player.CheckForItems("Sword of Dark Necromancy"))
-                                {
-                                    ItemValue = 0x47bd;
-                                }
-                                break;
-                            }
-                        }
+                        ItemValue = 0x47bd;
+
                         break;
                     case 0x1628:
-                        for (int i = 0; i < client.Player.Inventory.Length; i++)
-                        {
-                            if (client.Player.Inventory[i] == null) continue;
-                            if (client.Player.Inventory[i].ObjectId == "Hunter Necklace")
-                            {
-                                if (client.Player.CheckForItems("Hunter Necklace"))
-                                {
-                                    ItemValue = 0x61b7;
-                                }
-                                break;
-                            }
-                        }
+                        ItemValue = 0x61b7;
+
                         break;
                     case 0x1463:
-                        for (int i = 0; i < client.Player.Inventory.Length; i++)
-                        {
-                            if (client.Player.Inventory[i] == null) continue;
-                            if (client.Player.Inventory[i].ObjectId == "Warped Worlds Staff")
-                            {
-                                if (client.Player.CheckForItems("Warped Worlds Staff"))
-                                {
-                                    ItemValue = 0x61c5;
-                                }
-                                break;
-                            }
-                        }
+                        ItemValue = 0x61c5;
+
                         break;
                     case 0x61d8:
-                        for (int i = 0; i < client.Player.Inventory.Length; i++)
-                        {
-                            if (client.Player.Inventory[i] == null) continue;
-                            if (client.Player.Inventory[i].ObjectId == "Empowered Whip")
-                            {
-                                if (client.Player.CheckForItems("Empowered Whip"))
-                                {
-                                    ItemValue = 0x61d7;
-                                }
-                                break;
-                            }
-                        }
+                        ItemValue = 0x61d7;
+
                         break;
                     case 0x61b4:
-                        for (int i = 0; i < client.Player.Inventory.Length; i++)
-                        {
-                            if (client.Player.Inventory[i] == null) continue;
-                            if (client.Player.Inventory[i].ObjectId == "Shard of the Stone Soul")
-                            {
-                                if (client.Player.CheckForItems("Shard of the Stone Soul"))
-                                {
-                                    ItemValue = stoneList[rnd.Next(stoneList.Length)];
-                                }
-                                break;
-                            }
-                        }
+                        ItemValue = stoneList[rnd.Next(stoneList.Length)];
+
                         break;
                     case 0x611f:
-                        for (int i = 0; i < client.Player.Inventory.Length; i++)
-                        {
-                            if (client.Player.Inventory[i] == null) continue;
-                            if (client.Player.Inventory[i].ObjectId == "Shard of Ancient Assault")
-                            {
-                                if (client.Player.CheckForItems("Shard of Ancient Assault"))
-                                {
-                                    ItemValue = ancientList[rnd.Next(ancientList.Length)];
-                                }
-                                break;
-                            }
-                        }
+                        ItemValue = ancientList[rnd.Next(ancientList.Length)];
                         break;
                     default:
                         client.Player.SendError("You can't forge anything with these items.");
@@ -176,8 +113,38 @@ namespace wServer.networking.handlers
                                                                         : item.DisplayId) + "\"");
                 client.Player.Inventory[packet.SorSlot.SlotId] = item;
                 client.Player.Inventory[packet.ShardSlot.SlotId] = null;
+
             }
-            else if (packet.SorSlot.ObjectType != 18918)
+            else if (packet.SorSlot.ObjectType == 25799)
+            {
+
+                if (InArray(allLegendaries, packet.ShardSlot.ObjectType))
+                {
+                    if(client.Player.Credits >= 75000)
+                    {
+                        client.Player.Manager.Database.UpdateCredit(client.Account, -75000);
+                        client.Player.Credits = client.Account.Credits - 75000;
+                        client.Player.ForceUpdate(client.Player.Credits);
+
+                        ItemValue = allLegendaries2[rnd.Next(allLegendaries2.Length)];
+                    }
+                    else
+                    {
+                        client.Player.SendError("You do not have 75K Gold to reroll this legendary!");
+                    }
+                    
+                }
+
+
+                if (ItemValue == 0x0) return;
+                Item item = client.Player.Manager.Resources.GameData.Items[ItemValue];
+                client.Player.SendError("You have rerolled the item \"" + (item.DisplayId == null || item.DisplayId == "" ?
+                                                                        item.ObjectId
+                                                                        : item.DisplayId) + "\"");
+                client.Player.Inventory[packet.SorSlot.SlotId] = item;
+                client.Player.Inventory[packet.ShardSlot.SlotId] = null;
+            }
+            else if (packet.SorSlot.ObjectType != 18918 || packet.SorSlot.ObjectType != 0x64c7)
             {
                 switch (packet.SorSlot.ObjectType)
                 {
@@ -185,218 +152,85 @@ namespace wServer.networking.handlers
                     case 0xae9:
                         if (packet.ShardSlot.ObjectType == 0xae9)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Potion of Life")
-                                {
-                                    if (client.Player.CheckForItems("Potion of Life"))
-                                    {
-                                        ItemValue = 0x236E;
-                                    }
-                                    break;
-                                }
-                            }
-                            
+                            ItemValue = 0x236E;
                         }
-
                         break;
                     //Mana
                     case 0xaea:
                         if (packet.ShardSlot.ObjectType == 0xaea)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Potion of Mana")
-                                {
-                                    if (client.Player.CheckForItems("Potion of Mana"))
-                                    {
-                                        ItemValue = 0x236F;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x236F;
                         }
                         break;
                     //Attack
                     case 0xa1f:
                         if (packet.ShardSlot.ObjectType == 0xa1f)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Potion of Attack")
-                                {
-                                    if (client.Player.CheckForItems("Potion of Attack"))
-                                    {
-                                        ItemValue = 0x2368;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x2368;
                         }
                         break;
                     //Defense
                     case 0xa20:
                         if (packet.ShardSlot.ObjectType == 0xa20)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Potion of Defense")
-                                {
-                                    if (client.Player.CheckForItems("Potion of Defense"))
-                                    {
-                                        ItemValue = 0x2369;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x2369;
                         }
                         break;
                     //Speed
                     case 0xa21:
                         if (packet.ShardSlot.ObjectType == 0xa21)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Potion of Speed")
-                                {
-                                    if (client.Player.CheckForItems("Potion of Speed"))
-                                    {
-                                        ItemValue = 0x236A;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x236A;
                         }
+
                         break;
                     //Vit
                     case 0xa34:
                         if (packet.ShardSlot.ObjectType == 0xa34)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Potion of Vitality")
-                                {
-                                    if (client.Player.CheckForItems("Potion of Vitality"))
-                                    {
-                                        ItemValue = 0x236B;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x236B;
                         }
                         break;
                     //wis
                     case 0xa35:
                         if (packet.ShardSlot.ObjectType == 0xa35)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Potion of Wisdom")
-                                {
-                                    if (client.Player.CheckForItems("Potion of Wisdom"))
-                                    {
-                                        ItemValue = 0x236C;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x236C;
                         }
                         break;
                     //Dex
                     case 0xa4c:
                         if (packet.ShardSlot.ObjectType == 0xa4c)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Potion of Dexterity")
-                                {
-                                    if (client.Player.CheckForItems("Potion of Dexterity"))
-                                    {
-                                        ItemValue = 0x236D;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x236D;
                         }
                         break;
                     //mgt
                     case 0x5822:
                         if (packet.ShardSlot.ObjectType == 0x5822)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Potion of Might")
-                                {
-                                    if (client.Player.CheckForItems("Potion of Might"))
-                                    {
-                                        ItemValue = 0x61C9;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x61C9;
                         }
                         break;
                     //luc
                     case 0x5823:
                         if (packet.ShardSlot.ObjectType == 0x5823)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Potion of Luck")
-                                {
-                                    if (client.Player.CheckForItems("Potion of Luck"))
-                                    {
-                                        ItemValue = 0x61cb;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x61cb;
                         }
                         break;
                     //res
                     case 0x68fd:
                         if (packet.ShardSlot.ObjectType == 0x68fd)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Potion of Restoration")
-                                {
-                                    if (client.Player.CheckForItems("Potion of Restoration"))
-                                    {
-                                        ItemValue = 0x61ca;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x61ca;
                         }
                         break;
                     //prot
                     case 0x68fe:
                         if (packet.ShardSlot.ObjectType == 0x68fe)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Potion of Protection")
-                                {
-                                    if (client.Player.CheckForItems("Potion of Protection"))
-                                    {
-                                        ItemValue = 0x61cc;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x61cc;
                         }
                         break;
 
@@ -407,18 +241,7 @@ namespace wServer.networking.handlers
                     case 0x236E:
                         if (packet.ShardSlot.ObjectType == 0x236E && client.Player.Onrane >= 1)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Greater Potion of Life")
-                                {
-                                    if (client.Player.CheckForItems("Greater Potion of Life"))
-                                    {
-                                        ItemValue = 0x62a5;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x62a5;
                             client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
                             client.Player.Onrane = client.Account.Onrane - 1;
                             client.Player.ForceUpdate(client.Player.Onrane);
@@ -432,19 +255,8 @@ namespace wServer.networking.handlers
                     case 0x236F:
                         if (packet.ShardSlot.ObjectType == 0x236F && client.Player.Onrane >= 1)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Greater Potion of Mana")
-                                {
-                                    if (client.Player.CheckForItems("Greater Potion of Mana"))
-                                    {
-                                        ItemValue = 0x619c;
-                                    }
-                                    break;
-                                }
-                            }
-                            
+
+                            ItemValue = 0x619c;
                             client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
                             client.Player.Onrane = client.Account.Onrane - 1;
                             client.Player.ForceUpdate(client.Player.Onrane);
@@ -458,19 +270,7 @@ namespace wServer.networking.handlers
                     case 0x2368:
                         if (packet.ShardSlot.ObjectType == 0x2368 && client.Player.Onrane >= 1)
                         {
-                            
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Greater Potion of Attack")
-                                {
-                                    if (client.Player.CheckForItems("Greater Potion of Attack"))
-                                    {
-                                        ItemValue = 0x619f;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x619f;
                             client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
                             client.Player.Onrane = client.Account.Onrane - 1;
                             client.Player.ForceUpdate(client.Player.Onrane);
@@ -484,19 +284,7 @@ namespace wServer.networking.handlers
                     case 0x2369:
                         if (packet.ShardSlot.ObjectType == 0x2369 && client.Player.Onrane >= 1)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Greater Potion of Defense")
-                                {
-                                    if (client.Player.CheckForItems("Greater Potion of Defense"))
-                                    {
-                                        ItemValue = 0x62a3;
-                                    }
-                                    break;
-                                }
-                            }
-                            
+                            ItemValue = 0x62a3;
                             client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
                             client.Player.Onrane = client.Account.Onrane - 1;
                             client.Player.ForceUpdate(client.Player.Onrane);
@@ -510,19 +298,7 @@ namespace wServer.networking.handlers
                     case 0x236A:
                         if (packet.ShardSlot.ObjectType == 0x236A && client.Player.Onrane >= 1)
                         {
-                            
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Greater Potion of Speed")
-                                {
-                                    if (client.Player.CheckForItems("Greater Potion of Speed"))
-                                    {
-                                        ItemValue = 0x62a1;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x62a1;
                             client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
                             client.Player.Onrane = client.Account.Onrane - 1;
                             client.Player.ForceUpdate(client.Player.Onrane);
@@ -536,19 +312,7 @@ namespace wServer.networking.handlers
                     case 0x236B:
                         if (packet.ShardSlot.ObjectType == 0x236B && client.Player.Onrane >= 1)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Greater Potion of Vitality")
-                                {
-                                    if (client.Player.CheckForItems("Greater Potion of Vitality"))
-                                    {
-                                        ItemValue = 0x62a0;
-                                    }
-                                    break;
-                                }
-                            }
-                            
+                            ItemValue = 0x62a0;
                             client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
                             client.Player.Onrane = client.Account.Onrane - 1;
                             client.Player.ForceUpdate(client.Player.Onrane);
@@ -562,19 +326,7 @@ namespace wServer.networking.handlers
                     case 0x236C:
                         if (packet.ShardSlot.ObjectType == 0x236C && client.Player.Onrane >= 1)
                         {
-                            
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Greater Potion of Wisdom")
-                                {
-                                    if (client.Player.CheckForItems("Greater Potion of Wisdom"))
-                                    {
-                                        ItemValue = 0x619e;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x619e;
                             client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
                             client.Player.Onrane = client.Account.Onrane - 1;
                             client.Player.ForceUpdate(client.Player.Onrane);
@@ -588,19 +340,7 @@ namespace wServer.networking.handlers
                     case 0x236D:
                         if (packet.ShardSlot.ObjectType == 0x236D && client.Player.Onrane >= 1)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Greater Potion of Dexterity")
-                                {
-                                    if (client.Player.CheckForItems("Greater Potion of Dexterity"))
-                                    {
-                                        ItemValue = 0x62a4;
-                                    }
-                                    break;
-                                }
-                            }
-                            
+                            ItemValue = 0x62a4;
                             client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
                             client.Player.Onrane = client.Account.Onrane - 1;
                             client.Player.ForceUpdate(client.Player.Onrane);
@@ -614,18 +354,7 @@ namespace wServer.networking.handlers
                     case 0x61C9:
                         if (packet.ShardSlot.ObjectType == 0x61C9 && client.Player.Onrane >= 1)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Greater Potion of Might")
-                                {
-                                    if (client.Player.CheckForItems("Greater Potion of Might"))
-                                    {
-                                        ItemValue = 0x62a6;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x62a6;
                             client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
                             client.Player.Onrane = client.Account.Onrane - 1;
                             client.Player.ForceUpdate(client.Player.Onrane);
@@ -639,19 +368,7 @@ namespace wServer.networking.handlers
                     case 0x61cb:
                         if (packet.ShardSlot.ObjectType == 0x61cb && client.Player.Onrane >= 1)
                         {
-                            
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Greater Potion of Luck")
-                                {
-                                    if (client.Player.CheckForItems("Greater Potion of Luck"))
-                                    {
-                                        ItemValue = 0x62a7;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x62a7;
                             client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
                             client.Player.Onrane = client.Account.Onrane - 1;
                             client.Player.ForceUpdate(client.Player.Onrane);
@@ -665,19 +382,7 @@ namespace wServer.networking.handlers
                     case 0x61ca:
                         if (packet.ShardSlot.ObjectType == 0x61ca && client.Player.Onrane >= 1)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Greater Potion of Restoration")
-                                {
-                                    if (client.Player.CheckForItems("Greater Potion of Restoration"))
-                                    {
-                                        ItemValue = 0x619d;
-                                    }
-                                    break;
-                                }
-                            }
-                            
+                            ItemValue = 0x619d;
                             client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
                             client.Player.Onrane = client.Account.Onrane - 1;
                             client.Player.ForceUpdate(client.Player.Onrane);
@@ -691,18 +396,7 @@ namespace wServer.networking.handlers
                     case 0x61cc:
                         if (packet.ShardSlot.ObjectType == 0x61cc && client.Player.Onrane >= 1)
                         {
-                            for (int i = 0; i < client.Player.Inventory.Length; i++)
-                            {
-                                if (client.Player.Inventory[i] == null) continue;
-                                if (client.Player.Inventory[i].ObjectId == "Greater Potion of Protection")
-                                {
-                                    if (client.Player.CheckForItems("Greater Potion of Protection"))
-                                    {
-                                        ItemValue = 0x62a2;
-                                    }
-                                    break;
-                                }
-                            }
+                            ItemValue = 0x62a2;
                             client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
                             client.Player.Onrane = client.Account.Onrane - 1;
                             client.Player.ForceUpdate(client.Player.Onrane);
@@ -721,14 +415,17 @@ namespace wServer.networking.handlers
 
                 }
                 if (ItemValue == 0x0) return;
-                    Item item = client.Player.Manager.Resources.GameData.Items[ItemValue];
-                    client.Player.Inventory[packet.SorSlot.SlotId] = item;
-                    client.Player.Inventory[packet.ShardSlot.SlotId] = null;
+                Item item = client.Player.Manager.Resources.GameData.Items[ItemValue];
+                client.Player.Inventory[packet.SorSlot.SlotId] = item;
+                client.Player.Inventory[packet.ShardSlot.SlotId] = null;
 
             }
+            
 
 
 
         }
+
+
     }
 }

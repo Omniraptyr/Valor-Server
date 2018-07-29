@@ -1847,12 +1847,24 @@ namespace wServer.realm.entities
             });
         }
 
+        public string playerAscended()
+        {
+            if(AscensionEnabled == true)
+            {
+                return "ascended ";
+            }
+            else
+            {
+                return "";
+            }
+        }
+
         private void AnnounceDeath(string killer)
         {
             var playerDesc = Manager.Resources.GameData.Classes[ObjectType];
             var maxed = playerDesc.Stats.Where((t, i) => Stats.Base[i] >= t.MaxValue).Count();
-            var deathMessage = Name + "'s " + maxed + "/12 " + playerDesc.ObjectId + " died with " + Fame + " base fame to " + killer;
-
+            //var deathMessage = Name + "'s " + maxed + "/12 " + playerDesc.ObjectId + " died with " + Fame + " base fame to " + killer;
+            var deathMessage = "{\"key\":\"server.death\",\"tokens\":{\"player\":\"" + Name + "'s " + playerAscended() + maxed + "/12 " + playerDesc.ObjectId + "\",\"level\":\"" + Level + "\",\"enemy\":\"" + killer + "\"}}";
             // notable deaths
             if ((maxed >= 8 || Fame >= 1000) && !Client.Account.Admin)
             {

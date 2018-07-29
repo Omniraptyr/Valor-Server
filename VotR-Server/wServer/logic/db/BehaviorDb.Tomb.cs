@@ -786,10 +786,9 @@ namespace wServer.logic
                     ),
                     new State("Chase",
                         new Follow(.9, 7, 0),
-
-                        new InvisiToss("Jackal Warrior", 1, 180, coolDown: 6000),
-                        new InvisiToss("Jackal Veteran", 1, 90, coolDown: 6000),
-                        new InvisiToss("Jackal Assassin", 1, 0, coolDown: 600),
+                        new Reproduce("Jackal Warrior", 10, 2, 10000),
+                        new Reproduce("Jackal Veteran", 10, 1, 10000),
+                        new Reproduce("Jackal Assassin", 10, 1, 10000),
                         new Shoot(25, 4, shootAngle: 25, projectileIndex: 0, coolDown: 1250)
                     )
                 )

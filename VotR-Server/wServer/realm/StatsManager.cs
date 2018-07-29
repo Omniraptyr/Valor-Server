@@ -99,7 +99,7 @@ namespace wServer.realm
             Random rnd = new Random();
             int luckNm = rnd.Next(1, 1001);
             var ret = 1.0f;
-            if (luckNm <= Owner.Stats[9])
+            if (luckNm <= CritChance())
             {
                 ret *= MightMultiplier();
                 Owner.Client.SendPacket(new CriticalDamage()
@@ -119,10 +119,22 @@ namespace wServer.realm
             }
             return ret;
         }
+        public int CritChance()
+        {
+            if (Owner.HasConditionEffect(ConditionEffects.Bravery))
+            {
+                return Owner.Stats[9]+100;
+            }
+            else
+            {
+                return Owner.Stats[9];
+            }
+
+        }
 
         public float MightMultiplier()
         {
-            float ret = Math.Min(3.5f, 1.0f + Owner.Stats[8] / 100);
+            float ret = Math.Min(4f, 1.0f + Owner.Stats[8] / 70);
             if (Owner.HasConditionEffect(ConditionEffects.Bravery))
                 return ret * 2;
             return ret;

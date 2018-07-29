@@ -39,7 +39,7 @@ namespace wServer.realm.worlds.logic
         private readonly string[] _randomEnemies =
         {
             "Djinn", "Beholder", "White Demon of the Abyss", "Flying Brain", "Slime God", "Arena Risen Mummy",
-            "Native Sprite God", "Ent God", "Medusa", "Ghost God", "Leviathan", "Elite Skeleton", "Angelic Commander", "Urgle"
+            "Native Sprite God", "Ent God", "Medusa", "Ghost God", "Leviathan", "Elite Skeleton", "Angelic Commander"
         };
 
         // _bossLevel defines the wave at which the random bosses change
@@ -84,12 +84,12 @@ namespace wServer.realm.worlds.logic
 
         private readonly new Dictionary<int, string[]> _waveRewards = new Dictionary<int, string[]>
         {
-            { 5,  new string[] {"Tomb of the Ancients Key", "Sprite World Key", "Undead Lair Key", "Abyss of Demons Key", "Lab Key", "Cornfield of Peril Key" } },
-            { 10, new string[] {"100 Gold", "Onrane"} },
-            { 20, new string[] { "Onrane", "Wine Cellar Incantation" } },
-            { 25, new string[] {"100 Gold", "Onrane", "Gold Cache", "Wine Cellar Incantation"} },
-            { 30, new string[] {"Onrane", "100 Gold", "Onrane Cache", "Wine Cellar Incantation" }},
-            { 50, new string[] {"Onrane Cache", "Medium Sor Fragment", "Wine Cellar Incantation" } }
+            { 5,  new string[] { "10 Gold", "1 Gold", "100 Gold" } },
+            { 10, new string[] {"100 Gold", "Onrane", "Tiny Sor Fragment" } },
+            { 20, new string[] { "Onrane", "Wine Cellar Incantation", "Tiny Sor Fragment" } },
+            { 25, new string[] {"100 Gold", "Onrane", "Gold Cache", "Wine Cellar Incantation", "Two Tiny Sor Fragments" } },
+            { 30, new string[] {"Onrane", "100 Gold", "Onrane Cache", "Wine Cellar Incantation", "Two Tiny Sor Fragments" }},
+            { 50, new string[] {"Onrane Cache", "Medium Sor Fragment", "Wine Cellar Incantation", "Two Tiny Sor Fragments" } }
         };
 
         private ArenaState _arenaState;

@@ -170,11 +170,9 @@ namespace wServer.realm.entities.vendors
             var invTrans = player.Inventory.CreateTransaction();
             var item = Manager.Resources.GameData.Items[Item];
             var slot = invTrans.GetAvailableInventorySlot(item);
-            if (slot == -1)
-            {
-                player.Manager.Database.AddGift(player.Client.Account, Item, tran);
-                return null;
-            }
+            player.Manager.Database.AddGift(player.Client.Account, Item, tran);
+                
+            
 
             invTrans[slot] = item;
             return invTrans;

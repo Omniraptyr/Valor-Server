@@ -64,6 +64,13 @@ namespace wServer.networking.handlers
                 return null;
             }
             
+            if(acc.NameChosen != true)
+            {
+                client.SendFailure("Account banned.", Failure.MessageWithDisconnect);
+                Log.InfoFormat("{0} ({1}) tried to log in. Account Banned.",
+                    acc.Name, client.IP);
+                return null;
+            }
             if (acc.Banned)
             {
                 client.SendFailure("Account banned.", Failure.MessageWithDisconnect);
