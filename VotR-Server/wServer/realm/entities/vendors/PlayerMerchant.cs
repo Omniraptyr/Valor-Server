@@ -4,7 +4,7 @@ using common;
 using wServer.networking;
 using System;
 using wServer.networking.packets.outgoing;
-
+using System.Threading;
 namespace wServer.realm.entities.vendors
 {
     public class PlayerMerchant : Merchant
@@ -52,6 +52,7 @@ namespace wServer.realm.entities.vendors
             PurchaseItem(player);
         }
 
+
         private async void PurchaseItem(Player player)
         {
            
@@ -60,11 +61,11 @@ namespace wServer.realm.entities.vendors
             var sellerId = PlayerShopItem.AccountId;
             var seller = Manager.Clients.FirstOrDefault(
                 c => c.Key.Account?.AccountId == sellerId).Key;
-            if (seller.Player.Owner.Name == "Vault")
-            {
-                player.SendError("Can't process your purchase at this time.");
-                return;
-            }
+        //    if (seller.Player.Owner.Name == "Vault")
+            //{
+            //    player.SendError("Can't process your purchase at this time.");
+           //     return;
+          //  }
             var price = PlayerShopItem.Price;
             var type = PlayerShopItem.ItemId;
             var trans = db.Conn.CreateTransaction();
