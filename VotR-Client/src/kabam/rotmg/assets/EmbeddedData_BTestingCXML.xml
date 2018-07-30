@@ -13355,6 +13355,10 @@
         <HitSound>monster/ogres_hit</HitSound>
         <DeathSound>monster/ogres_death</DeathSound>
         <MaxHitPoints>22500</MaxHitPoints>
+        <Hero/>
+        <Quest/>
+        <God/>
+        <Encounter/>
         <Projectile id="0">
             <ObjectId>Giant Bash</ObjectId>
             <Speed>75</Speed>

@@ -187,7 +187,8 @@ namespace wServer.realm.entities
             {"Truvix, the Lord Wanderer",       Tuple.Create(20, 15, 1000)},
             {"Test Egg",                        Tuple.Create(20, 15, 1000)},
             {"The Horrific",                    Tuple.Create(20, 15, 1000)},
-            { "Codename G-24, Nitrostorm",             Tuple.Create(15,1, 20) },
+            { "Codename G-24, Nitrostorm",      Tuple.Create(15,1, 20) },
+            { "Ogla, the Giant God",      Tuple.Create(15,1, 20) },
 
             // special events
             { "Megaman",                        Tuple.Create(50,20, 20) },

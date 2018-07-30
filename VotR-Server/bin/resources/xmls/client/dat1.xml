@@ -123894,7 +123894,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Defense>0</Defense>
         <DisplayId>Archer Giant</DisplayId>
     </Object>
-    <Object type="0x64da" id="Ogla, the Giant God">
+<Object type="0x64da" id="Ogla, the Giant God">
         <Enemy/>
         <Class>Character</Class>
         <AnimatedTexture>
@@ -123904,6 +123904,10 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <HitSound>monster/ogres_hit</HitSound>
         <DeathSound>monster/ogres_death</DeathSound>
         <MaxHitPoints>22500</MaxHitPoints>
+        <Hero/>
+        <Quest/>
+        <God/>
+        <Encounter/>
         <Projectile id="0">
             <ObjectId>Giant Bash</ObjectId>
             <Speed>75</Speed>
@@ -123925,7 +123929,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Speed>80</Speed>
             <Damage>140</Damage>
             <Size>100</Size>
-            <LifetimeMS>1600</LifetimeMS>
+            <LifetimeMS>300</LifetimeMS>
             <ConditionEffect duration="2">Stunned</ConditionEffect>
             <ConditionEffect duration="3">Unstable</ConditionEffect>
         </Projectile>
