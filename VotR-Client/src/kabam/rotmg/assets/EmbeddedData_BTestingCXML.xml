@@ -13138,4 +13138,353 @@
         <Defense>0</Defense>
         <DisplayId>G-10 Testing</DisplayId>
     </Object>
+    <Object type="0x64d4" id="Giant Warrior">
+        <Enemy/>
+        <Group>Giant</Group>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars8x8rHero1</File>
+            <Index>36</Index>
+        </AnimatedTexture>
+        <HitSound>monster/ogres_hit</HitSound>
+        <DeathSound>monster/ogres_death</DeathSound>
+        <MaxHitPoints>400</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>White Bolt</ObjectId>
+            <Speed>80</Speed>
+            <Damage>100</Damage>
+            <Size>125</Size>
+            <LifetimeMS>800</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Silver Shield</ObjectId>
+            <Speed>30</Speed>
+            <Damage>40</Damage>
+            <Size>100</Size>
+            <LifetimeMS>200</LifetimeMS>
+            <ConditionEffect duration="2">Stunned</ConditionEffect>
+            <ConditionEffect duration="2">Slowed</ConditionEffect>
+        </Projectile>
+        <Size>130</Size>
+        <Defense>10</Defense>
+        <DisplayId>Giant Warrior</DisplayId>
+    </Object>
+    <Object type="0x64d5" id="Giant Armored Warrior">
+        <Enemy/>
+        <Group>Giant</Group>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars8x8rHero1</File>
+            <Index>37</Index>
+        </AnimatedTexture>
+        <HitSound>monster/ogres_hit</HitSound>
+        <DeathSound>monster/ogres_death</DeathSound>
+        <MaxHitPoints>400</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Darkness Bolt</ObjectId>
+            <Speed>80</Speed>
+            <Damage>80</Damage>
+            <Size>125</Size>
+            <LifetimeMS>800</LifetimeMS>
+            <ConditionEffect duration="4">Slowed</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Silver Shield</ObjectId>
+            <Speed>30</Speed>
+            <Damage>40</Damage>
+            <Size>100</Size>
+            <LifetimeMS>200</LifetimeMS>
+            <ConditionEffect duration="2">Stunned</ConditionEffect>
+            <ConditionEffect duration="2">Slowed</ConditionEffect>
+        </Projectile>
+        <Size>130</Size>
+        <Defense>20</Defense>
+        <DisplayId>Giant Armored Warrior</DisplayId>
+    </Object>
+    <Object type="0x64d6" id="Giant King">
+        <Enemy/>
+        <Group>Giant</Group>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars8x8rHero1</File>
+            <Index>38</Index>
+        </AnimatedTexture>
+        <HitSound>monster/ogres_hit</HitSound>
+        <DeathSound>monster/ogres_death</DeathSound>
+        <MaxHitPoints>800</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>White Bolt</ObjectId>
+            <Speed>80</Speed>
+            <Damage>80</Damage>
+            <Size>125</Size>
+            <LifetimeMS>800</LifetimeMS>
+            <ConditionEffect duration="4">Slowed</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Silver Shield</ObjectId>
+            <Speed>30</Speed>
+            <Damage>40</Damage>
+            <Size>100</Size>
+            <LifetimeMS>200</LifetimeMS>
+            <ConditionEffect duration="2">Stunned</ConditionEffect>
+            <ConditionEffect duration="2">Slowed</ConditionEffect>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>White Ball</ObjectId>
+            <Speed>100</Speed>
+            <Damage>60</Damage>
+            <Size>125</Size>
+            <LifetimeMS>1000</LifetimeMS>
+            <ConditionEffect duration="3">Unstable</ConditionEffect>
+        </Projectile>
+        <Size>130</Size>
+        <Defense>0</Defense>
+        <DisplayId>Giant King</DisplayId>
+    </Object>
+    <Object type="0x64d7" id="Giant Priestess">
+        <Enemy/>
+        <Group>Giant</Group>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars8x8rHero1</File>
+            <Index>39</Index>
+        </AnimatedTexture>
+        <HitSound>monster/ogres_hit</HitSound>
+        <DeathSound>monster/ogres_death</DeathSound>
+        <MaxHitPoints>800</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Silver Shield</ObjectId>
+            <Speed>60</Speed>
+            <Damage>80</Damage>
+            <Size>125</Size>
+            <LifetimeMS>1200</LifetimeMS>
+            <ConditionEffect duration="3">Stunned</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Silver Shield</ObjectId>
+            <Speed>30</Speed>
+            <Damage>40</Damage>
+            <Size>100</Size>
+            <LifetimeMS>200</LifetimeMS>
+            <ConditionEffect duration="2">Stunned</ConditionEffect>
+            <ConditionEffect duration="2">Slowed</ConditionEffect>
+        </Projectile>
+        <Size>130</Size>
+        <Defense>0</Defense>
+        <DisplayId>Giant Priestess</DisplayId>
+    </Object>
+    <Object type="0x64d8" id="Giant Knight">
+        <Enemy/>
+        <Group>Giant</Group>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars8x8rHero1</File>
+            <Index>40</Index>
+        </AnimatedTexture>
+        <HitSound>monster/ogres_hit</HitSound>
+        <DeathSound>monster/ogres_death</DeathSound>
+        <MaxHitPoints>900</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Darkness Bolt</ObjectId>
+            <Speed>100</Speed>
+            <Damage>80</Damage>
+            <Size>125</Size>
+            <LifetimeMS>1200</LifetimeMS>
+            <ConditionEffect duration="2">Slowed</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Silver Shield</ObjectId>
+            <Speed>30</Speed>
+            <Damage>40</Damage>
+            <Size>100</Size>
+            <LifetimeMS>200</LifetimeMS>
+            <ConditionEffect duration="2">Stunned</ConditionEffect>
+            <ConditionEffect duration="2">Slowed</ConditionEffect>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>White Bolt</ObjectId>
+            <Speed>50</Speed>
+            <Damage>160</Damage>
+            <Size>125</Size>
+            <LifetimeMS>1600</LifetimeMS>
+        </Projectile>
+        <Size>150</Size>
+        <Defense>30</Defense>
+        <DisplayId>Giant Knight</DisplayId>
+    </Object>
+    <Object type="0x64d9" id="Archer Giant">
+        <Enemy/>
+        <Group>Giant</Group>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars8x8rHero1</File>
+            <Index>41</Index>
+        </AnimatedTexture>
+        <HitSound>monster/ogres_hit</HitSound>
+        <DeathSound>monster/ogres_death</DeathSound>
+        <MaxHitPoints>300</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Red Arrow</ObjectId>
+            <Speed>100</Speed>
+            <Damage>80</Damage>
+            <Size>125</Size>
+            <LifetimeMS>2000</LifetimeMS>
+            <ArmorPiercing/>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Silver Shield</ObjectId>
+            <Speed>30</Speed>
+            <Damage>40</Damage>
+            <Size>100</Size>
+            <LifetimeMS>200</LifetimeMS>
+            <ConditionEffect duration="2">Stunned</ConditionEffect>
+            <ConditionEffect duration="2">Slowed</ConditionEffect>
+        </Projectile>
+        <Size>130</Size>
+        <Defense>0</Defense>
+        <DisplayId>Archer Giant</DisplayId>
+    </Object>
+    <Object type="0x64da" id="Ogla, the Giant God">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>24</Index>
+        </AnimatedTexture>
+        <HitSound>monster/ogres_hit</HitSound>
+        <DeathSound>monster/ogres_death</DeathSound>
+        <MaxHitPoints>22500</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Giant Bash</ObjectId>
+            <Speed>75</Speed>
+            <Damage>80</Damage>
+            <Size>125</Size>
+            <LifetimeMS>1000</LifetimeMS>
+            <MultiHit/>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Giant Shot</ObjectId>
+            <Speed>100</Speed>
+            <Damage>140</Damage>
+            <Size>125</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Silver Shield</ObjectId>
+            <Speed>80</Speed>
+            <Damage>140</Damage>
+            <Size>100</Size>
+            <LifetimeMS>300</LifetimeMS>
+            <ConditionEffect duration="2">Stunned</ConditionEffect>
+            <ConditionEffect duration="3">Unstable</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>White Bolt</ObjectId>
+            <Speed>60</Speed>
+            <Damage>75</Damage>
+            <Size>125</Size>
+            <LifetimeMS>800</LifetimeMS>
+        </Projectile>
+        <Size>130</Size>
+        <Defense>30</Defense>
+        <DisplayId>Ogla, the Giant God</DisplayId>
+    </Object>
+    <Object type="0x64db" id="Giant's Hill Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Giant's Hill</DungeonName>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x120</Index>
+        </Texture>
+        <DisplayId>Giant's Hill</DisplayId>
+    </Object>
+    <Object type="0x64dc" id="Oryx the Mad God 2OA">
+        <DisplayId>Oryx the Mad God</DisplayId>
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiChar16x16</File>
+            <Index>0x54</Index>
+        </Texture>
+        <HitSound>monster/oryx_hit</HitSound>
+        <DeathSound>monster/oryx_death</DeathSound>
+        <Size>120</Size>
+        <MaxHitPoints>75000</MaxHitPoints>
+        <Defense>60</Defense>
+        <Quest/>
+        <God/>
+        <Oryx/>
+        <StasisImmune/>
+        <Level>1</Level>
+        <XpMult>1</XpMult>
+        <NoArticle/>
+        <Projectile id="0">
+            <ObjectId>Fire Bolt</ObjectId>
+            <Damage>135</Damage>
+            <Speed>70</Speed>
+            <LifetimeMS>2500</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Green Star</ObjectId>
+            <Damage>160</Damage>
+            <Speed>70</Speed>
+            <LifetimeMS>2500</LifetimeMS>
+            <ConditionEffect duration="10">Slowed</ConditionEffect>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Blade</ObjectId>
+            <Damage>240</Damage>
+            <Speed>100</Speed>
+            <LifetimeMS>450</LifetimeMS>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Purple Star</ObjectId>
+            <Damage>160</Damage>
+            <Speed>55</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="5">Blind</ConditionEffect>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Blue Star</ObjectId>
+            <Damage>160</Damage>
+            <Speed>105</Speed>
+            <LifetimeMS>1200</LifetimeMS>
+            <ConditionEffect duration="5">Confused</ConditionEffect>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Grey Star</ObjectId>
+            <Damage>160</Damage>
+            <Speed>45</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="3">Quiet</ConditionEffect>
+        </Projectile>
+        <Projectile id="6">
+            <ObjectId>Red Star</ObjectId>
+            <Damage>160</Damage>
+            <Speed>55</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="13">
+            <ObjectId>Dark Gray Spinner</ObjectId>
+            <Speed>90</Speed>
+            <Size>100</Size>
+            <Damage>1</Damage>
+            <LifetimeMS>1800</LifetimeMS>
+            <ConditionEffect duration="20">Quiet</ConditionEffect>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="14">
+            <ObjectId>Gray Spinner</ObjectId>
+            <Speed>90</Speed>
+            <Size>100</Size>
+            <Damage>1</Damage>
+            <LifetimeMS>1800</LifetimeMS>
+            <ConditionEffect duration="60">Weak</ConditionEffect>
+            <MultiHit/>
+        </Projectile>
+    </Object>
 </Objects>

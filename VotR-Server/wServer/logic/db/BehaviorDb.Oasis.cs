@@ -12,6 +12,7 @@ namespace wServer.logic
         private _ Oasis = () => Behav()
             .Init("Oasis Giant",
                 new State(
+                    new DropPortalOnDeath("Giant's Hill Portal", 0.25),
                     new Shoot(10, 4, 7, predictive: 1),
                     new Prioritize(
                         new StayCloseToSpawn(0.3, 2),

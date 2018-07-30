@@ -55,7 +55,7 @@ namespace wServer.realm.entities.vendors
 
         private async void PurchaseItem(Player player)
         {
-           
+
             var db = Manager.Database;
             // acquire price, id and seller here so that the wrong price is not sent to seller after update
             var sellerId = PlayerShopItem.AccountId;

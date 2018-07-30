@@ -56,35 +56,35 @@ namespace wServer.realm.worlds.logic
             new string[]
             {
                 "Stheno the Snake Queen", "Archdemon Malphas", "Septavius the Ghost God",
-                "Limon the Sprite God", "Dr Terrible", "swmp Swamp Spirit"
+                "Limon the Sprite God", "Dr Terrible"
             },
             new string[]
             {
                 "Thessal the Mermaid Goddess", "Crystal Prisoner", "Lord of the Lost Lands",
-                "Septavius the Ghost God", "Limon the Sprite God", "Dr Terrible", "swmp Swamp Spirit",
+                "Septavius the Ghost God", "Limon the Sprite God", "Dr Terrible",
                 "Archdemon Malphas", "Epic Larva"
             },
             new string[]
             {
-                "Tomb Support", "Tomb Defender", "Tomb Attacker", "Oryx the Mad God 2",
+                "Tomb Support", "Tomb Defender", "Tomb Attacker", "Oryx the Mad God 2OA",
                 "Grand Sphinx", "Queen of Hearts", "Thessal the Mermaid Goddess", "Gigacorn", "BedlamGod",
                 "Crystal Prisoner", "Lord of the Lost Lands", "Epic Larva", "TF The Fallen", "Larry Gigsman, the Superhuman"
             },
             new string[]
             {
                 "Thessal the Mermaid Goddess", "Tomb Support", "Tomb Defender", "Tomb Attacker",
-                "Queen of Hearts", "Grand Sphinx", "Oryx the Mad God 2", "Cube God", "Skull Shrine",
+                "Queen of Hearts", "Grand Sphinx", "Oryx the Mad God 2OA", "Cube God", "Skull Shrine",
                 "TF The Fallen", "Larry Gigsman, the Superhuman"
             },
             new string[]
             {
-                "Oryx the Mad God 2", "Cube God", "Skull Shrine", "TF The Fallen", "Larry Gigsman, the Superhuman", "BedlamGod"
+                "Oryx the Mad God 2OA", "Cube God", "Skull Shrine", "TF The Fallen", "Larry Gigsman, the Superhuman", "BedlamGod"
             }
         };
 
         private readonly new Dictionary<int, string[]> _waveRewards = new Dictionary<int, string[]>
         {
-            { 5,  new string[] { "10 Gold", "1 Gold", "100 Gold" } },
+            { 5,  new string[] { "10 Gold", "Onrane", "100 Gold" } },
             { 10, new string[] {"100 Gold", "Onrane", "Tiny Sor Fragment" } },
             { 20, new string[] { "Onrane", "Wine Cellar Incantation", "Tiny Sor Fragment" } },
             { 25, new string[] {"100 Gold", "Onrane", "Gold Cache", "Wine Cellar Incantation", "Two Tiny Sor Fragments" } },
@@ -497,7 +497,7 @@ namespace wServer.realm.worlds.logic
 
             var p = entity as Player;
             if (p != null)
-                p.SendInfo("Welcome to Oryx's Arena. Take caution, you can die here. " + ArenaStateCheck() + " " + _time + " " + _wave);
+                p.SendInfo("Welcome to Oryx's Arena. Take caution, you can die here. ");
 
             return ret;
         }

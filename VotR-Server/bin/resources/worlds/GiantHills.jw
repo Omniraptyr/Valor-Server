@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Giant's Hill",
+"sbName":"Giant's Hill",
+"difficulty":3,
+"background":0,
+"blocking":1,
+"restrictTp":false,
+"showDisplays":false,
+"portals":[0x64db],
+"maps":["gianthills.jm", "gianthills2.jm"],
+"music":["sorc5"]}

@@ -117,6 +117,7 @@
     <Compile Include="logic\db\BehaviorDb.FrostChamber.cs" />
     <Compile Include="logic\db\BehaviorDb.FrozenIsland.cs" />
     <Compile Include="logic\db\BehaviorDb.Genisus.cs" />
+    <Compile Include="logic\db\BehaviorDb.HillGiant.cs" />
     <Compile Include="logic\db\BehaviorDb.Horrific.cs" />
     <Compile Include="logic\db\BehaviorDb.Kraken.cs" />
     <Compile Include="logic\db\BehaviorDb.Larry.cs" />

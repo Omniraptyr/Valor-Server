@@ -75,7 +75,79 @@ namespace wServer.logic
                     new ItemLoot("Potion of Wisdom", 0.3)
                 ),
                 new Threshold(0.20,
-                    new ItemLoot("Oryx's Arena Key", 0.05)
+                    new ItemLoot("Oryx's Arena Key", 0.01)
+                ),
+                new Threshold(0.1,
+                    new TierLoot(10, ItemType.Weapon, 0.07),
+                    new TierLoot(11, ItemType.Weapon, 0.06),
+                    new TierLoot(12, ItemType.Weapon, 0.05),
+                    new TierLoot(5, ItemType.Ability, 0.07),
+                    new TierLoot(6, ItemType.Ability, 0.05),
+                    new TierLoot(11, ItemType.Armor, 0.07),
+                    new TierLoot(12, ItemType.Armor, 0.06),
+                    new TierLoot(13, ItemType.Armor, 0.05),
+                    new TierLoot(5, ItemType.Ring, 0.06)
+                )
+            )
+
+                    .Init("Oryx the Mad God 2OA",
+                new State(
+                    new State("Attack",
+                        new Wander(.05),
+                        new Shoot(25, projectileIndex: 0, count: 8, shootAngle: 45, coolDown: 1500, coolDownOffset: 1500),
+                        new Shoot(25, projectileIndex: 1, count: 3, shootAngle: 10, coolDown: 1000, coolDownOffset: 1000),
+                        new Shoot(25, projectileIndex: 2, count: 3, shootAngle: 10, predictive: 0.2, coolDown: 1000,
+                            coolDownOffset: 1000),
+                        new Shoot(25, projectileIndex: 3, count: 2, shootAngle: 10, predictive: 0.4, coolDown: 1000,
+                            coolDownOffset: 1000),
+                        new Shoot(25, projectileIndex: 4, count: 3, shootAngle: 10, predictive: 0.6, coolDown: 1000,
+                            coolDownOffset: 1000),
+                        new Shoot(25, projectileIndex: 5, count: 2, shootAngle: 10, predictive: 0.8, coolDown: 1000,
+                            coolDownOffset: 1000),
+                        new Shoot(25, projectileIndex: 6, count: 3, shootAngle: 10, predictive: 1, coolDown: 1000,
+                            coolDownOffset: 1000),
+                        new Taunt(1, 6000, "Puny mortals! My {HP} HP will annihilate you!"),
+                        new Spawn("Henchman of Oryx", 5, coolDown: 5000),
+                        new HpLessTransition(.2, "prepareRage")
+                    ),
+                    new State("prepareRage",
+                        new Follow(.1, 15, 3),
+                        new Taunt("Can't... keep... henchmen... alive... anymore! ARGHHH!!!"),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Shoot(25, 30, fixedAngle: 0, projectileIndex: 7, coolDown: 4000, coolDownOffset: 4000),
+                        new Shoot(25, 30, fixedAngle: 30, projectileIndex: 8, coolDown: 4000, coolDownOffset: 4000),
+                        new TimedTransition(10000, "rage")
+                    ),
+                    new State("rage",
+                        new Follow(.1, 15, 3),
+                        new Shoot(25, 30, projectileIndex: 7, coolDown: 90000001, coolDownOffset: 8000),
+                        new Shoot(25, 30, projectileIndex: 8, coolDown: 90000001, coolDownOffset: 8500),
+                        new Shoot(25, projectileIndex: 0, count: 8, shootAngle: 45, coolDown: 1500, coolDownOffset: 1500),
+                        new Shoot(25, projectileIndex: 1, count: 3, shootAngle: 10, coolDown: 1000, coolDownOffset: 1000),
+                        new Shoot(25, projectileIndex: 2, count: 3, shootAngle: 10, predictive: 0.2, coolDown: 1000,
+                            coolDownOffset: 1000),
+                        new Shoot(25, projectileIndex: 3, count: 2, shootAngle: 10, predictive: 0.4, coolDown: 1000,
+                            coolDownOffset: 1000),
+                        new Shoot(25, projectileIndex: 4, count: 3, shootAngle: 10, predictive: 0.6, coolDown: 1000,
+                            coolDownOffset: 1000),
+                        new Shoot(25, projectileIndex: 5, count: 2, shootAngle: 10, predictive: 0.8, coolDown: 1000,
+                            coolDownOffset: 1000),
+                        new Shoot(25, projectileIndex: 6, count: 3, shootAngle: 10, predictive: 1, coolDown: 1000,
+                            coolDownOffset: 1000),
+                        new TossObject("Monstrosity Scarab", 7, 0, coolDown: 1000),
+                        new Taunt(1, 6000, "Puny mortals! My {HP} HP will annihilate you!")
+                    )
+                ),
+                 new MostDamagers(3,
+                    LootTemplates.SF4()
+                    ),
+                new Threshold(0.29,
+                    new ItemLoot("Potion of Vitality", 1)
+                ),
+                new Threshold(0.05,
+                    new ItemLoot("Potion of Attack", 0.3),
+                    new ItemLoot("Potion of Defense", 0.3),
+                    new ItemLoot("Potion of Wisdom", 0.3)
                 ),
                 new Threshold(0.1,
                     new TierLoot(10, ItemType.Weapon, 0.07),
@@ -218,7 +290,7 @@ namespace wServer.logic
                     LootTemplates.SF4()
                     ),
                 new Threshold(0.20,
-                    new ItemLoot("Oryx's Arena Key", 0.025)
+                    new ItemLoot("Oryx's Arena Key", 0.01)
                 ),
                 new Threshold(0.05,
                     new ItemLoot("Potion of Attack", 0.3),
