@@ -3147,7 +3147,7 @@ namespace wServer.logic
                         new TimedTransition(6000, "bfight1")
                         ),
                    new State(
-                       new Grenade(2, 325, range: 10, coolDown: 400, effect: ConditionEffectIndex.Paralyzed, effectDuration: 2000, color: 0x00FFFF),
+                       new Grenade(2, 80, range: 10, coolDown: 400, effect: ConditionEffectIndex.Paralyzed, effectDuration: 2000, color: 0x00FFFF),
                    new State(
                         new RemoveEntity(99, "Scorching Fanatic"),
                         new RemoveEntity(99, "BD Bastille Brute"),
@@ -3819,7 +3819,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SF4()
                     ),
-                new Threshold(0.05,
+                new Threshold(0.02,
                     new TierLoot(12, ItemType.Weapon, 0.08),
                     new TierLoot(5, ItemType.Ability, 0.07),
                     new TierLoot(6, ItemType.Ability, 0.05),
@@ -3828,8 +3828,14 @@ namespace wServer.logic
                     new ItemLoot("Greater Potion of Might", 0.5),
                     new ItemLoot("Greater Potion of Luck", 0.5),
                     new ItemLoot("Greater Potion of Protection", 0.5),
+                    new ItemLoot("Greater Potion of Life", 0.5),
+                    new ItemLoot("Greater Potion of Mana", 0.5),
                     new ItemLoot("Ultimate Onrane Cache", 1),
                     new ItemLoot("10000 Gold", 0.50),
+                    new ItemLoot("Large Sor Fragment", 0.50),
+                    new ItemLoot("Medium Sor Fragment", 0.50),
+                    new ItemLoot("Sor Crystal", 0.50),
+                    new ItemLoot("Gold Cache", 0.50),
                     new ItemLoot("Potion of Life", 1),
                     new ItemLoot("Potion of Defense", 1),
                     new ItemLoot("Potion of Attack", 0.6),
