@@ -3585,11 +3585,16 @@ namespace wServer.logic
                             new ReplaceTile("BD Ground 6d", "BD Ground 5d", 99),
                             new ChangeSize(60, 140),
                             new Flash(0xFFFFFF, 0.5, 6),
-                            new TimedTransition(4000, "attack1")
+                            new TimedTransition(4000, "first123")
                             )
                         ),
                     new State(
-                          new DamageTakenTransition(420000, "ready2"),
+                        new DamageTakenTransition(420000, "ready2"),
+                    new State("first123",
+                        new Order(90, "Spiritorb Holder Sentry", "sentry3"),
+                        new Wander(0.1),
+                        new TimedTransition(4000, "attack1")
+                            ),
                     new State("attack1",
                         new Order(90, "Spiritorb Holder Sentry", "sentry2"),
                             new Prioritize(
@@ -3613,7 +3618,6 @@ namespace wServer.logic
                         new TimedTransition(4000, "attack3")
                         ),
                      new State("attack3",
-                        new Order(90, "Spiritorb Holder Sentry", "sentry3"),
                         new Wander(0.1),
                         new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 7, coolDown: 2000),
                         new TimedTransition(4000, "attack1")
