@@ -95,6 +95,7 @@ namespace wServer.realm.entities
                     if (RageBar == 0)
                     {
                         ApplyConditionEffect(ConditionEffectIndex.Weak);
+                        ApplyConditionEffect(ConditionEffectIndex.Quiet, 2);
                     }
                     else
                     {

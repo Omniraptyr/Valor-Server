@@ -1039,7 +1039,7 @@ namespace wServer.logic
                 new State(
                     new Shoot(10, count: 12, projectileIndex: 2, coolDown: 4000),
                     new Prioritize(
-                          new Orbit(0.7, 3, target: "BD Winged Beast", speedVariance: 0.05),
+                          new Orbit(0.7, 3, target: "Drannol, the Eternal Beast", speedVariance: 0.05),
                           new Follow(0.5, 8, 1)
                    ),
                 new State("Main",
@@ -3650,7 +3650,8 @@ namespace wServer.logic
                           new DamageTakenTransition(580000, "ready3"),
                     new State("attack1a",
                         new Order(90, "Scorching Wrath Helper", "spawn"),
-                        new Order(99, "BD Taskmaster 4", "spawn"),
+                        new TossObject("Flaming Summon", 3, angle: 180, coolDown: 9999),
+                        new TossObject("Flaming Summon", 3, angle: 0, coolDown: 9999),
                         new Taunt("My company and I will burn you to ashes!"),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Order(90, "Scorching Wrath Helper", "spawn"),
@@ -3663,7 +3664,7 @@ namespace wServer.logic
                         new Shoot(10, count: 4, shootAngle: 8, projectileIndex: 5, coolDown: 3000),
                         new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 5, coolDown: 3000, coolDownOffset: 1600),
                         new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 5, coolDown: 3000, coolDownOffset: 1600),
-                        new TimedTransition(2000, "attack2a")
+                        new TimedTransition(4000, "attack2a")
                         ),
                     new State("attack2a",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -3718,12 +3719,14 @@ namespace wServer.logic
                             )
                         ),
                     new State(
+                        new Order(90, "Scorching Wrath Helper", "spawn"),
                         new DamageTakenTransition(700000, "ready4"),
                         new Shoot(20, count: 14, projectileIndex: 0, coolDown: 600),
                         new State("attack1b",
-                            new Order(90, "Spiritorb Holder Sentry", "sentry1"),
+                            new Order(90, "Spiritorb Holder Sentry", "sentry2"),
                             new Taunt("YOU SHALL BE CRUSHED!"),
                             new Prioritize(
+                                new Charge(2, 8, coolDown: 4000),
                                 new Follow(0.6),
                                 new Wander(0.1)
                             ),
@@ -3739,7 +3742,21 @@ namespace wServer.logic
 
                         new Shoot(10, count: 3, shootAngle: 6, projectileIndex: 8, coolDown: 2000, coolDownOffset: 4800),
                         new Shoot(10, count: 3, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 60, coolDownOffset: 4800),
-                        new Shoot(10, count: 3, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 300, coolDownOffset: 4800)
+                        new Shoot(10, count: 3, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 300, coolDownOffset: 4800),
+                        new TimedTransition(8000, "attack1b")
+                            ),
+                       new State("attack2b",
+                           new ConditionalEffect(ConditionEffectIndex.Armored),
+                           new Flash(0xFF0000, 0.25, 6),
+                            new Prioritize(
+                                new Charge(2, 8, coolDown: 6000),
+                                new Follow(1),
+                                new Wander(0.1)
+                            ),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 3000, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 3000, angleOffset: 80, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 3000, angleOffset: 280, coolDownOffset: 1800),
+                        new TimedTransition(8000, "attack1b")
                             )
                         ),
                      new State("supressiongorange",

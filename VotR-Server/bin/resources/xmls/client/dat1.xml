@@ -124122,11 +124122,11 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Class>Character</Class>
         <AnimatedTexture>
             <File>raiding32x32Embed</File>
-            <Index>1</Index>
+            <Index>0x01</Index>
         </AnimatedTexture>
         <HitSound>monster/skull_shrine_hit</HitSound>
         <DeathSound>monster/ghost_god_death</DeathSound>
-        <MaxHitPoints>225000</MaxHitPoints>
+        <MaxHitPoints>250000</MaxHitPoints>
         <Projectile id="0">
             <ObjectId>Fire Bullet</ObjectId>
             <Speed>75</Speed>
