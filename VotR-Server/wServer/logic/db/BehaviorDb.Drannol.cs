@@ -3819,7 +3819,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SF4()
                     ),
-                new Threshold(0.02,
+                new Threshold(0.002,
                     new TierLoot(12, ItemType.Weapon, 0.08),
                     new TierLoot(5, ItemType.Ability, 0.07),
                     new TierLoot(6, ItemType.Ability, 0.05),
