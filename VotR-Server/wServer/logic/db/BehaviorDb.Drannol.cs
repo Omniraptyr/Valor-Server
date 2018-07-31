@@ -2929,8 +2929,7 @@ namespace wServer.logic
                  new State("sentry3",
                     new Grenade(4, 100, range: 100, coolDown: 4000, effect: ConditionEffectIndex.Bleeding, color: 0xFFFF00, effectDuration: 4000),
                     new Spawn("BD Bastille Brute", 1, 1, coolDown: 999999, givesNoXp: true),
-                    new Shoot(10, count: 6, projectileIndex: 1, fixedAngle: 0, coolDown: 1),
-                    new Shoot(10, count: 1, projectileIndex: 0, coolDown: 4000)
+                    new Shoot(8, count: 8, shootAngle: 20, projectileIndex: 1, predictive: 0.3, coolDown: 2000)
                     ),
                 new State("dead",
                     new Suicide()
