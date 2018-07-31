@@ -1037,6 +1037,7 @@ namespace wServer.logic
 
                             .Init("Flaming Summon",
                 new State(
+                    new ChangeSize(60, 140),
                     new Shoot(10, count: 12, projectileIndex: 2, coolDown: 4000),
                     new Prioritize(
                           new Orbit(0.7, 3, target: "Drannol, the Eternal Beast", speedVariance: 0.05),
@@ -3348,7 +3349,7 @@ namespace wServer.logic
                     ),
                     new State(
                         new ReplaceTile("BD Ground 2", "Super Hot Lava", 99),
-                        new DamageTakenTransition(40000, "Return1"),
+                        new DamageTakenTransition(80000, "Return1"),
                         new Shoot(20, count: 14, projectileIndex: 0, coolDown: 600),
                     new State(
                             new Shoot(1, count: 4, coolDown: 2000, projectileIndex: 4, fixedAngle: 90, rotateAngle: 10, coolDownOffset: 0, shootAngle: 90),
@@ -3359,7 +3360,7 @@ namespace wServer.logic
                         new TimedTransition(10000, "DT2"),
                         new Prioritize(
                             new Charge(2, 8, coolDown: 4000),
-                            new Follow(0.4),
+                            new Follow(0.6),
                             new Wander(0.1)
                         ),
                         new Shoot(10, count: 6, shootAngle: 6, rotateAngle: 20, projectileIndex: 1, predictive: 0.1, coolDown: 2000)
@@ -3390,7 +3391,7 @@ namespace wServer.logic
                         new TimedTransition(6000, "DT3")
                         ),
                     new State(
-                        new DamageTakenTransition(65000, "Return2"),
+                        new DamageTakenTransition(110000, "Return2"),
                         new State(
                             new Order(90, "Spiritorb Holder Sentry", "sentry1"),
                             new Shoot(20, count: 14, projectileIndex: 0, coolDown: 600),
@@ -3403,7 +3404,7 @@ namespace wServer.logic
                             new TimedTransition(10000, "DT4"),
                             new Prioritize(
                                 new Charge(2, 8, coolDown: 4000),
-                                new Follow(0.4),
+                                new Follow(0.8),
                                 new Wander(0.1)
                             ),
                             new Shoot(10, count: 6, shootAngle: 6, rotateAngle: 20, projectileIndex: 1, predictive: 0.1, coolDown: 2000)
@@ -3434,7 +3435,7 @@ namespace wServer.logic
                         new TimedTransition(6000, "DIE1")
                         ),
                     new State("DIE1",
-                            new DamageTakenTransition(80000, "invulnerable"),
+                            new DamageTakenTransition(140000, "invulnerable"),
                             new Order(90, "Spiritorb Holder Sentry", "sentry2"),
                             new Order(90, "Scorching Wrath Helper", "spawn"),
                             new Taunt("Your lives will not be spared!"),
@@ -3458,7 +3459,7 @@ namespace wServer.logic
                             new Wander(0.4)
                             ),
                         new Flash(0x000000, 0.25, 4),
-                        new DamageTakenTransition(90000, "Return3"),
+                        new DamageTakenTransition(170000, "Return3"),
                         new Order(90, "Scorching Wrath Helper", "idle"),
                         new TossObject("Scorching Fanatic", 4, 0, coolDown: 9999999),
                         new TossObject("Scorching Fanatic", 4, 45, coolDown: 9999999),
@@ -3486,7 +3487,7 @@ namespace wServer.logic
                         new TimedTransition(6000, "f1")
                         ),
                   new State(
-                   new DamageTakenTransition(100000, "ready1"),
+                   new DamageTakenTransition(200000, "ready1"),
                     new Order(90, "Spiritorb Holder Sentry", "sentry3"),
                     new State("f1",
                             new TimedTransition(1, "f2"),
@@ -3563,7 +3564,7 @@ namespace wServer.logic
                         ),
                                           new State("suppressionpurple",
                             new TimedTransition(10000, "FAILED"),
-                            new DamageTakenTransition(250000, "seal1"),
+                            new DamageTakenTransition(300000, "seal1"),
                             new ReplaceTile("BD Ground 5d", "BD Ground 6d", 99),
                             new Flash(0xFFFFFF, 0.25, 6)
                             ),
@@ -3589,7 +3590,7 @@ namespace wServer.logic
                             )
                         ),
                     new State(
-                          new DamageTakenTransition(360000, "ready2"),
+                          new DamageTakenTransition(420000, "ready2"),
                     new State("attack1",
                         new Order(90, "Spiritorb Holder Sentry", "sentry2"),
                             new Prioritize(
@@ -3621,7 +3622,7 @@ namespace wServer.logic
                         ),
                       new State("suppressionggreen",
                            new TimedTransition(10000, "FAILED"),
-                            new DamageTakenTransition(420000, "seal2"),
+                            new DamageTakenTransition(520000, "seal2"),
                             new ReplaceTile("BD Ground 5c", "BD Ground 6c", 99),
                             new Flash(0xFFFFFF, 0.25, 6)
                             ),
@@ -3647,7 +3648,7 @@ namespace wServer.logic
                             )
                         ),
                      new State(
-                          new DamageTakenTransition(580000, "ready3"),
+                          new DamageTakenTransition(660000, "ready3"),
                     new State("attack1a",
                         new Order(90, "Scorching Wrath Helper", "spawn"),
                         new TossObject("Flaming Summon", 3, angle: 180, coolDown: 9999),
@@ -3693,7 +3694,7 @@ namespace wServer.logic
                         ),
                    new State("suppressionblue",
                             new TimedTransition(10000, "FAILED"),
-                            new DamageTakenTransition(630000, "seal3"),
+                            new DamageTakenTransition(770000, "seal3"),
                             new ReplaceTile("BD Ground 5b", "BD Ground 6b", 99),
                             new Flash(0xFFFFFF, 0.25, 6)
                             ),
@@ -3720,14 +3721,14 @@ namespace wServer.logic
                         ),
                     new State(
                         new Order(90, "Scorching Wrath Helper", "spawn"),
-                        new DamageTakenTransition(700000, "ready4"),
+                        new DamageTakenTransition(840000, "ready4"),
                         new Shoot(20, count: 14, projectileIndex: 0, coolDown: 600),
                         new State("attack1b",
                             new Order(90, "Spiritorb Holder Sentry", "sentry2"),
                             new Taunt("YOU SHALL BE CRUSHED!"),
                             new Prioritize(
                                 new Charge(2, 8, coolDown: 4000),
-                                new Follow(0.6),
+                                new Follow(1.4),
                                 new Wander(0.1)
                             ),
                         new Shoot(10, count: 2, shootAngle: 20, projectileIndex: 9, coolDown: 6000),
@@ -3753,15 +3754,15 @@ namespace wServer.logic
                                 new Follow(1),
                                 new Wander(0.1)
                             ),
-                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 3000, coolDownOffset: 1800),
-                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 3000, angleOffset: 80, coolDownOffset: 1800),
-                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 3000, angleOffset: 280, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 80, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 280, coolDownOffset: 1800),
                         new TimedTransition(8000, "attack1b")
                             )
                         ),
                      new State("supressiongorange",
                             new TimedTransition(10000, "FAILED"),
-                            new DamageTakenTransition(800000, "seal4"),
+                            new DamageTakenTransition(980000, "seal4"),
                             new ReplaceTile("BD Ground 5a", "BD Ground 6a", 99),
                             new Flash(0xFFFFFF, 0.25, 6)
                             ),
