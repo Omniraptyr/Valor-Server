@@ -15,15 +15,15 @@ namespace wServer.realm.entities
         int _canTpCooldownTime;
         bool isSurgeGone;
         bool surgewither;
-       // public Projectile enemyprj;
+        public Projectile enemyprj;
         public int protectionDamage = 0;
         void HandleEffects(RealmTime time)
         {
 
-          //  if(enemyprj != null)
-          //  {
-          //      CheckEnemyProjectile(enemyprj);
-          //  }
+           /* if(enemyprj != null)
+            {
+                CheckEnemyProjectile(enemyprj);
+            }*/
             
 
             if (CheckAxe())
@@ -56,8 +56,6 @@ namespace wServer.realm.entities
                 Stats.Boost.ActivateBoost[1].Pop(60, false);
                 Stats.ReCalculateValues();
             }
-
-
             if (CheckMocking())
             {
                 ApplyConditionEffect(ConditionEffectIndex.Relentless);

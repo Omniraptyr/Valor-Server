@@ -40,7 +40,7 @@ namespace wServer.networking.handlers
 
                 if (player.tradeAccepted && player.tradeTarget.tradeAccepted)
                 {
-                    if (player.Client.Account.Admin != player.tradeTarget.Client.Account.Admin)
+                    if (player.Client.Account.Admin != player.tradeTarget.Client.Account.Admin || player.Client.Account.Elite != player.tradeTarget.Client.Account.Elite)
                     {
                         player.tradeTarget.CancelTrade();
                         player.CancelTrade();

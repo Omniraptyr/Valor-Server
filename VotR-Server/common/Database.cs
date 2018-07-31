@@ -108,7 +108,7 @@ namespace common
 
             // make sure guest have all classes if they are supposed to
             var stats = new DbClassStats(acnt);
-            if (_resources.Settings.Accounts.ClassesUnlocked)
+            if (_resources.Settings.Accounts.ClassesUnlocked || acnt.Elite == 1)
             {
                 foreach (var @class in _resources.GameData.Classes.Keys)
                     stats.Unlock(@class);
@@ -149,6 +149,13 @@ namespace common
                 foreach (var @class in _resources.GameData.Classes.Keys)
                     stats.Unlock(@class);
             stats.FlushAsync();
+
+            if (acc.Elite == 1)
+            {
+                foreach (var @class in _resources.GameData.Classes.Keys)
+                    stats.Unlock(@class);
+                stats.FlushAsync();
+            }
 
             // make sure account has all skins if they are supposed to
             if (acc.Rank >= 10)
@@ -353,7 +360,7 @@ namespace common
             acc.FlushAsync();
         }
 
-        public RegisterStatus Register(string uuid, string password, bool isGuest, out DbAccount acc)
+        public RegisterStatus Register(string uuid, string password, bool isGuest, int elite, out DbAccount acc)
         {
             var newAccounts = _resources.Settings.Accounts;
 
@@ -372,6 +379,7 @@ namespace common
                 Verified = false,
                 AgeVerified = true,
                 FirstDeath = true,
+                Elite = elite,
                 PetYardType = newAccounts.PetYardType,
                 GuildId = 0,
                 GuildRank = 0,

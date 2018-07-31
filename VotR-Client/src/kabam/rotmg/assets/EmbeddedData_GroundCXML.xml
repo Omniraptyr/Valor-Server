@@ -4816,4 +4816,88 @@
         </RandomTexture>
         <Speed>.666</Speed>
     </Ground>
+    <Ground type="0x298e" id="BD Ground 5a">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x35d</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x298f" id="BD Ground 6a">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x358</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x2991" id="BD Ground 5b">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x35d</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x2992" id="BD Ground 6b">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x358</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x2993" id="BD Ground 5c">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x35d</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x2994" id="BD Ground 6c">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x358</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x2995" id="BD Ground 5d">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x35d</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x2996" id="BD Ground 6d">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x358</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x2997" id="BD Ground 5e">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x35d</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x2998" id="BD Ground 6e">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x358</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x2999" id="BD Ground 5f">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x35d</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x299a" id="BD Ground 6f">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x358</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x299b" id="BD Ground 5g">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x35d</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x299c" id="BD Ground 6g">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x358</Index>
+        </Texture>
+    </Ground>
 </GroundTypes>

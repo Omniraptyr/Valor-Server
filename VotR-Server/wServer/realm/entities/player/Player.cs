@@ -158,6 +158,13 @@ namespace wServer.realm.entities
             set { _striked.SetValue(value); }
         }
 
+        private readonly SV<int> _elite;
+        public int Elite
+        {
+            get { return _elite.GetValue(); }
+            set { _elite.SetValue(value); }
+        }
+
         private readonly SV<bool> _ascensionEnabled;
         public bool AscensionEnabled
         {
@@ -565,6 +572,7 @@ namespace wServer.realm.entities
                 case StatsType.PWProtection: PWProtection = (int)val; break;
                 case StatsType.SorStorage: SorStorage = (int)val; break;
                 case StatsType.Striked: Striked = (int)val == 1; break;
+                case StatsType.Elite: Elite = (int)val; break;
             }
         }
 
@@ -687,6 +695,7 @@ namespace wServer.realm.entities
             stats[StatsType.ProtectionPointsMax] = ProtectionMax;
             stats[StatsType.SorStorage] = SorStorage;
             stats[StatsType.Striked] = Striked;
+            stats[StatsType.Elite] = Elite;
         }
 
         public void SaveToCharacter()
@@ -807,6 +816,7 @@ namespace wServer.realm.entities
             _pwRestoration = new SV<int>(this, StatsType.PWRestoration, client.Character.PWRestoration);
             _pwProtection = new SV<int>(this, StatsType.PWProtection, client.Character.PWProtection);
             _striked = new SV<bool>(this, StatsType.Striked, client.Account.Striked);
+            _elite = new SV<int>(this, StatsType.Elite, client.Account.Elite, true);
 
 
 
@@ -1090,6 +1100,7 @@ namespace wServer.realm.entities
                 HandleEffects(time);
                 HandleKrakenGround(time);
                 HandleOceanTrenchGround(time);
+                HandleBastille(time);
                 TickActivateEffects(time);
                 FameCounter.Tick(time);
                 // TODO, server side ground damage

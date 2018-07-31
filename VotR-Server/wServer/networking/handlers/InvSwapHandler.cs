@@ -176,6 +176,7 @@ namespace wServer.networking.handlers
                 !(a as Container).BagOwners.Contains(p.AccountId))
                 return false;
 
+
             if (b is Container &&
                 (b as Container).BagOwners.Length > 0 &&
                 !(b as Container).BagOwners.Contains(p.AccountId))

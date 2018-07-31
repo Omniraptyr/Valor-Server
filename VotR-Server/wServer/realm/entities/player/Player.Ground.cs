@@ -77,7 +77,44 @@ namespace wServer.realm.entities
                 Log.Error(ex);
             }
         }
+        private void HandleBastille(RealmTime time)
+        {
+            try
+            {
+                if (RageBar > 0)
+                {
+                    ApplyConditionEffect(ConditionEffectIndex.Weak, 0);
+                }
+                // don't suffocate hidden players
+                if (HasConditionEffect(ConditionEffects.Hidden)) return;
 
+                if (time.TotalElapsedMs - l <= 100 || Owner?.Name != "SummoningPoint") return;
+
+                if (this.GetNearestEntity(999, 0x63ed) == null)
+                {
+                    if (RageBar == 0)
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.Weak);
+                    }
+                    else
+                    {
+                        RageBar -= 2;
+                    }
+                }
+                else
+                {
+                    if (RageBar < 100)
+                        RageBar += 1;
+                    if (RageBar > 100)
+                        RageBar = 100;
+                }
+                l = time.TotalElapsedMs;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+            }
+        }
         bool HandleGround(RealmTime time)
         {
             if (time.TotalElapsedMs - l > 500)

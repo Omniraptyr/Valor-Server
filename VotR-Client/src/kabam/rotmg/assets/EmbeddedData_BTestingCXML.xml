@@ -12558,15 +12558,15 @@
         <Projectile id="8">
             <ObjectId>Eternal Wave</ObjectId>
             <Damage>560</Damage>
-            <Speed>80</Speed>
+            <Speed>40</Speed>
             <ConditionEffect duration="6">Armor Broken</ConditionEffect>
-            <LifetimeMS>2000</LifetimeMS>
+            <LifetimeMS>3000</LifetimeMS>
         </Projectile>
         <Projectile id="9">
             <ObjectId>Eternal Slash</ObjectId>
             <Damage>640</Damage>
-            <Speed>60</Speed>
-            <LifetimeMS>1800</LifetimeMS>
+            <Speed>30</Speed>
+            <LifetimeMS>2800</LifetimeMS>
             <MultiHit/>
             <Wavy/>
             <ConditionEffect duration="3">Slowed</ConditionEffect>
@@ -13490,5 +13490,148 @@
             <ConditionEffect duration="60">Weak</ConditionEffect>
             <MultiHit/>
         </Projectile>
+    </Object>
+    <Object type="0x64de" id="BD Taskmaster 1">
+        <DisplayId>The Voice</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <Class>Character</Class>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <Size>110</Size>
+        <MaxHitPoints>30000</MaxHitPoints>
+        <Defense>50</Defense>
+        <NoMiniMap/>
+        <Level>1</Level>
+        <XpMult>100</XpMult>
+        <NoArticle/>
+        <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x64df" id="BD Taskmaster 2">
+        <DisplayId>Taskmaster 2</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <Class>Character</Class>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <Size>110</Size>
+        <MaxHitPoints>30000</MaxHitPoints>
+        <Defense>50</Defense>
+        <NoMiniMap/>
+        <Level>1</Level>
+        <XpMult>100</XpMult>
+        <NoArticle/>
+        <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x64e1" id="BD Taskmaster 3">
+        <DisplayId>Taskmaster 2</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <Class>Character</Class>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <Size>110</Size>
+        <MaxHitPoints>30000</MaxHitPoints>
+        <Defense>50</Defense>
+        <NoMiniMap/>
+        <Level>1</Level>
+        <XpMult>100</XpMult>
+        <NoArticle/>
+        <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x64e2" id="BD Taskmaster 4">
+        <DisplayId>Taskmaster 2</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <Class>Character</Class>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <Size>110</Size>
+        <MaxHitPoints>30000</MaxHitPoints>
+        <Defense>50</Defense>
+        <NoMiniMap/>
+        <Level>1</Level>
+        <XpMult>100</XpMult>
+        <NoArticle/>
+        <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x64e3" id="Flaming Summon">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>raiding32x32Embed</File>
+            <Index>1</Index>
+        </AnimatedTexture>
+        <HitSound>monster/skull_shrine_hit</HitSound>
+        <DeathSound>monster/ghost_god_death</DeathSound>
+        <MaxHitPoints>225000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Fire Bullet</ObjectId>
+            <Speed>75</Speed>
+            <Damage>60</Damage>
+            <Size>125</Size>
+            <LifetimeMS>1000</LifetimeMS>
+            <MultiHit/>
+            <ConditionEffect duration="3">Armor Broken</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Meteor Bastille Blast</ObjectId>
+            <Speed>100</Speed>
+            <Damage>160</Damage>
+            <Size>125</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Lava Circle</ObjectId>
+            <Speed>40</Speed>
+            <Damage>100</Damage>
+            <Size>100</Size>
+            <LifetimeMS>420</LifetimeMS>
+            <ConditionEffect duration="4">Stunned</ConditionEffect>
+        </Projectile>
+        <Size>0</Size>
+        <Defense>20</Defense>
+        <DisplayId>Flaming Summon</DisplayId>
+    </Object>
+    <Object type="0x64e4" id="BD Taskmaster 5">
+        <DisplayId>Taskmaster 2</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <Class>Character</Class>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <Size>110</Size>
+        <MaxHitPoints>30000</MaxHitPoints>
+        <Defense>50</Defense>
+        <NoMiniMap/>
+        <Level>1</Level>
+        <XpMult>100</XpMult>
+        <NoArticle/>
+        <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x64e5" id="Summoning Point Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Summoning Point</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x221</Index>
+        </Texture>
+        <DisplayId>Summoning Point</DisplayId>
     </Object>
 </Objects>

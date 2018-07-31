@@ -28,6 +28,12 @@ namespace wServer.realm.entities.vendors
 
         public override void Buy(Player player)
         {
+            if (player.Client.Account.Elite == 1)
+            {
+                player.SendError("Elite accounts can't use the marketplace!");
+                return;
+            }
+
             if (player.Client.Account.Admin && player.Client.Account.Rank < 100)
             {
                 SendFailed(player, BuyResult.Admin);

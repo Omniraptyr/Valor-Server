@@ -22,9 +22,10 @@ namespace wServer.networking.handlers
 
         private void Handle(Player player, ObjectSlot slot)
         {
-            //sor forger dupe fix
+
             if (player.Owner.Name == "Station")
                 return;
+                
 
             if (player?.Owner == null || player.tradeTarget != null)
                 return;
@@ -81,7 +82,7 @@ namespace wServer.networking.handlers
 
             // create new container for item to be placed in
             Container container;
-            if (item.Soulbound || player.Client.Account.Admin)
+            if (item.Soulbound || player.Client.Account.Admin || player.Client.Account.Elite == 1)
             {
                 container = new Container(player.Manager, soulBag, 1000 * 60, true);
                 container.BagOwners = new int[] { player.AccountId };

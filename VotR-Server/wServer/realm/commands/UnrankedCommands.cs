@@ -807,6 +807,11 @@ namespace wServer.realm.commands
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
+            if (player.Client.Account.Elite == 1)
+            {
+                player.SendError("Elite accounts can't use the marketplace!");
+                return false;
+            }
             if (!(player.Owner is Marketplace))
             {
                 player.SendError("Can only market items in Marketplace.");
@@ -849,6 +854,13 @@ namespace wServer.realm.commands
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
+
+            if (player.Client.Account.Elite == 1)
+            {
+                player.SendError("Elite accounts can't use the marketplace!");
+                return false;
+            }
+
             if (!(player.Owner is Marketplace))
             {
                 player.SendError("Can only market items in Marketplace.");

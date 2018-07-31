@@ -374,7 +374,13 @@ namespace common
             get { return GetValue<bool>("guest"); }
             set { SetValue<bool>("guest", value); }
         }
-        
+
+        public int Elite
+        {
+            get { return GetValue<int>("elite"); }
+            set { SetValue<int>("elite", value); }
+        }
+
         public int Credits
         {
             get { return GetValue<int>("credits"); }

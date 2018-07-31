@@ -46,7 +46,7 @@ namespace wServer.networking.handlers
                     .Where(p => p.Value.ProjectileOwner.Self.Id == objectId)
                     .SingleOrDefault(p => p.Value.ProjectileId == bulletId).Value;
 
-
+            //player.enemyprj = prj;
 
             if (player.CheckDRage() == true)
             {

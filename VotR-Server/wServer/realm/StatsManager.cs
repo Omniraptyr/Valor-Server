@@ -134,7 +134,7 @@ namespace wServer.realm
 
         public float MightMultiplier()
         {
-            float ret = Math.Min(3.5f, 1.0f + Owner.Stats[8] / 70);
+            float ret = Math.Min(2.5f + Owner.Stats[2] / 50, 1.0f + Owner.Stats[8] / 70);
             if (Owner.HasConditionEffect(ConditionEffects.Bravery))
                 return ret * 2;
             return ret;

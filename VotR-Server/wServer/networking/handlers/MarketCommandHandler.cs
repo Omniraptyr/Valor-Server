@@ -49,6 +49,12 @@ namespace wServer.networking.handlers
 
         private void AddOffers(Client client, MarketOffer[] newOffers)
         {
+            if (client.Player.Client.Account.Elite == 1)
+            {
+                client.Player.SendError("Elite accounts can't use the marketplace!");
+                return;
+            }
+
             if (newOffers.Length > 20 || newOffers.Select(o => o.Slot.SlotId).Distinct().Count() < newOffers.Length)
             {
                 Log.Info($"Market Error {client.Player.Name}: Invalid offer.");

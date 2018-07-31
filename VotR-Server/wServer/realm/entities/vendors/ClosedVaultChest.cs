@@ -31,6 +31,8 @@ namespace wServer.realm.entities.vendors
             var t2 = trans.ExecuteAsync();
             Task.WhenAll(t1, t2).ContinueWith(t =>
             {
+                player.Credits -= Price;
+
                 if (t.IsCanceled)
                 {
                     SendFailed(player, BuyResult.TransactionFailed);
@@ -38,7 +40,6 @@ namespace wServer.realm.entities.vendors
                 }
 
                 acc.Reload("vaultCount");
-                player.CurrentFame = acc.Fame;
 
                 (Owner as Vault)?.AddChest(this);
                 player.Client.SendPacket(new networking.packets.outgoing.BuyResult()

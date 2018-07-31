@@ -91,6 +91,26 @@ namespace wServer.logic
                     )
                 )
             )
+            .Init("BD Spirit Orb Power",
+            new State(
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("Main",
+                    new State("idle",
+                        new PlayerWithinTransition(1, "follow")
+                        ),
+                    new State("follow",
+                        new EntityExistsTransition("Spiritorb Holder Default Yellow", 6, "die"),
+                        new Prioritize(
+                            new Follow(2.5, 16, 1),
+                            new Wander(0.25)
+                        )
+                        ),
+                    new State("die",
+                        new Suicide()
+                        )
+                    )
+                )
+            )
             .Init("Spiritorb Holder Default Orange",
             new State(
                 new TransformOnDeath("Spiritorb Holder Orange", 1, 1, 1),
@@ -245,7 +265,73 @@ namespace wServer.logic
                 )
             )
 
-                                .Init("BD Puzzling Blue Deactivated",
+        //30 seconds for orb spawns
+            .Init("BD Taskmaster 1",
+            new State(
+                new SetNoXP(),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("start",
+                    new EntityExistsTransition("BD Taskmaster 3", 9999, "begin")
+                    ),
+                new State("isorb",
+                    new EntityNotExistsTransition("BD Spirit Orb Power", 9999, "begin")
+                    ),
+                new State("begin",
+                    new Taunt(true, "A power orb spawns in 20 seconds..."),
+                    new TimedTransition(20000, "abouttospawn")
+                    ),
+                new State("abouttospawn",
+                    new Taunt(true, "A power orb spawns in 10 second..."),
+                    new TimedTransition(10000, "spawn")
+                    ),
+                new State("spawn",
+                     new Order(99, "BD Taskmaster 2", "first"),
+                     new TimedTransition(1000, "isorb")
+                    ),
+                new State("suicide2",
+                     new Suicide()
+                    )
+                )
+            )
+
+            .Init("BD Taskmaster 2",
+            new State(
+                new SetNoXP(),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("idle"
+                    ),
+                new State("first",
+                     new Spawn("BD Spirit Orb Power", 1, 1, coolDown: 99999),
+                     new TimedTransition(1000, "idle")
+                    ),
+                new State("suicide2",
+                     new Suicide()
+                    )
+                )
+            )
+
+            .Init("BD Taskmaster 4",
+            new State(
+                new SetNoXP(),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("idle"
+                    ),
+                new State("first",
+                     new Spawn("Flaming Summon", 1, 1, coolDown: 999999)
+                    ),
+                new State("suicide2",
+                     new Suicide()
+                    )
+                )
+            )
+             .Init("BD Taskmaster 5",
+            new State(
+                new SetNoXP(),
+                new ConditionalEffect(ConditionEffectIndex.Invincible)
+                )
+            )
+
+            .Init("BD Puzzling Blue Deactivated",
             new State(
                 new SetNoXP(),
                 new TransformOnDeath("BD Puzzling Blue Activated", 1, 1, 1),
@@ -313,7 +399,7 @@ namespace wServer.logic
                 new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 0, coolDown: 2000),
                 new Orbit(0.8, 3, 10, target: "Revil, the Twisted Vanguard"),
                 new State("first",
-                    new DamageTakenTransition(20000, "heal")
+                    new DamageTakenTransition(10000, "heal")
                     ),
                 new State("heal",
                     new HealGroup(20, "Revil", coolDown: 9999, healAmount: 20000),
@@ -617,7 +703,8 @@ namespace wServer.logic
                 new TransformOnDeath("Spiritorb Holder Default Yellow", 1, 1, 1),
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("Main",
-                    new State("idle"
+                    new State("idle",
+                        new TimedTransition(24000, "die")
                         ),
                     new State("die",
                         new Suicide()
@@ -948,6 +1035,27 @@ namespace wServer.logic
 
 
 
+                            .Init("Flaming Summon",
+                new State(
+                    new Shoot(10, count: 12, projectileIndex: 2, coolDown: 4000),
+                    new Prioritize(
+                          new Orbit(0.7, 3, target: "BD Winged Beast", speedVariance: 0.05),
+                          new Follow(0.5, 8, 1)
+                   ),
+                new State("Main",
+                        new Shoot(10, count: 1, projectileIndex: 1, predictive: 1, coolDown: 1200),
+                        new Shoot(10, count: 4, shootAngle: 8, projectileIndex: 0, angleOffset: 40, coolDown: 400),
+                        new Shoot(10, count: 4, shootAngle: 8, projectileIndex: 0, angleOffset: 320, coolDown: 400),
+                        new TimedTransition(4000, "fight2")
+                        ),
+                    new State("fight2",
+                        new ConditionalEffect(ConditionEffectIndex.Armored),
+                        new Shoot(10, count: 3, projectileIndex: 1, coolDown: 200),
+                        new Shoot(10, count: 7, projectileIndex: 0, coolDown: 1000),
+                        new TimedTransition(2000, "Main")
+                        )
+                    )
+                )
 
 
 
@@ -1962,7 +2070,6 @@ namespace wServer.logic
                         new TossObject("Twisted Shield", range: 4, angle: 90, coolDown: 99999),
                         new TossObject("Twisted Shield", range: 4, angle: 270, coolDown: 99999),
                         new TossObject("Twisted Axe", range: 4, angle: 90, coolDown: 99999),
-                        new TossObject("Twisted Axe", range: 4, angle: 270, coolDown: 99999),
                         new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 2, coolDown: 2000),
                         new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 2, coolDown: 2000),
                         new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 2, coolDown: 2000),
@@ -2818,6 +2925,12 @@ namespace wServer.logic
                  new State("sentry2",
                     new Shoot(10, count: 3, shootAngle: 20, projectileIndex: 1, predictive: 0.3, coolDown: 3000)
                     ),
+                 new State("sentry3",
+                    new Grenade(4, 100, range: 100, coolDown: 4000, effect: ConditionEffectIndex.Bleeding, color: 0xFFFF00, effectDuration: 4000),
+                    new Spawn("BD Bastille Brute", 1, 1, coolDown: 999999, givesNoXp: true),
+                    new Shoot(10, count: 6, projectileIndex: 1, fixedAngle: 0, coolDown: 1),
+                    new Shoot(10, count: 1, projectileIndex: 0, coolDown: 4000)
+                    ),
                 new State("dead",
                     new Suicide()
                     )
@@ -2864,6 +2977,7 @@ namespace wServer.logic
             )
             .Init("Scorching Wrath Real",
                 new State(
+                    //new DropPortalOnDeath("Summoning Point Portal", 1, 120),
                     new TransformOnDeath("Lin2", 1, 1),
                 new State(
 
@@ -3190,6 +3304,7 @@ namespace wServer.logic
                 )
            .Init("Lin2",
             new State(
+                new DropPortalOnDeath("Summoning Point Portal", 1, 120),
                 new TransformOnDeath("Scorching Fanatic", 2, 3),
                 new SetNoXP(),
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -3224,6 +3339,7 @@ namespace wServer.logic
                         new TimedTransition(4000, "taunt3")
                         ),
                     new State("taunt3",
+                        new Spawn("BD Taskmaster 3", 1, 1, coolDown: 99999),
                         new ChangeMusic("DrannolCage"),
                         new Taunt(true, "I will rip you to shreds..and when I'm done I'll destroy your puny safehaven so called the Nexus.", "My rage is an unstoppable force. Finally, this is the day of my judgement."),
                         new MoveTo(1, 44, 40),
@@ -3231,6 +3347,7 @@ namespace wServer.logic
                         )
                     ),
                     new State(
+                        new ReplaceTile("BD Ground 2", "Super Hot Lava", 99),
                         new DamageTakenTransition(40000, "Return1"),
                         new Shoot(20, count: 14, projectileIndex: 0, coolDown: 600),
                     new State(
@@ -3246,7 +3363,7 @@ namespace wServer.logic
                             new Wander(0.1)
                         ),
                         new Shoot(10, count: 6, shootAngle: 6, rotateAngle: 20, projectileIndex: 1, predictive: 0.1, coolDown: 2000)
-                       
+
                             )
                          ),
                     new State(
@@ -3266,63 +3383,441 @@ namespace wServer.logic
                             )
                          )
                       ),
-                      new State("Return1",
-                        new HealSelf(coolDown: 500),
-                        new Taunt("I grow stronger!"),
+                    new State("Return1",
+                        new Taunt("You are nothing"),
                         new MoveTo(1, 44, 40),
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
-                        new TimedTransition(4000, "DT3")
+                        new TimedTransition(6000, "DT3")
                         ),
                     new State(
-                        new Order(90, "Spiritorb Holder Sentry", "sentry1"),
-                        new DamageTakenTransition(40000, "Return1", true),
-                        new Shoot(20, count: 14, projectileIndex: 0, coolDown: 600),
+                        new DamageTakenTransition(65000, "Return2"),
+                        new State(
+                            new Order(90, "Spiritorb Holder Sentry", "sentry1"),
+                            new Shoot(20, count: 14, projectileIndex: 0, coolDown: 600),
+                        new State(
+                                new Shoot(1, count: 4, coolDown: 2000, projectileIndex: 4, fixedAngle: 90, rotateAngle: 10, coolDownOffset: 0, shootAngle: 90),
+                                new Shoot(1, count: 8, coolDown: 10000, projectileIndex: 4, fixedAngle: 180, coolDownOffset: 4000, shootAngle: 45),
+                                new Shoot(1, count: 4, coolDown: 2000, projectileIndex: 4, fixedAngle: 180, rotateAngle: -10, coolDownOffset: 0, shootAngle: 90),
+                                new Shoot(1, count: 4, coolDown: 10000, projectileIndex: 4, fixedAngle: 90, coolDownOffset: 4000, shootAngle: 22.5),
+                        new State("DT3",
+                            new TimedTransition(10000, "DT4"),
+                            new Prioritize(
+                                new Charge(2, 8, coolDown: 4000),
+                                new Follow(0.4),
+                                new Wander(0.1)
+                            ),
+                            new Shoot(10, count: 6, shootAngle: 6, rotateAngle: 20, projectileIndex: 1, predictive: 0.1, coolDown: 2000)
+                                    )
+                                )
+                             ),
+                        new State(
+                                new Shoot(1, count: 4, shootAngle: 6, coolDown: 4000, projectileIndex: 4, fixedAngle: 90),
+                                new Shoot(1, count: 4, shootAngle: 6, coolDown: 4000, projectileIndex: 4, fixedAngle: 270),
+                                new Shoot(1, count: 4, shootAngle: 6, coolDown: 4000, projectileIndex: 4, fixedAngle: 0, coolDownOffset: 2000),
+                                new Shoot(1, count: 4, shootAngle: 6, coolDown: 4000, projectileIndex: 4, fixedAngle: 180, coolDownOffset: 2000),
+                        new State("DT4",
+                            new TimedTransition(10000, "DT3"),
+                            new Prioritize(
+                                new Charge(2, 8, coolDown: 4000),
+                                new Follow(0.4),
+                                new Wander(0.1)
+                            ),
+                            new Shoot(10, count: 4, shootAngle: 8, angleOffset: 40, projectileIndex: 1, predictive: 0.1, coolDown: 2000),
+                            new Shoot(10, count: 4, shootAngle: 8, angleOffset: 320, projectileIndex: 1, predictive: 0.1, coolDown: 2000)
+                             )
+                          )
+                        ),
+                    new State("Return2",
+                        new Order(90, "Spiritorb Holder Sentry", "idle"),
+                        new MoveTo(1, 44, 40),
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new TimedTransition(6000, "DIE1")
+                        ),
+                    new State("DIE1",
+                            new DamageTakenTransition(80000, "invulnerable"),
+                            new Order(90, "Spiritorb Holder Sentry", "sentry2"),
+                            new Order(90, "Scorching Wrath Helper", "spawn"),
+                            new Taunt("Your lives will not be spared!"),
+                            new TossObject("Scorching Fanatic", 4, 0, coolDown: 9999999),
+                            new TossObject("Scorching Fanatic", 4, 45, coolDown: 9999999),
+                            new TossObject("Scorching Fanatic", 4, 90, coolDown: 9999999),
+                            new TossObject("Scorching Fanatic", 4, 135, coolDown: 9999999),
+                            new TossObject("Scorching Fanatic", 4, 180, coolDown: 9999999),
+                            new TossObject("Scorching Fanatic", 4, 225, coolDown: 9999999),
+                            new TossObject("Scorching Fanatic", 4, 270, coolDown: 9999999),
+                            new TossObject("Scorching Fanatic", 4, 315, coolDown: 9999999),
+                            new Shoot(10, count: 8, projectileIndex: 2, coolDown: 3000),
+                            new Shoot(10, count: 6, shootAngle: 10, projectileIndex: 2, predictive: 0.1, coolDown: 1000, coolDownOffset: 1600),
+                            new Shoot(10, count: 3, shootAngle: 8, angleOffset: 40, projectileIndex: 1, predictive: 0.1, coolDown: 1000),
+                            new Shoot(10, count: 3, shootAngle: 8, angleOffset: 320, projectileIndex: 1, predictive: 0.1, coolDown: 1000)
+                        ),
                     new State(
-                            new Shoot(1, count: 4, coolDown: 2000, projectileIndex: 4, fixedAngle: 90, rotateAngle: 10, coolDownOffset: 0, shootAngle: 90),
-                            new Shoot(1, count: 8, coolDown: 10000, projectileIndex: 4, fixedAngle: 180, coolDownOffset: 4000, shootAngle: 45),
-                            new Shoot(1, count: 4, coolDown: 2000, projectileIndex: 4, fixedAngle: 180, rotateAngle: -10, coolDownOffset: 0, shootAngle: 90),
-                            new Shoot(1, count: 4, coolDown: 10000, projectileIndex: 4, fixedAngle: 90, coolDownOffset: 4000, shootAngle: 22.5),
-                    new State("DT3",
-                        new TimedTransition(10000, "DT4"),
                         new Prioritize(
-                            new Charge(2, 8, coolDown: 4000),
-                            new Follow(0.4),
-                            new Wander(0.1)
+                            new StayAbove(0.7, 200),
+                            new Follow(0.7, range: 7),
+                            new Wander(0.4)
+                            ),
+                        new Flash(0x000000, 0.25, 4),
+                        new DamageTakenTransition(90000, "Return3"),
+                        new Order(90, "Scorching Wrath Helper", "idle"),
+                        new TossObject("Scorching Fanatic", 4, 0, coolDown: 9999999),
+                        new TossObject("Scorching Fanatic", 4, 45, coolDown: 9999999),
+                        new TossObject("Scorching Fanatic", 4, 90, coolDown: 9999999),
+                        new TossObject("Scorching Fanatic", 4, 135, coolDown: 9999999),
+                        new TossObject("Scorching Fanatic", 4, 180, coolDown: 9999999),
+                        new TossObject("Scorching Fanatic", 4, 225, coolDown: 9999999),
+                        new TossObject("Scorching Fanatic", 4, 270, coolDown: 9999999),
+                        new TossObject("Scorching Fanatic", 4, 315, coolDown: 9999999),
+                        new Shoot(10, count: 6, shootAngle: 10, projectileIndex: 2, predictive: 0.1, coolDown: 1000, coolDownOffset: 1600),
+                        new Shoot(10, count: 3, shootAngle: 8, angleOffset: 40, projectileIndex: 1, predictive: 0.1, coolDown: 1000),
+                        new Shoot(10, count: 3, shootAngle: 8, angleOffset: 320, projectileIndex: 1, predictive: 0.1, coolDown: 1000),
+                     new State("invulnerable",
+                          new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                          new TimedTransition(4000, "notinvulnerable")
+                          ),
+                     new State("notinvulnerable",
+                          new TimedTransition(4000, "invulnerable")
+                          )
                         ),
-                        new Shoot(10, count: 6, shootAngle: 6, rotateAngle: 20, projectileIndex: 1, predictive: 0.1, coolDown: 2000)
-
+                  new State("Return3",
+                        new Order(90, "Spiritorb Holder Sentry", "idle"),
+                        new MoveTo(1, 44, 40),
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new TimedTransition(6000, "f1")
+                        ),
+                  new State(
+                   new DamageTakenTransition(100000, "ready1"),
+                    new Order(90, "Spiritorb Holder Sentry", "sentry3"),
+                    new State("f1",
+                            new TimedTransition(1, "f2"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 0, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f2",
+                            new TimedTransition(1, "f3"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 20, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f3",
+                            new TimedTransition(1, "f4"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 40, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f4",
+                            new TimedTransition(1, "f5"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 60, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f5",
+                            new TimedTransition(1, "f6"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 80, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f6",
+                            new TimedTransition(1, "f7"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 100, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f7",
+                            new TimedTransition(1, "f8"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 120, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f8",
+                            new TimedTransition(1, "f9"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 140, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f9",
+                            new TimedTransition(1, "f10"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 160, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f10",
+                            new TimedTransition(1, "f11"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 180, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f11",
+                            new TimedTransition(1, "f12"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 200, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f12",
+                            new TimedTransition(1, "f13"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 220, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f13",
+                            new TimedTransition(1, "f15"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 240, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f15",
+                            new TimedTransition(1, "f16"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 260, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f16",
+                            new TimedTransition(1, "f17"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 280, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f17",
+                            new TimedTransition(1, "f18"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 300, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f18",
+                            new TimedTransition(1, "f19"),
+                            new Shoot(10, count: 4, shootAngle: 90, fixedAngle: 320, projectileIndex: 3, coolDown: 1)
+                            ),
+                    new State("f19",
+                            new TimedTransition(1, "f1"),
+                            new Shoot(10, count: 2, shootAngle: 4, fixedAngle: 340, projectileIndex: 3, coolDown: 1)
                             )
-                         ),
-                    new State(
-                            new Shoot(1, count: 4, shootAngle: 6, coolDown: 4000, projectileIndex: 4, fixedAngle: 90),
-                            new Shoot(1, count: 4, shootAngle: 6, coolDown: 4000, projectileIndex: 4, fixedAngle: 270),
-                            new Shoot(1, count: 4, shootAngle: 6, coolDown: 4000, projectileIndex: 4, fixedAngle: 0, coolDownOffset: 2000),
-                            new Shoot(1, count: 4, shootAngle: 6, coolDown: 4000, projectileIndex: 4, fixedAngle: 180, coolDownOffset: 2000),
-                    new State("DT4",
-                        new TimedTransition(10000, "DT3"),
-                        new Prioritize(
-                            new Charge(2, 8, coolDown: 4000),
-                            new Follow(0.4),
-                            new Wander(0.1)
                         ),
-                        new Shoot(10, count: 10, shootAngle: 8, rotateAngle: 20, projectileIndex: 1, predictive: 0.1, coolDown: 2000)
+                                          new State("suppressionpurple",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(250000, "seal1"),
+                            new ReplaceTile("BD Ground 5d", "BD Ground 6d", 99),
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                      new State(
+                          new ConditionalEffect(ConditionEffectIndex.Invincible),
+                          new State("ready1",
+                            new Order(90, "Spiritorb Holder Sentry", "idle"),
+                            new Order(90, "Scorching Wrath Helper", "idle"),
+                            new MoveTo(1, 44, 40),
+                            new TimedTransition(6000, "suppressionpurple")
+                            ),
+                        new State("seal1",
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue1", "Wanzyu", 20),
+                            new Flash(0xFF00FF, 0.5, 6)
+                            ),
+                        new State("continue1",
+                            new Taunt("GAAAAH!"),
+                            new ReplaceTile("BD Ground 6d", "BD Ground 5d", 99),
+                            new ChangeSize(60, 140),
+                            new Flash(0xFFFFFF, 0.5, 6),
+                            new TimedTransition(4000, "attack1")
+                            )
+                        ),
+                    new State(
+                          new DamageTakenTransition(360000, "ready2"),
+                    new State("attack1",
+                        new Order(90, "Spiritorb Holder Sentry", "sentry2"),
+                            new Prioritize(
+                                new Charge(2, 8, coolDown: 4000),
+                                new Follow(0.4),
+                                new Wander(0.1)
+                            ),
+                        new Shoot(10, count: 4, shootAngle: 6, projectileIndex: 6, coolDown: 2000),
+                        new Shoot(10, count: 4, shootAngle: 10, angleOffset: 180, projectileIndex: 7, coolDown: 2000, coolDownOffset: 1200),
+                        new Shoot(10, count: 4, shootAngle: 10, angleOffset: 0, projectileIndex: 7, coolDown: 2000, coolDownOffset: 1200),
+                        new TimedTransition(6000, "attack2")
+                        ),
+                   new State("attack2",
+                        new Order(90, "Spiritorb Holder Sentry", "idle"),
+                            new Prioritize(
+                                new Follow(1),
+                                new Wander(0.1)
+                            ),
+                        new Shoot(10, count: 3, shootAngle: 8, angleOffset: 40, projectileIndex: 6, predictive: 0.1, coolDown: 1000),
+                        new Shoot(10, count: 3, shootAngle: 8, angleOffset: 320, projectileIndex: 6, predictive: 0.1, coolDown: 1000),
+                        new TimedTransition(4000, "attack3")
+                        ),
+                     new State("attack3",
+                        new Order(90, "Spiritorb Holder Sentry", "sentry3"),
+                        new Wander(0.1),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 7, coolDown: 2000),
+                        new TimedTransition(4000, "attack1")
+                            )
+                        ),
+                      new State("suppressionggreen",
+                           new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(420000, "seal2"),
+                            new ReplaceTile("BD Ground 5c", "BD Ground 6c", 99),
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                      new State(
+                          new ConditionalEffect(ConditionEffectIndex.Invincible),
+                          new State("ready2",
+                            new Order(90, "Spiritorb Holder Sentry", "idle"),
+                            new Order(90, "Scorching Wrath Helper", "idle"),
+                            new MoveTo(1, 44, 40),
+                            new TimedTransition(6000, "suppressionggreen")
+                            ),
+                        new State("seal2",
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue2", "Igaur", 20),
+                            new Flash(0x00FF00, 0.5, 6)
+                            ),
+                        new State("continue2",
+                            new Taunt("GAAAAH!"),
+                            new ReplaceTile("BD Ground 6c", "BD Ground 5c", 99),
+                            new ChangeSize(60, 120),
+                            new Flash(0xFFFFFF, 0.5, 6),
+                            new TimedTransition(4000, "attack1a")
+                            )
+                        ),
+                     new State(
+                          new DamageTakenTransition(580000, "ready3"),
+                    new State("attack1a",
+                        new Order(90, "Scorching Wrath Helper", "spawn"),
+                        new Order(99, "BD Taskmaster 4", "spawn"),
+                        new Taunt("My company and I will burn you to ashes!"),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Order(90, "Scorching Wrath Helper", "spawn"),
+                            new Prioritize(
+                                new Charge(2, 8, coolDown: 4000),
+                                new Follow(0.4),
+                                new Wander(0.1)
+                            ),
+                        new Shoot(10, count: 6, projectileIndex: 7, coolDown: 6000),
+                        new Shoot(10, count: 4, shootAngle: 8, projectileIndex: 5, coolDown: 3000),
+                        new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 5, coolDown: 3000, coolDownOffset: 1600),
+                        new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 5, coolDown: 3000, coolDownOffset: 1600),
+                        new TimedTransition(2000, "attack2a")
+                        ),
+                    new State("attack2a",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                            new Prioritize(
+                                new Charge(2, 8, coolDown: 4000),
+                                new Follow(0.4),
+                                new Wander(0.1)
+                            ),
+                        new Shoot(10, count: 6, projectileIndex: 7, coolDown: 6000),
+                        new Shoot(10, count: 4, shootAngle: 8, projectileIndex: 5, coolDown: 3000),
+                        new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 5, coolDown: 3000, coolDownOffset: 1600),
+                        new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 5, coolDown: 3000, coolDownOffset: 1600),
+                        new EntitiesNotExistsTransition(99, "vulni", "Flaming Summon")
+                            ),
+                    new State("vulni",
+                            new Prioritize(
+                                new Charge(2, 8, coolDown: 4000),
+                                new Follow(0.4),
+                                new Wander(0.1)
+                            ),
+                        new Shoot(10, count: 6, projectileIndex: 7, coolDown: 6000),
+                        new Shoot(10, count: 4, shootAngle: 8, projectileIndex: 5, coolDown: 3000),
+                        new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 5, coolDown: 3000, coolDownOffset: 1600),
+                        new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 5, coolDown: 3000, coolDownOffset: 1600)
+                            )
+                        ),
+                   new State("suppressionblue",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(630000, "seal3"),
+                            new ReplaceTile("BD Ground 5b", "BD Ground 6b", 99),
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                    new State(
+                          new ConditionalEffect(ConditionEffectIndex.Invincible),
+                          new State("ready3",
+                            new Order(90, "Spiritorb Holder Sentry", "idle"),
+                            new Order(90, "Scorching Wrath Helper", "idle"),
+                            new MoveTo(1, 44, 40),
+                            new TimedTransition(6000, "suppressionblue")
+                            ),
+                        new State("seal3",
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue3", "Tareg", 20),
+                            new Flash(0x0000FF, 0.5, 6)
+                            ),
+                        new State("continue3",
+                            new Taunt("NO!"),
+                            new ReplaceTile("BD Ground 6b", "BD Ground 5b", 99),
+                            new ChangeSize(60, 100),
+                            new Flash(0xFFFFFF, 0.5, 6),
+                            new TimedTransition(4000, "attack1b")
+                            )
+                        ),
+                    new State(
+                        new DamageTakenTransition(700000, "ready4"),
+                        new Shoot(20, count: 14, projectileIndex: 0, coolDown: 600),
+                        new State("attack1b",
+                            new Order(90, "Spiritorb Holder Sentry", "sentry1"),
+                            new Taunt("YOU SHALL BE CRUSHED!"),
+                            new Prioritize(
+                                new Follow(0.6),
+                                new Wander(0.1)
+                            ),
+                        new Shoot(10, count: 2, shootAngle: 20, projectileIndex: 9, coolDown: 6000),
 
+                        new Shoot(10, count: 1, shootAngle: 6, projectileIndex: 8, coolDown: 2000),
+                        new Shoot(10, count: 1, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 60),
+                        new Shoot(10, count: 1, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 300),
+
+                        new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 8, coolDown: 2000, coolDownOffset: 2600),
+                        new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 60, coolDownOffset: 2600),
+                        new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 300, coolDownOffset: 2600),
+
+                        new Shoot(10, count: 3, shootAngle: 6, projectileIndex: 8, coolDown: 2000, coolDownOffset: 4800),
+                        new Shoot(10, count: 3, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 60, coolDownOffset: 4800),
+                        new Shoot(10, count: 3, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 300, coolDownOffset: 4800)
+                            )
+                        ),
+                     new State("supressiongorange",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(800000, "seal4"),
+                            new ReplaceTile("BD Ground 5a", "BD Ground 6a", 99),
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                     new State(
+                          new ConditionalEffect(ConditionEffectIndex.Invincible),
+                          new State("ready4",
+                            new Order(90, "Spiritorb Holder Sentry", "idle"),
+                            new Order(90, "Scorching Wrath Helper", "idle"),
+                            new MoveTo(1, 44, 40),
+                            new TimedTransition(6000, "supressiongorange")
+                            ),
+                        new State("seal4",
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue4", "Nivitet", 20),
+                            new Flash(0xFFA500, 0.5, 6)
+                            ),
+                        new State("continue4",
+                            new Taunt("Not.......again..."),
+                            new ReplaceTile("BD Ground 6a", "BD Ground 5a", 99),
+                            new ChangeSize(80, 40),
+                            new Flash(0xFFFFFF, 0.5, 6),
+                            new TimedTransition(4000, "crybaby")
+                            ),
+                         new State("crybaby",
+                            new Flash(0xFFFFFF, 0.2, 8),
+                            new BackAndForth(1, 4),
+                            new TimedTransition(4000, "suicide")
+                            ),
+                         new State("suicide",
+                            new AnnounceOnDeath("An eternal threat has finally been sealed for another millenia.."),
+                            new Suicide()
+                            )
+                        ),
+                     new State(
+                         new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new State("FAILED",
+                            new Flash(0xFF0000, 0.25, 6),
+                            new Taunt("Finally, the seal has been broken..Now you will all suffer!"),
+                            new TimedTransition(6000, "byebye")
+                            ),
+                        new State("byebye",
+                            new ReturnToSpawn(2),
+                            new TimedTransition(8000, "latabih")
+                            ),
+                        new State("latabih",
+                            new Suicide()
                             )
                          )
-                      )
                     ),
+                new MostDamagers(3,
+                    LootTemplates.FabledItemsLoot2Drannol()
+                ),
                 new MostDamagers(3,
                     LootTemplates.SF4()
                     ),
-                new Threshold(0.025,
-                    new ItemLoot("Potion of Defense", 1.0),
-                    new TierLoot(9, ItemType.Weapon, 0.1),
-                    new TierLoot(4, ItemType.Ability, 0.1),
-                    new TierLoot(9, ItemType.Armor, 0.1),
-                    new TierLoot(3, ItemType.Ring, 0.05),
-                    new TierLoot(10, ItemType.Armor, 0.05),
-                    new TierLoot(10, ItemType.Weapon, 0.05),
-                    new TierLoot(4, ItemType.Ring, 0.025)
+                new Threshold(0.05,
+                    new TierLoot(12, ItemType.Weapon, 0.08),
+                    new TierLoot(5, ItemType.Ability, 0.07),
+                    new TierLoot(6, ItemType.Ability, 0.05),
+                    new TierLoot(13, ItemType.Armor, 0.06),
+                    new TierLoot(7, ItemType.Ring, 0.08),
+                    new ItemLoot("Greater Potion of Might", 0.5),
+                    new ItemLoot("Greater Potion of Luck", 0.5),
+                    new ItemLoot("Greater Potion of Protection", 0.5),
+                    new ItemLoot("Ultimate Onrane Cache", 1),
+                    new ItemLoot("10000 Gold", 0.50),
+                    new ItemLoot("Potion of Life", 1),
+                    new ItemLoot("Potion of Defense", 1),
+                    new ItemLoot("Potion of Attack", 0.6),
+                    new ItemLoot("Potion of Dexterity", 0.5),
+                    new ItemLoot("Potion of Vitality", 0.5),
+                    new ItemLoot("Potion of Speed", 0.5),
+                    new ItemLoot("Potion of Mana", 0.5)
                 )
             )
 ;

@@ -51,7 +51,7 @@ namespace wServer.networking.handlers
             var s1 = client.Manager.Database.Verify(packet.GUID, packet.Password, out acc);
             if (s1 == LoginStatus.AccountNotExists)
             {
-                var s2 = client.Manager.Database.Register(packet.GUID, packet.Password, true, out acc);
+                var s2 = client.Manager.Database.Register(packet.GUID, packet.Password, true, 0, out acc);
                 if (s2 != RegisterStatus.OK)
                 {
                     client.SendFailure("Bad Login", Failure.MessageWithDisconnect);
