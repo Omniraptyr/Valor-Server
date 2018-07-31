@@ -1035,7 +1035,7 @@ namespace wServer.logic
 
 
 
-                            .Init("Flaming Summon",
+                .Init("Flaming Summon",
                 new State(
                     new ChangeSize(60, 140),
                     new Shoot(10, count: 12, projectileIndex: 2, coolDown: 4000),
@@ -1044,15 +1044,15 @@ namespace wServer.logic
                           new Follow(0.5, 8, 1)
                    ),
                 new State("Main",
-                        new Shoot(10, count: 1, projectileIndex: 1, predictive: 1, coolDown: 1200),
-                        new Shoot(10, count: 4, shootAngle: 8, projectileIndex: 0, angleOffset: 40, coolDown: 400),
-                        new Shoot(10, count: 4, shootAngle: 8, projectileIndex: 0, angleOffset: 320, coolDown: 400),
+                        new Shoot(10, count: 1, projectileIndex: 1, predictive: 1, coolDown: 4000),
+                        new Shoot(10, count: 4, shootAngle: 8, projectileIndex: 0, coolDown: 3000, angleOffset: 40),
+                        new Shoot(10, count: 4, shootAngle: 8, projectileIndex: 0, coolDown: 3000, angleOffset: 320),
                         new TimedTransition(4000, "fight2")
                         ),
                     new State("fight2",
                         new ConditionalEffect(ConditionEffectIndex.Armored),
-                        new Shoot(10, count: 3, projectileIndex: 1, coolDown: 200),
-                        new Shoot(10, count: 7, projectileIndex: 0, coolDown: 1000),
+                        new Shoot(10, count: 3, projectileIndex: 1, coolDown: 2000),
+                        new Shoot(10, count: 7, projectileIndex: 0, coolDown: 3000),
                         new TimedTransition(2000, "Main")
                         )
                     )
@@ -2927,7 +2927,6 @@ namespace wServer.logic
                     new Shoot(10, count: 3, shootAngle: 20, projectileIndex: 1, predictive: 0.3, coolDown: 3000)
                     ),
                  new State("sentry3",
-                    new Grenade(4, 100, range: 100, coolDown: 4000, effect: ConditionEffectIndex.Bleeding, color: 0xFFFF00, effectDuration: 4000),
                     new Spawn("BD Bastille Brute", 1, 1, coolDown: 999999, givesNoXp: true),
                     new Shoot(8, count: 8, shootAngle: 20, projectileIndex: 1, predictive: 0.3, coolDown: 2000)
                     ),
@@ -3655,7 +3654,6 @@ namespace wServer.logic
                     new State("attack1a",
                         new Order(90, "Scorching Wrath Helper", "spawn"),
                         new TossObject("Flaming Summon", 3, angle: 180, coolDown: 9999),
-                        new TossObject("Flaming Summon", 3, angle: 0, coolDown: 9999),
                         new Taunt("My company and I will burn you to ashes!"),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Order(90, "Scorching Wrath Helper", "spawn"),
