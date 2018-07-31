@@ -86,6 +86,12 @@ namespace wServer.realm.entities
                     ApplyConditionEffect(ConditionEffectIndex.Weak, 0);
                     ApplyConditionEffect(ConditionEffectIndex.Quiet, 0);
                 }
+                if (RageBar >= 80)
+                {
+                    ApplyConditionEffect(ConditionEffectIndex.Empowered, 4000);
+                    ApplyConditionEffect(ConditionEffectIndex.Damaging, 4000);
+                    ApplyConditionEffect(ConditionEffectIndex.Invulnerable, 2000);
+                }
                 // don't suffocate hidden players
                 if (HasConditionEffect(ConditionEffects.Hidden)) return;
 
