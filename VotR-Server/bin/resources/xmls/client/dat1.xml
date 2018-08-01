@@ -75443,7 +75443,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <Equipment>0xa14, 0x5829, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="620">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
-        <Attack max="75">10</Attack>
+        <Attack max="80">10</Attack>
         <Defense max="25">0</Defense>
         <Speed max="60">10</Speed>
         <Dexterity max="55">12</Dexterity>

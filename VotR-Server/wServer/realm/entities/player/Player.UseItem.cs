@@ -1790,7 +1790,7 @@ namespace wServer.realm.entities
 
             Owner.AOE(target, 3, false, enemy =>
             {
-                if (enemy.ObjectType != 0x638f)
+                if (enemy.ObjectType == 0x638f)
                 {
                     if (enemy.HasConditionEffect(ConditionEffects.StasisImmune))
                     {
