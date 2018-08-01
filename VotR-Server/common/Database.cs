@@ -106,7 +106,7 @@ namespace common
                 PassResetToken = ""
             };
 
-            if (acnt.Elite == 1 && acnt.VaultCount == 1)
+            if (acnt.Elite == 1)
             {
                 acnt.VaultCount = 52;
             }
@@ -166,9 +166,9 @@ namespace common
                 stats.FlushAsync();
             }
 
-            if (acc.Elite == 1 && acc.VaultCount == 1)
+            if (acc.Elite == 1)
             {
-                acc.VaultCount = 20;
+                acc.VaultCount = 52;
             }
             if (acc.Elite == 1 && acc.MaxCharSlot == 2)
             {

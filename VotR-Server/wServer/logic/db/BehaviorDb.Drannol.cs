@@ -706,7 +706,7 @@ namespace wServer.logic
                         new TimedTransition(100, "idle")
                         ),
                     new State("idle",
-                        new EnemyAOE(3, false, 300, 400, true, 0xFF0000),
+                        new EnemyAOE(3, false, 500, 550, true, 0xFF0000),
                         new Suicide()
                         )
                     )
@@ -719,7 +719,7 @@ namespace wServer.logic
                       new Sequence(
                             new Timed(3000,
                                 new Prioritize(
-                                    new Follow(1, 8, 1),
+                                    new Follow(1.3, 8, 1),
                                     new Wander(0.7)
                                     )),
                             new Timed(2000,
@@ -727,7 +727,7 @@ namespace wServer.logic
                                     new Charge(3, 6, coolDown: 1000),
                                     new Swirl(1, 4, targeted: false)
                                     )),
-                            new Timed(1000,
+                            new Timed(3000,
                                 new Prioritize(
                                     new Orbit(1, 3),
                                     new Wander(0.8)
@@ -871,7 +871,7 @@ namespace wServer.logic
                         new Follow(0.3, 20, 1),
                         new Wander(0.25)
                         ),
-                        new Shoot(10, count: 3, shootAngle: 8, projectileIndex: 0, predictive: 0.5, coolDown: 3000),
+                        new Shoot(10, count: 3, shootAngle: 8, projectileIndex: 0, predictive: 0.5, coolDown: 3000, coolDownOffset: 2000),
                         new EntityExistsTransition("Spiritorb Holder Yellow", 99, "fight2")
                         ),
                     new State("fight2",
@@ -879,7 +879,7 @@ namespace wServer.logic
                         new Follow(0.6, 20, 1),
                         new Wander(0.25)
                         ),
-                        new Shoot(10, count: 3, shootAngle: 8, projectileIndex: 0, predictive: 0.5, coolDown: 3000),
+                        new Shoot(10, count: 3, shootAngle: 8, projectileIndex: 0, predictive: 0.5, coolDown: 3000, coolDownOffset: 2000),
                         new EntityNotExistsTransition("Spiritorb Holder Yellow", 99, "fight1")
                         )
                     )
@@ -1110,7 +1110,7 @@ namespace wServer.logic
 
                 .Init("Flaming Summon",
                 new State(
-                    new ChangeSize(60, 140),
+                    new ChangeSize(60, 100),
                     new Shoot(10, count: 12, projectileIndex: 2, coolDown: 4000),
                     new Prioritize(
                           new Orbit(0.7, 3, target: "Drannol, the Eternal Beast", speedVariance: 0.05),
@@ -3727,6 +3727,7 @@ namespace wServer.logic
                     new State("attack1a",
                         new Order(90, "Scorching Wrath Helper", "spawn"),
                         new TossObject("Flaming Summon", 3, angle: 180, coolDown: 9999),
+                        new TossObject("Flaming Summon", 3, angle: 0, coolDown: 9999),
                         new Taunt("My company and I will burn you to ashes!"),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Order(90, "Scorching Wrath Helper", "spawn"),
@@ -3803,11 +3804,16 @@ namespace wServer.logic
                         new TossObject("Scorching Crawler", 4, 225, coolDown: 9999999),
                         new TossObject("Scorching Crawler", 4, 270, coolDown: 9999999),
                         new TossObject("Scorching Crawler", 4, 315, coolDown: 9999999),
+
+                        new TossObject("Scorching Crawler", 7, 45, coolDown: 9999999),
+                        new TossObject("Scorching Crawler", 7, 135, coolDown: 9999999),
+                        new TossObject("Scorching Crawler", 7, 225, coolDown: 9999999),
+                        new TossObject("Scorching Crawler", 7, 315, coolDown: 9999999),
                         new TimedTransition(4000, "attack1b")
                         )
                     ),
                     new State(
-                        new Reproduce("DrannolTarget", 40, 5, 6000),
+                        new Reproduce("DrannolTarget", 40, 8, 3000),
                         new Order(90, "Spiritorb Holder Sentry", "sentry2"),
                         new Order(90, "Scorching Wrath Helper", "spawn"),
                         new EntitiesNotExistsTransition(99, "thenextone", "Scorching Crawler"),
@@ -3860,14 +3866,13 @@ namespace wServer.logic
                             )
                         ),
                       new State(
-                        new Reproduce("DrannolTarget", 40, 7, 6000),
+                        new Reproduce("DrannolTarget", 40, 8, 3000),
                         new DamageTakenTransition(920000, "ready4"),
                         new Shoot(20, count: 14, projectileIndex: 0, coolDown: 600),
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new State("thenextone",
                             new Prioritize(
                                 new Charge(2, 8, coolDown: 4000),
-                                new Follow(1),
+                                new Follow(1.5),
                                 new Wander(0.1)
                             ),
                         new Shoot(10, count: 2, shootAngle: 20, projectileIndex: 9, coolDown: 6000),
@@ -3899,8 +3904,8 @@ namespace wServer.logic
                        new State("thenextone3",
                            new Flash(0xFF0000, 0.25, 6),
                             new Prioritize(
-                                new Charge(2.5, 8, coolDown: 6000),
-                                new Follow(1.5),
+                                new Charge(4, 8, coolDown: 6000),
+                                new Follow(1.7),
                                 new Wander(0.1)
                             ),
                         new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, coolDownOffset: 1800),

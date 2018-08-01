@@ -124291,7 +124291,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
     </Texture>
     <HitSound>monster/skull_shrine_hit</HitSound>
     <DeathSound>monster/ghost_god_death</DeathSound>
-    <Size>2000</Size>
+    <Size>200</Size>
 	<StasisImmune/>
 	<CurseImmune/>
     <MaxHitPoints>999999</MaxHitPoints>
