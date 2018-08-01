@@ -3807,7 +3807,7 @@ namespace wServer.logic
                         )
                     ),
                     new State(
-                        new Reproduce("DrannolTarget", 40, 5, 4000),
+                        new Reproduce("DrannolTarget", 40, 5, 6000),
                         new Order(90, "Spiritorb Holder Sentry", "sentry2"),
                         new Order(90, "Scorching Wrath Helper", "spawn"),
                         new EntitiesNotExistsTransition(99, "thenextone", "Scorching Crawler"),
@@ -3860,7 +3860,7 @@ namespace wServer.logic
                             )
                         ),
                       new State(
-                        new Reproduce("DrannolTarget", 40, 7, 4000),
+                        new Reproduce("DrannolTarget", 40, 7, 6000),
                         new DamageTakenTransition(920000, "ready4"),
                         new Shoot(20, count: 14, projectileIndex: 0, coolDown: 600),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -3973,6 +3973,7 @@ namespace wServer.logic
                     new TierLoot(6, ItemType.Ability, 0.05),
                     new TierLoot(13, ItemType.Armor, 0.06),
                     new TierLoot(7, ItemType.Ring, 0.08),
+                    new ItemLoot("Drannol's Judgement", 0.01),
                     new ItemLoot("Greater Potion of Might", 0.5),
                     new ItemLoot("Greater Potion of Luck", 0.5),
                     new ItemLoot("Greater Potion of Protection", 0.5),

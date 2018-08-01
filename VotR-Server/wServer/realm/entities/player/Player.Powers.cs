@@ -27,7 +27,7 @@ namespace wServer.realm.entities
             {
                 return false;
             }
-            if (Inventory[2].ObjectId == "Drannol's Fury")
+            if (Inventory[2].ObjectId == "Drannol's Fury" || Inventory[2].ObjectId == "Drannol's Judgement")
             {
                 return true;
             }
