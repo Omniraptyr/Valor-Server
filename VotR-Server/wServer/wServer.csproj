@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="logic\behaviors\Aoe.cs" />
     <Compile Include="logic\behaviors\ApplySetpiece.cs" />
     <Compile Include="logic\behaviors\ChangeGroundOnDeath.cs" />
     <Compile Include="logic\behaviors\ConditionalBehavior.cs" />

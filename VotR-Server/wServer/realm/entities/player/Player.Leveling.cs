@@ -273,12 +273,12 @@ namespace wServer.realm.entities
             }
             else if (newFame != Fame)
             {
-                BroadcastSync(new Notification()
-                {
-                    ObjectId = Id,
-                    Color = new ARGB(0xFFE25F00),
-                    Message = "+" + (newFame - Fame) + " fame"
-                }, p => this.DistSqr(p) < RadiusSqr);
+               // BroadcastSync(new Notification()
+             //   {
+            //        ObjectId = Id,
+             //       Color = new ARGB(0xFFE25F00),
+             //       Message = "+" + (newFame - Fame) + " fame"
+            //    }, p => this.DistSqr(p) < RadiusSqr);
             }
 
             Fame = newFame;

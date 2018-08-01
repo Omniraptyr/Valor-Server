@@ -1726,20 +1726,20 @@ namespace wServer.logic
                         new InvisiToss("Zol Sorcerer", 5, 180, coolDown: 9999999),
                         new InvisiToss("Zol Sorcerer", 5, 270, coolDown: 9999999),
                         //Start Spawning Servants shortly after
-                        new InvisiToss("Servant of Darkness", 8, 45, coolDown: 40000, coolDownOffset: 2600),
-                        new InvisiToss("Servant of Darkness", 8, 135, coolDown: 40000, coolDownOffset: 2600),
-                        new InvisiToss("Servant of Darkness", 8, 225, coolDown: 40000, coolDownOffset: 2600),
-                        new InvisiToss("Servant of Darkness", 8, 315, coolDown: 40000, coolDownOffset: 2600),
+                        new InvisiToss("Servant of Darkness", 8, 45, coolDown: 20000, coolDownOffset: 2600),
+                        new InvisiToss("Servant of Darkness", 8, 135, coolDown: 20000, coolDownOffset: 2600),
+                        new InvisiToss("Servant of Darkness", 8, 225, coolDown: 20000, coolDownOffset: 2600),
+                        new InvisiToss("Servant of Darkness", 8, 315, coolDown: 20000, coolDownOffset: 2600),
                         //Start Spawning Brutes
-                        new InvisiToss("Brute of the Hideout", 4, 45, coolDown: 32500, coolDownOffset: 1400),
-                        new InvisiToss("Brute of the Hideout", 4, 135, coolDown: 32500, coolDownOffset: 1400),
-                        new InvisiToss("Brute of the Hideout", 4, 225, coolDown: 32500, coolDownOffset: 1400),
-                        new InvisiToss("Brute of the Hideout", 4, 315, coolDown: 32500, coolDownOffset: 1400),
+                        new InvisiToss("Brute of the Hideout", 4, 45, coolDown: 22500, coolDownOffset: 1400),
+                        new InvisiToss("Brute of the Hideout", 4, 135, coolDown: 22500, coolDownOffset: 1400),
+                        new InvisiToss("Brute of the Hideout", 4, 225, coolDown: 22500, coolDownOffset: 1400),
+                        new InvisiToss("Brute of the Hideout", 4, 315, coolDown: 22500, coolDownOffset: 1400),
                         // Spawn demons
-                        new InvisiToss("Demon of the Dark", 8, 45, coolDown: 65000, coolDownOffset: 2600),
-                        new InvisiToss("Demon of the Dark", 8, 135, coolDown: 65000, coolDownOffset: 2600),
-                        new InvisiToss("Demon of the Dark", 8, 225, coolDown: 65000, coolDownOffset: 2600),
-                        new InvisiToss("Demon of the Dark", 8, 315, coolDown: 65000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 45, coolDown: 40000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 135, coolDown: 40000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 225, coolDown: 40000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 315, coolDown: 40000, coolDownOffset: 2600),
                         new TimedTransition(74000, "ReadyBurst2")
                         ),
                     new State("ReadyBurst2",
@@ -1766,10 +1766,10 @@ namespace wServer.logic
                         new InvisiToss("Zol Sorcerer", 5, 180, coolDown: 9999999),
                         new InvisiToss("Zol Sorcerer", 5, 270, coolDown: 9999999),
                         // Spawn demons
-                        new InvisiToss("Demon of the Dark", 8, 45, coolDown: 25000, coolDownOffset: 2600),
-                        new InvisiToss("Demon of the Dark", 8, 135, coolDown: 25000, coolDownOffset: 2600),
-                        new InvisiToss("Demon of the Dark", 8, 225, coolDown: 25000, coolDownOffset: 2600),
-                        new InvisiToss("Demon of the Dark", 8, 315, coolDown: 25000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 45, coolDown: 20000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 135, coolDown: 20000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 225, coolDown: 20000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 315, coolDown: 20000, coolDownOffset: 2600),
                         //Start Spawning Cubes
                         new InvisiToss("Giant Cube of Zol", 6, 65, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 155, coolDown: 34000, coolDownOffset: 6000),
@@ -1811,27 +1811,27 @@ namespace wServer.logic
                         new InvisiToss("Corrupted Stone Giant B", 10, 225, coolDown: 60000, coolDownOffset: 2600),
                         new InvisiToss("Corrupted Stone Giant B", 10, 315, coolDown: 60000, coolDownOffset: 2600),
                         // Spawn demons
-                        new InvisiToss("Demon of the Dark", 8, 45, coolDown: 25000, coolDownOffset: 2600),
-                        new InvisiToss("Demon of the Dark", 8, 135, coolDown: 25000, coolDownOffset: 2600),
-                        new InvisiToss("Demon of the Dark", 8, 225, coolDown: 25000, coolDownOffset: 2600),
-                        new InvisiToss("Demon of the Dark", 8, 315, coolDown: 25000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 45, coolDown: 20000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 135, coolDown: 20000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 225, coolDown: 20000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 315, coolDown: 20000, coolDownOffset: 2600),
                         //Start Spawning Cubes
                         new InvisiToss("Giant Cube of Zol", 6, 65, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 155, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 245, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 335, coolDown: 34000, coolDownOffset: 6000),
                         //Start Spawning Slimes
-                        new InvisiToss("AH Big Purple Slime", 8, 65, coolDown: 25000, coolDownOffset: 6000),
-                        new InvisiToss("AH Big Purple Slime", 8, 155, coolDown: 25000, coolDownOffset: 6000),
-                        new InvisiToss("AH Big Purple Slime", 8, 245, coolDown: 25000, coolDownOffset: 6000),
-                        new InvisiToss("AH Big Purple Slime", 8, 335, coolDown: 25000, coolDownOffset: 6000),
+                        new InvisiToss("AH Big Purple Slime", 8, 65, coolDown: 22500, coolDownOffset: 6000),
+                        new InvisiToss("AH Big Purple Slime", 8, 155, coolDown: 22500, coolDownOffset: 6000),
+                        new InvisiToss("AH Big Purple Slime", 8, 245, coolDown: 22500, coolDownOffset: 6000),
+                        new InvisiToss("AH Big Purple Slime", 8, 335, coolDown: 22500, coolDownOffset: 6000),
                         new TimedTransition(74000, "Done")
                         )
                       ),
                     new State("Failed",
                         new Taunt(true, "THERE IS NO REMORSE. YOU ARE BANISHED.", "YOU HAVE NOT BEEN FORGIVEN. REIGN.", "WE DO NOT FORGIVE. YOU WON'T ADVANCE. YOU WILL BE LEFT TO BE DOOMED."),
                         new Flash(0xFF0000, 0.25, 3),
-                        new TimedTransition(8000, "Failure")
+                        new TimedTransition(6000, "Failure")
                         ),
                     new State("Done",
                         //Delete all spooks
@@ -1850,7 +1850,7 @@ namespace wServer.logic
                         new TimedTransition(6000, "Success")
                         ),
                     new State("Failure",
-                        new Shoot(40, count: 46, projectileIndex: 5, coolDown: 500),
+                        new Shoot(40, count: 42, projectileIndex: 1, coolDown: 500),
                         new Suicide()
                         ),
                     new State("Success",
@@ -1898,20 +1898,25 @@ namespace wServer.logic
                         new InvisiToss("Zol Sorcerer", 5, 180, coolDown: 9999999),
                         new InvisiToss("Zol Sorcerer", 5, 270, coolDown: 9999999),
                         //Start Spawning Servants shortly after
-                        new InvisiToss("Servant of Darkness", 8, 45, coolDown: 40000, coolDownOffset: 2600),
-                        new InvisiToss("Servant of Darkness", 8, 135, coolDown: 40000, coolDownOffset: 2600),
-                        new InvisiToss("Servant of Darkness", 8, 225, coolDown: 40000, coolDownOffset: 2600),
-                        new InvisiToss("Servant of Darkness", 8, 315, coolDown: 40000, coolDownOffset: 2600),
+                        new InvisiToss("Servant of Darkness", 8, 45, coolDown: 20000, coolDownOffset: 2600),
+                        new InvisiToss("Servant of Darkness", 8, 135, coolDown: 20000, coolDownOffset: 2600),
+                        new InvisiToss("Servant of Darkness", 8, 225, coolDown: 20000, coolDownOffset: 2600),
+                        new InvisiToss("Servant of Darkness", 8, 315, coolDown: 20000, coolDownOffset: 2600),
                         //Start Spawning Brutes
                         new InvisiToss("Brute of the Hideout", 4, 45, coolDown: 32500, coolDownOffset: 1400),
                         new InvisiToss("Brute of the Hideout", 4, 135, coolDown: 32500, coolDownOffset: 1400),
                         new InvisiToss("Brute of the Hideout", 4, 225, coolDown: 32500, coolDownOffset: 1400),
                         new InvisiToss("Brute of the Hideout", 4, 315, coolDown: 32500, coolDownOffset: 1400),
                         // Spawn demons
-                        new InvisiToss("Demon of the Dark", 8, 45, coolDown: 65000, coolDownOffset: 2600),
-                        new InvisiToss("Demon of the Dark", 8, 135, coolDown: 65000, coolDownOffset: 2600),
-                        new InvisiToss("Demon of the Dark", 8, 225, coolDown: 65000, coolDownOffset: 2600),
-                        new InvisiToss("Demon of the Dark", 8, 315, coolDown: 65000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 45, coolDown: 44000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 135, coolDown: 44000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 225, coolDown: 44000, coolDownOffset: 2600),
+                        new InvisiToss("Demon of the Dark", 8, 315, coolDown: 44000, coolDownOffset: 2600),
+                        // Spawn niolru
+                        new InvisiToss("Niolru", 8, 45, coolDown: 38000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 135, coolDown: 38000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 225, coolDown: 38000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 315, coolDown: 38000, coolDownOffset: 2600),
                         new TimedTransition(74000, "ReadyBurst2")
                         ),
                     new State("ReadyBurst2",
@@ -1952,6 +1957,11 @@ namespace wServer.logic
                         new InvisiToss("AH Big Purple Slime", 8, 155, coolDown: 25000, coolDownOffset: 6000),
                         new InvisiToss("AH Big Purple Slime", 8, 245, coolDown: 25000, coolDownOffset: 6000),
                         new InvisiToss("AH Big Purple Slime", 8, 335, coolDown: 25000, coolDownOffset: 6000),
+                        // Spawn niolru
+                        new InvisiToss("Niolru", 8, 45, coolDown: 38000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 135, coolDown: 38000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 225, coolDown: 38000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 315, coolDown: 38000, coolDownOffset: 2600),
                         new TimedTransition(74000, "ReadyFinalBurst")
                       ),
                       new State("ReadyFinalBurst",
@@ -1978,10 +1988,10 @@ namespace wServer.logic
                         new InvisiToss("Zol Sorcerer", 5, 180, coolDown: 9999999),
                         new InvisiToss("Zol Sorcerer", 5, 270, coolDown: 9999999),
                         //Start Spawning Servants shortly after
-                        new InvisiToss("Corrupted Stone Giant B", 10, 45, coolDown: 25000, coolDownOffset: 2600),
-                        new InvisiToss("Corrupted Stone Giant B", 10, 135, coolDown: 25000, coolDownOffset: 2600),
-                        new InvisiToss("Corrupted Stone Giant B", 10, 225, coolDown: 25000, coolDownOffset: 2600),
-                        new InvisiToss("Corrupted Stone Giant B", 10, 315, coolDown: 25000, coolDownOffset: 2600),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 45, coolDown: 30000, coolDownOffset: 2600),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 135, coolDown: 30000, coolDownOffset: 2600),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 225, coolDown: 30000, coolDownOffset: 2600),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 315, coolDown: 30000, coolDownOffset: 2600),
                         // Spawn demons
                         new InvisiToss("Demon of the Dark", 8, 45, coolDown: 25000, coolDownOffset: 2600),
                         new InvisiToss("Demon of the Dark", 8, 135, coolDown: 25000, coolDownOffset: 2600),
@@ -1993,17 +2003,22 @@ namespace wServer.logic
                         new InvisiToss("Giant Cube of Zol", 6, 245, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 335, coolDown: 34000, coolDownOffset: 6000),
                         //Start Spawning Slimes
-                        new InvisiToss("AH Feral of the Zol", 8, 65, coolDown: 12000, coolDownOffset: 6000),
-                        new InvisiToss("AH Feral of the Zol", 8, 155, coolDown: 12000, coolDownOffset: 6000),
-                        new InvisiToss("AH Feral of the Zol", 8, 245, coolDown: 12000, coolDownOffset: 6000),
-                        new InvisiToss("AH Feral of the Zol", 8, 335, coolDown: 12000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 65, coolDown: 50000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 155, coolDown: 50000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 245, coolDown: 50000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 335, coolDown: 50000, coolDownOffset: 6000),
+                        // Spawn niolru
+                        new InvisiToss("Niolru", 8, 45, coolDown: 25000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 135, coolDown: 25000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 225, coolDown: 25000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 315, coolDown: 25000, coolDownOffset: 2600),
                         new TimedTransition(74000, "Done")
                         )
                       ),
                     new State("Failed",
                         new Taunt(true, "THERE IS NO REMORSE. YOU ARE BANISHED.", "YOU HAVE NOT BEEN FORGIVEN. REIGN.", "WE DO NOT FORGIVE. YOU WON'T ADVANCE. YOU WILL BE LEFT TO BE DOOMED."),
                         new Flash(0xFF0000, 0.25, 3),
-                        new TimedTransition(8000, "Failure")
+                        new TimedTransition(6000, "Failure")
                         ),
                     new State("Done",
                         //Delete all spooks
@@ -2022,7 +2037,7 @@ namespace wServer.logic
                         new TimedTransition(6000, "Success")
                         ),
                     new State("Failure",
-                        new Shoot(40, count: 46, projectileIndex: 5, coolDown: 500),
+                        new Shoot(40, count: 42, projectileIndex: 1, coolDown: 500),
                         new Suicide()
                         ),
                     new State("Success",

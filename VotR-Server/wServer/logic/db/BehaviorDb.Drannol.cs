@@ -698,6 +698,56 @@ namespace wServer.logic
                 )
             )
 
+                    .Init("DrannolTargetBurst",
+            new State(
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("Main",
+                    new State("first",
+                        new TimedTransition(100, "idle")
+                        ),
+                    new State("idle",
+                        new EnemyAOE(3, false, 300, 400, true, 0xFF0000),
+                        new Suicide()
+                        )
+                    )
+                )
+            )
+               .Init("DrannolTarget",
+                new State(
+                    new ConditionalEffect(ConditionEffectIndex.Invincible),
+                    new State("Seek",
+                      new Sequence(
+                            new Timed(3000,
+                                new Prioritize(
+                                    new Follow(1, 8, 1),
+                                    new Wander(0.7)
+                                    )),
+                            new Timed(2000,
+                                new Prioritize(
+                                    new Charge(3, 6, coolDown: 1000),
+                                    new Swirl(1, 4, targeted: false)
+                                    )),
+                            new Timed(1000,
+                                new Prioritize(
+                                    new Orbit(1, 3),
+                                    new Wander(0.8)
+                                    )
+                                )
+                            ),
+                        new TimedTransition(12000, "Countdown"),
+                        new PlayerWithinTransition(1, "Countdown")
+                        ),
+                    new State("Countdown",
+                        new SetAltTexture(1),
+                        new TimedTransition(400, "Blam")
+                        ),
+                   new State("Blam",
+                        new Spawn("DrannolTargetBurst", 1, 1, coolDown: 1000),
+                        new Suicide()
+                        )
+                  )
+            )
+
             .Init("Spiritorb Holder Yellow",
             new State(
                 new TransformOnDeath("Spiritorb Holder Default Yellow", 1, 1, 1),
@@ -810,6 +860,29 @@ namespace wServer.logic
                         ),
                         new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 0, coolDown: 400, shootLowHp: true)
                         )
+                )
+            )
+            .Init("Scorching Crawler",
+            new State(
+                new State("Main",
+                    new State("fight1",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                    new Prioritize(
+                        new Follow(0.3, 20, 1),
+                        new Wander(0.25)
+                        ),
+                        new Shoot(10, count: 3, shootAngle: 8, projectileIndex: 0, predictive: 0.5, coolDown: 3000),
+                        new EntityExistsTransition("Spiritorb Holder Yellow", 99, "fight2")
+                        ),
+                    new State("fight2",
+                    new Prioritize(
+                        new Follow(0.6, 20, 1),
+                        new Wander(0.25)
+                        ),
+                        new Shoot(10, count: 3, shootAngle: 8, projectileIndex: 0, predictive: 0.5, coolDown: 3000),
+                        new EntityNotExistsTransition("Spiritorb Holder Yellow", 99, "fight1")
+                        )
+                    )
                 )
             )
                     .Init("BD Twisted Sentry",
@@ -3717,19 +3790,34 @@ namespace wServer.logic
                             new ReplaceTile("BD Ground 6b", "BD Ground 5b", 99),
                             new ChangeSize(60, 100),
                             new Flash(0xFFFFFF, 0.5, 6),
-                            new TimedTransition(4000, "attack1b")
-                            )
-                        ),
+                            new TimedTransition(4000, "crawlerphase")
+                            ),
+                    new State("crawlerphase",
+                        new Taunt("I REFUSE TO BE SEALED ONCE AGAIN!"),
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new TossObject("Scorching Crawler", 4, 0, coolDown: 9999999),
+                        new TossObject("Scorching Crawler", 4, 45, coolDown: 9999999),
+                        new TossObject("Scorching Crawler", 4, 90, coolDown: 9999999),
+                        new TossObject("Scorching Crawler", 4, 135, coolDown: 9999999),
+                        new TossObject("Scorching Crawler", 4, 180, coolDown: 9999999),
+                        new TossObject("Scorching Crawler", 4, 225, coolDown: 9999999),
+                        new TossObject("Scorching Crawler", 4, 270, coolDown: 9999999),
+                        new TossObject("Scorching Crawler", 4, 315, coolDown: 9999999),
+                        new TimedTransition(4000, "attack1b")
+                        )
+                    ),
                     new State(
+                        new Reproduce("DrannolTarget", 40, 5, 4000),
+                        new Order(90, "Spiritorb Holder Sentry", "sentry2"),
                         new Order(90, "Scorching Wrath Helper", "spawn"),
-                        new DamageTakenTransition(840000, "ready4"),
+                        new EntitiesNotExistsTransition(99, "thenextone", "Scorching Crawler"),
                         new Shoot(20, count: 14, projectileIndex: 0, coolDown: 600),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new State("attack1b",
-                            new Order(90, "Spiritorb Holder Sentry", "sentry2"),
                             new Taunt("YOU SHALL BE CRUSHED!"),
                             new Prioritize(
                                 new Charge(2, 8, coolDown: 4000),
-                                new Follow(1.4),
+                                new Follow(1),
                                 new Wander(0.1)
                             ),
                         new Shoot(10, count: 2, shootAngle: 20, projectileIndex: 9, coolDown: 6000),
@@ -3747,9 +3835,7 @@ namespace wServer.logic
                         new Shoot(10, count: 3, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 300, coolDownOffset: 4800),
                         new TimedTransition(8000, "attack1b")
                             ),
-                       new State("attack2b",
-                           new ConditionalEffect(ConditionEffectIndex.Armored),
-                           new Flash(0xFF0000, 0.25, 6),
+                     new State("attack2b",
                             new Prioritize(
                                 new Charge(2, 8, coolDown: 6000),
                                 new Follow(1),
@@ -3758,12 +3844,74 @@ namespace wServer.logic
                         new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, coolDownOffset: 1800),
                         new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 80, coolDownOffset: 1800),
                         new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 280, coolDownOffset: 1800),
+                        new TimedTransition(4000, "attack3b")
+                            ),
+                       new State("attack3b",
+                           new Flash(0xFF0000, 0.25, 6),
+                            new Prioritize(
+                                new Charge(2.5, 8, coolDown: 6000),
+                                new Follow(1.5),
+                                new Wander(0.1)
+                            ),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 80, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 280, coolDownOffset: 1800),
                         new TimedTransition(8000, "attack1b")
                             )
                         ),
+                      new State(
+                        new Reproduce("DrannolTarget", 40, 7, 4000),
+                        new DamageTakenTransition(920000, "ready4"),
+                        new Shoot(20, count: 14, projectileIndex: 0, coolDown: 600),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new State("thenextone",
+                            new Prioritize(
+                                new Charge(2, 8, coolDown: 4000),
+                                new Follow(1),
+                                new Wander(0.1)
+                            ),
+                        new Shoot(10, count: 2, shootAngle: 20, projectileIndex: 9, coolDown: 6000),
+
+                        new Shoot(10, count: 1, shootAngle: 6, projectileIndex: 8, coolDown: 2000),
+                        new Shoot(10, count: 1, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 60),
+                        new Shoot(10, count: 1, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 300),
+
+                        new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 8, coolDown: 2000, coolDownOffset: 2600),
+                        new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 60, coolDownOffset: 2600),
+                        new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 300, coolDownOffset: 2600),
+
+                        new Shoot(10, count: 3, shootAngle: 6, projectileIndex: 8, coolDown: 2000, coolDownOffset: 4800),
+                        new Shoot(10, count: 3, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 60, coolDownOffset: 4800),
+                        new Shoot(10, count: 3, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 300, coolDownOffset: 4800),
+                        new TimedTransition(8000, "thenextone2")
+                            ),
+                     new State("thenextone2",
+                            new Prioritize(
+                                new Charge(2, 8, coolDown: 6000),
+                                new Follow(1),
+                                new Wander(0.1)
+                            ),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 80, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 280, coolDownOffset: 1800),
+                        new TimedTransition(4000, "thenextone3")
+                            ),
+                       new State("thenextone3",
+                           new Flash(0xFF0000, 0.25, 6),
+                            new Prioritize(
+                                new Charge(2.5, 8, coolDown: 6000),
+                                new Follow(1.5),
+                                new Wander(0.1)
+                            ),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 80, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 280, coolDownOffset: 1800),
+                        new TimedTransition(8000, "thenextone")
+                            )
+                        ),
                      new State("supressiongorange",
-                            new TimedTransition(10000, "FAILED"),
-                            new DamageTakenTransition(980000, "seal4"),
+                            new TimedTransition(7000, "FAILED"),
+                            new DamageTakenTransition(1300000, "seal4"),
                             new ReplaceTile("BD Ground 5a", "BD Ground 6a", 99),
                             new Flash(0xFFFFFF, 0.25, 6)
                             ),
@@ -3834,7 +3982,6 @@ namespace wServer.logic
                     new ItemLoot("10000 Gold", 0.50),
                     new ItemLoot("Large Sor Fragment", 0.50),
                     new ItemLoot("Medium Sor Fragment", 0.50),
-                    new ItemLoot("Sor Crystal", 0.50),
                     new ItemLoot("Gold Cache", 0.50),
                     new ItemLoot("Potion of Life", 1),
                     new ItemLoot("Potion of Defense", 1),

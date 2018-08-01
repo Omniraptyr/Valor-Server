@@ -106,6 +106,15 @@ namespace common
                 PassResetToken = ""
             };
 
+            if (acnt.Elite == 1 && acnt.VaultCount == 1)
+            {
+                acnt.VaultCount = 52;
+            }
+            if (acnt.Elite == 1 && acnt.MaxCharSlot == 2)
+            {
+                acnt.MaxCharSlot = 20;
+            }
+
             // make sure guest have all classes if they are supposed to
             var stats = new DbClassStats(acnt);
             if (_resources.Settings.Accounts.ClassesUnlocked || acnt.Elite == 1)
@@ -155,6 +164,15 @@ namespace common
                 foreach (var @class in _resources.GameData.Classes.Keys)
                     stats.Unlock(@class);
                 stats.FlushAsync();
+            }
+
+            if (acc.Elite == 1 && acc.VaultCount == 1)
+            {
+                acc.VaultCount = 20;
+            }
+            if (acc.Elite == 1 && acc.MaxCharSlot == 2)
+            {
+                acc.MaxCharSlot = 20;
             }
 
             // make sure account has all skins if they are supposed to

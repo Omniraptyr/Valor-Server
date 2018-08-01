@@ -5,6 +5,11 @@ import com.company.assembleegameclient.ui.GuildText;
 import com.company.assembleegameclient.ui.RankText;
 import com.company.assembleegameclient.ui.StatusBar;
 import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
+import com.company.assembleegameclient.util.TextureRedrawer;
+import com.company.util.AssetLibrary;
+
+import flash.display.Bitmap;
+import flash.display.BitmapData;
 
 import flash.filters.DropShadowFilter;
 import flash.text.TextFieldAutoSize;
@@ -23,6 +28,11 @@ public class PlayerToolTip extends ToolTip {
     private var mpBar_:StatusBar;
     private var clickMessage_:TextFieldDisplayConcrete;
     private var eGrid:EquippedGrid;
+    private var raidBitmap:Bitmap;
+    private var raidBitmapData:BitmapData;
+
+    public static const IMAGE_NAME:String = "lofiCharBig";
+    public static const IMAGE_ID:int = 100;
 
     public function PlayerToolTip(_arg1:Player) {
         var _local2:int;
@@ -35,6 +45,13 @@ public class PlayerToolTip extends ToolTip {
         this.rankText_.x = 6;
         this.rankText_.y = _local2;
         addChild(this.rankText_);
+        if(player_.elite_ == 1){
+            this.raidBitmapData = TextureRedrawer.redraw(AssetLibrary.getImageFromSet(IMAGE_NAME, IMAGE_ID), 26, true, 0);
+            this.raidBitmap = new Bitmap(this.raidBitmapData);
+            this.raidBitmap.x = this.rankText_.x + 70;
+            this.raidBitmap.y = this.rankText_.y - 8;
+            addChild(this.raidBitmap);
+        }
         _local2 = (_local2 + 30);
         if (((!((_arg1.guildName_ == null))) && (!((_arg1.guildName_ == ""))))) {
             this.guildText_ = new GuildText(this.player_.guildName_, this.player_.guildRank_, 136);

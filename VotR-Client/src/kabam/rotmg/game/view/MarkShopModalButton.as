@@ -39,7 +39,7 @@ public class MarkShopModalButton extends Sprite implements TooltipAble {
 
     public function MarkShopModalButton() {
         this.hoverTooltipDelegate = new HoverTooltipDelegate();
-        this.tooltip = new TextToolTip(0x363636, 0x660000, null, "Shows the amount of raid tokens available. Click to open raid launcher.", 200);
+        this.tooltip = new TextToolTip(0x363636, 0x660000, null, "Click to open raid launcher.", 200);
         super();
         mouseChildren = false;
         this.markShopTexture = TextureRedrawer.redraw(AssetLibrary.getImageFromSet(IMAGE_NAME, IMAGE_ID), 28, true, 0);

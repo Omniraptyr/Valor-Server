@@ -120,19 +120,36 @@ namespace wServer.networking.handlers
 
                 if (InArray(allLegendaries, packet.ShardSlot.ObjectType))
                 {
-                    if(client.Player.Credits >= 75000)
+                    if(client.Account.Elite != 1)
                     {
-                        client.Player.Manager.Database.UpdateCredit(client.Account, -75000);
-                        client.Player.Credits = client.Account.Credits - 75000;
-                        client.Player.ForceUpdate(client.Player.Credits);
+                        if (client.Player.Credits >= 75000)
+                        {
+                            client.Player.Manager.Database.UpdateCredit(client.Account, -75000);
+                            client.Player.Credits = client.Account.Credits - 75000;
+                            client.Player.ForceUpdate(client.Player.Credits);
 
-                        ItemValue = allLegendaries2[rnd.Next(allLegendaries2.Length)];
+                            ItemValue = allLegendaries2[rnd.Next(allLegendaries2.Length)];
+                        }
+                        else
+                        {
+                            client.Player.SendError("You do not have 75K Gold to reroll this legendary!");
+                        }
                     }
                     else
                     {
-                        client.Player.SendError("You do not have 75K Gold to reroll this legendary!");
+                        if (client.Player.Onrane >= 30)
+                        {
+                            client.Player.Manager.Database.UpdateOnrane(client.Account, -30);
+                            client.Player.Onrane = client.Account.Onrane - 30;
+                            client.Player.ForceUpdate(client.Player.Onrane);
+
+                            ItemValue = allLegendaries2[rnd.Next(allLegendaries2.Length)];
+                        }
+                        else
+                        {
+                            client.Player.SendError("You do not have 30 Onrane to reroll this legendary!");
+                        }
                     }
-                    
                 }
 
 

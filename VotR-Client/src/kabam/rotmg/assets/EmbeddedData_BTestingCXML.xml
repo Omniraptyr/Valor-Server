@@ -13634,4 +13634,135 @@
         </Texture>
         <DisplayId>Summoning Point</DisplayId>
     </Object>
+    <Object type="0x64e6" id="Shaderunner Cloak">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3e0</Index>
+        </Texture>
+        <SlotType>13</SlotType>
+        <Description>A cloak that keeps you hidden in the shadows while also making you feel unstoppable.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="16">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="60">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>80</MpCost>
+        <Activate effect="Invisible" duration="6">ConditionEffectSelf</Activate>
+        <Activate effect="Speedy" duration="2" useWisMod="true">ConditionEffectSelf</Activate>
+        <Activate effect="Healing" duration="6" useWisMod="false">ConditionEffectSelf</Activate>
+        <Cooldown>7</Cooldown>
+        <feedPower>1000</feedPower>
+        <DisplayId>Shaderunner Cloak</DisplayId>
+    </Object>
+    <Object type="0x64e7" id="Drannol's Judgement">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x107</Index>
+        </Texture>
+        <SlotType>7</SlotType>
+        <Description>A rare special armor created from the gem of the Eternal Beast.</Description>
+        <ActivateOnEquip stat="0" amount="520">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="-30">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>2200</feedPower>
+        <Legend id="4" stat="27">
+            <Name>Rage of Drannol</Name>
+            <Description>Anytime you take damage you receive a rate of fire buff.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <Legendary/>
+        <DisplayId>Drannol's Judgement</DisplayId>
+    </Object>
+    <Object type="0x64e8" id="Scorching Crawler">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars8x8dHero1</File>
+            <Index>56</Index>
+        </AnimatedTexture>
+        <HitSound>monster/abyss_brutes_hit</HitSound>
+        <DeathSound>monster/abyss_brutes_death</DeathSound>
+        <Size>120</Size>
+        <ShadowSize>0</ShadowSize>
+        <MaxHitPoints>20000</MaxHitPoints>
+        <Defense>20</Defense>
+        <Projectile id="0">
+            <ObjectId>Fire Bolt</ObjectId>
+            <Speed>60</Speed>
+            <Damage>160</Damage>
+            <Size>125</Size>
+            <LifetimeMS>1400</LifetimeMS>
+            <ConditionEffect duration="4.5">Confused</ConditionEffect>
+            <Wavy/>
+        </Projectile>
+        <DisplayId>Scorching Crawler</DisplayId>
+    </Object>
+    <Object type="0x64e9" id="DrannolTarget">
+        <Enemy/>
+        <Class>Character</Class>
+        <Group>DrannolTarget</Group>
+        <DisplayId>Drannol's Target Lock-On</DisplayId>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1db</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1dc</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/skull_shrine_hit</HitSound>
+        <DeathSound>monster/ghost_god_death</DeathSound>
+        <Size>110</Size>
+        <Z>0.12</Z>
+        <StasisImmune/>
+        <CurseImmune/>
+        <MaxHitPoints>999999</MaxHitPoints>
+    </Object>
+    <Object type="0x64f1" id="DrannolTargetBurst">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Flame Burst</DisplayId>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1da</Index>
+        </Texture>
+        <HitSound>monster/skull_shrine_hit</HitSound>
+        <DeathSound>monster/ghost_god_death</DeathSound>
+        <Size>200</Size>
+        <StasisImmune/>
+        <CurseImmune/>
+        <MaxHitPoints>999999</MaxHitPoints>
+    </Object>
+    <Object type="0x64f2" id="Ivory Taskmaster 22">
+        <DisplayId>Taskmaster 22</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <Class>Character</Class>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <Size>110</Size>
+        <MaxHitPoints>30000</MaxHitPoints>
+        <Defense>50</Defense>
+        <NoMiniMap/>
+        <Level>1</Level>
+        <XpMult>100</XpMult>
+        <NoArticle/>
+        <ShadowSize>0</ShadowSize>
+    </Object>
 </Objects>

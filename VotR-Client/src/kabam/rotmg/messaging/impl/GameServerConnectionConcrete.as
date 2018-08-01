@@ -1906,6 +1906,9 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                 case StatData.SOR_STORAGE:
                     _local4.sorStorage_ = _local8;
                     break;
+                case StatData.ELITE:
+                    _local4.elite_ = _local8;
+                    break;
             }
         }
     }

@@ -143,6 +143,7 @@ public class StatData {
     public static const ASCENSIONENABLED = 146;
     public static const RAGE_STAT = 147;
     public static const SOR_STORAGE = 148;
+    public static const ELITE = 150;
 
     // unimplemented
     public static const DAMAGE_MIN:int = 98;
@@ -151,6 +152,7 @@ public class StatData {
     public static const DAMAGE_MAX_BONUS = 101;
     public static const FORTUNE_BONUS = 105;
     public static const RANK = 103;
+    public static const STRIKED = 149;
     public static const ADMIN = 104;
     public static const FORTUNE = 102;
 

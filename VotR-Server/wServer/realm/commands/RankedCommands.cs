@@ -56,6 +56,7 @@ namespace wServer.realm.commands
                 return true;
             }
         }
+
         class DyeCommand : Command
         {
             public DyeCommand() : base("setdyeboth", permLevel: 10, alias: "dyeboth") { }
@@ -886,16 +887,42 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    internal class RageDebugCommand : Command
+    internal class TransferGoldCommand : Command
     {
-        public RageDebugCommand() : base("rc", permLevel: 90)
+        public TransferGoldCommand() : base("g2o", permLevel: 0)
         {
         }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
             var amount2 = int.Parse(args);
-            player.RageBar = amount2;
+
+            if (string.IsNullOrEmpty(args))
+            {
+                player.SendInfo("/g2o <amount>");
+                return false;
+            }
+            if (player.Client.Account.Elite == 1)
+            {
+                if (amount2 >= 10000 && player.Credits >= 10000)
+                {
+                    player.Client.Manager.Database.UpdateCredit(player.Client.Account, -amount2);
+                    player.Credits -= amount2;
+                    player.ForceUpdate(player.Credits);
+                    player.Onrane += amount2 / 10000;
+                    player.Client.Manager.Database.UpdateOnrane(player.Client.Account, amount2 / 10000);
+                    player.ForceUpdate(player.Onrane);
+                }
+                else
+                {
+                    player.SendError("You must transfer at least 10000 gold..");
+                }
+            }
+            else
+            {
+                player.SendError("Your account must be Elite in order to complete this action.");
+            }
+
             return true;
         }
     }

@@ -23,6 +23,19 @@ namespace wServer.logic
                 )
             )
 
+         .Init("Ivory Taskmaster 22",
+            new State(
+                new DropPortalOnDeath("Ivory Wyvern Portal", 1, 120),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("idle",
+                     new EntitiesNotExistsTransition(9999, "activate", "NM Red Dragon Soul", "NM Blue Dragon Soul", "NM Green Dragon Soul", "NM Black Dragon Soul")
+                    ),
+                new State("activate",
+                     new Suicide()
+                    )
+                )
+            )
+
          .Init("NM Red Dragon Soul",
                 new State(
                     new SetNoXP(),

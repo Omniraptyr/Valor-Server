@@ -71,7 +71,7 @@ namespace wServer.logic.behaviors
                         Color = new ARGB(color),
                         TargetObjectId = host.Id,
                         Pos1 = target
-                    }, host, null, PacketPriority.High);
+                    }, host, null, PacketPriority.Low);
                     host.Owner.Timers.Add(new WorldTimer(1500, (world, t) =>
                     {
                         world.BroadcastPacketNearby(new Aoe()
@@ -86,7 +86,7 @@ namespace wServer.logic.behaviors
                         world.AOE(target, radius, true, p =>
                         {
                             (p as IPlayer).Damage(damage, host);
-                            if (!p.HasConditionEffect(ConditionEffects.Invincible) && 
+                            if (!p.HasConditionEffect(ConditionEffects.Invincible) &&
                                 !p.HasConditionEffect(ConditionEffects.Stasis))
                                 p.ApplyConditionEffect(effect, effectDuration);
                         });
@@ -95,7 +95,8 @@ namespace wServer.logic.behaviors
                 cool = coolDown.Next(Random);
             }
             else
-                cool -= time.ElapsedMsDelta;
+                cool -= time.ElapsedMsDelta
+                    ;
 
             state = cool;
         }
