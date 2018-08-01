@@ -3915,8 +3915,8 @@ namespace wServer.logic
                             )
                         ),
                      new State("supressiongorange",
-                            new TimedTransition(7000, "FAILED"),
-                            new DamageTakenTransition(1300000, "seal4"),
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(1100000, "seal4"),
                             new ReplaceTile("BD Ground 5a", "BD Ground 6a", 99),
                             new Flash(0xFFFFFF, 0.25, 6)
                             ),
