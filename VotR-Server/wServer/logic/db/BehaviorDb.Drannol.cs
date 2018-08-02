@@ -706,7 +706,7 @@ namespace wServer.logic
                         new TimedTransition(100, "idle")
                         ),
                     new State("idle",
-                        new EnemyAOE(4, false, 600, 700, true, 0xFF0000),
+                        new EnemyAOE(3, false, 500, 550, true, 0xFF0000),
                         new Suicide()
                         )
                     )
@@ -866,7 +866,6 @@ namespace wServer.logic
             new State(
                 new State("Main",
                     new Flash(0xFF0000, 0.25, 4),
-                    new ConditionalEffect(ConditionEffectIndex.Invincible, duration: 6000),
                     new State("fight1",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Sequence(
@@ -3687,7 +3686,6 @@ namespace wServer.logic
                             new Shoot(10, count: 4, shootAngle: 10, angleOffset: 0, projectileIndex: 7, coolDown: 2000, coolDownOffset: 1200),
                             new DamageTakenTransition(520000, "ready2"),
                         new State("dontremove",
-                            new ConditionalEffect(ConditionEffectIndex.Armored, duration: 2000),
                              new Prioritize(
                                     new Follow(1),
                                     new Wander(0.1)
