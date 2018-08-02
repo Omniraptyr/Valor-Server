@@ -331,6 +331,10 @@ namespace wServer.realm.entities
 
         private void Activate(RealmTime time, Item item, Position target)
         {
+            if (CheckD2Rage() == true)
+            {
+                HP -= item.MpCost*2;
+            }
             if (CheckBifierce() == true)
             {
                 Surge++;

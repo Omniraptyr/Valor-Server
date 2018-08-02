@@ -31908,7 +31908,6 @@
 			<Amplitude>0.5</Amplitude>
             <Frequency>0.5</Frequency>
         </Projectile>
-        <ActivateOnEquip stat="20" amount="25">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <OldSound>weapon/wand_of_death</OldSound>
@@ -33682,7 +33681,7 @@
         <feedPower>2200</feedPower>
         <Legendary/>
         <Legend id="4" stat="27">
-            <Name>Titan's Wrath</Name>
+            <Name>Bulwark</Name>
             <Description>Anytime you take damage you have a 20% chance to recover most of the damage taken.</Description>
             <HP>0</HP>
             <MP>0</MP>
@@ -34284,8 +34283,8 @@
         <Projectile>
             <ObjectId>Giant Bash</ObjectId>
             <Speed>100</Speed>
-            <MinDamage>370</MinDamage>
-            <MaxDamage>415</MaxDamage>
+            <MinDamage>380</MinDamage>
+            <MaxDamage>470</MaxDamage>
             <LifetimeMS>340</LifetimeMS>
         </Projectile>
         <ActivateOnEquip stat="121" amount="-40">IncrementStat</ActivateOnEquip>

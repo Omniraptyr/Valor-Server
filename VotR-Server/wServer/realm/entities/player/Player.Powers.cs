@@ -27,7 +27,22 @@ namespace wServer.realm.entities
             {
                 return false;
             }
-            if (Inventory[2].ObjectId == "Drannol's Fury" || Inventory[2].ObjectId == "Drannol's Judgement")
+            if (Inventory[2].ObjectId == "Drannol's Fury")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckD2Rage()
+        {
+            if (Inventory[2] == null)
+            {
+                return false;
+            }
+            if (Inventory[2].ObjectId == "Drannol's Judgement")
             {
                 return true;
             }

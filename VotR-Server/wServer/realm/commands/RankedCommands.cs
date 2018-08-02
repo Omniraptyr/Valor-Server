@@ -904,13 +904,13 @@ class ClearSpawnsCommand : Command
             }
             if (player.Client.Account.Elite == 1)
             {
-                if (amount2 >= 10000 && player.Credits >= 10000)
+                if (amount2 >= 1000 && player.Credits >= 1000)
                 {
                     player.Client.Manager.Database.UpdateCredit(player.Client.Account, -amount2);
                     player.Credits -= amount2;
                     player.ForceUpdate(player.Credits);
-                    player.Onrane += amount2 / 10000;
-                    player.Client.Manager.Database.UpdateOnrane(player.Client.Account, amount2 / 10000);
+                    player.Onrane += amount2 / 1000;
+                    player.Client.Manager.Database.UpdateOnrane(player.Client.Account, amount2 / 1000);
                     player.ForceUpdate(player.Onrane);
                 }
                 else
