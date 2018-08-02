@@ -74842,7 +74842,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <UnlockCost>50</UnlockCost>
         <DisplayId>{players.Priest}</DisplayId>
     </Object>
-        <Object type="0x031d" id="Warrior">
+    <Object type="0x031d" id="Warrior">
         <Class>Player</Class>
         <Description>{players.The_warrior_wears_strong_armor_and_uses_his_magic_helmet_}</Description>
         <AnimatedTexture>
@@ -74924,29 +74924,29 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <UnlockCost>499</UnlockCost>
         <DisplayId>{players.Knight}</DisplayId>
     </Object>
-    <Object type="0x0328" id="Templar">
+    <Object type="0x031f" id="Paladin">
         <Class>Player</Class>
-        <Description>The holy templar fights only for justice. He uses his banner to invigorate allies by it and strikes down his opponents with ease.</Description>
+        <Description>{players.The_paladin_can_deal_damage_at_close_range,_wear_armor_an}</Description>
         <AnimatedTexture>
             <File>players</File>
-            <Index>15</Index>
+            <Index>6</Index>
         </AnimatedTexture>
         <HitSound>player/paladin_hit</HitSound>
         <DeathSound>player/paladin_death</DeathSound>
         <Player/>
         <BloodProb>1.0</BloodProb>
-        <SlotTypes>29, 28, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-        <Equipment>0x52b1, 0x51ab, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="880">180</MaxHitPoints>
-        <MaxMagicPoints max="125">72</MaxMagicPoints>
-        <Attack max="85">15</Attack>
-        <Defense max="20">0</Defense>
-        <Speed max="65">10</Speed>
-        <Dexterity max="45">12</Dexterity>
-        <HpRegen max="80">10</HpRegen>
-        <MpRegen max="30">4</MpRegen>
-        <Might max="40">2</Might>
-        <Luck max="40">2</Luck>
+        <SlotTypes>1, 12, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Equipment>0xa00, 0xa52, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <MaxHitPoints max="820">170</MaxHitPoints>
+        <MaxMagicPoints max="252">100</MaxMagicPoints>
+        <Attack max="50">12</Attack>
+        <Defense max="30">0</Defense>
+        <Speed max="55">12</Speed>
+        <Dexterity max="45">10</Dexterity>
+        <HpRegen max="40">10</HpRegen>
+        <MpRegen max="75">10</MpRegen>
+        <Might max="30">2</Might>
+        <Luck max="10">2</Luck>
         <Restoration max="60">10</Restoration>
         <Protection max="50">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
@@ -74954,18 +74954,17 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
         <LevelIncrease min="0" max="0">Defense</LevelIncrease>
         <LevelIncrease min="0" max="2">Speed</LevelIncrease>
-        <LevelIncrease min="1" max="2">Dexterity</LevelIncrease>
+        <LevelIncrease min="0" max="2">Dexterity</LevelIncrease>
         <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
-        <LevelIncrease min="0" max="1">Might</LevelIncrease>
+        <LevelIncrease min="0" max="0">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
         <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
         <LevelIncrease min="0" max="1">Protection</LevelIncrease>
-        <UnlockLevel level="20" type="0x0310">Priest</UnlockLevel>
-        <UnlockLevel level="20" type="0x0327">Samurai</UnlockLevel>
         <UnlockLevel level="20" type="0x031e">Knight</UnlockLevel>
-        <UnlockCost>999</UnlockCost>
-        <DisplayId>Templar</DisplayId>
+        <UnlockLevel level="20" type="0x0310">Priest</UnlockLevel>
+        <UnlockCost>499</UnlockCost>
+        <DisplayId>{players.Paladin}</DisplayId>
     </Object>
     <Object type="0x0320" id="Assassin">
         <Class>Player</Class>
@@ -75303,7 +75302,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <UnlockCost>999</UnlockCost>
         <DisplayId>Samurai</DisplayId>
     </Object>
-	  <Object type="0x0328" id="Templar">
+    <Object type="0x0328" id="Templar">
         <Class>Player</Class>
         <Description>The holy templar fights only for justice. He uses his banner to invigorate allies by it and strikes down his opponents with ease.</Description>
         <AnimatedTexture>
@@ -75316,7 +75315,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>29, 28, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0x52b1, 0x51ab, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="780">155</MaxHitPoints>
+        <MaxHitPoints max="880">180</MaxHitPoints>
         <MaxMagicPoints max="125">72</MaxMagicPoints>
         <Attack max="85">15</Attack>
         <Defense max="20">0</Defense>
@@ -75326,7 +75325,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <MpRegen max="30">4</MpRegen>
         <Might max="40">2</Might>
         <Luck max="40">2</Luck>
-		<Restoration max="60">10</Restoration>
+        <Restoration max="60">10</Restoration>
         <Protection max="50">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
@@ -75338,7 +75337,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
-		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
         <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0310">Priest</UnlockLevel>
         <UnlockLevel level="20" type="0x0327">Samurai</UnlockLevel>
@@ -75346,7 +75345,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <UnlockCost>999</UnlockCost>
         <DisplayId>Templar</DisplayId>
     </Object>
-	       <Object type="0x0329" id="Drakzix">
+    <Object type="0x0329" id="Drakzix">
         <Class>Player</Class>
         <Description>Ancient species that live in the depths of the unspeakable who have turned on their lord, Oryx. They have the ability to hold infinite power and seek vengeance.</Description>
         <AnimatedTexture>
@@ -115566,7 +115565,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <feedPower>2200</feedPower>
         <Legendary/>
         <Legend id="4" stat="27">
-            <Name>Bulwark</Name>
+            <Name>Titan's Wrath</Name>
             <Description>Anytime you take damage you have a 20% chance to recover most of the damage taken.</Description>
             <HP>0</HP>
             <MP>0</MP>
@@ -123695,7 +123694,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <feedPower>880</feedPower>
         <DisplayId>Earthforce Dice</DisplayId>
     </Object>
-	    <Object type="0x64d4" id="Giant Warrior">
+    <Object type="0x64d4" id="Giant Warrior">
         <Enemy/>
         <Class>Character</Class>
         <AnimatedTexture>
@@ -124218,10 +124217,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>7</SlotType>
         <Description>A rare special armor created from the gem of the Eternal Beast.</Description>
-        <ActivateOnEquip stat="0" amount="1400">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="121" amount="80">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="27" amount="-50">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="-40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="2000">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="-30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="-25">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <feedPower>2200</feedPower>

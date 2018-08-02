@@ -706,7 +706,7 @@ namespace wServer.logic
                         new TimedTransition(100, "idle")
                         ),
                     new State("idle",
-                        new EnemyAOE(3, false, 500, 550, true, 0xFF0000),
+                        new EnemyAOE(4, false, 600, 700, true, 0xFF0000),
                         new Suicide()
                         )
                     )
@@ -865,13 +865,28 @@ namespace wServer.logic
             .Init("Scorching Crawler",
             new State(
                 new State("Main",
+                    new Flash(0xFF0000, 0.25, 4),
+                    new ConditionalEffect(ConditionEffectIndex.Invincible, duration: 6000),
                     new State("fight1",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Prioritize(
-                        new Follow(0.3, 20, 1),
-                        new Wander(0.25)
-                        ),
-                        new Shoot(10, count: 3, shootAngle: 8, projectileIndex: 0, predictive: 0.5, coolDown: 3000, coolDownOffset: 2000),
+                        new Sequence(
+                            new Timed(2200,
+                                new Prioritize(
+                                    new Wander(2)
+                                    )),
+                            new Timed(4000,
+                                new Prioritize(
+                                    new Charge(2, 6, coolDown: 1150),
+                                    new Follow(0.6, 20, 1)
+                                    )),
+                            new Timed(4000,
+                                new Prioritize(
+                                    new Follow(0.4, 20, 1),
+                                    new Wander(0.25)
+                                    )
+                                )
+                            ),
+                        new Shoot(10, count: 3, shootAngle: 8, projectileIndex: 0, predictive: 0.5, coolDown: 3000, coolDownOffset: 2400),
                         new EntityExistsTransition("Spiritorb Holder Yellow", 99, "fight2")
                         ),
                     new State("fight2",
@@ -879,7 +894,7 @@ namespace wServer.logic
                         new Follow(0.6, 20, 1),
                         new Wander(0.25)
                         ),
-                        new Shoot(10, count: 3, shootAngle: 8, projectileIndex: 0, predictive: 0.5, coolDown: 3000, coolDownOffset: 2000),
+                        new Shoot(10, count: 3, shootAngle: 8, projectileIndex: 0, predictive: 0.5, coolDown: 3000, coolDownOffset: 2400),
                         new EntityNotExistsTransition("Spiritorb Holder Yellow", 99, "fight1")
                         )
                     )
@@ -3633,7 +3648,7 @@ namespace wServer.logic
                             new Shoot(10, count: 2, shootAngle: 4, fixedAngle: 340, projectileIndex: 3, coolDown: 1)
                             )
                         ),
-                                          new State("suppressionpurple",
+                    new State("suppressionpurple",
                             new TimedTransition(10000, "FAILED"),
                             new DamageTakenTransition(300000, "seal1"),
                             new ReplaceTile("BD Ground 5d", "BD Ground 6d", 99),
@@ -3657,47 +3672,44 @@ namespace wServer.logic
                             new ReplaceTile("BD Ground 6d", "BD Ground 5d", 99),
                             new ChangeSize(60, 140),
                             new Flash(0xFFFFFF, 0.5, 6),
-                            new TimedTransition(4000, "first123")
+                            new TimedTransition(4000, "dontremove")
                             )
                         ),
                     new State(
-                        new DamageTakenTransition(420000, "ready2"),
-                    new State("first123",
-                        new Order(90, "Spiritorb Holder Sentry", "sentry3"),
-                        new Wander(0.1),
-                        new TimedTransition(4000, "attack1")
-                            ),
-                    new State("attack1",
-                        new Order(90, "Spiritorb Holder Sentry", "sentry2"),
-                            new Prioritize(
-                                new Charge(2, 8, coolDown: 4000),
-                                new Follow(0.4),
-                                new Wander(0.1)
-                            ),
-                        new Shoot(10, count: 4, shootAngle: 6, projectileIndex: 6, coolDown: 2000),
-                        new Shoot(10, count: 4, shootAngle: 10, angleOffset: 180, projectileIndex: 7, coolDown: 2000, coolDownOffset: 1200),
-                        new Shoot(10, count: 4, shootAngle: 10, angleOffset: 0, projectileIndex: 7, coolDown: 2000, coolDownOffset: 1200),
-                        new TimedTransition(6000, "attack2")
-                        ),
-                   new State("attack2",
-                        new Order(90, "Spiritorb Holder Sentry", "idle"),
-                            new Prioritize(
-                                new Follow(1),
-                                new Wander(0.1)
-                            ),
-                        new Shoot(10, count: 3, shootAngle: 8, angleOffset: 40, projectileIndex: 6, predictive: 0.1, coolDown: 1000),
-                        new Shoot(10, count: 3, shootAngle: 8, angleOffset: 320, projectileIndex: 6, predictive: 0.1, coolDown: 1000),
-                        new TimedTransition(4000, "attack3")
-                        ),
-                     new State("attack3",
-                        new Wander(0.1),
-                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 7, coolDown: 2000),
-                        new TimedTransition(4000, "attack1")
+                            new Order(90, "Spiritorb Holder Sentry", "sentry3"),
+                            new Taunt("YOUR FILTHY POWER ORB WILL BE NO MATCH AGAINST THE POWERS OF THIS ANCIENT SIGIL!"),
+                            new Grenade(4, 80, range: 5, coolDown: 4000, effect: ConditionEffectIndex.Bleeding, effectDuration: 3000),
+                            new Shoot(10, count: 3, shootAngle: 8, angleOffset: 40, projectileIndex: 3, predictive: 1, coolDown: 400),
+                            new Shoot(10, count: 3, shootAngle: 8, angleOffset: 320, projectileIndex: 3, predictive: 1, coolDown: 400),
+                            new Shoot(10, count: 4, shootAngle: 18, projectileIndex: 6, coolDown: 3000),
+                            new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 7, coolDown: 6000),
+                            new Shoot(10, count: 4, shootAngle: 10, angleOffset: 180, projectileIndex: 7, coolDown: 2000, coolDownOffset: 1200),
+                            new Shoot(10, count: 4, shootAngle: 10, angleOffset: 0, projectileIndex: 7, coolDown: 2000, coolDownOffset: 1200),
+                            new DamageTakenTransition(520000, "ready2"),
+                        new State("dontremove",
+                            new ConditionalEffect(ConditionEffectIndex.Armored, duration: 2000),
+                             new Prioritize(
+                                    new Follow(1),
+                                    new Wander(0.1)
+                                ),
+                            new TimedTransition(4000, "removeorb")
+                                ),
+                        new State("removeorb",
+                            new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                             new Prioritize(
+                                    new Charge(3, 8, coolDown: 3000),
+                                    new Follow(1.4),
+                                    new Wander(0.1)
+                                ),
+                            new Taunt(0.25, "Without your power orb you can't compete against my pure rage!", "You are worthless without your power orb.."),
+                            new Flash(0x000000, 0.25, 4),
+                            new RemoveEntity(6, "BD Spirit Orb Power"),
+                            new TimedTransition(4000, "dontremove")
                             )
-                        ),
+                      ),
                       new State("suppressionggreen",
                            new TimedTransition(10000, "FAILED"),
-                            new DamageTakenTransition(520000, "seal2"),
+                            new DamageTakenTransition(620000, "seal2"),
                             new ReplaceTile("BD Ground 5c", "BD Ground 6c", 99),
                             new Flash(0xFFFFFF, 0.25, 6)
                             ),
@@ -3723,7 +3735,7 @@ namespace wServer.logic
                             )
                         ),
                      new State(
-                          new DamageTakenTransition(660000, "ready3"),
+                          new DamageTakenTransition(760000, "ready3"),
                     new State("attack1a",
                         new Order(90, "Scorching Wrath Helper", "spawn"),
                         new TossObject("Flaming Summon", 3, angle: 180, coolDown: 9999),
@@ -3769,7 +3781,7 @@ namespace wServer.logic
                         ),
                    new State("suppressionblue",
                             new TimedTransition(10000, "FAILED"),
-                            new DamageTakenTransition(770000, "seal3"),
+                            new DamageTakenTransition(870000, "seal3"),
                             new ReplaceTile("BD Ground 5b", "BD Ground 6b", 99),
                             new Flash(0xFFFFFF, 0.25, 6)
                             ),
@@ -3813,7 +3825,7 @@ namespace wServer.logic
                         )
                     ),
                     new State(
-                        new Reproduce("DrannolTarget", 40, 8, 3000),
+                        new Reproduce("DrannolTarget", 40, 8, 2000),
                         new Order(90, "Spiritorb Holder Sentry", "sentry2"),
                         new Order(90, "Scorching Wrath Helper", "spawn"),
                         new EntitiesNotExistsTransition(99, "thenextone", "Scorching Crawler"),
@@ -3866,8 +3878,8 @@ namespace wServer.logic
                             )
                         ),
                       new State(
-                        new Reproduce("DrannolTarget", 40, 8, 3000),
-                        new DamageTakenTransition(920000, "ready4"),
+                        new Reproduce("DrannolTarget", 40, 8, 2000),
+                        new DamageTakenTransition(1020000, "ready4"),
                         new Shoot(20, count: 14, projectileIndex: 0, coolDown: 600),
                         new State("thenextone",
                             new Prioritize(
@@ -3916,7 +3928,7 @@ namespace wServer.logic
                         ),
                      new State("supressiongorange",
                             new TimedTransition(10000, "FAILED"),
-                            new DamageTakenTransition(1100000, "seal4"),
+                            new DamageTakenTransition(1200000, "seal4"),
                             new ReplaceTile("BD Ground 5a", "BD Ground 6a", 99),
                             new Flash(0xFFFFFF, 0.25, 6)
                             ),

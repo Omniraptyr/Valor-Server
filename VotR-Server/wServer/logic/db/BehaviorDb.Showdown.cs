@@ -192,7 +192,7 @@ namespace wServer.logic
                 new State(
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("Seek",
-                               new Sequence(
+                    new Sequence(
                             new Timed(2000,
                                 new Prioritize(
                                     new Follow(0.5, 8, 1),

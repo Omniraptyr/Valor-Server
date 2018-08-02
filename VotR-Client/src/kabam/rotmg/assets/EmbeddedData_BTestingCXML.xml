@@ -13661,10 +13661,9 @@
         </Texture>
         <SlotType>7</SlotType>
         <Description>A rare special armor created from the gem of the Eternal Beast.</Description>
-        <ActivateOnEquip stat="0" amount="1400">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="121" amount="80">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="27" amount="-50">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="-40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="2000">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="-30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="-25">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <feedPower>2200</feedPower>
