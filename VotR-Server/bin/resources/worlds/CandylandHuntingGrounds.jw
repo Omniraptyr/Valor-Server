@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Candyland Hunting Grounds",
+"sbName":"Candyland Hunting Grounds",
+"difficulty":3,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x074a],
+"maps":["CandylandHuntingGrounds.jm"],
+"music":["sorc2"]}
