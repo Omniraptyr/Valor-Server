@@ -210,6 +210,7 @@ namespace wServer.logic
 
         .Init("md Janus the Doorwarden",
                 new State(
+                    new DropPortalOnDeath("Puppet Encore Portal", 1, 120),
                     new HpLessTransition(0.15, "ragetime"),
                     new State("idle",
                         new EntitiesNotExistsTransition(9999, "activate", "BD Portal Spawner 5")
@@ -316,7 +317,6 @@ namespace wServer.logic
                     new TierLoot(7, ItemType.Armor, 0.05),
                     new TierLoot(10, ItemType.Weapon, 0.05),
                     new TierLoot(5, ItemType.Ring, 0.025),
-                    new ItemLoot("Thousand Shot", 0.03),
                     new ItemLoot("Bow of Janus rage", 0.03),
                     new ItemLoot("Eye of Janus", 0.03),
                     new ItemLoot("Key of Janus", 0.03),

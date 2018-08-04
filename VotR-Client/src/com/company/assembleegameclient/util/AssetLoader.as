@@ -54,12 +54,14 @@ public class AssetLoader {
         AssetLibrary.addImageSet("lofiObj", new EmbeddedAssets.lofiObjEmbed_().bitmapData, 8, 8);
         AssetLibrary.addImageSet("lofiObj2", new EmbeddedAssets.lofiObj2Embed_().bitmapData, 8, 8);
         AssetLibrary.addImageSet("lofiObj3", new EmbeddedAssets.lofiObj3Embed_().bitmapData, 8, 8);
+        AssetLibrary.addImageSet("lofiObj3Alt", new EmbeddedAssets.lofiObj3Alt().bitmapData, 8, 8);
         AssetLibrary.addImageSet("lofiObj4", new EmbeddedAssets.lofiObj4Embed_().bitmapData, 8, 8);
         AssetLibrary.addImageSet("lofiObj5", new EmbeddedAssets.lofiObj5Embed_().bitmapData, 8, 8);
         AssetLibrary.addImageSet("lofiObj6", new EmbeddedAssets.lofiObj6Embed_().bitmapData, 8, 8);
         AssetLibrary.addImageSet("lofiObjBig", new EmbeddedAssets.lofiObjBigEmbed_().bitmapData, 16, 16);
         AssetLibrary.addImageSet("lofiObj40x40", new EmbeddedAssets.lofiObj40x40Embed_().bitmapData, 40, 40);
         AssetLibrary.addImageSet("lofiProjs", new EmbeddedAssets.lofiProjsEmbed_().bitmapData, 8, 8);
+        AssetLibrary.addImageSet("lofiProjsAlt", new EmbeddedAssets.lofiProjsAlt_().bitmapData, 8, 8);
         AssetLibrary.addImageSet("lofiParticlesShocker", new EmbeddedAssets.lofiParticlesShockerEmbed_().bitmapData, 16, 16);
         AssetLibrary.addImageSet("lofiProjsBig", new EmbeddedAssets.lofiProjsBigEmbed_().bitmapData, 16, 16);
         AssetLibrary.addImageSet("lofiParts", new EmbeddedAssets.lofiPartsEmbed_().bitmapData, 8, 8);
@@ -75,6 +77,7 @@ public class AssetLoader {
         AssetLibrary.addImageSet("innerP2_mask", new EmbeddedAssets.innerP2MaskEmbed_().bitmapData, 4, 4);
         AssetLibrary.addImageSet("invisible", new BitmapDataSpy(8, 8, true, 0), 8, 8);
         AssetLibrary.addImageSet("d3LofiObjEmbed", new EmbeddedAssets.d3LofiObjEmbed_().bitmapData, 8, 8);
+        AssetLibrary.addImageSet("d3LofiObjEmbedAlt", new EmbeddedAssets.d3LofiObjAlt_().bitmapData, 8, 8);
         AssetLibrary.addImageSet("legendaries8x8Embed", new EmbeddedAssets.legendaries8x8Embed_().bitmapData, 8, 8);
         AssetLibrary.addImageSet("customEffects16x16", new EmbeddedAssets.customEffects16x16Embed_().bitmapData, 16, 16);
         AssetLibrary.addImageSet("customEffects8x8", new EmbeddedAssets.customEffects8x8Embed_().bitmapData, 8, 8);
@@ -112,7 +115,9 @@ public class AssetLoader {
         AnimatedChars.add("chars16x16dEncounters2", new EmbeddedAssets.chars16x16dEncounters2Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.DOWN);
         AnimatedChars.add("chars16x16rEncounters", new EmbeddedAssets.chars16x16rEncountersEmbed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
         AnimatedChars.add("d3Chars8x8rEmbed", new EmbeddedAssets.d3Chars8x8rEmbed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
+        AnimatedChars.add("d3Chars8x8rEmbedAlt", new EmbeddedAssets.d3Chars8x8rAlt_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
         AnimatedChars.add("d3Chars16x16rEmbed", new EmbeddedAssets.d3Chars16x16rEmbed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
+        AnimatedChars.add("d3Chars16x16rEmbedAlt", new EmbeddedAssets.d3Chars16x16rAlt_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
         AnimatedChars.add("players", new EmbeddedAssets.playersEmbed_().bitmapData, new EmbeddedAssets.playersMaskEmbed_().bitmapData, 8, 8, 56, 24, AnimatedChar.RIGHT);
         AnimatedChars.add("playerskins", new EmbeddedAssets.playersSkinsEmbed_().bitmapData, new EmbeddedAssets.playersSkinsMaskEmbed_().bitmapData, 8, 8, 56, 24, AnimatedChar.RIGHT);
         AnimatedChars.add("chars8x8rPets1", new EmbeddedAssets.chars8x8rPets1Embed_().bitmapData, new EmbeddedAssets.chars8x8rPets1MaskEmbed_().bitmapData, 8, 8, 56, 8, AnimatedChar.RIGHT);

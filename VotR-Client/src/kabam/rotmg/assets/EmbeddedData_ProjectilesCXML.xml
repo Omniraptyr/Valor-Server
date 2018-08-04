@@ -6845,4 +6845,36 @@
         </Texture>
         <Rotation>20</Rotation>
     </Object>
+    <Object type="0xa22f" id="Puppet Green Wheel">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>lofiProjsAlt</File>
+            <Index>0x78</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0xa23a" id="Indigo Dark Arrow">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>lofiProjsAlt</File>
+            <Index>0x79</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0xa22d" id="Puppet Purple Wheel">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>lofiProjsAlt</File>
+            <Index>0x76</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0xa22e" id="Puppet Red Wheel">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>lofiProjsAlt</File>
+            <Index>0x77</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
 </Objects>

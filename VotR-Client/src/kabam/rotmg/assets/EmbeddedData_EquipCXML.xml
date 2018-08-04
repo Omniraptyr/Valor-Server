@@ -8643,20 +8643,20 @@
         <Projectile>
             <ObjectId>Thousand Shot Arrow</ObjectId>
             <Speed>165</Speed>
-            <MinDamage>40</MinDamage>
+            <MinDamage>80</MinDamage>
             <MaxDamage>130</MaxDamage>
             <LifetimeMS>460</LifetimeMS>
             <MultiHit/>
+            <ArmorPiercing/>
         </Projectile>
         <ActivateOnEquip stat="22" amount="-5">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="3" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="100">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <NumProjectiles>1</NumProjectiles>
         <OldSound>arrowShoot</OldSound>
         <feedPower>900</feedPower>
-        <Soulbound/>
-        <DisplayId>{equip.Thousand_Shot}</DisplayId>
+        <DisplayId>Thousand Shot</DisplayId>
     </Object>
     <Object type="0xc1c" id="Coral Venom Trap">
         <Class>Equipment</Class>

@@ -141,6 +141,11 @@ public class EmbeddedAssets {
     public static var legendaries8x8Embed_:Class = EmbeddedAssets_legendaries8x8Embed_;
     public static var emotesEmbed_:Class = EmbeddedAssets_emotesEmbed_;
     public static var raiding32x32Embed_:Class = EmbeddedAssets_raiding32x32Embed_;
+    public static var d3Chars8x8rAlt_:Class = EmbeddedAssets_d3Chars8x8rAlt_;
+    public static var d3Chars16x16rAlt_:Class = EmbeddedAssets_d3Chars16x16rAlt_;
+    public static var d3LofiObjAlt_:Class = EmbeddedAssets_d3LofiObjAlt_;
+    public static var lofiProjsAlt_:Class = EmbeddedAssets_lofiProjsAlt_;
+    public static var lofiObj3Alt:Class = EmbeddedAssets_lofiObj3Alt;
     public static var models_:Object = {
         "Monster Tank1": new monsterTank1Embed_(),
         "Monster Tank2": new monsterTank2Embed_(),
