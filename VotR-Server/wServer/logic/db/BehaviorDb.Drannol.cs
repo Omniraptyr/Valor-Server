@@ -1990,7 +1990,7 @@ namespace wServer.logic
                         new TimedTransition(14000, "breturn1"),
                     new State("bfight1a",
                        new Prioritize(
-                            new Follow(0.5, acquireRange: 15, range: 8),
+                            new Follow(0.7, acquireRange: 80, range: 8),
                             new Wander(1)
                             ),
                         new Shoot(10, 4, projectileIndex: 3, shootAngle: 12, coolDown: 1000),
@@ -1998,7 +1998,7 @@ namespace wServer.logic
                         ),
                     new State("bfight1b",
                         new Prioritize(
-                            new Follow(0.5, acquireRange: 15, range: 8),
+                            new Follow(0.5, acquireRange: 80, range: 8),
                             new Wander(1)
                             ),
                         new Shoot(10, 8, projectileIndex: 3, shootAngle: 12, coolDown: 1000),
@@ -2006,7 +2006,7 @@ namespace wServer.logic
                         ),
                     new State("bfight1c",
                         new Prioritize(
-                            new Follow(1.8, acquireRange: 15, range: 8),
+                            new Follow(1.8, acquireRange: 80, range: 8),
                             new Wander(1)
                             ),
                         new TimedTransition(4000, "bfightblast")
@@ -2047,6 +2047,7 @@ namespace wServer.logic
                         new Taunt(0.25, "Farewell, challenger.."),
                         new Prioritize(
                             new Charge(2, 10, coolDown: 3000),
+                            new Follow(0.6, acquireRange: 80, range: 8),
                             new Wander(1)
                             ),
                         new Grenade(4, 120, range: 5, coolDown: 4000),
@@ -2102,7 +2103,7 @@ namespace wServer.logic
                         new Flash(0xFFFFFF, 0.5, 6),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Prioritize(
-                            new Follow(1.2, 10, 2),
+                            new Follow(1.2, 80, 2),
                             new Wander(1)
                             ),
                         new Shoot(10, 10, projectileIndex: 2, shootAngle: 6, coolDown: 1000),
@@ -2118,8 +2119,13 @@ namespace wServer.logic
                         new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 1, coolDown: 2000),
                         new Shoot(10, count: 8, shootAngle: 6, projectileIndex: 1, coolDown: 2000, coolDownOffset: 400),
                         new Shoot(10, count: 12, shootAngle: 6, projectileIndex: 0, coolDown: 2000, coolDownOffset: 1500),
-                        new Orbit(1, 3, 10),
+                        
                         new Taunt(0.10, "FOR LIN!"),
+                        new Prioritize(
+                            new Orbit(1, 3, 10),
+                            new Follow(1.2, 80, 2),
+                            new Wander(1)
+                            ),
                         new TossObject("Twisted Axe", range: 8, angle: 90, coolDown: 99999),
                         new TossObject("Twisted Axe", range: 8, angle: 270, coolDown: 99999),
                         new SetAltTexture(2),
@@ -2137,7 +2143,7 @@ namespace wServer.logic
                         new Flash(0xFFFFFF, 0.5, 6),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Prioritize(
-                            new Follow(1.2, 10, 2),
+                            new Follow(1.2, 80, 2),
                             new Wander(1)
                             ),
                         new Shoot(10, 10, projectileIndex: 2, shootAngle: 6, coolDown: 1000),
@@ -2153,6 +2159,7 @@ namespace wServer.logic
                         new SetAltTexture(0),
                         new Prioritize(
                             new Charge(1, 10, coolDown: 3000),
+                            new Follow(1.2, 80, 2),
                             new Orbit(0.4, 5)
                             ),
                         new TossObject("Twisted Shield", range: 4, angle: 90, coolDown: 99999),
@@ -3968,7 +3975,7 @@ namespace wServer.logic
                             new TimedTransition(6000, "byebye")
                             ),
                         new State("byebye",
-                            new ReturnToSpawn(2),
+                            new MoveTo(2, 44, 0),
                             new TimedTransition(8000, "latabih")
                             ),
                         new State("latabih",

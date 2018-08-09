@@ -30,6 +30,12 @@ namespace wServer.networking.handlers
 
             if (entity is GuildHallPortal)
             {
+                if(player.ObjectDesc.ObjectId == "Challenger")
+                {
+                    player.SendError("Challengers can only queue up for a Challenger Arena match!");
+                    return;
+                }
+                 
                 HandleGuildPortal(player, entity as GuildHallPortal);
                 return;
             }
@@ -39,6 +45,11 @@ namespace wServer.networking.handlers
 
         private void HandleGuildPortal(Player player, GuildHallPortal portal)
         {
+            if (player.ObjectDesc.ObjectId == "Challenger")
+            {
+                player.SendError("Challengers can only queue up for a Challenger Arena match!");
+                return;
+            }
             if (string.IsNullOrEmpty(player.Guild))
             {
                 player.SendError("You are not in a guild.");
@@ -60,6 +71,12 @@ namespace wServer.networking.handlers
         {
             if (portal == null || !portal.Usable)
                 return;
+
+            if (player.ObjectDesc.ObjectId == "Challenger" && portal.ObjectDesc.ObjectId != "Admins Arena Portal")
+            {
+                player.SendError("Challengers can only queue up for a Challenger Arena match!");
+                return;
+            }
 
             using (TimedLock.Lock(portal.CreateWorldLock))
             {

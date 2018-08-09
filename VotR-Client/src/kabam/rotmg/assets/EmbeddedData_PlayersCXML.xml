@@ -119,7 +119,7 @@
         <LevelIncrease min="0" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
-        `	<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+     	<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
         <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockCost>0</UnlockCost>
         <DisplayId>{players.Wizard}</DisplayId>
@@ -869,5 +869,44 @@
         <UnlockLevel level="20">Gambler</UnlockLevel>
         <UnlockLevel level="20">Templar</UnlockLevel>
         <DisplayId>Blademaster</DisplayId>
+    </Object>
+    <Object type="0x67aa" id="Challenger">
+        <Class>Player</Class>
+        <Description>This class is used to fight inside of the challenger arena.</Description>
+        <AnimatedTexture>
+            <File>players</File>
+            <Index>22</Index>
+        </AnimatedTexture>
+        <HitSound>player/archer_hit</HitSound>
+        <DeathSound>player/priest_death</DeathSound>
+        <Player/>
+        <BloodProb>1.0</BloodProb>
+        <SlotTypes>36, 37, 38, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Equipment>0x67b1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <MaxHitPoints max="100">100</MaxHitPoints>
+        <MaxMagicPoints max="100">100</MaxMagicPoints>
+        <Attack max="20">10</Attack>
+        <Defense max="5">0</Defense>
+        <Speed max="10">10</Speed>
+        <Dexterity max="20">20</Dexterity>
+        <HpRegen max="50">20</HpRegen>
+        <MpRegen max="50">20</MpRegen>
+        <Might max="0">0</Might>
+        <Luck max="0">0</Luck>
+        <Restoration max="0">0</Restoration>
+        <Protection max="0">0</Protection>
+        <LevelIncrease min="0" max="0">MaxHitPoints</LevelIncrease>
+        <LevelIncrease min="0" max="0">MaxMagicPoints</LevelIncrease>
+        <LevelIncrease min="0" max="0">Attack</LevelIncrease>
+        <LevelIncrease min="0" max="0">Defense</LevelIncrease>
+        <LevelIncrease min="0" max="0">Speed</LevelIncrease>
+        <LevelIncrease min="0" max="0">Dexterity</LevelIncrease>
+        <LevelIncrease min="0" max="0">HpRegen</LevelIncrease>
+        <LevelIncrease min="0" max="0">MpRegen</LevelIncrease>
+        <LevelIncrease min="0" max="0">Might</LevelIncrease>
+        <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="0">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="0">Protection</LevelIncrease>
+        <DisplayId>Challenger</DisplayId>
     </Object>
 </Objects>

@@ -92,6 +92,9 @@ public class PlayerMenu extends Menu {
         _local3 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 7), 0xFFFFFF, TextKey.PLAYERMENU_TRADE);
         _local3.addEventListener(MouseEvent.CLICK, this.onTrade);
         addOption(_local3);
+        _local3 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 10), 0x000099, "RPS Bet");
+        _local3.addEventListener(MouseEvent.CLICK, this.onTrade);
+        addOption(_local3);
         _local3 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 21), 0xFFFFFF, TextKey.PLAYERMENU_PM);
         _local3.addEventListener(MouseEvent.CLICK, this.onPrivateMessage);
         addOption(_local3);

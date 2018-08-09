@@ -40,6 +40,7 @@ public class Projectile extends BasicObject {
     public var bulletType_:uint;
     public var damagesEnemies_:Boolean;
     public var damagesPlayers_:Boolean;
+    public var damagesFromPlayer_:Boolean;
     public var damage_:int;
     public var sound_:String;
     public var startX_:Number;
@@ -100,6 +101,7 @@ public class Projectile extends BasicObject {
         var _local10:TextureData = ObjectLibrary.typeToTextureData_[this.props_.type_];
         this.texture_ = _local10.getTexture(objectId_);
         this.damagesPlayers_ = this.containerProps_.isEnemy_;
+        this.damagesFromPlayer_ = this.containerProps_.isPlayer_;
         this.damagesEnemies_ = !(this.damagesPlayers_);
         this.sound_ = this.containerProps_.oldSound_;
         this.multiHitDict_ = ((this.projProps_.multiHit_) ? new Dictionary() : null);
@@ -245,10 +247,11 @@ public class Projectile extends BasicObject {
         if (go != null) {
             var player:Player = map_.player_;
             var goIsEnemy:Boolean = go.props_.isEnemy_;
+            var goIsPlayer:Boolean = go.props_.isPlayer_;
             var goHit:Boolean = player != null &&
                     !player.isPaused() &&
                     !player.isHidden() &&
-                    (this.damagesPlayers_ || goIsEnemy && this.ownerId_ == player.objectId_);
+                    (this.damagesPlayers_ || goIsEnemy && this.ownerId_ == player.objectId_ || this.damagesFromPlayer_ || goIsPlayer && this.ownerId_ == player.objectId_);
 
             if (goHit) {
                 var dmg:int = GameObject.damageWithDefense(this.damage_, go.defense_, this.projProps_.armorPiercing_, go.condition_);
@@ -260,7 +263,14 @@ public class Projectile extends BasicObject {
                         doneAction(map_.gs_, Tutorial.KILL_ACTION);
                     }
                 }
-
+                if(go.pvp_ && player.pvp_){
+                    map_.gs_.gsc_.playerHit(this.bulletId_, go.objectId_);
+                    if(go.isProtected()){
+                        go.damage(this.containerType_, dmg2, this.projProps_.effects_, false, this);
+                    }else{
+                        go.damage(this.containerType_, dmg, this.projProps_.effects_, false, this);
+                    }
+                }
                 if (go == player) {
                     map_.gs_.gsc_.playerHit(this.bulletId_, this.ownerId_);
                     if(go.isProtected()){
@@ -300,7 +310,6 @@ public class Projectile extends BasicObject {
     public function getHit(x:Number, y:Number):GameObject {
         var currentDSqr:Number = Number.MAX_VALUE;
         var hit:GameObject;
-
         for each (var go:GameObject in map_.visibleHit_) {
             var dx:Number;
             var dy:Number;
@@ -311,11 +320,21 @@ public class Projectile extends BasicObject {
                     map_.goDict_[go.objectId_] == null) {
                 continue;
             }
-
-            if (damagesEnemies_ && go.props_.isEnemy_ || damagesPlayers_ && go.props_.isPlayer_) {
+            if ((this.damagesEnemies_ && go.objectId_ != this.ownerId_ && ((go.pvp_ && go.props_.isPlayer_) || go.props_.isEnemy_)) || (this.damagesPlayers_ && go.props_.isPlayer_)) {
                 if (!projProps_.multiHit_ || multiHitDict_[go] == null) {
-                    if (go == map_.player_) {
-                        return go;
+                    if (go == map_.player_ || go.props_.isPlayer_) {
+                        var _owner:GameObject = map_.goDict_[this.ownerId_];
+                        if (_owner is Player) {
+                            if (_owner != null) {
+                                if (go.canBeHitBy(_owner)) {
+                                    return (go);
+                                } else {
+                                    continue;
+                                }
+                            } else {
+                                return (go);
+                            }
+                        }
                     }
 
                     var dSqr:Number = dx * dx + dy * dy;
@@ -324,6 +343,7 @@ public class Projectile extends BasicObject {
                         hit = go;
                     }
                 }
+
             }
         }
         return hit;

@@ -31,6 +31,7 @@ namespace wServer.networking.handlers
                 return;
 
             var prj = (player as IProjectileOwner).Projectiles[pkt.BulletId];
+
             if (prj == null)
                 Log.Debug("prj is dead...");
 

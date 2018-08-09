@@ -66,6 +66,7 @@ namespace wServer.realm.worlds
         public int Difficulty { get; protected set; }
         public int Background { get; protected set; }
         public bool IsLimbo { get; protected set; }
+        public bool PvP { get; protected set; }
         public bool AllowTeleport { get; protected set; }
         public bool ShowDisplays { get; protected set; }
         public string[] ExtraXML { get; protected set; }
@@ -114,6 +115,7 @@ namespace wServer.realm.worlds
             AllowTeleport = !proto.restrictTp;
             ShowDisplays = proto.showDisplays;
             Blocking = proto.blocking;
+            PvP = proto.pvp;
             Opener = "";
 
             var rnd = new Random();
@@ -366,6 +368,13 @@ namespace wServer.realm.worlds
                 Players.TryAdd(entity.Id, entity as Player);
                 PlayersCollision.Insert(entity);
                 Interlocked.Increment(ref _totalConnects);
+                if (entity.Owner.PvP)
+                {
+                    (entity as Player).PvP = true;
+                    (entity as Player).SendHelp("Be weary adventurer..");
+                }
+                else
+                    (entity as Player).PvP = false;
             }
             else if (entity is Enemy)
             {

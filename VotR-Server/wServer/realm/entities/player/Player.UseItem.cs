@@ -592,6 +592,15 @@ namespace wServer.realm.entities
                     case ActivateEffects.SorActivate:
                         AESorActivate(time, item, target, eff);
                         break;
+                    case ActivateEffects.BulletNova2:
+                        AEBulletNova2(time, item, target, eff);
+                        break;
+                    case ActivateEffects.CSmokeGrenade:
+                        AECSmokeGrenade(time, item, target, eff);
+                        break;
+                    case ActivateEffects.CFlashGrenade:
+                        AECFlashGrenade(time, item, target, eff);
+                        break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
@@ -1564,6 +1573,81 @@ namespace wServer.realm.entities
             }));
         }
 
+
+        private void AECSmokeGrenade(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            BroadcastSync(new ShowEffect()
+            {
+                EffectType = EffectType.Throw,
+                Color = new ARGB(0x000000),
+                TargetObjectId = Id,
+                Pos1 = target,
+                Duration = 2
+            }, p => this.DistSqr(p) < RadiusSqr);
+
+            var x = new Placeholder(Manager, 2000);
+            x.Move(target.X, target.Y);
+            Owner.EnterWorld(x);
+            Owner.Timers.Add(new WorldTimer(2000, (world, t) =>
+            {
+                world.BroadcastPacketNearby(new ShowEffect()
+                {
+                    EffectType = EffectType.AreaBlast,
+                    Color = new ARGB(0x000000),
+                    TargetObjectId = x.Id,
+                    Pos1 = new Position() { X = 6 }
+                }, x, null, PacketPriority.High);
+
+                world.AOE(target, 6, true, player =>
+                {
+                    player.ApplyConditionEffect(new ConditionEffect
+                    {
+                        Effect = ConditionEffectIndex.Darkness,
+                        DurationMS = 3000
+                    });
+
+
+                });
+            }));
+        }
+
+        private void AECFlashGrenade(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            BroadcastSync(new ShowEffect()
+            {
+                EffectType = EffectType.Throw,
+                Color = new ARGB(0xFFFF00),
+                TargetObjectId = Id,
+                Pos1 = target,
+                Duration = 2
+            }, p => this.DistSqr(p) < RadiusSqr);
+
+            var x = new Placeholder(Manager, 2000);
+            x.Move(target.X, target.Y);
+            Owner.EnterWorld(x);
+            Owner.Timers.Add(new WorldTimer(2000, (world, t) =>
+            {
+                world.BroadcastPacketNearby(new ShowEffect()
+                {
+                    EffectType = EffectType.AreaBlast,
+                    Color = new ARGB(0xFFFF00),
+                    TargetObjectId = x.Id,
+                    Pos1 = new Position() { X = 4 }
+                }, x, null, PacketPriority.High);
+
+                world.AOE(target, 5, true, player =>
+                {
+                    player.ApplyConditionEffect(new ConditionEffect
+                    {
+                        Effect = ConditionEffectIndex.Confused,
+                        DurationMS = 3000
+                    });
+
+
+                });
+            }));
+        }
+
         private void DamageGrenade(RealmTime time, Position target)
         {
             BroadcastSync(new ShowEffect()
@@ -2344,6 +2428,44 @@ namespace wServer.realm.entities
                 prjs[i] = proj;
             }
             batch[20] = new ShowEffect()
+            {
+                EffectType = EffectType.Trail,
+                Pos1 = target,
+                TargetObjectId = Id,
+                Color = new ARGB(0xFFFF00AA)
+            };
+
+            foreach (var plr in Owner.Players.Values
+                        .Where(p => p.DistSqr(this) < RadiusSqr))
+            {
+                plr.Client.SendPackets(batch);
+            }
+        }
+
+        private void AEBulletNova2(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            var prjs = new Projectile[4];
+            var prjDesc = item.Projectiles[0]; //Assume only one
+            var batch = new Packet[5];
+            for (var i = 0; i < 4; i++)
+            {
+                var proj = CreateProjectile(prjDesc, item.ObjectType,
+                    Random.Next(prjDesc.MinDamage, prjDesc.MaxDamage),
+                    time.TotalElapsedMs, target, (float)(i * (Math.PI * 2) / 4));
+                Owner.EnterWorld(proj);
+                FameCounter.Shoot(proj);
+                batch[i] = new ServerPlayerShoot()
+                {
+                    BulletId = proj.ProjectileId,
+                    OwnerId = Id,
+                    ContainerType = item.ObjectType,
+                    StartingPos = target,
+                    Angle = proj.Angle,
+                    Damage = (short)proj.Damage
+                };
+                prjs[i] = proj;
+            }
+            batch[4] = new ShowEffect()
             {
                 EffectType = EffectType.Trail,
                 Pos1 = target,

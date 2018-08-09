@@ -151,6 +151,13 @@ namespace wServer.realm.entities
             set { _marksEnabled.SetValue(value); }
         }
 
+        private readonly SV<bool> _pvp;
+        public bool PvP
+        {
+            get { return _pvp.GetValue(); }
+            set { _pvp.SetValue(value); }
+        }
+
         private readonly SV<bool> _striked;
         public bool Striked
         {
@@ -573,6 +580,7 @@ namespace wServer.realm.entities
                 case StatsType.SorStorage: SorStorage = (int)val; break;
                 case StatsType.Striked: Striked = (int)val == 1; break;
                 case StatsType.Elite: Elite = (int)val; break;
+                case StatsType.PvP: PvP = (int)val == 1; break;
             }
         }
 
@@ -696,6 +704,7 @@ namespace wServer.realm.entities
             stats[StatsType.SorStorage] = SorStorage;
             stats[StatsType.Striked] = Striked;
             stats[StatsType.Elite] = Elite;
+            stats[StatsType.PvP] = PvP;
         }
 
         public void SaveToCharacter()
@@ -817,7 +826,7 @@ namespace wServer.realm.entities
             _pwProtection = new SV<int>(this, StatsType.PWProtection, client.Character.PWProtection);
             _striked = new SV<bool>(this, StatsType.Striked, client.Account.Striked);
             _elite = new SV<int>(this, StatsType.Elite, client.Account.Elite, true);
-
+            _pvp = new SV<bool>(this, StatsType.PvP, true);
 
 
 
@@ -1471,9 +1480,7 @@ namespace wServer.realm.entities
         public override bool HitByProjectile(Projectile projectile, RealmTime time)
         {
             ushort dmgAmount;
-
-            if (projectile.ProjectileOwner is Player ||
-                IsInvulnerable())
+            if (IsInvulnerable())
             {
                 return false;
             }
@@ -1501,15 +1508,19 @@ namespace wServer.realm.entities
             }
             ApplyConditionEffect(projectile.ProjDesc.Effects);
 
-            Owner.BroadcastPacketNearby(new Damage()
+            if (!(Owner.PvP))
             {
-                TargetId = this.Id,
-                Effects = HasConditionEffect(ConditionEffects.Invincible) ? 0 : projectile.ConditionEffects,
-                DamageAmount = (ushort)dmgAmount,
-                Kill = HP <= 0,
-                BulletId = projectile.ProjectileId,
-                ObjectId = projectile.ProjectileOwner.Self.Id
-            }, this, this, PacketPriority.Low);
+                Owner.BroadcastPacketNearby(new Damage()
+                {
+                    TargetId = this.Id,
+                    Effects = HasConditionEffect(ConditionEffects.Invincible) ? 0 : projectile.ConditionEffects,
+                    DamageAmount = (ushort)dmgAmount,
+                    Kill = HP <= 0,
+                    BulletId = projectile.ProjectileId,
+                    ObjectId = projectile.ProjectileOwner.Self.Id
+                }, this, this, PacketPriority.Low);
+            }
+
 
 
 
@@ -1578,37 +1589,78 @@ namespace wServer.realm.entities
             }));
         }
 
+
         void GenerateGravestone(bool phantomDeath = false)
         {
             var playerDesc = Manager.Resources.GameData.Classes[ObjectType];
             var maxed = playerDesc.Stats.Where((t, i) => Stats.Base[i] >= t.MaxValue).Count();
             ushort objType;
             int time;
-            switch (maxed)
+            if (Owner.PvP)
             {
-                case 12: objType = 0x69cf; time = 600000; break;
-                case 11: objType = 0x69ce; time = 600000; break;
-                case 10: objType = 0x585d; time = 600000; break;
-                case 9: objType = 0x585c; time = 600000; break;
-                case 8: objType = 0x0735; time = 600000; break;
-                case 7: objType = 0x0734; time = 600000; break;
-                case 6: objType = 0x072b; time = 600000; break;
-                case 5: objType = 0x072a; time = 600000; break;
-                case 4: objType = 0x0729; time = 600000; break;
-                case 3: objType = 0x0728; time = 600000; break;
-                case 2: objType = 0x0727; time = 600000; break;
-                case 1: objType = 0x0726; time = 600000; break;
-                default:
-                    objType = 0x0725; time = 300000;
-                    if (Level < 20) { objType = 0x0724; time = 60000; }
-                    if (Level <= 1) { objType = 0x0723; time = 30000; }
-                    break;
+
+                switch (maxed)
+                {
+                    case 12: objType = 0x69cf; time = 600000; break;
+                    case 11: objType = 0x69ce; time = 600000; break;
+                    case 10: objType = 0x585d; time = 600000; break;
+                    case 9: objType = 0x585c; time = 600000; break;
+                    case 8: objType = 0x0735; time = 600000; break;
+                    case 7: objType = 0x0734; time = 600000; break;
+                    case 6: objType = 0x072b; time = 600000; break;
+                    case 5: objType = 0x072a; time = 600000; break;
+                    case 4: objType = 0x0729; time = 600000; break;
+                    case 3: objType = 0x0728; time = 600000; break;
+                    case 2: objType = 0x0727; time = 600000; break;
+                    case 1: objType = 0x0726; time = 600000; break;
+                    default:
+                        objType = 0x0725; time = 300000;
+                        if (Level < 20) { objType = 0x0724; time = 60000; }
+                        if (Level <= 1) { objType = 0x0723; time = 30000; }
+                        break;
+                }
+            }
+            else
+            {
+                switch (maxed)
+                {
+                    case 12: objType = 0x79cf; time = 600000; break;
+                    case 11: objType = 0x79ce; time = 600000; break;
+                    case 10: objType = 0x785d; time = 600000; break;
+                    case 9: objType = 0x785c; time = 600000; break;
+                    case 8: objType = 0x7735; time = 600000; break;
+                    case 7: objType = 0x7734; time = 600000; break;
+                    case 6: objType = 0x792b; time = 600000; break;
+                    case 5: objType = 0x792a; time = 600000; break;
+                    case 4: objType = 0x7729; time = 600000; break;
+                    case 3: objType = 0x7728; time = 600000; break;
+                    case 2: objType = 0x7727; time = 600000; break;
+                    case 1: objType = 0x7726; time = 600000; break;
+                    default:
+                        objType = 0x7725; time = 300000;
+                        if (Level < 20) { objType = 0x7724; time = 60000; }
+                        if (Level <= 1) { objType = 0x7723; time = 30000; }
+                        break;
+                }
             }
 
-            var obj = new StaticObject(Manager, objType, time, true, true, false);
-            obj.Move(X, Y);
-            obj.Name = (!phantomDeath) ? Name : $"{Name} got rekt";
-            Owner.EnterWorld(obj);
+            if (Owner.PvP)
+            {
+                var obj = new Container(Manager, objType, 10000, true);
+                obj.Move(X, Y);
+                obj.Name = (!phantomDeath) ? Name : $"{Name} got rekt";
+
+                for (int i = 0; i < 4; i++)
+                    obj.Inventory[i] = this.Inventory[i];
+                Owner.EnterWorld(obj);
+            }
+            else
+            {
+                var obj = new StaticObject(Manager, objType, time, true, true, false);
+                obj.Move(X, Y);
+                obj.Name = (!phantomDeath) ? Name : $"{Name} got rekt";
+                Owner.EnterWorld(obj);
+            }
         }
 
         public double thresholdBoost()
@@ -1952,20 +2004,60 @@ namespace wServer.realm.entities
                 return;
 
             SaveToCharacter();
-            Manager.Database.Death(Manager.Resources.GameData, _client.Account,
+
+            if (Owner.PvP)
+            {
+                var amount = ((int)Credits / 100) * 20;
+                Client.Manager.Database.UpdateCredit(Client.Account, -amount);
+                Credits = Client.Account.Credits - amount;
+                
+            }
+
+
+            if ((entity is Player))
+            {
+                 Manager.Database.Death(Manager.Resources.GameData, _client.Account,
+                _client.Character, FameCounter.Stats, (entity as Player).Name + " the " + entity.ObjectDesc.ObjectId);
+            }
+            else
+            {
+                Manager.Database.Death(Manager.Resources.GameData, _client.Account,
                 _client.Character, FameCounter.Stats, killer);
+            }
+
 
             ZolReborn("Corrupted Entity");
             GenerateGravestone();
-            AnnounceDeath(killer);
 
-            _client.SendPacket(new Death()
+            if((entity is Player))
             {
-                AccountId = AccountId.ToString(),
-                CharId = _client.Character.CharId,
-                KilledBy = killer,
-                ZombieId = -1
-            });
+                AnnounceDeath((entity as Player).Name + " the " + entity.ObjectDesc.ObjectId);
+            }
+            else
+            {
+                AnnounceDeath(killer);
+            }
+
+            if ((entity is Player))
+            {
+                _client.SendPacket(new Death()
+                {
+                    AccountId = AccountId.ToString(),
+                    CharId = _client.Character.CharId,
+                    KilledBy = (entity as Player).Name + " the " + entity.ObjectDesc.ObjectId,
+                    ZombieId = -1
+                });
+            }
+            else
+            {
+                _client.SendPacket(new Death()
+                {
+                    AccountId = AccountId.ToString(),
+                    CharId = _client.Character.CharId,
+                    KilledBy = killer,
+                    ZombieId = -1
+                });
+            }
 
 
 

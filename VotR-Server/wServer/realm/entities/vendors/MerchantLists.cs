@@ -134,8 +134,8 @@ namespace wServer.realm.entities.vendors
             new ShopItem("Burden of the Warpawn", 160),
             new ShopItem("The Odyssey", 120),
             new ShopItem("The Executioner", 120),
-            new ShopItem("Rip of Soul", 130)/*,
-            new ShopItem("Shard of the Unknown", 300)*/
+            new ShopItem("Rip of Soul", 130),
+            new ShopItem("Sincryer's Demise", 140)
         };
 
         private static readonly List<ISellableItem> Drannol = new List<ISellableItem>

@@ -21,6 +21,8 @@ public class TooltipHelper
 
     public static const QUEST_COLOR:uint = 10824234;
 
+    public static const BR_COLOR:uint = 6711039;
+
     public function TooltipHelper()
     {
         super();

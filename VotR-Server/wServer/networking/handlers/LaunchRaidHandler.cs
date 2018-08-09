@@ -16,6 +16,7 @@ namespace wServer.networking.handlers
 
         public void launchRaid(Player player, int gold, bool ultra, int raidId)
         {
+            var playerSvr = player.Manager.Config.serverInfo.name;
             var Manager = player.Manager;
             var gameData = Manager.Resources.GameData;
             if (player.Credits >= gold)
@@ -31,7 +32,7 @@ namespace wServer.networking.handlers
                                 player.Client.Manager.Database.UpdateCredit(player.Client.Account, -gold);
                                 player.Credits = player.Client.Account.Credits - gold;
                                 player.ForceUpdate(player.Credits);
-                                player.Manager.Chat.RaidAnnounce("The Zol Awakening Raid has been launched!");
+                                player.Manager.Chat.RaidAnnounce("The Zol Awakening Raid has been launched on " + playerSvr + "!");
                                 ushort objType;
 
 
@@ -72,7 +73,7 @@ namespace wServer.networking.handlers
                                 player.Client.Manager.Database.UpdateCredit(player.Client.Account, -gold);
                                 player.Credits = player.Client.Account.Credits - gold;
                                 player.ForceUpdate(player.Credits);
-                                player.Manager.Chat.RaidAnnounce("The Ultra Zol Awakening Raid has been launched!");
+                                player.Manager.Chat.RaidAnnounce("The Ultra Zol Awakening Raid has been launched on " + playerSvr + "!");
 
                                 Manager._isRaidLaunched = true;
                                 ushort objType;
@@ -114,7 +115,7 @@ namespace wServer.networking.handlers
                                 player.Client.Manager.Database.UpdateCredit(player.Client.Account, -gold);
                                 player.Credits = player.Client.Account.Credits - gold;
                                 player.ForceUpdate(player.Credits);
-                                player.Manager.Chat.RaidAnnounce("The Calling of the Titan Raid has been launched!");
+                                player.Manager.Chat.RaidAnnounce("The Calling of the Titan Raid has been launched on " + playerSvr + "!");
                                 ushort objType;
 
 
@@ -179,17 +180,17 @@ namespace wServer.networking.handlers
                     case 1:
                         if(packet.Ultra == false)
                         {
-                            launchRaid(player, 6000, false, 1);
+                            launchRaid(player, 10000, false, 1);
                         }
                         else
                         {
-                            launchRaid(player, 7500, true, 1);
+                            launchRaid(player, 10000, true, 1);
                         }
                         break;
                     case 2:
                         if (packet.Ultra == false)
                         {
-                            launchRaid(player, 6000, false, 2);
+                            launchRaid(player, 10000, false, 2);
                         }
                         break;
                 }

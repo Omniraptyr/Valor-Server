@@ -586,14 +586,77 @@ namespace wServer.logic.loot
             };
         }
 
+
+        public static ILootDef[] ChallengerChest1()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Basic Spell", 0.25),
+                    new ItemLoot("Medium Spell", 0.25),
+                    new ItemLoot("Champion Spell", 0.25),
+                    new ItemLoot("Basic Sphere", 0.25),
+                    new ItemLoot("Medium Sphere", 0.25),
+                    new ItemLoot("Champion Sphere", 0.25),
+                    new ItemLoot("Energy Staff 2", 0.25),
+                    new ItemLoot("Firebrand Staff 2", 0.25),
+                    new ItemLoot("Comet Staff 2", 0.25),
+                    new ItemLoot("Flash Grenade", 0.25),
+                    new ItemLoot("Smoke Grenade", 0.25),
+                    new ItemLoot("Challenger Steel Shield", 0.25),
+                    new ItemLoot("Mossy Helm", 0.25),
+                    new ItemLoot("Challenger Drake Hide Armor", 0.25),
+                    new ItemLoot("Quiver of the Challenger", 0.25),
+                    new ItemLoot("Challenger Steel Dagger", 0.25),
+                    new ItemLoot("Thrownaxe", 0.25),
+                    new ItemLoot("Challenger Shortbow", 0.25)
+
+                ),
+                new OnlyOne(
+                    new ItemLoot("Greater Health Potion", 1),
+                    new ItemLoot("Greater Magic Potion", 1)
+                )
+            };
+        }
+        public static ILootDef[] ChallengerChest2()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Basic Spell", 0.50),
+                    new ItemLoot("Medium Spell", 0.50),
+                    new ItemLoot("Champion Spell", 0.50),
+                    new ItemLoot("Basic Sphere", 0.50),
+                    new ItemLoot("Medium Sphere", 0.50),
+                    new ItemLoot("Champion Sphere", 0.50),
+                    new ItemLoot("Energy Staff 2", 0.50),
+                    new ItemLoot("Firebrand Staff 2", 0.50),
+                    new ItemLoot("Comet Staff 2", 0.50),
+                    new ItemLoot("Flash Grenade", 0.50),
+                    new ItemLoot("Smoke Grenade", 0.50),
+                    new ItemLoot("Challenger Steel Shield", 0.50),
+                    new ItemLoot("Mossy Helm", 0.50),
+                    new ItemLoot("Challenger Drake Hide Armor", 0.50),
+                    new ItemLoot("Quiver of the Challenger", 0.50),
+                    new ItemLoot("Challenger Steel Dagger", 0.50),
+                    new ItemLoot("Thrownaxe", 0.50),
+                    new ItemLoot("Challenger Shortbow", 0.50)
+
+                ),
+                new OnlyOne(
+                    new ItemLoot("Greater Health Potion", 1),
+                    new ItemLoot("Greater Magic Potion", 1)
+                )
+            };
+        }
         public static ILootDef[] SF0()
         {
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.07),
-                    new ItemLoot("Three Tiny Sor Fragments", 0.07),
-                    new ItemLoot("Tiny Sor Fragment", 0.07)
+                    new ItemLoot("Two Tiny Sor Fragments", 0.01),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.01),
+                    new ItemLoot("Tiny Sor Fragment", 0.01)
                 ),
                 new OnlyOne(
                     new ItemLoot("Wine Cellar Incantation", 0.005)
@@ -608,9 +671,9 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.08),
-                    new ItemLoot("Three Tiny Sor Fragments", 0.08),
-                    new ItemLoot("Tiny Sor Fragment", 0.08)
+                    new ItemLoot("Two Tiny Sor Fragments", 0.02),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.02),
+                    new ItemLoot("Tiny Sor Fragment", 0.02)
                 ),
                 new OnlyOne(
                     new ItemLoot("Wine Cellar Incantation", 0.005)
@@ -625,9 +688,9 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.09),
-                    new ItemLoot("Three Tiny Sor Fragments", 0.09),
-                    new ItemLoot("Tiny Sor Fragment", 0.09)
+                    new ItemLoot("Two Tiny Sor Fragments", 0.03),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.03),
+                    new ItemLoot("Tiny Sor Fragment", 0.03)
                 ),
                 new OnlyOne(
                     new ItemLoot("Wine Cellar Incantation", 0.005)
@@ -642,9 +705,9 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.12),
-                    new ItemLoot("Three Tiny Sor Fragments", 0.12),
-                    new ItemLoot("Tiny Sor Fragment", 0.12)
+                    new ItemLoot("Two Tiny Sor Fragments", 0.04),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.04),
+                    new ItemLoot("Tiny Sor Fragment", 0.04)
                 ),
                 new OnlyOne(
                     new ItemLoot("Wine Cellar Incantation", 0.005)
@@ -659,9 +722,9 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.14),
-                    new ItemLoot("Three Tiny Sor Fragments", 0.14),
-                    new ItemLoot("Tiny Sor Fragment", 0.14)
+                    new ItemLoot("Two Tiny Sor Fragments", 0.05),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.05),
+                    new ItemLoot("Tiny Sor Fragment", 0.05)
                 ),
                 new OnlyOne(
                     new ItemLoot("Wine Cellar Incantation", 0.005)

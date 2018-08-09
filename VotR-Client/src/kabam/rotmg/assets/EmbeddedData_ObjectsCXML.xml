@@ -728,6 +728,172 @@
         <DisplayId>{objects.Battle_Nexus_Portal}</DisplayId>
     </Object>
     <Object type="0x0723" id="Gravestone 1">
+        <Class>Container</Class>
+        <ShowName/>
+        <Container/>
+        <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Texture>
+            <File>lofiChar28x8</File>
+            <Index>0x6c</Index>
+        </Texture>
+        <DisplayId>{objects.Gravestone_1}</DisplayId>
+    </Object>
+    <Object type="0x0724" id="Gravestone 2">
+        <Class>Container</Class>
+        <ShowName/>
+        <Container/>
+        <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Texture>
+            <File>lofiChar28x8</File>
+            <Index>0x6d</Index>
+        </Texture>
+        <DisplayId>{objects.Gravestone_2}</DisplayId>
+    </Object>
+    <Object type="0x0725" id="Gravestone 3">
+        <Class>Container</Class>
+        <ShowName/>
+        <Container/>
+        <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Texture>
+            <File>lofiChar28x8</File>
+            <Index>0x6e</Index>
+        </Texture>
+        <DisplayId>{objects.Gravestone_3}</DisplayId>
+    </Object>
+    <Object type="0x0726" id="Gravestone 4">
+        <Class>Container</Class>
+        <ShowName/>
+        <Container/>
+        <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Texture>
+            <File>lofiChar28x8</File>
+            <Index>0x6f</Index>
+        </Texture>
+        <DisplayId>{objects.Gravestone_4}</DisplayId>
+    </Object>
+    <Object type="0x0727" id="Gravestone 5">
+        <Class>Container</Class>
+        <ShowName/>
+        <Container/>
+        <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Texture>
+            <File>lofiChar216x16</File>
+            <Index>0x13</Index>
+        </Texture>
+        <DisplayId>{objects.Gravestone_5}</DisplayId>
+    </Object>
+    <Object type="0x0728" id="Gravestone 6">
+        <Class>Container</Class>
+        <ShowName/>
+        <Container/>
+        <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Texture>
+            <File>lofiChar216x16</File>
+            <Index>0x14</Index>
+        </Texture>
+        <DisplayId>{objects.Gravestone_6}</DisplayId>
+    </Object>
+    <Object type="0x0729" id="Gravestone 7">
+        <Class>Container</Class>
+        <ShowName/>
+        <Container/>
+        <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Texture>
+            <File>lofiChar216x16</File>
+            <Index>0x15</Index>
+        </Texture>
+        <DisplayId>{objects.Gravestone_7}</DisplayId>
+    </Object>
+    <Object type="0x072a" id="Gravestone 8">
+        <Class>Container</Class>
+        <ShowName/>
+        <Container/>
+        <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Texture>
+            <File>lofiChar216x16</File>
+            <Index>0x16</Index>
+        </Texture>
+        <DisplayId>{objects.Gravestone_8}</DisplayId>
+    </Object>
+    <Object type="0x072b" id="Gravestone 9">
+        <Class>Container</Class>
+        <ShowName/>
+        <Container/>
+        <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Texture>
+            <File>lofiChar216x16</File>
+            <Index>0x17</Index>
+        </Texture>
+        <DisplayId>{objects.Gravestone_9}</DisplayId>
+    </Object>
+    <Object type="0x0734" id="Gravestone 10">
+        <Class>Container</Class>
+        <ShowName/>
+        <Container/>
+        <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Texture>
+            <File>lofiChar216x16</File>
+            <Index>0x27</Index>
+        </Texture>
+        <DisplayId>{objects.Gravestone_10}</DisplayId>
+    </Object>
+    <Object type="0x0735" id="Gravestone 11">
+        <Class>Container</Class>
+        <ShowName/>
+        <Container/>
+        <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Texture>
+            <File>lofiChar216x16</File>
+            <Index>0x3d</Index>
+        </Texture>
+        <DisplayId>{objects.Gravestone_11}</DisplayId>
+    </Object>
+    <Object type="0x585c" id="Gravestone 12">
+        <Class>Container</Class>
+        <ShowName/>
+        <Container/>
+        <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1ad</Index>
+        </Texture>
+        <DisplayId>Gravestone 12</DisplayId>
+    </Object>
+    <Object type="0x585d" id="Gravestone 13">
+        <Class>Container</Class>
+        <ShowName/>
+        <Container/>
+        <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1ae</Index>
+        </Texture>
+        <DisplayId>Gravestone 13</DisplayId>
+    </Object>
+    <Object type="0x69ce" id="Gravestone 14">
+        <Class>Container</Class>
+        <ShowName/>
+        <Container/>
+        <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1b3</Index>
+        </Texture>
+        <DisplayId>Gravestone 14</DisplayId>
+    </Object>
+    <Object type="0x69cf" id="Gravestone 15">
+        <Class>Container</Class>
+        <Container/>
+        <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <ShowName/>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1b4</Index>
+        </Texture>
+        <DisplayId>Gravestone 15</DisplayId>
+    </Object>
+
+    <Object type="0x7723" id="PVE Gravestone 1">
         <Class>GameObject</Class>
         <ShowName/>
         <Texture>
@@ -736,7 +902,7 @@
         </Texture>
         <DisplayId>{objects.Gravestone_1}</DisplayId>
     </Object>
-    <Object type="0x0724" id="Gravestone 2">
+    <Object type="0x7724" id="PVE Gravestone 2">
         <Class>GameObject</Class>
         <ShowName/>
         <Texture>
@@ -745,7 +911,7 @@
         </Texture>
         <DisplayId>{objects.Gravestone_2}</DisplayId>
     </Object>
-    <Object type="0x0725" id="Gravestone 3">
+    <Object type="0x7725" id="PVE Gravestone 3">
         <Class>GameObject</Class>
         <ShowName/>
         <Texture>
@@ -754,7 +920,7 @@
         </Texture>
         <DisplayId>{objects.Gravestone_3}</DisplayId>
     </Object>
-    <Object type="0x0726" id="Gravestone 4">
+    <Object type="0x7726" id="PVE Gravestone 4">
         <Class>GameObject</Class>
         <ShowName/>
         <Texture>
@@ -763,7 +929,7 @@
         </Texture>
         <DisplayId>{objects.Gravestone_4}</DisplayId>
     </Object>
-    <Object type="0x0727" id="Gravestone 5">
+    <Object type="0x7727" id="PVE Gravestone 5">
         <Class>GameObject</Class>
         <ShowName/>
         <Texture>
@@ -772,7 +938,7 @@
         </Texture>
         <DisplayId>{objects.Gravestone_5}</DisplayId>
     </Object>
-    <Object type="0x0728" id="Gravestone 6">
+    <Object type="0x7728" id="PVE Gravestone 6">
         <Class>GameObject</Class>
         <ShowName/>
         <Texture>
@@ -781,7 +947,7 @@
         </Texture>
         <DisplayId>{objects.Gravestone_6}</DisplayId>
     </Object>
-    <Object type="0x0729" id="Gravestone 7">
+    <Object type="0x7729" id="PVE Gravestone 7">
         <Class>GameObject</Class>
         <ShowName/>
         <Texture>
@@ -790,7 +956,7 @@
         </Texture>
         <DisplayId>{objects.Gravestone_7}</DisplayId>
     </Object>
-    <Object type="0x072a" id="Gravestone 8">
+    <Object type="0x792a" id="PVE Gravestone 8">
         <Class>GameObject</Class>
         <ShowName/>
         <Texture>
@@ -799,7 +965,7 @@
         </Texture>
         <DisplayId>{objects.Gravestone_8}</DisplayId>
     </Object>
-    <Object type="0x072b" id="Gravestone 9">
+    <Object type="0x792b" id="PVE Gravestone 9">
         <Class>GameObject</Class>
         <ShowName/>
         <Texture>
@@ -808,7 +974,7 @@
         </Texture>
         <DisplayId>{objects.Gravestone_9}</DisplayId>
     </Object>
-    <Object type="0x0734" id="Gravestone 10">
+    <Object type="0x7734" id="PVE Gravestone 10">
         <Class>GameObject</Class>
         <ShowName/>
         <Texture>
@@ -817,7 +983,7 @@
         </Texture>
         <DisplayId>{objects.Gravestone_10}</DisplayId>
     </Object>
-    <Object type="0x0735" id="Gravestone 11">
+    <Object type="0x7735" id="PVE Gravestone 11">
         <Class>GameObject</Class>
         <ShowName/>
         <Texture>
@@ -825,6 +991,42 @@
             <Index>0x3d</Index>
         </Texture>
         <DisplayId>{objects.Gravestone_11}</DisplayId>
+    </Object>
+    <Object type="0x785c" id="PVE Gravestone 12">
+        <Class>GameObject</Class>
+        <ShowName/>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1ad</Index>
+        </Texture>
+        <DisplayId>Gravestone 12</DisplayId>
+    </Object>
+    <Object type="0x785d" id="PVE Gravestone 13">
+        <Class>GameObject</Class>
+        <ShowName/>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1ae</Index>
+        </Texture>
+        <DisplayId>Gravestone 13</DisplayId>
+    </Object>
+    <Object type="0x79ce" id="PVE Gravestone 14">
+        <Class>GameObject</Class>
+        <ShowName/>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1b3</Index>
+        </Texture>
+        <DisplayId>Gravestone 14</DisplayId>
+    </Object>
+    <Object type="0x79cf" id="PVE Gravestone 15">
+        <Class>GameObject</Class>
+        <ShowName/>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1b4</Index>
+        </Texture>
+        <DisplayId>Gravestone 15</DisplayId>
     </Object>
     <Object type="0x072c" id="Tomb of the Ancients Portal">
         <DisplayId>{objects.Tomb_of_the_Ancients_Portal}</DisplayId>

@@ -213,6 +213,62 @@ namespace wServer.logic
                     new ItemLoot("Onrane", 0.05)
                 )
             )
+              .Init("Challenger Chest 1",
+                new State(
+                    new TransformOnDeath("Challenger Chest 1 Spawner", 1, 1, 1),
+                    new State("Idle",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new TimedTransition(5000, "UnsetEffect")
+                    ),
+                    new State("UnsetEffect")
+                ),
+                new MostDamagers(3,
+                    LootTemplates.ChallengerChest1()
+                    )
+            )
+           .Init("Challenger Chest 2",
+                new State(
+                    new TransformOnDeath("Challenger Chest 2 Spawner", 1, 1, 1),
+                    new State("Idle",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new TimedTransition(5000, "UnsetEffect")
+                    ),
+                    new State("UnsetEffect")
+                ),
+                new MostDamagers(3,
+                    LootTemplates.ChallengerChest2()
+                    )
+            )
+            .Init("Challenger Chest 1 Spawner",
+            new State(
+                new TransformOnDeath("Challenger Chest 1", 1, 1, 1),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("cooldown",
+                     new TimedTransition(90000, "activate")
+                    ),
+                new State("activate",
+                     new EntitiesNotExistsTransition(1, "activate", "Challenger Chest 1")
+                    ),
+                new State("activate",
+                     new Suicide()
+                    )
+                )
+            )
+            .Init("Challenger Chest 2 Spawner",
+            new State(
+                new TransformOnDeath("Challenger Chest 2", 1, 1, 1),
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("cooldown",
+                     new TimedTransition(90000, "activate")
+                    ),
+                new State("activate",
+                     new EntitiesNotExistsTransition(1, "activate", "Challenger Chest 2")
+                    ),
+                new State("activate",
+                     new Suicide()
+                    )
+                )
+            )
             .Init("Sheep",
                 new State(
                     new PlayerWithinTransition(15, "player_nearby"),

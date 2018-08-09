@@ -643,7 +643,7 @@ namespace wServer.logic
                     )
                 ),
             new MostDamagers(6,
-                new ItemLoot("Potion of Attack", 0.381),
+                new ItemLoot("Potion of Attack", 1),
                 new ItemLoot("Potion of Defense", 0.516),
                 new ItemLoot("Potion of Mana", 0.148)
                 ),

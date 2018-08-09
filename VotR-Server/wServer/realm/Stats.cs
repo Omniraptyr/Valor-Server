@@ -164,6 +164,7 @@ namespace wServer.realm
         SorStorage = 148,
         Striked = 149,
         Elite = 150,
+        PvP = 151,
 
         None = 255
     }

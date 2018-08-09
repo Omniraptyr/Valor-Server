@@ -1,14 +1,14 @@
 {
   "dbInfo": {
-    "host": "127.0.0.1",
-    "port": "1985", //1985 - 6379
+    "host": "144.217.80.74", //144.217.80.74
+    "port": "6379", //1985 - 6379
     "auth": "y5let1de@isaKraze@non8712jok", //y5let1de@isaKraze@non8712jok - none
     "index": "0"
   },
   "serverInfo": {
     "type": "World",
-    "name": "Valor TESTING",
-    "address": "144.217.80.74", //144.217.80.74 - 127.0.0.1
+    "name": "Drannol",
+    "address": "192.99.244.202", //144.217.80.74 - 127.0.0.1
     "port": "2050",
     "coordinates": {
       "latitude": "0",
@@ -19,12 +19,12 @@
   "serverSettings": {
     "logFolder": "./logs",
     "resourceFolder": "./resources",
-    "version": "39.F9",
+    "version": "39.L9",
     "tps": "10",
     "mode": "Single",
     "key": "B1A5ED",
     "maxConnections": "1024",
-    "maxPlayers": "100",
+    "maxPlayers": "200",
     "maxPlayersWithPriority": "120",
     "enablePets": "true",
     "enableMarket": "true"

@@ -133,6 +133,15 @@ public class EquipmentTile extends InteractiveItemTile {
             case ItemConstants.JACKET_TYPE:
                 _local2 = AssetLibrary.getImageFromSet("lofiObj6", 240);
                 break;
+            case ItemConstants.CHALLENGER_WEAPON:
+                _local2 = AssetLibrary.getImageFromSet("legendaries8x8Embed", 295);
+                break;
+            case ItemConstants.CHALLENGER_ABILITY:
+                _local2 = AssetLibrary.getImageFromSet("legendaries8x8Embed", 296);
+                break;
+            case ItemConstants.CHALLENGER_ARMOR:
+                _local2 = AssetLibrary.getImageFromSet("legendaries8x8Embed", 297);
+                break;
         }
         if (_local2 != null) {
             this.backgroundDetail = new Bitmap(_local2);

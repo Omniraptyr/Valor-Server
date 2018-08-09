@@ -297,6 +297,7 @@ namespace common.resources
         StatBoostSelf,
         StatBoostAura,
         BulletNova,
+        BulletNova2,
         ConditionEffectAura,
         ConditionEffectSelf,
         Heal,
@@ -416,6 +417,8 @@ namespace common.resources
         Torii,
         JacketAbility,
         SorActivate,
+        CSmokeGrenade,
+        CFlashGrenade
     }
 
     public class ActivateEffect

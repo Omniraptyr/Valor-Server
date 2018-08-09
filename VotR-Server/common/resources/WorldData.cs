@@ -27,6 +27,7 @@ namespace common.resources
         public string[] maps;
         public string[] music;
         public byte[][] wmap;
+        public bool pvp;
     }
 
     public class WorldData

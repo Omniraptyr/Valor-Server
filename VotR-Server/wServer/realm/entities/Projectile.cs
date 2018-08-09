@@ -27,7 +27,8 @@ namespace wServer.realm.entities
 
         private readonly ConcurrentDictionary<Player, Tuple<int, int>> _startTime = 
             new ConcurrentDictionary<Player, Tuple<int, int>>(); 
-        private readonly HashSet<Entity> _hit = new HashSet<Entity>(); 
+        private readonly HashSet<Entity> _hit = new HashSet<Entity>();
+        private readonly HashSet<Entity> _hitPlayer = new HashSet<Entity>();
 
         public Projectile(RealmManager manager, ProjectileDesc desc)
             : base(manager, manager.Resources.GameData.IdToObjectType[desc.ObjectId])

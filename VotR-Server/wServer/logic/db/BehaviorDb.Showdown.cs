@@ -227,31 +227,6 @@ namespace wServer.logic
                         )
                   )
             )
-                      .Init("Hades Test Chest",
-                new State(
-                    new State("Idle",
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new TimedTransition(5000, "UnsetEffect")
-                    ),
-                    new State("UnsetEffect")
-                ),
-                new Threshold(0.15,
-                new TierLoot(12, ItemType.Weapon, 0.045),
-                new TierLoot(11, ItemType.Weapon, 0.05),
-                new TierLoot(6, ItemType.Ability, 0.045),
-                new TierLoot(12, ItemType.Armor, 0.05),
-                new ItemLoot("Potion of Vitality", 1),
-                new ItemLoot("Potion of Attack", 1),
-                new ItemLoot("Potion of Life", 1),
-                new ItemLoot("Truncheon of Immortal Demons", 0.03),
-                new ItemLoot("Coat of the Devil", 0.03),
-                new ItemLoot("Skull of Hades", 0.03),
-                new ItemLoot("Hellslicer", 0.04),
-                new ItemLoot("The Eye of Peril", 0.04),
-                new ItemLoot("Sinburn Hide", 0.01),
-                new ItemLoot("Wildfire Crossbow", 0.01)
-                )
-            )
         .Init("Crimson Trap",
             new State(
                 new SetNoXP(),

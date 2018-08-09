@@ -144,6 +144,7 @@ public class StatData {
     public static const RAGE_STAT = 147;
     public static const SOR_STORAGE = 148;
     public static const ELITE = 150;
+    public static const PVP = 151;
 
     // unimplemented
     public static const DAMAGE_MIN:int = 98;

@@ -1909,6 +1909,9 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                 case StatData.ELITE:
                     _local4.elite_ = _local8;
                     break;
+                case StatData.PVP:
+                    _local4.pvp_ = _local8;
+                    break;
             }
         }
     }
