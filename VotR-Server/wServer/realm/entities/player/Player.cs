@@ -2005,13 +2005,13 @@ namespace wServer.realm.entities
 
             SaveToCharacter();
 
-            if (Owner.PvP)
-            {
-                var amount = ((int)Credits / 100) * 20;
-                Client.Manager.Database.UpdateCredit(Client.Account, -amount);
-                Credits = Client.Account.Credits - amount;
+           // if (Owner.PvP)
+           // {
+           //     var amount = ((int)Credits / 100) * 20;
+           //     Client.Manager.Database.UpdateCredit(Client.Account, -amount);
+           //     Credits = Client.Account.Credits - amount;
                 
-            }
+           // }
 
 
             if ((entity is Player))
