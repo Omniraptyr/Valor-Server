@@ -585,7 +585,14 @@ namespace wServer.realm.commands
                 player.SendError("Invalid amount!");
                 return false;
             }
-            if(Convert.ToInt32(arguments[1]) <= 100000)
+
+            if (Convert.ToInt32(arguments[1]) < 0)
+            {
+                player.SendError("You need to set your gamble to a positive integer.");
+                return false;
+            }
+
+            if (Convert.ToInt32(arguments[1]) <= 100000)
             {
                 player.RequestGamble(arguments[0], Convert.ToInt32(arguments[1]));
                 if (arguments[1] == "betamount")
