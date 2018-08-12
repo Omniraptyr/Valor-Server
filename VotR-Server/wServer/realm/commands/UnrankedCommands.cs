@@ -628,6 +628,12 @@ namespace wServer.realm.commands
                 return false;
             }
 
+            if(amount2 < 0)
+            {
+                player.SendError("You need to set your gamble to a positive integer.");
+                return false;
+            }
+
             player.betAmount = amount2;
             return true;
         }
