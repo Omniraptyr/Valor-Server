@@ -267,8 +267,6 @@ namespace wServer.networking.server
 
         private bool FlushPending(SendToken s)
         {
-            try
-            {
                 Packet packet;
                 for (var i = 0; i < 3; i++)
                     while (_pendings[i].TryDequeue(out packet))
@@ -288,12 +286,6 @@ namespace wServer.networking.server
                     return false;
 
                 return true;
-            }catch(NullReferenceException e)
-            {
-                return false;
-                throw (e);
-            }
-
         }
 
         private void SendPolicyFile()
