@@ -30697,15 +30697,15 @@
         <SlotType>9</SlotType>
         <Description>Utter destruction will follow your path. Unstoppable.</Description>
         <ActivateOnEquip stat="20" amount="25">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="-100">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="-5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-140">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="-100">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <feedPower>3000</feedPower>
         <Legendary/>
         <Legend id="11" stat="27">
             <Name>Unstoppable</Name>
-            <Description>If your health AND protection is full you deal double damage.</Description>
+            <Description>If your health is full you deal double damage.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
@@ -34870,5 +34870,71 @@
         <BagType>1</BagType>
         <OldSound>bladeSwing</OldSound>
         <DisplayId>Challenger Blade</DisplayId>
+    </Object>
+    <Object type="0x69c3" id="Flames of Purity">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x72</Index>
+        </Texture>
+        <SlotType>17</SlotType>
+        <Description>These flames will cleanse our realm..</Description>
+        <RateOfFire>1.25</RateOfFire>
+        <Sound>weapon/sprite_wand</Sound>
+        <Projectile>
+            <ObjectId>Fire Bullet</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>220</MinDamage>
+            <MaxDamage>300</MaxDamage>
+            <LifetimeMS>714</LifetimeMS>
+            <Amplitude>2.28</Amplitude>
+            <Frequency>0.5</Frequency>
+            <CondChance effect="Armor Broken" chance="2" duration="6"/>
+        </Projectile>
+        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>magicShoot</OldSound>
+        <feedPower>1850</feedPower>
+        <Legendary/>
+        <NumProjectiles>2</NumProjectiles>
+        <DisplayId>Flames of Purity</DisplayId>
+    </Object>
+    <Object type="0x69c4" id="The Bleeding Fang">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x80</Index>
+        </Texture>
+        <SlotType>2</SlotType>
+        <Description>A razor sharp fang that seems to even have the blood of the Eternal Beast on it's tip.</Description>
+        <RateOfFire>1.75</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Lava Bolt</ObjectId>
+            <Speed>120</Speed>
+            <MinDamage>138</MinDamage>
+            <MaxDamage>190</MaxDamage>
+            <LifetimeMS>380</LifetimeMS>
+            <CondChance effect="Bleeding" chance="5" duration="6"/>
+        </Projectile>
+        <Steal type="life" amount="10"/>
+        <ActivateOnEquip stat="0" amount="-80">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <OldSound>daggerSwing</OldSound>
+        <feedPower>1800</feedPower>
+        <Legendary/>
+        <Legend id="4" stat="27">
+            <Name>Blood Barrier</Name>
+            <Description>If your surge is at least 2 and you use any ability at all you receive armored. The duration of this armored scales with how much HP you currently have.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <DisplayId>The Bleeding Fang</DisplayId>
     </Object>
 </Objects>

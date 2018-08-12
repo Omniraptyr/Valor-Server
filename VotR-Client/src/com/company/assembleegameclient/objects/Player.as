@@ -397,7 +397,7 @@ public class Player extends Character {
         map_.mapOverlay_.addStatusText(_local2);
     }
     public function BotDModifier():int {
-        if(ObjectLibrary.typeToDisplayId_[this.equipment_[3]] == "Bracelet of the Demolished" && hp_ == maxHP_ && protectionPoints_ == protectionPointsMax_){
+        if(ObjectLibrary.typeToDisplayId_[this.equipment_[3]] == "Bracelet of the Demolished" && hp_ == maxHP_){
             return 2;
         }else{
             return 1;

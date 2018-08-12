@@ -560,6 +560,91 @@ namespace wServer.realm.commands
         }
     }
 
+    class GambleCommand : Command
+    {
+        public GambleCommand() : base("gamble") { }
+
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+
+            string[] arguments = args.Split(' ');
+            if (arguments.Length != 2)
+            {
+                player.SendError("Error!");
+                return false;
+            }
+
+            if (String.IsNullOrWhiteSpace(arguments[0]))
+            {
+                player.SendError("Invalid player!");
+                return false;
+            }
+
+            if (String.IsNullOrWhiteSpace(arguments[1]))
+            {
+                player.SendError("Invalid amount!");
+                return false;
+            }
+            if(Convert.ToInt32(arguments[1]) <= 100000)
+            {
+                player.RequestGamble(arguments[0], Convert.ToInt32(arguments[1]));
+                if (arguments[1] == "betamount")
+                {
+                    player.RequestGamble(arguments[0], player.betAmount);
+                }
+                else
+                {
+                    player.betAmount = Convert.ToInt32(arguments[1]);
+                }
+            }
+            else
+            {
+                player.SendError("You are going to go broke at this rate..");
+                return false;
+            }
+            
+            return true;
+        }
+    }
+
+    class SetGambleCommand : Command
+    {
+        public SetGambleCommand() : base("setgamble") { }
+
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+
+            var amount2 = int.Parse(args);
+
+            if (string.IsNullOrEmpty(args))
+            {
+                player.SendInfo("/setgamble <amount>");
+                return false;
+            }
+
+            if (!(amount2 <= 100000))
+            {
+                player.SendError("You need to lower your gamble amount..");
+                return false;
+            }
+
+            player.betAmount = amount2;
+            return true;
+        }
+    }
+
+    class CheckGambleCommand : Command
+    {
+        public CheckGambleCommand() : base("checkgamble") { }
+
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+            player.SendInfo("Your set gamble is currently " + player.betAmount);
+            return true;
+        }
+    }
+
+
     class TimeCommand : Command
     {
         public TimeCommand() : base("time") { }
@@ -571,40 +656,72 @@ namespace wServer.realm.commands
         }
     }
 
-  /*  class ArenaCommand : Command
+    /*  class ArenaCommand : Command
+      {
+          public ArenaCommand() : base("arena") { }
+
+          protected override bool Process(Player player, RealmTime time, string args)
+          {
+              player.Client.Reconnect(new Reconnect()
+              {
+                  Host = "",
+                  Port = 2050,
+                  GameId = World.Arena,
+                  Name = "Arena"
+              });
+              return true;
+          }
+      }
+
+      class DeathArenaCommand : Command
+      {
+          public DeathArenaCommand() : base("oa") { }
+
+          protected override bool Process(Player player, RealmTime time, string args)
+          {
+              player.Client.Reconnect(new Reconnect()
+              {
+                  Host = "",
+                  Port = 2050,
+                  GameId = World.DeathArena,
+                  Name = "Oryx's Arena"
+              });
+              return true;
+          }
+      }*/
+
+    class PickGambleCommand : Command
     {
-        public ArenaCommand() : base("arena") { }
+        public PickGambleCommand() : base("pg") { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
-            player.Client.Reconnect(new Reconnect()
+            if (String.IsNullOrWhiteSpace(args))
             {
-                Host = "",
-                Port = 2050,
-                GameId = World.Arena,
-                Name = "Arena"
-            });
+                player.SendError("You didnt choose rock, paper or scissors!");
+                return false;
+            }
+            switch (args)
+            {
+                case "r":
+                    player.gamble = "Rock";
+                    player.gambleChosen = true;
+                    break;
+                case "p":
+                    player.gamble = "Paper";
+                    player.gambleChosen = true;
+                    break;
+                case "s":
+                    player.gamble = "Scissors";
+                    player.gambleChosen = true;
+                    break;
+                default:
+                    player.SendError("You didnt choose rock, paper or scissors!");
+                    break;
+            }
             return true;
         }
     }
-
-    class DeathArenaCommand : Command
-    {
-        public DeathArenaCommand() : base("oa") { }
-
-        protected override bool Process(Player player, RealmTime time, string args)
-        {
-            player.Client.Reconnect(new Reconnect()
-            {
-                Host = "",
-                Port = 2050,
-                GameId = World.DeathArena,
-                Name = "Oryx's Arena"
-            });
-            return true;
-        }
-    }*/
-
 
     class DailyQuestCommand : Command
     {

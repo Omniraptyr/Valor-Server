@@ -128,6 +128,8 @@ public class GameServerConnection {
     public static const ALERTNOTICE:int = 163;
     public static const MARKREQUEST:int = 164;
     public static const QOLACTION:int = 165;
+    public static const GAMBLESTART:int = 166;
+    public static const REQUESTGAMBLE:int = 167;
 
     public static var instance:GameServerConnection;
 
@@ -188,6 +190,9 @@ public class GameServerConnection {
     }
 
     public function requestTrade(_arg1:String):void {
+    }
+
+    public function requestGamble(_arg1:String, _arg2:int):void {
     }
 
     public function changeTrade(_arg1:Vector.<Boolean>):void {

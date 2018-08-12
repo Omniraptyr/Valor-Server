@@ -515,6 +515,7 @@ public class TextKey {
     public static const PLAYERMENU_GUILDCHAT:String = "PlayerMenu.GuildChat";
     public static const PLAYER_NOTELEPORTWHILEPAUSED:String = "Player.noTeleportWhilePaused";
     public static const TRADEREQUESTPANEL_WANTSTRADE:String = "TradeRequestPanel.wantsTrade";
+    public static const GAMBLEREQUESTPANEL_WANTSGAMBLE:String = "GambleRequestPanel.wantsGamble";
     public static const TRADE_ACCEPT:String = "Trade.Accept";
     public static const TRADE_REJECT:String = "Trade.Reject";
     public static const EDIT_GUILD_BOARD_SAVE:String = "EditGuildBoard.save";

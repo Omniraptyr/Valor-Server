@@ -153,13 +153,13 @@ namespace wServer.logic
                 new ItemLoot("Potion of Vitality", 1),
                 new ItemLoot("Potion of Attack", 1),
                 new ItemLoot("Potion of Life", 1),
-                new ItemLoot("Truncheon of Immortal Demons", 0.005),
-                new ItemLoot("Coat of the Devil", 0.005),
-                new ItemLoot("Skull of Hades", 0.005),
-                new ItemLoot("Hellslicer", 0.005),
-                new ItemLoot("The Eye of Peril", 0.005),
-                new ItemLoot("Sinburn Hide", 0.005),
-                new ItemLoot("Wildfire Crossbow", 0.005)
+                new ItemLoot("Truncheon of Immortal Demons", 0.01),
+                new ItemLoot("Coat of the Devil", 0.01),
+                new ItemLoot("Skull of Hades", 0.01),
+                new ItemLoot("Hellslicer", 0.01),
+                new ItemLoot("The Eye of Peril", 0.01),
+                new ItemLoot("Sinburn Hide", 0.01),
+                new ItemLoot("Wildfire Crossbow", 0.01)
                 )
             )
 

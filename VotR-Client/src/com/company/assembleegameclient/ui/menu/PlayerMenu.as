@@ -92,8 +92,8 @@ public class PlayerMenu extends Menu {
         _local3 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 7), 0xFFFFFF, TextKey.PLAYERMENU_TRADE);
         _local3.addEventListener(MouseEvent.CLICK, this.onTrade);
         addOption(_local3);
-        _local3 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 10), 0x000099, "RPS Bet");
-        _local3.addEventListener(MouseEvent.CLICK, this.onTrade);
+        _local3 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 10), 0xFFFFFF, "Gamble");
+        _local3.addEventListener(MouseEvent.CLICK, this.onGamble);
         addOption(_local3);
         _local3 = new MenuOption(AssetLibrary.getImageFromSet("lofiInterfaceBig", 21), 0xFFFFFF, TextKey.PLAYERMENU_PM);
         _local3.addEventListener(MouseEvent.CLICK, this.onPrivateMessage);
@@ -153,6 +153,12 @@ public class PlayerMenu extends Menu {
         remove();
     }
 
+    private function onGambleMessage(_arg1:Event):void {
+        var _local2:ShowChatInputSignal = StaticInjectorContext.getInjector().getInstance(ShowChatInputSignal);
+        _local2.dispatch(true, ("/gamble " + this.playerName_ + " 1000"));
+        remove();
+    }
+
     private function onGuildMessage(_arg1:Event):void {
         var _local2:ShowChatInputSignal = StaticInjectorContext.getInjector().getInstance(ShowChatInputSignal);
         _local2.dispatch(true, "/g ");
@@ -181,6 +187,11 @@ public class PlayerMenu extends Menu {
 
     private function onTrade(_arg1:Event):void {
         this.gs_.gsc_.requestTrade(this.playerName_);
+        remove();
+    }
+
+    private function onGamble(_arg1:Event):void {
+        this.gs_.gsc_.requestGamble(this.playerName_, 1000);
         remove();
     }
 

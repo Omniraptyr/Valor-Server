@@ -197,6 +197,7 @@ namespace wServer.networking.server
             {
                 s.Reset();
                 FlushPending(s);
+                
             }
 
             int bytesToSend = s.BytesAvailable > _bufferSize ? 
@@ -266,25 +267,33 @@ namespace wServer.networking.server
 
         private bool FlushPending(SendToken s)
         {
-            Packet packet;
-            for (var i = 0; i < 3; i++)
-                while (_pendings[i].TryDequeue(out packet))
-                {
-                    var bytesWritten = packet.Write(_client, s.Data, s.BytesAvailable);
-
-                    if (bytesWritten == 0)
+            try
+            {
+                Packet packet;
+                for (var i = 0; i < 3; i++)
+                    while (_pendings[i].TryDequeue(out packet))
                     {
-                        _pendings[i].Enqueue(packet);
-                        return true;
+                        var bytesWritten = packet.Write(_client, s.Data, s.BytesAvailable);
+
+                        if (bytesWritten == 0)
+                        {
+                            _pendings[i].Enqueue(packet);
+                            return true;
+                        }
+
+                        s.BytesAvailable += bytesWritten;
                     }
 
-                    s.BytesAvailable += bytesWritten;
-                }
+                if (s.BytesAvailable <= 0)
+                    return false;
 
-            if (s.BytesAvailable <= 0) 
+                return true;
+            }catch(NullReferenceException e)
+            {
                 return false;
-                
-            return true;
+                throw (e);
+            }
+
         }
 
         private void SendPolicyFile()

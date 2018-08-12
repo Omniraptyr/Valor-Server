@@ -870,7 +870,7 @@
         <UnlockLevel level="20">Templar</UnlockLevel>
         <DisplayId>Blademaster</DisplayId>
     </Object>
-    <Object type="0x67aa" id="Challenger">
+    <!--<Object type="0x67aa" id="Challenger">
         <Class>Player</Class>
         <Description>This class is used to fight inside of the challenger arena.</Description>
         <AnimatedTexture>
@@ -908,5 +908,5 @@
         <LevelIncrease min="0" max="0">Restoration</LevelIncrease>
         <LevelIncrease min="0" max="0">Protection</LevelIncrease>
         <DisplayId>Challenger</DisplayId>
-    </Object>
+    </Object>-->
 </Objects>

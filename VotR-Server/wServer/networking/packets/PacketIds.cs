@@ -115,6 +115,8 @@ namespace wServer.networking.packets
         UNBOXRESULT = 162,
         ALERTNOTICE = 163,
         MARKREQUEST = 164,
-        QOLACTION = 165
+        QOLACTION = 165,
+        GAMBLE_START = 166,
+        REQUESTGAMBLE = 167
     }
 }

@@ -335,6 +335,10 @@ namespace wServer.realm.entities
             {
                 HP -= item.MpCost*2;
             }
+            if (CheckFang() == true)
+            {
+                ApplyConditionEffect(ConditionEffectIndex.Armored, HP * 4);
+            }
             if (CheckBifierce() == true)
             {
                 Surge++;

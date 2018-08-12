@@ -46,6 +46,7 @@ import com.company.assembleegameclient.sound.SoundEffectLibrary;
 import com.company.assembleegameclient.ui.PicView;
 import com.company.assembleegameclient.ui.dialogs.Dialog;
 import com.company.assembleegameclient.ui.dialogs.NotEnoughFameDialog;
+import com.company.assembleegameclient.ui.panels.GambleRequestPanel;
 import com.company.assembleegameclient.ui.panels.GuildInvitePanel;
 import com.company.assembleegameclient.ui.panels.TradeRequestPanel;
 import com.company.assembleegameclient.util.ConditionEffect;
@@ -128,6 +129,7 @@ import kabam.rotmg.messaging.impl.incoming.EvolvedPetMessage;
 import kabam.rotmg.messaging.impl.incoming.Failure;
 import kabam.rotmg.messaging.impl.incoming.CriticalDamage;
 import kabam.rotmg.messaging.impl.incoming.File;
+import kabam.rotmg.messaging.impl.incoming.GambleStart;
 import kabam.rotmg.messaging.impl.incoming.GlobalNotification;
 import kabam.rotmg.messaging.impl.incoming.Goto;
 import kabam.rotmg.messaging.impl.incoming.GuildResult;
@@ -209,6 +211,7 @@ import kabam.rotmg.messaging.impl.outgoing.PlayerText;
 import kabam.rotmg.messaging.impl.outgoing.Pong;
 import kabam.rotmg.messaging.impl.outgoing.QoLAction;
 import kabam.rotmg.messaging.impl.outgoing.QueuePong;
+import kabam.rotmg.messaging.impl.outgoing.RequestGamble;
 import kabam.rotmg.messaging.impl.outgoing.RequestTrade;
 import kabam.rotmg.messaging.impl.outgoing.Reskin;
 import kabam.rotmg.messaging.impl.outgoing.ReskinPet;
@@ -441,6 +444,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(MARKREQUEST).toMessage(MarkRequest);
         _local1.map(UNBOXREQUEST).toMessage(UnboxRequest);
         _local1.map(MARKET_COMMAND).toMessage(MarketCommand);
+        _local1.map(REQUESTGAMBLE).toMessage(RequestGamble);
         _local1.map(FAILURE).toMessage(Failure).toMethod(this.onFailure);
         _local1.map(CREATE_SUCCESS).toMessage(CreateSuccess).toMethod(this.onCreateSuccess);
         _local1.map(SERVERPLAYERSHOOT).toMessage(ServerPlayerShoot).toMethod(this.onServerPlayerShoot);
@@ -466,6 +470,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(ALLYSHOOT).toMessage(AllyShoot).toMethod(this.onAllyShoot);
         _local1.map(ENEMYSHOOT).toMessage(EnemyShoot).toMethod(this.onEnemyShoot);
         _local1.map(TRADEREQUESTED).toMessage(TradeRequested).toMethod(this.onTradeRequested);
+        _local1.map(GAMBLESTART).toMessage(GambleStart).toMethod(this.onGambleRequest);
         _local1.map(TRADESTART).toMessage(TradeStart).toMethod(this.onTradeStart);
         _local1.map(TRADECHANGED).toMessage(TradeChanged).toMethod(this.onTradeChanged);
         _local1.map(TRADEDONE).toMessage(TradeDone).toMethod(this.onTradeDone);
@@ -616,6 +621,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.unmap(ENEMYSHOOT);
         _local1.unmap(TRADEREQUESTED);
         _local1.unmap(TRADESTART);
+        _local1.unmap(GAMBLESTART);
         _local1.unmap(TRADECHANGED);
         _local1.unmap(CRITICALDAMAGE)
         _local1.unmap(TRADEDONE);
@@ -1053,6 +1059,13 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         serverConnection.queueMessage(_local2);
     }
 
+    override public function requestGamble(_arg1:String, _arg2:int):void {
+        var _local2:RequestGamble = (this.messages.require(REQUESTGAMBLE) as RequestGamble);
+        _local2.name_ = _arg1;
+        _local2.amount_ = _arg2;
+        serverConnection.queueMessage(_local2);
+    }
+
     override public function changeTrade(_arg1:Vector.<Boolean>):void {
         var _local2:ChangeTrade = (this.messages.require(CHANGETRADE) as ChangeTrade);
         _local2.offer_ = _arg1;
@@ -1252,6 +1265,19 @@ public class GameServerConnectionConcrete extends GameServerConnection {
             gs_.hudView.interactPanel.setOverride(new TradeRequestPanel(gs_, _arg1.name_));
         }
         this.addTextLine.dispatch(ChatMessage.make("", ((((_arg1.name_ + " wants to ") + 'trade with you.  Type "/trade ') + _arg1.name_) + '" to trade.')));
+    }
+
+    private function onGambleRequest(_arg1:GambleStart):void {
+        if (!Parameters.data_.chatTrade) {
+            return;
+        }
+        if (((Parameters.data_.tradeWithFriends))) {
+            return;
+        }
+        if (Parameters.data_.showTradePopup) {
+            gs_.hudView.interactPanel.setOverride(new GambleRequestPanel(gs_, _arg1.name_, _arg1.amount_));
+        }
+        this.addTextLine.dispatch(ChatMessage.make("", ((((_arg1.name_ + " wants to ") + 'gamble with you.')))));
     }
 
     private function onTradeStart(_arg1:TradeStart):void {

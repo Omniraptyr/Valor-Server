@@ -248,7 +248,23 @@ namespace wServer.realm.entities
             {
                 return false;
             }
-            if (Inventory[3].ObjectId == "Bracelet of the Demolished" && HP == Stats[0] && protectionDamage == 0)
+            if (Inventory[3].ObjectId == "Bracelet of the Demolished" && HP == Stats[0])
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool CheckFang()
+        {
+            if (Inventory[0] == null)
+            {
+                return false;
+            }
+            if (Inventory[0].ObjectId == "The Bleeding Fang" && Surge >= 2)
             {
                 return true;
             }
