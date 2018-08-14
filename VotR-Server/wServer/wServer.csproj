@@ -241,6 +241,7 @@
     <Compile Include="networking\packets\outgoing\SorForge.cs" />
     <Compile Include="networking\packets\outgoing\UnboxResult.cs" />
     <Compile Include="realm\ActivateBoost2.cs" />
+    <Compile Include="realm\ChunkManager.cs" />
     <Compile Include="realm\entities\player\Player.Gambling.cs" />
     <Compile Include="realm\entities\player\Player.Marks.cs" />
     <Compile Include="realm\entities\player\Player.VACBan.cs" />

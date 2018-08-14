@@ -4897,4 +4897,40 @@
             <Index>0x358</Index>
         </Texture>
     </Ground>
+	   <Ground type="0x299d" id="Depth Ground 1">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3d0</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x299e" id="Depth Ground 2">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3d1</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x299f" id="Depth Ground 3">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3d2</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29a1" id="Depth Ground 4">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3d3</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29a2" id="Depth Ground 5">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3d4</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29a3" id="Depth Ground 6">
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3d5</Index>
+        </Texture>
+    </Ground>
 </GroundTypes>

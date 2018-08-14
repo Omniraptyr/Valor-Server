@@ -125478,4 +125478,84 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Legend>
         <DisplayId>The Bleeding Fang</DisplayId>
     </Object>
+	    <Object type="0x69c5" id="The Depths Wall">
+        <Class>DoubleWall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d7</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d8</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d3</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x69c6" id="The Depths Decors">
+        <Class>GameObject</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d9</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3da</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3db</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3dc</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3df</Index>
+            </Texture>
+        </RandomTexture>
+        <Size>100</Size>
+        <ShadowSize>60</ShadowSize>
+        <DisplayId>The Depths Decors</DisplayId>
+    </Object>
+    <Object type="0x69c7" id="Ancient Depths Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Ancient Depths</DungeonName>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3dd</Index>
+        </Texture>
+        <DisplayId>Ancient Depths Portal</DisplayId>
+    </Object>
+    <Object type="0x69c8" id="Ancient Depths Key">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3de</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>This key opens the entrance to the Ancient Depths.</Description>
+        <Sound>use_key</Sound>
+        <Consumable/>
+        <Soulbound/>
+        <Activate id="Ancient Depths Portal">Create</Activate>
+        <feedPower>230</feedPower>
+        <DisplayId>Ancient Depths Key</DisplayId>
+    </Object>
 </Objects>

@@ -623,6 +623,11 @@ namespace wServer.realm.commands
 
             var amount2 = int.Parse(args);
 
+            if (player.isGambling == true)
+            {
+                player.SendInfo("You can't change the amount while gambling already!");
+                return false;
+            }
             if (string.IsNullOrEmpty(args))
             {
                 player.SendInfo("/setgamble <amount>");
