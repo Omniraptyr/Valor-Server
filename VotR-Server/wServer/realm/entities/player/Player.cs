@@ -1327,6 +1327,9 @@ namespace wServer.realm.entities
                 return;
             }
 
+            ApplyConditionEffect(ConditionEffectIndex.Invincible, 1500);
+            ApplyConditionEffect(ConditionEffectIndex.Stunned, 1500);
+
             if (!ignoreRestrictions)
             {
                 if (Id == objId)

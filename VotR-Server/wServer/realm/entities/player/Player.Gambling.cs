@@ -54,6 +54,17 @@ namespace wServer.realm.entities
                 SendError(name + " not found!");
                 return;
             }
+            if (target.Client.Account.Elite == 1 && this.Client.Account.Elite == 0)
+            {
+                SendError("Must be an Elite Account to be with another Elite Account.");
+                return;
+            }
+
+            if (target.Client.Account.Elite == 0 && this.Client.Account.Elite == 1)
+            {
+                SendError("Must be an Elite Account to be with another Elite Account.");
+                return;
+            }
 
             if (this.betAmount != target.betAmount)
             {

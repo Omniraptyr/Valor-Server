@@ -214,7 +214,7 @@ namespace wServer.logic
 					new TierLoot(11, ItemType.Weapon, 0.1),
 					new TierLoot(6, ItemType.Ring, 0.1),
                     new TierLoot(7, ItemType.Ring, 0.01),
-                    new ItemLoot("Shard of the Stone Soul", 0.005),
+                    new ItemLoot("Shard of the Stone Soul", 0.0005),
                     new ItemLoot("Ancient Stone Maul", 0.01),
                     new ItemLoot("Marble Tablet", 0.01)
                 )
