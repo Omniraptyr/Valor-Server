@@ -1042,6 +1042,7 @@ namespace common
             return task;
         }
 
+
         public Task UpdateLootbox2(DbAccount acc, int amount, ITransaction transaction = null)
         {
             var trans = transaction ?? _db.CreateTransaction();

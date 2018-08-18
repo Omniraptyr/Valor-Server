@@ -333,7 +333,18 @@ namespace wServer.realm.entities
         {
             if (CheckD2Rage() == true)
             {
-                HP -= item.MpCost*2;
+                HP -= item.MpCost * 2;
+            }
+            if (CheckIok() == true)
+            {
+                ApplyConditionEffect(NegativeEffs);
+                BroadcastSync(new ShowEffect()
+                {
+                    EffectType = EffectType.AreaBlast,
+                    TargetObjectId = Id,
+                    Color = new ARGB(0xffffffff),
+                    Pos1 = new Position() { X = 1 }
+                }, p => this.DistSqr(p) < RadiusSqr);
             }
             if (CheckFang() == true)
             {

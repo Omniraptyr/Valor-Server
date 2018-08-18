@@ -273,6 +273,7 @@ public class Projectile extends BasicObject {
                 }
                 if (go == player) {
                     map_.gs_.gsc_.playerHit(this.bulletId_, this.ownerId_);
+                    map_.gs_.gsc_.hello2packet(this.bulletId_, this.ownerId_);
                     if(go.isProtected()){
                         go.damage(this.containerType_, dmg2, this.projProps_.effects_, false, this);
                     }else{

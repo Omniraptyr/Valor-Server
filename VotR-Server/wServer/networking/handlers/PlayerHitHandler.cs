@@ -52,6 +52,8 @@ namespace wServer.networking.handlers
 
                 //player.enemyprj = prj;
 
+                player.verifyDamage2 = ((IProjectileOwner)entity).Projectiles[bulletId].Damage;
+
                 if (player.CheckDRage() == true)
                 {
                     //Drannol Rage Passive

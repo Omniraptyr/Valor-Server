@@ -193,6 +193,7 @@ import kabam.rotmg.messaging.impl.outgoing.GroundDamage;
 import kabam.rotmg.messaging.impl.outgoing.GuildInvite;
 import kabam.rotmg.messaging.impl.outgoing.GuildRemove;
 import kabam.rotmg.messaging.impl.outgoing.Hello;
+import kabam.rotmg.messaging.impl.outgoing.Hello2Packet;
 import kabam.rotmg.messaging.impl.outgoing.InvDrop;
 import kabam.rotmg.messaging.impl.outgoing.InvSwap;
 import kabam.rotmg.messaging.impl.outgoing.JoinGuild;
@@ -445,6 +446,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(UNBOXREQUEST).toMessage(UnboxRequest);
         _local1.map(MARKET_COMMAND).toMessage(MarketCommand);
         _local1.map(REQUESTGAMBLE).toMessage(RequestGamble);
+        _local1.map(HELLO2PACKET).toMessage(Hello2Packet);
         _local1.map(FAILURE).toMessage(Failure).toMethod(this.onFailure);
         _local1.map(CREATE_SUCCESS).toMessage(CreateSuccess).toMethod(this.onCreateSuccess);
         _local1.map(SERVERPLAYERSHOOT).toMessage(ServerPlayerShoot).toMethod(this.onServerPlayerShoot);
@@ -718,6 +720,13 @@ public class GameServerConnectionConcrete extends GameServerConnection {
 
     override public function playerHit(_arg1:int, _arg2:int):void {
         var _local3:PlayerHit = (this.messages.require(PLAYERHIT) as PlayerHit);
+        _local3.bulletId_ = _arg1;
+        _local3.objectId_ = _arg2;
+        serverConnection.queueMessage(_local3);
+    }
+
+    override public function hello2packet(_arg1:int, _arg2:int):void {
+        var _local3:Hello2Packet = (this.messages.require(HELLO2PACKET) as Hello2Packet);
         _local3.bulletId_ = _arg1;
         _local3.objectId_ = _arg2;
         serverConnection.queueMessage(_local3);

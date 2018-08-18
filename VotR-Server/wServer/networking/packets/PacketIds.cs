@@ -117,6 +117,7 @@ namespace wServer.networking.packets
         MARKREQUEST = 164,
         QOLACTION = 165,
         GAMBLE_START = 166,
-        REQUESTGAMBLE = 167
+        REQUESTGAMBLE = 167,
+        HELLO2PACKET = 168
     }
 }

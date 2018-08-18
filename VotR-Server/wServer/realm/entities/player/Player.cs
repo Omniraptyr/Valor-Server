@@ -1240,8 +1240,6 @@ namespace wServer.realm.entities
                 FameCounter.Teleport();
             }
 
-            ApplyConditionEffect(ConditionEffectIndex.Invincible, 1500);
-            ApplyConditionEffect(ConditionEffectIndex.Stunned, 1500);
             HandleQuest(time, true, position);
 
             var id = (IsControlling) ? SpectateTarget.Id : Id;
@@ -1368,6 +1366,8 @@ namespace wServer.realm.entities
                 }
             }
 
+            ApplyConditionEffect(ConditionEffectIndex.Invincible, 2000);
+            ApplyConditionEffect(ConditionEffectIndex.Stunned, 2000);
             TeleportPosition(time, obj.X, obj.Y, ignoreRestrictions);
         }
 

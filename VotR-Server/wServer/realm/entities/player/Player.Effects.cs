@@ -17,6 +17,8 @@ namespace wServer.realm.entities
         bool surgewither;
         public Projectile enemyprj;
         public int protectionDamage = 0;
+        public int verifyDamage1;
+        public int verifyDamage2;
         void HandleEffects(RealmTime time)
         {
 

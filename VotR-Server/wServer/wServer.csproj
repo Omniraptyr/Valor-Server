@@ -216,6 +216,7 @@
     <Compile Include="logic\transitions\RandomTransition.cs" />
     <Compile Include="networking\handlers\AlertNoticeHandler.cs" />
     <Compile Include="networking\handlers\ForgeItemHandler.cs" />
+    <Compile Include="networking\handlers\Hello2PacketHandler.cs" />
     <Compile Include="networking\handlers\LaunchRaidHandler.cs" />
     <Compile Include="networking\handlers\MarkRequestHandler.cs" />
     <Compile Include="networking\handlers\QoLActionHandler.cs" />
@@ -225,6 +226,7 @@
     <Compile Include="networking\packets\incoming\AlertNotice.cs" />
     <Compile Include="networking\packets\incoming\ClaimDailyRewardMessage.cs" />
     <Compile Include="networking\packets\incoming\ForgeItem.cs" />
+    <Compile Include="networking\packets\incoming\Hello2Packet.cs" />
     <Compile Include="networking\packets\incoming\LaunchRaid.cs" />
     <Compile Include="networking\packets\incoming\GoToQuestRoom.cs" />
     <Compile Include="networking\packets\incoming\KeyInfoRequest.cs" />

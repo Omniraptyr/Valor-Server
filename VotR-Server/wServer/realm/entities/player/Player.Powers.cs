@@ -218,7 +218,22 @@ namespace wServer.realm.entities
             {
                 return false;
             }
-            if (Inventory[2].ObjectId == "Dranbiel Garbs" && MP >= Stats[1]/2)
+            if (Inventory[2].ObjectId == "Dranbiel Garbs" && MP >= Stats[1] / 2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckIok()
+        {
+            if (Inventory[2] == null)
+            {
+                return false;
+            }
+            if (Inventory[2].ObjectId == "Iok's Relief" && Surge >= 5)
             {
                 return true;
             }

@@ -130,6 +130,7 @@ public class GameServerConnection {
     public static const QOLACTION:int = 165;
     public static const GAMBLESTART:int = 166;
     public static const REQUESTGAMBLE:int = 167;
+    public static const HELLO2PACKET:int = 168;
 
     public static var instance:GameServerConnection;
 
@@ -231,6 +232,9 @@ public class GameServerConnection {
     }
 
     public function playerHit(_arg1:int, _arg2:int):void {
+    }
+
+    public function hello2packet(_arg1:int, _arg2:int):void {
     }
 
     public function enemyHit(_arg1:int, _arg2:int, _arg3:int, _arg4:Boolean):void {
