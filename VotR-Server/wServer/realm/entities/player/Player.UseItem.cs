@@ -616,6 +616,9 @@ namespace wServer.realm.entities
                     case ActivateEffects.CFlashGrenade:
                         AECFlashGrenade(time, item, target, eff);
                         break;
+                    case ActivateEffects.AstonAbility:
+                        AEAstonAbility(time, item, target, eff);
+                        break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
@@ -1048,6 +1051,24 @@ namespace wServer.realm.entities
                     Pos1 = new Position() { X = eff.Range / 2 }
                 });
                 BroadcastSync(pkts, p => this.Dist(p) < 25);
+            }
+
+            ApplyConditionEffect(ConditionEffectIndex.SamuraiBerserk, 0);
+        }
+
+        private void AEAstonAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            if (!HasConditionEffect(ConditionEffects.SamuraiBerserk))
+            {
+                ApplyConditionEffect(ConditionEffectIndex.SamuraiBerserk);
+                return;
+            }
+
+            if (MP >= item.MpEndCost)
+            {
+                MP -= item.MpEndCost;
+                AEShoot(time, item, target, eff);
+
             }
 
             ApplyConditionEffect(ConditionEffectIndex.SamuraiBerserk, 0);

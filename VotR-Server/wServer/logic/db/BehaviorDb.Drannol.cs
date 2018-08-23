@@ -225,7 +225,7 @@ namespace wServer.logic
             )
 
 
-                        .Init("BD Puzzling Purple Deactivated",
+         .Init("BD Puzzling Purple Deactivated",
             new State(
                 new SetNoXP(),
                 new TransformOnDeath("BD Puzzling Purple Activated", 1, 1, 1),
@@ -2165,6 +2165,7 @@ namespace wServer.logic
                         new TossObject("Twisted Shield", range: 4, angle: 90, coolDown: 99999),
                         new TossObject("Twisted Shield", range: 4, angle: 270, coolDown: 99999),
                         new TossObject("Twisted Axe", range: 4, angle: 90, coolDown: 99999),
+                        new TossObject("Twisted Axe", range: 4, angle: 270, coolDown: 99999),
                         new Shoot(10, count: 1, fixedAngle: 45, projectileIndex: 2, coolDown: 2000),
                         new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 2, coolDown: 2000),
                         new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 2, coolDown: 2000),
@@ -3654,27 +3655,76 @@ namespace wServer.logic
                             new Shoot(10, count: 2, shootAngle: 4, fixedAngle: 340, projectileIndex: 3, coolDown: 1)
                             )
                         ),
-                    new State("suppressionpurple",
+                    new State("1suppressionpurple",
                             new TimedTransition(10000, "FAILED"),
-                            new DamageTakenTransition(300000, "seal1"),
+                            new DamageTakenTransition(300000, "aseal1"),
                             new ReplaceTile("BD Ground 5d", "BD Ground 6d", 99),
                             new Flash(0xFFFFFF, 0.25, 6)
                             ),
+                    new State("aseal1",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue1", "Wanzyu", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
+
+                    new State("1suppressionblue",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(300000, "bseal1"),
+                            new ReplaceTile("BD Ground 5b", "BD Ground 6b", 99),
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                    new State("bseal1",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue1", "Tareg", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
+
+
+                    new State("1suppressiongreen",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(300000, "cseal1"),
+                            new ReplaceTile("BD Ground 5c", "BD Ground 6c", 99), 
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                    new State("cseal1",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue1", "Igaur", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
+
+
+                    new State("1suppressionorange",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(300000, "dseal1"),
+                            new ReplaceTile("BD Ground 5a", "BD Ground 6a", 99),
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                    new State("dseal1",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue1", "Nivitet", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
                       new State(
                           new ConditionalEffect(ConditionEffectIndex.Invincible),
                           new State("ready1",
                             new Order(90, "Spiritorb Holder Sentry", "idle"),
                             new Order(90, "Scorching Wrath Helper", "idle"),
                             new MoveTo(1, 44, 40),
-                            new TimedTransition(6000, "suppressionpurple")
-                            ),
-                        new State("seal1",
-                            new TimedTransition(10000, "FAILED"),
-                            new PlayerTextTransition("continue1", "Wanzyu", 20),
-                            new Flash(0xFF00FF, 0.5, 6)
+                            new TimedRandomTransition(6000, false, "1suppressionpurple", "1suppressionblue", "1suppressiongreen", "1suppressionorange")
                             ),
                         new State("continue1",
                             new Taunt("GAAAAH!"),
+                            new ReplaceTile("BD Ground 6a", "BD Ground 5a", 99),
+                            new ReplaceTile("BD Ground 6b", "BD Ground 5b", 99),
+                            new ReplaceTile("BD Ground 6c", "BD Ground 5c", 99),
                             new ReplaceTile("BD Ground 6d", "BD Ground 5d", 99),
                             new ChangeSize(60, 140),
                             new Flash(0xFFFFFF, 0.5, 6),
@@ -3697,7 +3747,7 @@ namespace wServer.logic
                                     new Follow(1),
                                     new Wander(0.1)
                                 ),
-                            new TimedTransition(4000, "removeorb")
+                            new TimedTransition(2000, "removeorb")
                                 ),
                         new State("removeorb",
                             new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -3708,32 +3758,83 @@ namespace wServer.logic
                                 ),
                             new Taunt(0.25, "Without your power orb you can't compete against my pure rage!", "You are worthless without your power orb.."),
                             new Flash(0x000000, 0.25, 4),
-                            new RemoveEntity(6, "BD Spirit Orb Power"),
-                            new TimedTransition(4000, "dontremove")
+                            new RemoveEntity(7, "BD Spirit Orb Power"),
+                            new TimedTransition(2000, "dontremove")
                             )
                       ),
-                      new State("suppressionggreen",
-                           new TimedTransition(10000, "FAILED"),
-                            new DamageTakenTransition(620000, "seal2"),
+
+                    new State("2suppressionpurple",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(620000, "aseal2"),
+                            new ReplaceTile("BD Ground 5d", "BD Ground 6d", 99),
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                    new State("aseal2",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue2", "Wanzyu", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
+
+                    new State("2suppressionblue",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(620000, "bseal2"),
+                            new ReplaceTile("BD Ground 5b", "BD Ground 6b", 99),
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                    new State("bseal2",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue2", "Tareg", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
+
+
+                    new State("2suppressiongreen",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(620000, "cseal2"),
                             new ReplaceTile("BD Ground 5c", "BD Ground 6c", 99),
                             new Flash(0xFFFFFF, 0.25, 6)
                             ),
+                    new State("cseal2",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue2", "Igaur", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
+
+
+                    new State("2suppressionorange",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(620000, "dseal2"),
+                            new ReplaceTile("BD Ground 5a", "BD Ground 6a", 99),
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                    new State("dseal2",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue2", "Nivitet", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
+
                       new State(
                           new ConditionalEffect(ConditionEffectIndex.Invincible),
                           new State("ready2",
                             new Order(90, "Spiritorb Holder Sentry", "idle"),
                             new Order(90, "Scorching Wrath Helper", "idle"),
                             new MoveTo(1, 44, 40),
-                            new TimedTransition(6000, "suppressionggreen")
-                            ),
-                        new State("seal2",
-                            new TimedTransition(10000, "FAILED"),
-                            new PlayerTextTransition("continue2", "Igaur", 20),
-                            new Flash(0x00FF00, 0.5, 6)
+                            new TimedRandomTransition(6000, false, "2suppressionpurple", "2suppressionblue", "2suppressiongreen", "2suppressionorange")
                             ),
                         new State("continue2",
                             new Taunt("GAAAAH!"),
+                            new ReplaceTile("BD Ground 6a", "BD Ground 5a", 99),
+                            new ReplaceTile("BD Ground 6b", "BD Ground 5b", 99),
                             new ReplaceTile("BD Ground 6c", "BD Ground 5c", 99),
+                            new ReplaceTile("BD Ground 6d", "BD Ground 5d", 99),
                             new ChangeSize(60, 120),
                             new Flash(0xFFFFFF, 0.5, 6),
                             new TimedTransition(4000, "attack1a")
@@ -3784,28 +3885,81 @@ namespace wServer.logic
                         new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 5, coolDown: 3000, coolDownOffset: 1600)
                             )
                         ),
-                   new State("suppressionblue",
+
+
+                    new State("3suppressionpurple",
                             new TimedTransition(10000, "FAILED"),
-                            new DamageTakenTransition(870000, "seal3"),
+                            new DamageTakenTransition(870000, "aseal3"),
+                            new ReplaceTile("BD Ground 5d", "BD Ground 6d", 99),
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                    new State("aseal3",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue3", "Wanzyu", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
+
+
+                    new State("3suppressionblue",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(870000, "bseal3"),
                             new ReplaceTile("BD Ground 5b", "BD Ground 6b", 99),
                             new Flash(0xFFFFFF, 0.25, 6)
                             ),
+                    new State("bseal3",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue3", "Tareg", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
+
+
+                    new State("3suppressiongreen",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(870000, "cseal3"),
+                            new ReplaceTile("BD Ground 5c", "BD Ground 6c", 99),
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                    new State("cseal3",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue3", "Igaur", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
+
+
+                    new State("3suppressionorange",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(870000, "dseal3"),
+                            new ReplaceTile("BD Ground 5a", "BD Ground 6a", 99),
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                    new State("dseal3",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue3", "Nivitet", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
+
                     new State(
                           new ConditionalEffect(ConditionEffectIndex.Invincible),
                           new State("ready3",
                             new Order(90, "Spiritorb Holder Sentry", "idle"),
                             new Order(90, "Scorching Wrath Helper", "idle"),
                             new MoveTo(1, 44, 40),
-                            new TimedTransition(6000, "suppressionblue")
-                            ),
-                        new State("seal3",
-                            new TimedTransition(10000, "FAILED"),
-                            new PlayerTextTransition("continue3", "Tareg", 20),
-                            new Flash(0x0000FF, 0.5, 6)
+                            new TimedRandomTransition(6000, false, "3suppressionpurple", "3suppressionblue", "3suppressiongreen", "3suppressionorange")
                             ),
                         new State("continue3",
                             new Taunt("NO!"),
+                            new ReplaceTile("BD Ground 6a", "BD Ground 5a", 99),
                             new ReplaceTile("BD Ground 6b", "BD Ground 5b", 99),
+                            new ReplaceTile("BD Ground 6c", "BD Ground 5c", 99),
+                            new ReplaceTile("BD Ground 6d", "BD Ground 5d", 99),
                             new ChangeSize(60, 100),
                             new Flash(0xFFFFFF, 0.5, 6),
                             new TimedTransition(4000, "crawlerphase")
@@ -3931,28 +4085,81 @@ namespace wServer.logic
                         new TimedTransition(8000, "thenextone")
                             )
                         ),
-                     new State("supressiongorange",
+
+
+                    new State("4suppressionpurple",
                             new TimedTransition(10000, "FAILED"),
-                            new DamageTakenTransition(1200000, "seal4"),
+                            new DamageTakenTransition(1200000, "aseal4"),
+                            new ReplaceTile("BD Ground 5d", "BD Ground 6d", 99),
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                    new State("aseal4",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue4", "Wanzyu", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
+
+
+                    new State("4suppressionblue",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(1200000, "bseal4"),
+                            new ReplaceTile("BD Ground 5b", "BD Ground 6b", 99),
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                    new State("bseal4",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue4", "Tareg", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
+
+
+                    new State("4suppressiongreen",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(1200000, "cseal4"),
+                            new ReplaceTile("BD Ground 5c", "BD Ground 6c", 99),
+                            new Flash(0xFFFFFF, 0.25, 6)
+                            ),
+                    new State("cseal4",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue4", "Igaur", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
+
+
+                    new State("4suppressionorange",
+                            new TimedTransition(10000, "FAILED"),
+                            new DamageTakenTransition(1200000, "dseal4"),
                             new ReplaceTile("BD Ground 5a", "BD Ground 6a", 99),
                             new Flash(0xFFFFFF, 0.25, 6)
                             ),
+                    new State("dseal4",
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new TimedTransition(10000, "FAILED"),
+                            new PlayerTextTransition("continue4", "Nivitet", 20),
+                            new Flash(0xFF69B4, 0.5, 6)
+                            ),
+
+
                      new State(
                           new ConditionalEffect(ConditionEffectIndex.Invincible),
                           new State("ready4",
                             new Order(90, "Spiritorb Holder Sentry", "idle"),
                             new Order(90, "Scorching Wrath Helper", "idle"),
                             new MoveTo(1, 44, 40),
-                            new TimedTransition(6000, "supressiongorange")
-                            ),
-                        new State("seal4",
-                            new TimedTransition(10000, "FAILED"),
-                            new PlayerTextTransition("continue4", "Nivitet", 20),
-                            new Flash(0xFFA500, 0.5, 6)
+                            new TimedRandomTransition(6000, false, "4suppressionpurple", "4suppressionblue", "4suppressiongreen", "4suppressionorange")
                             ),
                         new State("continue4",
                             new Taunt("Not.......again..."),
                             new ReplaceTile("BD Ground 6a", "BD Ground 5a", 99),
+                            new ReplaceTile("BD Ground 6b", "BD Ground 5b", 99),
+                            new ReplaceTile("BD Ground 6c", "BD Ground 5c", 99),
+                            new ReplaceTile("BD Ground 6d", "BD Ground 5d", 99),
                             new ChangeSize(80, 40),
                             new Flash(0xFFFFFF, 0.5, 6),
                             new TimedTransition(4000, "crybaby")

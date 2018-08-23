@@ -409,9 +409,9 @@ namespace wServer.logic
                 new SetNoXP(),
                 new State("omw",
                     new Taunt(0.25, "Yesss....YESSSS......", "I FEEL SO..POWERFUL!", "MY VEINS...THE ZOL COURSES WITHIN THEM!", "Old companions...I AM YOUR NEW MASTER!", "...."),
-                     new ConditionalEffect(ConditionEffectIndex.Invincible),
+                     new ConditionalEffect(ConditionEffectIndex.Armored),
                      new ChangeSize(60, 150),
-                     new TimedTransition(6000, "omw2")
+                     new TimedTransition(4000, "omw2")
                     ),
               new State("omw2",
                   new Flash(0x00FF00, 0.2, 8),

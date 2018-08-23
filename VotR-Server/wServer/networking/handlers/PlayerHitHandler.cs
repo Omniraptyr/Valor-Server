@@ -59,6 +59,12 @@ namespace wServer.networking.handlers
                     //Drannol Rage Passive
                     player.ApplyConditionEffect(ConditionEffectIndex.GraspofZol, 2000 + (player.Surge * 20));
                 }
+
+                if (player.CheckAnguish() == true)
+                {
+                    //Drannol Rage Passive 2
+                    ((Enemy)entity).Damage(player, time, ((IProjectileOwner)entity).Projectiles[bulletId].Damage / 2, false);
+                }
                 Random rnd = new Random();
                 int chance = rnd.Next(1, 6);
                 if (player.CheckFRage() == true && chance == 1)

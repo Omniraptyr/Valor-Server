@@ -81,6 +81,51 @@ namespace wServer.realm.entities
                 return false;
             }
         }
+        public bool CheckCrescent()
+        {
+            if (Inventory[0] == null)
+            {
+                return false;
+            }
+            if (Inventory[0].ObjectId == "Moon Crescent Halberd" && MP >= Stats[1] / 2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckGHelm()
+        {
+            if (Inventory[1] == null)
+            {
+                return false;
+            }
+            if (Inventory[1].ObjectId == "The Gilded Helm")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckAnguish()
+        {
+            if (Inventory[1] == null)
+            {
+                return false;
+            }
+            if (Inventory[1].ObjectId == "Anguish of Drannol")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public bool CheckForItems(string item1)
         {
             if (Inventory[4].ObjectId == item1 || Inventory[5].ObjectId == item1 || Inventory[6].ObjectId == item1 || Inventory[7].ObjectId == item1 || Inventory[8].ObjectId == item1 || Inventory[9].ObjectId == item1 || Inventory[10].ObjectId == item1 || Inventory[11].ObjectId == item1)
@@ -234,21 +279,6 @@ namespace wServer.realm.entities
                 return false;
             }
             if (Inventory[2].ObjectId == "Iok's Relief" && Surge >= 5)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        public bool CheckWoW()
-        {
-            if (Inventory[2] == null)
-            {
-                return false;
-            }
-            if (Inventory[2].ObjectId == "Words of Wisdom")
             {
                 return true;
             }

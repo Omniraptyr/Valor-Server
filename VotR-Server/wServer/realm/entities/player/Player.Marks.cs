@@ -6,7 +6,7 @@ namespace wServer.realm.entities
 {
     partial class Player
     {
-
+        int tghbonus = 0;
         int surgeBonus = 0;
         public double attackPercentage;
         public double defensePercentage;

@@ -66,13 +66,21 @@ namespace wServer.realm.entities
             {
                 ApplyConditionEffect(ConditionEffectIndex.Relentless, 0);
             }
-            if (CheckWoW())
+            if (CheckCrescent())
             {
                 ApplyConditionEffect(ConditionEffectIndex.SlowedImmune);
             }
             else
             {
                 ApplyConditionEffect(ConditionEffectIndex.SlowedImmune, 0);
+            }
+            if (CheckGHelm())
+            {
+                tghbonus = 8;
+            }
+            else
+            {
+                tghbonus = 0;
             }
             if (CheckForce())
             {
@@ -238,7 +246,7 @@ namespace wServer.realm.entities
                         surgewither = true;
                     }
                 }
-                _surgeDepletion += (28-surgeBonus) * (time.ElapsedMsDelta / 1000f);
+                _surgeDepletion += (28-(surgeBonus+tghbonus)) * (time.ElapsedMsDelta / 1000f);
             }
             if (surgewither)
             {
