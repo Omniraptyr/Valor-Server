@@ -32,7 +32,7 @@ public class WebLoadAccountTask extends BaseTask implements LoadAccountTask {
         var rotmg:SharedObject;
         this.data = new AccountData();
         try {
-            rotmg = SharedObject.getLocal("RotMG", "/");
+            rotmg = SharedObject.getLocal("VLR", "/");
             ((rotmg.data["GUID"]) && ((this.data.username = rotmg.data["GUID"])));
             ((rotmg.data["Password"]) && ((this.data.password = rotmg.data["Password"])));
             ((rotmg.data["Token"]) && ((this.data.token = rotmg.data["Token"])));

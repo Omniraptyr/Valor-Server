@@ -409,9 +409,9 @@ namespace wServer.logic
                 new SetNoXP(),
                 new State("omw",
                     new Taunt(0.25, "Yesss....YESSSS......", "I FEEL SO..POWERFUL!", "MY VEINS...THE ZOL COURSES WITHIN THEM!", "Old companions...I AM YOUR NEW MASTER!", "...."),
-                     new ConditionalEffect(ConditionEffectIndex.Armored),
+                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                      new ChangeSize(60, 150),
-                     new TimedTransition(4000, "omw2")
+                     new TimedTransition(6000, "omw2")
                     ),
               new State("omw2",
                   new Flash(0x00FF00, 0.2, 8),
@@ -1202,7 +1202,7 @@ namespace wServer.logic
                 new State(
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                     new State("Idle",
-                        new EntityNotExistsTransition("AH The Heart", 50, "Loot")
+                        new EntityNotExistsTransition("AH ULTRA The Heart", 50, "Loot")
                         ),
                     new State("Loot",
                         new Suicide()
@@ -1267,7 +1267,7 @@ namespace wServer.logic
                     new TierLoot(6, ItemType.Ability, 0.05),
                     new TierLoot(13, ItemType.Armor, 0.06),
                     new TierLoot(7, ItemType.Ring, 0.08),
-                    new ItemLoot("Spiritclaw", 0.01),
+                    new ItemLoot("Spiritclaw", 0.007),
                     new ItemLoot("Ultimate Onrane Cache", 1),
                     new ItemLoot("The Stronghold Key", 0.75),
                     new ItemLoot("10000 Gold", 0.50),
@@ -1285,7 +1285,7 @@ namespace wServer.logic
                     //new TransformOnDeath("AH TZol Portal Spawner"),
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                     new State("Idle",
-                        new EntityNotExistsTransition("AH Aldragine", 50, "Loot")
+                        new EntityNotExistsTransition("AH ULTRA Aldragine", 50, "Loot")
                         ),
                     new State("Loot",
                         new Suicide()
@@ -1303,7 +1303,7 @@ namespace wServer.logic
                     new TierLoot(6, ItemType.Ability, 0.05),
                     new TierLoot(13, ItemType.Armor, 0.06),
                     new TierLoot(7, ItemType.Ring, 0.08),
-                    new ItemLoot("Spiritclaw", 0.015),
+                    new ItemLoot("Spiritclaw", 0.014),
                     new ItemLoot("Sor Fragment Cache", 0.75),
                     new ItemLoot("Ultimate Onrane Cache", 1),
                     new ItemLoot("The Stronghold Key", 0.75),

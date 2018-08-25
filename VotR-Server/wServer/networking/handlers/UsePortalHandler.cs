@@ -30,11 +30,6 @@ namespace wServer.networking.handlers
 
             if (entity is GuildHallPortal)
             {
-                if(player.ObjectDesc.ObjectId == "Challenger")
-                {
-                    player.SendError("Challengers can only queue up for a Challenger Arena match!");
-                    return;
-                }
                  
                 HandleGuildPortal(player, entity as GuildHallPortal);
                 return;
@@ -45,16 +40,6 @@ namespace wServer.networking.handlers
 
         private void HandleGuildPortal(Player player, GuildHallPortal portal)
         {
-            if (player.ObjectDesc.ObjectId == "Challenger")
-            {
-                player.SendError("Challengers can only queue up for a Challenger Arena match!");
-                return;
-            }
-            if (string.IsNullOrEmpty(player.Guild))
-            {
-                player.SendError("You are not in a guild.");
-                return;
-            }
 
             if (portal.ObjectType == 0x072f)
             {
@@ -72,10 +57,20 @@ namespace wServer.networking.handlers
             if (portal == null || !portal.Usable)
                 return;
 
-            if (player.ObjectDesc.ObjectId == "Challenger" && portal.ObjectDesc.ObjectId != "Admins Arena Portal")
+            if(player.Owner.raidOpener != player.Name)
             {
-                player.SendError("Challengers can only queue up for a Challenger Arena match!");
-                return;
+                if (portal.ObjectType == 0x22c3 || portal.ObjectType == 0x63ae || portal.ObjectType == 0x612b)
+                {
+                    if (player.Credits >= 3000)
+                    {
+                        player.Client.Manager.Database.UpdateCredit(player.Client.Account, -3000);
+                    }
+                    else
+                    {
+                        player.SendError("You do not have enough gold to enter this raid!");
+                    }
+
+                }
             }
 
             using (TimedLock.Lock(portal.CreateWorldLock))

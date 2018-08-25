@@ -2,7 +2,7 @@
 	"slot": 3, 
 	"linkType": 1, 
 	"title": "Wiki", 
-	"image": "https://cdn.discordapp.com/attachments/368574563002613765/374695719828717568/Untitledhvhjvhjvhvhcgcgc.png", 
+	"image": "http://valorproject.wikidot.com/", 
 	"priority": 759, 
 	"linkDetail": "", 
 	"platform": "kabam.com,kongregate,steam,rotmg", 
@@ -15,7 +15,7 @@
 	"title": "Discord", 
 	"image": "https://cdn.discordapp.com/attachments/368574563002613765/374695719828717568/Untitledhvhjvhjvhvhcgcgc.png", 
 	"priority": 756, 
-	"linkDetail": "https://discord.gg/thvsHPA", 
+	"linkDetail": "https://discord.gg/SYkumRa", 
 	"platform": "kabam.com,kongregate,steam,rotmg", 
 	"startTime": 1412730000000, 
 	"endTime": 1913417540000
@@ -23,8 +23,8 @@
 {
 	"slot": 1, 
 	"linkType": 1, 
-	"title": "July 7th..", 
-	"image": "https://i.imgur.com/zASpGBS.png", 
+	"title": "Winter 2018", 
+	"image": "https://cdn.discordapp.com/attachments/482952269902381067/482952322712993802/Untitled.png", 
 	"priority": 757, 
 	"linkDetail": "", 
 	"platform": "kabam.com,kongregate,steam,rotmg", 

@@ -68,7 +68,7 @@ public class WebAccount implements Account {
         this.token = _arg3;
         try {
             if (this._rememberMe) {
-                _local4 = SharedObject.getLocal("RotMG", "/");
+                _local4 = SharedObject.getLocal("VLR", "/");
                 _local4.data["GUID"] = _arg1;
                 _local4.data["Token"] = _arg3;
                 _local4.data["Password"] = _arg2;

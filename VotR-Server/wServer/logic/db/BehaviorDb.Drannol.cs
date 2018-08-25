@@ -719,7 +719,7 @@ namespace wServer.logic
                       new Sequence(
                             new Timed(3000,
                                 new Prioritize(
-                                    new Follow(1.3, 8, 1),
+                                    new Follow(1.6, 8, 1),
                                     new Wander(0.7)
                                     )),
                             new Timed(2000,
@@ -1126,6 +1126,7 @@ namespace wServer.logic
                 new State(
                     new ChangeSize(60, 100),
                     new Shoot(10, count: 12, projectileIndex: 2, coolDown: 4000),
+                    new Grenade(4, 140, range: 8, coolDown: 2000, effect: ConditionEffectIndex.Bleeding, effectDuration: 3000, color: 0xFFFF00),
                     new Prioritize(
                           new Orbit(0.7, 3, target: "Drannol, the Eternal Beast", speedVariance: 0.05),
                           new Follow(0.5, 8, 1)
@@ -1137,7 +1138,7 @@ namespace wServer.logic
                         new TimedTransition(4000, "fight2")
                         ),
                     new State("fight2",
-                        new ConditionalEffect(ConditionEffectIndex.Armored),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Shoot(10, count: 3, projectileIndex: 1, coolDown: 2000),
                         new Shoot(10, count: 7, projectileIndex: 0, coolDown: 3000),
                         new TimedTransition(2000, "Main")
@@ -2938,7 +2939,7 @@ namespace wServer.logic
                     new TimedTransition(60000, "finish"),
                     new Orbit(2, 5, target: "BD Platform Helper"),
                 new State("go2",
-                   new Shoot(10, count: 1, shootAngle: 12, projectileIndex: 1, predictive: 0.1, coolDown: 800)
+                   new Shoot(10, count: 1, shootAngle: 12, projectileIndex: 1, predictive: 0.1, coolDown: 600)
                         )
                     ),
                 new State("finish",
@@ -3242,7 +3243,8 @@ namespace wServer.logic
                         new TimedTransition(6000, "bfight1")
                         ),
                    new State(
-                       new Grenade(2, 80, range: 10, coolDown: 400, effect: ConditionEffectIndex.Paralyzed, effectDuration: 2000, color: 0x00FFFF),
+                       new Grenade(2, 300, range: 10, coolDown: 400, effect: ConditionEffectIndex.Paralyzed, effectDuration: 2000, color: 0x00FFFF),
+                       new Shoot(10, 7, projectileIndex: 3, shootAngle: 14, coolDown: 1800),
                    new State(
                         new RemoveEntity(99, "Scorching Fanatic"),
                         new RemoveEntity(99, "BD Bastille Brute"),
@@ -3985,6 +3987,7 @@ namespace wServer.logic
                     ),
                     new State(
                         new Reproduce("DrannolTarget", 40, 8, 2000),
+                        new Reproduce("BD Bastille Brute", 10, 2, 8000),
                         new Order(90, "Spiritorb Holder Sentry", "sentry2"),
                         new Order(90, "Scorching Wrath Helper", "spawn"),
                         new EntitiesNotExistsTransition(99, "thenextone", "Scorching Crawler"),
@@ -4067,9 +4070,9 @@ namespace wServer.logic
                                 new Follow(1),
                                 new Wander(0.1)
                             ),
-                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, coolDownOffset: 1800),
-                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 80, coolDownOffset: 1800),
-                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 280, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 1200, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 1200, angleOffset: 80, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 1200, angleOffset: 280, coolDownOffset: 1800),
                         new TimedTransition(4000, "thenextone3")
                             ),
                        new State("thenextone3",
@@ -4079,9 +4082,9 @@ namespace wServer.logic
                                 new Follow(1.7),
                                 new Wander(0.1)
                             ),
-                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, coolDownOffset: 1800),
-                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 80, coolDownOffset: 1800),
-                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 2000, angleOffset: 280, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 1400, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 1400, angleOffset: 80, coolDownOffset: 1800),
+                        new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 8, coolDown: 1400, angleOffset: 280, coolDownOffset: 1800),
                         new TimedTransition(8000, "thenextone")
                             )
                         ),
@@ -4202,7 +4205,7 @@ namespace wServer.logic
                     new TierLoot(6, ItemType.Ability, 0.05),
                     new TierLoot(13, ItemType.Armor, 0.06),
                     new TierLoot(7, ItemType.Ring, 0.08),
-                    new ItemLoot("Drannol's Judgement", 0.01),
+                    new ItemLoot("Drannol's Judgement", 0.007),
                     new ItemLoot("Greater Potion of Might", 0.5),
                     new ItemLoot("Greater Potion of Luck", 0.5),
                     new ItemLoot("Greater Potion of Protection", 0.5),

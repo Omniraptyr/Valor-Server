@@ -439,7 +439,7 @@
         <Might max="40">2</Might>
         <Luck max="50">2</Luck>
         <Restoration max="60">10</Restoration>
-        <Protection max="50">4</Protection>
+        <Protection max="75">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="5" max="15">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>

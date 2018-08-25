@@ -5877,8 +5877,7 @@
         <StunImmune/>
         <Elitedrop/>
         <ArmorBreakImmune/>
-        <Quest/>
-        <MaxHitPoints>850000</MaxHitPoints>
+        <MaxHitPoints>1250000</MaxHitPoints>
         <Defense>80</Defense>
         <Projectile id="0">
             <ObjectId>White Bolt</ObjectId>
@@ -5951,7 +5950,7 @@
         <Projectile id="8">
             <ObjectId>Aldragine Zol Spinners</ObjectId>
             <Damage>180</Damage>
-            <Speed>75</Speed>
+            <Speed>80</Speed>
             <LifetimeMS>4000</LifetimeMS>
             <Size>120</Size>
             <ConditionEffect duration="6">Exhausted</ConditionEffect>
@@ -5961,7 +5960,7 @@
         <Projectile id="9">
             <ObjectId>Paralyze Bullet</ObjectId>
             <Damage>100</Damage>
-            <Speed>75</Speed>
+            <Speed>60</Speed>
             <LifetimeMS>4000</LifetimeMS>
             <Size>120</Size>
             <ConditionEffect duration="6">Paralyzed</ConditionEffect>
@@ -8827,7 +8826,7 @@
         <Projectile id="0">
             <ObjectId>Sor Ball</ObjectId>
             <Speed>70</Speed>
-            <Damage>160</Damage>
+            <Damage>90</Damage>
             <Size>100</Size>
             <MultiHit/>
             <ArmorPiercing/>
@@ -8837,7 +8836,7 @@
         <Projectile id="1">
             <ObjectId>Sor Mini Ball 1</ObjectId>
             <Speed>100</Speed>
-            <Damage>140</Damage>
+            <Damage>90</Damage>
             <Size>100</Size>
             <LifetimeMS>4000</LifetimeMS>
         </Projectile>
@@ -8852,7 +8851,7 @@
         <Projectile id="3">
             <ObjectId>Sor Mini Ball 2</ObjectId>
             <Speed>100</Speed>
-            <Damage>200</Damage>
+            <Damage>100</Damage>
             <Size>120</Size>
             <ConditionEffect duration="6">Quiet</ConditionEffect>
             <Amplitude>1.0</Amplitude>
@@ -9756,10 +9755,9 @@
         <StasisImmune/>
         <DazedImmune/>
         <StunImmune/>
-        <UElitedrop/>
         <ArmorBreakImmune/>
         <Quest/>
-        <MaxHitPoints>1000000</MaxHitPoints>
+        <MaxHitPoints>1500000</MaxHitPoints>
         <Defense>90</Defense>
         <Projectile id="0">
             <ObjectId>White Bolt</ObjectId>

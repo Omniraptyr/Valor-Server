@@ -21,6 +21,7 @@ namespace wServer.realm
 
         public int this[int index] => Base[index] + Boost[index] + PWNum(index);
 
+        
         public StatsManager(Player owner)
         {
             Owner = owner;
@@ -121,9 +122,17 @@ namespace wServer.realm
         }
         public int CritChance()
         {
+            if (Owner.HasConditionEffect(ConditionEffects.Bravery) && Owner.CheckTinda() == true)
+            {
+                return Owner.Stats[9] + 300;
+            }
             if (Owner.HasConditionEffect(ConditionEffects.Bravery))
             {
                 return Owner.Stats[9]+100;
+            }
+            if (Owner.CheckTinda() == true)
+            {
+                return Owner.Stats[9] + 200;
             }
             else
             {

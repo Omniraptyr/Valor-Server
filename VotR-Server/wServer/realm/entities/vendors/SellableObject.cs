@@ -98,6 +98,7 @@ namespace wServer.realm.entities.vendors
             if (player.Stars < RankReq)
                 return BuyResult.InsufficientRank;
 
+            
             var acc = player.Client.Account;
             if (acc.NameChosen == false)
             {
@@ -109,8 +110,17 @@ namespace wServer.realm.entities.vendors
 
             if (player.GetCurrency(Currency) < Price)
                 return BuyResult.InsufficientFunds;
-            
-            return BuyResult.Ok;
+
+            if (Currency == CurrencyType.Onrane)
+            {
+                player.Onrane -= Price;
+                player.ForceUpdate(player.Onrane);
+                return BuyResult.Ok;
+            }
+            else
+            {
+                return BuyResult.Ok;
+            }
         }
 
         protected void SendFailed(Player player, BuyResult result)

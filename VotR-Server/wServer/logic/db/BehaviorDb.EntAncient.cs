@@ -232,7 +232,7 @@ namespace wServer.logic
             .Init("Greater Nature Sprite",
                 new State(
                     new EntitiesNotExistsTransition(16, "Transform", "Ent Ancient", "Actual Ent Ancient"),
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                    new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 4000),
                     new Shoot(10, 4, 10),
                     new Prioritize(
                         new StayCloseToSpawn(1.2, 10),
@@ -267,7 +267,7 @@ namespace wServer.logic
                         ),
                     new Decay(60000)
                     ),
-                                new MostDamagers(3,
+                new MostDamagers(3,
                     LootTemplates.SFExtremelyLow()
                     ),
                 new Threshold(0.15,

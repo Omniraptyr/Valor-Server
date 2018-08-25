@@ -36720,31 +36720,32 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <Soulbound/>
       <DisplayId>{equip.Useless_Katana}</DisplayId>
    </Object>
-   <Object type="0x915" id="Ray Katana">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>lofiObj3</File>
-         <Index>0x22a</Index>
-      </Texture>
-      <SlotType>24</SlotType>
-      <Description>{equip.A_great_katana_charged_with_the_power_of_the_sun_itself.}</Description>
-      <RateOfFire>1</RateOfFire>
-      <Sound>weapon/long_sword</Sound>
-      <Projectile>
-         <ObjectId>Beam Slash</ObjectId>
-         <Speed>180</Speed>
-         <MinDamage>60</MinDamage>
-         <MaxDamage>95</MaxDamage>
-         <LifetimeMS>340</LifetimeMS>
-         <MultiHit/>
-      </Projectile>
-      <BagType>6</BagType>
-      <FameBonus>3</FameBonus>
-      <OldSound>bladeSwing</OldSound>
-      <feedPower>500</feedPower>
-      <DisplayId>{equip.Ray_Katana}</DisplayId>
-   </Object>
+    <Object type="0x915" id="Ray Katana">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x22a</Index>
+        </Texture>
+        <SlotType>24</SlotType>
+        <Description>{equip.A_great_katana_charged_with_the_power_of_the_sun_itself.}</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/long_sword</Sound>
+        <Projectile>
+            <ObjectId>Beam Slash</ObjectId>
+            <Speed>180</Speed>
+            <MinDamage>85</MinDamage>
+            <MaxDamage>110</MaxDamage>
+            <LifetimeMS>370</LifetimeMS>
+            <MultiHit/>
+            <CondChance effect="Bleeding" chance="6" duration="8"/>
+        </Projectile>
+        <BagType>6</BagType>
+        <FameBonus>3</FameBonus>
+        <OldSound>bladeSwing</OldSound>
+        <feedPower>500</feedPower>
+        <DisplayId>{equip.Ray_Katana}</DisplayId>
+    </Object>
    <Object type="0xc53" id="Basic Star">
       <Class>Equipment</Class>
       <Item/>
@@ -38002,7 +38003,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <feedPower>450</feedPower>
       <DisplayId>{equip.Fire_Dragon_Battle_Armor}</DisplayId>
    </Object>
-   <Object type="0x7565" id="Celestial Blade">
+    <Object type="0x7565" id="Celestial Blade">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -38016,11 +38017,12 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <Projectile>
             <ObjectId>Celestial Slash</ObjectId>
             <Speed>145</Speed>
-            <MinDamage>65</MinDamage>
-            <MaxDamage>79</MaxDamage>
-            <LifetimeMS>300</LifetimeMS>
+            <MinDamage>124</MinDamage>
+            <MaxDamage>180</MaxDamage>
+            <LifetimeMS>320</LifetimeMS>
             <Amplitude>.5</Amplitude>
             <Frequency>0.5</Frequency>
+            <CondChance effect="Dazed" chance="5" duration="6"/>
         </Projectile>
         <NumProjectiles>3</NumProjectiles>
         <BagType>6</BagType>
@@ -38263,34 +38265,35 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <feedPower>500</feedPower>
       <DisplayId>{equip.Pirate_KingAPOSs_Cutlass}</DisplayId>
    </Object>
-   <Object type="0xcdc" id="Doku No Ken">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>lofiObj3</File>
-         <Index>0x404</Index>
-      </Texture>
-      <SlotType>24</SlotType>
-      <Description>{equip.Stuck_in_the_maw_of_the_Son_of_Arachna,_this_Katana_is_coat}</Description>
-      <RateOfFire>1.25</RateOfFire>
-      <Sound>weapon/long_sword</Sound>
-      <Projectile id="0">
-         <ObjectId>Poison Katana Slash</ObjectId>
-         <Speed>130</Speed>
-         <MinDamage>130</MinDamage>
-         <MaxDamage>150</MaxDamage>
-         <LifetimeMS>400</LifetimeMS>
-         <Amplitude>0.5</Amplitude>
-         <Frequency>1</Frequency>
-         <Size>90</Size>
-         <MultiHit/>
-      </Projectile>
-      <BagType>6</BagType>
-      <FameBonus>4</FameBonus>
-      <OldSound>bladeSwing</OldSound>
-      <feedPower>500</feedPower>
-      <DisplayId>{equip.Doku_No_Ken}</DisplayId>
-   </Object>
+    <Object type="0xcdc" id="Doku No Ken">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x404</Index>
+        </Texture>
+        <SlotType>24</SlotType>
+        <Description>{equip.Stuck_in_the_maw_of_the_Son_of_Arachna,_this_Katana_is_coat}</Description>
+        <RateOfFire>1.25</RateOfFire>
+        <Sound>weapon/long_sword</Sound>
+        <Projectile id="0">
+            <ObjectId>Poison Katana Slash</ObjectId>
+            <Speed>130</Speed>
+            <MinDamage>130</MinDamage>
+            <MaxDamage>150</MaxDamage>
+            <LifetimeMS>400</LifetimeMS>
+            <Amplitude>0.5</Amplitude>
+            <Frequency>1</Frequency>
+            <Size>90</Size>
+            <MultiHit/>
+            <CondChance effect="Bleeding" chance="10" duration="3"/>
+        </Projectile>
+        <BagType>6</BagType>
+        <FameBonus>4</FameBonus>
+        <OldSound>bladeSwing</OldSound>
+        <feedPower>500</feedPower>
+        <DisplayId>{equip.Doku_No_Ken}</DisplayId>
+    </Object>
    <Object type="0xcde" id="Leaf Bow">
       <Class>Equipment</Class>
       <Item/>
@@ -75349,8 +75352,8 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <MpRegen max="75">15</MpRegen>
         <Might max="40">2</Might>
         <Luck max="50">2</Luck>
-		<Restoration max="60">10</Restoration>
-        <Protection max="50">4</Protection>
+        <Restoration max="60">10</Restoration>
+        <Protection max="75">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="5" max="15">MaxMagicPoints</LevelIncrease>
         <LevelIncrease min="1" max="2">Attack</LevelIncrease>
@@ -75361,7 +75364,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
-		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
         <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0322">Huntress</UnlockLevel>
         <UnlockLevel level="20" type="0x0321">Necromancer</UnlockLevel>
@@ -78488,7 +78491,7 @@ This dagger was a myth, will you live to tell the tale?
         <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="60">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="20">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="10">IncrStatPerc</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
     </Object>
@@ -81072,33 +81075,36 @@ This dagger was a myth, will you live to tell the tale?
   </Object>
 
 
-<Object type="0x5046" id="Hellslicer">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>d3LofiObjEmbed</File>
-      <Index>0xad</Index>
-    </Texture>
-    <SlotType>24</SlotType>
-    <Description>An extremely red katana that burns through anything by touch.</Description>
-    <RateOfFire>1</RateOfFire>
-    <Sound>weapon/long_sword</Sound>
-    <Projectile>
-      <ObjectId>Slicer Slash</ObjectId>
-      <Speed>120</Speed>
-      <MinDamage>130</MinDamage>
-      <MaxDamage>190</MaxDamage>
-      <LifetimeMS>362</LifetimeMS>
-      <MultiHit/>
-    <PassesCover/>
-    </Projectile>
-    <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
-    <BagType>6</BagType>
-    <FameBonus>6</FameBonus>
-    <OldSound>bladeSwing</OldSound>
-    <feedPower>750</feedPower>
-    <DisplayId>Hellslicer</DisplayId>
-  </Object>
+    <Object type="0x5046" id="Hellslicer">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0xad</Index>
+        </Texture>
+        <SlotType>24</SlotType>
+        <Description>An extremely red katana that burns through anything by touch.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/long_sword</Sound>
+        <Projectile>
+            <ObjectId>Slicer Slash</ObjectId>
+            <Speed>120</Speed>
+            <MinDamage>130</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <LifetimeMS>362</LifetimeMS>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <PassesCover/>
+            <CondChance effect="Bleeding" chance="5" duration="6"/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>bladeSwing</OldSound>
+        <feedPower>750</feedPower>
+        <DisplayId>Hellslicer</DisplayId>
+    </Object>
   <Object type="0x5047" id="Slicer Slash">
     <Class>Projectile</Class>
     <Texture>
@@ -88572,24 +88578,24 @@ A whole thanksgiving turkey!
         </RandomTexture>
 	  <Rotation>150</Rotation>
   </Object>
-  <Object type="0x42f9" id="Gold Cache">
-    <Class>Equipment</Class>
-    <Item/>
-    <SlotType>10</SlotType>
-    <Texture>
-      <File>d3LofiObjEmbed</File>
-      <Index>0x1f8</Index>
-    </Texture>
-    <Description>Using this item gives you 500, 1000, 1500 gold.</Description>
-    <ExtraTooltipData>
-      <EffectInfo name="" description="This item drops from weekly loyalty packages."/>
-    </ExtraTooltipData>
-    <Consumable/>
-    <Activate>RandomGold</Activate>
-    <Sound>spell/fire_nova</Sound>
-    <feedPower>275</feedPower> 
-    <DisplayId>Gold Cache</DisplayId>
-  </Object>
+    <Object type="0x42f9" id="Gold Cache">
+        <Class>Equipment</Class>
+        <Item/>
+        <SlotType>10</SlotType>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1f8</Index>
+        </Texture>
+        <Description>Using this item gives you 250, 500, 750 gold.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="" description="This item drops from weekly loyalty packages."/>
+        </ExtraTooltipData>
+        <Consumable/>
+        <Activate>RandomGold</Activate>
+        <Sound>spell/fire_nova</Sound>
+        <feedPower>275</feedPower>
+        <DisplayId>Gold Cache</DisplayId>
+    </Object>
 <Object type="0x42fb" id="Star Bloop">
     <Class>Projectile</Class>
     <Texture>
@@ -89788,7 +89794,7 @@ A whole thanksgiving turkey!
     <StunImmune/>
 	<Elitedrop/>
     <ArmorBreakImmune/>
-    <MaxHitPoints>850000</MaxHitPoints>
+    <MaxHitPoints>1250000</MaxHitPoints>
     <Defense>80</Defense>
     <Projectile id="0">
       <ObjectId>White Bolt</ObjectId>
@@ -107265,8 +107271,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile>
             <ObjectId>Moon Magic</ObjectId>
             <Speed>60</Speed>
-            <MinDamage>400</MinDamage>
-            <MaxDamage>580</MaxDamage>
+            <MinDamage>440</MinDamage>
+            <MaxDamage>680</MaxDamage>
             <LifetimeMS>600</LifetimeMS>
             <ArmorPiercing/>
             <MultiHit/>
@@ -107275,7 +107281,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <OldSound>weapon/blunt_sword</OldSound>
         <feedPower>2050</feedPower>
         <Legendary/>
@@ -107319,7 +107325,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Projectile>
         <ActivateOnEquip stat="0" amount="-80">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <NumProjectiles>4</NumProjectiles>
         <ArcGap>10</ArcGap>
         <Legendary/>
@@ -107712,7 +107718,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Legendary/>
         <FameBonus>8</FameBonus>
     </Object>
-	    <Object type="0x42f8" id="Dagger of Tindailius">
+    <Object type="0x42f8" id="Dagger of Tindailius">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -107726,17 +107732,25 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile>
             <ObjectId>Mirac Doom</ObjectId>
             <Speed>120</Speed>
-            <MinDamage>150</MinDamage>
-            <MaxDamage>200</MaxDamage>
-            <LifetimeMS>590</LifetimeMS>
+            <MinDamage>165</MinDamage>
+            <MaxDamage>210</MaxDamage>
+            <LifetimeMS>610</LifetimeMS>
             <MultiHit/>
         </Projectile>
-        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+        <Steal type="mana" amount="2"/>
+        <ActivateOnEquip stat="22" amount="15">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <OldSound>weapon/blunt_dagger</OldSound>
         <feedPower>1800</feedPower>
+        <Legend id="4" stat="27">
+            <Name>Manastrike</Name>
+            <Description>If your mana is at least 1/2 full your luck is increased by 20%.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
         <Legendary/>
         <DisplayId>Dagger of Tindailius</DisplayId>
     </Object>
@@ -108031,22 +108045,21 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>3</SlotType>
         <Description>This weapon has power akin to the explosion of a planet.</Description>
-        <RateOfFire>2</RateOfFire>
+        <RateOfFire>1.5</RateOfFire>
         <Sound>weapon/golden_bow</Sound>
         <Projectile>
             <ObjectId>Galactic Wave</ObjectId>
             <Speed>160</Speed>
-            <MinDamage>100</MinDamage>
-            <MaxDamage>174</MaxDamage>
-            <LifetimeMS>479</LifetimeMS>
+            <MinDamage>162</MinDamage>
+            <MaxDamage>246</MaxDamage>
+            <LifetimeMS>490</LifetimeMS>
             <MultiHit/>
             <ArmorPiercing/>
             <Wavy/>
         </Projectile>
-        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="65">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="112" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <Legendary/>
@@ -108368,22 +108381,22 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <SlotType>9</SlotType>
         <Description>Utter destruction will follow your path. Unstoppable.</Description>
         <ActivateOnEquip stat="20" amount="25">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="-140">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="3" amount="-100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="-80">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <feedPower>3000</feedPower>
         <Legendary/>
         <Legend id="11" stat="27">
             <Name>Unstoppable</Name>
-            <Description>If your health is full you deal double damage.</Description>
+            <Description>If your health is full and your protection is full you deal double damage.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
         </Legend>
         <DisplayId>Bracelet of the Demolished</DisplayId>
     </Object>
-	<Object type="0x43a2" id="Grasp of Elysium">
+    <Object type="0x43a2" id="Grasp of Elysium">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -108397,15 +108410,13 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile>
             <ObjectId>Ely Shot</ObjectId>
             <Speed>140</Speed>
-            <MinDamage>164</MinDamage>
-            <MaxDamage>224</MaxDamage>
+            <MinDamage>170</MinDamage>
+            <MaxDamage>206</MaxDamage>
             <LifetimeMS>420</LifetimeMS>
             <Wavy/>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="26" amount="-6">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="-4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="-20">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <OldSound>daggerSwing</OldSound>
@@ -108674,7 +108685,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Legend>
         <NumProjectiles>1</NumProjectiles>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <OldSound>daggerSwing</OldSound>
         <feedPower>2250</feedPower>
         <DisplayId>Karana's Secret</DisplayId>
@@ -108795,7 +108806,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Steal type="mana" amount="5"/>
         <Legend id="3" stat="27">
             <Name>Undermind</Name>
-            <Description>If your ability's tier is not lower than 6 and you have over 60 surge you activate a blast around you that inflicts weak.</Description>
+            <Description>If you have over 40 surge you activate a blast around you that inflicts weak.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
@@ -109206,67 +109217,66 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
     <ShadowSize>60</ShadowSize>
     <DisplayId>Sor Mini Crystals</DisplayId>
   </Object>
-  <Object type="0x69ef" id="Sorgigas, the Sor Giant">
-      <Group>Sorgigas</Group>
-      <Enemy/>
-      <Class>Character</Class>
-      <Hero/>
-      <Quest/>
-      <God/>
-      <Encounter/>
-	  <ResetSS/>
-	  <Lootdrop/>
-      <StasisImmune/>
-      <ParalyzeImmune/>
-      <Level>20</Level>
-      <PerRealmMax>1</PerRealmMax>
-      <AnimatedTexture>
-        <File>d1chars16x16r</File>
-        <Index>9</Index>
-      </AnimatedTexture>
-      <HitSound>monster/ogres_hit</HitSound>
-      <DeathSound>monster/ogres_death</DeathSound>
-      <MaxHitPoints>125000</MaxHitPoints>
-      <Projectile id="0">
-         <ObjectId>Dragon Attack Green Ball</ObjectId>
-         <Speed>70</Speed>
-         <Damage>160</Damage>
-         <Size>100</Size>
-         <MultiHit/>
-		 <ArmorPiercing/>
-		 <ConditionEffect duration="3">Exhausted</ConditionEffect>
-         <LifetimeMS>2000</LifetimeMS>
-      </Projectile>
-      <Projectile id="1">
-         <ObjectId>Green Missile</ObjectId>
-         <Speed>100</Speed>
-         <Damage>140</Damage>
-         <Size>100</Size>
-         <LifetimeMS>4000</LifetimeMS>
-      </Projectile>
-      <Projectile id="2">
-         <ObjectId>Silver Shield</ObjectId>
-         <Speed>100</Speed>
-         <Damage>80</Damage>
-         <Size>120</Size>
-		 <ConditionEffect duration="2">Confused</ConditionEffect>
-         <LifetimeMS>1800</LifetimeMS>
-      </Projectile>
-	  <Projectile id="3">
-         <ObjectId>Dragon Attack Green Spin Ball</ObjectId>
-         <Speed>100</Speed>
-         <Damage>200</Damage>
-         <Size>120</Size>
-		 <ConditionEffect duration="6">Quiet</ConditionEffect>
-		 <Amplitude>1.0</Amplitude>
-         <Frequency>3.0</Frequency>
-         <LifetimeMS>5000</LifetimeMS>
-      </Projectile>
-      <Size>150</Size>
-      <Defense>70</Defense>
-      <XpMult>0.8</XpMult>
-      <DisplayId>Sorgigas, the Sor Giant</DisplayId>
-   </Object>
+    <Object type="0x69ef" id="Sorgigas, the Sor Giant">
+        <Group>Sorgigas</Group>
+        <Enemy/>
+        <Class>Character</Class>
+        <Hero/>
+        <Quest/>
+        <God/>
+        <Encounter/>
+        <Lootdrop/>
+        <StasisImmune/>
+        <ParalyzeImmune/>
+        <Level>20</Level>
+        <PerRealmMax>1</PerRealmMax>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>9</Index>
+        </AnimatedTexture>
+        <HitSound>monster/ogres_hit</HitSound>
+        <DeathSound>monster/ogres_death</DeathSound>
+        <MaxHitPoints>125000</MaxHitPoints>
+        <Projectile id="0">
+            <ObjectId>Sor Ball</ObjectId>
+            <Speed>70</Speed>
+            <Damage>90</Damage>
+            <Size>100</Size>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <ConditionEffect duration="3">Exhausted</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Sor Mini Ball 1</ObjectId>
+            <Speed>100</Speed>
+            <Damage>90</Damage>
+            <Size>100</Size>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Sor Wave</ObjectId>
+            <Speed>100</Speed>
+            <Damage>80</Damage>
+            <Size>120</Size>
+            <ConditionEffect duration="2">Confused</ConditionEffect>
+            <LifetimeMS>1800</LifetimeMS>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Sor Mini Ball 2</ObjectId>
+            <Speed>100</Speed>
+            <Damage>100</Damage>
+            <Size>120</Size>
+            <ConditionEffect duration="6">Quiet</ConditionEffect>
+            <Amplitude>1.0</Amplitude>
+            <Frequency>3.0</Frequency>
+            <LifetimeMS>5000</LifetimeMS>
+        </Projectile>
+        <Size>150</Size>
+        <Defense>70</Defense>
+        <XpMult>0.8</XpMult>
+        <DisplayId>Sorgigas, the Sor Giant</DisplayId>
+    </Object>
    <Object type="0x69f1" id="Sor Fiend">
     <Enemy/>
     <Class>Character</Class>
@@ -110025,7 +110035,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <File>d3LofiObjEmbed</File>
             <Index>0x1ec</Index>
         </Texture>
-        <Description>Using this item gives you 5-15 Sor Fragments.</Description>
+        <Description>Using this item sends 1-15 Sor Fragments to your gift chest.</Description>
         <ExtraTooltipData>
             <EffectInfo name="" description="This item only drops from Elite Lootboxes"/>
         </ExtraTooltipData>
@@ -110034,7 +110044,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Sound>spell/fire_nova</Sound>
         <feedPower>275</feedPower>
         <Fabled/>
-		<Consumable/>
         <DisplayId>Sor Fragment Cache</DisplayId>
     </Object>
     <Object type="0x61c5" id="Dreamweaver of Darogek">
@@ -110357,8 +110366,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>9</SlotType>
         <Description>You can't break us. We can only shatter you.</Description>
-        <ActivateOnEquip stat="0" amount="300">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="10">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="360">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="-100">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <feedPower>1800</feedPower>
@@ -110627,7 +110635,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Sound>spell/fire_spray</Sound>
         <Usable/>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <MpCost>130</MpCost>
         <Activate range="7" amount="3" players="false" duration="5" effect="ArmorBroken" color="0x47003D" objType="0x630c">Torii</Activate>
         <Cooldown>5</Cooldown>
@@ -111657,7 +111665,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <StunImmune/>
         <ArmorBreakImmune/>
         <Quest/>
-        <MaxHitPoints>1000000</MaxHitPoints>
+        <MaxHitPoints>1500000</MaxHitPoints>
         <Defense>90</Defense>
         <Projectile id="0">
             <ObjectId>White Bolt</ObjectId>
@@ -112852,7 +112860,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Legend>
         <ActivateOnEquip stat="22" amount="5">IncrStatPerc</ActivateOnEquip>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <NumProjectiles>2</NumProjectiles>
         <ArcGap>0</ArcGap>
         <OldSound>daggerSwing</OldSound>
@@ -114232,7 +114240,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ConditionEffect duration="2.5">Stunned</ConditionEffect>
         <Usable/>
         <BagType>11</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <Fabled/>
         <MpCost>110</MpCost>
         <feedPower>1800</feedPower>
@@ -114404,14 +114412,13 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>11</BagType>
-        <FameBonus>6</FameBonus>
         <MpCost>100</MpCost>
         <feedPower>700</feedPower>
         <FameBonus>6</FameBonus>
         <Fabled/>
-        <Activate stat="0" amount="80" duration="6" noStack="true" useWisMod="false">StatBoostSelf</Activate>
-        <Activate effect="Berserk" duration="4" useWisMod="true">ConditionEffectSelf</Activate>
-        <Activate effect="Dazed" duration="2" range="5" color="0x808080" target="enemy" center="mouse" visualEffect="8"
+        <Activate stat="0" amount="160" duration="6" noStack="true" useWisMod="true">StatBoostSelf</Activate>
+        <Activate effect="Berserk" duration="6" useWisMod="true">ConditionEffectSelf</Activate>
+        <Activate effect="Slowed" duration="7" range="5" color="0x808080" target="enemy" center="mouse" visualEffect="8"
                   useWisMod="true">GenericActivate
         </Activate>
     </Object>
@@ -115787,7 +115794,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ConditionEffect duration="6">Armor Broken</ConditionEffect>
         <Usable/>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <MpCost>125</MpCost>
         <Activate>Shoot</Activate>
         <NumProjectiles>12</NumProjectiles>
@@ -125630,5 +125637,76 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Legend>
         <Legendary/>
         <DisplayId>Iok's Relief</DisplayId>
+    </Object>
+    <Object type="0x69e5" id="Iok's Courage">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3e1</Index>
+        </Texture>
+        <SlotType>29</SlotType>
+        <Description>The true source of Iok's determination.</Description>
+        <RateOfFire>0.75</RateOfFire>
+        <Sound>weapon/mithril_sword</Sound>
+        <Projectile>
+            <ObjectId>White Bolt</ObjectId>
+            <Speed>129</Speed>
+            <MinDamage>122</MinDamage>
+            <MaxDamage>170</MaxDamage>
+            <LifetimeMS>400</LifetimeMS>
+            <ArmorPiercing/>
+            <Amplitude>2</Amplitude>
+            <Frequency>0.7</Frequency>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <Legend id="4" stat="27">
+            <Name>Blessing of the Skies</Name>
+            <Description>If your protection is depleted your surge increases by 15 everytime you use an ability.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <Legendary/>
+        <NumProjectiles>6</NumProjectiles>
+        <ArcGap>4</ArcGap>
+        <OldSound>weapon/blunt_sword</OldSound>
+        <DisplayId>Iok's Courage</DisplayId>
+    </Object>
+	    <Object type="0x5611" id="Infused Katana">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x29</Index>
+        </Texture>
+        <SlotType>24</SlotType>
+        <Description>It's edge is infused with the pure power of a Sor Crystal.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/long_sword</Sound>
+        <Projectile id="0">
+            <ObjectId>Green Bolt</ObjectId>
+            <Speed>130</Speed>
+            <MinDamage>85</MinDamage>
+            <MaxDamage>150</MaxDamage>
+            <LifetimeMS>400</LifetimeMS>
+            <Size>90</Size>
+            <MultiHit/>
+            <CondChance effect="Bleeding" chance="5" duration="7"/>
+        </Projectile>
+		<ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="20">IncrementStat</ActivateOnEquip>
+		<ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+		<NumProjectiles>3</NumProjectiles>
+		<ArcGap>10</ArcGap>
+        <FameBonus>6</FameBonus>
+        <OldSound>bladeSwing</OldSound>
+        <DisplayId>Infused Katana</DisplayId>
     </Object>
 </Objects>

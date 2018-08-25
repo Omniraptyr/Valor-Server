@@ -14,7 +14,7 @@ public class CookieLanguageModel implements LanguageModel {
         this.availableLanguages = this.makeAvailableLanguages();
         super();
         try {
-            this.cookie = SharedObject.getLocal("RotMG", "/");
+            this.cookie = SharedObject.getLocal("VLR", "/");
         }
         catch (error:Error) {
         }

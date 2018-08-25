@@ -9832,10 +9832,11 @@
         <Projectile>
             <ObjectId>Beam Slash</ObjectId>
             <Speed>180</Speed>
-            <MinDamage>60</MinDamage>
-            <MaxDamage>95</MaxDamage>
-            <LifetimeMS>340</LifetimeMS>
+            <MinDamage>85</MinDamage>
+            <MaxDamage>110</MaxDamage>
+            <LifetimeMS>370</LifetimeMS>
             <MultiHit/>
+            <CondChance effect="Bleeding" chance="6" duration="8"/>
         </Projectile>
         <BagType>6</BagType>
         <FameBonus>3</FameBonus>
@@ -11114,11 +11115,12 @@
         <Projectile>
             <ObjectId>Celestial Slash</ObjectId>
             <Speed>145</Speed>
-            <MinDamage>65</MinDamage>
-            <MaxDamage>79</MaxDamage>
-            <LifetimeMS>300</LifetimeMS>
+            <MinDamage>124</MinDamage>
+            <MaxDamage>180</MaxDamage>
+            <LifetimeMS>320</LifetimeMS>
             <Amplitude>.5</Amplitude>
             <Frequency>0.5</Frequency>
+            <CondChance effect="Dazed" chance="5" duration="6"/>
         </Projectile>
         <NumProjectiles>3</NumProjectiles>
         <BagType>6</BagType>
@@ -11382,6 +11384,7 @@
             <Frequency>1</Frequency>
             <Size>90</Size>
             <MultiHit/>
+            <CondChance effect="Bleeding" chance="10" duration="3"/>
         </Projectile>
         <BagType>6</BagType>
         <FameBonus>4</FameBonus>
@@ -16949,12 +16952,15 @@
             <ObjectId>Slicer Slash</ObjectId>
             <Speed>120</Speed>
             <MinDamage>130</MinDamage>
-            <MaxDamage>190</MaxDamage>
+            <MaxDamage>200</MaxDamage>
             <LifetimeMS>362</LifetimeMS>
             <MultiHit/>
+            <ArmorPiercing/>
             <PassesCover/>
+            <CondChance effect="Bleeding" chance="5" duration="6"/>
         </Projectile>
-        <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <OldSound>bladeSwing</OldSound>
@@ -20033,17 +20039,25 @@
         <Projectile>
             <ObjectId>Mirac Doom</ObjectId>
             <Speed>120</Speed>
-            <MinDamage>150</MinDamage>
-            <MaxDamage>200</MaxDamage>
-            <LifetimeMS>590</LifetimeMS>
+            <MinDamage>165</MinDamage>
+            <MaxDamage>210</MaxDamage>
+            <LifetimeMS>610</LifetimeMS>
             <MultiHit/>
         </Projectile>
-        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+        <Steal type="mana" amount="2"/>
+        <ActivateOnEquip stat="22" amount="15">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <OldSound>weapon/blunt_dagger</OldSound>
         <feedPower>1800</feedPower>
+        <Legend id="4" stat="27">
+            <Name>Manastrike</Name>
+            <Description>If your mana is at least 1/2 full your luck is increased by 20%.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
         <Legendary/>
         <DisplayId>Dagger of Tindailius</DisplayId>
     </Object>
@@ -20055,7 +20069,7 @@
             <File>d3LofiObjEmbed</File>
             <Index>0x1f8</Index>
         </Texture>
-        <Description>Using this item gives you 500, 1000, 1500 gold.</Description>
+        <Description>Using this item gives you 250, 500, 750 gold.</Description>
         <ExtraTooltipData>
             <EffectInfo name="" description="This item drops from weekly loyalty packages."/>
         </ExtraTooltipData>
@@ -20878,15 +20892,13 @@
         <Projectile>
             <ObjectId>Ely Shot</ObjectId>
             <Speed>140</Speed>
-            <MinDamage>164</MinDamage>
-            <MaxDamage>224</MaxDamage>
+            <MinDamage>170</MinDamage>
+            <MaxDamage>206</MaxDamage>
             <LifetimeMS>420</LifetimeMS>
             <Wavy/>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="26" amount="-6">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="-4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="-20">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <OldSound>daggerSwing</OldSound>
@@ -23320,7 +23332,7 @@
         <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="60">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="10">IncrStatPerc</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
     </Object>
@@ -29460,7 +29472,7 @@
             <Surge>25</Surge>
         </Legend>
         <feedPower>1800</feedPower>
-        <FameBonus>9</FameBonus>
+        <FameBonus>8</FameBonus>
         <NumProjectiles>5</NumProjectiles>
         <OldSound>bladeSwing</OldSound>
     </Object>
@@ -30171,7 +30183,7 @@
         </Legend>
         <NumProjectiles>3</NumProjectiles>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <OldSound>daggerSwing</OldSound>
         <feedPower>2050</feedPower>
         <DisplayId>The Gilded Blade</DisplayId>
@@ -30223,8 +30235,8 @@
         <Projectile>
             <ObjectId>Moon Magic</ObjectId>
             <Speed>60</Speed>
-            <MinDamage>400</MinDamage>
-            <MaxDamage>580</MaxDamage>
+            <MinDamage>440</MinDamage>
+            <MaxDamage>680</MaxDamage>
             <LifetimeMS>600</LifetimeMS>
             <ArmorPiercing/>
             <MultiHit/>
@@ -30233,7 +30245,7 @@
         <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <OldSound>weapon/blunt_sword</OldSound>
         <feedPower>2050</feedPower>
         <Legendary/>
@@ -30365,7 +30377,7 @@
         </Projectile>
         <ActivateOnEquip stat="0" amount="-80">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <NumProjectiles>4</NumProjectiles>
         <ArcGap>10</ArcGap>
         <Legendary/>
@@ -30701,15 +30713,15 @@
         <SlotType>9</SlotType>
         <Description>Utter destruction will follow your path. Unstoppable.</Description>
         <ActivateOnEquip stat="20" amount="25">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="-140">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="3" amount="-100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="-80">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <feedPower>3000</feedPower>
         <Legendary/>
         <Legend id="11" stat="27">
             <Name>Unstoppable</Name>
-            <Description>If your health is full you deal double damage.</Description>
+            <Description>If your health is full and your protection is full you deal double damage.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
@@ -30776,7 +30788,7 @@
         </Legend>
         <NumProjectiles>1</NumProjectiles>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <OldSound>daggerSwing</OldSound>
         <feedPower>2250</feedPower>
         <DisplayId>Karana's Secret</DisplayId>
@@ -30808,7 +30820,7 @@
         <Steal type="mana" amount="5"/>
         <Legend id="3" stat="27">
             <Name>Undermind</Name>
-            <Description>If your ability's tier is not lower than 6 and you have over 60 surge you activate a blast around you that inflicts weak.</Description>
+            <Description>If you have over 40 surge you activate a blast around you that inflicts weak.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
@@ -31443,7 +31455,7 @@
             <File>d3LofiObjEmbed</File>
             <Index>0x1ec</Index>
         </Texture>
-        <Description>Using this item sends 1-5 Sor Fragments to your gift chest.</Description>
+        <Description>Using this item sends 1-15 Sor Fragments to your gift chest.</Description>
         <ExtraTooltipData>
             <EffectInfo name="" description="This item only drops from Elite Lootboxes"/>
         </ExtraTooltipData>
@@ -31635,7 +31647,7 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x65</Index>
+            <Index>0x66</Index>
         </Texture>
         <SlotType>29</SlotType>
         <Description>Death to the Winged Beast!</Description>
@@ -31648,7 +31660,6 @@
             <MaxDamage>138</MaxDamage>
             <LifetimeMS>360</LifetimeMS>
             <ArmorPiercing/>
-            <MultiHit/>
             <Amplitude>0.8</Amplitude>
             <Frequency>0.4</Frequency>
             <Wavy/>
@@ -31758,8 +31769,7 @@
         </Texture>
         <SlotType>9</SlotType>
         <Description>You can't break us. We can only shatter you.</Description>
-        <ActivateOnEquip stat="0" amount="300">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="10">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="360">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="-100">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <feedPower>1800</feedPower>
@@ -32007,7 +32017,7 @@
         <Sound>spell/fire_spray</Sound>
         <Usable/>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <MpCost>130</MpCost>
         <Activate range="7" amount="3" players="false" duration="5" effect="Armor Broken" color="0x47003D" objType="0x620c">Torii</Activate>
         <Cooldown>5</Cooldown>
@@ -32884,7 +32894,7 @@
         </Legend>
         <ActivateOnEquip stat="22" amount="5">IncrStatPerc</ActivateOnEquip>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <NumProjectiles>2</NumProjectiles>
         <ArcGap>0</ArcGap>
         <OldSound>daggerSwing</OldSound>
@@ -33447,9 +33457,9 @@
         <feedPower>700</feedPower>
         <FameBonus>6</FameBonus>
         <Fabled/>
-        <Activate stat="0" amount="80" duration="6" noStack="true" useWisMod="true">StatBoostSelf</Activate>
-        <Activate effect="Berserk" duration="4" useWisMod="true">ConditionEffectSelf</Activate>
-        <Activate effect="Dazed" duration="7" range="5" color="0x808080" target="enemy" center="mouse" visualEffect="8"
+        <Activate stat="0" amount="160" duration="6" noStack="true" useWisMod="true">StatBoostSelf</Activate>
+        <Activate effect="Berserk" duration="6" useWisMod="true">ConditionEffectSelf</Activate>
+        <Activate effect="Slowed" duration="7" range="5" color="0x808080" target="enemy" center="mouse" visualEffect="8"
                   useWisMod="true">GenericActivate
         </Activate>
     </Object>
@@ -33659,7 +33669,7 @@
         <ConditionEffect duration="6">Armor Broken</ConditionEffect>
         <Usable/>
         <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
+        <FameBonus>8</FameBonus>
         <MpCost>125</MpCost>
         <Activate>Shoot</Activate>
         <NumProjectiles>12</NumProjectiles>
@@ -34986,5 +34996,76 @@
         </Legend>
         <Legendary/>
         <DisplayId>Iok's Relief</DisplayId>
+    </Object>
+    <Object type="0x69e5" id="Iok's Courage">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3e1</Index>
+        </Texture>
+        <SlotType>29</SlotType>
+        <Description>The true source of Iok's determination.</Description>
+        <RateOfFire>0.75</RateOfFire>
+        <Sound>weapon/mithril_sword</Sound>
+        <Projectile>
+            <ObjectId>White Bolt</ObjectId>
+            <Speed>129</Speed>
+            <MinDamage>122</MinDamage>
+            <MaxDamage>170</MaxDamage>
+            <LifetimeMS>400</LifetimeMS>
+            <ArmorPiercing/>
+            <Amplitude>2</Amplitude>
+            <Frequency>0.7</Frequency>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>8</FameBonus>
+        <Legend id="4" stat="27">
+            <Name>Blessing of the Skies</Name>
+            <Description>If your protection is depleted your surge increases by 15 everytime you use an ability.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <Legendary/>
+        <NumProjectiles>6</NumProjectiles>
+        <ArcGap>4</ArcGap>
+        <OldSound>weapon/blunt_sword</OldSound>
+        <DisplayId>Iok's Courage</DisplayId>
+    </Object>
+    <Object type="0x5611" id="Infused Katana">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x29</Index>
+        </Texture>
+        <SlotType>24</SlotType>
+        <Description>It's edge is infused with the pure power of a Sor Crystal.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/long_sword</Sound>
+        <Projectile id="0">
+            <ObjectId>Green Bolt</ObjectId>
+            <Speed>130</Speed>
+            <MinDamage>85</MinDamage>
+            <MaxDamage>150</MaxDamage>
+            <LifetimeMS>400</LifetimeMS>
+            <Size>90</Size>
+            <MultiHit/>
+            <CondChance effect="Bleeding" chance="5" duration="7"/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <NumProjectiles>3</NumProjectiles>
+        <ArcGap>10</ArcGap>
+        <FameBonus>6</FameBonus>
+        <OldSound>bladeSwing</OldSound>
+        <DisplayId>Infused Katana</DisplayId>
     </Object>
 </Objects>

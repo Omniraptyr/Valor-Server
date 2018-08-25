@@ -60,6 +60,8 @@ namespace wServer.networking.handlers
                                     ObjectId = player.Id,
                                     Message = player.Name + " has launched the Zol Awakening Raid!"
                                 }, null, PacketPriority.Low);
+                                //set raid opener
+                                player.Owner.raidOpener = player.Name;
                             }
                             else
                             {
@@ -99,6 +101,8 @@ namespace wServer.networking.handlers
                                     ObjectId = player.Id,
                                     Message = player.Name + " has launched the Ultra Zol Awakening Raid!"
                                 }, null, PacketPriority.Low);
+                                //set raid opener
+                                player.Owner.raidOpener = player.Name;
                             }
                             else
                             {
@@ -108,8 +112,6 @@ namespace wServer.networking.handlers
                         break;
 
                     case 2:
-                        if(player.Stars >= 20)
-                        {
                             if (player.startRaid2(player) == false)
                             {
                                 player.Client.Manager.Database.UpdateCredit(player.Client.Account, -gold);
@@ -143,16 +145,14 @@ namespace wServer.networking.handlers
                                     ObjectId = player.Id,
                                     Message = player.Name + " has launched the Calling of the Titan Raid!"
                                 }, null, PacketPriority.Low);
+                                //set raid opener
+                                player.Owner.raidOpener = player.Name;
                             }
                             else
                             {
                                 player.SendError("You need the correct token in your inventory to launch this raid.");
                             }
-                        }
-                        else
-                        {
-                            player.SendError("You need at least 20 stars to launch this raid.");
-                        }
+                        
                        
                         break;
                 }
@@ -165,34 +165,35 @@ namespace wServer.networking.handlers
     }
         void Handle(Player player, RealmTime time, LaunchRaid packet)
         {
-            
-            
-            
-            
-            
 
             var acc = player.Client.Account;
             if (player.Manager._isRaidLaunched == false)
             {
-
-                switch (packet.RaidId)
+                if (player.Stars >= 20)
                 {
-                    case 1:
-                        if(packet.Ultra == false)
-                        {
-                            launchRaid(player, 10000, false, 1);
-                        }
-                        else
-                        {
-                            launchRaid(player, 10000, true, 1);
-                        }
-                        break;
-                    case 2:
-                        if (packet.Ultra == false)
-                        {
-                            launchRaid(player, 10000, false, 2);
-                        }
-                        break;
+                    switch (packet.RaidId)
+                    {
+                        case 1:
+                            if (packet.Ultra == false)
+                            {
+                                launchRaid(player, 10000, false, 1);
+                            }
+                            else
+                            {
+                                launchRaid(player, 10000, true, 1);
+                            }
+                            break;
+                        case 2:
+                            if (packet.Ultra == false)
+                            {
+                                launchRaid(player, 10000, false, 2);
+                            }
+                            break;
+                    }
+                }
+                else
+                {
+                    player.SendError("You need at least 20 stars to launch a raid.");
                 }
 
 

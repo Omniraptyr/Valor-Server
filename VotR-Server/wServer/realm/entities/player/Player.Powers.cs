@@ -293,7 +293,7 @@ namespace wServer.realm.entities
             {
                 return false;
             }
-            if (Inventory[3].ObjectId == "Bracelet of the Demolished" && HP == Stats[0])
+            if (Inventory[3].ObjectId == "Bracelet of the Demolished" && HP == Stats[0] && protectionDamage == 0)
             {
                 return true;
             }
@@ -354,7 +354,37 @@ namespace wServer.realm.entities
             {
                 return false;
             }
-            if (Inventory[3].ObjectId == "Furious Gauntlet" && Surge >= 60)
+            if (Inventory[3].ObjectId == "Starmind Gauntlet" && Surge >= 60)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckCourage()
+        {
+            if (Inventory[0] == null)
+            {
+                return false;
+            }
+            if (Inventory[0].ObjectId == "Iok's Courage" && protectionDamage >= ProtectionMax)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckTinda()
+        {
+            if (Inventory[0] == null)
+            {
+                return false;
+            }
+            if (Inventory[0].ObjectId == "Dagger of Tindailius" && MP >= Stats[1]/2)
             {
                 return true;
             }

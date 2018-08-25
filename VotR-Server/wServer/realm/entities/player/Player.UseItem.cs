@@ -364,6 +364,10 @@ namespace wServer.realm.entities
                 if (item.MpCost > 0)
                     WeakBlast(time, item, target);
             }
+            if (CheckCourage())
+            {
+                Surge += 15;
+            }
             if (CheckDran())
             {
                 if (item.MpCost > 0)
@@ -1914,8 +1918,11 @@ namespace wServer.realm.entities
 
             Owner.AOE(target, 3, false, enemy =>
             {
-                if (enemy.ObjectType == 0x638f)
-                {
+
+                    if (enemy.ObjectType == 0x638f)
+                    {
+                        return;
+                    }
                     if (enemy.HasConditionEffect(ConditionEffects.StasisImmune))
                     {
                         pkts.Add(new Notification()
@@ -1925,10 +1932,11 @@ namespace wServer.realm.entities
                             Message = "Immune"
                         });
                     }
-                }
                 else if (!enemy.HasConditionEffect(ConditionEffects.Stasis))
                 {
+                    
                     enemy.ApplyConditionEffect(ConditionEffectIndex.Stasis, eff.DurationMS);
+                    enemy.ApplyConditionEffect(ConditionEffectIndex.Dazed, eff.DurationMS + 3000);
 
                     Owner.Timers.Add(new WorldTimer(eff.DurationMS, (world, t) =>
                         enemy.ApplyConditionEffect(ConditionEffectIndex.StasisImmune, 3000)));
@@ -1961,6 +1969,10 @@ namespace wServer.realm.entities
 
             Owner.AOE(target, 6, false, enemy =>
             {
+                if (enemy.ObjectType == 0x638f)
+                {
+                    return;
+                }
                 if (enemy.HasConditionEffect(ConditionEffects.StasisImmune))
                 {
                     pkts.Add(new Notification()
@@ -1973,6 +1985,7 @@ namespace wServer.realm.entities
                 else if (!enemy.HasConditionEffect(ConditionEffects.Stasis))
                 {
                     enemy.ApplyConditionEffect(ConditionEffectIndex.Stasis, eff.DurationMS);
+                    enemy.ApplyConditionEffect(ConditionEffectIndex.Dazed, eff.DurationMS+3000);
 
                     Owner.Timers.Add(new WorldTimer(eff.DurationMS, (world, t) =>
                         enemy.ApplyConditionEffect(ConditionEffectIndex.StasisImmune, 3000)));

@@ -195,13 +195,8 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SF4()
                     ),
-                new Threshold(0.01,
-                    new ItemLoot("Amethyst Lair Armor", 0.25),
-                    new ItemLoot("Sword of the Truthfinder", 0.25),
-                    new ItemLoot("Kami Cloth", 0.25),
-                    new ItemLoot("Staff of Uranium", 0.25)
-                ),
                 new Threshold(0.05,
+                    new ItemLoot("Infused Katana", 0.005),
                     new ItemLoot("Potion of Vitality", 0.5),
                     new ItemLoot("Potion of Dexterity", 0.5),
                     new ItemLoot("Potion of Wisdom", 0.5),

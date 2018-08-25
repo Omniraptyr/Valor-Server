@@ -2,7 +2,7 @@
   "dbInfo": {
     "host": "127.0.0.1", //144.217.80.74
     "port": "1985", //1985 - 6379
-    "auth": "y5let1de@isaKraze@non8712jok", //y5let1de@isaKraze@non8712jok - none
+    "auth": "2NSVsRREv3FYXPGm", //y5let1de@isaKraze@non8712jok - none
     "index": "0"
   },
   "serverInfo": {
@@ -19,7 +19,7 @@
   "serverSettings": {
     "logFolder": "./logs",
     "resourceFolder": "./resources",
-    "version": "39.M9",
+    "version": "39.V9",
     "tps": "10",
     "mode": "Single",
     "key": "B1A5ED",
