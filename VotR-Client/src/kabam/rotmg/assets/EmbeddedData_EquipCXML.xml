@@ -31660,6 +31660,7 @@
             <MaxDamage>138</MaxDamage>
             <LifetimeMS>360</LifetimeMS>
             <ArmorPiercing/>
+            <MultiHit/>
             <Amplitude>0.8</Amplitude>
             <Frequency>0.4</Frequency>
             <Wavy/>

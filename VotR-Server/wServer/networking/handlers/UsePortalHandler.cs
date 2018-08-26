@@ -68,6 +68,7 @@ namespace wServer.networking.handlers
                     else
                     {
                         player.SendError("You do not have enough gold to enter this raid!");
+                        return;
                     }
 
                 }
