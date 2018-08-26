@@ -7,9 +7,9 @@ using wServer.realm.worlds.logic;
 
 namespace wServer.networking.handlers
 {
-    class UsePortalHandler : PacketHandlerBase<UsePortal>
+    internal class UsePortalHandler : PacketHandlerBase<UsePortal>
     {
-        private readonly int[] _realmPortals = new int[] { 0x0704, 0x070e, 0x071c, 0x703, 0x070d, 0x0d40 };
+        private readonly int[] _realmPortals = { 0x0704, 0x070e, 0x071c, 0x703, 0x070d, 0x0d40 };
 
         public override PacketId ID => PacketId.USEPORTAL;
 
@@ -28,19 +28,17 @@ namespace wServer.networking.handlers
             var entity = player.Owner.GetEntity(packet.ObjectId);
             if (entity == null) return;
 
-            if (entity is GuildHallPortal)
-            {
-                 
-                HandleGuildPortal(player, entity as GuildHallPortal);
+            if (entity is GuildHallPortal portal)
+            {          
+                HandleGuildPortal(player, portal);
                 return;
             }
 
             HandlePortal(player, entity as Portal);
         }
 
-        private void HandleGuildPortal(Player player, GuildHallPortal portal)
+        private static void HandleGuildPortal(Player player, GuildHallPortal portal)
         {
-
             if (portal.ObjectType == 0x072f)
             {
                 var proto = player.Manager.Resources.Worlds["GuildHall"];
@@ -57,25 +55,17 @@ namespace wServer.networking.handlers
             if (portal == null || !portal.Usable)
                 return;
 
-            if(player.Owner.raidOpener != player.Name)
-            {
-                if (portal.ObjectType == 0x22c3 || portal.ObjectType == 0x63ae || portal.ObjectType == 0x612b)
-                {
-                    if (player.Credits >= 3000)
-                    {
-                        player.Client.Manager.Database.UpdateCredit(player.Client.Account, -3000);
-                    }
-                    else
-                    {
-                        player.SendError("You do not have enough gold to enter this raid!");
-                    }
-
-                }
-            }
-
             using (TimedLock.Lock(portal.CreateWorldLock))
             {
                 var world = portal.WorldInstance;
+
+                if (player.Owner.raidOpener != player.Name &&
+                   (portal.ObjectType == 0x22c3 || portal.ObjectType == 0x63ae || portal.ObjectType == 0x612b)) {
+                        if (player.Credits >= 3000)
+                            player.Client.Manager.Database.UpdateCredit(player.Client.Account, -3000);
+                        else
+                            player.SendError("You do not have enough gold to enter this raid!");                       
+                }
 
                 // special portal case lookup
                 if (world == null && _realmPortals.Contains(portal.ObjectType))
@@ -86,8 +76,7 @@ namespace wServer.networking.handlers
                 }
 
                 if (world is Realm && !player.Manager.Resources.GameData.ObjectTypeToId[portal.ObjectDesc.ObjectType].Contains("Cowardice"))
-                {
-                    
+                {                 
                     player.FameCounter.CompleteDungeon(player.Owner.Name);
                 }
 

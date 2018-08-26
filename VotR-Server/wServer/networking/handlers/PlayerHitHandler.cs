@@ -7,11 +7,9 @@ using common.resources;
 using System;
 namespace wServer.networking.handlers
 {
-    class PlayerHitHandler : PacketHandlerBase<PlayerHit>
+    internal class PlayerHitHandler : PacketHandlerBase<PlayerHit>
     {
         public override PacketId ID => PacketId.PLAYERHIT;
-        private Timer timer = null;
-        private int inproperHits;
 
         protected override void HandlePacket(Client client, PlayerHit packet)
         {
@@ -20,29 +18,13 @@ namespace wServer.networking.handlers
 
         private void Handle(Client client, RealmTime time, int objectId, byte bulletId)
         {
-            Player player = client.Player;
+            var player = client.Player;
             if (client.Player.Owner.PvP != true)
-            {
-                if (timer == null)
-                {
-                    timer = new Timer(60000);
-                    timer.Elapsed += (o, e) => {
-                        inproperHits = 0;
-                    };
-                    timer.AutoReset = true;
-                    timer.Enabled = true;
-                }
-
-                
-
+            {   
                 if (player?.Owner == null)
                     return;
 
                 var entity = player.Owner.GetEntity(objectId);
-
-                if (entity == null)
-                    inproperHits++;
-
 
                 var prj = entity != null ?
                     ((IProjectileOwner)entity).Projectiles[bulletId] :
@@ -50,33 +32,25 @@ namespace wServer.networking.handlers
                         .Where(p => p.Value.ProjectileOwner.Self.Id == objectId)
                         .SingleOrDefault(p => p.Value.ProjectileId == bulletId).Value;
 
-                //player.enemyprj = prj;
-
                 player.verifyDamage2 = ((IProjectileOwner)entity).Projectiles[bulletId].Damage;
 
-                if (player.CheckDRage() == true)
+                if (player.CheckDRage())
                 {
                     //Drannol Rage Passive
                     player.ApplyConditionEffect(ConditionEffectIndex.GraspofZol, 2000 + (player.Surge * 20));
                 }
 
-                if (player.CheckAnguish() == true)
+                if (player.CheckAnguish())
                 {
                     //Drannol Rage Passive 2
-                    ((Enemy)entity).Damage(player, time, ((IProjectileOwner)entity).Projectiles[bulletId].Damage / 2, false);
+                    ((Enemy)entity).Damage(player, time, player.verifyDamage2 / 2, false);
                 }
-                Random rnd = new Random();
-                int chance = rnd.Next(1, 6);
-                if (player.CheckFRage() == true && chance == 1)
+
+                if (player.CheckFRage() && new Random().Next(1, 6) == 1)
                 {
                     //Titan's Wrath
                     player.HP += prj.ProjDesc.MinDamage / 2;
                 }
-                if (prj == null)
-                    inproperHits++;
-
-                if (inproperHits > 100)
-                    Log.Error(player.Name + " has reached 100 inproper hits, maybe hacking?");
 
                 prj?.ForceHit(player, time);
             }

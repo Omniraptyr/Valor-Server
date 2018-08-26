@@ -1835,7 +1835,7 @@ namespace wServer.realm.entities
         }
         bool isAlertArea()
         {
-            var amount = ((int)Credits / 100) * 10;
+            var amount = (int)(Credits * 0.1);
             if (Owner.Name == "KrakenLair" || Owner.Name == "TheHollows" || Owner.Name == "HiddenTempleBoss" || Owner.Name == "FrozenIsland")
             {
                 Client.Manager.Database.UpdateCredit(Client.Account, -amount);
@@ -1912,27 +1912,20 @@ namespace wServer.realm.entities
             });
         }
 
-        public string playerAscended()
-        {
-            if(AscensionEnabled == true)
-            {
-                return "ascended ";
-            }
-            else
-            {
-                return "";
-            }
-        }
-
-        private void AnnounceDeath(string killer)
-        {
+        private void AnnounceDeath(string killer) {
             var playerDesc = Manager.Resources.GameData.Classes[ObjectType];
-            var maxed = playerDesc.Stats.Where((t, i) => Stats.Base[i] >= t.MaxValue).Count();
-            //var deathMessage = Name + "'s " + maxed + "/12 " + playerDesc.ObjectId + " died with " + Fame + " base fame to " + killer;
-            var deathMessage = "{\"key\":\"server.death\",\"tokens\":{\"player\":\"" + Name + "'s " + playerAscended() + maxed + "/12 " + playerDesc.ObjectId + "\",\"level\":\"" + Level + "\",\"enemy\":\"" + killer + "\"}}";
+            var maxed = playerDesc.Stats.Where((t, i) => Stats.Base[i] >= t.MaxValue).Count() +
+                (AscensionEnabled
+                    ? playerDesc.Stats.Where((t, i)
+                        => Stats.Base[i] == t.MaxValue + 10
+                           || Stats.Base[i] == t.MaxValue + 50).Count() : 0); //ghetto code
+            var deathMessage = "{\"key\":\"server.death\",\"tokens\":{\"player\":\"" + Name + "'s "
+                               + maxed + (AscensionEnabled ? "/24 " : "/12 ")
+                               + playerDesc.ObjectId + "\",\"level\":\""
+                               + Level + "\",\"enemy\":\""
+                               + killer + "\"}}";
             // notable deaths
-            if ((maxed >= 8 || Fame >= 1000) && !Client.Account.Admin)
-            {
+            if ((maxed >= 12 || Fame >= 10000) && !Client.Account.Admin) {
                 foreach (var w in Manager.Worlds.Values)
                     foreach (var p in w.Players.Values)
                         p.SendHelp(deathMessage);
@@ -1942,32 +1935,24 @@ namespace wServer.realm.entities
             var pGuild = Client.Account.GuildId;
 
             // guild case, only for level 20
-            if (pGuild > 0 && Level == 20)
-            {
-                foreach (var w in Manager.Worlds.Values)
-                {
-                    foreach (var p in w.Players.Values)
-                    {
-                        if (p.Client.Account.GuildId == pGuild)
-                        {
+            if (pGuild > 0 && Level == 20) {
+                foreach (var w in Manager.Worlds.Values) {
+                    foreach (var p in w.Players.Values) {
+                        if (p.Client.Account.GuildId == pGuild) {
                             p.SendGuildDeath(deathMessage);
                         }
                     }
                 }
 
-                foreach (var i in Owner.Players.Values)
-                {
-                    if (i.Client.Account.GuildId != pGuild)
-                    {
+                foreach (var i in Owner.Players.Values) {
+                    if (i.Client.Account.GuildId != pGuild) {
                         i.SendInfo(deathMessage);
                     }
                 }
             }
             // guild less case
-            else
-            {
-                foreach (var i in Owner.Players.Values)
-                {
+            else {
+                foreach (var i in Owner.Players.Values) {
                     i.SendInfo(deathMessage);
                 }
             }
@@ -1977,7 +1962,8 @@ namespace wServer.realm.entities
         public void Death(string killer, Entity entity = null, WmapTile tile = null, bool rekt = false)
         {
             int[] x = null;
-                int[] y = null;
+            int[] y = null;
+
             if (_client.State == ProtocolState.Disconnected || _dead)
                 return;
 
@@ -2028,7 +2014,7 @@ namespace wServer.realm.entities
             }
 
 
-            ZolReborn("Corrupted Entity");
+            CheckZolReborn("Corrupted Entity");
             GenerateGravestone();
 
             if((entity is Player))
@@ -2071,7 +2057,8 @@ namespace wServer.realm.entities
                 _client.Disconnect();
             }));
         }
-        public void ZolReborn(string entity)
+
+        public void CheckZolReborn(string entity)
         {
             if (Owner.Name == "Aldragine's Hideout" || Owner.Name == "Ultra Aldragine's Hideout" || Owner.Name == "Sincryer's Gate" || Owner.Name == "Ultra Sincryer's Gate" || Owner.Name == "Nontridus" || Owner.Name == "NontridusUltra" || Owner.Name == "Core of the Hideout" || Owner.Name == "Ultra Core of the Hideout" || Owner.Name == "Keeping of Aldragine" || Owner.Name == "KeepingUltra")
             {

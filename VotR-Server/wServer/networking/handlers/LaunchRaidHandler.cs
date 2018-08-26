@@ -23,7 +23,6 @@ namespace wServer.networking.handlers
             {
                 switch (raidId)
                 {
-
                     case 1:
                         if (ultra == false)
                         {
@@ -33,12 +32,10 @@ namespace wServer.networking.handlers
                                 player.Credits = player.Client.Account.Credits - gold;
                                 player.ForceUpdate(player.Credits);
                                 player.Manager.Chat.RaidAnnounce("The Zol Awakening Raid has been launched on " + playerSvr + "!");
-                                ushort objType;
-
 
                                 Manager._isRaidLaunched = true;
 
-                                if (!gameData.IdToObjectType.TryGetValue("Aldragine's Hideout Portal", out objType) ||
+                                if (!gameData.IdToObjectType.TryGetValue("Aldragine's Hideout Portal", out var objType) ||
                                         !gameData.Portals.ContainsKey(objType))
                                     return;
                                 var timeoutTime = gameData.Portals[objType].Timeout;
