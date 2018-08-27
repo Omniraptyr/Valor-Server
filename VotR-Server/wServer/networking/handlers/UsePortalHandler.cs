@@ -29,7 +29,7 @@ namespace wServer.networking.handlers
             if (entity == null) return;
 
             if (entity is GuildHallPortal portal)
-            {          
+            {
                 HandleGuildPortal(player, portal);
                 return;
             }
@@ -60,11 +60,15 @@ namespace wServer.networking.handlers
                 var world = portal.WorldInstance;
 
                 if (player.Owner.raidOpener != player.Name &&
-                   (portal.ObjectType == 0x22c3 || portal.ObjectType == 0x63ae || portal.ObjectType == 0x612b)) {
-                        if (player.Credits >= 3000)
-                            player.Client.Manager.Database.UpdateCredit(player.Client.Account, -3000);
-                        else
-                            player.SendError("You do not have enough gold to enter this raid!");                       
+                   (portal.ObjectType == 0x22c3 || portal.ObjectType == 0x63ae || portal.ObjectType == 0x612b))
+                {
+                    if (player.Credits >= 3000)
+                        player.Client.Manager.Database.UpdateCredit(player.Client.Account, -3000);
+                    else
+                    {
+                        player.SendError("You do not have enough gold to enter this raid!");
+                        return;
+                    }
                 }
 
                 // special portal case lookup
@@ -76,7 +80,7 @@ namespace wServer.networking.handlers
                 }
 
                 if (world is Realm && !player.Manager.Resources.GameData.ObjectTypeToId[portal.ObjectDesc.ObjectType].Contains("Cowardice"))
-                {                 
+                {
                     player.FameCounter.CompleteDungeon(player.Owner.Name);
                 }
 

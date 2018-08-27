@@ -81131,7 +81131,6 @@ This dagger was a myth, will you live to tell the tale?
             <MaxDamage>150</MaxDamage>
             <LifetimeMS>463</LifetimeMS>
             <MultiHit/>
-            <ArmorPiercing/>
         </Projectile>
         <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="100">IncrementStat</ActivateOnEquip>
@@ -100679,24 +100678,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
     <Activate amount="100" range="5.5" useWisMod="true">HealNova</Activate>
     <Activate effect="Damaging" duration="2.5" useWisMod="true">ConditionEffectSelf</Activate>
   </Object>
-   <Object type="0x59f1" id="Crescendo Bullet">
-      <Class>Projectile</Class>
-      <RandomTexture>
-		<Texture>
-		  <File>d3LofiObjEmbed</File>
-		  <Index>0x3f6</Index>
-		</Texture>
-		<Texture>
-		  <File>d3LofiObjEmbed</File>
-		  <Index>0x3f7</Index>
-		</Texture>
-		<Texture>
-		  <File>d3LofiObjEmbed</File>
-		  <Index>0x3f8</Index>
-		</Texture>
-      </RandomTexture>
-      <AngleCorrection>1</AngleCorrection>
-   </Object>
     <Object type="0x59a2" id="Mythical Basilisk Venom">
         <Class>Equipment</Class>
         <Item/>
@@ -108145,8 +108126,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile>
             <ObjectId>Zeal Arrow</ObjectId>
             <Speed>150</Speed>
-            <MinDamage>900</MinDamage>
-            <MaxDamage>1000</MaxDamage>
+            <MinDamage>600</MinDamage>
+            <MaxDamage>700</MaxDamage>
             <LifetimeMS>1250</LifetimeMS>
             <Size>150</Size>
             <ArmorPiercing/>
@@ -125555,6 +125536,84 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <EnemyOccupySquare/>
         <BlocksSight/>
     </Object>
+	<Object type="0x5617" id="The Depths Wall 2">
+        <Class>DoubleWall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d7</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d8</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d3</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+		<Object type="0x5618" id="The Depths Wall 3">
+        <Class>DoubleWall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d7</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d8</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d3</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x5619" id="The Depths Wall 4">
+        <Class>DoubleWall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d7</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d8</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d3</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
     <Object type="0x69c6" id="The Depths Decors">
         <Class>GameObject</Class>
         <RandomTexture>
@@ -125708,5 +125767,143 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <FameBonus>6</FameBonus>
         <OldSound>bladeSwing</OldSound>
         <DisplayId>Infused Katana</DisplayId>
+    </Object>
+	<Object type="0x5613" id="Draketail Blade">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3e3</Index>
+        </Texture>
+        <SlotType>2</SlotType>
+        <Description>A sharp dagger with the tail of a Drake attached to the bottom of the hilt.</Description>
+        <RateOfFire>1.1</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Fire Magic</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>135</MinDamage>
+            <MaxDamage>160</MaxDamage>
+            <LifetimeMS>400</LifetimeMS>
+            <ArmorPiercing/>
+            <Wavy/>
+        </Projectile>
+        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>daggerSwing</OldSound>
+        <DisplayId>Draketail Blade</DisplayId>
+    </Object>
+    <Object type="0x5614" id="Quiver of the Chosen">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3e4</Index>
+        </Texture>
+        <SlotType>15</SlotType>
+        <Description>A quiver made for the chosen archer to battle the evils that lie in the Ancient Depths.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Projectile>
+            <ObjectId>Red Arrow</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>250</MinDamage>
+            <MaxDamage>500</MaxDamage>
+            <LifetimeMS>1000</LifetimeMS>
+            <Size>150</Size>
+            <ConditionEffect duration="6">Bleeding</ConditionEffect>
+            <PassesCover/>
+            <ParticleTrail/>
+            <MultiHit/>
+        </Projectile>
+        <ActivateOnEquip stat="28" amount="14">IncrementStat</ActivateOnEquip>
+        <ConditionEffect duration="6">Bleeding</ConditionEffect>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>20</MpCost>
+        <Activate>Shoot</Activate>
+        <DisplayId>Quiver of the Chosen</DisplayId>
+    </Object>
+    <Object type="0x5615" id="Chosen Armor">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3e5</Index>
+        </Texture>
+        <SlotType>6</SlotType>
+        <Description>An armor made for the chosen archer to battle the evils that lie in the Ancient Depths.</Description>
+        <ActivateOnEquip stat="0" amount="150">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="18">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <DisplayId>Chosen Armor</DisplayId>
+    </Object>
+    <Object type="0x5616" id="Chosen Bow">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3e6</Index>
+        </Texture>
+        <SlotType>3</SlotType>
+        <Description>A bow made for the chosen archer to battle the evils that lie in the Ancient Depths.</Description>
+        <RateOfFire>0.85</RateOfFire>
+        <Sound>weapon/golden_bow</Sound>
+        <Projectile>
+            <ObjectId>Red Arrow</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>88</MinDamage>
+            <MaxDamage>105</MaxDamage>
+            <LifetimeMS>440</LifetimeMS>
+            <Amplitude>0.3</Amplitude>
+            <Frequency>1.2</Frequency>
+            <Size>100</Size>
+            <MultiHit/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="140">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
+        <NumProjectiles>3</NumProjectiles>
+        <ArcGap>20</ArcGap>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <DisplayId>Chosen Bow</DisplayId>
+    </Object>
+	    <Object type="0x59a1" id="Crashing Crescendo">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3f5</Index>
+        </Texture>
+        <SlotType>29</SlotType>
+        <Description>The shattered blade of a celestial envoy, this crested lance is with bound with a presence that drives it to lead it's bewinged hearlds beyond the stars themselves.</Description>
+        <RateOfFire>0.7</RateOfFire>
+        <Sound>weapon/blunt_sword</Sound>
+        <Projectile>
+            <ObjectId>Dark Blue Magic</ObjectId>
+            <Speed>45</Speed>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <LifetimeMS>1425</LifetimeMS>
+            <Amplitude>1.4</Amplitude>
+            <Frequency>1.9</Frequency>
+            <Size>100</Size>
+            <MultiHit/>
+        </Projectile>
+        <NumProjectiles>4</NumProjectiles>
+        <ArcGap>28</ArcGap>
+        <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="5">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <DisplayId>Crashing Crescendo</DisplayId>
     </Object>
 </Objects>

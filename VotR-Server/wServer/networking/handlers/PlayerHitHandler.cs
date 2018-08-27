@@ -20,7 +20,7 @@ namespace wServer.networking.handlers
         {
             var player = client.Player;
             if (client.Player.Owner.PvP != true)
-            {   
+            {
                 if (player?.Owner == null)
                     return;
 
@@ -32,7 +32,8 @@ namespace wServer.networking.handlers
                         .Where(p => p.Value.ProjectileOwner.Self.Id == objectId)
                         .SingleOrDefault(p => p.Value.ProjectileId == bulletId).Value;
 
-                player.verifyDamage2 = ((IProjectileOwner)entity).Projectiles[bulletId].Damage;
+                if (entity != null)
+                    player.verifyDamage2 = ((IProjectileOwner)entity).Projectiles[bulletId].Damage;
 
                 if (player.CheckDRage())
                 {

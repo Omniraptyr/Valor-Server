@@ -5982,4 +5982,82 @@
         <feedPower>230</feedPower>
         <DisplayId>Ancient Depths Key</DisplayId>
     </Object>
+    <Object type="0x5617" id="The Depths Wall 2">
+        <Class>DoubleWall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d7</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d8</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d3</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x5618" id="The Depths Wall 3">
+        <Class>DoubleWall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d7</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d8</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d3</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x5619" id="The Depths Wall 4">
+        <Class>DoubleWall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d7</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d8</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d3</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
 </Objects>
