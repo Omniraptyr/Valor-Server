@@ -258,7 +258,7 @@ namespace wServer.realm
             }
             else
             {
-                return 0;
+                return 1;
             }
         }
 
