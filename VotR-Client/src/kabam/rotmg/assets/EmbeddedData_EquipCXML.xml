@@ -30678,16 +30678,15 @@
         </Texture>
         <SlotType>9</SlotType>
         <Description>Utter destruction will follow your path. Unstoppable.</Description>
-        <ActivateOnEquip stat="20" amount="25">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="-80">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="3" amount="-80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <feedPower>3000</feedPower>
         <Legendary/>
         <Legend id="11" stat="27">
             <Name>Unstoppable</Name>
-            <Description>If your health is full and your protection is full you deal double damage.</Description>
+            <Description>If your health is above 80% you deal 30% more damage.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
@@ -31720,10 +31719,10 @@
         <FameBonus>8</FameBonus>
         <MpCost>60</MpCost>
         <ActivateOnEquip stat="114" amount="150">IncrementStat</ActivateOnEquip>
-        <Activate duration="6">DiceActivate</Activate>
+        <Activate duration="3">DiceActivate</Activate>
         <Activate effect="Invulnerable" duration="2">ConditionEffectSelf</Activate>
         <Activate effect="Surged" duration="3.5">ConditionEffectSelf</Activate>
-        <feedPower>2000</feedPower>
+        <Cooldown>6</Cooldown>
         <Legendary/>
         <DisplayId>Devil Dice</DisplayId>
     </Object>
@@ -34277,6 +34276,7 @@
         <Activate duration="8">DiceActivate</Activate>
         <Activate effect="Invulnerable" duration="2">ConditionEffectSelf</Activate>
         <feedPower>880</feedPower>
+        <Cooldown>6</Cooldown>
         <DisplayId>Earthforce Dice</DisplayId>
     </Object>
     <Object type="0x67a1" id="Basic Spell">
@@ -34980,13 +34980,13 @@
             <Speed>129</Speed>
             <MinDamage>122</MinDamage>
             <MaxDamage>170</MaxDamage>
-            <LifetimeMS>400</LifetimeMS>
+            <LifetimeMS>300</LifetimeMS>
             <ArmorPiercing/>
             <Amplitude>2</Amplitude>
             <Frequency>0.7</Frequency>
         </Projectile>
         <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="122" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>

@@ -11825,50 +11825,52 @@
         <Size>160</Size>
         <ParalyzeImmune/>
         <StasisImmune/>
+        <Elitedrop/>
         <DazedImmune/>
+        <SlowedImmune/>
         <ShadowSize>0</ShadowSize>
         <Quest/>
         <MaxHitPoints>1750000</MaxHitPoints>
-        <Defense>40</Defense>
+        <Defense>65</Defense>
         <Projectile id="0">
             <ObjectId>Twisted Shot 1</ObjectId>
-            <MinDamage>120</MinDamage>
-            <MaxDamage>140</MaxDamage>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>180</MaxDamage>
             <Speed>60</Speed>
-            <ConditionEffect duration="2">Dazed</ConditionEffect>
+            <ConditionEffect duration="4">Dazed</ConditionEffect>
             <LifetimeMS>2500</LifetimeMS>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Twisted Shot 2</ObjectId>
-            <MinDamage>60</MinDamage>
-            <MaxDamage>80</MaxDamage>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>120</MaxDamage>
             <Speed>60</Speed>
             <ConditionEffect duration="6">Armor Broken</ConditionEffect>
             <LifetimeMS>1000</LifetimeMS>
         </Projectile>
         <Projectile id="2">
             <ObjectId>White Flame</ObjectId>
-            <MinDamage>160</MinDamage>
-            <MaxDamage>225</MaxDamage>
-            <Speed>30</Speed>
+            <MinDamage>190</MinDamage>
+            <MaxDamage>250</MaxDamage>
+            <Speed>40</Speed>
             <LifetimeMS>6000</LifetimeMS>
             <MultiHit/>
             <Amplitude>1.2</Amplitude>
             <Frequency>1</Frequency>
-            <ConditionEffect duration="3">Slowed</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
         <Projectile id="3">
             <ObjectId>Twisted Cone</ObjectId>
-            <MinDamage>100</MinDamage>
-            <MaxDamage>120</MaxDamage>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>160</MaxDamage>
             <Speed>90</Speed>
             <LifetimeMS>6000</LifetimeMS>
             <ArmorPiercing/>
         </Projectile>
         <Projectile id="4">
             <ObjectId>Twisted Boomerang 2</ObjectId>
-            <MinDamage>45</MinDamage>
-            <MaxDamage>90</MaxDamage>
+            <MinDamage>60</MinDamage>
+            <MaxDamage>120</MaxDamage>
             <Speed>110</Speed>
             <LifetimeMS>2000</LifetimeMS>
             <MultiHit/>

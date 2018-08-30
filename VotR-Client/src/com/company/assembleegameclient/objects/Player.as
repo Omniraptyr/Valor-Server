@@ -396,9 +396,9 @@ public class Player extends Character {
         _local2.setStringBuilder(new LineBuilder().setParams(TextKey.PLAYER_EXP, {"exp": _arg1}));
         map_.mapOverlay_.addStatusText(_local2);
     }
-    public function BotDModifier():int {
-        if(ObjectLibrary.typeToDisplayId_[this.equipment_[3]] == "Bracelet of the Demolished" && hp_ == maxHP_ && protectionPoints_ == protectionPointsMax_){
-            return 2;
+    public function BotDModifier():Number {
+        if(ObjectLibrary.typeToDisplayId_[this.equipment_[3]] == "Bracelet of the Demolished" && hp_ >= maxHP_ * 0.80){
+            return 1.3;
         }else{
             return 1;
         }
@@ -1244,7 +1244,7 @@ public class Player extends Character {
             _local13 = int(_local12.projProps_.minDamage_);
             _local14 = int(_local12.projProps_.maxDamage_);
             _local15 = ((_arg5) ? this.attackMultiplier() : 1);
-            _local16 = this.BotDModifier() * (map_.gs_.gsc_.getNextDamage(_local13, _local14) * _local15 + this.relentlessDamageBonus() + this.aegisDamageBonus() + this.KaraModifier() + this.moonlightDamageBonus() + this.MarkRage());
+            _local16 = (map_.gs_.gsc_.getNextDamage(_local13, _local14) * _local15 + (this.relentlessDamageBonus() + this.aegisDamageBonus() + this.KaraModifier() + this.moonlightDamageBonus() + this.MarkRage()) * this.BotDModifier());
             if (_arg1 > (map_.gs_.moveRecords_.lastClearTime_ + 600)) {
                 _local16 = 0;
             }

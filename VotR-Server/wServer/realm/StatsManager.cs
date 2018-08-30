@@ -50,11 +50,15 @@ namespace wServer.realm
 
         public int GetAttackDamage(int min, int max, bool isAbility = false)
         {
-            var ret = isDoubleDamage() * Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility) * CriticalModifier() + VengeanceDamage() + RelentlessDamage() + KaraDamage() + MoonLightDamage() + RageDamage();
+            var ret = Owner.Client.Random.NextIntRange((uint)min, (uint)max) * GetAttackMult(isAbility) * CriticalModifier() * DemoDamage() + SpecialDamageMods();
             //Log.Info($"Dmg: {ret}");
             return (int)ret;
         }
 
+        public int SpecialDamageMods()
+        {
+            return VengeanceDamage() + RelentlessDamage() + KaraDamage() + MoonLightDamage() + RageDamage();
+        }
         public float GetAttackMult(bool isAbility)
         {
             if (isAbility)
@@ -246,15 +250,15 @@ namespace wServer.realm
             }
         }
 
-        public int isDoubleDamage()
+        public float DemoDamage()
         {
             if (Owner.CheckDemo())
             {
-                return 2;
+                return 1.3f;
             }
             else
             {
-                return 1;
+                return 0;
             }
         }
 

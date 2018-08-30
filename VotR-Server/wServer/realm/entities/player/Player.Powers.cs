@@ -293,7 +293,7 @@ namespace wServer.realm.entities
             {
                 return false;
             }
-            if (Inventory[3].ObjectId == "Bracelet of the Demolished" && HP == Stats[0] && protectionDamage == 0)
+            if (Inventory[3].ObjectId == "Bracelet of the Demolished" && HP >= Convert.ToInt32(Stats[0] * 0.80))
             {
                 return true;
             }
