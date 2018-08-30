@@ -2161,8 +2161,13 @@ namespace wServer.realm.entities
             var pkts = new List<Packet>();
             this.AOE(range, true, player =>
             {
-                if (!player.HasConditionEffect(ConditionEffects.Sick) || !player.HasConditionEffect(ConditionEffects.Corrupted))
-                    ActivateHealHp(player as Player, amount + (RestorationHeal() / 4), pkts);
+                if (!player.HasConditionEffect(ConditionEffects.Sick) ||
+                    !player.HasConditionEffect(ConditionEffects.Corrupted))
+                {
+                    var heal = amount + RestorationHeal() / 4;
+                    if (heal <= 0) heal = 1;
+                    ActivateHealHp(player as Player, heal, pkts);
+                }
 
                 addSupportScore(amount, false);
             });
