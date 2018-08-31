@@ -108380,16 +108380,14 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>9</SlotType>
         <Description>Utter destruction will follow your path. Unstoppable.</Description>
-        <ActivateOnEquip stat="20" amount="25">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="-80">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="3" amount="-80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="20">IncrementStat</ActivateOnEquip>
+	    <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
-        <feedPower>3000</feedPower>
         <Legendary/>
         <Legend id="11" stat="27">
             <Name>Unstoppable</Name>
-            <Description>If your health is full and your protection is full you deal double damage.</Description>
+            <Description>You deal 30% more damage above 80% HP.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
