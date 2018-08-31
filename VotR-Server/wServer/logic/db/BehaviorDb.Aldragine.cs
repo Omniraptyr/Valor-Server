@@ -138,7 +138,7 @@ namespace wServer.logic
         .Init("Stone of Zol",
             new State(
                 new State("1",
-                    new Shoot(10, count: 4, projectileIndex: 0, coolDown: 2500),
+                    new Shoot(10, count: 8, projectileIndex: 0, coolDown: 2500),
                      new HpLessTransition(0.15, "2"),
                      new HealSelf(coolDown: 8000)
                     ),
@@ -463,7 +463,7 @@ namespace wServer.logic
                         new Follow(0.35, 8, 1),
                         new Wander(1)
                         ),
-                     new Shoot(10, count: 3, shootAngle: 16, projectileIndex: 0, coolDown: 2800),
+                     new Shoot(10, count: 7, shootAngle: 16, projectileIndex: 0, coolDown: 2000),
                      new TimedTransition(4000, "box")
                     ),
                 new State("box",
@@ -479,7 +479,7 @@ namespace wServer.logic
                         new StayBack(0.4, 6),
                         new Wander(1)
                         ),
-                     new Shoot(10, count: 3, shootAngle: 26, projectileIndex: 1, coolDown: 1000),
+                     new Shoot(10, count: 5, shootAngle: 26, projectileIndex: 1, coolDown: 1000),
                      new TimedTransition(4000, "fight1")
                     ),
                 new State("fight4",

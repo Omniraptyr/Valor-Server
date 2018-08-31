@@ -3222,6 +3222,18 @@ namespace wServer.logic
                         new Shoot(10, 12, projectileIndex: 3, coolDown: 1000),
                         new Shoot(10, 8, projectileIndex: 1, coolDown: 400, shootAngle: 10),
                         new Shoot(10, count: 3, shootAngle: 10, projectileIndex: 4, predictive: 0.1, coolDown: 800),
+                        new TimedTransition(10000, "rage2")
+                        ),
+                   new State("rage2",
+                       new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                       new Grenade(4, 300, range: 10, coolDown: 1000, effect: ConditionEffectIndex.Paralyzed, effectDuration: 2000, color: 0x00FFFF),
+                       new Taunt(0.5, "I WONT STOP UNTIL YOU ARE DEAD!"),
+                       new Flash(0xFF0000, 0.2, 8),
+                       new Prioritize(
+                            new Orbit(1.5, 2, 1),
+                            new Wander(0.25)
+                            ),
+                        new Shoot(10, 6, projectileIndex: 3, coolDown: 400),
                         new TimedTransition(10000, "return")
                         ),
                    new State("return",
@@ -3970,7 +3982,10 @@ namespace wServer.logic
                     ),
                     new State(
                         new Reproduce("DrannolTarget", 40, 8, 2000),
-                        new Reproduce("BD Bastille Brute", 10, 2, 8000),
+                        new TossObject("BD Bastille Brute", 7, 45, coolDown: 9999999),
+                        new TossObject("BD Bastille Brute", 7, 135, coolDown: 9999999),
+                        new TossObject("BD Bastille Brute", 7, 225, coolDown: 9999999),
+                        new TossObject("BD Bastille Brute", 7, 315, coolDown: 9999999),
                         new Order(90, "Spiritorb Holder Sentry", "sentry2"),
                         new Order(90, "Scorching Wrath Helper", "spawn"),
                         new EntitiesNotExistsTransition(99, "thenextone", "Scorching Crawler"),
