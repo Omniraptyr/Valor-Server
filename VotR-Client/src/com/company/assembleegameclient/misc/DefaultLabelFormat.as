@@ -1,13 +1,15 @@
 package com.company.assembleegameclient.misc
 {
-   import flash.filters.BitmapFilterQuality;
-   import flash.filters.DropShadowFilter;
-   import flash.text.TextFormat;
-   import flash.text.TextFormatAlign;
-   import flashx.textLayout.formats.TextAlign;
-   import kabam.rotmg.text.model.FontModel;
-   
-   public class DefaultLabelFormat
+import flash.filters.BitmapFilterQuality;
+import flash.filters.DropShadowFilter;
+import flash.text.TextFormat;
+import flash.text.TextFormatAlign;
+
+import flashx.textLayout.formats.TextAlign;
+
+import kabam.rotmg.text.model.FontModel;
+
+public class DefaultLabelFormat
    {
        
       

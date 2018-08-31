@@ -96,7 +96,7 @@ public class NewsModal extends EmptyFrame {
     }
 
 
-    public function onCloseButtonClicked() {
+    public function onCloseButtonClicked() : void {
         var _local1:FlushPopupStartupQueueSignal = StaticInjectorContext.getInjector().getInstance(FlushPopupStartupQueueSignal);
         closeButton.clicked.remove(this.onCloseButtonClicked);
         if (this.triggeredOnStartup) {
@@ -104,12 +104,11 @@ public class NewsModal extends EmptyFrame {
         }
     }
 
-    private function onAdded(_arg1:Event) {
+    private function onAdded(_arg1:Event) : void {
         this.newsModel.markAsRead();
-        this.refreshNewsButton();
     }
 
-    private function updateIndicator() {
+    private function updateIndicator() : void {
         this.fontModel.apply(this.pageIndicator, 24, 0xFFFFFF, true);
         this.pageIndicator.text = ((this.currentPageNumber + " / ") + this.newsModel.numberOfNews);
         addChild(this.pageIndicator);
@@ -165,13 +164,6 @@ public class NewsModal extends EmptyFrame {
         this.currentPage = this.newsModel.getModalPage(_arg1);
         addChild(this.currentPage);
         this.updateIndicator();
-    }
-
-    private function refreshNewsButton():void {
-        var _local1:HUDModel = StaticInjectorContext.getInjector().getInstance(HUDModel);
-        if (((!((_local1 == null))) && (!((_local1.gameSprite == null))))) {
-            _local1.gameSprite.refreshNewsUpdateButton();
-        }
     }
 
     override protected function makeModalBackground():Sprite {

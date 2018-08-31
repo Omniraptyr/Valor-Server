@@ -20,7 +20,7 @@ public class LiveSteamApi extends Sprite implements SteamApi {
     [Inject]
     public var logger:ILogger;
     private var loader:Loader;
-    private var api;
+    private var api:*;
     private var steamID:String;
     private var sessionTicket:String;
 
@@ -53,7 +53,7 @@ public class LiveSteamApi extends Sprite implements SteamApi {
     }
 
     private function onSessionTicketResponse(_arg1:String):void {
-        var _local2 = !((_arg1 == null));
+        var _local2:Boolean = !((_arg1 == null));
         ((_local2) && ((this.sessionTicket = _arg1)));
         this.logger.debug("LiveSteamApi sessionTicket: {0}", [this.sessionTicket]);
         this.sessionReceived.dispatch(_local2);

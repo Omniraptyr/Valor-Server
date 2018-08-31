@@ -8,7 +8,9 @@ import com.company.assembleegameclient.ui.FrameChef;
 
 import flash.events.Event;
 import flash.events.MouseEvent;
+
 import kabam.rotmg.questrewards.components.ModalItemSlot;
+
 import org.osflash.signals.Signal;
 
 public class SorForgerUI extends FrameChef {
@@ -38,7 +40,7 @@ public class SorForgerUI extends FrameChef {
         return (this.slot4);
     }
 
-    private function addForgeUI(){
+    private function addForgeUI() : void {
         this.slot1 = new ModalItemSlot(true, false);
         this.slot1.y = 180;
         this.slot1.x = 85;
@@ -56,7 +58,7 @@ public class SorForgerUI extends FrameChef {
 
 
 
-    private function onClose(e:Event) {
+    private function onClose(e:Event) : void {
     }
 
 

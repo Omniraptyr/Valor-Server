@@ -2,109 +2,111 @@
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 
 import flash.display.Sprite;
-import flash.events.MouseEvent;
+import flash.events.Event;
 import flash.filters.DropShadowFilter;
 import flash.text.TextFieldAutoSize;
 
+import kabam.rotmg.core.signals.HideTooltipsSignal;
+import kabam.rotmg.core.signals.ShowTooltipSignal;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.tooltips.HoverTooltipDelegate;
+import kabam.rotmg.tooltips.TooltipAble;
 
-import org.osflash.signals.natives.NativeSignal;
-
-public class StatView extends Sprite {
-
+public class StatView extends Sprite implements TooltipAble {
     public var fullName_:String;
     public var description_:String;
     public var nameText_:TextFieldDisplayConcrete;
     public var valText_:TextFieldDisplayConcrete;
     public var redOnZero_:Boolean;
     public var val_:int = -1;
-    public var pval_:int = -1;
     public var boost_:int = -1;
     public var valColor_:uint = 0xB3B3B3;
-    public var powerColor_:uint = 0x4169E1;
-    public var toolTip_:TextToolTip;
-    public var mouseOver:NativeSignal;
-    public var mouseOut:NativeSignal;
+    public var hoverTooltipDelegate:HoverTooltipDelegate;
+    protected var tooltip_:TextToolTip;
 
-    public function StatView(_arg1:String, _arg2:String, _arg3:String, _arg4:Boolean) {
-        this.toolTip_ = new TextToolTip(0x363636, 0x9B9B9B, "", "", 200);
+    public function StatView(name:String, fullName:String, desc:String, redOnZero:Boolean) {
         super();
-        this.fullName_ = _arg2;
-        this.description_ = _arg3;
+        this.fullName_ = fullName;
+        this.description_ = desc;
         this.nameText_ = new TextFieldDisplayConcrete().setSize(13).setColor(0xB3B3B3);
-        this.nameText_.setStringBuilder(new LineBuilder().setParams(_arg1));
+        this.nameText_.setStringBuilder(new LineBuilder().setParams(name));
         this.configureTextAndAdd(this.nameText_);
         this.valText_ = new TextFieldDisplayConcrete().setSize(13).setColor(this.valColor_).setBold(true);
         this.valText_.setStringBuilder(new StaticStringBuilder("-"));
         this.configureTextAndAdd(this.valText_);
-        this.redOnZero_ = _arg4;
-        this.mouseOver = new NativeSignal(this, MouseEvent.MOUSE_OVER, MouseEvent);
-        this.mouseOut = new NativeSignal(this, MouseEvent.MOUSE_OUT, MouseEvent);
+        this.redOnZero_ = redOnZero;
+		
+        this.tooltip_ = new TextToolTip(0x272727, 0x828282, fullName, desc, 150);
+        this.hoverTooltipDelegate = new HoverTooltipDelegate();
+        this.hoverTooltipDelegate.setDisplayObject(this);
+        this.hoverTooltipDelegate.tooltip = this.tooltip_;
+        addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
+    }
+	
+    public function configureTextAndAdd(textField:TextFieldDisplayConcrete):void {
+        textField.setAutoSize(TextFieldAutoSize.LEFT);
+        textField.filters = [new DropShadowFilter(0, 0, 0)];
+        addChild(textField);
     }
 
-    public function configureTextAndAdd(_arg1:TextFieldDisplayConcrete):void {
-        _arg1.setAutoSize(TextFieldAutoSize.LEFT);
-        _arg1.filters = [new DropShadowFilter(0, 0, 0)];
-        addChild(_arg1);
-    }
-
-    public function addTooltip():void {
-        this.toolTip_.setTitle(new LineBuilder().setParams(this.fullName_));
-        this.toolTip_.setText(new LineBuilder().setParams(this.description_));
-        if (!stage.contains(this.toolTip_)) {
-            stage.addChild(this.toolTip_);
-        }
-    }
-
-    public function removeTooltip():void {
-        if (this.toolTip_.parent != null) {
-            this.toolTip_.parent.removeChild(this.toolTip_);
-        }
-    }
-
-    public function draw(_arg1:int, _arg2:int, _arg3:int, _arg4:int):void {
-        var _local4:uint;
-        if ((((_arg1 == this.val_)) && ((_arg2 == this.boost_)) && ((_arg4 == this.pval_)))) {
+    public function draw(val:int, boost:int, max:int, ascendVal:int):void {
+        var color:uint;
+        if (val == this.val_ && boost == this.boost_) {
             return;
         }
-        this.val_ = _arg1;
-        this.boost_ = _arg2;
-        this.pval_ = _arg4;
-        if (_arg4 >= 10) {
-            _local4 = 0x4169E1;
-        }else{
-            if ((_arg1 - _arg2) >= _arg3) {
-                _local4 = 0xFCDF00;
-            }
-            else {
-                if (((((this.redOnZero_) && ((this.val_ <= 0)))) || ((this.boost_ < 0)))) {
-                    _local4 = 16726072;
-                }
-                else {
-                    if (this.boost_ > 0) {
-                        _local4 = 6206769;
-                    }
-                    else {
-                        _local4 = 0xB3B3B3;
-                    }
+        this.val_ = val;
+        this.boost_ = boost;
+        if(ascendVal >= 10) {
+            color = 4286945;
+        } else if ((val - boost) >= max) {
+            color = 0xFCDF00;
+		} else {
+            if (this.redOnZero_ && this.val_ <= 0 || this.boost_ < 0) {
+                color = 16726072;
+            } else {
+                if (this.boost_ > 0) {
+                    color = 6206769;
+                } else {
+                    color = 0xB3B3B3;
                 }
             }
         }
-
-        if (this.valColor_ != _local4) {
-            this.valColor_ = _local4;
+        if (this.valColor_ != color) {
+            this.valColor_ = color;
             this.valText_.setColor(this.valColor_);
         }
-        var _local5:String = this.val_.toString();
+        var valText:String = this.val_.toString();
         if (this.boost_ != 0) {
-            _local5 = (_local5 + (((" (" + (((this.boost_ > 0)) ? "+" : "")) + this.boost_.toString()) + ")"));
+            valText += " (" + (this.boost_ > 0 ? "+" : "") + this.boost_.toString() + ")";
         }
-        this.valText_.setStringBuilder(new StaticStringBuilder(_local5));
+        this.valText_.setStringBuilder(new StaticStringBuilder(valText));
         this.valText_.x = this.nameText_.getBounds(this).right;
     }
+	
+    protected function onRemovedFromStage(e:Event):void {
+        removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
+        this.hoverTooltipDelegate.removeDisplayObject();
+        this.hoverTooltipDelegate.tooltip = null;
+        this.hoverTooltipDelegate = null;
+        this.tooltip_ = null;
+    }
 
+    public function setShowToolTipSignal(showTooltip:ShowTooltipSignal):void {
+        this.hoverTooltipDelegate.setShowToolTipSignal(showTooltip);
+    }
 
+    public function getShowToolTip():ShowTooltipSignal {
+        return this.hoverTooltipDelegate.getShowToolTip();
+    }
+
+    public function setHideToolTipsSignal(hideTooltip:HideTooltipsSignal):void {
+        this.hoverTooltipDelegate.setHideToolTipsSignal(hideTooltip);
+    }
+
+    public function getHideToolTips():HideTooltipsSignal {
+        return this.hoverTooltipDelegate.getHideToolTips();
+    }
 }
 }

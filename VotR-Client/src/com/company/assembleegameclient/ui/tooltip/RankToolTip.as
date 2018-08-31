@@ -92,13 +92,9 @@ import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
 class LegendLine extends Sprite {
-
-    /*private*/
-    var coloredStar_:StarGraphic;
-    /*private*/
-    var rangeText_:TextFieldDisplayConcrete;
-    /*private*/
-    var star_:StarGraphic;
+    private var coloredStar_:StarGraphic;
+    private var rangeText_:TextFieldDisplayConcrete;
+    private var star_:StarGraphic;
 
     public function LegendLine(_arg1:int, _arg2:int, _arg3:ColorTransform) {
         this.addColoredStar(_arg3);
@@ -131,12 +127,8 @@ class LegendLine extends Sprite {
         addChild(this.coloredStar_);
     }
 
-    /*private*/
-    function positionGreyStar():void {
+    private function positionGreyStar():void {
         this.star_.x = (this.rangeText_.getBounds(this).right + 2);
         this.star_.y = 4;
     }
-
-
 }
-

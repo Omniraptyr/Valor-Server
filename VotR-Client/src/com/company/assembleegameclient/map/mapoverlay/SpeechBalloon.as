@@ -17,9 +17,6 @@ import flash.display.Sprite;
 import flash.events.MouseEvent;
 import flash.filters.DropShadowFilter;
 import flash.geom.Point;
-import flash.text.TextField;
-import flash.text.TextFieldAutoSize;
-import flash.text.TextFormat;
 
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.emotes.EmoteGraphicHelper;

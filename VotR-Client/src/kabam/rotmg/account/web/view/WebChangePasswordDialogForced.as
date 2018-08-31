@@ -29,7 +29,7 @@ public class WebChangePasswordDialogForced extends Frame {
     }
 
     private function isCurrentPasswordValid():Boolean {
-        var _local1 = (this.password_.text().length >= 5);
+        var _local1:Boolean = (this.password_.text().length >= 5);
         if (!_local1) {
             this.password_.setError(TextKey.WEB_CHANGE_PASSWORD_INCORRECT);
         }
@@ -39,7 +39,7 @@ public class WebChangePasswordDialogForced extends Frame {
     private function isNewPasswordValid():Boolean {
         var _local2:String;
         var _local3:int;
-        var _local1 = (this.newPassword_.text().length >= 10);
+        var _local1:Boolean = (this.newPassword_.text().length >= 10);
         if (!_local1) {
             this.newPassword_.setError(TextKey.LINK_WEB_ACCOUNT_SHORT);
         }
@@ -58,7 +58,7 @@ public class WebChangePasswordDialogForced extends Frame {
     }
 
     private function isNewPasswordVerified():Boolean {
-        var _local1 = (this.newPassword_.text() == this.retypeNewPassword_.text());
+        var _local1:Boolean = (this.newPassword_.text() == this.retypeNewPassword_.text());
         if (!_local1) {
             this.retypeNewPassword_.setError(TextKey.PASSWORD_DOES_NOT_MATCH);
         }

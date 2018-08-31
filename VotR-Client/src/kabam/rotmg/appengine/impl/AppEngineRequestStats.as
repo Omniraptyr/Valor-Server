@@ -22,26 +22,16 @@ public class AppEngineRequestStats {
 import kabam.lib.console.model.Watch;
 
 class StatsWatch extends Watch {
+    private static const STATS_PATTERN:String = "[APPENGINE STATS] [0xFFEE00:{/x={MEAN}ms, ok={OK}/{COUNT}} {NAME}]";
+    private static const MEAN:String = "{MEAN}";
+    private static const COUNT:String = "{COUNT}";
+    private static const OK:String = "{OK}";
+    private static const NAME:String = "{NAME}";
 
-    /*private*/
-    static const STATS_PATTERN:String = "[APPENGINE STATS] [0xFFEE00:{/x={MEAN}ms, ok={OK}/{COUNT}} {NAME}]";
-    /*private*/
-    static const MEAN:String = "{MEAN}";
-    /*private*/
-    static const COUNT:String = "{COUNT}";
-    /*private*/
-    static const OK:String = "{OK}";
-    /*private*/
-    static const NAME:String = "{NAME}";
-
-    /*private*/
-    var count:int;
-    /*private*/
-    var time:int;
-    /*private*/
-    var mean:int;
-    /*private*/
-    var ok:int;
+    private var count:int;
+    private var time:int;
+    private var mean:int;
+    private var ok:int;
 
     public function StatsWatch(_arg1:String) {
         super(_arg1, "");
@@ -57,11 +47,7 @@ class StatsWatch extends Watch {
         data = this.report();
     }
 
-    /*private*/
-    function report():String {
+    private function report():String {
         return (STATS_PATTERN.replace(MEAN, this.mean).replace(COUNT, this.count).replace(OK, this.ok).replace(NAME, name));
     }
-
-
 }
-

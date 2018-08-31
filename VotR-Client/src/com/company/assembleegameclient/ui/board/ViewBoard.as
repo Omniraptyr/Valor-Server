@@ -20,7 +20,7 @@ import flash.events.MouseEvent;
 
 import kabam.rotmg.text.model.TextKey;
 
-class ViewBoard extends Sprite {
+internal class ViewBoard extends Sprite {
 
     public static const TEXT_WIDTH:int = 400;
     public static const TEXT_HEIGHT:int = 400;
@@ -63,7 +63,7 @@ class ViewBoard extends Sprite {
         this.boardText_.htmlText = _local5;
         this.boardText_.useTextDimensions();
         this.mainSprite_.addChild(this.boardText_);
-        var _local6 = (this.boardText_.height > 400);
+        var _local6:Boolean = (this.boardText_.height > 400);
         if (_local6) {
             this.scrollBar_ = new Scrollbar(16, (TEXT_HEIGHT - 4));
             this.scrollBar_.x = (TEXT_WIDTH + 6);

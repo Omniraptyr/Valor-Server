@@ -2,8 +2,10 @@
 {
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
+
 import kabam.rotmg.ui.signals.ToggleShowTierTagSignal;
 import kabam.rotmg.ui.signals.UpdateHUDSignal;
+
 import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class InventoryGridMediator extends Mediator

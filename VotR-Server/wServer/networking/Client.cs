@@ -240,25 +240,25 @@ namespace wServer.networking
                 if (Account != null)
                     try
                     {
-                        Save();
+                        Save().ContinueWith(task =>
+                        {
+                            Manager.Disconnect(this);
+                            _server.Disconnect(this);
+                        });
                     }
                     catch (Exception e)
                     {
                         var msg = $"{e.Message}\n{e.StackTrace}";
                         Log.Error(msg);
                     }
-
-                Manager.Disconnect(this);
-                _server.Disconnect(this);
             }
         }
 
-        private void Save() // only when disconnect
+        private async Task Save() // only when disconnect
         {
             var acc = Account;
 
-            if (Character == null || Player == null || Player.Owner is Test)
-            {
+            if (Character == null || Player == null || Player.Owner is Test) {
                 Manager.Database.ReleaseLock(acc);
                 return;
             }
@@ -266,10 +266,11 @@ namespace wServer.networking
             Player.SaveToCharacter();
             if (!acc.Hidden && acc.AccountIdOverrider == 0)
                 acc.RefreshLastSeen();
+#pragma warning disable 4014
             acc.FlushAsync();
-
-            Manager.Database.SaveCharacter(acc, Character, Player.FameCounter.ClassStats, true).GetAwaiter();
-            Manager.Database.ReleaseLock(acc);
+            Manager.Database.SaveCharacter(acc, Character, Player.FameCounter.ClassStats, true)
+                .ContinueWith(t => Manager.Database.ReleaseLock(acc));
+#pragma warning restore 4014
         }
 
         public void Dispose()

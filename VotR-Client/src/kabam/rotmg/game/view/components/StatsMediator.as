@@ -9,7 +9,6 @@ import kabam.rotmg.ui.view.StatsDockedSignal;
 import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class StatsMediator extends Mediator {
-
     [Inject]
     public var view:StatsView;
     [Inject]
@@ -31,11 +30,11 @@ public class StatsMediator extends Mediator {
         this.updateHUD.remove(this.onUpdateHUD);
     }
 
-    private function onUpdateHUD(_arg1:Player):void {
-        this.view.draw(_arg1);
+    private function onUpdateHUD(plr:Player):void {
+        this.view.draw(plr);
     }
 
-    private function onStatsDrag(_arg1:MouseEvent):void {
+    private function onStatsDrag(e:MouseEvent):void {
         if (this.view.currentState == StatsView.STATE_DOCKED) {
             this.view.undock();
             this.statsUndocked.dispatch(this.view);
@@ -45,7 +44,5 @@ public class StatsMediator extends Mediator {
     private function onStatsDock():void {
         this.view.dock();
     }
-
-
 }
 }

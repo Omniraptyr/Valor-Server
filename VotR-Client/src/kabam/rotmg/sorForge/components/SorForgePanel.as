@@ -9,7 +9,6 @@ import com.company.util.BitmapUtil;
 
 import flash.display.Bitmap;
 import flash.display.BitmapData;
-import flash.text.TextFieldAutoSize;
 
 import kabam.rotmg.pets.util.PetsViewAssetFactory;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
@@ -19,12 +18,12 @@ public class SorForgePanel extends Panel {
 
     private const titleText:TextFieldDisplayConcrete = PetsViewAssetFactory.returnTextfield(0xFFFFFF, 16, true);
 
-    var sorIcon:BitmapData = TextureRedrawer.resize(AssetLibrary.getImageFromSet("d3LofiObjEmbed", 817), null, 100, true, 0, 0);
+    internal var sorIcon:BitmapData = TextureRedrawer.resize(AssetLibrary.getImageFromSet("d3LofiObjEmbed", 817), null, 100, true, 0, 0);
     private var icon:Bitmap;
     private var title:String = "Sor Forge";
     private var buttonText:String = "Forge";
     private var objectType:int;
-    var forgeButton:DeprecatedTextButton;
+    internal var forgeButton:DeprecatedTextButton;
 
     public function SorForgePanel(_arg_1:GameSprite, _arg_2:int) {
         super(_arg_1);

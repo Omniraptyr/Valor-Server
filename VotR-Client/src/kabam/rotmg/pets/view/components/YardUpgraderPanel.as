@@ -14,12 +14,12 @@ public class YardUpgraderPanel extends Panel {
     private const titleText:TextFieldDisplayConcrete = PetsViewAssetFactory.returnTextfield(0xFFFFFF, 16, true);
 
     private var icon:Bitmap;
-    var infoButton:DeprecatedTextButton;
-    var upgradeYardButton:DeprecatedTextButton;
+    internal var infoButton:DeprecatedTextButton;
+    internal var upgradeYardButton:DeprecatedTextButton;
     private var title:String = "Pets.caretakerPanelTitle";
     private var infoButtonString:String = "Pets.caretakerPanelButtonInfo";
     private var upgradeYardButtonString:String = "Pets.caretakerPanelButtonUpgrade";
-    var type:uint;
+    internal var type:uint;
 
     public function YardUpgraderPanel(_arg1:GameSprite, _arg2:uint) {
         this.type = _arg2;

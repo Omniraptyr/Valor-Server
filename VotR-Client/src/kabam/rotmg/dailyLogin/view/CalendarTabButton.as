@@ -31,9 +31,9 @@ public class CalendarTabButton extends Sprite {
     private var state_:String = "idle";
     private var tabNameTxt:TextFieldDisplayConcrete;
     private var background:Sprite;
-    private var tabName;
-    private var hintText;
-    private var hintTextField;
+    private var tabName:String;
+    private var hintText:String;
+    private var hintTextField:String;
     private var tooltip:DailyCalendarInfoIcon;
 
     public function CalendarTabButton(_arg1:String, _arg2:String, _arg3:String, _arg4:String, _arg5:int) {

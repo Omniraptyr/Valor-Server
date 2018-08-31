@@ -2,9 +2,9 @@
  * Created by Fabian on 14.07.2015.
  */
 package kabam.rotmg.messaging.impl.outgoing {
-import kabam.rotmg.messaging.impl.data.MarketOffer
-
 import flash.utils.IDataOutput;
+
+import kabam.rotmg.messaging.impl.data.MarketOffer;
 
 public class MarketCommand extends OutgoingMessage {
 

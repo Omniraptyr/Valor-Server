@@ -1,63 +1,42 @@
 ﻿package kabam.rotmg.raidLauncher {
 import com.company.assembleegameclient.account.ui.CheckBoxField;
+import com.company.assembleegameclient.sound.SoundEffectLibrary;
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 
-import kabam.rotmg.news.view.*;
-
-import com.company.assembleegameclient.sound.SoundEffectLibrary;
-import com.company.util.AssetLibrary;
-import com.company.util.KeyCodes;
-import com.company.util.MoreColorUtil;
-
-import flash.display.Bitmap;
-import flash.display.BitmapData;
 import flash.display.DisplayObject;
 import flash.display.Sprite;
 import flash.events.Event;
-import flash.events.KeyboardEvent;
 import flash.events.MouseEvent;
 import flash.filters.DropShadowFilter;
-import flash.filters.GlowFilter;
-import flash.geom.ColorTransform;
-import flash.text.TextField;
 import flash.text.TextFieldAutoSize;
 import flash.text.TextFormatAlign;
 
 import kabam.rotmg.account.core.view.EmptyFrame;
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
-import kabam.rotmg.news.model.NewsModel;
 import kabam.rotmg.pets.view.components.PopupWindowBackground;
 import kabam.rotmg.text.model.FontModel;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.ui.model.HUDModel;
 
 public class RaidLauncherModal extends EmptyFrame {
-
     public static const MODAL_WIDTH:int = 440;
     public static const MODAL_HEIGHT:int = 500;
-    private static const OVER_COLOR_TRANSFORM:ColorTransform = new ColorTransform(1, (220 / 0xFF), (133 / 0xFF));
-    private static const DROP_SHADOW_FILTER:DropShadowFilter = new DropShadowFilter(0, 0, 0);
-    private static const GLOW_FILTER:GlowFilter = new GlowFilter(0xFF0000, 1, 11, 5);
-    private static const filterWithGlow:Array = [DROP_SHADOW_FILTER, GLOW_FILTER];
-    private static const filterNoGlow:Array = [DROP_SHADOW_FILTER];
 
     public static var backgroundImageEmbed:Class = RaidLauncher_backgroundImageEmbed;
     public static var raid1launchFlagEmbed:Class = Raid1_launchFlag;
     public static var raid2launchFlagEmbed:Class = Raid2_launchFlag;
-    public static var modalWidth:int = MODAL_WIDTH;//440
-    public static var modalHeight:int = MODAL_HEIGHT;//400
+    public static var modalWidth:int = MODAL_WIDTH;
+    public static var modalHeight:int = MODAL_HEIGHT;
 
-    private var fontModel:FontModel;
     public var launchButton:DeprecatedTextButton;
     public var ultraCheckbox:CheckBoxField;
-    private var triggeredOnStartup:Boolean;
-
-
     public var launchButton2:DeprecatedTextButton;
     public var ultraCheckbox2:CheckBoxField;
+    private var fontModel:FontModel;
+    private var triggeredOnStartup:Boolean;
+
     public function RaidLauncherModal(_arg1:Boolean = false) {
         this.triggeredOnStartup = _arg1;
         this.fontModel = StaticInjectorContext.getInjector().getInstance(FontModel);
@@ -66,8 +45,6 @@ public class RaidLauncherModal extends EmptyFrame {
         super(modalWidth, modalHeight);
         this.setCloseButton(true);
         this.setTitle("Choose a raid to launch", true);
-        addEventListener(Event.ADDED_TO_STAGE, this.onAdded);
-        addEventListener(Event.REMOVED_FROM_STAGE, this.destroy);
         closeButton.clicked.add(this.onCloseButtonClicked);
     }
 
@@ -90,8 +67,7 @@ public class RaidLauncherModal extends EmptyFrame {
         return (_local5);
     }
 
-
-    public function onCloseButtonClicked() {
+    public function onCloseButtonClicked() : void {
         var _local1:FlushPopupStartupQueueSignal = StaticInjectorContext.getInjector().getInstance(FlushPopupStartupQueueSignal);
         closeButton.clicked.remove(this.onCloseButtonClicked);
         if (this.triggeredOnStartup) {
@@ -99,18 +75,8 @@ public class RaidLauncherModal extends EmptyFrame {
         }
     }
 
-    private function onAdded(_arg1:Event) {
-    }
-
     public function onClick(_arg1:MouseEvent):void {
     }
-
-    private function destroy(_arg1:Event):void {
-        removeEventListener(Event.ADDED_TO_STAGE, this.onAdded);
-        removeEventListener(Event.REMOVED_FROM_STAGE, this.destroy);
-    }
-
-
 
     override protected function makeModalBackground():Sprite {
         var _local1:Sprite = new Sprite();
@@ -136,35 +102,35 @@ public class RaidLauncherModal extends EmptyFrame {
         _local1.addChild(_local4);
         _local1.addChild(_local5);
         this.launchButton = new DeprecatedTextButton(12, "Launch");
-        this.launchButton.y = 118
-        this.launchButton.x = this.launchButton.x + 10
+        this.launchButton.y = 118;
+        this.launchButton.x = this.launchButton.x + 10;
         this.launchButton.setEnabled(true);
         _local1.addChild(this.launchButton);
-        this.ultraCheckbox = new CheckBoxField("Ultra", false)
-        this.ultraCheckbox.y = this.launchButton.y
-        this.ultraCheckbox.x = this.launchButton.x + 80
+        this.ultraCheckbox = new CheckBoxField("Ultra", false);
+        this.ultraCheckbox.y = this.launchButton.y;
+        this.ultraCheckbox.x = this.launchButton.x + 80;
         _local1.addChild(this.ultraCheckbox);
-        this.launchButton.addEventListener(MouseEvent.CLICK, this.onMouseClick)
+        this.launchButton.addEventListener(MouseEvent.CLICK, this.onMouseClick);
 
         this.launchButton2 = new DeprecatedTextButton(12, "Launch");
-        this.launchButton2.y = 236
-        this.launchButton2.x = this.launchButton2.x + 10
+        this.launchButton2.y = 236;
+        this.launchButton2.x = this.launchButton2.x + 10;
         this.launchButton2.setEnabled(true);
         _local1.addChild(this.launchButton2);
-        this.ultraCheckbox2 = new CheckBoxField("Ultra", false)
-        this.ultraCheckbox2.y = this.launchButton2.y
-        this.ultraCheckbox2.x = this.launchButton2.x + 80
+        this.ultraCheckbox2 = new CheckBoxField("Ultra", false);
+        this.ultraCheckbox2.y = this.launchButton2.y;
+        this.ultraCheckbox2.x = this.launchButton2.x + 80;
         _local1.addChild(this.ultraCheckbox2);
-        this.launchButton2.addEventListener(MouseEvent.CLICK, this.onMouseClick)
+        this.launchButton2.addEventListener(MouseEvent.CLICK, this.onMouseClick);
         return (_local1);
     }
+
     private function onMouseClick(e:MouseEvent):void {
         SoundEffectLibrary.play("button_click");
     }
+
     override public function onCloseClick(_arg1:MouseEvent):void {
         SoundEffectLibrary.play("button_click");
     }
-
-
 }
 }

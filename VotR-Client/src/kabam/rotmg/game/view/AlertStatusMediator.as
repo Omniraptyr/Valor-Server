@@ -1,75 +1,68 @@
 ﻿package kabam.rotmg.game.view {
-import com.company.assembleegameclient.game.AlertStatusModel;
-import com.company.assembleegameclient.game.GiftStatusModel;
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.sound.SoundEffectLibrary;
 
 import flash.events.MouseEvent;
 
 import kabam.lib.net.api.MessageProvider;
-
 import kabam.lib.net.impl.SocketServer;
-
 import kabam.rotmg.account.core.Account;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-
 import kabam.rotmg.game.signals.UpdateAlertStatusDisplaySignal;
-
-import kabam.rotmg.game.signals.UpdateGiftStatusDisplaySignal;
 import kabam.rotmg.messaging.impl.GameServerConnection;
 import kabam.rotmg.messaging.impl.outgoing.AlertNotice;
-import kabam.rotmg.messaging.impl.outgoing.ForgeItem;
+import kabam.rotmg.ui.signals.UpdateHUDSignal;
 
-import org.swiftsuspenders.Injector;
+import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class AlertStatusMediator {
-
+public class AlertStatusMediator extends Mediator {
     [Inject]
     public var updateAlertStatusDisplay:UpdateAlertStatusDisplaySignal;
     [Inject]
     public var view:AlertStatusDisplay;
     [Inject]
-    public var alertStatusModel:AlertStatusModel;
-    [Inject]
     public var account:Account;
     [Inject]
-    public var injector:Injector;
-    [Inject]
-    public var closeDialogs:CloseDialogsSignal;
+    public var updateHUD:UpdateHUDSignal;
     [Inject]
     public var socketServer:SocketServer;
     [Inject]
     public var messages:MessageProvider;
-    [Inject]
 
-    public function initialize():void {
-        this.updateAlertStatusDisplay.add(this.onLootboxUpdate);
+    override public function initialize():void {
+        this.updateAlertStatusDisplay.add(this.onAlertUpdate);
+        this.updateHUD.add(this.onUpdateHUD);
         if (this.account.isRegistered()) {
             this.view.drawAsOpen();
-        }
-        else {
+        } else {
             this.view.drawAsClosed();
         }
-        this.view..addEventListener(MouseEvent.CLICK, this.onButtonClick);
+        this.view.addEventListener(MouseEvent.CLICK, this.onButtonClick);
     }
 
-    private function onLootboxUpdate():void {
+    override public function destroy():void {
+        this.view.removeEventListener(MouseEvent.CLICK, this.onButtonClick);
+        this.updateAlertStatusDisplay.remove(this.onAlertUpdate);
+        this.updateHUD.remove(this.onUpdateHUD);
+    }
+
+    private function onUpdateHUD(plr:Player):void {
+        this.view.updateAlertNum(plr.alertToken_);
+    }
+
+    private function onAlertUpdate():void {
         if (this.account.isRegistered()) {
             this.view.drawAsOpen();
-        }
-        else {
+        } else {
             this.view.drawAsClosed();
         }
     }
 
-    protected function onButtonClick(_arg_1:MouseEvent):void {
+    protected function onButtonClick(e:MouseEvent):void {
         SoundEffectLibrary.play("button_click");
-        var _local_1:AlertNotice;
-        _local_1 = (this.messages.require(GameServerConnection.ALERTNOTICE) as AlertNotice);
-        _local_1.alert_ = true;
-        this.socketServer.sendMessage(_local_1);
+        var alertNotice:AlertNotice;
+        alertNotice = (this.messages.require(GameServerConnection.ALERTNOTICE) as AlertNotice);
+        alertNotice.alert_ = true;
+        this.socketServer.sendMessage(alertNotice);
     }
-
-
 }
 }

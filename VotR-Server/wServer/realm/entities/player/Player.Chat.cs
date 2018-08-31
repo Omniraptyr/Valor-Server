@@ -206,7 +206,7 @@ namespace wServer.realm.entities
             });
         }
 
-        public void SendGuildDeath(string text)
+        public void SendGuildAnnounce(string text)
         {
             _client.SendPacket(new Text()
             {

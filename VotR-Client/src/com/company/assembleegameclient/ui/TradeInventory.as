@@ -119,7 +119,7 @@ public class TradeInventory extends Sprite {
     }
 
     public function setMessage(_arg1:int):void {
-        var _local2 = "";
+        var _local2:String = "";
         switch (_arg1) {
             case CLICKITEMS_MESSAGE:
                 this.nameText_.setColor(0xB3B3B3);

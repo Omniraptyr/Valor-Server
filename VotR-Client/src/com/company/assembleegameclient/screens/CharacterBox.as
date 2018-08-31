@@ -49,7 +49,7 @@ public class CharacterBox extends Sprite {
     private var lock_:Bitmap;
     private var saleText_:TextFieldDisplayConcrete;
     private var unlockedText_:TextFieldDisplayConcrete;
-    private var saleTag_;
+    private var saleTag_:*;
     public var buyButtonClicked_:NativeSignal;
     public var characterSelectClicked_:NativeSignal;
 
@@ -88,10 +88,7 @@ public class CharacterBox extends Sprite {
             _local_5.filters = [new DropShadowFilter(0, 0, 0, 1, 4, 4)];
             this.graphicContainer_.addChild(_local_5);
             this.classNameText_.y = 74;
-        }
-        else {
-            //can't buy characters, sorry hun
-            //addChild(this.buyButton_);
+        } else {
             this.lock_ = new Bitmap(AssetLibrary.getImageFromSet("lofiInterface2", 5));
             this.lock_.scaleX = 2;
             this.lock_.scaleY = 2;

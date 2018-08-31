@@ -57,7 +57,7 @@ public class Model3D_stage3d {
         var _local13:int;
         var _local14:int;
         this.dispose();
-        var _local4 = "";
+        var _local4:String = "";
         var _local5:Vector.<Number> = new Vector.<Number>();
         var _local6:Vector.<Number> = new Vector.<Number>();
         var _local7:Vector.<Number> = new Vector.<Number>();

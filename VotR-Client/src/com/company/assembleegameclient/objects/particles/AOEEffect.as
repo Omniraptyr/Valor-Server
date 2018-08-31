@@ -20,7 +20,7 @@ public class AOEEffect extends ParticleEffect {
         x_ = this.start_.x;
         y_ = this.start_.y;
         var _local3:int = 40;
-        var _local4 = 200;
+        var _local4:int = 200;
         var _local5:int = (4 + (this.novaRadius_ * 2));
         var _local6:int;
         while (_local6 < _local5) {
@@ -39,8 +39,8 @@ public class AOEEffect extends ParticleEffect {
         var _local9:Particle;
         x_ = this.start_.x;
         y_ = this.start_.y;
-        var _local3 = 200;
-        var _local4 = 200;
+        var _local3:int = 200;
+        var _local4:int = 200;
         var _local5:int = (4 + (this.novaRadius_ * 2));
         var _local6:int;
         while (_local6 < _local5) {

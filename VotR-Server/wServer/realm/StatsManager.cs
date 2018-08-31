@@ -16,11 +16,9 @@ namespace wServer.realm
         internal readonly BaseStatManager Base;
         internal readonly BoostStatManager Boost;
 
-
         private readonly SV<int>[] _stats;
 
-        public int this[int index] => Base[index] + Boost[index] + PWNum(index);
-
+        public int this[int index] => Base[index] + Boost[index];
         
         public StatsManager(Player owner)
         {
@@ -317,18 +315,18 @@ namespace wServer.realm
             }
         }
 
-        public static string StatIndexToName(int index)
+        public string StatIndexToFullName(int index)
         {
             switch (index)
             {
-                case 0: return "MaxHitPoints";
-                case 1: return "MaxMagicPoints";
+                case 0: return "HP";
+                case 1: return "MP";
                 case 2: return "Attack";
                 case 3: return "Defense";
                 case 4: return "Speed";
                 case 5: return "Dexterity";
-                case 6: return "HpRegen";
-                case 7: return "MpRegen";
+                case 6: return "Vitality";
+                case 7: return "Wisdom";
                 case 8: return "Might";
                 case 9: return "Luck";
                 case 10: return "Restoration";
@@ -477,72 +475,6 @@ namespace wServer.realm
                     return StatsType.FortuneBonus;
                 default:
                     return StatsType.None;
-            }
-        }
-
-        public static StatsType GetPowerStatType(int stat)
-        {
-            switch (stat)
-            {
-                case 0:
-                    return StatsType.PWMaximumHP;
-                case 1:
-                    return StatsType.PWMaximumMP;
-                case 2:
-                    return StatsType.PWAttack;
-                case 3:
-                    return StatsType.PWDefense;
-                case 4:
-                    return StatsType.PWSpeed;
-                case 5:
-                    return StatsType.PWDexterity;
-                case 6:
-                    return StatsType.PWVitality;
-                case 7:
-                    return StatsType.PWWisdom;
-                case 8:
-                    return StatsType.PWMight;
-                case 9:
-                    return StatsType.PWLuck;
-                case 10:
-                    return StatsType.PWRestoration;
-                case 11:
-                    return StatsType.PWProtection;
-                default:
-                    return StatsType.None;
-            }
-        }
-
-        public int PWNum(int stat)
-        {
-            switch (stat)
-            {
-                case 0:
-                    return Owner.PWHealth;
-                case 1:
-                    return Owner.PWMana;
-                case 2:
-                    return Owner.PWAttack;
-                case 3:
-                    return Owner.PWDefense;
-                case 4:
-                    return Owner.PWSpeed;
-                case 5:
-                    return Owner.PWDexterity;
-                case 6:
-                    return Owner.PWVitality;
-                case 7:
-                    return Owner.PWWisdom;
-                case 8:
-                    return Owner.PWMight;
-                case 9:
-                    return Owner.PWLuck;
-                case 10:
-                    return Owner.PWRestoration;
-                case 11:
-                    return Owner.PWProtection;
-                default:
-                    return 0;
             }
         }
     }

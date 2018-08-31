@@ -1,8 +1,8 @@
 package kabam.rotmg.ui.signals
 {
-   import org.osflash.signals.Signal;
-   
-   public class ToggleShowTierTagSignal extends Signal
+import org.osflash.signals.Signal;
+
+public class ToggleShowTierTagSignal extends Signal
    {
        
       

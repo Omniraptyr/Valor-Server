@@ -45,8 +45,8 @@ namespace wServer.networking.handlers
             if (slotA != slotB && (slotA < 12 && slotB < 12 
                 || player.HasBackpack && slotA != (255 | 254) && slotB != (255 | 254))) {
                 Player playerA = null, playerB = null;
-                if (a is Player) playerA = a as Player;
-                if (b is Player) playerB = b as Player;
+                if (a is Player player1) playerA = player1;
+                if (b is Player player2) playerB = player2;
 
                 if (slotA >= 0 && slotA < 4) {
                     playerA?.OnUnequip(playerA.Inventory[slotA]);

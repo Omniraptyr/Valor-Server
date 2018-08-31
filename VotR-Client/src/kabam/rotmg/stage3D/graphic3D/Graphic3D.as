@@ -80,7 +80,7 @@ public class Graphic3D {
         ctOffset[1] = ct.greenOffset / 0xFF;
         ctOffset[2] = ct.blueOffset / 0xFF;
         ctOffset[3] = ct.alphaOffset / 0xFF;
-        var c3d = ctx.GetContext3D();
+        var c3d:Context3D = ctx.GetContext3D();
         c3d.setProgramConstantsFromVector(Context3DProgramType.FRAGMENT, 2, ctMult);
         c3d.setProgramConstantsFromVector(Context3DProgramType.FRAGMENT, 3, ctOffset);
     }
@@ -125,7 +125,7 @@ public class Graphic3D {
     public function render(ctx:Context3DProxy):void {
         ctx.setProgram(Program3DFactory.getInstance().getProgram(ctx, this.repeat));
         ctx.setTextureAt(0, this.texture);
-        var c3d = ctx.GetContext3D();
+        var c3d:Context3D = ctx.GetContext3D();
         if (this.vertexBufferCustom != null) {
             c3d.setVertexBufferAt(0, this.vertexBufferCustom, 0, Context3DVertexBufferFormat.FLOAT_3);
             c3d.setVertexBufferAt(1, this.vertexBufferCustom, 3, Context3DVertexBufferFormat.FLOAT_2);

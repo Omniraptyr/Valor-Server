@@ -23,7 +23,7 @@ public class LiveKongregateApi extends Sprite implements KongregateApi {
     private var _loaded:Signal;
     private var _purchaseResponse:Signal;
     private var loader:Loader;
-    private var api;
+    private var api:*;
 
     public function LiveKongregateApi() {
         this._loaded = new Signal();

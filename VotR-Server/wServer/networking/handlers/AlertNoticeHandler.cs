@@ -4,91 +4,47 @@ using wServer.networking.packets;
 using wServer.networking.packets.incoming;
 using wServer.networking.packets.outgoing;
 using wServer.realm.worlds;
-using wServer.realm.worlds.logic;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using wServer.networking.packets.outgoing;
-using common.resources;
 namespace wServer.networking.handlers
 {
-    class AlertNoticehandler : PacketHandlerBase<AlertNotice>
+    internal class AlertNoticehandler : PacketHandlerBase<AlertNotice>
     {
         public override PacketId ID => PacketId.ALERTNOTICE;
+        private static readonly string[] AlertAreas = { "KrakenLair", "TheHollows", "HiddenTempleBoss", "FrozenIsland" };
 
-        protected override void HandlePacket(Client client, AlertNotice packet)
-        {
+        protected override void HandlePacket(Client client, AlertNotice packet) {
             client.Manager.Logic.AddPendingAction(t => Handle(client.Player, t, packet));
         }
 
-        void Handle(Player player, RealmTime time, AlertNotice packet)
-        {
+        private static void Handle(Player player, RealmTime time, AlertNotice packet) {
+            var cli = player.Client;
+            if (cli.Account.RaidToken >= 1) {
+                if (cli.Account.Credits >= 1000) {
+                    var rnd = new Random();
 
-            var plr = player.Client.Player;
-            var acnt = player.Client.Account;
+                    cli.Manager.Database.UpdateAlertToken(cli.Account, -1);
+                    player.AlertToken--;
+                    player.ForceUpdate(player.AlertToken);
 
+                    player.SendHelp("Launching alert... Good luck!");
+                    var alertArea = player.Owner.Manager.Resources.Worlds[AlertAreas[rnd.Next(AlertAreas.Length)]];
 
-            if (player.Client.Account.RaidToken == 1)
-            {
-                if(player.Client.Account.Credits >= 1000)
-                {
-                    Random rnd = new Random();
-                    int drop3 = rnd.Next(1, 5);
+                    DynamicWorld.TryGetWorld(alertArea, player.Client, out var world);
+                    world = player.Owner.Manager.AddWorld(world ?? new World(alertArea));
 
-                    player.Client.Manager.Database.UpdateAlertToken(player.Client.Account, -1);
-
-                    player.SendHelp("Launching alert...good luck!");
-                    World world;
-                    ProtoWorld choosin = player.Owner.Manager.Resources.Worlds["KrakenLair"];
-
-                    switch (drop3)
-                    {
-                        case 1:
-                            choosin = player.Owner.Manager.Resources.Worlds["TheHollows"];
-                            break;
-                        case 2:
-                            choosin = player.Owner.Manager.Resources.Worlds["HiddenTempleBoss"];
-                            break;
-                        case 3:
-                            choosin = player.Owner.Manager.Resources.Worlds["KrakenLair"];
-                            break;
-                        case 4:
-                            choosin = player.Owner.Manager.Resources.Worlds["FrozenIsland"];
-                            break;
-                    }
-         
-                    if (choosin.id < 0)
-                        world = player.Owner.Manager.GetWorld(choosin.id);
-                    else
-                    {
-                        DynamicWorld.TryGetWorld(choosin, player.Client, out world);
-                        world = player.Owner.Manager.AddWorld(world ?? new World(choosin));
-                    }
-
-
-                    player.Owner.Timers.Add(new WorldTimer(8000, (world_, t) =>
-                    {
-                        player.Client.Reconnect(new Reconnect()
-                        {
+                    player.Owner.Timers.Add(new WorldTimer(8000, (w, t) => {
+                        player.Client.Reconnect(new Reconnect {
                             Host = "",
                             Port = 2050,
                             GameId = world.Id,
                             Name = world.SBName,
                             IsFromArena = false
                         });
-
                     }));
-
-
-
+                } else {
+                    player.SendError("You do not have the required amount of gold in order to launch an alert.");
                 }
-                else
-                {
-                    player.SendError("You do not have the amount of gold to enter an alert.");
-                }
-            }
-            else
-            {
+            } else {
                 player.SendError("You do not have an alert to launch.");
             }
         }

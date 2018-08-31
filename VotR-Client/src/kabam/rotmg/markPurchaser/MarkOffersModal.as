@@ -1,36 +1,24 @@
 package kabam.rotmg.markPurchaser {
-import com.company.assembleegameclient.account.ui.CheckBoxField;
-import com.company.assembleegameclient.ui.DeprecatedTextButton;
-import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+import com.company.assembleegameclient.sound.SoundEffectLibrary;
 import com.company.assembleegameclient.util.Currency;
 import com.company.assembleegameclient.util.TextureRedrawer;
-
-
-import kabam.rotmg.news.view.*;
-
-import com.company.assembleegameclient.sound.SoundEffectLibrary;
 import com.company.util.AssetLibrary;
-import com.company.util.KeyCodes;
-import com.company.util.MoreColorUtil;
 
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.display.DisplayObject;
 import flash.display.Sprite;
 import flash.events.Event;
-import flash.events.KeyboardEvent;
 import flash.events.MouseEvent;
 import flash.filters.DropShadowFilter;
 import flash.filters.GlowFilter;
 import flash.geom.ColorTransform;
-import flash.text.TextField;
 import flash.text.TextFieldAutoSize;
 import flash.text.TextFormatAlign;
 
 import kabam.rotmg.account.core.view.EmptyFrame;
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
-import kabam.rotmg.news.model.NewsModel;
 import kabam.rotmg.pets.view.components.PopupWindowBackground;
 import kabam.rotmg.raidLauncher.RaidLauncherModal;
 import kabam.rotmg.raidLauncher.RaidLauncher_backgroundImageEmbed;
@@ -38,9 +26,6 @@ import kabam.rotmg.text.model.FontModel;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.tooltips.HoverTooltipDelegate;
-import kabam.rotmg.ui.UIUtils;
-import kabam.rotmg.ui.model.HUDModel;
 import kabam.rotmg.util.components.LegacyBuyButton;
 
 public class MarkOffersModal extends EmptyFrame {
@@ -175,7 +160,7 @@ public class MarkOffersModal extends EmptyFrame {
     }
 
 
-    public function onCloseButtonClicked() {
+    public function onCloseButtonClicked() : void {
         var _local1:FlushPopupStartupQueueSignal = StaticInjectorContext.getInjector().getInstance(FlushPopupStartupQueueSignal);
         closeButton.clicked.remove(this.onCloseButtonClicked);
         if (this.triggeredOnStartup) {
@@ -184,7 +169,7 @@ public class MarkOffersModal extends EmptyFrame {
     }
 
 
-    private function onAdded(_arg1:Event) {
+    private function onAdded(_arg1:Event) : void {
     }
 
     public function onClick(_arg1:MouseEvent):void {

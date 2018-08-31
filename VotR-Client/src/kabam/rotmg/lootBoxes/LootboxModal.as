@@ -1,48 +1,30 @@
 package kabam.rotmg.lootBoxes {
-import com.company.assembleegameclient.account.ui.CheckBoxField;
 import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.sound.SoundEffectLibrary;
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 import com.company.assembleegameclient.util.Currency;
-
-import kabam.rotmg.game.model.GameModel;
-
-import kabam.rotmg.game.view.LootboxesDisplay;
-
-import kabam.rotmg.lootBoxes.GoldLootbox_ImageEmbed;
-
-import kabam.rotmg.lootBoxes.LootboxBackground_ImageEmbed;
-
-import kabam.rotmg.news.view.*;
-import com.company.assembleegameclient.game.GameSprite;
-import com.company.assembleegameclient.sound.SoundEffectLibrary;
-import com.company.util.AssetLibrary;
-import com.company.util.KeyCodes;
 import com.company.util.MoreColorUtil;
 
-import flash.display.Bitmap;
-import flash.display.BitmapData;
 import flash.display.DisplayObject;
 import flash.display.Sprite;
 import flash.events.Event;
-import flash.events.KeyboardEvent;
 import flash.events.MouseEvent;
 import flash.filters.DropShadowFilter;
 import flash.filters.GlowFilter;
 import flash.geom.ColorTransform;
-import flash.text.TextField;
 import flash.text.TextFieldAutoSize;
 import flash.text.TextFormatAlign;
 
 import kabam.rotmg.account.core.view.EmptyFrame;
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
-import kabam.rotmg.news.model.NewsModel;
+import kabam.rotmg.game.model.GameModel;
+import kabam.rotmg.game.view.LootboxesDisplay;
 import kabam.rotmg.pets.view.components.PopupWindowBackground;
 import kabam.rotmg.text.model.FontModel;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import kabam.rotmg.ui.model.HUDModel;
 import kabam.rotmg.util.components.LegacyBuyButton;
 
 public class LootboxModal extends EmptyFrame {
@@ -111,7 +93,7 @@ public class LootboxModal extends EmptyFrame {
     }
 
 
-    public function onCloseButtonClicked() {
+    public function onCloseButtonClicked() : void {
         var _local1:FlushPopupStartupQueueSignal = StaticInjectorContext.getInjector().getInstance(FlushPopupStartupQueueSignal);
         closeButton.clicked.remove(this.onCloseButtonClicked);
         if (this.triggeredOnStartup) {
@@ -119,7 +101,7 @@ public class LootboxModal extends EmptyFrame {
         }
     }
 
-    private function onAdded(_arg1:Event) {
+    private function onAdded(_arg1:Event) : void {
     }
 
 
@@ -251,7 +233,7 @@ public class LootboxModal extends EmptyFrame {
         _local1.addChild(this.lootboxDisplay_);
         var _local_3:Player = StaticInjectorContext.getInjector().getInstance(GameModel).player;
         if (_local_3 != null) {
-            this.lootboxDisplay_.draw(_local_3.lootBox1_, _local_3.lootBox2_, _local_3.lootBox3_, _local_3.lootBox4_);
+            this.lootboxDisplay_.draw(_local_3.bronzeLootbox_, _local_3.silverLootbox_, _local_3.goldLootbox_, _local_3.eliteLootbox_);
         }
         //_local1.addChild(_local5);
         return (_local1);

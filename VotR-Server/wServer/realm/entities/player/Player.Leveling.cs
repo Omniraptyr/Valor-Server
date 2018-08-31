@@ -187,8 +187,8 @@ namespace wServer.realm.entities
             {"Truvix, the Lord Wanderer",       Tuple.Create(20, 15, 1000)},
             {"Test Egg",                        Tuple.Create(20, 15, 1000)},
             {"The Horrific",                    Tuple.Create(20, 15, 1000)},
-            { "Codename G-24, Nitrostorm",      Tuple.Create(15,1, 20) },
-            { "Ogla, the Giant God",      Tuple.Create(15,1, 20) },
+            {"Codename G-24, Nitrostorm",       Tuple.Create(15,1, 20) },
+            {"Ogla, the Giant God",             Tuple.Create(15,1, 20) },
 
             // special events
             { "Megaman",                        Tuple.Create(50,20, 20) },
@@ -310,7 +310,7 @@ namespace wServer.realm.entities
                 {
                     foreach (var i in Owner.Players.Values)
                     {
-                        i.SendInfo(Name + " achieved level 20 as a " + playerDesc.ObjectId + " !");
+                        i.SendInfo(Name + " achieved level 20 as a " + playerDesc.ObjectId + "!");
                     }
                 }
                 else
@@ -412,101 +412,65 @@ namespace wServer.realm.entities
         public bool EnemyKilled(Enemy enemy, int exp, bool killer)
         {
             var acc = Client.Account;
-            Random rnd = new Random();
-            int drop3 = rnd.Next(1, 10001);
-            int drop = rnd.Next(1, 10);
-            int drop4 = rnd.Next(1, 5);
+            var rnd = new Random();
             var time = new RealmTime();
-            int drop2 = rnd.Next(1, 7);
             if (enemy == questEntity)
             {
-                BroadcastSync(new Notification()
+                BroadcastSync(new Notification
                 {
                     ObjectId = Id,
                     Color = new ARGB(0xFF00FF00),
                     Message = "{\"key\":\"server.quest_complete\"}"
                 }, p => this.DistSqr(p) < RadiusSqr);
             }
-            if (drop3 == 1)
-            {
-                if(RaidToken == 0)
-                {
-                    if(enemy.ObjectType != 0x0dc0 || enemy.ObjectType != 0x0dc1)
-                    {
-                        Client.Manager.Database.UpdateAlertToken(acc, 1);
-                        SendHelp("A challenge awaits you..go to nexus to handle your alert!");
-                    }
-                }
+
+            if (rnd.NextDouble() <= 0.0001) {
+                Client.Manager.Database.UpdateAlertToken(acc, 1);
+                AlertToken++;
+                this.ForceUpdate(AlertToken);
+                SendHelp("A challenge awaits you... Go to the Nexus to handle your alert!");
             }
-            if (enemy.ObjectDesc.Lootdrop == true)
-            {
-                if (drop <= 2)
-                {
-                    switch (drop2)
-                    {
-                        case 1:
-                            Client.Manager.Database.UpdateLootbox1(acc, 1);
-                            Lootbox1 += 1;
-                            this.ForceUpdate(Lootbox1);
-                            SendHelp("You have obtained a Bronze Lootbox drop! Go to nexus to open it!");
-                            break;
-                        case 2:
-                            Client.Manager.Database.UpdateLootbox1(acc, 1);
-                            Lootbox1 += 1;
-                            this.ForceUpdate(Lootbox1);
-                            SendHelp("You have obtained a Bronze Lootbox drop! Go to nexus to open it!");
-                            break;
-                        case 3:
-                            Client.Manager.Database.UpdateLootbox1(acc, 1);
-                            Lootbox1 += 1;
-                            this.ForceUpdate(Lootbox1);
-                            SendHelp("You have obtained a Bronze Lootbox drop! Go to nexus to open it!");
-                            break;
-                        case 4:
-                            Client.Manager.Database.UpdateLootbox2(acc, 1);
-                            Lootbox2 += 1;
-                            this.ForceUpdate(Lootbox2);
-                            SendHelp("You have obtained a Silver Lootbox drop! Go to nexus to open it!");
-                            break;
-                        case 5:
-                            Client.Manager.Database.UpdateLootbox2(acc, 1);
-                            Lootbox2 += 1;
-                            this.ForceUpdate(Lootbox2);
-                            SendHelp("You have obtained a Silver Lootbox drop! Go to nexus to open it!");
-                            break;
-                        case 6:
-                            Client.Manager.Database.UpdateLootbox3(acc, 1);
-                            Lootbox3 += 1;
-                            this.ForceUpdate(Lootbox3);
-                            SendHelp("You have obtained a Gold Lootbox drop! Go to nexus to open it!");
-                            break;
-                    }
-                }
-            }
-            if (enemy.ObjectDesc.Elitedrop == true)
-            {
-                if (drop4 <= 3)
-                {
-                    Client.Manager.Database.UpdateLootbox4(acc, 1);
-                    Lootbox4 += 1;
-                    this.ForceUpdate(Lootbox4);
-                    SendHelp("You have obtained a Elite Lootbox drop! Go to nexus to open it!");
+
+            if (enemy.ObjectDesc.Lootdrop) {
+                if (rnd.NextDouble() <= 0.05) {
+                    Client.Manager.Database.UpdateGoldLootbox(acc, 1);
+                    GoldLootbox++;
+                    this.ForceUpdate(GoldLootbox);
+                    SendHelp("You have obtained a Gold Lootbox drop! Go to the Nexus to open it!");
+                } else if (rnd.NextDouble() <= 0.1) {
+                    Client.Manager.Database.UpdateSilverLootbox(acc, 1);
+                    SilverLoootbox++;
+                    this.ForceUpdate(SilverLoootbox);
+                    SendHelp("You have obtained a Silver Lootbox drop! Go to the Nexus to open it!");
+                } else if (rnd.NextDouble() <= 0.15) {
+                    Client.Manager.Database.UpdateBronzeLootbox(acc, 1);
+                    BronzeLootbox++;
+                    this.ForceUpdate(BronzeLootbox);
+                    SendHelp("You have obtained a Bronze Lootbox drop! Go to the Nexus to open it!");
                 }
             }
 
-            if (enemy.ObjectDesc.ResetSS == true)
+            if (enemy.ObjectDesc.Elitedrop && rnd.NextDouble() <= 0.6) {
+                Client.Manager.Database.UpdateEliteLootbox(acc, 1);
+                EliteLootbox++;
+                this.ForceUpdate(EliteLootbox);
+                SendHelp("You have obtained an Elite Lootbox drop! Go to the Nexus to open it!");
+            }
+
+            if (enemy.ObjectDesc.ResetSS)
             {
                 foreach (var player in Owner.Players.Values)
                     player.SupportScore = 0;
             }
 
-            if (enemy.ObjectDesc.UElitedrop == true)
+            if (enemy.ObjectDesc.UElitedrop)
             {
-                Client.Manager.Database.UpdateLootbox4(acc, 1);
-                Lootbox4 += 1;
-                this.ForceUpdate(Lootbox4);
-                SendHelp("You have obtained a Elite Lootbox drop! Go to nexus to open it!");
+                Client.Manager.Database.UpdateEliteLootbox(acc, 1);
+                EliteLootbox++;
+                this.ForceUpdate(EliteLootbox);
+                SendHelp("You have obtained an Elite Lootbox drop! Go to the Nexus to open it!");
             }
+
             if (exp != 0)
             {
                 foreach (var i in Owner.PlayersCollision.HitTest(X, Y, 16).Where(e => e is Player))

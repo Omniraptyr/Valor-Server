@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.misc
 {
-   import flash.text.TextField;
-   import flash.text.TextFieldAutoSize;
-   
-   public class UILabel extends TextField
+import flash.text.TextField;
+import flash.text.TextFieldAutoSize;
+
+public class UILabel extends TextField
    {
       
       public static var DEBUG:Boolean = false;

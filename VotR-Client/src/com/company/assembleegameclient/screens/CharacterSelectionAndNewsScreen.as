@@ -243,7 +243,7 @@ public class CharacterSelectionAndNewsScreen extends Sprite {
         addChild(this.nameText);
     }
 
-    function getReferenceRectangle():Rectangle {
+    internal function getReferenceRectangle():Rectangle {
         var _local1:Rectangle = new Rectangle();
         if (stage) {
             _local1 = new Rectangle(0, 0, stage.stageWidth, stage.stageHeight);

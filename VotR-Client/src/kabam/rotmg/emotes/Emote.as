@@ -1,13 +1,13 @@
 package kabam.rotmg.emotes
 {
-   import flash.display.Sprite;
-   import flash.display.BitmapData;
-   import flash.geom.Matrix;
-   import flash.display.Shape;
-   import flash.display.Bitmap;
-   import flash.filters.GlowFilter;
-   
-   public class Emote extends Sprite
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.filters.GlowFilter;
+import flash.geom.Matrix;
+
+public class Emote extends Sprite
    {
        
       

@@ -9,7 +9,6 @@ import com.company.util.BitmapUtil;
 
 import flash.display.Bitmap;
 import flash.display.BitmapData;
-import flash.text.TextFieldAutoSize;
 
 import kabam.rotmg.pets.util.PetsViewAssetFactory;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
@@ -19,12 +18,12 @@ public class MarksPanel extends Panel {
 
     private const titleText:TextFieldDisplayConcrete = PetsViewAssetFactory.returnTextfield(0xFFFFFF, 16, true);
 
-    var pageIcon:BitmapData = TextureRedrawer.resize(AssetLibrary.getImageFromSet("d3LofiObjEmbed", 880), null, 100, true, 0, 0);
+    internal var pageIcon:BitmapData = TextureRedrawer.resize(AssetLibrary.getImageFromSet("d3LofiObjEmbed", 880), null, 100, true, 0, 0);
     private var icon:Bitmap;
     private var title:String = "Mark Shop";
     private var buttonText:String = "Offers";
     private var objectType:int;
-    var offersButton:DeprecatedTextButton;
+    internal var offersButton:DeprecatedTextButton;
 
     public function MarksPanel(_arg_1:GameSprite, _arg_2:int) {
         super(_arg_1);

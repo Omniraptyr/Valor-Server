@@ -1,6 +1,7 @@
 package com.company.assembleegameclient.objects {
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.ui.panels.Panel;
+
 import kabam.rotmg.sorForge.components.SorForgePanel;
 
 public class SorForger extends GameObject implements IInteractiveObject {

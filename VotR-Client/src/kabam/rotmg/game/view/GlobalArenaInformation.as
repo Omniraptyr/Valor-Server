@@ -1,7 +1,9 @@
 package kabam.rotmg.game.view
 {
 import com.adobe.serialization.json.JSON;
+
 import flash.utils.Dictionary;
+
 import kabam.rotmg.messaging.impl.incoming.GlobalNotification;
 
 public class GlobalArenaInformation

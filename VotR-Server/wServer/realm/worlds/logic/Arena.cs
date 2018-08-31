@@ -134,7 +134,8 @@ namespace wServer.realm.worlds.logic
         public override bool AllowedAccess(Client client)
         {
             return base.AllowedAccess(client) &&
-                   ((_countDown != CountDownState.Done && _solo == false) || client.Account.Admin);
+                  _countDown != CountDownState.Done && _solo == false
+                   || client.Account.Admin;
         }
 
         public override World GetInstance(Client client)

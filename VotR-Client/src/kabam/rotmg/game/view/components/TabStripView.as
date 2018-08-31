@@ -1,6 +1,5 @@
 ﻿package kabam.rotmg.game.view.components {
 import com.company.assembleegameclient.objects.ImageFactory;
-import com.company.assembleegameclient.ui.icons.IconButton;
 import com.company.assembleegameclient.ui.icons.IconButtonFactory;
 import com.company.ui.BaseSimpleText;
 import com.company.util.GraphicsUtil;
@@ -12,12 +11,9 @@ import flash.display.IGraphicsData;
 import flash.display.Sprite;
 import flash.events.MouseEvent;
 
-import kabam.rotmg.text.model.TextKey;
-
 import org.osflash.signals.Signal;
 
 public class TabStripView extends Sprite {
-
     public const tabSelected:Signal = new Signal(String);
     public const WIDTH:Number = 186;
     public const HEIGHT:Number = 153;
@@ -32,7 +28,6 @@ public class TabStripView extends Sprite {
     public var tabs:Vector.<TabView>;
     private var contents:Vector.<Sprite>;
     public var currentTabIndex:int;
-    public var friendsBtn:IconButton;
 
     public function TabStripView(_arg1:Number = 186, _arg2:Number = 153) {
         this.tabs = new Vector.<TabView>();

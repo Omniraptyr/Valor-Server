@@ -60,9 +60,9 @@ public class MysteryBoxPanel extends Panel {
         addChild(this.icon_);
         this.bitmap_ = new Bitmap(null);
         this.icon_.addChild(this.bitmap_);
-        var _local5 = "MysteryBoxPanel.open";
-        var _local6 = "MysteryBoxPanel.checkBackLater";
-        var _local7 = "MysteryBoxPanel.mysteryBoxShop";
+        var _local5:String = "MysteryBoxPanel.open";
+        var _local6:String = "MysteryBoxPanel.checkBackLater";
+        var _local7:String = "MysteryBoxPanel.mysteryBoxShop";
         var _local8:MysteryBoxModel = _local3.getInstance(MysteryBoxModel);
         var _local9:Account = _local3.getInstance(Account);
         if (((_local8.isInitialized()) || (!(_local9.isRegistered())))) {

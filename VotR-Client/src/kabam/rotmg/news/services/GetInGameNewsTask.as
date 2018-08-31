@@ -50,7 +50,7 @@ public class GetInGameNewsTask extends BaseTask {
         }
     }
 
-    private function parseNews(_arg1:String) {
+    private function parseNews(_arg1:String) : void {
         var _local3:Object;
         var _local4:Object;
         var _local5:InGameNews;

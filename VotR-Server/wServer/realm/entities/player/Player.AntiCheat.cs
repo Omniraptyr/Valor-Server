@@ -6,12 +6,12 @@ namespace wServer.realm.entities
 {
     public enum PlayerShootStatus
     {
-        OK,
-        ITEM_MISMATCH,
-        COOLDOWN_STILL_ACTIVE,
-        NUM_PROJECTILE_MISMATCH,
-        CLIENT_TOO_SLOW,
-        CLIENT_TOO_FAST
+        Ok,
+        ItemMismatch,
+        CooldownStillActive,
+        NumProjectileMismatch,
+        ClientTooSlow,
+        ClientTooFast
     }
 
     public class TimeCop
@@ -88,11 +88,11 @@ namespace wServer.realm.entities
         public PlayerShootStatus ValidatePlayerShoot(Item item, int time)
         {
             if (item != Inventory[0])
-                return PlayerShootStatus.ITEM_MISMATCH;
+                return PlayerShootStatus.ItemMismatch;
             
             var dt = (int)(1 / Stats.GetAttackFrequency() * 1 / item.RateOfFire);
             if (time < _time.LastClientTime() + dt)
-                return PlayerShootStatus.COOLDOWN_STILL_ACTIVE;
+                return PlayerShootStatus.CooldownStillActive;
 
             if (time != _lastShootTime)
             {
@@ -102,7 +102,7 @@ namespace wServer.realm.entities
                 {
                     _shotsLeft = 0;
                     _time.Push(time, Environment.TickCount);
-                    return PlayerShootStatus.NUM_PROJECTILE_MISMATCH;
+                    return PlayerShootStatus.NumProjectileMismatch;
                 }
                 _shotsLeft = 0;
             }
@@ -114,11 +114,11 @@ namespace wServer.realm.entities
             var timeDiff = _time.TimeDiff();
             //Log.Info($"timeDiff: {timeDiff}");
             if (timeDiff < MinTimeDiff)
-                return PlayerShootStatus.CLIENT_TOO_SLOW;
+                return PlayerShootStatus.ClientTooSlow;
             if (timeDiff > MaxTimeDiff)
-                return PlayerShootStatus.CLIENT_TOO_FAST;
+                return PlayerShootStatus.ClientTooFast;
             
-            return PlayerShootStatus.OK;
+            return PlayerShootStatus.Ok;
         }
 
         public bool IsNoClipping()

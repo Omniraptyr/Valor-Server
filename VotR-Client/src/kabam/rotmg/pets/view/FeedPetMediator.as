@@ -1,7 +1,7 @@
 ﻿package kabam.rotmg.pets.view {
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.messaging.impl.outgoing.PetUpgradeRequest;
 import kabam.rotmg.messaging.impl.data.SlotObjectData;
+import kabam.rotmg.messaging.impl.outgoing.PetUpgradeRequest;
 import kabam.rotmg.pets.controller.PetFeedResultSignal;
 import kabam.rotmg.pets.controller.UpgradePetSignal;
 import kabam.rotmg.pets.data.FeedPetRequestVO;

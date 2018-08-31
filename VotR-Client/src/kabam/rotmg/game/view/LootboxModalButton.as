@@ -9,19 +9,12 @@ import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.display.Sprite;
 import flash.events.MouseEvent;
-import flash.filters.DropShadowFilter;
-import flash.geom.Rectangle;
 
 import kabam.rotmg.core.StaticInjectorContext;
-
-
 import kabam.rotmg.core.signals.HideTooltipsSignal;
 import kabam.rotmg.core.signals.ShowTooltipSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.lootBoxes.LootboxModal;
-import kabam.rotmg.raidLauncher.RaidLauncherModal;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.tooltips.HoverTooltipDelegate;
 import kabam.rotmg.tooltips.TooltipAble;
 import kabam.rotmg.ui.UIUtils;

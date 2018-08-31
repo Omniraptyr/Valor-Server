@@ -195,6 +195,7 @@ namespace wServer.realm.entities
         };
 
         private readonly object _useLock = new object();
+        private bool isOnCd;
         public void UseItem(RealmTime time, int objId, int slot, Position pos)
         {
             using (TimedLock.Lock(_useLock))
@@ -217,7 +218,7 @@ namespace wServer.realm.entities
                 // eheh no more clearing BBQ loot bags
                 if (this.Dist(entity) > 3)
                 {
-                    Client.SendPacket(new InvResult() { Result = 1 });
+                    Client.SendPacket(new InvResult { Result = 1 });
                     return;
                 }
 
@@ -249,9 +250,20 @@ namespace wServer.realm.entities
                 if (tradeTarget != null && item.Consumable)
                     return;
 
+                if (isOnCd) return;
+                if (item.Cooldown != 0) {
+                    isOnCd = true;
+                    var timer = new Timer(item.Cooldown);
+                    timer.Elapsed += (o, e) => {
+                        isOnCd = false;
+                        timer.Dispose();
+                    };
+                    timer.Enabled = true;
+                }
+
                 if (MP < item.MpCost)
                 {
-                    Client.SendPacket(new InvResult() { Result = 1 });
+                    Client.SendPacket(new InvResult { Result = 1 });
                     return;
                 }
 
@@ -841,34 +853,33 @@ namespace wServer.realm.entities
 
         private void AEAscensionActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            if (Stars >= 20)
-            {
-                if (CurrentFame >= 5000)
-                {
-
-                    for (int i = 0; i < Inventory.Length; i++)
-                    {
-                        if (Inventory[i] == null) continue;
-                        if (Inventory[i].ObjectId == "Lost Scripture #2")
-                        {
-                            Inventory[i] = null;
-                            SaveToCharacter();
-                            Client.Manager.Database.UpdateFame(Client.Account, -5000);
-                            CurrentFame = Client.Account.Fame - 5000;
-                            AscensionEnabled = true;
-                            break;
-                        }
-                    }
-
-                }
-                else
-                {
-                    SendError("You must have at least 5000 Fame to activate a Lost Scripture on this character.");
-                }
+            if (Stars < 20) {
+                SendError("You must at least be 20 stars to ascend.");
+                return;
             }
-            else
-            {
-                SendError("You must have at least 20 stars before you can activate marks on this character.");
+
+            if (CurrentFame < 5000) {
+                SendError("You must have at least 5000 account fame to ascend.");
+                return;
+            }
+
+            var playerDesc = Manager.Resources.GameData.Classes[ObjectType];
+            var maxed = playerDesc.Stats.Where((t, i) => Stats.Base[i] >= t.MaxValue).Count();
+            if (maxed < 12) {
+                SendError("You must be 12/12 to ascend.");
+                return;
+            }
+
+            for (int i = 0; i < Inventory.Length; i++) {
+                if (Inventory[i] == null) continue;
+                if (Inventory[i].ObjectId == "Lost Scripture #2") {
+                    Inventory[i] = null;
+                    SaveToCharacter();
+                    Client.Manager.Database.UpdateFame(Client.Account, -5000);
+                    CurrentFame = Client.Account.Fame - 5000;
+                    AscensionEnabled = true;
+                    break;
+                }
             }
         }
 
@@ -1039,6 +1050,8 @@ namespace wServer.realm.entities
 
             if (MP >= item.MpEndCost)
             {
+                if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
+
                 MP -= item.MpEndCost;
                 List<Packet> pkts = new List<Packet>();
                 this.AOE(eff.Range / 2, false, enemy =>
@@ -1070,9 +1083,9 @@ namespace wServer.realm.entities
 
             if (MP >= item.MpEndCost)
             {
+                if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
                 MP -= item.MpEndCost;
                 AEShoot(time, item, target, eff);
-
             }
 
             ApplyConditionEffect(ConditionEffectIndex.SamuraiBerserk, 0);
@@ -1080,6 +1093,7 @@ namespace wServer.realm.entities
 
         private void AEBanner(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             BroadcastSync(new ShowEffect()
             {
                 EffectType = EffectType.Throw,
@@ -1097,6 +1111,7 @@ namespace wServer.realm.entities
 
         private void AETorii(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             Torii torii = new Torii(this,
                 eff.Range,
                 eff.Amount,
@@ -1114,13 +1129,14 @@ namespace wServer.realm.entities
 
             addSupportScore(500 + ((eff.DurationMS / 1000) * 20), false);
             Owner.Timers.Add(new WorldTimer(eff.Amount * 1000, (world, t) => {
-                Owner.LeaveWorld(fakeTorii);
+                world.LeaveWorld(fakeTorii);
             }));
         }
 
 
         private void AESiphonAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             int drained = DrainedHP;
             int mpAvailable = MP;
             if (!HasConditionEffect(ConditionEffects.DrakzixCharging))
@@ -1270,7 +1286,6 @@ namespace wServer.realm.entities
                 case 3:
                     amount = 10;
                     SendInfo("You received " + amount + " Sor Fragments.");
-                    SendInfo("You received 4 Sor Fragments.");
                     break;
 
                 case 4:
@@ -1440,7 +1455,7 @@ namespace wServer.realm.entities
                 Message = "Opened by " + Name
             }, null, PacketPriority.Low);
             foreach (var player in Owner.Players.Values)
-                player.SendInfo("{\"key\":\"{server.dungeon_opened_by}\",\"tokens\":{\"dungeon\":\"" + gameData.Portals[objType].DungeonName + "\",\"name\":\"" + Name + "\"}}");
+            player.SendInfo("{\"key\":\"{server.dungeon_opened_by}\",\"tokens\":{\"dungeon\":\"" + gameData.Portals[objType].DungeonName + "\",\"name\":\"" + Name + "\"}}");
         }
 
         private void AEIncrementStat(RealmTime time, Item item, Position target, ActivateEffect eff)
@@ -1450,78 +1465,18 @@ namespace wServer.realm.entities
 
             Stats.Base[idx] += eff.Amount;
             if (Stats.Base[idx] > statInfo[idx].MaxValue)
-            {
                 Stats.Base[idx] = statInfo[idx].MaxValue;
-
-                // pot boosting
-                var boostAmount = 1;
-                if (idx == 0 || idx == 1)
-                    boostAmount = 20;
-                Stats.Boost.ActivateBoost[idx].AddOffset(boostAmount);
-                Stats.ReCalculateValues();
-            }
         }
         private void AEPowerStat(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            if (AscensionEnabled == true)
-            {
-                switch (eff.Amount)
-                {
-                    case 0:
-                        if (PWHealth < 50)
-                            PWHealth += 5;
-                        break;
-                    case 1:
-                        if (PWMana < 50)
-                            PWMana += 5;
-                        break;
-                    case 2:
-                        if (PWAttack < 10)
-                            PWAttack += 1;
-                        break;
-                    case 3:
-                        if (PWDefense < 10)
-                            PWDefense += 1;
-                        break;
-                    case 4:
-                        if (PWSpeed < 10)
-                            PWSpeed += 1;
-                        break;
-                    case 5:
-                        if (PWDexterity < 10)
-                            PWDexterity += 1;
-                        break;
-                    case 6:
-                        if (PWVitality < 10)
-                            PWVitality += 1;
-                        break;
-                    case 7:
-                        if (PWWisdom < 10)
-                            PWWisdom += 1;
-                        break;
-                    case 8:
-                        if (PWMight < 10)
-                            PWMight += 1;
-                        break;
-                    case 9:
-                        if (PWLuck < 10)
-                            PWLuck += 1;
-                        break;
-                    case 10:
-                        if (PWRestoration < 10)
-                            PWRestoration += 1;
-                        break;
-                    case 11:
-                        if (PWProtection < 10)
-                            PWProtection += 1;
-                        break;
-                }
+            if (AscensionEnabled) {
+                var idx = StatsManager.GetStatIndex((StatsType)eff.Stats);
+                var statInfo = Manager.Resources.GameData.Classes[ObjectType].Stats;
 
-            }
-            else
-            {
-                SendInfo("A character that isn't ascended can't use Vials.");
-            }
+                Stats.Base[idx] += eff.Amount;
+                if (Stats.Base[idx] > statInfo[idx].MaxValue + (idx < 2 ? 50 : 10))
+                    Stats.Base[idx] = statInfo[idx].MaxValue + (idx < 2 ? 50 : 10);
+            } else SendInfo("A character that isn't ascended can't use vials.");
         }
         private void AEFixedStat(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
@@ -1555,6 +1510,7 @@ namespace wServer.realm.entities
 
         private void AEPoisonGrenade(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             var impDamage = eff.ImpactDamage;
 
             if (eff.UseWisMod)
@@ -1616,6 +1572,7 @@ namespace wServer.realm.entities
 
         private void AECSmokeGrenade(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             BroadcastSync(new ShowEffect()
             {
                 EffectType = EffectType.Throw,
@@ -1653,6 +1610,7 @@ namespace wServer.realm.entities
 
         private void AECFlashGrenade(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             BroadcastSync(new ShowEffect()
             {
                 EffectType = EffectType.Throw,
@@ -1690,6 +1648,7 @@ namespace wServer.realm.entities
 
         private void DamageGrenade(RealmTime time, Position target)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             BroadcastSync(new ShowEffect()
             {
                 EffectType = EffectType.Throw,
@@ -1904,6 +1863,7 @@ namespace wServer.realm.entities
 
         private void StasisBlast(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             var pkts = new List<Packet>
             {
                 new ShowEffect()
@@ -1955,6 +1915,7 @@ namespace wServer.realm.entities
         }
         private void BigStasisBlast(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             var pkts = new List<Packet>
             {
                 new ShowEffect()
@@ -2004,6 +1965,7 @@ namespace wServer.realm.entities
         }
         private void AETrap(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             BroadcastSync(new ShowEffect()
             {
                 EffectType = EffectType.Throw,
@@ -2027,6 +1989,7 @@ namespace wServer.realm.entities
 
         private void AEVampireBlast(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             var pkts = new List<Packet>
             {
                 new ShowEffect()
@@ -2100,6 +2063,7 @@ namespace wServer.realm.entities
 
         private void AETeleport(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             TeleportPosition(time, target, true);
         }
 
@@ -2161,8 +2125,12 @@ namespace wServer.realm.entities
             var pkts = new List<Packet>();
             this.AOE(range, true, player =>
             {
-                if (!player.HasConditionEffect(ConditionEffects.Sick) || !player.HasConditionEffect(ConditionEffects.Corrupted))
-                    ActivateHealHp(player as Player, amount + (RestorationHeal() / 4), pkts);
+                if (!player.HasConditionEffect(ConditionEffects.Sick) ||
+                    !player.HasConditionEffect(ConditionEffects.Corrupted)) {
+                    var heal = amount + RestorationHeal() / 4;
+                    if (heal <= 0) heal = 1;
+                    ActivateHealHp(player as Player, heal, pkts);
+                }
 
                 addSupportScore(amount, false);
             });
@@ -2430,6 +2398,7 @@ namespace wServer.realm.entities
 
         private void AEShoot(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             var arcGap = item.ArcGap * Math.PI / 180;
             var startAngle = Math.Atan2(target.Y - Y, target.X - X) - (item.NumProjectiles - 1) / 2 * arcGap;
             var prjDesc = item.Projectiles[0]; //Assume only one
@@ -2455,6 +2424,7 @@ namespace wServer.realm.entities
 
         private void AEBulletNova(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             var prjs = new Projectile[20];
             var prjDesc = item.Projectiles[0]; //Assume only one
             var batch = new Packet[21];
@@ -2493,6 +2463,7 @@ namespace wServer.realm.entities
 
         private void AEBulletNova2(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             var prjs = new Projectile[4];
             var prjDesc = item.Projectiles[0]; //Assume only one
             var batch = new Packet[5];
@@ -2531,6 +2502,8 @@ namespace wServer.realm.entities
 
         private void AEGenericActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (!eff.Center.Equals("mouse") 
+                && MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             var targetPlayer = eff.Target.Equals("player");
             var centerPlayer = eff.Center.Equals("player");
             var duration = (eff.UseWisMod) ?
@@ -2572,6 +2545,7 @@ namespace wServer.realm.entities
 
         private void AEHealingGrenade(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             BroadcastSync(new ShowEffect()
             {
                 EffectType = EffectType.Throw,

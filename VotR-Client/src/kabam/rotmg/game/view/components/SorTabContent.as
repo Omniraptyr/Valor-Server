@@ -2,36 +2,19 @@ package kabam.rotmg.game.view.components {
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.sound.SoundEffectLibrary;
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
-import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
-
-import flash.display.Bitmap;
-
-import flash.display.BitmapData;
 
 import flash.display.Sprite;
 import flash.events.MouseEvent;
-import flash.text.TextFormatAlign;
+import flash.filters.DropShadowFilter;
 
 import kabam.rotmg.core.StaticInjectorContext;
-
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.game.view.FameWithdrawDisplay;
-
-import kabam.rotmg.game.view.MarkDisplay;
-
-import kabam.rotmg.game.view.NodeDisplay1;
-import kabam.rotmg.game.view.NodeDisplay2;
-import kabam.rotmg.game.view.NodeDisplay3;
-import kabam.rotmg.game.view.NodeDisplay4;
 import kabam.rotmg.game.view.SorDisplay;
-
-import kabam.rotmg.ui.model.TabStripModel;
-import com.company.assembleegameclient.objects.Player;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import flash.filters.GlowFilter;
-import flash.filters.DropShadowFilter;
+import kabam.rotmg.ui.model.TabStripModel;
+
 public class SorTabContent extends Sprite {
 
     private var background:Sprite;

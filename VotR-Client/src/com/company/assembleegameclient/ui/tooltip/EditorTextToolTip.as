@@ -1,5 +1,6 @@
 package com.company.assembleegameclient.ui.tooltip {
 import com.company.ui.BaseSimpleText;
+
 import flash.filters.DropShadowFilter;
 
 public class EditorTextToolTip extends ToolTip{

@@ -23,10 +23,10 @@ public class PackageButton extends BasePackageButton {
     public var clicked:Signal;
     private var _state:String = "showDuration";
     private var _icon:DisplayObject;
-    var durationText:TextFieldDisplayConcrete;
-    var quantityText:TextFieldDisplayConcrete;
-    var quantityStringBuilder:StaticStringBuilder;
-    var durationStringBuilder:LineBuilder;
+    internal var durationText:TextFieldDisplayConcrete;
+    internal var quantityText:TextFieldDisplayConcrete;
+    internal var quantityStringBuilder:StaticStringBuilder;
+    internal var durationStringBuilder:LineBuilder;
 
     public function PackageButton() {
         this.clicked = new Signal();

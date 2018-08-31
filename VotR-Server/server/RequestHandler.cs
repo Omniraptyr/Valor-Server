@@ -120,7 +120,6 @@ namespace server
             {"/credits/add", new credits.add()},
             {"/fame/list", new fame.list()},
             {"/picture/get", new picture.get()},
-            {"/app/getLanguageStrings", new app.getLanguageStrings()},
             {"/app/init", new app.init()},
             {"/package/getPackages", new package.getPackages()},
             {"/app/globalNews", new app.globalNews()},

@@ -75,8 +75,8 @@ public class TransferAccountView extends Frame {
 
     public function makeTosText():void {
         this.tosText = new TextFieldDisplayConcrete();
-        var _local1 = (('<font color="#7777EE"><a href="' + Parameters.TERMS_OF_USE_URL) + '" target="_blank">');
-        var _local2 = (('<font color="#7777EE"><a href="' + Parameters.PRIVACY_POLICY_URL) + '" target="_blank">');
+        var _local1:String = (('<font color="#7777EE"><a href="' + Parameters.TERMS_OF_USE_URL) + '" target="_blank">');
+        var _local2:String = (('<font color="#7777EE"><a href="' + Parameters.PRIVACY_POLICY_URL) + '" target="_blank">');
         this.tosText.setStringBuilder(new LineBuilder().setParams(TextKey.TOS_TEXT, {
             "tou": _local1,
             "_tou": this.endLink,
@@ -150,7 +150,7 @@ public class TransferAccountView extends Frame {
     }
 
     private function isPasswordValid(_arg1:LabeledField):Boolean {
-        var _local2 = (_arg1.text().length >= 5);
+        var _local2:Boolean = (_arg1.text().length >= 5);
         _arg1.setErrorHighlight(!(_local2));
         if (!_local2) {
             this.errors.push(TextKey.PASSWORD_TOO_SHORT);
@@ -159,7 +159,7 @@ public class TransferAccountView extends Frame {
     }
 
     private function isPasswordVerified():Boolean {
-        var _local1 = (this.newPasswordInput.text() == this.retypePasswordInput.text());
+        var _local1:Boolean = (this.newPasswordInput.text() == this.retypePasswordInput.text());
         this.retypePasswordInput.setErrorHighlight(!(_local1));
         if (!_local1) {
             this.errors.push(TextKey.PASSWORDS_DONT_MATCH);

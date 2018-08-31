@@ -38,9 +38,9 @@ public class RequestPlayerCreditsTask extends BaseTask {
     }
 
     private function handleTimer(_arg1:TimerEvent):void {
-        var _local2 = this.retryTimes;
-        var _local3 = this.retryCount;
-        var _local4 = (_local2[_local3] - 1);
+        var _local2:Array = this.retryTimes;
+        var _local3:int = this.retryCount;
+        var _local4:int = (_local2[_local3] - 1);
         _local2[_local3] = _local4;
         if (this.retryTimes[this.retryCount] <= 0) {
             this.timer.removeEventListener(TimerEvent.TIMER, this.handleTimer);

@@ -7,6 +7,7 @@ import com.company.assembleegameclient.account.ui.FrameuBox;
 import com.company.assembleegameclient.game.AGameSprite;
 
 import flash.events.Event;
+
 import org.osflash.signals.Signal;
 
 public class UnboxResultBox extends FrameuBox {
@@ -22,7 +23,7 @@ public class UnboxResultBox extends FrameuBox {
         this.unboxScroll_ = new UnboxScroll(444 + (Math.random() * 8), _items);
         this.unboxScroll_.x = (this.w_ / 2) - (UnboxScroll.WIDTH / 2) - 4;
         this.unboxScroll_.y = this.h_ - 66;
-        addChild(this.unboxScroll_)
+        addChild(this.unboxScroll_);
         this.offsetH(UnboxScroll.HEIGHT);
         addEventListener(Event.ENTER_FRAME, hideInventory_);
         this.unboxScroll_.addEventListener(Event.COMPLETE, onComplete);

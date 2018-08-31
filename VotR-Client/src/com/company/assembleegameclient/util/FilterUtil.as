@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.util
 {
-   import flash.filters.DropShadowFilter;
-   import flash.filters.GlowFilter;
-   
-   public class FilterUtil
+import flash.filters.DropShadowFilter;
+import flash.filters.GlowFilter;
+
+public class FilterUtil
    {
       
       private static const STANDARD_DROP_SHADOW_FILTER:Array = [new DropShadowFilter(0,0,0,0.5,12,12)];

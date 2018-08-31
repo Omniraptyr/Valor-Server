@@ -23,7 +23,7 @@ public class PortalNameParser {
     }
 
     private function makePatternFromParts(_arg1:Array):String {
-        var _local2 = (("{" + _arg1[1]) + "}");
+        var _local2:String = (("{" + _arg1[1]) + "}");
         if (_arg1.length > 1) {
             _local2 = (_local2 + ((" (" + _arg1[2]) + ")"));
         }

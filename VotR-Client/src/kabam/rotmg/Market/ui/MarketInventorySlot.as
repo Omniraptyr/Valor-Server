@@ -1,10 +1,10 @@
 package kabam.rotmg.market.ui
 {
+import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.util.DisplayHierarchy;
 
 import flash.events.Event;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
-   import flash.events.MouseEvent;
+import flash.events.MouseEvent;
 
 import kabam.rotmg.messaging.impl.data.SlotObjectData;
 import kabam.rotmg.pets.view.components.slot.FeedFuseSlot;

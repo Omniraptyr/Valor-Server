@@ -1,6 +1,4 @@
 package kabam.rotmg.game.view {
-import com.company.assembleegameclient.game.AGameSprite;
-import com.company.assembleegameclient.sound.SoundEffectLibrary;
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.AssetLibrary;
@@ -8,27 +6,21 @@ import com.company.util.AssetLibrary;
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.display.Sprite;
-import flash.events.MouseEvent;
 import flash.filters.DropShadowFilter;
 import flash.geom.Rectangle;
 
-import kabam.rotmg.core.StaticInjectorContext;
-
-
 import kabam.rotmg.core.signals.HideTooltipsSignal;
 import kabam.rotmg.core.signals.ShowTooltipSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.raidLauncher.RaidLauncherModal;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import kabam.rotmg.tooltips.HoverTooltipDelegate;
 import kabam.rotmg.tooltips.TooltipAble;
 import kabam.rotmg.ui.UIUtils;
 
 public class AlertStatusDisplay extends Sprite implements TooltipAble {
-
     public static const IMAGE_NAME:String = "legendaries8x8Embed";
     public static const IMAGE_ID:int = 208;
+    private static const ALERT_TEXT:String = "This launches an alert if you have any. Dying in an alert will cause you to lose 10% of your gold, but your character won't be lost.";
 
     public var hoverTooltipDelegate:HoverTooltipDelegate;
     private var bitmap:Bitmap;
@@ -36,10 +28,11 @@ public class AlertStatusDisplay extends Sprite implements TooltipAble {
     private var giftOpenProcessedTexture:BitmapData;
     private var text:TextFieldDisplayConcrete;
     private var tooltip:TextToolTip;
+    private var alertNum:int = -1;
 
     public function AlertStatusDisplay() {
         this.hoverTooltipDelegate = new HoverTooltipDelegate();
-        this.tooltip = new TextToolTip(0x363636, 0x9B9B9B, null, "This launches an alert if needed to be done. Dying in an alert will cause you to lose 10% of your gold but you won't die.", 200);
+        this.tooltip = new TextToolTip(0x363636, 0x9B9B9B, null, ALERT_TEXT, 200);
         super();
         mouseChildren = false;
         this.giftOpenProcessedTexture = TextureRedrawer.redraw(AssetLibrary.getImageFromSet(IMAGE_NAME, IMAGE_ID), 40, true, 0);
@@ -48,28 +41,35 @@ public class AlertStatusDisplay extends Sprite implements TooltipAble {
         this.bitmap.x = -5;
         this.bitmap.y = -8;
         this.text = new TextFieldDisplayConcrete().setSize(16).setColor(0xFFFFFF);
-        this.text.setStringBuilder(new LineBuilder().setParams("Alerts"));
+        this.text.setStringBuilder(new StaticStringBuilder("Alerts"));
         this.text.filters = [new DropShadowFilter(0, 0, 0, 1, 4, 4, 2)];
         this.text.setVerticalAlign(TextFieldDisplayConcrete.BOTTOM);
         this.hoverTooltipDelegate.setDisplayObject(this);
         this.hoverTooltipDelegate.tooltip = this.tooltip;
         this.drawAsOpen();
-        var _local1:Rectangle = this.bitmap.getBounds(this);
-        var _local2:int = 10;
-        this.text.x = (_local1.right - _local2);
-        this.text.y = (_local1.bottom - _local2);
+        var bounds:Rectangle = this.bitmap.getBounds(this);
+        var offset:int = 10;
+        this.text.x = (bounds.right - offset);
+        this.text.y = (bounds.bottom - offset);
     }
 
-    public function setShowToolTipSignal(_arg1:ShowTooltipSignal):void {
-        this.hoverTooltipDelegate.setShowToolTipSignal(_arg1);
+    internal function updateAlertNum(alertNum:int) : void {
+        if (this.alertNum == alertNum) return;
+
+        this.tooltip.setText(new StaticStringBuilder(ALERT_TEXT + "\n\nCurrent amount of alerts: " + (this.alertNum = alertNum)));
+        //this.hoverTooltipDelegate.tooltip = this.tooltip;
+    }
+
+    public function setShowToolTipSignal(showTooltip:ShowTooltipSignal):void {
+        this.hoverTooltipDelegate.setShowToolTipSignal(showTooltip);
     }
 
     public function getShowToolTip():ShowTooltipSignal {
         return (this.hoverTooltipDelegate.getShowToolTip());
     }
 
-    public function setHideToolTipsSignal(_arg1:HideTooltipsSignal):void {
-        this.hoverTooltipDelegate.setHideToolTipsSignal(_arg1);
+    public function setHideToolTipsSignal(hideTooltips:HideTooltipsSignal):void {
+        this.hoverTooltipDelegate.setHideToolTipsSignal(hideTooltips);
     }
 
     public function getHideToolTips():HideTooltipsSignal {
@@ -83,13 +83,13 @@ public class AlertStatusDisplay extends Sprite implements TooltipAble {
     }
 
     public function drawAsClosed():void {
-        if (((this.background) && ((this.background.parent == this)))) {
+        if (this.background && this.background.parent == this) {
             removeChild(this.background);
         }
-        if (((this.text) && ((this.text.parent == this)))) {
+        if (this.text && this.text.parent == this) {
             removeChild(this.text);
         }
-        if (((this.bitmap) && ((this.bitmap.parent == this)))) {
+        if (this.bitmap && this.bitmap.parent == this) {
             removeChild(this.bitmap);
         }
     }

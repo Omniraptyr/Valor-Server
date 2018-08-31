@@ -1,7 +1,6 @@
 ﻿package com.company.assembleegameclient.objects {
 import com.company.assembleegameclient.objects.animation.AnimationsData;
 import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.util.ConditionEffect;
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
 import com.company.util.AssetLibrary;
@@ -14,7 +13,6 @@ import flash.utils.Dictionary;
 import flash.utils.getDefinitionByName;
 
 import kabam.rotmg.assets.EmbeddedData;
-
 import kabam.rotmg.constants.GeneralConstants;
 import kabam.rotmg.constants.ItemConstants;
 import kabam.rotmg.messaging.impl.data.StatData;
@@ -91,10 +89,10 @@ public class ObjectLibrary {
         var _local4:int = _arg1.indexOf("CXML");
         currentDungeon = _arg1.substr(_local3, (_local4 - _local3));
         dungeonsXMLLibrary_[currentDungeon] = new Dictionary(true);
-        parseFromXML(_arg2, parseDungeonCallbak);
+        parseFromXML(_arg2, parseDungeonCallback);
     }
 
-    private static function parseDungeonCallbak(_arg1:int, _arg2:XML) {
+    private static function parseDungeonCallback(_arg1:int, _arg2:XML) : void {
         if (((!((currentDungeon == ""))) && (!((dungeonsXMLLibrary_[currentDungeon] == null))))) {
             dungeonsXMLLibrary_[currentDungeon][_arg1] = _arg2;
             propsLibrary_[_arg1].belonedDungeon = currentDungeon;

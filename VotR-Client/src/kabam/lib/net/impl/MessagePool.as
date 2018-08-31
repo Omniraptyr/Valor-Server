@@ -45,7 +45,7 @@ public class MessagePool {
         return (this.count);
     }
 
-    function append(_arg1:Message):void {
+    internal function append(_arg1:Message):void {
         ((this.tail) && ((this.tail.next = _arg1)));
         _arg1.prev = this.tail;
         this.tail = _arg1;

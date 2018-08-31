@@ -85,7 +85,7 @@ public class KabamLoginView extends Frame {
     }
 
     private function isPasswordValid():Boolean {
-        var _local1 = !((this.password.text() == ""));
+        var _local1:Boolean = !((this.password.text() == ""));
         if (!_local1) {
             this.password.setError(TextKey.WEB_LOGIN_DIALOG_PASSWORD_ERROR);
         }
@@ -93,7 +93,7 @@ public class KabamLoginView extends Frame {
     }
 
     private function isEmailValid():Boolean {
-        var _local1 = !((this.email.text() == ""));
+        var _local1:Boolean = !((this.email.text() == ""));
         if (!_local1) {
             this.email.setError(TextKey.WEBLOGINDIALOG_EMAIL_ERROR);
         }

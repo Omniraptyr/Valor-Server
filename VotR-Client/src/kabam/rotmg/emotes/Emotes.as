@@ -1,10 +1,11 @@
 package kabam.rotmg.emotes
 {
-   import flash.utils.Dictionary;
-   import com.company.util.AssetLibrary;
-   import flash.display.BitmapData;
-   
-   public class Emotes
+import com.company.util.AssetLibrary;
+
+import flash.display.BitmapData;
+import flash.utils.Dictionary;
+
+public class Emotes
    {
       
       private static var emotes:Dictionary = new Dictionary();

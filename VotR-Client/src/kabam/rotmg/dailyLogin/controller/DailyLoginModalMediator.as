@@ -54,7 +54,7 @@ public class DailyLoginModalMediator extends Mediator {
         this.view.closeButton.clicked.add(this.onCloseButtonClicked);
     }
 
-    public function onCloseButtonClicked() {
+    public function onCloseButtonClicked() : void {
         this.view.closeButton.clicked.remove(this.onCloseButtonClicked);
         this.flushStartupQueue.dispatch();
     }

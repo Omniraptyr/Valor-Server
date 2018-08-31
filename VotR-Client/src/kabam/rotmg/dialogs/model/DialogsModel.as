@@ -22,7 +22,7 @@ public class DialogsModel {
     }
 
     private function sortQueue():void {
-        this.queue.sort(function (_arg1:PopupQueueEntry, _arg2:PopupQueueEntry) {
+        this.queue.sort(function (_arg1:PopupQueueEntry, _arg2:PopupQueueEntry) : int {
             var _local3:int = getPopupPriorityByName(_arg1.name);
             var _local4:int = getPopupPriorityByName(_arg2.name);
             if (_local3 < _local4) {

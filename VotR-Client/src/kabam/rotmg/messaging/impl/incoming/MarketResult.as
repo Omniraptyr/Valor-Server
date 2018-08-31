@@ -2,9 +2,9 @@
  * Created by Fabian on 14.07.2015.
  */
 package kabam.rotmg.messaging.impl.incoming {
-import kabam.rotmg.messaging.impl.data.PlayerShopItem;
-
 import flash.utils.IDataInput;
+
+import kabam.rotmg.messaging.impl.data.PlayerShopItem;
 
 public class MarketResult extends IncomingMessage {
 

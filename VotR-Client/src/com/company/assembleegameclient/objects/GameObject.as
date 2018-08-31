@@ -124,10 +124,12 @@ public class GameObject extends BasicObject {
     protected var vS_:Vector.<Number>;
     protected var uvt_:Vector.<Number>;
     protected var fillMatrix_:Matrix;
-    private var hpbarBackFill_:GraphicsSolidFill = null;
-    private var hpbarBackPath_:GraphicsPath = null;
-    private var hpbarFill_:GraphicsSolidFill = null;
-    private var hpbarPath_:GraphicsPath = null;
+    private var backFill_:GraphicsSolidFill = null;
+    private var backPath_:GraphicsPath = null;
+    private var barFill_:GraphicsSolidFill = null;
+    private var barFillPath_:GraphicsPath = null;
+	private var protBarFill_:GraphicsSolidFill = null;
+    private var protBarFillPath_:GraphicsPath = null;
     private var icons_:Vector.<BitmapData> = null;
     private var iconFills_:Vector.<GraphicsBitmapFill> = null;
     private var iconPaths_:Vector.<GraphicsPath> = null;
@@ -237,49 +239,55 @@ public class GameObject extends BasicObject {
     }
 
 
-    public function setObjectId(_arg1:int):void {
-        var _local2:TextureData;
-        objectId_ = _arg1;
+    public function setObjectId(objId:int):void {
+        var texData:TextureData;
+        objectId_ = objId;
+
         if (this.randomTextureData_ != null) {
-            _local2 = this.randomTextureData_[(objectId_ % this.randomTextureData_.length)];
-            this.texture_ = _local2.texture_;
-            this.mask_ = _local2.mask_;
-            this.animatedChar_ = _local2.animatedChar_;
+            texData = this.randomTextureData_[objectId_ % this.randomTextureData_.length];
+            this.texture_ = texData.texture_;
+            this.mask_ = texData.mask_;
+            this.animatedChar_ = texData.animatedChar_;
             if (this.object3d_ != null) {
                 this.object3d_.setBitMapData(this.texture_);
             }
         }
     }
 
-    public function setAltTexture(_arg1:int):void {
-        var _local3:TextureData;
-        var _local2:TextureData = ObjectLibrary.typeToTextureData_[this.objectType_];
-        if (_arg1 == 0) {
-            _local3 = _local2;
-        }
-        else {
-            _local3 = _local2.getAltTextureData(_arg1);
-            if (_local3 == null) {
+    public function setAltTexture(altTexId:int):void {
+        var altTexData:TextureData;
+        var curTexData:TextureData = ObjectLibrary.typeToTextureData_[this.objectType_];
+
+        if (altTexId == 0) {
+            altTexData = curTexData;
+        } else {
+            altTexData = curTexData.getAltTextureData(altTexId);
+            if (altTexData == null) {
                 return;
             }
         }
-        this.texture_ = _local3.texture_;
-        this.mask_ = _local3.mask_;
-        this.animatedChar_ = _local3.animatedChar_;
+
+        this.texture_ = altTexData.texture_;
+        this.mask_ = altTexData.mask_;
+        this.animatedChar_ = altTexData.animatedChar_;
+
         if (this.effect_ != null) {
             map_.removeObj(this.effect_.objectId_);
             this.effect_ = null;
         }
-        if (_local3.effectProps_ != null) {
-            this.effect_ = ParticleEffect.fromProps(_local3.effectProps_, this);
+
+        if (altTexData.effectProps_ != null && !Parameters.data_.noParticlesMaster) {
+            this.effect_ = ParticleEffect.fromProps(altTexData.effectProps_, this);
             if (map_ != null) {
                 map_.addObj(this.effect_, x_, y_);
             }
         }
     }
-    public function canBeHitBy(_arg1:GameObject) {
+	
+    public function canBeHitBy(_arg1:GameObject) : Boolean {
         return (this.pvp_ && _arg1.pvp_);
     }
+	
     public function setTex1(_arg1:int):void {
         if (_arg1 == this.tex1Id_) {
             return;
@@ -878,8 +886,8 @@ public class GameObject extends BasicObject {
     }
 
     public function showDamageText2(_arg_1:int, _arg_2:Boolean):void {
-        var value:Number = Math.round(map_.player_.criticalMultiplier_ * 10)/10
-        var _local_3:String = ("-" + _arg_1 + " (" + value + ")");
+        var value:Number = Math.round(map_.player_.criticalMultiplier_ * 10)/10;
+        var _local_3:String = ("-" + _arg_1 + " (" + value + "x)");
         var _local_4:CharacterStatusText = new CharacterStatusText(this, ((_arg_2) ? 0xFF4500 : 0xFFFF00), 1000);
         _local_4.setStringBuilder(new StaticStringBuilder(_local_3));
         map_.mapOverlay_.addStatusText(_local_4);
@@ -1039,6 +1047,11 @@ public class GameObject extends BasicObject {
                     map_.addObj(new ExplosionEffect(_local14, this.size_, 10), x_, y_);
                 }
             }
+        }
+        if (!_arg1
+                && (Parameters.data_.noEnemyDamage && this.props_.isEnemy_
+                        || Parameters.data_.noAllyDamage && this.props_.isPlayer_)) {
+            return;
         }
         if (_arg2 > 0) {
             _local15 = ((((this.isArmorBroken()) || (((!((_arg5 == null))) && (_arg5.projProps_.armorPiercing_))))) || (_local6));
@@ -1237,44 +1250,68 @@ public class GameObject extends BasicObject {
         }
     }
 
-    protected function drawHpBar(_arg1:Vector.<IGraphicsData>, _arg2:int):void {
-        var _local7:Number;
-        var _local8:Number;
-        if (this.hpbarPath_ == null) {
-            this.hpbarBackFill_ = new GraphicsSolidFill();
-            this.hpbarBackPath_ = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS, new Vector.<Number>());
-            this.hpbarFill_ = new GraphicsSolidFill(0x10FF00);
-            this.hpbarPath_ = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS, new Vector.<Number>());
+    protected function drawHpBar(gfx:Vector.<IGraphicsData>, offsetY:int):void {
+		var scale:Number;
+        if (this.barFillPath_ == null) {
+            this.backFill_ = new GraphicsSolidFill();
+            this.backPath_ = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS, new Vector.<Number>());
+            this.barFill_ = new GraphicsSolidFill(0x10FF00);
+            this.barFillPath_ = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS, new Vector.<Number>());
+			this.protBarFill_ = new GraphicsSolidFill(0xFFFFFF);
+            this.protBarFillPath_ = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS, new Vector.<Number>());
         }
-        var _local3:Number = this.maxHP_;
         if (this.hp_ > this.maxHP_) {
             this.maxHP_ = this.hp_;
         }
-        if (this.hp_ <= _local3) {
-            _local7 = ((_local3 - this.hp_) / _local3);
-            this.hpbarBackFill_.color = MoreColorUtil.lerpColor(0x545454, 0xFF0000, (Math.abs(Math.sin((_arg2 / 300))) * _local7));
+        this.backFill_.color = 1118481;
+        this.backPath_.data.length = 0;
+        (this.backPath_.data as Vector.<Number>).push(posS_[0] - 20 - 1.2,
+                posS_[1] + offsetY - 1.2,
+                posS_[0] + 20 + 1.2,
+                posS_[1] + offsetY - 1.2,
+                posS_[0] + 20 + 1.2,
+                posS_[1] + offsetY + 5 + 1.2,
+                posS_[0] - 20 - 1.2,
+                posS_[1] + offsetY + 5 + 1.2);
+        gfx.push(this.backFill_);
+        gfx.push(this.backPath_);
+        gfx.push(GraphicsUtil.END_FILL);
+		if (this.hp_ > 0) {
+            scale = this.hp_ / this.maxHP_ * 40;
+            this.barFillPath_.data.length = 0;
+            (this.barFillPath_.data as Vector.<Number>).push(posS_[0] - 20,
+                    posS_[1] + offsetY,
+                    posS_[0] - 20 + scale,
+                    posS_[1] + offsetY,
+                    posS_[0] - 20 + scale,
+                    posS_[1] + offsetY + 5,
+                    posS_[0] - 20,
+                    posS_[1] + offsetY + 5);
+            gfx.push(this.barFill_);
+            gfx.push(this.barFillPath_);
+            gfx.push(GraphicsUtil.END_FILL);
         }
-        else {
-            this.hpbarBackFill_.color = 0x545454;
-        }
-        var _local4:int = 20;
-        var _local5:int = 4;
-        var _local6:int = 6;
-        this.hpbarBackPath_.data.length = 0;
-        this.hpbarBackPath_.data.push((posS_[0] - _local4), (posS_[1] + _local5), (posS_[0] + _local4), (posS_[1] + _local5), (posS_[0] + _local4), ((posS_[1] + _local5) + _local6), (posS_[0] - _local4), ((posS_[1] + _local5) + _local6));
-        _arg1.push(this.hpbarBackFill_);
-        _arg1.push(this.hpbarBackPath_);
-        _arg1.push(GraphicsUtil.END_FILL);
-        if (this.hp_ > 0) {
-            _local8 = (((this.hp_ / this.maxHP_) * 2) * _local4);
-            this.hpbarPath_.data.length = 0;
-            this.hpbarPath_.data.push((posS_[0] - _local4), (posS_[1] + _local5), ((posS_[0] - _local4) + _local8), (posS_[1] + _local5), ((posS_[0] - _local4) + _local8), ((posS_[1] + _local5) + _local6), (posS_[0] - _local4), ((posS_[1] + _local5) + _local6));
-            _arg1.push(this.hpbarFill_);
-            _arg1.push(this.hpbarPath_);
-            _arg1.push(GraphicsUtil.END_FILL);
-        }
-        GraphicsFillExtra.setSoftwareDrawSolid(this.hpbarFill_, true);
-        GraphicsFillExtra.setSoftwareDrawSolid(this.hpbarBackFill_, true);
+		if (this.props_.isPlayer_) {
+			var player:Player = this as Player;
+			if (player && player.protectionPoints_ > 0) {
+			    scale = player.protectionPoints_ / player.protectionPointsMax_ * 40;
+                this.protBarFillPath_.data.length = 0;
+                (this.protBarFillPath_.data as Vector.<Number>).push(posS_[0] - 20,
+                        posS_[1] + offsetY,
+                        posS_[0] - 20 + scale,
+                        posS_[1] + offsetY,
+                        posS_[0] - 20 + scale,
+                        posS_[1] + offsetY + 5,
+                        posS_[0] - 20,
+                        posS_[1] + offsetY + 5);
+                gfx.push(this.protBarFill_);
+                gfx.push(this.protBarFillPath_);
+                gfx.push(GraphicsUtil.END_FILL);
+			}
+		}
+		GraphicsFillExtra.setSoftwareDrawSolid(this.protBarFill_, true);
+        GraphicsFillExtra.setSoftwareDrawSolid(this.barFill_, true);
+        GraphicsFillExtra.setSoftwareDrawSolid(this.backFill_, true);
     }
 
     override public function draw(_arg1:Vector.<IGraphicsData>, _arg2:Camera, _arg3:int):void {
@@ -1378,7 +1415,8 @@ public class GameObject extends BasicObject {
             if (_local10 != 0) {
                 hasShadow_ = true;
                 if (Parameters.data_.HPBar) {
-                    this.drawHpBar(_arg1, _arg3);
+                     this.drawHpBar(_arg1,
+                            int((this.props_.isPlayer_ && this != map_.player_ ? 12 : 0) + 6));
                 }
             }
             else {

@@ -74,9 +74,6 @@ import kabam.lib.net.api.MessageMap;
 import kabam.lib.net.api.MessageProvider;
 import kabam.lib.net.impl.Message;
 import kabam.lib.net.impl.SocketServer;
-import kabam.rotmg.game.signals.UpdateAlertStatusDisplaySignal;
-import kabam.rotmg.market.MarketItemsResultSignal;
-import kabam.rotmg.market.MarketResultSignal;
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.core.view.PurchaseConfirmationDialog;
 import kabam.rotmg.arena.control.ArenaDeathSignal;
@@ -105,9 +102,11 @@ import kabam.rotmg.game.model.PotionInventoryModel;
 import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
 import kabam.rotmg.game.signals.AddTextLineSignal;
 import kabam.rotmg.game.signals.GiftStatusUpdateSignal;
-import kabam.rotmg.game.view.components.QueuedStatusText;
+import kabam.rotmg.game.signals.UpdateAlertStatusDisplaySignal;
 import kabam.rotmg.maploading.signals.ChangeMapSignal;
 import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
+import kabam.rotmg.market.MarketItemsResultSignal;
+import kabam.rotmg.market.MarketResultSignal;
 import kabam.rotmg.messaging.impl.data.GroundTileData;
 import kabam.rotmg.messaging.impl.data.MarketOffer;
 import kabam.rotmg.messaging.impl.data.ObjectData;
@@ -121,13 +120,13 @@ import kabam.rotmg.messaging.impl.incoming.Aoe;
 import kabam.rotmg.messaging.impl.incoming.BuyResult;
 import kabam.rotmg.messaging.impl.incoming.ClientStat;
 import kabam.rotmg.messaging.impl.incoming.CreateSuccess;
+import kabam.rotmg.messaging.impl.incoming.CriticalDamage;
 import kabam.rotmg.messaging.impl.incoming.Damage;
 import kabam.rotmg.messaging.impl.incoming.Death;
 import kabam.rotmg.messaging.impl.incoming.EnemyShoot;
 import kabam.rotmg.messaging.impl.incoming.EvolvedMessageHandler;
 import kabam.rotmg.messaging.impl.incoming.EvolvedPetMessage;
 import kabam.rotmg.messaging.impl.incoming.Failure;
-import kabam.rotmg.messaging.impl.incoming.CriticalDamage;
 import kabam.rotmg.messaging.impl.incoming.File;
 import kabam.rotmg.messaging.impl.incoming.GambleStart;
 import kabam.rotmg.messaging.impl.incoming.GlobalNotification;
@@ -153,11 +152,11 @@ import kabam.rotmg.messaging.impl.incoming.QuestRedeemResponse;
 import kabam.rotmg.messaging.impl.incoming.QueuePing;
 import kabam.rotmg.messaging.impl.incoming.Reconnect;
 import kabam.rotmg.messaging.impl.incoming.ReskinUnlock;
-import kabam.rotmg.messaging.impl.incoming.SorForge;
 import kabam.rotmg.messaging.impl.incoming.ServerFull;
 import kabam.rotmg.messaging.impl.incoming.ServerPlayerShoot;
-import kabam.rotmg.messaging.impl.incoming.ShowEffect;
 import kabam.rotmg.messaging.impl.incoming.SetFocus;
+import kabam.rotmg.messaging.impl.incoming.ShowEffect;
+import kabam.rotmg.messaging.impl.incoming.SorForge;
 import kabam.rotmg.messaging.impl.incoming.SwitchMusic;
 import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
 import kabam.rotmg.messaging.impl.incoming.TradeChanged;
@@ -185,6 +184,7 @@ import kabam.rotmg.messaging.impl.outgoing.Create;
 import kabam.rotmg.messaging.impl.outgoing.CreateGuild;
 import kabam.rotmg.messaging.impl.outgoing.EditAccountList;
 import kabam.rotmg.messaging.impl.outgoing.EnemyHit;
+import kabam.rotmg.messaging.impl.outgoing.EnterArena;
 import kabam.rotmg.messaging.impl.outgoing.Escape;
 import kabam.rotmg.messaging.impl.outgoing.ForgeItem;
 import kabam.rotmg.messaging.impl.outgoing.GoToQuestRoom;
@@ -193,7 +193,6 @@ import kabam.rotmg.messaging.impl.outgoing.GroundDamage;
 import kabam.rotmg.messaging.impl.outgoing.GuildInvite;
 import kabam.rotmg.messaging.impl.outgoing.GuildRemove;
 import kabam.rotmg.messaging.impl.outgoing.Hello;
-import kabam.rotmg.messaging.impl.outgoing.Hello2Packet;
 import kabam.rotmg.messaging.impl.outgoing.InvDrop;
 import kabam.rotmg.messaging.impl.outgoing.InvSwap;
 import kabam.rotmg.messaging.impl.outgoing.JoinGuild;
@@ -211,6 +210,7 @@ import kabam.rotmg.messaging.impl.outgoing.PlayerShoot;
 import kabam.rotmg.messaging.impl.outgoing.PlayerText;
 import kabam.rotmg.messaging.impl.outgoing.Pong;
 import kabam.rotmg.messaging.impl.outgoing.QoLAction;
+import kabam.rotmg.messaging.impl.outgoing.QuestRedeem;
 import kabam.rotmg.messaging.impl.outgoing.QueuePong;
 import kabam.rotmg.messaging.impl.outgoing.RequestGamble;
 import kabam.rotmg.messaging.impl.outgoing.RequestTrade;
@@ -224,8 +224,6 @@ import kabam.rotmg.messaging.impl.outgoing.Teleport;
 import kabam.rotmg.messaging.impl.outgoing.UnboxRequest;
 import kabam.rotmg.messaging.impl.outgoing.UseItem;
 import kabam.rotmg.messaging.impl.outgoing.UsePortal;
-import kabam.rotmg.messaging.impl.outgoing.EnterArena;
-import kabam.rotmg.messaging.impl.outgoing.QuestRedeem;
 import kabam.rotmg.minimap.control.UpdateGameObjectTileSignal;
 import kabam.rotmg.minimap.control.UpdateGroundTileSignal;
 import kabam.rotmg.minimap.model.UpdateGroundTileVO;
@@ -254,7 +252,6 @@ import kabam.rotmg.ui.view.NotEnoughGoldDialog;
 import kabam.rotmg.ui.view.TitleView;
 
 import org.osflash.signals.Signal;
-
 import org.swiftsuspenders.Injector;
 
 import robotlegs.bender.framework.api.ILogger;
@@ -343,11 +340,6 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         this.getPetUpdater();
         instance = this;
     }
-
-    private static function isStatPotion(_arg1:int):Boolean {
-        return ((((((((((((((((((((_arg1 == 2591)) || ((_arg1 == 5465)))) || ((_arg1 == 9064)))) || ((((((_arg1 == 2592)) || ((_arg1 == 5466)))) || ((_arg1 == 9065)))))) || ((((((_arg1 == 2593)) || ((_arg1 == 5467)))) || ((_arg1 == 9066)))))) || ((((((_arg1 == 2612)) || ((_arg1 == 5468)))) || ((_arg1 == 9067)))))) || ((((((_arg1 == 2613)) || ((_arg1 == 5469)))) || ((_arg1 == 9068)))))) || ((((((_arg1 == 2636)) || ((_arg1 == 5470)))) || ((_arg1 == 9069)))))) || ((((((_arg1 == 2793)) || ((_arg1 == 5471)))) || ((_arg1 == 9070)))))) || ((((((_arg1 == 2794)) || ((_arg1 == 5472)))) || ((_arg1 == 9071))))));
-    }
-
 
     private function getPetUpdater():void {
         this.injector.map(AGameSprite).toValue(gs_);
@@ -446,7 +438,6 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.map(UNBOXREQUEST).toMessage(UnboxRequest);
         _local1.map(MARKET_COMMAND).toMessage(MarketCommand);
         _local1.map(REQUESTGAMBLE).toMessage(RequestGamble);
-        _local1.map(HELLO2PACKET).toMessage(Hello2Packet);
         _local1.map(FAILURE).toMessage(Failure).toMethod(this.onFailure);
         _local1.map(CREATE_SUCCESS).toMessage(CreateSuccess).toMethod(this.onCreateSuccess);
         _local1.map(SERVERPLAYERSHOOT).toMessage(ServerPlayerShoot).toMethod(this.onServerPlayerShoot);
@@ -645,8 +636,8 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         var _local1:ICipher;
         var _local2:ICipher;
         if (Parameters.ENABLE_ENCRYPTION) {
-            _local1 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray(Parameters.RANDOM1));
-            _local2 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray(Parameters.RANDOM2));
+            _local1 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray("DE5A1B"));
+            _local2 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray("612a806cac78114ba5013cb531"));
             serverConnection.setOutgoingCipher(_local1);
             serverConnection.setIncomingCipher(_local2);
         }
@@ -720,13 +711,6 @@ public class GameServerConnectionConcrete extends GameServerConnection {
 
     override public function playerHit(_arg1:int, _arg2:int):void {
         var _local3:PlayerHit = (this.messages.require(PLAYERHIT) as PlayerHit);
-        _local3.bulletId_ = _arg1;
-        _local3.objectId_ = _arg2;
-        serverConnection.queueMessage(_local3);
-    }
-
-    override public function hello2packet(_arg1:int, _arg2:int):void {
-        var _local3:Hello2Packet = (this.messages.require(HELLO2PACKET) as Hello2Packet);
         _local3.bulletId_ = _arg1;
         _local3.objectId_ = _arg2;
         serverConnection.queueMessage(_local3);
@@ -865,58 +849,68 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         serverConnection.queueMessage(_local8);
     }
 
-    override public function useItem_new(_arg1:GameObject, _arg2:int):Boolean {
-        var _local4:XML;
-        var _local3:int = _arg1.equipment_[_arg2];
-        if ((((_local3 >= 0x9000)) && ((_local3 < 0xF000)))) {
-            _local4 = ObjectLibrary.xmlLibrary_[36863];
-        }
-        else {
-            _local4 = ObjectLibrary.xmlLibrary_[_local3];
-        }
-        if (((((_local4) && (!(_arg1.isPaused())))) && (((_local4.hasOwnProperty("Consumable")) || (_local4.hasOwnProperty("InvUse")))))) {
-            if (!this.validStatInc(_local3, _arg1)) {
-                this.addTextLine.dispatch(ChatMessage.make("", (_local4.attribute("id") + " not consumed. Already at max.")));
-                return (false);
-            }
-            if (isStatPotion(_local3)) {
-                this.addTextLine.dispatch(ChatMessage.make("", (_local4.attribute("id") + " Consumed")));
-            }
-            this.applyUseItem(_arg1, _arg2, _local3, _local4);
-            SoundEffectLibrary.play("use_potion");
-            return (true);
-        }
-        SoundEffectLibrary.play("error");
-        return (false);
-    }
+    private var lastUseTime:int;
+    override public function useItem_new(go:GameObject, slot:int):Boolean {
+        if (getTimer() - 550 > this.lastUseTime) this.lastUseTime = getTimer();
+        else return false;
 
-    private function validStatInc(itemId:int, itemOwner:GameObject):Boolean {
-        var p:Player;
-        try {
-            if ((itemOwner is Player)) {
-                p = (itemOwner as Player);
+        var itemId:int = go.equipment_[slot];
+        var itemXML:XML = (itemId >= 0x9000 && itemId < 0xF000
+                ? ObjectLibrary.xmlLibrary_[36863] : ObjectLibrary.xmlLibrary_[itemId]);
+
+        if (itemId != 0x53aa && itemXML && !go.isPaused()
+                && (itemXML.Activate == "IncrementStat" || itemXML.Activate == "PowerStat")){
+            var player:Player = (go is Player ? go as Player : this.player);
+            var stats:Vector.<int> = StatData.statToPlayerValues(itemXML.Activate.@stat, player);
+            if (stats == null) return false;
+
+            var baseStat:int = (stats[0] - stats[1]);
+            var consumeResult:String;
+            if (itemXML.Activate == "PowerStat") {
+                if (player.ascended_) {
+                    if (baseStat == stats[2] + 10) {
+                        this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' not consumed." +
+                                " You already fully ascended this stat."));
+                        return false;
+                    }
+
+                    if (baseStat + int(itemXML.Activate.@amount) == stats[2] + 10) {
+                        consumeResult = "You are now fully ascended in this stat."
+                    } else consumeResult = (stats[2] + 10 - (baseStat + int(itemXML.Activate.@amount)))
+                            + " left to fully ascend this stat.";
+
+                    this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' consumed. " + consumeResult));
+                } else {
+                    this.addTextLine.dispatch(ChatMessage.make("", "You must have ascension enabled in order to consume vials."));
+                    return false;
+                }
             }
-            else {
-                p = this.player;
+
+            if (itemXML.Activate == "IncrementStat") {
+                if (baseStat >= stats[2]) {
+                    this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' not consumed. " +
+                            "You already maxed this stat."));
+                    return false;
+                }
+
+                if (baseStat + int(itemXML.Activate.@amount) >= stats[2]) {
+                    consumeResult = "You are now maxed in this stat."
+                } else consumeResult = (stats[2] - (baseStat + int(itemXML.Activate.@amount)))
+                        + " left to max this stat.";
+
+                this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' consumed. " + consumeResult));
             }
-            if (((itemId == 2591 || itemId == 5465 || itemId == 9064) && (p.attackMax_ == (p.attack_ - p.attackBoost_)))
-                    || ((itemId == 2592 || itemId == 5466 || itemId == 9065) && (p.defenseMax_ == (p.defense_ - p.defenseBoost_)))
-                    || ((itemId == 2593 || itemId == 5467 || itemId == 9066) && (p.speedMax_ == (p.speed_ - p.speedBoost_)))
-                    || ((itemId == 2612 || itemId == 5468 || itemId == 9067) && (p.vitalityMax_ == (p.vitality_ - p.vitalityBoost_)))
-                    || ((itemId == 2613 || itemId == 5469 || itemId == 9068) && (p.wisdomMax_ == (p.wisdom_ - p.wisdomBoost_)))
-                    || ((itemId == 2636 || itemId == 5470 || itemId == 9069) && (p.dexterityMax_ == (p.dexterity_ - p.dexterityBoost_)))
-                    || ((itemId == 2793 || itemId == 5471 || itemId == 9070) && (p.maxHPMax_ == (p.maxHP_ - p.maxHPBoost_)))
-                    || ((itemId == 2794 || itemId == 5472 || itemId == 9071) && (p.maxMPMax_ == (p.maxMP_ - p.maxMPBoost_)))
-                    || ((itemId == 22562 || itemId == 25033 || itemId == 26879) && (p.mightMax_ == (p.might_ - p.mightBoost_)))
-                    || ((itemId == 26877 || itemId == 25034 || itemId == 27042) && (p.restorationMax_ == (p.restoration_ - p.restorationBoost_)))
-                    || ((itemId == 22563 || itemId == 25035 || itemId == 27041) && (p.luckMax_ == (p.luck_ - p.luckBoost_)))
-                    || ((itemId == 26878 || itemId == 25036 || itemId == 27043) && (p.protectionMax_ == (p.protection_ - p.protectionBoost_))))
-                return false;
+            this.applyUseItem(go, slot, itemId, itemXML);
+            SoundEffectLibrary.play("use_potion");
+            return true;
+        } else if (itemId == 0x53aa) { //ultra ghetto fix
+            this.applyUseItem(go, slot, itemId, itemXML);
+            SoundEffectLibrary.play("use_potion");
+            return true;
         }
-        catch (err:Error) {
-            logger.error(("PROBLEM IN STAT INC " + err.getStackTrace()));
-        }
-        return (true);
+
+        SoundEffectLibrary.play("error");
+        return false;
     }
 
     private function applyUseItem(_arg1:GameObject, _arg2:int, _arg3:int, _arg4:XML):void {
@@ -1007,7 +1001,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
             converted = ((((gs_.model.getConverted()) || ((this.player.credits_ > 100)))) || ((sObj.price_ > this.player.credits_)));
         }
         if (sObj.soldObjectName() == TextKey.VAULT_CHEST) {
-            this.openDialog.dispatch(new PurchaseConfirmationDialog(function () {
+            this.openDialog.dispatch(new PurchaseConfirmationDialog(function () : void {
                 buyConfirmation(sObj, converted, sellableObjectId, quantity);
             }));
         }
@@ -1016,7 +1010,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         }
     }
 
-    private function buyConfirmation(_arg1:SellableObject, _arg2:Boolean, _arg3:int, _arg4:int) {
+    private function buyConfirmation(_arg1:SellableObject, _arg2:Boolean, _arg3:int, _arg4:int) : void {
         outstandingBuy_ = true;
         var _local5:Buy = (this.messages.require(BUY) as Buy);
         _local5.objectId_ = _arg3;
@@ -1187,7 +1181,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
     }
 
     private function onServerPlayerShoot(_arg1:ServerPlayerShoot):void {
-        var _local2 = (_arg1.ownerId_ == this.playerId_);
+        var _local2:Boolean = (_arg1.ownerId_ == this.playerId_);
         var _local3:GameObject = gs_.map.goDict_[_arg1.ownerId_];
         if ((((_local3 == null)) || (_local3.dead_))) {
             if (_local2) {
@@ -1301,7 +1295,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         var _local3:Object;
         var _local4:Object;
         gs_.hudView.tradeDone();
-        var _local2 = "";
+        var _local2:String = "";
         try {
             _local4 = JSON.parse(_arg1.description_);
             _local2 = _local4.key;
@@ -1369,26 +1363,26 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         }
     }
 
-    private function onNotification(_arg1:Notification):void {
-        var _local3:LineBuilder;
-        var _local4:CharacterStatusText;
-        var _local5:QueuedStatusText;
-        var _local2:GameObject = gs_.map.goDict_[_arg1.objectId_];
-        if (_local2 != null) {
-            _local3 = LineBuilder.fromJSON(_arg1.message);
-            if (_local3.key == "server.plus_symbol") {
-                _local4 = new CharacterStatusText(_local2, _arg1.color_, 1000);
-                _local4.setStringBuilder(_local3);
-                gs_.map.mapOverlay_.addStatusText(_local4);
-            }
-            else {
-                _local5 = new QueuedStatusText(_local2, _local3, _arg1.color_, 2000);
-                gs_.map.mapOverlay_.addQueuedText(_local5);
-                if ((((_local2 == this.player)) && ((_local3.key == "server.quest_complete")))) {
+    private function onNotification(notif:Notification) : void {
+        var lineBuilder:LineBuilder = null;
+        var go:GameObject = gs_.map.goDict_[notif.objectId_];
+        if (go != null) {
+            lineBuilder = LineBuilder.fromJSON(notif.message);
+            if (go == this.player) {
+                if (lineBuilder.key == "server.quest_complete") {
                     gs_.map.quest_.completed();
                 }
+                this.makeNotification(lineBuilder, go, notif.color_, 1000);
+            } else if (go.props_.isEnemy_ || !Parameters.data_.noAllyNotifications) {
+                this.makeNotification(lineBuilder, go, notif.color_, 1000);
             }
         }
+    }
+
+    private function makeNotification(lineBuilder:LineBuilder, go:GameObject, color:uint, lifetime:int) : void {
+        var statusText:CharacterStatusText = new CharacterStatusText(go, color, lifetime);
+        statusText.setStringBuilder(lineBuilder);
+        gs_.map.mapOverlay_.addStatusText(statusText);
     }
 
     private function onGlobalNotification(_arg1:GlobalNotification):void {
@@ -1431,133 +1425,160 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         lastTickId_ = _arg1.tickId_;
     }
 
-    private function canShowEffect(_arg1:GameObject):Boolean {
-        if (_arg1 != null) {
-            return (true);
+    private function canShowEffect(go:GameObject) : Boolean {
+        if (go != null) {
+            return true;
         }
-        var _local2 = (_arg1.objectId_ == this.playerId_);
-        if (((((!(_local2)) && (_arg1.props_.isPlayer_))) && (Parameters.data_.disableAllyParticles))) {
-            return (false);
-        }
-        return (true);
+
+        var isPlayer:Boolean = go.objectId_ == this.playerId_;
+        return !isPlayer && go.props_.isPlayer_ && Parameters.data_.disableAllyParticles;
     }
 
-    private function onShowEffect(_arg1:ShowEffect):void {
-        var _local3:GameObject;
-        var _local4:ParticleEffect;
-        var _local5:Point;
-        var _local6:uint;
-        var _local2:AbstractMap = gs_.map;
-        switch (_arg1.effectType_) {
+    private function onShowEffect(se:ShowEffect):void {
+        var go:GameObject;
+        var particleEffect:ParticleEffect;
+        var toPos:Point;
+        var time:uint;
+        var map:AbstractMap = gs_.map;
+
+        if (Parameters.data_.noParticlesMaster
+                && (se.effectType_ == ShowEffect.HEAL_EFFECT_TYPE
+                        || se.effectType_ == ShowEffect.TELEPORT_EFFECT_TYPE
+                        || se.effectType_ == ShowEffect.STREAM_EFFECT_TYPE
+                        || se.effectType_ == ShowEffect.POISON_EFFECT_TYPE
+                        || se.effectType_ == ShowEffect.LINE_EFFECT_TYPE
+                        || se.effectType_ == ShowEffect.FLOW_EFFECT_TYPE
+                        || se.effectType_ == ShowEffect.COLLAPSE_EFFECT_TYPE
+                        || se.effectType_ == ShowEffect.CONEBLAST_EFFECT_TYPE)) {
+            return;
+        }
+
+        switch (se.effectType_) {
             case ShowEffect.HEAL_EFFECT_TYPE:
-                _local3 = _local2.goDict_[_arg1.targetObjectId_];
-                if ((((_local3 == null)) || (!(this.canShowEffect(_local3))))) break;
-                _local2.addObj(new HealEffect(_local3, _arg1.color_), _local3.x_, _local3.y_);
+                go = map.goDict_[se.targetObjectId_];
+                if (go == null || !this.canShowEffect(go)) break;
+
+                map.addObj(new HealEffect(go, se.color_), go.x_, go.y_);
                 return;
             case ShowEffect.TELEPORT_EFFECT_TYPE:
-                _local2.addObj(new TeleportEffect(), _arg1.pos1_.x_, _arg1.pos1_.y_);
+                map.addObj(new TeleportEffect(), se.pos1_.x_, se.pos1_.y_);
                 return;
             case ShowEffect.STREAM_EFFECT_TYPE:
-                _local4 = new StreamEffect(_arg1.pos1_, _arg1.pos2_, _arg1.color_);
-                _local2.addObj(_local4, _arg1.pos1_.x_, _arg1.pos1_.y_);
+                particleEffect = new StreamEffect(se.pos1_, se.pos2_, se.color_);
+                map.addObj(particleEffect, se.pos1_.x_, se.pos1_.y_);
                 return;
             case ShowEffect.THROW_EFFECT_TYPE:
-                _local3 = _local2.goDict_[_arg1.targetObjectId_];
-                _local5 = (((_local3) != null) ? new Point(_local3.x_, _local3.y_) : _arg1.pos2_.toPoint());
-                if (((!((_local3 == null))) && (!(this.canShowEffect(_local3))))) break;
-                _local4 = new ThrowEffect(_local5, _arg1.pos1_.toPoint(), _arg1.color_, _arg1.duration_ * 1000);
-                _local2.addObj(_local4, _local5.x, _local5.y);
+                go = map.goDict_[se.targetObjectId_];
+                if (go == null || !this.canShowEffect(go)) break;
+
+                toPos = (go != null ? new Point(go.x_, go.y_) : se.pos2_.toPoint());
+                particleEffect = new ThrowEffect(toPos, se.pos1_.toPoint(), se.color_, se.duration_ * 1000);
+                map.addObj(particleEffect, toPos.x, toPos.y);
                 return;
             case ShowEffect.NOVA_EFFECT_TYPE:
-                _local3 = _local2.goDict_[_arg1.targetObjectId_];
-                if ((((_local3 == null)) || (!(this.canShowEffect(_local3))))) break;
-                _local4 = new NovaEffect(_local3, _arg1.pos1_.x_, _arg1.color_);
-                _local2.addObj(_local4, _local3.x_, _local3.y_);
+                go = map.goDict_[se.targetObjectId_];
+                if (go == null || !this.canShowEffect(go)) break;
+
+                particleEffect = new NovaEffect(go, se.pos1_.x_, se.color_);
+                map.addObj(particleEffect, go.x_, go.y_);
                 return;
             case ShowEffect.POISON_EFFECT_TYPE:
-                _local3 = _local2.goDict_[_arg1.targetObjectId_];
-                if ((((_local3 == null)) || (!(this.canShowEffect(_local3))))) break;
-                _local4 = new PoisonEffect(_local3, _arg1.color_);
-                _local2.addObj(_local4, _local3.x_, _local3.y_);
+                go = map.goDict_[se.targetObjectId_];
+                if (go == null || !this.canShowEffect(go)) break;
+
+                particleEffect = new PoisonEffect(go, se.color_);
+                map.addObj(particleEffect, go.x_, go.y_);
                 return;
             case ShowEffect.LINE_EFFECT_TYPE:
-                _local3 = _local2.goDict_[_arg1.targetObjectId_];
-                if ((((_local3 == null)) || (!(this.canShowEffect(_local3))))) break;
-                _local4 = new LineEffect(_local3, _arg1.pos1_, _arg1.color_);
-                _local2.addObj(_local4, _arg1.pos1_.x_, _arg1.pos1_.y_);
+                go = map.goDict_[se.targetObjectId_];
+                if (go == null || !this.canShowEffect(go)) break;
+
+                particleEffect = new LineEffect(go, se.pos1_, se.color_);
+                map.addObj(particleEffect, se.pos1_.x_, se.pos1_.y_);
                 return;
             case ShowEffect.BURST_EFFECT_TYPE:
-                _local3 = _local2.goDict_[_arg1.targetObjectId_];
-                if ((((_local3 == null)) || (!(this.canShowEffect(_local3))))) break;
-                _local4 = new BurstEffect(_local3, _arg1.pos1_, _arg1.pos2_, _arg1.color_);
-                _local2.addObj(_local4, _arg1.pos1_.x_, _arg1.pos1_.y_);
+                go = map.goDict_[se.targetObjectId_];
+                if (go == null || !this.canShowEffect(go)) break;
+
+                particleEffect = new BurstEffect(go, se.pos1_, se.pos2_, se.color_);
+                map.addObj(particleEffect, se.pos1_.x_, se.pos1_.y_);
                 return;
             case ShowEffect.FLOW_EFFECT_TYPE:
-                _local3 = _local2.goDict_[_arg1.targetObjectId_];
-                if ((((_local3 == null)) || (!(this.canShowEffect(_local3))))) break;
-                _local4 = new FlowEffect(_arg1.pos1_, _local3, _arg1.color_);
-                _local2.addObj(_local4, _arg1.pos1_.x_, _arg1.pos1_.y_);
+                go = map.goDict_[se.targetObjectId_];
+                if (go == null || !this.canShowEffect(go)) break;
+
+                particleEffect = new FlowEffect(se.pos1_, go, se.color_);
+                map.addObj(particleEffect, se.pos1_.x_, se.pos1_.y_);
                 return;
             case ShowEffect.RING_EFFECT_TYPE:
-                _local3 = _local2.goDict_[_arg1.targetObjectId_];
-                if ((((_local3 == null)) || (!(this.canShowEffect(_local3))))) break;
-                _local4 = new RingEffect(_local3, _arg1.pos1_.x_, _arg1.color_);
-                _local2.addObj(_local4, _local3.x_, _local3.y_);
+                go = map.goDict_[se.targetObjectId_];
+                if (go == null || !this.canShowEffect(go)) break;
+
+                particleEffect = new RingEffect(go, se.pos1_.x_, se.color_);
+                map.addObj(particleEffect, go.x_, go.y_);
                 return;
             case ShowEffect.LIGHTNING_EFFECT_TYPE:
-                _local3 = _local2.goDict_[_arg1.targetObjectId_];
-                if ((((_local3 == null)) || (!(this.canShowEffect(_local3))))) break;
-                _local4 = new LightningEffect(_local3, _arg1.pos1_, _arg1.color_, _arg1.pos2_.x_);
-                _local2.addObj(_local4, _local3.x_, _local3.y_);
+                go = map.goDict_[se.targetObjectId_];
+                if (go == null || !this.canShowEffect(go)) break;
+
+                particleEffect = new LightningEffect(go, se.pos1_, se.color_, se.pos2_.x_);
+                map.addObj(particleEffect, go.x_, go.y_);
                 return;
             case ShowEffect.COLLAPSE_EFFECT_TYPE:
-                _local3 = _local2.goDict_[_arg1.targetObjectId_];
-                if ((((_local3 == null)) || (!(this.canShowEffect(_local3))))) break;
-                _local4 = new CollapseEffect(_local3, _arg1.pos1_, _arg1.pos2_, _arg1.color_);
-                _local2.addObj(_local4, _arg1.pos1_.x_, _arg1.pos1_.y_);
+                go = map.goDict_[se.targetObjectId_];
+                if (go == null || !this.canShowEffect(go)) break;
+
+                particleEffect = new CollapseEffect(go, se.pos1_, se.pos2_, se.color_);
+                map.addObj(particleEffect, se.pos1_.x_, se.pos1_.y_);
                 return;
             case ShowEffect.CONEBLAST_EFFECT_TYPE:
-                _local3 = _local2.goDict_[_arg1.targetObjectId_];
-                if ((((_local3 == null)) || (!(this.canShowEffect(_local3))))) break;
-                _local4 = new ConeBlastEffect(_local3, _arg1.pos1_, _arg1.pos2_.x_, _arg1.color_);
-                _local2.addObj(_local4, _local3.x_, _local3.y_);
+                go = map.goDict_[se.targetObjectId_];
+                if (go == null || !this.canShowEffect(go)) break;
+
+                particleEffect = new ConeBlastEffect(go, se.pos1_, se.pos2_.x_, se.color_);
+                map.addObj(particleEffect, go.x_, go.y_);
                 return;
             case ShowEffect.JITTER_EFFECT_TYPE:
                 gs_.camera_.startJitter();
                 return;
             case ShowEffect.FLASH_EFFECT_TYPE:
-                _local3 = _local2.goDict_[_arg1.targetObjectId_];
-                if ((((_local3 == null)) || (!(this.canShowEffect(_local3))))) break;
-                _local3.flash_ = new FlashDescription(getTimer(), _arg1.color_, _arg1.pos1_.x_, _arg1.pos1_.y_);
+                go = map.goDict_[se.targetObjectId_];
+                if (go == null || !this.canShowEffect(go)) break;
+
+                go.flash_ = new FlashDescription(getTimer(), se.color_, se.pos1_.x_, se.pos1_.y_);
                 return;
             case ShowEffect.THROW_PROJECTILE_EFFECT_TYPE:
-                _local5 = _arg1.pos1_.toPoint();
-                if (((!((_local3 == null))) && (!(this.canShowEffect(_local3))))) break;
-                _local4 = new ThrowProjectileEffect(_arg1.color_, _arg1.pos2_.toPoint(), _arg1.pos1_.toPoint());
-                _local2.addObj(_local4, _local5.x, _local5.y);
+                toPos = se.pos1_.toPoint();
+                if (go == null || !this.canShowEffect(go)) break;
+
+                particleEffect = new ThrowProjectileEffect(se.color_, se.pos2_.toPoint(), se.pos1_.toPoint());
+                map.addObj(particleEffect, toPos.x, toPos.y);
                 return;
             case ShowEffect.SHOCKER_EFFECT_TYPE:
-                _local3 = _local2.goDict_[_arg1.targetObjectId_];
-                if ((((_local3 == null)) || (!(this.canShowEffect(_local3))))) break;
-                if (((_local3) && (_local3.shockEffect))) {
-                    _local3.shockEffect.destroy();
+                go = map.goDict_[se.targetObjectId_];
+                if (go == null || !this.canShowEffect(go)) break;
+                if (go && go.shockEffect) {
+                    go.shockEffect.destroy();
                 }
-                _local4 = new ShockerEffect(_local3);
-                _local3.shockEffect = ShockerEffect(_local4);
-                gs_.map.addObj(_local4, _local3.x_, _local3.y_);
+
+                particleEffect = new ShockerEffect(go);
+                go.shockEffect = ShockerEffect(particleEffect);
+                gs_.map.addObj(particleEffect, go.x_, go.y_);
                 return;
             case ShowEffect.SHOCKEE_EFFECT_TYPE:
-                _local3 = _local2.goDict_[_arg1.targetObjectId_];
-                if ((((_local3 == null)) || (!(this.canShowEffect(_local3))))) break;
-                _local4 = new ShockeeEffect(_local3);
-                gs_.map.addObj(_local4, _local3.x_, _local3.y_);
+                go = map.goDict_[se.targetObjectId_];
+                if (go == null || !this.canShowEffect(go)) break;
+
+                particleEffect = new ShockeeEffect(go);
+                gs_.map.addObj(particleEffect, go.x_, go.y_);
                 return;
             case ShowEffect.RISING_FURY_EFFECT_TYPE:
-                _local3 = _local2.goDict_[_arg1.targetObjectId_];
-                if ((((_local3 == null)) || (!(this.canShowEffect(_local3))))) break;
-                _local6 = (_arg1.pos1_.x_ * 1000);
-                _local4 = new RisingFuryEffect(_local3, _local6);
-                gs_.map.addObj(_local4, _local3.x_, _local3.y_);
+                go = map.goDict_[se.targetObjectId_];
+                if (go == null || !this.canShowEffect(go)) break;
+
+                time = (se.pos1_.x_ * 1000);
+                particleEffect = new RisingFuryEffect(go, time);
+                gs_.map.addObj(particleEffect, go.x_, go.y_);
                 return;
         }
     }
@@ -1571,68 +1592,68 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local2.onGoto(_arg1.pos_.x_, _arg1.pos_.y_, gs_.lastUpdate_);
     }
 
-    private function updateGameObject(_arg1:GameObject, _arg2:Vector.<StatData>, _arg3:Boolean):void {
-        var _local7:StatData;
-        var _local8:int;
-        var _local9:int;
-        var _local10:int;
-        var _local4:Player = (_arg1 as Player);
-        var _local5:Merchant = (_arg1 as Merchant);
-        var _local6:Pet = (_arg1 as Pet);
-        if (_local6) {
-            this.petUpdater.updatePet(_local6, _arg2);
+    private function updateGameObject(go:GameObject, statDataVec:Vector.<StatData>, isLocalObj:Boolean):void {
+        var statData:StatData;
+        var statValue:int;
+        var invIndex:int;
+        var bpIndex:int;
+        var player:Player = (go as Player);
+        var merchant:Merchant = (go as Merchant);
+        var pet:Pet = (go as Pet);
+        if (pet) {
+            this.petUpdater.updatePet(pet, statDataVec);
             if (gs_.map.isPetYard) {
-                this.petUpdater.updatePetVOs(_local6, _arg2);
+                this.petUpdater.updatePetVOs(pet, statDataVec);
             }
             return;
         }
-        for each (_local7 in _arg2) {
-            _local8 = _local7.statValue_;
-            switch (_local7.statType_) {
+        for each (statData in statDataVec) {
+            statValue = statData.statValue_;
+            switch (statData.statType_) {
                 case StatData.MAX_HP_STAT:
-                    _arg1.maxHP_ = _local8;
+                    go.maxHP_ = statValue;
                     break;
                 case StatData.HP_STAT:
-                    _arg1.hp_ = _local8;
+                    go.hp_ = statValue;
                     break;
                 case StatData.SIZE_STAT:
-                    _arg1.setSize(_local8);
+                    go.setSize(statValue);
                     break;
                 case StatData.MAX_MP_STAT:
-                    _local4.maxMP_ = _local8;
+                    player.maxMP_ = statValue;
                     break;
                 case StatData.MP_STAT:
-                    _local4.mp_ = _local8;
+                    player.mp_ = statValue;
                     break;
                 case StatData.NEXT_LEVEL_EXP_STAT:
-                    _local4.nextLevelExp_ = _local8;
+                    player.nextLevelExp_ = statValue;
                     break;
                 case StatData.EXP_STAT:
-                    _local4.exp_ = _local8;
+                    player.exp_ = statValue;
                     break;
                 case StatData.LEVEL_STAT:
-                    _arg1.level_ = _local8;
+                    go.level_ = statValue;
                     break;
                 case StatData.ATTACK_STAT:
-                    _local4.attack_ = _local8;
+                    player.attack_ = statValue;
                     break;
                 case StatData.DEFENSE_STAT:
-                    _arg1.defense_ = _local8;
+                    go.defense_ = statValue;
                     break;
                 case StatData.SPEED_STAT:
-                    _local4.speed_ = _local8;
+                    player.speed_ = statValue;
                     break;
                 case StatData.DEXTERITY_STAT:
-                    _local4.dexterity_ = _local8;
+                    player.dexterity_ = statValue;
                     break;
                 case StatData.VITALITY_STAT:
-                    _local4.vitality_ = _local8;
+                    player.vitality_ = statValue;
                     break;
                 case StatData.WISDOM_STAT:
-                    _local4.wisdom_ = _local8;
+                    player.wisdom_ = statValue;
                     break;
                 case StatData.CONDITION_STAT:
-                    _arg1.condition_[ConditionEffect.CE_FIRST_BATCH] = _local8;
+                    go.condition_[ConditionEffect.CE_FIRST_BATCH] = statValue;
                     break;
                 case StatData.INVENTORY_0_STAT:
                 case StatData.INVENTORY_1_STAT:
@@ -1646,154 +1667,157 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                 case StatData.INVENTORY_9_STAT:
                 case StatData.INVENTORY_10_STAT:
                 case StatData.INVENTORY_11_STAT:
-                    _local9 = (_local7.statType_ - StatData.INVENTORY_0_STAT);
-                    if (_local8 != -1) {
-                        _arg1.lockedSlot[_local9] = 0;
+                    invIndex = (statData.statType_ - StatData.INVENTORY_0_STAT);
+                    if (statValue != -1) {
+                        go.lockedSlot[invIndex] = 0;
                     }
-                    _arg1.equipment_[_local9] = _local8;
+                    go.equipment_[invIndex] = statValue;
                     break;
                 case StatData.NUM_STARS_STAT:
-                    _local4.numStars_ = _local8;
+                    player.numStars_ = statValue;
                     break;
                 case StatData.NAME_STAT:
-                    if (_arg1.name_ != _local7.strStatValue_) {
-                        _arg1.name_ = _local7.strStatValue_;
-                        _arg1.nameBitmapData_ = null;
+                    if (go.name_ != statData.strStatValue_) {
+                        go.name_ = statData.strStatValue_;
+                        go.nameBitmapData_ = null;
                     }
                     break;
                 case StatData.TEX1_STAT:
-                    (((_local8 >= 0)) && (_arg1.setTex1(_local8)));
+                    if (statValue >= 0)
+                        go.setTex1(statValue);
                     break;
                 case StatData.TEX2_STAT:
-                    (((_local8 >= 0)) && (_arg1.setTex2(_local8)));
+                    if (statValue >= 0)
+                        go.setTex2(statValue);
                     break;
                 case StatData.MERCHANDISE_TYPE_STAT:
-                    _local5.setMerchandiseType(_local8);
+                    merchant.setMerchandiseType(statValue);
                     break;
                 case StatData.CREDITS_STAT:
-                    _local4.setCredits(_local8);
+                    player.setCredits(statValue);
                     break;
                 case StatData.MERCHANDISE_PRICE_STAT:
-                    (_arg1 as SellableObject).setPrice(_local8);
+                    (go as SellableObject).setPrice(statValue);
                     break;
                 case StatData.ACTIVE_STAT:
-                    (_arg1 as Portal).active_ = !((_local8 == 0));
+                    (go as Portal).active_ = statValue != 0;
                     break;
                 case StatData.ACCOUNT_ID_STAT:
-                    _local4.accountId_ = _local7.strStatValue_;
+                    player.accountId_ = statData.strStatValue_;
                     break;
                 case StatData.FAME_STAT:
-                    _local4.fame_ = _local8;
+                    player.fame_ = statValue;
                     break;
                 case StatData.FORTUNE_TOKEN_STAT:
-                    _local4.setTokens(_local8);
+                    player.setTokens(statValue);
                     break;
                 case StatData.MERCHANDISE_CURRENCY_STAT:
-                    (_arg1 as SellableObject).setCurrency(_local8);
+                    (go as SellableObject).setCurrency(statValue);
                     break;
                 case StatData.CONNECT_STAT:
-                    _arg1.connectType_ = _local8;
+                    go.connectType_ = statValue;
                     break;
                 case StatData.MERCHANDISE_COUNT_STAT:
-                    _local5.count_ = _local8;
-                    _local5.untilNextMessage_ = 0;
+                    merchant.count_ = statValue;
+                    merchant.untilNextMessage_ = 0;
                     break;
                 case StatData.MERCHANDISE_MINS_LEFT_STAT:
-                    _local5.minsLeft_ = _local8;
-                    _local5.untilNextMessage_ = 0;
+                    merchant.minsLeft_ = statValue;
+                    merchant.untilNextMessage_ = 0;
                     break;
                 case StatData.MERCHANDISE_DISCOUNT_STAT:
-                    _local5.discount_ = _local8;
-                    _local5.untilNextMessage_ = 0;
+                    merchant.discount_ = statValue;
+                    merchant.untilNextMessage_ = 0;
                     break;
                 case StatData.MERCHANDISE_RANK_REQ_STAT:
-                    (_arg1 as SellableObject).setRankReq(_local8);
+                    (go as SellableObject).setRankReq(statValue);
                     break;
                 case StatData.MAX_HP_BOOST_STAT:
-                    _local4.maxHPBoost_ = _local8;
+                    player.maxHPBoost_ = statValue;
                     break;
                 case StatData.MAX_MP_BOOST_STAT:
-                    _local4.maxMPBoost_ = _local8;
+                    player.maxMPBoost_ = statValue;
                     break;
                 case StatData.ATTACK_BOOST_STAT:
-                    _local4.attackBoost_ = _local8;
+                    player.attackBoost_ = statValue;
                     break;
                 case StatData.DEFENSE_BOOST_STAT:
-                    _local4.defenseBoost_ = _local8;
+                    player.defenseBoost_ = statValue;
                     break;
                 case StatData.SPEED_BOOST_STAT:
-                    _local4.speedBoost_ = _local8;
+                    player.speedBoost_ = statValue;
                     break;
                 case StatData.VITALITY_BOOST_STAT:
-                    _local4.vitalityBoost_ = _local8;
+                    player.vitalityBoost_ = statValue;
                     break;
                 case StatData.WISDOM_BOOST_STAT:
-                    _local4.wisdomBoost_ = _local8;
+                    player.wisdomBoost_ = statValue;
                     break;
                 case StatData.DEXTERITY_BOOST_STAT:
-                    _local4.dexterityBoost_ = _local8;
+                    player.dexterityBoost_ = statValue;
                     break;
                 case StatData.OWNER_ACCOUNT_ID_STAT:
-                    (_arg1 as Container).setOwnerId(_local7.strStatValue_);
+                    (go as Container).setOwnerId(statData.strStatValue_);
                     break;
                 case StatData.RANK_REQUIRED_STAT:
-                    (_arg1 as NameChanger).setRankRequired(_local8);
+                    (go as NameChanger).setRankRequired(statValue);
                     break;
                 case StatData.NAME_CHOSEN_STAT:
-                    _local4.nameChosen_ = !((_local8 == 0));
-                    _arg1.nameBitmapData_ = null;
+                    player.nameChosen_ = statValue != 0;
+                    go.nameBitmapData_ = null;
                     break;
                 case StatData.CURR_FAME_STAT:
-                    _local4.currFame_ = _local8;
+                    player.currFame_ = statValue;
                     break;
                 case StatData.NEXT_CLASS_QUEST_FAME_STAT:
-                    _local4.nextClassQuestFame_ = _local8;
+                    player.nextClassQuestFame_ = statValue;
                     break;
                 case StatData.GLOW_COLOR_STAT:
-                    _local4.setGlow(_local8);
+                    player.setGlow(statValue);
                     break;
                 case StatData.SINK_LEVEL_STAT:
-                    if (!_arg3) {
-                        _local4.sinkLevel_ = _local8;
+                    if (!isLocalObj) {
+                        player.sinkLevel_ = statValue;
                     }
                     break;
                 case StatData.ALT_TEXTURE_STAT:
-                    _arg1.setAltTexture(_local8);
+                    go.setAltTexture(statValue);
                     break;
                 case StatData.GUILD_NAME_STAT:
-                    _local4.setGuildName(_local7.strStatValue_);
+                    player.setGuildName(statData.strStatValue_);
                     break;
                 case StatData.GUILD_RANK_STAT:
-                    _local4.guildRank_ = _local8;
+                    player.guildRank_ = statValue;
                     break;
                 case StatData.BREATH_STAT:
-                    _local4.breath_ = _local8;
+                    player.breath_ = statValue;
                     break;
                 case StatData.XP_BOOSTED_STAT:
-                    _local4.xpBoost_ = _local8;
+                    player.xpBoost_ = statValue;
                     break;
                 case StatData.XP_TIMER_STAT:
-                    _local4.xpTimer = (_local8 * TO_MILLISECONDS);
+                    player.xpTimer = (statValue * TO_MILLISECONDS);
                     break;
                 case StatData.LD_TIMER_STAT:
-                    _local4.dropBoost = (_local8 * TO_MILLISECONDS);
+                    player.dropBoost = (statValue * TO_MILLISECONDS);
                     break;
                 case StatData.LT_TIMER_STAT:
-                    _local4.tierBoost = (_local8 * TO_MILLISECONDS);
+                    player.tierBoost = (statValue * TO_MILLISECONDS);
                     break;
                 case StatData.HEALTH_POTION_STACK_STAT:
-                    _local4.healthPotionCount_ = _local8;
+                    player.healthPotionCount_ = statValue;
                     break;
                 case StatData.MAGIC_POTION_STACK_STAT:
-                    _local4.magicPotionCount_ = _local8;
+                    player.magicPotionCount_ = statValue;
                     break;
                 case StatData.TEXTURE_STAT:
-                    ((((!((_local4.skinId == _local8))) && ((_local8 >= 0)))) && (this.setPlayerSkinTemplate(_local4, _local8)));
+                    if (player.skinId != statValue && statValue >= 0)
+                        this.setPlayerSkinTemplate(player, statValue);
                     break;
                 case StatData.HASBACKPACK_STAT:
-                    (_arg1 as Player).hasBackpack_ = Boolean(_local8);
-                    if (_arg3) {
-                        this.updateBackpackTab.dispatch(Boolean(_local8));
+                    (go as Player).hasBackpack_ = Boolean(statValue);
+                    if (isLocalObj) {
+                        this.updateBackpackTab.dispatch(Boolean(statValue));
                     }
                     break;
                 case StatData.BACKPACK_0_STAT:
@@ -1804,148 +1828,114 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                 case StatData.BACKPACK_5_STAT:
                 case StatData.BACKPACK_6_STAT:
                 case StatData.BACKPACK_7_STAT:
-                    _local10 = (((_local7.statType_ - StatData.BACKPACK_0_STAT) + GeneralConstants.NUM_EQUIPMENT_SLOTS) + GeneralConstants.NUM_INVENTORY_SLOTS);
-                    (_arg1 as Player).equipment_[_local10] = _local8;
+                    bpIndex = statData.statType_ - StatData.BACKPACK_0_STAT
+                            + GeneralConstants.NUM_EQUIPMENT_SLOTS + GeneralConstants.NUM_INVENTORY_SLOTS;
+                    (go as Player).equipment_[bpIndex] = statValue;
                     break;
                 case StatData.NEW_CON_STAT:
-                    _arg1.condition_[ConditionEffect.CE_SECOND_BATCH] = _local8;
+                    go.condition_[ConditionEffect.CE_SECOND_BATCH] = statValue;
                     break;
                 case StatData.RANK:
-                    _local4.rank_ = _local8;
+                    player.rank_ = statValue;
                     break;
                 case StatData.ADMIN:
-                    _local4.admin_ = _local8 == 1 ? true : false;
+                    player.admin_ = statValue == 1;
                     break;
                 case StatData.ONRANE_STAT:
-                    _local4.setOnrane(_local8);
+                    player.setOnrane(statValue);
                     break;
                 case StatData.KANTOS_STAT:
-                    _local4.setKantos(_local8);
+                    player.setKantos(statValue);
                     break;
-                case StatData.RAID_TOKEN:
-                    _local4.raidToken_ = _local8;
+                case StatData.ALERT_TOKEN:
+                    player.alertToken_ = statValue;
                     break;
                 case StatData.SURGE:
-                    _local4.surge_ = _local8;
+                    player.surge_ = statValue;
                     break;
                 case StatData.MIGHT_STAT:
-                    _local4.might_ = _local8;
+                    player.might_ = statValue;
                     break;
                 case StatData.LUCK_STAT:
-                    _local4.luck_ = _local8;
+                    player.luck_ = statValue;
                     break;
                 case StatData.MIGHT_BOOST_STAT:
-                    _local4.mightBoost_ = _local8;
+                    player.mightBoost_ = statValue;
                     break;
                 case StatData.LUCK_BOOST_STAT:
-                    _local4.luckBoost_ = _local8;
+                    player.luckBoost_ = statValue;
                     break;
-                case StatData.LOOTBOX1:
-                    _local4.setLootbox1(_local8);
+                case StatData.BRONZE_LOOTBOX:
+                    player.setBronzeLootbox(statValue);
                     break;
-                case StatData.LOOTBOX2:
-                    _local4.setLootbox2(_local8);
+                case StatData.SILVER_LOOTBOX:
+                    player.setSilverLootbox(statValue);
                     break;
-                case StatData.LOOTBOX3:
-                    _local4.setLootbox3(_local8);
+                case StatData.GOLD_LOOTBOX:
+                    player.setGoldLootbox(statValue);
                     break;
-                case StatData.LOOTBOX4:
-                    _local4.setLootbox4(_local8);
+                case StatData.ELITE_LOOTBOX:
+                    player.setEliteLootbox(statValue);
                     break;
-                case StatData.LOOTBOX5:
-                    _local4.lootBox5_ = _local8;
+                case StatData.PREMIUM_LOOTBOX:
+                    player.premiumLootbox_ = statValue;
                     break;
                 case StatData.RESTORATION_STAT:
-                    _local4.restoration_ = _local8;
+                    player.restoration_ = statValue;
                     break;
                 case StatData.PROTECTION_STAT:
-                    _local4.protection_ = _local8;
+                    player.protection_ = statValue;
                     break;
                 case StatData.RESTORATION_BOOST_STAT:
-                    _local4.restorationBoost_ = _local8;
+                    player.restorationBoost_ = statValue;
                     break;
                 case StatData.PROTECTION_BOOST_STAT:
-                    _local4.protectionBoost_ = _local8;
+                    player.protectionBoost_ = statValue;
                     break;
                 case StatData.PROTECTIONPOINTS:
-                    _local4.protectionPoints_ = _local8;
+                    player.protectionPoints_ = statValue;
                     break;
                 case StatData.PROTECTIONMAX:
-                    _local4.protectionPointsMax_ = _local8;
+                    player.protectionPointsMax_ = statValue;
                     break;
                 case StatData.EFFECT:
-                    _local4.setEffect(_local7.strStatValue_);
+                    player.setEffect(statData.strStatValue_);
                     break;
                 case StatData.MARKSENABLED:
-                    _local4.marksEnabled_ = _local8;
-                    if (_arg3) {
-                         this.updateMarkTab.dispatch(Boolean(_local8));
+                    player.marksEnabled_ = statValue == 1;
+                    if (isLocalObj) {
+                         this.updateMarkTab.dispatch(Boolean(statValue));
                     }
                      break;
+                case StatData.ASCENSIONENABLED:
+                    player.ascended_ = statValue == 1;
+                    break;
                 case StatData.MARK:
-                    _local4.mark_ = _local8;
+                    player.mark_ = statValue;
                     break;
                 case StatData.NODE1:
-                    _local4.node1_ = _local8;
+                    player.node1_ = statValue;
                     break;
                 case StatData.NODE2:
-                    _local4.node2_ = _local8;
+                    player.node2_ = statValue;
                     break;
                 case StatData.NODE3:
-                    _local4.node3_ = _local8;
+                    player.node3_ = statValue;
                     break;
                 case StatData.NODE4:
-                    _local4.node4_ = _local8;
-                    break;
-
-
-                case StatData.PWMAX_HP_STAT:
-                    _local4.pwHealth_ = _local8;
-                    break;
-                case StatData.PWMAX_MP_STAT:
-                    _local4.pwMana_ = _local8;
-                    break;
-                case StatData.PWATTACK_STAT:
-                    _local4.pwAttack_ = _local8;
-                    break;
-                case StatData.PWDEFENSE_STAT:
-                    _local4.pwDefense_ = _local8;
-                    break;
-                case StatData.PWDEXTERITY_STAT:
-                    _local4.pwDexterity_ = _local8;
-                    break;
-                case StatData.PWSPEED_STAT:
-                    _local4.pwSpeed_ = _local8;
-                    break;
-                case StatData.PWVITALITY_STAT:
-                    _local4.pwVitality_ = _local8;
-                    break;
-                case StatData.PWWISDOM_STAT:
-                    _local4.pwWisdom_ = _local8;
-                    break;
-                case StatData.PWMIGHT_STAT:
-                    _local4.pwMight_ = _local8;
-                    break;
-                case StatData.PWLUCK_STAT:
-                    _local4.pwLuck_ = _local8;
-                    break;
-                case StatData.PWRESTORATION_STAT:
-                    _local4.pwRestoration_ = _local8;
-                    break;
-                case StatData.PWPROTECTION_STAT:
-                    _local4.pwProtection_ = _local8;
+                    player.node4_ = statValue;
                     break;
                 case StatData.RAGE_STAT:
-                    _local4.rage_ = _local8;
+                    player.rage_ = statValue;
                     break;
                 case StatData.SOR_STORAGE:
-                    _local4.sorStorage_ = _local8;
+                    player.sorStorage_ = statValue;
                     break;
                 case StatData.ELITE:
-                    _local4.elite_ = _local8;
+                    player.elite_ = statValue;
                     break;
                 case StatData.PVP:
-                    _local4.pvp_ = _local8;
+                    player.pvp_ = statValue == 1;
                     break;
             }
         }
@@ -1975,7 +1965,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         if (_local5 == null) {
             return;
         }
-        var _local6 = (_arg1.objectId_ == this.playerId_);
+        var _local6:Boolean = (_arg1.objectId_ == this.playerId_);
         if (((!((_arg2 == 0))) && (!(_local6)))) {
             _local5.onTickPos(_arg1.pos_.x_, _arg1.pos_.y_, _arg2, _arg3);
         }
@@ -2021,12 +2011,12 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                     _local18 = gs_.model.getNewUnlocks(_local7.objectType_, _local7.level_);
                     _local7.handleLevelUp(!((_local18.length == 0)));
                 }
-                else {
+                else if (!Parameters.data_.noAllyNotifications) {
                     _local7.levelUpEffect(TextKey.PLAYER_LEVELUP);
                 }
             }
             else {
-                if (((!((_local8 == -1))) && ((_local7.exp_ > _local9)))) {
+                if (_local8 != -1 && _local7.exp_ > _local9 && !Parameters.data_.noAllyNotifications) {
                     _local7.handleExpUp((_local7.exp_ - _local9));
                 }
             }
@@ -2185,7 +2175,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
             this.aoeAck(gs_.lastUpdate_, this.player.x_, this.player.y_);
             return;
         }
-        var _local3 = (this.player.distTo(_arg1.pos_) < _arg1.radius_);
+        var _local3:Boolean = (this.player.distTo(_arg1.pos_) < _arg1.radius_);
         if (_local3) {
             _local4 = GameObject.damageWithDefense(_arg1.damage_, this.player.defense_, false, this.player.condition_);
             _local5 = null;
@@ -2376,7 +2366,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
     }
 
     private function handleJsonDialog(_arg1:Failure):void {
-        var errorMsg = JSON.parse(_arg1.errorDescription_);
+        var errorMsg:Object = JSON.parse(_arg1.errorDescription_);
         var dlg:Dialog;
 
         // check for correct client version

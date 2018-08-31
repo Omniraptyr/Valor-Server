@@ -22,7 +22,7 @@ public class SecurityQuestionsConfirmDialog extends Frame {
 
     private function createAssets():void {
         var _local3:String;
-        var _local1 = "";
+        var _local1:String = "";
         var _local2:int;
         for each (_local3 in this.questionsList) {
             _local1 = (_local1 + (('<font color="#7777EE">' + LineBuilder.getLocalizedStringFromKey(_local3)) + "</font>\n"));
@@ -50,7 +50,7 @@ public class SecurityQuestionsConfirmDialog extends Frame {
         titleText_.setColor(0xB3B3B3);
     }
 
-    public function setError(_arg1:String) {
+    public function setError(_arg1:String) : void {
         titleText_.setStringBuilder(new LineBuilder().setParams(_arg1));
         titleText_.setColor(16549442);
     }

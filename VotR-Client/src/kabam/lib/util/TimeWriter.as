@@ -36,7 +36,7 @@ public class TimeWriter {
         if (_arg3 == -1) {
             _arg3 = _local4.length;
         }
-        var _local5 = "";
+        var _local5:String = "";
         var _local6:int = _local4.length;
         while (_local6 < _arg3) {
             _local5 = (_local5 + "0");

@@ -24,8 +24,8 @@ public class CollapseEffect extends ParticleEffect {
         x_ = this.center_.x;
         y_ = this.center_.y;
         var _local3:Number = Point.distance(this.center_, this.edgePoint_);
-        var _local4 = 300;
-        var _local5 = 200;
+        var _local4:int = 300;
+        var _local5:int = 200;
         var _local6:int = 24;
         var _local7:int;
         while (_local7 < _local6) {
@@ -46,7 +46,7 @@ public class CollapseEffect extends ParticleEffect {
         y_ = this.center_.y;
         var _local3:Number = Point.distance(this.center_, this.edgePoint_);
         var _local4:int = 50;
-        var _local5 = 150;
+        var _local5:int = 150;
         var _local6:int = 8;
         var _local7:int;
         while (_local7 < _local6) {

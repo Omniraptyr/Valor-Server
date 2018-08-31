@@ -1,8 +1,6 @@
 package kabam.rotmg.messaging.impl.outgoing {
 import flash.utils.IDataOutput;
 
-import kabam.rotmg.messaging.impl.data.SlotObjectData;
-
 public class LaunchRaid extends OutgoingMessage {
 
     public function LaunchRaid(_arg_1:uint, _arg_2:Function) {

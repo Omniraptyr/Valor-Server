@@ -256,7 +256,7 @@ public class MysteryBoxInfo extends EventDispatcher {
 
     public function getSaleTimeLeftStringBuilder():LineBuilder {
         var _local1:Date = new Date();
-        var _local2 = "";
+        var _local2:String = "";
         var _local3:Number = ((this._saleEnd.time - _local1.time) / 1000);
         var _local4:LineBuilder = new LineBuilder();
         if (_local3 > TimeUtil.DAY_IN_S) {

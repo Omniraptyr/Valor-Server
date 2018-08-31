@@ -21,7 +21,7 @@ import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-class MemberListLine extends Sprite {
+internal class MemberListLine extends Sprite {
 
     public static const WIDTH:int = 756;
     public static const HEIGHT:int = 32;

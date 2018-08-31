@@ -78,7 +78,7 @@ public class CharacterDetailsView extends Sprite {
         this.button.x = 172;
         this.button.y = 4;
         addChild(this.button);
-        this.questButton.x = 140;
+        this.questButton.x = 150;
         this.questButton.y = 4;
         addChild(this.questButton);
     }

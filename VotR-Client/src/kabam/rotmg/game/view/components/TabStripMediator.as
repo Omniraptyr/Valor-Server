@@ -3,8 +3,6 @@ import com.company.assembleegameclient.objects.ImageFactory;
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.ui.icons.IconButtonFactory;
 
-import flash.events.MouseEvent;
-
 import kabam.rotmg.assets.services.IconFactory;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.pets.controller.NotifyActivePetUpdated;

@@ -45,7 +45,6 @@ public class EquipmentToolTip extends ToolTip {
     private var uniqueEffects:Vector.<Effect>;
     private var itemSlotTypeId:int;
     private var invType:int;
-    private var inventorySlotID:uint;
     private var inventoryOwnerType:String;
     private var isInventoryFull:Boolean;
     private var playerCanUse:Boolean;
@@ -88,6 +87,7 @@ public class EquipmentToolTip extends ToolTip {
         this.buildCategorySpecificText();
         this.addUniqueEffectsToList();
         this.addNumProjectilesTagsToEffectsList();
+        this.addRateOfFire();
         this.addProjectileTagsToEffectsList();
         this.addActivateTagsToEffectsList();
         this.addActivateOnEquipTagsToEffectsList();
@@ -95,30 +95,18 @@ public class EquipmentToolTip extends ToolTip {
         this.addMpCostTagToEffectsList();
         this.addHpCostTagToEffectsList();
         this.addSurgeCostTagToEffectsList();
+        this.addCooldown();
         this.addFameBonusTagToEffectsList();
         this.makeEffectsList();
         this.makeLineTwo();
         this.makeRestrictionList();
         this.makeRestrictionText();
-        this.makeItemPowerText();
         this.makeLegendaryExtraText();
-    }
-
-    private function makeItemPowerText():void {
-        /*var _local_1:int;
-        if (this.objectXML.hasOwnProperty("feedPower")) {
-            _local_1 = ((((this.playerCanUse) || ((this.player == null)))) ? 0xFFFFFF : 16549442);
-            this.powerText = new TextFieldDisplayConcrete().setSize(12).setColor(_local_1).setBold(true).setTextWidth((((MAX_WIDTH - this.icon.width) - 4) - 30)).setWordWrap(true);
-            this.powerText.setStringBuilder(new StaticStringBuilder().setString(("Feed Power: " + this.objectXML.feedPower)));
-            this.powerText.filters = [new DropShadowFilter(0, 0, 0, 0.5, 12, 12)];
-            waiter.push(this.powerText.textChanged);
-            addChild(this.powerText);
-        }*/
     }
 
     private function makeLegendaryExtraText():void {
         if (this.objectXML.hasOwnProperty("Legend")) {
-            this.legendaryText = new TextFieldDisplayConcrete().setSize(12).setColor(0xFFFF19).setBold(true).setTextWidth((((MAX_WIDTH - this.icon.width) - 4) - 30)).setWordWrap(true);
+            this.legendaryText = new TextFieldDisplayConcrete().setSize(12).setColor(0xFFFF19).setBold(true).setTextWidth(MAX_WIDTH - 4).setWordWrap(true);
             this.legendaryText.setStringBuilder(new StaticStringBuilder().setString((this.objectXML.Legend.Name + ": " + this.objectXML.Legend.Description)));
             this.legendaryText.filters = [new DropShadowFilter(0, 0, 0, 0.5, 12, 12)];
             waiter.push(this.legendaryText.textChanged);
@@ -303,18 +291,22 @@ public class EquipmentToolTip extends ToolTip {
     }
 
     private function addProjectileTagsToEffectsList():void {
-        var _local_1:XML;
-        var _local_2:int;
-        var _local_3:int;
-        var _local_4:Number;
-        var _local_5:XML;
-        if (((this.objectXML.hasOwnProperty("Projectile")) && (!(this.comparisonResults.processedTags.hasOwnProperty(this.objectXML.Projectile.toXMLString()))))) {
-            _local_1 = XML(this.objectXML.Projectile);
-            _local_2 = int(_local_1.MinDamage);
-            _local_3 = int(_local_1.MaxDamage);
-            this.effects.push(new Effect(TextKey.DAMAGE, {"damage": (((_local_2 == _local_3)) ? _local_2 : ((_local_2 + " - ") + _local_3)).toString()}));
-            _local_4 = ((Number(_local_1.Speed) * Number(_local_1.LifetimeMS)) / 10000);
-            this.effects.push(new Effect(TextKey.RANGE, {"range": TooltipHelper.getFormattedRangeString(_local_4)}));
+        var projXML:XML;
+        var minDmg:int;
+        var maxDmg:int;
+        var range:Number;
+        var xml:XML;
+        if (this.objectXML.hasOwnProperty("Projectile")
+                && !this.comparisonResults.processedTags.hasOwnProperty(this.objectXML.Projectile.toXMLString())) {
+            projXML = XML(this.objectXML.Projectile);
+            minDmg = int(projXML.MinDamage);
+            maxDmg = int(projXML.MaxDamage);
+            this.effects.push(new Effect(TextKey.DAMAGE, {"damage":
+                        (((minDmg == maxDmg)) ? minDmg : ((minDmg + " - ") + maxDmg)).toString()}));
+            range = projXML.Speed * projXML.LifetimeMS / 10000;
+            this.effects.push(new Effect(TextKey.RANGE, {"range": TooltipHelper.getFormattedRangeString(
+                        (this.objectXML.Projectile.hasOwnProperty("Boomerang") ? range / 2 : range))}));
+
             if (this.objectXML.Projectile.hasOwnProperty("MultiHit")) {
                 this.effects.push(new Effect(TextKey.MULTIHIT, {}).setColor(TooltipHelper.NO_DIFF_COLOR));
             }
@@ -330,20 +322,37 @@ public class EquipmentToolTip extends ToolTip {
             if (this.objectXML.Projectile.hasOwnProperty("Parametric")) {
                 this.effects.push(new Effect("Shots are parametric", {}).setColor(TooltipHelper.NO_DIFF_COLOR));
             }
-            for each(_local_5 in _local_1.ConditionEffect)
-            {
-                this.effects.push(new Effect(TextKey.EFFECT_FOR_DURATION,{
-                    "effect":_local_5,
-                    "duration":_local_5.@duration
+
+            for each(xml in projXML.ConditionEffect) {
+                this.effects.push(new Effect(TextKey.EFFECT_FOR_DURATION, {
+                    "effect": xml,
+                    "duration": xml.@duration
                 }).setColor(TooltipHelper.NO_DIFF_COLOR));
             }
-            for each (_local_5 in _local_1.CondChance) {
+
+            for each (xml in projXML.CondChance) {
                 this.effects.push(new Effect("{condChance}% to inflict " +
                         "{condEff} for {condDuration} seconds", {"condChance": this.objectXML.Projectile.CondChance.@chance,
                     "condEff": this.objectXML.Projectile.CondChance.@effect,
                     "condDuration": this.objectXML.Projectile.CondChance.@duration
                 }));
             }
+        }
+    }
+
+    private function addRateOfFire() : void {
+        if (this.objectXML.hasOwnProperty("RateOfFire")) {
+            this.effects.push(new Effect("Rate of Fire: {rof}", {
+                "rof": this.objectXML.RateOfFire * 100 + "%"
+            }));
+        }
+    }
+
+    private function addCooldown() : void {
+        if (this.objectXML.hasOwnProperty("Cooldown")) {
+            this.effects.push(new Effect("Cooldown: {cd}", {
+                "cd": this.objectXML.Cooldown + " seconds"
+            }));
         }
     }
 
@@ -485,7 +494,8 @@ public class EquipmentToolTip extends ToolTip {
                         this.effects.push(new Effect(TextKey.REMOVES_NEGATIVE, {}).setColor(TooltipHelper.NO_DIFF_COLOR));
                         break;
                     case ActivationType.BANNER:
-                        this.effects.push(new Effect("Banner lifetime: {lifetime} \nBanner radius: {radius} \nEmpowerment duration: {duration} \n", {
+                        this.effects.push(new Effect("Banner: {data}", {"data": ""}));
+                        this.effects.push(new Effect("Within {radius} sqrs\nEmpower allies for {duration} seconds\nStays active for {lifetime} seconds", {
                             "lifetime": _local_1.@amount,
                             "duration": _local_1.@duration,
                             "radius": _local_1.@range
@@ -574,7 +584,23 @@ public class EquipmentToolTip extends ToolTip {
                         _local_18["data"] = _local_31;
                         this.effects.push(new Effect(_local_2, _local_18));
                         break;
-
+                    case ActivationType.POWER_STAT:
+                        _local_3 = int(_local_1.@stat);
+                        _local_4 = int(_local_1.@amount);
+                        _local_18 = {};
+                        if (((!((_local_3 == StatData.HP_STAT))) && (!((_local_3 == StatData.MP_STAT))))) {
+                            _local_2 = "Permanently ascends {statName}";
+                            _local_18["statName"] = new LineBuilder().setParams(StatData.statToName(_local_3));
+                            this.effects.push(new Effect(_local_2, _local_18).setColor(16777103));
+                            break;
+                        }
+                        _local_2 = TextKey.BLANK;
+                        _local_31 = new AppendingLineBuilder().setDelimiter(" ");
+                        _local_31.pushParams(TextKey.BLANK, {"data": new StaticStringBuilder(("+" + _local_4))});
+                        _local_31.pushParams(StatData.statToName(_local_3));
+                        _local_18["data"] = _local_31;
+                        this.effects.push(new Effect(_local_2, _local_18));
+                        break;
                     case ActivationType.TORII:
                         this.effects.push(new Effect("Spawns {type} Torii \nDisappears after {lifetime} seconds \nApplies '{effect}' in a {radius} sqrs area for {duration} seconds", {
                             "lifetime": _local_1.@amount,
@@ -590,9 +616,7 @@ public class EquipmentToolTip extends ToolTip {
                         }).setColor(TooltipHelper.NO_DIFF_COLOR));
                         break;
                 }
-
             }
-
         }
     }
 
@@ -748,7 +772,6 @@ public class EquipmentToolTip extends ToolTip {
         }
         if (this.objectXML.hasOwnProperty("Legendary"))
         {
-            this.restrictions.push(new Restriction("This legendary item is extremely rare.", 0xFFFF00, true));
             this.titleText.setColor(0xFFFF00);
         }
         if (this.objectXML.hasOwnProperty("Outfit"))
@@ -756,8 +779,7 @@ public class EquipmentToolTip extends ToolTip {
             this.restrictions.push(new Restriction("This item adds both Large and Small dye effects.", 0xFF00, true));
         }
         if (this.objectXML.hasOwnProperty("Fabled"))
-        {
-            this.restrictions.push(new Restriction("This item can only be found in Fabled Dungeons.", 0x9F0000, true));
+        {;
             this.titleText.setColor(0xFF0000);
         }
         if (this.objectXML.hasOwnProperty("PoZPage"))
@@ -1000,7 +1022,7 @@ public class EquipmentToolTip extends ToolTip {
         var _local_5:Number;
         var _local_6:int;
         var _local_7:Number;
-        var _local_3 = "-1";
+        var _local_3:String = "-1";
         var _local_4:Number = (this.player.wisdom_ + this.player.wisdomBoost_);
         if (_local_4 < 30) {
             _local_3 = _arg_1;
@@ -1051,8 +1073,8 @@ class Effect {
         var _local_4:String;
         var _local_5:LineBuilder;
         var _local_1:Object = {};
-        var _local_2 = "";
-        var _local_3 = "";
+        var _local_2:String = "";
+        var _local_3:String = "";
         if (this.replacementColor_) {
             _local_2 = (('</font><font color="#' + this.replacementColor_.toString(16)) + '">');
             _local_3 = (('</font><font color="#' + this.color_.toString(16)) + '">');

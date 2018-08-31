@@ -2,7 +2,6 @@
 import com.company.assembleegameclient.appengine.SavedCharacter;
 import com.company.assembleegameclient.appengine.SavedCharactersList;
 import com.company.assembleegameclient.appengine.SavedNewsItem;
-import com.company.assembleegameclient.parameters.Parameters;
 
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.kongregate.KongregateAccount;
@@ -56,10 +55,6 @@ public class PlayerModel {
 
     public function setIsAgeVerified(_arg1:Boolean):void {
         this.isAgeVerified = true;
-    }
-
-    public function isNewPlayer():Boolean {
-        return (((Parameters.data_.needsTutorial) && ((this.charList.nextCharId_ == 1))));
     }
 
     public function getMaxCharacters():int {

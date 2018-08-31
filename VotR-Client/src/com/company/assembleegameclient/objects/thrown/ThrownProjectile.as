@@ -2,6 +2,7 @@
 {
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.util.TextureRedrawer;
+
 import flash.display.BitmapData;
 import flash.geom.Point;
 

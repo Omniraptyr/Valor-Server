@@ -2,7 +2,6 @@
 package com.company.assembleegameclient.objects.particles {
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.objects.BasicObject;
-import com.company.util.BitmapUtil;
 import com.company.util.CachingColorTransformer;
 import com.company.util.GraphicsUtil;
 
@@ -12,14 +11,12 @@ import flash.display.GraphicsPath;
 import flash.display.IGraphicsData;
 import flash.geom.Matrix;
 
-import mx.utils.GraphicsUtil;
-
 public class OrbitObject extends BasicObject {
 
     public function OrbitObject(_arg1:BitmapData) {
         this.vS_ = new Vector.<Number>(8);
         this._01i = new Matrix();
-        this.path_ = new GraphicsPath(com.company.util.GraphicsUtil.QUAD_COMMANDS, null);
+        this.path_ = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS, null);
         this.bitmapFill_ = new GraphicsBitmapFill(null, null, false, false);
         super();
         this.bitmapFill_.bitmapData = _arg1;
@@ -62,7 +59,7 @@ public class OrbitObject extends BasicObject {
         this.bitmapFill_.matrix = this._01i;
         _arg1.push(this.bitmapFill_);
         _arg1.push(this.path_);
-        _arg1.push(com.company.util.GraphicsUtil.END_FILL);
+        _arg1.push(GraphicsUtil.END_FILL);
     }
 
     override public function removeFromMap():void {

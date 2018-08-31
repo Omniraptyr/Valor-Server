@@ -9,8 +9,6 @@ import flash.geom.Rectangle;
 import flash.geom.Vector3D;
 
 public class Camera {
-
-    public static const lN_:Vector3D = new Vector3D(0, 0, 1);
     public static const CENTER_SCREEN_RECT:Rectangle = new Rectangle(-300, -325, 600, 600);
     public static const OFFSET_SCREEN_RECT:Rectangle = new Rectangle(-300, -450, 600, 600);
     private static const SCREENSHOT_SCREEN_RECT:Rectangle = new Rectangle(-400, -325, 800, 600);
@@ -60,19 +58,22 @@ public class Camera {
         this.f_.z = -1;
     }
 
-    public function configureCamera(_arg1:GameObject, _arg2:Boolean):void {
-        var _local3:Rectangle = ((Parameters.data_.centerOnPlayer) ? CENTER_SCREEN_RECT : OFFSET_SCREEN_RECT);
-        if (Parameters.screenShotMode_) {
-            if (!Parameters.screenShotSlimMode_) {
-                _local3 = SCREENSHOT_SCREEN_RECT;
-            }
-            else {
-                _local3 = SLIM_SCREENSHOT_SCREEN_RECT;
-            }
-        }
-        var _local4:Number = Parameters.data_.cameraAngle;
-        this.configure(_arg1.x_, _arg1.y_, 12, _local4, _local3);
-        this.isHallucinating_ = _arg2;
+    public function configureCamera(go:GameObject, isHallu:Boolean):void {
+        var view:Rectangle = this.correctViewingArea(Parameters.data_.centerOnPlayer);
+        var angle:Number = Parameters.data_.cameraAngle;
+        this.configure(go.x_, go.y_, 12, angle, view);
+        this.isHallucinating_ = isHallu;
+    }
+
+    public function correctViewingArea(center:Boolean):Rectangle {
+        var w:Number = WebMain.sWidth;
+        var h:Number = WebMain.sHeight;
+        var uiOffset:Number = Number(200 * WebMain.sHeight / 600);
+
+        if (center)
+            return new Rectangle(-((w - uiOffset) / 2), -(h * 13 / 24), w, h);
+
+        return new Rectangle(-((w - uiOffset) / 2), -(h * 3 / 4), w, h);
     }
 
     public function startJitter():void {

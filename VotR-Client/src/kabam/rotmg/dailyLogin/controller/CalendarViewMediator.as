@@ -38,7 +38,7 @@ public class CalendarViewMediator extends Mediator {
     }
 
     private function onClaimReward(_arg1:ClaimDailyRewardResponse):void {
-        var _local2 = "";
+        var _local2:String = "";
         if (_arg1.gold > 0) {
             _local2 = "gold";
             this.addTextLine.dispatch(ChatMessage.make(Parameters.SERVER_CHAT_NAME, ((((((_arg1.gold > 0)) ? _arg1.gold : _arg1.quantity) + "x ") + _local2) + " was claimed."), -1, -1, "", false));

@@ -24,7 +24,7 @@ public class QuestRewardsPanel extends Panel {
     private var feedPetText:String = "See Offers";
     private var checkBackLaterText:String = "Check Back Later";
     private var objectType:int;
-    var feedButton:DeprecatedTextButtonStatic;
+    internal var feedButton:DeprecatedTextButtonStatic;
 
     public function QuestRewardsPanel(_arg1:GameSprite) {
         super(_arg1);

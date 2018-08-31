@@ -25,7 +25,7 @@ public class SecurityQuestionsDialog extends Frame {
         }
     }
 
-    public function updateAnswers(_arg1:Array) {
+    public function updateAnswers(_arg1:Array) : void {
         var _local3:TextInputField;
         var _local2:int = 1;
         for each (_local3 in this.fields) {
@@ -104,7 +104,7 @@ public class SecurityQuestionsDialog extends Frame {
         titleText_.setStringBuilder(new LineBuilder().setParams(TextKey.SECURITY_QUESTIONS_SAVING_IN_PROGRESS));
     }
 
-    public function setError(_arg1:String) {
+    public function setError(_arg1:String) : void {
         titleText_.setStringBuilder(new LineBuilder().setParams(_arg1, {"min": this.minQuestionLength}));
         titleText_.setColor(16549442);
     }

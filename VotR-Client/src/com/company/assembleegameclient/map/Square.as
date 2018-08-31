@@ -41,7 +41,7 @@ public class Square {
 
     private static function hash(_arg1:int, _arg2:int):int {
         var _local3:int = LOOKUP[((_arg1 + _arg2) % 7)];
-        var _local4 = (((_arg1 << 16) | _arg2) ^ 81397550);
+        var _local4:Number = (((_arg1 << 16) | _arg2) ^ 81397550);
         _local4 = ((_local4 * _local3) % 0xFFFF);
         return (_local4);
     }

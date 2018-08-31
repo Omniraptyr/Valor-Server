@@ -154,7 +154,7 @@ public class WebAccount implements Account {
         return (this._rememberMe);
     }
 
-    public function set paymentProvider(_arg1:String) {
+    public function set paymentProvider(_arg1:String) : void {
         this._paymentProvider = _arg1;
     }
 
@@ -162,7 +162,7 @@ public class WebAccount implements Account {
         return (this._paymentProvider);
     }
 
-    public function set paymentData(_arg1:String) {
+    public function set paymentData(_arg1:String) : void {
         this._paymentData = _arg1;
     }
 

@@ -8,12 +8,15 @@ import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
 import com.company.assembleegameclient.util.FilterUtil;
 import com.company.assembleegameclient.util.TierUtil;
 import com.company.util.GraphicsUtil;
+
 import flash.display.GraphicsPath;
 import flash.display.GraphicsSolidFill;
 import flash.display.IGraphicsData;
 import flash.display.Shape;
 import flash.display.Sprite;
+
 import kabam.rotmg.constants.ItemConstants;
+
 public class ItemTile extends Sprite
 {
 

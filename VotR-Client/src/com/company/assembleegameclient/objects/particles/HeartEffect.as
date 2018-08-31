@@ -106,16 +106,14 @@ class HeartParticle extends Particle {
     public var rad_:Number;
     public var alive_:Boolean = true;
     public var speed_:Number;
-    /*private*/
-    var radVar_:Number;
+    private var radVar_:Number;
 
     public function HeartParticle(_arg1:uint = 0xFF0000) {
         this.radVar_ = (0.97 + (Math.random() * 0.06));
         super(_arg1, 0, (140 + (Math.random() * 40)));
     }
 
-    /*private*/
-    function move(_arg1:Number):void {
+    private function move(_arg1:Number):void {
         x_ = (this.cX_ + (((((16 * Math.sin(_arg1)) * Math.sin(_arg1)) * Math.sin(_arg1)) / 16) * (this.rad_ * this.radVar_)));
         y_ = (this.cY_ - ((((((13 * Math.cos(_arg1)) - (5 * Math.cos((2 * _arg1)))) - (2 * Math.cos((3 * _arg1)))) - Math.cos((4 * _arg1))) / 16) * (this.rad_ * this.radVar_)));
     }

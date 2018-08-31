@@ -47,13 +47,9 @@ import com.company.assembleegameclient.util.FreeList;
 import flash.geom.Vector3D;
 
 class FountainParticle extends Particle {
-
-    /*private*/
-    static const G:Number = -4.9;
-    /*private*/
-    static const VI:Number = 6.5;
-    /*private*/
-    static const ZI:Number = 0.75;
+    private static const G:Number = -4.9;
+    private static const VI:Number = 6.5;
+    private static const ZI:Number = 0.75;
 
     public var startTime_:int;
     protected var moveVec_:Vector3D;

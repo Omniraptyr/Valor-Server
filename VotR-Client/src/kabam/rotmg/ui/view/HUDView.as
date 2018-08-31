@@ -16,6 +16,8 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.geom.Point;
 
+import kabam.rotmg.game.view.CooldownTimer;
+
 import kabam.rotmg.game.view.components.TabStripView;
 import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
 import kabam.rotmg.messaging.impl.incoming.TradeChanged;
@@ -39,9 +41,11 @@ public class HUDView extends Sprite implements UnFocusAble {
     private var characterDetails:CharacterDetailsView;
     private var equippedGridBG:Sprite;
     private var player:Player;
+    private var cdtimer:CooldownTimer;
     public var tabStrip:TabStripView;
     public var interactPanel:InteractPanel;
     public var tradePanel:TradePanel;
+
 
     public function HUDView() {
         this.createAssets();
@@ -55,6 +59,7 @@ public class HUDView extends Sprite implements UnFocusAble {
         this.tabStrip = new TabStripView();
         this.characterDetails = new CharacterDetailsView();
         this.statMeters = new StatMetersView();
+        this.cdtimer = new CooldownTimer();
     }
 
     private function addAssets():void {
@@ -83,6 +88,13 @@ public class HUDView extends Sprite implements UnFocusAble {
         this.createEquippedGridBackground();
         this.createEquippedGrid();
         this.createInteractPanel(_arg1);
+        this.createCooldownTimer();
+    }
+
+    private function createCooldownTimer():void {
+        this.cdtimer.x = this.EQUIPMENT_INVENTORY_POSITION.x + 44;
+        this.cdtimer.y = this.EQUIPMENT_INVENTORY_POSITION.y;
+        addChild(cdtimer);
     }
 
     private function createInteractPanel(_arg1:GameSprite):void {
@@ -138,6 +150,7 @@ public class HUDView extends Sprite implements UnFocusAble {
         this.equippedGrid.visible = _arg1;
         this.equippedGridBG.visible = _arg1;
         this.interactPanel.visible = _arg1;
+        this.cdtimer.visible = _arg1;
     }
 
     public function tradeDone():void {

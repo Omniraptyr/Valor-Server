@@ -97,7 +97,7 @@ public class VerticalScrollingList extends Sprite implements List {
         var _local1:Size = this.list.getSize();
         var _local2:int = _local1.height;
         _local3 = this.list.getSizeOfItems().height;
-        var _local4 = (_local3 > _local2);
+        var _local4:Boolean = (_local3 > _local2);
         _local5 = !((this.scrollbar.visible == _local4));
         this.scrollbar.setIsEnabled(false);
         this.scrollbar.visible = _local4;

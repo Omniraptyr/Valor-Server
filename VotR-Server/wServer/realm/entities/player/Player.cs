@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using common;
@@ -42,183 +41,176 @@ namespace wServer.realm.entities
         private readonly SV<int> _accountId;
         public int AccountId
         {
-            get { return _accountId.GetValue(); }
-            set { _accountId.SetValue(value); }
+            get => _accountId.GetValue();
+            set => _accountId.SetValue(value);
         }
 
         private readonly SV<int> _experience;
         public int Experience
         {
-            get { return _experience.GetValue(); }
-            set { _experience.SetValue(value); }
+            get => _experience.GetValue();
+            set => _experience.SetValue(value);
         }
 
         private readonly SV<int> _experienceGoal;
         public int ExperienceGoal
         {
-            get { return _experienceGoal.GetValue(); }
-            set { _experienceGoal.SetValue(value); }
+            get => _experienceGoal.GetValue();
+            set => _experienceGoal.SetValue(value);
         }
 
         private readonly SV<int> _level;
         public int Level
         {
-            get { return _level.GetValue(); }
-            set { _level.SetValue(value); }
+            get => _level.GetValue();
+            set => _level.SetValue(value);
         }
 
         private readonly SV<int> _currentFame;
         public int CurrentFame
         {
-            get { return _currentFame.GetValue(); }
-            set { _currentFame.SetValue(value); }
+            get => _currentFame.GetValue();
+            set => _currentFame.SetValue(value);
         }
 
         private readonly SV<int> _fame;
         public int Fame
         {
-            get { return _fame.GetValue(); }
-            set { _fame.SetValue(value); }
+            get => _fame.GetValue();
+            set => _fame.SetValue(value);
         }
 
         private readonly SV<int> _fameGoal;
         public int FameGoal
         {
-            get { return _fameGoal.GetValue(); }
-            set { _fameGoal.SetValue(value); }
+            get => _fameGoal.GetValue();
+            set => _fameGoal.SetValue(value);
         }
 
         private readonly SV<int> _stars;
         public int Stars
         {
-            get { return _stars.GetValue(); }
-            set { _stars.SetValue(value); }
+            get => _stars.GetValue();
+            set => _stars.SetValue(value);
         }
 
         private readonly SV<string> _guild;
         public string Guild
         {
-            get { return _guild.GetValue(); }
-            set { _guild.SetValue(value); }
+            get => _guild.GetValue();
+            set => _guild.SetValue(value);
         }
 
         private readonly SV<int> _guildRank;
         public int GuildRank
         {
-            get { return _guildRank.GetValue(); }
-            set { _guildRank.SetValue(value); }
+            get => _guildRank.GetValue();
+            set => _guildRank.SetValue(value);
         }
 
         private readonly SV<int> _credits;
         public int Credits
         {
-            get { return _credits.GetValue(); }
-            set { _credits.SetValue(value); }
+            get => _credits.GetValue();
+            set => _credits.SetValue(value);
         }
 
         private readonly SV<int> _sorStorage;
         public int SorStorage
         {
-            get { return _sorStorage.GetValue(); }
-            set { _sorStorage.SetValue(value); }
+            get => _sorStorage.GetValue();
+            set => _sorStorage.SetValue(value);
         }
 
         private readonly SV<bool> _nameChosen;
         public bool NameChosen
         {
-            get { return _nameChosen.GetValue(); }
-            set { _nameChosen.SetValue(value); }
+            get => _nameChosen.GetValue();
+            set => _nameChosen.SetValue(value);
         }
 
         private readonly SV<int> _texture1;
         public int Texture1
         {
-            get { return _texture1.GetValue(); }
-            set { _texture1.SetValue(value); }
+            get => _texture1.GetValue();
+            set => _texture1.SetValue(value);
         }
 
         private readonly SV<int> _texture2;
         public int Texture2
         {
-            get { return _texture2.GetValue(); }
-            set { _texture2.SetValue(value); }
+            get => _texture2.GetValue();
+            set => _texture2.SetValue(value);
         }
 
         private readonly SV<bool> _marksEnabled;
         public bool MarksEnabled
         {
-            get { return _marksEnabled.GetValue(); }
-            set { _marksEnabled.SetValue(value); }
+            get => _marksEnabled.GetValue();
+            set => _marksEnabled.SetValue(value);
         }
 
         private readonly SV<bool> _pvp;
         public bool PvP
         {
-            get { return _pvp.GetValue(); }
-            set { _pvp.SetValue(value); }
-        }
-
-        private readonly SV<bool> _striked;
-        public bool Striked
-        {
-            get { return _striked.GetValue(); }
-            set { _striked.SetValue(value); }
+            get => _pvp.GetValue();
+            set => _pvp.SetValue(value);
         }
 
         private readonly SV<int> _elite;
         public int Elite
         {
-            get { return _elite.GetValue(); }
-            set { _elite.SetValue(value); }
+            get => _elite.GetValue();
+            set => _elite.SetValue(value);
         }
 
         private readonly SV<bool> _ascensionEnabled;
         public bool AscensionEnabled
         {
-            get { return _ascensionEnabled.GetValue(); }
-            set { _ascensionEnabled.SetValue(value); }
+            get => _ascensionEnabled.GetValue();
+            set => _ascensionEnabled.SetValue(value);
         }
 
         private readonly SV<int> _mark;
         public int Mark
         {
-            get { return _mark.GetValue(); }
-            set { _mark.SetValue(value); }
+            get => _mark.GetValue();
+            set => _mark.SetValue(value);
         }
 
         private readonly SV<int> _node1;
         public int Node1
         {
-            get { return _node1.GetValue(); }
-            set { _node1.SetValue(value); }
+            get => _node1.GetValue();
+            set => _node1.SetValue(value);
         }
 
         private readonly SV<int> _node2;
         public int Node2
         {
-            get { return _node2.GetValue(); }
-            set { _node2.SetValue(value); }
+            get => _node2.GetValue();
+            set => _node2.SetValue(value);
         }
 
         private readonly SV<int> _node3;
         public int Node3
         {
-            get { return _node3.GetValue(); }
-            set { _node3.SetValue(value); }
+            get => _node3.GetValue();
+            set => _node3.SetValue(value);
         }
 
         private readonly SV<int> _node4;
         public int Node4
         {
-            get { return _node4.GetValue(); }
-            set { _node4.SetValue(value); }
+            get => _node4.GetValue();
+            set => _node4.SetValue(value);
         }
 
         private readonly SV<string> _effect;
         public string Effect
         {
-            get { return _effect.GetValue(); }
-            set { _effect.SetValue(value); }
+            get => _effect.GetValue();
+            set => _effect.SetValue(value);
         }
 
         public string XmlEffect { get; set; }
@@ -227,236 +219,162 @@ namespace wServer.realm.entities
         private readonly SV<int> _skin;
         public int Skin
         {
-            get { return _skin.GetValue(); }
-            set { _skin.SetValue(value); }
+            get => _skin.GetValue();
+            set => _skin.SetValue(value);
         }
 
         private readonly SV<int> _glow;
         public int Glow
         {
-            get { return _glow.GetValue(); }
-            set { _glow.SetValue(value); }
+            get => _glow.GetValue();
+            set => _glow.SetValue(value);
         }
 
         private readonly SV<int> _mp;
         public int MP
         {
-            get { return _mp.GetValue(); }
-            set { _mp.SetValue(value); }
+            get => _mp.GetValue();
+            set => _mp.SetValue(value);
         }
 
         private readonly SV<int> _surge;
         public int Surge
         {
-            get { return _surge.GetValue(); }
-            set { _surge.SetValue(value); }
+            get => _surge.GetValue();
+            set => _surge.SetValue(value);
         }
 
         private readonly SV<int> _protection;
         public int Protection
         {
-            get { return _protection.GetValue(); }
-            set { _protection.SetValue(value); }
+            get => _protection.GetValue();
+            set => _protection.SetValue(value);
         }
 
         private readonly SV<int> _protectionMax;
         public int ProtectionMax
         {
-            get { return _protectionMax.GetValue(); }
-            set { _protectionMax.SetValue(value); }
+            get => _protectionMax.GetValue();
+            set => _protectionMax.SetValue(value);
         }
 
         private readonly SV<int> _surgeCounter;
         public int SurgeCounter
         {
-            get { return _surgeCounter.GetValue(); }
-            set { _surgeCounter.SetValue(value); }
+            get => _surgeCounter.GetValue();
+            set => _surgeCounter.SetValue(value);
         }
-
-        private readonly SV<int> _pwHealth;
-        public int PWHealth
-        {
-            get { return _pwHealth.GetValue(); }
-            set { _pwHealth.SetValue(value); }
-        }
-        private readonly SV<int> _pwMana;
-        public int PWMana
-        {
-            get { return _pwMana.GetValue(); }
-            set { _pwMana.SetValue(value); }
-        }
-        private readonly SV<int> _pwAttack;
-        public int PWAttack
-        {
-            get { return _pwAttack.GetValue(); }
-            set { _pwAttack.SetValue(value); }
-        }
-        private readonly SV<int> _pwDefense;
-        public int PWDefense
-        {
-            get { return _pwDefense.GetValue(); }
-            set { _pwDefense.SetValue(value); }
-        }
-        private readonly SV<int> _pwSpeed;
-        public int PWSpeed
-        {
-            get { return _pwSpeed.GetValue(); }
-            set { _pwSpeed.SetValue(value); }
-        }
-        private readonly SV<int> _pwVitality;
-        public int PWVitality
-        {
-            get { return _pwVitality.GetValue(); }
-            set { _pwVitality.SetValue(value); }
-        }
-        private readonly SV<int> _pwWisdom;
-        public int PWWisdom
-        {
-            get { return _pwWisdom.GetValue(); }
-            set { _pwWisdom.SetValue(value); }
-        }
-        private readonly SV<int> _pwDexterity;
-        public int PWDexterity
-        {
-            get { return _pwDexterity.GetValue(); }
-            set { _pwDexterity.SetValue(value); }
-        }
-        private readonly SV<int> _pwMight;
-        public int PWMight
-        {
-            get { return _pwMight.GetValue(); }
-            set { _pwMight.SetValue(value); }
-        }
-        private readonly SV<int> _pwLuck;
-        public int PWLuck
-        {
-            get { return _pwLuck.GetValue(); }
-            set { _pwLuck.SetValue(value); }
-        }
-        private readonly SV<int> _pwRestoration;
-        public int PWRestoration
-        {
-            get { return _pwRestoration.GetValue(); }
-            set { _pwRestoration.SetValue(value); }
-        }
-        private readonly SV<int> _pwProtection;
-        public int PWProtection
-        {
-            get { return _pwProtection.GetValue(); }
-            set { _pwProtection.SetValue(value); }
-        }
-
 
         private readonly SV<bool> _hasBackpack;
         public bool HasBackpack
         {
-            get { return _hasBackpack.GetValue(); }
-            set { _hasBackpack.SetValue(value); }
+            get => _hasBackpack.GetValue();
+            set => _hasBackpack.SetValue(value);
         }
 
         private readonly SV<bool> _xpBoosted;
         public bool XPBoosted
         {
-            get { return _xpBoosted.GetValue(); }
-            set { _xpBoosted.SetValue(value); }
+            get => _xpBoosted.GetValue();
+            set => _xpBoosted.SetValue(value);
         }
 
         private readonly SV<int> _oxygenBar;
         public int OxygenBar
         {
-            get { return _oxygenBar.GetValue(); }
-            set { _oxygenBar.SetValue(value); }
+            get => _oxygenBar.GetValue();
+            set => _oxygenBar.SetValue(value);
         }
 
         private readonly SV<int> _rageBar;
         public int RageBar
         {
-            get { return _rageBar.GetValue(); }
-            set { _rageBar.SetValue(value); }
+            get => _rageBar.GetValue();
+            set => _rageBar.SetValue(value);
         }
 
         private readonly SV<int> _rank;
         public int Rank
         {
-            get { return _rank.GetValue(); }
-            set { _rank.SetValue(value); }
+            get => _rank.GetValue();
+            set => _rank.SetValue(value);
         }
 
         private readonly SV<int> _admin;
         public int Admin
         {
-            get { return _admin.GetValue(); }
-            set { _admin.SetValue(value); }
+            get => _admin.GetValue();
+            set => _admin.SetValue(value);
         }
 
         private readonly SV<int> _tokens;
         public int Tokens
         {
-            get { return _tokens.GetValue(); }
-            set { _tokens.SetValue(value); }
+            get => _tokens.GetValue();
+            set => _tokens.SetValue(value);
         }
 
         private readonly SV<int> _onrane;
         public int Onrane
         {
-            get { return _onrane.GetValue(); }
-            set { _onrane.SetValue(value); }
+            get => _onrane.GetValue();
+            set => _onrane.SetValue(value);
         }
 
         private readonly SV<int> _kantos;
         public int Kantos
         {
-            get { return _kantos.GetValue(); }
-            set { _kantos.SetValue(value); }
+            get => _kantos.GetValue();
+            set => _kantos.SetValue(value);
         }
 
         private readonly SV<int> _raidToken;
-        public int RaidToken
+        public int AlertToken
         {
-            get { return _raidToken.GetValue(); }
-            set { _raidToken.SetValue(value); }
+            get => _raidToken.GetValue();
+            set => _raidToken.SetValue(value);
         }
 
         private readonly SV<int> _raidRank;
         public int RaidRank
         {
-            get { return _raidRank.GetValue(); }
-            set { _raidRank.SetValue(value); }
+            get => _raidRank.GetValue();
+            set => _raidRank.SetValue(value);
         }
 
         private readonly SV<int> _lootbox1;
-        public int Lootbox1
+        public int BronzeLootbox
         {
-            get { return _lootbox1.GetValue(); }
-            set { _lootbox1.SetValue(value); }
+            get => _lootbox1.GetValue();
+            set => _lootbox1.SetValue(value);
         }
 
         private readonly SV<int> _lootbox2;
-        public int Lootbox2
+        public int SilverLoootbox
         {
-            get { return _lootbox2.GetValue(); }
-            set { _lootbox2.SetValue(value); }
+            get => _lootbox2.GetValue();
+            set => _lootbox2.SetValue(value);
         }
 
         private readonly SV<int> _lootbox3;
-        public int Lootbox3
+        public int GoldLootbox
         {
-            get { return _lootbox3.GetValue(); }
-            set { _lootbox3.SetValue(value); }
+            get => _lootbox3.GetValue();
+            set => _lootbox3.SetValue(value);
         }
 
         private readonly SV<int> _lootbox4;
-        public int Lootbox4
+        public int EliteLootbox
         {
-            get { return _lootbox4.GetValue(); }
-            set { _lootbox4.SetValue(value); }
+            get => _lootbox4.GetValue();
+            set => _lootbox4.SetValue(value);
         }
 
         private readonly SV<int> _lootbox5;
         public int Lootbox5
         {
-            get { return _lootbox5.GetValue(); }
-            set { _lootbox5.SetValue(value); }
+            get => _lootbox5.GetValue();
+            set => _lootbox5.SetValue(value);
         }
         public int XPBoostTime { get; set; }
         public int LDBoostTime { get; set; }
@@ -467,13 +385,13 @@ namespace wServer.realm.entities
         public int? GuildInvite { get; set; }
         public bool Muted { get; set; }
 
-        public RInventory DbLink { get; private set; }
-        public int[] SlotTypes { get; private set; }
-        public Inventory Inventory { get; private set; }
+        public RInventory DbLink { get; }
+        public int[] SlotTypes { get; }
+        public Inventory Inventory { get; }
 
         public ItemStacker HealthPots { get; private set; }
         public ItemStacker MagicPots { get; private set; }
-        public ItemStacker[] Stacks { get; private set; }
+        public ItemStacker[] Stacks { get; }
 
         public readonly StatsManager Stats;
 
@@ -554,31 +472,18 @@ namespace wServer.realm.entities
                 case StatsType.Tokens: Tokens = (int)val; break;
                 case StatsType.Onrane: Onrane = (int)val; break;
                 case StatsType.Kantos: Kantos = (int)val; break;
-                case StatsType.RaidToken: RaidToken = (int)val; break;
-                case StatsType.Lootbox1: Lootbox1 = (int)val; break;
-                case StatsType.Lootbox2: Lootbox2 = (int)val; break;
-                case StatsType.Lootbox3: Lootbox3 = (int)val; break;
-                case StatsType.Lootbox4: Lootbox4 = (int)val; break;
+                case StatsType.RaidToken: AlertToken = (int)val; break;
+                case StatsType.Lootbox1: BronzeLootbox = (int)val; break;
+                case StatsType.Lootbox2: SilverLoootbox = (int)val; break;
+                case StatsType.Lootbox3: GoldLootbox = (int)val; break;
+                case StatsType.Lootbox4: EliteLootbox = (int)val; break;
                 case StatsType.Lootbox5: Lootbox5 = (int)val; break;
                 case StatsType.RaidRank: RaidRank = (int)val; break;
                 case StatsType.Surge: Surge = (int)val; break;
                 case StatsType.SurgeCounter: SurgeCounter = (int)val; break;
                 case StatsType.ProtectionPoints: Protection = (int)val; break;
                 case StatsType.ProtectionPointsMax: ProtectionMax = (int)val; break;
-                case StatsType.PWMaximumHP: PWHealth = (int)val; break;
-                case StatsType.PWMaximumMP: PWMana = (int)val; break;
-                case StatsType.PWAttack: PWAttack = (int)val; break;
-                case StatsType.PWDefense: PWDefense = (int)val; break;
-                case StatsType.PWSpeed: PWSpeed = (int)val; break;
-                case StatsType.PWDexterity: PWDexterity = (int)val; break;
-                case StatsType.PWVitality: PWVitality = (int)val; break;
-                case StatsType.PWWisdom: PWWisdom = (int)val; break;
-                case StatsType.PWMight: PWMight = (int)val; break;
-                case StatsType.PWLuck: PWLuck = (int)val; break;
-                case StatsType.PWRestoration: PWRestoration = (int)val; break;
-                case StatsType.PWProtection: PWProtection = (int)val; break;
                 case StatsType.SorStorage: SorStorage = (int)val; break;
-                case StatsType.Striked: Striked = (int)val == 1; break;
                 case StatsType.Elite: Elite = (int)val; break;
                 case StatsType.PvP: PvP = (int)val == 1; break;
             }
@@ -678,33 +583,93 @@ namespace wServer.realm.entities
             stats[StatsType.Tokens] = Tokens;
             stats[StatsType.Onrane] = Onrane;
             stats[StatsType.Kantos] = Kantos;
-            stats[StatsType.RaidToken] = RaidToken;
+            stats[StatsType.RaidToken] = AlertToken;
             stats[StatsType.RaidRank] = RaidRank;
             stats[StatsType.Surge] = Surge;
             stats[StatsType.SurgeCounter] = SurgeCounter;
-            stats[StatsType.Lootbox1] = Lootbox1;
-            stats[StatsType.Lootbox2] = Lootbox2;
-            stats[StatsType.Lootbox3] = Lootbox3;
-            stats[StatsType.Lootbox4] = Lootbox4;
+            stats[StatsType.Lootbox1] = BronzeLootbox;
+            stats[StatsType.Lootbox2] = SilverLoootbox;
+            stats[StatsType.Lootbox3] = GoldLootbox;
+            stats[StatsType.Lootbox4] = EliteLootbox;
             stats[StatsType.Lootbox5] = Lootbox5;
-            stats[StatsType.PWMaximumHP] = PWHealth;
-            stats[StatsType.PWMaximumMP] = PWMana;
-            stats[StatsType.PWAttack] = PWAttack;
-            stats[StatsType.PWDefense] = PWDefense;
-            stats[StatsType.PWSpeed] = PWSpeed;
-            stats[StatsType.PWDexterity] = PWDexterity;
-            stats[StatsType.PWVitality] = PWVitality;
-            stats[StatsType.PWWisdom] = PWWisdom;
-            stats[StatsType.PWMight] = PWMight;
-            stats[StatsType.PWLuck] = PWLuck;
-            stats[StatsType.PWRestoration] = PWRestoration;
-            stats[StatsType.PWProtection] = PWProtection;
             stats[StatsType.ProtectionPoints] = Protection;
             stats[StatsType.ProtectionPointsMax] = ProtectionMax;
             stats[StatsType.SorStorage] = SorStorage;
-            stats[StatsType.Striked] = Striked;
             stats[StatsType.Elite] = Elite;
             stats[StatsType.PvP] = PvP;
+        }
+
+        public void MigrateStats() {
+            if (!AscensionEnabled) {
+                SendInfo("You must be ascended to migrate your stats.");
+                return;
+            }
+
+            var chr = _client.Character;
+            var stats = Stats.Base.GetStats();
+
+            if (chr != null && chr.PWHealth != 0) {
+                stats[0] += chr.PWHealth;
+                chr.PWHealth = 0;
+            }
+
+            if (chr != null && chr.PWMana != 0) {
+                stats[1] += chr.PWMana;
+                chr.PWMana = 0;
+            }
+
+            if (chr != null && chr.PWAttack != 0) {
+                stats[2] += chr.PWAttack;
+                chr.PWAttack = 0;
+            }
+
+            if (chr != null && chr.PWDefense != 0) {
+                stats[3] += chr.PWDefense;
+                chr.PWDefense = 0;
+            }
+
+            if (chr != null && chr.PWSpeed != 0) {
+                stats[4] += chr.PWSpeed;
+                chr.PWSpeed = 0;
+            }
+
+            if (chr != null && chr.PWDexterity != 0) {
+                stats[5] += chr.PWDexterity;
+                chr.PWDexterity = 0;
+            }
+
+            if (chr != null && chr.PWVitality != 0) {
+                stats[6] += chr.PWVitality;
+                chr.PWVitality = 0;
+            }
+
+            if (chr != null && chr.PWWisdom != 0) {
+                stats[7] += chr.PWWisdom;
+                chr.PWWisdom = 0;
+            }
+
+            if (chr != null && chr.PWMight != 0) {
+                stats[8] += chr.PWMight;
+                chr.PWMight = 0;
+            }
+
+            if (chr != null && chr.PWLuck != 0) {
+                stats[9] += chr.PWLuck;
+                chr.PWLuck = 0;
+            }
+
+            if (chr != null && chr.PWRestoration != 0) {
+                stats[10] += chr.PWRestoration;
+                chr.PWRestoration = 0;
+            }
+
+            if (chr != null && chr.PWProtection != 0) {
+                stats[11] += chr.PWProtection;
+                chr.PWProtection = 0;
+            }
+
+            if (chr != null && stats != null) chr.Stats = stats;
+            SendInfo("Finished, your stats have been successfully migrated.");
         }
 
         public void SaveToCharacter()
@@ -737,19 +702,6 @@ namespace wServer.realm.entities
             chr.LTBoostTime = LTBoostTime;
             chr.PetId = Pet?.PetId ?? 0;
             chr.Items = Inventory.GetItemTypes();
-
-            chr.PWHealth = PWHealth;
-            chr.PWMana = PWMana;
-            chr.PWAttack = PWAttack;
-            chr.PWDefense = PWDefense;
-            chr.PWSpeed = PWSpeed;
-            chr.PWDexterity = PWDexterity;
-            chr.PWVitality = PWVitality;
-            chr.PWWisdom = PWWisdom;
-            chr.PWMight = PWMight;
-            chr.PWLuck = PWLuck;
-            chr.PWRestoration = PWRestoration;
-            chr.PWProtection = PWProtection;
         }
 
         public Player(Client client, bool saveInventory = true)
@@ -810,28 +762,8 @@ namespace wServer.realm.entities
             _lootbox4 = new SV<int>(this, StatsType.Lootbox4, client.Account.Lootbox4, true);
             _lootbox5 = new SV<int>(this, StatsType.Lootbox5, client.Account.Lootbox5, true);
             _sorStorage = new SV<int>(this, StatsType.SorStorage, client.Account.SorStorage, true);
-
-            _pwHealth = new SV<int>(this, StatsType.PWMaximumHP, client.Character.PWHealth);
-            _pwMana = new SV<int>(this, StatsType.PWMaximumMP, client.Character.PWMana);
-            _pwAttack = new SV<int>(this, StatsType.PWAttack, client.Character.PWAttack);
-            _pwDefense = new SV<int>(this, StatsType.PWDefense, client.Character.PWDefense);
-            _pwSpeed = new SV<int>(this, StatsType.PWSpeed, client.Character.PWSpeed);
-            _pwDexterity = new SV<int>(this, StatsType.PWDexterity, client.Character.PWDexterity);
-            _pwVitality = new SV<int>(this, StatsType.PWVitality, client.Character.PWVitality);
-            _pwWisdom = new SV<int>(this, StatsType.PWWisdom, client.Character.PWWisdom);
-            _pwMight = new SV<int>(this, StatsType.PWMight, client.Character.PWMight);
-            _pwLuck = new SV<int>(this, StatsType.PWLuck, client.Character.PWLuck);
-            _pwMight = new SV<int>(this, StatsType.PWMight, client.Character.PWMight);
-            _pwRestoration = new SV<int>(this, StatsType.PWRestoration, client.Character.PWRestoration);
-            _pwProtection = new SV<int>(this, StatsType.PWProtection, client.Character.PWProtection);
-            _striked = new SV<bool>(this, StatsType.Striked, client.Account.Striked);
             _elite = new SV<int>(this, StatsType.Elite, client.Account.Elite, true);
             _pvp = new SV<bool>(this, StatsType.PvP, true);
-
-
-
-
-
 
             Name = client.Account.Name;
             XmlEffect = "";
@@ -848,8 +780,6 @@ namespace wServer.realm.entities
                 SetDefaultSkin(s);
                 SetDefaultSize(gameData.Skins[s].Size);
             }
-
-
 
             var guild = Manager.Database.GetGuild(client.Account.GuildId);
             if (guild?.Name != null)
@@ -938,9 +868,7 @@ namespace wServer.realm.entities
         }
 
         public override void Init(World owner)
-        {
-            
-
+        {           
             var x = 0;
             var y = 0;
             var spawnRegions = owner.GetSpawnPoints();
@@ -979,9 +907,15 @@ namespace wServer.realm.entities
                 OxygenBar = 100;
             if (owner.Name.Equals("SummoningPoint"))
                 RageBar = 100;
+            if ((owner.Name.Equals("BastilleofDrannol") 
+                 || owner.Name.Equals("AldraginesHideout") 
+                 || owner.Name.Equals("UltraAldraginesHideout"))
+                && owner.raidOpener != Name) {
+                Client.Manager.Database.UpdateCredit(Client.Account, -3000);
+            }
             if (owner.Name.Equals("Nexus"))
             {
-                int amount = (int)(Math.Min(Math.Floor((Stats[10] / 90d) * 6), 6));
+                int amount = (int)Math.Min(Math.Floor(Stats[10] / 90d * 6), 6);
 
                 if (amount > HealthPots.Count)
                     HealthPots = new ItemStacker(this, 254, 0x0A22, amount, 6);
@@ -1026,12 +960,12 @@ namespace wServer.realm.entities
             base.Init(owner);
         }
 
-        private List<Timer> timerList = new List<Timer>();
+        private readonly List<Timer> timerList = new List<Timer>();
         public int[] stealAmount = { 0, 0 };
 
-        void TimerHandler(int delay, ConditionEffectIndex cei)
+        private void TimerHandler(int delay, ConditionEffectIndex cei)
         {
-            Timer timer = new Timer(delay, (int)cei);
+            var timer = new Timer(delay, (int)cei);
             timer.Elapsed += (o, e) => {
                 Client.Player?.ApplyConditionEffect(cei);
                 if (timerList.Exists(t => t == timer)) timerList.Remove(timer);
@@ -1073,7 +1007,7 @@ namespace wServer.realm.entities
                     if (pair.Key != string.Empty)
                     {
                         var cei = (int)Enum.Parse(typeof(ConditionEffectIndex), pair.Key.Trim().Replace(" ", ""), true);
-                        foreach (Timer t in timerList)
+                        foreach (var t in timerList)
                             if (t.Id == cei)
                             {
                                 t.Dispose();
@@ -1380,103 +1314,9 @@ namespace wServer.realm.entities
                 return true;
             return false;
         }
-        private int RestorationHeal()
-        {
 
-            if (Stats[10] >= 0 && Stats[10] <= 10)
-            {
-                return 25;
-            }
-            else if (Stats[10] >= 11 && Stats[10] <= 20)
-            {
-                return 50;
-            }
-            else if (Stats[10] >= 21 && Stats[10] <= 30)
-            {
-                return 75;
-            }
-            else if (Stats[10] >= 31 && Stats[10] <= 40)
-            {
-                return 100;
-            }
-            else if (Stats[10] >= 41 && Stats[10] <= 50)
-            {
-                return 125;
-            }
-            else if (Stats[10] >= 51 && Stats[10] <= 60)
-            {
-                return 150;
-            }
-            else if (Stats[10] >= 61 && Stats[10] <= 70)
-            {
-                return 175;
-            }
-            else if (Stats[10] >= 71 && Stats[10] <= 80)
-            {
-                return 200;
-            }
-            else if (Stats[10] >= 81 && Stats[10] <= 90)
-            {
-                return 225;
-            }
-            else if (Stats[10] >= 91 && Stats[10] <= 100)
-            {
-                return 250;
-            }
-            else if (Stats[10] >= 101 && Stats[10] <= 110)
-            {
-                return 275;
-            }
-            else if (Stats[10] >= 111 && Stats[10] <= 120)
-            {
-                return 300;
-            }
-            else if (Stats[10] >= 121 && Stats[10] <= 130)
-            {
-                return 325;
-            }
-            else if (Stats[10] >= 131 && Stats[10] <= 140)
-            {
-                return 350;
-            }
-            else if (Stats[10] >= 141 && Stats[10] <= 150)
-            {
-                return 375;
-            }
-            else if (Stats[10] >= 151 && Stats[10] <= 160)
-            {
-                return 400;
-            }
-            else if (Stats[10] >= 161 && Stats[10] <= 170)
-            {
-                return 425;
-            }
-            else if (Stats[10] >= 171 && Stats[10] <= 180)
-            {
-                return 450;
-            }
-            else if (Stats[10] >= 181 && Stats[10] <= 190)
-            {
-                return 475;
-            }
-            else if (Stats[10] >= 191 && Stats[10] <= 200)
-            {
-                return 500;
-            }
-            return 20;
-
-        }
-
-        public bool CheckLegendarySlot()
-        {
-            for (var i = 0; i < 3; i++)
-            {
-                var item = Inventory[i];
-                if (item == null || !item.Legendary)
-                    continue;
-                return true;
-            }
-            return false;
+        private int RestorationHeal() {
+            return 25 + (int)Math.Min(Math.Floor(Stats[10] / 10d) * 25, 475);
         }
 
         public override bool HitByProjectile(Projectile projectile, RealmTime time)
@@ -1917,13 +1757,15 @@ namespace wServer.realm.entities
             var maxed = playerDesc.Stats.Where((t, i) => Stats.Base[i] >= t.MaxValue).Count() +
                 (AscensionEnabled
                     ? playerDesc.Stats.Where((t, i)
-                        => Stats.Base[i] == t.MaxValue + 10
-                           || Stats.Base[i] == t.MaxValue + 50).Count() : 0); //ghetto code
+                        => Stats.Base[i] >= t.MaxValue + 10
+                           || Stats.Base[i] >= t.MaxValue + 50).Count() : 0); //ghetto code
+
             var deathMessage = "{\"key\":\"server.death\",\"tokens\":{\"player\":\"" + Name + "'s "
                                + maxed + (AscensionEnabled ? "/24 " : "/12 ")
                                + playerDesc.ObjectId + "\",\"level\":\""
                                + Level + "\",\"enemy\":\""
                                + killer + "\"}}";
+
             // notable deaths
             if ((maxed >= 12 || Fame >= 10000) && !Client.Account.Admin) {
                 foreach (var w in Manager.Worlds.Values)
@@ -1939,7 +1781,7 @@ namespace wServer.realm.entities
                 foreach (var w in Manager.Worlds.Values) {
                     foreach (var p in w.Players.Values) {
                         if (p.Client.Account.GuildId == pGuild) {
-                            p.SendGuildDeath(deathMessage);
+                            p.SendGuildAnnounce(deathMessage);
                         }
                     }
                 }

@@ -1,7 +1,9 @@
 package com.company.assembleegameclient.account.ui {
 
 import com.company.assembleegameclient.game.AGameSprite;
+
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+
 import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class ItemResultBoxMediator extends Mediator {

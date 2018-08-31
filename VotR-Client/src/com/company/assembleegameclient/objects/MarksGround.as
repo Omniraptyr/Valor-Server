@@ -3,7 +3,6 @@ import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.ui.panels.Panel;
 
 import kabam.rotmg.markPurchaser.components.MarksPanel;
-import kabam.rotmg.sorForge.components.SorForgePanel;
 
 public class MarksGround extends GameObject implements IInteractiveObject {
 

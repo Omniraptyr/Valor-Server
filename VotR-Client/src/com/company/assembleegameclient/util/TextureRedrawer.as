@@ -31,26 +31,25 @@ public class TextureRedrawer {
     private static var colorTexture1:BitmapData = new BitmapDataSpy(1, 1, false);
     private static var colorTexture2:BitmapData = new BitmapDataSpy(1, 1, false);
 
-
-    public static function redraw(tex:BitmapData, size:int, padBottom:Boolean, glowColor:uint, useCache:Boolean = true, sMult:Number = 5):BitmapData {
-        var hash:* = getHash(size, padBottom, glowColor, sMult);
+    public static function redraw(tex:BitmapData, size:int, padBottom:Boolean, glowColor:uint, useCache:Boolean = true, sMult:Number = 5, glowMult:Number = 1.4):BitmapData {
+        var hash:* = getHash(size, padBottom, glowColor, sMult, glowMult);
         if (useCache && isCached(tex, hash)) {
             return redrawCaches[tex][hash];
         }
         var modTex:BitmapData = resize(tex, null, size, padBottom, 0, 0, sMult);
-        modTex = GlowRedrawer.outlineGlow(modTex, glowColor, 1.4, useCache);
+        modTex = GlowRedrawer.outlineGlow(modTex, glowColor, glowMult, useCache);
         if (useCache) {
             cache(tex, hash, modTex);
         }
         return modTex;
     }
 
-    private static function getHash(size:int, padBottom:Boolean, glowColor:uint, sMult:Number):* {
+    private static function getHash(size:int, padBottom:Boolean, glowColor:uint, sMult:Number, glowMult:Number):* {
         var h:int = (padBottom ? (1 << 27) : 0) | (size * sMult);
         if (glowColor == 0) {
-            return h;
+            return h + glowMult.toString();
         }
-        return h.toString() + glowColor.toString();
+        return h.toString() + glowColor.toString() + glowMult.toString();
     }
 
     private static function cache(tex:BitmapData, hash:*, modifiedTex:BitmapData):void {
@@ -68,9 +67,8 @@ public class TextureRedrawer {
         }
         return false;
     }
-    public static function retextureNoSizeChange(_arg_1:BitmapData, _arg_2:BitmapData, _arg_3:int, _arg_4:int) : BitmapData
-
-    {   var shader:Shader = new Shader(textureShaderData_);
+	
+    public static function retextureNoSizeChange(_arg_1:BitmapData, _arg_2:BitmapData, _arg_3:int, _arg_4:int) : BitmapData {   var shader:Shader = new Shader(textureShaderData_);
         var _local_7:Matrix = new Matrix();
         _local_7.scale(5,5);
         var _local_6:BitmapData = new BitmapData(_arg_1.width * 5,_arg_1.height * 5,true,0);
@@ -87,6 +85,7 @@ public class TextureRedrawer {
         _local_6.applyFilter(_local_6,_local_6.rect,PointUtil.ORIGIN,new ShaderFilter(shader));
         return _local_6;
     }
+	
     public static function resize(tex:BitmapData, mask:BitmapData, size:int, padBottom:Boolean, op1:int, op2:int, sMult:Number = 5):BitmapData {
         if (mask != null && (op1 != 0 || op2 != 0)) {
             tex = retexture(tex, mask, op1, op2);
@@ -114,7 +113,7 @@ public class TextureRedrawer {
         }
         tex = new BitmapDataSpy(size + 4 + 4, size + 4 + 4, true, 0);
         tex.fillRect(new Rectangle(4, 4, size, size), 0xFF000000 | color);
-        tex.applyFilter(tex, tex.rect, PointUtil.ORIGIN, OUTLINE_FILTER);
+        tex.applyFilter(tex, tex.rect, PointUtil.ORIGIN, new GlowFilter(0, 0.8, 1.4, 1.4, 0xFF, BitmapFilterQuality.LOW, false, false));
         colorDict[color] = tex;
         return tex;
     }
@@ -161,8 +160,8 @@ public class TextureRedrawer {
 
     private static function getTexture(op:int, bmp:BitmapData):BitmapData {
         var ret:BitmapData;
-        var type = (op >> 24) & 0xFF;
-        var value = op & 0xFFFFFF; // could mean color or sprite index
+        var type:Number = (op >> 24) & 0xFF;
+        var value:Number = op & 0xFFFFFF; // could mean color or sprite index
         switch (type) {
             case 0:
                 ret = bmp;

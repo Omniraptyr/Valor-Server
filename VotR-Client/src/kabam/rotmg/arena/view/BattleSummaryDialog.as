@@ -18,7 +18,7 @@ public class BattleSummaryDialog extends Sprite {
     private const WIDTH:int = 264;
     private const HEIGHT:int = 302;
     private const background:DialogBackground = makeBackground();
-    private const splashArt = makeSplashArt();
+    private const splashArt:* = makeSplashArt();
 
     private var BattleSummarySplash:Class;
     private var leftSummary:BattleSummaryText;
@@ -88,7 +88,7 @@ public class BattleSummaryDialog extends Sprite {
         this.background.graphics.endFill();
     }
 
-    private function makeSplashArt() {
+    private function makeSplashArt() : * {
         var _local1:* = new this.BattleSummarySplash();
         _local1.y = 27;
         _local1.x = 2;

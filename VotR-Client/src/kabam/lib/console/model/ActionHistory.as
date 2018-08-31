@@ -1,5 +1,5 @@
 ﻿package kabam.lib.console.model {
-final class ActionHistory {
+internal final class ActionHistory {
 
     private var stack:Vector.<String>;
     private var index:int;

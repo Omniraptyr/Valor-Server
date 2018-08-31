@@ -5,7 +5,6 @@ import kabam.rotmg.classes.model.CharacterSkinState;
 import kabam.rotmg.classes.services.BuySkinTask;
 import kabam.rotmg.core.model.PlayerModel;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.ui.view.NotEnoughGoldDialog;
 
 public class BuyCharacterSkinCommand {
 

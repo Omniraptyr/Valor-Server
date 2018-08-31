@@ -10,7 +10,6 @@ import com.company.util.GraphicsUtil;
 
 import flash.display.CapsStyle;
 import flash.display.DisplayObject;
-import flash.display.GraphicsBitmapFill;
 import flash.display.GraphicsGradientFill;
 import flash.display.GraphicsPath;
 import flash.display.GraphicsSolidFill;
@@ -23,10 +22,6 @@ import flash.events.Event;
 import flash.filters.DropShadowFilter;
 
 import kabam.rotmg.pets.view.components.DialogCloseButton;
-
-import mx.controls.TextInput;
-
-import spark.components.CheckBox;
 
 public class FrameuBox extends Sprite
 {
@@ -120,13 +115,6 @@ public class FrameuBox extends Sprite
         _local2.y = (this.h_ - 60);
         _local2.x = 15;
         this.h_ = (this.h_ + 40);
-    }
-
-    public function addCheckBox(_arg1:CheckBox):void {
-        addChild(_arg1);
-        _arg1.y = (this.h_ - 66);
-        _arg1.x = 17;
-        this.h_ = (this.h_ + 44);
     }
 
 

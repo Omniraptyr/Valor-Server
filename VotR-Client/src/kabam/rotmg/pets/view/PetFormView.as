@@ -75,7 +75,7 @@ public class PetFormView extends PetInteractionView implements DialogCloser {
         }
     }
 
-    public function onSkinGroupInit() {
+    public function onSkinGroupInit() : void {
         this.skinGroupInitCount++;
         if (this.skinGroupInitCount == this.NUM_CATEGORIES) {
             this.positionSkinGroups();

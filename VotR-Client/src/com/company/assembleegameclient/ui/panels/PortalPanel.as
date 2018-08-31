@@ -3,8 +3,6 @@ import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.objects.Portal;
 import com.company.assembleegameclient.objects.PortalNameParser;
 import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.tutorial.Tutorial;
-import com.company.assembleegameclient.tutorial.doneAction;
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 
 import flash.events.Event;
@@ -37,7 +35,7 @@ public class PortalPanel extends Panel {
     public function PortalPanel(_arg1:GameSprite, _arg2:Portal) {
         super(_arg1);
         this.owner_ = _arg2;
-        this.nameText_ = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF).setBold(true).setTextWidth(WIDTH).setHorizontalAlign(TextFormatAlign.CENTER);
+        this.nameText_ = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF).setBold(true).setTextWidth(WIDTH).setWordWrap(true).setHorizontalAlign(TextFormatAlign.CENTER);
         this.nameText_.filters = [new DropShadowFilter(0, 0, 0)];
         addChild(this.nameText_);
         this.waiter.push(this.nameText_.textChanged);
@@ -82,7 +80,6 @@ public class PortalPanel extends Panel {
     }
 
     private function enterPortal():void {
-        doneAction(gs_, Tutorial.ENTER_PORTAL_ACTION);
         gs_.gsc_.usePortal(this.owner_.objectId_);
         this.exitGameSignal.dispatch();
     }

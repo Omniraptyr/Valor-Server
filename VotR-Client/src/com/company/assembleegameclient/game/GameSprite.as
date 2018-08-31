@@ -7,7 +7,6 @@ import com.company.assembleegameclient.objects.Pet;
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.objects.Projectile;
 import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.tutorial.Tutorial;
 import com.company.assembleegameclient.ui.GuildText;
 import com.company.assembleegameclient.ui.RankText;
 import com.company.assembleegameclient.ui.menu.PlayerMenu;
@@ -19,9 +18,9 @@ import com.company.util.PointUtil;
 
 import flash.display.DisplayObject;
 import flash.display.Sprite;
+import flash.display.StageScaleMode;
 import flash.events.Event;
 import flash.events.MouseEvent;
-import flash.external.ExternalInterface;
 import flash.filters.ColorMatrixFilter;
 import flash.utils.ByteArray;
 import flash.utils.getTimer;
@@ -29,7 +28,6 @@ import flash.utils.getTimer;
 import kabam.lib.loopedprocs.LoopedCallback;
 import kabam.lib.loopedprocs.LoopedProcess;
 import kabam.rotmg.account.core.Account;
-import kabam.rotmg.appengine.api.AppEngineClient;
 import kabam.rotmg.arena.view.ArenaTimer;
 import kabam.rotmg.arena.view.ArenaWaveCounter;
 import kabam.rotmg.chat.view.Chat;
@@ -37,33 +35,25 @@ import kabam.rotmg.constants.GeneralConstants;
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.core.model.MapModel;
 import kabam.rotmg.core.model.PlayerModel;
+import kabam.rotmg.core.view.Layers;
 import kabam.rotmg.dailyLogin.signal.ShowDailyCalendarPopupSignal;
 import kabam.rotmg.dialogs.control.AddPopupToStartupQueueSignal;
 import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.dialogs.model.DialogsModel;
-import kabam.rotmg.dialogs.model.PopupNamesConfig;
 import kabam.rotmg.game.view.AlertStatusDisplay;
 import kabam.rotmg.game.view.ArenaDisplay;
 import kabam.rotmg.game.view.CreditDisplay;
-import kabam.rotmg.game.view.GiftStatusDisplay;
 import kabam.rotmg.game.view.GlobalArenaInformation;
 import kabam.rotmg.game.view.LootboxModalButton;
-import kabam.rotmg.game.view.NewsModalButton;
+import kabam.rotmg.game.view.RaidLauncherButton;
 import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
 import kabam.rotmg.maploading.signals.MapLoadedSignal;
 import kabam.rotmg.messaging.impl.GameServerConnectionConcrete;
 import kabam.rotmg.messaging.impl.incoming.MapInfo;
-import kabam.rotmg.news.model.NewsModel;
-import kabam.rotmg.news.view.NewsTicker;
-import kabam.rotmg.game.view.MarkShopModalButton;
 import kabam.rotmg.packages.services.PackageModel;
-import kabam.rotmg.packages.view.PackageButton;
 import kabam.rotmg.promotions.model.BeginnersPackageModel;
 import kabam.rotmg.promotions.signals.ShowBeginnersPackageSignal;
-import kabam.rotmg.promotions.view.BeginnersPackageButton;
-import kabam.rotmg.protip.signals.ShowProTipSignal;
-import kabam.rotmg.questrewards.view.QuestRewardsPanel;
 import kabam.rotmg.servers.api.Server;
 import kabam.rotmg.stage3D.Renderer;
 import kabam.rotmg.ui.UIUtils;
@@ -71,10 +61,7 @@ import kabam.rotmg.ui.view.HUDView;
 
 import org.osflash.signals.Signal;
 
-import robotlegs.bender.framework.api.ILogger;
-
 public class GameSprite extends AGameSprite {
-
     protected static const PAUSED_FILTER:ColorMatrixFilter = new ColorMatrixFilter(MoreColorUtil.greyscaleFilterMatrix);
 
     public const monitor:Signal = new Signal(String, int);
@@ -87,12 +74,9 @@ public class GameSprite extends AGameSprite {
     public var rankText_:RankText;
     public var guildText_:GuildText;
     public var creditDisplay_:CreditDisplay;
-    public var giftStatusDisplay:GiftStatusDisplay;
     public var alertStatusDisplay:AlertStatusDisplay;
-    public var markShopButton:MarkShopModalButton;
+    public var raidLauncherButton:RaidLauncherButton;
     public var lootBoxButton:LootboxModalButton;
-    public var newsModalButton:NewsModalButton;
-    public var newsTicker:NewsTicker;
     public var arenaTimer:ArenaTimer;
     public var arenaWaveCounter:ArenaWaveCounter;
     public var mapModel:MapModel;
@@ -199,7 +183,6 @@ public class GameSprite extends AGameSprite {
 
     override public function initialize():void {
         var _local1:Account;
-        var _local4:ShowProTipSignal;
         map.initialize();
         this.modelInitialized.dispatch();
         if (this.evalIsNotInCombatMapArea()) {
@@ -211,13 +194,6 @@ public class GameSprite extends AGameSprite {
         }
         _local1 = StaticInjectorContext.getInjector().getInstance(Account);
         if (map.name_ == Map.NEXUS) {
-            this.addToQueueSignal.dispatch(PopupNamesConfig.DAILY_LOGIN_POPUP, this.openDailyCalendarPopupSignal, -1, null);
-            if (this.beginnersPackageModel.isBeginnerAvailable()) {
-                this.addToQueueSignal.dispatch(PopupNamesConfig.BEGINNERS_OFFER_POPUP, this.showBeginnersPackage, 1, null);
-            }
-            else {
-                this.addToQueueSignal.dispatch(PopupNamesConfig.PACKAGES_OFFER_POPUP, this.showPackage, 1, null);
-            }
             this.flushQueueSignal.dispatch();
         }
         this.isNexus_ = (map.name_ == Map.NEXUS);
@@ -230,56 +206,25 @@ public class GameSprite extends AGameSprite {
         this.creditDisplay_.x = 594;
         this.creditDisplay_.y = 0;
         addChild(this.creditDisplay_);
-        var _local2:AppEngineClient = StaticInjectorContext.getInjector().getInstance(AppEngineClient);
         var _local3:Object = {
             "game_net_user_id": _local1.gameNetworkUserId(),
             "game_net": _local1.gameNetwork(),
             "play_platform": _local1.playPlatform()
         };
         MoreObjectUtil.addToObject(_local3, _local1.getCredentials());
-        if (((((((!((map.name_ == "Kitchen"))) && (!((map.name_ == "Tutorial"))))) && (!((map.name_ == "Nexus Explanation"))))) && ((Parameters.data_.watchForTutorialExit == true)))) {
-            Parameters.data_.watchForTutorialExit = false;
-            this.callTracking('rotmg.Marketing.track("tutorialComplete")');
-            _local3["fteStepCompleted"] = 9900;
-            _local2.sendRequest("/log/logFteStep", _local3);
-        }
-        if (map.name_ == "Kitchen") {
-            _local3["fteStepCompleted"] = 200;
-            _local2.sendRequest("/log/logFteStep", _local3);
-        }
-        if (map.name_ == "Tutorial") {
-            if (Parameters.data_.needsTutorial == true) {
-                Parameters.data_.watchForTutorialExit = true;
-                this.callTracking('rotmg.Marketing.track("install")');
-                _local3["fteStepCompleted"] = 100;
-                _local2.sendRequest("/log/logFteStep", _local3);
-            }
-            this.startTutorial();
-        }
-        else {
-            if (((((((((((((!((map.name_ == "Arena"))) && (!((map.name_ == "Kitchen"))))) && (!((map.name_ == "Nexus Explanation"))))) && (!((map.name_ == "Vault Explanation"))))) && (!((map.name_ == "Guild Explanation"))))) && (!(this.evalIsNotInCombatMapArea())))) && (Parameters.data_.showProtips))) {
-                _local4 = StaticInjectorContext.getInjector().getInstance(ShowProTipSignal);
-                ((_local4) && (_local4.dispatch()));
-            }
-        }
-        if (map.name_ == "Daily Quest Room") {
-            QuestRewardsPanel.checkQuests();
-        }
         Parameters.save();
         hidePreloader();
+        stage.dispatchEvent(new Event(Event.RESIZE));
+        this.parent.parent.setChildIndex((this.parent.parent as Layers).top, 2);
     }
 
     private function showSafeAreaDisplays():void {
         this.showRankText();
         this.showGuildText();
-        this.setYAndPositionPackage();
-        this.showMarkShopButton();
-        this.showLootboxButton();
-        this.showGiftStatusDisplay();
         this.showAlertStatusDisplay();
         this.addArenaDisplay();
-        // this.showNewsUpdate();
-        // this.showNewsTicker();
+        this.showRaidLauncher();
+        this.showLootboxButton();
     }
 
     private function showTimer():void {
@@ -293,21 +238,6 @@ public class GameSprite extends AGameSprite {
         this.arenaWaveCounter.y = 5;
         this.arenaWaveCounter.x = 5;
         addChild(this.arenaWaveCounter);
-    }
-
-    private function showNewsTicker():void {
-        this.newsTicker = new NewsTicker();
-        this.newsTicker.x = (300 - (this.newsTicker.width / 2));
-        this.newsTicker.y = (5 + UIUtils.NOTIFICATION_SPACE);
-        addChild(this.newsTicker);
-    }
-
-    private function showGiftStatusDisplay():void {
-        this.giftStatusDisplay = new GiftStatusDisplay();
-        this.giftStatusDisplay.x = 6;
-        this.giftStatusDisplay.y = (this.displaysPosY + 2);
-        this.displaysPosY = (this.displaysPosY + UIUtils.NOTIFICATION_SPACE);
-        addChild(this.giftStatusDisplay);
     }
 
     private function addArenaDisplay():void {
@@ -326,74 +256,19 @@ public class GameSprite extends AGameSprite {
         addChild(this.alertStatusDisplay);
     }
 
-    private function showMarkShopButton():void {
-        this.markShopButton = new MarkShopModalButton();
-        this.markShopButton.x = 6;
-        this.markShopButton.y = (this.displaysPosY + 2);
+    private function showRaidLauncher():void {
+        this.raidLauncherButton = new RaidLauncherButton();
+        this.raidLauncherButton.x = 6;
+        this.raidLauncherButton.y = (this.displaysPosY + 2);
         this.displaysPosY = (this.displaysPosY + UIUtils.NOTIFICATION_SPACE);
-        addChild(this.markShopButton);
+        addChild(this.raidLauncherButton);
     }
+
     private function showLootboxButton():void {
         this.lootBoxButton = new LootboxModalButton();
-        this.lootBoxButton.x = this.markShopButton.x + 32;
-        this.lootBoxButton.y = this.markShopButton.y;
+        this.lootBoxButton.x = this.raidLauncherButton.x + 32;
+        this.lootBoxButton.y = this.raidLauncherButton.y;
         addChild(this.lootBoxButton);
-    }
-
-    private function showNewsUpdate(_arg1:Boolean = true):void {
-        var _local4:NewsModalButton;
-        var _local2:ILogger = StaticInjectorContext.getInjector().getInstance(ILogger);
-        var _local3:NewsModel = StaticInjectorContext.getInjector().getInstance(NewsModel);
-        _local2.debug("NEWS UPDATE -- making button");
-        if (_local3.hasValidModalNews()) {
-            _local2.debug("NEWS UPDATE -- making button - ok");
-            _local4 = new NewsModalButton();
-            _local4.x = 6;
-            _local4.y = 92;
-            if (_arg1) {
-                this.displaysPosY = (this.displaysPosY + UIUtils.NOTIFICATION_SPACE);
-            }
-            if (this.newsModalButton != null) {
-                removeChild(this.newsModalButton);
-            }
-            this.newsModalButton = _local4;
-            //addChild(this.newsModalButton);
-        }
-    }
-
-    public function refreshNewsUpdateButton():void {
-        var _local1:ILogger = StaticInjectorContext.getInjector().getInstance(ILogger);
-        _local1.debug("NEWS UPDATE -- refreshing button, update noticed");
-        this.showNewsUpdate(false);
-    }
-
-    private function setYAndPositionPackage():void {
-        this.packageY = (this.displaysPosY + 2);
-        this.displaysPosY = (this.displaysPosY + UIUtils.NOTIFICATION_SPACE);
-        this.positionPackage();
-    }
-
-    private function positionPackage():void {
-        this.currentPackage.x = 6;
-        this.currentPackage.y = this.packageY;
-    }
-
-    public function showBeginnersButtonIfSafe():void {
-        if (this.evalIsNotInCombatMapArea()) {
-            this.addAndPositionPackage(new BeginnersPackageButton());
-        }
-    }
-
-    public function showPackageButtonIfSafe():void {
-        if (this.evalIsNotInCombatMapArea()) {
-            this.addAndPositionPackage(new PackageButton());
-        }
-    }
-
-    private function addAndPositionPackage(_arg1:DisplayObject):void {
-        this.currentPackage = _arg1;
-        addChild(this.currentPackage);
-        this.positionPackage();
     }
 
     private function showGuildText():void {
@@ -409,22 +284,6 @@ public class GameSprite extends AGameSprite {
         this.rankText_.y = this.displaysPosY;
         this.displaysPosY = (this.displaysPosY + UIUtils.NOTIFICATION_SPACE);
         addChild(this.rankText_);
-    }
-
-    private function callTracking(_arg1:String):void {
-        if (ExternalInterface.available == false) {
-            return;
-        }
-        try {
-            ExternalInterface.call(_arg1);
-        }
-        catch (err:Error) {
-        }
-    }
-
-    private function startTutorial():void {
-        tutorial_ = new Tutorial(this);
-        addChild(tutorial_);
     }
 
     private function updateNearestInteractive():void {
@@ -454,8 +313,67 @@ public class GameSprite extends AGameSprite {
         this.mapModel.currentInteractiveTarget = _local3;
     }
 
-    private function isPetMap():Boolean {
-        return (true);
+    public function onScreenResize(e:Event) : void {
+        var scaleX:Number = 800 / stage.stageWidth;
+        var scaleY:Number = 600 / stage.stageHeight;
+        if (this.map != null) {
+            this.map.scaleX = scaleX;
+            this.map.scaleY = scaleY;
+        }
+        if (this.hudView != null) {
+            this.hudView.scaleX = scaleX;
+            this.hudView.scaleY = 1;
+            this.hudView.y = 0;
+            this.hudView.x = 800 - 200 * this.hudView.scaleX;
+            if (this.creditDisplay_ != null) {
+                this.creditDisplay_.x = this.hudView.x - 6 * this.creditDisplay_.scaleX;
+            }
+        }
+        if (this.chatBox_ != null) {
+            this.chatBox_.scaleX = scaleX;
+            this.chatBox_.scaleY = scaleY;
+            this.chatBox_.y = 300 + 300 * (1 - this.chatBox_.scaleY);
+        }
+        if (this.rankText_ != null) {
+            this.rankText_.scaleX = scaleX;
+            this.rankText_.scaleY = scaleY;
+            this.rankText_.x = 8 * this.rankText_.scaleX;
+            this.rankText_.y = 4 * this.rankText_.scaleY;
+        }
+        if (this.guildText_ != null) {
+            this.guildText_.scaleX = scaleX;
+            this.guildText_.scaleY = scaleY;
+            this.guildText_.x = 64 * this.guildText_.scaleX;
+            this.guildText_.y = 6 * this.guildText_.scaleY;
+        }
+        if (this.creditDisplay_ != null) {
+            this.creditDisplay_.scaleX = scaleX;
+            this.creditDisplay_.scaleY = scaleY;
+        }
+        if (this.arenaDisplay != null) {
+            this.arenaDisplay.scaleX = scaleX;
+            this.arenaDisplay.scaleY = scaleY;
+            this.arenaDisplay.x = 6 * this.arenaDisplay.scaleX;
+            this.arenaDisplay.y = 62 * this.arenaDisplay.scaleY;
+        }
+        if (this.alertStatusDisplay != null) {
+            this.alertStatusDisplay.scaleX = scaleX;
+            this.alertStatusDisplay.scaleY = scaleY;
+            this.alertStatusDisplay.x = 6 * this.alertStatusDisplay.scaleX;
+            this.alertStatusDisplay.y = 34 * this.alertStatusDisplay.scaleY;
+        }
+        if (this.lootBoxButton != null) {
+            this.lootBoxButton.scaleX = scaleX;
+            this.lootBoxButton.scaleY = scaleY;
+            this.lootBoxButton.x = 38 * this.lootBoxButton.scaleX;
+            this.lootBoxButton.y = 90 * this.lootBoxButton.scaleY;
+        }
+        if (this.raidLauncherButton != null) {
+            this.raidLauncherButton.scaleX = scaleX;
+            this.raidLauncherButton.scaleY = scaleY;
+            this.raidLauncherButton.x = 6 * this.raidLauncherButton.scaleX;
+            this.raidLauncherButton.y = 90 * this.raidLauncherButton.scaleY;
+        }
     }
 
     public function connect():void {
@@ -467,6 +385,12 @@ public class GameSprite extends AGameSprite {
             lastUpdate_ = getTimer();
             stage.addEventListener(MoneyChangedEvent.MONEY_CHANGED, this.onMoneyChanged);
             stage.addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
+
+            this.parent.parent.setChildIndex((this.parent.parent as Layers).top, 0);
+            stage.scaleMode = StageScaleMode.NO_SCALE;
+            stage.addEventListener(Event.RESIZE, this.onScreenResize);
+            stage.dispatchEvent(new Event(Event.RESIZE));
+
             LoopedProcess.addProcess(new LoopedCallback(100, this.updateNearestInteractive));
         }
     }
@@ -478,8 +402,13 @@ public class GameSprite extends AGameSprite {
             this.idleWatcher_.stop();
             stage.removeEventListener(MoneyChangedEvent.MONEY_CHANGED, this.onMoneyChanged);
             stage.removeEventListener(Event.ENTER_FRAME, this.onEnterFrame);
+
+            stage.removeEventListener(Event.RESIZE, this.onScreenResize);
+            stage.scaleMode = StageScaleMode.EXACT_FIT;
+            stage.dispatchEvent(new Event(Event.RESIZE));
+
             LoopedProcess.destroyAll();
-            ((contains(map)) && (removeChild(map)));
+            contains(map) && removeChild(map);
             map.dispose();
             CachingColorTransformer.clear();
             TextureRedrawer.clearCache();
@@ -497,7 +426,6 @@ public class GameSprite extends AGameSprite {
     }
 
     private function onEnterFrame(_arg1:Event):void {
-        var _local7:Number;
         var _local2:int = getTimer();
         var _local3:int = (_local2 - lastUpdate_);
         if (this.idleWatcher_.update(_local3)) {
@@ -551,7 +479,5 @@ public class GameSprite extends AGameSprite {
 
     public function showPetToolTip(_arg1:Boolean):void {
     }
-
-
 }
 }

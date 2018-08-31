@@ -3,9 +3,6 @@
  */
 package com.company.assembleegameclient.ui {
 import com.company.assembleegameclient.account.ui.*;
-
-
-import com.company.assembleegameclient.ui.DeprecatedClickableText;
 import com.company.ui.BaseSimpleText;
 import com.company.util.GraphicsUtil;
 
@@ -22,10 +19,6 @@ import flash.events.Event;
 import flash.filters.DropShadowFilter;
 
 import kabam.rotmg.pets.view.components.DialogCloseButton;
-
-import mx.controls.TextInput;
-
-import spark.components.CheckBox;
 
 public class FrameChef extends Sprite
 {
@@ -118,13 +111,6 @@ public class FrameChef extends Sprite
         this.h_ = (this.h_ + 40);
     }
 
-    public function addCheckBox(_arg1:CheckBox):void {
-        addChild(_arg1);
-        _arg1.y = (this.h_ - 66);
-        _arg1.x = 17;
-        this.h_ = (this.h_ + 44);
-    }
-
 
     public function offsetH(_arg1:int):void
     {
@@ -169,8 +155,8 @@ public class FrameChef extends Sprite
 
     public function onAddedToStage(_arg1:Event):void {
         this.draw();
-        x = ((stage.stageWidth / 2) - ((this.w_ - 6) / 2));
-        y = ((stage.stageHeight / 2) - (height / 2));
+        this.x = (400 - ((this.w_ - 6) / 2));
+        this.y = (300 - (h_ / 2)); //was height
         if (this.frameTextInputBoxes.length > 0) {
             (stage.focus = this.frameTextInputBoxes[0].inputText_);
         }

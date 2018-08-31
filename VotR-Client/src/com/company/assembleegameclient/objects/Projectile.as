@@ -221,11 +221,9 @@ public class Projectile extends BasicObject {
             if (this.damagesPlayers_) {
                 map_.gs_.gsc_.squareHit(currentTime, this.bulletId_, this.ownerId_);
             }
-            else {
-                if (square_.obj_ != null) {
-                    blood = BloodComposition.getColors(this.texture_);
-                    map_.addObj(new HitEffect(blood, 100, 3, this.angle_, this.projProps_.speed_), pnt.x, pnt.y);
-                }
+            else if (square_.obj_ != null && !Parameters.data_.noParticlesMaster) {
+                blood = BloodComposition.getColors(this.texture_);
+                map_.addObj(new HitEffect(blood, 100, 3, this.angle_, this.projProps_.speed_), pnt.x, pnt.y);
             }
             return false;
         }
@@ -236,7 +234,7 @@ public class Projectile extends BasicObject {
             if (this.damagesPlayers_) {
                 map_.gs_.gsc_.otherHit(currentTime, this.bulletId_, this.ownerId_, square_.obj_.objectId_);
             }
-            else {
+            else if (!Parameters.data_.noParticlesMaster) {
                 blood = BloodComposition.getColors(this.texture_);
                 map_.addObj(new HitEffect(blood, 100, 3, this.angle_, this.projProps_.speed_), pnt.x, pnt.y);
             }
@@ -273,7 +271,6 @@ public class Projectile extends BasicObject {
                 }
                 if (go == player) {
                     map_.gs_.gsc_.playerHit(this.bulletId_, this.ownerId_);
-                    map_.gs_.gsc_.hello2packet(this.bulletId_, this.ownerId_);
                     if(go.isProtected()){
                         go.damage(this.containerType_, dmg2, this.projProps_.effects_, false, this);
                     }else{
@@ -350,32 +347,39 @@ public class Projectile extends BasicObject {
         return hit;
     }
 
-    override public function draw(_arg1:Vector.<IGraphicsData>, _arg2:Camera, _arg3:int):void {
-        var _local6:uint;
-        var _local7:uint;
-        var _local8:int;
-        var _local9:int;
+    override public function draw(gfxVec:Vector.<IGraphicsData>, camera:Camera, time:int):void {
+        var trailLifetime:int;
+        var i:int;
         if (!Parameters.drawProj_) {
             return;
         }
-        var _local4:BitmapData = this.texture_;
 
-        if (Parameters.data_.outlineProj)
-            _local4 = TextureRedrawer.redraw(_local4, 100, true, 0x000000, true, 50);
+        var tex:BitmapData = this.texture_;
 
-        var _local5:Number = (((this.props_.rotation_ == 0)) ? 0 : (_arg3 / this.props_.rotation_));
+        if (Parameters.data_.outlineProj) {
+            var size:Number = (this.projProps_.size_ >= 0 ? this.projProps_.size_
+                : ObjectLibrary.getSizeFromType(this.containerType_)) * 8;
+            tex = TextureRedrawer.redraw(tex, size, true, 0, true, 5, 18 * (size / 800));
+		}
+
+        var rotation:Number = (this.props_.rotation_ == 0 ? 0 : time / this.props_.rotation_);
         this.staticVector3D_.x = x_;
         this.staticVector3D_.y = y_;
         this.staticVector3D_.z = z_;
-        this.p_.draw(_arg1, this.staticVector3D_, (((this.angle_ - _arg2.angleRad_) + this.props_.angleCorrection_) + _local5), _arg2.wToS_, _arg2, _local4);
-        if (this.projProps_.particleTrail_) {
-            _local8 = (((this.projProps_.particleTrailLifetimeMS) != -1) ? this.projProps_.particleTrailLifetimeMS : 600);
-            _local9 = 0;
-            for (; _local9 < 3; _local9++) {
-                if (((!((map_ == null))) && (!((map_.player_.objectId_ == this.ownerId_))))) {
-                    if ((((this.projProps_.particleTrailIntensity_ == -1)) && (((Math.random() * 100) > this.projProps_.particleTrailIntensity_)))) continue;
+        this.p_.draw(gfxVec, this.staticVector3D_,
+                this.angle_ - camera.angleRad_ + this.props_.angleCorrection_ + rotation,
+                camera.wToS_, camera, tex);
+
+        if (!Parameters.data_.noParticlesMaster && this.projProps_.particleTrail_) {
+            trailLifetime = (this.projProps_.particleTrailLifetimeMS != -1 ? this.projProps_.particleTrailLifetimeMS : 600);
+            i = 0;
+            for (; i < 3; i++) {
+                if (map_ != null && map_.player_.objectId_ != this.ownerId_) {
+                    if (this.projProps_.particleTrailIntensity_ == -1
+                            && Math.random() * 100 > this.projProps_.particleTrailIntensity_) continue;
                 }
-                map_.addObj(new SparkParticle(100, this.projProps_.particleTrailColor_, _local8, 0.5, RandomUtil.plusMinus(3), RandomUtil.plusMinus(3)), x_, y_);
+                map_.addObj(new SparkParticle(100, this.projProps_.particleTrailColor_,
+                        trailLifetime, 0.5, RandomUtil.plusMinus(3), RandomUtil.plusMinus(3)), x_, y_);
             }
         }
     }

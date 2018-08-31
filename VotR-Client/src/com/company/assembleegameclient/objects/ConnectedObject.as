@@ -51,7 +51,7 @@ public class ConnectedObject extends GameObject {
         if (dict_ == null) {
             init();
         }
-        var _local2 = (_arg1 & 252645135);
+        var _local2:int = (_arg1 & 252645135);
         return (dict_[_local2]);
     }
 

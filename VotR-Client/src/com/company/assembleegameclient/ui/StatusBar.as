@@ -13,7 +13,6 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import org.osflash.signals.Signal;
 
 public class StatusBar extends Sprite {
-
     public static var barTextSignal:Signal = new Signal(Boolean);
 
     public var w_:int;
@@ -26,7 +25,7 @@ public class StatusBar extends Sprite {
     public var max_:int = -1;
     public var boost_:int = -1;
     public var maxMax_:int = -1;
-    public var pval_:int = -1;
+    public var postMax_:int = -1;
     private var labelText_:TextFieldDisplayConcrete;
     private var labelTextStringBuilder_:LineBuilder;
     private var valueText_:TextFieldDisplayConcrete;
@@ -43,19 +42,19 @@ public class StatusBar extends Sprite {
     private var direction:int = -1;
     private var speed:Number = 0.1;
 
-    public function StatusBar(_arg1:int, _arg2:int, _arg3:uint, _arg4:uint, _arg5:String = null) {
+    public function StatusBar(w:int, h:int, color:uint, backColor:uint, label:String = null) {
         this.colorSprite = new Sprite();
         super();
         addChild(this.colorSprite);
-        this.w_ = _arg1;
-        this.h_ = _arg2;
-        this.defaultForegroundColor = (this.color_ = _arg3);
-        this.defaultBackgroundColor = (this.backColor_ = _arg4);
+        this.w_ = w;
+        this.h_ = h;
+        this.defaultForegroundColor = (this.color_ = color);
+        this.defaultBackgroundColor = (this.backColor_ = backColor);
         this.textColor_ = 0xFFFFFF;
-        if (((!((_arg5 == null))) && (!((_arg5.length == 0))))) {
+        if (label != null && label.length != 0) {
             this.labelText_ = new TextFieldDisplayConcrete().setSize(13).setColor(this.textColor_);
             this.labelText_.setBold(true);
-            this.labelTextStringBuilder_ = new LineBuilder().setParams(_arg5);
+            this.labelTextStringBuilder_ = new LineBuilder().setParams(label);
             this.labelText_.setStringBuilder(this.labelTextStringBuilder_);
             this.centerVertically(this.labelText_);
             this.labelText_.filters = [new DropShadowFilter(0, 0, 0)];
@@ -72,7 +71,7 @@ public class StatusBar extends Sprite {
         this.centerVertically(this.boostText_);
         this.boostText_.filters = [new DropShadowFilter(0, 0, 0)];
         this.multiplierIcon = new Sprite();
-        this.multiplierIcon.x = (this.w_ - 25);
+        this.multiplierIcon.x = this.w_ - 25;
         this.multiplierIcon.y = -3;
         this.multiplierIcon.graphics.beginFill(0xFF00FF, 0);
         this.multiplierIcon.graphics.drawRect(0, 0, 20, 20);
@@ -90,49 +89,54 @@ public class StatusBar extends Sprite {
         barTextSignal.add(this.setBarText);
     }
 
-    public function centerVertically(_arg1:TextFieldDisplayConcrete):void {
-        _arg1.setVerticalAlign(TextFieldDisplayConcrete.MIDDLE);
-        _arg1.y = ((this.h_ / 2) + 1);
+    public function centerVertically(textField:TextFieldDisplayConcrete):void {
+        textField.setVerticalAlign(TextFieldDisplayConcrete.MIDDLE);
+        textField.y = this.h_ / 2 + 1;
     }
 
-    private function onMultiplierOver(_arg1:MouseEvent):void {
+    private function onMultiplierOver(e:MouseEvent):void {
         dispatchEvent(new Event("MULTIPLIER_OVER"));
     }
 
-    private function onMultiplierOut(_arg1:MouseEvent):void {
+    private function onMultiplierOut(e:MouseEvent):void {
         dispatchEvent(new Event("MULTIPLIER_OUT"));
     }
 
-    public function draw(_arg1:int, _arg2:int, _arg3:int, _arg4:int = -1, _arg5:int = -1):void {
-        if (_arg2 > 0) {
-            _arg1 = Math.min(_arg2, Math.max(0, _arg1));
+    public function draw(val:int, max:int, boost:int, maxMax:int = -1, postMax:int = -1):void {
+        if (max > 0) {
+            val = Math.min(max, Math.max(0, val));
         }
-        if ((((((((_arg1 == this.val_)) && ((_arg2 == this.max_)))) && ((_arg3 == this.boost_)))) && ((_arg4 == this.maxMax_)) && ((_arg5 == this.pval_)))) {
+        if (val == this.val_
+         && max == this.max_
+         && boost == this.boost_
+         && maxMax == this.maxMax_
+         && postMax == this.postMax_) {
             return;
         }
-        this.val_ = _arg1;
-        this.max_ = _arg2;
-        this.boost_ = _arg3;
-        this.maxMax_ = _arg4;
-        this.pval_ = _arg5;
+        this.val_ = val;
+        this.max_ = max;
+        this.boost_ = boost;
+        this.maxMax_ = maxMax;
+        this.postMax_ = postMax;
         this.internalDraw();
     }
-    public function setLabelText(_arg1:String, _arg2:Object = null):void {
-        this.labelTextStringBuilder_.setParams(_arg1, _arg2);
+
+    public function setLabelText(label:String, tokens:Object = null):void {
+        this.labelTextStringBuilder_.setParams(label, tokens);
         this.labelText_.setStringBuilder(this.labelTextStringBuilder_);
     }
 
-    private function setTextColor(_arg1:uint):void {
-        this.textColor_ = _arg1;
+    private function setTextColor(color:uint):void {
+        this.textColor_ = color;
         if (this.boostText_ != null) {
             this.boostText_.setColor(this.textColor_);
         }
         this.valueText_.setColor(this.textColor_);
     }
 
-    public function setBarText(_arg1:Boolean):void {
+    public function setBarText(barTextShown:Boolean):void {
         this.mouseOver_ = false;
-        if (_arg1) {
+        if (barTextShown) {
             removeEventListener(MouseEvent.ROLL_OVER, this.onMouseOver);
             removeEventListener(MouseEvent.ROLL_OUT, this.onMouseOut);
         }
@@ -146,24 +150,18 @@ public class StatusBar extends Sprite {
     private function internalDraw():void {
         graphics.clear();
         this.colorSprite.graphics.clear();
-        var _local1:uint = 0xFFFFFF;
+        var color:uint = 0xFFFFFF;
 
-        if(this.pval_ >= 50){
-            _local1 = 0x4169E1;
-        }else if((((this.maxMax_ > 0)) && (((this.max_ - this.boost_) >= this.maxMax_)))){
-            _local1 = 0xFCDF00;
+        if (this.postMax_ >= 50) {
+            color = 4286945;
+        } else if (this.maxMax_ > 0 && this.max_ - this.boost_ >= this.maxMax_) {
+            color = 0xFCDF00;
+        } else if (this.boost_ > 0) {
+            color = 6206769;
         }
 
-        if ((((this.maxMax_ > 0)) && (((this.max_ - this.boost_) == this.maxMax_)))) {
-            _local1 = 0xFCDF00;
-        }
-        else {
-            if (this.boost_ > 0) {
-                _local1 = 6206769;
-            }
-        }
-        if (this.textColor_ != _local1) {
-            this.setTextColor(_local1);
+        if (this.textColor_ != color) {
+            this.setTextColor(color);
         }
         graphics.beginFill(this.backColor_);
         graphics.drawRect(0, 0, this.w_, this.h_);
@@ -186,17 +184,17 @@ public class StatusBar extends Sprite {
         if (contains(this.boostText_)) {
             removeChild(this.boostText_);
         }
-        if (((Parameters.data_.toggleBarText) || (((this.mouseOver_) && ((this.h_ > 4)))))) {
+        if (Parameters.data_.toggleBarText || this.mouseOver_ && this.h_ > 4) {
             this.drawWithMouseOver();
         }
     }
 
     public function drawWithMouseOver():void {
         if (this.max_ > 0) {
-            this.valueText_.setStringBuilder(this.valueTextStringBuilder_.setString(((this.val_ + "/") + this.max_)));
+            this.valueText_.setStringBuilder(this.valueTextStringBuilder_.setString(this.val_ + "/" + this.max_));
         }
         else {
-            this.valueText_.setStringBuilder(this.valueTextStringBuilder_.setString(("" + this.val_)));
+            this.valueText_.setStringBuilder(this.valueTextStringBuilder_.setString("" + this.val_));
         }
         if (!contains(this.valueText_)) {
             this.valueText_.mouseEnabled = false;
@@ -204,17 +202,18 @@ public class StatusBar extends Sprite {
             addChild(this.valueText_);
         }
         if (this.boost_ != 0) {
-            this.boostText_.setStringBuilder(this.valueTextStringBuilder_.setString((((" (" + (((this.boost_ > 0)) ? "+" : "")) + this.boost_.toString()) + ")")));
+            this.boostText_.setStringBuilder(
+                    this.valueTextStringBuilder_.setString(" (" + (this.boost_ > 0 ? "+" : "") + this.boost_.toString() + ")"));
             if (!contains(this.boostText_)) {
                 this.boostText_.mouseEnabled = false;
                 this.boostText_.mouseChildren = false;
                 addChild(this.boostText_);
             }
-            this.valueText_.x = ((this.w_ / 2) - ((this.valueText_.width + this.boostText_.width) / 2));
-            this.boostText_.x = (this.valueText_.x + this.valueText_.width);
+            this.valueText_.x = this.w_ / 2 - (this.valueText_.width + this.boostText_.width) / 2;
+            this.boostText_.x = this.valueText_.x + this.valueText_.width;
         }
         else {
-            this.valueText_.x = ((this.w_ / 2) - (this.valueText_.width / 2));
+            this.valueText_.x = this.w_ / 2 - this.valueText_.width / 2;
             if (contains(this.boostText_)) {
                 removeChild(this.boostText_);
             }
@@ -234,17 +233,17 @@ public class StatusBar extends Sprite {
         }
     }
 
-    public function startPulse(_arg1:Number, _arg2:Number, _arg3:Number):void {
+    public function startPulse(reps:Number, color:Number, pulseColor:Number):void {
         this.isPulsing = true;
-        this.color_ = _arg2;
-        this.pulseBackColor = _arg3;
-        this.repetitions = _arg1;
+        this.color_ = color;
+        this.pulseBackColor = pulseColor;
+        this.repetitions = reps;
         this.internalDraw();
         addEventListener(Event.ENTER_FRAME, this.onPulse);
     }
 
-    private function onPulse(_arg1:Event):void {
-        if ((((this.colorSprite.alpha > 1)) || ((this.colorSprite.alpha < 0)))) {
+    private function onPulse(e:Event):void {
+        if (this.colorSprite.alpha > 1 || this.colorSprite.alpha < 0) {
             this.direction = (this.direction * -1);
             if (this.colorSprite.alpha > 1) {
                 this.repetitions--;
@@ -261,16 +260,14 @@ public class StatusBar extends Sprite {
         this.colorSprite.alpha = (this.colorSprite.alpha + (this.speed * this.direction));
     }
 
-    private function onMouseOver(_arg1:MouseEvent):void {
+    private function onMouseOver(e:MouseEvent):void {
         this.mouseOver_ = true;
         this.internalDraw();
     }
 
-    private function onMouseOut(_arg1:MouseEvent):void {
+    private function onMouseOut(e:MouseEvent):void {
         this.mouseOver_ = false;
         this.internalDraw();
     }
-
-
 }
 }

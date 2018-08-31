@@ -15,10 +15,6 @@ import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTileEve
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
 import com.company.assembleegameclient.util.DisplayHierarchy;
 
-import kabam.rotmg.market.ui.MarketCreateOfferScreen;
-
-import kabam.rotmg.market.ui.MarketInventorySlot;
-
 import kabam.rotmg.chat.model.ChatMessage;
 import kabam.rotmg.constants.ItemConstants;
 import kabam.rotmg.core.model.MapModel;
@@ -26,7 +22,10 @@ import kabam.rotmg.core.model.PlayerModel;
 import kabam.rotmg.core.signals.ShowTooltipSignal;
 import kabam.rotmg.game.model.PotionInventoryModel;
 import kabam.rotmg.game.signals.AddTextLineSignal;
+import kabam.rotmg.game.view.CooldownTimer;
 import kabam.rotmg.game.view.components.TabStripView;
+import kabam.rotmg.market.ui.MarketCreateOfferScreen;
+import kabam.rotmg.market.ui.MarketInventorySlot;
 import kabam.rotmg.messaging.impl.GameServerConnection;
 import kabam.rotmg.pets.controller.reskin.ReskinPetFlowStartSignal;
 import kabam.rotmg.pets.data.PetFormModel;
@@ -146,9 +145,14 @@ public class ItemGridMediator extends Mediator {
                     _local2.blockingItemUpdates = true;
                     _local2.updateUseability(this.view.curPlayer);
                 }
-                else {
-                    if ((((_local3 is Map)) || ((this.hudModel.gameSprite.map.mouseX < 300)))) {
+                else if ((((_local3 is Map)) || ((this.hudModel.gameSprite.map.mouseX < 300)))) {
                         this.dropItem(_local2);
+                    }
+                else if (_local3 is CooldownTimer) {
+                    var draggedXML:XML = ObjectLibrary.xmlLibrary_[_local2.itemSprite.itemId];
+                    var abilXML:XML = ObjectLibrary.xmlLibrary_[view.curPlayer.equipment_[1]];
+                    if (draggedXML.SlotType == abilXML.SlotType) {
+                        GameServerConnection.instance.invSwap(this.view.curPlayer, _local2.ownerGrid.owner, _local2.tileId, _local2.itemSprite.itemId, this.view.curPlayer, 1, this.view.curPlayer.equipment_[1]);
                     }
                 }
             }

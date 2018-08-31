@@ -4,16 +4,15 @@ import com.company.assembleegameclient.ui.DeprecatedTextButton;
 import com.company.assembleegameclient.ui.Scrollbar;
 import com.company.assembleegameclient.ui.dialogs.Dialog;
 
+import flash.display.Shape;
 import flash.display.Sprite;
-   import flash.display.Shape;
-   import flash.events.MouseEvent;
-   import flash.events.Event;
+import flash.events.Event;
+import flash.events.MouseEvent;
 
-import kabam.rotmg.market.MarketResultSignal;
 import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.market.MarketResultSignal;
 import kabam.rotmg.messaging.impl.GameServerConnection;
 import kabam.rotmg.messaging.impl.data.MarketOffer;
-
 import kabam.rotmg.pets.view.dialogs.PetDialog;
 
 import org.osflash.signals.natives.NativeMappedSignal;
@@ -175,8 +174,8 @@ import com.company.assembleegameclient.ui.DeprecatedTextButton;
 import com.company.assembleegameclient.ui.dialogs.Dialog;
 
 import flash.display.Sprite;
-import flash.events.MouseEvent;
 import flash.events.Event;
+import flash.events.MouseEvent;
 
 import kabam.rotmg.market.ui.MarketInventorySlot;
 import kabam.rotmg.messaging.impl.data.MarketOffer;

@@ -124,7 +124,7 @@ public class PotionSlotView extends Sprite {
             _local8.y = (_local8.y - 30);
             this.potionIconDraggableSprite.addChild(_local8);
         }
-        var _local5 = (_arg1 > 0);
+        var _local5:Boolean = (_arg1 > 0);
         if (_local5) {
             this.setTextString(String(_arg1));
             _local6 = CENTER_ICON_X;

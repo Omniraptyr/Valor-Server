@@ -7,7 +7,6 @@ import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.tutorial.Tutorial;
 import com.company.assembleegameclient.tutorial.doneAction;
 import com.company.assembleegameclient.ui.options.Options;
-import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.KeyCodes;
 
 import flash.display.Stage;
@@ -28,18 +27,17 @@ import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.game.model.PotionInventoryModel;
 import kabam.rotmg.game.model.UseBuyPotionVO;
 import kabam.rotmg.game.signals.AddTextLineSignal;
-import kabam.rotmg.game.signals.UpdateAlertStatusDisplaySignal;
-import kabam.rotmg.game.signals.UpdateLootboxButtonSignal;
-import kabam.rotmg.game.signals.UpdateMarkShopButtonSignal;
 import kabam.rotmg.game.signals.ExitGameSignal;
 import kabam.rotmg.game.signals.GiftStatusUpdateSignal;
 import kabam.rotmg.game.signals.SetTextBoxVisibilitySignal;
+import kabam.rotmg.game.signals.UpdateAlertStatusDisplaySignal;
+import kabam.rotmg.game.signals.UpdateLootboxButtonSignal;
+import kabam.rotmg.game.signals.UpdateMarkShopButtonSignal;
 import kabam.rotmg.game.signals.UseBuyPotionSignal;
 import kabam.rotmg.game.view.components.StatsTabHotKeyInputSignal;
 import kabam.rotmg.messaging.impl.GameServerConnection;
 import kabam.rotmg.minimap.control.MiniMapZoomSignal;
 import kabam.rotmg.pets.controller.reskin.ReskinPetFlowStartSignal;
-import kabam.rotmg.ui.UIUtils;
 import kabam.rotmg.ui.model.TabStripModel;
 
 import net.hires.debug.Stats;
@@ -297,21 +295,6 @@ public class MapUserInput {
         var _local9:Boolean;
         var _local10:Square;
         var _local2:Stage = this.gs_.stage;
-        this.currentString = (this.currentString + String.fromCharCode(_arg1.keyCode).toLowerCase());
-        if (this.currentString == UIUtils.EXPERIMENTAL_MENU_PASSWORD.slice(0, this.currentString.length)) {
-            if (this.currentString.length == UIUtils.EXPERIMENTAL_MENU_PASSWORD.length) {
-                _local4 = StaticInjectorContext.getInjector().getInstance(AddTextLineSignal);
-                _local5 = new ChatMessage();
-                _local5.name = Parameters.SERVER_CHAT_NAME;
-                this.currentString = "";
-                UIUtils.SHOW_EXPERIMENTAL_MENU = !(UIUtils.SHOW_EXPERIMENTAL_MENU);
-                _local5.text = ((UIUtils.SHOW_EXPERIMENTAL_MENU) ? "Experimental menu activated" : "Experimental menu deactivated");
-                _local4.dispatch(_local5);
-            }
-        }
-        else {
-            this.currentString = "";
-        }
         switch (_arg1.keyCode) {
             case KeyCodes.F1:
             case KeyCodes.F2:

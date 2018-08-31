@@ -53,7 +53,7 @@ public class TextHandler {
         var _local3:String;
         var _local4:String;
         var _local5:String;
-        var _local2 = (_arg1.numStars_ == -1);
+        var _local2:Boolean = (_arg1.numStars_ == -1);
         if ((((((((_arg1.numStars_ < Parameters.data_.chatStarRequirement)) && (!((_arg1.name_ == this.model.player.name_))))) && (!(_local2)))) && (!(this.isSpecialRecipientChat(_arg1.recipient_))))) {
             return;
         }
@@ -112,12 +112,7 @@ public class TextHandler {
             }
             else {
                 if (_arg1.name_ == "@ANNOUNCEMENT") {
-                    if (((((!((this.hudModel == null))) && (!((this.hudModel.gameSprite == null))))) && (!((this.hudModel.gameSprite.newsTicker == null))))) {
-                        this.hudModel.gameSprite.newsTicker.activateNewScrollText(_arg1.text_);
-                    }
-                    else {
-                        NewsTicker.setPendingScrollText(_arg1.text_);
-                    }
+                    NewsTicker.setPendingScrollText(_arg1.text_);
                 }
                 else {
                     if ((((_arg1.name_ == "#{objects.ft_shopkeep}")) && (!(FortuneModel.HAS_FORTUNES)))) {
@@ -143,7 +138,7 @@ public class TextHandler {
         _local2.name = _arg1.name_;
         _local2.objectId = _arg1.objectId_;
         _local2.numStars = _arg1.numStars_;
-        _local2.admin = _arg1.admin_;
+        _local2.admin = _arg1.admin_ != 0;
         _local2.recipient = _arg1.recipient_;
         _local2.isWhisper = ((_arg1.recipient_) && (!(this.isSpecialRecipientChat(_arg1.recipient_))));
         _local2.isToMe = (_arg1.recipient_ == this.model.player.name_);

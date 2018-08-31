@@ -16,7 +16,7 @@ public class IsPackageAffordableGuard implements IGuard {
 
 
     public function approve():Boolean {
-        var _local1 = (this.playerModel.getCredits() >= this.packageInfo.price);
+        var _local1:Boolean = (this.playerModel.getCredits() >= this.packageInfo.price);
         if (!_local1) {
             this.openMoneyWindow.dispatch();
         }

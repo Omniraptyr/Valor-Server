@@ -121,20 +121,20 @@ public class MysteryBoxSelectEntry extends Sprite {
         addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
     }
 
-    private function updateTextPosition() {
+    private function updateTextPosition() : void {
         this.title.y = Math.round(((this.redbar.height - (this.title.getTextHeight() + (((this.title.textField.numLines == 1)) ? 8 : 10))) / 2));
         if (((((this.mbi.isNew()) || (this.mbi.isOnSale()))) && ((this.title.textField.numLines == 2)))) {
             this.title.y = (this.title.y + 6);
         }
     }
 
-    public function updateContent() {
+    public function updateContent() : void {
         if (this.left) {
             this.left.setStringBuilder(new LineBuilder().setParams(((this.mbi.unitsLeft + " ") + LineBuilder.getLocalizedStringFromKey("MysteryBoxSelectEntry.left"))));
         }
     }
 
-    private function addUnitsLeftText() {
+    private function addUnitsLeftText() : void {
         var _local1:uint;
         var _local2:int;
         if (this.mbi.unitsLeft >= 0) {
@@ -155,7 +155,7 @@ public class MysteryBoxSelectEntry extends Sprite {
         }
     }
 
-    private function markAsSold() {
+    private function markAsSold() : void {
         this.buyButton.setPrice(0, Currency.INVALID);
         this.buyButton.setText(LineBuilder.getLocalizedStringFromKey("MysteryBoxError.soldOutButton"));
         if (((this.leftNavSprite) && ((this.leftNavSprite.parent == this)))) {
@@ -178,7 +178,7 @@ public class MysteryBoxSelectEntry extends Sprite {
         this.removeInfoImageChild();
     }
 
-    private function onClick(_arg1:MouseEvent) {
+    private function onClick(_arg1:MouseEvent) : void {
         switch (_arg1.currentTarget) {
             case this.rightNavSprite:
                 if (this.quantity_ == 1) {

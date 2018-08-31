@@ -222,8 +222,8 @@ public class QuestRewardsView extends EmptyFrame {
     public function noNewQuests():void {
         this.addCloseButton();
         var _local1:TextField = new TextField();
-        var _local2 = "ALL QUESTS COMPLETED!";
-        var _local3 = "";
+        var _local2:String = "ALL QUESTS COMPLETED!";
+        var _local3:String = "";
         _local1.text = ((_local2 + "\n\n\n\n") + _local3);
         _local1.width = 600;
         var _local4:FontModel = StaticInjectorContext.getInjector().getInstance(FontModel);

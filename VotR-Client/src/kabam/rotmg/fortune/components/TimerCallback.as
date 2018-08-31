@@ -5,14 +5,14 @@ import flash.utils.Timer;
 public class TimerCallback {
 
     private var f:Function;
-    private var data1;
-    private var data2;
-    private var data3;
-    private var data4;
-    private var data5;
-    private var data6;
-    private var data7;
-    private var data8;
+    private var data1:*;
+    private var data2:*;
+    private var data3:*;
+    private var data4:*;
+    private var data5:*;
+    private var data6:*;
+    private var data7:*;
+    private var data8:*;
     private var tbo:Timer;
 
     public function TimerCallback(_arg1:Number, _arg2:Function, _arg3:* = null, _arg4:* = null, _arg5:* = null, _arg6:* = null, _arg7:* = null, _arg8:* = null, _arg9:* = null, _arg10:* = null) {

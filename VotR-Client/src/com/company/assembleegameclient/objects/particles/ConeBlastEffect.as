@@ -25,7 +25,7 @@ public class ConeBlastEffect extends ParticleEffect {
         var _local11:Particle;
         x_ = this.start_.x;
         y_ = this.start_.y;
-        var _local3 = 200;
+        var _local3:int = 200;
         var _local4:int = 100;
         var _local5:Number = (Math.PI / 3);
         var _local6:int = 7;

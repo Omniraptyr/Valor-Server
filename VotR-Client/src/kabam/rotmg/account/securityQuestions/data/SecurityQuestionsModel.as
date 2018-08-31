@@ -23,7 +23,7 @@ public class SecurityQuestionsModel {
         return (this._securityQuestionsList);
     }
 
-    public function clearQuestionsList() {
+    public function clearQuestionsList() : void {
         this._securityQuestionsList = [];
     }
 

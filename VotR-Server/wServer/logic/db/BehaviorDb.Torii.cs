@@ -1,5 +1,4 @@
-﻿using common.resources;
-using wServer.logic.behaviors;
+﻿using wServer.logic.behaviors;
 using wServer.logic.transitions;
 
 namespace wServer.logic

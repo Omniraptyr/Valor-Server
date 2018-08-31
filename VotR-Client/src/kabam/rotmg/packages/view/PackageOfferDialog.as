@@ -23,10 +23,10 @@ import org.osflash.signals.Signal;
 
 public class PackageOfferDialog extends Sprite implements Resizable {
 
-    const paddingTop:Number = 6;
-    const paddingRight:Number = 6;
-    const paddingBottom:Number = 16;
-    const fontSize:int = 27;
+    internal const paddingTop:Number = 6;
+    internal const paddingRight:Number = 6;
+    internal const paddingBottom:Number = 16;
+    internal const fontSize:int = 27;
     private const busyIndicator:DisplayObject = makeBusyIndicator();
     private const buyNow:Sprite = makeBuyNow();
     private const title:TextFieldDisplayConcrete = makeTitle();
@@ -35,9 +35,9 @@ public class PackageOfferDialog extends Sprite implements Resizable {
     public var ready:Signal;
     public var buy:Signal;
     public var close:Signal;
-    var loader:LoaderProxy;
-    var goldDisplay:GoldDisplay;
-    var image:DisplayObject;
+    internal var loader:LoaderProxy;
+    internal var goldDisplay:GoldDisplay;
+    internal var image:DisplayObject;
     private var packageInfo:PackageInfo;
     private var spaceAvailable:Rectangle;
 

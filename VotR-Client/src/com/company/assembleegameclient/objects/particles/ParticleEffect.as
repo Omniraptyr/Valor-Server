@@ -1,6 +1,7 @@
 ﻿package com.company.assembleegameclient.objects.particles {
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.parameters.Parameters;
 
 import flash.display.IGraphicsData;
 
@@ -15,38 +16,41 @@ public class ParticleEffect extends GameObject {
         this.reducedDrawEnabled = false;
     }
 
-    public static function fromProps(_arg1:EffectProperties, _arg2:GameObject):ParticleEffect {
-        switch (_arg1.id) {
-            case "Healing":
-                return (new HealingEffect(_arg2));
-            case "Fountain":
-                return (new FountainEffect(_arg2, _arg1));
-            case "FountainSnowy":
-                return (new FountainSnowyEffect(_arg2, _arg1));
-            case "SkyBeam":
-                return (new SkyBeamEffect(_arg2, _arg1));
-            case "Circle":
-                return (new CircleEffect(_arg2, _arg1));
-            case "Heart":
-                return (new HeartEffect(_arg2, _arg1));
-            case "Gas":
-                return (new GasEffect(_arg2, _arg1));
-            case "Vent":
-                return (new VentEffect(_arg2));
-            case "Bubbles":
-                return (new BubbleEffect(_arg2, _arg1));
-            case "XMLEffect":
-                return (new XMLEffect(_arg2, _arg1));
-            case "CustomParticles":
-                return (ParticleGenerator.attachParticleGenerator(_arg1, _arg2));
-            case "Orbiting":
-                return (new OrbitEffect(_arg1, _arg2));
-            case "FollowOrbiting":
-                return (new FollowOrbitEffect(_arg1, _arg2));
-            case "QuadSpaceConcentrate":
-                return (new QuadSpaceConcentrate(_arg1, _arg2));
+    public static function fromProps(props:EffectProperties, go:GameObject):ParticleEffect {
+        if (Parameters.data_.noParticlesMaster && props.id != "Vent") {
+            return null;
         }
-        return (null);
+        switch (props.id) {
+            case "Healing":
+                return new HealingEffect(go);
+            case "Fountain":
+                return new FountainEffect(go, props);
+            case "FountainSnowy":
+                return new FountainSnowyEffect(go, props);
+            case "SkyBeam":
+                return new SkyBeamEffect(go, props);
+            case "Circle":
+                return new CircleEffect(go, props);
+            case "Heart":
+                return new HeartEffect(go, props);
+            case "Gas":
+                return new GasEffect(go, props);
+            case "Vent":
+                return new VentEffect(go);
+            case "Bubbles":
+                return new BubbleEffect(go, props);
+            case "XMLEffect":
+                return new XMLEffect(go, props);
+            case "CustomParticles":
+                return ParticleGenerator.attachParticleGenerator(props, go);
+            case "Orbiting":
+                return new OrbitEffect(props, go);
+            case "FollowOrbiting":
+                return new FollowOrbitEffect(props, go);
+            case "QuadSpaceConcentrate":
+                return new QuadSpaceConcentrate(props, go);
+        }
+        return null;
     }
 
 

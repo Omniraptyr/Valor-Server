@@ -111,7 +111,6 @@
     <Content Include="resources\data\filterList.txt" />
     <Content Include="resources\data\inGameNews.txt" />
     <Content Include="resources\data\init.xml" />
-    <Content Include="resources\data\languages\en.txt" />
     <Content Include="resources\data\loginRewards.xml" />
     <Content Include="resources\data\mysteryBoxes.xml" />
     <Content Include="resources\data\news.txt" />

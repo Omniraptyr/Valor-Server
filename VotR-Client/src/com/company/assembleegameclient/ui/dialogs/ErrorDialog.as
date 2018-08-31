@@ -50,9 +50,8 @@ public class ErrorDialog extends Sprite {
 
     public function ErrorDialog(_arg1:String) {
         super();
-        var _local2:String = ["An error has occured:", _arg1].join("\n");
         this.stageProxy = new StageProxy(this);
-        this._makeUIAndAdd(_local2, "D'oh, this isn't good", "ErrorWindow.buttonOK", null);
+        this._makeUIAndAdd("We couldn't connect you to Valor servers. This could be an issue with your internet connection, or the Valor servers themselves.", "Connectivity Error", "OK", null);
         this.makeUIAndAdd();
         this.uiWaiter.complete.addOnce(this.onComplete);
         addChild(this.box_);

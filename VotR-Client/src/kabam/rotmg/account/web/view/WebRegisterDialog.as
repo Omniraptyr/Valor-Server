@@ -60,7 +60,7 @@ public class WebRegisterDialog extends Frame {
 
     public function makeSignInText():void {
         this.signInText = new TextFieldDisplayConcrete();
-        var _local1 = '<font color="#7777EE"><a href="event:flash.events.TextEvent">';
+        var _local1:String = '<font color="#7777EE"><a href="event:flash.events.TextEvent">';
         this.signInText.setStringBuilder(new LineBuilder().setParams(TextKey.SIGN_IN_TEXT, {
             "signIn": _local1,
             "_signIn": this.endLink
@@ -71,8 +71,8 @@ public class WebRegisterDialog extends Frame {
 
     public function makeTosText():void {
         this.tosText = new TextFieldDisplayConcrete();
-        var _local1 = (('<font color="#7777EE"><a href="' + Parameters.TERMS_OF_USE_URL) + '" target="_blank">');
-        var _local2 = (('<font color="#7777EE"><a href="' + Parameters.PRIVACY_POLICY_URL) + '" target="_blank">');
+        var _local1:String = (('<font color="#7777EE"><a href="' + Parameters.TERMS_OF_USE_URL) + '" target="_blank">');
+        var _local2:String = (('<font color="#7777EE"><a href="' + Parameters.PRIVACY_POLICY_URL) + '" target="_blank">');
         this.tosText.setStringBuilder(new LineBuilder().setParams(TextKey.TOS_TEXT, {
             "tou": _local1,
             "_tou": this.endLink,
@@ -122,7 +122,7 @@ public class WebRegisterDialog extends Frame {
 
     private function isAgeVerified():Boolean {
         var _local1:uint = DateFieldValidator.getPlayerAge(this.ageVerificationInput);
-        var _local2 = (_local1 >= 13);
+        var _local2:Boolean = (_local1 >= 13);
         this.ageVerificationInput.setErrorHighlight(!(_local2));
         if (!_local2) {
             this.errors.push(TextKey.INELIGIBLE_AGE);
@@ -149,7 +149,7 @@ public class WebRegisterDialog extends Frame {
     }
 
     private function isPasswordValid():Boolean {
-        var _local1 = (this.passwordInput.text().length >= 5);
+        var _local1:Boolean = (this.passwordInput.text().length >= 5);
         this.passwordInput.setErrorHighlight(!(_local1));
         if (!_local1) {
             this.errors.push(TextKey.PASSWORD_TOO_SHORT);
@@ -158,7 +158,7 @@ public class WebRegisterDialog extends Frame {
     }
 
     private function isPasswordVerified():Boolean {
-        var _local1 = (this.passwordInput.text() == this.retypePasswordInput.text());
+        var _local1:Boolean = (this.passwordInput.text() == this.retypePasswordInput.text());
         this.retypePasswordInput.setErrorHighlight(!(_local1));
         if (!_local1) {
             this.errors.push(TextKey.PASSWORDS_DONT_MATCH);

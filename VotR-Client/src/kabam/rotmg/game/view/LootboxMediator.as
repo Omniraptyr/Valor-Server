@@ -3,8 +3,6 @@ package kabam.rotmg.game.view {
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.game.signals.UpdateLootboxButtonSignal;
 
-import kabam.rotmg.game.signals.UpdateMarkShopButtonSignal;
-
 public class LootboxMediator {
 
     [Inject]

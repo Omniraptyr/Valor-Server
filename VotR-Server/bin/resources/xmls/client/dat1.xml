@@ -110341,7 +110341,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Index>0x5f</Index>
         </Texture>
         <ExtraTooltipData>
-            <EffectInfo name="" description="Applies a random devil gambler effect. (6s)"/>
+            <EffectInfo name="" description="Applies a random devil gambler effect. (4s)"/>
         </ExtraTooltipData>
         <SlotType>33</SlotType>
         <Description>Gamblin' with the devil.</Description>
@@ -110350,10 +110350,10 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <FameBonus>8</FameBonus>
         <MpCost>60</MpCost>
         <ActivateOnEquip stat="114" amount="150">IncrementStat</ActivateOnEquip>
-        <Activate duration="6">DiceActivate</Activate>
+        <Activate duration="4">DiceActivate</Activate>
         <Activate effect="Invulnerable" duration="2">ConditionEffectSelf</Activate>
         <Activate effect="Surged" duration="3.5">ConditionEffectSelf</Activate>
-        <feedPower>2000</feedPower>
+        <Cooldown>6</Cooldown>
         <Legendary/>
         <DisplayId>Devil Dice</DisplayId>
     </Object>
@@ -110656,7 +110656,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       </Texture>
       <Size>120</Size>
       <ShadowSize>50</ShadowSize>
-      <MaxHitPoints>999999</MaxHitPoints>
+      <MaxHitPoints>0</MaxHitPoints>
     </Object>
     <Object type="0x6305" id="T1 Torii">
       <Class>Character</Class>
@@ -110666,7 +110666,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       </Texture>
       <Size>120</Size>
       <ShadowSize>50</ShadowSize>
-      <MaxHitPoints>999999</MaxHitPoints>
+      <MaxHitPoints>0</MaxHitPoints>
    </Object>
    <Object type="0x6306" id="T2 Torii">
       <Class>Character</Class>
@@ -110676,7 +110676,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       </Texture>
       <Size>120</Size>
       <ShadowSize>50</ShadowSize>
-      <MaxHitPoints>999999</MaxHitPoints>
+      <MaxHitPoints>0</MaxHitPoints>
    </Object>
    <Object type="0x6307" id="T3 Torii">
       <Class>Character</Class>
@@ -110686,7 +110686,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       </Texture>
       <Size>120</Size>
       <ShadowSize>50</ShadowSize>
-      <MaxHitPoints>999999</MaxHitPoints>
+      <MaxHitPoints>0</MaxHitPoints>
    </Object>
    <Object type="0x6308" id="T4 Torii">
       <Class>Character</Class>
@@ -110696,7 +110696,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       </Texture>
       <Size>120</Size>
       <ShadowSize>50</ShadowSize>
-      <MaxHitPoints>999999</MaxHitPoints>
+      <MaxHitPoints>0</MaxHitPoints>
    </Object>
    <Object type="0x6309" id="T5 Torii">
       <Class>Character</Class>
@@ -110706,7 +110706,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       </Texture>
       <Size>120</Size>
       <ShadowSize>50</ShadowSize>
-      <MaxHitPoints>999999</MaxHitPoints>
+      <MaxHitPoints>0</MaxHitPoints>
    </Object>
    <Object type="0x630a" id="T6 Torii">
       <Class>Character</Class>
@@ -110716,7 +110716,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       </Texture>
       <Size>120</Size>
       <ShadowSize>50</ShadowSize>
-      <MaxHitPoints>999999</MaxHitPoints>
+      <MaxHitPoints>0</MaxHitPoints>
    </Object>
    <Object type="0x630b" id="Necro Torii">
       <Class>Character</Class>
@@ -110726,7 +110726,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       </Texture>
       <Size>120</Size>
       <ShadowSize>50</ShadowSize>
-      <MaxHitPoints>999999</MaxHitPoints>
+      <MaxHitPoints>0</MaxHitPoints>
    </Object>
    <Object type="0x630c" id="Wicked Torii">
       <Class>GameObject</Class>
@@ -110750,7 +110750,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       </AltTexture>
       <Size>120</Size>
       <ShadowSize>50</ShadowSize>
-      <MaxHitPoints>999999</MaxHitPoints>
+      <MaxHitPoints>0</MaxHitPoints>
    </Object>
     <Object type="0x6110" id="BD Stone Urgle">
         <Enemy/>
@@ -112540,7 +112540,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <SlotType>34</SlotType>
         <Tier>9</Tier>
         <Description>Two blades, a Ragetalon and Agateclaw. When used together, they vibrate and seem to sing.</Description>
-        <RateOfFire>1.5</RateOfFire>
+        <RateOfFire>1</RateOfFire>
         <Sound>weapon/fire_dagger</Sound>
         <Projectile>
             <ObjectId>Ragetalon Blade Proj</ObjectId>
@@ -113880,7 +113880,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
-	<Object type="0x619c" id="Vial of Mana">
+    <Object type="0x619c" id="Vial of Mana">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -113889,14 +113889,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>10</SlotType>
         <Tier>2</Tier>
-        <Description>A potion that permanently increases your ascends your maximum mana stat by 5.</Description>
+        <Description>A potion that permanently ascends your maximum mana stat by 5.</Description>
         <Sound>use_potion</Sound>
-        <Activate amount="1">PowerStat</Activate>
+        <Activate stat="3" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
         <BagType>6</BagType>
-        <feedPower>150</feedPower>
-        <DisplayId>Vial of Mana</DisplayId>
     </Object>
     <Object type="0x619d" id="Vial of Restoration">
         <Class>Equipment</Class>
@@ -113907,14 +113905,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>10</SlotType>
         <Tier>2</Tier>
-        <Description>A potion that permanently increases your ascends your restoration stat by 1.</Description>
+        <Description>A potion that permanently ascends your restoration stat by 1.</Description>
         <Sound>use_potion</Sound>
-        <Activate amount="10">PowerStat</Activate>
+        <Activate stat="121" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
         <BagType>6</BagType>
-        <feedPower>150</feedPower>
-        <DisplayId>Vial of Restoration</DisplayId>
     </Object>
     <Object type="0x619e" id="Vial of Wisdom">
         <Class>Equipment</Class>
@@ -113925,14 +113921,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>10</SlotType>
         <Tier>2</Tier>
-        <Description>A potion that permanently increases your ascends your wisdom stat by 1.</Description>
+        <Description>A potion that permanently ascends your wisdom stat by 1.</Description>
         <Sound>use_potion</Sound>
-        <Activate amount="7">PowerStat</Activate>
+        <Activate stat="27" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
         <BagType>6</BagType>
-        <feedPower>150</feedPower>
-        <DisplayId>Vial of Wisdom</DisplayId>
     </Object>
     <Object type="0x619f" id="Vial of Attack">
         <Class>Equipment</Class>
@@ -113943,14 +113937,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>10</SlotType>
         <Tier>2</Tier>
-        <Description>A potion that permanently increases your ascends your attack stat by 1.</Description>
+        <Description>A potion that permanently ascends your attack stat by 1.</Description>
         <Sound>use_potion</Sound>
-        <Activate amount="2">PowerStat</Activate>
+        <Activate stat="20" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
         <BagType>6</BagType>
-        <feedPower>150</feedPower>
-        <DisplayId>Vial of Attack</DisplayId>
     </Object>
     <Object type="0x62a0" id="Vial of Vitality">
         <Class>Equipment</Class>
@@ -113961,14 +113953,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>10</SlotType>
         <Tier>2</Tier>
-        <Description>A potion that permanently increases your ascends your vitality stat by 1.</Description>
+        <Description>A potion that permanently ascends your vitality stat by 1.</Description>
         <Sound>use_potion</Sound>
-        <Activate amount="6">PowerStat</Activate>
+        <Activate stat="26" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
         <BagType>6</BagType>
-        <feedPower>150</feedPower>
-        <DisplayId>Vial of Vitality</DisplayId>
     </Object>
     <Object type="0x62a1" id="Vial of Speed">
         <Class>Equipment</Class>
@@ -113979,14 +113969,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>10</SlotType>
         <Tier>2</Tier>
-        <Description>A potion that permanently increases your ascends your speed stat by 1.</Description>
+        <Description>A potion that permanently ascends your speed stat by 1.</Description>
         <Sound>use_potion</Sound>
-        <Activate amount="4">PowerStat</Activate>
+        <Activate stat="22" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
         <BagType>6</BagType>
-        <feedPower>150</feedPower>
-        <DisplayId>Vial of Speed</DisplayId>
     </Object>
     <Object type="0x62a2" id="Vial of Protection">
         <Class>Equipment</Class>
@@ -113997,14 +113985,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>10</SlotType>
         <Tier>2</Tier>
-        <Description>A potion that permanently increases your ascends your protection stat by 1.</Description>
+        <Description>A potion that permanently ascends your protection stat by 1.</Description>
         <Sound>use_potion</Sound>
-        <Activate amount="11">PowerStat</Activate>
+        <Activate stat="122" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
         <BagType>6</BagType>
-        <feedPower>150</feedPower>
-        <DisplayId>Vial of Protection</DisplayId>
     </Object>
     <Object type="0x62a3" id="Vial of Defense">
         <Class>Equipment</Class>
@@ -114015,14 +114001,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>10</SlotType>
         <Tier>2</Tier>
-        <Description>A potion that permanently increases your ascends your defense stat by 1.</Description>
+        <Description>A potion that permanently ascends your defense stat by 1.</Description>
         <Sound>use_potion</Sound>
-        <Activate amount="3">PowerStat</Activate>
+        <Activate stat="21" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
         <BagType>6</BagType>
-        <feedPower>150</feedPower>
-        <DisplayId>Vial of Defense</DisplayId>
     </Object>
     <Object type="0x62a4" id="Vial of Dexterity">
         <Class>Equipment</Class>
@@ -114033,52 +114017,14 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>10</SlotType>
         <Tier>2</Tier>
-        <Description>A potion that permanently increases your ascends your dexterity stat by 1.</Description>
+        <Description>A potion that permanently ascends your dexterity stat by 1.</Description>
         <Sound>use_potion</Sound>
-        <Activate amount="5">PowerStat</Activate>
+        <Activate stat="28" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
         <BagType>6</BagType>
-        <feedPower>150</feedPower>
-        <DisplayId>Vial of Dexterity</DisplayId>
     </Object>
     <Object type="0x62a5" id="Vial of Life">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0xd9</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Tier>2</Tier>
-        <Description>A potion that permanently increases your ascends your maximum health stat by 5.</Description>
-        <Sound>use_potion</Sound>
-        <Activate amount="0">PowerStat</Activate>
-        <Consumable/>
-        <Potion/>
-        <BagType>6</BagType>
-        <feedPower>150</feedPower>
-        <DisplayId>Vial of Life</DisplayId>
-    </Object>
-    <Object type="0x62a6" id="Vial of Might">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0xdb</Index>
-        </Texture>
-        <SlotType>10</SlotType>
-        <Tier>2</Tier>
-        <Description>A potion that permanently increases your ascends your might stat by 1.</Description>
-        <Sound>use_potion</Sound>
-        <Activate amount="8">PowerStat</Activate>
-        <Consumable/>
-        <Potion/>
-        <BagType>6</BagType>
-        <feedPower>150</feedPower>
-        <DisplayId>Vial of Might</DisplayId>
-    </Object>
-    <Object type="0x62a7" id="Vial of Luck">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -114087,14 +114033,44 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>10</SlotType>
         <Tier>2</Tier>
-        <Description>A potion that permanently increases your ascends your luck stat by 1.</Description>
+        <Description>A potion that permanently ascends your maximum health stat by 5.</Description>
         <Sound>use_potion</Sound>
-        <Activate amount="9">PowerStat</Activate>
+        <Activate stat="0" amount="5">PowerStat</Activate>
         <Consumable/>
         <Potion/>
         <BagType>6</BagType>
-        <feedPower>150</feedPower>
-        <DisplayId>Vial of Luck</DisplayId>
+    </Object>
+    <Object type="0x62a6" id="Vial of Might">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xdc</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Tier>2</Tier>
+        <Description>A potion that permanently ascends your might stat by 1.</Description>
+        <Sound>use_potion</Sound>
+        <Activate stat="112" amount="1">PowerStat</Activate>
+        <Consumable/>
+        <Potion/>
+        <BagType>6</BagType>
+    </Object>
+    <Object type="0x62a7" id="Vial of Luck">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0xdb</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Tier>2</Tier>
+        <Description>A potion that permanently ascends your luck stat by 1.</Description>
+        <Sound>use_potion</Sound>
+        <Activate stat="114" amount="1">PowerStat</Activate>
+        <Consumable/>
+        <Potion/>
+        <BagType>6</BagType>
     </Object>
 	<Object type="0x53a1" id="Lost Scripture">
         <Class>Equipment</Class>
@@ -125654,13 +125630,13 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Speed>129</Speed>
             <MinDamage>122</MinDamage>
             <MaxDamage>170</MaxDamage>
-            <LifetimeMS>400</LifetimeMS>
+            <LifetimeMS>300</LifetimeMS>
             <ArmorPiercing/>
             <Amplitude>2</Amplitude>
             <Frequency>0.7</Frequency>
         </Projectile>
         <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="122" amount="30">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
@@ -125678,7 +125654,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <OldSound>weapon/blunt_sword</OldSound>
         <DisplayId>Iok's Courage</DisplayId>
     </Object>
-	    <Object type="0x5611" id="Infused Katana">
+	<Object type="0x5611" id="Infused Katana">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -125708,5 +125684,55 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <FameBonus>6</FameBonus>
         <OldSound>bladeSwing</OldSound>
         <DisplayId>Infused Katana</DisplayId>
+    </Object>
+	<Object type="0x5612" id="Uber Sword">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x458</Index>
+        </Texture>
+		<ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="TurtleBat"/>
+        </ExtraTooltipData>
+        <SlotType>1</SlotType>
+        <Description>Infused with the energy of Uber Shrek himself, this weapon is truly a prized possesion.</Description>
+        <RateOfFire>1.33</RateOfFire>
+        <Sound>weapon/mithril_sword</Sound>
+        <Projectile>
+            <ObjectId>Shrek Blast</ObjectId>
+            <Speed>330</Speed>
+            <MinDamage>175</MinDamage>
+            <MaxDamage>350</MaxDamage>
+            <LifetimeMS>110</LifetimeMS>
+            <Size>120</Size>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="70">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>bladeSwing</OldSound>
+    </Object>
+	<Object type="0xa233" id="Shrek Blast">
+      <Class>Projectile</Class>
+      <Texture>
+         <File>d3LofiObjEmbed</File>
+         <Index>0x459</Index>
+      </Texture>
+	  <Rotation>77</Rotation>
+   </Object>
+    <Object type="0x5613" id="Uber Armor">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x45a</Index>
+        </Texture>
+        <SlotType>7</SlotType>
+        <Description>Its material is harvested from the coveted hide of Uber Shrek, making it an extremely tough yet powerful armor.</Description>
+	    <ActivateOnEquip stat="3" amount="-33">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="30">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="25">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
     </Object>
 </Objects>

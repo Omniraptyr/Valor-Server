@@ -59,9 +59,9 @@ public class AgeVerificationDialog extends Dialog {
     }
 
     private function setText():void {
-        var _local1 = (('<font color="#7777EE"><a href="' + Parameters.TERMS_OF_USE_URL) + '" target="_blank">');
-        var _local2 = (('<font color="#7777EE"><a href="' + Parameters.PRIVACY_POLICY_URL) + '" target="_blank">');
-        var _local3 = "</a></font>";
+        var _local1:String = (('<font color="#7777EE"><a href="' + Parameters.TERMS_OF_USE_URL) + '" target="_blank">');
+        var _local2:String = (('<font color="#7777EE"><a href="' + Parameters.PRIVACY_POLICY_URL) + '" target="_blank">');
+        var _local3:String = "</a></font>";
         textText_.setStringBuilder(new LineBuilder().setParams("AgeVerificationDialog.text", {
             "tou": _local1,
             "_tou": _local3,
@@ -95,7 +95,7 @@ public class AgeVerificationDialog extends Dialog {
     private function onVerify(_arg1:Event):void {
         var _local3:Boolean;
         var _local2:uint = this.getPlayerAge();
-        var _local4 = "";
+        var _local4:String = "";
         if (!this.ageVerificationField.isValidDate()) {
             _local4 = this.BIRTH_DATE_INVALID_ERROR;
             _local3 = true;

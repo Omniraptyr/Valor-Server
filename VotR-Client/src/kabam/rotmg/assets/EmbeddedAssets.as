@@ -1,6 +1,5 @@
 ﻿package kabam.rotmg.assets {
 public class EmbeddedAssets {
-
     public static var particlesEmbed:Class = EmbeddedAssets_particlesEmbed;
     public static const StarburstSpinner:Class = EmbeddedAssets_StarburstSpinner;
     public static const EvolveBackground:Class = EmbeddedAssets_EvolveBackground;
@@ -54,7 +53,6 @@ public class EmbeddedAssets {
     public static var chars8x8rPets1Embed_:Class = EmbeddedAssets_chars8x8rPets1Embed_;
     public static var chars8x8rPets2Embed_:Class = EmbeddedAssets_chars8x8rPets2Embed_;
     public static var chars8x8rPets1MaskEmbed_:Class = EmbeddedAssets_chars8x8rPets1MaskEmbed_;
-    public static var chars8x8rPetsKaratePenguin_:Class = EmbeddedAssets_chars8x8rPetsKaratePenguin_;
     public static var petsDivineEmbed_:Class = EmbeddedAssets_petsDivineEmbed_;
     public static var redLootBagEmbed_:Class = EmbeddedAssets_redLootBagEmbed_;
     public static var starsEmbed_:Class = EmbeddedAssets_starsEmbed_;
@@ -116,14 +114,9 @@ public class EmbeddedAssets {
     private static var petUpgrader_:Class = EmbeddedAssets_petUpgrader_;
     public static var d1Chars8x8rEmbed_:Class = EmbeddedAssets_d1Chars8x8rEmbed_;
     public static var d1Chars16x16rEmbed_:Class = EmbeddedAssets_d1Chars16x16rEmbed_;
-    public static var d1LofiObjEmbed_:Class = EmbeddedAssets_d1LofiObjEmbed_;
     public static var customEffects8x8Embed_:Class = EmbeddedAssets_customEffects8x8Embed_;
     public static var customEffects16x16Embed_:Class = EmbeddedAssets_customEffects16x16Embed_;
     public static var d1LofiObjBigEmbed_:Class = EmbeddedAssets_d1LofiObjBigEmbed_;
-    public static var d2Chars8x8rEmbed_:Class = EmbeddedAssets_d2Chars8x8rEmbed_;
-    public static var d2Chars16x16rEmbed_:Class = EmbeddedAssets_d2Chars16x16rEmbed_;
-    public static var d2LofiObjEmbed_:Class = EmbeddedAssets_d2LofiObjEmbed_;
-    public static var d2LofiObjBigEmbed_:Class = EmbeddedAssets_d2LofiObjBigEmbed_;
     public static var d3Chars8x8rEmbed_:Class = EmbeddedAssets_d3Chars8x8rEmbed_;
     public static var d3Chars16x16rEmbed_:Class = EmbeddedAssets_d3Chars16x16rEmbed_;
     public static var d3LofiObjEmbed_:Class = EmbeddedAssets_d3LofiObjEmbed_;
@@ -195,7 +188,5 @@ public class EmbeddedAssets {
         "Jacko": new jackoEmbed_(),
         "Pet Upgrader Obj": new petUpgrader_()
     };
-
-
 }
-}//package kabam.rotmg.assets
+}

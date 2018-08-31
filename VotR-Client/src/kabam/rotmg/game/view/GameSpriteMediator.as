@@ -24,11 +24,8 @@ import kabam.rotmg.game.signals.PlayGameSignal;
 import kabam.rotmg.game.signals.SetWorldInteractionSignal;
 import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
 import kabam.rotmg.maploading.signals.ShowLoadingViewSignal;
-import kabam.rotmg.news.controller.NewsButtonRefreshSignal;
-import kabam.rotmg.packages.control.BeginnersPackageAvailableSignal;
 import kabam.rotmg.packages.control.InitPackagesSignal;
 import kabam.rotmg.packages.control.OpenPackageSignal;
-import kabam.rotmg.packages.control.PackageAvailableSignal;
 import kabam.rotmg.packages.model.PackageInfo;
 import kabam.rotmg.packages.services.PackageModel;
 import kabam.rotmg.pets.controller.ShowPetTooltip;
@@ -73,10 +70,6 @@ public class GameSpriteMediator extends Mediator {
     [Inject]
     public var hudModelInitialized:HUDModelInitialized;
     [Inject]
-    public var beginnersPackageAvailable:BeginnersPackageAvailableSignal;
-    [Inject]
-    public var packageAvailable:PackageAvailableSignal;
-    [Inject]
     public var initPackages:InitPackagesSignal;
     [Inject]
     public var showBeginnersPackage:ShowBeginnersPackageSignal;
@@ -88,8 +81,6 @@ public class GameSpriteMediator extends Mediator {
     public var showPetTooltip:ShowPetTooltip;
     [Inject]
     public var showLoadingViewSignal:ShowLoadingViewSignal;
-    [Inject]
-    public var newsButtonRefreshSignal:NewsButtonRefreshSignal;
     [Inject]
     public var openDialog:OpenDialogSignal;
     [Inject]
@@ -131,7 +122,6 @@ public class GameSpriteMediator extends Mediator {
         this.view.showBeginnersPackage = this.showBeginnersPackage;
         this.view.openDailyCalendarPopupSignal = this.showDailyCalendarSignal;
         this.view.showPackage.add(this.onShowPackage);
-        this.newsButtonRefreshSignal.add(this.onNewsButtonRefreshSignal);
     }
 
     private function onShowPackage():void {
@@ -151,11 +141,8 @@ public class GameSpriteMediator extends Mediator {
         this.view.modelInitialized.remove(this.onGameSpriteModelInitialized);
         this.view.drawCharacterWindow.remove(this.onStatusPanelDraw);
         this.hudModelInitialized.remove(this.onHUDModelInitialized);
-        this.beginnersPackageAvailable.remove(this.onBeginner);
-        this.packageAvailable.remove(this.onPackage);
         this.view.closed.remove(this.onClosed);
         this.view.monitor.remove(this.onMonitor);
-        this.newsButtonRefreshSignal.remove(this.onNewsButtonRefreshSignal);
         this.view.disconnect();
     }
 
@@ -165,14 +152,6 @@ public class GameSpriteMediator extends Mediator {
 
     public function onSetWorldInteraction(_arg1:Boolean):void {
         this.view.mui_.setEnablePlayerInput(_arg1);
-    }
-
-    private function onBeginner():void {
-        this.view.showBeginnersButtonIfSafe();
-    }
-
-    private function onPackage():void {
-        this.view.showPackageButtonIfSafe();
     }
 
     private function onClosed():void {
@@ -202,8 +181,6 @@ public class GameSpriteMediator extends Mediator {
 
     private function onGameSpriteModelInitialized():void {
         this.hudSetupStarted.dispatch(this.view);
-        this.beginnersPackageAvailable.add(this.onBeginner);
-        this.packageAvailable.add(this.onPackage);
         this.initPackages.dispatch();
     }
 
@@ -218,11 +195,5 @@ public class GameSpriteMediator extends Mediator {
     private function onShowPetTooltip(_arg1:Boolean):void {
         this.view.showPetToolTip(_arg1);
     }
-
-    private function onNewsButtonRefreshSignal():void {
-        this.view.refreshNewsUpdateButton();
-    }
-
-
 }
 }

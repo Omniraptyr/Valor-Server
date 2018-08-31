@@ -210,7 +210,7 @@ public class CreditDisplay extends Sprite {
     }
 
     public function getFortuneTimeLeftStr():String {
-        var _local_1 = "";
+        var _local_1:String = "";
         var _local_2:Date = new Date();
         var _local_3:Number = ((this.fortuneTimeEnd - _local_2.time) / 1000);
         if (_local_3 > TimeUtil.DAY_IN_S) {

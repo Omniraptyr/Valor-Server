@@ -2,7 +2,7 @@
   "dbInfo": {
     "host": "127.0.0.1", //144.217.80.74
     "port": "1985", //1985 - 6379
-    "auth": "2NSVsRREv3FYXPGm", //y5let1de@isaKraze@non8712jok - none
+    "auth": "2NSVsRREv3FYXPGm", //2NSVsRREv3FYXPGm - none
     "index": "0"
   },
   "serverInfo": {
@@ -19,13 +19,13 @@
   "serverSettings": {
     "logFolder": "./logs",
     "resourceFolder": "./resources",
-    "version": "39.V9",
-    "tps": "10",
+    "version": "37.73",
+    "tps": "5",
     "mode": "Single",
-    "key": "B1A5ED",
+    "key": "DE5A1B",
     "maxConnections": "1024",
-    "maxPlayers": "200",
-    "maxPlayersWithPriority": "120",
+    "maxPlayers": "170",
+    "maxPlayersWithPriority": "170",
     "enablePets": "false",
     "enableMarket": "true"
   }

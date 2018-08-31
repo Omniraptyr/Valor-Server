@@ -67,10 +67,8 @@ class Star {
     public var y_:Number;
     public var scale_:Number;
     public var bitmap_:BitmapData;
-    /*private*/
-    var w_:Number;
-    /*private*/
-    var h_:Number;
+    private var w_:Number;
+    private var h_:Number;
     protected var bitmapFill_:GraphicsBitmapFill;
     protected var path_:GraphicsPath;
 

@@ -36,7 +36,7 @@ public class WebForgotPasswordDialog extends Frame {
     }
 
     private function isEmailValid():Boolean {
-        var _local1 = !((this.emailInput.text() == ""));
+        var _local1:Boolean = !((this.emailInput.text() == ""));
         if (!_local1) {
             this.emailInput.setError("Not a valid email address");
         }

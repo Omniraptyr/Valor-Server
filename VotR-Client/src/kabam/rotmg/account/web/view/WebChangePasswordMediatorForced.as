@@ -55,7 +55,7 @@ public class WebChangePasswordMediatorForced extends Mediator {
     }
 
     private function isCurrentPasswordValid():Boolean {
-        var _local1 = (this.view.password_.text().length >= 5);
+        var _local1:Boolean = (this.view.password_.text().length >= 5);
         if (!_local1) {
             this.view.password_.setError(TextKey.WEB_CHANGE_PASSWORD_INCORRECT);
         }
@@ -63,7 +63,7 @@ public class WebChangePasswordMediatorForced extends Mediator {
     }
 
     private function isNewPasswordValid():Boolean {
-        var _local1 = (this.view.newPassword_.text().length >= 10);
+        var _local1:Boolean = (this.view.newPassword_.text().length >= 10);
         if (!_local1) {
             this.view.newPassword_.setError(TextKey.REGISTER_WEB_SHORT_ERROR);
         }
@@ -71,7 +71,7 @@ public class WebChangePasswordMediatorForced extends Mediator {
     }
 
     private function isNewPasswordVerified():Boolean {
-        var _local1 = (this.view.newPassword_.text() == this.view.retypeNewPassword_.text());
+        var _local1:Boolean = (this.view.newPassword_.text() == this.view.retypeNewPassword_.text());
         if (!_local1) {
             this.view.retypeNewPassword_.setError(TextKey.REGISTER_WEB_MATCH_ERROR);
         }

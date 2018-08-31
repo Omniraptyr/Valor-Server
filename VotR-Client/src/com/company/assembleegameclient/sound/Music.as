@@ -2,15 +2,14 @@
 import com.company.assembleegameclient.parameters.Parameters;
 
 public class Music {
-
     private static var musicName:String;
     private static var song:Song;
-
 
     public static function load(name:String):void {
         if (musicName == name) {
             return;
         }
+
         musicName = name;
 
         if (Parameters.data_.playMusic) {
@@ -22,7 +21,9 @@ public class Music {
         if (song) {
             song.stop();
         }
-        if (musicName == null || musicName == "") {
+
+        if (musicName == null || musicName == ""
+                || Parameters.data_.musicVolume == 0 || !Parameters.data_.playMusic) {
             return;
         }
         song = new Song(musicName);
@@ -32,9 +33,11 @@ public class Music {
     public static function setPlayMusic(play:Boolean):void {
         Parameters.data_.playMusic = play;
         Parameters.save();
+
         if (play) {
             transitionNewMusic();
         }
+
         else if (song) {
             song.stop(true);
             song = null;
@@ -44,11 +47,15 @@ public class Music {
     public static function setMusicVolume(newVol:Number):void {
         Parameters.data_.musicVolume = newVol;
         Parameters.save();
+
+        if (newVol == 0) {
+            if (song) song.stop(true);
+            return;
+        }
+
         if (Parameters.data_.playMusic && song) {
             song.volume = newVol;
         }
     }
-
-
 }
 }

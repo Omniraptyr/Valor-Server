@@ -105,17 +105,17 @@ public class GameServerConnection {
     public static const QUEST_REDEEM:int = 37;
     public static const QUEST_FETCH_RESPONSE:int = 65;
     public static const QUEST_REDEEM_RESPONSE:int = 88;
-    public static const SERVER_FULL = 110;
-    public static const QUEUE_PING = 111;
-    public static const QUEUE_PONG = 112;
-    public static const MARKET_COMMAND = 99;
+    public static const SERVER_FULL:int = 110;
+    public static const QUEUE_PING:int = 111;
+    public static const QUEUE_PONG:int = 112;
+    public static const MARKET_COMMAND:int = 99;
     public static const PET_CHANGE_FORM_MSG:int = 150;
     public static const QUEST_ROOM_MSG:int = 155;
     public static const KEY_INFO_REQUEST:int = 151;
     public static const KEY_INFO_RESPONSE:int = 152;
-    public static const MARKET_RESULT = 100;
-    public static const SET_FOCUS = 108;
-    public static const SWITCH_MUSIC = 106;
+    public static const MARKET_RESULT:int = 100;
+    public static const SET_FOCUS:int = 108;
+    public static const SWITCH_MUSIC:int = 106;
     public static const CLAIM_LOGIN_REWARD_MSG:int = 153;
     public static const LOGIN_REWARD_MSG:int = 154;
     public static const LAUNCH_RAID:int = 156;
@@ -130,7 +130,6 @@ public class GameServerConnection {
     public static const QOLACTION:int = 165;
     public static const GAMBLESTART:int = 166;
     public static const REQUESTGAMBLE:int = 167;
-    public static const HELLO2PACKET:int = 168;
 
     public static var instance:GameServerConnection;
 
@@ -232,9 +231,6 @@ public class GameServerConnection {
     }
 
     public function playerHit(_arg1:int, _arg2:int):void {
-    }
-
-    public function hello2packet(_arg1:int, _arg2:int):void {
     }
 
     public function enemyHit(_arg1:int, _arg2:int, _arg3:int, _arg4:Boolean):void {

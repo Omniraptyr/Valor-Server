@@ -44,8 +44,8 @@ public class RegisterWebAccountDialog extends Frame {
         this.retypePasswordInput = new TextInputField(TextKey.RETYPE_PASSWORD, true);
         addTextInputField(this.retypePasswordInput);
         this.checkbox = new CheckBoxField("", false);
-        var _local1 = (('<font color="#7777EE"><a href="' + Parameters.TERMS_OF_USE_URL) + '" target="_blank">');
-        var _local2 = "</a></font>.";
+        var _local1:String = (('<font color="#7777EE"><a href="' + Parameters.TERMS_OF_USE_URL) + '" target="_blank">');
+        var _local2:String = "</a></font>.";
         this.checkbox.setTextStringBuilder(new LineBuilder().setParams(TextKey.REGISTER_WEB_CHECKBOX, {
             "link": _local1,
             "_link": _local2
@@ -99,7 +99,7 @@ public class RegisterWebAccountDialog extends Frame {
     }
 
     private function isPasswordValid():Boolean {
-        var _local1 = (this.passwordInput.text().length >= 5);
+        var _local1:Boolean = (this.passwordInput.text().length >= 5);
         if (!_local1) {
             this.passwordInput.setError(TextKey.REGISTER_WEB_SHORT_ERROR);
         }
@@ -107,7 +107,7 @@ public class RegisterWebAccountDialog extends Frame {
     }
 
     private function isPasswordVerified():Boolean {
-        var _local1 = (this.passwordInput.text() == this.retypePasswordInput.text());
+        var _local1:Boolean = (this.passwordInput.text() == this.retypePasswordInput.text());
         if (!_local1) {
             this.retypePasswordInput.setError(TextKey.REGISTER_WEB_MATCH_ERROR);
         }

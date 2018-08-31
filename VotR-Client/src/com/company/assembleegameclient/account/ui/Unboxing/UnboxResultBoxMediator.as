@@ -1,11 +1,13 @@
 package com.company.assembleegameclient.account.ui.Unboxing
 {
-import com.company.assembleegameclient.sound.SoundEffectLibrary;
-import robotlegs.bender.bundles.mvcs.Mediator;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import com.company.assembleegameclient.game.AGameSprite;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import com.company.assembleegameclient.account.ui.ItemResultBox;
+import com.company.assembleegameclient.game.AGameSprite;
+import com.company.assembleegameclient.sound.SoundEffectLibrary;
+
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class UnboxResultBoxMediator extends Mediator
 {

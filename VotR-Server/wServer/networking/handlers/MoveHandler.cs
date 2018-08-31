@@ -6,7 +6,7 @@ using common.resources;
 
 namespace wServer.networking.handlers
 {
-    class MoveHandler : PacketHandlerBase<Move>
+    internal class MoveHandler : PacketHandlerBase<Move>
     {
         public override PacketId ID => PacketId.MOVE;
 
@@ -15,7 +15,7 @@ namespace wServer.networking.handlers
             client.Manager.Logic.AddPendingAction(t => Handle(client.Player, t, packet));
         }
 
-        void Handle(Player player, RealmTime time, Move packet)
+        private static void Handle(Player player, RealmTime time, Move packet)
         {
             if (player?.Owner == null)
                 return;

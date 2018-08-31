@@ -1,14 +1,15 @@
 package kabam.rotmg.emotes
 {
-   import flash.text.TextField;
-   import flash.text.TextFormat;
-   import flash.display.DisplayObject;
-   import flash.display.Sprite;
-   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import flash.text.TextFieldAutoSize;
-   
-   public class EmoteGraphicHelper
+import flash.display.DisplayObject;
+import flash.display.Sprite;
+import flash.text.TextField;
+import flash.text.TextFieldAutoSize;
+import flash.text.TextFormat;
+
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public class EmoteGraphicHelper
    {
       
       private static const tField:TextField = _J_R_();
@@ -87,9 +88,10 @@ package kabam.rotmg.emotes
    }
 }
 
-import flash.display.Sprite;
 import flash.display.DisplayObject;
+import flash.display.Sprite;
 import flash.geom.Rectangle;
+
 import kabam.rotmg.emotes.Emote;
 
 class Drawer extends Sprite

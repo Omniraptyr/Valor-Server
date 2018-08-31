@@ -1,28 +1,18 @@
 package kabam.rotmg.game.view.components {
 import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
-
-import flash.display.Bitmap;
-
-import flash.display.BitmapData;
 
 import flash.display.Sprite;
-import flash.text.TextFormatAlign;
+import flash.filters.DropShadowFilter;
 
 import kabam.rotmg.game.view.MarkDisplay;
-
 import kabam.rotmg.game.view.NodeDisplay1;
 import kabam.rotmg.game.view.NodeDisplay2;
 import kabam.rotmg.game.view.NodeDisplay3;
 import kabam.rotmg.game.view.NodeDisplay4;
-
-import kabam.rotmg.ui.model.TabStripModel;
-import com.company.assembleegameclient.objects.Player;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-import flash.filters.GlowFilter;
-import flash.filters.DropShadowFilter;
+import kabam.rotmg.ui.model.TabStripModel;
+
 public class MarksTabContent extends Sprite {
 
     private var background:Sprite;

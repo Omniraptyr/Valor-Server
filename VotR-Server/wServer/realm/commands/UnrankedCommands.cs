@@ -797,26 +797,24 @@ namespace wServer.realm.commands
         }
     }
 
-    class LefttoMaxCommand : Command
+    internal class LefttoMaxCommand : Command
     {
-        public LefttoMaxCommand() : base("lefttomax") { }
+        public LefttoMaxCommand() : base("lefttomax", alias: "l2m") { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
             var pd = player.Manager.Resources.GameData.Classes[player.ObjectType];
+            var str = "";
 
-            player.SendInfo($"HP: {pd.Stats[0].MaxValue - player.Stats.Base[0]}");
-            player.SendInfo($"MP: {pd.Stats[1].MaxValue - player.Stats.Base[1]}");
-            player.SendInfo($"Attack: {pd.Stats[2].MaxValue - player.Stats.Base[2]}");
-            player.SendInfo($"Defense: {pd.Stats[3].MaxValue - player.Stats.Base[3]}");
-            player.SendInfo($"Speed: {pd.Stats[4].MaxValue - player.Stats.Base[4]}");
-            player.SendInfo($"Dexterity: {pd.Stats[5].MaxValue - player.Stats.Base[5]}");
-            player.SendInfo($"Vitality: {pd.Stats[6].MaxValue - player.Stats.Base[6]}");
-            player.SendInfo($"Wisdom: {pd.Stats[7].MaxValue - player.Stats.Base[7]}");
-            player.SendInfo($"Might: {pd.Stats[8].MaxValue - player.Stats.Base[8]}");
-            player.SendInfo($"Luck: {pd.Stats[9].MaxValue - player.Stats.Base[9]}");
-            player.SendInfo($"Restoration: {pd.Stats[10].MaxValue - player.Stats.Base[10]}");
-            player.SendInfo($"Protection: {pd.Stats[11].MaxValue - player.Stats.Base[11]}");
+            for (var i = 0; i < pd.Stats.Length; i++) {
+                var l2m = (player.AscensionEnabled ? pd.Stats[i].MaxValue + 10 : pd.Stats[i].MaxValue) 
+                          - player.Stats.Base[i];
+
+                if (l2m != 0) str += player.Stats.StatIndexToFullName(i) + ": " 
+                              + l2m + (i == pd.Stats.Length - 1 ? "" : ", ");
+
+                if (i == pd.Stats.Length - 1) player.SendInfo(str);
+            }
             return true;
         }
     }
@@ -947,6 +945,7 @@ namespace wServer.realm.commands
                 player.SendError("Elite accounts can't use the marketplace!");
                 return false;
             }
+
             if (!(player.Owner is Marketplace))
             {
                 player.SendError("Can only market items in Marketplace.");
@@ -959,9 +958,8 @@ namespace wServer.realm.commands
                 player.SendError("Usage: /market <slot> <amount>. Only slot numbers 1-16 are valid and amount must be a positive value.");
                 return false;
             }
-            
-            int amount;
-            if (!int.TryParse(match.Groups[2].Value, out amount))
+
+            if (!int.TryParse(match.Groups[2].Value, out var amount))
             {
                 player.SendError("Amount is too large. Try something below 2147483648...");
                 return false;
@@ -1457,6 +1455,16 @@ namespace wServer.realm.commands
                 GameId = World.ClothBazaar,
                 Name = "Cloth Bazaar"
             });
+            return true;
+        }
+    }
+
+    class MigrateCommand : Command
+    {
+        public MigrateCommand() : base("migrate") { }
+
+        protected override bool Process(Player player, RealmTime time, string args) {
+            player.MigrateStats();
             return true;
         }
     }

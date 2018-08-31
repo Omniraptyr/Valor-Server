@@ -2,13 +2,10 @@ package kabam.rotmg.market.ui
 {
 import kabam.rotmg.market.MarketItemsResultSignal;
 import kabam.rotmg.market.MarketResultSignal;
-import kabam.rotmg.market.ui.MarketActionSignal;
-import kabam.rotmg.market.ui.MarketMediator;
 
 import org.swiftsuspenders.Injector;
 
 import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-
 import robotlegs.bender.framework.api.IConfig;
 
 public class MarketMediatorConfig implements IConfig

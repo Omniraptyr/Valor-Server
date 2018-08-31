@@ -2,41 +2,39 @@
 import flash.geom.Point;
 
 public class ThrowEffect extends ParticleEffect {
-
     public var start_:Point;
     public var end_:Point;
     public var color_:int;
     public var duration_:int;
 
-    public function ThrowEffect(_arg1:Point, _arg2:Point, _arg3:int, _arg4:int = 1000) {
-        this.start_ = _arg1;
-        this.end_ = _arg2;
-        this.color_ = _arg3;
-        this.duration_ = _arg4;
+    public function ThrowEffect(start:Point, end:Point, color:int, duration:int = 1000) {
+        this.start_ = start;
+        this.end_ = end;
+        this.color_ = color;
+        this.duration_ = duration;
     }
 
-    override public function runNormalRendering(_arg1:int, _arg2:int):Boolean {
+    override public function runNormalRendering(time:int, dt:int):Boolean {
         x_ = this.start_.x;
         y_ = this.start_.y;
-        var _local3 = 200;
-        var _local4:ThrowParticle = new ThrowParticle(_local3, this.color_, this.duration_, this.start_, this.end_);
+        var particle:ThrowParticle = new ThrowParticle(200, this.color_, this.duration_, this.start_, this.end_);
         if(this.duration_ == 0){
-            _local4 = new ThrowParticle(_local3, this.color_, 1500, this.start_, this.end_);
+            particle = new ThrowParticle(200, this.color_, 1500, this.start_, this.end_);
         }
-        map_.addObj(_local4, x_, y_);
-        return (false);
+        map_.addObj(particle, x_, y_);
+        return false;
     }
 
-    override public function runEasyRendering(_arg1:int, _arg2:int):Boolean {
+    override public function runEasyRendering(time:int, dt:int):Boolean {
         x_ = this.start_.x;
         y_ = this.start_.y;
-        var _local3:int = 10;
-        var _local4:ThrowParticle = new ThrowParticle(_local3, this.color_, this.duration_, this.start_, this.end_);
-        map_.addObj(_local4, x_, y_);
-        return (false);
+        var particle:ThrowParticle = new ThrowParticle(10, this.color_, this.duration_, this.start_, this.end_);
+        if(this.duration_ == 0){
+            particle = new ThrowParticle(10, this.color_, 1500, this.start_, this.end_);
+        }
+        map_.addObj(particle, x_, y_);
+        return false;
     }
-
-
 }
 }
 
@@ -47,7 +45,6 @@ import com.company.assembleegameclient.util.RandomUtil;
 import flash.geom.Point;
 
 class ThrowParticle extends Particle {
-
     public var lifetime_:int;
     public var timeLeft_:int;
     public var initialSize_:int;
@@ -58,33 +55,31 @@ class ThrowParticle extends Particle {
     public var pathX_:Number;
     public var pathY_:Number;
 
-    public function ThrowParticle(_arg1:int, _arg2:int, _arg3:int, _arg4:Point, _arg5:Point) {
-        super(_arg2, 0, _arg1);
-        this.lifetime_ = (this.timeLeft_ = _arg3);
-        this.initialSize_ = _arg1;
-        this.start_ = _arg4;
-        this.end_ = _arg5;
-        this.dx_ = ((this.end_.x - this.start_.x) / this.timeLeft_);
-        this.dy_ = ((this.end_.y - this.start_.y) / this.timeLeft_);
-        var _local6:Number = (Point.distance(_arg4, _arg5) / this.timeLeft_);
+    public function ThrowParticle(size:int, color:int, lifetime:int, start:Point, end:Point) {
+        super(color, 0, size);
+        this.lifetime_ = (this.timeLeft_ = lifetime);
+        this.initialSize_ = size;
+        this.start_ = start;
+        this.end_ = end;
+        this.dx_ = (this.end_.x - this.start_.x) / this.timeLeft_;
+        this.dy_ = (this.end_.y - this.start_.y) / this.timeLeft_;
         this.pathX_ = (x_ = this.start_.x);
         this.pathY_ = (y_ = this.start_.y);
     }
 
-    override public function update(_arg1:int, _arg2:int):Boolean {
-        this.timeLeft_ = (this.timeLeft_ - _arg2);
+    override public function update(time:int, dt:int):Boolean {
+        this.timeLeft_ = this.timeLeft_ - dt;
         if (this.timeLeft_ <= 0) {
-            return (false);
+            return false;
         }
-        z_ = (Math.sin(((this.timeLeft_ / this.lifetime_) * Math.PI)) * 2);
+        z_ = Math.sin(this.timeLeft_ / this.lifetime_ * Math.PI) * 2;
         setSize(0);
-        this.pathX_ = (this.pathX_ + (this.dx_ * _arg2));
-        this.pathY_ = (this.pathY_ + (this.dy_ * _arg2));
+        this.pathX_ = this.pathX_ + this.dx_ * dt;
+        this.pathY_ = this.pathY_ + this.dy_ * dt;
         moveTo(this.pathX_, this.pathY_);
-        map_.addObj(new SparkParticle((100 * (z_ + 1)), color_, 400, z_, RandomUtil.plusMinus(1), RandomUtil.plusMinus(1)), this.pathX_, this.pathY_);
-        return (true);
+        map_.addObj(new SparkParticle(100 * (z_ + 1), color_, 400, z_,
+                RandomUtil.plusMinus(1), RandomUtil.plusMinus(1)), this.pathX_, this.pathY_);
+        return true;
     }
-
-
 }
 

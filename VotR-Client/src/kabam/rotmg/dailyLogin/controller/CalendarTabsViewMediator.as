@@ -22,7 +22,7 @@ public class CalendarTabsViewMediator extends Mediator {
         var _local2:CalendarTabButton;
         this.tabs = new Vector.<CalendarTabButton>();
         this.view.init(CalendarSettings.getTabsRectangle(this.model.overallMaxDays));
-        var _local1 = "";
+        var _local1:String = "";
         if (this.model.hasCalendar(CalendarTypes.NON_CONSECUTIVE)) {
             _local1 = CalendarTypes.NON_CONSECUTIVE;
             this.tabs.push(this.view.addCalendar("Login Calendar", CalendarTypes.NON_CONSECUTIVE, "Unlock rewards the more days you login. Logins do not need to be in consecutive days. You must claim all rewards before the end of the event."));

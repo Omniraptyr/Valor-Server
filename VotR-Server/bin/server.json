@@ -2,7 +2,7 @@
   "dbInfo": {
     "host": "127.0.0.1",
     "port": "1985", //1985 - 6379
-    "auth": "2NSVsRREv3FYXPGm", //y5let1de@isaKraze@non8712jok - none
+    "auth": "2NSVsRREv3FYXPGm", //2NSVsRREv3FYXPGm - none
     "index": "0"
   },
   "serverInfo": {

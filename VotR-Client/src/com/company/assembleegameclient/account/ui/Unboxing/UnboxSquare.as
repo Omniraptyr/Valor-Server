@@ -11,6 +11,8 @@ import flash.display.BitmapData;
 import flash.display.Sprite;
 import flash.text.TextFormatAlign;
 
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+
 public class UnboxSquare extends Sprite {
     public function UnboxSquare(_item:int, _id:int=0) {
         this.itemType_ = _item;
@@ -24,7 +26,7 @@ public class UnboxSquare extends Sprite {
     public var itemName_:BaseSimpleText;
     public var id_:int;
 
-    private function addIcon() {
+    private function addIcon() : void {
         var _local1:XML = ObjectLibrary.xmlLibrary_[this.itemType_];
         var _local2:Number = 5;
         if (_local1.hasOwnProperty("ScaleValue")) {
@@ -64,7 +66,7 @@ public class UnboxSquare extends Sprite {
         this.itemName_ = new BaseSimpleText(10, 0x000000, false, 77, 0);
         this.itemName_.setBold(true);
         this.itemName_.setAlignment(TextFormatAlign.CENTER);
-        this.itemName_.text = ObjectLibrary.typeToDisplayId_[this.itemType_];
+        this.itemName_.text = LineBuilder.getLocalizedStringFromKey(ObjectLibrary.typeToDisplayId_[this.itemType_]);
         this.itemName_.wordWrap = true;
         this.itemName_.updateMetrics();
         this.itemName_.y = (25 / 2 + 50) - (this.itemName_.textHeight / 2) - 3;

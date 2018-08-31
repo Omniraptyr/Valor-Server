@@ -908,17 +908,12 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SF3()
                     ),
-                    new Threshold(0.05,
-                       new TierLoot(12, ItemType.Weapon, 0.08),
-                       new TierLoot(5, ItemType.Ability, 0.07),
-                       new TierLoot(6, ItemType.Ability, 0.05),
-                       new TierLoot(13, ItemType.Armor, 0.06),
-                       new TierLoot(5, ItemType.Ring, 0.06),
+                    new Threshold(0.1,
                        new ItemLoot("Onrane Cache", 0.25),
                        new ItemLoot("The Stronghold Key", 0.06),
                        new ItemLoot("Gold Cache", 0.025),
-                       new ItemLoot("Potion of Life", 1),
-                       new ItemLoot("Potion of Mana", 1)
+                       new ItemLoot("Vial of Life", 1),
+                       new ItemLoot("Vial of Mana", 1)
                        )
             )
            .Init("AH ULTRA The Sincryer",
@@ -1081,19 +1076,12 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SF4()
                     ),
-                    new Threshold(0.05,
-                       new TierLoot(12, ItemType.Weapon, 0.08),
-                       new TierLoot(5, ItemType.Ability, 0.07),
-                       new TierLoot(6, ItemType.Ability, 0.05),
-                       new TierLoot(13, ItemType.Armor, 0.06),
+                    new Threshold(0.1,
                        new TierLoot(7, ItemType.Ring, 0.06),
                        new ItemLoot("Onrane Cache", 0.40),
-                       new ItemLoot("The Stronghold Key", 0.06),
                        new ItemLoot("Gold Cache", 0.050),
-                       new ItemLoot("Potion of Life", 1),
-                       new ItemLoot("Potion of Mana", 1),
-                       new ItemLoot("Kismet Seal", 0.1),
-                       new ItemLoot("Sword of Dark Retribution", 1)
+                       new ItemLoot("Vial of Life", 1),
+                       new ItemLoot("Vial of Mana", 1)
                        )
             )
             /* .Init("AH Loot Chest 1",
@@ -1179,23 +1167,20 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SF4()
                     ),
-                new Threshold(0.05,
-                new TierLoot(12, ItemType.Weapon, 0.08),
-                new TierLoot(5, ItemType.Ability, 0.07),
-                new TierLoot(6, ItemType.Ability, 0.05),
-                new TierLoot(13, ItemType.Armor, 0.06),
+                new Threshold(0.1,
                 new TierLoot(7, ItemType.Ring, 0.08),
                 new ItemLoot("Onrane Cache", 1),
-                new ItemLoot("The Stronghold Key", 0.07),
-                new ItemLoot("Gold Cache", 1),
+                new ItemLoot("Gold Cache", 0.75),
                 new ItemLoot("Wisdom Eon", 0.1),
                 new ItemLoot("Attack Eon", 0.1),
-                new ItemLoot("Potion of Life", 1),
-                new ItemLoot("Potion of Defense", 1),
-                new ItemLoot("Potion of Attack", 0.6),
-                new ItemLoot("Potion of Dexterity", 0.5),
-                new ItemLoot("Potion of Vitality", 0.5),
-                new ItemLoot("Potion of Speed", 0.5)
+                new ItemLoot("Vial of Life", 1),
+                new ItemLoot("Vial of Mana", 1),
+                new ItemLoot("Vial of Defense", 1),
+                new ItemLoot("Vial of Attack", 0.6),
+                new ItemLoot("Vial of Dexterity", 0.5),
+                new ItemLoot("Vial of Vitality", 0.5),
+                new ItemLoot("Vial of Wisdom", 0.5),
+                new ItemLoot("Vial of Speed", 0.5)
                 )
             )
            .Init("AH ULTRA Heart Loot Ctrl",
@@ -1214,23 +1199,20 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SF4()
                     ),
-                new Threshold(0.05,
-                new TierLoot(12, ItemType.Weapon, 0.08),
-                new TierLoot(5, ItemType.Ability, 0.07),
-                new TierLoot(6, ItemType.Ability, 0.05),
-                new TierLoot(13, ItemType.Armor, 0.06),
+                new Threshold(0.1,
                 new TierLoot(7, ItemType.Ring, 0.085),
                 new ItemLoot("Onrane Cache", 1),
-                new ItemLoot("The Stronghold Key", 0.07),
                 new ItemLoot("Gold Cache", 1),
                 new ItemLoot("Wisdom Eon", 0.2),
                 new ItemLoot("Attack Eon", 0.2),
-                new ItemLoot("Potion of Life", 1),
-                new ItemLoot("Potion of Defense", 1),
-                new ItemLoot("Potion of Attack", 1),
-                new ItemLoot("Potion of Dexterity", 1),
-                new ItemLoot("Potion of Vitality", 1),
-                new ItemLoot("Potion of Speed", 0.5)
+                new ItemLoot("Vial of Life", 1),
+                new ItemLoot("Vial of Mana", 1),
+                new ItemLoot("Vial of Defense", 1),
+                new ItemLoot("Vial of Attack", 1),
+                new ItemLoot("Vial of Dexterity", 1),
+                new ItemLoot("Vial of Vitality", 1),
+                new ItemLoot("Vial of Wisdom", 1),
+                new ItemLoot("Vial of Speed", 1)
                 )
             )
             /*.Init("AH TZol Portal Spawner",
@@ -1261,23 +1243,20 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SF4()
                     ),
-                new Threshold(0.05,
-                    new TierLoot(12, ItemType.Weapon, 0.08),
-                    new TierLoot(5, ItemType.Ability, 0.07),
-                    new TierLoot(6, ItemType.Ability, 0.05),
-                    new TierLoot(13, ItemType.Armor, 0.06),
+                new Threshold(0.1,
                     new TierLoot(7, ItemType.Ring, 0.08),
                     new ItemLoot("Spiritclaw", 0.007),
-                    new ItemLoot("Ultimate Onrane Cache", 1),
-                    new ItemLoot("The Stronghold Key", 0.75),
+                    new ItemLoot("Ultimate Onrane Cache", 0.75),
+                    new ItemLoot("The Stronghold Key", 0.05),
                     new ItemLoot("10000 Gold", 0.50),
-                    new ItemLoot("Potion of Life", 1),
-                    new ItemLoot("Potion of Defense", 1),
-                    new ItemLoot("Potion of Attack", 0.6),
-                    new ItemLoot("Potion of Dexterity", 0.5),
-                    new ItemLoot("Potion of Vitality", 0.5),
-                    new ItemLoot("Potion of Speed", 0.5),
-                    new ItemLoot("Potion of Mana", 0.5)
+                    new ItemLoot("Vial of Life", 1),
+                    new ItemLoot("Vial of Defense", 1),
+                    new ItemLoot("Vial of Attack", 0.6),
+                    new ItemLoot("Vial of Dexterity", 0.5),
+                    new ItemLoot("Vial of Vitality", 0.5),
+                    new ItemLoot("Vial of Wisdom", 0.5),
+                    new ItemLoot("Vial of Speed", 0.5),
+                    new ItemLoot("Vial of Mana", 0.5)
                 )
             )
         .Init("AH ULTRA Aldragine Loot Ctrl",
@@ -1297,24 +1276,21 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.FabledItemsLootUltra()
                 ),
-                new Threshold(0.05,
-                    new TierLoot(12, ItemType.Weapon, 0.08),
-                    new TierLoot(5, ItemType.Ability, 0.07),
-                    new TierLoot(6, ItemType.Ability, 0.05),
-                    new TierLoot(13, ItemType.Armor, 0.06),
-                    new TierLoot(7, ItemType.Ring, 0.08),
+                new Threshold(0.1,
+                    new TierLoot(7, ItemType.Ring, 0.1),
                     new ItemLoot("Spiritclaw", 0.014),
-                    new ItemLoot("Sor Fragment Cache", 0.75),
+                    new ItemLoot("Sor Fragment Cache", 0.33),
                     new ItemLoot("Ultimate Onrane Cache", 1),
-                    new ItemLoot("The Stronghold Key", 0.75),
+                    new ItemLoot("The Stronghold Key", 0.1),
                     new ItemLoot("10000 Gold", 1.00),
-                    new ItemLoot("Potion of Life", 1),
-                    new ItemLoot("Potion of Defense", 1),
-                    new ItemLoot("Potion of Attack", 1),
-                    new ItemLoot("Potion of Dexterity", 1),
-                    new ItemLoot("Potion of Vitality", 1),
-                    new ItemLoot("Potion of Speed", 1),
-                    new ItemLoot("Potion of Mana", 1)
+                    new ItemLoot("Vial of Life", 1),
+                    new ItemLoot("Vial of Defense", 1),
+                    new ItemLoot("Vial of Attack", 1),
+                    new ItemLoot("Vial of Dexterity", 1),
+                    new ItemLoot("Vial of Vitality", 1),
+                    new ItemLoot("Vial of Wisdom", 1),
+                    new ItemLoot("Vial of Speed", 1),
+                    new ItemLoot("Vial of Mana", 1)
                 )
             )
         .Init("AH Secret Chest",
@@ -1507,20 +1483,16 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SF4()
                     ),
-                    new Threshold(0.05,
-                        new TierLoot(12, ItemType.Weapon, 0.08),
-                        new TierLoot(5, ItemType.Ability, 0.07),
-                        new TierLoot(6, ItemType.Ability, 0.05),
-                        new TierLoot(13, ItemType.Armor, 0.06),
+                    new Threshold(0.1,
                         new TierLoot(7, ItemType.Ring, 0.08),
-                        new ItemLoot("Onrane Cache", 1),
-                        new ItemLoot("The Stronghold Key", 0.07),
-                        new ItemLoot("Gold Cache", 0.5),
-                        new ItemLoot("Potion of Life", 1),
-                        new ItemLoot("Potion of Defense", 1),
-                        new ItemLoot("Potion of Attack", 0.6),
-                        new ItemLoot("Potion of Dexterity", 0.5),
-                        new ItemLoot("Potion of Vitality", 0.5)
+                        new ItemLoot("Onrane Cache", 0.75),
+                        new ItemLoot("Gold Cache", 0.33),
+                        new ItemLoot("Vial of Life", 1),
+                        new ItemLoot("Vial of Defense", 1),
+                        new ItemLoot("Vial of Attack", 0.6),
+                        new ItemLoot("Vial of Dexterity", 0.6),
+                        new ItemLoot("Vial of Vitality", 0.5),
+                        new ItemLoot("Vial of Wisdom", 0.5)
                 )
             )
         .Init("AH ULTRA The Vision of Aldragine",
@@ -1674,20 +1646,16 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SF4()
                     ),
-                    new Threshold(0.05,
-                        new TierLoot(12, ItemType.Weapon, 0.08),
-                        new TierLoot(5, ItemType.Ability, 0.07),
-                        new TierLoot(6, ItemType.Ability, 0.05),
-                        new TierLoot(13, ItemType.Armor, 0.06),
+                    new Threshold(0.1,
                         new TierLoot(7, ItemType.Ring, 0.08),
                         new ItemLoot("Onrane Cache", 1),
-                        new ItemLoot("The Stronghold Key", 0.07),
-                        new ItemLoot("Gold Cache", 0.7),
-                        new ItemLoot("Potion of Life", 1),
-                        new ItemLoot("Potion of Defense", 1),
-                        new ItemLoot("Potion of Attack", 1),
-                        new ItemLoot("Potion of Dexterity", 1),
-                        new ItemLoot("Potion of Vitality", 1)
+                        new ItemLoot("Gold Cache", 0.5),
+                        new ItemLoot("Vial of Life", 1),
+                        new ItemLoot("Vial of Defense", 1),
+                        new ItemLoot("Vial of Attack", 1),
+                        new ItemLoot("Vial of Dexterity", 1),
+                        new ItemLoot("Vial of Vitality", 1),
+                        new ItemLoot("Vial of Wisdom", 1)
                 )
             )
         .Init("AH The Heart",

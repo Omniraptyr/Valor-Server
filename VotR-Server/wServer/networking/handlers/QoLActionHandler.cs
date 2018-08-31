@@ -43,10 +43,10 @@ namespace wServer.networking.handlers
                         player.Credits -= 1000;
                         player.ForceUpdate(player.Credits);
                         
-                        player.Client.Manager.Database.UpdateFame(acc, player.Fame);
                         player.CurrentFame += player.Fame;
                         player.ForceUpdate(player.CurrentFame);
 
+                        player.Client.Manager.Database.UpdateFame(acc, -player.Fame);
                         player.Fame -= player.Fame;
                         player.ForceUpdate(player.Fame);
                         player.SaveToCharacter();

@@ -4,9 +4,6 @@ import com.company.assembleegameclient.game.AGameSprite;
 import flash.events.MouseEvent;
 
 import kabam.rotmg.dialogs.control.OpenDialogNoModalSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.pets.view.FeedPetView;
-import kabam.rotmg.pets.view.FusePetView;
 import kabam.rotmg.sorForge.SorForgerUI;
 
 import robotlegs.bender.bundles.mvcs.Mediator;

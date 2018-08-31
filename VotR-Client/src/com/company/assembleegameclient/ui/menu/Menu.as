@@ -1,7 +1,9 @@
 ﻿package com.company.assembleegameclient.ui.menu {
 import com.company.util.GraphicsUtil;
 import com.company.util.RectangleUtil;
+import com.company.assembleegameclient.game.GameSprite;
 
+import flash.display.DisplayObjectContainer;
 import flash.display.CapsStyle;
 import flash.display.GraphicsPath;
 import flash.display.GraphicsSolidFill;
@@ -69,24 +71,54 @@ public class Menu extends Sprite implements UnFocusAble {
         }
     }
 
+    public function scaleParent(param1:Boolean):void {
+        var _loc2_:DisplayObjectContainer = null;
+        if (this.parent is GameSprite) {
+            _loc2_ = this;
+        }
+        else {
+            _loc2_ = this.parent;
+        }
+        var _loc3_:Number = 800 / stage.stageWidth;
+        var _loc4_:Number = 600 / stage.stageHeight;
+        if (param1 == true) {
+            _loc2_.scaleX = _loc3_ / _loc4_;
+            _loc2_.scaleY = 1;
+        }
+        else {
+            _loc2_.scaleX = _loc3_;
+            _loc2_.scaleY = _loc4_;
+        }
+    }
+
     private function position():void {
+        var _loc1_:Number;
+        var _loc2_:Boolean = false;
+        var _loc3_:Number = (stage.stageWidth - 800) / 2 + stage.mouseX;
+        _loc1_ = (stage.stageHeight - 600) / 2 + stage.mouseY;
+        var _loc4_:Number = 600 / stage.stageHeight;
+        this.scaleParent(_loc2_);
+        if (_loc2_) {
+            _loc3_ = _loc3_ * _loc4_;
+            _loc1_ = _loc1_ * _loc4_;
+        }
         if (stage == null) {
             return;
         }
-        if (stage.mouseX < (stage.stageWidth / 2)) {
-            x = (stage.mouseX + 12);
+        if (stage.mouseX + 0.5 * stage.stageWidth - 400 < stage.stageWidth / 2) {
+            x = _loc3_ + 12;
         }
         else {
-            x = ((stage.mouseX - width) - 1);
+            x = _loc3_ - width - 1;
         }
         if (x < 12) {
             x = 12;
         }
-        if (stage.mouseY < (stage.stageHeight / 3)) {
-            y = (stage.mouseY + 12);
+        if (stage.mouseY + 0.5 * stage.stageHeight - 300 < stage.stageHeight / 3) {
+            y = _loc1_ + 12;
         }
         else {
-            y = ((stage.mouseY - height) - 1);
+            y = _loc1_ - height - 1;
         }
         if (y < 12) {
             y = 12;
@@ -111,7 +143,6 @@ public class Menu extends Sprite implements UnFocusAble {
         GraphicsUtil.drawCutEdgeRect(-6, -6, Math.max(154, (width + 12)), (height + 12), 4, [1, 1, 1, 1], this.path_);
         graphics.drawGraphicsData(this.graphicsData_);
     }
-
-
 }
 }
+

@@ -173,10 +173,11 @@ public class Frame extends Sprite {
         this.rightButton_.setDefaultColor(0xFFFFFF);
     }
 
-    protected function onAddedToStage(_arg1:Event):void {
+
+    protected function onAddedToStage(_arg_1:Event):void {
         this.draw();
-        x = ((stage.stageWidth / 2) - ((this.w_ - 6) / 2));
-        y = ((stage.stageHeight / 2) - (height / 2));
+        this.x = (400 - ((this.w_ - 6) / 2));
+        this.y = (300 - (h_ / 2)); //was height
         if (this.textInputFields_.length > 0) {
             stage.focus = this.textInputFields_[0].inputText_;
         }

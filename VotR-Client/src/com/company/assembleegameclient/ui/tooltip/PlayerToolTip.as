@@ -10,7 +10,6 @@ import com.company.util.AssetLibrary;
 
 import flash.display.Bitmap;
 import flash.display.BitmapData;
-
 import flash.filters.DropShadowFilter;
 import flash.text.TextFieldAutoSize;
 

@@ -1,6 +1,6 @@
 package kabam.rotmg.assets.services {
-import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.map.GroundLibrary;
+import com.company.assembleegameclient.objects.ObjectLibrary;
 
 import flash.net.URLLoaderDataFormat;
 import flash.utils.IDataInput;

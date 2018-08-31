@@ -65,9 +65,9 @@ public class FortuneGroundPanel extends Panel {
         addChild(this.icon_);
         this.bitmap_ = new Bitmap(null);
         this.icon_.addChild(this.bitmap_);
-        var _local5 = "FortuneGroundPanel.play";
-        var _local6 = "MysteryBoxPanel.checkBackLater";
-        var _local7 = "FortuneGroundPanel.alchemist";
+        var _local5:String = "FortuneGroundPanel.play";
+        var _local6:String = "MysteryBoxPanel.checkBackLater";
+        var _local7:String = "FortuneGroundPanel.alchemist";
         var _local8:FortuneModel = _local3.getInstance(FortuneModel);
         var _local9:Account = _local3.getInstance(Account);
         if (((FortuneModel.HAS_FORTUNES) && (_local9.isRegistered()))) {

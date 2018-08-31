@@ -8,11 +8,7 @@ public class UIUtils {
     public static const NOTIFICATION_BACKGROUND_HEIGHT:Number = 25;
     private static const NOTIFICATION_BACKGROUND_ALPHA:Number = 0.4;
     private static const NOTIFICATION_BACKGROUND_COLOR:Number = 0;
-    public static const EXPERIMENTAL_MENU_PASSWORD:String = "decamenu";
     public static const NOTIFICATION_SPACE:uint = 28;
-
-    public static var SHOW_EXPERIMENTAL_MENU:Boolean = false;
-
 
     public static function makeStaticHUDBackground():Sprite {
         var _local1:Number = NOTIFICATION_BACKGROUND_WIDTH;

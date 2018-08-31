@@ -8,6 +8,7 @@ public class ActivationType {
     public static const BULLET_NOVA:String = "BulletNova";
     public static const REMOVE_NEG_COND_SELF:String = "RemoveNegativeConditionsSelf";
     public static const INCREMENT_STAT:String = "IncrementStat";
+    public static const POWER_STAT:String = "PowerStat";
     public static const HEAL:String = "Heal";
     public static const HEAL_NOVA:String = "HealNova";
     public static const MAGIC:String = "Magic";

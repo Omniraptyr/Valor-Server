@@ -1,11 +1,12 @@
 ﻿package kabam.rotmg.messaging.impl.data {
+import com.company.assembleegameclient.objects.Player;
+
 import flash.utils.IDataInput;
 import flash.utils.IDataOutput;
 
 import kabam.rotmg.text.model.TextKey;
 
 public class StatData {
-
     public static const MAX_HP_STAT:int = 0;
     public static const HP_STAT:int = 1;
     public static const SIZE_STAT:int = 2;
@@ -101,109 +102,126 @@ public class StatData {
     public static const PET_THIRDABILITY_TYPE_STAT:int = 95;
     public static const NEW_CON_STAT:int = 96;
     public static const FORTUNE_TOKEN_STAT:int = 97;
-    public static const ONRANE_STAT = 106;
-    public static const KANTOS_STAT = 107;
-    public static const RAID_TOKEN = 108;
-    public static const RAID_RANK = 109;
-    public static const SURGE = 110;
-    public static const MIGHT_STAT = 112;
-    public static const MIGHT_BOOST_STAT = 113;
-    public static const LUCK_STAT = 114;
-    public static const LUCK_BOOST_STAT = 115;
-    public static const LOOTBOX1 = 116;
-    public static const LOOTBOX2 = 117;
-    public static const LOOTBOX3 = 118;
-    public static const LOOTBOX4 = 119;
-    public static const LOOTBOX5 = 120;
-    public static const RESTORATION_STAT = 121;
-    public static const PROTECTION_STAT = 122;
-    public static const RESTORATION_BOOST_STAT = 123;
-    public static const PROTECTION_BOOST_STAT = 124;
-    public static const PROTECTIONPOINTS = 125;
-    public static const PROTECTIONMAX = 126;
-    public static const EFFECT = 127;
-    public static const MARKSENABLED = 128;
-    public static const MARK = 129;
-    public static const NODE1 = 130;
-    public static const NODE2 = 131;
-    public static const NODE3 = 132;
-    public static const NODE4 = 133;
-    public static const PWMAX_HP_STAT:int = 134;
-    public static const PWMAX_MP_STAT:int = 135;
-    public static const PWATTACK_STAT:int = 136;
-    public static const PWDEFENSE_STAT:int = 137;
-    public static const PWSPEED_STAT:int = 138;
-    public static const PWVITALITY_STAT:int = 139;
-    public static const PWWISDOM_STAT:int = 140;
-    public static const PWDEXTERITY_STAT:int = 141;
-    public static const PWMIGHT_STAT = 142;
-    public static const PWLUCK_STAT = 143;
-    public static const PWRESTORATION_STAT = 144;
-    public static const PWPROTECTION_STAT = 145;
-    public static const ASCENSIONENABLED = 146;
-    public static const RAGE_STAT = 147;
-    public static const SOR_STORAGE = 148;
-    public static const ELITE = 150;
-    public static const PVP = 151;
+    public static const ONRANE_STAT:int = 106;
+    public static const KANTOS_STAT:int = 107;
+    public static const ALERT_TOKEN:int = 108;
+    public static const RAID_RANK:int = 109;
+    public static const SURGE:int= 110;
+    public static const MIGHT_STAT:int = 112;
+    public static const MIGHT_BOOST_STAT:int = 113;
+    public static const LUCK_STAT:int = 114;
+    public static const LUCK_BOOST_STAT:int = 115;
+    public static const BRONZE_LOOTBOX:int = 116;
+    public static const SILVER_LOOTBOX:int = 117;
+    public static const GOLD_LOOTBOX:int = 118;
+    public static const ELITE_LOOTBOX:int = 119;
+    public static const PREMIUM_LOOTBOX:int = 120;
+    public static const RESTORATION_STAT:int = 121;
+    public static const PROTECTION_STAT:int = 122;
+    public static const RESTORATION_BOOST_STAT:int = 123;
+    public static const PROTECTION_BOOST_STAT:int = 124;
+    public static const PROTECTIONPOINTS:int = 125;
+    public static const PROTECTIONMAX:int = 126;
+    public static const EFFECT:int = 127;
+    public static const MARKSENABLED:int = 128;
+    public static const MARK:int = 129;
+    public static const NODE1:int = 130;
+    public static const NODE2:int = 131;
+    public static const NODE3:int = 132;
+    public static const NODE4:int = 133;
+    public static const ASCENSIONENABLED:int = 146;
+    public static const RAGE_STAT:int = 147;
+    public static const SOR_STORAGE:int = 148;
+    public static const ELITE:int = 150;
+    public static const PVP:int = 151;
 
     // unimplemented
     public static const DAMAGE_MIN:int = 98;
     public static const DAMAGE_MAX:int = 99;
-    public static const DAMAGE_MIN_BONUS = 100;
-    public static const DAMAGE_MAX_BONUS = 101;
-    public static const FORTUNE_BONUS = 105;
-    public static const RANK = 103;
-    public static const STRIKED = 149;
-    public static const ADMIN = 104;
-    public static const FORTUNE = 102;
+    public static const DAMAGE_MIN_BONUS:int = 100;
+    public static const DAMAGE_MAX_BONUS:int = 101;
+    public static const FORTUNE_BONUS:int = 105;
+    public static const RANK:int = 103;
+    public static const ADMIN:int = 104;
+    public static const FORTUNE:int = 102;
 
     public var statType_:uint = 0;
     public var statValue_:int;
     public var strStatValue_:String;
 
 
-    public static function statToName(_arg1:int):String {
-        switch (_arg1) {
+    public static function statToName(statId:int):String {
+        switch (statId) {
             case MAX_HP_STAT:
-                return (TextKey.STAT_DATA_MAXHP);
+                return TextKey.STAT_DATA_MAXHP;
             case HP_STAT:
-                return (TextKey.STATUS_BAR_HEALTH_POINTS);
+                return TextKey.STATUS_BAR_HEALTH_POINTS;
             case SIZE_STAT:
-                return (TextKey.STAT_DATA_SIZE);
+                return TextKey.STAT_DATA_SIZE;
             case MAX_MP_STAT:
-                return (TextKey.STAT_DATA_MAXMP);
+                return TextKey.STAT_DATA_MAXMP;
             case MP_STAT:
-                return (TextKey.STATUS_BAR_MANA_POINTS);
+                return TextKey.STATUS_BAR_MANA_POINTS;
             case EXP_STAT:
-                return (TextKey.STAT_DATA_XP);
+                return TextKey.STAT_DATA_XP;
             case LEVEL_STAT:
-                return (TextKey.STAT_DATA_LEVEL);
+                return TextKey.STAT_DATA_LEVEL;
             case ATTACK_STAT:
-                return (TextKey.STAT_MODEL_ATTACK_LONG);
+                return TextKey.STAT_MODEL_ATTACK_LONG;
             case DEFENSE_STAT:
-                return (TextKey.STAT_MODEL_DEFENSE_LONG);
+                return TextKey.STAT_MODEL_DEFENSE_LONG;
             case SPEED_STAT:
-                return (TextKey.STAT_MODEL_SPEED_LONG);
+                return TextKey.STAT_MODEL_SPEED_LONG;
             case VITALITY_STAT:
-                return (TextKey.STAT_MODEL_VITALITY_LONG);
+                return TextKey.STAT_MODEL_VITALITY_LONG;
             case WISDOM_STAT:
-                return (TextKey.STAT_MODEL_WISDOM_LONG);
+                return TextKey.STAT_MODEL_WISDOM_LONG;
             case DEXTERITY_STAT:
-                return (TextKey.STAT_MODEL_DEXTERITY_LONG);
+                return TextKey.STAT_MODEL_DEXTERITY_LONG;
             case LUCK_STAT:
-                return (TextKey.STAT_MODEL_LUCK_LONG);
+                return TextKey.STAT_MODEL_LUCK_LONG;
             case MIGHT_STAT:
-                return (TextKey.STAT_MODEL_MIGHT_LONG);
+                return TextKey.STAT_MODEL_MIGHT_LONG;
             case RESTORATION_STAT:
-                return (TextKey.STAT_MODEL_RESTORATION_LONG);
+                return TextKey.STAT_MODEL_RESTORATION_LONG;
             case PROTECTION_STAT:
-                return (TextKey.STAT_MODEL_PROTECTION_LONG);
+                return TextKey.STAT_MODEL_PROTECTION_LONG;
             case FORTUNE:
-                return (TextKey.STAT_MODEL_FORTUNE_LONG);
+                return TextKey.STAT_MODEL_FORTUNE_LONG;
         }
         return (TextKey.STAT_DATA_UNKNOWN_STAT);
     }
 
+    public static function statToPlayerValues(statId:int, player:Player) : Vector.<int> {
+        switch (statId) {
+            case MAX_HP_STAT:
+                return new <int>[player.maxHP_, player.maxHPBoost_, player.maxHPMax_];
+            case MAX_MP_STAT:
+                return new <int>[player.maxMP_, player.maxMPBoost_, player.maxMPMax_];
+            case ATTACK_STAT:
+                return new <int>[player.attack_, player.attackBoost_, player.attackMax_];
+            case DEFENSE_STAT:
+                return new <int>[player.defense_, player.defenseBoost_, player.defenseMax_];
+            case SPEED_STAT:
+                return new <int>[player.speed_, player.speedBoost_, player.speedMax_];
+            case VITALITY_STAT:
+                return new <int>[player.vitality_, player.vitalityBoost_, player.vitalityMax_];
+            case WISDOM_STAT:
+                return new <int>[player.wisdom_, player.wisdomBoost_, player.wisdomMax_];
+            case DEXTERITY_STAT:
+                return new <int>[player.dexterity_, player.dexterityBoost_, player.dexterityMax_];
+            case LUCK_STAT:
+                return new <int>[player.luck_, player.luckBoost_, player.luckMax_];
+            case MIGHT_STAT:
+                return new <int>[player.might_, player.mightBoost_, player.mightMax_];
+            case RESTORATION_STAT:
+                return new <int>[player.restoration_, player.restorationBoost_, player.restorationMax_];
+            case PROTECTION_STAT:
+                return new <int>[player.protection_, player.protectionBoost_, player.protectionMax_];
+            default:
+                return null;
+        }
+    }
 
     public function isStringStat():Boolean {
         switch (this.statType_) {
@@ -213,38 +231,36 @@ public class StatData {
             case ACCOUNT_ID_STAT:
             case OWNER_ACCOUNT_ID_STAT:
             case EFFECT:
-                return (true);
+                return true;
         }
-        return (false);
+        return false;
     }
 
-    public function parseFromInput(_arg1:IDataInput):void {
-        this.statType_ = _arg1.readUnsignedByte();
+    public function parseFromInput(input:IDataInput):void {
+        this.statType_ = input.readUnsignedByte();
         if (!this.isStringStat()) {
-            this.statValue_ = _arg1.readInt();
+            this.statValue_ = input.readInt();
         }
         else {
-            this.strStatValue_ = _arg1.readUTF();
+            this.strStatValue_ = input.readUTF();
         }
     }
 
-    public function writeToOutput(_arg1:IDataOutput):void {
-        _arg1.writeByte(this.statType_);
+    public function writeToOutput(output:IDataOutput):void {
+        output.writeByte(this.statType_);
         if (!this.isStringStat()) {
-            _arg1.writeInt(this.statValue_);
+            output.writeInt(this.statValue_);
         }
         else {
-            _arg1.writeUTF(this.strStatValue_);
+            output.writeUTF(this.strStatValue_);
         }
     }
 
     public function toString():String {
         if (!this.isStringStat()) {
-            return ((((("[" + this.statType_) + ": ") + this.statValue_) + "]"));
+            return "[" + this.statType_ + ": " + this.statValue_ + "]";
         }
-        return ((((("[" + this.statType_) + ': "') + this.strStatValue_) + '"]'));
+        return "[" + this.statType_ + ': "' + this.strStatValue_ + '"]';
     }
-
-
 }
 }

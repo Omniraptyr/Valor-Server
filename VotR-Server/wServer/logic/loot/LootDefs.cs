@@ -252,7 +252,7 @@ namespace wServer.logic.loot
                 //You have a 25% chance to get ANOTHER attack or wisdom eon
                 new OnlyOne(
                     new ItemLoot("Attack Eon", 0.25),
-                    new ItemLoot("Wisdom Eon", 0/25)
+                    new ItemLoot("Wisdom Eon", 0.25)
                 ),
                 //High chance to get 2 cloth
                 new OnlyOne(
@@ -310,8 +310,8 @@ namespace wServer.logic.loot
                 ),
                 //Whole Sor Crystal
                 new OnlyOne(
-                    new ItemLoot("Legendary Sor Crystal", 0.50),
-                    new ItemLoot("Ultimate Onrane Cache", 0.50)
+                    new ItemLoot("Legendary Sor Crystal", 0.15),
+                    new ItemLoot("Ultimate Onrane Cache", 0.33)
                 ),
                 //certain fabled item
                new OnlyOne(
@@ -393,7 +393,7 @@ namespace wServer.logic.loot
                     new ItemLoot("Ring of Dark Retribution", 0.8)
                     ),
                new OnlyOne(
-                    new ItemLoot("Large Sor Fragment", 0.5)
+                    new ItemLoot("Large Sor Fragment", 0.25)
                 )
             };
         }
@@ -409,7 +409,6 @@ namespace wServer.logic.loot
                     new ItemLoot("Stonepraise Tome", 0.75),
                     new ItemLoot("Realitytaker Orb", 0.75),
                     new ItemLoot("Evisceration Claws", 0.75),
-                    new ItemLoot("Titanic Bracelet", 0.75),
                     new ItemLoot("Heatblast Trap", 0.75),
                     new ItemLoot("Royalty Bow", 0.75),
                     new ItemLoot("Banner of Revenge", 0.75),
@@ -422,9 +421,10 @@ namespace wServer.logic.loot
                     new ItemLoot("Twisted Amulet", 0.75),
                     new ItemLoot("The Twisted Axe", 0.75),
                     new ItemLoot("Hunter Necklace", 0.75),
-                    new ItemLoot("Corruption Spell", 0.75)
+                    new ItemLoot("Corruption Spell", 0.75),
+                    new ItemLoot("Titanic Bracelet", 0.75)
                 ),
-                //Have another chance to get fabled iten
+                //Have another chance to get fabled item
                 new OnlyOne(
                     new ItemLoot("Bloodwell", 0.50),
                     new ItemLoot("Lavos Armor", 0.50),
@@ -432,7 +432,6 @@ namespace wServer.logic.loot
                     new ItemLoot("Stonepraise Tome", 0.50),
                     new ItemLoot("Realitytaker Orb", 0.50),
                     new ItemLoot("Evisceration Claws", 0.50),
-                    new ItemLoot("Titanic Bracelet", 0.50),
                     new ItemLoot("Heatblast Trap", 0.50),
                     new ItemLoot("Royalty Bow", 0.50),
                     new ItemLoot("Banner of Revenge", 0.50),
@@ -445,7 +444,8 @@ namespace wServer.logic.loot
                     new ItemLoot("Twisted Amulet", 0.50),
                     new ItemLoot("The Twisted Axe", 0.50),
                     new ItemLoot("Hunter Necklace", 0.50),
-                    new ItemLoot("Corruption Spell", 0.50)
+                    new ItemLoot("Corruption Spell", 0.50),
+                    new ItemLoot("Titanic Bracelet", 0.50)
                 ),
                 //You have a 100% chance to get attack or wisdom eon
                 new OnlyOne(
@@ -458,7 +458,7 @@ namespace wServer.logic.loot
                     new ItemLoot("Vitality Eon", 1)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Medium Sor Fragment", 0.5)
+                    new ItemLoot("Medium Sor Fragment", 0.1)
                 )
             };
         }

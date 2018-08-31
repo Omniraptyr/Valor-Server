@@ -20,11 +20,11 @@ namespace wServer.networking.handlers
             switch (packet.lootboxType)
             {
                 case 1:
-                    if(player.Lootbox1 >= 1)
+                    if(player.BronzeLootbox >= 1)
                     {
-                        player.Client.Manager.Database.UpdateLootbox1(acc, -1);
-                        player.Lootbox1 -= 1;
-                        player.ForceUpdate(player.Lootbox1);
+                        player.Client.Manager.Database.UpdateBronzeLootbox(acc, -1);
+                        player.BronzeLootbox -= 1;
+                        player.ForceUpdate(player.BronzeLootbox);
                         player.Unbox(1);
                     }
                     else
@@ -33,11 +33,11 @@ namespace wServer.networking.handlers
                     }
                     break;
                 case 2:
-                    if (player.Lootbox2 >= 1)
+                    if (player.SilverLoootbox >= 1)
                     {
-                        player.Client.Manager.Database.UpdateLootbox2(acc, -1);
-                        player.Lootbox2 -= 1;
-                        player.ForceUpdate(player.Lootbox2);
+                        player.Client.Manager.Database.UpdateSilverLootbox(acc, -1);
+                        player.SilverLoootbox -= 1;
+                        player.ForceUpdate(player.SilverLoootbox);
                         player.Unbox(2);
                     }
                     else
@@ -46,11 +46,11 @@ namespace wServer.networking.handlers
                     }
                     break;
                 case 3:
-                    if (player.Lootbox3 >= 1)
+                    if (player.GoldLootbox >= 1)
                     {
-                        player.Client.Manager.Database.UpdateLootbox3(acc, -1);
-                        player.Lootbox3 -= 1;
-                        player.ForceUpdate(player.Lootbox3);
+                        player.Client.Manager.Database.UpdateGoldLootbox(acc, -1);
+                        player.GoldLootbox -= 1;
+                        player.ForceUpdate(player.GoldLootbox);
                         player.Unbox(3);
                     }
                     else
@@ -59,14 +59,14 @@ namespace wServer.networking.handlers
                     }
                     break;
                 case 4:
-                    if (player.Lootbox4 >= 1 && player.Onrane >= 5)
+                    if (player.EliteLootbox >= 1 && player.Onrane >= 5)
                     {
-                        player.Client.Manager.Database.UpdateLootbox4(acc, -1);
+                        player.Client.Manager.Database.UpdateEliteLootbox(acc, -1);
                         player.Client.Manager.Database.UpdateOnrane(acc, -5);
-                        player.Lootbox4 -= 1;
+                        player.EliteLootbox -= 1;
                         player.Onrane = player.Client.Account.Onrane - 5;
                         player.ForceUpdate(player.Onrane);
-                        player.ForceUpdate(player.Lootbox4);
+                        player.ForceUpdate(player.EliteLootbox);
                         player.Unbox(4);
                     }
                     else

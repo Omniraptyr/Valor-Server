@@ -1,16 +1,13 @@
 package kabam.rotmg.market.ui
 {
 import com.company.assembleegameclient.screens.TitleMenuOption;
-import kabam.rotmg.market.ui.MarketCreateOfferScreen;
-import kabam.rotmg.market.ui.MarketMyOffersScreen;
-
 
 import flash.display.Sprite;
 import flash.text.TextFieldAutoSize;
+
 import flashx.textLayout.formats.VerticalAlign;
 
 import kabam.rotmg.account.core.view.EmptyFrame;
-
 import kabam.rotmg.pets.view.components.DialogCloseButton;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;

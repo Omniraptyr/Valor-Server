@@ -15,7 +15,6 @@ import flash.display.BitmapData;
 import flash.filters.DropShadowFilter;
 import flash.geom.ColorTransform;
 
-import kabam.rotmg.assets.services.IconFactory;
 import kabam.rotmg.core.model.PlayerModel;
 import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
@@ -24,7 +23,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 public class ClassToolTip extends ToolTip {
 
-    private static const unlockReqCT = new ColorTransform(0, 0, 0, 0.5, 0, 0, 0, 0);
+    private static const unlockReqCT:ColorTransform = new ColorTransform(0, 0, 0, 0.5, 0, 0, 0, 0);
 
     private var portrait_:Bitmap;
     private var nameText_:TextFieldDisplayConcrete;
@@ -34,14 +33,11 @@ public class ClassToolTip extends ToolTip {
     private var toUnlockText_:TextFieldDisplayConcrete;
     private var unlockText_:TextFieldDisplayConcrete;
     private var nextClassQuest_:TextFieldDisplayConcrete;
-    private var costText_:TextFieldDisplayConcrete;
-    private var coinBitmap_:Bitmap;
     private var showUnlockRequirements:Boolean;
 
     public function ClassToolTip(_arg1:XML, _arg2:PlayerModel, _arg3:CharacterStats) {
         var _local8:AppendingLineBuilder;
         var _local9:XML;
-        var _local10:BitmapData;
         var _local11:int;
         var _local12:int;
         var _local13:int;
@@ -95,14 +91,6 @@ public class ClassToolTip extends ToolTip {
             this.unlockText_.filters = [new DropShadowFilter(0, 0, 0)];
             waiter.push(this.unlockText_.textChanged);
             addChild(this.unlockText_);
-            this.costText_ = new TextFieldDisplayConcrete().setSize(13).setColor(0xFF00);
-            this.costText_.setStringBuilder(new LineBuilder().setParams(TextKey.OR_BUY_NOW, {"unlockCost": _arg1.UnlockCost}));
-            this.costText_.filters = [new DropShadowFilter(0, 0, 0)];
-            waiter.push(this.costText_.textChanged);
-            addChild(this.costText_);
-            _local10 = IconFactory.makeCoin();
-            this.coinBitmap_ = new Bitmap(_local10);
-            addChild(this.coinBitmap_);
         }
         else {
             _local13 = (((_arg3 == null)) ? 0 : _arg3.numStars());
@@ -146,10 +134,6 @@ public class ClassToolTip extends ToolTip {
             this.toUnlockText_.y = (height - 2);
             this.unlockText_.x = 12;
             this.unlockText_.y = (height - 4);
-            this.costText_.x = 12;
-            this.costText_.y = (height - 4);
-            this.coinBitmap_.y = (this.costText_.y - 2);
-            this.coinBitmap_.x = ((this.costText_.x + this.costText_.getBounds(this.costText_).width) + 4);
         }
         else {
             this.bestLevel_.x = 8;

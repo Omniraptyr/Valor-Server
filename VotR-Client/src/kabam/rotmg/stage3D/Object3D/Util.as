@@ -21,7 +21,7 @@ public class Util {
 
     public static function readString(_arg1:ByteArray, _arg2:int):String {
         var _local5:uint;
-        var _local3 = "";
+        var _local3:String = "";
         var _local4:int;
         while (_local4 < _arg2) {
             _local5 = _arg1.readUnsignedByte();

@@ -29,7 +29,7 @@ public class SoundIcon extends Sprite {
     }
 
     private function onIconClick(_arg1:MouseEvent):void {
-        var _local2 = !(((Parameters.data_.playMusic) || (Parameters.data_.playSFX)));
+        var _local2:Boolean = !(((Parameters.data_.playMusic) || (Parameters.data_.playSFX)));
         Music.setPlayMusic(_local2);
         SFX.setPlaySFX(_local2);
         Parameters.data_.playPewPew = _local2;

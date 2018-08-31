@@ -115,7 +115,7 @@ public class KeyCodeBox extends Sprite {
 
     private function onInputEnterFrame(_arg1:Event):void {
         var _local2:int = (getTimer() / 400);
-        var _local3 = ((_local2 % 2) == 0);
+        var _local3:Boolean = ((_local2 % 2) == 0);
         if (_local3) {
             this.setText(new StaticStringBuilder(""));
         }

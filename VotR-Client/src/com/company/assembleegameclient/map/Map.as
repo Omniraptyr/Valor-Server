@@ -326,10 +326,7 @@ public class Map extends AbstractMap {
         var rect:Rectangle = camera.clipRect_;
         x = -rect.x;
         y = -rect.y;
-        var sy:Number = (-rect.y - rect.height / 2) / 50;
-        var plrPos:Point = new Point(
-                camera.x_ + sy * Math.cos(camera.angleRad_ - Math.PI / 2),
-                camera.y_ + sy * Math.sin(camera.angleRad_ - Math.PI / 2));
+        var plrPos:Point = this.correctMapView(camera);
 
         if (background_ != null) {
             background_.draw(camera, currentTime);
@@ -476,17 +473,17 @@ public class Map extends AbstractMap {
             var fIndex:uint = this.getFilterIndex();
             var r3d:Render3D = StaticInjectorContext.getInjector().getInstance(Render3D);
             r3d.dispatch(this.graphicsData_, this.graphicsData3d_, width_, height_, camera, fIndex);
-            for (var i:int = 0; i < this.graphicsData_.length; i++) {
-                if (this.graphicsData_[i] is GraphicsBitmapFill && GraphicsFillExtra.isSoftwareDraw(GraphicsBitmapFill(this.graphicsData_[i]))) {
-                    this.graphicsDataStageSoftware_.push(this.graphicsData_[i]);
-                    this.graphicsDataStageSoftware_.push(this.graphicsData_[i + 1]);
-                    this.graphicsDataStageSoftware_.push(this.graphicsData_[i + 2]);
+            for (var k:int = 0; k < this.graphicsData_.length; k++) {
+                if (this.graphicsData_[k] is GraphicsBitmapFill && GraphicsFillExtra.isSoftwareDraw(GraphicsBitmapFill(this.graphicsData_[k]))) {
+                    this.graphicsDataStageSoftware_.push(this.graphicsData_[k]);
+                    this.graphicsDataStageSoftware_.push(this.graphicsData_[k + 1]);
+                    this.graphicsDataStageSoftware_.push(this.graphicsData_[k + 2]);
                 }
                 else {
-                    if (this.graphicsData_[i] is GraphicsSolidFill && GraphicsFillExtra.isSoftwareDrawSolid(GraphicsSolidFill(this.graphicsData_[i]))) {
-                        this.graphicsDataStageSoftware_.push(this.graphicsData_[i]);
-                        this.graphicsDataStageSoftware_.push(this.graphicsData_[i + 1]);
-                        this.graphicsDataStageSoftware_.push(this.graphicsData_[i + 2]);
+                    if (this.graphicsData_[k] is GraphicsSolidFill && GraphicsFillExtra.isSoftwareDrawSolid(GraphicsSolidFill(this.graphicsData_[k]))) {
+                        this.graphicsDataStageSoftware_.push(this.graphicsData_[k]);
+                        this.graphicsDataStageSoftware_.push(this.graphicsData_[k + 1]);
+                        this.graphicsDataStageSoftware_.push(this.graphicsData_[k + 2]);
                     }
                 }
             }
@@ -546,6 +543,17 @@ public class Map extends AbstractMap {
                 removeChild(this.darkness);
             }
         }
+    }
+
+    public function correctMapView(camera:Camera):Point {
+        var clipRect:Rectangle = camera.clipRect_;
+        x = -clipRect.x * 800 / WebMain.sWidth;
+        y = -clipRect.y * 600 / WebMain.sHeight;
+        var rectX:Number = (-clipRect.x - clipRect.width / 2) / 50;
+        var rectY:Number = (-clipRect.y - clipRect.height / 2) / 50;
+        var dist:Number = Math.sqrt(rectX * rectX + rectY * rectY);
+        var angle:Number = camera.angleRad_ - Math.PI / 2 - Math.atan2(rectX, rectY);
+        return new Point(camera.x_ + dist * Math.cos(angle), camera.y_ + dist * Math.sin(angle));
     }
 
     private function getFilterIndex():uint {

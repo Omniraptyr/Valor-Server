@@ -11,16 +11,13 @@ namespace wServer.networking.handlers
     {
         public override PacketId ID => PacketId.PLAYERHIT;
 
-        protected override void HandlePacket(Client client, PlayerHit packet)
-        {
+        protected override void HandlePacket(Client client, PlayerHit packet) {
             client.Manager.Logic.AddPendingAction(t => Handle(client, t, packet.ObjectId, packet.BulletId));
         }
 
-        private void Handle(Client client, RealmTime time, int objectId, byte bulletId)
-        {
+        private static void Handle(Client client, RealmTime time, int objectId, byte bulletId) {
             var player = client.Player;
-            if (client.Player.Owner.PvP != true)
-            {   
+            if (client.Player.Owner.PvP != true) {
                 if (player?.Owner == null)
                     return;
 
@@ -32,30 +29,23 @@ namespace wServer.networking.handlers
                         .Where(p => p.Value.ProjectileOwner.Self.Id == objectId)
                         .SingleOrDefault(p => p.Value.ProjectileId == bulletId).Value;
 
-                player.verifyDamage2 = ((IProjectileOwner)entity).Projectiles[bulletId].Damage;
-
-                if (player.CheckDRage())
-                {
+                if (player.CheckDRage()) {
                     //Drannol Rage Passive
                     player.ApplyConditionEffect(ConditionEffectIndex.GraspofZol, 2000 + (player.Surge * 20));
                 }
 
-                if (player.CheckAnguish())
-                {
+                if (entity != null && prj != null && player.CheckAnguish()) {
                     //Drannol Rage Passive 2
-                    ((Enemy)entity).Damage(player, time, player.verifyDamage2 / 2, false);
+                    ((Enemy)entity).Damage(player, time, prj.Damage / 2, false);
                 }
 
-                if (player.CheckFRage() && new Random().Next(1, 6) == 1)
-                {
+                if (prj != null && player.CheckFRage() && new Random().NextDouble() <= 0.17) {
                     //Titan's Wrath
                     player.HP += prj.ProjDesc.MinDamage / 2;
                 }
 
                 prj?.ForceHit(player, time);
-            }
-            else
-            {
+            } else {
                 if (player?.Owner == null)
                     return;
 
@@ -67,7 +57,6 @@ namespace wServer.networking.handlers
 
                 prj?.ForceHit(entity, time);
             }
-
         }
     }
 }

@@ -25,7 +25,7 @@ public class EggHatchedDialog extends Sprite {
     public const closed:Signal = new Signal();
 
     private var EggHatchImage:Class;
-    var skinType:int;
+    internal var skinType:int;
     private var petBitmap:Bitmap;
     private var petName:String;
 

@@ -33,9 +33,9 @@ public class DateValidator {
     }
 
     public function isLeapYear(_arg1:int):Boolean {
-        var _local2 = ((_arg1 % 4) == 0);
-        var _local3 = ((_arg1 % 100) == 0);
-        var _local4 = ((_arg1 % 400) == 0);
+        var _local2:Boolean = ((_arg1 % 4) == 0);
+        var _local3:Boolean = ((_arg1 % 100) == 0);
+        var _local4:Boolean = ((_arg1 % 400) == 0);
         return (((_local2) && (((!(_local3)) || (_local4)))));
     }
 

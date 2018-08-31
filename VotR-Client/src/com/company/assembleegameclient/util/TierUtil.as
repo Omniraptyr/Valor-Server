@@ -3,8 +3,8 @@ package com.company.assembleegameclient.util
 import com.company.assembleegameclient.misc.DefaultLabelFormat;
 import com.company.assembleegameclient.misc.UILabel;
 import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
-   
-   public class TierUtil
+
+public class TierUtil
    {
        
       

@@ -18,8 +18,8 @@ public class PetInteractionPanel extends Panel {
     private var fuseButtonString:String = "Pets.petInteractionPanelFusePetButton";
     private var feedPetText:String = "Pets.petInteractionPanelFeedPetButton";
     private var objectType:int;
-    var feedButton:DeprecatedTextButton;
-    var fuseButton:DeprecatedTextButton;
+    internal var feedButton:DeprecatedTextButton;
+    internal var fuseButton:DeprecatedTextButton;
 
     public function PetInteractionPanel(_arg1:GameSprite, _arg2:int) {
         super(_arg1);

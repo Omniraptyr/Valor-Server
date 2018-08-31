@@ -29,7 +29,7 @@ public class QueueMediator extends Mediator {
         this.view.remove();
     }
     
-    private function onUpdate(pos:int, cnt:int) {
+    private function onUpdate(pos:int, cnt:int) : void {
         this.view.update(pos, cnt);
     }
 

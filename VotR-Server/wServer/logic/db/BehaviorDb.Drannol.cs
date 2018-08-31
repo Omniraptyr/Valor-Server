@@ -939,17 +939,12 @@ namespace wServer.logic
                         )
                     )
                 ),
-                    new Threshold(0.05,
-                       new TierLoot(11, ItemType.Weapon, 0.08),
-                       new TierLoot(4, ItemType.Ability, 0.07),
-                       new TierLoot(6, ItemType.Ability, 0.05),
-                       new TierLoot(13, ItemType.Armor, 0.06),
-                       new TierLoot(6, ItemType.Ring, 0.06),
+                    new Threshold(0.1,
                        new ItemLoot("Onrane Cache", 0.025),
                        new ItemLoot("Onrane", 0.045),
                        new ItemLoot("1000 Gold", 0.050),
-                       new ItemLoot("Greater Potion of Life", 0.5),
-                       new ItemLoot("Potion of Speed", 0.5)
+                       new ItemLoot("Vial of Life", 0.5),
+                       new ItemLoot("Vial of Speed", 0.5)
                        )
             )
             .Init("BD Axeman of Drannol",
@@ -2220,19 +2215,15 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SF3()
                     ),
-                    new Threshold(0.04,
-                       new TierLoot(12, ItemType.Weapon, 0.08),
-                       new TierLoot(5, ItemType.Ability, 0.07),
-                       new TierLoot(6, ItemType.Ability, 0.05),
-                       new TierLoot(13, ItemType.Armor, 0.06),
+                    new Threshold(0.1,
                        new TierLoot(7, ItemType.Ring, 0.06),
-                       new ItemLoot("Onrane Cache", 0.90),
-                       new ItemLoot("Gold Cache", 0.050),
-                       new ItemLoot("Potion of Life", 1),
-                       new ItemLoot("Greater Potion of Protection", 1),
-                       new ItemLoot("Greater Potion of Vitality", 1),
-                       new ItemLoot("Greater Potion of Defense", 1),
-                       new ItemLoot("Potion of Attack", 1)
+                       new ItemLoot("Onrane Cache", 0.75),
+                       new ItemLoot("Gold Cache", 0.33),
+                       new ItemLoot("Vial of Life", 1),
+                       new ItemLoot("Vial of Protection", 1),
+                       new ItemLoot("Vial of Vitality", 1),
+                       new ItemLoot("Vial of Defense", 1),
+                       new ItemLoot("Vial of Attack", 1)
                        )
             )
                 .Init("BD Portal Spawner 2",
@@ -2248,21 +2239,17 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.FabledItemsLoot2B()
                 ),
-                new Threshold(0.04,
-                    new TierLoot(12, ItemType.Weapon, 0.08),
-                    new TierLoot(5, ItemType.Ability, 0.07),
-                    new TierLoot(6, ItemType.Ability, 0.05),
-                    new TierLoot(13, ItemType.Armor, 0.06),
+                new Threshold(0.1,
                     new TierLoot(7, ItemType.Ring, 0.08),
-                    new ItemLoot("Sor Fragment Cache", 0.25),
-                    new ItemLoot("Onrane Cache", 0.5),
-                    new ItemLoot("Greater Potion of Protection", 0.4),
-                    new ItemLoot("Potion of Defense", 0.4),
-                    new ItemLoot("Greater Potion of Attack", 0.4),
-                    new ItemLoot("Greater Potion of Might", 0.4),
-                    new ItemLoot("Potion of Vitality", 0.4),
-                    new ItemLoot("Potion of Luck", 0.4),
-                    new ItemLoot("Potion of Mana", 0.4)
+                    new ItemLoot("Sor Fragment Cache", 0.1),
+                    new ItemLoot("Onrane Cache", 0.25),
+                    new ItemLoot("Vial of Protection", 0.4),
+                    new ItemLoot("Vial of Defense", 0.4),
+                    new ItemLoot("Vial of Attack", 0.4),
+                    new ItemLoot("Vial of Might", 0.4),
+                    new ItemLoot("Vial of Vitality", 0.4),
+                    new ItemLoot("Vial of Luck", 0.4),
+                    new ItemLoot("Vial of Mana", 0.4)
                 )
             )
             .Init("BD Berikao, the Dark Hunter",
@@ -2865,20 +2852,20 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SF3()
                     ),
-                    new Threshold(0.05,
+                    new Threshold(0.1,
                        new TierLoot(12, ItemType.Weapon, 0.08),
                        new TierLoot(5, ItemType.Ability, 0.07),
                        new TierLoot(6, ItemType.Ability, 0.05),
                        new TierLoot(13, ItemType.Armor, 0.06),
                        new TierLoot(7, ItemType.Ring, 0.06),
                        new ItemLoot("Onrane", 0.085),
-                       new ItemLoot("Onrane Cache", 0.60),
-                       new ItemLoot("Gold Cache", 0.075),
+                       new ItemLoot("Onrane Cache", 0.46),
+                       new ItemLoot("Gold Cache", 0.5),
                        new ItemLoot("100 Gold", 0.5),
-                       new ItemLoot("Greater Potion of Life", 1),
-                       new ItemLoot("Potion of Dexterity", 1),
-                       new ItemLoot("Greater Potion of Protection", 1),
-                       new ItemLoot("Greater Potion of Luck", 1)
+                       new ItemLoot("Vial of Life", 1),
+                       new ItemLoot("Vial of Dexterity", 1),
+                       new ItemLoot("Vial of Protection", 1),
+                       new ItemLoot("Vial of Luck", 1)
                        )
             )
 
@@ -3376,26 +3363,22 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SF4()
                     ),
-                new Threshold(0.05,
-                new TierLoot(12, ItemType.Weapon, 0.08),
-                new TierLoot(5, ItemType.Ability, 0.07),
-                new TierLoot(6, ItemType.Ability, 0.05),
-                new TierLoot(13, ItemType.Armor, 0.06),
+                new Threshold(0.1,
                 new TierLoot(7, ItemType.Ring, 0.08),
-                new ItemLoot("Onrane Cache", 1),
+                new ItemLoot("Onrane Cache", 0.86),
                 new ItemLoot("Onrane", 0.1),
                 new ItemLoot("Gold Cache", 1),
                 new ItemLoot("Vitality Eon", 0.1),
                 new ItemLoot("Defense Eon", 0.1),
-                new ItemLoot("Greater Potion of Protection", 1),
-                new ItemLoot("Greater Potion of Vitality", 1),
-                new ItemLoot("Greater Potion of Defense", 1),
-                new ItemLoot("Potion of Life", 1),
-                new ItemLoot("Potion of Defense", 1),
-                new ItemLoot("Potion of Attack", 0.6),
-                new ItemLoot("Potion of Dexterity", 0.5),
-                new ItemLoot("Potion of Luck", 0.5),
-                new ItemLoot("Potion of Restoration", 0.5)
+                new ItemLoot("Vial of Protection", 1),
+                new ItemLoot("Vial of Vitality", 1),
+                new ItemLoot("Vial of Defense", 1),
+                new ItemLoot("Vial of Life", 1),
+                new ItemLoot("Vial of Defense", 1),
+                new ItemLoot("Vial of Attack", 0.6),
+                new ItemLoot("Vial of Dexterity", 0.5),
+                new ItemLoot("Vial of Luck", 0.5),
+                new ItemLoot("Vial of Restoration", 0.5)
                     )
                 )
            .Init("Lin2",
@@ -3480,7 +3463,7 @@ namespace wServer.logic
                          )
                       ),
                     new State("Return1",
-                        new Taunt("You are nothing"),
+                        new Taunt("You are nothing!"),
                         new MoveTo(1, 44, 40),
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new TimedTransition(6000, "DT3")
@@ -3758,7 +3741,7 @@ namespace wServer.logic
                                     new Follow(1.4),
                                     new Wander(0.1)
                                 ),
-                            new Taunt(0.25, "Without your power orb you can't compete against my pure rage!", "You are worthless without your power orb.."),
+                            new Taunt(0.25, "Without your power orb you can't compete against my pure rage!", "You are worthless without your power orb..."),
                             new Flash(0x000000, 0.25, 4),
                             new RemoveEntity(7, "BD Spirit Orb Power"),
                             new TimedTransition(2000, "dontremove")
@@ -4173,7 +4156,7 @@ namespace wServer.logic
                             new TimedTransition(4000, "suicide")
                             ),
                          new State("suicide",
-                            new AnnounceOnDeath("An eternal threat has finally been sealed for another millenia.."),
+                            new AnnounceOnDeath("An eternal threat has finally been sealed for another millenia..."),
                             new Suicide()
                             )
                         ),
@@ -4181,7 +4164,7 @@ namespace wServer.logic
                          new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new State("FAILED",
                             new Flash(0xFF0000, 0.25, 6),
-                            new Taunt("Finally, the seal has been broken..Now you will all suffer!"),
+                            new Taunt("Finally, the seal has been broken... Now you will all suffer!"),
                             new TimedTransition(6000, "byebye")
                             ),
                         new State("byebye",
@@ -4199,30 +4182,25 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.SF4()
                     ),
-                new Threshold(0.002,
-                    new TierLoot(12, ItemType.Weapon, 0.08),
-                    new TierLoot(5, ItemType.Ability, 0.07),
-                    new TierLoot(6, ItemType.Ability, 0.05),
-                    new TierLoot(13, ItemType.Armor, 0.06),
+                new Threshold(0.004,
                     new TierLoot(7, ItemType.Ring, 0.08),
                     new ItemLoot("Drannol's Judgement", 0.007),
-                    new ItemLoot("Greater Potion of Might", 0.5),
-                    new ItemLoot("Greater Potion of Luck", 0.5),
-                    new ItemLoot("Greater Potion of Protection", 0.5),
-                    new ItemLoot("Greater Potion of Life", 0.5),
-                    new ItemLoot("Greater Potion of Mana", 0.5),
-                    new ItemLoot("Ultimate Onrane Cache", 1),
-                    new ItemLoot("10000 Gold", 0.50),
-                    new ItemLoot("Large Sor Fragment", 0.50),
-                    new ItemLoot("Medium Sor Fragment", 0.50),
-                    new ItemLoot("Gold Cache", 0.50),
-                    new ItemLoot("Potion of Life", 1),
-                    new ItemLoot("Potion of Defense", 1),
-                    new ItemLoot("Potion of Attack", 0.6),
-                    new ItemLoot("Potion of Dexterity", 0.5),
-                    new ItemLoot("Potion of Vitality", 0.5),
-                    new ItemLoot("Potion of Speed", 0.5),
-                    new ItemLoot("Potion of Mana", 0.5)
+                    new ItemLoot("Ultimate Onrane Cache", 0.75),
+                    new ItemLoot("10000 Gold", 0.25),
+                    new ItemLoot("Large Sor Fragment", 0.066),
+                    new ItemLoot("Medium Sor Fragment", 0.15),
+                    new ItemLoot("Gold Cache", 0.75),
+                    new ItemLoot("Vial of Life", 1),
+                    new ItemLoot("Vial of Defense", 1),
+                    new ItemLoot("Vial of Attack", 0.6),
+                    new ItemLoot("Vial of Dexterity", 0.5),
+                    new ItemLoot("Vial of Vitality", 0.5),
+                    new ItemLoot("Vial of Speed", 0.5),
+                    new ItemLoot("Vial of Mana", 0.5),
+                    new ItemLoot("Vial of Might", 0.5),
+                    new ItemLoot("Vial of Luck", 0.5),
+                    new ItemLoot("Vial of Restoration", 0.5),
+                    new ItemLoot("Vial of Protection", 0.5)
                 )
             )
 ;

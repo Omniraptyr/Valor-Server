@@ -24,7 +24,7 @@ public class RingEffect extends ParticleEffect {
         y_ = this.start_.y;
         var _local3:int;
         var _local4:int = 12;
-        var _local5 = 200;
+        var _local5:int = 200;
         var _local6:int;
         while (_local6 < _local4) {
             _local7 = (((_local6 * 2) * Math.PI) / _local4);

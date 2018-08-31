@@ -35,7 +35,7 @@ public class DomainModel {
     private function isLocalDomainInWhiteList():Boolean {
         var _local3:String;
         var _local1:String = this.getLocalDomain();
-        var _local2 = (_local1 == this.LOCALHOST);
+        var _local2:Boolean = (_local1 == this.LOCALHOST);
         for each (_local3 in this.WHITELIST) {
             _local2 = ((_local2) || ((_local1 == _local3)));
         }

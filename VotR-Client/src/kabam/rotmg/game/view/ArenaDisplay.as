@@ -1,26 +1,22 @@
 package kabam.rotmg.game.view
 {
+import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.AssetLibrary;
 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
 import flash.display.Sprite;
-
-   import flash.display.Bitmap;
-   import flash.display.BitmapData;
-   import com.company.assembleegameclient.game.GameSprite;
-   import flash.events.MouseEvent;
-   import flash.geom.Rectangle;
-   import com.company.assembleegameclient.util.TextureRedrawer;
-   import flash.filters.DropShadowFilter;
+import flash.events.MouseEvent;
+import flash.filters.DropShadowFilter;
+import flash.geom.Rectangle;
 
 import kabam.rotmg.core.signals.HideTooltipsSignal;
-
 import kabam.rotmg.core.signals.ShowTooltipSignal;
-
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.tooltips.HoverTooltipDelegate;
-
 import kabam.rotmg.tooltips.TooltipAble;
 import kabam.rotmg.ui.UIUtils;
 
@@ -121,17 +117,14 @@ public class ArenaDisplay extends Sprite implements TooltipAble
 }
 
 import com.company.assembleegameclient.game.AGameSprite;
-
 import com.company.assembleegameclient.ui.menu.Menu;
-
 import com.company.assembleegameclient.ui.menu.MenuOption;
-
 import com.company.util.AssetLibrary;
-import flash.events.MouseEvent;
+
 import flash.events.Event;
+import flash.events.MouseEvent;
 
 import kabam.rotmg.chat.control.ShowChatInputSignal;
-
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.game.view.ArenaInfoItem;
 import kabam.rotmg.game.view.GlobalArenaInformation;

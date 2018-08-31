@@ -1,5 +1,4 @@
 package kabam.rotmg.assets.services {
-import com.company.assembleegameclient.map.GroundLibrary;
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.objects.TextureDataConcrete;
 
@@ -9,11 +8,11 @@ import flash.utils.ByteArray;
 import flash.utils.Dictionary;
 import flash.utils.IDataInput;
 
+import ion.utils.png.PNGDecoder;
+
 import kabam.lib.tasks.BaseTask;
 import kabam.rotmg.appengine.api.AppEngineClient;
 import kabam.rotmg.core.signals.SetLoadingMessageSignal;
-
-import ion.utils.png.PNGDecoder;
 
 public class RequestEmbeddedAssetsTask extends BaseTask {
     

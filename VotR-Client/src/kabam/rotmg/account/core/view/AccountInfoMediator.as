@@ -21,7 +21,7 @@ public class AccountInfoMediator extends Mediator {
         this.update.add(this.updateLogin);
     }
 
-    private function updateDisplayName() {
+    private function updateDisplayName() : void {
         var _local1:WebAccount;
         if ((this.account is WebAccount)) {
             _local1 = (this.account as WebAccount);

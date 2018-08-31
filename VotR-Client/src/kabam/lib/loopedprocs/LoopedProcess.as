@@ -20,7 +20,7 @@ public class LoopedProcess {
         if (loopProcs[_arg1.id] == _arg1) {
             return (_arg1.id);
         }
-        var _local2 = ++maxId;
+        var _local2:int = ++maxId;
         loopProcs[_local2] = _arg1;
         _arg1.lastRun = getTimer();
         return (maxId);

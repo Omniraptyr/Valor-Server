@@ -32,7 +32,7 @@ public class NewsView extends Sprite {
         this.cellThree.y = (this.LARGE_CELL_HEIGHT + this.SPACER);
     }
 
-    function update(_arg1:Vector.<NewsCellVO>):void {
+    internal function update(_arg1:Vector.<NewsCellVO>):void {
         this.cellOne.init(_arg1[0]);
         this.cellTwo.init(_arg1[1]);
         this.cellThree.init(_arg1[2]);

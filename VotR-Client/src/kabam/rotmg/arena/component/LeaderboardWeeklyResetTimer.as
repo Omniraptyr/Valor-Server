@@ -44,7 +44,7 @@ public class LeaderboardWeeklyResetTimer extends Sprite {
         var _local4:int = Math.floor((_local1 / 60000));
         _local1 = (_local1 % 60000);
         var _local5:int = Math.floor((_local1 / 1000));
-        var _local6 = "";
+        var _local6:String = "";
         if (_local2 > 0) {
             _local6 = (((((_local2 + " days, ") + _local3) + " hours, ") + _local4) + " minutes");
         }

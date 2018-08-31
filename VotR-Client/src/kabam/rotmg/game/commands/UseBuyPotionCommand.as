@@ -51,7 +51,7 @@ public class UseBuyPotionCommand {
     }
 
     private function canPurchasePotion():Boolean {
-        var _local1 = (this.player.credits_ >= this.potion.currentCost(this.player.getPotionCount(this.potionId)));
+        var _local1:Boolean = (this.player.credits_ >= this.potion.currentCost(this.player.getPotionCount(this.potionId)));
         var _local2:Boolean = Parameters.data_.contextualPotionBuy;
         return (((_local1) && (_local2)));
     }

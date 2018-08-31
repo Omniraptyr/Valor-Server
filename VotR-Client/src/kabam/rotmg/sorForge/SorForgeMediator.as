@@ -1,22 +1,18 @@
 package kabam.rotmg.sorForge {
-import kabam.rotmg.messaging.impl.outgoing.SorForgeRequest;
-import kabam.rotmg.raidLauncher.*;
-
 import com.company.assembleegameclient.game.AGameSprite;
-import com.company.assembleegameclient.parameters.Parameters;
 
 import flash.events.MouseEvent;
+
 import kabam.lib.net.api.MessageProvider;
 import kabam.lib.net.impl.SocketServer;
-import kabam.rotmg.chat.model.ChatMessage;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.dialogs.control.OpenDialogNoModalSignal;
 import kabam.rotmg.game.signals.AddTextLineSignal;
 import kabam.rotmg.messaging.impl.GameServerConnection;
-import kabam.rotmg.messaging.impl.outgoing.LaunchRaid;
-import kabam.rotmg.questrewards.components.ModalItemSlot;
+import kabam.rotmg.messaging.impl.outgoing.SorForgeRequest;
+
 import org.swiftsuspenders.Injector;
-import kabam.rotmg.messaging.impl.data.SlotObjectData;
+
 import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class SorForgeMediator extends Mediator {

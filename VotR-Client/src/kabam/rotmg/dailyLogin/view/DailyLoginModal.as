@@ -54,13 +54,13 @@ public class DailyLoginModal extends Sprite {
         this.centerModal();
     }
 
-    private function addClaimButton() {
+    private function addClaimButton() : void {
         this.claimButton = new DeprecatedTextButtonStatic(16, "Go & Claim");
         this.claimButton.textChanged.addOnce(this.alignClaimButton);
         addChild(this.claimButton);
     }
 
-    public function showLegend(_arg1:Boolean) {
+    public function showLegend(_arg1:Boolean) : void {
         var _local2:Sprite;
         var _local6:Bitmap;
         var _local7:Bitmap;
@@ -106,7 +106,7 @@ public class DailyLoginModal extends Sprite {
         }
     }
 
-    private function createModalBox() {
+    private function createModalBox() : void {
         var _local1:DisplayObject = new MysteryBoxSelectModal.backgroundImageEmbed();
         this.modalRectangle.width--;
         _local1.height = (this.modalRectangle.height - 27);

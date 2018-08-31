@@ -6,7 +6,6 @@ package com.company.assembleegameclient.account.ui.Unboxing {
 import com.company.assembleegameclient.sound.SoundEffectLibrary;
 import com.company.util.GraphicsUtil;
 
-
 import flash.display.GraphicsPath;
 import flash.display.GraphicsSolidFill;
 import flash.display.IGraphicsData;

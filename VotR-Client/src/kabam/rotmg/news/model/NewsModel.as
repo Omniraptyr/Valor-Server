@@ -34,8 +34,8 @@ public class NewsModel {
         this.sortNews();
     }
 
-    private function sortNews() {
-        this.inGameNews.sort(function (_arg1:InGameNews, _arg2:InGameNews) {
+    private function sortNews() : void {
+        this.inGameNews.sort(function (_arg1:InGameNews, _arg2:InGameNews) : int {
             if (_arg1.weight > _arg2.weight) {
                 return (-1);
             }

@@ -16,8 +16,7 @@ import kabam.rotmg.servers.api.Server;
 import kabam.rotmg.servers.api.ServerModel;
 
 public class PlayGameCommand {
-
-    public static const RECONNECT_DELAY:int = 2000;
+    public static const RECONNECT_DELAY:int = 250;
 
     [Inject]
     public var setScreen:SetScreenSignal;

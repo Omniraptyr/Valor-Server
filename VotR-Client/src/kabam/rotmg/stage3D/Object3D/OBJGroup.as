@@ -6,8 +6,8 @@ public class OBJGroup {
     public var name:String;
     public var materialName:String;
     public var indexBuffer:IndexBuffer3D;
-    var _faces:Vector.<Vector.<String>>;
-    var _indices:Vector.<uint>;
+    internal var _faces:Vector.<Vector.<String>>;
+    internal var _indices:Vector.<uint>;
 
     public function OBJGroup(_arg1:String = null, _arg2:String = null) {
         this.name = _arg1;

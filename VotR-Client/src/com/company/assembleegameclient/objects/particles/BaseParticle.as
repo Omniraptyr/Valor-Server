@@ -1,7 +1,6 @@
 ﻿package com.company.assembleegameclient.objects.particles {
 import com.company.assembleegameclient.map.Camera;
 import com.company.assembleegameclient.objects.BasicObject;
-import com.company.util.CachingColorTransformer;
 import com.company.util.GraphicsUtil;
 
 import flash.display.BitmapData;

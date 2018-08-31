@@ -1,7 +1,5 @@
 package kabam.rotmg.game.commands {
 import com.company.assembleegameclient.game.AlertStatusModel;
-import com.company.assembleegameclient.game.GiftStatusModel;
-import com.company.assembleegameclient.game.MarkShopModel;
 
 import robotlegs.bender.bundles.mvcs.Command;
 

@@ -212,10 +212,10 @@ public class CharacterSkinListItem extends Sprite {
     }
 
     private function setButtonVisibilities():void {
-        var _local1 = (this.state == CharacterSkinState.OWNED);
-        var _local2 = (this.state == CharacterSkinState.PURCHASABLE);
-        var _local3 = (this.state == CharacterSkinState.PURCHASING);
-        var _local4 = (this.state == CharacterSkinState.LOCKED);
+        var _local1:Boolean = (this.state == CharacterSkinState.OWNED);
+        var _local2:Boolean = (this.state == CharacterSkinState.PURCHASABLE);
+        var _local3:Boolean = (this.state == CharacterSkinState.PURCHASING);
+        var _local4:Boolean = (this.state == CharacterSkinState.LOCKED);
         this.selectionButton.visible = _local1;
         ((this.buyButtonContainer) && ((this.buyButtonContainer.visible = _local2)));
         this.lock.visible = _local4;
@@ -271,7 +271,7 @@ public class CharacterSkinListItem extends Sprite {
         addEventListener(MouseEvent.CLICK, this.onClick);
     }
 
-    function removeEventListeners():void {
+    internal function removeEventListeners():void {
         removeEventListener(MouseEvent.CLICK, this.onClick);
     }
 

@@ -1,24 +1,11 @@
 package kabam.rotmg.game.view.components {
-import com.company.assembleegameclient.game.AlertStatusModel;
-import com.company.assembleegameclient.game.GiftStatusModel;
-import com.company.assembleegameclient.objects.Player;
-import com.company.assembleegameclient.sound.SoundEffectLibrary;
-
 import flash.events.MouseEvent;
 
 import kabam.lib.net.api.MessageProvider;
-
 import kabam.lib.net.impl.SocketServer;
-
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-
-import kabam.rotmg.game.signals.UpdateAlertStatusDisplaySignal;
-
-import kabam.rotmg.game.signals.UpdateGiftStatusDisplaySignal;
 import kabam.rotmg.messaging.impl.GameServerConnection;
-import kabam.rotmg.messaging.impl.outgoing.AlertNotice;
-import kabam.rotmg.messaging.impl.outgoing.ForgeItem;
 import kabam.rotmg.messaging.impl.outgoing.QoLAction;
 
 import org.swiftsuspenders.Injector;

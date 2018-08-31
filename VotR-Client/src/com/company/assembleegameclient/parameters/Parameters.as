@@ -11,8 +11,8 @@ import flash.utils.Dictionary;
 
 public class Parameters {
 
-    public static const BUILD_VERSION:String = "39";
-    public static const MINOR_VERSION:String = "V9";
+    public static const BUILD_VERSION:String = "37";
+    public static const MINOR_VERSION:String = "73";
     public static const FULL_BUILD:String = BUILD_VERSION + "." + MINOR_VERSION;
     public static const ENABLE_ENCRYPTION:Boolean = true;
     public static const PORT:int = 2050;
@@ -35,9 +35,9 @@ public class Parameters {
     public static const RANDOM_REALM_GAMEID:int = -3;
     public static const MAPTEST_GAMEID:int = -6;
     public static const MAX_SINK_LEVEL:Number = 18;
-    public static const TERMS_OF_USE_URL:String = "http://legal.decagames.io/tos";
-    public static const PRIVACY_POLICY_URL:String = "http://legal.decagames.io/privacy";
-    public static const USER_GENERATED_CONTENT_TERMS:String = "/UGDTermsofUse.html";
+    public static const TERMS_OF_USE_URL:String = ""; //add tos later (?)
+    public static const PRIVACY_POLICY_URL:String = ""; //add pp later (?)
+    public static const USER_GENERATED_CONTENT_TERMS:String = ""; //add tos later (?)
     public static const RANDOM1:String = "B1A5ED";
     public static const RANDOM2:String = "612a806cac78114ba5013cb531";
     public static const RSA_PUBLIC_KEY:String =
@@ -65,8 +65,7 @@ public class Parameters {
         try {
             savedOptions_ = SharedObject.getLocal("AssembleeGameClientOptions", "/");
             data_ = savedOptions_.data;
-        }
-        catch (error:Error) {
+        } catch (error:Error) {
             data_ = new Object();
         }
         setDefaults();
@@ -78,31 +77,29 @@ public class Parameters {
             if (savedOptions_ != null) {
                 savedOptions_.flush();
             }
-        }
-        catch (error:Error) {
-        }
+        } catch (error:Error) { }
     }
 
-    private static function setDefaultKey(_arg1:String, _arg2:uint):void {
-        if (!data_.hasOwnProperty(_arg1)) {
-            data_[_arg1] = _arg2;
+    private static function setDefaultKey(val:String, keyCode:uint):void {
+        if (!data_.hasOwnProperty(val)) {
+            data_[val] = keyCode;
         }
-        keyNames_[_arg1] = true;
+        keyNames_[val] = true;
     }
 
-    public static function setKey(_arg1:String, _arg2:uint):void {
-        var _local3:String;
-        for (_local3 in keyNames_) {
-            if (data_[_local3] == _arg2) {
-                data_[_local3] = KeyCodes.UNSET;
+    public static function setKey(val:String, keyCode:uint):void {
+        var key:String;
+        for (key in keyNames_) {
+            if (data_[key] == keyCode) {
+                data_[key] = KeyCodes.UNSET;
             }
         }
-        data_[_arg1] = _arg2;
+        data_[val] = keyCode;
     }
 
-    private static function setDefault(_arg1:String, _arg2:*):void {
-        if (!data_.hasOwnProperty(_arg1)) {
-            data_[_arg1] = _arg2;
+    private static function setDefault(val:String, obj:*):void {
+        if (!data_.hasOwnProperty(val)) {
+            data_[val] = obj;
         }
     }
 
@@ -110,7 +107,7 @@ public class Parameters {
         return !GPURenderError && data_.GPURender && !Map.forceSoftwareRender;
     }
 
-    public static function clearGpuRenderEvent(_arg1:Event):void {
+    public static function clearGpuRenderEvent(e:Event):void {
         clearGpuRender();
     }
 
@@ -229,14 +226,12 @@ public class Parameters {
         else {
             setDefault("SFXVolume", 0);
         }
-        setDefault("friendList", KeyCodes.UNSET);
-        setDefault("tradeWithFriends", false);
-        setDefault("chatFriend", false);
-        setDefault("friendStarRequirement", 0);
         setDefault("HPBar", false);
         setDefault("outlineProj", true);
+        setDefault("noAllyNotifications",false);
+        setDefault("noAllyDamage",false);
+        setDefault("noEnemyDamage",false);
+        setDefault("noParticlesMaster",false);
     }
-
-
 }
 }

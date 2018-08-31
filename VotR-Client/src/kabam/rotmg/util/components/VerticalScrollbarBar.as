@@ -8,7 +8,7 @@ import kabam.rotmg.util.graphics.GraphicsHelper;
 
 import org.osflash.signals.Signal;
 
-final class VerticalScrollbarBar extends Sprite {
+internal final class VerticalScrollbarBar extends Sprite {
 
     public static const WIDTH:int = VerticalScrollbar.WIDTH;//20
     public static const BEVEL:int = VerticalScrollbar.BEVEL;//4

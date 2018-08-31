@@ -44,6 +44,8 @@ import kabam.rotmg.dailyLogin.tasks.FetchPlayerCalendarTask;
 import kabam.rotmg.death.view.ResurrectionView;
 import kabam.rotmg.death.view.ResurrectionViewMediator;
 import kabam.rotmg.game.model.PotionInventoryModel;
+import kabam.rotmg.game.view.CooldownTimer;
+import kabam.rotmg.game.view.CooldownTimerMediator;
 import kabam.rotmg.game.view.NameChangerPanel;
 import kabam.rotmg.game.view.NameChangerPanelMediator;
 import kabam.rotmg.game.view.TextPanel;
@@ -79,6 +81,7 @@ import kabam.rotmg.ui.signals.ShowTitleUISignal;
 import kabam.rotmg.ui.signals.ToggleShowTierTagSignal;
 import kabam.rotmg.ui.signals.UpdateBackpackTabSignal;
 import kabam.rotmg.ui.signals.UpdateHUDSignal;
+import kabam.rotmg.ui.signals.UpdateMarkTabSignal;
 import kabam.rotmg.ui.signals.UpdatePotionInventorySignal;
 import kabam.rotmg.ui.view.AccountScreenMediator;
 import kabam.rotmg.ui.view.AgeVerificationDialog;
@@ -115,7 +118,7 @@ import kabam.rotmg.ui.view.TitleView;
 import kabam.rotmg.ui.view.UnFocusAble;
 import kabam.rotmg.ui.view.components.PotionSlotMediator;
 import kabam.rotmg.ui.view.components.PotionSlotView;
-import kabam.rotmg.ui.signals.UpdateMarkTabSignal;
+
 import org.swiftsuspenders.Injector;
 
 import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
@@ -184,6 +187,7 @@ public class UIConfig implements IConfig {
         this.mediatorMap.map(LanguageOptionOverlay).toMediator(LanguageOptionOverlayMediator);
         this.mediatorMap.map(ArenaPortalPanel).toMediator(ArenaPortalPanelMediator);
         this.mediatorMap.map(StatMetersView).toMediator(StatMetersMediator);
+        this.mediatorMap.map(CooldownTimer).toMediator(CooldownTimerMediator);
         this.mediatorMap.map(HUDView).toMediator(HUDMediator);
         this.mediatorMap.map(PotionSlotView).toMediator(PotionSlotMediator);
         this.mediatorMap.map(ResurrectionView).toMediator(ResurrectionViewMediator);

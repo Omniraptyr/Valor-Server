@@ -73,7 +73,7 @@ public class ChoiceBox extends Sprite {
         }
     }
 
-    public function value() {
+    public function value() : * {
         return (this.values_[this.selectedIndex_]);
     }
 

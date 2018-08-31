@@ -151,7 +151,7 @@ public class MysteryBoxRollModal extends Sprite {
     }
 
 
-    private function configureRollByQuantity(_arg1:*) {
+    private function configureRollByQuantity(_arg1:*) : void {
         var _local2:int;
         var _local3:int;
         this.quantity_ = _arg1;
@@ -314,7 +314,7 @@ public class MysteryBoxRollModal extends Sprite {
         this.prepareNextRoll();
     }
 
-    private function prepareNextRoll() {
+    private function prepareNextRoll() : void {
         this.titleText = this.getText(this.mbi._title, TEXT_MARGIN, 6, true).setSize(18);
         this.titleText.setColor(0xFFDE00);
         addChild(this.titleText);
@@ -331,9 +331,9 @@ public class MysteryBoxRollModal extends Sprite {
         var _local2:uint;
         while (_local2 < this.indexInRolls.length) {
             if (this.indexInRolls[_local2] < (this.mbi._rollsWithContentsUnique.length - 1)) {
-                var _local3 = this.indexInRolls;
-                var _local4 = _local2;
-                var _local5 = (_local3[_local4] + 1);
+                var _local3:Vector.<int> = this.indexInRolls;
+                var _local4:int = _local2;
+                var _local5:int = (_local3[_local4] + 1);
                 _local3[_local4] = _local5;
             }
             else {

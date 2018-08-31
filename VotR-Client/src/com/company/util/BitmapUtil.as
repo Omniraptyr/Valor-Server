@@ -1,6 +1,5 @@
 ﻿package com.company.util {
 import flash.display.BitmapData;
-import flash.geom.ColorTransform;
 import flash.geom.Matrix;
 import flash.geom.Point;
 import flash.geom.Rectangle;
@@ -80,9 +79,9 @@ public class BitmapUtil {
                         _local2[_local3] = 1;
                     }
                     else {
-                        var _local10 = _local2;
-                        var _local11 = _local3;
-                        var _local12 = (_local10[_local11] + 1);
+                        var _local10:Dictionary = _local2;
+                        var _local11:* = _local3;
+                        var _local12:int = (_local10[_local11] + 1);
                         _local10[_local11] = _local12;
                     }
                 }
@@ -114,7 +113,7 @@ public class BitmapUtil {
         var _local7:int = _arg2.y();
         var _local8:int = _arg3.x();
         var _local9:int = _arg3.y();
-        var _local10 = ((((_local7 > _local9)) ? (_local7 - _local9) : (_local9 - _local7)) > (((_local6 > _local8)) ? (_local6 - _local8) : (_local8 - _local6)));
+        var _local10:Boolean = ((((_local7 > _local9)) ? (_local7 - _local9) : (_local9 - _local7)) > (((_local6 > _local8)) ? (_local6 - _local8) : (_local8 - _local6)));
         if (_local10) {
             _local11 = _local6;
             _local6 = _local7;

@@ -79,8 +79,7 @@ class ExplosionParticle extends Particle {
     public var lifetime_:int;
     public var timeLeft_:int;
     protected var moveVec_:Vector3D;
-    /*private*/
-    var deleted:Boolean = false;
+    private var deleted:Boolean = false;
 
     public function ExplosionParticle(_arg1:uint, _arg2:Number, _arg3:int, _arg4:int, _arg5:Number, _arg6:Number, _arg7:Number) {
         this.moveVec_ = new Vector3D();

@@ -22,7 +22,6 @@ namespace common.resources
         public Packages Packages { get; private set; }
         public Regex[] FilterList { get; private set; }
         public IDictionary<string, byte[]> WebFiles { get; private set; }
-        public IDictionary<string, byte[]> Languages { get; private set; }
         public IDictionary<string, byte[]> Textures { get; private set; }
         public byte[] ZippedTextures { get; private set; }
         public IList<string> MusicNames { get; private set; }
@@ -48,7 +47,6 @@ namespace common.resources
                 Packages.Load(resourcePath + "/data/packages.xml");
 
                 webFiles(resourcePath + "/web");
-                languages(resourcePath + "/data/languages");
                 textures(resourcePath + "/textures"); // needs to be loaded after GameData
 
                 RoleRanks = Ranks.ReadFile(resourcePath + "/data/roles.json");
@@ -76,26 +74,6 @@ namespace common.resources
                     .Replace("\\", "/");
 
                 webFiles[webPath] = File.ReadAllBytes(file);
-            }
-        }
-
-        private void languages(string dir)
-        {
-            Log.Info("Loading language data...");
-
-            Dictionary<string, byte[]> languages;
-
-            Languages =
-                new ReadOnlyDictionary<string, byte[]>(
-                    languages = new Dictionary<string, byte[]>());
-
-            var basePath = Path.Combine(Utils.GetAssemblyDirectory(), dir);
-            foreach (string lang in new String[] { "en" })
-            {
-                var zipBytes = Utils.Deflate(
-                    File.ReadAllBytes(Path.Combine(basePath, lang + ".txt")));
-
-                languages.Add(lang, zipBytes);
             }
         }
 

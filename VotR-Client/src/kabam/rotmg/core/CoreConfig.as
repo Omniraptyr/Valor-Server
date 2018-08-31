@@ -7,7 +7,6 @@ import kabam.lib.tasks.TaskMonitor;
 import kabam.rotmg.account.core.signals.CharListDataSignal;
 import kabam.rotmg.application.api.ApplicationSetup;
 import kabam.rotmg.assets.services.RequestEmbeddedAssetsTask;
-import kabam.rotmg.assets.services.RequestEmbeddedDataTask;
 import kabam.rotmg.chat.control.SpamFilter;
 import kabam.rotmg.core.commands.ConfigurePaymentsWindowCommand;
 import kabam.rotmg.core.commands.ConfigureSpamFilterCommand;

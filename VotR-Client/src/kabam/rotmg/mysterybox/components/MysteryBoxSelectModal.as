@@ -114,7 +114,7 @@ public class MysteryBoxSelectModal extends Sprite {
         }
     }
 
-    public function updateContent() {
+    public function updateContent() : void {
         var _local1:MysteryBoxSelectEntry;
         for each (_local1 in this.selectEntries) {
             _local1.updateContent();

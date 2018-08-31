@@ -19,7 +19,7 @@ import flash.events.MouseEvent;
 
 import kabam.rotmg.text.model.TextKey;
 
-class EditBoard extends Sprite {
+internal class EditBoard extends Sprite {
 
     public static const TEXT_WIDTH:int = 400;
     public static const TEXT_HEIGHT:int = 400;

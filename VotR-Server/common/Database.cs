@@ -1025,7 +1025,7 @@ namespace common
             return task;
         }
 
-        public Task UpdateLootbox1(DbAccount acc, int amount, ITransaction transaction = null)
+        public Task UpdateBronzeLootbox(DbAccount acc, int amount, ITransaction transaction = null)
         {
             var trans = transaction ?? _db.CreateTransaction();
 
@@ -1043,7 +1043,7 @@ namespace common
         }
 
 
-        public Task UpdateLootbox2(DbAccount acc, int amount, ITransaction transaction = null)
+        public Task UpdateSilverLootbox(DbAccount acc, int amount, ITransaction transaction = null)
         {
             var trans = transaction ?? _db.CreateTransaction();
 
@@ -1060,7 +1060,7 @@ namespace common
             return task;
         }
 
-        public Task UpdateLootbox3(DbAccount acc, int amount, ITransaction transaction = null)
+        public Task UpdateGoldLootbox(DbAccount acc, int amount, ITransaction transaction = null)
         {
             var trans = transaction ?? _db.CreateTransaction();
 
@@ -1077,7 +1077,7 @@ namespace common
             return task;
         }
 
-        public Task UpdateLootbox4(DbAccount acc, int amount, ITransaction transaction = null)
+        public Task UpdateEliteLootbox(DbAccount acc, int amount, ITransaction transaction = null)
         {
             var trans = transaction ?? _db.CreateTransaction();
 

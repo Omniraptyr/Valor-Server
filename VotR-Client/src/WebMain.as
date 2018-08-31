@@ -2,17 +2,14 @@
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.util.AssetLoader;
 import com.company.assembleegameclient.util.StageProxy;
-import com.demonsters.debugger.MonsterDebugger;
 
 import flash.display.LoaderInfo;
 import flash.display.Sprite;
 import flash.display.Stage;
 import flash.display.StageScaleMode;
 import flash.events.Event;
-import flash.system.Capabilities;
 
 import kabam.lib.net.NetConfig;
-import kabam.rotmg.market.ui.MarketMediatorConfig;
 import kabam.rotmg.account.AccountConfig;
 import kabam.rotmg.appengine.AppEngineConfig;
 import kabam.rotmg.application.ApplicationConfig;
@@ -37,6 +34,7 @@ import kabam.rotmg.game.GameConfig;
 import kabam.rotmg.language.LanguageConfig;
 import kabam.rotmg.legends.LegendsConfig;
 import kabam.rotmg.maploading.MapLoadingConfig;
+import kabam.rotmg.market.ui.MarketMediatorConfig;
 import kabam.rotmg.minimap.MiniMapConfig;
 import kabam.rotmg.mysterybox.MysteryBoxConfig;
 import kabam.rotmg.news.NewsConfig;
@@ -60,22 +58,38 @@ import robotlegs.bender.extensions.signalCommandMap.SignalCommandMapExtension;
 import robotlegs.bender.framework.api.IContext;
 import robotlegs.bender.framework.api.LogLevel;
 
-[SWF(frameRate="60", backgroundColor="#000000", width="800", height="600")]
+[SWF(frameRate="61", backgroundColor="#000000", width="800", height="600")]
 public class WebMain extends Sprite {
-
     public static var ENV:String;
     public static var STAGE:Stage;
+    public static var sWidth:Number = 800;
+    public static var sHeight:Number = 600;
 
     protected var context:IContext;
 
     public function WebMain() {
-        //MonsterDebugger.initialize(this);
         if (stage) {
+            stage.addEventListener(Event.RESIZE, this.onStageResize);
             this.setup();
-        }
-        else {
+        } else {
             addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
         }
+    }
+
+    public function onStageResize(e:Event) : void {
+        if (stage.scaleMode == StageScaleMode.NO_SCALE) {
+            this.scaleX = stage.stageWidth / 800;
+            this.scaleY = stage.stageHeight / 600;
+            this.x = (800 - stage.stageWidth) / 2;
+            this.y = (600 - stage.stageHeight) / 2;
+        } else {
+            this.scaleX = 1;
+            this.scaleY = 1;
+            this.x = 0;
+            this.y = 0;
+        }
+        sWidth = stage.stageWidth;
+        sHeight = stage.stageHeight;
     }
 
     private function onAddedToStage(_arg1:Event):void {
@@ -90,7 +104,6 @@ public class WebMain extends Sprite {
         new AssetLoader().load();
         stage.scaleMode = StageScaleMode.EXACT_FIT;
         this.context.injector.getInstance(StartupSignal).dispatch();
-        this.configureForAirIfDesktopPlayer();
         STAGE = stage;
         UIUtils.toggleQuality(Parameters.data_.uiQuality);
     }
@@ -99,8 +112,6 @@ public class WebMain extends Sprite {
         ENV = stage.loaderInfo.parameters["env"];
         if (ENV == null)
             ENV = "production";
-        
-        //ENV = "nrtest";
     }
 
     private function hackParameters():void {
@@ -158,14 +169,5 @@ public class WebMain extends Sprite {
                 .configure(this);
         this.context.logLevel = LogLevel.DEBUG;
     }
-
-    private function configureForAirIfDesktopPlayer():void {
-        if (Capabilities.playerType == "Desktop") {
-            Parameters.data_.fullscreenMode = false;
-            Parameters.save();
-        }
-    }
-
-
 }
 }

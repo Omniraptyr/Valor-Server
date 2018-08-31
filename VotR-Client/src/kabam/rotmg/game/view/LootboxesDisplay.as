@@ -1,9 +1,7 @@
 ﻿package kabam.rotmg.game.view {
 import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.util.FameUtil;
 import com.company.assembleegameclient.util.TextureRedrawer;
-import com.company.assembleegameclient.util.TimeUtil;
 import com.company.util.AssetLibrary;
 
 import flash.display.Bitmap;
@@ -13,9 +11,6 @@ import flash.events.MouseEvent;
 import flash.filters.DropShadowFilter;
 
 import kabam.rotmg.assets.services.IconFactory;
-import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.fortune.model.FortuneInfo;
-import kabam.rotmg.fortune.services.FortuneModel;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import kabam.rotmg.ui.view.SignalWaiter;

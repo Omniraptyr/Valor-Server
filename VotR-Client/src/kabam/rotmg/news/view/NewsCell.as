@@ -24,8 +24,8 @@ public class NewsCell extends Sprite {
     private static const LARGE:String = "LARGE";
     private static const SMALL:String = "SMALL";
 
-    static var DefaultGraphicLarge:Class = NewsCell_DefaultGraphicLarge;
-    static var DefaultGraphicSmall:Class = NewsCell_DefaultGraphicSmall;
+    internal static var DefaultGraphicLarge:Class = NewsCell_DefaultGraphicLarge;
+    internal static var DefaultGraphicSmall:Class = NewsCell_DefaultGraphicSmall;
 
     private var imageContainer:Sprite;
     private var maskShape:Shape;

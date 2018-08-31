@@ -151,7 +151,7 @@ public class Model3D {
 
 
     public function toString():String {
-        var _local1 = "";
+        var _local1:String = "";
         _local1 = (_local1 + (((("vL(" + this.vL_.length) + "): ") + this.vL_.join()) + "\n"));
         _local1 = (_local1 + (((("uvts(" + this.uvts_.length) + "): ") + this.uvts_.join()) + "\n"));
         return ((_local1 + (((("faces_(" + this.faces_.length) + "): ") + this.faces_.join()) + "\n")));

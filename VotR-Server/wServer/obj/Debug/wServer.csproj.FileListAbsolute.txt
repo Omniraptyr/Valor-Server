@@ -48,7 +48,6 @@ C:\votr\VotR-Server2\VotR-Server\bin\wServer.json
 C:\votr\VotR-Server2\VotR-Server\bin\wServer.exe.config
 C:\votr\VotR-Server2\VotR-Server\bin\wServer.exe
 C:\votr\VotR-Server2\VotR-Server\bin\wServer.pdb
-C:\votr\VotR-Server2\VotR-Server\wServer\obj\Debug\wServer.csprojResolveAssemblyReference.cache
 C:\votr\VotR-Server2\VotR-Server\wServer\obj\Debug\wServer.csproj.CoreCompileInputs.cache
 C:\votr\VotR-Server2\VotR-Server\wServer\obj\Debug\wServer.exe
 C:\votr\VotR-Server2\VotR-Server\wServer\obj\Debug\wServer.pdb
@@ -90,3 +89,5 @@ C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\wServer\obj\Debug\wServer.csproj.C
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\wServer\obj\Debug\wServer.csproj.CopyComplete
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\wServer\obj\Debug\wServer.exe
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\wServer\obj\Debug\wServer.pdb
+C:\votr\VotR-Server2\VotR-Server\wServer\obj\Debug\wServer.csprojAssemblyReference.cache
+C:\votr\VotR-Server2\VotR-Server\wServer\obj\Debug\wServer.csproj.CopyComplete

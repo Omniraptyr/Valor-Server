@@ -17,7 +17,7 @@ public class ReportErrorToAppEngineCommand {
     public var setup:ApplicationSetup;
     [Inject]
     public var event:ErrorEvent;
-    private var error;
+    private var error:*;
 
 
     public function execute():void {

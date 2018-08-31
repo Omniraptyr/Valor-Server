@@ -13,7 +13,7 @@ public class CharacterSkinLimitedBanner extends Sprite {
     private const LimitedBanner:Class = CharacterSkinLimitedBanner_LimitedBanner;
 
     private const limitedText:TextFieldDisplayConcrete = makeText();
-    private const limitedBanner = makeLimitedBanner();
+    private const limitedBanner:* = makeLimitedBanner();
     public const readyForPositioning:Signal = new Signal();
 
     public function CharacterSkinLimitedBanner() {
@@ -30,7 +30,7 @@ public class CharacterSkinLimitedBanner extends Sprite {
         return (_local1);
     }
 
-    private function makeLimitedBanner() {
+    private function makeLimitedBanner() : * {
         var _local1:* = new LimitedBanner();
         addChild(_local1);
         return (_local1);

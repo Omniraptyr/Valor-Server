@@ -80,10 +80,8 @@ class Island {
     public var center_:Point;
     public var startTime_:int;
     public var bitmapData_:BitmapData;
-    /*private*/
-    var bitmapFill_:GraphicsBitmapFill;
-    /*private*/
-    var path_:GraphicsPath;
+    private var bitmapFill_:GraphicsBitmapFill;
+    private var path_:GraphicsPath;
 
     public function Island(_arg1:Number, _arg2:Number, _arg3:int):void {
         this.bitmapFill_ = new GraphicsBitmapFill(null, new Matrix(), true, false);

@@ -3,18 +3,16 @@ package kabam.rotmg.market.ui
 import com.company.assembleegameclient.ui.Scrollbar;
 import com.company.assembleegameclient.ui.dialogs.Dialog;
 
+import flash.display.Shape;
 import flash.display.Sprite;
-   import flash.display.Shape;
-   import flash.events.Event;
-   import flash.text.TextFieldAutoSize;
+import flash.events.Event;
+import flash.text.TextFieldAutoSize;
 
-import kabam.rotmg.market.MarketItemsResultSignal;
-
-import kabam.rotmg.market.MarketResultSignal;
 import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.market.MarketItemsResultSignal;
+import kabam.rotmg.market.MarketResultSignal;
 import kabam.rotmg.messaging.impl.GameServerConnection;
 import kabam.rotmg.messaging.impl.data.PlayerShopItem;
-
 import kabam.rotmg.pets.view.dialogs.PetDialog;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
@@ -85,7 +83,7 @@ public class MarketMyOffersScreen extends Sprite
          this.scrollBar.addEventListener(Event.CHANGE,this.onScroll);
       }
       
-      private function onOfferRemove(param1:kabam.rotmg.messaging.impl.data.PlayerShopItem) : void
+      private function onOfferRemove(param1:PlayerShopItem) : void
       {
          StaticInjectorContext.getInjector().getInstance(MarketResultSignal).add(this.onResult);
          GameServerConnection.instance.removeMarketOffer(param1);
@@ -97,7 +95,7 @@ public class MarketMyOffersScreen extends Sprite
          var message:String = param1;
          var error:Boolean = param2;
          StaticInjectorContext.getInjector().getInstance(MarketResultSignal).remove(this.onResult);
-         dialog = new PetDialog(!!error?"Ooops :C":"Success",message,"Ok",null,"/marketResult");
+         dialog = new PetDialog(error?"Ooops :C":"Success",message,"Ok",null,"/marketResult");
          dialog.addFullDim();
          dialog.addEventListener(Dialog.LEFT_BUTTON,function(param1:Event):void
          {
@@ -114,14 +112,19 @@ public class MarketMyOffersScreen extends Sprite
    }
 }
 
+import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.ui.DeprecatedTextButton;
 import com.company.assembleegameclient.ui.dialogs.Dialog;
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
 import flash.display.Sprite;
-
-import flash.events.MouseEvent;
 import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.globalization.DateTimeFormatter;
+import flash.globalization.LocaleID;
+
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.core.signals.ShowTooltipSignal;
 import kabam.rotmg.messaging.impl.data.PlayerShopItem;
@@ -211,7 +214,7 @@ class OfferEntry extends Sprite
    {
       var dialog:PetDialog = null;
       var event:MouseEvent = param1;
-      dialog = new PetDialog("Are you sure?",!!this.isLast?"This action cannot be undone, continue?":"This action will cost you 5 fame and cannot be undone, continue?","Remove","Keep it","/removeConfirm");
+      dialog = new PetDialog("Are you sure?",!!this.isLast?"This action cannot be undone, continue?":"This action will cost you 50 gold and cannot be undone, continue?","Remove","Keep it","/removeConfirm");
       dialog.addFullDim();
       dialog.addEventListener(Dialog.RIGHT_BUTTON,function(param1:Event):void
       {
@@ -226,12 +229,6 @@ class OfferEntry extends Sprite
    }
 }
 
-
-import flash.display.Bitmap;
-import com.company.assembleegameclient.objects.ObjectLibrary;
-import flash.display.BitmapData;
-import flash.globalization.DateTimeFormatter;
-import flash.globalization.LocaleID;
 
 class OfferToolTip extends ToolTip
 {

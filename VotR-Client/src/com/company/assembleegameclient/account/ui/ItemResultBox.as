@@ -1,18 +1,12 @@
 package com.company.assembleegameclient.account.ui {
-import com.company.assembleegameclient.constants.InventoryOwnerTypes;
 import com.company.assembleegameclient.game.AGameSprite;
 import com.company.assembleegameclient.objects.ObjectLibrary;
-import com.company.assembleegameclient.ui.DeprecatedClickableText;
-import com.company.assembleegameclient.ui.DeprecatedTextButton;
-import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
 import com.company.util.BitmapUtil;
 
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.events.Event;
-
 import flash.events.MouseEvent;
-import kabam.rotmg.text.model.TextKey;
 
 import org.osflash.signals.Signal;
 
@@ -38,8 +32,7 @@ public class ItemResultBox extends Frame2 {
         this.addDisplayObject(this.itemBitmap_, this.w_ / 2 - this.itemBitmap_.width / 2 - 10);
     }
 
-    private function onClose(e:Event) {
-
+    private function onClose(e:Event) : void {
         stage.focus = null;
         dispatchEvent(new Event(Event.COMPLETE));
     }
