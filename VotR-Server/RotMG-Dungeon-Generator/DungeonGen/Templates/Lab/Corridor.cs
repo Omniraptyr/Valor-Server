@@ -18,7 +18,6 @@
 
 */
 
-using System;
 using DungeonGenerator.Dungeon;
 using RotMG.Common.Rasterizer;
 

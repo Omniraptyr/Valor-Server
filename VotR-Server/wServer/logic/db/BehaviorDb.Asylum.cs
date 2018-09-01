@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using wServer.logic.loot;
+﻿using wServer.logic.loot;
 using wServer.logic.transitions;
 using wServer.logic.behaviors;
 

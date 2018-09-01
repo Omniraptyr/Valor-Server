@@ -6,7 +6,6 @@ using wServer.realm.entities;
 using wServer.realm.setpieces;
 using wServer.realm.terrain;
 using log4net;
-using wServer.realm.worlds;
 using wServer.realm.worlds.logic;
 
 namespace wServer.realm

@@ -1,14 +1,8 @@
 ﻿using Mono.Game;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using common.resources;
 using wServer.realm;
 using wServer.realm.entities;
 using wServer.realm.terrain;
-using wServer.realm.worlds;
 using wServer.realm.worlds.logic;
 
 namespace wServer.logic.behaviors.PetBehaviors

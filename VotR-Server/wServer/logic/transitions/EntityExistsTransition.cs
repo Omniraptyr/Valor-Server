@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using wServer.realm;
-using common;
-using wServer.realm.entities;
+﻿using wServer.realm;
 
 namespace wServer.logic.transitions
 {

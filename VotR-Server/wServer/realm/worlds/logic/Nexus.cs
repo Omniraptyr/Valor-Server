@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using common.resources;
+﻿using common.resources;
 using wServer.networking;
 using wServer.realm.entities;
 using wServer.realm.terrain;

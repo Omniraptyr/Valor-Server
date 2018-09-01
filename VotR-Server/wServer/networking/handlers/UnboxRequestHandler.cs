@@ -2,7 +2,7 @@
 using wServer.realm.entities;
 using wServer.networking.packets;
 using wServer.networking.packets.incoming;
-using wServer.networking.packets.outgoing;
+
 namespace wServer.networking.handlers
 {
     class UnboxRequestHandler : PacketHandlerBase<UnboxRequest>

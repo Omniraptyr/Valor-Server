@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Runtime;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using common;
 using common.resources;
 using log4net;
 using Newtonsoft.Json;
-using wServer.networking;
 using wServer.networking.packets.outgoing;
 using wServer.realm.setpieces;
 using wServer.realm.entities;

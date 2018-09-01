@@ -1,4 +1,3 @@
-using System;
 using wServer.realm;
 using common.resources;
 using Mono.Game;

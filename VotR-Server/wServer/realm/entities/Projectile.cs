@@ -2,7 +2,6 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using common.resources;
-using log4net;
 
 namespace wServer.realm.entities
 {

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using common.resources;
 using wServer.networking;
-using wServer.networking.packets.outgoing;
 using wServer.networking.packets.outgoing.arena;
 using wServer.realm.entities;
 using wServer.realm.terrain;

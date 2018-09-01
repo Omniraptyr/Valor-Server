@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using common.resources;
+﻿using common.resources;
 using Mono.Game;
 using wServer.realm;
 using wServer.realm.entities;

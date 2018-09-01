@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using common.resources;
-using wServer.networking.packets.outgoing;
 using wServer.realm.worlds.logic;
 
 namespace wServer.realm.entities.vendors

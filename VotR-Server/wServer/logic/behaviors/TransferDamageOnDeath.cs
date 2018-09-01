@@ -1,5 +1,4 @@
-﻿using common.resources;
-using wServer.realm;
+﻿using wServer.realm;
 using wServer.realm.entities;
 
 namespace wServer.logic.behaviors

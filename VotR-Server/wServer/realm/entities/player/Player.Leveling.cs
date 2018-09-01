@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using wServer.networking.packets.outgoing;
-using System.Timers;
 using common.resources;
 namespace wServer.realm.entities
 {

@@ -1,7 +1,4 @@
-﻿using common.resources;
-using wServer.networking.packets;
-using System.Collections.Generic;
-using System;
+﻿using System;
 namespace wServer.realm.entities
 {
     partial class Player

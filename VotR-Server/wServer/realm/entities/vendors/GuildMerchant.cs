@@ -1,6 +1,5 @@
 ﻿using System;
 using common.resources;
-using wServer.networking.packets.outgoing;
 
 namespace wServer.realm.entities.vendors
 {

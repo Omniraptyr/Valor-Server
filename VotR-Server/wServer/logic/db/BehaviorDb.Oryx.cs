@@ -1,5 +1,5 @@
 #region
-using wServer.realm;
+
 using common.resources;
 using wServer.logic.behaviors;
 using wServer.logic.loot;

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using common;
-using common.resources;
 using wServer.realm;
 
 namespace wServer

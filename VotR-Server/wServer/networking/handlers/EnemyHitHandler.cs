@@ -3,8 +3,6 @@ using wServer.realm;
 using wServer.realm.entities;
 using wServer.networking.packets;
 using wServer.networking.packets.incoming;
-using System.Collections.Generic;
-using System;
 
 namespace wServer.networking.handlers
 {
