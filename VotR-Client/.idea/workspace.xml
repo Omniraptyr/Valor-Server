@@ -65,20 +65,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebMain.as" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WebMain.as" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WebMain.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="116" column="44" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
+            <state relative-caret-position="96">
+              <caret line="112" column="24" selection-start-line="112" selection-start-column="24" selection-end-line="112" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameObject.as" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameObject.as" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/GameObject.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5">
-              <caret line="889" column="70" selection-start-line="889" selection-start-column="70" selection-end-line="889" selection-end-column="70" />
+            <state relative-caret-position="204">
+              <caret line="900" column="28" selection-start-line="900" selection-start-column="28" selection-end-line="900" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -86,7 +86,7 @@
       <file leaf-file-name="Parameters.as" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
+            <state relative-caret-position="1258">
               <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
             </state>
           </provider>
@@ -95,7 +95,7 @@
       <file leaf-file-name="Projectile.as" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/Projectile.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
+            <state relative-caret-position="4437">
               <caret line="286" column="40" selection-start-line="286" selection-start-column="40" selection-end-line="286" selection-end-column="40" />
             </state>
           </provider>
@@ -104,7 +104,7 @@
       <file leaf-file-name="ConditionEffect.as" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/util/ConditionEffect.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2137">
+            <state relative-caret-position="3366">
               <caret line="207" column="87" selection-start-line="207" selection-start-column="87" selection-end-line="207" selection-end-column="87" />
             </state>
           </provider>
@@ -236,7 +236,6 @@
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/ui/FrameChef.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/game/GameSprite.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/GameServerConnectionConcrete.as" />
-        <option value="$PROJECT_DIR$/src/WebMain.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/ui/menu/Menu.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/account/ui/FrameuBox.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/ui/dialogs/Dialog.as" />
@@ -244,6 +243,7 @@
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/GameObject.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/Projectile.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as" />
+        <option value="$PROJECT_DIR$/src/WebMain.as" />
       </list>
     </option>
   </component>
@@ -267,7 +267,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -296,8 +296,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -699,15 +699,15 @@
       <workItem from="1535782908327" duration="113000" />
       <workItem from="1535801963664" duration="790000" />
       <workItem from="1535805724365" duration="781000" />
+      <workItem from="1535807726280" duration="78000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1556860000" />
+    <option name="totallyTimeSpent" value="1556938000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -715,7 +715,7 @@
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info id="Image Layers" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5248902" side_tool="true" visible="true" weight="0.36825398" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="7" sideWeight="0.5248902" side_tool="true" visible="true" weight="0.36825398" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
@@ -723,9 +723,8 @@
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17569546" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17569546" />
       <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.47510982" weight="0.36825398" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="5" />
@@ -739,6 +738,7 @@
       <window_info anchor="right" id="Properties" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.47510982" weight="0.36825398" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1028,9 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1343">
           <caret line="97" column="62" selection-start-line="97" selection-start-column="62" selection-end-line="97" selection-end-column="62" />
-          <folding>
-            <element signature="e#50#87#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1090,38 +1087,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebMain.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="116" column="44" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/util/ConditionEffect.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2137">
+        <state relative-caret-position="3366">
           <caret line="207" column="87" selection-start-line="207" selection-start-column="87" selection-end-line="207" selection-end-column="87" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/Projectile.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
+        <state relative-caret-position="4437">
           <caret line="286" column="40" selection-start-line="286" selection-start-column="40" selection-end-line="286" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
+        <state relative-caret-position="1258">
           <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/GameObject.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="889" column="70" selection-start-line="889" selection-start-column="70" selection-end-line="889" selection-end-column="70" />
+        <state relative-caret-position="204">
+          <caret line="900" column="28" selection-start-line="900" selection-start-column="28" selection-end-line="900" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebMain.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="112" column="24" selection-start-line="112" selection-start-column="24" selection-end-line="112" selection-end-column="24" />
         </state>
       </provider>
     </entry>
