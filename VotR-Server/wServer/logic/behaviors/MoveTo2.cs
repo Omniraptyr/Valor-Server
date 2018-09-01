@@ -1,8 +1,6 @@
-﻿using common.resources;
-using Mono.Game;
+﻿using Mono.Game;
 using System;
 using wServer.realm;
-using wServer.realm.entities;
 
 namespace wServer.logic.behaviors
 {

@@ -18,7 +18,6 @@
 
 */
 
-using System;
 using System.Collections.Generic;
 using RotMG.Common;
 

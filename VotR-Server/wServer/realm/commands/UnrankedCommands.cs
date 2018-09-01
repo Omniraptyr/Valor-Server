@@ -5,13 +5,9 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using common;
 using common.resources;
-using TagLib;
-using wServer.networking;
 using wServer.realm.entities;
 using wServer.realm.worlds;
 using wServer.realm.worlds.logic;
-using System.Collections.Generic;
-using wServer.networking.packets;
 using wServer.networking.packets.incoming;
 using wServer.networking.packets.outgoing;
 using File = TagLib.File;
@@ -807,7 +803,9 @@ namespace wServer.realm.commands
             var str = "";
 
             for (var i = 0; i < pd.Stats.Length; i++) {
-                var l2m = (player.AscensionEnabled ? pd.Stats[i].MaxValue + 10 : pd.Stats[i].MaxValue) 
+                var l2m = (player.AscensionEnabled 
+                              ? pd.Stats[i].MaxValue + (i < 2 ? 50 : 10) 
+                              : pd.Stats[i].MaxValue) 
                           - player.Stats.Base[i];
 
                 if (l2m != 0) str += player.Stats.StatIndexToFullName(i) + ": " 
@@ -1455,16 +1453,6 @@ namespace wServer.realm.commands
                 GameId = World.ClothBazaar,
                 Name = "Cloth Bazaar"
             });
-            return true;
-        }
-    }
-
-    class MigrateCommand : Command
-    {
-        public MigrateCommand() : base("migrate") { }
-
-        protected override bool Process(Player player, RealmTime time, string args) {
-            player.MigrateStats();
             return true;
         }
     }

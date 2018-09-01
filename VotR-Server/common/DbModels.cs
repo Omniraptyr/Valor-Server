@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -766,66 +764,6 @@ namespace common
         {
             get { return GetValue<int[]>("stats"); }
             set { SetValue<int[]>("stats", value); }
-        }
-        public int PWHealth
-        {
-            get { return GetValue<int>("pwHP"); }
-            set { SetValue<int>("pwHP", value); }
-        }
-        public int PWMana
-        {
-            get { return GetValue<int>("pwMP"); }
-            set { SetValue<int>("pwMP", value); }
-        }
-        public int PWAttack
-        {
-            get { return GetValue<int>("pwAttack"); }
-            set { SetValue<int>("pwAttack", value); }
-        }
-        public int PWDefense
-        {
-            get { return GetValue<int>("pwDefense"); }
-            set { SetValue<int>("pwDefense", value); }
-        }
-        public int PWSpeed
-        {
-            get { return GetValue<int>("pwSpeed"); }
-            set { SetValue<int>("pwSpeed", value); }
-        }
-        public int PWDexterity
-        {
-            get { return GetValue<int>("pwDexterity"); }
-            set { SetValue<int>("pwDexterity", value); }
-        }
-        public int PWWisdom
-        {
-            get { return GetValue<int>("pwWisdom"); }
-            set { SetValue<int>("pwWisdom", value); }
-        }
-        public int PWMight
-        {
-            get { return GetValue<int>("pwMight"); }
-            set { SetValue<int>("pwMight", value); }
-        }
-        public int PWLuck
-        {
-            get { return GetValue<int>("pwLuck"); }
-            set { SetValue<int>("pwLuck", value); }
-        }
-        public int PWRestoration
-        {
-            get { return GetValue<int>("pwRestoration"); }
-            set { SetValue<int>("pwRestoration", value); }
-        }
-        public int PWVitality
-        {
-            get { return GetValue<int>("pwVitality"); }
-            set { SetValue<int>("pwVitality", value); }
-        }
-        public int PWProtection
-        {
-            get { return GetValue<int>("pwProtection"); }
-            set { SetValue<int>("pwProtection", value); }
         }
 
         public int Tex1

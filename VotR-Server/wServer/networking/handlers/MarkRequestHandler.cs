@@ -2,14 +2,7 @@
 using wServer.realm.entities;
 using wServer.networking.packets;
 using wServer.networking.packets.incoming;
-using wServer.networking.packets.outgoing;
-using wServer.realm.worlds;
-using wServer.realm.worlds.logic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using wServer.networking.packets.outgoing;
-using common.resources;
+
 namespace wServer.networking.handlers
 {
     class MarkRequestHandler : PacketHandlerBase<MarkRequest>

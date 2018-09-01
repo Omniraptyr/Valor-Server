@@ -2,10 +2,7 @@
 
 using common.resources;
 using System.Collections.Generic;
-using wServer.networking.packets;
 using wServer.networking.packets.outgoing;
-using wServer.networking.packets.outgoing.pets;
-using wServer.realm.entities;
 
 #endregion
 

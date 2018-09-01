@@ -3,7 +3,6 @@ using System.Collections.Specialized;
 using Anna.Request;
 using common;
 using log4net;
-using SendGrid.Helpers.Mail;
 using System.Net.Mail;
 using System.Text;
 

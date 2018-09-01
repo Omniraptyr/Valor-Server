@@ -9,8 +9,6 @@ namespace wServer.logic.behaviors
         private readonly int _amount;
         private int _cachedMaxHp = -1;
         private int _lastPlayerNum = -1;
-        private int _lastPerc = -1;
-        private int _cool = 5000;
 
         public ScaleHP(int amount) {
             _amount = amount;
@@ -20,16 +18,17 @@ namespace wServer.logic.behaviors
             var cool = (int?)state ?? -1;
 
             if (cool <= 0) {
-                var playerNum = host.Owner.Players.Count;
-                if (_lastPlayerNum == playerNum) return;
+                if (_lastPlayerNum == host.Owner.Players.Count) return;
 
+                var playerNum = host.Owner.Players.Count - _lastPlayerNum;        
                 var enemy = host as Enemy;
+                var hpPerc = enemy.HP / enemy.MaximumHP;
 
                 if (_cachedMaxHp == -1)
                     _cachedMaxHp = enemy.MaximumHP;
 
                 enemy.MaximumHP = _cachedMaxHp + _amount * Math.Max(playerNum - 1, 0);
-                enemy.HP += _amount * Math.Max(playerNum - 1, 0);
+                enemy.HP += _amount * Math.Max(playerNum - 1, 0) * hpPerc;
 
                 enemy.HP = Math.Min(enemy.MaximumHP, enemy.HP);
 

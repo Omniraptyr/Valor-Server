@@ -2,7 +2,6 @@
 using System.Collections.Concurrent;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using log4net;
 using wServer.networking;
 using wServer.networking.packets.outgoing;

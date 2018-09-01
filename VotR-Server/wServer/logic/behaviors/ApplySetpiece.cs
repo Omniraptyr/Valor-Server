@@ -1,6 +1,5 @@
 ﻿using System;
 using wServer.realm;
-using wServer.realm.entities;
 using wServer.realm.setpieces;
 
 namespace wServer.logic.behaviors

@@ -1,5 +1,4 @@
-﻿using System.IO;
-using common.resources;
+﻿using common.resources;
 using wServer.networking;
 
 namespace wServer.realm.worlds.logic

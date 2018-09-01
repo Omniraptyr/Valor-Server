@@ -123,11 +123,11 @@ namespace wServer.realm.entities
                 ApplyConditionEffect(ConditionEffectIndex.Alliance, 0);
             }
 
-            if (HasConditionEffect(ConditionEffects.Protected) && HasConditionEffect(ConditionEffects.Corrupted))
+            if (Protection > 0 && HasConditionEffect(ConditionEffects.Corrupted))
             {
                 ApplyConditionEffect(ConditionEffectIndex.Corrupted, 0);
             }
-            if (HasConditionEffect(ConditionEffects.Protected))
+            if (Protection > 0)
             {
                 ApplyConditionEffect(ConditionEffectIndex.ParalyzeImmune);
                 ApplyConditionEffect(ConditionEffectIndex.StunImmune);
@@ -142,15 +142,6 @@ namespace wServer.realm.entities
 
             ProtectionMax = (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50))+10;
             Protection =    (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50))+10-protectionDamage;
-            if(Protection > 0)
-            {
-                ApplyConditionEffect(ConditionEffectIndex.Protected);
-            }
-            else
-            {
-                ApplyConditionEffect(ConditionEffectIndex.Protected, 0);
-
-            }
             if(Protection < 0)
             {
             Protection = 0;

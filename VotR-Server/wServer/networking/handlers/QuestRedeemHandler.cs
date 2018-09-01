@@ -1,11 +1,8 @@
 ﻿#define NO_TINKER_QUESTS //remove this line to enable tinkering
 
-using System.Threading.Tasks;
-using common.resources;
 using wServer.networking.packets;
 using wServer.networking.packets.incoming.arena;
 using wServer.networking.packets.outgoing;
-using wServer.realm;
 
 namespace wServer.networking.handlers
 {

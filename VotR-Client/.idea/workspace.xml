@@ -20,9 +20,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FrameChef.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/FrameChef.as">
+      <file leaf-file-name="GuildRegisterPanelMediator.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/panels/mediators/GuildRegisterPanelMediator.as">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="2329">
               <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
               <folding>
@@ -32,13 +33,18 @@
                 <marker date="1535764102493" expanded="true" signature="6173:6252" ph="{...}" />
                 <marker date="1535764102493" expanded="true" signature="6318:6325" ph="{...}" />
               </folding>
+=======
+            <state relative-caret-position="595">
+              <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameServerConnectionConcrete.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/GameServerConnectionConcrete.as">
+      <file leaf-file-name="Dialog.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/dialogs/Dialog.as">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="9554">
               <caret line="637" column="43" lean-forward="false" selection-start-line="637" selection-start-column="43" selection-end-line="637" selection-end-column="43" />
               <folding>
@@ -67,6 +73,58 @@
                 <marker date="1535764102785" expanded="true" signature="108380:108503" ph="..." />
                 <marker date="1535764102785" expanded="true" signature="108599:108879" ph="{...}" />
               </folding>
+=======
+            <state relative-caret-position="2108">
+              <caret line="146" column="44" selection-start-line="146" selection-start-column="44" selection-end-line="146" selection-end-column="44" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StageProxy.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/util/StageProxy.as">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="1343">
+              <caret line="136" column="43" lean-forward="false" selection-start-line="136" selection-start-column="43" selection-end-line="136" selection-end-column="43" />
+              <folding />
+=======
+            <state relative-caret-position="459">
+              <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FrameuBox.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/account/ui/FrameuBox.as">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="1819">
+              <caret line="123" column="5" lean-forward="false" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
+              <folding>
+                <element signature="e#50#87#0" expanded="true" />
+                <marker date="1535764102500" expanded="true" signature="48:4863" ph="{...}" />
+              </folding>
+=======
+            <state relative-caret-position="2533">
+              <caret line="168" column="5" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Frame.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/account/ui/Frame.as">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="51">
+              <caret line="13" column="43" lean-forward="false" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+              <folding />
+=======
+            <state relative-caret-position="2737">
+              <caret line="179" column="47" selection-start-line="179" selection-start-column="47" selection-end-line="179" selection-end-column="47" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
             </state>
           </provider>
         </entry>
@@ -74,59 +132,37 @@
       <file leaf-file-name="WebMain.as" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WebMain.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1343">
-              <caret line="136" column="43" lean-forward="false" selection-start-line="136" selection-start-column="43" selection-end-line="136" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Menu.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/menu/Menu.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1819">
-              <caret line="123" column="5" lean-forward="false" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
-              <folding>
-                <element signature="e#50#87#0" expanded="true" />
-                <marker date="1535764102500" expanded="true" signature="48:4863" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TeleportMenuOption.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/menu/TeleportMenuOption.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="13" column="43" lean-forward="false" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuOption.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/menu/MenuOption.as">
-          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="51">
               <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding />
+=======
+            <state relative-caret-position="96">
+              <caret line="112" column="24" selection-start-line="112" selection-start-column="24" selection-end-line="112" selection-end-column="24" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UnFocusAble.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/ui/view/UnFocusAble.as">
+      <file leaf-file-name="GameObject.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/GameObject.as">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="51">
               <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
               <folding />
+=======
+            <state relative-caret-position="204">
+              <caret line="900" column="28" selection-start-line="900" selection-start-column="28" selection-end-line="900" selection-end-column="28" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArenaDisplay.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/view/ArenaDisplay.as">
+      <file leaf-file-name="Parameters.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="1904">
               <caret line="127" column="26" lean-forward="false" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
               <folding>
@@ -154,31 +190,45 @@
                 <marker date="1535764102740" expanded="true" signature="7486:7652" ph="{...}" />
                 <marker date="1535764102740" expanded="true" signature="7719:7741" ph="{...}" />
               </folding>
+=======
+            <state relative-caret-position="1258">
+              <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmbeddedData_EquipCXML.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
+      <file leaf-file-name="Projectile.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/Projectile.as">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="420189">
               <caret line="24717" column="31" lean-forward="false" selection-start-line="24717" selection-start-column="31" selection-end-line="24717" selection-end-column="31" />
               <folding>
                 <marker date="1535764102601" expanded="true" signature="1318481:1318495" ph="..." />
               </folding>
+=======
+            <state relative-caret-position="4437">
+              <caret line="286" column="40" selection-start-line="286" selection-start-column="40" selection-end-line="286" selection-end-column="40" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Parameters.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as">
+      <file leaf-file-name="ConditionEffect.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/util/ConditionEffect.as">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="459">
               <caret line="35" column="48" lean-forward="false" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
               <folding>
                 <marker date="1535764102486" expanded="true" signature="51:9955" ph="{...}" />
                 <marker date="1535764102486" expanded="true" signature="358:9953" ph="{...}" />
               </folding>
+=======
+            <state relative-caret-position="3366">
+              <caret line="207" column="87" selection-start-line="207" selection-start-column="87" selection-end-line="207" selection-end-column="87" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
             </state>
           </provider>
         </entry>
@@ -194,36 +244,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>plrpos</find>
-      <find>ispetmap</find>
-      <find>banner</find>
-      <find>stats[2]</find>
-      <find>poisoncomparison.dat</find>
-      <find>class tooltip</find>
-      <find>markshopbut</find>
-      <find>news</find>
-      <find>support</find>
-      <find>unboxing..</find>
-      <find>ObjectLibrary.typeToDisplayId_</find>
-      <find>class options</find>
-      <find>continue</find>
-      <find>.scalex =</find>
-      <find>confirmbuymodal</find>
-      <find>statmetersview</find>
       <find>class hudview</find>
       <find>is map</find>
       <find>nextalt</find>
       <find>forge</find>
-      <find>class frame</find>
       <find>itemxml.activate</find>
       <find>random1</find>
       <find>class parameters</find>
       <find>itemid !=</find>
       <find>master eon</find>
-      <find>class menu</find>
       <find>arenamen</find>
       <find>class arenamen</find>
       <find>extends menu</find>
+      <find>powers</find>
+      <find>class gamesprite</find>
+      <find>bracelet</find>
+      <find>noallydamage</find>
+      <find>class parameter</find>
+      <find>noenemyd</find>
+      <find>gpurender</find>
+      <find>damagetext</find>
+      <find>class menu</find>
+      <find>renouncedi</find>
+      <find>unboxing..</find>
+      <find>class frame</find>
+      <find>.protected</find>
+      <find>isprotect</find>
+      <find>damage(</find>
+      <find>class param</find>
+      <find>assembleegameclientopti</find>
+      <find>PROTECTED</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -271,8 +321,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/GameServerConnection.as" />
-        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/ui/StatusBar.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/ui/view/StatMetersView.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/core/model/PlayerModel.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/game/view/AlertStatusMediator.as" />
@@ -281,15 +329,12 @@
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/particles/ThrowEffect.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/data/StatData.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/constants/ActivationType.as" />
-        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/account/ui/FrameuBox.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/particles/OrbitObject.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/account/ui/Frame2.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/game/view/components/StatView.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/text/model/TextKey.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/game/view/components/TabStripView.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/particles/ParticleEffect.as" />
-        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/Projectile.as" />
-        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/GameObject.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/language/service/GetLanguageService.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedAssets.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/sound/SoundEffectLibrary.as" />
@@ -305,7 +350,6 @@
         <option value="$PROJECT_DIR$/src/kabam/rotmg/ui/view/ButtonFactory.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/ui/view/TitleView.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/ui/view/TitleMediator.as" />
-        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/game/GameSprite.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/account/ui/Unboxing/UnboxResultBox.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/account/ui/Unboxing/UnboxSquare.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/ui/options/Options.as" />
@@ -318,9 +362,15 @@
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/ui/panels/mediators/ItemGridMediator.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/Player.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/ui/FrameChef.as" />
-        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as" />
-        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/ui/menu/Menu.as" />
+        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/game/GameSprite.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/GameServerConnectionConcrete.as" />
+        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/ui/menu/Menu.as" />
+        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/account/ui/FrameuBox.as" />
+        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/ui/dialogs/Dialog.as" />
+        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/util/ConditionEffect.as" />
+        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/GameObject.as" />
+        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/Projectile.as" />
+        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as" />
         <option value="$PROJECT_DIR$/src/WebMain.as" />
       </list>
     </option>
@@ -355,8 +405,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="Scratches" />
+=======
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -386,6 +439,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -805,16 +859,34 @@
       <workItem from="1535752486429" duration="214000" />
       <workItem from="1535753556903" duration="1414000" />
       <workItem from="1535755611953" duration="170000" />
+<<<<<<< HEAD
       <workItem from="1535764386366" duration="104000" />
+=======
+      <workItem from="1535760594214" duration="767000" />
+      <workItem from="1535763601157" duration="708000" />
+      <workItem from="1535766184678" duration="538000" />
+      <workItem from="1535767893456" duration="1348000" />
+      <workItem from="1535770197866" duration="425000" />
+      <workItem from="1535770849031" duration="347000" />
+      <workItem from="1535782908327" duration="113000" />
+      <workItem from="1535801963664" duration="790000" />
+      <workItem from="1535805724365" duration="781000" />
+      <workItem from="1535807726280" duration="78000" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="1551147000" />
+=======
+    <option name="totallyTimeSpent" value="1556938000" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
+<<<<<<< HEAD
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -841,6 +913,38 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+=======
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.28696924" weight="0.26666668" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info id="Image Layers" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="7" sideWeight="0.5248902" side_tool="true" visible="true" weight="0.36825398" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="4" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17569546" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.41874084" weight="0.3984127" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info id="Nl-Palette" order="3" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Properties" order="5" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.47510982" weight="0.36825398" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -868,6 +972,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/commands/PlayGameCommand.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -924,6 +1029,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/view/MarkShopMediator.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -995,6 +1102,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/game/GameSprite.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2924">
@@ -1002,6 +1110,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
     <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/account/ui/Unboxing/UnboxScroll.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
@@ -1023,6 +1133,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/account/ui/Unboxing/UnboxResultBox.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1030,6 +1141,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
     <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/options/Options.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3791">
@@ -1116,6 +1229,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/account/ui/Frame.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2703">
@@ -1123,6 +1237,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/editor/view/components/drawer/FrameButton.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1144,6 +1260,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/GameServerConnectionConcrete.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9554">
@@ -1209,11 +1326,46 @@
         <state relative-caret-position="51">
           <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/ui/view/UnFocusAble.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/menu/TeleportMenuOption.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/menu/MenuOption.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/game/GameSprite.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4454">
+          <caret line="322" column="35" selection-start-line="322" selection-start-column="35" selection-end-line="322" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521832">
+          <caret line="30696" column="34" selection-start-line="30696" selection-start-column="34" selection-end-line="30696" selection-end-column="34" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/view/ArenaDisplay.as">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="1904">
           <caret line="127" column="26" lean-forward="false" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
           <folding>
@@ -1241,35 +1393,138 @@
             <marker date="1535764102740" expanded="true" signature="7486:7652" ph="{...}" />
             <marker date="1535764102740" expanded="true" signature="7719:7741" ph="{...}" />
           </folding>
+=======
+        <state relative-caret-position="1513">
+          <caret line="107" column="37" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/stage3D/GraphicsFillExtra.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="420189">
           <caret line="24717" column="31" lean-forward="false" selection-start-line="24717" selection-start-column="31" selection-end-line="24717" selection-end-column="31" />
           <folding>
             <marker date="1535764102601" expanded="true" signature="1318481:1318495" ph="..." />
           </folding>
+=======
+        <state relative-caret-position="1343">
+          <caret line="97" column="62" selection-start-line="97" selection-start-column="62" selection-end-line="97" selection-end-column="62" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="459">
           <caret line="35" column="48" lean-forward="false" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
           <folding>
             <marker date="1535764102486" expanded="true" signature="51:9955" ph="{...}" />
             <marker date="1535764102486" expanded="true" signature="358:9953" ph="{...}" />
           </folding>
+=======
+        <state relative-caret-position="11067">
+          <caret line="906" column="98" selection-start-line="906" selection-start-column="98" selection-end-line="906" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/text/model/TextKey.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3434">
+          <caret line="202" column="42" selection-start-line="202" selection-start-column="42" selection-end-line="202" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/account/ui/Unboxing/UnboxResultBox.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/account/ui/Frame.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2737">
+          <caret line="179" column="47" selection-start-line="179" selection-start-column="47" selection-end-line="179" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/panels/mediators/GuildRegisterPanelMediator.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/util/StageProxy.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/account/ui/FrameuBox.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2533">
+          <caret line="168" column="5" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/dialogs/Dialog.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2108">
+          <caret line="146" column="44" selection-start-line="146" selection-start-column="44" selection-end-line="146" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/util/ConditionEffect.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3366">
+          <caret line="207" column="87" selection-start-line="207" selection-start-column="87" selection-end-line="207" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/Projectile.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4437">
+          <caret line="286" column="40" selection-start-line="286" selection-start-column="40" selection-end-line="286" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/objects/GameObject.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="900" column="28" selection-start-line="900" selection-start-column="28" selection-end-line="900" selection-end-column="28" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WebMain.as">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="1343">
           <caret line="136" column="43" lean-forward="false" selection-start-line="136" selection-start-column="43" selection-end-line="136" selection-end-column="43" />
           <folding />
+=======
+        <state relative-caret-position="96">
+          <caret line="112" column="24" selection-start-line="112" selection-start-column="24" selection-end-line="112" selection-end-column="24" />
+>>>>>>> 29ba57caa812288764b711cd8135a5e8c057653e
         </state>
       </provider>
     </entry>

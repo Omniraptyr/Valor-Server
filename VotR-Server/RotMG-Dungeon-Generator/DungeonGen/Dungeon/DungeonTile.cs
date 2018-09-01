@@ -18,8 +18,6 @@
 
 */
 
-using System;
-
 namespace DungeonGenerator.Dungeon {
 	public struct TileType {
 		public readonly uint Id;

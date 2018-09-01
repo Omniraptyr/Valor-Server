@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using common.resources;
+﻿using System.Linq;
 using wServer.realm;
-using Mono.Game;
 using wServer.realm.entities;
 
 namespace wServer.logic.behaviors

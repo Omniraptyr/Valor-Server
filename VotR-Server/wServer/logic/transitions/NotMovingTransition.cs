@@ -1,7 +1,5 @@
-﻿using System.Drawing;
-using Mono.Game;
+﻿using Mono.Game;
 using wServer.realm;
-using wServer.realm.entities;
 
 namespace wServer.logic.transitions
 {

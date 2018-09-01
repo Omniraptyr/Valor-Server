@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using common.resources;
-using StackExchange.Redis;
 using wServer.logic.loot;
 using wServer.networking;
 using wServer.networking.packets.outgoing;

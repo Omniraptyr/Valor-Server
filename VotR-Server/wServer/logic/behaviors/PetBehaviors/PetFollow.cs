@@ -2,7 +2,6 @@
 using wServer.realm;
 using wServer.realm.entities;
 using wServer.realm.terrain;
-using wServer.realm.worlds;
 using wServer.realm.worlds.logic;
 
 namespace wServer.logic.behaviors.PetBehaviors

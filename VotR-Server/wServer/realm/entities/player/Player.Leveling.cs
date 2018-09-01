@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using wServer.networking.packets.outgoing;
-using System.Timers;
 using common.resources;
 namespace wServer.realm.entities
 {
@@ -228,14 +227,13 @@ namespace wServer.realm.entities
             return ret;
         }
 
-        Entity questEntity;
-        public Entity Quest { get { return questEntity; } }
+        public Entity Quest { get; private set; }
         public void HandleQuest(RealmTime time, bool force = false, Position? destination = null)
         {
-            if (force || time.TickCount % 500 == 0 || questEntity == null || questEntity.Owner == null)
+            if (force || time.TickCount % 500 == 0 || Quest?.Owner == null)
             {
                 var newQuest = FindQuest(destination);
-                if (newQuest != null && newQuest != questEntity)
+                if (newQuest != null && newQuest != Quest)
                 {
                     Owner.Timers.Add(new WorldTimer(100, (w, t) =>
                     {
@@ -244,7 +242,7 @@ namespace wServer.realm.entities
                             ObjectId = newQuest.Id
                         });
                     }));
-                    questEntity = newQuest;
+                    Quest = newQuest;
                 }
             }
         }
@@ -319,7 +317,7 @@ namespace wServer.realm.entities
                     InvokeStatChange(StatsType.Experience, Experience - GetLevelExp(Level), true);
                 }
                       
-                questEntity = null;
+                Quest = null;
 
                 return true;
             }
@@ -378,34 +376,17 @@ namespace wServer.realm.entities
             {
                 return 100;
             }
-            else if (Stats[11] >= 41 && Stats[11] <= 50)
+
+            if (Stats[11] >= 41 && Stats[11] <= 50)
             {
                 return 90;
             }
-            else if (Stats[11] >= 51 && Stats[11] <= 60)
+
+            if (Stats[11] >= 51 && Stats[11] <= 60)
             {
                 return 75;
             }
-            else if (Stats[11] >= 61 && Stats[11] <= 70)
-            {
-                return 60;
-            }
-            else if (Stats[11] >= 71 && Stats[11] <= 80)
-            {
-                return 55;
-            }
-            else if (Stats[11] >= 81 && Stats[11] <= 90)
-            {
-                return 50;
-            }
-            else if (Stats[11] >= 101 && Stats[11] <= 130)
-            {
-                return 45;
-            }
-            else if (Stats[11] > 139)
-            {
-                return 40;
-            }
+
             return 100;
         }
 
@@ -414,7 +395,7 @@ namespace wServer.realm.entities
             var acc = Client.Account;
             var rnd = new Random();
             var time = new RealmTime();
-            if (enemy == questEntity)
+            if (enemy == Quest)
             {
                 BroadcastSync(new Notification
                 {

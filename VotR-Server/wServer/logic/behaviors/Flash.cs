@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using wServer.networking.packets.outgoing;
+﻿using wServer.networking.packets.outgoing;
 using wServer.realm;
-using wServer.realm.entities;
 
 namespace wServer.logic.behaviors
 {

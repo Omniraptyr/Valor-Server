@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using common;
-using common.resources;
 using wServer.networking.packets.outgoing;
 using wServer.realm.worlds.logic;
 

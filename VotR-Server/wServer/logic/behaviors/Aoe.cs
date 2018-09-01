@@ -1,5 +1,4 @@
-﻿using System;
-using wServer.realm;
+﻿using wServer.realm;
 using wServer.realm.entities;
 using wServer.networking.packets.outgoing;
 

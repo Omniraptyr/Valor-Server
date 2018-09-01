@@ -24,8 +24,8 @@
     "mode": "Single",
     "key": "DE5A1B",
     "maxConnections": "1024",
-    "maxPlayers": "170",
-    "maxPlayersWithPriority": "170",
+    "maxPlayers": "200",
+    "maxPlayersWithPriority": "200",
     "enablePets": "false",
     "enableMarket": "true"
   }

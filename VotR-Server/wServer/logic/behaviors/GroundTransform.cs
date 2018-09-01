@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using wServer.logic.loot;
+﻿using System.Collections.Generic;
 using wServer.realm;
-using wServer.realm.terrain;
 
 namespace wServer.logic.behaviors
 {

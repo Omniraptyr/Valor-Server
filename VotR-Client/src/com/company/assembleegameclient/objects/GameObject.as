@@ -540,10 +540,6 @@ public class GameObject extends BasicObject {
         return (!(((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.SAMURAIBERSERK_BIT) == 0)));
     }
 
-    public function isProtected():Boolean {
-        return (!(((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.PROTECTED_BIT) == 0)));
-    }
-
     public function isRelentless():Boolean {
         return (!(((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.RELENTLESS_BIT) == 0)));
     }
@@ -879,6 +875,9 @@ public class GameObject extends BasicObject {
                 }
             }
         }
+        if (this.props_.isEnemy_ && Parameters.data_.noEnemyDamage
+                || this.props_.isPlayer_ && Parameters.data_.noAllyDamage)
+            return;
         if (_arg_2 > 0) {
             _local_15 = ((((this.isArmorBroken()) || (((!((_arg_5 == null))) && (_arg_5.projProps_.armorPiercing_))))) || (_local_6));
             this.showDamageText2(_arg_2, _local_15);
@@ -1055,7 +1054,7 @@ public class GameObject extends BasicObject {
         }
         if (_arg2 > 0) {
             _local15 = ((((this.isArmorBroken()) || (((!((_arg5 == null))) && (_arg5.projProps_.armorPiercing_))))) || (_local6));
-            if(isProtected()){
+            if(this is Player && (this as Player).protectionPoints_ > 0){
                 this.showDamageText3(_arg2, _local15);
             }else{
                 this.showDamageText(_arg2, _local15);

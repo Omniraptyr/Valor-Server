@@ -1,5 +1,4 @@
-﻿using wServer.networking.handlers;
-using wServer.realm;
+﻿using wServer.realm;
 
 namespace wServer.logic.transitions
 {

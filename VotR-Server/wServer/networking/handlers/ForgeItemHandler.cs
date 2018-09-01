@@ -1,9 +1,7 @@
 ﻿using wServer.networking.packets;
 using wServer.networking.packets.incoming;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using common.resources;
 
 namespace wServer.networking.handlers
 {
