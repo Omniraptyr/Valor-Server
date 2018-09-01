@@ -227,14 +227,13 @@ namespace wServer.realm.entities
             return ret;
         }
 
-        Entity questEntity;
-        public Entity Quest { get { return questEntity; } }
+        public Entity Quest { get; private set; }
         public void HandleQuest(RealmTime time, bool force = false, Position? destination = null)
         {
-            if (force || time.TickCount % 500 == 0 || questEntity == null || questEntity.Owner == null)
+            if (force || time.TickCount % 500 == 0 || Quest?.Owner == null)
             {
                 var newQuest = FindQuest(destination);
-                if (newQuest != null && newQuest != questEntity)
+                if (newQuest != null && newQuest != Quest)
                 {
                     Owner.Timers.Add(new WorldTimer(100, (w, t) =>
                     {
@@ -243,7 +242,7 @@ namespace wServer.realm.entities
                             ObjectId = newQuest.Id
                         });
                     }));
-                    questEntity = newQuest;
+                    Quest = newQuest;
                 }
             }
         }
@@ -318,7 +317,7 @@ namespace wServer.realm.entities
                     InvokeStatChange(StatsType.Experience, Experience - GetLevelExp(Level), true);
                 }
                       
-                questEntity = null;
+                Quest = null;
 
                 return true;
             }
@@ -413,7 +412,7 @@ namespace wServer.realm.entities
             var acc = Client.Account;
             var rnd = new Random();
             var time = new RealmTime();
-            if (enemy == questEntity)
+            if (enemy == Quest)
             {
                 BroadcastSync(new Notification
                 {

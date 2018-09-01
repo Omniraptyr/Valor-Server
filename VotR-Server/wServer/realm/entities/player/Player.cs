@@ -960,11 +960,10 @@ namespace wServer.realm.entities
             if (!KeepAlive(time))
                 return;
 
+            if (time.TickCount % 20 == 0) CheckTradeTimeout(time);
+            if (time.TickCount % 500 == 0) HandleQuest(time);
 
-            CheckTradeTimeout(time);
-            HandleQuest(time);
-
-            if (!HasConditionEffect(ConditionEffects.Paused))
+            if (!HasConditionEffect(ConditionEffects.Paused) && time.TickCount % 3 == 0)
             {
                 HandleRegen(time);
                 HandleEffects(time);
@@ -983,11 +982,7 @@ namespace wServer.realm.entities
             SendUpdate(time);
             SendNewTick(time);
 
-            if (HP <= 0)
-            {
-                Death("Unknown", rekt: true);
-                return;
-            }
+            if (HP <= 0) Death("Unknown", rekt: true);
         }
 
 

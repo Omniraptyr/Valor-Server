@@ -208,7 +208,7 @@ namespace wServer.realm.entities
                 }
 
                 if (i is Player ||
-                    i == questEntity || i == SpectateTarget || /*(i is StaticObject && (i as StaticObject).Static) ||*/
+                    i == Quest || i == SpectateTarget || /*(i is StaticObject && (i as StaticObject).Static) ||*/
                     visibleTiles.Contains(new IntPoint((int)i.X, (int)i.Y)))
                     continue;
 
@@ -246,8 +246,8 @@ namespace wServer.realm.entities
                     yield return i;
             }
 
-            if (questEntity?.Owner != null && _clientEntities.Add(questEntity))
-                yield return questEntity;
+            if (Quest?.Owner != null && _clientEntities.Add(Quest))
+                yield return Quest;
 
             if (SpectateTarget?.Owner != null && _clientEntities.Add(SpectateTarget))
                 yield return SpectateTarget;
