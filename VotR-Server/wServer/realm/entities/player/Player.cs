@@ -602,6 +602,8 @@ namespace wServer.realm.entities
         public void SaveToCharacter()
         {
             var chr = _client.Character;
+            if (chr == null) return;
+
             chr.Level = Level;
             chr.Experience = Experience;
             chr.Fame = Fame;
@@ -957,22 +959,32 @@ namespace wServer.realm.entities
         
         public override void Tick(RealmTime time)
         {
-            if (!KeepAlive(time))
+            if (!KeepAlive(time)) //todo: simplify this later on
                 return;
 
-            if (time.TickCount % 20 == 0) {
+            var tickCount = time.TickCount;
+
+            if (tickCount % 20 == 0) {
                 CheckTradeTimeout(time);
                 HandleQuest(time);
             }
 
-            if (!HasConditionEffect(ConditionEffects.Paused) && time.TickCount % 3 == 0)
+            if (!HasConditionEffect(ConditionEffects.Paused))
             {
-                HandleEffects(time);
-                HandleKrakenGround(time);
-                HandleOceanTrenchGround(time);
-                HandleBastille(time);
-                TickActivateEffects(time);
-                FameCounter.Tick(time);
+                if (tickCount % 300 == 0)
+                    FameCounter.Tick(time);
+
+                if (tickCount % 25 == 0)
+                    HandleEffects(time);
+
+                if (tickCount % 5 == 0) {
+                    //TickActivateEffects(time); no need for that xp booster shit
+                    var name = Owner.Name;
+                    if (name.Equals("OceanTrench")) HandleKrakenGround(time);
+                    if (name.Equals("KrakenLair")) HandleOceanTrenchGround(time);
+                    if (name.Equals("SummoningPoint")) HandleBastille(time);
+                }
+
                 // TODO, server side ground damage
                 //if (HandleGround(time))
                 //    return; // death resulted
@@ -983,99 +995,49 @@ namespace wServer.realm.entities
             SendUpdate(time);
             SendNewTick(time);
             HandleRegen(time); //moved here so people don't get 'slow' refills
-
+                               //todo: perhaps check if hp/mp is at max (and subsequientally remove it from the check)
             if (HP <= 0) Death("Unknown", rekt: true);
-        }
-
-
-
-        void TickActivateEffects(RealmTime time)
-        {
-            var dt = time.ElapsedMsDelta;
-
-            if (XPBoostTime != 0)
-                if (Level >= 20)
-                    XPBoostTime = 0;
-
-            if (XPBoostTime > 0)
-                XPBoostTime = Math.Max(XPBoostTime - dt, 0);
-            if (XPBoostTime == 0)
-                XPBoosted = false;
-
-            if (LDBoostTime > 0)
-                LDBoostTime = Math.Max(LDBoostTime - dt, 0);
-
-            if (LTBoostTime > 0)
-                LTBoostTime = Math.Max(LTBoostTime - dt, 0);
+           
         }
 
         float _hpRegenCounter;
         float _mpRegenCounter;
         float _hpPotRegenCounter;
 
-        void HandleRegen(RealmTime time)
-        {
+        private void HandleRegen(RealmTime time) {
             // hp regen
-            if (!HasConditionEffect(ConditionEffects.Corrupted))
-            {
+            if (!HasConditionEffect(ConditionEffects.Corrupted)) {
                 if (HP == Stats[0] || !CanHpRegen())
                     _hpRegenCounter = 0;
-                else
-                {
+                else {
                     _hpRegenCounter += Stats.GetHPRegen() * time.ElapsedMsDelta / 1000f;
                     var regen = (int)_hpRegenCounter;
-                    if (regen > 0)
-                    {
-                        if (Mark == 2)
-                        {
-                            HP = Math.Min(Stats[0]+Convert.ToInt32(Stats[0] * 0.25), HP + regen);
-                        }
-                        else
-                        {
+                    if (regen > 0) {
+                        if (Mark == 2) {
+                            HP = Math.Min(Stats[0] + Convert.ToInt32(Stats[0] * 0.25), HP + regen);
+                        } else {
                             HP = Math.Min(Stats[0], HP + regen);
                         }
                         _hpRegenCounter -= regen;
                     }
                 }
-            }
 
-            // mp regen
-            if (!HasConditionEffect(ConditionEffects.Corrupted))
-            {
                 if (MP == Stats[1] || !CanMpRegen())
                     _mpRegenCounter = 0;
-                else
-                {
+                else {
                     _mpRegenCounter += Stats.GetMPRegen() * time.ElapsedMsDelta / 1000f;
                     var regen = (int)_mpRegenCounter;
-                    if (regen > 0)
-                    {
-                        if(Mark == 1)
-                        {
-                            MP = Math.Min(Stats[1]+Convert.ToInt32(Stats[1] * 0.25), MP + regen);
-                        }
-                        else
-                        {
+                    if (regen > 0) {
+                        if (Mark == 1) {
+                            MP = Math.Min(Stats[1] + Convert.ToInt32(Stats[1] * 0.25), MP + regen);
+                        } else {
                             MP = Math.Min(Stats[1], MP + regen);
                         }
-                        
+
                         _mpRegenCounter -= regen;
                     }
                 }
             }
-
-            // hp pot regen
-            /*if (Stacks[0].Count < Stacks[0].MaxCount)
-            {
-                _hpPotRegenCounter += Stacks[0].MaxCount * time.ElaspedMsDelta / 120000f;
-                var potRegen = (int)_hpPotRegenCounter;
-                if (potRegen > 0)
-                {
-                    Stacks[0].Put(Stacks[0].Item);
-                    _hpPotRegenCounter -= potRegen;
-                    UpdateCount++;
-                }
-            }*/
         }
 
         public void TeleportPosition(RealmTime time, float x, float y, bool ignoreRestrictions = false)

@@ -2922,7 +2922,7 @@ namespace wServer.logic
                 new State(
                     new Taunt("SURVIVE MY FURY!"),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
-                    new TimedTransition(60000, "finish"),
+                    new TimedTransition(30000, "finish"),
                     new Orbit(2, 5, target: "BD Platform Helper"),
                 new State("go2",
                    new Shoot(10, count: 1, shootAngle: 12, projectileIndex: 1, predictive: 0.1, coolDown: 600)
