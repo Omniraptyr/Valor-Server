@@ -146,27 +146,16 @@ namespace wServer.networking
             return IsLagging;
         }
 
-        internal void ProcessPacket(Packet pkt)
-        {
-            lock (DcLock)
-            {
+        internal void ProcessPacket(Packet pkt) {
+            using (TimedLock.Lock(DcLock)) {
                 if (State == ProtocolState.Disconnected)
                     return;
 
-                try
-                {
-                    Log.Logger.Log(typeof(Client), log4net.Core.Level.Verbose,
-                        $"Handling packet '{pkt.ID}'...", null);
-
-                    IPacketHandler handler;
-                    if (!PacketHandlers.Handlers.TryGetValue(pkt.ID, out handler))
-                        Log.WarnFormat("Unhandled packet '{0}'.", pkt.ID);
-                    else
+                try {
+                    if (PacketHandlers.Handlers.TryGetValue(pkt.ID, out var handler))
                         handler.Handle(this, (IncomingMessage)pkt);
                 }
-                catch (Exception e)
-                {
-                    Log.Error($"Error when handling packet '{pkt.ToString()}'...", e);
+                catch (Exception) {
                     Disconnect("Packet handling error.");
                 }
             }

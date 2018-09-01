@@ -4,6 +4,7 @@ import com.company.util.KeyCodes;
 import com.company.util.MoreDateUtil;
 
 import flash.display.DisplayObject;
+import flash.display.StageScaleMode;
 import flash.events.Event;
 import flash.net.SharedObject;
 import flash.system.Capabilities;
@@ -228,10 +229,11 @@ public class Parameters {
         }
         setDefault("HPBar", false);
         setDefault("outlineProj", true);
-        setDefault("noAllyNotifications",false);
-        setDefault("noAllyDamage",false);
-        setDefault("noEnemyDamage",false);
-        setDefault("noParticlesMaster",false);
+        setDefault("noAllyNotifications", false);
+        setDefault("noAllyDamage", false);
+        setDefault("noEnemyDamage", false);
+        setDefault("noParticlesMaster", false);
+        setDefault("stageScale", StageScaleMode.NO_SCALE);
     }
 }
 }
