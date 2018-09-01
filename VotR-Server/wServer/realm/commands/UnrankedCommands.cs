@@ -807,7 +807,9 @@ namespace wServer.realm.commands
             var str = "";
 
             for (var i = 0; i < pd.Stats.Length; i++) {
-                var l2m = (player.AscensionEnabled ? pd.Stats[i].MaxValue + 10 : pd.Stats[i].MaxValue) 
+                var l2m = (player.AscensionEnabled 
+                              ? pd.Stats[i].MaxValue + (i < 2 ? 50 : 10) 
+                              : pd.Stats[i].MaxValue) 
                           - player.Stats.Base[i];
 
                 if (l2m != 0) str += player.Stats.StatIndexToFullName(i) + ": " 

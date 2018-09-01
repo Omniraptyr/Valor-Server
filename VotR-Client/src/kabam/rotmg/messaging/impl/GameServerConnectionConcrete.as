@@ -858,59 +858,58 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         var itemXML:XML = (itemId >= 0x9000 && itemId < 0xF000
                 ? ObjectLibrary.xmlLibrary_[36863] : ObjectLibrary.xmlLibrary_[itemId]);
 
-        if (itemId != 0x53aa && itemXML && !go.isPaused()
-                && (itemXML.Activate == "IncrementStat" || itemXML.Activate == "PowerStat")){
-            var player:Player = (go is Player ? go as Player : this.player);
-            var stats:Vector.<int> = StatData.statToPlayerValues(itemXML.Activate.@stat, player);
-            if (stats == null) return false;
+        if (itemXML && !go.isPaused()) {
+            if (itemXML.Activate == "IncrementStat" || itemXML.Activate == "PowerStat") {
+                var player:Player = (go is Player ? go as Player : this.player);
+                var stats:Vector.<int> = StatData.statToPlayerValues(itemXML.Activate.@stat, player);
+                if (stats == null) return false;
 
-            var baseStat:int = (stats[0] - stats[1]);
-            var consumeResult:String;
-            if (itemXML.Activate == "PowerStat") {
-                if (player.ascended_) {
-                    var postMaxOffset:int = (itemXML.Activate.@stat == 0 || itemXML.Activate.@stat == 3 ? 50 : 10);
-                    if (baseStat == stats[2] + postMaxOffset) {
-                        this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' not consumed." +
-                                " You already fully ascended this stat."));
+                var baseStat:int = (stats[0] - stats[1]);
+                var consumeResult:String;
+                if (itemXML.Activate == "PowerStat") {
+                    if (player.ascended_) {
+                        var postMaxOffset:int = (itemXML.Activate.@stat == 0 || itemXML.Activate.@stat == 3 ? 50 : 10);
+                        if (baseStat == stats[2] + postMaxOffset) {
+                            this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' not consumed." +
+                                    " You already fully ascended this stat."));
+                            return false;
+                        }
+
+                        if (baseStat + int(itemXML.Activate.@amount) == stats[2] + postMaxOffset) {
+                            consumeResult = "You are now fully ascended in this stat."
+                        } else consumeResult = (stats[2] + postMaxOffset - (baseStat + int(itemXML.Activate.@amount)))
+                                + " left to fully ascend this stat.";
+
+                        this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' consumed. " + consumeResult));
+                    } else {
+                        this.addTextLine.dispatch(ChatMessage.make("", "You must have ascension enabled in order to consume vials."));
+                        return false;
+                    }
+                }
+
+                if (itemXML.Activate == "IncrementStat") {
+                    if (baseStat >= stats[2]) {
+                        this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' not consumed. " +
+                                "You already maxed this stat."));
                         return false;
                     }
 
-                    if (baseStat + int(itemXML.Activate.@amount) == stats[2] + postMaxOffset) {
-                        consumeResult = "You are now fully ascended in this stat."
-                    } else consumeResult = (stats[2] + postMaxOffset - (baseStat + int(itemXML.Activate.@amount)))
-                            + " left to fully ascend this stat.";
+                    if (baseStat + int(itemXML.Activate.@amount) >= stats[2]) {
+                        consumeResult = "You are now maxed in this stat."
+                    } else consumeResult = (stats[2] - (baseStat + int(itemXML.Activate.@amount)))
+                            + " left to max this stat.";
 
                     this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' consumed. " + consumeResult));
-                } else {
-                    this.addTextLine.dispatch(ChatMessage.make("", "You must have ascension enabled in order to consume vials."));
-                    return false;
                 }
+                this.applyUseItem(go, slot, itemId, itemXML);
+                SoundEffectLibrary.play("use_potion");
+                return true;
+            } else if (itemXML.hasOwnProperty("Consumable") || itemXML.hasOwnProperty("InvUse")) {
+                this.applyUseItem(go, slot, itemId, itemXML);
+                SoundEffectLibrary.play("use_potion");
+                return true;
             }
-
-            if (itemXML.Activate == "IncrementStat") {
-                if (baseStat >= stats[2]) {
-                    this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' not consumed. " +
-                            "You already maxed this stat."));
-                    return false;
-                }
-
-                if (baseStat + int(itemXML.Activate.@amount) >= stats[2]) {
-                    consumeResult = "You are now maxed in this stat."
-                } else consumeResult = (stats[2] - (baseStat + int(itemXML.Activate.@amount)))
-                        + " left to max this stat.";
-
-                this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' consumed. " + consumeResult));
-            }
-            this.applyUseItem(go, slot, itemId, itemXML);
-            SoundEffectLibrary.play("use_potion");
-            return true;
-        } else if (itemXML && !go.isPaused()
-                && (itemXML.Activate == "Consumable" || itemXML.Activate == "InvUse")) {
-            this.applyUseItem(go, slot, itemId, itemXML);
-            SoundEffectLibrary.play("use_potion");
-            return true;
         }
-
         SoundEffectLibrary.play("error");
         return false;
     }
