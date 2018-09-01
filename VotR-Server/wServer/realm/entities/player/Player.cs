@@ -602,6 +602,8 @@ namespace wServer.realm.entities
         public void SaveToCharacter()
         {
             var chr = _client.Character;
+            if (chr == null) return;
+
             chr.Level = Level;
             chr.Experience = Experience;
             chr.Fame = Fame;
