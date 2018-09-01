@@ -63,7 +63,7 @@ public class Parameters {
 
     public static function load():void {
         try {
-            savedOptions_ = SharedObject.getLocal("AssembleeGameClientOptions", "/");
+            savedOptions_ = SharedObject.getLocal("ValorOptions", "/");
             data_ = savedOptions_.data;
         } catch (error:Error) {
             data_ = new Object();

@@ -70,7 +70,6 @@ public class ConditionEffect {
     public static const GRASPOFZOL:int = 55;
     public static const SAMURAIBERSERK:int = 56;
     public static const DRAKZIXCHARGING:int = 57;
-    public static const PROTECTED:int = 58;
     public static const RELENTLESS:int = 59;
     public static const VENGEANCE:int = 60;
     public static const MANARECOVERY:int = 61;
@@ -134,7 +133,6 @@ public class ConditionEffect {
     public static const GRASPOFZOL_BIT:uint = (1 << (GRASPOFZOL - NEW_CON_THREASHOLD));
     public static const SAMURAIBERSERK_BIT:uint = (1 << (SAMURAIBERSERK - NEW_CON_THREASHOLD));
     public static const DRAKZIXCHARGING_BIT:uint = (1 << (DRAKZIXCHARGING - NEW_CON_THREASHOLD));
-    public static const PROTECTED_BIT:uint = (1 << (PROTECTED - NEW_CON_THREASHOLD));
     public static const RELENTLESS_BIT:uint = (1 << (RELENTLESS - NEW_CON_THREASHOLD));
     public static const VENGEANCE_BIT:uint = (1 << (VENGEANCE - NEW_CON_THREASHOLD));
     public static const MANARECOVERY_BIT:uint = (1 << (MANARECOVERY - NEW_CON_THREASHOLD));
@@ -208,7 +206,6 @@ public class ConditionEffect {
                 new ConditionEffect("GraspofZol", GRASPOFZOL_BIT, [64], "GraspofZol"),
                 new ConditionEffect("Samurai Berserk", SAMURAIBERSERK_BIT, [50], "Samurai Berserk"),
                 new ConditionEffect("Charging", DRAKZIXCHARGING_BIT, [65], "Charging"),
-                new ConditionEffect("Protected", PROTECTED_BIT, [66], "Protected"),
                 new ConditionEffect("Relentless", RELENTLESS_BIT, [67], "Relentless"),
                 new ConditionEffect("Vengeance", VENGEANCE_BIT, [68], "Vengeance"),
                 new ConditionEffect("ManaRecovery", MANARECOVERY_BIT, [69], "ManaRecovery"),

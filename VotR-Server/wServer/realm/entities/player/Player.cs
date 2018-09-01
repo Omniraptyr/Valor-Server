@@ -960,12 +960,13 @@ namespace wServer.realm.entities
             if (!KeepAlive(time))
                 return;
 
-            if (time.TickCount % 20 == 0) CheckTradeTimeout(time);
-            if (time.TickCount % 500 == 0) HandleQuest(time);
+            if (time.TickCount % 20 == 0) {
+                CheckTradeTimeout(time);
+                HandleQuest(time);
+            }
 
             if (!HasConditionEffect(ConditionEffects.Paused) && time.TickCount % 3 == 0)
             {
-                HandleRegen(time);
                 HandleEffects(time);
                 HandleKrakenGround(time);
                 HandleOceanTrenchGround(time);
@@ -981,6 +982,7 @@ namespace wServer.realm.entities
 
             SendUpdate(time);
             SendNewTick(time);
+            HandleRegen(time); //moved here so people don't get 'slow' refills
 
             if (HP <= 0) Death("Unknown", rekt: true);
         }

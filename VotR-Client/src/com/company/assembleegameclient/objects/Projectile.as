@@ -263,7 +263,7 @@ public class Projectile extends BasicObject {
                 }
                 if(go.pvp_ && player.pvp_){
                     map_.gs_.gsc_.playerHit(this.bulletId_, go.objectId_);
-                    if(go.isProtected()){
+                    if(go is Player && (go as Player).protectionPoints_ > 0){
                         go.damage(this.containerType_, dmg2, this.projProps_.effects_, false, this);
                     }else{
                         go.damage(this.containerType_, dmg, this.projProps_.effects_, false, this);
@@ -271,7 +271,7 @@ public class Projectile extends BasicObject {
                 }
                 if (go == player) {
                     map_.gs_.gsc_.playerHit(this.bulletId_, this.ownerId_);
-                    if(go.isProtected()){
+                    if(go is Player && (go as Player).protectionPoints_ > 0){
                         go.damage(this.containerType_, dmg2, this.projProps_.effects_, false, this);
                     }else{
                         go.damage(this.containerType_, dmg, this.projProps_.effects_, false, this);

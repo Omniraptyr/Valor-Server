@@ -376,34 +376,17 @@ namespace wServer.realm.entities
             {
                 return 100;
             }
-            else if (Stats[11] >= 41 && Stats[11] <= 50)
+
+            if (Stats[11] >= 41 && Stats[11] <= 50)
             {
                 return 90;
             }
-            else if (Stats[11] >= 51 && Stats[11] <= 60)
+
+            if (Stats[11] >= 51 && Stats[11] <= 60)
             {
                 return 75;
             }
-            else if (Stats[11] >= 61 && Stats[11] <= 70)
-            {
-                return 60;
-            }
-            else if (Stats[11] >= 71 && Stats[11] <= 80)
-            {
-                return 55;
-            }
-            else if (Stats[11] >= 81 && Stats[11] <= 90)
-            {
-                return 50;
-            }
-            else if (Stats[11] >= 101 && Stats[11] <= 130)
-            {
-                return 45;
-            }
-            else if (Stats[11] > 139)
-            {
-                return 40;
-            }
+
             return 100;
         }
 

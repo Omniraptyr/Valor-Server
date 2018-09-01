@@ -109,23 +109,23 @@ public class Menu extends Sprite implements UnFocusAble {
         }
 
         if (stage.mouseX + 0.5 * stage.stageWidth - 400 < stage.stageWidth / 2) {
-            x = _loc3_ + 12;
+            this.x = _loc3_ + 12;
         } else {
-            x = _loc3_ - width - 1;
+            this.x = _loc3_ - width - 1;
         }
 
-        if (x < 12) {
-            x = 12;
+        if (this.x < 12) {
+            this.x = 12;
         }
 
         if (stage.mouseY + 0.5 * stage.stageHeight - 300 < stage.stageHeight / 3) {
-            y = _loc1_ + 12;
+            this.y = _loc1_ + 12;
         } else {
-            y = _loc1_ - height - 1;
+            this.y = _loc1_ - height - 1;
         }
 
-        if (y < 12) {
-            y = 12;
+        if (this.y < 12) {
+            this.y = 12;
         }
     }
 

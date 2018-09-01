@@ -24,7 +24,6 @@ import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 import kabam.rotmg.ui.view.SignalWaiter;
 
 public class Dialog extends Sprite {
-
     public static const LEFT_BUTTON:String = "dialogLeftButton";
     public static const RIGHT_BUTTON:String = "dialogRightButton";
     public static const GREY:int = 0xB3B3B3;
@@ -231,12 +230,11 @@ public class Dialog extends Sprite {
     protected function onRightButtonClick(_arg1:Event):void {
         dispatchEvent(new Event(RIGHT_BUTTON));
     }
-    public function addFullDim() : void
-    {
+
+    public function addFullDim() : void {
         graphics.beginFill(0,0.5);
         graphics.drawRect(0,0,800,600);
         graphics.endFill();
     }
-
 }
 }
