@@ -868,15 +868,16 @@ public class GameServerConnectionConcrete extends GameServerConnection {
             var consumeResult:String;
             if (itemXML.Activate == "PowerStat") {
                 if (player.ascended_) {
-                    if (baseStat == stats[2] + 10) {
+                    var postMaxOffset:int = (itemXML.Activate.@stat == 0 || itemXML.Activate.@stat == 3 ? 50 : 10);
+                    if (baseStat == stats[2] + postMaxOffset) {
                         this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' not consumed." +
                                 " You already fully ascended this stat."));
                         return false;
                     }
 
-                    if (baseStat + int(itemXML.Activate.@amount) == stats[2] + 10) {
+                    if (baseStat + int(itemXML.Activate.@amount) == stats[2] + postMaxOffset) {
                         consumeResult = "You are now fully ascended in this stat."
-                    } else consumeResult = (stats[2] + 10 - (baseStat + int(itemXML.Activate.@amount)))
+                    } else consumeResult = (stats[2] + postMaxOffset - (baseStat + int(itemXML.Activate.@amount)))
                             + " left to fully ascend this stat.";
 
                     this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' consumed. " + consumeResult));
@@ -903,7 +904,8 @@ public class GameServerConnectionConcrete extends GameServerConnection {
             this.applyUseItem(go, slot, itemId, itemXML);
             SoundEffectLibrary.play("use_potion");
             return true;
-        } else if (itemId == 0x53aa) { //ultra ghetto fix
+        } else if (itemXML && !go.isPaused()
+                && (itemXML.Activate == "Consumable" || itemXML.Activate == "InvUse")) {
             this.applyUseItem(go, slot, itemId, itemXML);
             SoundEffectLibrary.play("use_potion");
             return true;

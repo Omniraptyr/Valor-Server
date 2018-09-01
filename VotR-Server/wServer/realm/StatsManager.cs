@@ -26,7 +26,6 @@ namespace wServer.realm
             Base = new BaseStatManager(this);
             Boost = new BoostStatManager(this);
 
-
             _stats = new SV<int>[NUM_STAT_TYPES];
             for (var i = 0; i < NUM_STAT_TYPES; i++)
                 _stats[i] = new SV<int>(Owner, GetStatType(i), this[i], i != 0 && i != 1); // make maxHP and maxMP global update

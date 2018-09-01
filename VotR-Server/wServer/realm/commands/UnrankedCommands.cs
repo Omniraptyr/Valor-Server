@@ -1459,16 +1459,6 @@ namespace wServer.realm.commands
         }
     }
 
-    class MigrateCommand : Command
-    {
-        public MigrateCommand() : base("migrate") { }
-
-        protected override bool Process(Player player, RealmTime time, string args) {
-            player.MigrateStats();
-            return true;
-        }
-    }
-
     class ServersCommand : Command
     {
         public ServersCommand() : base("servers", alias: "svrs") { }

@@ -17,6 +17,7 @@ namespace wServer.logic.behaviors
         }
 
         protected override void TickCore(Entity host, RealmTime time, ref object state) {
+            return; //temp disabled
             var cool = (int?)state ?? -1;
 
             if (cool <= 0) {

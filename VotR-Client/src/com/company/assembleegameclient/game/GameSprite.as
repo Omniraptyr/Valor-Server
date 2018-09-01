@@ -322,8 +322,8 @@ public class GameSprite extends AGameSprite {
         }
         if (this.hudView != null) {
             this.hudView.scaleX = scaleX;
-            this.hudView.scaleY = 1;
-            this.hudView.y = 0;
+            this.hudView.scaleY = scaleY;
+            this.hudView.y = 300 * (1 - scaleY);
             this.hudView.x = 800 - 200 * this.hudView.scaleX;
             if (this.creditDisplay_ != null) {
                 this.creditDisplay_.x = this.hudView.x - 6 * this.creditDisplay_.scaleX;
