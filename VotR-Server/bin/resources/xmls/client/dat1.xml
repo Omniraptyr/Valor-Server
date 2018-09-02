@@ -113892,7 +113892,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate stat="3" amount="5">PowerStat</Activate>
         <Consumable/>
         <Potion/>
-        <BagType>6</BagType>
+        <BagType>5</BagType>
     </Object>
     <Object type="0x619d" id="Vial of Restoration">
         <Class>Equipment</Class>
@@ -113908,7 +113908,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate stat="121" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
-        <BagType>6</BagType>
+        <BagType>5</BagType>
     </Object>
     <Object type="0x619e" id="Vial of Wisdom">
         <Class>Equipment</Class>
@@ -113924,7 +113924,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate stat="27" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
-        <BagType>6</BagType>
+        <BagType>5</BagType>
     </Object>
     <Object type="0x619f" id="Vial of Attack">
         <Class>Equipment</Class>
@@ -113940,7 +113940,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate stat="20" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
-        <BagType>6</BagType>
+        <BagType>5</BagType>
     </Object>
     <Object type="0x62a0" id="Vial of Vitality">
         <Class>Equipment</Class>
@@ -113956,7 +113956,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate stat="26" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
-        <BagType>6</BagType>
+        <BagType>5</BagType>
     </Object>
     <Object type="0x62a1" id="Vial of Speed">
         <Class>Equipment</Class>
@@ -113972,7 +113972,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate stat="22" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
-        <BagType>6</BagType>
+        <BagType>5</BagType>
     </Object>
     <Object type="0x62a2" id="Vial of Protection">
         <Class>Equipment</Class>
@@ -113988,7 +113988,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate stat="122" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
-        <BagType>6</BagType>
+        <BagType>5</BagType>
     </Object>
     <Object type="0x62a3" id="Vial of Defense">
         <Class>Equipment</Class>
@@ -114004,7 +114004,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate stat="21" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
-        <BagType>6</BagType>
+        <BagType>5</BagType>
     </Object>
     <Object type="0x62a4" id="Vial of Dexterity">
         <Class>Equipment</Class>
@@ -114020,7 +114020,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate stat="28" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
-        <BagType>6</BagType>
+        <BagType>5</BagType>
     </Object>
     <Object type="0x62a5" id="Vial of Life">
         <Class>Equipment</Class>
@@ -114036,7 +114036,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate stat="0" amount="5">PowerStat</Activate>
         <Consumable/>
         <Potion/>
-        <BagType>6</BagType>
+        <BagType>5</BagType>
     </Object>
     <Object type="0x62a6" id="Vial of Might">
         <Class>Equipment</Class>
@@ -114052,7 +114052,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate stat="112" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
-        <BagType>6</BagType>
+        <BagType>5</BagType>
     </Object>
     <Object type="0x62a7" id="Vial of Luck">
         <Class>Equipment</Class>
@@ -114068,7 +114068,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate stat="114" amount="1">PowerStat</Activate>
         <Consumable/>
         <Potion/>
-        <BagType>6</BagType>
+        <BagType>5</BagType>
     </Object>
 	<Object type="0x53a1" id="Lost Scripture">
         <Class>Equipment</Class>
