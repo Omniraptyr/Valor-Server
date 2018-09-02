@@ -939,7 +939,7 @@ class ClearSpawnsCommand : Command
         public CheckerMan() : base("bp", permLevel: 90) { }
         protected override bool Process(Player player, RealmTime time, string args)
         {
-            player.protectionDamage = player.ProtectionMax;
+            player.ProtectionDamage = player.ProtectionMax;
             return true;
         }
     }

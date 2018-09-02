@@ -444,20 +444,6 @@ public class Map extends AbstractMap {
             }
         }
 
-        // draw breath overlay
-        if (player_ != null && player_.breath_ >= 0 && player_.breath_ < Parameters.BREATH_THRESH) {
-            var bMult:Number = Parameters.BREATH_THRESH - player_.breath_ / Parameters.BREATH_THRESH;
-            var btMult:Number = Math.abs(Math.sin(currentTime / 300)) * 0.75;
-            BREATH_CT.alphaMultiplier = bMult * btMult;
-            hurtOverlay_.transform.colorTransform = BREATH_CT;
-            hurtOverlay_.visible = true;
-            hurtOverlay_.x = rect.left;
-            hurtOverlay_.y = rect.top;
-        }
-        else {
-            hurtOverlay_.visible = false;
-        }
-
         // draw side bar gradient
         if (player_ != null && !Parameters.screenShotMode_) {
             gradientOverlay_.visible = true;
@@ -530,21 +516,6 @@ public class Map extends AbstractMap {
 
         mapOverlay_.draw(camera, currentTime);
         partyOverlay_.draw(camera, currentTime);
-
-        // draw darkness
-        if (player_ && player_.isDarkness()) {
-            this.darkness.x = -300;
-            this.darkness.y = Parameters.data_.centerOnPlayer ? -525 : -515;
-            this.darkness.alpha = 0.95;
-            this.darkness.scaleX = stage.stageWidth / 800;
-            this.darkness.scaleY = stage.stageHeight / 600;
-            addChild(this.darkness);
-        }
-        else {
-            if (contains(this.darkness)) {
-                removeChild(this.darkness);
-            }
-        }
     }
 
     public function correctMapView(camera:Camera):Point {

@@ -371,7 +371,7 @@ namespace wServer.realm.entities
         }
 
         private readonly SV<int> _lootbox5;
-        public int Lootbox5
+        public int PremiumLootbox
         {
             get => _lootbox5.GetValue();
             set => _lootbox5.SetValue(value);
@@ -473,11 +473,11 @@ namespace wServer.realm.entities
                 case StatsType.Onrane: Onrane = (int)val; break;
                 case StatsType.Kantos: Kantos = (int)val; break;
                 case StatsType.RaidToken: AlertToken = (int)val; break;
-                case StatsType.Lootbox1: BronzeLootbox = (int)val; break;
-                case StatsType.Lootbox2: SilverLoootbox = (int)val; break;
-                case StatsType.Lootbox3: GoldLootbox = (int)val; break;
-                case StatsType.Lootbox4: EliteLootbox = (int)val; break;
-                case StatsType.Lootbox5: Lootbox5 = (int)val; break;
+                case StatsType.BronzeLootbox: BronzeLootbox = (int)val; break;
+                case StatsType.SilverLootbox: SilverLoootbox = (int)val; break;
+                case StatsType.GoldLootbox: GoldLootbox = (int)val; break;
+                case StatsType.EliteLootbox: EliteLootbox = (int)val; break;
+                case StatsType.PremiumLootbox: PremiumLootbox = (int)val; break;
                 case StatsType.RaidRank: RaidRank = (int)val; break;
                 case StatsType.Surge: Surge = (int)val; break;
                 case StatsType.SurgeCounter: SurgeCounter = (int)val; break;
@@ -572,10 +572,6 @@ namespace wServer.realm.entities
             stats[StatsType.HealthStackCount] = HealthPots.Count;
             stats[StatsType.MagicStackCount] = MagicPots.Count;
             stats[StatsType.HasBackpack] = (HasBackpack) ? 1 : 0;
-            stats[StatsType.XPBoost] = (XPBoostTime != 0) ? 1 : 0;
-            stats[StatsType.XPBoostTime] = XPBoostTime / 1000;
-            stats[StatsType.LDBoostTime] = LDBoostTime / 1000;
-            stats[StatsType.LTBoostTime] = LTBoostTime / 1000;
             stats[StatsType.OxygenBar] = OxygenBar;
             stats[StatsType.RageBar] = RageBar;
             stats[StatsType.Rank] = Rank;
@@ -587,11 +583,11 @@ namespace wServer.realm.entities
             stats[StatsType.RaidRank] = RaidRank;
             stats[StatsType.Surge] = Surge;
             stats[StatsType.SurgeCounter] = SurgeCounter;
-            stats[StatsType.Lootbox1] = BronzeLootbox;
-            stats[StatsType.Lootbox2] = SilverLoootbox;
-            stats[StatsType.Lootbox3] = GoldLootbox;
-            stats[StatsType.Lootbox4] = EliteLootbox;
-            stats[StatsType.Lootbox5] = Lootbox5;
+            stats[StatsType.BronzeLootbox] = BronzeLootbox;
+            stats[StatsType.SilverLootbox] = SilverLoootbox;
+            stats[StatsType.GoldLootbox] = GoldLootbox;
+            stats[StatsType.EliteLootbox] = EliteLootbox;
+            stats[StatsType.PremiumLootbox] = PremiumLootbox;
             stats[StatsType.ProtectionPoints] = Protection;
             stats[StatsType.ProtectionPointsMax] = ProtectionMax;
             stats[StatsType.SorStorage] = SorStorage;
@@ -626,10 +622,6 @@ namespace wServer.realm.entities
             chr.HealthStackCount = HealthPots.Count;
             chr.MagicStackCount = MagicPots.Count;
             chr.HasBackpack = HasBackpack;
-            chr.XPBoostTime = XPBoostTime;
-            chr.LDBoostTime = LDBoostTime;
-            chr.LTBoostTime = LTBoostTime;
-            chr.PetId = Pet?.PetId ?? 0;
             chr.Items = Inventory.GetItemTypes();
         }
 
@@ -685,11 +677,11 @@ namespace wServer.realm.entities
             _protection = new SV<int>(this, StatsType.ProtectionPoints, -1);
             _protectionMax = new SV<int>(this, StatsType.ProtectionPointsMax, -1);
             _surgeCounter = new SV<int>(this, StatsType.SurgeCounter, -1);
-            _lootbox1 = new SV<int>(this, StatsType.Lootbox1, client.Account.Lootbox1, true);
-            _lootbox2 = new SV<int>(this, StatsType.Lootbox2, client.Account.Lootbox2, true);
-            _lootbox3 = new SV<int>(this, StatsType.Lootbox3, client.Account.Lootbox3, true);
-            _lootbox4 = new SV<int>(this, StatsType.Lootbox4, client.Account.Lootbox4, true);
-            _lootbox5 = new SV<int>(this, StatsType.Lootbox5, client.Account.Lootbox5, true);
+            _lootbox1 = new SV<int>(this, StatsType.BronzeLootbox, client.Account.Lootbox1, true);
+            _lootbox2 = new SV<int>(this, StatsType.SilverLootbox, client.Account.Lootbox2, true);
+            _lootbox3 = new SV<int>(this, StatsType.GoldLootbox, client.Account.Lootbox3, true);
+            _lootbox4 = new SV<int>(this, StatsType.EliteLootbox, client.Account.Lootbox4, true);
+            _lootbox5 = new SV<int>(this, StatsType.PremiumLootbox, client.Account.Lootbox5, true);
             _sorStorage = new SV<int>(this, StatsType.SorStorage, client.Account.SorStorage, true);
             _elite = new SV<int>(this, StatsType.Elite, client.Account.Elite, true);
             _pvp = new SV<bool>(this, StatsType.PvP, true);
@@ -956,7 +948,7 @@ namespace wServer.realm.entities
             }
         }
 
-        /*public override void Tick(RealmTime time)
+        public override void Tick(RealmTime time)
         {
             if (!KeepAlive(time)) //todo: simplify this later on
                 return;
@@ -974,19 +966,18 @@ namespace wServer.realm.entities
                     FameCounter.Tick(time);
 
                 if (tickCount % 5 == 0) {
-                    TickActivateEffects(time);
-                    if (!Owner.Name.IsNullOrEmpty()) switch (Owner.Name)
-                    {
-                        case "OceanTrench":
-                            HandleKrakenGround(time);
-                            break;
-                        case "KrakenLair":
-                            HandleOceanTrenchGround(time);
-                            break;
-                        case "SummoningPoint":
-                            HandleBastille(time);
-                            break;
-                    }
+                    if (Owner.Name != null)
+                        switch (Owner.Name) {
+                            case "OceanTrench":
+                                HandleKrakenGround(time);
+                                break;
+                            case "KrakenLair":
+                                HandleOceanTrenchGround(time);
+                                break;
+                            case "SummoningPoint":
+                                HandleBastille(time);
+                                break;
+                        }
                 }
 
                 // TODO, server side ground damage
@@ -1003,94 +994,39 @@ namespace wServer.realm.entities
                                //todo: perhaps check if hp/mp is at max (and subsequientally remove it from the check)
             if (HP <= 0) Death("Unknown", rekt: true);
            
-        }*/
-
-        public override void Tick(RealmTime time) {
-            if (!KeepAlive(time))
-                return;
-
-            if (time.TickCount % 20 == 0) {
-                CheckTradeTimeout(time);
-                HandleQuest(time);
-            }
-
-            if (!HasConditionEffect(ConditionEffects.Paused) && time.TickCount % 3 == 0) {
-                HandleEffects(time);
-                HandleKrakenGround(time);
-                HandleOceanTrenchGround(time);
-                HandleBastille(time);
-                TickActivateEffects(time);
-                FameCounter.Tick(time);
-                // TODO, server side ground damage
-                //if (HandleGround(time))
-                //    return; // death resulted
-            }
-
-            base.Tick(time);
-
-            SendUpdate(time);
-            SendNewTick(time);
-            HandleRegen(time); //moved here so people don't get 'slow' refills
-
-            if (HP <= 0) Death("Unknown", rekt: true);
         }
 
-        private void TickActivateEffects(RealmTime time) {
-            var dt = time.ElapsedMsDelta;
-
-            if (XPBoostTime != 0)
-                if (Level >= 20)
-                    XPBoostTime = 0;
-
-            if (XPBoostTime > 0)
-                XPBoostTime = Math.Max(XPBoostTime - dt, 0);
-            if (XPBoostTime == 0)
-                XPBoosted = false;
-
-            if (LDBoostTime > 0)
-                LDBoostTime = Math.Max(LDBoostTime - dt, 0);
-
-            if (LTBoostTime > 0)
-                LTBoostTime = Math.Max(LTBoostTime - dt, 0);
-        }
-
-        float _hpRegenCounter;
-        float _mpRegenCounter;
-        float _hpPotRegenCounter;
+        private float _hpRegenCounter;
+        private float _mpRegenCounter;
 
         private void HandleRegen(RealmTime time) {
-            // hp regen
-            if (!HasConditionEffect(ConditionEffects.Corrupted)) {
-                if (HP == Stats[0] || !CanHpRegen())
-                    _hpRegenCounter = 0;
-                else {
-                    _hpRegenCounter += Stats.GetHPRegen() * time.ElapsedMsDelta / 1000f;
-                    var regen = (int)_hpRegenCounter;
-                    if (regen > 0) {
-                        if (Mark == 2) {
-                            HP = Math.Min(Stats[0] + Convert.ToInt32(Stats[0] * 0.25), HP + regen);
-                        } else {
-                            HP = Math.Min(Stats[0], HP + regen);
-                        }
-                        _hpRegenCounter -= regen;
-                    }
-                }
+            if (HasConditionEffect(ConditionEffects.Corrupted)) return;
 
-                if (MP == Stats[1] || !CanMpRegen())
-                    _mpRegenCounter = 0;
-                else {
-                    _mpRegenCounter += Stats.GetMPRegen() * time.ElapsedMsDelta / 1000f;
-                    var regen = (int)_mpRegenCounter;
-                    if (regen > 0) {
-                        if (Mark == 1) {
-                            MP = Math.Min(Stats[1] + Convert.ToInt32(Stats[1] * 0.25), MP + regen);
-                        } else {
-                            MP = Math.Min(Stats[1], MP + regen);
-                        }
-
-                        _mpRegenCounter -= regen;
-                    }
+            if (HP == Stats[0] || !CanHpRegen())
+                _hpRegenCounter = 0;
+            else {
+                _hpRegenCounter += Stats.GetHPRegen() * time.ElapsedMsDelta / 1000f;
+                var regen = (int)_hpRegenCounter;
+                if (regen > 0) {
+                    HP = Mark == 2
+                        ? Math.Min(Stats[0] + Convert.ToInt32(Stats[0] * 0.25), HP + regen)
+                        : Math.Min(Stats[0], HP + regen);
+                    _hpRegenCounter -= regen;
                 }
+            }
+
+            if (MP == Stats[1] || !CanMpRegen())
+                _mpRegenCounter = 0;
+            else {
+                _mpRegenCounter += Stats.GetMPRegen() * time.ElapsedMsDelta / 1000f;
+                var regen = (int)_mpRegenCounter;
+                if (regen <= 0) return;
+
+                MP = Mark == 1
+                    ? Math.Min(Stats[1] + Convert.ToInt32(Stats[1] * 0.25), MP + regen)
+                    : Math.Min(Stats[1], MP + regen);
+
+                _mpRegenCounter -= regen;
             }
         }
 
@@ -1281,7 +1217,7 @@ namespace wServer.realm.entities
             {
                 if (Protection > 0)
                 {
-                    protectionDamage += (int)Stats.GetDefenseDamage(projectile.Damage, true);
+                    ProtectionDamage += (int)Stats.GetDefenseDamage(projectile.Damage, true);
                 }
                 else
                 {
@@ -1322,7 +1258,7 @@ namespace wServer.realm.entities
             {
                 if (Protection > 0)
                 {
-                    protectionDamage += dmg;
+                    ProtectionDamage += dmg;
                 }
                 else
                 {

@@ -93,7 +93,6 @@ public class GameSprite extends AGameSprite {
     private var isGameStarted:Boolean;
     private var displaysPosY:uint = 4;
     private var currentPackage:DisplayObject;
-    private var packageY:Number;
     public var chatPlayerMenu:PlayerMenu;
     public var arenaDisplay:ArenaDisplay;
 
@@ -321,17 +320,17 @@ public class GameSprite extends AGameSprite {
             this.map.scaleY = scaleY;
         }
         if (this.hudView != null) {
-            this.hudView.scaleX = scaleX;
-            this.hudView.scaleY = scaleY;
-            this.hudView.y = 300 * (1 - scaleY);
+            this.hudView.scaleX = scaleX / scaleY;
+            this.hudView.scaleY = 1;
+            this.hudView.y = 0;
             this.hudView.x = 800 - 200 * this.hudView.scaleX;
             if (this.creditDisplay_ != null) {
                 this.creditDisplay_.x = this.hudView.x - 6 * this.creditDisplay_.scaleX;
             }
         }
         if (this.chatBox_ != null) {
-            this.chatBox_.scaleX = scaleX;
-            this.chatBox_.scaleY = scaleY;
+            this.chatBox_.scaleX = scaleX / scaleY;
+            this.chatBox_.scaleY = 1;
             this.chatBox_.y = 300 + 300 * (1 - this.chatBox_.scaleY);
         }
         if (this.rankText_ != null) {
@@ -387,7 +386,7 @@ public class GameSprite extends AGameSprite {
             stage.addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
 
             this.parent.parent.setChildIndex((this.parent.parent as Layers).top, 0);
-            stage.scaleMode = StageScaleMode.NO_SCALE;
+            stage.scaleMode = Parameters.data_.stageScale;
             stage.addEventListener(Event.RESIZE, this.onScreenResize);
             stage.dispatchEvent(new Event(Event.RESIZE));
 

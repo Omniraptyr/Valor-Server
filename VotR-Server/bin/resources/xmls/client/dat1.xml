@@ -110351,7 +110351,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate duration="4">DiceActivate</Activate>
         <Activate effect="Invulnerable" duration="2">ConditionEffectSelf</Activate>
         <Activate effect="Surged" duration="3.5">ConditionEffectSelf</Activate>
-        <Cooldown>6</Cooldown>
+        <Cooldown>2</Cooldown>
         <Legendary/>
         <DisplayId>Devil Dice</DisplayId>
     </Object>

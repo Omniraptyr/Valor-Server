@@ -1,20 +1,28 @@
 ﻿package kabam.rotmg.ui.view {
 import com.company.assembleegameclient.game.AGameSprite;
 import com.company.assembleegameclient.game.GameSprite;
+import com.company.assembleegameclient.map.HurtOverlay;
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.Player;
+import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.ui.TradePanel;
 import com.company.assembleegameclient.ui.panels.InteractPanel;
 import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
 import com.company.util.GraphicsUtil;
 import com.company.util.SpriteUtil;
 
+import flash.display.DisplayObject;
+
 import flash.display.GraphicsPath;
 import flash.display.GraphicsSolidFill;
 import flash.display.IGraphicsData;
 import flash.display.Sprite;
 import flash.events.Event;
+import flash.geom.ColorTransform;
 import flash.geom.Point;
+import flash.utils.getTimer;
+
+import kabam.rotmg.assets.EmbeddedAssets;
 
 import kabam.rotmg.game.view.CooldownTimer;
 
@@ -25,7 +33,6 @@ import kabam.rotmg.messaging.impl.incoming.TradeStart;
 import kabam.rotmg.minimap.view.MiniMapImp;
 
 public class HUDView extends Sprite implements UnFocusAble {
-
     private const BG_POSITION:Point = new Point(0, 0);
     private const MAP_POSITION:Point = new Point(4, 4);
     private const CHARACTER_DETAIL_PANEL_POSITION:Point = new Point(0, 198);
@@ -33,6 +40,10 @@ public class HUDView extends Sprite implements UnFocusAble {
     private const EQUIPMENT_INVENTORY_POSITION:Point = new Point(14, 304);
     private const TAB_STRIP_POSITION:Point = new Point(7, 346);
     private const INTERACT_PANEL_POSITION:Point = new Point(0, 500);
+    private const DARKNESS_Y_POSITION:int = -50; // x: center, y: offset
+    private const DARKNESS_X_POSITION:int = 0;
+    private const HURT_OVERLAY_POSITION:Point = new Point(-600, 0);
+    private const BREATH_CT:ColorTransform = new ColorTransform(0xFF / 0xFF, 55 / 0xFF, 0 / 0xFF, 0);
 
     private var background:CharacterWindowBackground;
     private var miniMap:MiniMapImp;
@@ -41,11 +52,12 @@ public class HUDView extends Sprite implements UnFocusAble {
     private var characterDetails:CharacterDetailsView;
     private var equippedGridBG:Sprite;
     private var player:Player;
-    private var cdtimer:CooldownTimer;
+    private var cdTimer:CooldownTimer;
     public var tabStrip:TabStripView;
     public var interactPanel:InteractPanel;
     public var tradePanel:TradePanel;
-
+    public var darkness:DisplayObject;
+    private var hurtOverlay_:HurtOverlay;
 
     public function HUDView() {
         this.createAssets();
@@ -59,7 +71,10 @@ public class HUDView extends Sprite implements UnFocusAble {
         this.tabStrip = new TabStripView();
         this.characterDetails = new CharacterDetailsView();
         this.statMeters = new StatMetersView();
-        this.cdtimer = new CooldownTimer();
+        this.hurtOverlay_ = new HurtOverlay();
+        this.cdTimer = new CooldownTimer();
+        this.darkness = new EmbeddedAssets.DarknessBackground();
+        this.darkness.alpha = 0.95;
     }
 
     private function addAssets():void {
@@ -68,6 +83,7 @@ public class HUDView extends Sprite implements UnFocusAble {
         addChild(this.tabStrip);
         addChild(this.characterDetails);
         addChild(this.statMeters);
+        addChild(this.hurtOverlay_);
     }
 
     private function positionAssets():void {
@@ -81,6 +97,9 @@ public class HUDView extends Sprite implements UnFocusAble {
         this.characterDetails.y = this.CHARACTER_DETAIL_PANEL_POSITION.y;
         this.statMeters.x = this.STAT_METERS_POSITION.x;
         this.statMeters.y = this.STAT_METERS_POSITION.y;
+        this.darkness.x = this.DARKNESS_X_POSITION;
+        this.hurtOverlay_.x = this.HURT_OVERLAY_POSITION.x;
+        this.hurtOverlay_.y = this.HURT_OVERLAY_POSITION.y;
     }
 
     public function setPlayerDependentAssets(_arg1:GameSprite):void {
@@ -92,9 +111,9 @@ public class HUDView extends Sprite implements UnFocusAble {
     }
 
     private function createCooldownTimer():void {
-        this.cdtimer.x = this.EQUIPMENT_INVENTORY_POSITION.x + 44;
-        this.cdtimer.y = this.EQUIPMENT_INVENTORY_POSITION.y;
-        addChild(cdtimer);
+        this.cdTimer.x = this.EQUIPMENT_INVENTORY_POSITION.x + 44;
+        this.cdTimer.y = this.EQUIPMENT_INVENTORY_POSITION.y;
+        addChild(cdTimer);
     }
 
     private function createInteractPanel(_arg1:GameSprite):void {
@@ -131,6 +150,27 @@ public class HUDView extends Sprite implements UnFocusAble {
         if (this.interactPanel) {
             this.interactPanel.draw();
         }
+
+        if (this.player && this.player.isDarkness()) {
+            this.darkness.y = DARKNESS_Y_POSITION;
+            addChild(this.darkness);
+        }
+        else {
+            if (contains(this.darkness)) {
+                removeChild(this.darkness);
+            }
+        }
+
+        if (player != null && player.breath_ >= 0 && player.breath_ < Parameters.BREATH_THRESH) {
+            var bMult:Number = (Parameters.BREATH_THRESH - player.breath_) / Parameters.BREATH_THRESH;
+            var btMult:Number = Math.abs(Math.sin(getTimer() / 300)) * 0.75;
+            BREATH_CT.alphaMultiplier = bMult * btMult;
+            hurtOverlay_.transform.colorTransform = BREATH_CT;
+            hurtOverlay_.visible = true;
+        }
+        else {
+            hurtOverlay_.visible = false;
+        }
     }
 
     public function startTrade(_arg1:AGameSprite, _arg2:TradeStart):void {
@@ -150,7 +190,7 @@ public class HUDView extends Sprite implements UnFocusAble {
         this.equippedGrid.visible = _arg1;
         this.equippedGridBG.visible = _arg1;
         this.interactPanel.visible = _arg1;
-        this.cdtimer.visible = _arg1;
+        this.cdTimer.visible = _arg1;
     }
 
     public function tradeDone():void {
@@ -185,6 +225,5 @@ public class HUDView extends Sprite implements UnFocusAble {
     public function setMiniMapFocus(object:GameObject) : void {
         this.miniMap.setFocus(object);
     }
-
 }
 }

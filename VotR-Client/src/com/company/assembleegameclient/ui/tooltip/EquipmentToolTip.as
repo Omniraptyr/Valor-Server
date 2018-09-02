@@ -23,7 +23,6 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
 public class EquipmentToolTip extends ToolTip {
-
     private static const MAX_WIDTH:int = 230;
 
     private var icon:Bitmap;
@@ -49,7 +48,6 @@ public class EquipmentToolTip extends ToolTip {
     private var isInventoryFull:Boolean;
     private var playerCanUse:Boolean;
     private var comparisonResults:SlotComparisonResult;
-    private var powerText:TextFieldDisplayConcrete;
     private var legendaryText:TextFieldDisplayConcrete;
 
     public function EquipmentToolTip(_arg_1:int, _arg_2:Player, _arg_3:int, _arg_4:String, _arg_5:uint = 1, _arg_6:Boolean = false, _arg7:Object = null) {
@@ -936,16 +934,10 @@ public class EquipmentToolTip extends ToolTip {
             this.restrictionsText.y = _local_1;
             _local_1 = (_local_1 + this.restrictionsText.height);
         }
-        if (this.powerText) {
-            if (contains(this.powerText)) {
-                this.powerText.x = 4;
-                this.powerText.y = _local_1;
-            }
-        }
         if (this.legendaryText) {
             if (contains(this.legendaryText)) {
                 this.legendaryText.x = 4;
-                this.legendaryText.y = _local_1 + 12;
+                this.legendaryText.y = _local_1;
             }
         }
     }
