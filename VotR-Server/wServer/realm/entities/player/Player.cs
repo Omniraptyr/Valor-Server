@@ -974,15 +974,20 @@ namespace wServer.realm.entities
                 if (tickCount % 300 == 0)
                     FameCounter.Tick(time);
 
-                if (tickCount % 25 == 0)
-                    HandleEffects(time);
-
                 if (tickCount % 5 == 0) {
                     //TickActivateEffects(time); no need for that xp booster shit
-                    var name = Owner.Name;
-                    if (name.Equals("OceanTrench")) HandleKrakenGround(time);
-                    if (name.Equals("KrakenLair")) HandleOceanTrenchGround(time);
-                    if (name.Equals("SummoningPoint")) HandleBastille(time);
+                    switch (Owner.Name)
+                    {
+                        case "OceanTrench":
+                            HandleKrakenGround(time);
+                            break;
+                        case "KrakenLair":
+                            HandleOceanTrenchGround(time);
+                            break;
+                        case "SummoningPoint":
+                            HandleBastille(time);
+                            break;
+                    }
                 }
 
                 // TODO, server side ground damage
@@ -994,6 +999,7 @@ namespace wServer.realm.entities
 
             SendUpdate(time);
             SendNewTick(time);
+            HandleEffects(time);
             HandleRegen(time); //moved here so people don't get 'slow' refills
                                //todo: perhaps check if hp/mp is at max (and subsequientally remove it from the check)
             if (HP <= 0) Death("Unknown", rekt: true);
