@@ -35,6 +35,7 @@ namespace wServer.networking.handlers
             }
             CheckLabConditions(player, packet);
         }
+
         private static void CheckLabConditions(Entity player, Move packet)
         {
             var tile = player.Owner.Map[(int)packet.NewPosition.X, (int)packet.NewPosition.Y];

@@ -32955,7 +32955,7 @@
         <Tier>2</Tier>
         <Description>A potion that permanently ascends your maximum mana stat by 5.</Description>
         <Sound>use_potion</Sound>
-        <Activate stat="3" amount="1">PowerStat</Activate>
+        <Activate stat="3" amount="5">PowerStat</Activate>
         <Consumable/>
         <Potion/>
         <BagType>5</BagType>

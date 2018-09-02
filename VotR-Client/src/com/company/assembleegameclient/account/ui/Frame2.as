@@ -159,8 +159,8 @@ public class Frame2 extends Sprite
 
     public function onAddedToStage(_arg1:Event):void {
         this.draw();
-        x = ((stage.stageWidth / 2) - ((this.w_ - 6) / 2));
-        y = ((stage.stageHeight / 2) - (height / 2));
+        this.x = (400 - ((this.w_ - 6) / 2));
+        this.y = (300 - (h_ / 2)); //was height
         if (this.frameTextInputBoxes.length > 0) {
             (stage.focus = this.frameTextInputBoxes[0].inputText_);
         }

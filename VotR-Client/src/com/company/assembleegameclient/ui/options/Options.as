@@ -12,6 +12,7 @@ import com.company.util.KeyCodes;
 import flash.display.BitmapData;
 import flash.display.Sprite;
 import flash.display.StageDisplayState;
+import flash.display.StageScaleMode;
 import flash.events.Event;
 import flash.events.KeyboardEvent;
 import flash.events.MouseEvent;
@@ -486,7 +487,13 @@ public class Options extends Sprite {
         this.addOptionAndPosition(new ChoiceOption("uiQuality", makeHighLowLabels(), [true, false], "Toggle UI Quality", "This allows you to pick the ui quality", onUIQualityToggle));
         this.addOptionAndPosition(new ChoiceOption("HPBar", makeOnOffLabels(), [true, false], "HP Bar", "This toggles whether to show the hp bar", null));
         this.addOptionAndPosition(new ChoiceOption("outlineProj", makeOnOffLabels(), [true, false], "Toggle Projectile Outline", "This toggles whether to outline projectiles", null));
-        this.addOptionAndPosition(new ChoiceOption("showTierTag",makeOnOffLabels(),[true,false],"Show Tier level","Show Tier level on gear",this.onToggleTierTag));
+        this.addOptionAndPosition(new ChoiceOption("showTierTag", makeOnOffLabels(), [true,false], "Show Tier Tag","This toggles whether to show tier tags on your gear",this.onToggleTierTag));
+        this.addOptionAndPosition(new ChoiceOption("stageScale", makeOnOffLabels(), [StageScaleMode.NO_SCALE, StageScaleMode.EXACT_FIT], "Fullscreen", "Extends viewing area at a cost of lower fps.", this.fsv3));
+    }
+
+    private function fsv3() : void {
+        stage.scaleMode = Parameters.data_.stageScale;
+        Parameters.root.dispatchEvent(new Event(Event.RESIZE));
     }
 
     private function onToggleTierTag() : void {

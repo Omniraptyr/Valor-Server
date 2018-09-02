@@ -10,6 +10,7 @@ import flash.display.DisplayObjectContainer;
 import flash.display.Graphics;
 import flash.display.Shape;
 import flash.display.Sprite;
+import flash.display.StageScaleMode;
 import flash.events.MouseEvent;
 import flash.filters.DropShadowFilter;
 import flash.geom.Point;
@@ -113,123 +114,134 @@ public class GameObjectArrow extends Sprite {
         this.extraGOs_.push(_arg1);
     }
 
-    public function draw(_arg1:int, _arg2:Camera):void {
-        var _local3:Rectangle;
-        var _local4:Number;
-        var _local5:Number;
+    public function correctQuestNote(param1:Rectangle):Rectangle {
+        var _loc2_:Rectangle = param1.clone();
+        if (stage.scaleMode == StageScaleMode.NO_SCALE) {
+            this.scaleY = this.scaleX = (stage.stageWidth < stage.stageHeight ? stage.stageWidth : stage.stageHeight) / 600;
+        }
+        else {
+            this.scaleX = 1;
+            this.scaleY = 1;
+        }
+        _loc2_.right = _loc2_.right - (800 - this.go_.map_.gs_.hudView.x) * stage.stageWidth / 800;
+        return _loc2_;
+    }
+
+    public function draw(_arg_1:int, _arg_2:Camera):void {
+        var _local_3:Rectangle;
+        var _local_4:Number;
+        var _local_5:Number;
         if (this.go_ == null) {
             visible = false;
             return;
         }
-        this.go_.computeSortVal(_arg2);
-        _local3 = _arg2.clipRect_;
-        _local4 = this.go_.posS_[0];
-        _local5 = this.go_.posS_[1];
-        if (!RectangleUtil.lineSegmentIntersectXY(_arg2.clipRect_, 0, 0, _local4, _local5, this.tempPoint)) {
+        this.go_.computeSortVal(_arg_2);
+        _local_3 = correctQuestNote(_arg_2.clipRect_);
+        _local_4 = this.go_.posS_[0];
+        _local_5 = this.go_.posS_[1];
+        if (!RectangleUtil.lineSegmentIntersectXY(_local_3, 0, 0, _local_4, _local_5, this.tempPoint)) {
             this.go_ = null;
             visible = false;
             return;
         }
         x = this.tempPoint.x;
         y = this.tempPoint.y;
-        var _local6:Number = Trig.boundTo180((270 - (Trig.toDegrees * Math.atan2(_local4, _local5))));
-        if (this.tempPoint.x < (_local3.left + 5)) {
-            if (_local6 > 45) {
-                _local6 = 45;
+        var _local_6:Number = Trig.boundTo180((270 - (Trig.toDegrees * Math.atan2(_local_4, _local_5))));
+        if (this.tempPoint.x < (_local_3.left + 5)) {
+            if (_local_6 > 45) {
+                _local_6 = 45;
             }
-            if (_local6 < -45) {
-                _local6 = -45;
+            if (_local_6 < -45) {
+                _local_6 = -45;
             }
         }
         else {
-            if (this.tempPoint.x > (_local3.right - 5)) {
-                if (_local6 > 0) {
-                    if (_local6 < 135) {
-                        _local6 = 135;
+            if (this.tempPoint.x > (_local_3.right - 5)) {
+                if (_local_6 > 0) {
+                    if (_local_6 < 135) {
+                        _local_6 = 135;
                     }
                 }
                 else {
-                    if (_local6 > -135) {
-                        _local6 = -135;
+                    if (_local_6 > -135) {
+                        _local_6 = -135;
                     }
                 }
             }
         }
-        if (this.tempPoint.y < (_local3.top + 5)) {
-            if (_local6 < 45) {
-                _local6 = 45;
+        if (this.tempPoint.y < (_local_3.top + 5)) {
+            if (_local_6 < 45) {
+                _local_6 = 45;
             }
-            if (_local6 > 135) {
-                _local6 = 135;
+            if (_local_6 > 135) {
+                _local_6 = 135;
             }
         }
         else {
-            if (this.tempPoint.y > (_local3.bottom - 5)) {
-                if (_local6 > -45) {
-                    _local6 = -45;
+            if (this.tempPoint.y > (_local_3.bottom - 5)) {
+                if (_local_6 > -45) {
+                    _local_6 = -45;
                 }
-                if (_local6 < -135) {
-                    _local6 = -135;
+                if (_local_6 < -135) {
+                    _local_6 = -135;
                 }
             }
         }
-        this.arrow_.rotation = _local6;
+        this.arrow_.rotation = _local_6;
         if (this.tooltip_ != null) {
             this.positionTooltip(this.tooltip_);
         }
         visible = true;
     }
 
-    private function positionTooltip(_arg1:ToolTip):void {
-        var _local5:Number;
-        var _local8:Number;
-        var _local9:Number;
-        var _local2:Number = this.arrow_.rotation;
-        var _local3:int = ((DIST + BIG_SIZE) + 12);
-        var _local4:Number = (_local3 * Math.cos((_local2 * Trig.toRadians)));
-        _local5 = (_local3 * Math.sin((_local2 * Trig.toRadians)));
-        var _local6:Number = _arg1.contentWidth_;
-        var _local7:Number = _arg1.contentHeight_;
-        if ((((_local2 >= 45)) && ((_local2 <= 135)))) {
-            _local8 = (_local4 + (_local6 / Math.tan((_local2 * Trig.toRadians))));
-            _arg1.x = (((_local4 + _local8) / 2) - (_local6 / 2));
-            _arg1.y = _local5;
+    private function positionTooltip(_arg_1:ToolTip):void {
+        var _local_5:Number;
+        var _local_8:Number;
+        var _local_9:Number;
+        var _local_2:Number = this.arrow_.rotation;
+        var _local_3:int = ((DIST + BIG_SIZE) + 12);
+        var _local_4:Number = (_local_3 * Math.cos((_local_2 * Trig.toRadians)));
+        _local_5 = (_local_3 * Math.sin((_local_2 * Trig.toRadians)));
+        var _local_6:Number = _arg_1.contentWidth_;
+        var _local_7:Number = _arg_1.contentHeight_;
+        if ((((_local_2 >= 45)) && ((_local_2 <= 135)))) {
+            _local_8 = (_local_4 + (_local_6 / Math.tan((_local_2 * Trig.toRadians))));
+            _arg_1.x = (((_local_4 + _local_8) / 2) - (_local_6 / 2));
+            _arg_1.y = _local_5;
         }
         else {
-            if ((((_local2 <= -45)) && ((_local2 >= -135)))) {
-                _local8 = (_local4 - (_local6 / Math.tan((_local2 * Trig.toRadians))));
-                _arg1.x = (((_local4 + _local8) / 2) - (_local6 / 2));
-                _arg1.y = (_local5 - _local7);
+            if ((((_local_2 <= -45)) && ((_local_2 >= -135)))) {
+                _local_8 = (_local_4 - (_local_6 / Math.tan((_local_2 * Trig.toRadians))));
+                _arg_1.x = (((_local_4 + _local_8) / 2) - (_local_6 / 2));
+                _arg_1.y = (_local_5 - _local_7);
             }
             else {
-                if ((((_local2 < 45)) && ((_local2 > -45)))) {
-                    _arg1.x = _local4;
-                    _local9 = (_local5 + (_local7 * Math.tan((_local2 * Trig.toRadians))));
-                    _arg1.y = (((_local5 + _local9) / 2) - (_local7 / 2));
+                if ((((_local_2 < 45)) && ((_local_2 > -45)))) {
+                    _arg_1.x = _local_4;
+                    _local_9 = (_local_5 + (_local_7 * Math.tan((_local_2 * Trig.toRadians))));
+                    _arg_1.y = (((_local_5 + _local_9) / 2) - (_local_7 / 2));
                 }
                 else {
-                    _arg1.x = (_local4 - _local6);
-                    _local9 = (_local5 - (_local7 * Math.tan((_local2 * Trig.toRadians))));
-                    _arg1.y = (((_local5 + _local9) / 2) - (_local7 / 2));
+                    _arg_1.x = (_local_4 - _local_6);
+                    _local_9 = (_local_5 - (_local_7 * Math.tan((_local_2 * Trig.toRadians))));
+                    _arg_1.y = (((_local_5 + _local_9) / 2) - (_local_7 / 2));
                 }
             }
         }
     }
 
     private function drawArrow():void {
-        var _local1:Graphics = this.arrow_.graphics;
-        _local1.clear();
-        var _local2:int = ((((this.big_) || (this.mouseOver_))) ? BIG_SIZE : SMALL_SIZE);
-        _local1.lineStyle(1, this.lineColor_);
-        _local1.beginFill(this.fillColor_);
-        _local1.moveTo(DIST, 0);
-        _local1.lineTo((_local2 + DIST), _local2);
-        _local1.lineTo((_local2 + DIST), -(_local2));
-        _local1.lineTo(DIST, 0);
-        _local1.endFill();
-        _local1.lineStyle();
+        var _local_1:Graphics = this.arrow_.graphics;
+        _local_1.clear();
+        var _local_2:int = ((((this.big_) || (this.mouseOver_))) ? BIG_SIZE : SMALL_SIZE);
+        _local_1.lineStyle(1, this.lineColor_);
+        _local_1.beginFill(this.fillColor_);
+        _local_1.moveTo(DIST, 0);
+        _local_1.lineTo((_local_2 + DIST), _local_2);
+        _local_1.lineTo((_local_2 + DIST), -(_local_2));
+        _local_1.lineTo(DIST, 0);
+        _local_1.endFill();
+        _local_1.lineStyle();
     }
-
-
 }
 }

@@ -536,6 +536,8 @@ public class Map extends AbstractMap {
             this.darkness.x = -300;
             this.darkness.y = Parameters.data_.centerOnPlayer ? -525 : -515;
             this.darkness.alpha = 0.95;
+            this.darkness.scaleX = stage.stageWidth / 800;
+            this.darkness.scaleY = stage.stageHeight / 600;
             addChild(this.darkness);
         }
         else {
