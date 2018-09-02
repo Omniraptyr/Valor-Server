@@ -147,7 +147,7 @@ namespace wServer.networking
         }
 
         internal void ProcessPacket(Packet pkt) {
-            using (TimedLock.Lock(DcLock)) {
+            lock (DcLock) {
                 if (State == ProtocolState.Disconnected)
                     return;
 
