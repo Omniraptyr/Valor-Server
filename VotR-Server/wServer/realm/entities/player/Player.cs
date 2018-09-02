@@ -956,8 +956,7 @@ namespace wServer.realm.entities
             }
         }
 
-        
-        public override void Tick(RealmTime time)
+        /*public override void Tick(RealmTime time)
         {
             if (!KeepAlive(time)) //todo: simplify this later on
                 return;
@@ -975,8 +974,8 @@ namespace wServer.realm.entities
                     FameCounter.Tick(time);
 
                 if (tickCount % 5 == 0) {
-                    //TickActivateEffects(time); no need for that xp booster shit
-                    switch (Owner.Name)
+                    TickActivateEffects(time);
+                    if (!Owner.Name.IsNullOrEmpty()) switch (Owner.Name)
                     {
                         case "OceanTrench":
                             HandleKrakenGround(time);
@@ -1004,6 +1003,55 @@ namespace wServer.realm.entities
                                //todo: perhaps check if hp/mp is at max (and subsequientally remove it from the check)
             if (HP <= 0) Death("Unknown", rekt: true);
            
+        }*/
+
+        public override void Tick(RealmTime time) {
+            if (!KeepAlive(time))
+                return;
+
+            if (time.TickCount % 20 == 0) {
+                CheckTradeTimeout(time);
+                HandleQuest(time);
+            }
+
+            if (!HasConditionEffect(ConditionEffects.Paused) && time.TickCount % 3 == 0) {
+                HandleEffects(time);
+                HandleKrakenGround(time);
+                HandleOceanTrenchGround(time);
+                HandleBastille(time);
+                TickActivateEffects(time);
+                FameCounter.Tick(time);
+                // TODO, server side ground damage
+                //if (HandleGround(time))
+                //    return; // death resulted
+            }
+
+            base.Tick(time);
+
+            SendUpdate(time);
+            SendNewTick(time);
+            HandleRegen(time); //moved here so people don't get 'slow' refills
+
+            if (HP <= 0) Death("Unknown", rekt: true);
+        }
+
+        private void TickActivateEffects(RealmTime time) {
+            var dt = time.ElapsedMsDelta;
+
+            if (XPBoostTime != 0)
+                if (Level >= 20)
+                    XPBoostTime = 0;
+
+            if (XPBoostTime > 0)
+                XPBoostTime = Math.Max(XPBoostTime - dt, 0);
+            if (XPBoostTime == 0)
+                XPBoosted = false;
+
+            if (LDBoostTime > 0)
+                LDBoostTime = Math.Max(LDBoostTime - dt, 0);
+
+            if (LTBoostTime > 0)
+                LTBoostTime = Math.Max(LTBoostTime - dt, 0);
         }
 
         float _hpRegenCounter;
