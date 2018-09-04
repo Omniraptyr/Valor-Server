@@ -449,7 +449,9 @@ namespace wServer.logic
                         new TimedTransition(4000, "start")
                         ),
                    new State("start",
+                        new Follow(1.2, 8, 1),
                         new Shoot(10, count: 12, projectileIndex: 1, coolDown: new Cooldown(2000, 4000)),
+                        new Shoot(10, count: 6, projectileIndex: 0, coolDown: 800),
                         new Taunt("My trusty followers..take care of these fools."),
                         new EntityNotExistsTransition("Orbiter Richmaster", 99, "begin")
                         ),

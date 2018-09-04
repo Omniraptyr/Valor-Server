@@ -457,11 +457,6 @@ namespace wServer.logic.loot
                     new ItemLoot("Defense Eon", 1),
                     new ItemLoot("Vitality Eon", 1)
                 ),
-                //High chance to get 2 cloth
-                new OnlyOne(
-                    new ItemLoot("Large Rage Cloth", 0.75),
-                    new ItemLoot("Small Rage Cloth", 0.75)
-                ),
                 new OnlyOne(
                     new ItemLoot("Medium Sor Fragment", 0.1)
                 )
