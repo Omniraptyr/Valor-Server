@@ -1,9 +1,9 @@
 {
   "dbInfo": {
     "host": "127.0.0.1",
-    "port": "6379", //1985 - 6379
-    "auth": "", //2NSVsRREv3FYXPGm - none
-    "index": "1"
+    "port": "1985", //1985 - 6379
+    "auth": "2NSVsRREv3FYXPGm", //2NSVsRREv3FYXPGm - none
+    "index": "0"
   },
   "serverInfo": {
     "type": "Account",

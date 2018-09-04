@@ -362,12 +362,12 @@ namespace wServer.realm.entities
                 {
                     Surge += 2*SurgeBonus() + EnergyEyeBonus();
                 }
-                isSurgeGone = true;
-                surgewither = false;
+                _isSurgeGone = true;
+                _surgeWither = false;
             }
             if (Surge >= protRestore())
             {
-                protectionDamage = 0;
+                ProtectionDamage = 0;
             }
         }
         public int protRestore()

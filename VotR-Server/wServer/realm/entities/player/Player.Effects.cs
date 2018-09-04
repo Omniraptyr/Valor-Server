@@ -4,157 +4,126 @@ namespace wServer.realm.entities
 {
     partial class Player
     {
-        float _healing;
-        float _healing2;
-        float _healing3;
-        float _healing4;
-        float _bleeding;
-        float _surgeDepletion;
-        float _surgeDepletion2;
-        int _newbieTime;
-        int _canTpCooldownTime;
-        bool isSurgeGone;
-        bool surgewither;
-        public Projectile enemyprj;
-        public int protectionDamage = 0;
-        void HandleEffects(RealmTime time)
+        private float _healing;
+        private float _healing2;
+        private float _healing3;
+        private float _healing4;
+        private float _bleeding;
+        private float _surgeDepletion;
+        private float _surgeDepletion2;
+        private int _newbieTime;
+        private int _canTpCooldownTime;
+        private bool _isSurgeGone;
+        private bool _surgeWither;
+        public int ProtectionDamage;
+        public int surgeMod;
+
+        private void HandleEffects(RealmTime time)
         {
+            if (time.TickCount % 25 == 0)
+            {
+                if (CheckAxe()) {
+                    Stats.Boost.ActivateBoost[0].Push(300, true);
+                    Stats.ReCalculateValues();
+                } else {
+                    Stats.Boost.ActivateBoost[0].Pop(300, true);
+                    Stats.ReCalculateValues();
+                }
 
-           /* if(enemyprj != null)
-            {
-                CheckEnemyProjectile(enemyprj);
-            }*/
-            
+                if (CheckSunMoon()) {
+                    Stats.Boost.ActivateBoost[1].Push(100, false);
+                    Stats.ReCalculateValues();
+                } else {
+                    Stats.Boost.ActivateBoost[1].Pop(100, false);
+                    Stats.ReCalculateValues();
+                }
 
-            if (CheckAxe())
-            {
-                Stats.Boost.ActivateBoost[0].Push(300, true);
-                Stats.ReCalculateValues();
-            }
-            else
-            {
-                Stats.Boost.ActivateBoost[0].Pop(300, true);
-                Stats.ReCalculateValues();
-            }
-            if (CheckSunMoon())
-            {
-                Stats.Boost.ActivateBoost[1].Push(100, false);
-                Stats.ReCalculateValues();
-            }
-            else
-            {
-                Stats.Boost.ActivateBoost[1].Pop(100, false);
-                Stats.ReCalculateValues();
-            }
-            if (CheckAnubis())
-            {
-                Stats.Boost.ActivateBoost[1].Push(60, false);
-                Stats.ReCalculateValues();
-            }
-            else
-            {
-                Stats.Boost.ActivateBoost[1].Pop(60, false);
-                Stats.ReCalculateValues();
-            }
-            if (CheckMocking())
-            {
-                ApplyConditionEffect(ConditionEffectIndex.Relentless);
-            }
-            else
-            {
-                ApplyConditionEffect(ConditionEffectIndex.Relentless, 0);
-            }
-            if (CheckCrescent())
-            {
-                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune);
-            }
-            else
-            {
-                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune, 0);
-            }
-            if (CheckGHelm())
-            {
-                tghbonus = 8;
-            }
-            else
-            {
-                tghbonus = 0;
-            }
-            if (CheckForce())
-            {
-                ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune);
-            }
-            else
-            {
-                ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune, 0);
-            }
-            if (CheckRoyal())
-            {
-                ApplyConditionEffect(ConditionEffectIndex.HealthRecovery);
-            }
-            else
-            {
-                ApplyConditionEffect(ConditionEffectIndex.HealthRecovery, 0);
-            }
-            if (CheckResistance())
-            {
-                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune);
-            }
-            else
-            {
-                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune, 0);
-            }
+                if (CheckAnubis()) {
+                    Stats.Boost.ActivateBoost[1].Push(60, false);
+                    Stats.ReCalculateValues();
+                } else {
+                    Stats.Boost.ActivateBoost[1].Pop(60, false);
+                    Stats.ReCalculateValues();
+                }
 
-            if (CheckAegis())
-            {
-                ApplyConditionEffect(ConditionEffectIndex.Vengeance);
-            }
-            else
-            {
-                ApplyConditionEffect(ConditionEffectIndex.Vengeance, 0);
-            }
+                if (CheckMocking()) {
+                    ApplyConditionEffect(ConditionEffectIndex.Relentless);
+                } else {
+                    ApplyConditionEffect(ConditionEffectIndex.Relentless, 0);
+                }
 
-            if (CheckGuilded())
-            {
-                ApplyConditionEffect(ConditionEffectIndex.Alliance);
-            }
-            else
-            {
-                ApplyConditionEffect(ConditionEffectIndex.Alliance, 0);
-            }
+                if (CheckCrescent()) {
+                    ApplyConditionEffect(ConditionEffectIndex.SlowedImmune);
+                } else {
+                    ApplyConditionEffect(ConditionEffectIndex.SlowedImmune, 0);
+                }
 
-            if (Protection > 0 && HasConditionEffect(ConditionEffects.Corrupted))
-            {
-                ApplyConditionEffect(ConditionEffectIndex.Corrupted, 0);
-            }
-            if (Protection > 0)
-            {
-                ApplyConditionEffect(ConditionEffectIndex.ParalyzeImmune);
-                ApplyConditionEffect(ConditionEffectIndex.StunImmune);
-            }
-            else
-            {
-                ApplyConditionEffect(ConditionEffectIndex.ParalyzeImmune, 0);
-                ApplyConditionEffect(ConditionEffectIndex.StunImmune, 0);
-            }
-            var playerDesc = Manager.Resources.GameData.Classes[ObjectType];
+                if (CheckGHelm()) {
+                    tghbonus = 8;
+                } else {
+                    tghbonus = 0;
+                }
 
+                if (CheckForce()) {
+                    ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune);
+                } else {
+                    ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune, 0);
+                }
+
+                if (CheckRoyal()) {
+                    ApplyConditionEffect(ConditionEffectIndex.HealthRecovery);
+                } else {
+                    ApplyConditionEffect(ConditionEffectIndex.HealthRecovery, 0);
+                }
+
+                if (CheckResistance()) {
+                    ApplyConditionEffect(ConditionEffectIndex.SlowedImmune);
+                } else {
+                    ApplyConditionEffect(ConditionEffectIndex.SlowedImmune, 0);
+                }
+
+                if (CheckAegis()) {
+                    ApplyConditionEffect(ConditionEffectIndex.Vengeance);
+                } else {
+                    ApplyConditionEffect(ConditionEffectIndex.Vengeance, 0);
+                }
+
+                if (CheckGuilded()) {
+                    ApplyConditionEffect(ConditionEffectIndex.Alliance);
+                } else {
+                    ApplyConditionEffect(ConditionEffectIndex.Alliance, 0);
+                }
+
+                if (Protection > 0 && HasConditionEffect(ConditionEffects.Corrupted)) {
+                    ApplyConditionEffect(ConditionEffectIndex.Corrupted, 0);
+                }
+
+                if (Protection > 0) {
+                    ApplyConditionEffect(ConditionEffectIndex.ParalyzeImmune);
+                    ApplyConditionEffect(ConditionEffectIndex.StunImmune);
+                } else {
+                    ApplyConditionEffect(ConditionEffectIndex.ParalyzeImmune, 0);
+                    ApplyConditionEffect(ConditionEffectIndex.StunImmune, 0);
+                }
+                MainLegendaryPassives();
+            }
 
             ProtectionMax = (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50))+10;
-            Protection =    (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50))+10-protectionDamage;
+            Protection =    (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50))+10-ProtectionDamage;
             if(Protection < 0)
             {
             Protection = 0;
             }
-            if(Surge == 100)
+            if(Surge >= 100-surgeMod)
             {
-                protectionDamage = 0;
+                ProtectionDamage = 0;
             }
-            MainLegendaryPassives();
+
             if (SurgeCounter == 1)
             {
                 Surge = 0;
             }
+
             if (_client.Account.Hidden && !HasConditionEffect(ConditionEffects.Hidden))
             {
                 ApplyConditionEffect(ConditionEffectIndex.Hidden);
@@ -164,9 +133,7 @@ namespace wServer.realm.entities
 
             if (Muted && !HasConditionEffect(ConditionEffects.Muted))
                 ApplyConditionEffect(ConditionEffectIndex.Muted);
-
-            
-
+          
             if (HasConditionEffect(ConditionEffects.Healing) && !HasConditionEffect(ConditionEffects.Sick) && !HasConditionEffect(ConditionEffects.DrakzixCharging))
             {
                 if (_healing > 1)
@@ -197,7 +164,9 @@ namespace wServer.realm.entities
                 _healing4 += 24 * (time.ElapsedMsDelta / 1000f);
             }
 
-            if (HasConditionEffect(ConditionEffects.HealthRecovery) && !HasConditionEffect(ConditionEffects.Sick) && !HasConditionEffect(ConditionEffects.DrakzixCharging))
+            if (HasConditionEffect(ConditionEffects.HealthRecovery) 
+                && !HasConditionEffect(ConditionEffects.Sick) 
+                && !HasConditionEffect(ConditionEffects.DrakzixCharging))
             {
                 if (_healing2 > 1)
                 {
@@ -221,7 +190,8 @@ namespace wServer.realm.entities
                 }
                 _bleeding += 28 * (time.ElapsedMsDelta / 1000f);
             }
-            if (isSurgeGone)
+
+            if (_isSurgeGone)
             {
                 if (_surgeDepletion > 1)
                 {
@@ -231,13 +201,14 @@ namespace wServer.realm.entities
                     _surgeDepletion -= (int)_surgeDepletion;
                     if (SurgeCounter == 0)
                     {
-                        isSurgeGone = false;
-                        surgewither = true;
+                        _isSurgeGone = false;
+                        _surgeWither = true;
                     }
                 }
                 _surgeDepletion += (28-(surgeBonus+tghbonus)) * (time.ElapsedMsDelta / 1000f);
             }
-            if (surgewither)
+
+            if (_surgeWither)
             {
                 if (_surgeDepletion2 > 1)
                 {
@@ -256,6 +227,7 @@ namespace wServer.realm.entities
                 if (MP == 0)
                     ApplyConditionEffect(ConditionEffectIndex.NinjaSpeedy, 0);
             }
+
             if (HasConditionEffect(ConditionEffects.SamuraiBerserk))
             {
                 MP = Math.Max(0, (int)(MP - 10 * time.ElapsedMsDelta / 1000f));
@@ -289,7 +261,7 @@ namespace wServer.realm.entities
             }
         }
 
-        bool CanHpRegen()
+        private bool CanHpRegen()
         {
             if (HasConditionEffect(ConditionEffects.Sick))
                 return false;
@@ -298,7 +270,7 @@ namespace wServer.realm.entities
             return true;
         }
 
-        bool CanMpRegen()
+        private bool CanMpRegen()
         {
             if (HasConditionEffect(ConditionEffects.Quiet) ||
                     HasConditionEffect(ConditionEffects.NinjaSpeedy) || 
@@ -333,9 +305,7 @@ namespace wServer.realm.entities
 
         public bool TPCooledDown()
         {
-            if (_canTpCooldownTime > 0)
-                return false;
-            return true;
+            return _canTpCooldownTime <= 0;
         }
     }
 }

@@ -961,17 +961,6 @@ public class Player extends Character {
     }
 
 
-    private function moonlightDamageBonus():Number{
-        if(ObjectLibrary.typeToDisplayId_[this.equipment_[0]] == "Moonlight" && surge_ >= 30){
-            return mp_*2;
-        }else if(ObjectLibrary.typeToDisplayId_[this.equipment_[0]] == "Moonlight"){
-            return mp_;
-        }
-        else{
-            return 0;
-        }
-    }
-
     private function isMercy():Boolean{
         if(ObjectLibrary.typeToDisplayId_[this.equipment_[2]] == "Mercy of Yazanahar" && mp_ <= maxMP_/2){
             return true;
@@ -1252,7 +1241,7 @@ public class Player extends Character {
             _local13 = int(_local12.projProps_.minDamage_);
             _local14 = int(_local12.projProps_.maxDamage_);
             _local15 = ((_arg5) ? this.attackMultiplier() : 1);
-            _local16 = (map_.gs_.gsc_.getNextDamage(_local13, _local14) * _local15 + (this.relentlessDamageBonus() + this.aegisDamageBonus() + this.KaraModifier() + this.moonlightDamageBonus() + this.MarkRage()) * this.BotDModifier());
+            _local16 = (map_.gs_.gsc_.getNextDamage(_local13, _local14) * _local15 + (this.relentlessDamageBonus() + this.aegisDamageBonus() + this.KaraModifier() + this.MarkRage()) * this.BotDModifier());
             if (_arg1 > (map_.gs_.moveRecords_.lastClearTime_ + 600)) {
                 _local16 = 0;
             }

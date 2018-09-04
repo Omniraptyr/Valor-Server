@@ -6885,4 +6885,50 @@
         </Texture>
         <Rotation>100</Rotation>
     </Object>
+    <Object type="0x65a1" id="Ancient Depths Projectile">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x130</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x65a2" id="Ancient Depths Spiral">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x131</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x65a4" id="Crocko Slash">
+        <Class>Projectile</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x132</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x133</Index>
+            </Texture>
+        </RandomTexture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x65a5" id="Ancient Depths Spiral 2">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x134</Index>
+        </Texture>
+        <Rotation>20</Rotation>
+    </Object>
+    <Object type="0x65a6" id="Crocko Bolt">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x135</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
 </Objects>

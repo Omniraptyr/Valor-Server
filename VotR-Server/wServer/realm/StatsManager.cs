@@ -35,7 +35,7 @@ namespace wServer.realm
         {
             Base.ReCalculateValues(e);
             Boost.ReCalculateValues(e);
-
+            
             for (var i = 0; i < _stats.Length; i++)
                 _stats[i].SetValue(this[i]);
         }
@@ -54,7 +54,7 @@ namespace wServer.realm
 
         public int SpecialDamageMods()
         {
-            return VengeanceDamage() + RelentlessDamage() + KaraDamage() + MoonLightDamage() + RageDamage();
+            return VengeanceDamage() + RelentlessDamage() + KaraDamage() + RageDamage();
         }
         public float GetAttackMult(bool isAbility)
         {
@@ -231,21 +231,6 @@ namespace wServer.realm
             }
         }
 
-        public int MoonLightDamage()
-        {
-            if (Owner.CheckMoonlight() && Owner.Surge >= 30)
-            {
-                return Owner.MP * 2;
-            }
-            else if (Owner.CheckMoonlight())
-            {
-                return Owner.MP;
-            }
-            else
-            {
-                return 0;
-            }
-        }
 
         public float DemoDamage()
         {
@@ -290,7 +275,7 @@ namespace wServer.realm
                 if (Owner.HasConditionEffect(ConditionEffects.Sick))
                     vit = 0;
 
-                return 6 + vit * .12f;
+                return 6 + vit * .16f;
             }
 
         }

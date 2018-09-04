@@ -58,6 +58,9 @@ namespace wServer.realm
                 foreach (var b in _player.Inventory[i].StatsBoost)
                     IncrementBoost((StatsType)b.Key, b.Value);
 
+                foreach (var b in _player.Inventory[i].StatsBoost)
+                    IncrementBoost((StatsType)b.Key, b.Value);
+
                 foreach (var b in _player.Inventory[i].StatsBoostPerc)
                     if (b.Value != 0) {
                         int realIndex = StatsManager.GetStatIndex((StatsType)b.Key);

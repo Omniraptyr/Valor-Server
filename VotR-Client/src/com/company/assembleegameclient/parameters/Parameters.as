@@ -13,7 +13,7 @@ import flash.utils.Dictionary;
 public class Parameters {
 
     public static const BUILD_VERSION:String = "37";
-    public static const MINOR_VERSION:String = "73";
+    public static const MINOR_VERSION:String = "74";
     public static const FULL_BUILD:String = BUILD_VERSION + "." + MINOR_VERSION;
     public static const ENABLE_ENCRYPTION:Boolean = true;
     public static const PORT:int = 2050;
@@ -58,7 +58,6 @@ public class Parameters {
     public static var screenShotSlimMode_:Boolean = false;
     public static var sendLogin_:Boolean = true;
     private static var savedOptions_:SharedObject = null;
-    public static var toggleHPBar_:Boolean = false;
     private static var keyNames_:Dictionary = new Dictionary();
 
 
@@ -184,11 +183,6 @@ public class Parameters {
         setDefault("paymentMethod", null);
         setDefault("filterLanguage", true);
         setDefault("showGuildInvitePopup", true);
-        setDefault("showBeginnersOffer", false);
-        setDefault("beginnersOfferTimeLeft", 0);
-        setDefault("beginnersOfferShowNow", false);
-        setDefault("beginnersOfferShowNowTime", 0);
-        setDefault("watchForTutorialExit", false);
         setDefault("clickForGold", false);
         setDefault("contextualPotionBuy", true);
         setDefault("inventorySwap", true);

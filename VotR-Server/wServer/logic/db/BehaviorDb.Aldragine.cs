@@ -2567,6 +2567,7 @@ namespace wServer.logic
                         new Shoot(8, count: 1, projectileIndex: 3, fixedAngle: 225, coolDown: 1, coolDownOffset: 2000),
                         new Shoot(8, count: 1, projectileIndex: 3, fixedAngle: 315, coolDown: 1, coolDownOffset: 2000),
                         new Shoot(8, count: 1, projectileIndex: 4, coolDown: new Cooldown(200, 1000)),
+                        new Shoot(8, count: 5, projectileIndex: 4, predictive: 0.5, coolDown: new Cooldown(2000, 2000)),
                         new TimedTransition(10000, "SpawnCGiant")
                         ),
                     new State("SpawnCGiant",
@@ -2719,6 +2720,7 @@ namespace wServer.logic
                         new Shoot(8, count: 1, projectileIndex: 3, fixedAngle: 225, coolDown: 1, coolDownOffset: 2000),
                         new Shoot(8, count: 1, projectileIndex: 3, fixedAngle: 315, coolDown: 1, coolDownOffset: 2000),
                         new Shoot(8, count: 1, projectileIndex: 4, coolDown: new Cooldown(200, 1000)),
+                        new Shoot(8, count: 5, projectileIndex: 4, predictive: 0.5, coolDown: new Cooldown(2000, 2000)),
                         new TimedTransition(10000, "SpawnCGiantB")
                         ),
                     new State("SpawnCGiantB",

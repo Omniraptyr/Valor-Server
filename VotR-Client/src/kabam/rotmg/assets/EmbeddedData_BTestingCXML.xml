@@ -5915,7 +5915,7 @@
         <Projectile id="4">
             <ObjectId>Destruction Star</ObjectId>
             <Damage>1000</Damage>
-            <Speed>30</Speed>
+            <Speed>45</Speed>
             <LifetimeMS>6000</LifetimeMS>
             <Size>180</Size>
             <MultiHit/>
@@ -9795,7 +9795,7 @@
         <Projectile id="4">
             <ObjectId>Destruction Star</ObjectId>
             <Damage>1000</Damage>
-            <Speed>35</Speed>
+            <Speed>45</Speed>
             <LifetimeMS>12000</LifetimeMS>
             <Size>180</Size>
             <MultiHit/>
@@ -14119,6 +14119,333 @@
             <ConditionEffect duration="2">Bleeding</ConditionEffect>
             <Size>90</Size>
             <MultiHit/>
+        </Projectile>
+    </Object>
+    <Object type="0x561d" id="Vicious Croc">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Vicious Croc</DisplayId>
+        <AnimatedTexture>
+            <File>d1chars8x8r</File>
+            <Index>16</Index>
+        </AnimatedTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <Size>100</Size>
+        <StasisImmune/>
+        <MaxHitPoints>2500</MaxHitPoints>
+        <Defense>10</Defense>
+        <XpMult>0.0</XpMult>
+        <Projectile id="0">
+            <ObjectId>Crocko Bolt</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>70</Size>
+            <LifetimeMS>1200</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Crocko Bolt</ObjectId>
+            <Damage>120</Damage>
+            <Speed>80</Speed>
+            <Size>120</Size>
+            <LifetimeMS>1200</LifetimeMS>
+            <ConditionEffect duration="4">Bleeding</ConditionEffect>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Silver Shield</ObjectId>
+            <MinDamage>70</MinDamage>
+            <MaxDamage>90</MaxDamage>
+            <Speed>125</Speed>
+            <LifetimeMS>200</LifetimeMS>
+            <ConditionEffect duration="6">Armor Broken</ConditionEffect>
+        </Projectile>
+    </Object>
+    <Object type="0x562e" id="Janirich">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Janirich</DisplayId>
+        <Group>Rich</Group>
+        <AnimatedTexture>
+            <File>d1chars8x8r</File>
+            <Index>15</Index>
+        </AnimatedTexture>
+        <HitSound>monster/night_elves_hit</HitSound>
+        <DeathSound>monster/night_elves_death</DeathSound>
+        <Size>120</Size>
+        <ParalyzeImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <MaxHitPoints>40000</MaxHitPoints>
+        <Defense>40</Defense>
+        <XpMult>0.0</XpMult>
+        <Projectile id="0">
+            <ObjectId>Purple Magic</ObjectId>
+            <Damage>60</Damage>
+            <Speed>100</Speed>
+            <LifetimeMS>2600</LifetimeMS>
+            <ConditionEffect duration="4">Slowed</ConditionEffect>
+            <ConditionEffect duration="6">Sick</ConditionEffect>
+            <Wavy/>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Purple Missile</ObjectId>
+            <Damage>140</Damage>
+            <Speed>100</Speed>
+            <Size>120</Size>
+            <LifetimeMS>2400</LifetimeMS>
+            <Amplitude>2.28</Amplitude>
+            <Frequency>0.5</Frequency>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Pink Star</ObjectId>
+            <MinDamage>40</MinDamage>
+            <MaxDamage>60</MaxDamage>
+            <Speed>125</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <ConditionEffect duration="2">Confused</ConditionEffect>
+        </Projectile>
+    </Object>
+    <Object type="0x561e" id="Ranarich">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Ranirich</DisplayId>
+        <Group>Rich</Group>
+        <AnimatedTexture>
+            <File>d1chars8x8r</File>
+            <Index>14</Index>
+        </AnimatedTexture>
+        <HitSound>monster/night_elves_hit</HitSound>
+        <DeathSound>monster/night_elves_death</DeathSound>
+        <Size>120</Size>
+        <ParalyzeImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <MaxHitPoints>60000</MaxHitPoints>
+        <Defense>50</Defense>
+        <XpMult>0.0</XpMult>
+        <Projectile id="0">
+            <ObjectId>Purple Magic Blast</ObjectId>
+            <Damage>120</Damage>
+            <Speed>100</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="8">Quiet</ConditionEffect>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Poison Fireball</ObjectId>
+            <Damage>80</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2400</LifetimeMS>
+            <ConditionEffect duration="6">Unstable</ConditionEffect>
+        </Projectile>
+    </Object>
+    <Object type="0x561f" id="Zanarich">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Zanirich</DisplayId>
+        <Group>Rich</Group>
+        <AnimatedTexture>
+            <File>d1chars8x8r</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+        <HitSound>monster/night_elves_hit</HitSound>
+        <DeathSound>monster/night_elves_death</DeathSound>
+        <Size>120</Size>
+        <ParalyzeImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <MaxHitPoints>40000</MaxHitPoints>
+        <Defense>20</Defense>
+        <XpMult>0.0</XpMult>
+        <Projectile id="0">
+            <ObjectId>Purple Boomerang</ObjectId>
+            <Damage>200</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>6000</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Darkness Bolt</ObjectId>
+            <Damage>180</Damage>
+            <Speed>70</Speed>
+            <Size>140</Size>
+            <LifetimeMS>2400</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+    </Object>
+    <Object type="0x562a" id="Orbiter Richmaster">
+        <Enemy/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <Class>Character</Class>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <Size>110</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>50</Defense>
+        <NoMiniMap/>
+        <Level>1</Level>
+        <XpMult>100</XpMult>
+        <NoArticle/>
+        <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x562b" id="Book of Lore">
+        <Enemy/>
+        <Class>Character</Class>
+        <Group>Rich</Group>
+        <AnimatedTexture>
+            <File>d1chars8x8r</File>
+            <Index>12</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Size>120</Size>
+        <StasisImmune/>
+        <MaxHitPoints>1000</MaxHitPoints>
+        <Defense>40</Defense>
+        <XpMult>0.0</XpMult>
+        <Projectile id="0">
+            <ObjectId>Pink Bolt</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>80</Size>
+            <LifetimeMS>1000</LifetimeMS>
+            <ConditionEffect duration="0.5">Petrify</ConditionEffect>
+            <Wavy/>
+        </Projectile>
+    </Object>
+    <Object type="0x562c" id="Krokanich">
+        <Enemy/>
+        <DisplayId>Krokanich</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>29</Index>
+        </AnimatedTexture>
+        <HitSound>monster/demons_hit</HitSound>
+        <DeathSound>monster/demons_death</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <SlowedImmune/>
+        <ShadowSize>0</ShadowSize>
+        <Hero/>
+        <Quest/>
+        <God/>
+        <Encounter/>
+        <StasisImmune/>
+        <Level>20</Level>
+        <MaxHitPoints>600000</MaxHitPoints>
+        <Defense>40</Defense>
+        <Projectile id="0">
+            <ObjectId>Crocko Slash</ObjectId>
+            <MinDamage>180</MinDamage>
+            <MaxDamage>220</MaxDamage>
+            <Speed>70</Speed>
+            <LifetimeMS>4000</LifetimeMS>
+            <Wavy/>
+            <ConditionEffect duration="6">Bleeding</ConditionEffect>
+            <ConditionEffect duration="4">Armor Broken</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Darkness Bolt</ObjectId>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>120</MaxDamage>
+            <Speed>100</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Puppet Green Wheel</ObjectId>
+            <Damage>60</Damage>
+            <Speed>120</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="4">Bleeding</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Green Boomerang</ObjectId>
+            <Damage>120</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>600</LifetimeMS>
+            <Boomerang/>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>White Bolt</ObjectId>
+            <Damage>85</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+    </Object>
+    <Object type="0x562d" id="Xanarich, the Chosen One">
+        <Enemy/>
+        <DisplayId>Xanarich</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>28</Index>
+        </AnimatedTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <SlowedImmune/>
+        <ShadowSize>0</ShadowSize>
+        <Hero/>
+        <Quest/>
+        <God/>
+        <Encounter/>
+        <StasisImmune/>
+        <Level>20</Level>
+        <MaxHitPoints>1000000</MaxHitPoints>
+        <Defense>60</Defense>
+        <Projectile id="0">
+            <ObjectId>Ancient Depths Projectile</ObjectId>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <Speed>80</Speed>
+            <LifetimeMS>4000</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Ancient Depths Spiral</ObjectId>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>120</MaxDamage>
+            <Speed>100</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="6">Sick</ConditionEffect>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Ancient Depths Spiral 2</ObjectId>
+            <Damage>60</Damage>
+            <Speed>120</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="6">Quiet</ConditionEffect>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Purple Bolt</ObjectId>
+            <Damage>75</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>White Ball</ObjectId>
+            <Damage>140</Damage>
+            <Speed>100</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
     </Object>
 </Objects>

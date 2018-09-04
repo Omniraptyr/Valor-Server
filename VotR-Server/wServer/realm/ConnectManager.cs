@@ -68,7 +68,7 @@ namespace wServer.realm
                     return;
                 }
 
-                conInfo.Client.SendFailure("Server at max capacity.");
+                conInfo.Client.SendFailure("Server is full.");
                 Log.Warn("Rejected player, server is at maximum");
                 return;
             }

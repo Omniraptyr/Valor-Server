@@ -18124,10 +18124,10 @@
         </Texture>
         <SlotType>14</SlotType>
         <Description>A robe that will reflect light off into different colors.</Description>
-        <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="27" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="220">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="20">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="7">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <feedPower>1000</feedPower>
@@ -30235,12 +30235,12 @@
         </Texture>
         <SlotType>29</SlotType>
         <Description></Description>
-        <RateOfFire>0.8</RateOfFire>
+        <RateOfFire>0.80</RateOfFire>
         <Sound>weapon/mithril_sword</Sound>
         <Projectile>
             <ObjectId>Moon Magic</ObjectId>
             <Speed>60</Speed>
-            <MinDamage>440</MinDamage>
+            <MinDamage>520</MinDamage>
             <MaxDamage>680</MaxDamage>
             <LifetimeMS>600</LifetimeMS>
             <ArmorPiercing/>
@@ -30649,9 +30649,10 @@
         <Description>A robe used by the great holy clerics of Dranbiel.</Description>
         <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="0" amount="180">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="122" amount="30">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="12">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="35">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="18">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="40">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <Legendary/>
         <Legend id="3" stat="27">
@@ -31758,9 +31759,9 @@
         <MpCost>60</MpCost>
         <ActivateOnEquip stat="114" amount="150">IncrementStat</ActivateOnEquip>
         <Activate duration="4">DiceActivate</Activate>
-        <Activate effect="Invulnerable" duration="2">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="1">ConditionEffectSelf</Activate>
         <Activate effect="Surged" duration="3.5">ConditionEffectSelf</Activate>
-        <Cooldown>6</Cooldown>
+        <Cooldown>2</Cooldown>
         <Legendary/>
         <DisplayId>Devil Dice</DisplayId>
     </Object>
@@ -31955,10 +31956,10 @@
         <Sound>weapon/wand_of_death</Sound>
         <Projectile>
             <ObjectId>Moonlight Shot</ObjectId>
-            <Speed>90</Speed>
+            <Speed>100</Speed>
             <MinDamage>124</MinDamage>
             <MaxDamage>152</MaxDamage>
-            <LifetimeMS>600</LifetimeMS>
+            <LifetimeMS>760</LifetimeMS>
             <ArmorPiercing/>
         </Projectile>
         <ActivateOnEquip stat="21" amount="15">IncrementStat</ActivateOnEquip>
@@ -31967,7 +31968,7 @@
         <Legendary/>
         <Legend id="3" stat="27">
             <Name>Lunar Grandeur</Name>
-            <Description>The amount of mana is transferred to bonus damage. When surge is over 30 you deal twice as much mana-based damage.</Description>
+            <Description>Your protection gets restored fully if your MP is full upon using an ability.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
@@ -34292,261 +34293,6 @@
         <feedPower>880</feedPower>
         <DisplayId>Earthforce Dice</DisplayId>
     </Object>
-    <Object type="0x67a1" id="Basic Spell">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x130</Index>
-        </Texture>
-        <SlotType>37</SlotType>
-        <Description>A spell that shoots in four directions.</Description>
-        <Sound>spell/fire_spray</Sound>
-        <Projectile>
-            <ObjectId>Fire Bolt</ObjectId>
-            <Speed>60</Speed>
-            <MinDamage>10</MinDamage>
-            <MaxDamage>20</MaxDamage>
-            <LifetimeMS>600</LifetimeMS>
-        </Projectile>
-        <BRItem/>
-        <Usable/>
-        <BagType>0</BagType>
-        <MpCost>30</MpCost>
-        <Activate>BulletNova2</Activate>
-        <DisplayId>Basic Spell</DisplayId>
-    </Object>
-    <Object type="0x67a2" id="Medium Spell">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x131</Index>
-        </Texture>
-        <SlotType>37</SlotType>
-        <Description>A spell that shoots in four directions.</Description>
-        <Sound>spell/fire_spray</Sound>
-        <Projectile>
-            <ObjectId>Fire Bolt</ObjectId>
-            <Speed>60</Speed>
-            <MinDamage>15</MinDamage>
-            <MaxDamage>20</MaxDamage>
-            <LifetimeMS>600</LifetimeMS>
-        </Projectile>
-        <BRItem/>
-        <Usable/>
-        <BagType>0</BagType>
-        <MpCost>35</MpCost>
-        <Activate>BulletNova2</Activate>
-        <DisplayId>Medium Spell</DisplayId>
-    </Object>
-    <Object type="0x67a3" id="Champion Spell">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x132</Index>
-        </Texture>
-        <SlotType>37</SlotType>
-        <Description>A spell that shoots in four directions.</Description>
-        <Sound>spell/fire_spray</Sound>
-        <Projectile>
-            <ObjectId>Fire Bolt</ObjectId>
-            <Speed>80</Speed>
-            <MinDamage>20</MinDamage>
-            <MaxDamage>20</MaxDamage>
-            <LifetimeMS>600</LifetimeMS>
-        </Projectile>
-        <BRItem/>
-        <Usable/>
-        <BagType>0</BagType>
-        <MpCost>40</MpCost>
-        <Activate>BulletNova2</Activate>
-        <DisplayId>Champion Spell</DisplayId>
-    </Object>
-    <Object type="0x67a4" id="Basic Sphere">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x133</Index>
-        </Texture>
-        <SlotType>37</SlotType>
-        <Description>A sphere that conjures energy shots in front of you.</Description>
-        <Sound>spell/fire_spray</Sound>
-        <Projectile>
-            <ObjectId>Fire Bolt</ObjectId>
-            <Speed>50</Speed>
-            <MinDamage>10</MinDamage>
-            <MaxDamage>30</MaxDamage>
-            <LifetimeMS>1400</LifetimeMS>
-            <Boomerang/>
-        </Projectile>
-        <BRItem/>
-        <Usable/>
-        <BagType>0</BagType>
-        <MpCost>60</MpCost>
-        <NumProjectiles>3</NumProjectiles>
-        <Activate>Shoot</Activate>
-        <DisplayId>Basic Sphere</DisplayId>
-    </Object>
-    <Object type="0x67a5" id="Medium Sphere">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x134</Index>
-        </Texture>
-        <SlotType>37</SlotType>
-        <Description>A sphere that conjures energy shots in front of you.</Description>
-        <Sound>spell/fire_spray</Sound>
-        <Projectile>
-            <ObjectId>Fire Bolt</ObjectId>
-            <Speed>50</Speed>
-            <MinDamage>15</MinDamage>
-            <MaxDamage>30</MaxDamage>
-            <LifetimeMS>1400</LifetimeMS>
-            <Boomerang/>
-        </Projectile>
-        <BRItem/>
-        <Usable/>
-        <BagType>0</BagType>
-        <MpCost>65</MpCost>
-        <NumProjectiles>3</NumProjectiles>
-        <Activate>Shoot</Activate>
-        <DisplayId>Medium Sphere</DisplayId>
-    </Object>
-    <Object type="0x67a6" id="Champion Sphere">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x135</Index>
-        </Texture>
-        <SlotType>37</SlotType>
-        <Description>A sphere that conjures energy shots in front of you.</Description>
-        <Sound>spell/fire_spray</Sound>
-        <Projectile>
-            <ObjectId>Fire Bolt</ObjectId>
-            <Speed>50</Speed>
-            <MinDamage>20</MinDamage>
-            <MaxDamage>30</MaxDamage>
-            <LifetimeMS>1400</LifetimeMS>
-            <Boomerang/>
-        </Projectile>
-        <BRItem/>
-        <Usable/>
-        <BagType>0</BagType>
-        <MpCost>70</MpCost>
-        <NumProjectiles>3</NumProjectiles>
-        <Activate>Shoot</Activate>
-        <DisplayId>Champion Sphere</DisplayId>
-    </Object>
-    <Object type="0x67a7" id="Energy Staff 2">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>lofiObj5</File>
-            <Index>0x70</Index>
-        </Texture>
-        <SlotType>36</SlotType>
-        <Description>{equip.A_magical_wooden_staff_topped_with_a_white_crystal.}</Description>
-        <RateOfFire>1</RateOfFire>
-        <Sound>weapon/fire_wand</Sound>
-        <Projectile>
-            <ObjectId>Grey Missile</ObjectId>
-            <Speed>100</Speed>
-            <MinDamage>2</MinDamage>
-            <MaxDamage>5</MaxDamage>
-            <LifetimeMS>600</LifetimeMS>
-            <Amplitude>0.5</Amplitude>
-            <Frequency>2</Frequency>
-        </Projectile>
-        <BRItem/>
-        <BagType>1</BagType>
-        <NumProjectiles>2</NumProjectiles>
-        <ArcGap>0</ArcGap>
-        <OldSound>magicShoot</OldSound>
-        <feedPower>5</feedPower>
-        <DisplayId>{equip.Energy_Staff}</DisplayId>
-    </Object>
-    <Object type="0x67a8" id="Firebrand Staff 2">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>lofiObj5</File>
-            <Index>0x71</Index>
-        </Texture>
-        <SlotType>36</SlotType>
-        <Description>{equip.A_staff_imbued_with_potent_magical_fire.}</Description>
-        <RateOfFire>1</RateOfFire>
-        <Sound>weapon/missile_wand</Sound>
-        <Projectile>
-            <ObjectId>Grey Missile</ObjectId>
-            <Speed>100</Speed>
-            <MinDamage>4</MinDamage>
-            <MaxDamage>8</MaxDamage>
-            <LifetimeMS>600</LifetimeMS>
-            <Amplitude>0.5</Amplitude>
-            <Frequency>2</Frequency>
-        </Projectile>
-        <BRItem/>
-        <BagType>1</BagType>
-        <NumProjectiles>2</NumProjectiles>
-        <ArcGap>0</ArcGap>
-        <OldSound>magicShoot</OldSound>
-        <DisplayId>{equip.Firebrand_Staff}</DisplayId>
-    </Object>
-    <Object type="0x67a9" id="Comet Staff 2">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>lofiObj5</File>
-            <Index>0x72</Index>
-        </Texture>
-        <SlotType>36</SlotType>
-        <Description>{equip.A_staff_charged_with_the_icy_powers_of_the_heavens.}</Description>
-        <RateOfFire>1</RateOfFire>
-        <Sound>weapon/missile_wand</Sound>
-        <Projectile>
-            <ObjectId>Grey Missile</ObjectId>
-            <Speed>100</Speed>
-            <MinDamage>5</MinDamage>
-            <MaxDamage>10</MaxDamage>
-            <LifetimeMS>600</LifetimeMS>
-            <Amplitude>0.5</Amplitude>
-            <Frequency>2</Frequency>
-        </Projectile>
-        <BagType>1</BagType>
-        <BRItem/>
-        <NumProjectiles>2</NumProjectiles>
-        <ArcGap>0</ArcGap>
-        <OldSound>magicShoot</OldSound>
-        <DisplayId>{equip.Comet_Staff}</DisplayId>
-    </Object>
-    <Object type="0x67b1" id="Challenger Sword">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x12a</Index>
-        </Texture>
-        <SlotType>36</SlotType>
-        <Description>A sword used to challenge other players in the challenger arena.</Description>
-        <RateOfFire>1</RateOfFire>
-        <Sound>weapon/mithril_sword</Sound>
-        <Projectile>
-            <ObjectId>Blade</ObjectId>
-            <Speed>100</Speed>
-            <MinDamage>10</MinDamage>
-            <MaxDamage>30</MaxDamage>
-            <LifetimeMS>300</LifetimeMS>
-        </Projectile>
-        <BRItem/>
-        <BagType>1</BagType>
-        <OldSound>bladeSwing</OldSound>
-        <DisplayId>Challenger Sword</DisplayId>
-    </Object>
     <Object type="0x168b" id="Challenger Chest 1">
         <Class>Character</Class>
         <Enemy/>
@@ -34603,225 +34349,6 @@
         <XpMult>0.0</XpMult>
         <DisplayId>Challenger Chest 2 Spawner</DisplayId>
     </Object>
-    <Object type="0x67b2" id="Challenger Chainmail">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x12b</Index>
-        </Texture>
-        <SlotType>38</SlotType>
-        <Description>A chainmail specifically built for the likes of a challenger.</Description>
-        <ActivateOnEquip stat="21" amount="7">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="-1">IncrementStat</ActivateOnEquip>
-        <BagType>1</BagType>
-        <BRItem/>
-        <DisplayId>Challenger Chainmail</DisplayId>
-    </Object>
-    <Object type="0x67b3" id="Challenger Steel Shield">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>lofiObj6</File>
-            <Index>0x72</Index>
-        </Texture>
-        <SlotType>37</SlotType>
-        <Description>{equip.A_shield_made_of_high_quality_steel.}</Description>
-        <Sound>spell/fire_spray</Sound>
-        <Projectile>
-            <ObjectId>Silver Shield</ObjectId>
-            <Speed>160</Speed>
-            <MinDamage>10</MinDamage>
-            <MaxDamage>20</MaxDamage>
-            <LifetimeMS>200</LifetimeMS>
-            <Size>140</Size>
-            <ConditionEffect duration="3">Stunned</ConditionEffect>
-            <MultiHit/>
-            <PassesCover/>
-            <ParticleTrail/>
-        </Projectile>
-        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="-2">IncrementStat</ActivateOnEquip>
-        <ConditionEffect duration="3">Stunned</ConditionEffect>
-        <Usable/>
-        <BagType>1</BagType>
-        <MpCost>55</MpCost>
-        <Cooldown>3</Cooldown>
-        <Activate>Shoot</Activate>
-        <BRItem/>
-        <NumProjectiles>3</NumProjectiles>
-        <DisplayId>Challenger Steel Shield</DisplayId>
-    </Object>
-    <Object type="0x67b4" id="Smoke Grenade">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x143</Index>
-        </Texture>
-        <SlotType>37</SlotType>
-        <Description>A smoke grenade used to impair the enemie's vision.</Description>
-        <Usable/>
-        <BagType>2</BagType>
-        <MpCost>30</MpCost>
-        <BRItem/>
-        <Activate>CSmokeGrenade</Activate>
-        <DisplayId>Smoke Grenade</DisplayId>
-    </Object>
-    <Object type="0x67b5" id="Flash Grenade">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x144</Index>
-        </Texture>
-        <SlotType>37</SlotType>
-        <Description>A flash grenade used to impair the enemie's movement.</Description>
-        <Usable/>
-        <BagType>2</BagType>
-        <MpCost>35</MpCost>
-        <BRItem/>
-        <Activate>CFlashGrenade</Activate>
-        <DisplayId>Flash Grenade</DisplayId>
-    </Object>
-    <Object type="0x67b6" id="Challenger Shortbow">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>lofiObj5</File>
-            <Index>0x50</Index>
-        </Texture>
-        <SlotType>36</SlotType>
-        <Description>A well-made shortbow.</Description>
-        <RateOfFire>0.8</RateOfFire>
-        <Sound>weapon/poor_quality_bow</Sound>
-        <Projectile>
-            <ObjectId>Green Arrow</ObjectId>
-            <Speed>160</Speed>
-            <MinDamage>8</MinDamage>
-            <MaxDamage>10</MaxDamage>
-            <LifetimeMS>440</LifetimeMS>
-            <MultiHit/>
-        </Projectile>
-        <BRItem/>
-        <BagType>1</BagType>
-        <OldSound>arrowShoot</OldSound>
-        <feedPower>5</feedPower>
-    </Object>
-    <Object type="0x67b7" id="Thrownaxe">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x12c</Index>
-        </Texture>
-        <SlotType>37</SlotType>
-        <Description>An axe made for the likes of a challenger.</Description>
-        <Sound>spell/fire_spray</Sound>
-        <Projectile>
-            <ObjectId>Challenger Thrownaxe Projectile</ObjectId>
-            <Speed>70</Speed>
-            <MinDamage>5</MinDamage>
-            <MaxDamage>10</MaxDamage>
-            <LifetimeMS>1400</LifetimeMS>
-            <Size>150</Size>
-            <ConditionEffect duration="2">Bleeding</ConditionEffect>
-            <MultiHit/>
-            <Boomerang/>
-        </Projectile>
-        <ConditionEffect duration="2">Bleeding</ConditionEffect>
-        <Usable/>
-        <BRItem/>
-        <BagType>1</BagType>
-        <MpCost>5</MpCost>
-        <Activate>Shoot</Activate>
-        <DisplayId>Thrownaxe</DisplayId>
-    </Object>
-    <Object type="0x67b8" id="Challenger Steel Dagger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>lofiObj5</File>
-            <Index>0x60</Index>
-        </Texture>
-        <SlotType>36</SlotType>
-        <Description>{equip.A_sharp_dagger_made_of_steel.}</Description>
-        <RateOfFire>1.25</RateOfFire>
-        <Sound>weapon/blunt_dagger</Sound>
-        <Projectile>
-            <ObjectId>Blade</ObjectId>
-            <Speed>100</Speed>
-            <MinDamage>5</MinDamage>
-            <MaxDamage>10</MaxDamage>
-            <LifetimeMS>350</LifetimeMS>
-        </Projectile>
-        <BRItem/>
-        <BagType>1</BagType>
-        <OldSound>daggerSwing</OldSound>
-        <DisplayId>Challenger Steel Dagger</DisplayId>
-    </Object>
-    <Object type="0x67b9" id="Quiver of the Challenger">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>lofiObj6</File>
-            <Index>0x33</Index>
-        </Texture>
-        <SlotType>37</SlotType>
-        <Description>A quiver used to hold magical arrows used by a challenger</Description>
-        <Sound>spell/fire_spray</Sound>
-        <Projectile>
-            <ObjectId>Indigo Arrow</ObjectId>
-            <Speed>80</Speed>
-            <MinDamage>30</MinDamage>
-            <MaxDamage>40</MaxDamage>
-            <LifetimeMS>1000</LifetimeMS>
-            <Size>150</Size>
-            <ConditionEffect duration="4">Paralyzed</ConditionEffect>
-        </Projectile>
-        <ConditionEffect duration="4">Paralyzed</ConditionEffect>
-        <Usable/>
-        <BRItem/>
-        <BagType>2</BagType>
-        <MpCost>70</MpCost>
-        <Activate>Shoot</Activate>
-        <DisplayId>Quiver of the Challenger</DisplayId>
-    </Object>
-    <Object type="0x67ba" id="Challenger Drake Hide Armor">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>lofiObj5</File>
-            <Index>0x08</Index>
-        </Texture>
-        <SlotType>38</SlotType>
-        <Description>Drake Hide Armor especially made for a challenger.</Description>
-        <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
-        <BagType>2</BagType>
-        <FameBonus>1</FameBonus>
-        <BRItem/>
-        <DisplayId>Challenger Drake Hide Armor</DisplayId>
-    </Object>
-    <Object type="0x67bb" id="Mossy Helm">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x12d</Index>
-        </Texture>
-        <SlotType>37</SlotType>
-        <Description>An old, old, helm made for a challenger</Description>
-        <ActivateOnEquip stat="21" amount="2">IncrementStat</ActivateOnEquip>
-        <Usable/>
-        <BagType>2</BagType>
-        <FameBonus>2</FameBonus>
-        <MpCost>70</MpCost>
-        <Activate effect="Invulnerable" duration="2">ConditionEffectSelf</Activate>
-        <Activate effect="Slowed" duration="3">ConditionEffectSelf</Activate>
-        <feedPower>90</feedPower>
-        <BRItem/>
-        <DisplayId>Mossy Helm</DisplayId>
-    </Object>
     <Object type="0x67c1" id="Challenger Thrownaxe Projectile">
         <Class>Projectile</Class>
         <Texture>
@@ -34829,58 +34356,6 @@
             <Index>0x12c</Index>
         </Texture>
         <Rotation>40</Rotation>
-    </Object>
-    <Object type="0x67c2" id="Challenger Staff">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x12e</Index>
-        </Texture>
-        <SlotType>36</SlotType>
-        <Description>A staff made for a challenger to challenge. Boom bap.</Description>
-        <RateOfFire>1</RateOfFire>
-        <Sound>weapon/fire_wand</Sound>
-        <Projectile>
-            <ObjectId>Yellow Missile</ObjectId>
-            <Speed>100</Speed>
-            <MinDamage>10</MinDamage>
-            <MaxDamage>12</MaxDamage>
-            <LifetimeMS>400</LifetimeMS>
-            <Amplitude>0.5</Amplitude>
-            <Frequency>2</Frequency>
-        </Projectile>
-        <BagType>1</BagType>
-        <NumProjectiles>2</NumProjectiles>
-        <ArcGap>20</ArcGap>
-        <BRItem/>
-        <OldSound>magicShoot</OldSound>
-        <DisplayId>Challenger Staff</DisplayId>
-    </Object>
-    <Object type="0x67c3" id="Challenger Blade">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x12f</Index>
-        </Texture>
-        <SlotType>36</SlotType>
-        <Description>The blade of a true challenger!</Description>
-        <RateOfFire>1</RateOfFire>
-        <Sound>weapon/mithril_sword</Sound>
-        <Projectile>
-            <ObjectId>White Bolt</ObjectId>
-            <Speed>100</Speed>
-            <MinDamage>10</MinDamage>
-            <MaxDamage>15</MaxDamage>
-            <LifetimeMS>300</LifetimeMS>
-        </Projectile>
-        <BRItem/>
-        <NumProjectiles>2</NumProjectiles>
-        <ArcGap>40</ArcGap>
-        <BagType>1</BagType>
-        <OldSound>bladeSwing</OldSound>
-        <DisplayId>Challenger Blade</DisplayId>
     </Object>
     <Object type="0x69c3" id="Flames of Purity">
         <Class>Equipment</Class>
@@ -35075,7 +34550,7 @@
         <FameBonus>6</FameBonus>
         <OldSound>bladeSwing</OldSound>
     </Object>
-	<Object type="0x5613" id="Uber Armor">
+	<Object type="0x5616" id="Uber Armor">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -35135,17 +34610,17 @@
             <MaxDamage>550</MaxDamage>
             <LifetimeMS>1000</LifetimeMS>
             <Size>150</Size>
-            <ConditionEffect duration="6">Bleeding</ConditionEffect>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
             <PassesCover/>
             <ParticleTrail/>
             <MultiHit/>
         </Projectile>
         <ActivateOnEquip stat="28" amount="14">IncrementStat</ActivateOnEquip>
-        <ConditionEffect duration="6">Bleeding</ConditionEffect>
+        <ConditionEffect duration="6">Slowed</ConditionEffect>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
-        <MpCost>10</MpCost>
+        <MpCost>20</MpCost>
         <Activate>Shoot</Activate>
         <DisplayId>Quiver of the Chosen</DisplayId>
     </Object>
@@ -35167,7 +34642,7 @@
         <FameBonus>6</FameBonus>
         <DisplayId>Chosen Armor</DisplayId>
     </Object>
-    <Object type="0x5616" id="Chosen Bow">
+    <Object type="0x561a" id="Chosen Bow">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -35176,7 +34651,7 @@
         </Texture>
         <SlotType>3</SlotType>
         <Description>A bow made for the chosen archer to battle the evils that lie in the Ancient Depths.</Description>
-        <RateOfFire>0.85</RateOfFire>
+        <RateOfFire>1.25</RateOfFire>
         <Sound>weapon/golden_bow</Sound>
         <Projectile>
             <ObjectId>Red Arrow</ObjectId>
@@ -35228,5 +34703,37 @@
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <DisplayId>Crashing Crescendo</DisplayId>
+    </Object>
+    <Object type="0x59a3" id="Death Amulet">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x437</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>Spooky.</Description>
+        <ActivateOnEquip stat="0" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
+        <BagType>4</BagType>
+        <FameBonus>3</FameBonus>
+    </Object>
+    <Object type="0x59a4" id="Robe of the Gargoyle Summoner">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x45b</Index>
+        </Texture>
+        <SlotType>14</SlotType>
+        <Description>A neccessary robe used to summon the ancient Stone Gargoyle.</Description>
+        <ActivateOnEquip stat="3" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
     </Object>
 </Objects>

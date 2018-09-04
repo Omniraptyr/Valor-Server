@@ -347,6 +347,10 @@ namespace wServer.realm.entities
             {
                 HP -= item.MpCost * 2;
             }
+            if (CheckMoonlight() == true)
+            {
+                ProtectionDamage = 0;
+            }
             if (CheckIok() == true)
             {
                 ApplyConditionEffect(NegativeEffs);

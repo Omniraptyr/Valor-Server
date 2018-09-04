@@ -79,8 +79,8 @@ namespace wServer.realm.entities
     partial class Player
     {
         private static readonly ILog CheatLog = LogManager.GetLogger("CheatLog");
-        private const float MaxTimeDiff = 1.15f;
-        private const float MinTimeDiff = 0.85f;
+        private const float MaxTimeDiff = 1.08f;
+        private const float MinTimeDiff = 0.92f;
         private readonly TimeCop _time = new TimeCop();
         private int _shotsLeft;
         private int _lastShootTime;
