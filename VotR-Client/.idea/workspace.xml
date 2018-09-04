@@ -73,8 +73,8 @@
       <file leaf-file-name="EmbeddedData_EquipCXML.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="34522" column="21" lean-forward="false" selection-start-line="34522" selection-start-column="21" selection-end-line="34522" selection-end-column="21" />
+            <state relative-caret-position="118">
+              <caret line="34543" column="38" lean-forward="true" selection-start-line="34543" selection-start-column="38" selection-end-line="34543" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -761,12 +761,12 @@
       <workItem from="1535882858509" duration="153000" />
       <workItem from="1535883259437" duration="2065000" />
       <workItem from="1535893572887" duration="119000" />
-      <workItem from="1535994191420" duration="28123000" />
+      <workItem from="1535994191420" duration="28716000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1596023000" />
+    <option name="totallyTimeSpent" value="1596616000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1194,8 +1194,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="34522" column="21" lean-forward="false" selection-start-line="34522" selection-start-column="21" selection-end-line="34522" selection-end-column="21" />
+        <state relative-caret-position="118">
+          <caret line="34543" column="38" lean-forward="true" selection-start-line="34543" selection-start-column="38" selection-end-line="34543" selection-end-column="38" />
           <folding />
         </state>
       </provider>

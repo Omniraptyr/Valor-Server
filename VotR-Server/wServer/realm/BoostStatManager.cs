@@ -34,7 +34,7 @@ namespace wServer.realm
                 _activateBoost2[i] = new ActivateBoost2();
             ReCalculateValues();
         }
-        
+
         protected internal void ReCalculateValues(InventoryChangedEventArgs e = null)
         {
             for (var i = 0; i < _boost.Length; i++)
@@ -58,11 +58,9 @@ namespace wServer.realm
                 foreach (var b in _player.Inventory[i].StatsBoost)
                     IncrementBoost((StatsType)b.Key, b.Value);
 
-                foreach (var b in _player.Inventory[i].StatsBoost)
-                    IncrementBoost((StatsType)b.Key, b.Value);
-
                 foreach (var b in _player.Inventory[i].StatsBoostPerc)
-                    if (b.Value != 0) {
+                    if (b.Value != 0)
+                    {
                         int realIndex = StatsManager.GetStatIndex((StatsType)b.Key);
                         IncrementBoost((StatsType)b.Key, (_parent.Base[realIndex]
                             + _boost[realIndex]) * b.Value / 100);
@@ -78,9 +76,9 @@ namespace wServer.realm
                 var setEquipped = equipSet.Setpieces
                     .Where(piece => piece.Type.Equals("Equipment"))
                     .All(piece => (_player.Inventory[piece.Slot] == null && piece.ItemType == 0xFFFF) ||
-                                  (_player.Inventory[piece.Slot] != null && 
+                                  (_player.Inventory[piece.Slot] != null &&
                                         _player.Inventory[piece.Slot].ObjectType == piece.ItemType));
-                
+
                 if (setEquipped)
                 {
                     // apply bonus
@@ -93,10 +91,10 @@ namespace wServer.realm
                                 _player.Size = ae.Size;
                                 break;
                             case ActivateEffects.IncrementStat:
-                                IncrementBoost((StatsType) ae.Stats, ae.Amount);
+                                IncrementBoost((StatsType)ae.Stats, ae.Amount);
                                 break;
                             case ActivateEffects.FixedStat:
-                                FixedStat((StatsType) ae.Stats, ae.Amount);
+                                FixedStat((StatsType)ae.Stats, ae.Amount);
                                 break;
                             case ActivateEffects.ConditionEffectSelf:
                                 _player.ApplyConditionEffect(ae.ConditionEffect.Value);
@@ -176,7 +174,7 @@ namespace wServer.realm
 
             }
         }
-        
+
         private void IncrementBoost(StatsType stat, int amount)
         {
             var i = StatsManager.GetStatIndex(stat);
