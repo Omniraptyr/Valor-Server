@@ -627,6 +627,7 @@ namespace common.resources
         public bool Ascended { get; private set; }
         public int MpEndCost { get; private set; }
         public int FameBonus { get; private set; }
+        public int SurgeMod { get; private set; }
         public int NumProjectiles { get; private set; }
         public float ArcGap { get; private set; }
         public float ArcGap1 { get; private set; }
@@ -736,6 +737,11 @@ namespace common.resources
                 NumProjectiles = Utils.FromString(n.Value);
             else
                 NumProjectiles = 1;
+
+            if ((n = elem.Element("SurgeMod")) != null)
+                SurgeMod = Utils.FromString(n.Value);
+            else
+                SurgeMod = 0;
 
             if ((n = elem.Element("ArcGap")) != null)
                 ArcGap = Utils.FromString(n.Value);

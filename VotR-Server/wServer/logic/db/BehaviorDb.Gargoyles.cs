@@ -216,7 +216,8 @@ namespace wServer.logic
                     new TierLoot(7, ItemType.Ring, 0.01),
                     new ItemLoot("Shard of the Stone Soul", 0.0005),
                     new ItemLoot("Ancient Stone Maul", 0.01),
-                    new ItemLoot("Marble Tablet", 0.01)
+                    new ItemLoot("Marble Tablet", 0.005),
+                    new ItemLoot("Robe of the Gargoyle Summoner", 0.005)
                 )
 			)
 			.Init("Stone Gargoyle",

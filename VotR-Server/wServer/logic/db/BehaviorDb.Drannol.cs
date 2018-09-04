@@ -913,7 +913,8 @@ namespace wServer.logic
                         ),
                     new State("shoot",
                         new HealSelf(coolDown: 4000),
-                        new Shoot(10, count: 3, shootAngle: 20, projectileIndex: 0, coolDown: 1800)
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 2000),
+                        new Shoot(10, count: 6, shootAngle: 20, projectileIndex: 0, coolDown: 900)
                         )
                     )
                 )
@@ -1676,8 +1677,9 @@ namespace wServer.logic
                 )
             )
 
-                                .Init("Revil, the Twisted Vanguard",
+                .Init("Revil, the Twisted Vanguard",
                 new State(
+                    new ScaleHP(30000),
                     new DropPortalOnDeath("The Steps Portal", 1, 120),
                     new ChangeMusicOnDeath("oldcity"),
                     new State("default",
@@ -1971,7 +1973,7 @@ namespace wServer.logic
                             ),
                     new State("getit3",
                         new Flash(0xFF0000, 0.2, 8),
-                        new HealSelf(coolDown: 9999, amount: 1750000),
+                        new HealSelf(coolDown: 3000, amount: 1750000),
                         new ChangeMusic("vanguarddying"),
                         new ChangeSize(60, 190),
                         new Taunt("I will show no mercy..."),
@@ -2253,6 +2255,7 @@ namespace wServer.logic
             )
             .Init("BD Berikao, the Dark Hunter",
                 new State(
+                    new ScaleHP(30000),
                     new DropPortalOnDeath("Twisted Trials Portal", 1, 120),
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -2922,7 +2925,7 @@ namespace wServer.logic
                 new State(
                     new Taunt("SURVIVE MY FURY!"),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
-                    new TimedTransition(30000, "finish"),
+                    new TimedTransition(60000, "finish"),
                     new Orbit(2, 5, target: "BD Platform Helper"),
                 new State("go2",
                    new Shoot(10, count: 1, shootAngle: 12, projectileIndex: 1, predictive: 0.1, coolDown: 600)
@@ -3562,7 +3565,7 @@ namespace wServer.logic
                         new Shoot(10, count: 3, shootAngle: 8, angleOffset: 40, projectileIndex: 1, predictive: 0.1, coolDown: 1000),
                         new Shoot(10, count: 3, shootAngle: 8, angleOffset: 320, projectileIndex: 1, predictive: 0.1, coolDown: 1000),
                      new State("invulnerable",
-                          new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                          new ConditionalEffect(ConditionEffectIndex.Invincible),
                           new TimedTransition(4000, "notinvulnerable")
                           ),
                      new State("notinvulnerable",
@@ -3746,7 +3749,7 @@ namespace wServer.logic
                             new TimedTransition(2000, "removeorb")
                                 ),
                         new State("removeorb",
-                            new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                            new ConditionalEffect(ConditionEffectIndex.Invincible),
                              new Prioritize(
                                     new Charge(3, 8, coolDown: 3000),
                                     new Follow(1.4),
@@ -3843,7 +3846,7 @@ namespace wServer.logic
                         new TossObject("Flaming Summon", 3, angle: 180, coolDown: 9999),
                         new TossObject("Flaming Summon", 3, angle: 0, coolDown: 9999),
                         new Taunt("My company and I will burn you to ashes!"),
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new Order(90, "Scorching Wrath Helper", "spawn"),
                             new Prioritize(
                                 new Charge(2, 8, coolDown: 4000),
@@ -3857,7 +3860,7 @@ namespace wServer.logic
                         new TimedTransition(4000, "attack2a")
                         ),
                     new State("attack2a",
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
                             new Prioritize(
                                 new Charge(2, 8, coolDown: 4000),
                                 new Follow(0.4),
@@ -3989,7 +3992,7 @@ namespace wServer.logic
                         new Order(90, "Scorching Wrath Helper", "spawn"),
                         new EntitiesNotExistsTransition(99, "thenextone", "Scorching Crawler"),
                         new Shoot(20, count: 14, projectileIndex: 0, coolDown: 600),
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new State("attack1b",
                             new Taunt("YOU SHALL BE CRUSHED!"),
                             new Prioritize(

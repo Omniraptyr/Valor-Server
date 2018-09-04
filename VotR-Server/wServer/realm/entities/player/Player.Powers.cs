@@ -399,7 +399,7 @@ namespace wServer.realm.entities
             {
                 return false;
             }
-            if (Inventory[0].ObjectId == "Moonlight")
+            if (Inventory[0].ObjectId == "Moonlight" && MP >= Stats[1])
             {
                 return true;
             }

@@ -196,6 +196,9 @@ namespace wServer.logic
                     new Spawn("Skeleton Swordsman", 2, coolDown: 8000),
                     new Spawn("Skeleton Veteran", 1, coolDown: 8000),
                     new Spawn("Skeleton Mage", 1, coolDown: 8000)
+                    ),
+                new Threshold(0.05,
+                    new ItemLoot("Death Amulet", 0.075)
                     )
             )
             ;

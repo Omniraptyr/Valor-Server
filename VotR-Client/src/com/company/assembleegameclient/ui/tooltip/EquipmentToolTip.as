@@ -94,6 +94,7 @@ public class EquipmentToolTip extends ToolTip {
         this.addHpCostTagToEffectsList();
         this.addSurgeCostTagToEffectsList();
         this.addCooldown();
+        this.addSurgeMod();
         this.addFameBonusTagToEffectsList();
         this.makeEffectsList();
         this.makeLineTwo();
@@ -350,6 +351,14 @@ public class EquipmentToolTip extends ToolTip {
         if (this.objectXML.hasOwnProperty("Cooldown")) {
             this.effects.push(new Effect("Cooldown: {cd}", {
                 "cd": this.objectXML.Cooldown + " seconds"
+            }));
+        }
+    }
+
+    private function addSurgeMod() : void {
+        if (this.objectXML.hasOwnProperty("SurgeMod")) {
+            this.effects.push(new Effect("SurgeMod: {sm}", {
+                "sm": this.objectXML.SurgeMod
             }));
         }
     }

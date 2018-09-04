@@ -116,18 +116,11 @@ namespace wServer.realm.commands
 
             protected override bool Process(Player player, RealmTime time, string args)
             {
-                var amount2 = int.Parse(args);
-
-                if (string.IsNullOrEmpty(args))
-                {
-                    player.SendInfo("/onrane <amount>");
-                    return false;
-                }
-                player.Onrane = player.Client.Account.Onrane += amount2;
-                player.ForceUpdate(player.Onrane);
+                    player.SendInfo("" + player.surgeMod);
                 return true;
             }
         }
+
 
         private const int Delay = 3; // in seconds
 

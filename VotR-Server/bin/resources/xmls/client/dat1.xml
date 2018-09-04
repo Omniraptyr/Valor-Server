@@ -83589,24 +83589,24 @@ This dagger was a myth, will you live to tell the tale?
         <FameBonus>6</FameBonus>
         <DisplayId>Sheath of the Holy Revival</DisplayId>
     </Object>
-  <Object type="0x5140" id="Spectrum Robe">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>d3LofiObjEmbed</File>
-      <Index>0xff</Index>
-    </Texture>
-    <SlotType>14</SlotType>
-    <Description>A robe that will reflect light off into different colors.</Description>
-    <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="27" amount="12">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="21" amount="7">IncrementStat</ActivateOnEquip>    
-    <BagType>6</BagType>
-    <FameBonus>6</FameBonus>
-    <feedPower>1000</feedPower>
-    <DisplayId>Spectrum Robe</DisplayId>
-  </Object>
+    <Object type="0x5140" id="Spectrum Robe">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0xff</Index>
+        </Texture>
+        <SlotType>14</SlotType>
+        <Description>A robe that will reflect light off into different colors.</Description>
+        <ActivateOnEquip stat="3" amount="220">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <feedPower>1000</feedPower>
+        <DisplayId>Spectrum Robe</DisplayId>
+    </Object>
   <Object type="0x5141" id="Riv the Heavenly Champion">
     <DisplayId>Riv the Heavenly Champion</DisplayId>
     <Enemy/>
@@ -89832,7 +89832,7 @@ A whole thanksgiving turkey!
     <Projectile id="4">
       <ObjectId>Destruction Star</ObjectId>
       <Damage>1000</Damage>
-      <Speed>30</Speed>
+      <Speed>45</Speed>
       <LifetimeMS>6000</LifetimeMS>
       <Size>180</Size>
       <MultiHit/>
@@ -107266,12 +107266,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>29</SlotType>
         <Description></Description>
-        <RateOfFire>0.8</RateOfFire>
+        <RateOfFire>0.80</RateOfFire>
         <Sound>weapon/mithril_sword</Sound>
         <Projectile>
             <ObjectId>Moon Magic</ObjectId>
             <Speed>60</Speed>
-            <MinDamage>440</MinDamage>
+            <MinDamage>520</MinDamage>
             <MaxDamage>680</MaxDamage>
             <LifetimeMS>600</LifetimeMS>
             <ArmorPiercing/>
@@ -108339,9 +108339,10 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Description>A robe used by the great holy clerics of Dranbiel.</Description>
         <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="0" amount="180">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="122" amount="30">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="21" amount="12">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="35">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="18">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="12">IncrementStat</ActivateOnEquip>
+		<ActivateOnEquip stat="121" amount="40">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <Legendary/>
         <Legend id="3" stat="27">
@@ -110351,7 +110352,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate duration="4">DiceActivate</Activate>
         <Activate effect="Invulnerable" duration="2">ConditionEffectSelf</Activate>
         <Activate effect="Surged" duration="3.5">ConditionEffectSelf</Activate>
-        <Cooldown>2</Cooldown>
+        <Cooldown>4</Cooldown>
         <Legendary/>
         <DisplayId>Devil Dice</DisplayId>
     </Object>
@@ -110570,10 +110571,10 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Sound>weapon/wand_of_death</Sound>
         <Projectile>
             <ObjectId>Moonlight Shot</ObjectId>
-            <Speed>90</Speed>
+            <Speed>100</Speed>
             <MinDamage>124</MinDamage>
             <MaxDamage>152</MaxDamage>
-            <LifetimeMS>600</LifetimeMS>
+            <LifetimeMS>760</LifetimeMS>
             <ArmorPiercing/>
         </Projectile>
         <ActivateOnEquip stat="21" amount="15">IncrementStat</ActivateOnEquip>
@@ -110582,7 +110583,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Legendary/>
         <Legend id="3" stat="27">
             <Name>Lunar Grandeur</Name>
-            <Description>The amount of mana is transferred to bonus damage. When surge is over 30 you deal twice as much mana-based damage.</Description>
+            <Description>Your protection gets restored fully if your MP is full upon using an ability.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>0</Surge>
@@ -111701,7 +111702,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile id="4">
             <ObjectId>Destruction Star</ObjectId>
             <Damage>1000</Damage>
-            <Speed>35</Speed>
+            <Speed>45</Speed>
             <LifetimeMS>12000</LifetimeMS>
             <Size>180</Size>
             <MultiHit/>
@@ -115591,6 +115592,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <StasisImmune/>
 		<Elitedrop/>
         <DazedImmune/>
+		<ArmorBreakImmune/>
         <SlowedImmune/>
         <ShadowSize>0</ShadowSize>
         <Quest/>
@@ -124105,7 +124107,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Defense>0</Defense>
         <DisplayId>Archer Giant</DisplayId>
     </Object>
-<Object type="0x64da" id="Ogla, the Giant God">
+	<Object type="0x64da" id="Ogla, the Giant God">
         <Enemy/>
         <Class>Character</Class>
         <AnimatedTexture>
@@ -125718,7 +125720,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       </Texture>
 	  <Rotation>77</Rotation>
    </Object>
-    <Object type="0x5613" id="Uber Armor">
+    <Object type="0x5616" id="Uber Armor">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -125732,5 +125734,677 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ActivateOnEquip stat="21" amount="25">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
+    </Object>
+<Object type="0x5613" id="Draketail Blade">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3e3</Index>
+        </Texture>
+        <SlotType>2</SlotType>
+        <Description>A sharp dagger with the tail of a Drake attached to the bottom of the hilt.</Description>
+        <RateOfFire>1.1</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Fire Magic</ObjectId>
+            <Speed>140</Speed>
+            <MinDamage>135</MinDamage>
+            <MaxDamage>160</MaxDamage>
+            <LifetimeMS>400</LifetimeMS>
+            <ArmorPiercing/>
+            <Wavy/>
+        </Projectile>
+        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>daggerSwing</OldSound>
+        <DisplayId>Draketail Blade</DisplayId>
+    </Object>
+    <Object type="0x5614" id="Quiver of the Chosen">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3e4</Index>
+        </Texture>
+        <SlotType>15</SlotType>
+        <Description>A quiver made for the chosen archer to battle the evils that lie in the Ancient Depths.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Projectile>
+            <ObjectId>Red Arrow</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>250</MinDamage>
+            <MaxDamage>550</MaxDamage>
+            <LifetimeMS>1000</LifetimeMS>
+            <Size>150</Size>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
+            <PassesCover/>
+            <ParticleTrail/>
+            <MultiHit/>
+        </Projectile>
+        <ActivateOnEquip stat="28" amount="14">IncrementStat</ActivateOnEquip>
+        <ConditionEffect duration="6">Slowed</ConditionEffect>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>20</MpCost>
+        <Activate>Shoot</Activate>
+        <DisplayId>Quiver of the Chosen</DisplayId>
+    </Object>
+    <Object type="0x5615" id="Chosen Armor">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3e5</Index>
+        </Texture>
+        <SlotType>6</SlotType>
+        <Description>An armor made for the chosen archer to battle the evils that lie in the Ancient Depths.</Description>
+        <ActivateOnEquip stat="0" amount="150">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="18">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <DisplayId>Chosen Armor</DisplayId>
+    </Object>
+    <Object type="0x561a" id="Chosen Bow">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3e6</Index>
+        </Texture>
+        <SlotType>3</SlotType>
+        <Description>A bow made for the chosen archer to battle the evils that lie in the Ancient Depths.</Description>
+        <RateOfFire>1.25</RateOfFire>
+        <Sound>weapon/golden_bow</Sound>
+        <Projectile>
+            <ObjectId>Red Arrow</ObjectId>
+            <Speed>160</Speed>
+            <MinDamage>88</MinDamage>
+            <MaxDamage>105</MaxDamage>
+            <LifetimeMS>440</LifetimeMS>
+            <Amplitude>0.3</Amplitude>
+            <Frequency>1.2</Frequency>
+            <Size>100</Size>
+            <MultiHit/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="140">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
+        <NumProjectiles>3</NumProjectiles>
+        <ArcGap>20</ArcGap>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>arrowShoot</OldSound>
+        <DisplayId>Chosen Bow</DisplayId>
+    </Object>
+    <Object type="0x59a1" id="Crashing Crescendo">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x3f5</Index>
+        </Texture>
+        <SlotType>29</SlotType>
+        <Description>The shattered blade of a celestial envoy, this crested lance is with bound with a presence that drives it to lead it's bewinged hearlds beyond the stars themselves.</Description>
+        <RateOfFire>0.7</RateOfFire>
+        <Sound>weapon/blunt_sword</Sound>
+        <Projectile>
+            <ObjectId>Dark Blue Magic</ObjectId>
+            <Speed>45</Speed>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <LifetimeMS>1425</LifetimeMS>
+            <Amplitude>1.4</Amplitude>
+            <Frequency>1.9</Frequency>
+            <Size>100</Size>
+            <MultiHit/>
+        </Projectile>
+        <NumProjectiles>4</NumProjectiles>
+        <ArcGap>28</ArcGap>
+        <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="5">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <DisplayId>Crashing Crescendo</DisplayId>
+    </Object>
+    <Object type="0x59a3" id="Death Amulet">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x437</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>Spooky.</Description>
+        <ActivateOnEquip stat="0" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
+        <BagType>4</BagType>
+        <FameBonus>3</FameBonus>
+    </Object>
+    <Object type="0x59a4" id="Robe of the Gargoyle Summoner">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x45b</Index>
+        </Texture>
+        <SlotType>14</SlotType>
+        <Description>A neccessary robe used to summon the ancient Stone Gargoyle.</Description>
+        <ActivateOnEquip stat="3" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+    </Object>
+    <Object type="0x5617" id="The Depths Wall 2">
+        <Class>DoubleWall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d7</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d8</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d3</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x5618" id="The Depths Wall 3">
+        <Class>DoubleWall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d7</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d8</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d3</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x5619" id="The Depths Wall 4">
+        <Class>DoubleWall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d7</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d8</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x3d3</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+		<Object type="0x6201" id="Moonlight Shot">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x77</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+	<Object type="0x561b" id="Large Rage Cloth">
+    <Class>Dye</Class>
+    <DisplayId>Large Rage Cloth</DisplayId>
+    <Item/>
+    <Texture>
+      <File>lofiObj3</File>
+      <Index>0x1b</Index>
+    </Texture>
+    <Mask>
+      <File>lofiObj3</File>
+      <Index>0x1c</Index>
+    </Mask>
+    <Tex1>0xa000056</Tex1>
+    <SlotType>10</SlotType>
+    <Description>{textiles.large_description}</Description>
+    <Activate>Dye</Activate>
+    <Sound>use_potion</Sound>
+    <Consumable/>
+    <Soulbound/>
+    <BagType>2</BagType>
+  </Object>
+  <Object type="0x561c" id="Small Rage Cloth">
+    <Class>Dye</Class>
+    <DisplayId>Small Rage Cloth</DisplayId>
+    <Item/>
+    <Texture>
+      <File>lofiObj3</File>
+      <Index>0x1d</Index>
+    </Texture>
+    <Mask>
+      <File>lofiObj3</File>
+      <Index>0x1e</Index>
+    </Mask>
+    <Tex2>0xa000056</Tex2>
+    <SlotType>10</SlotType>
+    <Description>{textiles.small_description}</Description>
+    <Activate>Dye</Activate>
+    <Sound>use_potion</Sound>
+    <Consumable/>
+    <Soulbound/>
+    <BagType>2</BagType>
+  </Object>
+      <Object type="0x561d" id="Vicious Croc">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Vicious Croc</DisplayId>
+        <AnimatedTexture>
+            <File>d1chars8x8r</File>
+            <Index>16</Index>
+        </AnimatedTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <Size>100</Size>
+        <StasisImmune/>
+        <MaxHitPoints>2500</MaxHitPoints>
+        <Defense>10</Defense>
+        <XpMult>0.0</XpMult>
+        <Projectile id="0">
+            <ObjectId>Crocko Bolt</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>70</Size>
+            <LifetimeMS>1200</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Crocko Bolt</ObjectId>
+            <Damage>120</Damage>
+            <Speed>80</Speed>
+            <Size>120</Size>
+            <LifetimeMS>1200</LifetimeMS>
+            <ConditionEffect duration="4">Bleeding</ConditionEffect>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Silver Shield</ObjectId>
+            <MinDamage>70</MinDamage>
+            <MaxDamage>90</MaxDamage>
+            <Speed>125</Speed>
+            <LifetimeMS>200</LifetimeMS>
+            <ConditionEffect duration="6">Armor Broken</ConditionEffect>
+        </Projectile>
+    </Object>
+    <Object type="0x562e" id="Janirich">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Janirich</DisplayId>
+        <Group>Rich</Group>
+        <AnimatedTexture>
+            <File>d1chars8x8r</File>
+            <Index>15</Index>
+        </AnimatedTexture>
+        <HitSound>monster/night_elves_hit</HitSound>
+        <DeathSound>monster/night_elves_death</DeathSound>
+        <Size>120</Size>
+        <ParalyzeImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <MaxHitPoints>40000</MaxHitPoints>
+        <Defense>40</Defense>
+        <XpMult>0.0</XpMult>
+        <Projectile id="0">
+            <ObjectId>Purple Magic</ObjectId>
+            <Damage>60</Damage>
+            <Speed>100</Speed>
+            <LifetimeMS>2600</LifetimeMS>
+            <ConditionEffect duration="4">Slowed</ConditionEffect>
+            <ConditionEffect duration="6">Sick</ConditionEffect>
+            <Wavy/>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Purple Missile</ObjectId>
+            <Damage>140</Damage>
+            <Speed>100</Speed>
+            <Size>120</Size>
+            <LifetimeMS>2400</LifetimeMS>
+            <Amplitude>2.28</Amplitude>
+            <Frequency>0.5</Frequency>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Pink Star</ObjectId>
+            <MinDamage>40</MinDamage>
+            <MaxDamage>60</MaxDamage>
+            <Speed>125</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <ConditionEffect duration="2">Confused</ConditionEffect>
+        </Projectile>
+    </Object>
+    <Object type="0x561e" id="Ranarich">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Ranirich</DisplayId>
+        <Group>Rich</Group>
+        <AnimatedTexture>
+            <File>d1chars8x8r</File>
+            <Index>14</Index>
+        </AnimatedTexture>
+        <HitSound>monster/night_elves_hit</HitSound>
+        <DeathSound>monster/night_elves_death</DeathSound>
+        <Size>120</Size>
+        <ParalyzeImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <MaxHitPoints>60000</MaxHitPoints>
+        <Defense>50</Defense>
+        <XpMult>0.0</XpMult>
+        <Projectile id="0">
+            <ObjectId>Purple Magic Blast</ObjectId>
+            <Damage>120</Damage>
+            <Speed>100</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="8">Quiet</ConditionEffect>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Poison Fireball</ObjectId>
+            <Damage>80</Damage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <LifetimeMS>2400</LifetimeMS>
+            <ConditionEffect duration="6">Unstable</ConditionEffect>
+        </Projectile>
+    </Object>
+    <Object type="0x561f" id="Zanarich">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Zanirich</DisplayId>
+        <Group>Rich</Group>
+        <AnimatedTexture>
+            <File>d1chars8x8r</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+        <HitSound>monster/night_elves_hit</HitSound>
+        <DeathSound>monster/night_elves_death</DeathSound>
+        <Size>120</Size>
+        <ParalyzeImmune/>
+        <DazedImmune/>
+        <StunImmune/>
+        <ArmorBreakImmune/>
+        <MaxHitPoints>40000</MaxHitPoints>
+        <Defense>20</Defense>
+        <XpMult>0.0</XpMult>
+        <Projectile id="0">
+            <ObjectId>Purple Boomerang</ObjectId>
+            <Damage>200</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>6000</LifetimeMS>
+            <Boomerang/>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Darkness Bolt</ObjectId>
+            <Damage>180</Damage>
+            <Speed>70</Speed>
+            <Size>140</Size>
+            <LifetimeMS>2400</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+    </Object>
+	<Object type="0x562a" id="Orbiter Richmaster">
+        <Enemy/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <Class>Character</Class>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <Size>110</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>50</Defense>
+        <NoMiniMap/>
+        <Level>1</Level>
+        <XpMult>100</XpMult>
+        <NoArticle/>
+        <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x562b" id="Book of Lore">
+        <Enemy/>
+        <Class>Character</Class>
+        <Group>Rich</Group>
+        <AnimatedTexture>
+            <File>d1chars8x8r</File>
+            <Index>12</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Size>120</Size>
+        <StasisImmune/>
+        <MaxHitPoints>1000</MaxHitPoints>
+        <Defense>40</Defense>
+        <XpMult>0.0</XpMult>
+        <Projectile id="0">
+            <ObjectId>Pink Bolt</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>80</Size>
+            <LifetimeMS>1000</LifetimeMS>
+            <ConditionEffect duration="0.5">Petrify</ConditionEffect>
+            <Wavy/>
+        </Projectile>
+    </Object>
+    <Object type="0x562c" id="Krokanich">
+        <Enemy/>
+        <DisplayId>Krokanich</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>30</Index>
+        </AnimatedTexture>
+        <HitSound>monster/demons_hit</HitSound>
+        <DeathSound>monster/demons_death</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <SlowedImmune/>
+        <ShadowSize>0</ShadowSize>
+        <Hero/>
+        <Quest/>
+        <God/>
+        <Encounter/>
+        <StasisImmune/>
+        <Level>20</Level>
+        <MaxHitPoints>600000</MaxHitPoints>
+        <Defense>40</Defense>
+        <Projectile id="0">
+            <ObjectId>Crocko Slash</ObjectId>
+            <MinDamage>180</MinDamage>
+            <MaxDamage>220</MaxDamage>
+            <Speed>70</Speed>
+            <LifetimeMS>4000</LifetimeMS>
+            <Wavy/>
+            <ConditionEffect duration="6">Bleeding</ConditionEffect>
+            <ConditionEffect duration="4">Armor Broken</ConditionEffect>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Darkness Bolt</ObjectId>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>120</MaxDamage>
+            <Speed>100</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Puppet Green Wheel</ObjectId>
+            <Damage>60</Damage>
+            <Speed>120</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="4">Bleeding</ConditionEffect>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Green Boomerang</ObjectId>
+            <Damage>120</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>600</LifetimeMS>
+            <Boomerang/>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>White Bolt</ObjectId>
+            <Damage>85</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+    </Object>
+    <Object type="0x562d" id="Xanarich, the Chosen One">
+        <Enemy/>
+        <DisplayId>Xanarich</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d1chars16x16r</File>
+            <Index>28</Index>
+        </AnimatedTexture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/skeletons_death</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <SlowedImmune/>
+        <ShadowSize>0</ShadowSize>
+        <Hero/>
+        <Quest/>
+        <God/>
+        <Encounter/>
+        <StasisImmune/>
+        <Level>20</Level>
+        <MaxHitPoints>1000000</MaxHitPoints>
+        <Defense>60</Defense>
+        <Projectile id="0">
+            <ObjectId>Ancient Depths Projectile</ObjectId>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <Speed>80</Speed>
+            <LifetimeMS>4000</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Ancient Depths Spiral</ObjectId>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>120</MaxDamage>
+            <Speed>100</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="6">Sick</ConditionEffect>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Ancient Depths Spiral 2</ObjectId>
+            <Damage>60</Damage>
+            <Speed>120</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="6">Quiet</ConditionEffect>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Purple Bolt</ObjectId>
+            <Damage>75</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+		<Projectile id="4">
+            <ObjectId>White Ball</ObjectId>
+            <Damage>140</Damage>
+            <Speed>100</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <ConditionEffect duration="6">Slowed</ConditionEffect>
+        </Projectile>
+    </Object>
+    <Object type="0x65a1" id="Ancient Depths Projectile">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x130</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x65a2" id="Ancient Depths Spiral">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x131</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x65a4" id="Crocko Slash">
+        <Class>Projectile</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x132</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x133</Index>
+            </Texture>
+        </RandomTexture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x65a5" id="Ancient Depths Spiral 2">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x134</Index>
+        </Texture>
+        <Rotation>20</Rotation>
+    </Object>
+    <Object type="0x65a6" id="Crocko Bolt">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x135</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
     </Object>
 </Objects>
