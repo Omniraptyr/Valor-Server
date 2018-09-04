@@ -460,7 +460,7 @@ namespace wServer.logic
                         )
                     ),
                     new State(
-                        new Reproduce("Book of Lore", 20, 6, 2000),
+                        new Reproduce("Book of Lore", 20, 8, 1000),
                     new State("fight2",
                         new Shoot(1, count: 4, projectileIndex: 1, coolDown: 200, fixedAngle: 90, rotateAngle: 10, coolDownOffset: 0, shootAngle: 90),
                         new Shoot(1, count: 8, projectileIndex: 1, coolDown: 10000, fixedAngle: 180, coolDownOffset: 2000, shootAngle: 45),
@@ -497,7 +497,7 @@ namespace wServer.logic
                             new Swirl(0.6, radius: 4),
                             new Wander(1)
                             ),
-                        new Shoot(10, count: 5, shootAngle: 10, projectileIndex: 0, coolDown: 800),
+                        new Shoot(10, count: 5, shootAngle: 10, projectileIndex: 0, coolDown: 200),
 
                         new Shoot(10, count: 6, projectileIndex: 3, shootAngle: 8, coolDown: 1000, fixedAngle: 0),
                         new Shoot(10, count: 6, projectileIndex: 3, shootAngle: 8, coolDown: 1000, fixedAngle: 0),
@@ -507,7 +507,7 @@ namespace wServer.logic
                         ),
                     new State("Return",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
-                        new ReturnToSpawn(1),
+                        new ReturnToSpawn(2),
                         new TimedTransition(6000, "fight5")
                         ),
                     new State("fight5",
@@ -521,7 +521,7 @@ namespace wServer.logic
                     new State("spiral",
                         new Grenade(2, 200, range: 8, coolDown: 2000, effect: ConditionEffectIndex.Confused, effectDuration: 4000, color: 0x0000FF),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 4000),
-                        new TimedTransition(8000, "fight2"),
+                        new TimedTransition(8000, "droporb"),
                         new Shoot(10, count: 10, projectileIndex: 1, coolDown: 2000),
                         new Shoot(10, count: 5, shootAngle: 10, projectileIndex: 0, coolDown: 2000),
                         new State("Duoforce1",
@@ -589,7 +589,7 @@ namespace wServer.logic
                     new State("rage",
                         new Taunt("I won't stand this foolery any longer!"),
                         new Grenade(3, 200, range: 8, coolDown: 2000, effect: ConditionEffectIndex.Paralyzed, effectDuration: 2000, color: 0x00FF00),
-                        new Reproduce("Book of Lore", 20, 6, 4000),
+                        new Reproduce("Book of Lore", 20, 8, 1000),
                         new Flash(0xFF0000, 0.2, 4),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 4000),
                         new Prioritize(
@@ -622,8 +622,8 @@ namespace wServer.logic
 
                     .Init("Orbiter Richmaster",
             new State(
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State(
-                    new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new InvisiToss("Janirich", range: 6, angle: 140, coolDown: 9999),
                     new InvisiToss("Ranarich", range: 6, angle: 270, coolDown: 9999),
                     new InvisiToss("Zanarich", range: 6, angle: 0, coolDown: 9999),
@@ -664,6 +664,7 @@ namespace wServer.logic
                     new Shoot(8, count: 5, shootAngle: 14, projectileIndex: 0, coolDown: 1600),
                     new HealEntity(20, "Janirich", healAmount: null, coolDown: 2000),
                     new HealEntity(20, "Zanarich", healAmount: null, coolDown: 2000),
+                    new HealSelf(coolDown: 10000, amount: null),
                     new State("OrbitOut",
                         new Orbit(0.6, 6, acquireRange: 15, target: "Orbiter Richmaster", speedVariance: 0.01, orbitClockwise: true),
                         new TimedTransition(8000, "OrbitIn")
