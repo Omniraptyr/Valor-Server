@@ -8,7 +8,7 @@ using wServer.realm.worlds.logic;
 
 namespace wServer.networking.handlers
 {
-    class CreateHandler : PacketHandlerBase<Create>
+    internal class CreateHandler : PacketHandlerBase<Create>
     {
         public override PacketId ID => PacketId.CREATE;
 
@@ -18,14 +18,13 @@ namespace wServer.networking.handlers
             Handle(client, packet);
         }
 
-        private void Handle(Client client, Create packet)
+        private static void Handle(Client client, Create packet)
         {
             if (client.State != ProtocolState.Handshaked)
                 return;
 
-            DbChar character;
             var status = client.Manager.Database.CreateCharacter(
-                client.Manager.Resources.GameData, client.Account, packet.ClassType, packet.SkinType, out character);
+                client.Manager.Resources.GameData, client.Account, packet.ClassType, packet.SkinType, out var character);
 
             if (status == CreateStatus.ReachCharLimit)
             {
@@ -51,7 +50,7 @@ namespace wServer.networking.handlers
             CreatePlayer(client, character);
         }
 
-        private void CreatePlayer(Client client, DbChar character)
+        private static void CreatePlayer(Client client, DbChar character)
         {
             client.Character = character;
 

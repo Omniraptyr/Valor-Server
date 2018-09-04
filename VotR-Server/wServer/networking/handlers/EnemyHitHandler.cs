@@ -6,7 +6,7 @@ using wServer.networking.packets.incoming;
 
 namespace wServer.networking.handlers
 {
-    class EnemyHitHandler : PacketHandlerBase<EnemyHit>
+    internal class EnemyHitHandler : PacketHandlerBase<EnemyHit>
     {
         public override PacketId ID => PacketId.ENEMYHIT;
 
@@ -15,11 +15,9 @@ namespace wServer.networking.handlers
         protected override void HandlePacket(Client client, EnemyHit packet)
         {
             client.Manager.Logic.AddPendingAction(t => Handle(client.Player, t, packet));
-            //Handle(client.Player, DummyTime, packet); 
-                // time currently isn't used by any hit detection (actually there is no hit detection right now)
         }
 
-        void Handle(Player player, RealmTime time, EnemyHit pkt)
+        private static void Handle(Player player, RealmTime time, EnemyHit pkt)
         {
             var entity = player?.Owner?.GetEntity(pkt.TargetId);
             if (entity?.Owner == null)
@@ -31,9 +29,12 @@ namespace wServer.networking.handlers
             var prj = (player as IProjectileOwner).Projectiles[pkt.BulletId];
 
             if (prj == null)
+            {
                 Log.Debug("prj is dead...");
+                return;
+            }
 
-            prj?.ForceHit(entity, time);
+            prj.TryHit(entity, time);
 
             if (pkt.Killed)
                 player.ClientKilledEntity.Enqueue(entity);

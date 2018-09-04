@@ -1790,9 +1790,6 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                 case StatData.GUILD_RANK_STAT:
                     player.guildRank_ = statValue;
                     break;
-                case StatData.BREATH_STAT:
-                    player.breath_ = statValue;
-                    break;
                 case StatData.XP_BOOSTED_STAT:
                     player.xpBoost_ = statValue;
                     break;

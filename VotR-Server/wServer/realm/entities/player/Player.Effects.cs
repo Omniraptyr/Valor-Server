@@ -19,8 +19,7 @@ namespace wServer.realm.entities
 
         private void HandleEffects(RealmTime time)
         {
-            if (time.TickCount % 25 == 0)
-            {
+            if (time.TickCount % 25 == 0) {
                 if (CheckAxe()) {
                     Stats.Boost.ActivateBoost[0].Push(300, true);
                     Stats.ReCalculateValues();
@@ -30,67 +29,19 @@ namespace wServer.realm.entities
                 }
 
                 if (CheckSunMoon()) {
-                    Stats.Boost.ActivateBoost[1].Push(100, false);
+                    Stats.Boost.ActivateBoost[1].Push(100);
                     Stats.ReCalculateValues();
                 } else {
-                    Stats.Boost.ActivateBoost[1].Pop(100, false);
+                    Stats.Boost.ActivateBoost[1].Pop(100);
                     Stats.ReCalculateValues();
                 }
 
                 if (CheckAnubis()) {
-                    Stats.Boost.ActivateBoost[1].Push(60, false);
+                    Stats.Boost.ActivateBoost[1].Push(60);
                     Stats.ReCalculateValues();
                 } else {
-                    Stats.Boost.ActivateBoost[1].Pop(60, false);
+                    Stats.Boost.ActivateBoost[1].Pop(60);
                     Stats.ReCalculateValues();
-                }
-
-                if (CheckMocking()) {
-                    ApplyConditionEffect(ConditionEffectIndex.Relentless);
-                } else {
-                    ApplyConditionEffect(ConditionEffectIndex.Relentless, 0);
-                }
-
-                if (CheckCrescent()) {
-                    ApplyConditionEffect(ConditionEffectIndex.SlowedImmune);
-                } else {
-                    ApplyConditionEffect(ConditionEffectIndex.SlowedImmune, 0);
-                }
-
-                if (CheckGHelm()) {
-                    tghbonus = 8;
-                } else {
-                    tghbonus = 0;
-                }
-
-                if (CheckForce()) {
-                    ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune);
-                } else {
-                    ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune, 0);
-                }
-
-                if (CheckRoyal()) {
-                    ApplyConditionEffect(ConditionEffectIndex.HealthRecovery);
-                } else {
-                    ApplyConditionEffect(ConditionEffectIndex.HealthRecovery, 0);
-                }
-
-                if (CheckResistance()) {
-                    ApplyConditionEffect(ConditionEffectIndex.SlowedImmune);
-                } else {
-                    ApplyConditionEffect(ConditionEffectIndex.SlowedImmune, 0);
-                }
-
-                if (CheckAegis()) {
-                    ApplyConditionEffect(ConditionEffectIndex.Vengeance);
-                } else {
-                    ApplyConditionEffect(ConditionEffectIndex.Vengeance, 0);
-                }
-
-                if (CheckGuilded()) {
-                    ApplyConditionEffect(ConditionEffectIndex.Alliance);
-                } else {
-                    ApplyConditionEffect(ConditionEffectIndex.Alliance, 0);
                 }
 
                 if (Protection > 0 && HasConditionEffect(ConditionEffects.Corrupted)) {
@@ -104,22 +55,19 @@ namespace wServer.realm.entities
                     ApplyConditionEffect(ConditionEffectIndex.ParalyzeImmune, 0);
                     ApplyConditionEffect(ConditionEffectIndex.StunImmune, 0);
                 }
-                MainLegendaryPassives();
+            }
+            ProtectionMax = (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50)) + 10;
+            Protection = (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50)) + 10 - ProtectionDamage;
+
+            if (Protection < 0) {
+                Protection = 0;
             }
 
-            ProtectionMax = (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50))+10;
-            Protection =    (int)(((Math.Pow(Stats[11], 2)) * 0.05) + (Stats[0] / 50))+10-ProtectionDamage;
-            if(Protection < 0)
-            {
-            Protection = 0;
-            }
-            if(Surge == 100)
-            {
+            if (Surge == 100) {
                 ProtectionDamage = 0;
             }
 
-            if (SurgeCounter == 1)
-            {
+            if (SurgeCounter == 1) {
                 Surge = 0;
             }
 

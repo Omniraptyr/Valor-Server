@@ -30,8 +30,13 @@ namespace wServer.networking.handlers
             client.Manager.Database.ReloadAccount(client.Account);
 
             string name = packet.Name;
-            name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(name);
-            if (name.Length < 3 || name.Length > 10 || !name.All(char.IsLetter) ||
+
+            if (name.Length > 1)
+                name = char.ToUpper(name[0]) + name.Substring(1);
+            else
+                name = name.ToUpper();
+
+            if (!name.All(char.IsLetter) || name.Length < 3 || name.Length > 10 ||
                 Database.GuestNames.Contains(name, StringComparer.InvariantCultureIgnoreCase))
                 client.SendPacket(new NameResult()
                 {

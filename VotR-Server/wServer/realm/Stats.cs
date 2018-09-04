@@ -77,7 +77,6 @@ namespace wServer.realm
         AltTextureIndex = 61,
         Guild = 62,
         GuildRank = 63,
-        OxygenBar = 64,
         XPBoost = 65,
         XPBoostTime = 66,
         LDBoostTime = 67,

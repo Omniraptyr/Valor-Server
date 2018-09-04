@@ -21,7 +21,6 @@ public class Parameters {
     public static const FELLOW_GUILD_COLOR:uint = 10944349;
     public static const NAME_CHOSEN_COLOR:uint = 0xFCDF00;
     public static const PLAYER_ROTATE_SPEED:Number = 0.003;
-    public static const BREATH_THRESH:int = 20;
     public static const RAGE_THRESH:int = 80;
     public static const SERVER_CHAT_NAME:String = "";
     public static const CLIENT_CHAT_NAME:String = "*Client*";

@@ -68,7 +68,6 @@ public class StatData {
     public static const ALT_TEXTURE_STAT:int = 61;
     public static const GUILD_NAME_STAT:int = 62;
     public static const GUILD_RANK_STAT:int = 63;
-    public static const BREATH_STAT:int = 64;
     public static const XP_BOOSTED_STAT:int = 65;
     public static const XP_TIMER_STAT:int = 66;
     public static const LD_TIMER_STAT:int = 67;

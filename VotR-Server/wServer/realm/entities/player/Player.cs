@@ -279,13 +279,6 @@ namespace wServer.realm.entities
             set => _xpBoosted.SetValue(value);
         }
 
-        private readonly SV<int> _oxygenBar;
-        public int OxygenBar
-        {
-            get => _oxygenBar.GetValue();
-            set => _oxygenBar.SetValue(value);
-        }
-
         private readonly SV<int> _rageBar;
         public int RageBar
         {
@@ -572,7 +565,6 @@ namespace wServer.realm.entities
             stats[StatsType.HealthStackCount] = HealthPots.Count;
             stats[StatsType.MagicStackCount] = MagicPots.Count;
             stats[StatsType.HasBackpack] = (HasBackpack) ? 1 : 0;
-            stats[StatsType.OxygenBar] = OxygenBar;
             stats[StatsType.RageBar] = RageBar;
             stats[StatsType.Rank] = Rank;
             stats[StatsType.Admin] = Admin;
@@ -664,7 +656,6 @@ namespace wServer.realm.entities
             _node3 = new SV<int>(this, StatsType.Node3, client.Character.Node3);
             _node4 = new SV<int>(this, StatsType.Node4, client.Character.Node4);
             _xpBoosted = new SV<bool>(this, StatsType.XPBoost, client.Character.XPBoostTime != 0, true);
-            _oxygenBar = new SV<int>(this, StatsType.OxygenBar, -1, true);
             _rageBar = new SV<int>(this, StatsType.RageBar, -1, true);
             _rank = new SV<int>(this, StatsType.Rank, client.Account.Rank);
             _admin = new SV<int>(this, StatsType.Admin, client.Account.Admin ? 1 : 0);
@@ -824,8 +815,6 @@ namespace wServer.realm.entities
             ExperienceGoal = GetExpGoal(_client.Character.Level);
             Stars = GetStars();
 
-            if (owner.Name.Equals("OceanTrench") || owner.Name.Equals("KrakenLair"))
-                OxygenBar = 100;
             if (owner.Name.Equals("SummoningPoint"))
                 RageBar = 100;
             if ((owner.Name.Equals("BastilleofDrannol") 
@@ -881,6 +870,59 @@ namespace wServer.realm.entities
             base.Init(owner);
         }
 
+        private void CheckLegendary()
+        {
+            if (CheckMocking()) {
+                ApplyConditionEffect(ConditionEffectIndex.Relentless);
+            } else {
+                ApplyConditionEffect(ConditionEffectIndex.Relentless, 0);
+            }
+
+            if (CheckCrescent()) {
+                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune);
+            } else {
+                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune, 0);
+            }
+
+            if (CheckGHelm()) {
+                tghbonus = 8;
+            } else {
+                tghbonus = 0;
+            }
+
+            if (CheckForce()) {
+                ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune);
+            } else {
+                ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune, 0);
+            }
+
+            if (CheckRoyal()) {
+                ApplyConditionEffect(ConditionEffectIndex.HealthRecovery);
+            } else {
+                ApplyConditionEffect(ConditionEffectIndex.HealthRecovery, 0);
+            }
+
+            if (CheckResistance()) {
+                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune);
+            } else {
+                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune, 0);
+            }
+
+            if (CheckAegis()) {
+                ApplyConditionEffect(ConditionEffectIndex.Vengeance);
+            } else {
+                ApplyConditionEffect(ConditionEffectIndex.Vengeance, 0);
+            }
+
+            if (CheckGuilded()) {
+                ApplyConditionEffect(ConditionEffectIndex.Alliance);
+            } else {
+                ApplyConditionEffect(ConditionEffectIndex.Alliance, 0);
+            }
+
+            MainLegendaryPassives();
+        }
+
         private readonly List<Timer> timerList = new List<Timer>();
         public int[] stealAmount = { 0, 0 };
 
@@ -904,6 +946,8 @@ namespace wServer.realm.entities
                     if (pair.Value < Stats[pair.Key])
                         Client.Disconnect();*/
 
+                CheckLegendary();
+
                 foreach (var pair in item.EffectEquip)
                     if (pair.Key != string.Empty)
                     {
@@ -924,6 +968,8 @@ namespace wServer.realm.entities
         {
             if (Client.Player != null && item != null)
             {
+                CheckLegendary();
+
                 foreach (var pair in item.EffectEquip)
                     if (pair.Key != string.Empty)
                     {
@@ -948,38 +994,24 @@ namespace wServer.realm.entities
             }
         }
 
-        public override void Tick(RealmTime time)
-        {
+        public override void Tick(RealmTime time) {
             if (!KeepAlive(time)) //todo: simplify this later on
                 return;
 
             var tickCount = time.TickCount;
+
+            if (tickCount % 3 == 0) {
+                HandleBastille(time);
+            }
 
             if (tickCount % 20 == 0) {
                 CheckTradeTimeout(time);
                 HandleQuest(time);
             }
 
-            if (!HasConditionEffect(ConditionEffects.Paused))
-            {
+            if (!HasConditionEffect(ConditionEffects.Paused)) {
                 if (tickCount % 300 == 0)
                     FameCounter.Tick(time);
-
-                if (tickCount % 5 == 0) {
-                    if (Owner.Name != null)
-                        switch (Owner.Name) {
-                            case "OceanTrench":
-                                HandleKrakenGround(time);
-                                break;
-                            case "KrakenLair":
-                                HandleOceanTrenchGround(time);
-                                break;
-                            case "SummoningPoint":
-                                HandleBastille(time);
-                                break;
-                        }
-                }
-
                 // TODO, server side ground damage
                 //if (HandleGround(time))
                 //    return; // death resulted
@@ -993,7 +1025,6 @@ namespace wServer.realm.entities
             HandleRegen(time); //moved here so people don't get 'slow' refills
                                //todo: perhaps check if hp/mp is at max (and subsequientally remove it from the check)
             if (HP <= 0) Death("Unknown", rekt: true);
-           
         }
 
         private float _hpRegenCounter;
@@ -1303,7 +1334,7 @@ namespace wServer.realm.entities
             Owner.Timers.Add(new WorldTimer(15000, (world, t) =>
             {
                 foreach (var player in Owner.Players.Values)
-                    player.SendHelp(Name + " has unboxed a " + Manager.Resources.GameData.Items[items[45]].ObjectId + " from the " + LootboxType(type) + "!");
+                    player.SendHelp(Name + " has unboxed the following from the " + LootboxType(type) + ": '" + Manager.Resources.GameData.Items[items[45]].ObjectId  + "'!");
             }));
         }
 

@@ -492,7 +492,7 @@ namespace wServer.realm.entities
                     continue;
                 foreach (var eff in item.Legend)
                 {
-                        ActivateMainPower(eff.PowerId, eff.HPAmount, eff.MPAmount, eff.SurgeAmount, eff.Stats);
+                    ActivateMainPower(eff.PowerId, eff.HPAmount, eff.MPAmount, eff.SurgeAmount, eff.Stats);
                 }
             } 
         }
