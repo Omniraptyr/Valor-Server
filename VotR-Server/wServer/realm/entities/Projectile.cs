@@ -109,11 +109,12 @@ namespace wServer.realm.entities
             if (!ProjDesc.MultiHit && _used && !(entity is Player))
                 return;
 
+            _used = true;
+
             if (_hit.Add(entity))
                 entity.HitByProjectile(this, time);
-
-            _used = true;
         }
+
         public void AddPlayerStartTime(Player player, int serverTime, int clientTime)
         {
             _startTime.TryAdd(player, new Tuple<int, int>(serverTime, clientTime));

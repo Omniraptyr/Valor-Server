@@ -12,8 +12,6 @@ namespace common
 {
     public abstract class RedisObject
     {
-        private static readonly ILog Log = LogManager.GetLogger(typeof(RedisObject));
-
         //Note do not modify returning buffer
         private Dictionary<RedisValue, KeyValuePair<byte[], bool>> _entries;
 
@@ -29,7 +27,7 @@ namespace common
                         x => new KeyValuePair<byte[], bool>(x.Value, false));
             else
             {
-                var entry = new HashEntry[] { new HashEntry(field, db.HashGet(key, field)) };
+                var entry = new[] { new HashEntry(field, db.HashGet(key, field)) };
                 _entries = entry.ToDictionary(x => x.Name, 
                     x => new KeyValuePair<byte[], bool>(x.Value, false));
             }
@@ -38,32 +36,21 @@ namespace common
         public IDatabase Database { get; private set; }
         public string Key { get; private set; }
 
-        public IEnumerable<RedisValue> AllKeys
-        {
-            get { return _entries.Keys; }
-        }
+        public IEnumerable<RedisValue> AllKeys => _entries.Keys;
 
-        public bool IsNull
-        {
-            get { return _entries.Count == 0; }
-        }
+        public bool IsNull => _entries.Count == 0;
 
         protected byte[] GetValueRaw(RedisValue key)
         {
-            KeyValuePair<byte[], bool> val;
-            if (!_entries.TryGetValue(key, out val))
+            if (!_entries.TryGetValue(key, out var val))
                 return null;
 
-            if (val.Key == null)
-                return null;
-
-            return (byte[]) val.Key.Clone();
+            return (byte[]) val.Key?.Clone();
         }
 
         protected T GetValue<T>(RedisValue key, T def = default(T))
         {
-            KeyValuePair<byte[], bool> val;
-            if (!_entries.TryGetValue(key, out val) || val.Key == null)
+            if (!_entries.TryGetValue(key, out var val) || val.Key == null)
                 return def;
 
             if (typeof (T) == typeof (int))
@@ -113,7 +100,7 @@ namespace common
                 buff = Encoding.UTF8.GetBytes(val.ToString());
 
             else if (typeof (T) == typeof (bool))
-                buff = new byte[] {(byte) ((bool) (object) val ? 1 : 0)};
+                buff = new[] {(byte) ((bool) (object) val ? 1 : 0)};
 
             else if (typeof (T) == typeof (DateTime))
                 buff = BitConverter.GetBytes(((DateTime) (object) val).ToBinary());
@@ -167,7 +154,7 @@ namespace common
                 _entries[update.Name] = new KeyValuePair<byte[], bool>(_entries[update.Name].Key, false);
         }
 
-        public async Task ReloadAsync(ITransaction trans = null, string field = null)
+        /*public async Task ReloadAsync(ITransaction trans = null, string field = null)
         {
             if (field != null && _entries != null)
             {
@@ -196,7 +183,7 @@ namespace common
                     x => x.Name, x => new KeyValuePair<byte[], bool>(x.Value, false));
             }
             catch { }
-        }
+        }*/
 
         public void Reload(string field = null)
         {
@@ -216,11 +203,11 @@ namespace common
 
     public class DbLoginInfo
     {
-        private IDatabase db;
+        private readonly IDatabase _db;
 
         internal DbLoginInfo(IDatabase db, string uuid)
         {
-            this.db = db;
+            _db = db;
             UUID = uuid;
             var json = (string) db.HashGet("logins", uuid.ToUpperInvariant());
             if (json == null)
@@ -230,10 +217,10 @@ namespace common
         }
 
         [JsonIgnore]
-        public string UUID { get; private set; }
+        public string UUID { get; }
 
         [JsonIgnore]
-        public bool IsNull { get; private set; }
+        public bool IsNull { get; }
 
         public string Salt { get; set; }
         public string HashedPassword { get; set; }
@@ -241,7 +228,7 @@ namespace common
 
         public void Flush()
         {
-            db.HashSet("logins", UUID.ToUpperInvariant(), JsonConvert.SerializeObject(this));
+            _db.HashSet("logins", UUID.ToUpperInvariant(), JsonConvert.SerializeObject(this));
         }
     }
 
@@ -265,13 +252,13 @@ namespace common
             FlushAsync();
         }
 
-        public int AccountId { get; private set; }
-        public int DiscordRank { get; private set; }
+        public int AccountId { get; }
+        public int DiscordRank { get; }
 
         public int AccountIdOverride
         {
-            get { return GetValue<int>("accountIdOverride"); }
-            set { SetValue<int>("accountIdOverride", value); }
+            get => GetValue<int>("accountIdOverride");
+            set => SetValue("accountIdOverride", value);
         }
         public int AccountIdOverrider { get; set; }
         
@@ -279,334 +266,325 @@ namespace common
 
         public string UUID
         {
-            get { return GetValue<string>("uuid"); }
-            set { SetValue<string>("uuid", value); }
+            get => GetValue<string>("uuid");
+            set => SetValue("uuid", value);
         }
 
         public string Name
         {
-            get { return GetValue<string>("name"); }
-            set { SetValue<string>("name", value); }
+            get => GetValue<string>("name");
+            set => SetValue("name", value);
         }
 
         public bool Admin
         {
-            get { return GetValue<bool>("admin"); }
-            set { SetValue<bool>("admin", value); }
+            get => GetValue<bool>("admin");
+            set => SetValue("admin", value);
         }
 
         public bool NameChosen
         {
-            get { return GetValue<bool>("nameChosen"); }
-            set { SetValue<bool>("nameChosen", value); }
+            get => GetValue<bool>("nameChosen");
+            set => SetValue("nameChosen", value);
         }
 
         public bool Verified
         {
-            get { return GetValue<bool>("verified"); }
-            set { SetValue<bool>("verified", value); }
+            get => GetValue<bool>("verified");
+            set => SetValue("verified", value);
         }
 
         public bool AgeVerified
         {
-            get { return GetValue<bool>("ageVerified"); }
-            set { SetValue<bool>("ageVerified", value); }
+            get => GetValue<bool>("ageVerified");
+            set => SetValue("ageVerified", value);
         }
 
         public bool FirstDeath
         {
-            get { return GetValue<bool>("firstDeath"); }
-            set { SetValue<bool>("firstDeath", value); }
+            get => GetValue<bool>("firstDeath");
+            set => SetValue("firstDeath", value);
         }
 
         public int PetYardType
         {
-            get { return GetValue<int>("petYardType"); }
-            set { SetValue<int>("petYardType", value); }
+            get => GetValue<int>("petYardType");
+            set => SetValue("petYardType", value);
         }
 
         public int GuildId
         {
-            get { return GetValue<int>("guildId"); }
-            set { SetValue<int>("guildId", value); }
+            get => GetValue<int>("guildId");
+            set => SetValue("guildId", value);
         }
 
         public int GuildRank
         {
-            get { return GetValue<int>("guildRank"); }
-            set { SetValue<int>("guildRank", value); }
+            get => GetValue<int>("guildRank");
+            set => SetValue("guildRank", value);
         }
 
         public int GuildFame
         {
-            get { return GetValue<int>("guildFame"); }
-            set { SetValue<int>("guildFame", value); }
+            get => GetValue<int>("guildFame");
+            set => SetValue("guildFame", value);
         }
 
         public int VaultCount
         {
-            get { return GetValue<int>("vaultCount"); }
-            set { SetValue<int>("vaultCount", value); }
+            get => GetValue<int>("vaultCount");
+            set => SetValue("vaultCount", value);
         }
 
         public ushort[] Gifts
         {
-            get { return GetValue<ushort[]>("gifts") ?? new ushort[0]; }
-            set { SetValue<ushort[]>("gifts", value); }
+            get => GetValue<ushort[]>("gifts") ?? new ushort[0];
+            set => SetValue("gifts", value);
         }
 
         public int MaxCharSlot
         {
-            get { return GetValue<int>("maxCharSlot"); }
-            set { SetValue<int>("maxCharSlot", value); }
+            get => GetValue<int>("maxCharSlot");
+            set => SetValue("maxCharSlot", value);
         }
 
         public DateTime RegTime
         {
-            get { return GetValue<DateTime>("regTime"); }
-            set { SetValue<DateTime>("regTime", value); }
+            get => GetValue<DateTime>("regTime");
+            set => SetValue("regTime", value);
         }
 
         public bool Guest
         {
-            get { return GetValue<bool>("guest"); }
-            set { SetValue<bool>("guest", value); }
+            get => GetValue<bool>("guest");
+            set => SetValue("guest", value);
         }
 
         public int Elite
         {
-            get { return GetValue<int>("elite"); }
-            set { SetValue<int>("elite", value); }
+            get => GetValue<int>("elite");
+            set => SetValue("elite", value);
         }
 
         public int Credits
         {
-            get { return GetValue<int>("credits"); }
-            set { SetValue<int>("credits", value); }
+            get => GetValue<int>("credits");
+            set => SetValue("credits", value);
         }
 
         public int Onrane
         {
-            get { return GetValue<int>("onrane"); }
-            set { SetValue<int>("onrane", value); }
+            get => GetValue<int>("onrane");
+            set => SetValue("onrane", value);
         }
 
         public int Kantos
         {
-            get { return GetValue<int>("kantos"); }
-            set { SetValue<int>("kantos", value); }
+            get => GetValue<int>("kantos");
+            set => SetValue("kantos", value);
         }
 
         public int TotalOnrane
         {
-            get { return GetValue<int>("totalOnrane"); }
-            set { SetValue<int>("totalOnrane", value); }
+            get => GetValue<int>("totalOnrane");
+            set => SetValue("totalOnrane", value);
         }
 
         public int TotalKantos
         {
-            get { return GetValue<int>("totalKantos"); }
-            set { SetValue<int>("totalKantos", value); }
+            get => GetValue<int>("totalKantos");
+            set => SetValue("totalKantos", value);
         }
 
         public int RaidToken
         {
-            get { return GetValue<int>("raidToken"); }
-            set { SetValue<int>("raidToken", value); }
+            get => GetValue<int>("raidToken");
+            set => SetValue("raidToken", value);
         }
 
         public int SorStorage
         {
-            get { return GetValue<int>("sorStorage"); }
-            set { SetValue<int>("sorStorage", value); }
+            get => GetValue<int>("sorStorage");
+            set => SetValue("sorStorage", value);
         }
 
-        public int Lootbox1
+        public int BronzeLootbox
         {
-            get { return GetValue<int>("lootBox1"); }
-            set { SetValue<int>("lootBox1", value); }
+            get => GetValue<int>("lootBox1");
+            set => SetValue("lootBox1", value);
         }
-        public int Lootbox2
+        public int SilverLootbox
         {
-            get { return GetValue<int>("lootBox2"); }
-            set { SetValue<int>("lootBox2", value); }
+            get => GetValue<int>("lootBox2");
+            set => SetValue("lootBox2", value);
         }
-        public int Lootbox3
+        public int GoldLootbox
         {
-            get { return GetValue<int>("lootBox3"); }
-            set { SetValue<int>("lootBox3", value); }
+            get => GetValue<int>("lootBox3");
+            set => SetValue("lootBox3", value);
         }
-        public int Lootbox4
+        public int EliteLootbox
         {
-            get { return GetValue<int>("lootBox4"); }
-            set { SetValue<int>("lootBox4", value); }
+            get => GetValue<int>("lootBox4");
+            set => SetValue("lootBox4", value);
         }
-        public int Lootbox5
+        public int PremiumLootbox
         {
-            get { return GetValue<int>("lootbox5"); }
-            set { SetValue<int>("lootbox5", value); }
+            get => GetValue<int>("lootbox5");
+            set => SetValue("lootbox5", value);
         }
 
         public int TotalCredits
         {
-            get { return GetValue<int>("totalCredits"); }
-            set { SetValue<int>("totalCredits", value); }
+            get => GetValue<int>("totalCredits");
+            set => SetValue("totalCredits", value);
         }
 
         public bool Striked
         {
-            get { return GetValue<bool>("striked"); }
-            set { SetValue<bool>("striked", value); }
+            get => GetValue<bool>("striked");
+            set => SetValue("striked", value);
         }
 
         public int Fame
         {
-            get { return GetValue<int>("fame"); }
-            set { SetValue<int>("fame", value); }
+            get => GetValue<int>("fame");
+            set => SetValue("fame", value);
         }
 
         public int TotalFame
         {
-            get { return GetValue<int>("totalFame"); }
-            set { SetValue<int>("totalFame", value); }
+            get => GetValue<int>("totalFame");
+            set => SetValue("totalFame", value);
         }
 
         public int Tokens
         {
-            get { return GetValue<int>("tokens"); }
-            set { SetValue<int>("tokens", value); }
+            get => GetValue<int>("tokens");
+            set => SetValue("tokens", value);
         }
 
         public int TotalTokens
         {
-            get { return GetValue<int>("totalTokens"); }
-            set { SetValue<int>("totalTokens", value); }
+            get => GetValue<int>("totalTokens");
+            set => SetValue("totalTokens", value);
         }
 
         public int NextCharId
         {
-            get { return GetValue<int>("nextCharId"); }
-            set { SetValue<int>("nextCharId", value); }
+            get => GetValue<int>("nextCharId");
+            set => SetValue("nextCharId", value);
         }
 
         public int LegacyRank
         {
-            get { return GetValue<int>("rank"); }
-            set { SetValue<int>("rank", value); }
-        }
-
-        public int RaidRank
-        {
-            get { return GetValue<int>("raidRank"); }
-            set { SetValue<int>("raidRank", value); }
+            get => GetValue<int>("rank");
+            set => SetValue("rank", value);
         }
 
         public ushort[] Skins
         {
-            get { return GetValue<ushort[]>("skins") ?? new ushort[0]; }
-            set { SetValue<ushort[]>("skins", value); }
+            get => GetValue<ushort[]>("skins") ?? new ushort[0];
+            set => SetValue("skins", value);
         }
 
         public int[] LockList
         {
-            get { return GetValue<int[]>("lockList") ?? new int[0]; }
-            set { SetValue<int[]>("lockList", value); }
+            get => GetValue<int[]>("lockList") ?? new int[0];
+            set => SetValue("lockList", value);
         }
 
         public int[] IgnoreList
         {
-            get { return GetValue<int[]>("ignoreList") ?? new int[0]; }
-            set { SetValue<int[]>("ignoreList", value); }
+            get => GetValue<int[]>("ignoreList") ?? new int[0];
+            set => SetValue("ignoreList", value);
         }
 
         public bool Banned
         {
-            get { return GetValue<bool>("banned"); }
-            set { SetValue<bool>("banned", value); }
+            get => GetValue<bool>("banned");
+            set => SetValue("banned", value);
         }
 
         public string Notes
         {
-            get { return GetValue<string>("notes"); }
-            set { SetValue<string>("notes", value); }
+            get => GetValue<string>("notes");
+            set => SetValue("notes", value);
         }
 
         public bool Hidden
         {
-            get { return GetValue<bool>("hidden"); }
-            set { SetValue<bool>("hidden", value); }
+            get => GetValue<bool>("hidden");
+            set => SetValue("hidden", value);
         }
 
         public int GlowColor
         {
-            get { return GetValue<int>("glow"); }
-            set { SetValue<int>("glow", value); }
+            get => GetValue<int>("glow");
+            set => SetValue("glow", value);
         }
 
         public string PassResetToken
         {
-            get { return GetValue<string>("passResetToken"); }
-            set { SetValue<string>("passResetToken", value); }
+            get => GetValue<string>("passResetToken");
+            set => SetValue("passResetToken", value);
         }
 
         public string IP
         {
-            get { return GetValue<string>("ip"); }
-            set { SetValue<string>("ip", value); }
+            get => GetValue<string>("ip");
+            set => SetValue("ip", value);
         }
 
         public int[] PetList
         {
-            get { return GetValue<int[]>("petList") ?? new int[0]; }
-            set { SetValue<int[]>("petList", value); }
+            get => GetValue<int[]>("petList") ?? new int[0];
+            set => SetValue("petList", value);
         }
 
         public uint LastMarketId
         {
-            get { return GetValue<uint>("lastMarketId"); }
-            set { SetValue<uint>("lastMarketId", value); }
+            get => GetValue<uint>("lastMarketId");
+            set => SetValue("lastMarketId", value);
         }
 
         public int BanLiftTime
         {
-            get { return GetValue<int>("banLiftTime"); }
-            set { SetValue<int>("banLiftTime", value); }
+            get => GetValue<int>("banLiftTime");
+            set => SetValue("banLiftTime", value);
         }
 
         public List<string> Emotes
         {
-            get { return GetValue<string>("emotes")?.CommaToArray<string>()?.ToList() ?? new List<string>(); }
-            set { SetValue<string>("emotes", value?.ToArray().ToCommaSepString() ?? String.Empty); }
+            get => GetValue<string>("emotes")?.CommaToArray<string>()?.ToList() ?? new List<string>();
+            set => SetValue("emotes", value?.ToArray().ToCommaSepString() ?? String.Empty);
         }
 
         public Int32 LastSeen
         {
-            get { return GetValue<Int32>("lastSeen"); }
-            set { SetValue<Int32>("lastSeen", value); }
+            get => GetValue<Int32>("lastSeen");
+            set => SetValue("lastSeen", value);
         }
 
         public int Size
         {
-            get { return GetValue<int>("size"); }
-            set { SetValue<int>("size", value); }
+            get => GetValue<int>("size");
+            set => SetValue("size", value);
         }
 
         public bool RankManager
         {
-            get { return GetValue<bool>("rankManager"); }
-            set { SetValue<bool>("rankManager", value); }
+            get => GetValue<bool>("rankManager");
+            set => SetValue("rankManager", value);
         }
 
         public string DiscordId
         {
-            get { return GetValue<string>("discordId"); }
-            set { SetValue<string>("discordId", value); }
+            get => GetValue<string>("discordId");
+            set => SetValue("discordId", value);
         }
 
-        public int Rank
-        {
-            get { return DiscordRank > LegacyRank ? DiscordRank : LegacyRank; }
-        }
+        public int Rank => DiscordRank > LegacyRank ? DiscordRank : LegacyRank;
 
         public PrivateMessages PrivateMessages
         {
@@ -617,7 +595,7 @@ namespace common
                     ? Utils.FromJson<PrivateMessages>(pMessages)
                     : null;
             }
-            set { SetValue<string>("privateMessages", value.ToJson()); }
+            set => SetValue("privateMessages", value.ToJson());
         }
 
         public Task AddPrivateMessage(int senderId, string subject, string message)
@@ -645,7 +623,7 @@ namespace common
 
     public class DbClassStats : RedisObject
     {
-        public DbAccount Account { get; private set; }
+        public DbAccount Account { get; }
 
         public DbClassStats(DbAccount acc, ushort? type = null)
         {
@@ -658,7 +636,7 @@ namespace common
             var field = type.ToString();
             string json = GetValue<string>(field);
             if (json == null)
-                SetValue<string>(field, JsonConvert.SerializeObject(new DbClassStatsEntry()
+                SetValue(field, JsonConvert.SerializeObject(new DbClassStatsEntry
                 {
                     BestLevel = 0,
                     BestFame = 0
@@ -671,7 +649,7 @@ namespace common
             var finalFame = Math.Max(character.Fame, character.FinalFame);
             string json = GetValue<string>(field);
             if (json == null)
-                SetValue<string>(field, JsonConvert.SerializeObject(new DbClassStatsEntry()
+                SetValue(field, JsonConvert.SerializeObject(new DbClassStatsEntry
                 {
                     BestLevel = character.Level,
                     BestFame = finalFame
@@ -683,7 +661,7 @@ namespace common
                     entry.BestLevel = character.Level;
                 if (finalFame > entry.BestFame)
                     entry.BestFame = finalFame;
-                SetValue<string>(field, JsonConvert.SerializeObject(entry));
+                SetValue(field, JsonConvert.SerializeObject(entry));
             }
         }
 
@@ -693,17 +671,17 @@ namespace common
             {
                 string v = GetValue<string>(type.ToString());
                 if (v != null) return JsonConvert.DeserializeObject<DbClassStatsEntry>(v);
-                else return default(DbClassStatsEntry);
+                return default(DbClassStatsEntry);
             }
-            set { SetValue<string>(type.ToString(), JsonConvert.SerializeObject(value)); }
+            set => SetValue(type.ToString(), JsonConvert.SerializeObject(value));
         }
 
     }
 
     public class DbChar : RedisObject
     {
-        public DbAccount Account { get; private set; }
-        public int CharId { get; private set; }
+        public DbAccount Account { get; }
+        public int CharId { get; }
 
         public DbChar(DbAccount acc, int charId)
         {
@@ -714,195 +692,196 @@ namespace common
 
         public ushort ObjectType
         {
-            get { return GetValue<ushort>("charType"); }
-            set { SetValue<ushort>("charType", value); }
+            get => GetValue<ushort>("charType");
+            set => SetValue("charType", value);
         }
 
         public int Level
         {
-            get { return GetValue<int>("level"); }
-            set { SetValue<int>("level", value); }
+            get => GetValue<int>("level");
+            set => SetValue("level", value);
         }
 
         public int Experience
         {
-            get { return GetValue<int>("exp"); }
-            set { SetValue<int>("exp", value); }
+            get => GetValue<int>("exp");
+            set => SetValue("exp", value);
         }
 
         public int Fame
         {
-            get { return GetValue<int>("fame"); }
-            set { SetValue<int>("fame", value); }
+            get => GetValue<int>("fame");
+            set => SetValue("fame", value);
         }
 
         public int FinalFame
         {
-            get { return GetValue<int>("finalFame"); }
-            set { SetValue<int>("finalFame", value); }
+            get => GetValue<int>("finalFame");
+            set => SetValue("finalFame", value);
         }
 
         public ushort[] Items
         {
-            get { return GetValue<ushort[]>("items"); }
-            set { SetValue<ushort[]>("items", value); }
+            get => GetValue<ushort[]>("items");
+            set => SetValue("items", value);
         }
 
         public int HP
         {
-            get { return GetValue<int>("hp"); }
-            set { SetValue<int>("hp", value); }
+            get => GetValue<int>("hp");
+            set => SetValue("hp", value);
         }
 
         public int MP
         {
-            get { return GetValue<int>("mp"); }
-            set { SetValue<int>("mp", value); }
+            get => GetValue<int>("mp");
+            set => SetValue("mp", value);
         }
 
         public int[] Stats
         {
-            get { return GetValue<int[]>("stats"); }
-            set { SetValue<int[]>("stats", value); }
+            get => GetValue<int[]>("stats");
+            set => SetValue("stats", value);
         }
 
         public int Tex1
         {
-            get { return GetValue<int>("tex1"); }
-            set { SetValue<int>("tex1", value); }
+            get => GetValue<int>("tex1");
+            set => SetValue("tex1", value);
         }
 
         public int Tex2
         {
-            get { return GetValue<int>("tex2"); }
-            set { SetValue<int>("tex2", value); }
+            get => GetValue<int>("tex2");
+            set => SetValue("tex2", value);
         }
 
         public string Effect
         {
-            get { return GetValue<string>("effect"); }
-            set { SetValue<string>("effect", value); }
+            get => GetValue<string>("effect");
+            set => SetValue("effect", value);
         }
 
         public bool MarksEnabled
         {
-            get { return GetValue<bool>("marksEnabled"); }
-            set { SetValue<bool>("marksEnabled", value); }
+            get => GetValue<bool>("marksEnabled");
+            set => SetValue("marksEnabled", value);
         }
 
         public bool AscensionEnabled
         {
-            get { return GetValue<bool>("ascensionEnabled"); }
-            set { SetValue<bool>("ascensionEnabled", value); }
+            get => GetValue<bool>("ascensionEnabled");
+            set => SetValue("ascensionEnabled", value);
         }
 
         public int Mark
         {
-            get { return GetValue<int>("mark"); }
-            set { SetValue<int>("mark", value); }
+            get => GetValue<int>("mark");
+            set => SetValue("mark", value);
         }
 
         public int Node1
         {
-            get { return GetValue<int>("node1"); }
-            set { SetValue<int>("node1", value); }
+            get => GetValue<int>("node1");
+            set => SetValue("node1", value);
         }
 
         public int Node2
         {
-            get { return GetValue<int>("node2"); }
-            set { SetValue<int>("node2", value); }
+            get => GetValue<int>("node2");
+            set => SetValue("node2", value);
         }
 
         public int Node3
         {
-            get { return GetValue<int>("node3"); }
-            set { SetValue<int>("node3", value); }
+            get => GetValue<int>("node3");
+            set => SetValue("node3", value);
         }
 
         public int Node4
         {
-            get { return GetValue<int>("node4"); }
-            set { SetValue<int>("node4", value); }
+            get => GetValue<int>("node4");
+            set => SetValue("node4", value);
         }
 
         public int Skin
         {
-            get { return GetValue<int>("skin"); }
-            set { SetValue<int>("skin", value); }
+            get => GetValue<int>("skin");
+            set => SetValue("skin", value);
         }
 
         public int PetId
         {
-            get { return GetValue<int>("petId"); }
-            set { SetValue<int>("petId", value); }
+            get => GetValue<int>("petId");
+            set => SetValue("petId", value);
         }
 
         public byte[] FameStats
         {
-            get { return GetValue<byte[]>("fameStats"); }
-            set { SetValue<byte[]>("fameStats", value); }
+            get => GetValue<byte[]>("fameStats");
+            set => SetValue("fameStats", value);
         }
 
         public DateTime CreateTime
         {
-            get { return GetValue<DateTime>("createTime"); }
-            set { SetValue<DateTime>("createTime", value); }
+            get => GetValue<DateTime>("createTime");
+            set => SetValue("createTime", value);
         }
 
         public DateTime LastSeen
         {
-            get { return GetValue<DateTime>("lastSeen"); }
-            set { SetValue<DateTime>("lastSeen", value); }
+            get => GetValue<DateTime>("lastSeen");
+            set => SetValue("lastSeen", value);
         }
 
         public bool Dead
         {
-            get { return GetValue<bool>("dead"); }
-            set { SetValue<bool>("dead", value); }
+            get => GetValue<bool>("dead");
+            set => SetValue("dead", value);
         }
 
         public int HealthStackCount
         {
-            get { return GetValue<int>("hpPotCount"); }
-            set { SetValue<int>("hpPotCount", value); }
+            get => GetValue<int>("hpPotCount");
+            set => SetValue("hpPotCount", value);
         }
 
         public int MagicStackCount
         {
-            get { return GetValue<int>("mpPotCount"); }
-            set { SetValue<int>("mpPotCount", value); }
+            get => GetValue<int>("mpPotCount");
+            set => SetValue("mpPotCount", value);
         }
 
         public bool HasBackpack
         {
-            get { return GetValue<bool>("hasBackpack"); }
-            set { SetValue<bool>("hasBackpack", value); }
+            get => GetValue<bool>("hasBackpack");
+            set => SetValue("hasBackpack", value);
         }
 
         public int XPBoostTime
         {
-            get { return GetValue<int>("xpBoost"); }
-            set { SetValue<int>("xpBoost", value); }
+            get => GetValue<int>("xpBoost");
+            set => SetValue("xpBoost", value);
         }
 
+        //ReSharper disable InconsistentNaming
         public int LDBoostTime
         {
-            get { return GetValue<int>("ldBoost"); }
-            set { SetValue<int>("ldBoost", value); }
+            get => GetValue<int>("ldBoost");
+            set => SetValue("ldBoost", value);
         }
 
         public int LTBoostTime
         {
-            get { return GetValue<int>("ltBoost"); }
-            set { SetValue<int>("ltBoost", value); }
+            get => GetValue<int>("ltBoost");
+            set => SetValue("ltBoost", value);
         }
     }
 
     public class DbDeath : RedisObject
     {
-        public DbAccount Account { get; private set; }
-        public int CharId { get; private set; }
+        public DbAccount Account { get; }
+        public int CharId { get; }
 
         public DbDeath(DbAccount acc, int charId)
         {
@@ -913,38 +892,38 @@ namespace common
 
         public ushort ObjectType
         {
-            get { return GetValue<ushort>("objType"); }
-            set { SetValue<ushort>("objType", value); }
+            get => GetValue<ushort>("objType");
+            set => SetValue("objType", value);
         }
 
         public int Level
         {
-            get { return GetValue<int>("level"); }
-            set { SetValue<int>("level", value); }
+            get => GetValue<int>("level");
+            set => SetValue("level", value);
         }
 
         public int TotalFame
         {
-            get { return GetValue<int>("totalFame"); }
-            set { SetValue<int>("totalFame", value); }
+            get => GetValue<int>("totalFame");
+            set => SetValue("totalFame", value);
         }
 
         public string Killer
         {
-            get { return GetValue<string>("killer"); }
-            set { SetValue<string>("killer", value); }
+            get => GetValue<string>("killer");
+            set => SetValue("killer", value);
         }
 
         public bool FirstBorn
         {
-            get { return GetValue<bool>("firstBorn"); }
-            set { SetValue<bool>("firstBorn", value); }
+            get => GetValue<bool>("firstBorn");
+            set => SetValue("firstBorn", value);
         }
 
         public DateTime DeathTime
         {
-            get { return GetValue<DateTime>("deathTime"); }
-            set { SetValue<DateTime>("deathTime", value); }
+            get => GetValue<DateTime>("deathTime");
+            set => SetValue("deathTime", value);
         }
     }
 
@@ -961,27 +940,22 @@ namespace common
     {
         public DbNews(IDatabase db, int count)
         {
-            news = db.SortedSetRangeByRankWithScores("news", 0, 10)
+            Entries = db.SortedSetRangeByRankWithScores("news", 0, 10)
                 .Select(x =>
                 {
-                    DbNewsEntry ret = JsonConvert.DeserializeObject<DbNewsEntry>(
+                    var ret = JsonConvert.DeserializeObject<DbNewsEntry>(
                         Encoding.UTF8.GetString(x.Element));
-                    ret.Date = new DateTime(1970, 1, 1, 0, 0, 0).AddSeconds((double) x.Score);
+                    ret.Date = new DateTime(1970, 1, 1, 0, 0, 0).AddSeconds(x.Score);
                     return ret;
                 }).ToArray();
         }
 
-        private DbNewsEntry[] news;
-
-        public DbNewsEntry[] Entries
-        {
-            get { return news; }
-        }
+        public DbNewsEntry[] Entries { get; }
     }
 
     public class DbVault : RedisObject
     {
-        public DbAccount Account { get; private set; }
+        public DbAccount Account { get; }
 
         public DbVault(DbAccount acc)
         {
@@ -991,12 +965,9 @@ namespace common
 
         public ushort[] this[int index]
         {
-            get 
-            { 
-                return GetValue<ushort[]>("vault." + index) ?? 
-                    Enumerable.Repeat((ushort)0xffff, 8).ToArray(); 
-            }
-            set { SetValue<ushort[]>("vault." + index, value); }
+            get => GetValue<ushort[]>("vault." + index) ?? 
+                   Enumerable.Repeat((ushort)0xffff, 8).ToArray();
+            set => SetValue("vault." + index, value);
         }
     }
 
@@ -1006,8 +977,8 @@ namespace common
 
         public ushort[] Items
         {
-            get { return GetValue<ushort[]>(Field) ?? Enumerable.Repeat((ushort)0xffff, 20).ToArray(); }
-            set { SetValue<ushort[]>(Field, value); }
+            get => GetValue<ushort[]>(Field) ?? Enumerable.Repeat((ushort)0xffff, 20).ToArray();
+            set => SetValue(Field, value);
         }
     }
 
@@ -1023,7 +994,7 @@ namespace common
                 return;
 
             var trans = Database.CreateTransaction();
-            SetValue<ushort[]>(Field, Items);
+            SetValue(Field, Items);
             FlushAsync(trans);
             trans.Execute(CommandFlags.FireAndForget);
         }
@@ -1054,7 +1025,7 @@ namespace common
     {
         private const int MaxListings = 20;
         private const int MaxGlowingRank = 10;
-        private static readonly Dictionary<string, TimeSpan> TimeSpans = new Dictionary<string, TimeSpan>()
+        private static readonly Dictionary<string, TimeSpan> TimeSpans = new Dictionary<string, TimeSpan>
         {
             {"week", TimeSpan.FromDays(7) },
             {"month", TimeSpan.FromDays(30) },
@@ -1186,48 +1157,48 @@ namespace common
             Init(acc.Database, "guild." + Id);
         }
 
-        public int Id { get; private set; }
+        public int Id { get; }
 
         public string Name
         {
-            get { return GetValue<string>("name"); }
-            set { SetValue<string>("name", value); }
+            get => GetValue<string>("name");
+            set => SetValue("name", value);
         }
 
         public int Level
         {
-            get { return GetValue<int>("level"); }
-            set { SetValue<int>("level", value); }
+            get => GetValue<int>("level");
+            set => SetValue("level", value);
         }
 
         public int Fame
         {
-            get { return GetValue<int>("fame"); }
-            set { SetValue<int>("fame", value); }
+            get => GetValue<int>("fame");
+            set => SetValue("fame", value);
         }
 
         public int TotalFame
         {
-            get { return GetValue<int>("totalFame"); }
-            set { SetValue<int>("totalFame", value); }
+            get => GetValue<int>("totalFame");
+            set => SetValue("totalFame", value);
         }
 
         public int[] Members // list of member account id's
         {
-            get { return GetValue<int[]>("members") ?? new int[0]; }
-            set { SetValue<int[]>("members", value); }
+            get => GetValue<int[]>("members") ?? new int[0];
+            set => SetValue("members", value);
         }
 
         public int[] Allies // list of ally guild id's UNIMPLEMENTED
         {
-            get { return GetValue<int[]>("allies") ?? new int[0]; }
-            set { SetValue<int[]>("allies", value); }
+            get => GetValue<int[]>("allies") ?? new int[0];
+            set => SetValue("allies", value);
         }
 
         public string Board
         {
-            get { return GetValue<string>("board") ?? ""; }
-            set { SetValue<string>("board", value); }
+            get => GetValue<string>("board") ?? "";
+            set => SetValue("board", value);
         }
     }
 
@@ -1247,10 +1218,10 @@ namespace common
         }
 
         [JsonIgnore]
-        public string IP { get; private set; }
+        public string IP { get; }
 
         [JsonIgnore]
-        public bool IsNull { get; private set; }
+        public bool IsNull { get; }
 
         public HashSet<int> Accounts { get; set; }
         public bool Banned { get; set; }
@@ -1272,27 +1243,27 @@ namespace common
         public DbPetAbility(DbPet owner, int abilityId)
         {
             _owner = owner;
-            _typeKey = string.Format("A{0}Type", abilityId);
-            _levelKey = string.Format("A{0}Level", abilityId);
-            _powerKey = string.Format("A{0}Power", abilityId);
+            _typeKey = $"A{abilityId}Type";
+            _levelKey = $"A{abilityId}Level";
+            _powerKey = $"A{abilityId}Power";
         }
 
         public PAbility Type
         {
-            get { return (PAbility)_owner.GetValue(_typeKey); }
-            set { _owner.SetValue(_typeKey, (int)value); }
+            get => (PAbility)_owner.GetValue(_typeKey);
+            set => _owner.SetValue(_typeKey, (int)value);
         }
 
         public int Level
         {
-            get { return _owner.GetValue(_levelKey); }
-            set { _owner.SetValue(_levelKey, value); }
+            get => _owner.GetValue(_levelKey);
+            set => _owner.SetValue(_levelKey, value);
         }
 
         public int Power
         {
-            get { return _owner.GetValue(_powerKey); }
-            set { _owner.SetValue(_powerKey, value); }
+            get => _owner.GetValue(_powerKey);
+            set => _owner.SetValue(_powerKey, value);
         }
     }
 
@@ -1300,9 +1271,9 @@ namespace common
     {
         public const int NumAbilities = 3;
 
-        public DbAccount Account { get; private set; }
+        public DbAccount Account { get; }
         public int PetId { get; set; }
-        public DbPetAbility[] Ability { get; private set; }
+        public DbPetAbility[] Ability { get; }
 
         public DbPet(DbAccount acc, int petId)
         {
@@ -1318,20 +1289,20 @@ namespace common
 
         public ushort ObjectType
         {
-            get { return GetValue<ushort>("objType"); }
-            set { SetValue<ushort>("objType", value); }
+            get => GetValue<ushort>("objType");
+            set => SetValue<ushort>("objType", value);
         }
 
         public PRarity Rarity
         {
-            get { return (PRarity)GetValue<ushort>("rarity"); }
-            set { SetValue<ushort>("rarity", (ushort)value); }
+            get => (PRarity)GetValue<ushort>("rarity");
+            set => SetValue<ushort>("rarity", (ushort)value);
         }
 
         public int MaxLevel
         {
-            get { return GetValue<int>("maxLevel"); }
-            set { SetValue<int>("maxLevel", value); }
+            get => GetValue<int>("maxLevel");
+            set => SetValue<int>("maxLevel", value);
         }
 
         internal int GetValue(string key)
@@ -1500,7 +1471,7 @@ namespace common
         public DbTinker(IDatabase db)
         {
             this.db = db;
-            this.entries = new List<Tinker>(db.HashGetAll(KEY).Select(x => Tinker.Load(BitConverter.ToUInt32(x.Value, 0), Encoding.UTF8.GetString(x.Value, 4, ((byte[])x.Value).Length - 4))));
+            entries = new List<Tinker>(db.HashGetAll(KEY).Select(x => Tinker.Load(BitConverter.ToUInt32(x.Value, 0), Encoding.UTF8.GetString(x.Value, 4, ((byte[])x.Value).Length - 4))));
         }
 
         public Task<bool> InsertAsync(Tinker quest, ITransaction transaction = null)

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Ionic.Zlib;
 using System.IO;
 using common;
 using common.resources;
+using Ionic.Zlib;
+using Newtonsoft.Json;
 
 namespace terrain
 {
@@ -43,7 +43,7 @@ namespace terrain
             for (int i = 0; i < obj.dict.Length; i++)
             {
                 var o = obj.dict[i];
-                tileDict[(short)i] = new TerrainTile()
+                tileDict[(short)i] = new TerrainTile
                 {
                     TileId = o.ground == null ? (ushort)0xff : data.IdToTileType[o.ground],
                     TileObj = o.objs == null ? null : o.objs[0].id,

@@ -143,6 +143,11 @@ public class Options extends Sprite {
             new StaticStringBuilder("Dystopia+")]);
     }
 
+    private static function makeHideLabels():Vector.<StringBuilder> {
+        return (new <StringBuilder>[new StaticStringBuilder("Off"),
+            new StaticStringBuilder("Locked"), new StaticStringBuilder("Guild"), new StaticStringBuilder("Both")]);
+    }
+
     private static function makeLineBuilder(str:String):LineBuilder {
         return (new LineBuilder().setParams(str));
     }
@@ -462,7 +467,7 @@ public class Options extends Sprite {
         this.addOptionAndPosition(new ChoiceOption("showTradePopup", makeOnOffLabels(), [true, false], TextKey.OPTIONS_SHOW_TRADE_REQUEST_PANEL, TextKey.OPTIONS_SHOW_TRADE_REQUEST_PANEL_DESC, null));
         this.addOptionAndPosition(new ChoiceOption("showGuildInvitePopup", makeOnOffLabels(), [true, false], TextKey.OPTIONS_SHOW_GUILD_INVITE_PANEL, TextKey.OPTIONS_SHOW_GUILD_INVITE_PANEL_DESC, null));
         this.addOptionAndPosition(new ChoiceOption("cursorSelect", makeCursorSelectLabels(), [MouseCursor.AUTO, "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"], "Custom Cursor", "Click here to change the mouse cursor. May help with aiming.", refreshCursor));
-        this.addOptionAndPosition(new ChoiceOption("hideLockList",makeOnOffLabels(),[true,false],"Hide Players","Hide players on screen",null));
+        this.addOptionAndPosition(new ChoiceOption("hideList", makeHideLabels(), [0, 1, 2, 3], "Hide Players", "Hide players on screen", null));
         if (!Parameters.GPURenderError) {
             hwAccDesc = TextKey.OPTIONS_HARDWARE_ACC_DESC;
             color = 0xFFFFFF;

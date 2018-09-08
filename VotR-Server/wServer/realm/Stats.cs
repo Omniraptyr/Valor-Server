@@ -121,7 +121,6 @@ namespace wServer.realm
         Onrane = 106,
         Kantos = 107,
         RaidToken = 108,
-        RaidRank = 109,
         Surge = 110,
         SurgeCounter = 111,
         Might = 112,

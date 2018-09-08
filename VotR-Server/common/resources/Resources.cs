@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using log4net;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
+using log4net;
 
 namespace common.resources
 {
@@ -33,7 +33,7 @@ namespace common.resources
             Settings = new AppSettings(resourcePath + "/data/init.xml");
             GameData = new XmlData(resourcePath + "/xmls");
             FilterList = File.ReadAllText(resourcePath + "/data/filterList.txt")
-                .Split(new string[] { Environment.NewLine }, StringSplitOptions.None)
+                .Split(new[] { Environment.NewLine }, StringSplitOptions.None)
                 .Select(l => new Regex(l, RegexOptions.IgnoreCase)).ToArray();
 
             if (!wServer)

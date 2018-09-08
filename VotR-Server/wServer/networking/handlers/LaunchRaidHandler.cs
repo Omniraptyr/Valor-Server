@@ -57,8 +57,7 @@ namespace wServer.networking.handlers
                                     ObjectId = player.Id,
                                     Message = player.Name + " has launched the Zol Awakening Raid!"
                                 }, null, PacketPriority.Low);
-                                //set raid opener
-                                player.Owner.raidOpener = player.Name;
+                                player.Owner.Opener = player.Name;
                             }
                             else
                             {
@@ -99,7 +98,7 @@ namespace wServer.networking.handlers
                                     Message = player.Name + " has launched the Ultra Zol Awakening Raid!"
                                 }, null, PacketPriority.Low);
                                 //set raid opener
-                                player.Owner.raidOpener = player.Name;
+                                player.Owner.Opener = player.Name;
                             }
                             else
                             {
@@ -143,7 +142,7 @@ namespace wServer.networking.handlers
                                     Message = player.Name + " has launched the Calling of the Titan Raid!"
                                 }, null, PacketPriority.Low);
                                 //set raid opener
-                                player.Owner.raidOpener = player.Name;
+                                player.Owner.Opener = player.Name;
                             }
                             else
                             {

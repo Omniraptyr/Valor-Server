@@ -18,10 +18,10 @@ namespace wServer.logic
                               new Spawn("Cube Blaster", maxChildren: 5, initialSpawn: 5, coolDown: 100000)
                  ),
                  new MostDamagers(3,
-                     LootTemplates.StatIncreasePotionsLoot()
+                     LootTemplates.StatPots()
                      ),
                new MostDamagers(3,
-                        LootTemplates.SF0()
+                        LootTemplates.Sor1Perc()
                     ),
                  new Threshold(0.15,
                      new TierLoot(3, ItemType.Ring, 0.2),

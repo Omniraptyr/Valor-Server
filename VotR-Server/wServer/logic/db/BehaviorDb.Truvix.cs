@@ -141,7 +141,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF2()
+                    LootTemplates.Sor3Perc()
                     ),
                 new Threshold(0.015,
                     new ItemLoot("Potion of Vitality", 0.1),

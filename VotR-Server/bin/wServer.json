@@ -1,14 +1,14 @@
 {
   "dbInfo": {
     "host": "127.0.0.1", //144.217.80.74
-    "port": "1985", //1985 - 6379
-    "auth": "2NSVsRREv3FYXPGm", //2NSVsRREv3FYXPGm - none
-    "index": "0"
+    "port": "6379", //1985 - 6379
+    "auth": "", //2NSVsRREv3FYXPGm - none
+    "index": "1"
   },
   "serverInfo": {
     "type": "World",
     "name": "Aldragine",
-    "address": "144.217.80.74", //144.217.80.74 - 127.0.0.1
+    "address": "127.0.0.1", //144.217.80.74 - 127.0.0.1
     "port": "2050",
     "coordinates": {
       "latitude": "0",
@@ -19,13 +19,13 @@
   "serverSettings": {
     "logFolder": "./logs",
     "resourceFolder": "./resources",
-    "version": "37.74",
+    "version": "73.73",
     "tps": "5",
     "mode": "Single",
-    "key": "DE5A1B",
-    "maxConnections": "512",
-    "maxPlayers": "150",
-    "maxPlayersWithPriority": "150",
+    "key": "BA15DE",
+    "maxConnections": "1024",
+    "maxPlayers": "200",
+    "maxPlayersWithPriority": "200",
     "enablePets": "false",
     "enableMarket": "true"
   }

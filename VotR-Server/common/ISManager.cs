@@ -42,7 +42,7 @@ namespace common
             AddHandler<NetworkMsg>(Channel.Network, HandleNetwork);
 
             // tell other servers listening that we've join the network
-            Publish(Channel.Network, new NetworkMsg()
+            Publish(Channel.Network, new NetworkMsg
             {
                 Code = NetworkCode.Join,
                 Info = _settings.serverInfo
@@ -69,7 +69,7 @@ namespace common
                 _lastPing = 0;
 
                 // notify other servers we're still alive. Update info in the process.
-                Publish(Channel.Network, new NetworkMsg()
+                Publish(Channel.Network, new NetworkMsg
                 {
                     Code = NetworkCode.Ping,
                     Info = _settings.serverInfo
@@ -84,7 +84,7 @@ namespace common
                     RemoveServer(s.Key);
 
                     // invoke server quit event
-                    var networkMsg = new NetworkMsg()
+                    var networkMsg = new NetworkMsg
                     {
                         Code = NetworkCode.Timeout,
                         Info = sInfo
@@ -97,7 +97,7 @@ namespace common
 
         public void Dispose()
         {
-            Publish(Channel.Network, new NetworkMsg()
+            Publish(Channel.Network, new NetworkMsg
             {
                 Code = NetworkCode.Quit,
                 Info = _settings.serverInfo
@@ -117,7 +117,7 @@ namespace common
                                 e.Content.Info.name, e.Content.Info.type, e.InstanceId);
 
                             // make new server aware of this server
-                            Publish(Channel.Network, new NetworkMsg()
+                            Publish(Channel.Network, new NetworkMsg
                             {
                                 Code = NetworkCode.Join,
                                 Info = _settings.serverInfo

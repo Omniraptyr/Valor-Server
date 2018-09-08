@@ -37,7 +37,7 @@ namespace wServer.realm.entities
                 case 4: return "Elite Lootbox";
                 case 5: return "Premium Lootbox";
             }
-            return "Bronze Lootbox";
+            return "Unknown";
         }
         public Tuple<Item> GetCrateLoot(CrateLoot crateLoot, Random rand)
         {

@@ -616,7 +616,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         _local1.unmap(TRADESTART);
         _local1.unmap(GAMBLESTART);
         _local1.unmap(TRADECHANGED);
-        _local1.unmap(CRITICALDAMAGE)
+        _local1.unmap(CRITICALDAMAGE);
         _local1.unmap(TRADEDONE);
         _local1.unmap(TRADEACCEPTED);
         _local1.unmap(CLIENTSTAT);
@@ -636,7 +636,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         var _local1:ICipher;
         var _local2:ICipher;
         if (Parameters.ENABLE_ENCRYPTION) {
-            _local1 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray("DE5A1B"));
+            _local1 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray("BA15DE"));
             _local2 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray("612a806cac78114ba5013cb531"));
             serverConnection.setOutgoingCipher(_local1);
             serverConnection.setIncomingCipher(_local2);
@@ -2014,7 +2014,8 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                 }
             }
             else {
-                if (_local8 != -1 && _local7.exp_ > _local9 && !Parameters.data_.noAllyNotifications) {
+                if (_local8 != -1 && _local7.exp_ > _local9
+                        && (_local6 || !Parameters.data_.noAllyNotifications)) {
                     _local7.handleExpUp((_local7.exp_ - _local9));
                 }
             }

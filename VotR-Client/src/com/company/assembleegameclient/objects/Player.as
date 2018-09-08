@@ -808,15 +808,16 @@ public class Player extends Character {
 
     override public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int) : void
     {
-        if(Parameters.data_.hideLockList)
-        {
-            if(this != map_.player_)
-            {
-                if(!this.starred_)
-                {
-                    return;
-                }
-            }
+        switch (Parameters.data_.hideList) {
+            case 1:
+                if (this != map_.player_ && !this.starred_) return;
+                break;
+            case 2:
+                if (this != map_.player_ && !this.isFellowGuild_) return;
+                break;
+            case 3:
+                if (this != map_.player_ && !this.starred_ && !this.isFellowGuild_) return;
+                break;
         }
 
         super.draw(_arg_1,_arg_2,_arg_3);

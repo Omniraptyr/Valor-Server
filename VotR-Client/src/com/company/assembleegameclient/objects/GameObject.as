@@ -875,9 +875,11 @@ public class GameObject extends BasicObject {
                 }
             }
         }
-        if ((this.props_.isEnemy_ && Parameters.data_.noEnemyDamage)
-                || (this.props_.isPlayer_ && Parameters.data_.noAllyDamage))
+        if(!_arg_1
+                && (Parameters.data_.noEnemyDamage && this.props_.isEnemy_
+                        || Parameters.data_.noAllyDamage && this.props_.isPlayer_)) {
             return;
+        }
         if (_arg_2 > 0) {
             _local_15 = ((((this.isArmorBroken()) || (((!((_arg_5 == null))) && (_arg_5.projProps_.armorPiercing_))))) || (_local_6));
             this.showDamageText2(_arg_2, _local_15);
@@ -1047,9 +1049,9 @@ public class GameObject extends BasicObject {
                 }
             }
         }
-        if (!_arg1
-                && ((Parameters.data_.noEnemyDamage && this.props_.isEnemy_)
-                        || (Parameters.data_.noAllyDamage && this.props_.isPlayer_))) {
+        if(!_arg1
+                && (Parameters.data_.noEnemyDamage && this.props_.isEnemy_
+                        || Parameters.data_.noAllyDamage && this.props_.isPlayer_)) {
             return;
         }
         if (_arg2 > 0) {

@@ -34,7 +34,7 @@ namespace wServer.networking.handlers
                 return;
             }
 
-            prj.TryHit(entity, time);
+            prj.ForceHit(entity, time);
 
             if (pkt.Killed)
                 player.ClientKilledEntity.Enqueue(entity);

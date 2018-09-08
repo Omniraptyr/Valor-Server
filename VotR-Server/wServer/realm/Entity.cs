@@ -562,9 +562,14 @@ namespace wServer.realm
 
         public void MoveEntity(float x, float y)
         {
-            if (Owner != null && !(this is Projectile) && !(this is Pet) && (!(this is StaticObject) || (this as StaticObject).Hittestable))
-                ((this is Enemy || this is StaticObject && !(this is Decoy)) ? Owner.EnemiesCollision : Owner.PlayersCollision)
-                    .Move(this, Math.Min(x, Owner.Map.Width), Math.Min(y, Owner.Map.Height));
+            if (Owner != null 
+                && !(this is Projectile) 
+                && !(this is Pet) 
+                && (!(this is StaticObject) || (this as StaticObject).Hittestable))
+
+            (this is Enemy || this is StaticObject && !(this is Decoy) ? Owner.EnemiesCollision : Owner.PlayersCollision)
+               .Move(this, Math.Min(x, Owner.Map.Width), Math.Min(y, Owner.Map.Height));
+
             X = x; Y = y;
         }
 
@@ -577,17 +582,14 @@ namespace wServer.realm
 
         public static Entity Resolve(RealmManager manager, string name)
         {
-            ushort id;
-            if (!manager.Resources.GameData.IdToObjectType.TryGetValue(name, out id))
-                return null;
-
-            return Resolve(manager, id);
+            return !manager.Resources.GameData.IdToObjectType.TryGetValue(name, out var id) 
+                ? null : Resolve(manager, id);
         }
 
         public static Entity Resolve(RealmManager manager, ushort id)
         {
             var node = manager.Resources.GameData.ObjectTypeToElement[id];
-            string type = node.Element("Class").Value;
+            var type = node.Element("Class").Value;
             switch (type)
             {
                 case "Projectile":
@@ -679,13 +681,13 @@ namespace wServer.realm
             return ObjectDesc.Enemy || ObjectDesc.Player;
         }
 
-        void ProcessConditionEffects(RealmTime time)
+        private void ProcessConditionEffects(RealmTime time)
         {
             if (_effects == null || !_tickingEffects) return;
 
             ConditionEffects newEffects = 0;
             _tickingEffects = false;
-            for (int i = 0; i < _effects.Length; i++)
+            for (var i = 0; i < _effects.Length; i++)
             {
                 if (_effects[i] > 0)
                 {
@@ -751,37 +753,26 @@ namespace wServer.realm
 
         private bool ApplyCondition(ConditionEffectIndex effect)
         {
-            if (effect == ConditionEffectIndex.Stunned &&
-                HasConditionEffect(ConditionEffects.StunImmume))
-                return false;
-
-            if (effect == ConditionEffectIndex.Stasis &&
-                HasConditionEffect(ConditionEffects.StasisImmune))
-                return false;
-
-            if (effect == ConditionEffectIndex.Paralyzed &&
-                HasConditionEffect(ConditionEffects.ParalyzeImmune))
-                return false;
-
-            if (effect == ConditionEffectIndex.ArmorBroken &&
-                HasConditionEffect(ConditionEffects.ArmorBreakImmune))
-                return false;
-
-            if (effect == ConditionEffectIndex.Curse &&
-                HasConditionEffect(ConditionEffects.CurseImmune))
-                return false;
-
-            if (effect == ConditionEffectIndex.Petrify &&
-                HasConditionEffect(ConditionEffects.PetrifyImmune))
-                return false;
-
-            if (effect == ConditionEffectIndex.Dazed &&
-                HasConditionEffect(ConditionEffects.DazedImmune))
-                return false;
-
-            if (effect == ConditionEffectIndex.Slowed &&
-                HasConditionEffect(ConditionEffects.SlowedImmune))
-                return false;
+            switch (effect)
+            {
+                case ConditionEffectIndex.Stunned 
+                    when HasConditionEffect(ConditionEffects.StunImmume):
+                case ConditionEffectIndex.Stasis 
+                    when HasConditionEffect(ConditionEffects.StasisImmune):
+                case ConditionEffectIndex.Paralyzed 
+                    when HasConditionEffect(ConditionEffects.ParalyzeImmune):
+                case ConditionEffectIndex.ArmorBroken 
+                    when HasConditionEffect(ConditionEffects.ArmorBreakImmune):
+                case ConditionEffectIndex.Curse 
+                    when HasConditionEffect(ConditionEffects.CurseImmune):
+                case ConditionEffectIndex.Petrify 
+                    when HasConditionEffect(ConditionEffects.PetrifyImmune):
+                case ConditionEffectIndex.Dazed 
+                    when HasConditionEffect(ConditionEffects.DazedImmune):
+                case ConditionEffectIndex.Slowed 
+                    when HasConditionEffect(ConditionEffects.SlowedImmune):
+                    return false;
+            }
 
             return true;
         }

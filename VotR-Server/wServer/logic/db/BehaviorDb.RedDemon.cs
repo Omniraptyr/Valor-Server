@@ -36,7 +36,7 @@ namespace wServer.logic
                         )
                     ),
                                 new MostDamagers(3,
-                    LootTemplates.SF0()
+                    LootTemplates.Sor1Perc()
                     ),
                 new Threshold(0.12,
                 new ItemLoot("Golden Sword", 0.04),

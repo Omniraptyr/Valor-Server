@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 
@@ -55,7 +56,7 @@ namespace common
             // retain the object's hash code immediately so that even
             // if the target is GC'ed we will be able to find and
             // remove the dead weak reference.
-            this.HashCode = comparer.GetHashCode(key);
+            HashCode = comparer.GetHashCode(key);
         }
     }
 
@@ -83,7 +84,7 @@ namespace common
         {
             WeakKeyReference<T> weakKey = obj as WeakKeyReference<T>;
             if (weakKey != null) return weakKey.HashCode;
-            return this.comparer.GetHashCode((T)obj);
+            return comparer.GetHashCode((T)obj);
         }
 
         // Note: There are actually 9 cases to handle here.
@@ -116,7 +117,7 @@ namespace common
             if (yIsDead)
                 return false;
 
-            return this.comparer.Equals(first, second);
+            return comparer.Equals(first, second);
         }
 
         private static T GetTarget(object obj, out bool isDead)
@@ -156,8 +157,6 @@ namespace common
         private KeyCollection keys;
         private ValueCollection values;
 
-        protected BaseDictionary() { }
-
         public abstract int Count { get; }
         public abstract void Clear();
         public abstract void Add(TKey key, TValue value);
@@ -176,10 +175,10 @@ namespace common
         {
             get
             {
-                if (this.keys == null)
-                    this.keys = new KeyCollection(this);
+                if (keys == null)
+                    keys = new KeyCollection(this);
 
-                return this.keys;
+                return keys;
             }
         }
 
@@ -187,10 +186,10 @@ namespace common
         {
             get
             {
-                if (this.values == null)
-                    this.values = new ValueCollection(this);
+                if (values == null)
+                    values = new ValueCollection(this);
 
-                return this.values;
+                return values;
             }
         }
 
@@ -199,7 +198,7 @@ namespace common
             get
             {
                 TValue value;
-                if (!this.TryGetValue(key, out value))
+                if (!TryGetValue(key, out value))
                     throw new KeyNotFoundException();
 
                 return value;
@@ -212,13 +211,13 @@ namespace common
 
         public void Add(KeyValuePair<TKey, TValue> item)
         {
-            this.Add(item.Key, item.Value);
+            Add(item.Key, item.Value);
         }
 
         public bool Contains(KeyValuePair<TKey, TValue> item)
         {
             TValue value;
-            if (!this.TryGetValue(item.Key, out value))
+            if (!TryGetValue(item.Key, out value))
                 return false;
 
             return EqualityComparer<TValue>.Default.Equals(value, item.Value);
@@ -231,15 +230,15 @@ namespace common
 
         public bool Remove(KeyValuePair<TKey, TValue> item)
         {
-            if (!this.Contains(item))
+            if (!Contains(item))
                 return false;
 
-            return this.Remove(item.Key);
+            return Remove(item.Key);
         }
 
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator()
         {
-            return this.GetEnumerator();
+            return GetEnumerator();
         }
 
         private abstract class Collection<T> : ICollection<T>
@@ -253,7 +252,7 @@ namespace common
 
             public int Count
             {
-                get { return this.dictionary.Count; }
+                get { return dictionary.Count; }
             }
 
             public bool IsReadOnly
@@ -276,7 +275,7 @@ namespace common
 
             public IEnumerator<T> GetEnumerator()
             {
-                foreach (KeyValuePair<TKey, TValue> pair in this.dictionary)
+                foreach (KeyValuePair<TKey, TValue> pair in dictionary)
                     yield return GetItem(pair);
             }
 
@@ -297,9 +296,9 @@ namespace common
                 throw new NotSupportedException("Collection is read-only.");
             }
 
-            System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+            IEnumerator IEnumerable.GetEnumerator()
             {
-                return this.GetEnumerator();
+                return GetEnumerator();
             }
         }
 
@@ -316,7 +315,7 @@ namespace common
             }
             public override bool Contains(TKey item)
             {
-                return this.dictionary.ContainsKey(item);
+                return dictionary.ContainsKey(item);
             }
         }
 
@@ -368,7 +367,7 @@ namespace common
         public WeakDictionary(int capacity, IEqualityComparer<TKey> comparer)
         {
             this.comparer = new WeakKeyComparer<TKey>(comparer);
-            this.dictionary = new Dictionary<object, TValue>(capacity, this.comparer);
+            dictionary = new Dictionary<object, TValue>(capacity, this.comparer);
         }
 
         // WARNING: The count returned here may include entries for which
@@ -377,30 +376,30 @@ namespace common
         // entries and update the count accordingly.
         public override int Count
         {
-            get { return this.dictionary.Count; }
+            get { return dictionary.Count; }
         }
 
         public override void Add(TKey key, TValue value)
         {
             if (key == null) throw new ArgumentNullException("key");
-            WeakReference<TKey> weakKey = new WeakKeyReference<TKey>(key, this.comparer);
-            this.dictionary.Add(weakKey, value);
+            WeakReference<TKey> weakKey = new WeakKeyReference<TKey>(key, comparer);
+            dictionary.Add(weakKey, value);
         }
 
         public override bool ContainsKey(TKey key)
         {
-            return this.dictionary.ContainsKey(key);
+            return dictionary.ContainsKey(key);
         }
 
         public override bool Remove(TKey key)
         {
-            return this.dictionary.Remove(key);
+            return dictionary.Remove(key);
         }
 
         public override bool TryGetValue(TKey key, out TValue value)
         {
             TValue weakValue;
-            if (this.dictionary.TryGetValue(key, out weakValue))
+            if (dictionary.TryGetValue(key, out weakValue))
             {
                 value = weakValue;
                 return true;
@@ -411,18 +410,18 @@ namespace common
 
         protected override void SetValue(TKey key, TValue value)
         {
-            WeakReference<TKey> weakKey = new WeakKeyReference<TKey>(key, this.comparer);
-            this.dictionary[weakKey] = value;
+            WeakReference<TKey> weakKey = new WeakKeyReference<TKey>(key, comparer);
+            dictionary[weakKey] = value;
         }
 
         public override void Clear()
         {
-            this.dictionary.Clear();
+            dictionary.Clear();
         }
 
         public override IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
         {
-            foreach (KeyValuePair<object, TValue> kvp in this.dictionary)
+            foreach (KeyValuePair<object, TValue> kvp in dictionary)
             {
                 WeakReference<TKey> weakKey = (WeakReference<TKey>)(kvp.Key);
                 TValue value = kvp.Value;
@@ -439,7 +438,7 @@ namespace common
         public void RemoveCollectedEntries()
         {
             List<object> toRemove = null;
-            foreach (KeyValuePair<object, TValue> pair in this.dictionary)
+            foreach (KeyValuePair<object, TValue> pair in dictionary)
             {
                 WeakReference<TKey> weakKey = (WeakReference<TKey>)(pair.Key);
 
@@ -454,7 +453,7 @@ namespace common
             if (toRemove != null)
             {
                 foreach (object key in toRemove)
-                    this.dictionary.Remove(key);
+                    dictionary.Remove(key);
             }
         }
     }

@@ -106,7 +106,7 @@ namespace common.resources
 
         private void AddMysteryBox(XElement elem)
         {
-            var mBox = new MysteryBox()
+            var mBox = new MysteryBox
             {
                 Id = elem.Attribute("id").Value.ToInt32(),
                 Title = elem.Attribute("title").Value,
@@ -126,7 +126,7 @@ namespace common.resources
                 mBox.Contents[i] = awards[i].CommaToArray<ushort>();
             
             // init costs
-            mBox.Cost = new MBoxCost()
+            mBox.Cost = new MBoxCost
             {
                 NormalPrice = elem.Element("Price").Attribute("amount").Value.ToInt32(),
                 Currency = elem.Element("Price").Attribute("currency").Value.ToInt32(),

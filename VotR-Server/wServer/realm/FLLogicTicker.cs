@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using System.Diagnostics;
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using log4net;
@@ -34,32 +34,26 @@ namespace wServer.realm
                 _pendings[i] = new ConcurrentQueue<Action<RealmTime>>();
         }
 
-        public void TickLoop()
-        {
+        public void TickLoop() {
             Log.Info("Logic loop started.");
 
             var loopTime = 0;
             var t = new RealmTime();
             var watch = Stopwatch.StartNew();
-            do
-            {
+            do {
                 t.TotalElapsedMs = watch.ElapsedMilliseconds;
+                var logicTime = (int)(watch.ElapsedMilliseconds - t.TotalElapsedMs);
+                _mre.WaitOne(Math.Max(0, MsPT - logicTime));
+
                 t.TickDelta = loopTime / MsPT;
                 t.TickCount += t.TickDelta;
                 t.ElapsedMsDelta = t.TickDelta * MsPT;
-
-                if (t.TickDelta > 3)
-                    Log.Warn("LAGGED! | ticks:" + t.TickDelta +
-                                      " ms: " + loopTime +
-                                      " tps: " + t.TickCount / (t.TotalElapsedMs / 1000.0));
 
                 if (_manager.Terminating)
                     break;
 
                 DoLogic(t);
 
-                var logicTime = (int)(watch.ElapsedMilliseconds - t.TotalElapsedMs);
-                _mre.WaitOne(Math.Max(0, MsPT - logicTime));
                 loopTime += (int)(watch.ElapsedMilliseconds - t.TotalElapsedMs) - t.ElapsedMsDelta;
             } while (true);
             Log.Info("Logic loop stopped.");
@@ -71,8 +65,7 @@ namespace wServer.realm
             
             foreach (var i in _pendings)
             {
-                Action<RealmTime> callback;
-                while (i.TryDequeue(out callback))
+                while (i.TryDequeue(out var callback))
                     try
                     {
                         callback(t);
@@ -87,14 +80,14 @@ namespace wServer.realm
             _manager.Monitor.Tick(t);
             _manager.InterServer.Tick(t.ElapsedMsDelta);
 
-            TickWorlds1(t);
+            TickWorlds(t);
 
             foreach (var client in clients)
-                if (client.Player != null && client.Player.Owner != null)
+                if (client.Player?.Owner != null)
                     client.Player.Flush();
         }
 
-        void TickWorlds1(RealmTime t)    //Continous simulation
+        private void TickWorlds(RealmTime t)    //Continous simulation
         {
             _worldTime.TickDelta += t.TickDelta;
             

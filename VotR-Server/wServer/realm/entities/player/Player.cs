@@ -328,13 +328,6 @@ namespace wServer.realm.entities
             set => _raidToken.SetValue(value);
         }
 
-        private readonly SV<int> _raidRank;
-        public int RaidRank
-        {
-            get => _raidRank.GetValue();
-            set => _raidRank.SetValue(value);
-        }
-
         private readonly SV<int> _lootbox1;
         public int BronzeLootbox
         {
@@ -471,7 +464,6 @@ namespace wServer.realm.entities
                 case StatsType.GoldLootbox: GoldLootbox = (int)val; break;
                 case StatsType.EliteLootbox: EliteLootbox = (int)val; break;
                 case StatsType.PremiumLootbox: PremiumLootbox = (int)val; break;
-                case StatsType.RaidRank: RaidRank = (int)val; break;
                 case StatsType.Surge: Surge = (int)val; break;
                 case StatsType.SurgeCounter: SurgeCounter = (int)val; break;
                 case StatsType.ProtectionPoints: Protection = (int)val; break;
@@ -565,26 +557,27 @@ namespace wServer.realm.entities
             stats[StatsType.HealthStackCount] = HealthPots.Count;
             stats[StatsType.MagicStackCount] = MagicPots.Count;
             stats[StatsType.HasBackpack] = (HasBackpack) ? 1 : 0;
-            stats[StatsType.RageBar] = RageBar;
             stats[StatsType.Rank] = Rank;
             stats[StatsType.Admin] = Admin;
             stats[StatsType.Tokens] = Tokens;
             stats[StatsType.Onrane] = Onrane;
             stats[StatsType.Kantos] = Kantos;
             stats[StatsType.RaidToken] = AlertToken;
-            stats[StatsType.RaidRank] = RaidRank;
             stats[StatsType.Surge] = Surge;
             stats[StatsType.SurgeCounter] = SurgeCounter;
-            stats[StatsType.BronzeLootbox] = BronzeLootbox;
-            stats[StatsType.SilverLootbox] = SilverLoootbox;
-            stats[StatsType.GoldLootbox] = GoldLootbox;
-            stats[StatsType.EliteLootbox] = EliteLootbox;
-            stats[StatsType.PremiumLootbox] = PremiumLootbox;
             stats[StatsType.ProtectionPoints] = Protection;
             stats[StatsType.ProtectionPointsMax] = ProtectionMax;
             stats[StatsType.SorStorage] = SorStorage;
             stats[StatsType.Elite] = Elite;
             stats[StatsType.PvP] = PvP;
+            if (Owner.Name == "SummoningPoint") stats[StatsType.RageBar] = RageBar;
+            if (Owner.Name == "Nexus") {
+                stats[StatsType.BronzeLootbox] = BronzeLootbox;
+                stats[StatsType.SilverLootbox] = SilverLoootbox;
+                stats[StatsType.GoldLootbox] = GoldLootbox;
+                stats[StatsType.EliteLootbox] = EliteLootbox;
+                stats[StatsType.PremiumLootbox] = PremiumLootbox;
+            }
         }
 
         public void SaveToCharacter()
@@ -663,16 +656,15 @@ namespace wServer.realm.entities
             _onrane = new SV<int>(this, StatsType.Onrane, client.Account.Onrane, true);
             _kantos = new SV<int>(this, StatsType.Kantos, client.Account.Kantos, true);
             _raidToken = new SV<int>(this, StatsType.RaidToken, client.Account.RaidToken, true);
-            _raidRank = new SV<int>(this, StatsType.RaidRank, client.Account.RaidRank, true);
             _surge = new SV<int>(this, StatsType.Surge, -1);
             _protection = new SV<int>(this, StatsType.ProtectionPoints, -1);
             _protectionMax = new SV<int>(this, StatsType.ProtectionPointsMax, -1);
             _surgeCounter = new SV<int>(this, StatsType.SurgeCounter, -1);
-            _lootbox1 = new SV<int>(this, StatsType.BronzeLootbox, client.Account.Lootbox1, true);
-            _lootbox2 = new SV<int>(this, StatsType.SilverLootbox, client.Account.Lootbox2, true);
-            _lootbox3 = new SV<int>(this, StatsType.GoldLootbox, client.Account.Lootbox3, true);
-            _lootbox4 = new SV<int>(this, StatsType.EliteLootbox, client.Account.Lootbox4, true);
-            _lootbox5 = new SV<int>(this, StatsType.PremiumLootbox, client.Account.Lootbox5, true);
+            _lootbox1 = new SV<int>(this, StatsType.BronzeLootbox, client.Account.BronzeLootbox, true);
+            _lootbox2 = new SV<int>(this, StatsType.SilverLootbox, client.Account.SilverLootbox, true);
+            _lootbox3 = new SV<int>(this, StatsType.GoldLootbox, client.Account.GoldLootbox, true);
+            _lootbox4 = new SV<int>(this, StatsType.EliteLootbox, client.Account.EliteLootbox, true);
+            _lootbox5 = new SV<int>(this, StatsType.PremiumLootbox, client.Account.PremiumLootbox, true);
             _sorStorage = new SV<int>(this, StatsType.SorStorage, client.Account.SorStorage, true);
             _elite = new SV<int>(this, StatsType.Elite, client.Account.Elite, true);
             _pvp = new SV<bool>(this, StatsType.PvP, true);
@@ -820,8 +812,9 @@ namespace wServer.realm.entities
             if ((owner.Name.Equals("BastilleofDrannol") 
                  || owner.Name.Equals("AldraginesHideout") 
                  || owner.Name.Equals("UltraAldraginesHideout"))
-                && owner.raidOpener != Name) {
+                 && owner.Opener != Name) {
                 Client.Manager.Database.UpdateCredit(Client.Account, -3000);
+                this.ForceUpdate(Credits);
             }
             if (owner.Name.Equals("Nexus"))
             {
@@ -840,11 +833,6 @@ namespace wServer.realm.entities
 
             if (owner.IsNotCombatMapArea)
             {
-                Client.SendPacket(new GlobalNotification
-                {
-                    Text = Client.Account.Gifts.Length > 0 ? "giftChestOccupied" : "giftChestEmpty"
-                });
-
                 if (DeathArena.Instance?.CurrentState != DeathArena.ArenaState.NotStarted && DeathArena.Instance?.CurrentState != DeathArena.ArenaState.Ended)
                 {
                     Client.SendPacket(new GlobalNotification
@@ -870,125 +858,58 @@ namespace wServer.realm.entities
             base.Init(owner);
         }
 
-        private void CheckLegendary()
-        {
-            if (CheckMocking()) {
-                ApplyConditionEffect(ConditionEffectIndex.Relentless);
-            } else {
-                ApplyConditionEffect(ConditionEffectIndex.Relentless, 0);
-            }
+        private readonly List<Timer> _timerList = new List<Timer>();
+        public int[] StealAmount = { 0, 0 };
 
-            if (CheckCrescent()) {
-                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune);
-            } else {
-                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune, 0);
-            }
-
-            if (CheckGHelm()) {
-                tghbonus = 8;
-            } else {
-                tghbonus = 0;
-            }
-
-            if (CheckForce()) {
-                ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune);
-            } else {
-                ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune, 0);
-            }
-
-            if (CheckRoyal()) {
-                ApplyConditionEffect(ConditionEffectIndex.HealthRecovery);
-            } else {
-                ApplyConditionEffect(ConditionEffectIndex.HealthRecovery, 0);
-            }
-
-            if (CheckResistance()) {
-                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune);
-            } else {
-                ApplyConditionEffect(ConditionEffectIndex.SlowedImmune, 0);
-            }
-
-            if (CheckAegis()) {
-                ApplyConditionEffect(ConditionEffectIndex.Vengeance);
-            } else {
-                ApplyConditionEffect(ConditionEffectIndex.Vengeance, 0);
-            }
-
-            if (CheckGuilded()) {
-                ApplyConditionEffect(ConditionEffectIndex.Alliance);
-            } else {
-                ApplyConditionEffect(ConditionEffectIndex.Alliance, 0);
-            }
-
-            MainLegendaryPassives();
-        }
-
-        private readonly List<Timer> timerList = new List<Timer>();
-        public int[] stealAmount = { 0, 0 };
-
-        private void TimerHandler(int delay, ConditionEffectIndex cei)
-        {
+        private void TimerHandler(int delay, ConditionEffectIndex cei) {
             var timer = new Timer(delay, (int)cei);
             timer.Elapsed += (o, e) => {
                 Client.Player?.ApplyConditionEffect(cei);
-                if (timerList.Exists(t => t == timer)) timerList.Remove(timer);
+                if (_timerList.Exists(t => t == timer)) _timerList.Remove(timer);
                 timer.Dispose();
             };
             timer.Enabled = true;
-            timerList.Add(timer);
+            _timerList.Add(timer);
         }
 
-        public void OnEquip(Item item)
-        {
-            if (Client.Player != null && item != null)
-            {
+        public void OnEquip(Item item) {
+            if (Client.Player != null && item != null) {
                 /*foreach (var pair in item.StatReq)
                     if (pair.Value < Stats[pair.Key])
                         Client.Disconnect();*/
 
-                CheckLegendary();
-
                 foreach (var pair in item.EffectEquip)
-                    if (pair.Key != string.Empty)
-                    {
+                    if (pair.Key != string.Empty) {
                         TimerHandler(pair.Value * 1000,
-                        (ConditionEffectIndex)Enum.Parse(typeof(ConditionEffectIndex), pair.Key.Trim().Replace(" ", ""), true));
+                        (ConditionEffectIndex)Enum.Parse(typeof(ConditionEffectIndex),
+                            pair.Key.Trim().Replace(" ", ""), true));
                     }
 
                 foreach (var pair in item.Steal)
-                    if (pair.Key != "")
-                    {
-                        if (pair.Key == "life") stealAmount[0] += pair.Value;
-                        else stealAmount[1] += pair.Value;
+                    if (pair.Key != "") {
+                        if (pair.Key == "life") StealAmount[0] += pair.Value;
+                        else StealAmount[1] += pair.Value;
                     }
             }
         }
 
-        public void OnUnequip(Item item)
-        {
-            if (Client.Player != null && item != null)
-            {
-                CheckLegendary();
-
+        public void OnUnequip(Item item) {
+            if (Client.Player != null && item != null) {
                 foreach (var pair in item.EffectEquip)
-                    if (pair.Key != string.Empty)
-                    {
+                    if (pair.Key != string.Empty) {
                         var cei = (int)Enum.Parse(typeof(ConditionEffectIndex), pair.Key.Trim().Replace(" ", ""), true);
-                        foreach (var t in timerList)
-                            if (t.Id == cei)
-                            {
+                        foreach (var t in _timerList)
+                            if (t.Id == cei) {
                                 t.Dispose();
-                                timerList.Remove(t);
+                                _timerList.Remove(t);
                                 return; //so that it only clears effs after the delay (unless no delay)
                             }
                         Client.Player.ApplyConditionEffect((ConditionEffectIndex)cei, 0);
                     }
-                foreach (var pair in item.Steal)
-                {
-                    if (pair.Key != "")
-                    {
-                        if (pair.Key == "life") stealAmount[0] -= pair.Value;
-                        else stealAmount[1] -= pair.Value;
+                foreach (var pair in item.Steal) {
+                    if (pair.Key != "") {
+                        if (pair.Key == "life") StealAmount[0] -= pair.Value;
+                        else StealAmount[1] -= pair.Value;
                     }
                 }
             }
@@ -1255,6 +1176,7 @@ namespace wServer.realm.entities
                     HP -= dmg;
                 }
             }
+
             ApplyConditionEffect(projectile.ProjDesc.Effects);
 
             if (!(Owner.PvP))
@@ -1270,9 +1192,6 @@ namespace wServer.realm.entities
                 }, this, this, PacketPriority.Low);
             }
 
-
-
-
             if (HP <= 0)
                 Death(projectile.ProjectileOwner.Self.ObjectDesc.DisplayId ??
                       projectile.ProjectileOwner.Self.ObjectDesc.ObjectId,
@@ -1280,6 +1199,7 @@ namespace wServer.realm.entities
 
             return base.HitByProjectile(projectile, time);
         }
+
         public void Damage(int dmg, Entity src)
         {
             if (IsInvulnerable())
@@ -1312,8 +1232,6 @@ namespace wServer.realm.entities
                       src.ObjectDesc.ObjectId,
                       src);
         }
-
-
 
         public void Unbox(int type)
         {

@@ -245,7 +245,6 @@
     <Compile Include="realm\ChunkManager.cs" />
     <Compile Include="realm\entities\player\Player.Gambling.cs" />
     <Compile Include="realm\entities\player\Player.Marks.cs" />
-    <Compile Include="realm\entities\player\Player.VACBan.cs" />
     <Compile Include="realm\entities\Torii.cs" />
     <Compile Include="realm\entities\Banner.cs" />
     <Compile Include="realm\entities\player\Player.Powers.cs" />
@@ -491,7 +490,7 @@
     <Compile Include="realm\setpieces\Crystal.cs" />
     <Compile Include="realm\setpieces\CubeGod.cs" />
     <Compile Include="realm\setpieces\Elemental.cs" />
-    <Compile Include="realm\setpieces\Gargland.cs" />
+    <Compile Include="realm\setpieces\Gargoyle.cs" />
     <Compile Include="realm\setpieces\GarnetJade.cs" />
     <Compile Include="realm\setpieces\GhostShip.cs" />
     <Compile Include="realm\setpieces\Graveyard.cs" />

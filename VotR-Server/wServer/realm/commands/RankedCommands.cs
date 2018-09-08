@@ -35,6 +35,22 @@ namespace wServer.realm.commands
             public int[] y;
             public bool? target;
         }
+
+        class BazaarCommand : Command
+        {
+            public BazaarCommand() : base("bazaar", permLevel: 10) { }
+
+            protected override bool Process(Player player, RealmTime time, string args) {
+                player.Client.Reconnect(new Reconnect() {
+                    Host = "",
+                    Port = 2050,
+                    GameId = World.ClothBazaar,
+                    Name = "Cloth Bazaar"
+                });
+                return true;
+            }
+        }
+
         class SetGoldCommand : Command
         {
             public SetGoldCommand() : base("setgold", permLevel: 90, alias: "gold") { }
@@ -116,7 +132,7 @@ namespace wServer.realm.commands
 
             protected override bool Process(Player player, RealmTime time, string args)
             {
-                    player.SendInfo("" + player.surgeMod);
+                    player.SendInfo("");
                 return true;
             }
         }
@@ -768,8 +784,8 @@ class ClearSpawnsCommand : Command
             {
                 lastKilled = killed;
                 foreach (var i in player.Owner.Enemies.Values.Where(e =>
-                    e.ObjectDesc != null && e.ObjectDesc.ObjectId != null
-                    && e.ObjectDesc.Enemy && e.ObjectDesc.ObjectId != "Tradabad Nexus Crier"
+                    e.ObjectDesc?.ObjectId != null 
+                    && e.ObjectDesc.Enemy 
                     && e.ObjectDesc.ObjectId.ContainsIgnoreCase(args)))
                 {
                     i.Spawned = true;
@@ -877,46 +893,6 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    internal class TransferGoldCommand : Command
-    {
-        public TransferGoldCommand() : base("g2o", permLevel: 0)
-        {
-        }
-
-        protected override bool Process(Player player, RealmTime time, string args)
-        {
-            var amount2 = int.Parse(args);
-
-            if (string.IsNullOrEmpty(args))
-            {
-                player.SendInfo("/g2o <amount>");
-                return false;
-            }
-            if (player.Client.Account.Elite == 1)
-            {
-                if (amount2 >= 1000 && player.Credits >= 1000)
-                {
-                    player.Client.Manager.Database.UpdateCredit(player.Client.Account, -amount2);
-                    player.Credits -= amount2;
-                    player.ForceUpdate(player.Credits);
-                    player.Onrane += amount2 / 1000;
-                    player.Client.Manager.Database.UpdateOnrane(player.Client.Account, amount2 / 1000);
-                    player.ForceUpdate(player.Onrane);
-                }
-                else
-                {
-                    player.SendError("You must transfer at least 10000 gold..");
-                }
-            }
-            else
-            {
-                player.SendError("Your account must be Elite in order to complete this action.");
-            }
-
-            return true;
-        }
-    }
-
     class SuppScoreCommand : Command
     {
         public SuppScoreCommand() : base("sscore", permLevel: 90) { }
@@ -936,7 +912,6 @@ class ClearSpawnsCommand : Command
             return true;
         }
     }
-
 
     internal class EnableMarkCommand : Command
     {

@@ -13,7 +13,7 @@ namespace wServer.logic
         private _ Cyclops = () => Behav()
             .Init("Cyclops God",
                 new State(
-                    new DropPortalOnDeath("Giant's Hill Portal", 0.25),
+                    new DropPortalOnDeath("Giant's Hill Portal"),
                     new State("idle",
                         new PlayerWithinTransition(11, "blade_attack"),
                         new HpLessTransition(0.8, "blade_attack")

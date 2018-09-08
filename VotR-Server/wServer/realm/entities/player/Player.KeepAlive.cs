@@ -9,7 +9,7 @@ namespace wServer.realm.entities
     public partial class Player
     {
         private const int PingPeriod = 3000;
-        public const int DcThresold = 12000;
+        public const int DcThreshold = 12000;
 
         private long _pingTime = -1;
         private long _pongTime = -1;
@@ -38,22 +38,20 @@ namespace wServer.realm.entities
         private readonly ConcurrentQueue<int> _serverTimeLog =
             new ConcurrentQueue<int>();
 
-        bool KeepAlive(RealmTime time) {
+        private bool KeepAlive(RealmTime time) {
             if (_pingTime == -1) {
                 _pingTime = time.TotalElapsedMs - PingPeriod;
                 _pongTime = time.TotalElapsedMs;
             }
 
             // check for disconnect timeout
-            if (time.TotalElapsedMs - _pongTime > DcThresold) {
+            if (time.TotalElapsedMs - _pongTime > DcThreshold) {
                 _client.Disconnect("Connection timeout. (KeepAlive)");
                 return false;
             }
 
-            long timeout;
-
             // check for shootack timeout
-            if (_shootAckTimeout.TryPeek(out timeout)) {
+            if (_shootAckTimeout.TryPeek(out var timeout)) {
                 if (time.TotalElapsedMs > timeout) {
                     _client.Disconnect("Connection timeout. (ShootAck)");
                     return false;
@@ -127,34 +125,31 @@ namespace wServer.realm.entities
         }
 
         public void AwaitShootAck(long serverTime) {
-            _shootAckTimeout.Enqueue(serverTime + DcThresold);
+            _shootAckTimeout.Enqueue(serverTime + DcThreshold);
         }
 
         public void ShootAckReceived() {
-            long ignored;
-            if (!_shootAckTimeout.TryDequeue(out ignored)) {
+            if (!_shootAckTimeout.TryDequeue(out _)) {
                 _client.Disconnect("One too many ShootAcks");
             }
         }
 
         public void AwaitUpdateAck(long serverTime) {
-            _updateAckTimeout.Enqueue(serverTime + DcThresold);
+            _updateAckTimeout.Enqueue(serverTime + DcThreshold);
         }
 
         public void UpdateAckReceived() {
-            long ignored;
-            if (!_updateAckTimeout.TryDequeue(out ignored)) {
+            if (!_updateAckTimeout.TryDequeue(out _)) {
                 _client.Disconnect("One too many UpdateAcks");
             }
         }
 
         public void AwaitGotoAck(long serverTime) {
-            _gotoAckTimeout.Enqueue(serverTime + DcThresold);
+            _gotoAckTimeout.Enqueue(serverTime + DcThreshold);
         }
 
         public void GotoAckReceived() {
-            long ignored;
-            if (!_gotoAckTimeout.TryDequeue(out ignored)) {
+            if (!_gotoAckTimeout.TryDequeue(out _)) {
                 _client.Disconnect("One too many GotoAcks");
             }
         }
@@ -164,8 +159,7 @@ namespace wServer.realm.entities
         }
 
         public void MoveReceived(RealmTime time, Move pkt) {
-            int tickId;
-            if (!_move.TryDequeue(out tickId)) {
+            if (!_move.TryDequeue(out var tickId)) {
                 _client.Disconnect("One too many MovePackets");
                 return;
             }
@@ -180,35 +174,8 @@ namespace wServer.realm.entities
                 return;
             }
 
-            var lastClientTime = LastClientTime;
-            var lastServerTime = LastServerTime;
             LastClientTime = pkt.Time;
             LastServerTime = time.TotalElapsedMs;
-
-            if (lastClientTime == -1)
-                return;
-
-            _clientTimeLog.Enqueue(pkt.Time - lastClientTime);
-            _serverTimeLog.Enqueue((int)(time.TotalElapsedMs - lastServerTime));
-
-            if (_clientTimeLog.Count < 30)
-                return;
-
-            if (_clientTimeLog.Count > 30) {
-                int ignore;
-                _clientTimeLog.TryDequeue(out ignore);
-                _serverTimeLog.TryDequeue(out ignore);
-            }
-
-            // calculate average
-            var clientDeltaAvg = _clientTimeLog.Sum() / _clientTimeLog.Count;
-            var serverDeltaAvg = _serverTimeLog.Sum() / _serverTimeLog.Count;
-            var dx = clientDeltaAvg > serverDeltaAvg
-                ? clientDeltaAvg - serverDeltaAvg
-                : serverDeltaAvg - clientDeltaAvg;
-            if (dx > 15) {
-                Log.Debug($"TickId: {tickId}, Client Delta: {_clientTimeLog.Sum() / _clientTimeLog.Count}, Server Delta: {_serverTimeLog.Sum() / _serverTimeLog.Count}");
-            }
         }
     }
 }

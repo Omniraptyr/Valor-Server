@@ -63,7 +63,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF0()
+                    LootTemplates.Sor1Perc()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Dagger of the Flaming Stinger", 0.01),

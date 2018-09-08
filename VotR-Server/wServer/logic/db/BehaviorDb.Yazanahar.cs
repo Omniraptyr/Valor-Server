@@ -11,7 +11,7 @@ namespace wServer.logic
             .Init("Yazanahar",
                 new State(
                     new DropPortalOnDeath("Ancient Depths Portal", probability: .75),
-                    new ScaleHP(30000),
+                    new ScaleHP(100000),
                     new HpLessTransition(0.20, "death1"),
                     new SetAltTexture(2),
                     new State(
@@ -189,7 +189,7 @@ namespace wServer.logic
                     )
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SF2()
+                    LootTemplates.Sor3Perc()
                     ),
                 new Threshold(0.010,
                     new ItemLoot("Potion of Life", 0.5),
@@ -408,7 +408,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Potion of Might", 1),
@@ -603,7 +603,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Potion of Life", 1),

@@ -266,7 +266,7 @@ namespace wServer.logic
                          )
                     ),
                                 new MostDamagers(3,
-                    LootTemplates.SFLow()
+                    LootTemplates.SorRare()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Potion of Speed", 1.0),

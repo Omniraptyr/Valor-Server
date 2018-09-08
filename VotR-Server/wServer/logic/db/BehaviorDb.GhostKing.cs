@@ -249,7 +249,7 @@ namespace wServer.logic
                     new BackAndForth(0.5, 3)
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF1()
+                    LootTemplates.Sor2Perc()
                     ),
                 new Threshold(0.18,
                 new ItemLoot("Deathwanderer", 0.001),

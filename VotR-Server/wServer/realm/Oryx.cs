@@ -49,7 +49,7 @@ namespace wServer.realm
             Tuple.Create("Elemental Phantom", (ISetPiece) new Elemental()),
             Tuple.Create("Mad Jester", (ISetPiece) new MadJester()),
             Tuple.Create("Encounter Altar", (ISetPiece) new GarnetJade()),
-            Tuple.Create("Lord Stone Gargoyle", (ISetPiece) new Gargland()),
+            Tuple.Create("Lord Stone Gargoyle", (ISetPiece) new Gargoyle()),
             Tuple.Create("Truvix, the Lord Wanderer", (ISetPiece) new TimePiece()),
             Tuple.Create("Dragon Head", (ISetPiece) new RockDragon()),
             Tuple.Create("Test Egg", (ISetPiece) new TestChicken()),

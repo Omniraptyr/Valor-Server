@@ -36,7 +36,7 @@ namespace common
 
         public void Publish<T>(Channel channel, T val, string target = null) where T : struct
         {
-            Message<T> message = new Message<T>()
+            Message<T> message = new Message<T>
             {
                 InstId = InstanceId,
                 TargetInst = target,
@@ -51,7 +51,18 @@ namespace common
         {
             Database.Sub.Subscribe(channel.ToString(), (s, buff) =>
             {
-                Message<T> message = JsonConvert.DeserializeObject<Message<T>>(
+                var message = JsonConvert.DeserializeObject<Message<T>>(
+                    Encoding.UTF8.GetString(buff));
+                if (message.TargetInst != null &&
+                    message.TargetInst != InstanceId)
+                    return;
+                handler(this, new InterServerEventArgs<T>(message.InstId, message.Content));
+            });
+        }
+
+        public void RemoveHandler<T>(Channel channel, EventHandler<InterServerEventArgs<T>> handler) where T : struct {
+            Database.Sub.Unsubscribe(channel.ToString(), (s, buff) => {
+                var message = JsonConvert.DeserializeObject<Message<T>>(
                     Encoding.UTF8.GetString(buff));
                 if (message.TargetInst != null &&
                     message.TargetInst != InstanceId)

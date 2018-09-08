@@ -59,7 +59,7 @@ namespace wServer.networking.handlers
             {
                 var world = portal.WorldInstance;
 
-                if (player.Owner.raidOpener != player.Name && player.Credits < 3000 &&
+                if (player.Owner.Opener != player.Name && player.Credits < 3000 &&
                    (portal.ObjectType == 0x22c3 || portal.ObjectType == 0x63ae || portal.ObjectType == 0x612b)) {
                     player.SendError("You do not have enough gold to enter this raid!");
                     return;

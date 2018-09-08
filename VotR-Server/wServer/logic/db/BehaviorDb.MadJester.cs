@@ -13,7 +13,7 @@ namespace wServer.logic
 		private _ MadJester = () => Behav()
 			.Init("Mad Jester",
 				new State(
-                    new ScaleHP(20000),
+                    new ScaleHP(70000),
 					new State("Wait",
 						new ConditionalEffect(ConditionEffectIndex.Invincible, true),
 						new PlayerWithinTransition(5, "Walk")
@@ -529,10 +529,10 @@ namespace wServer.logic
 					)
 				),
                  new MostDamagers(3,
-                    LootTemplates.SF3()
+                    LootTemplates.Sor4Perc()
                     ),
                  new MostDamagers(3,
-                    LootTemplates.StatIncreasePotionsLoot()
+                    LootTemplates.StatPots()
                 ),
                 new Threshold(0.10,
                     new TierLoot(10, ItemType.Weapon, 0.1),

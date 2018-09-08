@@ -189,7 +189,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF2()
+                    LootTemplates.Sor3Perc()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Flashburst Spell", 0.0075),

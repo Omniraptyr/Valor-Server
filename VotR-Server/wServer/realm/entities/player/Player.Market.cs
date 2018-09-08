@@ -109,7 +109,7 @@ namespace wServer.realm.entities
 
             Client.Account.LastMarketId = shopItem.Id;
 
-            Log.Info($"{Name} added a {item.DisplayName} to the market for {price} fame");
+            Log.Info($"{Name} added a {item.DisplayName} to the market for {price} gold");
             return MarketResult.Success;
         }
 

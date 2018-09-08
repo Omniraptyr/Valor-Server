@@ -30,8 +30,6 @@ namespace wServer.realm.worlds
         private static readonly ILog Log = LogManager.GetLogger(typeof(World));
         protected static readonly Random Rand = new Random((int)DateTime.Now.Ticks);
 
-        public string raidOpener;
-
         public const int Tutorial = -1;
         public const int Nexus = -2;
         public const int Realm = 1;
@@ -50,11 +48,9 @@ namespace wServer.realm.worlds
         public const int Station = -16;
 
         private RealmManager _manager;
-        public RealmManager Manager
-        {
-            get { return _manager; }
-            internal set
-            {
+        public RealmManager Manager {
+            get => _manager;
+            internal set {
                 _manager = value;
                 if (_manager != null)
                     Init();
@@ -84,16 +80,16 @@ namespace wServer.realm.worlds
 
         private long _elapsedTime;
         private int _totalConnects;
-        public int TotalConnects { get { return _totalConnects; } }
+        public int TotalConnects => _totalConnects;
         public bool Closed { get; set; }
 
         public ConcurrentDictionary<int, Player> Players { get; private set; }
         public ConcurrentDictionary<int, Enemy> Enemies { get; private set; }
         public ConcurrentDictionary<int, Enemy> Quests { get; private set; }
-        public ConcurrentDictionary<int, Pet> Pets { get; private set; } 
+        public ConcurrentDictionary<int, Pet> Pets { get; private set; }
         public ConcurrentDictionary<Tuple<int, byte>, Projectile> Projectiles { get; private set; }
         public ConcurrentDictionary<int, StaticObject> StaticObjects { get; private set; }
-        
+
         public CollisionMap<Entity> EnemiesCollision { get; private set; }
         public CollisionMap<Entity> PlayersCollision { get; private set; }
 
@@ -102,9 +98,8 @@ namespace wServer.realm.worlds
         private static int _entityInc;
 
         private readonly object _deleteLock = new object();
-        
-        public World(ProtoWorld proto)
-        {
+
+        public World(ProtoWorld proto) {
             Setup();
             Id = proto.id;
             Name = proto.name;
@@ -120,14 +115,12 @@ namespace wServer.realm.worlds
             Opener = "";
 
             var rnd = new Random();
-            if (proto.music != null)
-                Music = proto.music[rnd.Next(0, proto.music.Length)];
-            else
-                Music = "Test";
+            Music = proto.music != null
+                ? proto.music[rnd.Next(0, proto.music.Length)]
+                : "Test";
         }
 
-        private void Setup()
-        {
+        private void Setup() {
             Players = new ConcurrentDictionary<int, Player>();
             Enemies = new ConcurrentDictionary<int, Enemy>();
             Quests = new ConcurrentDictionary<int, Enemy>();
@@ -142,35 +135,27 @@ namespace wServer.realm.worlds
             Blocking = 0; // toggles sight block (0 disables sight block)
         }
 
-        public string GetDisplayName()
-        {
-            if (SBName != null && SBName.Length > 0)
-            {
+        public string GetDisplayName() {
+            if (!string.IsNullOrEmpty(SBName)) {
                 return SBName[0] == '{' ? Name : SBName;
             }
-            else
-            {
-                return Name;
-            }
+            return Name;
         }
 
-        public bool IsNotCombatMapArea => Id == Nexus || Id == Vault || Id == GuildHall || Id == ClothBazaar || Id == NexusExplanation ||
-                                            Id == Tinker || Id == MarketPlace;
+        public bool IsNotCombatMapArea => Id == Nexus || Id == Vault || Id == GuildHall 
+                                          || Id == ClothBazaar || Id == NexusExplanation ||Id == Tinker 
+                                          || Id == MarketPlace;
 
-        public virtual bool AllowedAccess(Client client)
-        {
-            return !Closed;
+        public virtual bool AllowedAccess(Client client) {
+            return !Closed || client.Account.Admin;
         }
 
-        public virtual KeyValuePair<IntPoint, TileRegion> [] GetSpawnPoints()
-        {
+        public virtual KeyValuePair<IntPoint, TileRegion>[] GetSpawnPoints() {
             return Map.Regions.Where(t => t.Value == TileRegion.Spawn).ToArray();
         }
-        
-        public virtual World GetInstance(Client client)
-        {
-            World world;
-            DynamicWorld.TryGetWorld(_manager.Resources.Worlds[Name], client, out world);
+
+        public virtual World GetInstance(Client client) {
+            DynamicWorld.TryGetWorld(_manager.Resources.Worlds[Name], client, out var world);
 
             if (world == null)
                 world = new World(_manager.Resources.Worlds[Name]);
@@ -179,19 +164,16 @@ namespace wServer.realm.worlds
             return Manager.AddWorld(world);
         }
 
-        public long GetAge()
-        {
+        public long GetAge() {
             return _elapsedTime;
         }
 
-        protected virtual void Init()
-        {
+        protected virtual void Init() {
             if (IsLimbo) return;
-            
+
             var proto = Manager.Resources.Worlds[Name];
 
-            if (proto.maps != null && proto.maps.Length <= 0)
-            {
+            if (proto.maps != null && proto.maps.Length <= 0) {
                 var template = DungeonTemplates.GetTemplate(Name);
                 if (template == null)
                     throw new KeyNotFoundException($"Template for {Name} not found.");
@@ -199,16 +181,14 @@ namespace wServer.realm.worlds
                 return;
             }
 
-            var map = Rand.Next(0, (proto.maps == null) ? 1 : proto.maps.Length);
+            var map = Rand.Next(0, proto.maps?.Length ?? 1);
             FromWorldMap(new MemoryStream(proto.wmap[map]));
 
             InitShops();
         }
 
-        protected void InitShops()
-        {
-            foreach (var shop in MerchantLists.Shops)
-            {
+        protected void InitShops() {
+            foreach (var shop in MerchantLists.Shops) {
                 var shopItems = new List<ISellableItem>(shop.Value.Item1);
                 var mLocations = Map.Regions
                     .Where(r => shop.Key == r.Value)
@@ -221,12 +201,10 @@ namespace wServer.realm.worlds
                 var rotate = shopItems.Count > mLocations.Length;
 
                 var reloadOffset = 0;
-                foreach (var loc in mLocations)
-                {
+                foreach (var loc in mLocations) {
                     var shopItem = shopItems[0];
                     shopItems.RemoveAt(0);
-                    while (shopItem.ItemId == ushort.MaxValue)
-                    {
+                    while (shopItem.ItemId == ushort.MaxValue) {
                         if (shopItems.Count <= 0)
                             shopItems.AddRange(shop.Value.Item1);
 
@@ -235,8 +213,7 @@ namespace wServer.realm.worlds
                     }
 
                     reloadOffset += 500;
-                    var m = new WorldMerchant(Manager, 0x01ca)
-                    {
+                    var m = new WorldMerchant(Manager, 0x01ca) {
                         ShopItem = shopItem,
                         Item = shopItem.ItemId,
                         Price = shopItem.Price,
@@ -248,7 +225,7 @@ namespace wServer.realm.worlds
                         ReloadOffset = reloadOffset,
                         Rotate = rotate
                     };
-                    
+
                     m.Move(loc.X + .5f, loc.Y + .5f);
                     EnterWorld(m);
 
@@ -257,8 +234,8 @@ namespace wServer.realm.worlds
                 }
             }
         }
-        protected void LoadMap(string embeddedResource)
-        {
+
+        protected void LoadMap(string embeddedResource) {
             if (embeddedResource == null)
                 return;
             var stream = typeof(RealmManager).Assembly.GetManifestResourceStream(embeddedResource);
@@ -267,10 +244,9 @@ namespace wServer.realm.worlds
 
             FromWorldMap(stream);
         }
-        public bool Delete()
-        {
-            using (TimedLock.Lock(_deleteLock))
-            {
+
+        public bool Delete() {
+            using (TimedLock.Lock(_deleteLock)) {
                 if (Players.Count > 0)
                     return false;
 
@@ -289,22 +265,18 @@ namespace wServer.realm.worlds
                 Projectiles = null;
                 StaticObjects = null;
                 Pets = null;
-                
+
                 return true;
             }
         }
 
-
-
-        public void DisposeEntities<T, TU>(ConcurrentDictionary<T, TU> dictionary)
-        {
+        public void DisposeEntities<T, TU>(ConcurrentDictionary<T, TU> dictionary) {
             var entities = dictionary.Values.ToArray();
             foreach (var entity in entities)
                 (entity as Entity).Dispose();
         }
 
-        protected void FromDungeonGen(int seed, DungeonTemplate template)
-        {
+        protected void FromDungeonGen(int seed, DungeonTemplate template) {
             Log.InfoFormat("Loading template for world {0}({1})...", Id, Name);
 
             var gen = new Generator(seed, template);
@@ -313,38 +285,32 @@ namespace wServer.realm.worlds
             ras.Rasterize();
             var dTiles = ras.ExportMap();
 
-            if (Map == null)
-            {
+            if (Map == null) {
                 Map = new Wmap(Manager.Resources.GameData);
                 Interlocked.Add(ref _entityInc, Map.Load(dTiles, _entityInc));
                 if (Blocking == 3)
                     Sight.CalcRegionBlocks(Map);
-            }
-            else
+            } else
                 Map.ResetTiles();
 
             InitMap();
         }
 
-        protected void FromWorldMap(System.IO.Stream dat)
-        {
+        protected void FromWorldMap(Stream dat) {
             Log.InfoFormat("Loading map for world {0}({1})...", Id, Name);
 
-            if (Map == null)
-            {
+            if (Map == null) {
                 Map = new Wmap(Manager.Resources.GameData);
                 Interlocked.Add(ref _entityInc, Map.Load(dat, _entityInc));
                 if (Blocking == 3)
                     Sight.CalcRegionBlocks(Map);
-            }
-            else
+            } else
                 Map.ResetTiles();
 
             InitMap();
         }
 
-        private void InitMap()
-        {
+        private void InitMap() {
             int w = Map.Width, h = Map.Height;
             EnemiesCollision = new CollisionMap<Entity>(0, w, h);
             PlayersCollision = new CollisionMap<Entity>(1, w, h);
@@ -360,141 +326,119 @@ namespace wServer.realm.worlds
                 EnterWorld(i);
         }
 
-        public virtual int EnterWorld(Entity entity)
-        {
-            if (entity is Player)
-            {
-                entity.Id = GetNextEntityId();
-                entity.Init(this);
-                Players.TryAdd(entity.Id, entity as Player);
-                PlayersCollision.Insert(entity);
-                Interlocked.Increment(ref _totalConnects);
-                if (entity.Owner.PvP)
-                {
-                    (entity as Player).PvP = true;
-                    (entity as Player).SendHelp("Be weary adventurer..");
-                }
-                else
-                    (entity as Player).PvP = false;
-            }
-            else if (entity is Enemy)
-            {
-                entity.Id = GetNextEntityId();
-                entity.Init(this);
-                Enemies.TryAdd(entity.Id, entity as Enemy);
-                EnemiesCollision.Insert(entity);
-                if (entity.ObjectDesc.Quest)
-                    Quests.TryAdd(entity.Id, entity as Enemy);
-            }
-            else if (entity is Projectile)
-            {
-                entity.Init(this);
-                var prj = entity as Projectile;
-                Projectiles[new Tuple<int, byte>(prj.ProjectileOwner.Self.Id, prj.ProjectileId)] = prj;
-            }
-            else if (entity is StaticObject)
-            {
-                entity.Id = GetNextEntityId();
-                entity.Init(this);
-                StaticObjects.TryAdd(entity.Id, entity as StaticObject);
-                if (entity is Decoy)
+        public virtual int EnterWorld(Entity entity) {
+            switch (entity) {
+                case Player player:
+                    player.Id = GetNextEntityId();
+                    player.Init(this);
+                    Players.TryAdd(player.Id, player);
+                    PlayersCollision.Insert(player);
+                    Interlocked.Increment(ref _totalConnects);
+                    if (player.Owner.PvP) {
+                        player.PvP = true;
+                        player.SendHelp("You have entered a PvP zone. You can die to other players here.");
+                    } else
+                        player.PvP = false;
+
+                    break;
+                case Enemy enemy:
+                    enemy.Id = GetNextEntityId();
+                    enemy.Init(this);
+                    Enemies.TryAdd(enemy.Id, enemy);
+                    EnemiesCollision.Insert(enemy);
+                    if (enemy.ObjectDesc.Quest)
+                        Quests.TryAdd(enemy.Id, enemy);
+                    break;
+                case Projectile prj:
+                    prj.Init(this);
+                    Projectiles[new Tuple<int, byte>(prj.ProjectileOwner.Self.Id, prj.ProjectileId)] = prj;
+                    break;
+                case StaticObject obj:
+                    obj.Id = GetNextEntityId();
+                    obj.Init(this);
+                    StaticObjects.TryAdd(obj.Id, obj);
+                    if (obj is Decoy)
+                        PlayersCollision.Insert(obj);
+                    else
+                        EnemiesCollision.Insert(obj);
+                    break;
+                case Pet _:
+                    entity.Id = GetNextEntityId();
+                    entity.Init(this);
+                    Pets.TryAdd(entity.Id, entity as Pet);
                     PlayersCollision.Insert(entity);
-                else
-                    EnemiesCollision.Insert(entity);
-            }
-            else if (entity is Pet)
-            {
-                entity.Id = GetNextEntityId();
-                entity.Init(this);
-                Pets.TryAdd(entity.Id, entity as Pet);
-                PlayersCollision.Insert(entity);
+                    break;
             }
             return entity.Id;
         }
 
-        public virtual void LeaveWorld(Entity entity)
-        {
-            if (entity is Player)
-            {
-                Player dummy;
-                Players.TryRemove(entity.Id, out dummy);
-                PlayersCollision.Remove(entity);
+        public virtual void LeaveWorld(Entity entity) {
+            switch (entity) {
+                case Player _: {
+                        Players.TryRemove(entity.Id, out var dummy);
+                        PlayersCollision.Remove(entity);
 
-                // if in trade, cancel it...
-                if (dummy.tradeTarget != null)
-                    dummy.CancelTrade();
+                        // if in trade, cancel it...
+                        if (dummy.tradeTarget != null)
+                            dummy.CancelTrade();
 
-                if (dummy.Pet != null)
-                    LeaveWorld(dummy.Pet);
-            }
-            else if (entity is Enemy)
-            {
-                Enemy dummy;
-                Enemies.TryRemove(entity.Id, out dummy);
-                EnemiesCollision.Remove(entity);
-                if (entity.ObjectDesc.Quest)
-                    Quests.TryRemove(entity.Id, out dummy);
-            }
-            else if (entity is Projectile)
-            {
-                var p = entity as Projectile;
-                Projectiles.TryRemove(new Tuple<int, byte>(p.ProjectileOwner.Self.Id, p.ProjectileId), out p);
-            }
-            else if (entity is StaticObject)
-            {
-                StaticObject dummy;
-                StaticObjects.TryRemove(entity.Id, out dummy);
+                        if (dummy.Pet != null)
+                            LeaveWorld(dummy.Pet);
+                        break;
+                    }
+                case Enemy _: {
+                        Enemies.TryRemove(entity.Id, out var dummy);
+                        EnemiesCollision.Remove(entity);
+                        if (entity.ObjectDesc.Quest)
+                            Quests.TryRemove(entity.Id, out dummy);
+                        break;
+                    }
+                case Projectile prj:
+                    Projectiles.TryRemove(new Tuple<int, byte>(prj.ProjectileOwner.Self.Id, prj.ProjectileId), out prj);
+                    break;
+                case StaticObject _: {
+                        StaticObjects.TryRemove(entity.Id, out var dummy);
 
-                if (entity.ObjectDesc?.BlocksSight == true)
-                {
-                    if (Blocking == 3)
-                        Sight.UpdateRegion(Map, (int)entity.X, (int)entity.Y);
+                        if (entity.ObjectDesc?.BlocksSight == true) {
+                            if (Blocking == 3)
+                                Sight.UpdateRegion(Map, (int)entity.X, (int)entity.Y);
 
-                    foreach (var plr in Players.Values
-                        .Where(p => MathsUtils.DistSqr(p.X, p.Y, entity.X, entity.Y) < Player.RadiusSqr))
-                        plr.Sight.UpdateCount++;
-                }
-                
-                if (entity is Decoy)
-                    PlayersCollision.Remove(entity);
-                else
-                    EnemiesCollision.Remove(entity);
+                            foreach (var plr in Players.Values
+                                .Where(p => MathsUtils.DistSqr(p.X, p.Y, entity.X, entity.Y) < Player.RadiusSqr))
+                                plr.Sight.UpdateCount++;
+                        }
+
+                        if (entity is Decoy)
+                            PlayersCollision.Remove(entity);
+                        else
+                            EnemiesCollision.Remove(entity);
+                        break;
+                    }
+                case Pet _: {
+                        Pets.TryRemove(entity.Id, out var dummy);
+                        PlayersCollision.Remove(entity);
+                        break;
+                    }
             }
-            else if (entity is Pet)
-            {
-                Pet dummy;
-                Pets.TryRemove(entity.Id, out dummy);
-                PlayersCollision.Remove(entity);
-            }
-                
             entity.Dispose();
         }
 
-        public int GetNextEntityId()
-        {
+        public int GetNextEntityId() {
             return Interlocked.Increment(ref _entityInc);
         }
 
-        public Entity GetEntity(int id)
-        {
-            Player ret1;
-            if (Players.TryGetValue(id, out ret1)) return ret1;
-            Enemy ret2;
-            if (Enemies.TryGetValue(id, out ret2)) return ret2;
-            StaticObject ret3;
-            if (StaticObjects.TryGetValue(id, out ret3)) return ret3;
-            return null;
+        public Entity GetEntity(int id) {
+            if (Players.TryGetValue(id, out var plr)) return plr;
+            if (Enemies.TryGetValue(id, out var enemy)) return enemy;
+            return StaticObjects.TryGetValue(id, out var obj) ? obj : null;
         }
 
-        public Player GetUniqueNamedPlayer(string name)
-        {
+        public Player GetUniqueNamedPlayer(string name) {
             if (Database.GuestNames.Contains(name))
                 return null;
 
-            foreach (var i in Players)
-            {
-                if (i.Value.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase))
-                {
+            foreach (var i in Players) {
+                if (i.Value.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase)) {
                     if (!i.Value.NameChosen && !(this is Test))
                         Manager.Database.ReloadAccount(i.Value.Client.Account);
 
@@ -508,10 +452,9 @@ namespace wServer.realm.worlds
             return null;
         }
 
-        public bool IsPassable(double x, double y, bool spawning = false)
-        {
-            var x_ = (int) x;
-            var y_ = (int) y;
+        public bool IsPassable(double x, double y, bool spawning = false) {
+            var x_ = (int)x;
+            var y_ = (int)y;
 
             if (!Map.Contains(x_, y_))
                 return false;
@@ -521,8 +464,7 @@ namespace wServer.realm.worlds
             if (tile.TileDesc.NoWalk)
                 return false;
 
-            if (tile.ObjType != 0 && tile.ObjDesc != null)
-            {
+            if (tile.ObjType != 0 && tile.ObjDesc != null) {
                 if (tile.ObjDesc.FullOccupy || tile.ObjDesc.EnemyOccupySquare || (spawning && tile.ObjDesc.OccupySquare))
                     return false;
             }
@@ -531,157 +473,139 @@ namespace wServer.realm.worlds
         }
 
         public void BroadcastPacket(
-            Packet pkt, 
-            Player exclude, 
-            PacketPriority priority = PacketPriority.Normal)
-        {
+            Packet pkt,
+            Player exclude,
+            PacketPriority priority = PacketPriority.Normal) {
             foreach (var i in Players)
                 if (i.Value != exclude)
                     i.Value.Client.SendPacket(pkt, priority);
         }
 
         public void BroadcastPackets(
-            IEnumerable<Packet> pkts, 
-            Player exclude, 
-            PacketPriority priority = PacketPriority.Normal)
-        {
+            IEnumerable<Packet> pkts,
+            Player exclude,
+            PacketPriority priority = PacketPriority.Normal) {
             foreach (var i in Players)
                 if (i.Value != exclude)
                     i.Value.Client.SendPackets(pkts, priority);
         }
 
         public void BroadcastPacketNearby(
-            Packet pkt, 
-            Entity entity, 
-            Player exclude = null, 
-            PacketPriority priority = PacketPriority.Normal)
-        {
+            Packet pkt,
+            Entity entity,
+            Player exclude = null,
+            PacketPriority priority = PacketPriority.Normal) {
             if (exclude == null)
                 BroadcastPacketConditional(
-                    pkt, 
-                    p => p.DistSqr(entity) < Player.RadiusSqr, 
+                    pkt,
+                    p => p.DistSqr(entity) < Player.RadiusSqr,
                     priority);
             else
                 BroadcastPacketConditional(
-                    pkt, 
-                    p => p != exclude && p.DistSqr(entity) < Player.RadiusSqr, 
+                    pkt,
+                    p => p != exclude && p.DistSqr(entity) < Player.RadiusSqr,
                     priority);
         }
 
         public void BroadcastPacketNearby(
-            Packet pkt, 
-            Position pos, 
-            PacketPriority priority = PacketPriority.Normal)
-        {
+            Packet pkt,
+            Position pos,
+            PacketPriority priority = PacketPriority.Normal) {
             BroadcastPacketConditional(
-                pkt, 
+                pkt,
                 p => MathsUtils.DistSqr(p.X, p.Y, pos.X, pos.Y) < Player.RadiusSqr,
                 priority);
         }
 
         public void BroadcastPacketConditional(
-            Packet pkt, 
-            Predicate<Player> cond, 
-            PacketPriority priority = PacketPriority.Normal)
-        {
+            Packet pkt,
+            Predicate<Player> cond,
+            PacketPriority priority = PacketPriority.Normal) {
             foreach (var i in Players)
                 if (cond(i.Value))
                     i.Value.Client.SendPacket(pkt, priority);
         }
 
-        public void WorldAnnouncement(string msg)
-        {
-            var announcement = string.Concat("<ANNOUNCMENT> ", msg);
+        public void WorldAnnouncement(string msg) {
+            var announcement = string.Concat("<ANNOUNCEMENT> ", msg);
             foreach (var i in Players)
                 i.Value.SendInfo(announcement);
         }
-        public void QuakeToWorld(World newWorld)
-        {
+
+        public void QuakeToWorld(World newWorld) {
             if (!Persist || this is Realm)
                 Closed = true;
 
-            BroadcastPacket(new ShowEffect()
-            {
+            BroadcastPacket(new ShowEffect {
                 EffectType = EffectType.Earthquake
             }, null, PacketPriority.Low);
-            
-            Timers.Add(new WorldTimer(8000, (w, t) =>
-            {
-                var rcpNotPaused = new Reconnect()
-                {
+
+            Timers.Add(new WorldTimer(8000, (w, t) => {
+                var rcpNotPaused = new Reconnect {
                     Host = "",
                     Port = 2050,
                     GameId = newWorld.Id,
                     Name = newWorld.SBName
                 };
 
-                var rcpPaused = new Reconnect()
-                {
+                var rcpPaused = new Reconnect {
                     Host = "",
                     Port = 2050,
-                    GameId = World.Nexus,
+                    GameId = Nexus,
                     Name = "Nexus"
                 };
 
                 foreach (var plr in w.Players.Values)
                     plr.Client.Reconnect(
-                        plr.HasConditionEffect(ConditionEffects.Paused) && plr.SpectateTarget == null ? 
+                        plr.HasConditionEffect(ConditionEffects.Paused) && plr.SpectateTarget == null ?
                         rcpPaused : rcpNotPaused);
             }));
 
             if (!Persist)
-                Timers.Add(new WorldTimer(20000, (w2, t2) =>
-                {
+                Timers.Add(new WorldTimer(20000, (w2, t2) => {
                     // to ensure people get kicked out of world
                     foreach (var plr in w2.Players.Values)
                         plr.Client.Disconnect();
                 }));
         }
 
-        public void ChatReceived(Player player, string text)
-        {
+        public void ChatReceived(Player player, string text) {
             foreach (var en in Enemies)
                 en.Value.OnChatTextReceived(player, text);
             foreach (var en in StaticObjects)
                 en.Value.OnChatTextReceived(player, text);
         }
 
-        public Position? GetRegionPosition(TileRegion region)
-        {
+        public Position? GetRegionPosition(TileRegion region) {
             if (Map.Regions.All(t => t.Value != region))
                 return null;
 
             var reg = Map.Regions.Single(t => t.Value == region);
-            return new Position() { X = reg.Key.X, Y = reg.Key.Y };
+            return new Position { X = reg.Key.X, Y = reg.Key.Y };
         }
 
-        public virtual void Tick(RealmTime time)
-        {
+        public virtual void Tick(RealmTime time) {
             // if Tick is overrided and you make a call to this function
             // make sure not to do anything after the call (or at least check)
             // as it is possible for the world to have been removed at that point.
 
-            try
-            {
+            try {
                 _elapsedTime += time.ElapsedMsDelta;
 
                 if (IsLimbo) return;
 
-                if (!Persist && _elapsedTime > 60000 && Players.Count <= 0)
-                {
+                if (!Persist && _elapsedTime > 60000 && Players.Count <= 0) {
                     Delete();
                     return;
                 }
 
 
                 for (var i = Timers.Count - 1; i >= 0; i--)
-                    try
-                    {
+                    try {
                         if (Timers[i].Tick(this, time))
                             Timers.RemoveAt(i);
                     }
-                    catch (Exception e)
-                    {
+                    catch (Exception e) {
                         var msg = e.Message + "\n" + e.StackTrace;
                         Log.Error(msg);
                         Timers.RemoveAt(i);
@@ -689,7 +613,7 @@ namespace wServer.realm.worlds
 
                 foreach (var i in Players)
                     i.Value.Tick(time);
-                
+
                 /*(if (EnemiesCollision != null)
                 {
                     foreach (var i in EnemiesCollision.GetActiveChunks(PlayersCollision))
@@ -707,29 +631,23 @@ namespace wServer.realm.worlds
                 foreach (var i in Projectiles)
                     i.Value.Tick(time);
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 var msg = e.Message + "\n" + e.StackTrace;
                 Log.Error(msg);
             }
         }
 
-        public void TickLogic(RealmTime time)
-        {
-            using (TimedLock.Lock(_deleteLock))
-            {
+        public void TickLogic(RealmTime time) {
+            using (TimedLock.Lock(_deleteLock)) {
                 if (Deleted)
                     return;
 
-                if (EnemiesCollision != null)
-                {
+                if (EnemiesCollision != null) {
                     foreach (var i in EnemiesCollision.GetActiveChunks(PlayersCollision))
                         i.Tick(time);
                     foreach (var i in StaticObjects.Where(x => x.Value is Decoy))
                         i.Value.Tick(time);
-                }
-                else
-                {
+                } else {
                     foreach (var i in Enemies)
                         i.Value.Tick(time);
                     foreach (var i in StaticObjects)
@@ -740,13 +658,12 @@ namespace wServer.realm.worlds
                     i.Value.Tick(time);
             }
         }
-        
-        public Projectile GetProjectile(int objectId, int bulletId)
-        {
+
+        public Projectile GetProjectile(int objectId, int bulletId) {
             var entity = GetEntity(objectId);
             return entity != null
-                ? ((IProjectileOwner) entity).Projectiles[bulletId]
-                : Projectiles.SingleOrDefault(p => 
+                ? ((IProjectileOwner)entity).Projectiles[bulletId]
+                : Projectiles.SingleOrDefault(p =>
                     p.Value.ProjectileOwner.Self.Id == objectId &&
                     p.Value.ProjectileId == bulletId).Value;
         }

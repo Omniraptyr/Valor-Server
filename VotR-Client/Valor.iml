@@ -3,7 +3,7 @@
   <component name="FlexBuildConfigurationManager" active="Main">
     <configurations>
       <configuration name="Main" main-class="WebMain" output-file="Valor.swf" output-folder="$MODULE_DIR$/bin-debug">
-        <dependencies target-player="18.0">
+        <dependencies target-player="18.0" framework-linkage="Merged">
           <entries>
             <entry library-id="680e46ac-f70a-4e8c-9acf-cc4b34cf31d2">
               <dependency linkage="Merged" />

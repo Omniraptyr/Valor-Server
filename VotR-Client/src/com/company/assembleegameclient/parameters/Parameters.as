@@ -12,8 +12,8 @@ import flash.utils.Dictionary;
 
 public class Parameters {
 
-    public static const BUILD_VERSION:String = "37";
-    public static const MINOR_VERSION:String = "74";
+    public static const BUILD_VERSION:String = "73";
+    public static const MINOR_VERSION:String = "73";
     public static const FULL_BUILD:String = BUILD_VERSION + "." + MINOR_VERSION;
     public static const ENABLE_ENCRYPTION:Boolean = true;
     public static const PORT:int = 2050;
@@ -27,7 +27,6 @@ public class Parameters {
     public static const ERROR_CHAT_NAME:String = "*Error*";
     public static const HELP_CHAT_NAME:String = "*Help*";
     public static const GUILD_CHAT_NAME:String = "*Guild*";
-    public static const NEWS_TIMESTAMP_DEFAULT:Number = 1.1;
     public static const NAME_CHANGE_PRICE:int = 5000;
     public static const GUILD_CREATION_PRICE:int = 1000;
     public static const TUTORIAL_GAMEID:int = -1;
@@ -185,7 +184,7 @@ public class Parameters {
         setDefault("clickForGold", false);
         setDefault("contextualPotionBuy", true);
         setDefault("inventorySwap", true);
-        setDefault("hideLockList",false);
+        setDefault("hideList", 0);
         setDefault("particleEffect", false);
         setDefault("uiQuality", true);
         setDefault("disableEnemyParticles", false);
