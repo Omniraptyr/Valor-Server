@@ -23,11 +23,11 @@ namespace wServer.networking.handlers
             var newX = packet.NewPosition.X;
             var newY = packet.NewPosition.Y;
 
-            if (Math.Abs(MathsUtils.DistSqr(newX, newY, player.X, player.Y))
+            /*if (Math.Abs(MathsUtils.DistSqr(newX, newY, player.X, player.Y))
                 > player.Stats.GetTilesPerSecSqr() * 1.05) {
                 player.Client.Disconnect("Moving too fast");
                 return;
-            }
+            }*/
 
             if (newX != -1 && newX != player.X ||
                   newY != -1 && newY != player.Y) {
