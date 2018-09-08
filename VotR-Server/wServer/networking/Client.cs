@@ -46,8 +46,6 @@ namespace wServer.networking
             internal set => _state = value;
         }
 
-        private int _pktCount;
-        private Timer _timer;
         public int Id { get; internal set; }
         public DbAccount Account { get; internal set; }
         public DbChar Character { get; internal set; }
@@ -75,8 +73,6 @@ namespace wServer.networking
             SendKey = new RC4(ServerKey);
 
             _handler = new CommHandler(this, send, receive);
-            _timer = new Timer(60000) { AutoReset = true, Enabled = true };
-            _timer.Elapsed += (o, e) => { _pktCount = 0; };
         }
 
         public void Reset() {
@@ -84,7 +80,6 @@ namespace wServer.networking
             SendKey = new RC4(ServerKey);
 
             Id = 0; // needed so that inbound packets that are currently queued are discarded.
-            _pktCount = 0;
             Account = null;
             Character = null;
             Player = null;
@@ -145,18 +140,11 @@ namespace wServer.networking
                 if (State == ProtocolState.Disconnected)
                     return;
 
-                if (_pktCount > 777) {
-                    Disconnect("Too many packets");
-                    _pktCount = 0;
-                    return;
-                }
-
                 try {
                     if (!PacketHandlers.Handlers.TryGetValue(pkt.ID, out var handler))
                         return;
 
                     handler.Handle(this, (IncomingMessage)pkt);
-                    _pktCount++;
                 }
                 catch (Exception) {
                     Disconnect("Packet handling error.");
