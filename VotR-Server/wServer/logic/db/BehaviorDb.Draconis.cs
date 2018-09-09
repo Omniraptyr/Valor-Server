@@ -198,7 +198,7 @@ namespace wServer.logic
                     new State("UnsetEffect")
                 ),
                new MostDamagers(3,
-                        LootTemplates.SF1()
+                        LootTemplates.Sor2Perc()
                     ),
                 new Threshold(0.15,
                 new TierLoot(12, ItemType.Weapon, 0.045),
@@ -223,7 +223,7 @@ namespace wServer.logic
                     new State("UnsetEffect")
                 ),
                new MostDamagers(3,
-                        LootTemplates.SF1()
+                        LootTemplates.Sor2Perc()
                     ),
                 new Threshold(0.15,
                 new TierLoot(12, ItemType.Weapon, 0.045),
@@ -248,7 +248,7 @@ namespace wServer.logic
                     new State("UnsetEffect")
                 ),
                new MostDamagers(3,
-                        LootTemplates.SF1()
+                        LootTemplates.Sor2Perc()
                     ),
                 new Threshold(0.15,
                 new TierLoot(12, ItemType.Weapon, 0.045),
@@ -275,7 +275,7 @@ namespace wServer.logic
                     new State("UnsetEffect")
                 ),
                 new MostDamagers(3,
-                        LootTemplates.SF1()
+                        LootTemplates.Sor2Perc()
                     ),
                 new Threshold(0.15,
                 new TierLoot(12, ItemType.Weapon, 0.045),
@@ -910,7 +910,7 @@ namespace wServer.logic
 
                 ),
                                 new MostDamagers(3,
-                    LootTemplates.SF3()
+                    LootTemplates.Sor4Perc()
                     ),
                 new Threshold(0.15,
                     new ItemLoot("Potion of Dexterity", 0.3),

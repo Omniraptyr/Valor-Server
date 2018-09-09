@@ -27,12 +27,12 @@ namespace wServer.networking
 
     public partial class Client
     {
-        static readonly ILog Log = LogManager.GetLogger(typeof(Client));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(Client));
 
-        public RealmManager Manager { get; private set; }
+        public RealmManager Manager { get; }
 
-        static readonly byte[] ServerKey = new byte[] { 0x61, 0x2a, 0x80, 0x6c, 0xac, 0x78, 0x11, 0x4b, 0xa5, 0x01, 0x3c, 0xb5, 0x31 };
-        static byte[] _clientKey = new byte[] { 0x81, 0x1f, 0x50, 0x39, 0x1f, 0xb4, 0x55, 0x89, 0x9c, 0xa9, 0xd7, 0x4b, 0x72 };
+        private static readonly byte[] ServerKey = { 0x61, 0x2a, 0x80, 0x6c, 0xac, 0x78, 0x11, 0x4b, 0xa5, 0x01, 0x3c, 0xb5, 0x31 };
+        private static byte[] _clientKey = { 0x81, 0x1f, 0x50, 0x39, 0x1f, 0xb4, 0x55, 0x89, 0x9c, 0xa9, 0xd7, 0x4b, 0x72 };
 
         public RC4 ReceiveKey { get; private set; }
         public RC4 SendKey { get; private set; }
@@ -41,10 +41,9 @@ namespace wServer.networking
         private readonly CommHandler _handler;
 
         private volatile ProtocolState _state;
-        public ProtocolState State
-        {
-            get { return _state; }
-            internal set { _state = value; }
+        public ProtocolState State {
+            get => _state;
+            internal set => _state = value;
         }
 
         public int Id { get; internal set; }
@@ -65,8 +64,7 @@ namespace wServer.networking
 
         public Client(Server server, RealmManager manager,
             SocketAsyncEventArgs send, SocketAsyncEventArgs receive,
-            byte[] clientKey)
-        {
+            byte[] clientKey) {
             _server = server;
             Manager = manager;
             _clientKey = clientKey;
@@ -77,8 +75,7 @@ namespace wServer.networking
             _handler = new CommHandler(this, send, receive);
         }
 
-        public void Reset()
-        {
+        public void Reset() {
             ReceiveKey = new RC4(_clientKey);
             SendKey = new RC4(ServerKey);
 
@@ -94,16 +91,13 @@ namespace wServer.networking
             _handler.Reset();
         }
 
-        public void BeginHandling(Socket skt)
-        {
+        public void BeginHandling(Socket skt) {
             Skt = skt;
 
-            try
-            {
+            try {
                 IP = ((IPEndPoint)skt.RemoteEndPoint).Address.ToString();
             }
-            catch (Exception e)
-            {
+            catch (Exception) {
                 IP = "";
             }
 
@@ -111,49 +105,46 @@ namespace wServer.networking
             _handler.BeginHandling(Skt);
         }
 
-        public void SendPacket(Packet pkt, PacketPriority priority = PacketPriority.Normal)
-        {
-            using (TimedLock.Lock(DcLock))
-            {
+        public void SendPacket(Packet pkt, PacketPriority priority = PacketPriority.Normal) {
+            using (TimedLock.Lock(DcLock)) {
                 if (State != ProtocolState.Disconnected)
                     _handler.SendPacket(pkt, priority);
             }
         }
 
-        public void SendPackets(IEnumerable<Packet> pkts, PacketPriority priority = PacketPriority.Normal)
-        {
-            using (TimedLock.Lock(DcLock))
-            {
+        public void SendPackets(IEnumerable<Packet> pkts, PacketPriority priority = PacketPriority.Normal) {
+            using (TimedLock.Lock(DcLock)) {
                 if (State != ProtocolState.Disconnected)
                     _handler.SendPackets(pkts, priority);
             }
         }
 
-        public bool IsReady()
-        {
-            if (State == ProtocolState.Disconnected)
-                return false;
-
-            if (State == ProtocolState.Ready && Player?.Owner == null)
-                return false;
+        public bool IsReady() {
+            switch (State)
+            {
+                case ProtocolState.Disconnected:
+                case ProtocolState.Ready when Player?.Owner == null:
+                    return false;
+            }
 
             return true;
         }
 
-        public bool CheckForLag()
-        {
+        public bool CheckForLag() {
             IsLagging = _handler.IsLagging();
             return IsLagging;
         }
 
         internal void ProcessPacket(Packet pkt) {
-            lock (DcLock) {
+            using (TimedLock.Lock(DcLock)) {
                 if (State == ProtocolState.Disconnected)
                     return;
 
                 try {
-                    if (PacketHandlers.Handlers.TryGetValue(pkt.ID, out var handler))
-                        handler.Handle(this, (IncomingMessage)pkt);
+                    if (!PacketHandlers.Handlers.TryGetValue(pkt.ID, out var handler))
+                        return;
+
+                    handler.Handle(this, (IncomingMessage)pkt);
                 }
                 catch (Exception) {
                     Disconnect("Packet handling error.");
@@ -161,10 +152,8 @@ namespace wServer.networking
             }
         }
 
-        public void Reconnect(Reconnect pkt)
-        {
-            if (Account == null)
-            {
+        public void Reconnect(Reconnect pkt) {
+            if (Account == null) {
                 Disconnect("Tried to reconnect an client with a null account...");
                 return;
             }
@@ -174,10 +163,8 @@ namespace wServer.networking
             SendPacket(pkt);
         }
 
-        public async void SendFailure(string text, int errorId = 0)
-        {
-            SendPacket(new Failure()
-            {
+        public async void SendFailure(string text, int errorId = 0) {
+            SendPacket(new Failure() {
                 ErrorId = errorId,
                 ErrorDescription = text
             });
@@ -188,21 +175,18 @@ namespace wServer.networking
             Disconnect();
         }
 
-        public async void SendFailureDialog(string title, string description)
-        {
+        public async void SendFailureDialog(string title, string description) {
             // Note: Client is programmed to check the build parameter
             // of the json object. If it doesn't match what the client
             // has, the error dialog will be an update client dialog
             // instead.
 
-            var jsonMsg = new FailureJsonDialogMessage()
-            {
+            var jsonMsg = new FailureJsonDialogMessage() {
                 build = Manager.Config.serverSettings.version,
                 title = title,
                 description = description
             };
-            SendPacket(new Failure()
-            {
+            SendPacket(new Failure() {
                 ErrorId = Failure.JsonDialogDisconnect,
                 ErrorDescription = JsonConvert.SerializeObject(jsonMsg)
             });
@@ -213,10 +197,8 @@ namespace wServer.networking
             Disconnect();
         }
 
-        public void Disconnect(string reason = "")
-        {
-            lock (DcLock)
-            {
+        public void Disconnect(string reason = "") {
+            lock (DcLock) {
                 if (State == ProtocolState.Disconnected)
                     return;
 
@@ -227,16 +209,13 @@ namespace wServer.networking
                         Account?.Name ?? " ", IP, reason);
 
                 if (Account != null)
-                    try
-                    {
-                        Save().ContinueWith(task =>
-                        {
+                    try {
+                        Save().ContinueWith(task => {
                             Manager.Disconnect(this);
                             _server.Disconnect(this);
                         });
                     }
-                    catch (Exception e)
-                    {
+                    catch (Exception e) {
                         var msg = $"{e.Message}\n{e.StackTrace}";
                         Log.Error(msg);
                     }
@@ -262,8 +241,7 @@ namespace wServer.networking
 #pragma warning restore 4014
         }
 
-        public void Dispose()
-        {
+        public void Dispose() {
             // nothing to do here
         }
     }

@@ -213,7 +213,7 @@ namespace wServer.logic
                            )
                        ),
                     new MostDamagers(3,
-                        LootTemplates.SF1()
+                        LootTemplates.Sor2Perc()
                     ),
                      new MostDamagers(3,
                          new ItemLoot("Potion of Restoration", 1)

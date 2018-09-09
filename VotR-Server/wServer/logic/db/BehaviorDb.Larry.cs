@@ -10,6 +10,7 @@ namespace wServer.logic
         private _ Larry = () => Behav()
             .Init("Larry Gigsman, the Superhuman",
                 new State(
+                    new ScaleHP(100000),
                     new State("default",
                         new Wander(0.05),
                         new PlayerWithinTransition(8, "taunt")

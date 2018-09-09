@@ -758,7 +758,7 @@ namespace wServer.logic
         .Init("AH The Sincryer",
                 new State(
                     new DropPortalOnDeath("The Nontridus Portal", 100, timeout: 180),
-                    new ScaleHP(30000),
+                    new ScaleHP(100000),
                     new HpLessTransition(0.14, "spookded"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -905,7 +905,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF3()
+                    LootTemplates.Sor4Perc()
                     ),
                     new Threshold(0.1,
                        new ItemLoot("Onrane Cache", 0.25),
@@ -918,7 +918,7 @@ namespace wServer.logic
            .Init("AH ULTRA The Sincryer",
                 new State(
                     new DropPortalOnDeath("Ultra The Nontridus Portal", 100, timeout: 180),
-                    new ScaleHP(25000),
+                    new ScaleHP(125000),
                     new HpLessTransition(0.14, "spookded"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -1073,7 +1073,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                     new Threshold(0.1,
                        new TierLoot(7, ItemType.Ring, 0.06),
@@ -1164,7 +1164,7 @@ namespace wServer.logic
                     LootTemplates.FabledItemsLoot2()
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.1,
                 new TierLoot(7, ItemType.Ring, 0.08),
@@ -1196,7 +1196,7 @@ namespace wServer.logic
                     LootTemplates.FabledItemsLoot2()
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.1,
                 new TierLoot(7, ItemType.Ring, 0.085),
@@ -1240,7 +1240,7 @@ namespace wServer.logic
                     LootTemplates.FabledItemsLoot1()
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.1,
                     new TierLoot(7, ItemType.Ring, 0.08),
@@ -1270,7 +1270,7 @@ namespace wServer.logic
                         )
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                 new MostDamagers(3,
                     LootTemplates.FabledItemsLootUltra()
@@ -1301,7 +1301,7 @@ namespace wServer.logic
                     new State("UnsetEffect")
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.15,
                 new ItemLoot("Gold Cache", 0.35),
@@ -1341,7 +1341,7 @@ namespace wServer.logic
             )
         .Init("AH The Vision of Aldragine",
                 new State(
-                    new ScaleHP(25000),
+                    new ScaleHP(125000),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new DropPortalOnDeath("Core of the Hideout Portal", 100, timeout: 180),
                     new HpLessTransition(0.15, "spookded"),
@@ -1480,7 +1480,7 @@ namespace wServer.logic
                     LootTemplates.FabledItemsLoot2()
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                     new Threshold(0.1,
                         new TierLoot(7, ItemType.Ring, 0.08),
@@ -1496,7 +1496,7 @@ namespace wServer.logic
             )
         .Init("AH ULTRA The Vision of Aldragine",
                 new State(
-                    new ScaleHP(25000),
+                    new ScaleHP(125000),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new DropPortalOnDeath("Ultra Core of the Hideout Portal", 100, timeout: 180),
                     new HpLessTransition(0.15, "spookded"),
@@ -1643,7 +1643,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                     new Threshold(0.1,
                         new TierLoot(7, ItemType.Ring, 0.08),
@@ -2018,7 +2018,7 @@ namespace wServer.logic
                 )
         .Init("AH Aldragine",
                 new State(
-                    new ScaleHP(25000),
+                    new ScaleHP(150000),
                     new HpLessTransition(0.13, "ded"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -2401,7 +2401,7 @@ namespace wServer.logic
                 )
         .Init("AH ULTRA Aldragine",
                 new State(
-                    new ScaleHP(25000),
+                    new ScaleHP(175000),
                     new HpLessTransition(0.13, "ded"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),

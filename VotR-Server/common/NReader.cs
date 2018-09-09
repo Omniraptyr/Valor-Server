@@ -35,13 +35,13 @@ namespace common
         }
         public override float ReadSingle()
         {
-            var arr = base.ReadBytes(4);
+            var arr = ReadBytes(4);
             Array.Reverse(arr);
             return BitConverter.ToSingle(arr, 0);
         }
         public override double ReadDouble()
         {
-            var arr = base.ReadBytes(8);
+            var arr = ReadBytes(8);
             Array.Reverse(arr);
             return BitConverter.ToDouble(arr, 0);
         }

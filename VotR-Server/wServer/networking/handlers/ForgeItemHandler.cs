@@ -62,392 +62,401 @@ namespace wServer.networking.handlers
         {
             var rnd = new Random();
             ushort itemValue = 0x0;
-            if (packet.SorSlot.ObjectType == 18918)
+            switch (packet.SorSlot.ObjectType)
             {
-                switch (packet.ShardSlot.ObjectType)
+                case 18918:
                 {
-                    case 0x68fa:
-                        itemValue = cosmicList[rnd.Next(cosmicList.Length)];
-                        break;
-                    case 0x68fb:
-                        itemValue = furyList[rnd.Next(furyList.Length)];
-                        break;
-                    case 0x68fc:
-                        itemValue = zolList[rnd.Next(zolList.Length)];
-                        break;
-                    case 0x47c4:
-                        itemValue = 0x47bd;                  
-                        break;
-                    case 0x1628:
-                        itemValue = 0x61b7;
-                        break;
-                    case 0x1463:
-                        itemValue = 0x61c5;
-                        break;
-                    case 0x61d8:
-                        itemValue = 0x61d7;
-                        break;
-                    case 0x61b4:
-                        itemValue = stoneList[rnd.Next(stoneList.Length)];
-                        break;
-                    case 0x611f:
-                        itemValue = ancientList[rnd.Next(ancientList.Length)];
-                        break;
-                    default:
-                        client.Player.SendError("You can't forge anything with these items.");
-                        itemValue = 0x0;
-                        break;
+                    switch (packet.ShardSlot.ObjectType)
+                    {
+                        case 0x68fa:
+                            itemValue = cosmicList[rnd.Next(cosmicList.Length)];
+                            break;
+                        case 0x68fb:
+                            itemValue = furyList[rnd.Next(furyList.Length)];
+                            break;
+                        case 0x68fc:
+                            itemValue = zolList[rnd.Next(zolList.Length)];
+                            break;
+                        case 0x61b4:
+                            itemValue = stoneList[rnd.Next(stoneList.Length)];
+                            break;
+                        case 0x611f:
+                            itemValue = ancientList[rnd.Next(ancientList.Length)];
+                            break;
+                        case 0x47c4:
+                            itemValue = 0x47bd;                  
+                            break;
+                        case 0x1628:
+                            itemValue = 0x61b7;
+                            break;
+                        case 0x1463:
+                            itemValue = 0x61c5;
+                            break;
+                        case 0x61d8:
+                            itemValue = 0x61d7;
+                            break;
+                        default:
+                            client.Player.SendError("You can't forge anything with these items.");
+                            itemValue = 0x0;
+                            break;
 
+                    }
+
+                    if (itemValue == 0x0) return;
+                    var item = client.Player.Manager.Resources.GameData.Items[itemValue];
+                    var itemStr = (string.IsNullOrEmpty(item.DisplayId)
+                        ? item.ObjectId
+                        : item.DisplayId);
+
+                    client.Player.SendError("You have forged the following item: '" + itemStr + "'!");
+                    client.Player.Inventory[packet.SorSlot.SlotId] = item;
+                    client.Player.Inventory[packet.ShardSlot.SlotId] = null;
+
+                    var guildId = client.Account.GuildId;
+                    if (guildId > 0) {
+                        foreach (var w in client.Manager.Worlds.Values) {
+                            foreach (var p in w.Players.Values) {
+                                if (p.Client.Account.GuildId == guildId && p != client.Player) {
+                                    p.SendGuildAnnounce(client.Player.Name + " has just forged the following item: '" + itemStr + "'!");
+                                }
+                            }
+                        }
+
+                        foreach (var i in client.Player.Owner.Players.Values) {
+                            if (i.Client.Account.GuildId != guildId) {
+                                i.SendInfo(client.Player.Name + " has just forged the following item: '" + itemStr + "'!");
+                            }
+                        }
+                    }
+                    break;
                 }
 
-                if (itemValue == 0x0) return;
-                var item = client.Player.Manager.Resources.GameData.Items[itemValue];
-                var itemStr = (string.IsNullOrEmpty(item.DisplayId)
-                    ? item.ObjectId
-                    : item.DisplayId);
+                case 25799:
+                {
 
-                client.Player.SendError("You have forged the following item: '" + itemStr + "'!");
-                client.Player.Inventory[packet.SorSlot.SlotId] = item;
-                client.Player.Inventory[packet.ShardSlot.SlotId] = null;
+                    if (InArray(allLegendaries, packet.ShardSlot.ObjectType))
+                    {
+                        if(client.Account.Elite != 1)
+                        {
+                            if (client.Player.Credits >= 75000)
+                            {
+                                client.Player.Manager.Database.UpdateCredit(client.Account, -75000);
+                                client.Player.Credits = client.Account.Credits - 75000;
+                                client.Player.ForceUpdate(client.Player.Credits);
 
-                var guildId = client.Account.GuildId;
-                if (guildId > 0) {
-                    foreach (var w in client.Manager.Worlds.Values) {
-                        foreach (var p in w.Players.Values) {
-                            if (p.Client.Account.GuildId == guildId) {
-                                p.SendGuildAnnounce(client.Player.Name + " has just forged the following item: '" + itemStr + "'!");
+                                itemValue = allLegendaries2[rnd.Next(allLegendaries2.Length)];
+                            }
+                            else
+                            {
+                                client.Player.SendError("You do not have 75K Gold to reroll this legendary!");
+                            }
+                        }
+                        else
+                        {
+                            if (client.Player.Onrane >= 30)
+                            {
+                                client.Player.Manager.Database.UpdateOnrane(client.Account, -30);
+                                client.Player.Onrane = client.Account.Onrane - 30;
+                                client.Player.ForceUpdate(client.Player.Onrane);
+
+                                itemValue = allLegendaries2[rnd.Next(allLegendaries2.Length)];
+                            }
+                            else
+                            {
+                                client.Player.SendError("You do not have 30 Onrane to reroll this legendary!");
                             }
                         }
                     }
 
-                    foreach (var i in client.Player.Owner.Players.Values) {
-                        if (i.Client.Account.GuildId != guildId) {
-                            i.SendInfo(client.Player.Name + " has just forged the following item: '" + itemStr + "'!");
-                        }
-                    }
-                }
-            }
-            else if (packet.SorSlot.ObjectType == 25799)
-            {
 
-                if (InArray(allLegendaries, packet.ShardSlot.ObjectType))
-                {
-                    if(client.Account.Elite != 1)
+                    if (itemValue == 0x0) return;
+                    var item = client.Player.Manager.Resources.GameData.Items[itemValue];
+                    client.Player.SendError("You have rerolled the item \"" + (string.IsNullOrEmpty(item.DisplayId) ?
+                                                item.ObjectId
+                                                : item.DisplayId) + "\"");
+                    client.Player.Inventory[packet.SorSlot.SlotId] = item;
+                    client.Player.Inventory[packet.ShardSlot.SlotId] = null;
+                    break;
+                }
+
+                default:
+                    if (packet.SorSlot.ObjectType != 18918 || packet.SorSlot.ObjectType != 0x64c7)
                     {
-                        if (client.Player.Credits >= 75000)
+                        switch (packet.SorSlot.ObjectType)
                         {
-                            client.Player.Manager.Database.UpdateCredit(client.Account, -75000);
-                            client.Player.Credits = client.Account.Credits - 75000;
-                            client.Player.ForceUpdate(client.Player.Credits);
+                            //Life
+                            case 0xae9:
+                                if (packet.ShardSlot.ObjectType == 0xae9)
+                                {
+                                    itemValue = 0x236E;
+                                }
+                                break;
+                            //Mana
+                            case 0xaea:
+                                if (packet.ShardSlot.ObjectType == 0xaea)
+                                {
+                                    itemValue = 0x236F;
+                                }
+                                break;
+                            //Attack
+                            case 0xa1f:
+                                if (packet.ShardSlot.ObjectType == 0xa1f)
+                                {
+                                    itemValue = 0x2368;
+                                }
+                                break;
+                            //Defense
+                            case 0xa20:
+                                if (packet.ShardSlot.ObjectType == 0xa20)
+                                {
+                                    itemValue = 0x2369;
+                                }
+                                break;
+                            //Speed
+                            case 0xa21:
+                                if (packet.ShardSlot.ObjectType == 0xa21)
+                                {
+                                    itemValue = 0x236A;
+                                }
 
-                            itemValue = allLegendaries2[rnd.Next(allLegendaries2.Length)];
+                                break;
+                            //Vit
+                            case 0xa34:
+                                if (packet.ShardSlot.ObjectType == 0xa34)
+                                {
+                                    itemValue = 0x236B;
+                                }
+                                break;
+                            //wis
+                            case 0xa35:
+                                if (packet.ShardSlot.ObjectType == 0xa35)
+                                {
+                                    itemValue = 0x236C;
+                                }
+                                break;
+                            //Dex
+                            case 0xa4c:
+                                if (packet.ShardSlot.ObjectType == 0xa4c)
+                                {
+                                    itemValue = 0x236D;
+                                }
+                                break;
+                            //mgt
+                            case 0x5822:
+                                if (packet.ShardSlot.ObjectType == 0x5822)
+                                {
+                                    itemValue = 0x61C9;
+                                }
+                                break;
+                            //luc
+                            case 0x5823:
+                                if (packet.ShardSlot.ObjectType == 0x5823)
+                                {
+                                    itemValue = 0x61cb;
+                                }
+                                break;
+                            //res
+                            case 0x68fd:
+                                if (packet.ShardSlot.ObjectType == 0x68fd)
+                                {
+                                    itemValue = 0x61ca;
+                                }
+                                break;
+                            //prot
+                            case 0x68fe:
+                                if (packet.ShardSlot.ObjectType == 0x68fe)
+                                {
+                                    itemValue = 0x61cc;
+                                }
+                                break;
+
+
+
+
+
+                            case 0x236E:
+                                if (packet.ShardSlot.ObjectType == 0x236E && client.Player.Onrane >= 1)
+                                {
+                                    itemValue = 0x62a5;
+                                    client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
+                                    client.Player.Onrane = client.Account.Onrane - 1;
+                                    client.Player.ForceUpdate(client.Player.Onrane);
+                                }
+                                else
+                                {
+                                    client.Player.SendError("You do not have enough onrane.");
+                                }
+                                break;
+                            //Mana
+                            case 0x236F:
+                                if (packet.ShardSlot.ObjectType == 0x236F && client.Player.Onrane >= 1)
+                                {
+
+                                    itemValue = 0x619c;
+                                    client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
+                                    client.Player.Onrane = client.Account.Onrane - 1;
+                                    client.Player.ForceUpdate(client.Player.Onrane);
+                                }
+                                else
+                                {
+                                    client.Player.SendError("You do not have enough onrane.");
+                                }
+                                break;
+                            //Attack
+                            case 0x2368:
+                                if (packet.ShardSlot.ObjectType == 0x2368 && client.Player.Onrane >= 1)
+                                {
+                                    itemValue = 0x619f;
+                                    client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
+                                    client.Player.Onrane = client.Account.Onrane - 1;
+                                    client.Player.ForceUpdate(client.Player.Onrane);
+                                }
+                                else
+                                {
+                                    client.Player.SendError("You do not have enough onrane.");
+                                }
+                                break;
+                            //Defense
+                            case 0x2369:
+                                if (packet.ShardSlot.ObjectType == 0x2369 && client.Player.Onrane >= 1)
+                                {
+                                    itemValue = 0x62a3;
+                                    client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
+                                    client.Player.Onrane = client.Account.Onrane - 1;
+                                    client.Player.ForceUpdate(client.Player.Onrane);
+                                }
+                                else
+                                {
+                                    client.Player.SendError("You do not have enough onrane.");
+                                }
+                                break;
+                            //Speed
+                            case 0x236A:
+                                if (packet.ShardSlot.ObjectType == 0x236A && client.Player.Onrane >= 1)
+                                {
+                                    itemValue = 0x62a1;
+                                    client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
+                                    client.Player.Onrane = client.Account.Onrane - 1;
+                                    client.Player.ForceUpdate(client.Player.Onrane);
+                                }
+                                else
+                                {
+                                    client.Player.SendError("You do not have enough onrane.");
+                                }
+                                break;
+                            //Vit
+                            case 0x236B:
+                                if (packet.ShardSlot.ObjectType == 0x236B && client.Player.Onrane >= 1)
+                                {
+                                    itemValue = 0x62a0;
+                                    client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
+                                    client.Player.Onrane = client.Account.Onrane - 1;
+                                    client.Player.ForceUpdate(client.Player.Onrane);
+                                }
+                                else
+                                {
+                                    client.Player.SendError("You do not have enough onrane.");
+                                }
+                                break;
+                            //wis
+                            case 0x236C:
+                                if (packet.ShardSlot.ObjectType == 0x236C && client.Player.Onrane >= 1)
+                                {
+                                    itemValue = 0x619e;
+                                    client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
+                                    client.Player.Onrane = client.Account.Onrane - 1;
+                                    client.Player.ForceUpdate(client.Player.Onrane);
+                                }
+                                else
+                                {
+                                    client.Player.SendError("You do not have enough onrane.");
+                                }
+                                break;
+                            //Dex
+                            case 0x236D:
+                                if (packet.ShardSlot.ObjectType == 0x236D && client.Player.Onrane >= 1)
+                                {
+                                    itemValue = 0x62a4;
+                                    client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
+                                    client.Player.Onrane = client.Account.Onrane - 1;
+                                    client.Player.ForceUpdate(client.Player.Onrane);
+                                }
+                                else
+                                {
+                                    client.Player.SendError("You do not have enough onrane.");
+                                }
+                                break;
+                            //mgt
+                            case 0x61C9:
+                                if (packet.ShardSlot.ObjectType == 0x61C9 && client.Player.Onrane >= 1)
+                                {
+                                    itemValue = 0x62a6;
+                                    client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
+                                    client.Player.Onrane = client.Account.Onrane - 1;
+                                    client.Player.ForceUpdate(client.Player.Onrane);
+                                }
+                                else
+                                {
+                                    client.Player.SendError("You do not have enough onrane.");
+                                }
+                                break;
+                            //luc
+                            case 0x61cb:
+                                if (packet.ShardSlot.ObjectType == 0x61cb && client.Player.Onrane >= 1)
+                                {
+                                    itemValue = 0x62a7;
+                                    client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
+                                    client.Player.Onrane = client.Account.Onrane - 1;
+                                    client.Player.ForceUpdate(client.Player.Onrane);
+                                }
+                                else
+                                {
+                                    client.Player.SendError("You do not have enough onrane.");
+                                }
+                                break;
+                            //res
+                            case 0x61ca:
+                                if (packet.ShardSlot.ObjectType == 0x61ca && client.Player.Onrane >= 1)
+                                {
+                                    itemValue = 0x619d;
+                                    client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
+                                    client.Player.Onrane = client.Account.Onrane - 1;
+                                    client.Player.ForceUpdate(client.Player.Onrane);
+                                }
+                                else
+                                {
+                                    client.Player.SendError("You do not have enough onrane.");
+                                }
+                                break;
+                            //prot
+                            case 0x61cc:
+                                if (packet.ShardSlot.ObjectType == 0x61cc && client.Player.Onrane >= 1)
+                                {
+                                    itemValue = 0x62a2;
+                                    client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
+                                    client.Player.Onrane = client.Account.Onrane - 1;
+                                    client.Player.ForceUpdate(client.Player.Onrane);
+                                }
+                                else
+                                {
+                                    client.Player.SendError("You do not have enough onrane.");
+                                }
+                                break;
+
+
+                            default:
+                                client.Player.SendError("You can't mix anything with that potion.");
+                                itemValue = 0x0;
+                                break;
+
                         }
-                        else
-                        {
-                            client.Player.SendError("You do not have 75K Gold to reroll this legendary!");
-                        }
+                        if (itemValue == 0x0) return;
+
+                        var item = client.Player.Manager.Resources.GameData.Items[itemValue];
+                        client.Player.Inventory[packet.SorSlot.SlotId] = item;
+                        client.Player.Inventory[packet.ShardSlot.SlotId] = null;
                     }
-                    else
-                    {
-                        if (client.Player.Onrane >= 30)
-                        {
-                            client.Player.Manager.Database.UpdateOnrane(client.Account, -30);
-                            client.Player.Onrane = client.Account.Onrane - 30;
-                            client.Player.ForceUpdate(client.Player.Onrane);
-
-                            itemValue = allLegendaries2[rnd.Next(allLegendaries2.Length)];
-                        }
-                        else
-                        {
-                            client.Player.SendError("You do not have 30 Onrane to reroll this legendary!");
-                        }
-                    }
-                }
-
-
-                if (itemValue == 0x0) return;
-                var item = client.Player.Manager.Resources.GameData.Items[itemValue];
-                client.Player.SendError("You have rerolled the item \"" + (string.IsNullOrEmpty(item.DisplayId) ?
-                                                                        item.ObjectId
-                                                                        : item.DisplayId) + "\"");
-                client.Player.Inventory[packet.SorSlot.SlotId] = item;
-                client.Player.Inventory[packet.ShardSlot.SlotId] = null;
-            }
-            else if (packet.SorSlot.ObjectType != 18918 || packet.SorSlot.ObjectType != 0x64c7)
-            {
-                switch (packet.SorSlot.ObjectType)
-                {
-                    //Life
-                    case 0xae9:
-                        if (packet.ShardSlot.ObjectType == 0xae9)
-                        {
-                            itemValue = 0x236E;
-                        }
-                        break;
-                    //Mana
-                    case 0xaea:
-                        if (packet.ShardSlot.ObjectType == 0xaea)
-                        {
-                            itemValue = 0x236F;
-                        }
-                        break;
-                    //Attack
-                    case 0xa1f:
-                        if (packet.ShardSlot.ObjectType == 0xa1f)
-                        {
-                            itemValue = 0x2368;
-                        }
-                        break;
-                    //Defense
-                    case 0xa20:
-                        if (packet.ShardSlot.ObjectType == 0xa20)
-                        {
-                            itemValue = 0x2369;
-                        }
-                        break;
-                    //Speed
-                    case 0xa21:
-                        if (packet.ShardSlot.ObjectType == 0xa21)
-                        {
-                            itemValue = 0x236A;
-                        }
-
-                        break;
-                    //Vit
-                    case 0xa34:
-                        if (packet.ShardSlot.ObjectType == 0xa34)
-                        {
-                            itemValue = 0x236B;
-                        }
-                        break;
-                    //wis
-                    case 0xa35:
-                        if (packet.ShardSlot.ObjectType == 0xa35)
-                        {
-                            itemValue = 0x236C;
-                        }
-                        break;
-                    //Dex
-                    case 0xa4c:
-                        if (packet.ShardSlot.ObjectType == 0xa4c)
-                        {
-                            itemValue = 0x236D;
-                        }
-                        break;
-                    //mgt
-                    case 0x5822:
-                        if (packet.ShardSlot.ObjectType == 0x5822)
-                        {
-                            itemValue = 0x61C9;
-                        }
-                        break;
-                    //luc
-                    case 0x5823:
-                        if (packet.ShardSlot.ObjectType == 0x5823)
-                        {
-                            itemValue = 0x61cb;
-                        }
-                        break;
-                    //res
-                    case 0x68fd:
-                        if (packet.ShardSlot.ObjectType == 0x68fd)
-                        {
-                            itemValue = 0x61ca;
-                        }
-                        break;
-                    //prot
-                    case 0x68fe:
-                        if (packet.ShardSlot.ObjectType == 0x68fe)
-                        {
-                            itemValue = 0x61cc;
-                        }
-                        break;
-
-
-
-
-
-                    case 0x236E:
-                        if (packet.ShardSlot.ObjectType == 0x236E && client.Player.Onrane >= 1)
-                        {
-                            itemValue = 0x62a5;
-                            client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
-                            client.Player.Onrane = client.Account.Onrane - 1;
-                            client.Player.ForceUpdate(client.Player.Onrane);
-                        }
-                        else
-                        {
-                            client.Player.SendError("You do not have enough onrane.");
-                        }
-                        break;
-                    //Mana
-                    case 0x236F:
-                        if (packet.ShardSlot.ObjectType == 0x236F && client.Player.Onrane >= 1)
-                        {
-
-                            itemValue = 0x619c;
-                            client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
-                            client.Player.Onrane = client.Account.Onrane - 1;
-                            client.Player.ForceUpdate(client.Player.Onrane);
-                        }
-                        else
-                        {
-                            client.Player.SendError("You do not have enough onrane.");
-                        }
-                        break;
-                    //Attack
-                    case 0x2368:
-                        if (packet.ShardSlot.ObjectType == 0x2368 && client.Player.Onrane >= 1)
-                        {
-                            itemValue = 0x619f;
-                            client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
-                            client.Player.Onrane = client.Account.Onrane - 1;
-                            client.Player.ForceUpdate(client.Player.Onrane);
-                        }
-                        else
-                        {
-                            client.Player.SendError("You do not have enough onrane.");
-                        }
-                        break;
-                    //Defense
-                    case 0x2369:
-                        if (packet.ShardSlot.ObjectType == 0x2369 && client.Player.Onrane >= 1)
-                        {
-                            itemValue = 0x62a3;
-                            client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
-                            client.Player.Onrane = client.Account.Onrane - 1;
-                            client.Player.ForceUpdate(client.Player.Onrane);
-                        }
-                        else
-                        {
-                            client.Player.SendError("You do not have enough onrane.");
-                        }
-                        break;
-                    //Speed
-                    case 0x236A:
-                        if (packet.ShardSlot.ObjectType == 0x236A && client.Player.Onrane >= 1)
-                        {
-                            itemValue = 0x62a1;
-                            client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
-                            client.Player.Onrane = client.Account.Onrane - 1;
-                            client.Player.ForceUpdate(client.Player.Onrane);
-                        }
-                        else
-                        {
-                            client.Player.SendError("You do not have enough onrane.");
-                        }
-                        break;
-                    //Vit
-                    case 0x236B:
-                        if (packet.ShardSlot.ObjectType == 0x236B && client.Player.Onrane >= 1)
-                        {
-                            itemValue = 0x62a0;
-                            client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
-                            client.Player.Onrane = client.Account.Onrane - 1;
-                            client.Player.ForceUpdate(client.Player.Onrane);
-                        }
-                        else
-                        {
-                            client.Player.SendError("You do not have enough onrane.");
-                        }
-                        break;
-                    //wis
-                    case 0x236C:
-                        if (packet.ShardSlot.ObjectType == 0x236C && client.Player.Onrane >= 1)
-                        {
-                            itemValue = 0x619e;
-                            client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
-                            client.Player.Onrane = client.Account.Onrane - 1;
-                            client.Player.ForceUpdate(client.Player.Onrane);
-                        }
-                        else
-                        {
-                            client.Player.SendError("You do not have enough onrane.");
-                        }
-                        break;
-                    //Dex
-                    case 0x236D:
-                        if (packet.ShardSlot.ObjectType == 0x236D && client.Player.Onrane >= 1)
-                        {
-                            itemValue = 0x62a4;
-                            client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
-                            client.Player.Onrane = client.Account.Onrane - 1;
-                            client.Player.ForceUpdate(client.Player.Onrane);
-                        }
-                        else
-                        {
-                            client.Player.SendError("You do not have enough onrane.");
-                        }
-                        break;
-                    //mgt
-                    case 0x61C9:
-                        if (packet.ShardSlot.ObjectType == 0x61C9 && client.Player.Onrane >= 1)
-                        {
-                            itemValue = 0x62a6;
-                            client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
-                            client.Player.Onrane = client.Account.Onrane - 1;
-                            client.Player.ForceUpdate(client.Player.Onrane);
-                        }
-                        else
-                        {
-                            client.Player.SendError("You do not have enough onrane.");
-                        }
-                        break;
-                    //luc
-                    case 0x61cb:
-                        if (packet.ShardSlot.ObjectType == 0x61cb && client.Player.Onrane >= 1)
-                        {
-                            itemValue = 0x62a7;
-                            client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
-                            client.Player.Onrane = client.Account.Onrane - 1;
-                            client.Player.ForceUpdate(client.Player.Onrane);
-                        }
-                        else
-                        {
-                            client.Player.SendError("You do not have enough onrane.");
-                        }
-                        break;
-                    //res
-                    case 0x61ca:
-                        if (packet.ShardSlot.ObjectType == 0x61ca && client.Player.Onrane >= 1)
-                        {
-                            itemValue = 0x619d;
-                            client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
-                            client.Player.Onrane = client.Account.Onrane - 1;
-                            client.Player.ForceUpdate(client.Player.Onrane);
-                        }
-                        else
-                        {
-                            client.Player.SendError("You do not have enough onrane.");
-                        }
-                        break;
-                    //prot
-                    case 0x61cc:
-                        if (packet.ShardSlot.ObjectType == 0x61cc && client.Player.Onrane >= 1)
-                        {
-                            itemValue = 0x62a2;
-                            client.Player.Manager.Database.UpdateOnrane(client.Account, -1);
-                            client.Player.Onrane = client.Account.Onrane - 1;
-                            client.Player.ForceUpdate(client.Player.Onrane);
-                        }
-                        else
-                        {
-                            client.Player.SendError("You do not have enough onrane.");
-                        }
-                        break;
-
-
-                    default:
-                        client.Player.SendError("You can't mix anything with that potion.");
-                        itemValue = 0x0;
-                        break;
-
-                }
-                if (itemValue == 0x0) return;
-
-                var item = client.Player.Manager.Resources.GameData.Items[itemValue];
-                client.Player.Inventory[packet.SorSlot.SlotId] = item;
-                client.Player.Inventory[packet.ShardSlot.SlotId] = null;
+                    break;
             }          
         }
     }

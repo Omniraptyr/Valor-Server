@@ -52,10 +52,24 @@ namespace wServer.realm
             return (int)ret;
         }
 
+        public float GetTilesPerSecSqr()
+        {
+            var ret = 4 + 5.6f * (this[4] / 75f);
+
+            if (Owner.HasConditionEffect(ConditionEffects.Slowed))
+                return ret / 2;
+
+            if (Owner.HasConditionEffect(ConditionEffects.Speedy))
+                return ret * 1.5f;
+      
+            return ret * ret;
+        }
+
         public int SpecialDamageMods()
         {
             return VengeanceDamage() + RelentlessDamage() + KaraDamage() + RageDamage();
         }
+
         public float GetAttackMult(bool isAbility)
         {
             if (isAbility)

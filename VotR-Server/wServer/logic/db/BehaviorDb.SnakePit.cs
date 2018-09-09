@@ -264,7 +264,7 @@ namespace wServer.logic
                     )
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SF0()
+                    LootTemplates.Sor1Perc()
                     ),
                 new MostDamagers(3,
                     new ItemLoot("Potion of Speed", 1)

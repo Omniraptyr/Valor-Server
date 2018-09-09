@@ -167,7 +167,7 @@ namespace wServer.logic
             )
             ),
                            new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
              new Threshold(0.01,
                  new ItemLoot("ShrimpQuiver", 0.04),

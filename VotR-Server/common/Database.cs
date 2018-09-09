@@ -5,9 +5,9 @@ using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using StackExchange.Redis;
 using common.resources;
 using log4net;
+using StackExchange.Redis;
 
 namespace common
 {
@@ -96,11 +96,11 @@ namespace common
                 Kantos = newAccounts.Kantos,
                 TotalKantos = newAccounts.Kantos,
                 RaidToken = newAccounts.RaidToken,
-                Lootbox1 = newAccounts.Lootbox1,
-                Lootbox2 = newAccounts.Lootbox2,
-                Lootbox3 = newAccounts.Lootbox3,
-                Lootbox4 = newAccounts.Lootbox4,
-                Lootbox5 = newAccounts.Lootbox5,
+                BronzeLootbox = newAccounts.Lootbox1,
+                SilverLootbox = newAccounts.Lootbox2,
+                GoldLootbox = newAccounts.Lootbox3,
+                EliteLootbox = newAccounts.Lootbox4,
+                PremiumLootbox = newAccounts.Lootbox5,
                 SorStorage = newAccounts.SorStorage,
                 Striked = newAccounts.Striked,
                 PassResetToken = ""
@@ -414,11 +414,11 @@ namespace common
                 Kantos = newAccounts.Kantos,
                 TotalKantos = newAccounts.Kantos,
                 RaidToken = newAccounts.RaidToken,
-                Lootbox1 = newAccounts.Lootbox1,
-                Lootbox2 = newAccounts.Lootbox2,
-                Lootbox3 = newAccounts.Lootbox3,
-                Lootbox4 = newAccounts.Lootbox4,
-                Lootbox5 = newAccounts.Lootbox5,
+                BronzeLootbox = newAccounts.Lootbox1,
+                SilverLootbox = newAccounts.Lootbox2,
+                GoldLootbox = newAccounts.Lootbox3,
+                EliteLootbox = newAccounts.Lootbox4,
+                PremiumLootbox = newAccounts.Lootbox5,
                 SorStorage = newAccounts.SorStorage,
                 Striked = newAccounts.Striked,
                 PassResetToken = "",
@@ -674,7 +674,7 @@ namespace common
 
         public int ResolveId(string ign)
         {
-            string val = (string) _db.HashGet("names", ign.ToUpperInvariant());
+            string val = _db.HashGet("names", ign.ToUpperInvariant());
             if (val == null)
                 return 0;
             return int.Parse(val);
@@ -1033,7 +1033,7 @@ namespace common
                 .ContinueWith(t =>
                 {
                     if (!t.IsCanceled)
-                        acc.Lootbox1 = (int)t.Result;
+                        acc.BronzeLootbox = (int)t.Result;
                 });
 
             if (transaction == null)
@@ -1051,7 +1051,7 @@ namespace common
                 .ContinueWith(t =>
                 {
                     if (!t.IsCanceled)
-                        acc.Lootbox2 = (int)t.Result;
+                        acc.SilverLootbox = (int)t.Result;
                 });
 
             if (transaction == null)
@@ -1068,7 +1068,7 @@ namespace common
                 .ContinueWith(t =>
                 {
                     if (!t.IsCanceled)
-                        acc.Lootbox3 = (int)t.Result;
+                        acc.GoldLootbox = (int)t.Result;
                 });
 
             if (transaction == null)
@@ -1085,7 +1085,7 @@ namespace common
                 .ContinueWith(t =>
                 {
                     if (!t.IsCanceled)
-                        acc.Lootbox4 = (int)t.Result;
+                        acc.EliteLootbox = (int)t.Result;
                 });
 
             if (transaction == null)
@@ -1230,7 +1230,7 @@ namespace common
                 Experience = 0,
                 Fame = 0,
                 Items = InitInventory(playerDesc.Equipment),
-                Stats = new int[]
+                Stats = new[]
                 {
                     playerDesc.Stats[0].StartingValue,
                     playerDesc.Stats[1].StartingValue,
@@ -1243,7 +1243,7 @@ namespace common
                     playerDesc.Stats[8].StartingValue,
                     playerDesc.Stats[9].StartingValue,
                     playerDesc.Stats[10].StartingValue,
-                    playerDesc.Stats[11].StartingValue,
+                    playerDesc.Stats[11].StartingValue
                 },
                 HP = playerDesc.Stats[0].StartingValue,
                 MP = playerDesc.Stats[1].StartingValue,
@@ -1259,7 +1259,7 @@ namespace common
 
             if (newCharacters.Maxed)
             {
-                character.Stats = new int[]
+                character.Stats = new[]
                 {
                     playerDesc.Stats[0].MaxValue,
                     playerDesc.Stats[1].MaxValue,
@@ -1272,7 +1272,7 @@ namespace common
                     playerDesc.Stats[8].MaxValue,
                     playerDesc.Stats[9].MaxValue,
                     playerDesc.Stats[10].MaxValue,
-                    playerDesc.Stats[11].MaxValue,
+                    playerDesc.Stats[11].MaxValue
                 };
                 character.HP = character.Stats[0];
                 character.MP = character.Stats[1];
@@ -1287,7 +1287,7 @@ namespace common
         {
             DbChar ret = new DbChar(acc, charId);
             if (ret.IsNull) return null;
-            else return ret;
+            return ret;
         }
 
         public DbChar LoadCharacter(int accId, int charId)
@@ -1296,7 +1296,7 @@ namespace common
             if (acc.IsNull) return null;
             DbChar ret = new DbChar(acc, charId);
             if (ret.IsNull) return null;
-            else return ret;
+            return ret;
         }
 
         public Task<bool> SaveCharacter(
@@ -1630,7 +1630,7 @@ namespace common
 
         public bool AddGift(DbAccount acc, ushort item, ITransaction tran = null)
         {
-            return AddGifts(acc, new ushort[] {item}, tran);
+            return AddGifts(acc, new[] {item}, tran);
         }
 
         public bool AddGifts(DbAccount acc, IEnumerable<ushort> items, ITransaction transaction = null)

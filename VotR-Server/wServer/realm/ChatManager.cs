@@ -10,14 +10,14 @@ namespace wServer.realm
 {
     public class ChatManager : IDisposable
     {
-        private static readonly string[] exclusiveEmotes = { ":whitebag:", ":bluebag:", ":cyanbag:", ":rip:", ":pbag:" };
+        private static readonly string[] ExclusiveEmotes = { ":whitebag:", ":bluebag:", ":cyanbag:", ":rip:", ":pbag:" };
 
-        static ILog log = LogManager.GetLogger(typeof(ChatManager));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(ChatManager));
 
-        RealmManager manager;
+        private readonly RealmManager _manager;
         public ChatManager(RealmManager manager)
         {
-            this.manager = manager;
+            _manager = manager;
             manager.InterServer.AddHandler<ChatMsg>(Channel.Chat, HandleChat);
             manager.InterServer.NewServer += AnnounceNewServer;
             manager.InterServer.ServerQuit += AnnounceServerQuit;
@@ -41,14 +41,16 @@ namespace wServer.realm
 
         public void Dispose()
         {
-            manager.InterServer.NewServer -= AnnounceNewServer;
-            manager.InterServer.ServerQuit -= AnnounceServerQuit;
+            // ReSharper disable DelegateSubtraction
+            _manager.InterServer.NewServer -= AnnounceNewServer;
+            _manager.InterServer.ServerQuit -= AnnounceServerQuit;
+            _manager.InterServer.RemoveHandler<ChatMsg>(Channel.Chat, HandleChat);
         }
 
         public void Say(Player src, string text)
         {
             foreach (var word in text.Split(' ')
-                .Where(word => word.StartsWith(":") && word.EndsWith(":") && exclusiveEmotes.Contains(word))
+                .Where(word => word.StartsWith(":") && word.EndsWith(":") && ExclusiveEmotes.Contains(word))
                 .Where(word => !src.Client.Account.Emotes.Contains(word)))
                 text = text.Replace(word, string.Empty);
 
@@ -82,7 +84,7 @@ namespace wServer.realm
         public bool Local(Player src, string text)
         {
             foreach (var word in text.Split(' ')
-                .Where(word => word.StartsWith(":") && word.EndsWith(":") && exclusiveEmotes.Contains(word))
+                .Where(word => word.StartsWith(":") && word.EndsWith(":") && ExclusiveEmotes.Contains(word))
                 .Where(word => !src.Client.Account.Emotes.Contains(word)))
                 text = text.Replace(word, string.Empty);
 
@@ -111,7 +113,7 @@ namespace wServer.realm
 
         private void SendTextPacket(Player src, Text tp, Predicate<Player> conditional)
         {
-            var filtered = manager.Resources.FilterList.Any(r => r.IsMatch(tp.Txt));
+            var filtered = _manager.Resources.FilterList.Any(r => r.IsMatch(tp.Txt));
 
             if (filtered)
             {
@@ -124,7 +126,7 @@ namespace wServer.realm
                 src.Owner.BroadcastPacketConditional(tp, conditional);
             }
 
-            log.Info($"[{src.Owner.Name}({src.Owner.Id}){(filtered ? " *filtered*" : "")}] <{src.Name}> {tp.Txt}");
+            Log.Info($"[{src.Owner.Name}({src.Owner.Id}){(filtered ? " *filtered*" : "")}] <{src.Name}> {tp.Txt}");
         }
 
         public void Mob(Entity entity, string text)
@@ -143,7 +145,7 @@ namespace wServer.realm
                 Name = $"#{name}",
                 Txt = text
             }, null, PacketPriority.Low);
-            log.Info($"[{world.Name}({world.Id})] <{name}> {text}");
+            Log.Info($"[{world.Name}({world.Id})] <{name}> {text}");
         }
 
         public void Announce(string text, bool local = false)
@@ -153,7 +155,7 @@ namespace wServer.realm
 
             if (local)
             {
-                foreach (var i in manager.Clients.Keys
+                foreach (var i in _manager.Clients.Keys
                 .Where(x => x.Player != null)
                 .Select(x => x.Player))
                 {
@@ -162,34 +164,10 @@ namespace wServer.realm
                 return;
             }
 
-            manager.InterServer.Publish(Channel.Chat, new ChatMsg()
+            _manager.InterServer.Publish(Channel.Chat, new ChatMsg()
             {
                 Type = ChatType.Announce,
-                Inst = manager.InstanceId,
-                Text = text
-            });
-        }
-
-        public void RaidAnnounce(string text, bool local = false)
-        {
-            if (string.IsNullOrWhiteSpace(text))
-                return;
-
-            if (local)
-            {
-                foreach (var i in manager.Clients.Keys
-                .Where(x => x.Player != null)
-                .Select(x => x.Player))
-                {
-                    i.RaidAlertReceived(text);
-                }
-                return;
-            }
-
-            manager.InterServer.Publish(Channel.Chat, new ChatMsg()
-            {
-                Type = ChatType.Announce,
-                Inst = manager.InstanceId,
+                Inst = _manager.InstanceId,
                 Text = text
             });
         }
@@ -199,10 +177,10 @@ namespace wServer.realm
             if (String.IsNullOrWhiteSpace(text))
                 return true;
 
-            manager.InterServer.Publish(Channel.Chat, new ChatMsg()
+            _manager.InterServer.Publish(Channel.Chat, new ChatMsg()
             {
                 Type = ChatType.Info,
-                Inst = manager.InstanceId,
+                Inst = _manager.InstanceId,
                 To = target,
                 Text = text
             });
@@ -222,33 +200,33 @@ namespace wServer.realm
                 Name = "#Oryx the Mad God",
                 Txt = text
             }, null, PacketPriority.Low);
-            log.InfoFormat("[{0}({1})] <Oryx the Mad God> {2}", world.Name, world.Id, text);
+            Log.InfoFormat("[{0}({1})] <Oryx the Mad God> {2}", world.Name, world.Id, text);
         }
         
         public bool Tell(Player src, string target, string text)
         {
             foreach (var word in text.Split(' ')
-                .Where(word => word.StartsWith(":") && word.EndsWith(":") && exclusiveEmotes.Contains(word))
+                .Where(word => word.StartsWith(":") && word.EndsWith(":") && ExclusiveEmotes.Contains(word))
                 .Where(word => !src.Client.Account.Emotes.Contains(word)))
                 text = text.Replace(word, string.Empty);
 
             if (String.IsNullOrWhiteSpace(text))
                 return true;
             
-            int id = manager.Database.ResolveId(target);
+            int id = _manager.Database.ResolveId(target);
             if (id == 0) return false;
 
-            if (!manager.Database.AccountLockExists(id))
+            if (!_manager.Database.AccountLockExists(id))
                 return false;
 
-            var acc = manager.Database.GetAccount(id);
+            var acc = _manager.Database.GetAccount(id);
             if (acc == null || acc.Hidden && src.Admin == 0)
                 return false;
             
-            manager.InterServer.Publish(Channel.Chat, new ChatMsg()
+            _manager.InterServer.Publish(Channel.Chat, new ChatMsg()
             {
                 Type = ChatType.Tell,
-                Inst = manager.InstanceId,
+                Inst = _manager.InstanceId,
                 ObjId = src.Id,
                 Stars = src.Stars,
                 Admin = src.Admin,
@@ -262,20 +240,20 @@ namespace wServer.realm
 
         public bool Invite(Player src, string target, string dungeon, int wid)
         {
-            int id = manager.Database.ResolveId(target);
+            int id = _manager.Database.ResolveId(target);
             if (id == 0) return false;
 
-            if (!manager.Database.AccountLockExists(id))
+            if (!_manager.Database.AccountLockExists(id))
                 return false;
 
-            var acc = manager.Database.GetAccount(id);
+            var acc = _manager.Database.GetAccount(id);
             if (acc == null || acc.Hidden && src.Admin == 0)
                 return false;
             
-            manager.InterServer.Publish(Channel.Chat, new ChatMsg()
+            _manager.InterServer.Publish(Channel.Chat, new ChatMsg()
             {
                 Type = ChatType.Invite,
-                Inst = manager.InstanceId,
+                Inst = _manager.InstanceId,
                 ObjId = wid,
                 From = src.Client.Account.AccountId,
                 To = id,
@@ -286,16 +264,16 @@ namespace wServer.realm
 
         public bool Guild(Player src, string text, bool announce = false)
         {
-            foreach (var word in text.Split(' ').Where(word => word.StartsWith(":") && word.EndsWith(":") && exclusiveEmotes.Contains(word)).Where(word => !src.Client.Account.Emotes.Contains(word)))
+            foreach (var word in text.Split(' ').Where(word => word.StartsWith(":") && word.EndsWith(":") && ExclusiveEmotes.Contains(word)).Where(word => !src.Client.Account.Emotes.Contains(word)))
                 text = text.Replace(word, String.Empty);
 
             if (String.IsNullOrWhiteSpace(text))
                 return true;
             
-            manager.InterServer.Publish(Channel.Chat, new ChatMsg()
+            _manager.InterServer.Publish(Channel.Chat, new ChatMsg()
             {
                 Type = (announce) ? ChatType.GuildAnnounce : ChatType.Guild,
-                Inst = manager.InstanceId,
+                Inst = _manager.InstanceId,
                 ObjId = src.Id,
                 Stars = src.Stars,
                 Admin = src.Admin,
@@ -311,10 +289,10 @@ namespace wServer.realm
             if (String.IsNullOrWhiteSpace(text))
                 return true;
 
-            manager.InterServer.Publish(Channel.Chat, new ChatMsg()
+            _manager.InterServer.Publish(Channel.Chat, new ChatMsg()
             {
                 Type = ChatType.GuildAnnounce,
-                Inst = manager.InstanceId,
+                Inst = _manager.InstanceId,
                 From = acc.AccountId,
                 To = acc.GuildId,
                 Text = text,
@@ -329,8 +307,8 @@ namespace wServer.realm
             {
                 case ChatType.Invite:
                     {
-                        string from = manager.Database.ResolveIgn(e.Content.From);
-                        foreach (var i in manager.Clients.Keys
+                        string from = _manager.Database.ResolveIgn(e.Content.From);
+                        foreach (var i in _manager.Clients.Keys
                             .Where(x => x.Player != null)
                             .Where(x => !x.Account.IgnoreList.Contains(e.Content.From))
                             .Where(x => x.Account.AccountId == e.Content.To)
@@ -341,10 +319,10 @@ namespace wServer.realm
                     } break;
                 case ChatType.Tell:
                     {
-                        string from = manager.Database.ResolveIgn(e.Content.From);
-                        string to = manager.Database.ResolveIgn(e.Content.To);
-                        bool filtered = manager.Resources.FilterList.Any(r => r.IsMatch(e.Content.Text));
-                        foreach (var i in manager.Clients.Keys
+                        string from = _manager.Database.ResolveIgn(e.Content.From);
+                        string to = _manager.Database.ResolveIgn(e.Content.To);
+                        bool filtered = _manager.Resources.FilterList.Any(r => r.IsMatch(e.Content.Text));
+                        foreach (var i in _manager.Clients.Keys
                             .Where(x => x.Player != null)
                             .Where(x => !x.Account.IgnoreList.Contains(e.Content.From))
                             .Where(x => x.Account.AccountId == e.Content.From ||
@@ -352,14 +330,14 @@ namespace wServer.realm
                             .Select(x => x.Player))
                         {
                             i.TellReceived(
-                                e.Content.Inst == manager.InstanceId ? e.Content.ObjId : -1,
+                                e.Content.Inst == _manager.InstanceId ? e.Content.ObjId : -1,
                                 e.Content.Stars, e.Content.Admin, from, to, e.Content.Text);
                         }
                     } break;
                 case ChatType.Guild:
                     {
-                        string from = manager.Database.ResolveIgn(e.Content.From);
-                        foreach (var i in manager.Clients.Keys
+                        string from = _manager.Database.ResolveIgn(e.Content.From);
+                        foreach (var i in _manager.Clients.Keys
                             .Where(x => x.Player != null)
                             .Where(x => !x.Account.IgnoreList.Contains(e.Content.From))
                             .Where(x => x.Account.GuildId > 0)
@@ -367,13 +345,13 @@ namespace wServer.realm
                             .Select(x => x.Player))
                         {
                             i.GuildReceived(
-                                e.Content.Inst == manager.InstanceId ? e.Content.ObjId : -1,
+                                e.Content.Inst == _manager.InstanceId ? e.Content.ObjId : -1,
                                 e.Content.Stars, e.Content.Admin, from, e.Content.Text);
                         }
                     } break;
                 case ChatType.GuildAnnounce:
                     {
-                        foreach (var i in manager.Clients.Keys
+                        foreach (var i in _manager.Clients.Keys
                             .Where(x => x.Player != null)
                             .Where(x => x.Account.GuildId > 0)
                             .Where(x => x.Account.GuildId == e.Content.To)
@@ -385,7 +363,7 @@ namespace wServer.realm
                     } break;
                 case ChatType.Announce:
                     {
-                        foreach (var i in manager.Clients.Keys
+                        foreach (var i in _manager.Clients.Keys
                             .Where(x => x.Player != null)
                             .Select(x => x.Player))
                         {
@@ -394,7 +372,7 @@ namespace wServer.realm
                     } break;
                 case ChatType.Info:
                     {
-                        var player = manager.Clients.Keys.Where(c => c.Account.AccountId == e.Content.To).FirstOrDefault();
+                        var player = _manager.Clients.Keys.Where(c => c.Account.AccountId == e.Content.To).FirstOrDefault();
                         player?.Player.SendInfo(e.Content.Text);
                     }
                     break;

@@ -78511,7 +78511,7 @@ This dagger was a myth, will you live to tell the tale?
     <FameBonus>6</FameBonus>
     <MpCost>105</MpCost>
     <Activate radius="3" totalDamage="145">VampireBlast</Activate>
-    <Activate effect="ArmorBroken" duration="2.3" range="3" color="0x05c2b5" target="enemy" center="mouse" visualEffect="0" useWisMod="false">GenericActivate</Activate>
+    <Activate effect="Armor Broken" duration="2.3" range="3" color="0x05c2b5" target="enemy" center="mouse" visualEffect="0" useWisMod="false">GenericActivate</Activate>
   </Object>
   <Object type="0x1691" id="Truncheon of Immortal Demons">
         <Class>Equipment</Class>
@@ -94766,7 +94766,6 @@ A whole thanksgiving turkey!
     <Activate>RandomOnrane</Activate>
     <Sound>spell/fire_nova</Sound>
     <feedPower>275</feedPower> 
-    <Fabled/>
     <DisplayId>Onrane Cache</DisplayId>
   </Object>
   <Object type="0x49a2" id="Kantos Cache">
@@ -95378,7 +95377,6 @@ A whole thanksgiving turkey!
     <Activate>URandomOnrane</Activate>
     <Sound>spell/fire_nova</Sound>
     <feedPower>275</feedPower> 
-    <Fabled/>
     <DisplayId>Ultimate Onrane Cache</DisplayId>
   </Object>
   <Object type="0x49f1" id="Keeping Key">

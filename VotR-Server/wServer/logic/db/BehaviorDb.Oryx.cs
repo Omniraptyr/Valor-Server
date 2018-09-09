@@ -14,6 +14,7 @@ namespace wServer.logic
         private _ Oryx = () => Behav()
             .Init("Oryx the Mad God 2",
                 new State(
+                    new ScaleHP(50000),
                     new State("Attack",
                         new Wander(.05),
                         new Shoot(25, projectileIndex: 0, count: 8, shootAngle: 45, coolDown: 1500, coolDownOffset: 1500),
@@ -64,7 +65,7 @@ namespace wServer.logic
                     LootTemplates.RaidTokens()
                 ),
                  new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.29,
                     new ItemLoot("Potion of Vitality", 1)
@@ -92,6 +93,7 @@ namespace wServer.logic
 
                     .Init("Oryx the Mad God 2OA",
                 new State(
+                    new ScaleHP(50000),
                     new State("Attack",
                         new Wander(.05),
                         new Shoot(25, projectileIndex: 0, count: 8, shootAngle: 45, coolDown: 1500, coolDownOffset: 1500),
@@ -139,7 +141,7 @@ namespace wServer.logic
                     )
                 ),
                  new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.29,
                     new ItemLoot("Potion of Vitality", 1)
@@ -287,7 +289,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.20,
                     new ItemLoot("Oryx's Arena Key", 0.01)

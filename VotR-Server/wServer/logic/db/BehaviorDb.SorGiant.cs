@@ -10,7 +10,7 @@ namespace wServer.logic
         private _ SorGiant = () => Behav()
             .Init("Sorgigas, the Sor Giant",
                 new State(
-                    new ScaleHP(15000),
+                    new ScaleHP(50000),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new PlayerWithinTransition(12, "taunt")
@@ -192,7 +192,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.05,
                     new ItemLoot("Infused Katana", 0.005),

@@ -101,7 +101,6 @@ public class Player extends Character {
     public var guildName_:String = null;
     public var guildRank_:int = -1;
     public var isFellowGuild_:Boolean = false;
-    public var breath_:int = -1;
     public var rage_:int = -1;
     public var maxMP_:int = 200;
     public var mp_:Number = 0;
@@ -175,10 +174,6 @@ public class Player extends Character {
     private var ip_:IntPoint;
     public var criticalMultiplier_:Number;
     public var isCrit_:Boolean;
-    private var breathBackFill_:GraphicsSolidFill = null;
-    private var breathBackPath_:GraphicsPath = null;
-    private var breathFill_:GraphicsSolidFill = null;
-    private var breathPath_:GraphicsPath = null;
 
     private var rageBackFill_:GraphicsSolidFill = null;
     private var rageBackPath_:GraphicsPath = null;
@@ -762,55 +757,6 @@ public class Player extends Character {
         return (0xFFFFFF);
     }
 
-    protected function drawBreathBar(gfx:Vector.<IGraphicsData>, time:int) : void {
-        var b:Number = NaN;
-        var bw:Number = NaN;
-        if(this.breathPath_ == null) {
-            this.breathBackFill_ = new GraphicsSolidFill();
-            this.breathBackPath_ = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS,new Vector.<Number>());
-            this.breathFill_ = new GraphicsSolidFill(2542335);
-            this.breathPath_ = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS,new Vector.<Number>());
-        }
-        if(this.breath_ <= Parameters.BREATH_THRESH) {
-            b = (Parameters.BREATH_THRESH - this.breath_) / Parameters.BREATH_THRESH;
-            this.breathBackFill_.color = MoreColorUtil.lerpColor(1118481, 16711680, Math.abs(Math.sin(time / 300)) * b);
-        } else {
-            this.breathBackFill_.color = 1118481;
-        }
-        var breathPath:Vector.<Number> = this.breathBackPath_.data as Vector.<Number>;
-        breathPath.length = 0;
-        breathPath.push(posS_[0] - 20 - 1.2,
-		        posS_[1] + 12 - 0 - 0,
-		        posS_[0] + 20 + 1.2,
-		        posS_[1] + 12 - 0 - 0,
-		        posS_[0] + 20 + 1.2,
-		        posS_[1] + 12 + 5 + 1.2,
-		        posS_[0] - 20 - 1.2,
-		        posS_[1] + 12 + 5 + 1.2);
-        gfx.push(this.breathBackFill_);
-        gfx.push(this.breathBackPath_);
-        gfx.push(GraphicsUtil.END_FILL);
-        if(this.breath_ > 0) {
-            bw = this.breath_ / 100 * 2 * 20;
-            this.breathPath_.data.length = 0;
-            breathPath = this.breathPath_.data as Vector.<Number>;
-            breathPath.length = 0;
-            breathPath.push(posS_[0] - 20,
-			        posS_[1] + 12,
-			        posS_[0] - 20 + bw,
-			        posS_[1] + 12,
-			        posS_[0] - 20 + bw,
-			        posS_[1] + 12 + 5,
-			        posS_[0] - 20,
-			        posS_[1] + 12 + 5);
-            gfx.push(this.breathFill_);
-            gfx.push(this.breathPath_);
-            gfx.push(GraphicsUtil.END_FILL);
-        }
-        GraphicsFillExtra.setSoftwareDrawSolid(this.breathFill_,true);
-        GraphicsFillExtra.setSoftwareDrawSolid(this.breathBackFill_,true);
-    }
-	
 	protected function drawRageBar(gfx:Vector.<IGraphicsData>, time:int) : void {
         var r:Number = NaN;
         var rw:Number = NaN;
@@ -862,30 +808,23 @@ public class Player extends Character {
 
     override public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int) : void
     {
-        if(Parameters.data_.hideLockList)
-        {
-            if(this != map_.player_)
-            {
-                if(!this.starred_)
-                {
-                    return;
-                }
-            }
+        switch (Parameters.data_.hideList) {
+            case 1:
+                if (this != map_.player_ && !this.starred_) return;
+                break;
+            case 2:
+                if (this != map_.player_ && !this.isFellowGuild_) return;
+                break;
+            case 3:
+                if (this != map_.player_ && !this.starred_ && !this.isFellowGuild_) return;
+                break;
         }
+
         super.draw(_arg_1,_arg_2,_arg_3);
-        if(this != map_.player_)
-        {
-            if(!Parameters.screenShotMode_)
-            {
-                drawName(_arg_1, _arg_2);
-            }
-        }
-        else if(this.breath_ >= 0)
-        {
-            this.drawBreathBar(_arg_1,_arg_3);
-        }
-        else if(this.rage_ >= 1)
-        {
+
+        if(this != map_.player_) {
+            drawName(_arg_1, _arg_2);
+        } else if(this.rage_ >= 1) {
             this.drawRageBar(_arg_1,_arg_3);
         }
     }

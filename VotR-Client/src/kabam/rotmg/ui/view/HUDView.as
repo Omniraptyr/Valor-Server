@@ -42,8 +42,6 @@ public class HUDView extends Sprite implements UnFocusAble {
     private const INTERACT_PANEL_POSITION:Point = new Point(0, 500);
     private const DARKNESS_Y_POSITION:int = -50; // x: center, y: offset
     private const DARKNESS_X_POSITION:int = 0;
-    private const HURT_OVERLAY_POSITION:Point = new Point(-600, 0);
-    private const BREATH_CT:ColorTransform = new ColorTransform(0xFF / 0xFF, 55 / 0xFF, 0 / 0xFF, 0);
 
     private var background:CharacterWindowBackground;
     private var miniMap:MiniMapImp;
@@ -57,7 +55,6 @@ public class HUDView extends Sprite implements UnFocusAble {
     public var interactPanel:InteractPanel;
     public var tradePanel:TradePanel;
     public var darkness:DisplayObject;
-    private var hurtOverlay_:HurtOverlay;
 
     public function HUDView() {
         this.createAssets();
@@ -71,7 +68,6 @@ public class HUDView extends Sprite implements UnFocusAble {
         this.tabStrip = new TabStripView();
         this.characterDetails = new CharacterDetailsView();
         this.statMeters = new StatMetersView();
-        this.hurtOverlay_ = new HurtOverlay();
         this.cdTimer = new CooldownTimer();
         this.darkness = new EmbeddedAssets.DarknessBackground();
         this.darkness.alpha = 0.95;
@@ -83,7 +79,6 @@ public class HUDView extends Sprite implements UnFocusAble {
         addChild(this.tabStrip);
         addChild(this.characterDetails);
         addChild(this.statMeters);
-        addChild(this.hurtOverlay_);
     }
 
     private function positionAssets():void {
@@ -98,8 +93,6 @@ public class HUDView extends Sprite implements UnFocusAble {
         this.statMeters.x = this.STAT_METERS_POSITION.x;
         this.statMeters.y = this.STAT_METERS_POSITION.y;
         this.darkness.x = this.DARKNESS_X_POSITION;
-        this.hurtOverlay_.x = this.HURT_OVERLAY_POSITION.x;
-        this.hurtOverlay_.y = this.HURT_OVERLAY_POSITION.y;
     }
 
     public function setPlayerDependentAssets(_arg1:GameSprite):void {
@@ -159,17 +152,6 @@ public class HUDView extends Sprite implements UnFocusAble {
             if (contains(this.darkness)) {
                 removeChild(this.darkness);
             }
-        }
-
-        if (player != null && player.breath_ >= 0 && player.breath_ < Parameters.BREATH_THRESH) {
-            var bMult:Number = (Parameters.BREATH_THRESH - player.breath_) / Parameters.BREATH_THRESH;
-            var btMult:Number = Math.abs(Math.sin(getTimer() / 300)) * 0.75;
-            BREATH_CT.alphaMultiplier = bMult * btMult;
-            hurtOverlay_.transform.colorTransform = BREATH_CT;
-            hurtOverlay_.visible = true;
-        }
-        else {
-            hurtOverlay_.visible = false;
         }
     }
 

@@ -143,6 +143,11 @@ public class Options extends Sprite {
             new StaticStringBuilder("Dystopia+")]);
     }
 
+    private static function makeHideLabels():Vector.<StringBuilder> {
+        return (new <StringBuilder>[new StaticStringBuilder("Off"),
+            new StaticStringBuilder("Locked"), new StaticStringBuilder("Guild"), new StaticStringBuilder("Both")]);
+    }
+
     private static function makeLineBuilder(str:String):LineBuilder {
         return (new LineBuilder().setParams(str));
     }
@@ -267,12 +272,12 @@ public class Options extends Sprite {
         this.setSelected(this.tabs_[0]);
 
         stage.addEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown, false, 1);
-        stage.addEventListener(KeyboardEvent.KEY_UP, this.onKeyUp, false, 1);
+        stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp, false, 1);
     }
 
     private function onRemovedFromStage(e:Event):void {
         stage.removeEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown, false);
-        stage.removeEventListener(KeyboardEvent.KEY_UP, this.onKeyUp, false);
+        stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyUp, false);
     }
 
     private function onKeyDown(e:KeyboardEvent):void {
@@ -294,7 +299,7 @@ public class Options extends Sprite {
         parent.removeChild(this);
     }
 
-    private function onKeyUp(e:KeyboardEvent):void {
+    private static function onKeyUp(e:KeyboardEvent):void {
         e.stopImmediatePropagation();
     }
 
@@ -313,7 +318,7 @@ public class Options extends Sprite {
         this.addOptionAndPosition(new KeyMapper("moveDown", TextKey.OPTIONS_MOVE_DOWN, TextKey.OPTIONS_MOVE_DOWN_DESC));
         this.addOptionAndPosition(new KeyMapper("moveRight", TextKey.OPTIONS_MOVE_RIGHT, TextKey.OPTIONS_MOVE_RIGHT_DESC));
         this.addOptionAndPosition(this.makeAllowCameraRotation());
-        this.addOptionAndPosition(this.makeAllowMiniMapRotation());
+        this.addOptionAndPosition(makeAllowMiniMapRotation());
         this.addOptionAndPosition(new KeyMapper("rotateLeft", TextKey.OPTIONS_ROTATE_LEFT, TextKey.OPTIONS_ROTATE_LEFT_DESC, !(Parameters.data_.allowRotation)));
         this.addOptionAndPosition(new KeyMapper("rotateRight", TextKey.OPTIONS_ROTATE_RIGHT, TextKey.OPTIONS_ROTATE_RIGHT_DESC, !(Parameters.data_.allowRotation)));
         this.addOptionAndPosition(new KeyMapper("useSpecial", TextKey.OPTIONS_USE_SPECIAL_ABILITY, TextKey.OPTIONS_USE_SPECIAL_ABILITY_DESC));
@@ -332,7 +337,7 @@ public class Options extends Sprite {
                 TextKey.OPTIONS_ALLOW_ROTATION, TextKey.OPTIONS_ALLOW_ROTATION_DESC, this.onAllowRotationChange));
     }
 
-    private function makeAllowMiniMapRotation():ChoiceOption {
+    private static function makeAllowMiniMapRotation():ChoiceOption {
         return (new ChoiceOption("allowMiniMapRotation", makeOnOffLabels(), [true, false],
                 "Allow MiniMap Rotation", "Toggles whether to allow for minimap rotation", null));
     }
@@ -361,13 +366,6 @@ public class Options extends Sprite {
         this.addOptionAndPosition(new KeyMapper("switchTabs", TextKey.OPTIONS_SWITCH_TABS, TextKey.OPTIONS_SWITCH_TABS_DESC));
         this.addOptionAndPosition(new KeyMapper("GPURenderToggle", TextKey.OPTIONS_HARDWARE_ACC_HOTKEY_TITLE, TextKey.OPTIONS_HARDWARE_ACC_HOTKEY_DESC));
         this.addOptionsChoiceOption();
-        if (this.isAirApplication()) {
-            this.addOptionAndPosition(new KeyMapper("toggleFullscreen", TextKey.OPTIONS_TOGGLE_FULLSCREEN, TextKey.OPTIONS_TOGGLE_FULLSCREEN_DESC));
-        }
-    }
-
-    public function isAirApplication():Boolean {
-        return Capabilities.playerType == "Desktop";
     }
 
     public function addOptionsChoiceOption():void {
@@ -469,7 +467,7 @@ public class Options extends Sprite {
         this.addOptionAndPosition(new ChoiceOption("showTradePopup", makeOnOffLabels(), [true, false], TextKey.OPTIONS_SHOW_TRADE_REQUEST_PANEL, TextKey.OPTIONS_SHOW_TRADE_REQUEST_PANEL_DESC, null));
         this.addOptionAndPosition(new ChoiceOption("showGuildInvitePopup", makeOnOffLabels(), [true, false], TextKey.OPTIONS_SHOW_GUILD_INVITE_PANEL, TextKey.OPTIONS_SHOW_GUILD_INVITE_PANEL_DESC, null));
         this.addOptionAndPosition(new ChoiceOption("cursorSelect", makeCursorSelectLabels(), [MouseCursor.AUTO, "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"], "Custom Cursor", "Click here to change the mouse cursor. May help with aiming.", refreshCursor));
-        this.addOptionAndPosition(new ChoiceOption("hideLockList",makeOnOffLabels(),[true,false],"Hide Players","Hide players on screen",null));
+        this.addOptionAndPosition(new ChoiceOption("hideList", makeHideLabels(), [0, 1, 2, 3], "Hide Players", "Hide players on screen", null));
         if (!Parameters.GPURenderError) {
             hwAccDesc = TextKey.OPTIONS_HARDWARE_ACC_DESC;
             color = 0xFFFFFF;
@@ -487,7 +485,7 @@ public class Options extends Sprite {
         this.addOptionAndPosition(new ChoiceOption("uiQuality", makeHighLowLabels(), [true, false], "Toggle UI Quality", "This allows you to pick the ui quality", onUIQualityToggle));
         this.addOptionAndPosition(new ChoiceOption("HPBar", makeOnOffLabels(), [true, false], "HP Bar", "This toggles whether to show the hp bar", null));
         this.addOptionAndPosition(new ChoiceOption("outlineProj", makeOnOffLabels(), [true, false], "Toggle Projectile Outline", "This toggles whether to outline projectiles", null));
-        this.addOptionAndPosition(new ChoiceOption("showTierTag", makeOnOffLabels(), [true,false], "Show Tier Tag","This toggles whether to show tier tags on your gear",this.onToggleTierTag));
+        this.addOptionAndPosition(new ChoiceOption("showTierTag", makeOnOffLabels(), [true,false], "Show Tier Tag","This toggles whether to show tier tags on your gear", onToggleTierTag));
         this.addOptionAndPosition(new ChoiceOption("stageScale", makeOnOffLabels(), [StageScaleMode.NO_SCALE, StageScaleMode.EXACT_FIT], "Fullscreen", "Extends viewing area at a cost of lower fps.", this.fsv3));
     }
 
@@ -496,7 +494,7 @@ public class Options extends Sprite {
         Parameters.root.dispatchEvent(new Event(Event.RESIZE));
     }
 
-    private function onToggleTierTag() : void {
+    private static function onToggleTierTag() : void {
         StaticInjectorContext.getInjector().getInstance(ToggleShowTierTagSignal).dispatch(Parameters.data_.showTierTag);
     }
 
@@ -513,9 +511,9 @@ public class Options extends Sprite {
 
     private function addSoundOptions():void {
         this.addOptionAndPosition(new ChoiceOption("playMusic", makeOnOffLabels(), [true, false], TextKey.OPTIONS_PLAY_MUSIC, TextKey.OPTIONS_PLAY_MUSIC_DESC, this.onPlayMusicChange));
-        this.addOptionAndPosition(new SliderOption("musicVolume", this.onMusicVolumeChange), -120, 15);
+        this.addOptionAndPosition(new SliderOption("musicVolume", onMusicVolumeChange), -120, 15);
         this.addOptionAndPosition(new ChoiceOption("playSFX", makeOnOffLabels(), [true, false], TextKey.OPTIONS_PLAY_SOUND_EFFECTS, TextKey.OPTIONS_PLAY_SOUND_EFFECTS_DESC, this.onPlaySoundEffectsChange));
-        this.addOptionAndPosition(new SliderOption("SFXVolume", this.onSoundEffectsVolumeChange), -120, 34);
+        this.addOptionAndPosition(new SliderOption("SFXVolume", onSoundEffectsVolumeChange), -120, 34);
         this.addOptionAndPosition(new ChoiceOption("playPewPew", makeOnOffLabels(), [true, false], TextKey.OPTIONS_PLAY_WEAPON_SOUNDS, TextKey.OPTIONS_PLAY_WEAPON_SOUNDS_DESC, null));
     }
 
@@ -534,11 +532,11 @@ public class Options extends Sprite {
         this.refresh();
     }
 
-    private function onMusicVolumeChange(_arg1:Number):void {
+    private static function onMusicVolumeChange(_arg1:Number):void {
         Music.setMusicVolume(_arg1);
     }
 
-    private function onSoundEffectsVolumeChange(_arg1:Number):void {
+    private static function onSoundEffectsVolumeChange(_arg1:Number):void {
         SFX.setSFXVolume(_arg1);
     }
 

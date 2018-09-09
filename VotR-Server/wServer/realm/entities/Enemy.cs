@@ -139,12 +139,12 @@ namespace wServer.realm.entities
                     ObjectId = projectile.ProjectileOwner.Self.Id
                 }, this, (projectile.ProjectileOwner as Player), PacketPriority.Low);
 
-                if (p?.stealAmount != null)
+                if (p?.StealAmount != null)
                 {
-                    if (p.stealAmount[0] != 0 && !p.HasConditionEffect(ConditionEffects.Sick))
+                    if (p.StealAmount[0] != 0 && !p.HasConditionEffect(ConditionEffects.Sick))
                     {
                         int maxHP = p.Stats[0];
-                        int lifeSteal = p.stealAmount[0];
+                        int lifeSteal = p.StealAmount[0];
 
                         if (lifeSteal >= 1 && p.HP < maxHP)
                             p.HP = ((p.HP + lifeSteal) > maxHP ? maxHP : p.HP + lifeSteal);
@@ -155,10 +155,10 @@ namespace wServer.realm.entities
                                 p.HP = ((p.HP + lifeSteal) > maxHP ? maxHP : p.HP + lifeSteal);
                         }
                     }
-                    if (p.stealAmount[1] != 0 && !p.HasConditionEffect(ConditionEffects.Quiet))
+                    if (p.StealAmount[1] != 0 && !p.HasConditionEffect(ConditionEffects.Quiet))
                     {
                         int maxMP = p.Stats[1];
-                        int manaLeech = p.stealAmount[1];
+                        int manaLeech = p.StealAmount[1];
 
                         if (manaLeech >= 1 && p.MP < maxMP)
                             p.MP = ((p.MP + manaLeech) > maxMP ? maxMP : p.MP + manaLeech);

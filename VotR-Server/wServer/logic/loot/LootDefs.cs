@@ -1,7 +1,7 @@
-﻿using common.resources;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using common.resources;
 using wServer.realm;
 using wServer.realm.entities;
 
@@ -15,31 +15,25 @@ namespace wServer.logic.loot
 
     internal class MostDamagers : ILootDef
     {
-        private readonly ILootDef[] loots;
-        private readonly int amount;
+        private readonly ILootDef[] _loots;
+        private readonly int _amount;
 
-        public MostDamagers(int amount, params ILootDef[] loots)
-        {
-            this.amount = amount;
-            this.loots = loots;
+        public MostDamagers(int amount, params ILootDef[] loots) {
+            _amount = amount;
+            _loots = loots;
         }
 
-        public string Lootstate { get; set; }
-
-        public void Populate(RealmManager manager, Enemy enemy, Tuple<Player, int> playerDat, Random rand, IList<LootDef> lootDefs)
-        {
+        public void Populate(RealmManager manager, Enemy enemy, Tuple<Player, int> playerDat, Random rand, IList<LootDef> lootDefs) {
             var data = enemy.DamageCounter.GetPlayerData();
             var mostDamage = GetMostDamage(data);
-            foreach (var loot in mostDamage.Where(pl => pl.Equals(playerDat)).SelectMany(pl => loots))
+            foreach (var loot in mostDamage.Where(pl => pl.Equals(playerDat)).SelectMany(pl => _loots))
                 loot.Populate(manager, enemy, null, rand, lootDefs);
         }
 
-        private IEnumerable<Tuple<Player, int>> GetMostDamage(IEnumerable<Tuple<Player, int>> data)
-        {
+        private IEnumerable<Tuple<Player, int>> GetMostDamage(IEnumerable<Tuple<Player, int>> data) {
             var damages = data.Select(_ => _.Item2).ToList();
-            var len = damages.Count < amount ? damages.Count : amount;
-            for (var i = 0; i < len; i++)
-            {
+            var len = damages.Count < _amount ? damages.Count : _amount;
+            for (var i = 0; i < len; i++) {
                 var val = damages.Max();
                 yield return data.FirstOrDefault(_ => _.Item2 == val);
                 damages.Remove(val);
@@ -49,40 +43,34 @@ namespace wServer.logic.loot
 
     public class OnlyOne : ILootDef
     {
-        private readonly ILootDef[] loots;
+        private readonly ILootDef[] _loots;
 
-        public OnlyOne(params ILootDef[] loots)
-        {
-            this.loots = loots;
+        public OnlyOne(params ILootDef[] loots) {
+            _loots = loots;
         }
 
-        public string Lootstate { get; set; }
-
-        public void Populate(RealmManager manager, Enemy enemy, Tuple<Player, int> playerDat, Random rand, IList<LootDef> lootDefs)
-        {
-            loots[rand.Next(0, loots.Length)].Populate(manager, enemy, playerDat, rand, lootDefs);
+        public void Populate(RealmManager manager, Enemy enemy, Tuple<Player, int> playerDat, Random rand, IList<LootDef> lootDefs) {
+            _loots[rand.Next(0, _loots.Length)].Populate(manager, enemy, playerDat, rand, lootDefs);
         }
     }
 
     public class ItemLoot : ILootDef
     {
-        private string item;
-        private double probability;
+        private readonly string _item;
+        private readonly double _probability;
 
-        public ItemLoot(string item, double probability)
-        {
-            this.item = item;
-            this.probability = probability;
+        public ItemLoot(string item, double probability) {
+            _item = item;
+            _probability = probability;
         }
 
         public void Populate(RealmManager manager, Enemy enemy, Tuple<Player, int> playerDat,
-                             Random rand, IList<LootDef> lootDefs)
-        {
+                             Random rand, IList<LootDef> lootDefs) {
             if (playerDat != null) return;
             var dat = manager.Resources.GameData;
-            if (dat.IdToObjectType.ContainsKey(item)
-                && dat.Items.ContainsKey(dat.IdToObjectType[item]))
-                lootDefs.Add(new LootDef(dat.Items[dat.IdToObjectType[item]], probability));
+            if (dat.IdToObjectType.ContainsKey(_item)
+                && dat.Items.ContainsKey(dat.IdToObjectType[_item]))
+                lootDefs.Add(new LootDef(dat.Items[dat.IdToObjectType[_item]], _probability));
         }
     }
 
@@ -97,55 +85,51 @@ namespace wServer.logic.loot
 
     public class TierLoot : ILootDef
     {
-        public static readonly int[] WeaponT = new int[] { 1, 2, 3, 8, 17, 24, 29, 34 };
-        public static readonly int[] AbilityT = new int[] { 4, 5, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 27, 28, 30, 32, 33, 35 };
-        public static readonly int[] ArmorT = new int[] { 6, 7, 14, };
-        public static readonly int[] RingT = new int[] { 9 };
-        public static readonly int[] PotionT = new int[] { 10 };
+        public static readonly int[] WeaponT = { 1, 2, 3, 8, 17, 24, 29, 34 };
+        public static readonly int[] AbilityT = { 4, 5, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 27, 28, 30, 32, 33, 35 };
+        public static readonly int[] ArmorT = { 6, 7, 14 };
+        public static readonly int[] RingT = { 9 };
+        public static readonly int[] PotionT = { 10 };
 
-        private byte tier;
-        private int[] types;
-        private double probability;
+        private readonly byte _tier;
+        private readonly int[] _types;
+        private readonly double _probability;
 
-        public TierLoot(byte tier, ItemType type, double probability)
-        {
-            this.tier = tier;
-            switch (type)
-            {
+        public TierLoot(byte tier, ItemType type, double probability) {
+            _tier = tier;
+            switch (type) {
                 case ItemType.Weapon:
-                    types = WeaponT; break;
+                    _types = WeaponT; break;
                 case ItemType.Ability:
-                    types = AbilityT; break;
+                    _types = AbilityT; break;
                 case ItemType.Armor:
-                    types = ArmorT; break;
+                    _types = ArmorT; break;
                 case ItemType.Ring:
-                    types = RingT; break;
+                    _types = RingT; break;
                 case ItemType.Potion:
-                    types = PotionT; break;
+                    _types = PotionT; break;
                 default:
                     throw new NotSupportedException(type.ToString());
             }
-            this.probability = probability;
+            _probability = probability;
         }
 
         public void Populate(RealmManager manager, Enemy enemy, Tuple<Player, int> playerDat,
-                             Random rand, IList<LootDef> lootDefs)
-        {
+                             Random rand, IList<LootDef> lootDefs) {
             if (playerDat != null) return;
-            Item[] candidates = manager.Resources.GameData.Items
-                .Where(item => Array.IndexOf(types, item.Value.SlotType) != -1)
-                .Where(item => item.Value.Tier == tier)
+            var candidates = manager.Resources.GameData.Items
+                .Where(item => Array.IndexOf(_types, item.Value.SlotType) != -1)
+                .Where(item => item.Value.Tier == _tier)
                 .Select(item => item.Value)
                 .ToArray();
             foreach (var i in candidates)
-                lootDefs.Add(new LootDef(i, probability / candidates.Length));
+                lootDefs.Add(new LootDef(i, _probability / candidates.Length));
         }
     }
+
     public static class LootTemplates
     {
-
-        public static ILootDef[] StatIncreasePotionsLoot()
-        {
+        public static ILootDef[] StatPots() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -159,26 +143,7 @@ namespace wServer.logic.loot
              };
         }
 
-
-
-
-        public static ILootDef[] GStatIncreasePotionsLoot()
-        {
-            return new ILootDef[]
-            {
-                new OnlyOne(
-                    new ItemLoot("Potion of Defense", 1),
-                    new ItemLoot("Potion of Attack", 1),
-                    new ItemLoot("Potion of Speed", 1),
-                    new ItemLoot("Potion of Vitality", 1),
-                    new ItemLoot("Potion of Wisdom", 1),
-                    new ItemLoot("Potion of Dexterity", 1)
-                )
-             };
-        }
-
-        public static ILootDef[] GStatIncreasePotionsLoot2()
-        {
+        public static ILootDef[] GreaterPots() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -198,21 +163,8 @@ namespace wServer.logic.loot
              };
         }
 
-        public static ILootDef[] GoldLoot()
-        {
-            return new ILootDef[]
-            {
-                new OnlyOne(
-                    new ItemLoot("1 Gold", 0.025),
-                    new ItemLoot("5 Gold", 0.025),
-                    new ItemLoot("10 Gold", 0.025)
-                ),
-             };
-        }
-
         //Hideout Fabled Dungeon
-        public static ILootDef[] FabledItemsLoot1()
-        {
+        public static ILootDef[] FabledItemsLoot1() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -284,8 +236,7 @@ namespace wServer.logic.loot
                 )
             };
         }
-        public static ILootDef[] RaidTokens()
-        {
+        public static ILootDef[] RaidTokens() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -297,8 +248,7 @@ namespace wServer.logic.loot
                 )
              };
         }
-        public static ILootDef[] FabledItemsLootUltra()
-        {
+        public static ILootDef[] FabledItemsLootUltra() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -398,8 +348,7 @@ namespace wServer.logic.loot
             };
         }
 
-        public static ILootDef[] FabledItemsLoot2Drannol()
-        {
+        public static ILootDef[] FabledItemsLoot2Drannol() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -462,49 +411,26 @@ namespace wServer.logic.loot
                 )
             };
         }
-        //1/125K
-        public static ILootDef[] SFExtremelyLow()
-        {
+
+        public static ILootDef[] SorVeryRare() {
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Tiny Sor Fragment", 0.000008)
+                    new ItemLoot("Tiny Sor Fragment", 0.0008)
                 )
              };
         }
-        //1/50k
-        public static ILootDef[] SFLow()
-        {
+
+        public static ILootDef[] SorRare() {
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Tiny Sor Fragment", 0.00002)
+                    new ItemLoot("Tiny Sor Fragment", 0.002)
                 )
              };
         }
-        //1/50
-        public static ILootDef[] SFElite()
-        {
-            return new ILootDef[]
-            {
-                new OnlyOne(
-                    new ItemLoot("Tiny Sor Fragment", 0.02)
-                )
-             };
-        }
-        //1/100
-        public static ILootDef[] SFCrystal()
-        {
-            return new ILootDef[]
-            {
-                new OnlyOne(
-                    new ItemLoot("Tiny Sor Fragment", 0.01)
-                )
-             };
-        }
-        //1/1000
-        public static ILootDef[] SFCrystal2()
-        {
+
+        public static ILootDef[] SorUncommon() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -512,9 +438,8 @@ namespace wServer.logic.loot
                 )
              };
         }
-        //1/25
-        public static ILootDef[] SFGigas()
-        {
+
+        public static ILootDef[] SorCommon() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -524,8 +449,7 @@ namespace wServer.logic.loot
         }
 
 
-        public static ILootDef[] FabledItemsLoot2B()
-        {
+        public static ILootDef[] FabledItemsLoot2B() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -554,8 +478,7 @@ namespace wServer.logic.loot
                 )
             };
         }
-        public static ILootDef[] FabledItemsLoots2B()
-        {
+        public static ILootDef[] FabledItemsLoots2B() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -586,71 +509,7 @@ namespace wServer.logic.loot
             };
         }
 
-
-        public static ILootDef[] ChallengerChest1()
-        {
-            return new ILootDef[]
-            {
-                new OnlyOne(
-                    new ItemLoot("Basic Spell", 0.25),
-                    new ItemLoot("Medium Spell", 0.25),
-                    new ItemLoot("Champion Spell", 0.25),
-                    new ItemLoot("Basic Sphere", 0.25),
-                    new ItemLoot("Medium Sphere", 0.25),
-                    new ItemLoot("Champion Sphere", 0.25),
-                    new ItemLoot("Energy Staff 2", 0.25),
-                    new ItemLoot("Firebrand Staff 2", 0.25),
-                    new ItemLoot("Comet Staff 2", 0.25),
-                    new ItemLoot("Flash Grenade", 0.25),
-                    new ItemLoot("Smoke Grenade", 0.25),
-                    new ItemLoot("Challenger Steel Shield", 0.25),
-                    new ItemLoot("Mossy Helm", 0.25),
-                    new ItemLoot("Challenger Drake Hide Armor", 0.25),
-                    new ItemLoot("Quiver of the Challenger", 0.25),
-                    new ItemLoot("Challenger Steel Dagger", 0.25),
-                    new ItemLoot("Thrownaxe", 0.25),
-                    new ItemLoot("Challenger Shortbow", 0.25)
-
-                ),
-                new OnlyOne(
-                    new ItemLoot("Greater Health Potion", 1),
-                    new ItemLoot("Greater Magic Potion", 1)
-                )
-            };
-        }
-        public static ILootDef[] ChallengerChest2()
-        {
-            return new ILootDef[]
-            {
-                new OnlyOne(
-                    new ItemLoot("Basic Spell", 0.50),
-                    new ItemLoot("Medium Spell", 0.50),
-                    new ItemLoot("Champion Spell", 0.50),
-                    new ItemLoot("Basic Sphere", 0.50),
-                    new ItemLoot("Medium Sphere", 0.50),
-                    new ItemLoot("Champion Sphere", 0.50),
-                    new ItemLoot("Energy Staff 2", 0.50),
-                    new ItemLoot("Firebrand Staff 2", 0.50),
-                    new ItemLoot("Comet Staff 2", 0.50),
-                    new ItemLoot("Flash Grenade", 0.50),
-                    new ItemLoot("Smoke Grenade", 0.50),
-                    new ItemLoot("Challenger Steel Shield", 0.50),
-                    new ItemLoot("Mossy Helm", 0.50),
-                    new ItemLoot("Challenger Drake Hide Armor", 0.50),
-                    new ItemLoot("Quiver of the Challenger", 0.50),
-                    new ItemLoot("Challenger Steel Dagger", 0.50),
-                    new ItemLoot("Thrownaxe", 0.50),
-                    new ItemLoot("Challenger Shortbow", 0.50)
-
-                ),
-                new OnlyOne(
-                    new ItemLoot("Greater Health Potion", 1),
-                    new ItemLoot("Greater Magic Potion", 1)
-                )
-            };
-        }
-        public static ILootDef[] SF0()
-        {
+        public static ILootDef[] Sor1Perc() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -666,8 +525,8 @@ namespace wServer.logic.loot
                 )
             };
         }
-        public static ILootDef[] SF1()
-        {
+
+        public static ILootDef[] Sor2Perc() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -683,8 +542,8 @@ namespace wServer.logic.loot
                 )
             };
         }
-        public static ILootDef[] SF2()
-        {
+
+        public static ILootDef[] Sor3Perc() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -700,8 +559,8 @@ namespace wServer.logic.loot
                 )
             };
         }
-        public static ILootDef[] SF3()
-        {
+
+        public static ILootDef[] Sor4Perc() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -717,8 +576,8 @@ namespace wServer.logic.loot
                 )
             };
         }
-        public static ILootDef[] SF4()
-        {
+
+        public static ILootDef[] Sor5Perc() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -734,9 +593,9 @@ namespace wServer.logic.loot
                 )
             };
         }
+
         //Sincryer (Hideout) Fabled Dungeon
-        public static ILootDef[] FabledItemsLoot2()
-        {
+        public static ILootDef[] FabledItemsLoot2() {
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -766,32 +625,22 @@ namespace wServer.logic.loot
         }
     }
 
-
-
-
-public class Threshold : ILootDef
+    public class Threshold : ILootDef
     {
-        private double threshold;
-        private ILootDef[] children;
+        private readonly double _threshold;
+        private readonly ILootDef[] _children;
 
-
-        public Threshold(double threshold, params ILootDef[] children)
-        {
-            this.threshold = threshold;
-            this.children = children;
-
+        public Threshold(double threshold, params ILootDef[] children) {
+            _threshold = threshold;
+            _children = children;
         }
 
         public void Populate(RealmManager manager, Enemy enemy, Tuple<Player, int> playerDat,
-                             Random rand, IList<LootDef> lootDefs)
-        {
-
-            if (playerDat != null && playerDat.Item2 / (double)enemy.ObjectDesc.MaxHP >= (threshold - (threshold * playerDat.Item1.thresholdBoost())) / Math.Max(enemy.Owner.Players.Count() / 2, 1))
-            {
-                foreach (var i in children)
+                             Random rand, IList<LootDef> lootDefs) {
+            if (playerDat != null && playerDat.Item2 / (double)enemy.ObjectDesc.MaxHP >= (_threshold - (_threshold * playerDat.Item1.thresholdBoost())) / Math.Max(enemy.Owner.Players.Count() / 2, 1)) {
+                foreach (var i in _children)
                     i.Populate(manager, enemy, null, rand, lootDefs);
             }
         }
     }
-
 }

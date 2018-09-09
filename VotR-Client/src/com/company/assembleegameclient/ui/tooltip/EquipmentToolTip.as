@@ -501,12 +501,13 @@ public class EquipmentToolTip extends ToolTip {
                         this.effects.push(new Effect(TextKey.REMOVES_NEGATIVE, {}).setColor(TooltipHelper.NO_DIFF_COLOR));
                         break;
                     case ActivationType.BANNER:
-                        this.effects.push(new Effect("Banner: {data}", {"data": ""}));
-                        this.effects.push(new Effect("Within {radius} sqrs\nEmpower allies for {duration} seconds\nStays active for {lifetime} seconds", {
-                            "lifetime": _local_1.@amount,
-                            "duration": _local_1.@duration,
-                            "radius": _local_1.@range
-                        }).setColor(TooltipHelper.NO_DIFF_COLOR));
+                        this.effects.push(new Effect("Banner: {data}", {
+                            "data": new AppendingLineBuilder().pushParams("Within {radius} sqrs\nEmpower allies for {duration} seconds\nStays active for {lifetime} seconds", {
+                                "lifetime": _local_1.@amount,
+                                "duration": _local_1.@duration,
+                                "radius": _local_1.@range
+                            }, TooltipHelper.getOpenTag(TooltipHelper.NO_DIFF_COLOR), TooltipHelper.getCloseTag())
+                        }));
                         break;
                     case ActivationType.GENERIC_ACTIVATE:
                         _local_9 = 16777103;

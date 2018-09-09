@@ -131,7 +131,7 @@ namespace common
             for (var i = 0; i < arr.Length; i++)
             {
                 if (i != 0) ret.Append(", ");
-                ret.Append(arr[i].ToString());
+                ret.Append(arr[i]);
             }
             return ret.ToString();
         }
@@ -142,8 +142,7 @@ namespace common
                 return x.Split(',').Select(_ => (T)(object)(ushort)FromString(_.Trim())).ToArray();
             if(typeof(T) == typeof(string))
                 return x.Split(',').Select(_ => (T)(object)_.Trim()).ToArray();
-            else  //assume int
-                return x.Split(',').Select(_ => (T)(object)FromString(_.Trim())).ToArray();
+            return x.Split(',').Select(_ => (T)(object)FromString(_.Trim())).ToArray();
         }
 
         public static byte[] SHA1(string val)

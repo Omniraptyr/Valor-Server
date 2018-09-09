@@ -29,7 +29,7 @@ namespace wServer.logic
                 )
             ),
                             new MostDamagers(3,
-                    LootTemplates.SFLow()
+                    LootTemplates.SorRare()
                     ),
             new Threshold(0.01,
                     new ItemLoot("Mad God Ale", 1.00),

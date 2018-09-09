@@ -31,7 +31,7 @@ namespace wServer.networking.handlers
                                 player.Client.Manager.Database.UpdateCredit(player.Client.Account, -gold);
                                 player.Credits = player.Client.Account.Credits - gold;
                                 player.ForceUpdate(player.Credits);
-                                player.Manager.Chat.RaidAnnounce("The Zol Awakening Raid has been launched on " + playerSvr + "!");
+                                player.Manager.Chat.Announce("The Zol Awakening Raid has been launched on " + playerSvr + "!");
 
                                 Manager._isRaidLaunched = true;
 
@@ -57,8 +57,7 @@ namespace wServer.networking.handlers
                                     ObjectId = player.Id,
                                     Message = player.Name + " has launched the Zol Awakening Raid!"
                                 }, null, PacketPriority.Low);
-                                //set raid opener
-                                player.Owner.raidOpener = player.Name;
+                                player.Owner.Opener = player.Name;
                             }
                             else
                             {
@@ -72,7 +71,7 @@ namespace wServer.networking.handlers
                                 player.Client.Manager.Database.UpdateCredit(player.Client.Account, -gold);
                                 player.Credits = player.Client.Account.Credits - gold;
                                 player.ForceUpdate(player.Credits);
-                                player.Manager.Chat.RaidAnnounce("The Ultra Zol Awakening Raid has been launched on " + playerSvr + "!");
+                                player.Manager.Chat.Announce("The Ultra Zol Awakening Raid has been launched on " + playerSvr + "!");
 
                                 Manager._isRaidLaunched = true;
                                 ushort objType;
@@ -99,7 +98,7 @@ namespace wServer.networking.handlers
                                     Message = player.Name + " has launched the Ultra Zol Awakening Raid!"
                                 }, null, PacketPriority.Low);
                                 //set raid opener
-                                player.Owner.raidOpener = player.Name;
+                                player.Owner.Opener = player.Name;
                             }
                             else
                             {
@@ -114,7 +113,7 @@ namespace wServer.networking.handlers
                                 player.Client.Manager.Database.UpdateCredit(player.Client.Account, -gold);
                                 player.Credits = player.Client.Account.Credits - gold;
                                 player.ForceUpdate(player.Credits);
-                                player.Manager.Chat.RaidAnnounce("The Calling of the Titan Raid has been launched on " + playerSvr + "!");
+                                player.Manager.Chat.Announce("The Calling of the Titan Raid has been launched on " + playerSvr + "!");
                                 ushort objType;
 
 
@@ -143,7 +142,7 @@ namespace wServer.networking.handlers
                                     Message = player.Name + " has launched the Calling of the Titan Raid!"
                                 }, null, PacketPriority.Low);
                                 //set raid opener
-                                player.Owner.raidOpener = player.Name;
+                                player.Owner.Opener = player.Name;
                             }
                             else
                             {

@@ -160,10 +160,10 @@ namespace wServer.logic
 					)
 				),
                new MostDamagers(3,
-                        LootTemplates.SF2()
+                        LootTemplates.Sor3Perc()
                     ),
                new MostDamagers(5,
-                    LootTemplates.StatIncreasePotionsLoot()
+                    LootTemplates.StatPots()
                 ),
                 new MostDamagers(1,
                     new ItemLoot("Kageboshi", 0.01)
@@ -309,10 +309,10 @@ namespace wServer.logic
 					)
 				),
                new MostDamagers(3,
-                        LootTemplates.SF2()
+                        LootTemplates.Sor3Perc()
                     ),
                 new MostDamagers(5,
-                    LootTemplates.StatIncreasePotionsLoot()
+                    LootTemplates.StatPots()
                 ),
                 new MostDamagers(1,
                     new ItemLoot("Wand of the Fallen", 0.01)

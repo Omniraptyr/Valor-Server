@@ -9,8 +9,7 @@ namespace wServer.logic.loot
 {
     public struct LootDef
     {
-        public LootDef(Item item, double probabilty)
-        {
+        public LootDef(Item item, double probabilty) {
             Item = item;
             Probability = probabilty;
         }
@@ -21,29 +20,23 @@ namespace wServer.logic.loot
 
     public class Loot : List<ILootDef>
     {
-        public Loot()
-        {
+        public Loot() {
         }
 
-        public Loot(params ILootDef[] lootDefs)   //For independent loots(e.g. chests)
-        {
+        public Loot(params ILootDef[] lootDefs) {  //For independent loots(e.g. chests)
             AddRange(lootDefs);
         }
 
-        private static Random rand = new Random();
+        private static readonly Random Rand = new Random();
 
-        public IEnumerable<Item> GetLoots(RealmManager manager, int min, int max)   //For independent loots(e.g. chests)
-        {
-
+        public IEnumerable<Item> GetLoots(RealmManager manager, int min, int max) {  //For independent loots(e.g. chests)
             var consideration = new List<LootDef>();
             foreach (var i in this)
-                i.Populate(manager, null, null, rand, consideration);
+                i.Populate(manager, null, null, Rand, consideration);
 
-            int retCount = rand.Next(min, max);
-            foreach (var i in consideration)
-            {
-                if (rand.NextDouble() < i.Probability)
-                {
+            var retCount = Rand.Next(min, max);
+            foreach (var i in consideration) {
+                if (Rand.NextDouble() < i.Probability) {
                     yield return i.Item;
                     retCount--;
                 }
@@ -52,78 +45,71 @@ namespace wServer.logic.loot
             }
         }
 
-        public void Handle(Enemy enemy, RealmTime time)
-        {
+        public void Handle(Enemy enemy, RealmTime time) {
             var consideration = new List<LootDef>();
 
             var sharedLoots = new List<Item>();
             foreach (var i in this)
-                i.Populate(enemy.Manager, enemy, null, rand, consideration);
-            foreach (var i in consideration)
-            {
-                if (rand.NextDouble() < i.Probability)
+                i.Populate(enemy.Manager, enemy, null, Rand, consideration);
+            foreach (var i in consideration) {
+                if (Rand.NextDouble() < i.Probability)
                     sharedLoots.Add(i.Item);
             }
 
             var dats = enemy.DamageCounter.GetPlayerData();
-            Dictionary<Player, IList<Item>> loots = enemy.DamageCounter.GetPlayerData().ToDictionary(
+            var loots = enemy.DamageCounter.GetPlayerData().ToDictionary(
                 d => d.Item1, d => (IList<Item>)new List<Item>());
 
             foreach (var loot in sharedLoots.Where(item => item.Soulbound))
-                loots[dats[rand.Next(dats.Length)].Item1].Add(loot);
+                loots[dats[Rand.Next(dats.Length)].Item1].Add(loot);
 
-            foreach (var dat in dats)
-            {
+            foreach (var dat in dats) {
                 consideration.Clear();
                 foreach (var i in this)
-                    i.Populate(enemy.Manager, enemy, dat, rand, consideration);
+                    i.Populate(enemy.Manager, enemy, dat, Rand, consideration);
 
                 var lootDropBoost = dat.Item1.LDBoostTime > 0 ? 1.5 : 1;
                 var luckStatBoost = 1 + dat.Item1.Stats.Boost[14] / 100.0;
 
-                IList<Item> playerLoot = loots[dat.Item1];
-                foreach (var i in consideration)
-                {
-                    if (rand.NextDouble() < i.Probability * lootDropBoost * luckStatBoost)
+                var playerLoot = loots[dat.Item1];
+                foreach (var i in consideration) {
+                    if (Rand.NextDouble() < i.Probability * lootDropBoost * luckStatBoost)
                         playerLoot.Add(i.Item);
                 }
             }
 
             AddBagsToWorld(enemy, sharedLoots, loots);
         }
-        private void AddBagsToWorld(Enemy enemy, IList<Item> shared, IDictionary<Player, IList<Item>> soulbound)
-        {
-                List<Player> pub = new List<Player>();  //only people not getting soulbound
-                foreach (var i in soulbound)
-                {
-                    if (i.Value.Count > 0)
-                        ShowBags(enemy, i.Value, i.Key);
-                    else
-                        pub.Add(i.Key);
-                }
-                if (pub.Count > 0 && shared.Count > 0)
-                    ShowBags(enemy, shared, pub.ToArray());
+
+        private static void AddBagsToWorld(Enemy enemy, IList<Item> shared, IDictionary<Player, IList<Item>> soulbound) {
+            var pub = new List<Player>();  //only people not getting soulbound
+            foreach (var i in soulbound) {
+                if (i.Value.Count > 0)
+                    ShowBags(enemy, i.Value, i.Key);
+                else
+                    pub.Add(i.Key);
+            }
+            if (pub.Count > 0 && shared.Count > 0)
+                ShowBags(enemy, shared, pub.ToArray());
         }
 
-        private void ShowBags(Enemy enemy, IEnumerable<Item> loots, params Player[] owners)
-        {
+        private static void ShowBags(Enemy enemy, IEnumerable<Item> loots, params Player[] owners) {
             var ownerIds = owners.Select(x => x.AccountId).ToArray();
-            int bagType = 0;
-            Item[] items = new Item[8];
-            int idx = 0;
+            var bagType = 0;
+            var items = new Item[8];
+            var idx = 0;
 
-            foreach (var i in loots)
-            {
+            foreach (var i in loots) {
                 if (i.BagType > bagType) bagType = i.BagType;
                 items[idx] = i;
                 idx++;
 
-                /*if (bagType == 6 || bagType == 11)
+                if (i.Fabled || i.Legendary)
                     foreach (var p in enemy.Owner.Players.Values)
-                        p.SendHelp(i.Key.Name + " has just received the " + items[idx].ObjectId + "!");*/
+                        p.SendHelp(owners[0].Name + " has just received the following item: '"
+                                                  + i.ObjectId + "'!");
 
-                if (idx == 8)
-                {
+                if (idx == 8) {
                     ShowBag(enemy, ownerIds, bagType, items);
 
                     bagType = 0;
@@ -136,11 +122,9 @@ namespace wServer.logic.loot
                 ShowBag(enemy, ownerIds, bagType, items);
         }
 
-        private static void ShowBag(Enemy enemy, int[] owners, int bagType, Item[] items)
-        {
+        private static void ShowBag(Enemy enemy, int[] owners, int bagType, Item[] items) {
             ushort bag = 0x0500;
-            switch (bagType)
-            {
+            switch (bagType) {
                 case 0:
                     bag = 0x500;
                     break;
@@ -190,13 +174,13 @@ namespace wServer.logic.loot
                     break;
             }
             var container = new Container(enemy.Manager, bag, 1000 * 60, true);
-            for (int j = 0; j < 8; j++)
+            for (var j = 0; j < 8; j++)
                 container.Inventory[j] = items[j];
             container.BagOwners = owners;
             container.Move(
-                enemy.X + (float)((rand.NextDouble() * 2 - 1) * 0.5),
-                enemy.Y + (float)((rand.NextDouble() * 2 - 1) * 0.5));
-            container.Size = 80;
+                enemy.X + (float)((Rand.NextDouble() * 2 - 1) * 0.5),
+                enemy.Y + (float)((Rand.NextDouble() * 2 - 1) * 0.5));
+            container.SetDefaultSize(bagType == 11 ? 140 : (bagType > 3 ? 120 : 80));
             enemy.Owner.EnterWorld(container);
         }
     }

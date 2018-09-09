@@ -108,6 +108,7 @@ namespace wServer.realm
                 Insert(obj);
                 return;
             }
+
             if (obj.Parent != this)
                 throw new InvalidOperationException("Cannot move object accoss different map.");
 

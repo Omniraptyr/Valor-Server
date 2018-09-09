@@ -17,8 +17,7 @@ namespace wServer.logic
                     new HealPlayer(5, coolDown: 450, healAmount: 100)
                     )
             )
-            .Init("Winter Fountain Frozen", //Frozen <3
-                                            //Kabam let it go :DDD
+            .Init("Winter Fountain Frozen",
                 new State(
                     new HealPlayer(5, coolDown: 450, healAmount: 100)
                     )
@@ -26,8 +25,7 @@ namespace wServer.logic
             .Init("Nexus Crier",
               new State("Active",
                   new ConditionalEffect(ConditionEffectIndex.Invincible),
-                  new BackAndForth(.2, 3),
-                  new Taunt(0.4, 10000, "Welcome to Vengeance of the Risen!", "Enjoy your stay on Vengeance of the Risen!", "Report bugs and exploiters to admins!", "Hi! I'm the nexus crier!")
+                  new BackAndForth(.2, 3)
                   )
                 )
                 .Init("Elite Skeleton",

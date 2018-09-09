@@ -15,8 +15,6 @@ namespace wServer.realm.entities
         internal string gamble;
         internal int betAmount;
 
-
-
         public void RequestGamble(string name, int amount)
         {
             if (Owner is Test)
@@ -25,48 +23,46 @@ namespace wServer.realm.entities
             Manager.Database.ReloadAccount(_client.Account);
             var acc = _client.Account;
 
-
             if (!acc.NameChosen)
             {
-                SendError("A unique name is required before gambling with others!");
+                SendError("You must choose a name before gambling.");
                 return;
             }
 
-            if(this.Owner.Name != "Nexus")
+            if (Owner.Name != "Nexus")
             {
-                SendError("You can't gamble outside of the nexus!");
+                SendError("You must be in the Nexus in order to gamble.");
                 return;
             }
-
-
 
             if (Database.GuestNames.Contains(name))
             {
-                SendError(name + " needs to choose a unique name first!");
+                SendError("'" + name + "' needs to choose a unique name before they gamble.");
                 return;
             }
 
             var target = Owner.GetUniqueNamedPlayer(name);
             if (target == null || !target.CanBeSeenBy(this))
             {
-                SendError(name + " not found!");
-                return;
-            }
-            if (target.Client.Account.Elite == 1 && this.Client.Account.Elite == 0)
-            {
-                SendError("Must be an Elite Account to be with another Elite Account.");
+                SendError("'" + name + "' not found.");
                 return;
             }
 
-            if (target.Client.Account.Elite == 0 && this.Client.Account.Elite == 1)
+            if (target.Client.Account.Elite == 1 && Client.Account.Elite == 0 
+                || target.Client.Account.Elite == 0 && Client.Account.Elite == 1)
             {
-                SendError("Must be an Elite Account to be with another Elite Account.");
+                SendError("Both parties must either be or not be Elite Accounts in order to gamble.");
+                return;
+            }
+
+            if (target.Client.Account.AccountId == Client.Account.AccountId) {
+                SendError("You can not gamble yourself.");
                 return;
             }
 
             if (this.betAmount != target.betAmount)
             {
-                SendError("The bet amount is not the same!");
+                SendError("You must have the same bet amount in order to gamble.");
                 return;
             }
 
@@ -75,7 +71,7 @@ namespace wServer.realm.entities
 
             if (target.gambleTarget != null)
             {
-                SendError(target.Name + " is already gambling!");
+                SendError("'" + target.Name + "' is already gambling.");
                 return;
             }
 

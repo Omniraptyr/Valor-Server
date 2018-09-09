@@ -76,7 +76,7 @@ namespace common
 
         public byte[] Write()
         {
-            var dat = new Tuple<byte, int>[]
+            var dat = new[]
             {
                 new Tuple<byte, int>(0, Shots),
 	            new Tuple<byte, int>(1, ShotsThatDamage),
@@ -102,7 +102,7 @@ namespace common
 	            new Tuple<byte, int>(21, TombsCompleted),
 	            new Tuple<byte, int>(22, TrenchesCompleted),
 	            new Tuple<byte, int>(23, JunglesCompleted),
-	            new Tuple<byte, int>(24, ManorsCompleted),
+	            new Tuple<byte, int>(24, ManorsCompleted)
             };
 
             MemoryStream ret = new MemoryStream();
@@ -117,7 +117,7 @@ namespace common
             return ret.ToArray();
         }
 
-        static Tuple<string, string, Func<FameStats, DbChar, int, bool>, Func<double, int>>[] bonusDat = new[] {
+        static Tuple<string, string, Func<FameStats, DbChar, int, bool>, Func<double, int>>[] bonusDat = {
             Tuple.Create("Ancestor", "First death of any of your characters",
                 new Func<FameStats, DbChar, int, bool>(
                     (fStats, character, baseFame) =>
@@ -244,7 +244,7 @@ namespace common
                     (fStats, character, baseFame) =>
                 character.Level == 20 && fStats.CubeKills == 0),
                 new Func<double, int>(f => (int) (f * 0.05))
-            ),
+            )
         };
 
         public int CalculateTotal(

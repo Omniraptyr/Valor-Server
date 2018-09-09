@@ -10,6 +10,7 @@ namespace wServer.logic
         private _ Concealment = () => Behav()
             .Init("The Dreadnought",
                 new State(
+                    new ScaleHP(35000),
                     new RealmPortalDrop(),
                     new State("default",
                         new PlayerWithinTransition(8, "fight1")
@@ -72,7 +73,7 @@ namespace wServer.logic
                        )
                     ),
                                 new MostDamagers(3,
-                    LootTemplates.SFLow()
+                    LootTemplates.SorRare()
                     ),
                                 new MostDamagers(3,
                     new ItemLoot("Potion of Might", 1.0)
@@ -81,7 +82,7 @@ namespace wServer.logic
                     new ItemLoot("Potion of Defense", 1.0)
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SF1()
+                    LootTemplates.Sor2Perc()
                     ),
                 new Threshold(0.022,
                     new TierLoot(10, ItemType.Weapon, 0.06),
@@ -208,6 +209,7 @@ namespace wServer.logic
             )
            .Init("Treasure Basilisk",
                 new State(
+                  new ScaleHP(35000),
                   new State("default",
                   new Taunt(true, "Find us..kill us..gain our treasures, if you are brave."),
                    new PlayerWithinTransition(8, "fight")

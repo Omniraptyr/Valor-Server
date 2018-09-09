@@ -39,12 +39,6 @@ public class Map extends AbstractMap {
     public static const CLOTH_BAZAAR:String = "Cloth Bazaar";
     public static const NEXUS:String = "Nexus";
     public static const DAILY_QUEST_ROOM:String = "Daily Quest Room";
-    public static const DAILY_LOGIN_ROOM:String = "Daily Login Room";
-    public static const PET_YARD_1:String = "Pet Yard";
-    public static const PET_YARD_2:String = "Pet Yard 2";
-    public static const PET_YARD_3:String = "Pet Yard 3";
-    public static const PET_YARD_4:String = "Pet Yard 4";
-    public static const PET_YARD_5:String = "Pet Yard 5";
     public static const GUILD_HALL:String = "Guild Hall";
     public static const NEXUS_EXPLANATION:String = "Nexus_Explanation";
     public static const VAULT:String = "Vault";
@@ -53,7 +47,6 @@ public class Map extends AbstractMap {
     protected static const BLIND_FILTER:ColorMatrixFilter = new ColorMatrixFilter([0.05, 0.05, 0.05, 0, 0, 0.05, 0.05, 0.05, 0, 0, 0.05, 0.05, 0.05, 0, 0, 0.05, 0.05, 0.05, 1, 0]);
 
     public static var forceSoftwareRender:Boolean = false;
-    protected static var BREATH_CT:ColorTransform = new ColorTransform((0xFF / 0xFF), (55 / 0xFF), (0 / 0xFF), 0);
     public static var texture:BitmapData;
 
     public var ifDrawEffectFlag:Boolean = true;

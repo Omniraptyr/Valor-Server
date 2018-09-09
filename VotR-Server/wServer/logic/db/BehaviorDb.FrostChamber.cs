@@ -148,7 +148,7 @@ namespace wServer.logic
                     new State("RushCrnrTR1",
                         new Order(99, "Frozen Sphere Turret", "Active4"),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new MoveTo2(35, 9, speed: 1.6, isMapPosition: true, once: true),
+                        //new MoveTo2(35, 9, speed: 1.6, isMapPosition: true, once: true),
                         new TimedTransition(3400, "RushCrnrTR2")
                         ),
                     new State("RushCrnrTR2",
@@ -160,7 +160,7 @@ namespace wServer.logic
                     //Rush to Corner Top Left
                     new State("RushCrnrTL1",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new MoveTo2(10, 9, speed: 1.6, isMapPosition: true, once: true),
+                        //new MoveTo2(10, 9, speed: 1.6, isMapPosition: true, once: true),
                         new TimedTransition(3400, "RushCrnrTL2")
                         ),
                     new State("RushCrnrTL2",
@@ -172,7 +172,7 @@ namespace wServer.logic
                     //Rush to Corner Bottom Left
                     new State("RushCrnrBL1",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new MoveTo2(10, 23, speed: 1.6, isMapPosition: true, once: true),
+                        //new MoveTo2(10, 23, speed: 1.6, isMapPosition: true, once: true),
                         new TimedTransition(3400, "RushCrnrBL2")
                         ),
                     new State("RushCrnrBL2",
@@ -184,7 +184,7 @@ namespace wServer.logic
                     //Rush to Corner Bottom Right
                     new State("RushCrnrBR1",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new MoveTo2(35, 23, speed: 1.6, isMapPosition: true, once: true),
+                        //new MoveTo2(35, 23, speed: 1.6, isMapPosition: true, once: true),
                         new TimedTransition(3400, "RushCrnrBR2")
                         ),
                     new State("RushCrnrBR2",
@@ -196,7 +196,7 @@ namespace wServer.logic
                     new State("HealingPhaseBef",
                         new Flash(0x00FF00, 2, 2),
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
-                        new MoveTo2(23, 16, speed: 1, isMapPosition: true, once: true),
+                        //new MoveTo2(23, 16, speed: 1, isMapPosition: true, once: true),
                         new TimedTransition(4600, "HealStart")
                         ),
                     new State("HealStart",
@@ -294,7 +294,7 @@ namespace wServer.logic
                     )
                   ),
                 new MostDamagers(3,
-                    LootTemplates.GStatIncreasePotionsLoot2()
+                    LootTemplates.GreaterPots()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Sor Fragment Cache", 0.75),
@@ -308,7 +308,6 @@ namespace wServer.logic
                     new TierLoot(6, ItemType.Ring, 0.1)
                     )
                 )
-
          ;
     }
 }

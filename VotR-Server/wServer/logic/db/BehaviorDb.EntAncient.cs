@@ -186,7 +186,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                        LootTemplates.SF1()
+                        LootTemplates.Sor2Perc()
                     ),
                 new Threshold(0.15,
                 new TierLoot(2, ItemType.Ring, 0.15),
@@ -267,7 +267,7 @@ namespace wServer.logic
                     new Decay(60000)
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                    LootTemplates.SorVeryRare()
                     ),
                 new Threshold(0.15,
                 new ItemLoot("Health Potion", 0.25),

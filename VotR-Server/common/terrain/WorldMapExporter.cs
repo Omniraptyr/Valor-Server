@@ -31,7 +31,7 @@ namespace terrain
                     }
                     dat[idx] = (byte)(i & 0xff);
                     dat[idx + 1] = (byte)(i >> 8);
-                    dat[idx + 2] = (byte)tile.Elevation;
+                    dat[idx + 2] = tile.Elevation;
                     idx += 3;
                 }
 

@@ -66,11 +66,10 @@ namespace wServer.networking.handlers
             
             if(acc.NameChosen != true)
             {
-                client.SendFailure("Account banned.", Failure.MessageWithDisconnect);
-                Log.InfoFormat("{0} ({1}) tried to log in. Account Banned.",
-                    acc.Name, client.IP);
+                client.SendFailure("You must choose a name before playing.", Failure.MessageWithDisconnect);
                 return null;
             }
+
             if (acc.Banned)
             {
                 client.SendFailure("Account banned.", Failure.MessageWithDisconnect);

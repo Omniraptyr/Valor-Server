@@ -79,7 +79,7 @@ namespace common.resources
         public IDictionary<ushort, PetAbilityDesc> PetAbilities { get; private set; }
         public IDictionary<int, ItemType> SlotType2ItemType { get; private set; }
 
-        int updateCount = 0;
+        int updateCount;
         int prevUpdateCount = -1;
         XElement addition;
         string[] addXml;
@@ -366,7 +366,7 @@ namespace common.resources
                 {
                     if (elem.Attribute("type") == null)
                         elem.Add(new XAttribute("type", type));
-                    this.addition.Add(elem);
+                    addition.Add(elem);
                     updateCount++;
                 }
             }
@@ -397,7 +397,7 @@ namespace common.resources
                 bool ext;
                 if (extAttr != null && bool.TryParse(extAttr.Value, out ext) && ext)
                 {
-                    this.addition.Add(elem);
+                    addition.Add(elem);
                     updateCount++;
                 }
             }
@@ -503,7 +503,7 @@ namespace common.resources
         {
             if (prevUpdateCount != updateCount)
             {
-                addXml = new string[] { addition.ToString() };
+                addXml = new[] { addition.ToString() };
                 prevUpdateCount = updateCount;
             }
         }

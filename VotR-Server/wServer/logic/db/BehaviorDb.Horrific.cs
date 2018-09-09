@@ -42,6 +42,7 @@ namespace wServer.logic
             )
             .Init("The Horrific",
                 new State(
+                    new ScaleHP(35000),
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("default",
@@ -200,7 +201,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF1()
+                    LootTemplates.Sor2Perc()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Potion of Might", 1.0),

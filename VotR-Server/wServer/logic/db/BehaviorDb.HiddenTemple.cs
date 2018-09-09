@@ -327,7 +327,7 @@ namespace wServer.logic
                         )
                     ),
                     new MostDamagers(3,
-                    LootTemplates.GStatIncreasePotionsLoot2()
+                    LootTemplates.GreaterPots()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Sor Fragment Cache", 0.75),

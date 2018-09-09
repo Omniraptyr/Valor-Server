@@ -43,28 +43,28 @@ namespace wServer.realm
         private static readonly ILog Log = LogManager.GetLogger(typeof(RealmManager));
 
         private readonly bool _initialized;
-        public string InstanceId { get; private set; }
+        public string InstanceId { get; }
         public bool Terminating { get; private set; }
 
-        public Resources Resources { get; private set; }
-        public Database Database { get; private set; }
-        public ServerConfig Config { get; private set; }
-        public int TPS { get; private set; }
+        public Resources Resources { get; }
+        public Database Database { get; }
+        public ServerConfig Config { get; }
+        public int TPS { get; }
         
-        public ConnectManager ConMan { get; private set; }
-        public BehaviorDb Behaviors { get; private set; }
-        public ISManager InterServer { get; private set; }
-        public ISControl ISControl { get; private set; }
-        public ChatManager Chat { get; private set; }
-        public DbServerManager DbServerController { get; private set; }
-        public CommandManager Commands { get; private set; }
-        public Market Market { get; private set; }
-        public DbTinker Tinker { get; private set; }
-        public PortalMonitor Monitor { get; private set; }
-        public DbEvents DbEvents { get; private set; }
+        public ConnectManager ConMan { get; }
+        public BehaviorDb Behaviors { get; }
+        public ISManager InterServer { get; }
+        public ISControl ISControl { get; }
+        public ChatManager Chat { get; }
+        public DbServerManager DbServerController { get; }
+        public CommandManager Commands { get; }
+        public Market Market { get; }
+        public DbTinker Tinker { get; }
+        public PortalMonitor Monitor { get; }
+        public DbEvents DbEvents { get; }
 
-        private Thread _network;
-        private Thread _logic;
+        //private Thread _network;
+        //private Thread _logic;
         public NetworkTicker Network { get; private set; }
         public FLLogicTicker Logic { get; private set; }
 
@@ -203,9 +203,8 @@ namespace wServer.realm
         {
             var player = client.Player;
             player?.Owner?.LeaveWorld(player);
-            
-            PlayerInfo plrInfo;
-            Clients.TryRemove(client, out plrInfo);
+
+            Clients.TryRemove(client, out var plrInfo);
 
             // recalculate usage statistics
             Config.serverInfo.players = ConMan.GetPlayerCount();
@@ -233,8 +232,7 @@ namespace wServer.realm
                     : Interlocked.Increment(ref _nextWorldId);
             }
 
-            World world;
-            DynamicWorld.TryGetWorld(proto, null, out world);
+            DynamicWorld.TryGetWorld(proto, null, out var world);
             if (world != null)
             {
                 if (world is Marketplace && !Config.serverSettings.enableMarket)
@@ -270,8 +268,7 @@ namespace wServer.realm
 
         public World GetWorld(int id)
         {
-            World ret;
-            if (!Worlds.TryGetValue(id, out ret)) return null;
+            if (!Worlds.TryGetValue(id, out var ret)) return null;
             if (ret.Id == 0) return null;
             return ret;
         }

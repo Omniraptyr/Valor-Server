@@ -52,7 +52,7 @@ namespace wServer.realm.entities
             _lastServerTime = serverTime;
         }
 
-        public int LastClientTime()
+        public float LastClientTime()
         {
             return _lastClientTime;
         }
@@ -90,7 +90,7 @@ namespace wServer.realm.entities
             if (item != Inventory[0])
                 return PlayerShootStatus.ItemMismatch;
             
-            var dt = (int)(1 / Stats.GetAttackFrequency() * 1 / item.RateOfFire);
+            var dt = 1 / Stats.GetAttackFrequency() * (1 / item.RateOfFire);
             if (time < _time.LastClientTime() + dt)
                 return PlayerShootStatus.CooldownStillActive;
 

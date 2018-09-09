@@ -71,10 +71,9 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ring, 0.04),
                     new TierLoot(4, ItemType.Ability, 0.04)
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                new MostDamagers(3,
+                    LootTemplates.SorVeryRare()
                     ),
-                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
                     new ItemLoot("Potion of Attack", 0.2),
                     new ItemLoot("Tiny Sor Fragment", 0.0001)
@@ -115,10 +114,9 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ring, 0.04),
                     new TierLoot(4, ItemType.Ability, 0.04)
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                new MostDamagers(3,
+                    LootTemplates.SorVeryRare()
                     ),
-                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
                     new ItemLoot("Potion of Attack", 0.2),
                     new ItemLoot("Tiny Sor Fragment", 0.0001)
@@ -145,7 +143,7 @@ namespace wServer.logic
                          )
                     ),
                             new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                    LootTemplates.SorVeryRare()
                     ),
                 new Threshold(.01,
                     new TierLoot(6, ItemType.Weapon, 0.1),
@@ -157,7 +155,6 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ring, 0.04),
                     new TierLoot(4, ItemType.Ability, 0.04)
                     ),
-                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
                     new ItemLoot("Potion of Speed", 0.2),
                     new ItemLoot("Tiny Sor Fragment", 0.0001)
@@ -186,7 +183,7 @@ namespace wServer.logic
                     new Reproduce(densityMax: 3)
                     ),
                                 new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                    LootTemplates.SorVeryRare()
                     ),
                 new Threshold(.01,
                     new TierLoot(6, ItemType.Weapon, 0.1),
@@ -198,7 +195,6 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ring, 0.04),
                     new TierLoot(4, ItemType.Ability, 0.04)
                     ),
-                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
                     new ItemLoot("Potion of Speed", 0.2),
                     new ItemLoot("Tiny Sor Fragment", 0.0001)
@@ -214,10 +210,9 @@ namespace wServer.logic
                     new Shoot(10, 4, 20, coolDown: 3000),
                     new Shoot(10, 8, coolDown: 2500, predictive: 1, coolDownOffset: 2690, projectileIndex: 1)
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                new MostDamagers(3,
+                    LootTemplates.SorVeryRare()
                     ),
-                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.1,
                     new TierLoot(11, ItemType.Armor, 0.1),
                     new TierLoot(7, ItemType.Weapon, 0.25),
@@ -245,7 +240,7 @@ namespace wServer.logic
                     new Reproduce(densityMax: 3)
                     ),
                                 new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                    LootTemplates.SorVeryRare()
                     ),
                 new Threshold(.01,
                     new TierLoot(6, ItemType.Weapon, 0.1),
@@ -257,7 +252,6 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ring, 0.04),
                     new TierLoot(4, ItemType.Ability, 0.04)
                     ),
-                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
                     new ItemLoot("Potion of Defense", 0.2),
                     new ItemLoot("Tiny Sor Fragment", 0.0001)
@@ -276,7 +270,7 @@ namespace wServer.logic
                     new Reproduce(densityMax: 3)
                     ),
                                 new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                    LootTemplates.SorVeryRare()
                     ),
                 new Threshold(.01,
                     new TierLoot(6, ItemType.Weapon, 0.1),
@@ -288,7 +282,6 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ring, 0.04),
                     new TierLoot(4, ItemType.Ability, 0.04)
                     ),
-                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
                     new ItemLoot("Potion of Defense", 0.2),
                     new ItemLoot("Tiny Sor Fragment", 0.0001)
@@ -306,7 +299,7 @@ namespace wServer.logic
                     new DropPortalOnDeath("Mad Lab Portal", .17)
                     ),
                                 new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                    LootTemplates.SorVeryRare()
                     ),
                 new Threshold(.01,
                     new TierLoot(6, ItemType.Weapon, 0.1),
@@ -318,7 +311,6 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ring, 0.04),
                     new TierLoot(4, ItemType.Ability, 0.04)
                     ),
-                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.07,
                     new ItemLoot("Potion of Attack", 0.2),
                     new ItemLoot("Tiny Sor Fragment", 0.0001)
@@ -335,10 +327,9 @@ namespace wServer.logic
                     new Shoot(10, projectileIndex: 1, predictive: 1, coolDown: 650),
                     new Reproduce(densityMax: 2)
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                new MostDamagers(3,
+                    LootTemplates.SorVeryRare()
                     ),
-                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(.01,
                     new TierLoot(6, ItemType.Weapon, 0.1),
                     new TierLoot(7, ItemType.Weapon, 0.07),
@@ -365,10 +356,9 @@ namespace wServer.logic
                     new Reproduce(densityMax: 3),
                     new DropPortalOnDeath("Undead Lair Portal", 0.17)
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                new MostDamagers(3,
+                    LootTemplates.SorVeryRare()
                     ),
-                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(.01,
                     new TierLoot(6, ItemType.Weapon, 0.1),
                     new TierLoot(7, ItemType.Weapon, 0.07),
@@ -392,10 +382,9 @@ namespace wServer.logic
                     new Shoot(12, 10, 1, projectileIndex: 1, coolDown: 2000),
                     new DropPortalOnDeath("Concealment of the Dreadnought Portal", .20)
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                new MostDamagers(3,
+                    LootTemplates.SorVeryRare()
                     ),
-                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(0.18,
                     new TierLoot(9, ItemType.Weapon, 0.055),
                     new TierLoot(7, ItemType.Weapon, 0.15),
@@ -428,7 +417,7 @@ namespace wServer.logic
                         )
                     ),
                                 new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                    LootTemplates.SorVeryRare()
                     ),
                 new Threshold(.01,
                     new TierLoot(5, ItemType.Weapon, 0.16),
@@ -468,7 +457,7 @@ namespace wServer.logic
                         )
                     ),
                                 new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                    LootTemplates.SorVeryRare()
                     ),
                 new Threshold(.01,
                     new TierLoot(5, ItemType.Weapon, 0.16),
@@ -508,7 +497,7 @@ namespace wServer.logic
                         )
                     ),
                                 new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                    LootTemplates.SorVeryRare()
                     ),
                 new Threshold(.01,
                     new TierLoot(5, ItemType.Weapon, 0.16),
@@ -564,10 +553,9 @@ namespace wServer.logic
                         new Suicide()
                         )
                     ),
-                                new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                new MostDamagers(3,
+                    LootTemplates.SorVeryRare()
                     ),
-                new MostDamagers(3, LootTemplates.GoldLoot()),
                 new Threshold(.01,
                     new TierLoot(6, ItemType.Weapon, 0.1),
                     new TierLoot(7, ItemType.Weapon, 0.07),
@@ -617,11 +605,8 @@ namespace wServer.logic
                             new TimedTransition(1500, "Wander"))
                         )
                     ),
-                new MostDamagers(3, 
-                    LootTemplates.GoldLoot()
-                    ),
                 new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                    LootTemplates.SorVeryRare()
                     ),
                 new Threshold(.01,
                     new TierLoot(6, ItemType.Weapon, 0.1),
@@ -677,7 +662,7 @@ namespace wServer.logic
                     new DropPortalOnDeath("The Crawling Depths", 1)
                     ),
                                 new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                    LootTemplates.SorVeryRare()
                     ),
                 new Threshold(.01,
                     new ItemLoot("1000 Gold", 0.01),
@@ -711,7 +696,7 @@ namespace wServer.logic
                     new DropPortalOnDeath("Woodland Labyrinth", 1)
                     ),
                                 new MostDamagers(3,
-                    LootTemplates.SFExtremelyLow()
+                    LootTemplates.SorVeryRare()
                     ),
                 new Threshold(.01,
                     new ItemLoot("1000 Gold", 0.01),

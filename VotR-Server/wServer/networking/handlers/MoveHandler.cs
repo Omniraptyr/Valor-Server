@@ -1,4 +1,5 @@
-﻿using wServer.realm.entities;
+﻿using System;
+using wServer.realm.entities;
 using wServer.networking.packets;
 using wServer.networking.packets.incoming;
 using wServer.realm;
@@ -15,25 +16,26 @@ namespace wServer.networking.handlers
             client.Manager.Logic.AddPendingAction(t => Handle(client.Player, t, packet));
         }
 
-        private static void Handle(Player player, RealmTime time, Move packet)
-        {
+        private static void Handle(Player player, RealmTime time, Move packet) {
             if (player?.Owner == null)
                 return;
 
-            player.MoveReceived(time, packet);
-
             var newX = packet.NewPosition.X;
             var newY = packet.NewPosition.Y;
-            if (player.SpectateTarget == null && player.Id == packet.ObjectId ||
-                player.SpectateTarget?.Id == packet.ObjectId)
-            {
-                if (newX != -1 && newX != player.X ||
-                    newY != -1 && newY != player.Y)
-                {
-                    player.Move(newX, newY);
-                }
+
+            /*if (Math.Abs(MathsUtils.DistSqr(newX, newY, player.X, player.Y))
+                > player.Stats.GetTilesPerSecSqr() * 1.05) {
+                player.Client.Disconnect("Moving too fast");
+                return;
+            }*/
+
+            if (newX != -1 && newX != player.X ||
+                  newY != -1 && newY != player.Y) {
+                player.Move(newX, newY);
             }
+
             CheckLabConditions(player, packet);
+            player.MoveReceived(time, packet);
         }
 
         private static void CheckLabConditions(Entity player, Move packet)

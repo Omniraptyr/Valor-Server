@@ -57,40 +57,6 @@ namespace wServer.realm.commands
         }
     }
 
-    /*class GoldFameTransferCommand : Command
-    {
-        public GoldFameTransferCommand() : base("transfer") { }
-
-        protected override bool Process(Player player, RealmTime time, string args)
-        {
-            var acc = player.Client.Account;
-
-            if (player.Credits <= 0)
-            {
-                player.SendError("You have no gold to transfer into fame.");
-                return false;
-            }
-            var amount2 = int.Parse(args);
-
-            if (string.IsNullOrEmpty(args))
-            {
-                player.SendInfo("/transfer <amount>  {Every 5 gold is 1 fame.}");
-                return false;
-            }
-
-            player.Client.Manager.Database.UpdateCredit(acc, -amount2);
-            player.Credits = player.Client.Account.Credits - amount2;
-            player.ForceUpdate(player.Credits);
-
-
-            player.Client.Manager.Database.UpdateFame(acc, amount2);
-            player.Fame = player.Client.Account.Credits + amount2;
-            player.ForceUpdate(player.Fame);
-
-            return true;
-        }
-    }*/
-
     class PauseCommand : Command
     {
         public PauseCommand() : base("pause") { }
@@ -141,11 +107,6 @@ namespace wServer.realm.commands
         }
     }
 
-    /// <summary>
-    /// This introduces a subtle bug, since the client UI is not notified when a /teleport is typed, it's cooldown does not reset.
-    /// This leads to the unfortunate situation where the cooldown has been not been reached, but the UI doesn't know. The graphical TP will fail
-    /// and cause it's timer to reset. NB: typing /teleport will workaround this timeout issue.
-    /// </summary>
     class TeleportCommand : Command
     {
         public TeleportCommand() : base("tp", alias: "teleport") { }
@@ -164,7 +125,7 @@ namespace wServer.realm.commands
                 return true;
             }
 
-            player.SendError($"Unable to find player: {args}");
+            player.SendError($"Unable to find player: <{args}>");
             return false;
         }
     }
@@ -183,7 +144,7 @@ namespace wServer.realm.commands
 
             if (player.Muted)
             {
-                player.SendError("Muted. You can not tell at this time.");
+                player.SendError("You are muted. You can not tell at this time.");
                 return false;
             }
 
@@ -205,7 +166,7 @@ namespace wServer.realm.commands
 
             if (!player.Manager.Chat.Tell(player, playername, msg))
             {
-                player.SendError(string.Format("{0} not found.", playername));
+                player.SendError($"<{playername}> not found.");
                 return false;
             }
             return true;
@@ -343,7 +304,7 @@ namespace wServer.realm.commands
                     .ToArray()
             });
 
-            player.SendInfo(playerName + " has been added to your ignore list.");
+            player.SendInfo("<" + playerName + "> has been added to your ignore list.");
             return true;
         }
     }
@@ -389,7 +350,7 @@ namespace wServer.realm.commands
                     .ToArray()
             });
 
-            player.SendInfo(playerName + " no longer ignored.");
+            player.SendInfo("<" + playerName + "> no longer ignored.");
             return true;
         }
     }
@@ -436,7 +397,7 @@ namespace wServer.realm.commands
                 LockAction = 1
             });
 
-            player.SendInfo(playerName + " has been locked.");
+            player.SendInfo("<" + playerName + "> is now locked.");
             return true;
         }
     }
@@ -483,25 +444,24 @@ namespace wServer.realm.commands
                 LockAction = 0
             });
 
-            player.SendInfo(playerName + " no longer locked.");
+            player.SendInfo("<" + playerName + "> is no longer locked.");
             return true;
         }
     }
 
-    class UptimeCommand : Command
+    internal class UptimeCommand : Command
     {
         public UptimeCommand() : base("uptime") { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
-            TimeSpan t = TimeSpan.FromMilliseconds(time.TotalElapsedMs);
+            var t = TimeSpan.FromMilliseconds(time.TotalElapsedMs);
 
-            string answer = string.Format("{0:D2}h:{1:D2}m:{2:D2}s",
-                            t.Hours,
-                            t.Minutes,
-                            t.Seconds);
+            var answer = t.Days != 0 
+                ? $"{t.Days:D2} days, {t.Hours:D2} hours, {t.Minutes:D2} minutes"
+                : $"{t.Hours:D2} hours, {t.Minutes:D2} minutes";
 
-            player.SendInfo("The server has been up for " + answer + ".");
+            player.SendInfo("The server has been up for: " + answer + ".");
             return true;
         }
     }
@@ -602,7 +562,7 @@ namespace wServer.realm.commands
             }
             else
             {
-                player.SendError("You are going to go broke at this rate..");
+                player.SendError("You are going to go broke at this rate...");
                 return false;
             }
             
@@ -839,20 +799,7 @@ namespace wServer.realm.commands
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
-            var owner = player.Owner;
-            var players = owner.Players.Values
-                .Where(p => p.Client != null && p.CanBeSeenBy(player))
-                .ToArray();
-
-            var sb = new StringBuilder($"Players in current area ({owner.Players.Count}): ");
-            for (var i = 0; i < players.Length; i++)
-            {
-                if (i != 0)
-                    sb.Append(", ");
-                sb.Append(players[i].Name);
-            }
-            
-            player.SendInfo(sb.ToString());
+            player.SendInfo($"There are '{player.Owner.Players.Count}' people in your area.");
             return true;
         }
     }
@@ -871,16 +818,8 @@ namespace wServer.realm.commands
                  select plr.Name)
                 .ToArray();
 
-            var sb = new StringBuilder($"Players online ({players.Length}): ");
-            for (var i = 0; i < players.Length; i++)
-            {
-                if (i != 0)
-                    sb.Append(", ");
-
-                sb.Append(players[i]);
-            }
-
-            player.SendInfo(sb.ToString());
+            var sb = $"There are '{players.Length}' people online.";
+            player.SendInfo(sb);
             return true;
         }
     }
@@ -906,26 +845,26 @@ namespace wServer.realm.commands
                         plr.Hidden && !player.Client.Account.Admin)
                         continue;
 
-                    player.SendInfo($"{plr.Name} is playing on {server.name} at [{plr.WorldInstance}]{plr.WorldName}.");
+                    player.SendInfo($"<{plr.Name}> is playing on {server.name} at {plr.WorldName}.");
                     return true;
                 }
 
             var pId = player.Manager.Database.ResolveId(name);
             if (pId == 0)
             {
-                player.SendInfo($"No player with the name {name}.");
+                player.SendInfo($"No player with the name <{name}>.");
                 return true;
             }
 
             var acc = player.Manager.Database.GetAccount(pId, "lastSeen");
             if (acc.LastSeen == 0)
             {
-                player.SendInfo($"{name} not online. Has not been seen since the dawn of time.");
+                player.SendInfo($"<{name}> not online. Has not been seen since the dawn of time.");
                 return true;
             }
 
             var dt = Utils.FromUnixTimestamp(acc.LastSeen);
-            player.SendInfo($"{name} not online. Player last seen {Utils.TimeAgo(dt)}.");
+            player.SendInfo($"<{name}> not online. Player last seen {Utils.TimeAgo(dt)}.");
             return true;
         }
     }
@@ -1252,7 +1191,7 @@ namespace wServer.realm.commands
             {
                 // chat needs to be done before removal so we can use
                 // srcPlayer as a source for guild info
-                manager.Chat.Guild(player, player.Name + " has left the guild.", true);
+                manager.Chat.Guild(player, "<" + player.Name + "> has left the guild.", true);
 
                 if (!manager.Database.RemoveFromGuild(player.Client.Account))
                 {
@@ -1300,7 +1239,7 @@ namespace wServer.realm.commands
                     targetPlayer.GuildRank = 0;
 
                     manager.Chat.Guild(player,
-                        targetPlayer.Name + " has been kicked from the guild by " + player.Name, true);
+                        "<" + targetPlayer.Name + "> has been kicked from the guild by <" + player.Name + ">", true);
                     targetPlayer.SendInfo("You have been kicked from the guild.");
                     return true;
                 }
@@ -1323,7 +1262,7 @@ namespace wServer.realm.commands
                 }
 
                 manager.Chat.Guild(player,
-                    targetAccount.Name + " has been kicked from the guild by " + player.Name, true);
+                    "<" + targetAccount.Name + "> has been kicked from the guild by <" + player.Name + ">", true);
                 return true;
             }
 
@@ -1436,23 +1375,6 @@ namespace wServer.realm.commands
                 }
                 player.SendInfo(sb.ToString());
             }
-            return true;
-        }
-    }
-
-    class BazaarCommand : Command
-    {
-        public BazaarCommand() : base("bazaar") { }
-
-        protected override bool Process(Player player, RealmTime time, string args)
-        {
-            player.Client.Reconnect(new Reconnect()
-            {
-                Host = "",
-                Port = 2050,
-                GameId = World.ClothBazaar,
-                Name = "Cloth Bazaar"
-            });
             return true;
         }
     }

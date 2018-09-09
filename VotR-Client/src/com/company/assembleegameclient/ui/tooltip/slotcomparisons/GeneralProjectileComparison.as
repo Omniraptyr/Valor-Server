@@ -5,12 +5,10 @@ import kabam.rotmg.text.model.TextKey;
 import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
 
 public class GeneralProjectileComparison extends SlotComparison {
-
     private var itemXML:XML;
     private var curItemXML:XML;
     private var projXML:XML;
     private var otherProjXML:XML;
-
 
     override protected function compareSlots(_arg1:XML, _arg2:XML):void {
         this.itemXML = _arg1;
@@ -24,7 +22,6 @@ public class GeneralProjectileComparison extends SlotComparison {
             this.addProjectileText();
             processedTags[_arg1.Projectile.toXMLString()] = true;
         }
-        this.buildRateOfFireText();
     }
 
     private function addProjectileText():void {
@@ -50,9 +47,10 @@ public class GeneralProjectileComparison extends SlotComparison {
             comparisonStringBuilder.pushParams("Shots are parametric", {}, TooltipHelper.getOpenTag(NO_DIFF_COLOR), TooltipHelper.getCloseTag());
         }
 		for each (_local4 in this.projXML.ConditionEffect) {
-            comparisonStringBuilder.pushParams("Shot Effect:\n{condition}"
-                , {"condition": wrapInColoredFont(this.projXML.ConditionEffect + " for " + this.projXML.ConditionEffect.@duration
-				+ " seconds", getTextColor(0))
+            comparisonStringBuilder.pushParams("Shot Effect:\n{condition}", {
+                        "condition":
+                                wrapInColoredFont(this.projXML.ConditionEffect + " for "
+                                        + this.projXML.ConditionEffect.@duration + " seconds", NO_DIFF_COLOR)
                 });
         }		
         for each (_local4 in this.projXML.CondChance) {
@@ -86,28 +84,5 @@ public class GeneralProjectileComparison extends SlotComparison {
         var _local7:String = (((_local1 == _local2)) ? _local1 : ((_local1 + " - ") + _local2)).toString();
         comparisonStringBuilder.pushParams(TextKey.DAMAGE, {"damage": wrapInColoredFont(_local7, getTextColor((_local3 - _local6)))});
     }
-
-    private function buildRateOfFireText():void {
-        if ((((this.itemXML.RateOfFire.length() == 0)) || ((this.curItemXML.RateOfFire.length() == 0)))) {
-            return;
-        }
-        var _local1:Number = Number(this.curItemXML.RateOfFire[0]);
-        var _local2:Number = Number(this.itemXML.RateOfFire[0]);
-        var _local3:int = int(((_local2 / _local1) * 100));
-        var _local4:int = (_local3 - 100);
-        if (_local4 == 0) {
-            return;
-        }
-        var _local5:uint = getTextColor(_local4);
-        var _local6:String = _local4.toString();
-        if (_local4 > 0) {
-            _local6 = ("+" + _local6);
-        }
-        _local6 = wrapInColoredFont((_local6 + "%"), _local5);
-        comparisonStringBuilder.pushParams(TextKey.RATE_OF_FIRE, {"data": _local6});
-        processedTags[this.itemXML.RateOfFire[0].toXMLString()];
-    }
-
-
 }
 }

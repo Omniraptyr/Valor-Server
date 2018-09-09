@@ -20,7 +20,7 @@ namespace wServer.logic
                     new State("follow",
                         new EntityExistsTransition("Spiritorb Holder Default Green", 6, "die"),
                         new Prioritize(
-                            new Follow(2.5, 16, 1),
+                            new Follow(1.5, 16, 1),
                             new Wander(0.25)
                             )
                         ),
@@ -40,7 +40,7 @@ namespace wServer.logic
                     new State("follow",
                         new EntityExistsTransition("Spiritorb Holder Default Blue", 6, "die"),
                         new Prioritize(
-                            new Follow(2.5, 16, 1),
+                            new Follow(1.5, 6, 1),
                             new Wander(0.25)
                         )
                         ),
@@ -60,7 +60,7 @@ namespace wServer.logic
                     new State("follow",
                         new EntityExistsTransition("Spiritorb Holder Default Purple", 6, "die"),
                         new Prioritize(
-                            new Follow(2.5, 16, 1),
+                            new Follow(1.5, 6, 1),
                             new Wander(0.25)
                         )
                         ),
@@ -80,7 +80,7 @@ namespace wServer.logic
                     new State("follow",
                         new EntityExistsTransition("Spiritorb Holder Default Orange", 6, "die"),
                         new Prioritize(
-                            new Follow(2.5, 16, 1),
+                            new Follow(1.5, 6, 1),
                             new Wander(0.25)
                         )
                         ),
@@ -100,7 +100,7 @@ namespace wServer.logic
                     new State("follow",
                         new EntityExistsTransition("Spiritorb Holder Default Yellow", 6, "die"),
                         new Prioritize(
-                            new Follow(2.5, 16, 1),
+                            new Follow(1.5, 6, 1),
                             new Wander(0.25)
                         )
                         ),
@@ -280,7 +280,7 @@ namespace wServer.logic
                     new TimedTransition(20000, "abouttospawn")
                     ),
                 new State("abouttospawn",
-                    new Taunt(true, "A power orb spawns in 10 second..."),
+                    new Taunt(true, "A power orb spawns in 10 seconds..."),
                     new TimedTransition(10000, "spawn")
                     ),
                 new State("spawn",
@@ -455,7 +455,7 @@ namespace wServer.logic
                      new EntityExistsTransition("BD Puzzling Orange Activated", 30, "4time")
                     ),
                 new State("4time",
-                    new Taunt("You must know your stuff.."),
+                    new Taunt("You must know your stuff..."),
                      new TimedTransition(4000, "4cooldown")
                     ),
                 new State("4cooldown",
@@ -477,7 +477,7 @@ namespace wServer.logic
                     new Suicide()
                     ),
                 new State("0",
-                     new Taunt("Something isn't right here..", "That doesn't quite match this barrier spell, now does it?", "Can't be right..", "Mrn..no.", "Doesn't quite add up."),
+                     new Taunt("Something is not right here...", "That does not quite match this barrier spell, does it now?", "That can not be right...", "Mhm... No.", "Does not quite add up."),
                      new EntityExistsTransition("BD Puzzling Blue Activated", 30, "2time")
                     ),
                 new State("01",
@@ -536,7 +536,7 @@ namespace wServer.logic
                      new EntityExistsTransition("BD Puzzling Purple Activated", 30, "0")
                     ),
                 new State("4time",
-                    new Taunt("You must know your stuff.."),
+                    new Taunt("You must know your stuff..."),
                      new TimedTransition(4000, "4cooldown")
                     ),
                 new State("4cooldown",
@@ -559,7 +559,7 @@ namespace wServer.logic
                     new Suicide()
                     ),
                 new State("0",
-                     new Taunt("Something isn't right here..", "That doesn't quite match this barrier spell, now does it?", "Can't be right..", "Mrn..no.", "Doesn't quite add up."),
+                     new Taunt("Something is not right here...", "That does not quite match this barrier spell, does it now?", "That can not be right...", "Mhm... No.", "Does not quite add up."),
                      new EntityExistsTransition("BD Puzzling Purple Activated", 30, "2time")
                     ),
                 new State("01",
@@ -618,7 +618,7 @@ namespace wServer.logic
                      new EntityExistsTransition("BD Puzzling Green Activated", 30, "0")
                     ),
                 new State("4time",
-                    new Taunt("You must know your stuff.."),
+                    new Taunt("You must know your stuff..."),
                      new TimedTransition(4000, "4cooldown")
                     ),
                 new State("4cooldown",
@@ -639,14 +639,14 @@ namespace wServer.logic
                     ),
                 new State("goodtogo",
                      new Flash(0xFFFFFF, 0.2, 5),
-                     new Taunt("Very well...Goodluck on your journey.", "How far you've made it..you have passsed."),
+                     new Taunt("Very well... Goodluck on your journey.", "How far you have made it... You have passsed."),
                      new TimedTransition(4000, "die")
                     ),
                 new State("die",
                      new Suicide()
                     ),
                 new State("0",
-                     new Taunt("Something isn't right here..", "That doesn't quite match this barrier spell, now does it?", "Can't be right..", "Mrn..no.", "Doesn't quite add up."),
+                     new Taunt("Something is not right here...", "That doesn't quite match this barrier spell, does it now?", "That can not be right...", "Mhm... No.", "Does not quite add up."),
                      new EntityExistsTransition("BD Puzzling Orange Activated", 30, "2time")
                     ),
                 new State("01",
@@ -1525,7 +1525,7 @@ namespace wServer.logic
                     new State("Reveal",
                         new Follow(0.6, 8, 1),
                         new Flash(0xFF0000, 0.25, 4),
-                        new Taunt(0.75, "You are mine..", "Right..where..I want you..", "There you are.."),
+                        new Taunt(0.75, "You are mine...", "Right... where... I want you...", "There you are..."),
                         new SetAltTexture(0, 1, 10, true),
                         new Shoot(10, count: 1, projectileIndex: 1, coolDown: 3000),
                         new Shoot(10, count: 1, projectileIndex: 1, predictive: 0.5, coolDown: 3000, coolDownOffset: 1500),
@@ -1533,7 +1533,7 @@ namespace wServer.logic
                         new TimedTransition(3800, "jump")
                         ),
                    new State("jump",
-                       new Taunt(0.75, "Heheheh..", "Bloodshed is so..gorgeous.."),
+                       new Taunt(0.75, "Heheheh...", "Bloodshed is so... gorgeous..."),
                         new SetAltTexture(1),
                         new Charge(7, range: 16, coolDown: 1000),
                         new Shoot(10, count: 10, shootAngle: 12, projectileIndex: 0, coolDown: 1000),
@@ -1652,7 +1652,7 @@ namespace wServer.logic
                     new State("Reveal",
                         new Follow(0.6, 8, 1),
                         new Flash(0xFF0000, 0.25, 4),
-                        new Taunt(0.75, "You are mine..", "Right..where..I want you..", "There you are.."),
+                        new Taunt(0.75, "You are mine...", "Right... where... I want you...", "There you are..."),
                         new SetAltTexture(0, 1, 10, true),
                         new Shoot(10, count: 1, projectileIndex: 1, coolDown: 3000),
                         new Shoot(10, count: 1, projectileIndex: 1, predictive: 0.5, coolDown: 3000, coolDownOffset: 1500),
@@ -1660,7 +1660,7 @@ namespace wServer.logic
                         new TimedTransition(3800, "jump")
                         ),
                    new State("jump",
-                       new Taunt(0.75, "Heheheh..", "Bloodshed is so..gorgeous.."),
+                       new Taunt(0.75, "Heheheh...", "Bloodshed is so... gorgeous..."),
                         new SetAltTexture(1),
                         new Charge(7, range: 16, coolDown: 1000),
                         new Shoot(10, count: 10, shootAngle: 12, projectileIndex: 0, coolDown: 1000),
@@ -1679,7 +1679,7 @@ namespace wServer.logic
 
                 .Init("Revil, the Twisted Vanguard",
                 new State(
-                    new ScaleHP(30000),
+                    new ScaleHP(100000),
                     new DropPortalOnDeath("The Steps Portal", 1, 120),
                     new ChangeMusicOnDeath("oldcity"),
                     new State("default",
@@ -1689,15 +1689,15 @@ namespace wServer.logic
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("huh",
-                        new Taunt("Centuries...I have resided here waiting for a friendly challenge.."),
+                        new Taunt("Centuries... I have resided here waiting for a friendly challenge..."),
                         new TimedTransition(4000, "taunt1")
                         ),
                     new State("taunt1",
-                        new Taunt("but it seems you have a more..malicious intent dealing with me."),
+                        new Taunt("But it seems you have a more... malicious intent dealing with me."),
                         new TimedTransition(4000, "taunt2")
                         ),
                     new State("taunt2",
-                        new Taunt("I haven't fought for so long...", "My courage hasn't failed me for centuries..let's just hope it doesn't fail me now."),
+                        new Taunt("I haven't fought for so long...", "My courage has not failed me for centuries... Let us hope it does not fail me now."),
                         new TimedTransition(4000, "taunt3")
                         ),
                     new State("taunt3",
@@ -1771,7 +1771,7 @@ namespace wServer.logic
                         new TimedTransition(4000, "delay")
                         ),
                      new State("delay",
-                        new Taunt(0.10, "Just like old times.."),
+                        new Taunt(0.10, "Just like old times..."),
                         new TimedTransition(4000, "fight1a")
                         )
                     ),
@@ -1790,7 +1790,7 @@ namespace wServer.logic
                         new Shoot(10, count: 1, fixedAngle: 180, projectileIndex: 2, coolDown: 2000),
                         new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 2, coolDown: 2000),
                         new Shoot(10, count: 3, projectileIndex: 0, coolDown: 800),
-                        new Taunt(0.25, "Farewell, challenger.."),
+                        new Taunt(0.25, "Farewell, challenger..."),
                         new Grenade(4, 120, range: 5, coolDown: 4000),
                         new TimedTransition(14000, "yell"),
                         new Shoot(10, count: 7, shootAngle: 10, projectileIndex: 1, predictive: 0.1, coolDown: 99999),
@@ -1861,7 +1861,7 @@ namespace wServer.logic
                         new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 1, coolDown: 2000, coolDownOffset: 400),
                         new Shoot(10, count: 8, shootAngle: 6, projectileIndex: 0, coolDown: 2000, coolDownOffset: 1500),
                         new Orbit(0.6, 5, 10),
-                        new Taunt(0.10, "Let's see how you HANDLE this..Heheh....."),
+                        new Taunt(0.10, "Let's see how you HANDLE this... Heheh..."),
                         new TossObject("Twisted Axe", range: 8, coolDown: 99999),
                         new SetAltTexture(2),
                         new ConditionalEffect(ConditionEffectIndex.Armored),
@@ -1886,7 +1886,7 @@ namespace wServer.logic
                         new EntityExistsTransition("BD Puzzling Green Activated", 999, "return3")
                         ),
                      new State("return3",
-                        new Taunt(0.1, "You put up a fight..didn't expect this."),
+                        new Taunt(0.1, "You put up a fight... I didn't expect this..."),
                         new ReturnToSpawn(2),
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new TimedTransition(6000, "fight4")
@@ -1942,7 +1942,7 @@ namespace wServer.logic
                         new RemoveEntity(999, "Twisted Axe"),
                         new RemoveEntity(999, "Twisted Shield"),
                         new Flash(0xFFFFFF, 1, 2),
-                        new Taunt("I.....underestimated......you......", "Heheh..haven't had a battle like this in a while..thank you."),
+                        new Taunt("I... underestimated... you...", "Heheh... Haven't had a battle like this in a while... Thank you..."),
                         new ReturnToSpawn(2),
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new TimedRandomTransition(8000, false, "rip", "getit")
@@ -1963,12 +1963,12 @@ namespace wServer.logic
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("getit",
-                        new Taunt("I see what must be done....", "This battle has took long enough..you have truly finished me off....."),
+                        new Taunt("I see what must be done...", "This battle has took long enough... You have truly finished me off..."),
                         new TimedTransition(6000, "getit2")
                             ),
                     new State("getit2",
                         new ChangeSize(20, 180),
-                        new Taunt("This was my fault...I am sorry..", "Didn't want it to come to this...Lin....please", "I didn't want to cause any harm...but you've pushed me to my limits."),
+                        new Taunt("This was my fault... I am sorry...", "Didn't want it to come to this... Lin... Please...", "I didn't want to cause any harm... But you pushed me to my limits..."),
                         new TimedTransition(6000, "getit3")
                             ),
                     new State("getit3",
@@ -2021,7 +2021,7 @@ namespace wServer.logic
                         new TimedTransition(4000, "bdelay")
                         ),
                      new State("bdelay",
-                        new Taunt(0.10, "Just like old times.."),
+                        new Taunt(0.10, "Just like old times..."),
                         new TimedTransition(4000, "bfight1a")
                         )
                     ),
@@ -2041,7 +2041,7 @@ namespace wServer.logic
                         new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 2, coolDown: 2000),
                         new Shoot(10, count: 3, projectileIndex: 0, coolDown: 800),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 8000),
-                        new Taunt(0.25, "Farewell, challenger.."),
+                        new Taunt(0.25, "Farewell, challenger..."),
                         new Prioritize(
                             new Charge(2, 10, coolDown: 3000),
                             new Follow(0.6, acquireRange: 80, range: 8),
@@ -2187,7 +2187,7 @@ namespace wServer.logic
                         new RemoveEntity(999, "Twisted Axe"),
                         new RemoveEntity(999, "Twisted Shield"),
                         new Flash(0xFFFFFF, 1, 2),
-                        new Taunt("Noooo...I've failed her.."),
+                        new Taunt("Noooo... I failed her..."),
                         new ReturnToSpawn(2),
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new TimedTransition(6000, "dedo")
@@ -2211,10 +2211,10 @@ namespace wServer.logic
                     LootTemplates.FabledItemsLoots2B()
                 ),
                 new MostDamagers(3,
-                    LootTemplates.GStatIncreasePotionsLoot2()
+                    LootTemplates.GreaterPots()
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SF3()
+                    LootTemplates.Sor4Perc()
                     ),
                     new Threshold(0.1,
                        new TierLoot(7, ItemType.Ring, 0.06),
@@ -2255,7 +2255,7 @@ namespace wServer.logic
             )
             .Init("BD Berikao, the Dark Hunter",
                 new State(
-                    new ScaleHP(30000),
+                    new ScaleHP(100000),
                     new DropPortalOnDeath("Twisted Trials Portal", 1, 120),
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -2849,10 +2849,10 @@ namespace wServer.logic
                     LootTemplates.FabledItemsLoot2B()
                 ),
                 new MostDamagers(3,
-                    LootTemplates.GStatIncreasePotionsLoot2()
+                    LootTemplates.GreaterPots()
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SF3()
+                    LootTemplates.Sor4Perc()
                     ),
                     new Threshold(0.1,
                        new TierLoot(12, ItemType.Weapon, 0.08),
@@ -2880,20 +2880,20 @@ namespace wServer.logic
                      new PlayerWithinTransition(3, "taunt1")
                     ),
                 new State("taunt1",
-                     new Taunt("No one has ever has made it this far....I congratulate you.."),
+                     new Taunt("No one has ever has made it this far... I congratulate you..."),
                      new TimedTransition(4000, "taunt2")
                     ),
                 new State("taunt2",
-                     new Taunt("However...."),
+                     new Taunt("However..."),
                      new TimedTransition(6000, "taunt3")
                     ),
                 new State("taunt3",
-                     new Taunt("Your hands are the hands of a murderer.."),
+                     new Taunt("Your hands are the hands of a murderer..."),
                      new TimedTransition(6000, "taunt4")
                     ),
                 new State("taunt4",
                      new Flash(0xFF0000, 0.25, 8),
-                     new Taunt("YOU'VE KILLED REVIL! NOW, YOU WILL PAY!"),
+                     new Taunt("YOU KILLED REVIL! NOW, YOU WILL PAY!"),
                      new TimedTransition(6000, "break")
                     ),
                 new State("break",
@@ -2918,7 +2918,7 @@ namespace wServer.logic
                      new TimedTransition(4000, "taunt2")
                     ),
                 new State("taunt2",
-                     new Taunt("Your ashes will decorate these ruins.."),
+                     new Taunt("Your ashes will decorate these ruins!"),
                      new TimedTransition(4000, "go2")
                     )
                 ),
@@ -3064,17 +3064,17 @@ namespace wServer.logic
                     //new DropPortalOnDeath("Summoning Point Portal", 1, 120),
                     new TransformOnDeath("Lin2", 1, 1),
                 new State(
-
+                    new ScaleHP(35000),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("default",
                         new PlayerWithinTransition(8, "taunt")
                         ),
                     new State("taunt",
-                        new Taunt("What have you done..Revil did nothing to you.."),
+                        new Taunt("What have you done... Revil did nothing to you..."),
                         new TimedTransition(6000, "taunt2")
                         ),
                     new State("taunt2",
-                        new Taunt("My vengeance will be sweet.."),
+                        new Taunt("My vengeance will be sweet..."),
                         new TimedTransition(6000, "windup")
                         )
                     ),
@@ -3375,7 +3375,7 @@ namespace wServer.logic
                     LootTemplates.FabledItemsLoots2B()
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.1,
                 new TierLoot(7, ItemType.Ring, 0.08),
@@ -3403,7 +3403,7 @@ namespace wServer.logic
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State("waiting",
                     new Flash(0xFFFFFF, 0.2, 12),
-                    new Taunt("I can finally be at peace with him.."),
+                    new Taunt("I can finally be at peace with him..."),
                     new TimedTransition(6000, "taunt1")
                     ),
                 new State("taunt1",
@@ -4197,7 +4197,7 @@ namespace wServer.logic
                     LootTemplates.FabledItemsLoot2Drannol()
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SF4()
+                    LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.004,
                     new TierLoot(7, ItemType.Ring, 0.08),

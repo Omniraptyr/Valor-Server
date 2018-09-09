@@ -79,10 +79,10 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.StatIncreasePotionsLoot()
+                    LootTemplates.StatPots()
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SF2()
+                    LootTemplates.Sor3Perc()
                     ),
                 new Threshold(0.01,
                     new TierLoot(8, ItemType.Weapon, .15),

@@ -1,6 +1,7 @@
 ﻿// code from: http://www.interact-sw.co.uk/iangblog/2004/04/26/yetmoretimedlocking
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 
 // Thanks to Eric Gunnerson for recommending this be a struct rather
@@ -24,7 +25,7 @@ public struct TimedLock : IDisposable
         if (!Monitor.TryEnter(o, timeout))
         {
 #if DEBUG
-            System.GC.SuppressFinalize(tl.leakDetector);
+            GC.SuppressFinalize(tl.leakDetector);
 #endif
             throw new LockTimeoutException();
         }
@@ -64,7 +65,7 @@ public struct TimedLock : IDisposable
             // If this finalizer runs, someone somewhere failed to
             // call Dispose, which means we've failed to leave
             // a monitor!
-            System.Diagnostics.Debug.Fail("Undisposed lock");
+            Debug.Fail("Undisposed lock");
         }
     }
     private Sentinel leakDetector;

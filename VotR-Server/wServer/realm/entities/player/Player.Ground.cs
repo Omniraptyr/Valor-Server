@@ -10,73 +10,6 @@ namespace wServer.realm.entities
     {
         long l;
 
-        private void HandleOceanTrenchGround(RealmTime time)
-        {
-            try
-            {
-                // don't suffocate hidden players
-                if (HasConditionEffect(ConditionEffects.Hidden)) return;
-
-                if (time.TotalElapsedMs - l <= 100 || Owner?.Name != "OceanTrench") return;
-
-                if (!(Owner?.StaticObjects.Where(i => i.Value.ObjectType == 0x0731).Count(i => (X - i.Value.X) * (X - i.Value.X) + (Y - i.Value.Y) * (Y - i.Value.Y) < 1) > 0))
-                {
-                    if (OxygenBar == 0)
-                        HP -= 10;
-                    else
-                        OxygenBar -= 2;
-
-                    if (HP <= 0)
-                        Death("suffocation");
-                }
-                else
-                {
-                    if (OxygenBar < 100)
-                        OxygenBar += 8;
-                    if (OxygenBar > 100)
-                        OxygenBar = 100;
-                }
-                l = time.TotalElapsedMs;
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex);
-            }
-        }
-
-        private void HandleKrakenGround(RealmTime time)
-        {
-            try
-            {
-                // don't suffocate hidden players
-                if (HasConditionEffect(ConditionEffects.Hidden)) return;
-
-                if (time.TotalElapsedMs - l <= 100 || Owner?.Name != "KrakenLair") return;
-
-                if (!(Owner?.StaticObjects.Where(i => i.Value.ObjectType == 0x0731).Count(i => (X - i.Value.X) * (X - i.Value.X) + (Y - i.Value.Y) * (Y - i.Value.Y) < 1) > 0))
-                {
-                    if (OxygenBar == 0)
-                        HP -= 10;
-                    else
-                        OxygenBar -= 2;
-
-                    if (HP <= 0)
-                        Death("suffocation");
-                }
-                else
-                {
-                    if (OxygenBar < 100)
-                        OxygenBar += 8;
-                    if (OxygenBar > 100)
-                        OxygenBar = 100;
-                }
-                l = time.TotalElapsedMs;
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex);
-            }
-        }
         private void HandleBastille(RealmTime time)
         {
             try
@@ -92,12 +25,12 @@ namespace wServer.realm.entities
                     ApplyConditionEffect(ConditionEffectIndex.Damaging, 2000);
                     ApplyConditionEffect(ConditionEffectIndex.Invulnerable, 1000);
                 }
-                // don't suffocate hidden players
+
                 if (HasConditionEffect(ConditionEffects.Hidden)) return;
 
                 if (time.TotalElapsedMs - l <= 100 || Owner?.Name != "SummoningPoint") return;
 
-                if (this.GetNearestEntity(999, 0x63ed) == null)
+                if (this.GetNearestEntity(150, 0x63ed) == null)
                 {
                     this.GetNearestEntity(999, 0x63e7).ApplyConditionEffect(ConditionEffectIndex.Invulnerable);
                     if (RageBar == 0)
@@ -125,6 +58,7 @@ namespace wServer.realm.entities
                 Log.Error(ex);
             }
         }
+
         bool HandleGround(RealmTime time)
         {
             if (time.TotalElapsedMs - l > 500)

@@ -176,7 +176,7 @@ namespace wServer.logic
                     new ItemLoot("Potion of Wisdom", 1)
                 ),
                 new MostDamagers(3,
-                    LootTemplates.SF1()
+                    LootTemplates.Sor2Perc()
                     ),
                 new Threshold(0.1,
                     new ItemLoot("Steel Shocker", 0.01),

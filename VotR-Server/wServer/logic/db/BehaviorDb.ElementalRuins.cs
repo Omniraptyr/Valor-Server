@@ -182,6 +182,7 @@ namespace wServer.logic
         //Swag
                     .Init("Urios, God of Elements",
                 new State(
+                    new ScaleHP(35000),
                     new RealmPortalDrop(),
                     //new TransformOnDeath("Urios Test Chest", 1, 1, 1),
                      new DamageTakenTransition(88800, "RealRage"),
@@ -313,7 +314,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF1()
+                    LootTemplates.Sor2Perc()
                     ),
                 new MostDamagers(3,
                     new ItemLoot("Potion of Restoration", 1.00)

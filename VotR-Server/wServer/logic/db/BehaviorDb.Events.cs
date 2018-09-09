@@ -16,6 +16,7 @@ namespace wServer.logic
 
             .Init("Skull Shrine",
             new State(
+                    new ScaleHP(35000),
                     new Shoot(25, 9, 10, predictive: 1),
                     new Spawn("Red Flaming Skull", 8, coolDown: 5000),
                     new Spawn("Blue Flaming Skull", 10, coolDown: 1000),
@@ -35,10 +36,10 @@ namespace wServer.logic
                    )
                 ),
                 new MostDamagers(3,
-                        LootTemplates.SF0()
+                        LootTemplates.Sor1Perc()
                     ),
               new MostDamagers(3,
-                     LootTemplates.StatIncreasePotionsLoot()
+                     LootTemplates.StatPots()
                      ),
                 new Threshold(0.05,
                     new TierLoot(8, ItemType.Weapon, 0.2),
@@ -84,6 +85,7 @@ namespace wServer.logic
 
             .Init("Hermit God",
                 new State(
+                    new ScaleHP(35000),
                     new DropPortalOnDeath("Ocean Trench Portal", 1, null, 5, 5),
                     new InvisiToss("Hermit God Drop", 6, 0, 90000001, coolDownOffset: 0),
                     new CopyDamageOnDeath("Hermit God Drop"),
@@ -196,7 +198,7 @@ namespace wServer.logic
                         )
                     ),
                     new MostDamagers(3,
-                        LootTemplates.SF1()
+                        LootTemplates.Sor2Perc()
                     ),
                 new Threshold(0.05,
                     new ItemLoot("Potion of Dexterity", 1),

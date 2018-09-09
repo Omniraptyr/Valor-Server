@@ -97,7 +97,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF1()
+                    LootTemplates.Sor2Perc()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Potion of Defense", 1.0),
@@ -342,7 +342,7 @@ namespace wServer.logic
                         )
                     ),
                                 new MostDamagers(3,
-                    LootTemplates.SF3()
+                    LootTemplates.Sor4Perc()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Onrane", 0.3),
@@ -532,7 +532,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.SF3()
+                    LootTemplates.Sor4Perc()
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Gold Cache", 1.0),
