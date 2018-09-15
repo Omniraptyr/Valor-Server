@@ -103,4 +103,3 @@ C:\Users\user01\Desktop\this can only go well\VotR-Server2\VotR-Server\RemoteLog
 C:\Users\user01\Desktop\this can only go well\VotR-Server2\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.csproj.CopyComplete
 C:\Users\user01\Desktop\this can only go well\VotR-Server2\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.exe
 C:\Users\user01\Desktop\this can only go well\VotR-Server2\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.pdb
-C:\Users\user01\Desktop\this can only go well\VotR-Server2\VotR-Server\RemoteLogger\obj\Debug\RemoteLogger.csprojAssemblyReference.cache
