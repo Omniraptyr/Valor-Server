@@ -349,6 +349,7 @@ namespace wServer.logic.loot
         }
 
         public static ILootDef[] FabledItemsLoot2Drannol() {
+			
             return new ILootDef[]
             {
                 new OnlyOne(
@@ -408,6 +409,105 @@ namespace wServer.logic.loot
                 ),
                 new OnlyOne(
                     new ItemLoot("Medium Sor Fragment", 0.1)
+                )
+            };
+        }
+		 public static ILootDef[] FabledItemsLootUltraDrannol()
+        {
+            return new ILootDef[]
+            {
+                new OnlyOne(
+                    new ItemLoot("Master Eon", 0.01)
+                ),
+                new OnlyOne(
+                    new ItemLoot("1000 Gold", 1),
+                    new ItemLoot("100 Gold", 1)
+                ),
+                //Whole Sor Crystal
+                new OnlyOne(
+                    new ItemLoot("Legendary Sor Crystal", 0.15),
+                    new ItemLoot("Ultimate Onrane Cache", 0.33)
+                ),
+                //certain fabled item
+               new OnlyOne(
+                    new ItemLoot("Bloodwell", 1),
+                    new ItemLoot("Lavos Armor", 1),
+                    new ItemLoot("Quiver of the Onslaught", 1),
+                    new ItemLoot("Stonepraise Tome", 1),
+                    new ItemLoot("Realitytaker Orb", 1),
+                    new ItemLoot("Evisceration Claws", 1),
+                    new ItemLoot("Heatblast Trap", 1),
+                    new ItemLoot("Royalty Bow", 1),
+                    new ItemLoot("Banner of Revenge", 1),
+                    new ItemLoot("Percussion Shield", 1),
+                    new ItemLoot("Toxin of the Vicious", 1),
+                    new ItemLoot("Implacable Ram", 1),
+                    new ItemLoot("Darkin Blades", 1),
+                    new ItemLoot("The Twisted Cloak", 1),
+                    new ItemLoot("The Twisted Axe", 1),
+                    new ItemLoot("Twisted Amulet", 1),
+                    new ItemLoot("The Twisted Axe", 1),
+                    new ItemLoot("Hunter Necklace", 1),
+                    new ItemLoot("Corruption Spell", 1),
+                    new ItemLoot("Titanic Bracelet", 1)
+                    ),
+                new OnlyOne(
+                    new ItemLoot("Bloodwell", 0.75),
+                    new ItemLoot("Lavos Armor", 0.75),
+                    new ItemLoot("Quiver of the Onslaught", 0.75),
+                    new ItemLoot("Stonepraise Tome", 0.75),
+                    new ItemLoot("Realitytaker Orb", 0.75),
+                    new ItemLoot("Evisceration Claws", 0.75),
+                    new ItemLoot("Heatblast Trap", 0.75),
+                    new ItemLoot("Royalty Bow", 0.75),
+                    new ItemLoot("Banner of Revenge", 0.75),
+                    new ItemLoot("Percussion Shield", 0.75),
+                    new ItemLoot("Toxin of the Vicious", 0.75),
+                    new ItemLoot("Implacable Ram", 0.75),
+                    new ItemLoot("Darkin Blades", 0.75),
+                    new ItemLoot("The Twisted Cloak", 0.75),
+                    new ItemLoot("The Twisted Axe", 0.75),
+                    new ItemLoot("Twisted Amulet", 0.75),
+                    new ItemLoot("The Twisted Axe", 0.75),
+                    new ItemLoot("Hunter Necklace", 0.75),
+                    new ItemLoot("Corruption Spell", 0.75),
+                    new ItemLoot("Titanic Bracelet", 0.75)
+                ),
+                //Have another chance to get fabled iten
+                new OnlyOne(
+                    new ItemLoot("Bloodwell", 0.75),
+                    new ItemLoot("Lavos Armor", 0.75),
+                    new ItemLoot("Quiver of the Onslaught", 0.75),
+                    new ItemLoot("Stonepraise Tome", 0.75),
+                    new ItemLoot("Realitytaker Orb", 0.75),
+                    new ItemLoot("Evisceration Claws", 0.75),
+                    new ItemLoot("Heatblast Trap", 0.75),
+                    new ItemLoot("Royalty Bow", 0.75),
+                    new ItemLoot("Banner of Revenge", 0.75),
+                    new ItemLoot("Percussion Shield", 0.75),
+                    new ItemLoot("Toxin of the Vicious", 0.75),
+                    new ItemLoot("Implacable Ram", 0.75),
+                    new ItemLoot("Darkin Blades", 0.75),
+                    new ItemLoot("The Twisted Cloak", 0.75),
+                    new ItemLoot("The Twisted Axe", 0.75),
+                    new ItemLoot("Twisted Amulet", 0.75),
+                    new ItemLoot("The Twisted Axe", 0.75),
+                    new ItemLoot("Hunter Necklace", 0.75),
+                    new ItemLoot("Corruption Spell", 0.75),
+                    new ItemLoot("Titanic Bracelet", 0.75)
+                ),
+                //You have a 100% chance to get attack or wisdom eon
+                new OnlyOne(
+                    new ItemLoot("Defense Eon", 1),
+                    new ItemLoot("Vitality Eon", 1)
+                ),
+                //You have a 75% chance to get ANOTHER attack or wisdom eon
+                new OnlyOne(
+                    new ItemLoot("Defense Eon", 0.75),
+                    new ItemLoot("Vitality Eon", 0.75)
+                ),
+               new OnlyOne(
+                    new ItemLoot("Large Sor Fragment", 0.25)
                 )
             };
         }

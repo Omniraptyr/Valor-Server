@@ -4936,4 +4936,10 @@
             <Index>0x3d5</Index>
         </Texture>
     </Ground>
+    <Ground type="0x29a4" id="BD Testing Floor">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x45c</Index>
+        </Texture>
+    </Ground>
 </GroundTypes>

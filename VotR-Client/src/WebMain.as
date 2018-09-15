@@ -109,9 +109,9 @@ public class WebMain extends Sprite {
     }
     
     private function setEnvironment():void {
-        ENV = stage.loaderInfo.parameters["env"];
+        ENV = stage.loaderInfo.parameters["localhost"];
         if (ENV == null)
-            ENV = "production";
+            ENV = "localhost";
     }
 
     private function hackParameters():void {
