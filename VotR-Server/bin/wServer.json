@@ -1,14 +1,14 @@
 {
   "dbInfo": {
     "host": "127.0.0.1", //144.217.80.74
-    "port": "1985", //1985 - 6379
-    "auth": "2NSVsRREv3FYXPGm", //2NSVsRREv3FYXPGm - none
+    "port": "6379", //1985 - 6379
+    "auth": "", //2NSVsRREv3FYXPGm - none
     "index": "0"
   },
   "serverInfo": {
     "type": "World",
     "name": "Aldragine",
-    "address": "144.217.80.74", //144.217.80.74 - 127.0.0.1
+    "address": "127.0.0.1", //144.217.80.74 - 127.0.0.1
     "port": "2050",
     "coordinates": {
       "latitude": "0",

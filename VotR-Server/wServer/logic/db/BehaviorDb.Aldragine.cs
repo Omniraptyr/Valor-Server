@@ -158,10 +158,12 @@ namespace wServer.logic
             new State(
                 new State("Default",
                     new EntityExistsTransition("AH The Heart", 50, "Transfer"),
+                    new EntityExistsTransition("AH ULTRA The Heart", 50, "Transfer"),
                     new TimedTransition(1000, "Main")
                     ),
                 new State("Transfer",
                     new TransferDamageOnDeath("AH The Heart", 50),
+                    new TransferDamageOnDeath("AH ULTRA The Heart", 50),
                     new TimedTransition(1000, "Main")
                     ),
                 new State("Main",
@@ -197,10 +199,12 @@ namespace wServer.logic
             new State(
                 new State("Default",
                     new EntityExistsTransition("AH The Heart", 50, "Transfer"),
+                    new EntityExistsTransition("AH ULTRA The Heart", 50, "Transfer"),
                     new TimedTransition(1000, "Main")
                     ),
                 new State("Transfer",
                     new TransferDamageOnDeath("AH The Heart", 50),
+                    new EntityExistsTransition("AH ULTRA The Heart", 50, "Transfer"),
                     new TimedTransition(1000, "Main")
                     ),
                 new State("Main",
@@ -240,10 +244,12 @@ namespace wServer.logic
             new State(
                 new State("Default",
                     new EntityExistsTransition("AH The Heart", 50, "Transfer"),
+                    new EntityExistsTransition("AH ULTRA The Heart", 50, "Transfer"),
                     new TimedTransition(1000, "Main")
                     ),
                 new State("Transfer",
                     new TransferDamageOnDeath("AH The Heart", 50),
+                    new TransferDamageOnDeath("AH ULTRA The Heart", 50),
                     new TimedTransition(1000, "Main")
                     ),
                 new State("Main",
@@ -326,10 +332,12 @@ namespace wServer.logic
             new State(
                 new State("Default",
                     new EntityExistsTransition("AH The Heart", 50, "Transfer"),
+                    new EntityExistsTransition("AH ULTRA The Heart", 50, "Transfer"),
                     new TimedTransition(1000, "Main")
                     ),
                 new State("Transfer",
                     new TransferDamageOnDeath("AH The Heart", 50),
+                    new TransferDamageOnDeath("AH ULTRA The Heart", 50),
                     new TimedTransition(1000, "Main")
                     ),
                 new State("Main",
@@ -356,10 +364,12 @@ namespace wServer.logic
             new State(
                 new State("Default",
                     new EntityExistsTransition("AH The Heart", 50, "Transfer"),
+                    new EntityExistsTransition("AH ULTRA The Heart", 50, "Transfer"),
                     new TimedTransition(1000, "Main")
                     ),
                 new State("Transfer",
                     new TransferDamageOnDeath("AH The Heart", 50),
+                    new TransferDamageOnDeath("AH ULTRA The Heart", 50),
                     new TimedTransition(1000, "Main")
                      ),
                 new State("Main",
@@ -623,10 +633,12 @@ namespace wServer.logic
                 new State(
                     new State("Default",
                         new EntityExistsTransition("AH The Heart", 50, "Transfer"),
+                        new EntityExistsTransition("AH ULTRA The Heart", 50, "Transfer"),
                         new TimedTransition(1000, "Main")
                         ),
                     new State("Transfer",
                         new TransferDamageOnDeath("AH The Heart", 50),
+                        new TransferDamageOnDeath("AH ULTRA The Heart", 50),
                         new TimedTransition(1000, "Main")
                         ),
                     new State("Main",
@@ -2105,6 +2117,8 @@ namespace wServer.logic
                         ),
                     new State("HauntingKnightsClear",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 180, coolDown: 4000, coolDownOffset: 3000),
+                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 0, coolDown: 4000, coolDownOffset: 3000),
                         new Shoot(8, count: 14, shootAngle: 22, projectileIndex: 4, fixedAngle: 0, coolDown: 6400, coolDownOffset: 3000),
                         new InvisiToss("Zol Sorcerer", 13, 0, coolDown: 9999999),
                         new InvisiToss("Zol Sorcerer", 13, 20, coolDown: 9999999),
@@ -2235,6 +2249,8 @@ namespace wServer.logic
                         ),
                     new State("HauntingKnightsClearB",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 180, coolDown: 4000, coolDownOffset: 3000),
+                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 0, coolDown: 4000, coolDownOffset: 3000),
                         new Shoot(8, count: 14, shootAngle: 22, projectileIndex: 4, fixedAngle: 180, coolDown: 6400, coolDownOffset: 3000),
                         new InvisiToss("Zol Sorcerer", 13, 180, coolDown: 9999999),
                         new InvisiToss("Zol Sorcerer", 13, 200, coolDown: 9999999),
@@ -2489,6 +2505,8 @@ namespace wServer.logic
                         ),
                     new State("HauntingKnightsClear",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                                                new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 180, coolDown: 4000, coolDownOffset: 3000),
+                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 0, coolDown: 4000, coolDownOffset: 3000),
                         new Shoot(8, count: 14, shootAngle: 22, projectileIndex: 4, fixedAngle: 0, coolDown: 6400, coolDownOffset: 3000),
                         new InvisiToss("Zol Sorcerer", 13, 0, coolDown: 9999999),
                         new InvisiToss("Zol Sorcerer", 13, 20, coolDown: 9999999),
@@ -2643,6 +2661,8 @@ namespace wServer.logic
                         ),
                     new State("HauntingKnightsClearB",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                                                new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 180, coolDown: 4000, coolDownOffset: 3000),
+                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 0, coolDown: 4000, coolDownOffset: 3000),
                         new Shoot(8, count: 14, shootAngle: 22, projectileIndex: 4, fixedAngle: 180, coolDown: 6400, coolDownOffset: 3000),
                         new InvisiToss("Zol Sorcerer", 13, 180, coolDown: 9999999),
                         new InvisiToss("Zol Sorcerer", 13, 200, coolDown: 9999999),

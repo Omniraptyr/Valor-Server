@@ -108,6 +108,8 @@ namespace wServer.networking.handlers
                         break;
 
                     case 2:
+					if (ultra == false)
+                        {
                             if (player.startRaid2(player) == false)
                             {
                                 player.Client.Manager.Database.UpdateCredit(player.Client.Account, -gold);
@@ -148,6 +150,49 @@ namespace wServer.networking.handlers
                             {
                                 player.SendError("You need the correct token in your inventory to launch this raid.");
                             }
+                        }
+                        else
+                        {
+                            if (player.startRaid2(player) == false)
+                            {
+                                player.Client.Manager.Database.UpdateCredit(player.Client.Account, -gold);
+                                player.Credits = player.Client.Account.Credits - gold;
+                                player.ForceUpdate(player.Credits);
+                                player.Manager.Chat.Announce("The Ultra Calling of the Titan Raid has been launched on " + playerSvr + "!");
+
+                                Manager._isRaidLaunched = true;
+                                ushort objType;
+                                if (!gameData.IdToObjectType.TryGetValue("Ultra Bastille of Drannol Portal", out objType) ||
+                                    !gameData.Portals.ContainsKey(objType))
+                                    return;
+                                var entity = Entity.Resolve(Manager, objType);
+
+                                entity.Move(4, 37);
+                                player.Owner.EnterWorld(entity);
+
+                                (entity as Portal).PlayerOpened = true;
+                                (entity as Portal).Opener = player.Name;
+                                var timeoutTime = gameData.Portals[objType].Timeout;
+                                player.Owner.Timers.Add(new WorldTimer(timeoutTime * 1000, (world, t) => world.LeaveWorld(entity)));
+                                player.Owner.Timers.Add(new WorldTimer(60000, (w, t) =>
+                                {
+                                    Manager._isRaidLaunched = false;
+                                }));
+                                player.Owner.BroadcastPacket(new Notification
+                                {
+                                    Color = new ARGB(0xFF00FF00),
+                                    ObjectId = player.Id,
+                                    Message = player.Name + " has launched the Ultra Calling of the Titan Raid!"
+                                }, null, PacketPriority.Low);
+                                //set raid opener
+                                player.Owner.Opener = player.Name;
+                            }
+                            else
+                            {
+                                player.SendError("You need the correct token in your inventory to launch this raid.");
+                            }
+                        }
+                        break;
                         
                        
                         break;
@@ -183,6 +228,10 @@ namespace wServer.networking.handlers
                             if (packet.Ultra == false)
                             {
                                 launchRaid(player, 10000, false, 2);
+                            }
+                            else
+                            {
+                                launchRaid(player, 10000, true, 2);
                             }
                             break;
                     }
