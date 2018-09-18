@@ -32,7 +32,7 @@ namespace wServer.realm.entities
 
                 if (this.GetNearestEntity(150, 0x63ed) == null)
                 {
-                    this.GetNearestEntity(999, 0x63e7).ApplyConditionEffect(ConditionEffectIndex.Armored);
+                    this.GetNearestEntity(999, 0x63e7).ApplyConditionEffect(ConditionEffectIndex.Invulnerable);
                     if (RageBar == 0)
                     {
                         ApplyConditionEffect(ConditionEffectIndex.Weak);
@@ -45,7 +45,7 @@ namespace wServer.realm.entities
                 }
                 else
                 {
-                    this.GetNearestEntity(999, 0x63e7).ApplyConditionEffect(ConditionEffectIndex.Armored, 0);
+                    this.GetNearestEntity(999, 0x63e7).ApplyConditionEffect(ConditionEffectIndex.Invulnerable, 0);
                     if (RageBar < 100)
                         RageBar += 1;
                     if (RageBar > 100)

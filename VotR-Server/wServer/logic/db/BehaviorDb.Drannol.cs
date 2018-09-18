@@ -42,7 +42,7 @@ namespace wServer.logic
                         new TossObject("BD Lava Bat", 4, 90, coolDown: 9999999),
                         new TossObject("BD Lava Bat", 4, 180, coolDown: 9999999),
                         new TossObject("BD Lava Bat", 4, 270, coolDown: 9999999),
-                        new EntityExistsTransition("BD Lava Bat",6,"follow")
+                        new EntityExistsTransition("BD Lava Bat", 6, "follow")
                         ),
                     new State("follow",
                         new EntityExistsTransition("Spiritorb Holder Default Green", 6, "die"),
@@ -61,7 +61,7 @@ namespace wServer.logic
             new State(
                 new State("Main",
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
-                    new PlayerWithinTransition(6,"phasechooser")
+                    new PlayerWithinTransition(6, "phasechooser")
                     ),
                 new State("phasechooser",
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -76,8 +76,8 @@ namespace wServer.logic
                     new Flash(0x0000FF, 1, 1),
                     new Grenade(2.5, 75, range: 4, coolDown: 1000, effect: ConditionEffectIndex.Stunned, effectDuration: 1300, color: 0x0000FF, fixedAngle: 45),
                     new Grenade(2.5, 0, range: 4, coolDown: 1000, effect: ConditionEffectIndex.Speedy, effectDuration: 700, color: 0x0000FF, fixedAngle: 45),
-                    new Grenade(2.5, 75, range: 4, coolDown: 1000, effect: ConditionEffectIndex.Stunned, effectDuration: 1300, color: 0x0000FF,fixedAngle: 135),
-                    new Grenade(2.5,0, range: 4, coolDown: 1000, effect: ConditionEffectIndex.Speedy, effectDuration: 700, color: 0x0000FF, fixedAngle: 135),
+                    new Grenade(2.5, 75, range: 4, coolDown: 1000, effect: ConditionEffectIndex.Stunned, effectDuration: 1300, color: 0x0000FF, fixedAngle: 135),
+                    new Grenade(2.5, 0, range: 4, coolDown: 1000, effect: ConditionEffectIndex.Speedy, effectDuration: 700, color: 0x0000FF, fixedAngle: 135),
                     new Grenade(2.5, 75, range: 4, coolDown: 1000, effect: ConditionEffectIndex.Stunned, effectDuration: 1300, color: 0x0000FF, fixedAngle: 225),
                     new Grenade(2.5, 0, range: 4, coolDown: 1000, effect: ConditionEffectIndex.Speedy, effectDuration: 700, color: 0x0000FF, fixedAngle: 225),
                     new Grenade(2.5, 75, range: 4, coolDown: 1000, effect: ConditionEffectIndex.Stunned, effectDuration: 1300, color: 0x0000FF, fixedAngle: 315),
@@ -97,7 +97,7 @@ namespace wServer.logic
                     new SetAltTexture(2),
                     new Taunt("IGAUR!"),
                     new Flash(0x00ff00, 1, 1),
-                    new TimedTransition(500,"minions")
+                    new TimedTransition(500, "minions")
                         ),
                 new State("minions",
                             new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -109,7 +109,7 @@ namespace wServer.logic
                             new TossObject("BD Axeman of Drannol", 3, 225, coolDown: 9999999),
                             new TossObject("BD Axeman of Drannol", 3, 270, coolDown: 9999999),
                             new TossObject("BD Axeman of Drannol", 3, 315, coolDown: 9999999),
-                            new TimedTransition(1750,"waitforspawn")
+                            new TimedTransition(1750, "waitforspawn")
                     ),
                 new State("waitforspawn",
                             new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -154,7 +154,7 @@ namespace wServer.logic
                   new State("damage",
                             new ConditionalEffect(ConditionEffectIndex.ArmorBroken),
                             new Taunt("Must.. Recharge.."),
-                            new TimedTransition(7000,"minions2")
+                            new TimedTransition(7000, "minions2")
                             ),
                   new State("minions2",
                             new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -210,7 +210,7 @@ namespace wServer.logic
                             ),
                         new State("death",
                             new Taunt("How could I run out of dark energy fighting a creature like you.."),
-                            new TimedTransition(1500,"realshit")
+                            new TimedTransition(1500, "realshit")
                             ),
                         new State("realshit",
                             new Suicide()
@@ -219,17 +219,17 @@ namespace wServer.logic
                     new SetAltTexture(3),
                     new Taunt("NIVITET!"),
                     new Flash(0xffa500, 1, 1),
-                    new TimedTransition(750,"chase")
+                    new TimedTransition(750, "chase")
                     ),
                     new State("chase",
                         new Shoot(10, count: 3, shootAngle: 12, projectileIndex: 1, predictive: 1, coolDown: 3000),
                         new Shoot(10, count: 6, shootAngle: 10, projectileIndex: 2, coolDown: 1000, coolDownOffset: 500),
-                        new TossObject("Bd Ultra Faint Soul",3,coolDown:5000),
+                        new TossObject("Bd Ultra Faint Soul", 3, coolDown: 5000),
                         new TossObject("Bd Ultra Faint Soul", 3, coolDown: 5000),
                         new TossObject("Bd Ultra Faint Soul", 3, coolDown: 5000),
                         new TossObject("Bd Ultra Faint Soul", 3, coolDown: 5000),
                         new Follow(1.2, 8, 1),
-                        new Charge(2,5,2000)
+                        new Charge(2, 5, 2000)
                         ),
                 new State("Wanzyu",
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -237,7 +237,7 @@ namespace wServer.logic
                     new Taunt("WANZYU!"),
                     new Flash(0x551a8b, 1, 1),
                     new TossObject("Nagarith the Tormentor", 3, coolDown: 9999999),
-                    new TimedTransition(3000,"nagarithcheck")
+                    new TimedTransition(3000, "nagarithcheck")
                     ),
                 new State("nagarithcheck",
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -247,8 +247,8 @@ namespace wServer.logic
                         new State("wanzyudeath",
                             new ConditionalEffect(ConditionEffectIndex.Invincible),
                             new Taunt("One... Last... Spell.."),
-                            new TossObject("Bd Ultra Bastille Brute", 3,90, coolDown: 9999999),
-                            new TossObject("Bd Ultra Bastille Brute", 3,270, coolDown: 9999999),
+                            new TossObject("Bd Ultra Bastille Brute", 3, 90, coolDown: 9999999),
+                            new TossObject("Bd Ultra Bastille Brute", 3, 270, coolDown: 9999999),
                             new TimedTransition(1500, "wanzyurealshit")
                             ),
                         new State("wanzyurealshit",
@@ -466,34 +466,34 @@ namespace wServer.logic
             new State(
                 new State("intro",
                     new Taunt("Drannol has summoned me back for a purpose... You shall not form that seal, the Eternal Beast will rise again!"),
-                    new Orbit(speed: 1,radius: 5,target: "Bastille Sorcerer", orbitClockwise: true),
-                    new Shoot(10,7),
-                    new TimedTransition(1000,"circleattack")
+                    new Orbit(speed: 1, radius: 5, target: "Bastille Sorcerer", orbitClockwise: true),
+                    new Shoot(10, 7),
+                    new TimedTransition(1000, "circleattack")
                     ),
                     new State("circleattack",
                         new Orbit(speed: 1.3, radius: 5, target: "Bastille Sorcerer", orbitClockwise: true),
                         new Shoot(10, count: 8, projectileIndex: 0, predictive: 1, coolDown: 400, coolDownOffset: 750),
-                        new HpLessTransition(0.5,"shotgun")
+                        new HpLessTransition(0.5, "shotgun")
                     ),
                     new State("shotgun",
                         new Orbit(speed: 1.3, radius: 5, target: "Bastille Sorcerer", orbitClockwise: true),
                         //new Charge(3, 7, 2000),
                         new Shoot(10, count: 8, projectileIndex: 0, predictive: 1, coolDown: 400, coolDownOffset: 750),
                         //new Shoot(10, count: 6, shootAngle: 10, projectileIndex: 1, coolDown: 2000),
-                        new TimedTransition(2500,"charge"),
-                        new HpLessTransition(0.33,"bombcharge")
+                        new TimedTransition(2500, "charge"),
+                        new HpLessTransition(0.33, "bombcharge")
                     ),
                     new State("charge",
-                        new Charge(3,12),
+                        new Charge(3, 12),
                         new Shoot(10, count: 6, shootAngle: 10, projectileIndex: 1),
-                        new TimedTransition(500,"shotgun"),
-                        new HpLessTransition(0.33,"bombcharge")
+                        new TimedTransition(500, "shotgun"),
+                        new HpLessTransition(0.33, "bombcharge")
                     ),
                     new State("bombcharge",
                         new Orbit(speed: 1.7, radius: 5, target: "Bastille Sorcerer", orbitClockwise: true),
                         new Grenade(3, 100, range: 20, coolDown: 1000, effect: ConditionEffectIndex.Slowed, effectDuration: 2000, color: 0xff0000),
                         new Shoot(10, count: 8, projectileIndex: 0, predictive: 1, coolDown: 400, coolDownOffset: 750),
-                        new TimedTransition(2000,"charge2")
+                        new TimedTransition(2000, "charge2")
                     ),
                     new State("charge2",
                         new Charge(3, 12),
@@ -1819,7 +1819,7 @@ namespace wServer.logic
                     )
                 )
             )
-            
+
         .Init("BerikaoFlood1",
             new State(
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -2452,7 +2452,7 @@ namespace wServer.logic
                         new TossObject("BD Ultra Stone Orb", 6, 225, coolDown: 9999999),
                         new TossObject("BD Ultra Stone Orb", 6, 270, coolDown: 9999999),
                         new TossObject("BD Ultra Stone Orb", 6, 315, coolDown: 9999999),
-                        new TimedTransition(4000,"Main")
+                        new TimedTransition(4000, "Main")
                         ),
                     new State("orbsv2",
                         new TossObject("BD Ultra Stone Orb", 6, 0, coolDown: 9999999),
@@ -3297,7 +3297,7 @@ namespace wServer.logic
                         new Shoot(10, count: 6, shootAngle: 6, projectileIndex: 1, coolDown: 2000),
                         new Shoot(10, count: 8, shootAngle: 6, projectileIndex: 1, coolDown: 2000, coolDownOffset: 400),
                         new Shoot(10, count: 12, shootAngle: 6, projectileIndex: 0, coolDown: 2000, coolDownOffset: 1500),
-                        
+
                         new Taunt(0.10, "FOR LIN!"),
                         new Prioritize(
                             new Orbit(1, 3, 10),
@@ -4555,8 +4555,8 @@ namespace wServer.logic
                         new SetAltTexture(0, 1, 10, true),
                         new Taunt("Let the fun begin...", "LIGHTS OFF!"),
                         new ReturnToSpawn(2),
-                        new Order(20,"BerikaoFlood","spawn"),
-                        new TimedTransition(1000,"alava")
+                        new Order(20, "BerikaoFlood", "spawn"),
+                        new TimedTransition(1000, "alava")
                         ),
                     new State("alava",
                         new Order(20, "BerikaoFlood1", "spawn"),
@@ -4598,7 +4598,7 @@ namespace wServer.logic
                         new Taunt("More SLAUGHTER!", "and the Death Begins..."),
                         new ReturnToSpawn(2),
                         new Order(20, "BerikaoFlood", "spawn"),
-                        new Order(100,"BerikaoPath","idle"),
+                        new Order(100, "BerikaoPath", "idle"),
                         new TimedTransition(1000, "blava")
                         ),
                     new State("blava",
@@ -6383,7 +6383,7 @@ namespace wServer.logic
                     new State("1suppressiongreen",
                             new TimedTransition(10000, "FAILED"),
                             new DamageTakenTransition(300000, "cseal1"),
-                            new ReplaceTile("BD Ground 5c", "BD Ground 6c", 99), 
+                            new ReplaceTile("BD Ground 5c", "BD Ground 6c", 99),
                             new Flash(0xFFFFFF, 0.25, 6)
                             ),
                     new State("cseal1",
@@ -7350,11 +7350,9 @@ namespace wServer.logic
                         new Order(90, "Ultra Scorching Wrath Helper", "spawn"),
                         new TossObject("Ultra Bastille Sorcerer", 10, angle: 90, coolDown: 9999999),
                         new TossObject("Ultra Bastille Sorcerer", 5, angle: 90, coolDown: 9999999),
-                        new TossObject("Flaming Summon", 3, angle: 180, coolDown: 9999),
-                        new TossObject("Flaming Summon", 3, angle: 0, coolDown: 9999),
                         new Taunt("Go my Sorcerers!"),
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
-                        new TimedTransition(8000,"waitforsorc")
+                        new TimedTransition(8000, "waitforsorc")
                         ),
                     new State("waitforsorc",
                         /*new Order(90, "Ultra Scorching Wrath Helper", "spawn"),
@@ -7668,7 +7666,7 @@ namespace wServer.logic
                             new TimedRandomTransition(6000, false, "4suppressionpurple", "4suppressionblue", "4suppressiongreen", "4suppressionorange")
                             ),
                         new State("continue4",
-                            new Taunt(0.05,"NOOOOOOOOO, I'VE BEEN SPRITED BY BITULOSS"),
+                            new Taunt(0.05, "NOOOOOOOOO, I'VE BEEN SPRITED BY BITULOSS"),
                             new Taunt("Not.......again..."),
                             new ReplaceTile("BD Ground 6a", "BD Ground 5a", 99),
                             new ReplaceTile("BD Ground 6b", "BD Ground 5b", 99),

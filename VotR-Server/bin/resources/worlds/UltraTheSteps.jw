@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Ultra The Steps",
+"sbName":"Ultra The Steps",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x65d4],
+"maps":["UltraTheSteps.jm"],
+"music":["scorchedwrath"]}
