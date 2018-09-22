@@ -14682,11 +14682,14 @@
         </Texture>
         <SlotType>7</SlotType>
         <Description>A armor that seals dark souls away from the underworld by the gray gem engraved in the plate.</Description>
-        <ActivateOnEquip stat="21" amount="22">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="23">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="26" amount="12">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="27" amount="12">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <feedPower>800</feedPower>
+        <Steal type="mana" amount="1"/>
         <FameBonus>6</FameBonus>
     </Object>
     <Object type="0x1389" id="Blade of the Great Tsunami">
@@ -17315,16 +17318,18 @@
         <Projectile>
             <ObjectId>Nether Bullet</ObjectId>
             <Speed>75</Speed>
-            <MinDamage>100</MinDamage>
-            <MaxDamage>120</MaxDamage>
+            <MinDamage>172</MinDamage>
+            <MaxDamage>185</MaxDamage>
             <LifetimeMS>390</LifetimeMS>
             <Wavy/>
             <MultiHit/>
             <Size>80</Size>
         </Projectile>
-        <ActivateOnEquip stat="3" amount="160">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="140">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
+        <Steal type="mana" amount="1"/>
         <OldSound>bladeSwing</OldSound>
         <feedPower>800</feedPower>
         <NumProjectiles>3</NumProjectiles>
@@ -21777,8 +21782,8 @@
         <feedPower>1850</feedPower>
         <DisplayId>The Atium</DisplayId>
     </Object>
-    <Object type="0x47cb" id="Amulet of Resurrection">
-        <DisplayId>Amulet of Resurrection</DisplayId>
+    <Object type="0x47cb" id="Amulet of Resurrection (Charged)">
+        <DisplayId>Amulet of Resurrection (C)</DisplayId>
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -21789,7 +21794,7 @@
         <Description>An amulet that will resurrect you upon your death.</Description>
         <Resurrects/>
         <BagType>6</BagType>
-        <Legendary/>
+        <QuestItem/>
         <feedPower>2200</feedPower>
     </Object>
     <Object type="0x47cc" id="Mind over Matter">
@@ -23760,15 +23765,16 @@
             <Index>0xd7</Index>
         </Texture>
         <SlotType>28</SlotType>
-        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="-2">IncrementStat</ActivateOnEquip>
         <Description>A machine infused with dark energy that sends a pulse of shadow particles into the sky.</Description>
         <Usable/>
         <BagType>6</BagType>
         <MpCost>85</MpCost>
         <Activate range="3" amount="6" duration="5">Banner</Activate>
-        <Activate effect="Invulnerable" duration="1">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="2">ConditionEffectSelf</Activate>
         <Activate effect="Damaging" duration="3">ConditionEffectSelf</Activate>
+        <Activate effect="Armored" duration="4">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
         <feedPower>760</feedPower>
         <FameBonus>6</FameBonus>
@@ -25205,7 +25211,7 @@
         </Texture>
         <SlotType>17</SlotType>
         <Description>A wicked staff that brings about a sensation of emptiness, but whispers occasionally seep forth from the darkness.</Description>
-        <RateOfFire>1.05</RateOfFire>
+        <RateOfFire>1.1</RateOfFire>
         <Sound>weapon/wand_of_death</Sound>
         <Projectile>
             <ObjectId>Malediction Missile</ObjectId>
@@ -25215,9 +25221,9 @@
             <LifetimeMS>485</LifetimeMS>
             <Amplitude>0.5</Amplitude>
             <Frequency>2</Frequency>
+            <MultiHit/>
         </Projectile>
         <ActivateOnEquip stat="3" amount="80">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="27" amount="2">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <NumProjectiles>2</NumProjectiles>

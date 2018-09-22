@@ -4933,4 +4933,15 @@
             <Index>0x3d5</Index>
         </Texture>
     </Ground>
+	<Ground type="0x29a4" id="Toxic Sludge">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x137</Index>
+        </Texture>
+      <MinDamage>40</MinDamage>
+      <MaxDamage>60</MaxDamage>
+      <Animate dx=".33" dy=".33">Flow</Animate>
+      <Sink/>
+      <BlendPriority>1</BlendPriority>
+   </Ground>
 </GroundTypes>

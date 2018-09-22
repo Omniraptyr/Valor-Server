@@ -237,7 +237,7 @@ namespace wServer.logic
                     new Taunt("WANZYU!"),
                     new Flash(0x551a8b, 1, 1),
                     new TossObject("Nagarith the Tormentor", 3, coolDown: 9999999),
-                    new TimedTransition(3000, "nagarithcheck")
+                    new TimedTransition(5000, "nagarithcheck")
                     ),
                 new State("nagarithcheck",
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -259,7 +259,7 @@ namespace wServer.logic
         .Init("Ultra Bastille Sorcerer",
             new State(
                 new State("Main",
-                    new ScaleHP(20000),
+                    new ScaleHP(10000),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new PlayerWithinTransition(6, "phasechooser")
                     ),
@@ -443,7 +443,7 @@ namespace wServer.logic
                     new Taunt("WANZYU!"),
                     new Flash(0x551a8b, 1, 1),
                     new TossObject("Ultra Nagarith the Tormentor", 3, coolDown: 9999999),
-                    new TimedTransition(3000, "nagarithcheck")
+                    new TimedTransition(5000, "nagarithcheck")
                     ),
                 new State("nagarithcheck",
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -506,7 +506,7 @@ namespace wServer.logic
         .Init("Ultra Nagarith the Tormentor",
             new State(
                 new State("intro",
-                    new ScaleHP(20000),
+                    new ScaleHP(15000),
                     new Taunt("Drannol has summoned me back for a purpose... You shall not form that seal, the Eternal Beast will rise again!"),
                     new Orbit(speed: 1, radius: 4, target: "Ultra Bastille Sorcerer", orbitClockwise: true),
                     new Shoot(10, 7),
@@ -2380,6 +2380,7 @@ namespace wServer.logic
                         new Shoot(10, count: 1, fixedAngle: 135, projectileIndex: 0, coolDown: 400),
                         new Shoot(10, count: 1, fixedAngle: 225, projectileIndex: 0, coolDown: 400),
                         new Shoot(10, count: 1, fixedAngle: 315, projectileIndex: 0, coolDown: 400),
+                        new EntitiesNotExistsTransition(4, "die", "BD Ultra Stone Urgle"),
                         new TimedTransition(2000, "fight1")
                         )
                     ),
@@ -3420,7 +3421,7 @@ namespace wServer.logic
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("getit",
-                        new Taunt("You will not reach Lin, we have been sealed off for centuries but she knows I stand guard."),
+                        new Taunt("You will not reach Lin; we have been sealed off for centuries, but she knows I stand guard."),
                         new TimedTransition(6000, "getit2")
                             ),
                     new State("getit2",
@@ -7378,6 +7379,7 @@ namespace wServer.logic
                         new Shoot(10, count: 4, shootAngle: 8, projectileIndex: 5, coolDown: 3000),
                         new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 5, coolDown: 3000, coolDownOffset: 1600),
                         new Shoot(10, count: 2, shootAngle: 6, projectileIndex: 5, coolDown: 3000, coolDownOffset: 1600),*/
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new EntitiesNotExistsTransition(99, "vulni", "Ultra Bastille Sorcerer")
                             ),
                     new State("vulni",

@@ -129,33 +129,77 @@ namespace wServer.logic
                         )
                      )
                   )
-           /*.Init("Varghus Test Chest",
-                 new State(
-                     new State("Idle",
-                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                         new TimedTransition(5000, "UnsetEffect")
-                     ),
-                     new State("UnsetEffect")
-                 ),
-                 new MostDamagers(3,
-                     new ItemLoot("Potion of Restoration", 1)
-                     ),
-                 new Threshold(0.15,
-                 new TierLoot(10, ItemType.Weapon, 0.1),
-                 new TierLoot(4, ItemType.Ability, 0.1),
-                 new TierLoot(10, ItemType.Armor, 0.1),
-                 new TierLoot(3, ItemType.Ring, 0.05),
-                 new TierLoot(10, ItemType.Armor, 0.05),
-                 new TierLoot(10, ItemType.Weapon, 0.05),
-                 new TierLoot(4, ItemType.Ring, 0.025),
-                 new ItemLoot("Potion of Dexterity", 0.8),
-                 new ItemLoot("Potion of Defense", 0.3),
-                 new ItemLoot("Soulreaper Armor", 0.035),
-                 new ItemLoot("Nether Blade", 0.035),
-                 new ItemLoot("Shadow Beacon", 0.035),
-                 new ItemLoot("Staff of Dark Malediction", 0.035)
-                 )
-             )*/
+        .Init("Tunnel Spike",
+               new State(
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                    new State("wait",
+                        new SetAltTexture(0),
+                        new PlayerWithinTransition(3, "spike")
+                    ),
+                new State("spike",
+                    new SetAltTexture(1),
+                    new Shoot(5, 1, projectileIndex: 0, coolDown: 500),
+                    new NoPlayerWithinTransition(4,"wait")
+                    )
+                )
+            )
+         .Init("Tunnel Arrow Turret1",
+                    new State(
+                       new SetNoXP(),
+                       new ConditionalEffect(ConditionEffectIndex.Invincible),
+                    new State("wait",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new TimedRandomTransition(500, true, "pew pew")
+                        ),
+                     new State("pew pew",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new Shoot(10, 1, fixedAngle: 90, coolDown: 2000)
+                        )
+            )
+            )
+
+
+            .Init("Tunnel Arrow Turret2",
+             new State(
+                       new SetNoXP(),
+                       new ConditionalEffect(ConditionEffectIndex.Invincible),
+                    new State("wait",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new TimedRandomTransition(600, true, "pew pew")
+                        ),
+                     new State("pew pew",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new Shoot(10, 1, fixedAngle: 270, coolDown: 2000)
+                        )
+            )
+            )
+              /*.Init("Varghus Test Chest",
+                    new State(
+                        new State("Idle",
+                            new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                            new TimedTransition(5000, "UnsetEffect")
+                        ),
+                        new State("UnsetEffect")
+                    ),
+                    new MostDamagers(3,
+                        new ItemLoot("Potion of Restoration", 1)
+                        ),
+                    new Threshold(0.15,
+                    new TierLoot(10, ItemType.Weapon, 0.1),
+                    new TierLoot(4, ItemType.Ability, 0.1),
+                    new TierLoot(10, ItemType.Armor, 0.1),
+                    new TierLoot(3, ItemType.Ring, 0.05),
+                    new TierLoot(10, ItemType.Armor, 0.05),
+                    new TierLoot(10, ItemType.Weapon, 0.05),
+                    new TierLoot(4, ItemType.Ring, 0.025),
+                    new ItemLoot("Potion of Dexterity", 0.8),
+                    new ItemLoot("Potion of Defense", 0.3),
+                    new ItemLoot("Soulreaper Armor", 0.035),
+                    new ItemLoot("Nether Blade", 0.035),
+                    new ItemLoot("Shadow Beacon", 0.035),
+                    new ItemLoot("Staff of Dark Malediction", 0.035)
+                    )
+                )*/
               .Init("Tunnel Varghus the Eye",
                    new State(
                        new RealmPortalDrop(),
@@ -229,10 +273,10 @@ namespace wServer.logic
                          new ItemLoot("Potion of Dexterity", 0.8),
                          new ItemLoot("Potion of Defense", 0.3),
                          new ItemLoot("Soulreaper Armor", 0.01),
-                         new ItemLoot("Nether Blade", 0.005),
-                         new ItemLoot("Shadow Beacon", 0.005),
+                         new ItemLoot("Nether Blade", 0.007),
+                         new ItemLoot("Shadow Beacon", 0.007),
                          new ItemLoot("Wand of Obscurity", 0.01),
-                         new ItemLoot("Staff of Dark Malediction", 0.015)
+                         new ItemLoot("Staff of Dark Malediction", 0.007)
                      )
                );
     }

@@ -57,11 +57,6 @@ public class TierUtil
                 _local_10 = TooltipHelper.QUEST_COLOR;
                 _local_11 = "QT";
             }
-            else if (_arg_1.hasOwnProperty("BRItem"))
-            {
-                _local_10 = TooltipHelper.BR_COLOR;
-                _local_11 = "BR";
-            }
             else
             {
                _local_10 = TooltipHelper.UNTIERED_COLOR;

@@ -693,17 +693,17 @@
         <HitSound>monster/night_elves_hit</HitSound>
         <DeathSound>monster/night_elves_death</DeathSound>
         <Size>110</Size>
-        <MaxHitPoints>4750</MaxHitPoints>
+        <MaxHitPoints>3500</MaxHitPoints>
         <Defense>25</Defense>
         <Projectile id="0">
             <ObjectId>Black Arrow</ObjectId>
-            <Damage>95</Damage>
+            <Damage>65</Damage>
             <Speed>90</Speed>
             <LifetimeMS>4000</LifetimeMS>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Blue Arrow</ObjectId>
-            <Damage>50</Damage>
+            <Damage>30</Damage>
             <Speed>90</Speed>
             <MultiHit/>
             <LifetimeMS>3000</LifetimeMS>
@@ -720,11 +720,11 @@
         <HitSound>monster/night_elves_hit</HitSound>
         <DeathSound>monster/night_elves_death</DeathSound>
         <Size>110</Size>
-        <MaxHitPoints>6550</MaxHitPoints>
+        <MaxHitPoints>3500</MaxHitPoints>
         <Defense>30</Defense>
         <Projectile id="0">
             <ObjectId>Thousand Shot Arrow</ObjectId>
-            <Damage>70</Damage>
+            <Damage>35</Damage>
             <Speed>90</Speed>
             <LifetimeMS>2750</LifetimeMS>
             <ConditionEffect duration="2.5">Bleeding</ConditionEffect>
@@ -741,11 +741,11 @@
         <HitSound>monster/ghost_god_hit</HitSound>
         <DeathSound>monster/beholder_death</DeathSound>
         <Size>120</Size>
-        <MaxHitPoints>3850</MaxHitPoints>
+        <MaxHitPoints>2000</MaxHitPoints>
         <Defense>35</Defense>
         <Projectile id="0">
             <ObjectId>Fire Bolt</ObjectId>
-            <Damage>125</Damage>
+            <Damage>75</Damage>
             <Speed>100</Speed>
             <LifetimeMS>2000</LifetimeMS>
         </Projectile>
@@ -761,12 +761,12 @@
         <HitSound>monster/default_hit</HitSound>
         <DeathSound>monster/dark_elves_death</DeathSound>
         <Size>120</Size>
-        <MaxHitPoints>8950</MaxHitPoints>
-        <Defense>60</Defense>
+        <MaxHitPoints>3500</MaxHitPoints>
+        <Defense>30</Defense>
         <Projectile id="0">
             <ObjectId>Crystal Serpent Missile</ObjectId>
-            <MinDamage>100</MinDamage>
-            <MaxDamage>180</MaxDamage>
+            <MinDamage>50</MinDamage>
+            <MaxDamage>100</MaxDamage>
             <Amplitude>0.5</Amplitude>
             <Frequency>2</Frequency>
             <MultiHit/>
@@ -792,11 +792,11 @@
         <HitSound>monster/night_elves_hit</HitSound>
         <DeathSound>monster/night_elves_death</DeathSound>
         <Size>120</Size>
-        <MaxHitPoints>4550</MaxHitPoints>
+        <MaxHitPoints>2400</MaxHitPoints>
         <Defense>25</Defense>
         <Projectile id="0">
             <ObjectId>Blade</ObjectId>
-            <Damage>100</Damage>
+            <Damage>60</Damage>
             <Speed>145</Speed>
             <LifetimeMS>5250</LifetimeMS>
         </Projectile>
@@ -854,7 +854,7 @@
         <HitSound>monster/default_hit</HitSound>
         <DeathSound>monster/stone_walls_death</DeathSound>
         <Size>100</Size>
-        <MaxHitPoints>3000</MaxHitPoints>
+        <MaxHitPoints>1500</MaxHitPoints>
         <Defense>60</Defense>
         <Projectile id="0">
             <ObjectId>Black Magic</ObjectId>
@@ -875,7 +875,7 @@
         <HitSound>monster/default_hit</HitSound>
         <DeathSound>monster/stone_walls_death</DeathSound>
         <Size>130</Size>
-        <MaxHitPoints>9500</MaxHitPoints>
+        <MaxHitPoints>6000</MaxHitPoints>
         <Defense>30</Defense>
         <Projectile id="0">
             <ObjectId>Armor Pierce Bullet</ObjectId>
@@ -14950,7 +14950,7 @@
         <ParalyzeImmune/>
         <StasisImmune/>
         <DazedImmune/>
-        <Elitedrop/>
+        <UElitedrop/>
         <ShadowSize>0</ShadowSize>
         <Quest/>
         <MaxHitPoints>500000</MaxHitPoints>
@@ -15134,7 +15134,7 @@
         <Size>160</Size>
         <ParalyzeImmune/>
         <StasisImmune/>
-        <Elitedrop/>
+        <UElitedrop/>
         <DazedImmune/>
         <ArmorBreakImmune/>
         <SlowedImmune/>
@@ -15364,7 +15364,7 @@
         <Size>150</Size>
         <ParalyzeImmune/>
         <StasisImmune/>
-        <Elitedrop/>
+        <UElitedrop/>
         <StunImmune/>
         <ArmorBreakImmune/>
         <NoMiniMap/>
@@ -15576,7 +15576,7 @@
         <Size>160</Size>
         <ParalyzeImmune/>
         <StasisImmune/>
-        <Elitedrop/>
+        <UElitedrop/>
         <DazedImmune/>
         <SlowedImmune/>
         <ShadowSize>0</ShadowSize>
@@ -15892,5 +15892,69 @@
         </Projectile>
         <MaxHitPoints>25000</MaxHitPoints>
         <Defense>5</Defense>
+    </Object>
+    <Object type="0x66a2" id="Tunnel Spike">
+        <DisplayId>Tunnel Spike</DisplayId>
+        <Class>Character</Class>
+        <Enemy/>
+        <NoMiniMap/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x45d</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x45e</Index>
+            </Texture>
+        </AltTexture>
+        <XpMult>0.0</XpMult>
+        <ShadowSize>0</ShadowSize>
+        <Projectile id="0">
+            <ObjectId>Invisible</ObjectId>
+            <Damage>75</Damage>
+            <Speed>0</Speed>
+            <LifetimeMS>500</LifetimeMS>
+            <Size>75</Size>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+            <MultiHit/>
+        </Projectile>
+        <MaxHitPoints>0</MaxHitPoints>
+    </Object>
+    <Object type="0x66a3" id="Tunnel Arrow Turret1">
+        <DisplayId>Tunnel Arrow Turret</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <Class>Character</Class>
+        <Projectile id="0">
+            <ObjectId>Red Arrow</ObjectId>
+            <Damage>55</Damage>
+            <Speed>90</Speed>
+            <LifetimeMS>2750</LifetimeMS>
+            <ConditionEffect duration="2.5">Bleeding</ConditionEffect>
+        </Projectile>
+        <NoMiniMap/>
+        <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x66a4" id="Tunnel Arrow Turret2">
+        <DisplayId>Tunnel Arrow Turret</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <Class>Character</Class>
+        <Projectile id="0">
+            <ObjectId>Red Arrow</ObjectId>
+            <Damage>55</Damage>
+            <Speed>90</Speed>
+            <LifetimeMS>2750</LifetimeMS>
+            <ConditionEffect duration="2.5">Bleeding</ConditionEffect>
+        </Projectile>
+        <NoMiniMap/>
+        <ShadowSize>0</ShadowSize>
     </Object>
 </Objects>
