@@ -10,24 +10,22 @@ namespace wServer.realm.entities
 {
     public class Enemy : Character
     {
-        public bool isPet; // TODO quick hack for backwards compatibility
-        bool stat;
+        private readonly bool stat;
         public Enemy ParentEntity;
 
-        DamageCounter counter;
         public Enemy(RealmManager manager, ushort objType)
             : base(manager, objType)
         {
             stat = ObjectDesc.MaxHP == 0;
-            counter = new DamageCounter(this);
+            DamageCounter = new DamageCounter(this);
         }
 
-        public DamageCounter DamageCounter { get { return counter; } }
+        public DamageCounter DamageCounter { get; private set; }
 
         public WmapTerrain Terrain { get; set; }
 
-        Position? pos;
-        public Position SpawnPoint { get { return pos ?? new Position() { X = X, Y = Y }; } }
+        private Position? pos;
+        public Position SpawnPoint => pos ?? new Position { X = X, Y = Y };
 
         public override void Init(World owner)
         {
@@ -42,17 +40,16 @@ namespace wServer.realm.entities
 
         public void SetDamageCounter(DamageCounter counter, Enemy enemy)
         {
-            this.counter = counter;
-            this.counter.UpdateEnemy(enemy);
+            DamageCounter = counter;
+            DamageCounter.UpdateEnemy(enemy);
         }
 
         public event EventHandler<BehaviorEventArgs> OnDeath;
 
         public void Death(RealmTime time)
         {
-            counter.Death(time);
-            if (CurrentState != null)
-                CurrentState.OnDeath(new BehaviorEventArgs(this, time));
+            DamageCounter.Death(time);
+            CurrentState?.OnDeath(new BehaviorEventArgs(this, time));
             OnDeath?.Invoke(this, new BehaviorEventArgs(this, time));
             Owner.LeaveWorld(this);
         }
@@ -65,11 +62,11 @@ namespace wServer.realm.entities
             if (!HasConditionEffect(ConditionEffects.Paused) &&
                 !HasConditionEffect(ConditionEffects.Stasis))
             {
-                var def = this.ObjectDesc.Defense;
+                var def = ObjectDesc.Defense;
                 if (noDef)
                     def = 0;
                 dmg = (int)StatsManager.GetDefenseDamage(this, dmg, def);
-                int effDmg = dmg;
+                var effDmg = dmg;
                 if (effDmg > HP)
                     effDmg = HP;
                 if (!HasConditionEffect(ConditionEffects.Invulnerable))
@@ -77,7 +74,7 @@ namespace wServer.realm.entities
                 ApplyConditionEffect(effs);
                 Owner.BroadcastPacketNearby(new Damage()
                 {
-                    TargetId = this.Id,
+                    TargetId = Id,
                     Effects = 0,
                     DamageAmount = (ushort)dmg,
                     Kill = HP < 0,
@@ -85,7 +82,7 @@ namespace wServer.realm.entities
                     ObjectId = from.Id
                 }, this, null, PacketPriority.Low);
 
-                counter.HitBy(from, time, null, dmg);
+                DamageCounter.HitBy(from, time, null, dmg);
 
                 if (HP < 0 && Owner != null)
                 {
@@ -97,23 +94,21 @@ namespace wServer.realm.entities
             return 0;
         }
 
-        private int[] stealHits = { 0, 0 };
+        private readonly int[] stealHits = { 0, 0 };
 
         public override bool HitByProjectile(Projectile projectile, RealmTime time)
         {
             if (stat) return false;
             if (HasConditionEffect(ConditionEffects.Invincible))
                 return false;
-            if (projectile.ProjectileOwner is Player &&
+            if (projectile.ProjectileOwner is Player p &&
                 !HasConditionEffect(ConditionEffects.Paused) &&
                 !HasConditionEffect(ConditionEffects.Stasis))
             {
-                var p = (projectile.ProjectileOwner as Player);
-
-                var def = this.ObjectDesc.Defense;
+                var def = ObjectDesc.Defense;
                 if (projectile.ProjDesc.ArmorPiercing)
                     def = 0;
-                int dmg = (int)StatsManager.GetDefenseDamage(this, projectile.Damage, def);
+                var dmg = (int)StatsManager.GetDefenseDamage(this, projectile.Damage, def);
                 if (!HasConditionEffect(ConditionEffects.Invulnerable))
                     HP -= dmg;
                 ConditionEffect[] effs = null;
@@ -121,57 +116,52 @@ namespace wServer.realm.entities
                 {
                     if (pair.Value == 0 || pair.Key == default(ConditionEffect)) continue;
 
-                    if ((pair.Value / 100d) > (new Random().NextDouble()))
+                    if (pair.Value / 100d > new Random().NextDouble())
                     {
-                        var effList = new List<ConditionEffect>(projectile.ProjDesc.Effects);
-                        effList.Add(pair.Key);
+                        var effList = new List<ConditionEffect>(projectile.ProjDesc.Effects) {pair.Key};
                         effs = effList.ToArray();
                     }
                 }
                 ApplyConditionEffect(effs ?? projectile.ProjDesc.Effects);
-                Owner.BroadcastPacketNearby(new Damage()
+                Owner.BroadcastPacketNearby(new Damage
                 {
-                    TargetId = this.Id,
+                    TargetId = Id,
                     Effects = projectile.ConditionEffects,
                     DamageAmount = (ushort)dmg,
                     Kill = HP < 0,
                     BulletId = projectile.ProjectileId,
                     ObjectId = projectile.ProjectileOwner.Self.Id
-                }, this, (projectile.ProjectileOwner as Player), PacketPriority.Low);
+                }, this, p, PacketPriority.Low);
 
-                if (p?.StealAmount != null)
-                {
-                    if (p.StealAmount[0] != 0 && !p.HasConditionEffect(ConditionEffects.Sick))
-                    {
-                        int maxHP = p.Stats[0];
-                        int lifeSteal = p.StealAmount[0];
+                if (p.StealAmount != null) {
+                    if (p.StealAmount[0] != 0 && !p.HasConditionEffect(ConditionEffects.Sick)) {
+                        var maxHP = p.Stats[0];
+                        var lifeSteal = p.StealAmount[0];
 
                         if (lifeSteal >= 1 && p.HP < maxHP)
-                            p.HP = ((p.HP + lifeSteal) > maxHP ? maxHP : p.HP + lifeSteal);
-                        else
-                        {
+                            p.HP = p.HP + lifeSteal > maxHP ? maxHP : p.HP + lifeSteal;
+                        else {
                             stealHits[0]++;
                             if (stealHits[0] >= 1 / lifeSteal)
-                                p.HP = ((p.HP + lifeSteal) > maxHP ? maxHP : p.HP + lifeSteal);
+                                p.HP = p.HP + lifeSteal > maxHP ? maxHP : p.HP + lifeSteal;
                         }
                     }
-                    if (p.StealAmount[1] != 0 && !p.HasConditionEffect(ConditionEffects.Quiet))
-                    {
-                        int maxMP = p.Stats[1];
-                        int manaLeech = p.StealAmount[1];
+
+                    if (p.StealAmount[1] != 0 && !p.HasConditionEffect(ConditionEffects.Quiet)) {
+                        var maxMP = p.Stats[1];
+                        var manaLeech = p.StealAmount[1];
 
                         if (manaLeech >= 1 && p.MP < maxMP)
-                            p.MP = ((p.MP + manaLeech) > maxMP ? maxMP : p.MP + manaLeech);
-                        else
-                        {
+                            p.MP = p.MP + manaLeech > maxMP ? maxMP : p.MP + manaLeech;
+                        else {
                             stealHits[1]++;
                             if (stealHits[1] >= 1 / manaLeech)
-                                p.MP = ((p.MP + manaLeech) > maxMP ? maxMP : p.MP + manaLeech);
+                                p.MP = p.MP + manaLeech > maxMP ? maxMP : p.MP + manaLeech;
                         }
                     }
                 }
 
-                counter.HitBy(projectile.ProjectileOwner as Player, time, projectile, dmg);
+                DamageCounter.HitBy(p, time, projectile, dmg);
 
                 if (HP < 0 && Owner != null)
                 {

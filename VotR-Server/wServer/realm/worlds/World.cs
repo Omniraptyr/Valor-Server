@@ -277,8 +277,6 @@ namespace wServer.realm.worlds
         }
 
         protected void FromDungeonGen(int seed, DungeonTemplate template) {
-            Log.InfoFormat("Loading template for world {0}({1})...", Id, Name);
-
             var gen = new Generator(seed, template);
             gen.Generate();
             var ras = new Rasterizer(seed, gen.ExportGraph());
@@ -297,8 +295,6 @@ namespace wServer.realm.worlds
         }
 
         protected void FromWorldMap(Stream dat) {
-            Log.InfoFormat("Loading map for world {0}({1})...", Id, Name);
-
             if (Map == null) {
                 Map = new Wmap(Manager.Resources.GameData);
                 Interlocked.Add(ref _entityInc, Map.Load(dat, _entityInc));

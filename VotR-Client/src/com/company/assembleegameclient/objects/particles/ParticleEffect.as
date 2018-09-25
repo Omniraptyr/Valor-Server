@@ -6,7 +6,6 @@ import com.company.assembleegameclient.parameters.Parameters;
 import flash.display.IGraphicsData;
 
 public class ParticleEffect extends GameObject {
-
     public var reducedDrawEnabled:Boolean;
 
     public function ParticleEffect() {
@@ -17,7 +16,9 @@ public class ParticleEffect extends GameObject {
     }
 
     public static function fromProps(props:EffectProperties, go:GameObject):ParticleEffect {
-        if (Parameters.data_.noParticlesMaster && props.id != "Vent") {
+        if (Parameters.data_.noParticlesMaster
+                && (props.id != "Vent"
+                || go == go.map_.player_ && props.id != "CustomParticles")) {
             return null;
         }
         switch (props.id) {
@@ -54,24 +55,22 @@ public class ParticleEffect extends GameObject {
     }
 
 
-    override public function update(_arg1:int, _arg2:int):Boolean {
+    override public function update(time:int, dt:int):Boolean {
         if (this.reducedDrawEnabled) {
-            return (this.runEasyRendering(_arg1, _arg2));
+            return (this.runEasyRendering(time, dt));
         }
-        return (this.runNormalRendering(_arg1, _arg2));
+        return this.runNormalRendering(time, dt);
     }
 
-    public function runNormalRendering(_arg1:int, _arg2:int):Boolean {
-        return (false);
+    public function runNormalRendering(time:int, dt:int):Boolean {
+        return false;
     }
 
-    public function runEasyRendering(_arg1:int, _arg2:int):Boolean {
-        return (false);
+    public function runEasyRendering(time:int, dt:int):Boolean {
+        return false;
     }
 
-    override public function draw(_arg1:Vector.<IGraphicsData>, _arg2:Camera, _arg3:int):void {
+    override public function draw(gfx:Vector.<IGraphicsData>, camera:Camera, time:int):void {
     }
-
-
 }
 }

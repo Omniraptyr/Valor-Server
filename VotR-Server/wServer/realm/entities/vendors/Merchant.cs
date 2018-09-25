@@ -14,18 +14,18 @@ namespace wServer.realm.entities.vendors
 
         public ushort Item
         {
-            get { return _item.GetValue(); }
-            set { _item.SetValue(value); }
+            get => _item.GetValue();
+            set => _item.SetValue(value);
         }
         public int Count
         {
-            get { return _count.GetValue(); }
-            set { _count.SetValue(value); }
+            get => _count.GetValue();
+            set => _count.SetValue(value);
         }
         public int TimeLeft
         {
-            get { return _timeLeft.GetValue(); }
-            set { _timeLeft.SetValue(value); }
+            get => _timeLeft.GetValue();
+            set => _timeLeft.SetValue(value);
         }
 
         public int ReloadOffset { get; set; }
@@ -213,9 +213,6 @@ namespace wServer.realm.entities.vendors
                 Result = 0,
                 ResultString = "{\"key\":\"PackagePurchased.message\"}"
             });
-
-            Log.InfoFormat("[{0}]User {1} has bought {2} for {3} {4}.",
-                DateTime.Now, player.Name, Manager.Resources.GameData.Items[Item].DisplayName, Price, Currency.ToString());
         }
     }
 }

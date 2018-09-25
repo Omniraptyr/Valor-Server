@@ -114,23 +114,30 @@ namespace wServer.realm.entities
         };
 
         private readonly object _useLock = new object();
-        private bool _isOnCd;
-        public void UseItem(RealmTime time, int objId, int slot, Position pos) {
-            using (TimedLock.Lock(_useLock)) {
+        public void UseItem(RealmTime time, int objId, int slot, Position pos)
+        {
+            if (LastAltAttack > time.TotalElapsedMs)
+                return;
+
+            using (TimedLock.Lock(_useLock))
+            {
                 var entity = Owner.GetEntity(objId);
-                if (entity == null) {
+                if (entity == null)
+                {
                     Client.SendPacket(new InvResult { Result = 1 });
                     return;
                 }
 
-                if (entity is Player && objId != Id) {
+                if (entity is Player && objId != Id)
+                {
                     Client.SendPacket(new InvResult { Result = 1 });
                     return;
                 }
 
                 var container = entity as IContainer;
 
-                if (this.Dist(entity) > 3) {
+                if (this.Dist(entity) > 3)
+                {
                     Client.SendPacket(new InvResult { Result = 1 });
                     return;
                 }
@@ -139,7 +146,8 @@ namespace wServer.realm.entities
 
                 // get item
                 Item item = null;
-                foreach (var stack in Stacks.Where(stack => stack.Slot == slot)) {
+                foreach (var stack in Stacks.Where(stack => stack.Slot == slot))
+                {
                     item = stack.Pull();
 
                     if (item == null)
@@ -147,7 +155,9 @@ namespace wServer.realm.entities
 
                     break;
                 }
-                if (item == null) {
+
+                if (item == null)
+                {
                     if (container == null)
                         return;
 
@@ -157,37 +167,28 @@ namespace wServer.realm.entities
                 if (item == null)
                     return;
 
-                if (_isOnCd)
-                    return;
-
-                _isOnCd = true;
-                var timer = new Timer(550);
-                timer.Elapsed += (o, e) => {
-                    _isOnCd = false;
-                    timer.Dispose();
-                };
-
-                if (item.Cooldown != 0) {
-                    timer.Interval = item.Cooldown;
-                    timer.Enabled = true;
-                } else timer.Enabled = true;
-
+                LastAltAttack = 550;
+                if (item.Cooldown != 0)
+                    LastAltAttack = (long)item.Cooldown;
 
                 // make sure not trading and trying to consume item
                 if (tradeTarget != null && item.Consumable)
                     return;
 
-                if (MP < item.MpCost) {
+                if (MP < item.MpCost)
+                {
                     Client.SendPacket(new InvResult { Result = 1 });
                     return;
                 }
 
                 // use item
                 var slotType = 10;
-                if (slot < cInv.Length) {
+                if (slot < cInv.Length)
+                {
                     slotType = container.SlotTypes[slot];
 
-                    if (item.Consumable) {
+                    if (item.Consumable)
+                    {
                         var gameData = Manager.Resources.GameData;
                         var db = Manager.Database;
 
@@ -211,13 +212,17 @@ namespace wServer.realm.entities
                                 return;
                             }
 
-                            if (slotType > 0) {
+                            if (slotType > 0)
+                            {
                                 FameCounter.UseAbility();
-                            } else {
+                            }
+                            else
+                            {
                                 if (item.ActivateEffects.Any(eff => eff.Effect == ActivateEffects.Heal ||
                                                                     eff.Effect == ActivateEffects.HealNova ||
                                                                     eff.Effect == ActivateEffects.Magic ||
-                                                                    eff.Effect == ActivateEffects.MagicNova)) {
+                                                                    eff.Effect == ActivateEffects.MagicNova))
+                                {
                                     FameCounter.DrinkPot();
                                 }
                             }
@@ -231,10 +236,13 @@ namespace wServer.realm.entities
                         return;
                     }
 
-                    if (slotType > 0) {
+                    if (slotType > 0)
+                    {
                         FameCounter.UseAbility();
                     }
-                } else {
+                }
+                else
+                {
                     FameCounter.DrinkPot();
                 }
 
@@ -247,52 +255,64 @@ namespace wServer.realm.entities
 
         private void Activate(RealmTime time, Item item, Position target)
         {
-            if (CheckD2Rage())
+            if (Surge < item.SurgeCost) Surge = 0;
+            else Surge -= item.SurgeCost;
+
+            if (HP < item.HpCost) HP = 1;
+            else HP -= item.HpCost;
+
+            if (MP < item.MpCost) MP = 0;
+            else MP -= item.MpCost;
+
+            switch (item.ObjectId)
             {
-                HP -= item.MpCost * 2;
-            }
-            if (CheckMoonlight())
-            {
-                ProtectionDamage = 0;
-            }
-            if (CheckIok())
-            {
-                ApplyConditionEffect(NegativeEffs);
-                BroadcastSync(new ShowEffect
-                {
-                    EffectType = EffectType.AreaBlast,
-                    TargetObjectId = Id,
-                    Color = new ARGB(0xffffffff),
-                    Pos1 = new Position { X = 1 }
-                }, p => this.DistSqr(p) < RadiusSqr);
-            }
-            if (CheckFang())
-            {
-                ApplyConditionEffect(ConditionEffectIndex.Armored, HP * 4);
-            }
-            if (CheckBifierce())
-            {
-                Surge++;
-            }
-            ActivateSecondaryPower(SecondaryPowerIdentify());
-            if (!CheckDim())
-            {
-                MP -= item.MpCost;
-            }
-            if (CheckFurious())
-            {
-                if (item.MpCost > 0)
+                case "Drannol's Judgement":
+                    HP -= item.MpCost * 2;
+                    break;
+                case "Moonlight" when MP >= Stats[1]:
+                    ProtectionDamage = 0;
+                    break;
+                case "Iok's Relief" when Surge >= 5:
+                    ApplyConditionEffect(NegativeEffs);
+                    BroadcastSync(new ShowEffect
+                    {
+                        EffectType = EffectType.AreaBlast,
+                        TargetObjectId = Id,
+                        Color = new ARGB(0xffffffff),
+                        Pos1 = new Position { X = 1 }
+                    }, p => this.DistSqr(p) < RadiusSqr);
+                    break;
+                case "The Bleeding Fang" when Surge >= 2:
+                    ApplyConditionEffect(ConditionEffectIndex.Armored, HP * 4);
+                    break;
+                case "The Bifierce" when HP <= Stats[0] / 2:
+                    Surge++;
+                    break;
+                case "Iok's Courage" when ProtectionDamage >= ProtectionMax:
+                    Surge += 15;
+                    break;
+                case "Starmind Gauntlet" when Surge >= 60 && item.MpCost > 0:
                     WeakBlast(time, item, target);
-            }
-            if (CheckCourage())
-            {
-                Surge += 15;
-            }
-            if (CheckDran())
-            {
-                if (item.MpCost > 0)
+                    break;
+                case "Dranbiel Garbs" when MP >= Stats[1] / 2 && item.MpCost > 0:
                     AEHealNoRest(time, item, target, 60);
+                    break;
+                case "Starcrash Ring" when item.MpCost > 0:
+                    AEMagicNoRest(time, item, target, item.MpCost / 4);
+                    break;
+                case "The Infernus" when item.MpCost > 0:
+                    BurstFire(time, item, target);
+                    break;
+                case "Meteor" when
+                    (Inventory[1].ObjectId == "Burning Tome" || Inventory[1].ObjectId == "Scorching Scepter")
+                    && item.MpCost > 0 && new Random().NextDouble() < 0.14f:
+                    DamageGrenade(time, target);
+                    break;
+                case "Dimensional Prism" when Surge > 10:
+                    MP += item.MpCost;
+                    break;
             }
+
             if (Mark == 12)
             {
                 if (item.MpCost > 0)
@@ -301,49 +321,7 @@ namespace wServer.realm.entities
                 if (item.MpCost > 0)
                     AEHealNoRest(time, item, target, 75);
             }
-            if (CheckStar())
-            {
-                if (item.MpCost > 0)
-                    AEMagicNoRest(time, item, target, item.MpCost / 4);
-            }
-            if (CheckInfernus())
-            {
-                if (item.MpCost > 0)
-                    BurstFire(time, item, target);
-            }
-            if (CheckMeteor())
-            {
-                if (item.MpCost > 0)
-                {
-                    Random rnd = new Random();
-                    int meteor = rnd.Next(1, 7);
-                    switch (meteor)
-                    {
-                        case 1:
-                            DamageGrenade(time, target);
-                            break;
-                        case 2:
-                            break;
-                        case 3:
-                            break;
-                        case 4:
-                            break;
-                        case 5:
-                            break;
-                        case 6:
-                            break;
 
-                    }
-                }
-            }
-            if (Surge >= item.SurgeCost)
-                Surge -= item.SurgeCost;
-
-
-            if (HP < item.HpCost)
-                HP = item.HpCost;
-            else
-                HP -= item.HpCost;
             foreach (var eff in item.ActivateEffects)
             {
                 switch (eff.Effect)
@@ -543,12 +521,137 @@ namespace wServer.realm.entities
                     case ActivateEffects.AstonAbility:
                         AEAstonAbility(time, item, target, eff);
                         break;
+                    case ActivateEffects.DualShoot:
+                        break;
+                    case ActivateEffects.BurningLightning:
+                        break;
+                    case ActivateEffects.Drake:
+                        break;
+                    case ActivateEffects.PermaPet:
+                        break;
+                    case ActivateEffects.DazeBlast:
+                        break;
+                    case ActivateEffects.ClearConditionEffectSelf:
+                        break;
+                    case ActivateEffects.TomeDamage:
+                        break;
+                    case ActivateEffects.MultiDecoy:
+                        break;
+                    case ActivateEffects.Mushroom:
+                        break;
+                    case ActivateEffects.PearlAbility:
+                        break;
+                    case ActivateEffects.BuildTower:
+                        break;
+                    case ActivateEffects.MonsterToss:
+                        break;
+                    case ActivateEffects.PartyAOE:
+                        break;
+                    case ActivateEffects.MiniPot:
+                        break;
+                    case ActivateEffects.Halo:
+                        break;
+                    case ActivateEffects.Summon:
+                        break;
+                    case ActivateEffects.ChristmasPopper:
+                        break;
+                    case ActivateEffects.Belt:
+                        break;
+                    case ActivateEffects.Totem:
+                        break;
+                    case ActivateEffects.Pet:
+                        break;
+                    case ActivateEffects.MysteryPortal:
+                        break;
+                    case ActivateEffects.ChangeSkin:
+                        break;
+                    case ActivateEffects.PetSkin:
+                        break;
+                    case ActivateEffects.Unlock:
+                        break;
+                    case ActivateEffects.MysteryDyes:
+                        break;
+                    case ActivateEffects.UnScroll:
+                        break;
+                    case ActivateEffects.BlackScroll:
+                        break;
+                    case ActivateEffects.RenamePet:
+                        break;
+                    case ActivateEffects.IdScroll:
+                        break;
+                    case ActivateEffects.BrownScroll:
+                        break;
+                    case ActivateEffects.HealNovaSigil:
+                        break;
+                    case ActivateEffects.RevivementBox:
+                        break;
+                    case ActivateEffects.NeonBox:
+                        break;
+                    case ActivateEffects.DareFistBox:
+                        break;
+                    case ActivateEffects.VorvBox:
+                        break;
+                    case ActivateEffects.GPBox:
+                        break;
+                    case ActivateEffects.MayhemBox:
+                        break;
+                    case ActivateEffects.SunshineBox:
+                        break;
+                    case ActivateEffects.BlizzardBox:
+                        break;
+                    case ActivateEffects.WigWeekBox:
+                        break;
+                    case ActivateEffects.LootboxActivate:
+                        break;
+                    case ActivateEffects.PetStoneActivate:
+                        break;
+                    case ActivateEffects.PLootboxActivate:
+                        break;
+                    case ActivateEffects.InsigniaActivate:
+                        break;
+                    case ActivateEffects.SorMachine:
+                        break;
+                    case ActivateEffects.RandomKantos:
+                        break;
+                    case ActivateEffects.PoZPage:
+                        break;
+                    case ActivateEffects.FameActivate:
+                        break;
+                    case ActivateEffects.AsiHeal:
+                        break;
+                    case ActivateEffects.AsiimovBox:
+                        break;
+                    case ActivateEffects.NewCharSlot:
+                        break;
+                    case ActivateEffects.RageReapBox:
+                        break;
+                    case ActivateEffects.SamuraiAbility2:
+                        break;
+                    case ActivateEffects.BronzeLockbox:
+                        break;
+                    case ActivateEffects.SpiderTrap:
+                        break;
+                    case ActivateEffects.RoyalTrap:
+                        break;
+                    case ActivateEffects.OPBUFF:
+                        break;
+                    case ActivateEffects.WARPAWNBUFF:
+                        break;
+                    case ActivateEffects.SilentBox:
+                        break;
+                    case ActivateEffects.CrimsonBox:
+                        break;
+                    case ActivateEffects.FUnlockPortal:
+                        break;
+                    case ActivateEffects.CreateGauntlet:
+                        break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
                 }
             }
         }
+
         private void AEDDiceActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             ConditionEffectIndex[] gamblerEffs = {
@@ -556,7 +659,7 @@ namespace wServer.realm.entities
                 ConditionEffectIndex.Invulnerable,
                 ConditionEffectIndex.Sick
             };
-            int roll = new Random().Next(0, 3);
+            var roll = new Random().Next(0, 3);
             if (roll != 3)
                 ApplyConditionEffect(gamblerEffs[roll], eff.DurationMS);
         }
@@ -623,16 +726,13 @@ namespace wServer.realm.entities
                 return;
 
             // get proto of world
-            ProtoWorld proto;
-            if (!Manager.Resources.Worlds.Data.TryGetValue(eff.DungeonName, out proto))
+            if (!Manager.Resources.Worlds.Data.TryGetValue(eff.DungeonName, out var proto))
             {
-                Log.Error("Unable to unlock portal. \"" + eff.DungeonName + "\" does not exist.");
                 return;
             }
 
             if (proto.portals == null || proto.portals.Length < 1)
             {
-                Log.Error("World is not associated with any portals.");
                 return;
             }
 
@@ -688,7 +788,7 @@ namespace wServer.realm.entities
 
         private void AELTBoost(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            if (LTBoostTime < 0 || (LTBoostTime > eff.DurationMS && eff.DurationMS >= 0))
+            if (LTBoostTime < 0 || LTBoostTime > eff.DurationMS && eff.DurationMS >= 0)
                 return;
 
             LTBoostTime = eff.DurationMS;
@@ -697,7 +797,7 @@ namespace wServer.realm.entities
 
         private void AELDBoost(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            if (LDBoostTime < 0 || (LDBoostTime > eff.DurationMS && eff.DurationMS >= 0))
+            if (LDBoostTime < 0 || LDBoostTime > eff.DurationMS && eff.DurationMS >= 0)
                 return;
 
             LDBoostTime = eff.DurationMS;
@@ -706,7 +806,7 @@ namespace wServer.realm.entities
 
         private void AEXPBoost(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            if (XPBoostTime < 0 || (XPBoostTime > eff.DurationMS && eff.DurationMS >= 0))
+            if (XPBoostTime < 0 || XPBoostTime > eff.DurationMS && eff.DurationMS >= 0)
                 return;
 
             XPBoostTime = eff.DurationMS;
@@ -716,14 +816,7 @@ namespace wServer.realm.entities
 
         private void AEBackpack(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            if (Rank >= 10)
-            {
-                HasBackpack = true;
-            }
-            else
-            {
-                SendError("You must be a donator to use this item!");
-            }
+            HasBackpack = true;
         }
 
         private void AEMarksActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
@@ -733,7 +826,7 @@ namespace wServer.realm.entities
                 if (CurrentFame >= 5000)
                 {
 
-                    for (int i = 0; i < Inventory.Length; i++)
+                    for (var i = 0; i < Inventory.Length; i++)
                     {
                         if (Inventory[i] == null) continue;
                         if (Inventory[i].ObjectId == "Lost Scripture")
@@ -761,26 +854,31 @@ namespace wServer.realm.entities
 
         private void AEAscensionActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            if (Stars < 20) {
+            if (Stars < 20)
+            {
                 SendError("You must at least be 20 stars to ascend.");
                 return;
             }
 
-            if (CurrentFame < 5000) {
+            if (CurrentFame < 5000)
+            {
                 SendError("You must have at least 5000 account fame to ascend.");
                 return;
             }
 
             var playerDesc = Manager.Resources.GameData.Classes[ObjectType];
             var maxed = playerDesc.Stats.Where((t, i) => Stats.Base[i] >= t.MaxValue).Count();
-            if (maxed < 12) {
+            if (maxed < 12)
+            {
                 SendError("You must be 12/12 to ascend.");
                 return;
             }
 
-            for (int i = 0; i < Inventory.Length; i++) {
+            for (var i = 0; i < Inventory.Length; i++)
+            {
                 if (Inventory[i] == null) continue;
-                if (Inventory[i].ObjectId == "Lost Scripture #2") {
+                if (Inventory[i].ObjectId == "Lost Scripture #2")
+                {
                     Inventory[i] = null;
                     SaveToCharacter();
                     Client.Manager.Database.UpdateFame(Client.Account, -5000);
@@ -794,8 +892,8 @@ namespace wServer.realm.entities
 
         private void AEEffectRandom(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            Random rnd = new Random();
-            int Chance = Random.Next(0, 10);
+            var rnd = new Random();
+            var Chance = Random.Next(0, 10);
             switch (Chance)
             {
                 case 0:
@@ -873,8 +971,7 @@ namespace wServer.realm.entities
             var acc = Client.Account;
             var trans = Manager.Database.Conn.CreateTransaction();
             Manager.Database.UpdateCurrency(acc, eff.Amount, CurrencyType.Fame, trans)
-                .ContinueWith(t =>
-                {
+                .ContinueWith(t => {
                     CurrentFame = acc.Fame;
                 });
             trans.Execute(CommandFlags.FireAndForget);
@@ -961,9 +1058,8 @@ namespace wServer.realm.entities
                 if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
 
                 MP -= item.MpEndCost;
-                List<Packet> pkts = new List<Packet>();
-                this.AOE(eff.Range / 2, false, enemy =>
-                {
+                var pkts = new List<Packet>();
+                this.AOE(eff.Range / 2, false, enemy => {
                     ((Enemy)enemy).Damage(this, time,
                         Stats.GetAttackDamage(eff.TotalDamage, eff.TotalDamage),
                         false);
@@ -1009,9 +1105,8 @@ namespace wServer.realm.entities
                 TargetObjectId = Id,
                 Pos1 = target
             }, p => this.Dist(p) < 25);
-            Owner.Timers.Add(new WorldTimer(1500, (world, t) =>
-            {
-                Banner banner = new Banner(this, eff.Range, eff.Amount, eff.DurationMS);
+            Owner.Timers.Add(new WorldTimer(1500, (world, t) => {
+                var banner = new Banner(this, eff.Range, eff.Amount, eff.DurationMS);
                 banner.Move(target.X, target.Y);
                 world.EnterWorld(banner);
             }));
@@ -1020,7 +1115,7 @@ namespace wServer.realm.entities
         private void AETorii(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
-            Torii torii = new Torii(this,
+            var torii = new Torii(this,
                 eff.Range,
                 eff.Amount,
                 eff.Players,
@@ -1035,7 +1130,7 @@ namespace wServer.realm.entities
             fakeTorii.Move(target.X, target.Y);
             Owner.EnterWorld(fakeTorii);
 
-            addSupportScore(500 + ((eff.DurationMS / 1000) * 20), false);
+            AddSupportScore(500 + eff.DurationMS / 1000 * 20, false);
             Owner.Timers.Add(new WorldTimer(eff.Amount * 1000, (world, t) => {
                 world.LeaveWorld(fakeTorii);
             }));
@@ -1045,35 +1140,36 @@ namespace wServer.realm.entities
         private void AESiphonAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
-            int drained = DrainedHP;
-            int mpAvailable = MP;
+            var drained = DrainedHP;
+            var mpAvailable = MP;
             if (!HasConditionEffect(ConditionEffects.DrakzixCharging))
             {
                 ApplyConditionEffect(ConditionEffectIndex.DrakzixCharging);
                 return;
             }
 
-            List<Packet> pkts = new List<Packet>();
-            pkts.Add(new ShowEffect
+            var pkts = new List<Packet>
             {
-                EffectType = EffectType.Flow,
-                TargetObjectId = Id,
-                Pos1 = target,
-                Color = new ARGB(0xFFA500)
-            });
+                new ShowEffect
+                {
+                    EffectType = EffectType.Flow,
+                    TargetObjectId = Id,
+                    Pos1 = target,
+                    Color = new ARGB(0xFFA500)
+                },
+                new ShowEffect
+                {
+                    EffectType = EffectType.Diffuse,
+                    TargetObjectId = Id,
+                    Color = new ARGB(0xFFA500),
+                    Pos1 = target,
+                    Pos2 = new Position {X = target.X + eff.Range, Y = target.Y}
+                }
+            };
 
-            pkts.Add(new ShowEffect
-            {
-                EffectType = EffectType.Diffuse,
-                TargetObjectId = Id,
-                Color = new ARGB(0xFFA500),
-                Pos1 = target,
-                Pos2 = new Position { X = target.X + eff.Range, Y = target.Y }
-            });
-            Owner.AOE(target, eff.Range, false, enemy =>
-            {
+            Owner.AOE(target, eff.Range, false, enemy => {
 
-                ((Enemy)enemy).Damage(this, time, ((((MP * 2)) * (drained / 2)) / 4) + eff.Amount, false);
+                ((Enemy)enemy).Damage(this, time, MP * 2 * (drained / 2) / 4 + eff.Amount, false);
             });
             BroadcastSync(pkts, p => this.Dist(p) < 25);
 
@@ -1119,10 +1215,11 @@ namespace wServer.realm.entities
 
             SendInfo("You have gained " + eff.Amount + " sor fragments! You currently have " + SorStorage + " sor fragments in storage.");
         }
+
         private void AEAbbyConstruct(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var inv = Inventory;
-            for (int i = 0; i < inv.Length; i++)
+            for (var i = 0; i < inv.Length; i++)
             {
                 if (inv[i] == null) continue;
                 if (inv[i].ObjectId == "Whip")
@@ -1137,6 +1234,7 @@ namespace wServer.realm.entities
 
             }
         }
+
         private void AETreasureActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var acc = Client.Account;
@@ -1168,9 +1266,9 @@ namespace wServer.realm.entities
         private void AEActivateFragment(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var acc = Client.Account;
-            Random rnd = new Random();
-            int amount = 0;
-            int Chance = Random.Next(0, 6);
+            var rnd = new Random();
+            var amount = 0;
+            var Chance = Random.Next(0, 6);
             switch (Chance)
             {
                 case 0:
@@ -1212,7 +1310,7 @@ namespace wServer.realm.entities
         private void AERandomOnrane(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var acc = Client.Account;
-            int OnraneChance = Random.Next(0, 5);
+            var OnraneChance = Random.Next(0, 5);
             switch (OnraneChance)
             {
                 case 0:
@@ -1256,7 +1354,7 @@ namespace wServer.realm.entities
         private void AERandomGold(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var acc = Client.Account;
-            int GoldChance = Random.Next(0, 3);
+            var GoldChance = Random.Next(0, 3);
             switch (GoldChance)
             {
                 case 0:
@@ -1285,7 +1383,7 @@ namespace wServer.realm.entities
         private void AEURandomOnrane(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var acc = Client.Account;
-            int OnraneChance = Random.Next(0, 5);
+            var OnraneChance = Random.Next(0, 5);
             switch (OnraneChance)
             {
                 case 0:
@@ -1331,7 +1429,7 @@ namespace wServer.realm.entities
 
         private void AECreate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            if(Owner.Name == "DeathArena")
+            if (Owner.Name == "DeathArena")
             {
                 SendError("Can't use keys here.");
             }
@@ -1360,7 +1458,7 @@ namespace wServer.realm.entities
                 Message = "Opened by " + Name
             }, null, PacketPriority.Low);
             foreach (var player in Owner.Players.Values)
-            player.SendInfo("{\"key\":\"{server.dungeon_opened_by}\",\"tokens\":{\"dungeon\":\"" + gameData.Portals[objType].DungeonName + "\",\"name\":\"" + Name + "\"}}");
+                player.SendInfo("{\"key\":\"{server.dungeon_opened_by}\",\"tokens\":{\"dungeon\":\"" + gameData.Portals[objType].DungeonName + "\",\"name\":\"" + Name + "\"}}");
         }
 
         private void AEIncrementStat(RealmTime time, Item item, Position target, ActivateEffect eff)
@@ -1372,17 +1470,21 @@ namespace wServer.realm.entities
             if (Stats.Base[idx] > statInfo[idx].MaxValue)
                 Stats.Base[idx] = statInfo[idx].MaxValue;
         }
+
         private void AEPowerStat(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            if (AscensionEnabled) {
+            if (AscensionEnabled)
+            {
                 var idx = StatsManager.GetStatIndex((StatsType)eff.Stats);
                 var statInfo = Manager.Resources.GameData.Classes[ObjectType].Stats;
 
                 Stats.Base[idx] += eff.Amount;
                 if (Stats.Base[idx] > statInfo[idx].MaxValue + (idx < 2 ? 50 : 10))
                     Stats.Base[idx] = statInfo[idx].MaxValue + (idx < 2 ? 50 : 10);
-            } else SendInfo("A character that isn't ascended can't use vials.");
+            }
+            else SendInfo("A character that isn't ascended can't use vials.");
         }
+
         private void AEFixedStat(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var idx = StatsManager.GetStatIndex((StatsType)eff.Stats);
@@ -1418,11 +1520,6 @@ namespace wServer.realm.entities
             if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             var impDamage = eff.ImpactDamage;
 
-            if (eff.UseWisMod)
-            {
-                impDamage = (int)UseWisMod(eff.ImpactDamage, 0);
-            }
-            
             BroadcastSync(new ShowEffect
             {
                 EffectType = EffectType.Throw,
@@ -1435,8 +1532,7 @@ namespace wServer.realm.entities
             var x = new Placeholder(Manager, eff.ThrowTime);
             x.Move(target.X, target.Y);
             Owner.EnterWorld(x);
-            Owner.Timers.Add(new WorldTimer(eff.ThrowTime, (world, t) =>
-            {
+            Owner.Timers.Add(new WorldTimer(eff.ThrowTime, (world, t) => {
                 world.BroadcastPacketNearby(new ShowEffect
                 {
                     EffectType = EffectType.AreaBlast,
@@ -1445,35 +1541,12 @@ namespace wServer.realm.entities
                     Pos1 = new Position { X = eff.Radius }
                 }, x, null, PacketPriority.High);
 
-              /*world.AOE(target, eff.Radius, false, entity => {
-                    foreach (Enemy enemy in Owner.Enemies.Values.Where(e => this.DistSqr(this) < RadiusSqr))
-                    {
-                        enemy.Damage(this, time, impDamage, false);
-                    }
-                    entity.ApplyConditionEffect(new ConditionEffect
-                    {
-                        Effect = ConditionEffectIndex.Sick,
-                        DurationMS = eff.DurationMSAlt
-                    });
-                    PoisonEnemy(world, (Enemy)entity, eff);
-                });*/
-                
                 world.AOE(target, eff.Radius, false, entity => {
                     PoisonEnemy(world, (Enemy)entity, eff);
                     ((Enemy)entity).Damage(this, time, impDamage, false);
-                    if (entity.ObjectType != 0x638f)
-                    {
-                        entity.ApplyConditionEffect(new ConditionEffect
-                        {
-                            Effect = ConditionEffectIndex.Sick,
-                            DurationMS = eff.DurationMSAlt
-                        });
-                    }
-                   
                 });
             }));
         }
-
 
         private void AECSmokeGrenade(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
@@ -1490,8 +1563,7 @@ namespace wServer.realm.entities
             var x = new Placeholder(Manager, 2000);
             x.Move(target.X, target.Y);
             Owner.EnterWorld(x);
-            Owner.Timers.Add(new WorldTimer(2000, (world, t) =>
-            {
+            Owner.Timers.Add(new WorldTimer(2000, (world, t) => {
                 world.BroadcastPacketNearby(new ShowEffect
                 {
                     EffectType = EffectType.AreaBlast,
@@ -1500,8 +1572,7 @@ namespace wServer.realm.entities
                     Pos1 = new Position { X = 6 }
                 }, x, null, PacketPriority.High);
 
-                world.AOE(target, 6, true, player =>
-                {
+                world.AOE(target, 6, true, player => {
                     player.ApplyConditionEffect(new ConditionEffect
                     {
                         Effect = ConditionEffectIndex.Darkness,
@@ -1528,8 +1599,7 @@ namespace wServer.realm.entities
             var x = new Placeholder(Manager, 2000);
             x.Move(target.X, target.Y);
             Owner.EnterWorld(x);
-            Owner.Timers.Add(new WorldTimer(2000, (world, t) =>
-            {
+            Owner.Timers.Add(new WorldTimer(2000, (world, t) => {
                 world.BroadcastPacketNearby(new ShowEffect
                 {
                     EffectType = EffectType.AreaBlast,
@@ -1538,8 +1608,7 @@ namespace wServer.realm.entities
                     Pos1 = new Position { X = 4 }
                 }, x, null, PacketPriority.High);
 
-                world.AOE(target, 5, true, player =>
-                {
+                world.AOE(target, 5, true, player => {
                     player.ApplyConditionEffect(new ConditionEffect
                     {
                         Effect = ConditionEffectIndex.Confused,
@@ -1565,8 +1634,7 @@ namespace wServer.realm.entities
             var x = new Placeholder(Manager, 1500);
             x.Move(target.X, target.Y);
             Owner.EnterWorld(x);
-            Owner.Timers.Add(new WorldTimer(1500, (world, t) =>
-            {
+            Owner.Timers.Add(new WorldTimer(1500, (world, t) => {
                 world.BroadcastPacketNearby(new ShowEffect
                 {
                     EffectType = EffectType.AreaBlast,
@@ -1617,11 +1685,10 @@ namespace wServer.realm.entities
 
             var current = startTarget;
             var targets = new Entity[eff.MaxTargets];
-            for (int i = 0; i < targets.Length; i++)
+            for (var i = 0; i < targets.Length; i++)
             {
                 targets[i] = current;
-                var next = current.GetNearestEntity(10, false, e =>
-                {
+                var next = current.GetNearestEntity(10, false, e => {
                     if (!(e is Enemy) ||
                         e.HasConditionEffect(ConditionEffects.Invincible) ||
                         e.HasConditionEffect(ConditionEffects.Stasis) ||
@@ -1706,11 +1773,10 @@ namespace wServer.realm.entities
 
             var current = startTarget;
             var targets = new Entity[eff.MaxTargets];
-            for (int i = 0; i < targets.Length; i++)
+            for (var i = 0; i < targets.Length; i++)
             {
                 targets[i] = current;
-                var next = current.GetNearestEntity(10, false, e =>
-                {
+                var next = current.GetNearestEntity(10, false, e => {
                     if (!(e is Enemy) ||
                         e.HasConditionEffect(ConditionEffects.Invincible) ||
                         e.HasConditionEffect(ConditionEffects.Stasis) ||
@@ -1781,25 +1847,24 @@ namespace wServer.realm.entities
                 }
             };
 
-            Owner.AOE(target, 3, false, enemy =>
-            {
+            Owner.AOE(target, 3, false, enemy => {
 
-                    if (enemy.ObjectType == 0x638f)
+                if (enemy.ObjectType == 0x638f)
+                {
+                    return;
+                }
+                if (enemy.HasConditionEffect(ConditionEffects.StasisImmune))
+                {
+                    pkts.Add(new Notification
                     {
-                        return;
-                    }
-                    if (enemy.HasConditionEffect(ConditionEffects.StasisImmune))
-                    {
-                        pkts.Add(new Notification
-                        {
-                            ObjectId = enemy.Id,
-                            Color = new ARGB(0xff00ff00),
-                            Message = "Immune"
-                        });
-                    }
+                        ObjectId = enemy.Id,
+                        Color = new ARGB(0xff00ff00),
+                        Message = "Immune"
+                    });
+                }
                 else if (!enemy.HasConditionEffect(ConditionEffects.Stasis))
                 {
-                    
+
                     enemy.ApplyConditionEffect(ConditionEffectIndex.Stasis, eff.DurationMS);
                     enemy.ApplyConditionEffect(ConditionEffectIndex.Dazed, eff.DurationMS + 3000);
 
@@ -1813,7 +1878,7 @@ namespace wServer.realm.entities
                         Message = "Stasis"
                     });
 
-                    addSupportScore(400, false);
+                    AddSupportScore(400, false);
                 }
             });
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
@@ -1833,8 +1898,7 @@ namespace wServer.realm.entities
                 }
             };
 
-            Owner.AOE(target, 6, false, enemy =>
-            {
+            Owner.AOE(target, 6, false, enemy => {
                 if (enemy.ObjectType == 0x638f)
                 {
                     return;
@@ -1851,7 +1915,7 @@ namespace wServer.realm.entities
                 else if (!enemy.HasConditionEffect(ConditionEffects.Stasis))
                 {
                     enemy.ApplyConditionEffect(ConditionEffectIndex.Stasis, eff.DurationMS);
-                    enemy.ApplyConditionEffect(ConditionEffectIndex.Dazed, eff.DurationMS+3000);
+                    enemy.ApplyConditionEffect(ConditionEffectIndex.Dazed, eff.DurationMS + 3000);
 
                     Owner.Timers.Add(new WorldTimer(eff.DurationMS, (world, t) =>
                         enemy.ApplyConditionEffect(ConditionEffectIndex.StasisImmune, 3000)));
@@ -1863,7 +1927,7 @@ namespace wServer.realm.entities
                         Message = "Stasis"
                     });
 
-                    addSupportScore(400, false);
+                    AddSupportScore(400, false);
                 }
             });
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
@@ -1879,8 +1943,7 @@ namespace wServer.realm.entities
                 Pos1 = target
             }, p => this.DistSqr(p) < RadiusSqr);
 
-            Owner.Timers.Add(new WorldTimer(1500, (world, t) =>
-            {
+            Owner.Timers.Add(new WorldTimer(1500, (world, t) => {
                 var trap = new Trap(
                     this,
                     eff.Radius,
@@ -1916,19 +1979,17 @@ namespace wServer.realm.entities
 
             var totalDmg = 0;
             var enemies = new List<Enemy>();
-            Owner.AOE(target, eff.Radius, false, enemy =>
-            {
+            Owner.AOE(target, eff.Radius, false, enemy => {
                 enemies.Add(enemy as Enemy);
                 totalDmg += (enemy as Enemy).Damage(this, time, eff.TotalDamage, false);
             });
 
             var players = new List<Player>();
-            this.AOE(eff.Radius, true, player =>
-            {
+            this.AOE(eff.Radius, true, player => {
                 if (!player.HasConditionEffect(ConditionEffects.Sick) || !player.HasConditionEffect(ConditionEffects.Corrupted))
                 {
                     players.Add(player as Player);
-                    addSupportScore(totalDmg * 5, false);
+                    AddSupportScore(totalDmg * 5, false);
                     ActivateHealHp(player as Player, totalDmg, pkts);
                 }
             });
@@ -1953,17 +2014,9 @@ namespace wServer.realm.entities
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
         }
 
-        private void addSupportScore(int score, bool special)
+        private void AddSupportScore(int score, bool special)
         {
-            if (special)
-            {
-                SupportScore += score * 2;
-            }
-            else
-            {
-                SupportScore += score;
-            }
-
+            SupportScore += special ? score * 2 : score;
         }
 
         private void AETeleport(RealmTime time, Item item, Position target, ActivateEffect eff)
@@ -1975,10 +2028,9 @@ namespace wServer.realm.entities
         private void AEMagicNova(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var pkts = new List<Packet>();
-            this.AOE(eff.Range, true, player =>
-            {
+            this.AOE(eff.Range, true, player => {
                 if (!player.HasConditionEffect(ConditionEffects.Corrupted))
-                    ActivateHealMp(player as Player, eff.Amount + (RestorationHeal() / 4), pkts);
+                    ActivateHealMp(player as Player, eff.Amount + RestorationHeal() / 4, pkts);
             });
             pkts.Add(new ShowEffect
             {
@@ -1995,10 +2047,11 @@ namespace wServer.realm.entities
             var pkts = new List<Packet>();
             if (!HasConditionEffect(ConditionEffects.Corrupted))
             {
-                ActivateHealMp(this, eff.Amount + (RestorationHeal() / 4), pkts);
+                ActivateHealMp(this, eff.Amount + RestorationHeal() / 4, pkts);
             }
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
         }
+
         private void AEMagicNoRest(RealmTime time, Item item, Position target, int amount)
         {
             var pkts = new List<Packet>();
@@ -2008,6 +2061,7 @@ namespace wServer.realm.entities
             }
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
         }
+
         private void AEHealNoRest(RealmTime time, Item item, Position target, int amount)
         {
             var pkts = new List<Packet>();
@@ -2017,6 +2071,7 @@ namespace wServer.realm.entities
             }
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
         }
+
         private void AEHealNova(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var amount = eff.Amount;
@@ -2028,16 +2083,16 @@ namespace wServer.realm.entities
             }
 
             var pkts = new List<Packet>();
-            this.AOE(range, true, player =>
-            {
+            this.AOE(range, true, player => {
                 if (!player.HasConditionEffect(ConditionEffects.Sick) ||
-                    !player.HasConditionEffect(ConditionEffects.Corrupted)) {
+                    !player.HasConditionEffect(ConditionEffects.Corrupted))
+                {
                     var heal = amount + RestorationHeal() / 4;
                     if (heal <= 0) heal = 1;
                     ActivateHealHp(player as Player, heal, pkts);
                 }
 
-                addSupportScore(amount, false);
+                AddSupportScore(amount, false);
             });
             pkts.Add(new ShowEffect
             {
@@ -2054,10 +2109,11 @@ namespace wServer.realm.entities
             if (!HasConditionEffect(ConditionEffects.Sick) || !HasConditionEffect(ConditionEffects.Corrupted))
             {
                 var pkts = new List<Packet>();
-                ActivateHealHp(this, eff.Amount + (RestorationHeal() / 4), pkts);
+                ActivateHealHp(this, eff.Amount + RestorationHeal() / 4, pkts);
                 BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
             }
         }
+
         private void AEHeal2(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             if (!HasConditionEffect(ConditionEffects.Sick) || !HasConditionEffect(ConditionEffects.Corrupted))
@@ -2067,6 +2123,7 @@ namespace wServer.realm.entities
                 BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
             }
         }
+
         private void AEMagic2(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var pkts = new List<Packet>();
@@ -2076,6 +2133,7 @@ namespace wServer.realm.entities
             }
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
         }
+
         private void AEDice(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             ConditionEffectIndex[] gamblerEffs = {
@@ -2083,7 +2141,7 @@ namespace wServer.realm.entities
                 ConditionEffectIndex.Berserk,
                 ConditionEffectIndex.Bravery
             };
-            int roll = new Random().Next(0, 3);
+            var roll = new Random().Next(0, 3);
             if (roll != 3)
                 ApplyConditionEffect(gamblerEffs[roll], eff.DurationMS);
         }
@@ -2096,7 +2154,6 @@ namespace wServer.realm.entities
             {
                 ownedSkins.Add(eff.SkinType);
                 acc.Skins = ownedSkins.ToArray();
-
                 acc.FlushAsync();
                 SendInfo("You've unlocked a new skin! Check your Wardrobe in the vault!");
             }
@@ -2116,25 +2173,27 @@ namespace wServer.realm.entities
                 range = UseWisMod(eff.Range);
             }
 
-            this.AOE(range, true, player =>
-            {
+            this.AOE(range, true, player => {
                 player.ApplyConditionEffect(new ConditionEffect
                 {
                     Effect = eff.ConditionEffect.Value,
                     DurationMS = duration
                 });
 
-                if (eff.ConditionEffect.Value == ConditionEffectIndex.Healing || eff.ConditionEffect.Value == ConditionEffectIndex.Surged || eff.ConditionEffect.Value == ConditionEffectIndex.Armored)
+                switch (eff.ConditionEffect.Value)
                 {
-                    addSupportScore(duration / 1000 * 60, false);
-                }
-                if (eff.ConditionEffect.Value == ConditionEffectIndex.Speedy)
-                {
-                    addSupportScore(duration / 1000 * 40, false);
-                }
-                if (eff.ConditionEffect.Value == ConditionEffectIndex.Berserk || eff.ConditionEffect.Value == ConditionEffectIndex.Damaging)
-                {
-                    addSupportScore(duration / 1000 * 20, false);
+                    case ConditionEffectIndex.Healing:
+                    case ConditionEffectIndex.Surged:
+                    case ConditionEffectIndex.Armored:
+                        AddSupportScore(duration / 1000 * 60, false);
+                        break;
+                    case ConditionEffectIndex.Speedy:
+                        AddSupportScore(duration / 1000 * 40, false);
+                        break;
+                    case ConditionEffectIndex.Berserk:
+                    case ConditionEffectIndex.Damaging:
+                        AddSupportScore(duration / 1000 * 20, false);
+                        break;
                 }
             });
             var color = 0xffffffff;
@@ -2178,8 +2237,7 @@ namespace wServer.realm.entities
 
         private void WeakBlast(RealmTime time, Item item, Position target)
         {
-            this.AOE(4, false, enemy =>
-            {
+            this.AOE(4, false, enemy => {
                 enemy.ApplyConditionEffect(new ConditionEffect
                 {
                     Effect = ConditionEffectIndex.Weak,
@@ -2197,14 +2255,13 @@ namespace wServer.realm.entities
 
         private void AEClearConditionEffectAura(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            this.AOE(eff.Range, true, player =>
-            {
+            this.AOE(eff.Range, true, player => {
                 var condition = eff.CheckExistingEffect;
                 ConditionEffects conditions = 0;
                 conditions |= (ConditionEffects)(1 << (Byte)condition.Value);
                 if (!condition.HasValue || player.HasConditionEffect(conditions))
                 {
-                    addSupportScore(400, false);
+                    AddSupportScore(400, false);
 
                     player.ApplyConditionEffect(new ConditionEffect
                     {
@@ -2248,25 +2305,19 @@ namespace wServer.realm.entities
                 range = UseWisMod(eff.Range);
             }
 
-            this.AOE(range, true, player =>
-            {
+            this.AOE(range, true, player => {
                 if (idx == 0)
-                    addSupportScore(amount * 3, false);
-
+                    AddSupportScore(amount * 3, false);
 
                 ((Player)player).Stats.Boost.ActivateBoost[idx].Push(amount, eff.NoStack);
                 ((Player)player).Stats.ReCalculateValues();
 
-
-                // hack job to allow instant heal of nostack boosts
                 if (eff.NoStack && amount > 0 && idx == 0)
                 {
                     ((Player)player).HP = Math.Min(((Player)player).Stats[0], ((Player)player).HP + amount);
                 }
 
-
-                Owner.Timers.Add(new WorldTimer(duration, (world, t) =>
-                {
+                Owner.Timers.Add(new WorldTimer(duration, (world, t) => {
                     ((Player)player).Stats.Boost.ActivateBoost[idx].Pop(amount, eff.NoStack);
                     ((Player)player).Stats.ReCalculateValues();
                 }));
@@ -2288,8 +2339,7 @@ namespace wServer.realm.entities
             var s = eff.Amount;
             Stats.Boost.ActivateBoost[idx].Push(s, eff.NoStack);
             Stats.ReCalculateValues();
-            Owner.Timers.Add(new WorldTimer(eff.DurationMS, (world, t) =>
-            {
+            Owner.Timers.Add(new WorldTimer(eff.DurationMS, (world, t) => {
                 Stats.Boost.ActivateBoost[idx].Pop(s, eff.NoStack);
                 Stats.ReCalculateValues();
             }));
@@ -2351,6 +2401,7 @@ namespace wServer.realm.entities
                 };
                 prjs[i] = proj;
             }
+
             batch[20] = new ShowEffect
             {
                 EffectType = EffectType.Trail,
@@ -2390,6 +2441,7 @@ namespace wServer.realm.entities
                 };
                 prjs[i] = proj;
             }
+
             batch[4] = new ShowEffect
             {
                 EffectType = EffectType.Trail,
@@ -2407,20 +2459,19 @@ namespace wServer.realm.entities
 
         private void AEGenericActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            if (!eff.Center.Equals("mouse") 
+            if (!eff.Center.Equals("mouse")
                 && MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
             var targetPlayer = eff.Target.Equals("player");
             var centerPlayer = eff.Center.Equals("player");
-            var duration = (eff.UseWisMod) ?
+            var duration = eff.UseWisMod ?
                 (int)(UseWisMod(eff.DurationSec) * 1000) :
                 eff.DurationMS;
-            var range = (eff.UseWisMod)
+            var range = eff.UseWisMod
                 ? UseWisMod(eff.Range)
                 : eff.Range;
 
             if (eff.ConditionEffect != null)
-                Owner.AOE((eff.Center.Equals("mouse")) ? target : new Position { X = X, Y = Y }, range, targetPlayer, entity =>
-                {
+                Owner.AOE(eff.Center.Equals("mouse") ? target : new Position { X = X, Y = Y }, range, targetPlayer, entity => {
                     if (!entity.HasConditionEffect(ConditionEffects.Stasis) &&
                        !entity.HasConditionEffect(ConditionEffects.Invincible))
                     {
@@ -2432,7 +2483,7 @@ namespace wServer.realm.entities
 
                         if (eff.ConditionEffect.Value == ConditionEffectIndex.Curse)
                         {
-                            addSupportScore(200, false);
+                            AddSupportScore(200, false);
                         }
 
                     }
@@ -2443,7 +2494,7 @@ namespace wServer.realm.entities
                 EffectType = (EffectType)eff.VisualEffect,
                 TargetObjectId = Id,
                 Color = new ARGB(eff.Color),
-                Pos1 = (centerPlayer) ? new Position { X = range } : target,
+                Pos1 = centerPlayer ? new Position { X = range } : target,
                 Pos2 = new Position { X = target.X - range, Y = target.Y }
             }, p => this.DistSqr(p) < RadiusSqr);
         }
@@ -2463,8 +2514,7 @@ namespace wServer.realm.entities
             var x = new Placeholder(Manager, 1000);
             x.Move(target.X, target.Y);
             Owner.EnterWorld(x);
-            Owner.Timers.Add(new WorldTimer(1000, (world, t) =>
-            {
+            Owner.Timers.Add(new WorldTimer(1000, (world, t) => {
                 world.BroadcastPacketNearby(new ShowEffect
                 {
                     EffectType = EffectType.AreaBlast,
@@ -2478,7 +2528,7 @@ namespace wServer.realm.entities
             }));
         }
 
-        static void ActivateHealHp(Player player, int amount, List<Packet> pkts)
+        private static void ActivateHealHp(Player player, int amount, List<Packet> pkts)
         {
             if (player.HasConditionEffect(ConditionEffects.DrakzixCharging))
                 return;
@@ -2508,7 +2558,7 @@ namespace wServer.realm.entities
             player.HP = newHp;
         }
 
-        static void ActivateHealMp(Player player, int amount, List<Packet> pkts)
+        private static void ActivateHealMp(Player player, int amount, List<Packet> pkts)
         {
             if (player.HasConditionEffect(ConditionEffects.DrakzixCharging))
                 return;
@@ -2536,15 +2586,10 @@ namespace wServer.realm.entities
             player.MP = newMp;
         }
 
-        void PoisonEnemy(World world, Enemy enemy, ActivateEffect eff)
+        private void PoisonEnemy(World world, Enemy enemy, ActivateEffect eff)
         {
 
             var totalDamage = eff.TotalDamage;
-
-            if (eff.UseWisMod)
-            {
-                totalDamage = (int)UseWisMod(eff.TotalDamage, 0);
-            }
 
             var remainingDmg = (int)StatsManager.GetDefenseDamage(enemy, totalDamage, 0);
             var perDmg = remainingDmg * 1000 / eff.DurationMS;
@@ -2552,8 +2597,7 @@ namespace wServer.realm.entities
             WorldTimer tmr = null;
             var x = 0;
 
-            Func<World, RealmTime, bool> poisonTick = (w, t) =>
-            {
+            Func<World, RealmTime, bool> poisonTick = (w, t) => {
                 if (enemy.Owner == null || w == null)
                     return true;
 
@@ -2584,7 +2628,8 @@ namespace wServer.realm.entities
             tmr = new WorldTimer(250, poisonTick);
             world.Timers.Add(tmr);
         }
-        void DamageEnemy(World world, Enemy enemy)
+
+        private void DamageEnemy(World world, Enemy enemy)
         {
             var remainingDmg = (int)StatsManager.GetDefenseDamage(enemy, (Stats[0] + Stats[1]) ^ 4, enemy.ObjectDesc.Defense);
             var perDmg = remainingDmg * 1000 / 1000;
@@ -2592,8 +2637,7 @@ namespace wServer.realm.entities
             WorldTimer tmr = null;
             var x = 0;
 
-            Func<World, RealmTime, bool> poisonTick = (w, t) =>
-            {
+            Func<World, RealmTime, bool> poisonTick = (w, t) => {
                 if (enemy.Owner == null || w == null)
                     return true;
 
@@ -2624,7 +2668,8 @@ namespace wServer.realm.entities
             tmr = new WorldTimer(250, poisonTick);
             world.Timers.Add(tmr);
         }
-        void BurnEnemy(World world, Enemy enemy, int damage)
+
+        private void BurnEnemy(World world, Enemy enemy, int damage)
         {
             var remainingDmg = (int)StatsManager.GetDefenseDamage(enemy, damage, enemy.ObjectDesc.Defense);
             var perDmg = remainingDmg * 1000 / 7000;
@@ -2632,8 +2677,7 @@ namespace wServer.realm.entities
             WorldTimer tmr = null;
             var x = 0;
 
-            Func<World, RealmTime, bool> burnTick = (w, t) =>
-            {
+            Func<World, RealmTime, bool> burnTick = (w, t) => {
                 if (enemy.Owner == null || w == null)
                     return true;
 
@@ -2664,7 +2708,8 @@ namespace wServer.realm.entities
             tmr = new WorldTimer(250, burnTick);
             world.Timers.Add(tmr);
         }
-        void BurnEnemy2(World world, Enemy enemy, int damage)
+
+        private void BurnEnemy2(World world, Enemy enemy, int damage)
         {
             var remainingDmg = (int)StatsManager.GetDefenseDamage(enemy, damage, enemy.ObjectDesc.Defense);
             var perDmg = remainingDmg * 1000 / 8000;
@@ -2672,8 +2717,7 @@ namespace wServer.realm.entities
             WorldTimer tmr = null;
             var x = 0;
 
-            Func<World, RealmTime, bool> burnTick = (w, t) =>
-            {
+            Func<World, RealmTime, bool> burnTick = (w, t) => {
                 if (enemy.Owner == null || w == null)
                     return true;
 
@@ -2704,7 +2748,8 @@ namespace wServer.realm.entities
             tmr = new WorldTimer(250, burnTick);
             world.Timers.Add(tmr);
         }
-        void HealingPlayersPoison(World world, Player player, ActivateEffect eff)
+
+        private static void HealingPlayersPoison(World world, Player player, ActivateEffect eff)
         {
             var remainingHeal = eff.TotalDamage;
             var perHeal = eff.TotalDamage * 1000 / eff.DurationMS;
@@ -2712,8 +2757,7 @@ namespace wServer.realm.entities
             WorldTimer tmr = null;
             var x = 0;
 
-            Func<World, RealmTime, bool> healTick = (w, t) =>
-            {
+            Func<World, RealmTime, bool> healTick = (w, t) => {
                 if (player.Owner == null || w == null)
                     return true;
 
@@ -2723,7 +2767,7 @@ namespace wServer.realm.entities
                     if (remainingHeal < thisHeal)
                         thisHeal = remainingHeal;
 
-                    List<Packet> pkts = new List<Packet>();
+                    var pkts = new List<Packet>();
 
                     ActivateHealHp(player, thisHeal, pkts);
                     w.BroadcastPackets(pkts, null, PacketPriority.Low);
@@ -2743,17 +2787,18 @@ namespace wServer.realm.entities
 
         private float UseWisMod(float value, int offset = 1)
         {
+            return value;
             double totalWisdom = Stats.Base[7] + Stats.Boost[7];
 
             if (totalWisdom < 30)
                 return value;
 
-            double m = (value < 0) ? -1 : 1;
-            double n = (value * totalWisdom / 150) + (value * m);
+            double m = value < 0 ? -1 : 1;
+            var n = value * totalWisdom / 150 + value * m;
             n = Math.Floor(n * Math.Pow(10, offset)) / Math.Pow(10, offset);
             if (n - (int)n * m >= 1 / Math.Pow(10, offset) * m)
             {
-                return ((int)(n * 10)) / 10.0f;
+                return (int)(n * 10) / 10.0f;
             }
 
             return (int)n;

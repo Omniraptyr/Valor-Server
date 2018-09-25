@@ -57,7 +57,6 @@ namespace wServer.networking.handlers
 
             if (newOffers.Length > 20 || newOffers.Select(o => o.Slot.SlotId).Distinct().Count() < newOffers.Length)
             {
-                Log.Info($"Market Error {client.Player.Name}: Invalid offer.");
                 client.SendPacket(MarketResult.Error("Invalid offer."));
                 return;
             }

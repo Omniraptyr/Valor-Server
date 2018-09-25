@@ -7,6 +7,6 @@
 "blocking":1,
 "restrictTp":true,
 "showDisplays":false,
-"portals":[0x65e0],
+"portals":[0x75e0],
 "maps":["UltraTheSteps2.jm"],
 "music":["scorchedwrath"]}

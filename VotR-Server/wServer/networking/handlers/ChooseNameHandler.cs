@@ -6,11 +6,10 @@ using wServer.realm.entities;
 using wServer.networking.packets;
 using wServer.networking.packets.incoming;
 using wServer.networking.packets.outgoing;
-using System.Globalization;
 
 namespace wServer.networking.handlers
 {
-    class ChooseNameHandler : PacketHandlerBase<ChooseName>
+    internal class ChooseNameHandler : PacketHandlerBase<ChooseName>
     {
         private static readonly ILog NameChangeLog = LogManager.GetLogger("NameChangeLog");
 
@@ -30,11 +29,11 @@ namespace wServer.networking.handlers
             client.Manager.Database.ReloadAccount(client.Account);
 
             string name = packet.Name;
+            if (string.IsNullOrEmpty(name))
+                return;
 
             if (name.Length > 1)
                 name = char.ToUpper(name[0]) + name.Substring(1);
-            else
-                name = name.ToUpper();
 
             if (!name.All(char.IsLetter) || name.Length < 3 || name.Length > 10 ||
                 Database.GuestNames.Contains(name, StringComparer.InvariantCultureIgnoreCase))
@@ -45,11 +44,11 @@ namespace wServer.networking.handlers
                 });
             else
             {
-                string key = Database.NAME_LOCK;
+                const string key = Database.NAME_LOCK;
                 string lockToken = null;
                 try
                 {
-                    while ((lockToken = client.Manager.Database.AcquireLock(key)) == null) ;
+                    while ((lockToken = client.Manager.Database.AcquireLock(key)) == null) {}
 
                     if (client.Manager.Database.Conn.HashExists("names", name.ToUpperInvariant()))
                     {
@@ -75,7 +74,8 @@ namespace wServer.networking.handlers
 
                         // rename
                         var oldName = client.Account.Name;
-                        while (!client.Manager.Database.RenameIGN(client.Account, name, lockToken)) ;
+                        while (!client.Manager.Database.RenameIGN(client.Account, name, lockToken)) {}
+
                         NameChangeLog.Info($"{oldName} changed their name to {name}");
 
                         // update player
@@ -95,7 +95,7 @@ namespace wServer.networking.handlers
             }
         }
         
-        private void UpdatePlayer(Player player)
+        private static void UpdatePlayer(Player player)
         {
             player.Credits = player.Client.Account.Credits;
             player.CurrentFame = player.Client.Account.Fame;

@@ -55,7 +55,10 @@ public class ParseSkinsXmlCommand {
         _local4.id = _arg1.@type;
         _local4.name = (((_arg1.DisplayId == undefined)) ? _arg1.@id : _arg1.DisplayId);
         _local4.unlockLevel = _arg1.UnlockLevel;
-        if (_arg1.hasOwnProperty("NoSkinSelect")) {
+        /*if (_arg1.hasOwnProperty("NoSkinSelect")) {
+            _local4.skinSelectEnabled = false;
+        }*/
+        if (_local4.name.indexOf("Set Skin") >= 0) {
             _local4.skinSelectEnabled = false;
         }
         if (_arg1.hasOwnProperty("UnlockSpecial")) {

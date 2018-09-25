@@ -38,6 +38,8 @@ namespace wServer.realm.entities
         InvalidShopItemId,
         [Description("Failed to remove item from Market. Please try again later.")]
         RemoveMarketFailure,
+        [Description("Can't market tiered items.")]
+        IsTiered
     }
 
     public partial class Player
@@ -91,7 +93,7 @@ namespace wServer.realm.entities
                 return LogError(MarketResult.NullItem);
             if (item.Soulbound)
                 return LogError(MarketResult.IsSoulbound);
-            
+
             // create shopItem
             var shopItem = Manager.Database.CreatePlayerShopItemAsync(
                 item.ObjectType, price, DateTime.UtcNow.ToUnixTimestamp(), AccountId).Result;
@@ -109,7 +111,6 @@ namespace wServer.realm.entities
 
             Client.Account.LastMarketId = shopItem.Id;
 
-            Log.Info($"{Name} added a {item.DisplayName} to the market for {price} gold");
             return MarketResult.Success;
         }
 
@@ -145,7 +146,6 @@ namespace wServer.realm.entities
             if (acc.Fame < CurrentFame)
                 CurrentFame = acc.Fame;
 
-            Log.Info($"{Name} removed {Manager.Resources.GameData.Items[shopItem.ItemId].DisplayName} ({shopItem.Price}) from market.");
             return MarketResult.Success;
         }
 

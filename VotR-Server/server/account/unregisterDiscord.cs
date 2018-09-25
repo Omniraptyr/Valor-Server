@@ -42,7 +42,6 @@ namespace server.account
                 }
 
                 Write(context, "<Success/>");
-                RankManagerLog.Info($"[{acc.Name}] Unregistered discord from account ({dId}:{accId})");
             }
             else
                 Write(context, "<Error>" + status.GetInfo() + "</Error>");

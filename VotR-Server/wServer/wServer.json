@@ -1,8 +1,8 @@
 {
   "dbInfo": {
     "host": "127.0.0.1", //144.217.80.74
-    "port": "6379", //1985 - 6379
-    "auth": "", //2NSVsRREv3FYXPGm - none
+    "port": "1985", //1985 - 6379
+    "auth": "2NSVsRREv3FYXPGm", //2NSVsRREv3FYXPGm - none
     "index": "0"
   },
   "serverInfo": {
@@ -14,7 +14,7 @@
       "latitude": "0",
       "longitude": "0"
     },
-    "adminOnly": "false"
+    "adminOnly": "true"
   },
   "serverSettings": {
     "logFolder": "./logs",
@@ -23,7 +23,7 @@
     "tps": "5",
     "mode": "Single",
     "key": "BA15DE",
-    "maxConnections": "1024",
+    "maxConnections": "300",
     "maxPlayers": "200",
     "maxPlayersWithPriority": "200",
     "enablePets": "false",

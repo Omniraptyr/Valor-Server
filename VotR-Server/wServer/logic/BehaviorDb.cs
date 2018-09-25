@@ -13,7 +13,6 @@ namespace wServer.logic
 {
     public partial class BehaviorDb
     {
-        private static readonly ILog Log = LogManager.GetLogger(nameof(BehaviorDb));
 
         public RealmManager Manager { get; }
 
@@ -22,14 +21,11 @@ namespace wServer.logic
         internal static XmlData InitGameData => InitDb.Manager.Resources.GameData;
 
         public BehaviorDb(RealmManager manager) {
-            Log.Info("Initializing Behavior Database...");
-
             Manager = manager;
 
             Definitions = new Dictionary<ushort, Tuple<State, Loot>>();
 
             if (Interlocked.Exchange(ref _initializing, 1) == 1) {
-                Log.Error("Attempted to initialize multiple BehaviorDb at the same time.");
                 throw new InvalidOperationException("Attempted to initialize multiple BehaviorDb at the same time.");
             }
             InitDb = this;
@@ -40,15 +36,12 @@ namespace wServer.logic
                 .ToArray();
             for (var i = 0; i < fields.Length; i++) {
                 var field = fields[i];
-                Log.Info($"Loading behavior for \"{field.Name}\" ({i + 1}/{fields.Length})");
                 ((_)field.GetValue(this))();
                 field.SetValue(this, null);
             }
 
             InitDb = null;
             _initializing = 0;
-
-            Log.Info("Behavior Database initialized...");
         }
 
         public void ResolveBehavior(Entity entity) {
@@ -68,9 +61,12 @@ namespace wServer.logic
                 if (defs.Length > 0) {
                     var loot = new Loot(defs);
                     rootState.Death += (sender, e) => loot.Handle((Enemy)e.Host, e.Time);
-                    InitDb.Definitions.Add(dat.IdToObjectType[objType], new Tuple<State, Loot>(rootState, loot));
-                } else
-                    InitDb.Definitions.Add(dat.IdToObjectType[objType], new Tuple<State, Loot>(rootState, null));
+                    if (dat.IdToObjectType.ContainsKey(objType))
+                        InitDb.Definitions.Add(dat.IdToObjectType[objType], new Tuple<State, Loot>(rootState, loot));
+                } else {
+                    if (dat.IdToObjectType.ContainsKey(objType))
+                        InitDb.Definitions.Add(dat.IdToObjectType[objType], new Tuple<State, Loot>(rootState, null));
+                }
                 return this;
             }
         }

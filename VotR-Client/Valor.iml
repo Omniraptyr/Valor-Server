@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="Flex" version="4">
-  <component name="FlexBuildConfigurationManager" active="Main">
+  <component name="FlexBuildConfigurationManager" active="Valor">
     <configurations>
-      <configuration name="Main" main-class="WebMain" output-file="Valor.swf" output-folder="$MODULE_DIR$/bin-debug">
-        <dependencies target-player="18.0" framework-linkage="Merged">
+      <configuration name="Valor" main-class="WebMain" output-file="Valor.swf" output-folder="$MODULE_DIR$/bin-debug">
+        <dependencies target-player="18.0">
           <entries>
             <entry library-id="680e46ac-f70a-4e8c-9acf-cc4b34cf31d2">
               <dependency linkage="Merged" />
@@ -13,7 +13,13 @@
         </dependencies>
         <compiler-options>
           <map>
+            <entry key="compiler.debug.swf" value="false" />
             <entry key="compiler.locale" value="en_US" />
+            <entry key="metadata.creator" value="Valor" />
+            <entry key="metadata.description" value="Game client for Valor." />
+            <entry key="metadata.language" value="en" />
+            <entry key="metadata.publisher" value="Valor" />
+            <entry key="metadata.title" value="Valor" />
           </map>
           <option name="additionalOptions" value="-swf-version 15  -use-direct-blit=true  -keep-as3-metadata+=Inject  -keep-as3-metadata+=Embed  -keep-as3-metadata+=PostConstruct  -keep-as3-metadata+=ArrayElementType" />
         </compiler-options>
@@ -22,7 +28,12 @@
         <packaging-ios />
       </configuration>
     </configurations>
-    <compiler-options />
+    <compiler-options>
+      <map>
+        <entry key="compiler.debug.swc" value="false" />
+        <entry key="compiler.debug.swf" value="false" />
+      </map>
+    </compiler-options>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />

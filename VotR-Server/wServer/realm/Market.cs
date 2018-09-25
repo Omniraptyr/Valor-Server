@@ -37,8 +37,6 @@ namespace wServer.realm
 
         public Market(RealmManager manager)
         {
-            Log.Info("Initializing player market...");
-
             _manager = manager;
             _dbMarket = new DbMarket(manager.Database.Conn);
             _merchants = new ConcurrentDictionary<IntPoint, PlayerMerchant>();
@@ -82,8 +80,6 @@ namespace wServer.realm
             };
 
             PopulateLists(_dbMarket.GetAll());
-
-            Log.Info("Player market an initialized...");
         }
 
         private static readonly object MarketLock = new object();
@@ -325,7 +321,6 @@ namespace wServer.realm
         {
             if (!ValidateShopItem(shopItem))
             {
-                Log.Warn($"Invalid PlayerShopItem. {shopItem.AccountId}'s item ({shopItem.ItemId}) will not be merched.");
                 return -1;
             }
 
@@ -405,7 +400,8 @@ namespace wServer.realm
             var gameData = _manager.Resources.GameData;
             var item = gameData.Items[shopItem.ItemId];
 
-            if (item.Potion && item.ActivateEffects.Any(a => a.Effect == ActivateEffects.IncrementStat))
+            if (item.Potion && item.ActivateEffects.Any(a => a.Effect == ActivateEffects.IncrementStat
+                                                             || a.Effect == ActivateEffects.PowerStat))
                 return ItemType.StatPot;
 
             if (!gameData.SlotType2ItemType.ContainsKey(item.SlotType))

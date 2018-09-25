@@ -30,9 +30,7 @@ namespace common
 
         public ISManager(Database db, ServerConfig settings)
             : base(db, settings.serverInfo.instanceId)
-        {
-            Log.InfoFormat("Server's Id is {0}", settings.serverInfo.instanceId);
-            
+        {     
             _settings = settings;
 
             // kind of fucked up to do this, but can't really think of another way
@@ -79,8 +77,6 @@ namespace common
                 foreach (var s in _lastUpdateTime.Where(s => s.Value > ServerTimeout).ToArray())
                 {
                     var sInfo = _servers[s.Key];
-                    Log.InfoFormat("{0} ({1}, {2}) timed out.", 
-                        sInfo.name, sInfo.type, s.Key);
                     RemoveServer(s.Key);
 
                     // invoke server quit event
@@ -113,9 +109,6 @@ namespace common
                     case NetworkCode.Join:
                         if (AddServer(e.InstanceId, e.Content.Info))
                         {
-                            Log.InfoFormat("{0} ({1}, {2}) joined the network.",
-                                e.Content.Info.name, e.Content.Info.type, e.InstanceId);
-
                             // make new server aware of this server
                             Publish(Channel.Network, new NetworkMsg
                             {
@@ -132,16 +125,11 @@ namespace common
                         break;
 
                     case NetworkCode.Ping:
-                        if (!_servers.ContainsKey(e.InstanceId))
-                            Log.InfoFormat("{0} ({1}, {2}) re-joined the network.", 
-                                e.Content.Info.name, e.Content.Info.type, e.InstanceId);
                         UpdateServer(e.InstanceId, e.Content.Info);
                         ServerPing?.Invoke(this, e);
                         break;
 
                     case NetworkCode.Quit:
-                        Log.InfoFormat("{0} ({1}, {2}) left the network.",
-                            e.Content.Info.name, e.Content.Info.type, e.InstanceId);
                         RemoveServer(e.InstanceId);
                         ServerQuit?.Invoke(this, e);
                         break;

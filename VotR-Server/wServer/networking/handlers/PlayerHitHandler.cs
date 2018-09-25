@@ -17,20 +17,19 @@ namespace wServer.networking.handlers
 
         private static void Handle(Client client, RealmTime time, int objectId, byte bulletId) {
             var player = client.Player;
-            if (!client.Player.Owner.PvP) {
-                if (player?.Owner == null)
-                    return;
+            if (player?.Owner == null)
+                return;
 
-                var entity = player.Owner.GetEntity(objectId);
+            var entity = player.Owner.GetEntity(objectId);
 
+            if (!player.Owner.PvP) {
                 var prj = entity != null ?
                     ((IProjectileOwner)entity).Projectiles[bulletId] :
                     player.Owner.Projectiles
                         .Where(p => p.Value.ProjectileOwner.Self.Id == objectId)
                         .SingleOrDefault(p => p.Value.ProjectileId == bulletId).Value;
 
-                if (prj != null && player != null)
-                {
+                if (prj != null) {
                     //Drannol Rage Passive
                     if (player.CheckDRage()) {
                         player.ApplyConditionEffect(ConditionEffectIndex.GraspofZol, 2000 + (player.Surge * 20));
@@ -49,12 +48,9 @@ namespace wServer.networking.handlers
 
                 prj?.ForceHit(player, time);
             } else {
-                if (player?.Owner == null)
-                    return;
-
-                var entity = player?.Owner?.GetEntity(objectId);
-
-                var prj = entity != null ? (player as IProjectileOwner).Projectiles[bulletId] : player.Owner.Projectiles
+                var prj = entity != null ?
+                    ((IProjectileOwner)player).Projectiles[bulletId] :
+                    player.Owner.Projectiles
                         .Where(p => p.Value.ProjectileOwner.Self.Id == objectId)
                         .SingleOrDefault(p => p.Value.ProjectileId == bulletId).Value;
 

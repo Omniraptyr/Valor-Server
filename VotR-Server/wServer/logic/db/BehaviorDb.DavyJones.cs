@@ -61,7 +61,6 @@ namespace wServer.logic
                 new TierLoot(5, ItemType.Ring, 0.01),
                 new ItemLoot("Spirit Dagger", 0.015),
                 new ItemLoot("ZSaber", 0.005),
-                new ItemLoot("Wine Cellar Incantation", 0.01),
                 new ItemLoot("Spectral Cloth Armor", 0.013),
                 new ItemLoot("Ghostly Prism", 0.01),
                 new ItemLoot("Captain's Ring", 0.03),

@@ -93,8 +93,7 @@ namespace wServer.logic
                     ),
                     new Threshold(0.1,
                         new ItemLoot("Ring of the Pyramid", 0.1),
-                        new ItemLoot("Tome of Holy Protection", 0.4),
-                        new ItemLoot("Wine Cellar Incantation", 0.6)
+                        new ItemLoot("Tome of Holy Protection", 0.4)
                     ),
                     new Threshold(0.2
                     )

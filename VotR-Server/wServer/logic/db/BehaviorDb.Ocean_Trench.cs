@@ -28,7 +28,6 @@ namespace wServer.logic
                           new ItemLoot("Potion of Mana", 0.1),
                           new ItemLoot("Coral Bow", 0.02),
                           new ItemLoot("Coral Venom Trap", 0.03),
-                          new ItemLoot("Wine Cellar Incantation", 0.02),
                           new ItemLoot("Coral Silk Armor", 0.04),
                           new ItemLoot("Coral Ring", 0.04)
                           )
@@ -173,7 +172,6 @@ namespace wServer.logic
                  new ItemLoot("ShrimpQuiver", 0.04),
               new ItemLoot("Coral Bow", 0.04),
               new ItemLoot("Coral Venom Trap", 0.045),
-              new ItemLoot("Wine Cellar Incantation", 0.05),
               new ItemLoot("Coral Silk Armor", 0.04),
               new ItemLoot("Coral Ring", 0.55),
               new ItemLoot("Golden Conch", 0.05),

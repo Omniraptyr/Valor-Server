@@ -16,7 +16,6 @@ import kabam.lib.net.api.MessageProvider;
 import org.osflash.signals.Signal;
 
 public class SocketServer {
-
     public static const MESSAGE_LENGTH_SIZE_IN_BYTES:int = 4;
 
     public const connected:Signal = new Signal();
@@ -83,7 +82,7 @@ public class SocketServer {
         this.delayTimer.start();
     }
 
-    private function onTimerComplete(_arg1:TimerEvent):void {
+    private function onTimerComplete(e:TimerEvent):void {
         this.delayTimer.removeEventListener(TimerEvent.TIMER_COMPLETE, this.onTimerComplete);
         this.socket.connect(this.server, this.port);
     }
@@ -237,7 +236,5 @@ public class SocketServer {
     public function isConnected():Boolean {
         return this.socket.connected;
     }
-
-
 }
 }

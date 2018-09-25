@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using wServer.realm.entities;
 using wServer.realm.terrain;
-using log4net;
 using wServer.realm.worlds;
 using wServer.realm.worlds.logic;
 
@@ -12,8 +11,6 @@ namespace wServer.realm
 {
     public class PortalMonitor
     {
-        static readonly ILog Log = LogManager.GetLogger(typeof(PortalMonitor));
-
         private readonly Dictionary<int, Portal> _portals;
         private readonly World _world;
         private readonly RealmManager _manager;
@@ -23,8 +20,6 @@ namespace wServer.realm
         
         public PortalMonitor(RealmManager manager, World world)
         {
-            Log.Info("Initalizing Portal Monitor...");
-
             _manager = manager;
             _world = world;
             _portals = new Dictionary<int, Portal>();
@@ -82,13 +77,11 @@ namespace wServer.realm
                 portal.Move(pos.X + 0.5f, pos.Y + 0.5f);
                 _world.EnterWorld(portal);
                 _portals.Add(worldId, portal);
-                Log.InfoFormat("Portal {0}({1}) added.", world.Id, world.GetDisplayName());
                 if (announce)
                     foreach (var w in _manager.Worlds.Values)
                         foreach (var p in w.Players.Values)
-                            p.SendInfo(string.Format("A portal to {0} has opened up{1}.", 
-                                (w == world) ? "this land" : world.GetDisplayName(), 
-                                (w is Nexus) ? "" : " in Nexus"));
+                            p.SendInfo(
+                                $"A portal to {(w == world ? "this land" : world.GetDisplayName())} has opened up{(w is Nexus ? "" : " in Nexus")}.");
                 return true;
             }
         }
@@ -106,9 +99,6 @@ namespace wServer.realm
                 var portal = _portals[worldId];
                 _world.LeaveWorld(portal);
                 _portals.Remove(worldId);
-                Log.InfoFormat("Portal {0}({1}) removed.", 
-                    portal.WorldInstance.Id, 
-                    portal.WorldInstance.Name);
                 return true;
             }
         }
@@ -126,8 +116,6 @@ namespace wServer.realm
                 var worldId = _portals.FirstOrDefault(p => p.Value == portal).Key;
                 _world.LeaveWorld(portal);
                 _portals.Remove(worldId);
-                Log.InfoFormat("Portal {0}({1}) removed.", 
-                    worldId, portal.WorldInstance.Name);
                 return true;
             }
         }
@@ -145,8 +133,6 @@ namespace wServer.realm
 
                 _world.LeaveWorld(portal.Value);
                 _portals.Remove(portal.Key);
-                Log.InfoFormat("Portal {0}({1}) removed.", 
-                    portal.Key, portal.Value.WorldInstance.Name);
                 return true;
             }
         }

@@ -15,9 +15,9 @@ using wServer.realm.worlds.logic;
 
 namespace wServer.realm.commands
 {
-    class SpawnCommand : Command
+    internal class SpawnCommand : Command
     {
-        static readonly ILog log = LogManager.GetLogger(typeof(SpawnCommand));
+        private static readonly ILog log = LogManager.GetLogger(typeof(SpawnCommand));
 
         private struct JsonSpawn
         {
@@ -36,7 +36,7 @@ namespace wServer.realm.commands
             public bool? target;
         }
 
-        class BazaarCommand : Command
+        private class BazaarCommand : Command
         {
             public BazaarCommand() : base("bazaar", permLevel: 10) { }
 
@@ -51,26 +51,41 @@ namespace wServer.realm.commands
             }
         }
 
-        class SetGoldCommand : Command
+        private class SetGoldCommand : Command
         {
             public SetGoldCommand() : base("setgold", permLevel: 90, alias: "gold") { }
 
-            protected override bool Process(Player player, RealmTime time, string args)
-            {
-                var amount2 = int.Parse(args);
+            protected override bool Process(Player player, RealmTime time, string args) {
+                var amount = int.Parse(args);
 
-                if (string.IsNullOrEmpty(args))
-                {
+                if (string.IsNullOrEmpty(args)) {
                     player.SendInfo("/gold <amount>");
                     return false;
                 }
-                player.Credits = player.Client.Account.Credits += amount2;
+                player.Credits = player.Client.Account.Credits += amount;
                 player.ForceUpdate(player.Credits);
                 return true;
             }
         }
 
-        class DyeCommand : Command
+        private class SetOnraneCommand : Command
+        {
+            public SetOnraneCommand() : base("setonrane", permLevel: 90, alias: "onrane") { }
+
+            protected override bool Process(Player player, RealmTime time, string args) {
+                var amount = int.Parse(args);
+
+                if (string.IsNullOrEmpty(args)) {
+                    player.SendInfo("/setonrane <amount>");
+                    return false;
+                }
+                player.Onrane = player.Client.Account.Onrane += amount;
+                player.ForceUpdate(player.Onrane);
+                return true;
+            }
+        }
+
+        private class DyeCommand : Command
         {
             public DyeCommand() : base("setdyeboth", permLevel: 10, alias: "dyeboth") { }
 
@@ -90,7 +105,8 @@ namespace wServer.realm.commands
                 return true;
             }
         }
-        class DyeACommand : Command
+
+        private class DyeACommand : Command
         {
             public DyeACommand() : base("setdyea", permLevel: 10, alias: "dyea") { }
 
@@ -108,7 +124,8 @@ namespace wServer.realm.commands
                 return true;
             }
         }
-        class DyeBCommand : Command
+
+        private class DyeBCommand : Command
         {
             public DyeBCommand() : base("setdyeb", permLevel: 10, alias: "dyeb") { }
 
@@ -126,17 +143,6 @@ namespace wServer.realm.commands
                 return true;
             }
         }
-        class SetOnraneCommand : Command
-        {
-            public SetOnraneCommand() : base("setonrane", permLevel: 90, alias: "onrane") { }
-
-            protected override bool Process(Player player, RealmTime time, string args)
-            {
-                    player.SendInfo("");
-                return true;
-            }
-        }
-
 
         private const int Delay = 3; // in seconds
 
@@ -183,14 +189,6 @@ namespace wServer.realm.commands
 
                     var desc = gameData.ObjectDescs[objType.Value];
 
-                    if (player.Client.Account.Rank < 100 &&
-                        player.Owner is DeathArena &&
-                        desc.ObjectId.Contains("Fountain"))
-                    {
-                        player.SendError("Insufficient rank.");
-                        return false;
-                    }
-
                     var hp = desc.MaxHP;
                     if (spawn.hp > hp && spawn.hp < int.MaxValue)
                         hp = spawn.hp.Value;
@@ -214,7 +212,7 @@ namespace wServer.realm.commands
 
                     if (x != null)
                     {
-                        for (int i = 0; i < x.Length && i < count; i++)
+                        for (var i = 0; i < x.Length && i < count; i++)
                         {
                             if (spawn.x[i] > 0 && spawn.x[i] <= player.Owner.Map.Width)
                             {
@@ -227,7 +225,7 @@ namespace wServer.realm.commands
 
                     if (y != null)
                     {
-                        for (int i = 0; i < y.Length && i < count; i++)
+                        for (var i = 0; i < y.Length && i < count; i++)
                         {
                             if (spawn.y[i] > 0 && spawn.y[i] <= player.Owner.Map.Height)
                             {
@@ -238,7 +236,7 @@ namespace wServer.realm.commands
 
                     }
 
-                    bool target = false;
+                    var target = false;
                     if (spawn.target != null)
                         target = spawn.target.Value;
 
@@ -276,7 +274,7 @@ namespace wServer.realm.commands
 
             if (num <= 0)
             {
-                player.SendInfo($"Really? {num} {name}? I'll get right on that...");
+                player.SendInfo("You can not summon negative amounts.");
                 return false;
             }
 
@@ -376,8 +374,7 @@ namespace wServer.realm.commands
 
                     entity.Spawned = true;
 
-                    var enemy = entity as Enemy;
-                    if (enemy != null)
+                    if (entity is Enemy enemy)
                     {
                         if (hp != null)
                         {
@@ -411,7 +408,7 @@ namespace wServer.realm.commands
     }
 
 
-class ClearSpawnsCommand : Command
+    internal class ClearSpawnsCommand : Command
     {
         public ClearSpawnsCommand() : base("clearspawn", permLevel: 90, alias: "cs") { }
 
@@ -441,30 +438,29 @@ class ClearSpawnsCommand : Command
             return true;
         }
     }
-    class SArenaCommand : Command
+
+    internal class SArenaCommand : Command
     {
         public SArenaCommand() : base("superarena", permLevel: 90, alias: "adar") { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
-            Entity entity = Entity.Resolve(player.Manager, 0x47a9);
-            World we = player.Manager.GetWorld(player.Owner.Id); //can't use Owner here, as it goes out of scope
-            int TimeoutTime = player.Manager.Resources.GameData.Portals[0x47a9].Timeout;
-            string DungName = player.Manager.Resources.GameData.Portals[0x47a9].DungeonName;
+            var entity = Entity.Resolve(player.Manager, 0x47a9);
+            var we = player.Manager.GetWorld(player.Owner.Id); //can't use Owner here, as it goes out of scope
+            var TimeoutTime = player.Manager.Resources.GameData.Portals[0x47a9].Timeout;
 
             entity.Move(player.X, player.Y);
             we.EnterWorld(entity);
 
-            ARGB c = new ARGB(0xFF00FF);
-
-            Text packet = new Text()
+            var packet = new Text
             {
                 BubbleTime = 0,
                 NumStars = -1,
                 TextColor = 0xFF00FF,
                 Name = "",
-                Txt = "A spawn arena has been opened by " + player.Name
+                Txt = "An 'Admin Arena' has been opened by <" + player.Name + ">"
             };
+
             player.Owner.BroadcastPacket(packet, null);
             we.Timers.Add(new WorldTimer(TimeoutTime * 1000,
                 (world, t) => //default portal close time * 1000
@@ -482,7 +478,8 @@ class ClearSpawnsCommand : Command
             return true;
         }
     }
-    class ClearGravesCommand : Command
+
+    internal class ClearGravesCommand : Command
     {
         public ClearGravesCommand() : base("cleargraves", permLevel: 80, alias: "cgraves") { }
 
@@ -507,15 +504,13 @@ class ClearSpawnsCommand : Command
     }
 
 
-
-    class ToggleEffCommand : Command
+    internal class ToggleEffCommand : Command
     {
         public ToggleEffCommand() : base("eff", permLevel: 90) { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
-            ConditionEffectIndex effect;
-            if (!Enum.TryParse(args, true, out effect))
+            if (!Enum.TryParse(args, true, out ConditionEffectIndex effect))
             {
                 player.SendError("Invalid effect!");
                 return false;
@@ -544,7 +539,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class GuildRankCommand : Command
+    internal class GuildRankCommand : Command
     {
         public GuildRankCommand() : base("grank", permLevel: 95) { }
 
@@ -621,7 +616,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class GimmeCommand : Command
+    internal class GimmeCommand : Command
     {
         public GimmeCommand() : base("gimme", permLevel: 90, alias: "give") { }
 
@@ -629,10 +624,8 @@ class ClearSpawnsCommand : Command
         {
             var gameData = player.Manager.Resources.GameData;
 
-            ushort objType;
-
             // allow both DisplayId and Id for query
-            if (!gameData.DisplayIdToObjectType.TryGetValue(args, out objType))
+            if (!gameData.DisplayIdToObjectType.TryGetValue(args, out var objType))
             {
                 if (!gameData.IdToObjectType.TryGetValue(args, out objType))
                 {
@@ -649,15 +642,6 @@ class ClearSpawnsCommand : Command
 
             var item = gameData.Items[objType];
 
-            if (player.Client.Account.Rank < 100 &&
-                (item.DisplayName.Equals("Boshy Gun") ||
-                 item.DisplayName.Equals("Boshy Shotgun") ||
-                 item.DisplayName.Equals("Oryx's Arena Key")))
-            {
-                player.SendError("Insufficient rank for that item.");
-                return false;
-            }
-
             var availableSlot = player.Inventory.GetAvailableInventorySlot(item);
             if (availableSlot != -1)
             {
@@ -670,13 +654,13 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class TpPosCommand : Command
+    internal class TpPosCommand : Command
     {
         public TpPosCommand() : base("tpPos", permLevel: 90, alias: "goto") { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
-            string[] coordinates = args.Split(' ');
+            var coordinates = args.Split(' ');
             if (coordinates.Length != 2)
             {
                 player.SendError("Invalid coordinates!");
@@ -697,7 +681,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class SetpieceCommand : Command
+    internal class SetpieceCommand : Command
     {
         public SetpieceCommand() : base("setpiece", permLevel: 90) { }
 
@@ -719,7 +703,7 @@ class ClearSpawnsCommand : Command
             {
                 try
                 {
-                    ISetPiece piece = (ISetPiece)Activator.CreateInstance(Type.GetType(
+                    var piece = (ISetPiece)Activator.CreateInstance(Type.GetType(
                     "wServer.realm.setpieces." + setPiece, true, true));
                     piece.RenderSetPiece(player.Owner, new IntPoint((int)player.X + 1, (int)player.Y + 1));
                     return true;
@@ -738,11 +722,11 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class DebugCommand : Command
+    internal class DebugCommand : Command
     {
-        class Locater : Enemy
+        private class Locater : Enemy
         {
-            Player player;
+            private Player player;
             public Locater(Player player)
                 : base(player.Manager, 0x0d5d)
             {
@@ -771,7 +755,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class KillAllCommand : Command
+    internal class KillAllCommand : Command
     {
         public KillAllCommand() : base("killAll", permLevel: 90, alias: "ka") { }
 
@@ -801,7 +785,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class KickCommand : Command
+    internal class KickCommand : Command
     {
         public KickCommand() : base("kick", permLevel: 80) { }
 
@@ -825,7 +809,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class GetQuestCommand : Command
+    internal class GetQuestCommand : Command
     {
         public GetQuestCommand() : base("getQuest", permLevel: 90) { }
 
@@ -841,7 +825,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class OryxSayCommand : Command
+    internal class OryxSayCommand : Command
     {
         public OryxSayCommand() : base("oryxSay", permLevel: 80, alias: "osay") { }
 
@@ -852,7 +836,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class AnnounceCommand : Command
+    internal class AnnounceCommand : Command
     {
         public AnnounceCommand() : base("announce", permLevel: 80) { }
 
@@ -862,7 +846,8 @@ class ClearSpawnsCommand : Command
             return true;
         }
     }
-    class RealmCommand : Command
+
+    internal class RealmCommand : Command
     {
         public RealmCommand() : base("realm", permLevel: 10) { }
 
@@ -893,7 +878,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class SuppScoreCommand : Command
+    internal class SuppScoreCommand : Command
     {
         public SuppScoreCommand() : base("sscore", permLevel: 90) { }
         protected override bool Process(Player player, RealmTime time, string args)
@@ -903,7 +888,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class CheckerMan : Command
+    internal class CheckerMan : Command
     {
         public CheckerMan() : base("bp", permLevel: 90) { }
         protected override bool Process(Player player, RealmTime time, string args)
@@ -939,7 +924,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class SelfCommand : Command
+    internal class SelfCommand : Command
     {
         public SelfCommand() : base("self", permLevel: 80) { }
 
@@ -965,7 +950,8 @@ class ClearSpawnsCommand : Command
             return true;
         }
     }
-    class SpectateCommand : Command
+
+    internal class SpectateCommand : Command
     {
         public SpectateCommand() : base("spectate", permLevel: 80) { }
 
@@ -1032,7 +1018,8 @@ class ClearSpawnsCommand : Command
             return true;
         }
     }
-    class NexusCommand : Command
+
+    internal class NexusCommand : Command
     {
         public NexusCommand() : base("nexus", permLevel: 10) { }
 
@@ -1048,7 +1035,8 @@ class ClearSpawnsCommand : Command
             return true;
         }
     }
-    class VaultCommand : Command
+
+    internal class VaultCommand : Command
     {
         public VaultCommand() : base("vault", permLevel: 10) { }
 
@@ -1065,7 +1053,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class SummonCommand : Command
+    internal class SummonCommand : Command
     {
         public SummonCommand() : base("summon", permLevel: 90) { }
 
@@ -1091,7 +1079,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class SummonAllCommand : Command
+    internal class SummonAllCommand : Command
     {
         public SummonAllCommand() : base("summonall", permLevel: 90) { }
 
@@ -1099,12 +1087,8 @@ class ClearSpawnsCommand : Command
         {
             foreach (var i in player.Owner.Players)
             {
-                // probably someone hidden doesn't want to be summoned, so we leave it as before here
-                if (i.Value.HasConditionEffect(ConditionEffects.Hidden))
-                    break;
-
                 i.Value.Teleport(time, player.Id, true);
-                i.Value.SendInfo($"You've been summoned by {player.Name}.");
+                i.Value.SendInfo($"You have been summoned by <{player.Name}>.");
             }
 
             player.SendInfo("All players summoned!");
@@ -1112,7 +1096,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class KillPlayerCommand : Command
+    internal class KillPlayerCommand : Command
     {
         public KillPlayerCommand() : base("killPlayer", permLevel: 100) { }
 
@@ -1133,7 +1117,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class SizeCommand : Command
+    internal class SizeCommand : Command
     {
         public SizeCommand() : base("size", permLevel: 10) { }
 
@@ -1168,7 +1152,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class RebootCommand : Command
+    internal class RebootCommand : Command
     {
         // Command actually closes the program.
         // An external program is used to monitor the world server existance.
@@ -1253,9 +1237,9 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class ReSkinCommand : Command
+    internal class ReSkinCommand : Command
     {
-        public ReSkinCommand() : base("reskin", permLevel: 10) { }
+        public ReSkinCommand() : base("reskin", permLevel: 80) { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
@@ -1300,7 +1284,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class MaxCommand : Command
+    internal class MaxCommand : Command
     {
         public MaxCommand() : base("max", permLevel: 80) { }
 
@@ -1324,40 +1308,8 @@ class ClearSpawnsCommand : Command
             return true;
         }
     }
-    class SwagCommand : Command
-    {
-        public SwagCommand() : base("swag", permLevel: 80) { }
 
-        protected override bool Process(Player player, RealmTime time, string args)
-        { 
-            player.SendInfo("ye " + player.Stats[14]);
-            return true;
-        }
-    }
-    /*class ResetServerFame : Command
-    {
-        public ResetServerFame() : base("resetFame", permLevel: 100) { }
-
-        // resets leaderboards, account stars, and account fame to 0
-        protected override bool Process(Player player, RealmTime time, string args)
-        {
-            // needed to make sure characters connected have fame reset properly
-            foreach (var client in player.Manager.Clients.Values)
-            {
-                client.Player.Experience = 0;
-                client.Player.Fame = 0;
-                client.Character.Experience = 0;
-                client.Character.Fame = 0;
-            }
-
-            Program.Stop();
-
-            player.Manager.Database.ResetFame();
-            return true;
-        }
-    }*/
-
-    class WipeServer : Command
+    /*class WipeServer : Command
     {
         public WipeServer() : base("wipeServer", permLevel: 110) { }
 
@@ -1376,9 +1328,9 @@ class ClearSpawnsCommand : Command
             Program.Stop();
             return true;
         }
-    }
+    }*/
 
-    class TpQuestCommand : Command
+    internal class TpQuestCommand : Command
     {
         public TpQuestCommand() : base("tq", permLevel: 90) { }
 
@@ -1396,7 +1348,8 @@ class ClearSpawnsCommand : Command
             return true;
         }
     }
-    class Position : Command
+
+    internal class Position : Command
     {
         public Position() : base("p", permLevel: 90) { }
         protected override bool Process(Player player, RealmTime time, string args)
@@ -1405,7 +1358,8 @@ class ClearSpawnsCommand : Command
             return true;
         }
     }
-    class RankCommand : Command
+
+    internal class RankCommand : Command
     {
         public RankCommand() : base("rank", permLevel: 100) { }
 
@@ -1464,7 +1418,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class MuteCommand : Command
+    internal class MuteCommand : Command
     {
         private static readonly Regex CmdParams = new Regex(@"^(\w+)( \d+)?$", RegexOptions.IgnoreCase);
 
@@ -1570,7 +1524,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class UnMuteCommand : Command
+    internal class UnMuteCommand : Command
     {
         public UnMuteCommand() : base("unmute", permLevel: 80) { }
 
@@ -1623,7 +1577,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class BanAccountCommand : Command
+    internal class BanAccountCommand : Command
     {
         public BanAccountCommand() : base("ban", permLevel: 80) { }
 
@@ -1700,8 +1654,8 @@ class ClearSpawnsCommand : Command
             public int banLiftTime;
         }
     }
-    
-    class BanIPCommand : Command
+
+    internal class BanIPCommand : Command
     {
         public BanIPCommand() : base("banip", permLevel: 80, alias: "ipban") { }
 
@@ -1776,7 +1730,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class UnBanAccountCommand : Command
+    internal class UnBanAccountCommand : Command
     {
         public UnBanAccountCommand() : base("unban", permLevel: 80) { }
 
@@ -1832,20 +1786,20 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class ClearInvCommand : Command
+    internal class ClearInvCommand : Command
     {
         public ClearInvCommand() : base("clearinv", permLevel: 80) { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
-            for (int i = 4; i < 12; i++)
+            for (var i = 4; i < 12; i++)
                 player.Inventory[i] = null;
             player.SendInfo("Inventory Cleared.");
             return true;
         }
     }
 
-    class MusicCommand : Command
+    internal class MusicCommand : Command
     {
         public MusicCommand() : base("music", permLevel: 70) { }
 
@@ -1894,7 +1848,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class CloseRealmCommand : Command
+    internal class CloseRealmCommand : Command
     {
         public CloseRealmCommand() : base("closerealm", permLevel: 80) { }
 
@@ -1919,7 +1873,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class QuakeCommand : Command
+    internal class QuakeCommand : Command
     {
         public QuakeCommand() : base("quake", permLevel: 90) { }
 
@@ -1965,7 +1919,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class VisitCommand : Command
+    internal class VisitCommand : Command
     {
         public VisitCommand() : base("visit", permLevel: 80) { }
 
@@ -1999,7 +1953,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class HideCommand : Command
+    internal class HideCommand : Command
     {
         public HideCommand() : base("hide", permLevel: 80, alias: "h") { }
 
@@ -2027,7 +1981,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class GlowCommand : Command
+    internal class GlowCommand : Command
     {
         public GlowCommand() : base("glow", permLevel: 10) { }
 
@@ -2049,7 +2003,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class LinkCommand : Command
+    internal class LinkCommand : Command
     {
         public LinkCommand() : base("link", permLevel: 90) { }
 
@@ -2075,7 +2029,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class UnLinkCommand : Command
+    internal class UnLinkCommand : Command
     {
         public UnLinkCommand() : base("unlink", permLevel: 90) { }
 
@@ -2100,7 +2054,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class GiftCommand : Command
+    internal class GiftCommand : Command
     {
         public GiftCommand() : base("gift", permLevel: 100) { }
 
@@ -2185,7 +2139,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class RemovePets : Command
+    internal class RemovePets : Command
     {
         public RemovePets() : base("removeAllPets", permLevel: 110) { }
 
@@ -2206,7 +2160,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class RemoveServerGold : Command
+    internal class RemoveServerGold : Command
     {
         public RemoveServerGold() : base("removeAllGold", permLevel: 110) { }
 
@@ -2227,7 +2181,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class OverrideAccountCommand : Command
+    internal class OverrideAccountCommand : Command
     {
         public OverrideAccountCommand() : base("override", permLevel: 100) { }
 
@@ -2255,7 +2209,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class Level20Command : Command
+    internal class Level20Command : Command
     {
         public Level20Command(RealmManager manager) : base("level20", permLevel: 10, alias: "l20") {
             _manager = manager;
@@ -2279,7 +2233,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class RenameCommand : Command
+    internal class RenameCommand : Command
     {
         public RenameCommand() : base("rename", permLevel: 80) { }
 
@@ -2349,7 +2303,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class UnnameCommand : Command
+    internal class UnnameCommand : Command
     {
         public UnnameCommand() : base("unname", permLevel: 100) { }
 
@@ -2404,7 +2358,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class WargCommand : Command
+    internal class WargCommand : Command
     {
         public WargCommand() : base("warg", permLevel: 100) { }
 
@@ -2452,7 +2406,7 @@ class ClearSpawnsCommand : Command
         }
     }
 
-    class CompactLOHCommand : Command
+    internal class CompactLOHCommand : Command
     {
         public CompactLOHCommand() : base("compactLOH", permLevel: 100, listCommand: false) { }
 

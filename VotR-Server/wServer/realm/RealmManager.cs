@@ -7,7 +7,6 @@ using wServer.networking;
 using System.Threading.Tasks;
 using System.Linq;
 using wServer.logic;
-using log4net;
 using wServer.realm.commands;
 using wServer.realm.entities.vendors;
 using wServer.realm.worlds;
@@ -40,8 +39,6 @@ namespace wServer.realm
 
     public class RealmManager
     {
-        private static readonly ILog Log = LogManager.GetLogger(typeof(RealmManager));
-
         private readonly bool _initialized;
         public string InstanceId { get; }
         public bool Terminating { get; private set; }
@@ -77,8 +74,6 @@ namespace wServer.realm
 
         public RealmManager(Resources resources, Database db, ServerConfig config)
         {
-            Log.Info("Initializing Realm Manager...");
-
             InstanceId = Guid.NewGuid().ToString();
             Database = db;
             Resources = resources;
@@ -133,8 +128,6 @@ namespace wServer.realm
                 OnWorldAdded(world);
 
             _initialized = true;
-
-            Log.Info("Realm Manager initialized.");
         }
 
         private void InitializeNexusHub()
@@ -147,8 +140,6 @@ namespace wServer.realm
         
         public void Run()
         {
-            Log.Info("Starting Realm Manager...");
-
             // start server logic management
             Logic = new FLLogicTicker(this);
             var logic = new Task(() => Logic.TickLoop(), TaskCreationOptions.LongRunning);
@@ -160,20 +151,14 @@ namespace wServer.realm
             var network = new Task(() => Network.TickLoop(), TaskCreationOptions.LongRunning);
             network.ContinueWith(Program.Stop, TaskContinuationOptions.OnlyOnFaulted);
             network.Start();
-
-            Log.Info("Realm Manager started.");
         }
 
         public void Stop()
         {
-            Log.Info("Stopping Realm Manager...");
-
             Terminating = true;
             InterServer.Dispose();
             Resources.Dispose();
             Network.Shutdown();
-
-            Log.Info("Realm Manager stopped.");
         }
 
         public bool TryConnect(Client client)
@@ -268,9 +253,11 @@ namespace wServer.realm
 
         public World GetWorld(int id)
         {
-            if (!Worlds.TryGetValue(id, out var ret)) return null;
-            if (ret.Id == 0) return null;
-            return ret;
+            return !Worlds.TryGetValue(id, out var ret) 
+                ? null 
+                : (ret.Id == 0 
+                    ? null 
+                    : ret);
         }
 
         public bool RemoveWorld(World world)
@@ -289,14 +276,12 @@ namespace wServer.realm
         void OnWorldAdded(World world)
         {
             world.Manager = this;
-            Log.InfoFormat("World {0}({1}) added. {2} Worlds existing.", world.Id, world.Name, Worlds.Count);
         }
 
         void OnWorldRemoved(World world)
         {
             //world.Manager = null;
             Monitor.RemovePortal(world.Id);
-            Log.InfoFormat("World {0}({1}) removed.", world.Id, world.Name);
         }
 
         public World GetRandomGameWorld()

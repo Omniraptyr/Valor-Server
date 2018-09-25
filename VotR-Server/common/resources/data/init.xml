@@ -4,10 +4,10 @@
   <EditorMinRank>0</EditorMinRank>
   <CharacterSlotCost>1000</CharacterSlotCost>
   <CharacterSlotCurrency>1</CharacterSlotCurrency>
-  <VaultChestCost>250</VaultChestCost>
+  <VaultChestCost>1000</VaultChestCost>
   <InventorySize>20</InventorySize>
   <UseExternalPayments>0</UseExternalPayments>
-  <MaxStackablePotions>3</MaxStackablePotions>
+  <MaxStackablePotions>6</MaxStackablePotions>
   <PotionPurchaseCooldown>400</PotionPurchaseCooldown>
   <PotionPurchaseCostCooldown>8000</PotionPurchaseCostCooldown>
   <PotionPurchaseCosts>

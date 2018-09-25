@@ -215,8 +215,7 @@ namespace wServer.logic
                 new Threshold(0.15,
                 new TierLoot(11, ItemType.Weapon, 0.1),
                 new TierLoot(12, ItemType.Armor, 0.1),
-                new ItemLoot("Doku No Ken", 0.015),
-                new ItemLoot("Wine Cellar Incantation", 0.015)
+                new ItemLoot("Doku No Ken", 0.015)
                     )
             )
          .Init("Blue Son of Arachna Giant Egg Sac",
@@ -228,8 +227,7 @@ namespace wServer.logic
                 new Threshold(0.15,
                 new TierLoot(11, ItemType.Weapon, 0.1),
                 new TierLoot(12, ItemType.Armor, 0.1),
-                new ItemLoot("Doku No Ken", 0.04),
-                new ItemLoot("Wine Cellar Incantation", 0.015)
+                new ItemLoot("Doku No Ken", 0.04)
                     ))
          .Init("Red Son of Arachna Giant Egg Sac",
                 new State(
@@ -240,8 +238,7 @@ namespace wServer.logic
                 new Threshold(0.15,
                 new TierLoot(11, ItemType.Weapon, 0.1),
                 new TierLoot(12, ItemType.Armor, 0.1),
-                new ItemLoot("Doku No Ken", 0.015),
-                new ItemLoot("Wine Cellar Incantation", 0.015)
+                new ItemLoot("Doku No Ken", 0.015)
                     ))
          .Init("Silver Son of Arachna Giant Egg Sac",
                 new State(
@@ -252,8 +249,7 @@ namespace wServer.logic
                 new Threshold(0.15,
                 new TierLoot(11, ItemType.Weapon, 0.1),
                 new TierLoot(12, ItemType.Armor, 0.1),
-                new ItemLoot("Doku No Ken", 0.015),
-                new ItemLoot("Wine Cellar Incantation", 0.015)
+                new ItemLoot("Doku No Ken", 0.015)
                     ))
          .Init("Silver Egg Summoner",
                 new State(

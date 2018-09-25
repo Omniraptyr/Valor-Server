@@ -36,7 +36,7 @@ namespace wServer.networking.handlers
 
             if (!guild.Name.Equals(guildName, StringComparison.InvariantCultureIgnoreCase))
             {
-                src.Player.SendError("You have not been invited to join " + guildName + ".");
+                src.Player.SendError("You have not been invited to join '" + guildName + "'.");
                 return;
             }
 
@@ -50,7 +50,7 @@ namespace wServer.networking.handlers
             src.Player.Guild = guild.Name;
             src.Player.GuildRank = 0;
 
-            src.Manager.Chat.Guild(src.Player, src.Player.Name + " has joined the guild!", true);
+            src.Manager.Chat.Guild(src.Player, "<" + src.Player.Name + "> has joined the guild!", true);
         }
     }
 }

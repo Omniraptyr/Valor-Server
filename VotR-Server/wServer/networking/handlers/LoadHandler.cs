@@ -28,7 +28,7 @@ namespace wServer.networking.handlers
             {
                 if (client.Character.Dead)
                 {
-                    client.SendFailure("Character is dead", 
+                    client.SendFailure("Character is dead.", 
                         Failure.MessageWithDisconnect);
                 }
                 else
@@ -51,7 +51,7 @@ namespace wServer.networking.handlers
             }
             else
             {
-                client.SendFailure("Failed to load character",
+                client.SendFailure("Failed to load character.",
                     Failure.MessageWithDisconnect);
             }
         }

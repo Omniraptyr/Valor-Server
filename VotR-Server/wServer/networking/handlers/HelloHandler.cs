@@ -9,7 +9,7 @@ namespace wServer.networking.handlers
 {
     class HelloHandler : PacketHandlerBase<Hello>
     {
-        private static readonly ILog Log = LogManager.GetLogger(typeof(HelloHandler));
+        private new static readonly ILog Log = LogManager.GetLogger(typeof(HelloHandler));
 
         public override PacketId ID => PacketId.HELLO;
 
@@ -72,17 +72,13 @@ namespace wServer.networking.handlers
 
             if (acc.Banned)
             {
-                client.SendFailure("Account banned.", Failure.MessageWithDisconnect);
-                Log.InfoFormat("{0} ({1}) tried to log in. Account Banned.",
-                    acc.Name, client.IP);
+                client.SendFailure("Failed to log in, account is banned.", Failure.MessageWithDisconnect);
                 return null;
             }
             
             if (client.Manager.Database.IsIpBanned(client.IP))
             {
-                client.SendFailure("IP banned.", Failure.MessageWithDisconnect);
-                Log.InfoFormat("{0} ({1}) tried to log in. IP Banned.",
-                    acc.Name, client.IP);
+                client.SendFailure("Failed to log in, account is banned.", Failure.MessageWithDisconnect);
                 return null;
             }
 

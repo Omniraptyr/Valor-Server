@@ -5819,14 +5819,12 @@
     </Object>
     <Object type="0x23a5" id="AH Aldragine Loot Ctrl">
         <Class>Character</Class>
-        <Enemy/>
         <StasisImmune/>
         <NoMiniMap/>
         <Texture>
             <File>invisible</File>
             <Index>0</Index>
         </Texture>
-        <MaxHitPoints>800000</MaxHitPoints>
         <Defense>0</Defense>
         <Size>0</Size>
         <XpMult>0.0</XpMult>
@@ -9897,14 +9895,12 @@
     </Object>
     <Object type="0x6133" id="AH ULTRA Aldragine Loot Ctrl">
         <Class>Character</Class>
-        <Enemy/>
         <StasisImmune/>
         <NoMiniMap/>
         <Texture>
             <File>invisible</File>
             <Index>0</Index>
         </Texture>
-        <MaxHitPoints>800000</MaxHitPoints>
         <Defense>0</Defense>
         <Size>0</Size>
         <XpMult>0.0</XpMult>
@@ -9969,7 +9965,7 @@
         <Size>0</Size>
         <XpMult>0.0</XpMult>
     </Object>
-    <Object type="0x6164" id="The Baphomet">
+    <Object type="0x6164" id="Mark Shop">
         <Class>MarksGround</Class>
         <Texture>
             <File>lofiObjBig</File>
@@ -14448,7 +14444,7 @@
             <ConditionEffect duration="6">Slowed</ConditionEffect>
         </Projectile>
     </Object>
-    <Object type="0x65a7" id="BD Ultra Spirit Orb Green">
+    <Object type="0x75a7" id="BD Ultra Spirit Orb Green">
         <Class>Character</Class>
         <Enemy/>
         <Texture>
@@ -14472,7 +14468,7 @@
         <MaxHitPoints>999999</MaxHitPoints>
         <DisplayId>BD Ultra Spirit Orb Green</DisplayId>
     </Object>
-    <Object type="0x65a8" id="BD Ultra Spirit Orb Blue">
+    <Object type="0x75a8" id="BD Ultra Spirit Orb Blue">
         <Class>Character</Class>
         <Enemy/>
         <Texture>
@@ -14496,7 +14492,7 @@
         <MaxHitPoints>999999</MaxHitPoints>
         <DisplayId>BD Ultra Spirit Orb Blue</DisplayId>
     </Object>
-    <Object type="0x65a9" id="BD Ultra Spirit Orb Purple">
+    <Object type="0x75a9" id="BD Ultra Spirit Orb Purple">
         <Class>Character</Class>
         <Enemy/>
         <Texture>
@@ -14520,7 +14516,7 @@
         <MaxHitPoints>999999</MaxHitPoints>
         <DisplayId>BD Ultra Spirit Orb Purple</DisplayId>
     </Object>
-    <Object type="0x65aa" id="BD Ultra Spirit Orb Orange">
+    <Object type="0x75aa" id="BD Ultra Spirit Orb Orange">
         <Class>Character</Class>
         <Enemy/>
         <Texture>
@@ -14544,7 +14540,7 @@
         <MaxHitPoints>999999</MaxHitPoints>
         <DisplayId>BD Ultra Spirit Orb Orange</DisplayId>
     </Object>
-    <Object type="0x65b1" id="Ultra Hunter Cave Portal">
+    <Object type="0x75b1" id="Ultra Hunter Cave Portal">
         <Class>Portal</Class>
         <IntergamePortal/>
         <DungeonName>Ultra Hunter Cave</DungeonName>
@@ -14554,7 +14550,7 @@
         </Texture>
         <DisplayId>Ultra Hunter Cave</DisplayId>
     </Object>
-    <Object type="0x65b2" id="BD Ultra Portal Spawner 1">
+    <Object type="0x75b2" id="BD Ultra Portal Spawner 1">
         <Class>Character</Class>
         <Enemy/>
         <StasisImmune/>
@@ -14569,7 +14565,7 @@
         <XpMult>0.0</XpMult>
         <DisplayId>BD Ultra Portal Spawner 1</DisplayId>
     </Object>
-    <Object type="0x65b3" id="Ultra Bastille of Drannol Portal">
+    <Object type="0x75b3" id="Ultra Bastille of Drannol Portal">
         <Class>Portal</Class>
         <IntergamePortal/>
         <DungeonName>Ultra Bastille of Drannol</DungeonName>
@@ -14579,7 +14575,7 @@
         </Texture>
         <DisplayId>Ultra Bastille of Drannol</DisplayId>
     </Object>
-    <Object type="0x65b4" id="BD Ultra Bastille Brute">
+    <Object type="0x75b4" id="BD Ultra Bastille Brute">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Ultra Bastille Brute</DisplayId>
@@ -14622,7 +14618,7 @@
             <ArmorPiercing/>
         </Projectile>
     </Object>
-    <Object type="0x65b5" id="Ultra Scorching Fanatic">
+    <Object type="0x75b5" id="Ultra Scorching Fanatic">
         <Enemy/>
         <Group>Ultra Scorching Fanatic</Group>
         <DisplayId>Ultra Scorching Fanatic</DisplayId>
@@ -14648,7 +14644,7 @@
             <LifetimeMS>1600</LifetimeMS>
         </Projectile>
     </Object>
-    <Object type="0x65b6" id="BD Ultra Lava Fanatic">
+    <Object type="0x75b6" id="BD Ultra Lava Fanatic">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Ultra Lava Fanatic</DisplayId>
@@ -14697,7 +14693,7 @@
             <ConditionEffect duration="6">Exhausted</ConditionEffect>
         </Projectile>
     </Object>
-    <Object type="0x65b7" id="BD Ultra Stone Urgle">
+    <Object type="0x75b7" id="BD Ultra Stone Urgle">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Ultra Stone Urgle</DisplayId>
@@ -14711,7 +14707,7 @@
         <MaxHitPoints>25000</MaxHitPoints>
         <Defense>40</Defense>
     </Object>
-    <Object type="0x65b8" id="BD Ultra Stone Orb">
+    <Object type="0x75b8" id="BD Ultra Stone Orb">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Ultra Stone Orb</DisplayId>
@@ -14738,7 +14734,7 @@
             <ConditionEffect duration="0.5">Confused</ConditionEffect>
         </Projectile>
     </Object>
-    <Object type="0x65b9" id="BD Ultra Faint Soul">
+    <Object type="0x75b9" id="BD Ultra Faint Soul">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Ultra Faint Soul</DisplayId>
@@ -14760,7 +14756,7 @@
             <ConditionEffect duration="2.5">Stunned</ConditionEffect>
         </Projectile>
     </Object>
-    <Object type="0x65c0" id="Sorc Tareg Blast">
+    <Object type="0x75c0" id="Sorc Tareg Blast">
         <Class>Projectile</Class>
         <RandomTexture>
             <Texture>
@@ -14770,7 +14766,7 @@
         </RandomTexture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
-    <Object type="0x65c1" id="Bastille Sorcerer">
+    <Object type="0x75c1" id="Bastille Sorcerer">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Bastille Sorcerer</DisplayId>
@@ -14839,7 +14835,7 @@
             <ArmorPiercing/>
         </Projectile>
     </Object>
-    <Object type="0x65c2" id="Nagarith the Tormentor">
+    <Object type="0x75c2" id="Nagarith the Tormentor">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Nagarith the Tormentor</DisplayId>
@@ -14874,7 +14870,7 @@
             <ArmorPiercing/>
         </Projectile>
     </Object>
-    <Object type="0x65c3" id="BD Ultra Tookytesttask2">
+    <Object type="0x75c3" id="BD Ultra Tookytesttask2">
         <Class>Character</Class>
         <Enemy/>
         <StasisImmune/>
@@ -14888,7 +14884,7 @@
         <Size>0</Size>
         <XpMult>0.0</XpMult>
     </Object>
-    <Object type="0x65c4" id="BD Ultra Berikao, the Dark Hunter HUNTING 1">
+    <Object type="0x75c4" id="BD Ultra Berikao, the Dark Hunter HUNTING 1">
         <Enemy/>
         <DisplayId>Ultra Berikao, the Dark Hunter</DisplayId>
         <Class>Character</Class>
@@ -14930,7 +14926,7 @@
             <ConditionEffect duration="8">Paralyzed</ConditionEffect>
         </Projectile>
     </Object>
-    <Object type="0x65c5" id="BD Ultra Berikao, the Dark Hunter">
+    <Object type="0x75c5" id="BD Ultra Berikao, the Dark Hunter">
         <Enemy/>
         <DisplayId>Ultra Berikao, the Dark Hunter</DisplayId>
         <Class>Character</Class>
@@ -14990,7 +14986,7 @@
             <ConditionEffect duration="4">Unstable</ConditionEffect>
         </Projectile>
     </Object>
-    <Object type="0x65c6" id="BD Ultra Berikao, the Dark Hunter HUNTING 2">
+    <Object type="0x75c6" id="BD Ultra Berikao, the Dark Hunter HUNTING 2">
         <Enemy/>
         <DisplayId>Ultra Berikao, the Dark Hunter</DisplayId>
         <Class>Character</Class>
@@ -15032,7 +15028,7 @@
             <ConditionEffect duration="8">Paralyzed</ConditionEffect>
         </Projectile>
     </Object>
-    <Object type="0x65c7" id="BD Ultra Lava Bat">
+    <Object type="0x75c7" id="BD Ultra Lava Bat">
         <Enemy/>
         <DisplayId>Lava Bat</DisplayId>
         <Class>Character</Class>
@@ -15054,7 +15050,7 @@
             <ArmorPiercing/>
         </Projectile>
     </Object>
-    <Object type="0x65c8" id="BD Ultra Lava Bat Spawner">
+    <Object type="0x75c8" id="BD Ultra Lava Bat Spawner">
         <Class>Character</Class>
         <Enemy/>
         <StasisImmune/>
@@ -15068,7 +15064,7 @@
         <Size>0</Size>
         <XpMult>0.0</XpMult>
     </Object>
-    <Object type="0x65c9" id="Ultra Drannol Secret Shop">
+    <Object type="0x75c9" id="Ultra Drannol Secret Shop">
         <Class>Portal</Class>
         <IntergamePortal/>
         <DungeonName>Ultra Drannol Secret Shop</DungeonName>
@@ -15078,7 +15074,7 @@
         </Texture>
         <DisplayId>Ultra Drannol Secret Shop</DisplayId>
     </Object>
-    <Object type="0x65d0" id="Ultra Twisted Trials">
+    <Object type="0x75d0" id="Ultra Twisted Trials">
         <Class>Portal</Class>
         <IntergamePortal/>
         <DungeonName>Ultra Twisted Trials</DungeonName>
@@ -15088,7 +15084,7 @@
         </Texture>
         <DisplayId>Ultra Twisted Trials</DisplayId>
     </Object>
-    <Object type="0x65d1" id="Ultra Twisted Trials Cont">
+    <Object type="0x75d1" id="Ultra Twisted Trials Cont">
         <Class>Portal</Class>
         <IntergamePortal/>
         <DungeonName>Ultra Twisted Trials Cont</DungeonName>
@@ -15098,7 +15094,7 @@
         </Texture>
         <DisplayId>Ultra Twisted Trials Cont</DisplayId>
     </Object>
-    <Object type="0x65d2" id="Ultra Twisted Domain">
+    <Object type="0x75d2" id="Ultra Twisted Domain">
         <Class>Portal</Class>
         <IntergamePortal/>
         <DungeonName>Ultra Twisted Domain</DungeonName>
@@ -15108,7 +15104,7 @@
         </Texture>
         <DisplayId>Ultra Twisted Domain</DisplayId>
     </Object>
-    <Object type="0x65d3" id="Ultra Revil, the Twisted Vanguard">
+    <Object type="0x75d3" id="Ultra Revil, the Twisted Vanguard">
         <Enemy/>
         <Group>Revil</Group>
         <DisplayId>Ultra Revil, the Twisted Vanguard</DisplayId>
@@ -15186,7 +15182,7 @@
             <MultiHit/>
         </Projectile>
     </Object>
-    <Object type="0x65d4" id="Ultra The Steps">
+    <Object type="0x75d4" id="Ultra The Steps">
         <Class>Portal</Class>
         <IntergamePortal/>
         <DungeonName>Ultra The Steps</DungeonName>
@@ -15196,7 +15192,7 @@
         </Texture>
         <DisplayId>Ultra The Steps</DisplayId>
     </Object>
-    <Object type="0x65d5" id="BD Ultra Portal Spawner 2">
+    <Object type="0x75d5" id="BD Ultra Portal Spawner 2">
         <Class>Character</Class>
         <Enemy/>
         <StasisImmune/>
@@ -15211,7 +15207,7 @@
         <XpMult>0.0</XpMult>
         <DisplayId>BD UltraPortal Spawner 2</DisplayId>
     </Object>
-    <Object type="0x65d6" id="Ultra Lin">
+    <Object type="0x75d6" id="Ultra Lin">
         <Class>Character</Class>
         <Enemy/>
         <StasisImmune/>
@@ -15226,7 +15222,7 @@
         <DisplayId>...</DisplayId>
         <XpMult>0.0</XpMult>
     </Object>
-    <Object type="0x65d7" id="Ultra Scorching Wrath Run">
+    <Object type="0x75d7" id="Ultra Scorching Wrath Run">
         <Enemy/>
         <Group>Scorching Wrath</Group>
         <DisplayId>Ultra Scorching Wrath</DisplayId>
@@ -15264,7 +15260,7 @@
             <LifetimeMS>6000</LifetimeMS>
         </Projectile>
     </Object>
-    <Object type="0x65d8" id="BD Ultra Platform Helper">
+    <Object type="0x75d8" id="BD Ultra Platform Helper">
         <Enemy/>
         <Group></Group>
         <DisplayId>BD Ultra Platform</DisplayId>
@@ -15283,7 +15279,7 @@
         <MaxHitPoints>9999999</MaxHitPoints>
         <Defense>20</Defense>
     </Object>
-    <Object type="0x65d9" id="BD Ultra Platform Helper 2">
+    <Object type="0x75d9" id="BD Ultra Platform Helper 2">
         <Enemy/>
         <Group></Group>
         <DisplayId>BD Ultra Platform</DisplayId>
@@ -15302,7 +15298,7 @@
         <MaxHitPoints>9999999</MaxHitPoints>
         <Defense>20</Defense>
     </Object>
-    <Object type="0x65e0" id="Ultra The Steps 2">
+    <Object type="0x75e0" id="Ultra The Steps 2">
         <Class>Portal</Class>
         <IntergamePortal/>
         <DungeonName>Ultra The Steps 2</DungeonName>
@@ -15312,7 +15308,7 @@
         </Texture>
         <DisplayId>Ultra The Steps 2</DisplayId>
     </Object>
-    <Object type="0x65e1" id="Ultra Scorching Wrath Helper">
+    <Object type="0x75e1" id="Ultra Scorching Wrath Helper">
         <Enemy/>
         <Group>Scorching Wrath</Group>
         <DisplayId>Ultra Scorching Wrath</DisplayId>
@@ -15331,7 +15327,7 @@
         <MaxHitPoints>9999999</MaxHitPoints>
         <Defense>40</Defense>
     </Object>
-    <Object type="0x65e2" id="Ultra Scorching Wrath Helper 2">
+    <Object type="0x75e2" id="Ultra Scorching Wrath Helper 2">
         <Enemy/>
         <Group>Scorching Wrath</Group>
         <DisplayId>Ultra Scorching Wrath</DisplayId>
@@ -15350,7 +15346,7 @@
         <MaxHitPoints>9999999</MaxHitPoints>
         <Defense>40</Defense>
     </Object>
-    <Object type="0x65e3" id="Ultra Scorching Wrath Real">
+    <Object type="0x75e3" id="Ultra Scorching Wrath Real">
         <Enemy/>
         <Group>Scorching Wrath</Group>
         <DisplayId>Ultra Scorching Wrath</DisplayId>
@@ -15416,7 +15412,7 @@
             <LifetimeMS>2000</LifetimeMS>
         </Projectile>
     </Object>
-    <Object type="0x65e4" id="UltraLin2">
+    <Object type="0x75e4" id="UltraLin2">
         <Class>Character</Class>
         <Enemy/>
         <StasisImmune/>
@@ -15432,7 +15428,7 @@
         <DisplayId>Lin</DisplayId>
         <XpMult>0.0</XpMult>
     </Object>
-    <Object type="0x65e5" id="Ultra Scorching Wrath Helper Anchor">
+    <Object type="0x75e5" id="Ultra Scorching Wrath Helper Anchor">
         <Enemy/>
         <Group>Scorching Wrath</Group>
         <DisplayId>Ultra Scorching Wrath</DisplayId>
@@ -15451,7 +15447,7 @@
         <MaxHitPoints>9999999</MaxHitPoints>
         <Defense>40</Defense>
     </Object>
-    <Object type="0x65e6" id="Ultra Summoning Point">
+    <Object type="0x75e6" id="Ultra Summoning Point">
         <Class>Portal</Class>
         <IntergamePortal/>
         <DungeonName>Ultra Summoning Point</DungeonName>
@@ -15461,7 +15457,7 @@
         </Texture>
         <DisplayId>Ultra Summoning Point</DisplayId>
     </Object>
-    <Object type="0x65e7" id="UltraDrannolTarget">
+    <Object type="0x75e7" id="UltraDrannolTarget">
         <Enemy/>
         <Class>Character</Class>
         <Group>DrannolTarget</Group>
@@ -15484,7 +15480,7 @@
         <CurseImmune/>
         <MaxHitPoints>999999</MaxHitPoints>
     </Object>
-    <Object type="0x65e8" id="UltraDrannolTargetBurst">
+    <Object type="0x75e8" id="UltraDrannolTargetBurst">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Flame Burst</DisplayId>
@@ -15499,7 +15495,7 @@
         <CurseImmune/>
         <MaxHitPoints>999999</MaxHitPoints>
     </Object>
-    <Object type="0x65e9" id="BD Taskmaster 6">
+    <Object type="0x75e9" id="BD Taskmaster 6">
         <DisplayId>Taskmaster 2</DisplayId>
         <Enemy/>
         <Texture>
@@ -15518,7 +15514,7 @@
         <NoArticle/>
         <ShadowSize>0</ShadowSize>
     </Object>
-    <Object type="0x65f0" id="BD Ultra Taskmaster 1">
+    <Object type="0x75f0" id="BD Ultra Taskmaster 1">
         <DisplayId>The Voice</DisplayId>
         <Enemy/>
         <Texture>
@@ -15537,7 +15533,7 @@
         <NoArticle/>
         <ShadowSize>0</ShadowSize>
     </Object>
-    <Object type="0x65f1" id="Ultra Scorching Crawler">
+    <Object type="0x75f1" id="Ultra Scorching Crawler">
         <Enemy/>
         <Class>Character</Class>
         <AnimatedTexture>
@@ -15560,9 +15556,9 @@
             <ConditionEffect duration="0.5">Speedy</ConditionEffect>
             <Wavy/>
         </Projectile>
-        <DisplayId>Scorching Crawler</DisplayId>
+        <DisplayId>Ultra Scorching Crawler</DisplayId>
     </Object>
-    <Object type="0x65f2" id="Ultra Drannol, the Eternal Beast">
+    <Object type="0x75f2" id="Ultra Drannol, the Eternal Beast">
         <Enemy/>
         <Group>Drannol</Group>
         <DisplayId>Ultra Drannol, the Eternal Beast</DisplayId>
@@ -15670,7 +15666,7 @@
             <ConditionEffect duration="3">Bleeding</ConditionEffect>
         </Projectile>
     </Object>
-    <Object type="0x65f3" id="Ultra Bastille Sorcerer">
+    <Object type="0x75f3" id="Ultra Bastille Sorcerer">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Ultra Bastille Sorcerer</DisplayId>
@@ -15739,7 +15735,7 @@
             <ArmorPiercing/>
         </Projectile>
     </Object>
-    <Object type="0x65f4" id="Ultra Nagarith the Tormentor">
+    <Object type="0x75f4" id="Ultra Nagarith the Tormentor">
         <Enemy/>
         <Class>Character</Class>
         <DisplayId>Ultra Nagarith the Tormentor</DisplayId>
@@ -15774,7 +15770,7 @@
             <ArmorPiercing/>
         </Projectile>
     </Object>
-    <Object type="0x65f5" id="BerikaoFlood">
+    <Object type="0x75f5" id="BerikaoFlood">
         <Group>Bastille Trap</Group>
         <Enemy/>
         <Class>Character</Class>
@@ -15791,7 +15787,7 @@
         <NoMiniMap/>
         <DisplayId>BerikaoFlood</DisplayId>
     </Object>
-    <Object type="0x65f6" id="BerikaoFlood1">
+    <Object type="0x75f6" id="BerikaoFlood1">
         <Group>Bastille Trap</Group>
         <Enemy/>
         <Class>Character</Class>
@@ -15808,7 +15804,7 @@
         <NoMiniMap/>
         <DisplayId>BerikaoFlood1</DisplayId>
     </Object>
-    <Object type="0x65f7" id="BerikaoFlood2">
+    <Object type="0x75f7" id="BerikaoFlood2">
         <Group>Bastille Trap</Group>
         <Enemy/>
         <Class>Character</Class>
@@ -15825,7 +15821,7 @@
         <NoMiniMap/>
         <DisplayId>BerikaoFlood1</DisplayId>
     </Object>
-    <Object type="0x65f8" id="BerikaoFlood3">
+    <Object type="0x75f8" id="BerikaoFlood3">
         <Group>Bastille Trap</Group>
         <Enemy/>
         <Class>Character</Class>
@@ -15842,7 +15838,7 @@
         <NoMiniMap/>
         <DisplayId>BerikaoFlood1</DisplayId>
     </Object>
-    <Object type="0x65f9" id="BerikaoPath">
+    <Object type="0x75f9" id="BerikaoPath">
         <Group>Bastille Trap</Group>
         <Enemy/>
         <Class>Character</Class>
@@ -15859,9 +15855,9 @@
         <NoMiniMap/>
         <DisplayId>BerikaoPath</DisplayId>
     </Object>
-    <Object type="0x66a0" id="Ultra Spiritorb Holder Sentry">
+    <Object type="0x76a0" id="Ultra Spiritorb Holder Sentry">
         <Enemy/>
-        <DisplayId>Ultra Sentry</DisplayId>
+        <DisplayId>Ultra Spiritorb Sentry</DisplayId>
         <Class>Character</Class>
         <Texture>
             <File>lofiObjBig</File>
@@ -15956,5 +15952,25 @@
         </Projectile>
         <NoMiniMap/>
         <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x66a5" id="TOP Wall">
+        <Class>Wall</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x121</Index>
+        </Texture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x122</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
     </Object>
 </Objects>

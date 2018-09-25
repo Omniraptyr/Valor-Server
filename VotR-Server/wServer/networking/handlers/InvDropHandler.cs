@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Linq;
-using wServer.realm;
-using wServer.realm.entities;
 using wServer.networking.packets;
 using wServer.networking.packets.incoming;
 using wServer.networking.packets.outgoing;
+using wServer.realm;
+using wServer.realm.entities;
 
 namespace wServer.networking.handlers
 {
-    class InvDropHandler : PacketHandlerBase<InvDrop>
+    internal class InvDropHandler : PacketHandlerBase<InvDrop>
     {
-        static readonly Random InvRand = new Random();
-
+        private static readonly Random InvRand = new Random();
         public override PacketId ID => PacketId.INVDROP;
 
         protected override void HandlePacket(Client client, InvDrop packet)
@@ -20,14 +19,12 @@ namespace wServer.networking.handlers
             Handle(client.Player, packet.SlotObject);
         }
 
-        private void Handle(Player player, ObjectSlot slot)
+        private static void Handle(Player player, ObjectSlot slot)
         {
-
-            if (player.Owner.Name == "Station")
+            if (player.Owner.Name == "Nexus")
                 return;
-                
 
-            if (player?.Owner == null || player.tradeTarget != null)
+            if (player.Owner == null || player.tradeTarget != null)
                 return;
 
             const ushort normBag = 0x0500;
@@ -40,27 +37,27 @@ namespace wServer.networking.handlers
             {
                 if (player.Owner.GetEntity(slot.ObjectId) is Player)
                 {
-                    player.Client.SendPacket(new InvResult() { Result = 1 });
+                    player.Client.SendPacket(new InvResult { Result = 1 });
                     return;
                 }
                 con = player.Owner.GetEntity(slot.ObjectId) as IContainer;
             } 
             else
             {
-                con = player as IContainer;
+                con = player;
             }
 
 
             if (slot.ObjectId == player.Id && player.Stacks.Any(stack => stack.Slot == slot.SlotId))
             {
-                player.Client.SendPacket(new InvResult() { Result = 1 });
+                player.Client.SendPacket(new InvResult { Result = 1 });
                 return; // don't allow dropping of stacked items
             }
             
             if (con?.Inventory[slot.SlotId] == null)
             {
                 //give proper error
-                player.Client.SendPacket(new InvResult() { Result = 1 });
+                player.Client.SendPacket(new InvResult { Result = 1 });
                 return;
             }
             
@@ -73,7 +70,7 @@ namespace wServer.networking.handlers
                 player.Manager.Database.RemoveGift(player.Client.Account, item.ObjectType, trans);
                 if (!trans.Execute())
                 {
-                    player.Client.SendPacket(new InvResult() { Result = 1 });
+                    player.Client.SendPacket(new InvResult { Result = 1 });
                     return;
                 }
             }
@@ -84,8 +81,10 @@ namespace wServer.networking.handlers
             Container container;
             if (item.Soulbound || player.Client.Account.Admin || player.Client.Account.Elite == 1)
             {
-                container = new Container(player.Manager, soulBag, 1000 * 60, true);
-                container.BagOwners = new int[] { player.AccountId };
+                container = new Container(player.Manager, soulBag, 1000 * 60, true)
+                {
+                    BagOwners = new[] {player.AccountId}
+                };
             }
             else
             {
@@ -100,7 +99,7 @@ namespace wServer.networking.handlers
             player.Owner.EnterWorld(container);
 
             // send success
-            player.Client.SendPacket(new InvResult() { Result = 0 });
+            player.Client.SendPacket(new InvResult { Result = 0 });
         }
     }
 }

@@ -154,7 +154,6 @@ namespace wServer.logic
                 new ItemLoot("Golden Limon Eye", 0.032),
                 new ItemLoot("Golden Crystal", 0.03),
                 new ItemLoot("Wand of Pristine Environments", .001),
-                new ItemLoot("Wine Cellar Incantation", 0.03),
                 new ItemLoot("Cloak of the Planewalker", 0.005),
                 new ItemLoot("Staff of Extreme Prejudice", 0.005),
 

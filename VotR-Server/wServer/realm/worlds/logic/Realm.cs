@@ -32,8 +32,6 @@ namespace wServer.realm.worlds.logic
 
         protected override void Init()
         {
-            Log.InfoFormat("Initializing Game World {0}({1}) from map {2}...", Id, Name, _mapId);
-
             FromWorldMap(new MemoryStream(Manager.Resources.Worlds["Realm"].wmap[_mapId - 1]));
             SetPieces.ApplySetPieces(this);
             
@@ -42,8 +40,6 @@ namespace wServer.realm.worlds.logic
                 _overseer = new Oryx(this);
                 _overseer.Init();
             }
-
-            Log.Info("Game World initalized.");
         }
 
         public override void Tick(RealmTime time)

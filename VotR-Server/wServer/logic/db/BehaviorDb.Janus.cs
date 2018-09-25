@@ -319,8 +319,7 @@ namespace wServer.logic
                     new ItemLoot("Bow of Janus rage", 0.03),
                     new ItemLoot("Eye of Janus", 0.03),
                     new ItemLoot("Key of Janus", 0.03),
-                    new ItemLoot("Warden Armor", 0.03),
-                    new ItemLoot("Wine Cellar Incantation", 0.01)
+                    new ItemLoot("Warden Armor", 0.03)
                 )
             )
 

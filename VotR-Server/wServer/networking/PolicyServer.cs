@@ -13,26 +13,22 @@ namespace wServer.networking
         private readonly TcpListener _listener;
         private bool _started;
 
-        public PolicyServer()
-        {
+        public PolicyServer() {
             _listener = new TcpListener(IPAddress.Any, 843);
         }
 
-        static void ServePolicyFile(IAsyncResult ar)
-        {
-            try
-            {
+        static void ServePolicyFile(IAsyncResult ar) {
+            try {
                 var cli = (ar.AsyncState as TcpListener).EndAcceptTcpClient(ar);
                 (ar.AsyncState as TcpListener).BeginAcceptTcpClient(ServePolicyFile, ar.AsyncState);
 
                 var s = cli.GetStream();
                 var rdr = new NReader(s);
                 var wtr = new NWriter(s);
-                if (rdr.ReadNullTerminatedString() == "<policy-file-request/>")
-                {
+                if (rdr.ReadNullTerminatedString() == "<policy-file-request/>") {
                     wtr.WriteNullTerminatedString(
                         @"<cross-domain-policy>" +
-                        @"<allow-access-from domain=""*.valormg.com"" to-ports=""*"" />" +
+                        @"<allow-access-from domain=""*"" to-ports=""*"" />" +
                         @"</cross-domain-policy>");
                     wtr.Write((byte)'\r');
                     wtr.Write((byte)'\n');
@@ -42,27 +38,22 @@ namespace wServer.networking
             catch { }
         }
 
-        public void Start()
-        {
-            Log.Info("Starting policy server...");
-            try
-            {
+        public void Start() {
+            try {
                 _listener.Start();
                 _listener.BeginAcceptTcpClient(ServePolicyFile, _listener);
                 _started = true;
             }
-            catch
-            {
+            catch {
                 Log.Warn("Could not start Socket Policy Server, is port 843 occupied?");
                 _started = false;
             }
         }
 
-        public void Stop()
-        {
-            if (!_started) 
+        public void Stop() {
+            if (!_started)
                 return;
-            
+
             Log.Warn("Stopping policy server...");
             _listener.Stop();
         }

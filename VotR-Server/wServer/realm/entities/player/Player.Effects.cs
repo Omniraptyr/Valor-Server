@@ -105,8 +105,9 @@ namespace wServer.realm.entities
                 }
                 MainLegendaryPassives();
             }
-            ProtectionMax = (int)(Math.Pow(Stats[11], 2) * 0.05 + Stats[0] / 50) + 10;
-            Protection = (int)(Math.Pow(Stats[11], 2) * 0.05 + Stats[0] / 50) + 10 - ProtectionDamage;
+
+            ProtectionMax = (int)(Math.Pow(Stats[11], 1.5) * 0.05) + 30;
+            Protection = (int)(Math.Pow(Stats[11], 1.5) * 0.05) + 30 - ProtectionDamage;
 
             if (Protection < 0) {
                 Protection = 0;

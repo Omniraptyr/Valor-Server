@@ -5,56 +5,30 @@ using wServer.networking.packets.incoming;
 
 namespace wServer.networking.handlers
 {
-    class QoLActionHandler : PacketHandlerBase<QoLAction>
+    internal class QoLActionHandler : PacketHandlerBase<QoLAction>
     {
         public override PacketId ID => PacketId.QOLACTION;
 
-        protected override void HandlePacket(Client client, QoLAction packet)
-        {
+        protected override void HandlePacket(Client client, QoLAction packet) {
             client.Manager.Logic.AddPendingAction(t => Handle(client.Player, t, packet));
         }
 
-        void Handle(Player player, RealmTime time, QoLAction packet)
-        {
-            switch (packet.ActionId)
-            {
+        private static void Handle(Player player, RealmTime time, QoLAction packet) {
+            switch (packet.ActionId) {
                 case 1:
-                    if(player.SorStorage >= 30)
-                    {
-                        //take fragments
+                    if (player.SorStorage >= 30) {
                         var acc = player.Client.Account;
                         player.Client.Manager.Database.UpdateSorStorage(acc, -30);
                         player.SorStorage -= 30;
                         player.ForceUpdate(player.SorStorage);
-                        //update vault with crystal
                         player.SendHelp("You now have " + player.SorStorage + " sor fragments left. A Sor Crystal has been sent to your vault!");
                         player.Client.Manager.Database.AddGift(acc, 0x49e5);
-                    }
-                    else
-                    {
+                    } else {
                         player.SendError("You can't construct a Sor Crystal with less than 30 fragments.");
                     }
                     break;
-                case 2:
-                    if(player.Fame >= 1 && player.Credits >= 1000)
-                    {
-                        var acc = player.Client.Account;
-                        player.Client.Manager.Database.UpdateCredit(acc, -1000);
-                        player.Credits -= 1000;
-                        player.ForceUpdate(player.Credits);
-                        
-                        player.CurrentFame += player.Fame;
-                        player.ForceUpdate(player.CurrentFame);
-
-                        player.Client.Manager.Database.UpdateFame(acc, -player.Fame);
-                        player.Fame -= player.Fame;
-                        player.ForceUpdate(player.Fame);
-                        player.SaveToCharacter();
-                    }
-                    else
-                    {
-                        player.SendError("Error!");
-                    }
+                default:
+                    player.SendError("Inproper action ID.");
                     break;
             }
         }

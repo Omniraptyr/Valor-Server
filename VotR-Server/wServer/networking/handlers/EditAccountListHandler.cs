@@ -4,7 +4,7 @@ using wServer.networking.packets.incoming;
 
 namespace wServer.networking.handlers
 {
-    class EditAccountListHandler : PacketHandlerBase<EditAccountList>
+    internal class EditAccountListHandler : PacketHandlerBase<EditAccountList>
     {
         private const int LockAction = 0;
         private const int IgnoreAction = 1;
@@ -13,7 +13,6 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, EditAccountList packet)
         {
-            //client.Manager.Logic.AddPendingAction(t => Handle(client, packet.AccountListId, packet.ObjectId, packet.Add));
             Handle(client, packet.AccountListId, packet.ObjectId, packet.Add);
         }
 
@@ -23,22 +22,22 @@ namespace wServer.networking.handlers
                 return;
 
             var targetPlayer = client.Player.Owner.GetEntity(objId) as Player;
-            if (targetPlayer == null || targetPlayer.Client.Account == null)
+            if (targetPlayer?.Client.Account == null)
             {
                 client.Player.SendError("Player not found.");
                 return;
             }
 
-            if (action == LockAction)
-            {
-                client.Manager.Database.LockAccount(client.Account, targetPlayer.Client.Account, add);
-                return;
-            }
-
-            if (action == IgnoreAction)
-            {
-                client.Manager.Database.IgnoreAccount(client.Account, targetPlayer.Client.Account, add);
-                return;
+            switch (action) {
+                case LockAction:
+                    client.Manager.Database.LockAccount(client.Account, targetPlayer.Client.Account, add);
+                    return;
+                case IgnoreAction:
+                    client.Manager.Database.IgnoreAccount(client.Account, targetPlayer.Client.Account, add);
+                    break;
+                default:
+                    client.Player.SendError("Inproper action ID.");
+                    break;
             }
         }
     }

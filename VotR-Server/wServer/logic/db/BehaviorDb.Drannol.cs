@@ -2043,6 +2043,7 @@ namespace wServer.logic
                     new Grenade(4, 140, range: 8, coolDown: 2000, effect: ConditionEffectIndex.Bleeding, effectDuration: 3000, color: 0xFFFF00),
                     new Prioritize(
                           new Orbit(0.7, 3, target: "Drannol, the Eternal Beast", speedVariance: 0.05),
+						  new Orbit(0.7, 3, target: "Ultra Drannol, the Eternal Beast", speedVariance: 0.05),
                           new Follow(0.5, 8, 1)
                    ),
                 new State("Main",
@@ -7351,6 +7352,8 @@ namespace wServer.logic
                         new Order(90, "Ultra Scorching Wrath Helper", "spawn"),
                         new TossObject("Ultra Bastille Sorcerer", 10, angle: 90, coolDown: 9999999),
                         new TossObject("Ultra Bastille Sorcerer", 5, angle: 90, coolDown: 9999999),
+						new TossObject("Flaming Summon", 3, angle: 180, coolDown: 9999),
+                        new TossObject("Flaming Summon", 3, angle: 0, coolDown: 9999),
                         new Taunt("Go my Sorcerers!"),
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new TimedTransition(8000, "waitforsorc")

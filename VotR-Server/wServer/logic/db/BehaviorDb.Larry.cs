@@ -104,10 +104,9 @@ namespace wServer.logic
                     new ItemLoot("Smileyman's Shank", 0.6),
                     new ItemLoot("Thisswordugly", 0.6),
                     new ItemLoot("Tree Stick Red Wand", 0.6),
-                    new ItemLoot("Master Eon", 0.025),
+                    new ItemLoot("Master Eon", 0.005),
                     new ItemLoot("Gold Cache", 0.8)
                 )
-
           )
         ;
     }

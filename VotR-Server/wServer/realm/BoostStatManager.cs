@@ -10,11 +10,9 @@ namespace wServer.realm
         private readonly Player _player;
         private readonly SV<int>[] _boostSV;
         private readonly int[] _boost;
-        private readonly ActivateBoost[] _activateBoost;
-        private readonly ActivateBoost2[] _activateBoost2;
 
-        public ActivateBoost[] ActivateBoost => _activateBoost;
-        public ActivateBoost2[] ActivateBoost2 => _activateBoost2;
+        public ActivateBoost[] ActivateBoost { get; }    
+        public ActivateBoost2[] ActivateBoost2 { get; }
         public int this[int index] => _boost[index];
 
         public BoostStatManager(StatsManager parent)
@@ -26,12 +24,12 @@ namespace wServer.realm
             _boostSV = new SV<int>[_boost.Length];
             for (var i = 0; i < _boostSV.Length; i++)
                 _boostSV[i] = new SV<int>(_player, StatsManager.GetBoostStatType(i), _boost[i], i != 0 && i != 1);
-            _activateBoost = new ActivateBoost[_boost.Length];
-            for (int i = 0; i < _activateBoost.Length; i++)
-                _activateBoost[i] = new ActivateBoost();
-            _activateBoost2 = new ActivateBoost2[_boost.Length];
-            for (int i = 0; i < _activateBoost2.Length; i++)
-                _activateBoost2[i] = new ActivateBoost2();
+            ActivateBoost = new ActivateBoost[_boost.Length];
+            for (int i = 0; i < ActivateBoost.Length; i++)
+                ActivateBoost[i] = new ActivateBoost();
+            ActivateBoost2 = new ActivateBoost2[_boost.Length];
+            for (int i = 0; i < ActivateBoost2.Length; i++)
+                ActivateBoost2[i] = new ActivateBoost2();
             ReCalculateValues();
         }
 
@@ -48,10 +46,8 @@ namespace wServer.realm
                 _boostSV[i].SetValue(_boost[i]);
         }
 
-        private void ApplyEquipBonus(InventoryChangedEventArgs e)
-        {
-            for (var i = 0; i < 4; i++)
-            {
+        private void ApplyEquipBonus(InventoryChangedEventArgs e) {
+            for (var i = 0; i < 4; i++) {
                 if (_player.Inventory[i] == null)
                     continue;
 
@@ -59,11 +55,10 @@ namespace wServer.realm
                     IncrementBoost((StatsType)b.Key, b.Value);
 
                 foreach (var b in _player.Inventory[i].StatsBoostPerc)
-                    if (b.Value != 0)
-                    {
-                        int realIndex = StatsManager.GetStatIndex((StatsType)b.Key);
-                        IncrementBoost((StatsType)b.Key, (_parent.Base[realIndex]
-                            + _boost[realIndex]) * b.Value / 100);
+                    if (b.Value != 0) {
+                        var index = StatsManager.GetStatIndex((StatsType)b.Key);
+                        IncrementBoost((StatsType)b.Key, (_parent.Base[index]
+                            + _boost[index]) * b.Value / 100);
                     }
             }
         }
@@ -134,10 +129,10 @@ namespace wServer.realm
 
         private void ApplyActivateBonus(InventoryChangedEventArgs e)
         {
-            for (var i = 0; i < _activateBoost.Length; i++)
+            for (var i = 0; i < ActivateBoost.Length; i++)
             {
                 // set boost
-                var b = _activateBoost[i].GetBoost();
+                var b = ActivateBoost[i].GetBoost();
                 _boost[i] += b;
 
                 if (i > 7)
@@ -166,10 +161,10 @@ namespace wServer.realm
             }
             //MARK BOOST
 
-            for (var i = 0; i < _activateBoost2.Length; i++)
+            for (var i = 0; i < ActivateBoost2.Length; i++)
             {
                 // set boost
-                var b = _activateBoost2[i].GetBoost();
+                var b = ActivateBoost2[i].GetBoost();
                 _boost[i] += b;
 
             }
@@ -180,7 +175,7 @@ namespace wServer.realm
             var i = StatsManager.GetStatIndex(stat);
             if (_parent.Base[i] + amount < 1)
             {
-                amount = (i == 0) ? -_parent.Base[i] + 1 : -_parent.Base[i];
+                amount = (i == 0) ? -_parent.Base[i] + 2 : -_parent.Base[i];
             }
             _boost[i] += amount;
         }

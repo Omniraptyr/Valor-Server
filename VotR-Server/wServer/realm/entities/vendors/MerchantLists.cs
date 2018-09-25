@@ -15,121 +15,84 @@ namespace wServer.realm.entities.vendors
         public int Count { get; }
         public string Name { get; }
 
-        public ShopItem(string name, ushort price, int count = -1)
-        {
+        public ShopItem(string name, int price, int count = -1) {
             ItemId = ushort.MaxValue;
             Price = price;
             Count = count;
             Name = name;
         }
 
-        public void SetItem(ushort item)
-        {
+        public void SetItem(ushort item) {
             if (ItemId != ushort.MaxValue)
                 throw new AccessViolationException("Can't change item after it has been set.");
 
             ItemId = item;
         }
     }
-    
+
     internal static class MerchantLists
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(MerchantLists));
 
-        private static readonly List<ISellableItem> Weapons = new List<ISellableItem>
-        {
-            /*new ShopItem("Dagger of Foul Malevolence", 500),
-            new ShopItem("Bow of Covert Havens", 500),
-            new ShopItem("Staff of the Cosmic Whole", 500),
-            new ShopItem("Wand of Recompense", 500), 
-            new ShopItem("Sword of Acclaim", 500),
-            new ShopItem("Masamune", 500) */
+        private static readonly List<ISellableItem> Weapon = new List<ISellableItem> {
+            new ShopItem("Dagger of Foul Malevolence", 1000),
+            new ShopItem("Bow of Covert Havens", 1000),
+            new ShopItem("Staff of the Cosmic Whole", 1000),
+            new ShopItem("Wand of Recompense", 1000),
+            new ShopItem("Sword of Acclaim", 1000),
+            new ShopItem("Masamune", 1000),
+            new ShopItem("Staff of the Vital Unity", 7500),
+            new ShopItem("Sadamune", 7500),
+            new ShopItem("Sword of Splendor", 7500),
+            new ShopItem("Wand of Evocation", 7500),
+            new ShopItem("Bow of Mystical Energy", 7500),
+            new ShopItem("Dagger of Sinister Deeds", 7500),
         };
 
-        private static readonly List<ISellableItem> Abilities = new List<ISellableItem>
-        {
-            /*new ShopItem("Cloak of Ghostly Concealment", 500),
-            new ShopItem("Quiver of Elvish Mastery", 500),  
-            new ShopItem("Elemental Detonation Spell", 500),
-            new ShopItem("Tome of Holy Guidance", 500),
-            new ShopItem("Helm of the Great General", 500),
-            new ShopItem("Colossus Shield", 500), 
-            new ShopItem("Seal of the Blessed Champion", 500),
-            new ShopItem("Baneserpent Poison", 500),
-            new ShopItem("Bloodsucker Skull", 500),
-            new ShopItem("Giantcatcher Trap", 500),
-            new ShopItem("Planefetter Orb", 500),
-            new ShopItem("Prism of Apparitions", 500),
-            new ShopItem("Scepter of Storms", 500),
-            new ShopItem("Doom Circle", 500)(*/
+        private static readonly List<ISellableItem> Ability = new List<ISellableItem> {
+            new ShopItem("Cloak of Ghostly Concealment", 2000),
+            new ShopItem("Quiver of Elvish Mastery", 2000),
+            new ShopItem("Elemental Detonation Spell", 2000),
+            new ShopItem("Tome of Holy Guidance", 2000),
+            new ShopItem("Helm of the Great General", 2000),
+            new ShopItem("Colossus Shield", 2000),
+            new ShopItem("Seal of the Blessed Champion", 2000),
+            new ShopItem("Baneserpent Poison", 2000),
+            new ShopItem("Bloodsucker Skull", 2000),
+            new ShopItem("Giantcatcher Trap", 2000),
+            new ShopItem("Planefetter Orb", 2000),
+            new ShopItem("Prism of Apparitions", 2000),
+            new ShopItem("Scepter of Storms", 2000),
+            new ShopItem("Doom Circle", 2000),
+            new ShopItem("Sheath of the Holy Revival", 2000),
+            new ShopItem("Banner of True War", 2000),
+            new ShopItem("Siphon of Redemption", 2000),
+            new ShopItem("Sanctified Charm", 2000),
+            new ShopItem("Stone Dice", 2000),
+            new ShopItem("Jacket of Sorrows", 2000)
         };
 
-        private static readonly List<ISellableItem> Armor = new List<ISellableItem>
-        {
-           /* new ShopItem("Robe of the Illusionist", 50),
-            new ShopItem("Robe of the Grand Sorcerer", 500),
-            new ShopItem("Studded Leather Armor", 50),
-            new ShopItem("Hydra Skin Armor", 500),
-            new ShopItem("Mithril Armor", 50),
-            new ShopItem("Acropolis Armor", 500)*/
+        private static readonly List<ISellableItem> Armor = new List<ISellableItem> {
+            new ShopItem("Robe of the Grand Sorcerer", 1000),
+            new ShopItem("Hydra Skin Armor", 1000),
+            new ShopItem("Acropolis Armor", 1000),
+            new ShopItem("Wyrmhide Armor", 7500),
+            new ShopItem("Robe of the Star Mother", 7500),
+            new ShopItem("Dominion Armor", 1000)
         };
 
-        private static readonly List<ISellableItem> Rings = new List<ISellableItem>
-        {
-           /* new ShopItem("Ring of Paramount Attack", 100),
-            new ShopItem("Ring of Paramount Defense", 100),
-            new ShopItem("Ring of Paramount Speed", 100),
-            new ShopItem("Ring of Paramount Dexterity", 100),
-            new ShopItem("Ring of Paramount Vitality", 100),
-            new ShopItem("Ring of Paramount Wisdom", 100),
-            new ShopItem("Ring of Paramount Health", 100),
-            new ShopItem("Ring of Paramount Magic", 100),
-            new ShopItem("Ring of Unbound Attack", 750),
-            new ShopItem("Ring of Unbound Defense", 750),
-            new ShopItem("Ring of Unbound Speed", 750),
-            new ShopItem("Ring of Unbound Dexterity", 750),
-            new ShopItem("Ring of Unbound Vitality", 750),
-            new ShopItem("Ring of Unbound Wisdom", 750),
-            new ShopItem("Ring of Unbound Health", 750),
-            new ShopItem("Ring of Unbound Magic", 750)*/
+        private static readonly List<ISellableItem> Rings = new List<ISellableItem> {
+             new ShopItem("Ring of Unbound Attack", 3000),
+             new ShopItem("Ring of Unbound Defense", 3000),
+             new ShopItem("Ring of Unbound Speed", 3000),
+             new ShopItem("Ring of Unbound Dexterity", 3000),
+             new ShopItem("Ring of Unbound Vitality", 3000),
+             new ShopItem("Ring of Unbound Wisdom", 3000),
+             new ShopItem("Ring of Unbound Health", 3000),
+             new ShopItem("Ring of Unbound Magic", 3000)
         };
 
-        private static readonly List<ISellableItem> Keys = new List<ISellableItem>
-        {
-            new ShopItem("Undead Lair Key", 200),
-            new ShopItem("Sprite World Key", 200),
-            new ShopItem("The Crawling Depths Key", 400),
-            new ShopItem("Abyss of Demons Key", 300),
-            //new ShopItem("Totem Key", 50),
-            new ShopItem("Pirate Cave Key", 100),
-            new ShopItem("Shatters Key", 900),
-            //new ShopItem("Beachzone Key", 30),
-            new ShopItem("Ivory Wyvern Key", 450),
-            new ShopItem("Lab Key", 400),
-            new ShopItem("Manor Key", 500),
-            new ShopItem("Cemetery Key", 400),
-            new ShopItem("Ocean Trench Key", 400),
-            new ShopItem("Snake Pit Key", 200),
-            //new ShopItem("Bella's Key", 150),
-            new ShopItem("Spider Den Key", 20),
-            new ShopItem("Tomb of the Ancients Key", 900),
-            new ShopItem("Woodland Labyrinth Key", 700),
-            new ShopItem("Theatre Key", 680),
-            new ShopItem("Ice Cave Key", 750),
-        };
-
-        private static readonly List<ISellableItem> PurchasableFame = new List<ISellableItem>
-        {
-
-        };
-
-        private static readonly List<ISellableItem> Consumables = new List<ISellableItem>
-        {
-
-        };
-
-        private static readonly List<ISellableItem> Aldragine = new List<ISellableItem>
-        {
+        private static readonly List<ISellableItem> Aldragine = new List<ISellableItem> {
             new ShopItem("Scepter of the Other", 150),
             new ShopItem("Burden of the Warpawn", 160),
             new ShopItem("The Odyssey", 120),
@@ -138,8 +101,7 @@ namespace wServer.realm.entities.vendors
             new ShopItem("Sincryer's Demise", 140)
         };
 
-        private static readonly List<ISellableItem> Drannol = new List<ISellableItem>
-        {
+        private static readonly List<ISellableItem> Drannol = new List<ISellableItem> {
             new ShopItem("Aegis of the Devourer", 130),
             new ShopItem("Drannol's Fury", 120),
             new ShopItem("Grasp of Elysium", 140),
@@ -148,35 +110,35 @@ namespace wServer.realm.entities.vendors
             new ShopItem("The Master's Betrayal", 110)
         };
 
-        private static readonly List<ISellableItem> Special = new List<ISellableItem>
-        {
-            new ShopItem("Backpack", 5000)
+        private static readonly List<ISellableItem> Special = new List<ISellableItem> {
+            new ShopItem("Backpack", 100000),
+            new ShopItem("Amulet of Resurrection", 1000000)
         };
 
-        public static readonly Dictionary<TileRegion, Tuple<List<ISellableItem>, CurrencyType, /*Rank Req*/int>> Shops = 
-            new Dictionary<TileRegion, Tuple<List<ISellableItem>, CurrencyType, int>>()
+        private static readonly List<ISellableItem> Coins = new List<ISellableItem> {
+            new ShopItem("100 Gold", 100),
+            new ShopItem("1000 Gold", 1000),
+            new ShopItem("10000 Gold", 10000),
+            new ShopItem("100000 Gold", 100000)
+        };
+
+        public static readonly Dictionary<TileRegion, Tuple<List<ISellableItem>, CurrencyType, int>> Shops =
+            new Dictionary<TileRegion, Tuple<List<ISellableItem>, CurrencyType, int>>
         {
-            { TileRegion.Store_1, new Tuple<List<ISellableItem>, CurrencyType, int>(Weapons, CurrencyType.Fame, 0) },
-            { TileRegion.Store_2, new Tuple<List<ISellableItem>, CurrencyType, int>(Abilities, CurrencyType.Fame, 0) },
+            { TileRegion.Store_1, new Tuple<List<ISellableItem>, CurrencyType, int>(Weapon, CurrencyType.Fame, 0) },
+            { TileRegion.Store_2, new Tuple<List<ISellableItem>, CurrencyType, int>(Ability, CurrencyType.Fame, 0) },
             { TileRegion.Store_3, new Tuple<List<ISellableItem>, CurrencyType, int>(Armor, CurrencyType.Fame, 0) },
             { TileRegion.Store_4, new Tuple<List<ISellableItem>, CurrencyType, int>(Rings, CurrencyType.Fame, 0) },
-            { TileRegion.Store_5, new Tuple<List<ISellableItem>, CurrencyType, int>(Keys, CurrencyType.Gold, 0) },
-            { TileRegion.Store_6, new Tuple<List<ISellableItem>, CurrencyType, int>(PurchasableFame, CurrencyType.Fame, 5) },
-            { TileRegion.Store_7, new Tuple<List<ISellableItem>, CurrencyType, int>(Consumables, CurrencyType.Fame, 0) },
-            { TileRegion.Store_8, new Tuple<List<ISellableItem>, CurrencyType, int>(Special, CurrencyType.Gold, 0) },
+            { TileRegion.Store_5, new Tuple<List<ISellableItem>, CurrencyType, int>(Coins, CurrencyType.Gold, 0) },
+            { TileRegion.Store_7, new Tuple<List<ISellableItem>, CurrencyType, int>(Special, CurrencyType.Fame, 0) },
             { TileRegion.Store_15, new Tuple<List<ISellableItem>, CurrencyType, int>(Aldragine, CurrencyType.Onrane, 20) },
             { TileRegion.Store_16, new Tuple<List<ISellableItem>, CurrencyType, int>(Drannol, CurrencyType.Onrane, 20) },
         };
-        
-        public static void Init(RealmManager manager)
-        {
+
+        public static void Init(RealmManager manager) {
             foreach (var shop in Shops)
-                foreach (var shopItem in shop.Value.Item1.OfType<ShopItem>())
-                {
-                    ushort id;
-                    if (!manager.Resources.GameData.IdToObjectType.TryGetValue(shopItem.Name, out id))
-                        Log.WarnFormat("Item name: {0}, not found.", shopItem.Name);
-                    else
+                foreach (var shopItem in shop.Value.Item1.OfType<ShopItem>()) {
+                    if (manager.Resources.GameData.IdToObjectType.TryGetValue(shopItem.Name, out var id))
                         shopItem.SetItem(id);
                 }
         }

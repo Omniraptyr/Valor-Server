@@ -378,6 +378,7 @@ public class Player extends Character {
         _local2.setStringBuilder(new LineBuilder().setParams(TextKey.PLAYER_EXP, {"exp": _arg1}));
         map_.mapOverlay_.addStatusText(_local2);
     }
+
     public function BotDModifier():Number {
         if(ObjectLibrary.typeToDisplayId_[this.equipment_[3]] == "Bracelet of the Demolished" && hp_ >= maxHP_ * 0.80){
             return 1.3;
@@ -1038,87 +1039,97 @@ public class Player extends Character {
         return (portrait_);
     }
 
-    public function useAltWeapon(_arg1:Number, _arg2:Number, _arg3:int):Boolean {
-        var _local7:XML;
-        var _local8:int;
-        var _local9:Number;
-        var _local10:int;
-        var _local11:int;
-        var _local12:int;
-        var _local13:int;
-        if ((((map_ == null)) || (isPaused()))) {
-            return (false);
+    public function useAltWeapon(mouseX:Number, mouseY:Number, useType:int):Boolean {
+        var activateXML:XML;
+        var curTime:int;
+        var shootAngle:Number;
+        var manaCost:int;
+        var cooldownMS:int;
+        var surgeCost:int;
+        var healthCost:int;
+        if (map_ == null || isPaused()) {
+            return false;
         }
-        var _local4:int = equipment_[1];
-        if (_local4 == -1) {
-            return (false);
+
+        var itemId:int = equipment_[1];
+        if (itemId == -1) {
+            return false;
         }
-        var _local5:XML = ObjectLibrary.xmlLibrary_[_local4];
-        if ((((_local5 == null)) || (!(_local5.hasOwnProperty("Usable"))))) {
-            return (false);
-        }
-        var _local6:Point = map_.pSTopW(_arg1, _arg2);
-        if (_local6 == null) {
+
+        var itemXML:XML = ObjectLibrary.xmlLibrary_[itemId];
+        if (itemXML == null || !itemXML.hasOwnProperty("Usable"))
+            return false;
+
+        var target:Point = map_.pSTopW(mouseX, mouseY);
+        if (target == null) {
             SoundEffectLibrary.play("error");
-            return (false);
+            return false;
         }
-        for each (_local7 in _local5.Activate) {
-            if (_local7.toString() == ActivationType.TELEPORT) {
-                if (!this.isValidPosition(_local6.x, _local6.y)) {
+
+        for each (activateXML in itemXML.Activate) {
+            if (activateXML.toString() == ActivationType.TELEPORT) {
+                if (!this.isValidPosition(target.x, target.y)) {
                     SoundEffectLibrary.play("error");
-                    return (false);
+                    return false;
                 }
             }
         }
-        _local8 = getTimer();
-        if (_arg3 == UseType.START_USE) {
-            if (_local8 < this.nextAltAttack_) {
-                SoundEffectLibrary.play("error");
-                return (false);
-            }
-            _local12 = int(_local5.SurgeCost);
-            _local13 = int(_local5.HpCost);
-            _local10 = int(_local5.MpCost);
-            if (_local10 > this.mp_) {
+
+        curTime = getTimer();
+        if (curTime < this.nextAltAttack_) {
+            SoundEffectLibrary.play("error");
+            return false;
+        }
+
+        if (useType == UseType.START_USE) {
+            surgeCost = int(itemXML.SurgeCost);
+            healthCost = int(itemXML.HpCost);
+            manaCost = int(itemXML.MpCost);
+
+            if (manaCost != 0 && manaCost > this.mp_) {
                 SoundEffectLibrary.play("no_mana");
-                return (false);
-            }else if(_local13 > this.hp_){
+                return false;
+            }
+
+            if (healthCost != 0 && healthCost > this.hp_) {
                 SoundEffectLibrary.play("no_mana");
-                return (false);
+                return false;
             }
-            if(_local12 != 0){
-                if(_local12 > this.surge_){
-                    SoundEffectLibrary.play("no_mana");
-                    return (false);
+
+            if (surgeCost != 0 && surgeCost > this.surge_) {
+                SoundEffectLibrary.play("no_mana");
+                return false;
+            }
+
+            cooldownMS = 550;
+            if (itemXML.hasOwnProperty("Cooldown")) {
+                cooldownMS = (Number(itemXML.Cooldown) * 1000);
+            }
+
+            this.nextAltAttack_ = curTime + cooldownMS;
+            this.lastAltAttack_ = curTime;
+
+            map_.gs_.gsc_.useItem(curTime, objectId_, 1, itemId, target.x, target.y, useType);
+
+            if (itemXML.Activate == ActivationType.SHOOT) {
+                shootAngle = Math.atan2(mouseY, mouseX);
+                this.doShoot(curTime, itemId, itemXML, (Parameters.data_.cameraAngle + shootAngle), false);
+            }
+        } else {
+            if (itemXML.hasOwnProperty("MultiPhase")) {
+                map_.gs_.gsc_.useItem(curTime, objectId_, 1, itemId, target.x, target.y, useType);
+                manaCost = int(itemXML.MpEndCost);
+                if (manaCost <= this.mp_) {
+                    shootAngle = Math.atan2(mouseY, mouseX);
+                    this.doShoot(curTime, itemId, itemXML, (Parameters.data_.cameraAngle + shootAngle), false);
                 }
             }
-            _local11 = 500;
-            if (_local5.hasOwnProperty("Cooldown")) {
-                _local11 = (Number(_local5.Cooldown) * 1000);
-            }
-            this.nextAltAttack_ = (_local8 + _local11);
-            this.lastAltAttack_ = getTimer();
-            map_.gs_.gsc_.useItem(_local8, objectId_, 1, _local4, _local6.x, _local6.y, _arg3);
-            if (_local5.Activate == ActivationType.SHOOT) {
-                _local9 = Math.atan2(_arg2, _arg1);
-                this.doShoot(_local8, _local4, _local5, (Parameters.data_.cameraAngle + _local9), false);
-            }
         }
-        else {
-            if (_local5.hasOwnProperty("MultiPhase")) {
-                map_.gs_.gsc_.useItem(_local8, objectId_, 1, _local4, _local6.x, _local6.y, _arg3);
-                _local10 = int(_local5.MpEndCost);
-                if (_local10 <= this.mp_) {
-                    _local9 = Math.atan2(_arg2, _arg1);
-                    this.doShoot(_local8, _local4, _local5, (Parameters.data_.cameraAngle + _local9), false);
-                }
-            }
-        }
-        return (true);
+        return true;
     }
 
-    public function attemptAttackAngle(_arg1:Number):void {
-        this.shoot((Parameters.data_.cameraAngle + _arg1));
+    public function attemptAttackAngle(angle:Number):void {
+        this.shoot(Parameters.data_.cameraAngle + angle);
     }
 
     override public function setAttack(_arg1:int, _arg2:Number):void {

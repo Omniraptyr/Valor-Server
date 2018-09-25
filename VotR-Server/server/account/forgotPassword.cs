@@ -56,7 +56,6 @@ namespace server.account
             }
             Database.ChangePassword(query["guid"], newPassword);
             Write(context, "<Success/>");
-            PassLog.Info($"Password reset requested. IP: {context.Request.ClientIP()}, Account: {acc.Name} ({acc.AccountId})");
         }
 
 

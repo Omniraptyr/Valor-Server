@@ -7,12 +7,11 @@ using StackExchange.Redis;
 
 namespace server.account
 {
-    class purchaseCharSlot : RequestHandler
+    internal class purchaseCharSlot : RequestHandler
     {
         public override void HandleRequest(RequestContext context, NameValueCollection query)
         {
-            DbAccount acc;
-            var status = Database.Verify(query["guid"], query["password"], out acc);
+            var status = Database.Verify(query["guid"], query["password"], out var acc);
             if (status == LoginStatus.OK)
             {
                 using (var l = Database.Lock(acc))

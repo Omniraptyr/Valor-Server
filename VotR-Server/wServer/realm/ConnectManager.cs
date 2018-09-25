@@ -69,7 +69,6 @@ namespace wServer.realm
                 }
 
                 conInfo.Client.SendFailure("Server is full.");
-                Log.Warn("Rejected player, server is at maximum");
                 return;
             }
 
@@ -299,7 +298,7 @@ namespace wServer.realm
 
             if (acc.GuildId > 0 && now - acc.LastSeen > 1800)
             {
-                client.Manager.Chat.GuildAnnounce(acc, acc.Name + " has joined the game");
+                client.Manager.Chat.GuildAnnounce(acc,"<" +  acc.Name + "> came online.");
             }
 
             if (!acc.Hidden && acc.AccountIdOverrider == 0)

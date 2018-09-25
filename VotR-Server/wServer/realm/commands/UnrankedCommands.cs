@@ -15,7 +15,7 @@ using MarketResult = wServer.realm.entities.MarketResult;
 
 namespace wServer.realm.commands
 {
-    class JoinGuildCommand : Command
+    internal class JoinGuildCommand : Command
     {
         public JoinGuildCommand() : base("join") { }
 
@@ -29,7 +29,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class TutorialCommand : Command
+    internal class TutorialCommand : Command
     {
         public TutorialCommand() : base("tutorial") { }
 
@@ -46,7 +46,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class ServerCommand : Command
+    internal class ServerCommand : Command
     {
         public ServerCommand() : base("world") { }
 
@@ -57,7 +57,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class PauseCommand : Command
+    internal class PauseCommand : Command
     {
         public PauseCommand() : base("pause") { }
 
@@ -107,7 +107,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class TeleportCommand : Command
+    internal class TeleportCommand : Command
     {
         public TeleportCommand() : base("tp", alias: "teleport") { }
 
@@ -130,7 +130,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class TellCommand : Command
+    internal class TellCommand : Command
     {
         public TellCommand() : base("tell", alias: "t") { }
 
@@ -173,7 +173,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class GCommand : Command
+    internal class GCommand : Command
     {
         public GCommand() : base("g", alias: "guild") { }
 
@@ -201,7 +201,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class LocalCommand : Command
+    internal class LocalCommand : Command
     {
         public LocalCommand() : base("l") { }
 
@@ -240,7 +240,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class HelpCommand : Command
+    internal class HelpCommand : Command
     {
         //actually the command is 'help', but /help is intercepted by client
         public HelpCommand() : base("commands") { }
@@ -263,7 +263,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class IgnoreCommand : Command
+    internal class IgnoreCommand : Command
     {
         public IgnoreCommand() : base("ignore") { }
 
@@ -309,7 +309,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class UnignoreCommand : Command
+    internal class UnignoreCommand : Command
     {
         public UnignoreCommand() : base("unignore") { }
 
@@ -355,7 +355,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class LockCommand : Command
+    internal class LockCommand : Command
     {
         public LockCommand() : base("lock") { }
 
@@ -402,7 +402,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class UnlockCommand : Command
+    internal class UnlockCommand : Command
     {
         public UnlockCommand() : base("unlock") { }
 
@@ -488,7 +488,7 @@ namespace wServer.realm.commands
         }
     }
     */
-    class PositionCommand : Command
+    internal class PositionCommand : Command
     {
         public PositionCommand() : base("pos", alias: "position") { }
 
@@ -499,7 +499,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class TradeCommand : Command
+    internal class TradeCommand : Command
     {
         public TradeCommand() : base("trade") { }
 
@@ -516,7 +516,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class GambleCommand : Command
+    internal class GambleCommand : Command
     {
         public GambleCommand() : base("gamble") { }
 
@@ -570,7 +570,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class SetGambleCommand : Command
+    internal class SetGambleCommand : Command
     {
         public SetGambleCommand() : base("setgamble") { }
 
@@ -607,7 +607,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class CheckGambleCommand : Command
+    internal class CheckGambleCommand : Command
     {
         public CheckGambleCommand() : base("checkgamble") { }
 
@@ -619,7 +619,7 @@ namespace wServer.realm.commands
     }
 
 
-    class TimeCommand : Command
+    internal class TimeCommand : Command
     {
         public TimeCommand() : base("time") { }
       
@@ -664,7 +664,7 @@ namespace wServer.realm.commands
           }
       }*/
 
-    class PickGambleCommand : Command
+    internal class PickGambleCommand : Command
     {
         public PickGambleCommand() : base("pg") { }
 
@@ -697,23 +697,6 @@ namespace wServer.realm.commands
         }
     }
 
-    class DailyQuestCommand : Command
-    {
-        public DailyQuestCommand() : base("dailyquest", alias: "dq") { }
-
-        protected override bool Process(Player player, RealmTime time, string args)
-        {
-            player.Client.Reconnect(new Reconnect()
-            {
-                Host = "",
-                Port = 2050,
-                GameId = World.Tinker,
-                Name = "Daily Quest Room"
-            });
-            return true;
-        }
-    }
-
   /*  class SoloArenaCommand : Command
     {
         public SoloArenaCommand() : base("sa") { }
@@ -731,7 +714,7 @@ namespace wServer.realm.commands
         }
     }*/
 
-    class GhallCommand : Command
+    internal class GhallCommand : Command
     {
         public GhallCommand() : base("ghall") { }
 
@@ -776,7 +759,8 @@ namespace wServer.realm.commands
             return true;
         }
     }
-    class GLandCommand : Command
+
+    internal class GLandCommand : Command
     {
         public GLandCommand() : base("gland", alias: "glands") { }
 
@@ -793,7 +777,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class WhoCommand : Command
+    internal class WhoCommand : Command
     {
         public WhoCommand() : base("who") { }
 
@@ -804,7 +788,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class OnlineCommand : Command
+    internal class OnlineCommand : Command
     {
         public OnlineCommand() : base("online") { }
 
@@ -824,7 +808,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class WhereCommand : Command
+    internal class WhereCommand : Command
     {
         public WhereCommand() : base("where") { }
 
@@ -845,7 +829,7 @@ namespace wServer.realm.commands
                         plr.Hidden && !player.Client.Account.Admin)
                         continue;
 
-                    player.SendInfo($"<{plr.Name}> is playing on {server.name} at {plr.WorldName}.");
+                    player.SendInfo($"<{plr.Name}> is playing on '{server.name}' at '{plr.WorldName}'.");
                     return true;
                 }
 
@@ -868,36 +852,31 @@ namespace wServer.realm.commands
             return true;
         }
     }
-    
-    class MarketCommand : Command
+
+    internal class MarketCommand : Command
     {
         public MarketCommand() : base("market") { }
 
-        private static Regex _regex = new Regex(@"^(\d+) (\d+)$", RegexOptions.IgnoreCase);
+        private static readonly Regex _regex = new Regex(@"^(\d+) (\d+)$", RegexOptions.IgnoreCase);
 
-        protected override bool Process(Player player, RealmTime time, string args)
-        {
-            if (player.Client.Account.Elite == 1)
-            {
+        protected override bool Process(Player player, RealmTime time, string args) {
+            if (player.Client.Account.Elite == 1) {
                 player.SendError("Elite accounts can't use the marketplace!");
                 return false;
             }
 
-            if (!(player.Owner is Marketplace))
-            {
+            if (!(player.Owner is Marketplace)) {
                 player.SendError("Can only market items in Marketplace.");
                 return false;
             }
 
             var match = _regex.Match(args);
-            if (!match.Success || (match.Groups[1].Value.ToInt32()) > 16 || (match.Groups[1].Value.ToInt32()) < 1)
-            {
+            if (!match.Success || (match.Groups[1].Value.ToInt32()) > 16 || (match.Groups[1].Value.ToInt32()) < 1) {
                 player.SendError("Usage: /market <slot> <amount>. Only slot numbers 1-16 are valid and amount must be a positive value.");
                 return false;
             }
 
-            if (!int.TryParse(match.Groups[2].Value, out var amount))
-            {
+            if (!int.TryParse(match.Groups[2].Value, out var amount)) {
                 player.SendError("Amount is too large. Try something below 2147483648...");
                 return false;
             }
@@ -905,8 +884,7 @@ namespace wServer.realm.commands
             var slot = match.Groups[1].Value.ToInt32() + 3;
 
             var result = player.AddToMarket(slot, amount);
-            if (result != MarketResult.Success)
-            {
+            if (result != MarketResult.Success) {
                 player.SendError(result.GetDescription());
                 return false;
             }
@@ -916,36 +894,30 @@ namespace wServer.realm.commands
         }
     }
 
-    class MarketAllCommand : Command
+    internal class MarketAllCommand : Command
     {
         public MarketAllCommand() : base("marketall", alias: "mall") { }
 
-        private static Regex _regex = new Regex(@"^([A-Za-z0-9 ]+) (\d+)$", RegexOptions.IgnoreCase);
+        private static readonly Regex Regex = new Regex(@"^([A-Za-z0-9 ]+) (\d+)$", RegexOptions.IgnoreCase);
 
-        protected override bool Process(Player player, RealmTime time, string args)
-        {
+        protected override bool Process(Player player, RealmTime time, string args) {
 
-            if (player.Client.Account.Elite == 1)
-            {
+            if (player.Client.Account.Elite == 1) {
                 player.SendError("Elite accounts can't use the marketplace!");
                 return false;
             }
 
-            if (!(player.Owner is Marketplace))
-            {
+            if (!(player.Owner is Marketplace)) {
                 player.SendError("Can only market items in Marketplace.");
                 return false;
             }
 
-            var match = _regex.Match(args);
+            var match = Regex.Match(args);
             var gameData = player.Manager.Resources.GameData;
-            ushort objType;
-            int price;
             var sold = 0;
-            bool err = false;
+            var err = false;
 
-            if (!match.Success)
-            {
+            if (!match.Success) {
                 player.SendError("Usage: /marketall <item name> <price>.");
                 return false;
             }
@@ -953,44 +925,35 @@ namespace wServer.realm.commands
             string itemName = match.Groups[1].Value;
 
             // allow both DisplayId and Id for query
-            if (!gameData.DisplayIdToObjectType.TryGetValue(itemName, out objType))
-            {
-                if (!gameData.IdToObjectType.TryGetValue(itemName, out objType))
-                {
+            if (!gameData.DisplayIdToObjectType.TryGetValue(itemName, out var objType)) {
+                if (!gameData.IdToObjectType.TryGetValue(itemName, out objType)) {
                     player.SendError("Unknown item type!");
                     return false;
                 }
             }
 
-            if (!gameData.Items.ContainsKey(objType))
-            {
+            if (!gameData.Items.ContainsKey(objType)) {
                 player.SendError("Unknown item type!");
                 return false;
             }
 
-            if (gameData.Items[objType].Soulbound)
-            {
+            if (gameData.Items[objType].Soulbound) {
                 player.SendError("Can't market soulbound items!");
                 return false;
             }
 
-            if (!int.TryParse(match.Groups[2].Value, out price))
-            {
+            if (!int.TryParse(match.Groups[2].Value, out var price)) {
                 player.SendError("Price is too large. Try something below 2147483648...");
                 return false;
             }
 
-            for (int i = 4; i < player.Inventory.Length; i++)
-            {
-                if (player.Inventory[i]?.ObjectType != null && player.Inventory[i]?.ObjectType == objType)
-                {
+            for (var i = 4; i < player.Inventory.Length; i++) {
+                if (player.Inventory[i]?.ObjectType != null && player.Inventory[i]?.ObjectType == objType) {
                     var result = player.AddToMarket(i, price);
-                    if (result != MarketResult.Success)
-                    {
+                    if (result != MarketResult.Success) {
                         player.SendError(result.GetDescription());
                         err = true;
-                    } else
-                    {
+                    } else {
                         sold++;
                     }
 
@@ -998,24 +961,16 @@ namespace wServer.realm.commands
             }
 
 
-            if (err)
-            {
-                if (sold > 0)
-                {
+            if (err) {
+                if (sold > 0) {
                     player.SendErrorFormat("Errors occurred, only {0} item{1} sold.", sold, sold > 1 ? "s" : "");
-                }
-                else
-                {
+                } else {
                     player.SendError("Errors occurred, couldn't market items.");
                 }
-                
-            }
-            else if (sold > 0)
-            {
+
+            } else if (sold > 0) {
                 player.SendInfoFormat("Success! Your {0} item{1} ha{2} been placed on the market.", sold, sold > 1 ? "s" : "", sold > 1 ? "ve" : "s");
-            } 
-            else
-            {
+            } else {
                 player.SendErrorFormat("No {0} found in your inventory.", gameData.Items[objType].DisplayName);
             }
 
@@ -1024,7 +979,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class MyMarketCommand : Command
+    internal class MyMarketCommand : Command
     {
         public MyMarketCommand() : base("myMarket") { }
 
@@ -1047,7 +1002,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class OopsCommand : Command
+    internal class OopsCommand : Command
     {
         public OopsCommand() : base("oops") { }
         
@@ -1076,7 +1031,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class RMarketCommand : Command
+    internal class RMarketCommand : Command
     {
         public RMarketCommand() : base("rmarket") { }
         
@@ -1113,7 +1068,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class MarketplaceCommand : Command
+    internal class MarketplaceCommand : Command
     {
         public MarketplaceCommand() : base("marketplace") { }
 
@@ -1130,7 +1085,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class RemoveAccountOverrideCommand : Command
+    internal class RemoveAccountOverrideCommand : Command
     {
         public RemoveAccountOverrideCommand() : base("removeOverride", 0, listCommand: false) { }
 
@@ -1157,7 +1112,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class CurrentSongCommand : Command
+    internal class CurrentSongCommand : Command
     {
         public CurrentSongCommand() : base("currentsong", alias: "song") { }
 
@@ -1175,7 +1130,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class GuildKickCommand : Command
+    internal class GuildKickCommand : Command
     {
         public GuildKickCommand() : base("gkick") { }
 
@@ -1271,7 +1226,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class GuildInviteCommand : Command
+    internal class GuildInviteCommand : Command
     {
         public GuildInviteCommand() : base("invite", alias: "ginvite") { }
 
@@ -1336,7 +1291,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class GuildWhoCommand : Command
+    internal class GuildWhoCommand : Command
     {
         public GuildWhoCommand() : base("gwho", alias: "mates") { }
 
@@ -1379,7 +1334,7 @@ namespace wServer.realm.commands
         }
     }
 
-    class ServersCommand : Command
+    internal class ServersCommand : Command
     {
         public ServersCommand() : base("servers", alias: "svrs") { }
 

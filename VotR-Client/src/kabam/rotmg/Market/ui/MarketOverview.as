@@ -5,8 +5,6 @@ import com.company.assembleegameclient.screens.TitleMenuOption;
 import flash.display.Sprite;
 import flash.text.TextFieldAutoSize;
 
-import flashx.textLayout.formats.VerticalAlign;
-
 import kabam.rotmg.account.core.view.EmptyFrame;
 import kabam.rotmg.pets.view.components.DialogCloseButton;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
@@ -89,7 +87,7 @@ public class MarketOverview extends EmptyFrame
       {
          var _loc5_:TitleMenuOption = new TitleMenuOption(param1,18,false);
          _loc5_.setAutoSize(TextFieldAutoSize.LEFT);
-         _loc5_.setVerticalAlign(VerticalAlign.MIDDLE);
+         _loc5_.setVerticalAlign("middle");
          _loc5_.x = param2;
          _loc5_.y = 85;
          _loc5_.clicked.add(param3);

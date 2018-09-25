@@ -340,9 +340,9 @@ public class EquipmentToolTip extends ToolTip {
     }
 
     private function addRateOfFire() : void {
-        if (this.objectXML.hasOwnProperty("RateOfFire")) {
+        if (this.objectXML.hasOwnProperty("RateOfFire") && this.objectXML.RateOfFire != 1) {
             this.effects.push(new Effect("Rate of Fire: {rof}", {
-                "rof": this.objectXML.RateOfFire * 100 + "%"
+                "rof": Math.round(this.objectXML.RateOfFire * 100) + "%"
             }));
         }
     }
@@ -484,15 +484,17 @@ public class EquipmentToolTip extends ToolTip {
                         }));
                         break;
                     case ActivationType.POISON_GRENADE:
-                        this.effects.push(new Effect(TextKey.POISON_GRENADE, {"data": ""}));
-                        this.effects.push(new Effect(TextKey.POISON_GRENADE_DATA, {
-                            "damage": _local_1.@totalDamage,
-                            "duration": _local_1.@duration,
-                            "radius": _local_1.@radius,
-                            "impactDamage": _local_1.@impactDamage,
-                            "throwTime": _local_1.@throwTime,
-                            "durationAlt": _local_1.@durationAlt
-                        }).setColor(TooltipHelper.NO_DIFF_COLOR));
+                        this.effects.push(new Effect("Poison Grenade: {data}", {
+                            "data": new AppendingLineBuilder().pushParams("Within {radius} sqrs\n" +
+                                    "After {throwTime} seconds\n" +
+                                    "{impactDamage} immediately + {damage} over {duration} seconds", {
+                                "damage": _local_1.@totalDamage,
+                                "duration": _local_1.@duration,
+                                "radius": _local_1.@radius,
+                                "impactDamage": _local_1.@impactDamage,
+                                "throwTime": _local_1.@throwTime
+                            }, TooltipHelper.getOpenTag(TooltipHelper.NO_DIFF_COLOR), TooltipHelper.getCloseTag())
+                        }));
                         break;
                     case ActivationType.REMOVE_NEG_COND:
                         this.effects.push(new Effect(TextKey.REMOVES_NEGATIVE, {}).setColor(TooltipHelper.NO_DIFF_COLOR));
@@ -502,7 +504,9 @@ public class EquipmentToolTip extends ToolTip {
                         break;
                     case ActivationType.BANNER:
                         this.effects.push(new Effect("Banner: {data}", {
-                            "data": new AppendingLineBuilder().pushParams("Within {radius} sqrs\nEmpower allies for {duration} seconds\nStays active for {lifetime} seconds", {
+                            "data": new AppendingLineBuilder().pushParams("Within {radius} sqrs\n" +
+                                    "Empower allies for {duration} seconds\n" +
+                                    "Stays active for {lifetime} seconds", {
                                 "lifetime": _local_1.@amount,
                                 "duration": _local_1.@duration,
                                 "radius": _local_1.@range

@@ -23,13 +23,13 @@ public class CharacterClass {
     public var dexterity:CharacterClassStat;
     public var hpRegeneration:CharacterClassStat;
     public var mpRegeneration:CharacterClassStat;
-    public var unlockCost:int;
-    private var maxLevelAchieved:int;
-    private var isSelected:Boolean;
     public var might:CharacterClassStat;
     public var luck:CharacterClassStat;
     public var restoration:CharacterClassStat;
     public var protection:CharacterClassStat;
+    public var unlockCost:int;
+    private var maxLevelAchieved:int;
+    private var isSelected:Boolean;
 
     public function getIsSelected():Boolean {
         return (this.isSelected);

@@ -7,6 +7,6 @@
 "blocking":1,
 "restrictTp":true,
 "showDisplays":false,
-"portals":[0x65d0],
+"portals":[0x75d0],
 "maps":["UltraTwistedTrials.jm"],
 "music":["bastille2"]}

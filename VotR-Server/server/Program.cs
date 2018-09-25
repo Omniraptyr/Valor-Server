@@ -93,10 +93,6 @@ namespace server
         {
             try
             {
-                Log.InfoFormat("Dispatching '{0}'@{1}",
-                    rContext.Request.Url.LocalPath, 
-                    rContext.Request.ClientIP());
-
                 if (rContext.Request.HttpMethod.Equals("GET"))
                 {
                     var query = HttpUtility.ParseQueryString(rContext.Request.Url.Query);

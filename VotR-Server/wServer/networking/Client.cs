@@ -101,7 +101,6 @@ namespace wServer.networking
                 IP = "";
             }
 
-            Log.InfoFormat("Received client @ {0}.", IP);
             _handler.BeginHandling(Skt);
         }
 
@@ -120,8 +119,7 @@ namespace wServer.networking
         }
 
         public bool IsReady() {
-            switch (State)
-            {
+            switch (State) {
                 case ProtocolState.Disconnected:
                 case ProtocolState.Ready when Player?.Owner == null:
                     return false;
@@ -136,7 +134,7 @@ namespace wServer.networking
         }
 
         internal void ProcessPacket(Packet pkt) {
-            using (TimedLock.Lock(DcLock)) {
+            lock (DcLock) {
                 if (State == ProtocolState.Disconnected)
                     return;
 
@@ -158,7 +156,6 @@ namespace wServer.networking
                 return;
             }
 
-            Log.InfoFormat("Reconnecting client ({0}) @ {1} to {2}...", Account.Name, IP, pkt.Name);
             Manager.ConMan.AddReconnect(Account.AccountId, pkt);
             SendPacket(pkt);
         }
@@ -204,25 +201,20 @@ namespace wServer.networking
 
                 State = ProtocolState.Disconnected;
 
-                if (!string.IsNullOrEmpty(reason))
-                    Log.InfoFormat("Disconnecting client ({0}) @ {1}... {2}",
-                        Account?.Name ?? " ", IP, reason);
-
                 if (Account != null)
                     try {
-                        Save().ContinueWith(task => {
-                            Manager.Disconnect(this);
-                            _server.Disconnect(this);
-                        });
+                        Save();
                     }
                     catch (Exception e) {
                         var msg = $"{e.Message}\n{e.StackTrace}";
                         Log.Error(msg);
                     }
+                Manager.Disconnect(this);
+                _server.Disconnect(this);
             }
         }
 
-        private async Task Save() // only when disconnect
+        private void Save() // only when disconnect
         {
             var acc = Account;
 
@@ -234,11 +226,10 @@ namespace wServer.networking
             Player.SaveToCharacter();
             if (!acc.Hidden && acc.AccountIdOverrider == 0)
                 acc.RefreshLastSeen();
-#pragma warning disable 4014
             acc.FlushAsync();
-            Manager.Database.SaveCharacter(acc, Character, Player.FameCounter.ClassStats, true)
-                .ContinueWith(t => Manager.Database.ReleaseLock(acc));
-#pragma warning restore 4014
+
+            Manager.Database.SaveCharacter(acc, Character, Player.FameCounter.ClassStats, true).GetAwaiter();
+            Manager.Database.ReleaseLock(acc);
         }
 
         public void Dispose() {

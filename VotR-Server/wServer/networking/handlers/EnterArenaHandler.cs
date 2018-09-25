@@ -20,6 +20,7 @@ namespace wServer.networking.handlers
 
         void Handle(Client client, CurrencyType currency)
         {
+            return; //disable, we don't use arena
             if (IsTest(client))
                 return;
 

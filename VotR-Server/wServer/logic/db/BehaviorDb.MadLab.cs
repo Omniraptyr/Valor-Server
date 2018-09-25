@@ -187,7 +187,6 @@ namespace wServer.logic
                     new ItemLoot("Scepter of Fulmination", 0.005),
                     new ItemLoot("Robe of the Mad Scientist", 0.005),
                     new ItemLoot("Experimental Ring", 0.01),
-                    new ItemLoot("Wine Cellar Incantation", 0.02),
                     new ItemLoot("Golden Nut", 0.045),
                     new ItemLoot("Golden Bolt", 0.045),
 

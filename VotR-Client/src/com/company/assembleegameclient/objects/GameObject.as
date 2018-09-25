@@ -893,6 +893,7 @@ public class GameObject extends BasicObject {
         _local_4.setStringBuilder(new StaticStringBuilder(_local_3));
         map_.mapOverlay_.addStatusText(_local_4);
     }
+
     public function damage(_arg1:int, _arg2:int, _arg3:Vector.<uint>, _arg4:Boolean, _arg5:Projectile):void {
         var _local7:int;
         var _local8:uint;

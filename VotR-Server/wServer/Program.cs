@@ -18,8 +18,6 @@ namespace wServer
         internal static ServerConfig Config;
         internal static Resources Resources;
 
-        static readonly ILog Log = LogManager.GetLogger("wServer");
-
         private static readonly ManualResetEvent Shutdown = new ManualResetEvent(false);
 
         static void Main(string[] args)
@@ -66,25 +64,20 @@ namespace wServer
 
                 Shutdown.WaitOne();
 
-                Log.Info("Terminating...");
                 manager.Stop();
                 server.Stop();
                 policy.Stop();
-                Log.Info("Server terminated.");
             }
         }
 
         public static void Stop(Task task = null)
         {
-            if (task != null)
-                Log.Fatal(task.Exception);
-
             Shutdown.Set();
         }
 
         private static void LogUnhandledException(object sender, UnhandledExceptionEventArgs args)
         {
-            Log.Fatal((Exception)args.ExceptionObject);
+            
         }
     }
 }

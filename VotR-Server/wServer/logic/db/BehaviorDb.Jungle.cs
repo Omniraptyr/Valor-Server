@@ -73,7 +73,6 @@ namespace wServer.logic
                      new ItemLoot("Staff of the Crystal Serpent", .25),
                      new ItemLoot("Robe of the Tlatoani", .20),
                      new ItemLoot("Crystal Bone Ring", .15),
-                     new ItemLoot("Wine Cellar Incantation", 0.001),
                      new ItemLoot("Cracked Crystal Skull", .20)
                      ),
                        new ItemLoot("Pollen Powder", 1),

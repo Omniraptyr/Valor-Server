@@ -27,7 +27,7 @@ namespace wServer.networking.handlers
             {
                 // chat needs to be done before removal so we can use
                 // srcPlayer as a source for guild info
-                manager.Chat.Guild(srcPlayer, srcPlayer.Name + " has left the guild.", true);
+                manager.Chat.Guild(srcPlayer,"<" + srcPlayer.Name + "> has left the guild.", true);
 
                 if (!manager.Database.RemoveFromGuild(source.Account))
                 {

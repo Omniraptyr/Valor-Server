@@ -10,8 +10,6 @@ namespace wServer.networking.handlers
     {
         public override PacketId ID => PacketId.ENEMYHIT;
 
-        private static readonly RealmTime DummyTime = new RealmTime();
-
         protected override void HandlePacket(Client client, EnemyHit packet)
         {
             client.Manager.Logic.AddPendingAction(t => Handle(client.Player, t, packet));
@@ -30,7 +28,6 @@ namespace wServer.networking.handlers
 
             if (prj == null)
             {
-                Log.Debug("prj is dead...");
                 return;
             }
 

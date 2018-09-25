@@ -7,6 +7,6 @@
 "blocking":1,
 "restrictTp":true,
 "showDisplays":false,
-"portals":[0x65c9],
+"portals":[0x75c9],
 "maps":["ubshop.jm"],
 "music":["safe"]}

@@ -1,4 +1,6 @@
 ﻿package kabam.rotmg.chat.control {
+import com.company.assembleegameclient.objects.GameObject;
+import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.parameters.Parameters;
 
 import kabam.rotmg.account.core.Account;
@@ -30,9 +32,26 @@ public class ParseChatMessageCommand {
 
     public function execute():void {
         switch (this.data) {
-            case "/help":
-                this.addTextLine.dispatch(ChatMessage.make(Parameters.HELP_CHAT_NAME, TextKey.HELP_COMMAND));
-                return;
+            case "/c":
+            case "/class":
+            case "/classes":
+                var classCount:Object = {};
+                var loops:uint = 0;
+                var go:GameObject = null;
+                var classList:String = "";
+                var goType:* = null;
+                for each (go in this.hudModel.gameSprite.map.goDict_) {
+                    if (go.props_.isPlayer_) {
+                        classCount[go.objectType_] = (classCount[go.objectType_] != undefined ? classCount[go.objectType_] + 1 : 1);
+                        loops++;
+                    }
+                }
+
+                for (goType in classCount) {
+                    classList += " " + ObjectLibrary.typeToDisplayId_[goType] + ": " + classCount[goType];
+                }
+                this.addTextLine.dispatch(ChatMessage.make("","Classes online (" + loops + "):" + classList));
+                break;
             default:
                 this.hudModel.gameSprite.gsc_.playerText(this.data);
         }

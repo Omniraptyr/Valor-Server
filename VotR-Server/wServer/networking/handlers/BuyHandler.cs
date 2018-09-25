@@ -20,9 +20,6 @@ namespace wServer.networking.handlers
             if (player?.Owner == null)
                 return;
 
-            if (objId == 0xc6c && player.Rank < 10)
-                player.SendInfo("You must a donator to purchase this item!");
-
             var obj = player.Owner.GetEntity(objId) as SellableObject;
             obj?.Buy(player);
         }

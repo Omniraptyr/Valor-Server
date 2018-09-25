@@ -116,14 +116,6 @@ namespace wServer.realm.entities.vendors
                 Result = 0,
                 ResultString = "{\"key\":\"PackagePurchased.message\"}"
             });
-
-            Log.InfoFormat("[{0}]User {1} has bought {2} for {3} {4} from {5}.",
-                DateTime.Now,
-                player.Name,
-                Manager.Resources.GameData.Items[Item].DisplayName,
-                Price,
-                Currency.ToString(),
-                Manager.Database.ResolveIgn(PlayerShopItem.AccountId));
         }
     }
 }

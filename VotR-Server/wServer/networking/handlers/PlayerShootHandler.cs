@@ -31,7 +31,6 @@ namespace wServer.networking.handlers
             // validate
             var result = player.ValidatePlayerShoot(item, packet.Time);
             if (result != PlayerShootStatus.Ok) {
-                CheatLog.Info($"PlayerShoot validation failure ({player.Name}:{player.AccountId}): {result}");
                 player.DropNextRandom();
                 return;
             }

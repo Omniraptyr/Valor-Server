@@ -10,12 +10,9 @@ using wServer.realm.worlds.logic;
 
 namespace wServer.realm
 {
-    //The mad god who look after the realm
     class Oryx
     {
         public bool Closing;
-
-        private static readonly ILog Log = LogManager.GetLogger(typeof(Oryx));
         
         private readonly Realm _world;
         private readonly Random _rand = new Random();
@@ -739,8 +736,6 @@ namespace wServer.realm
 
         public void Init()
         {
-            Log.InfoFormat("Oryx is controlling world {0}({1})...", _world.Id, _world.Name);
-
             var w = _world.Map.Width;
             var h = _world.Map.Height;
             var stats = new int[12];
@@ -753,7 +748,6 @@ namespace wServer.realm
                         stats[(int)tile.Terrain - 1]++;
                 }
 
-            Log.Info("Spawning minions...");
             foreach (var i in RegionMobs)
             {
                 var terrain = i.Key;
@@ -775,8 +769,6 @@ namespace wServer.realm
                         break;
                 }
             }
-
-            Log.Info("Oryx is done.");
         }
 
         public void Tick(RealmTime time)
@@ -796,8 +788,6 @@ namespace wServer.realm
 
         private void EnsurePopulation()
         {
-            Log.Info("Oryx is controlling population...");
-
             RecalculateEnemyCount();
 
             var state = new int[12];
@@ -867,8 +857,7 @@ namespace wServer.realm
             }
             RecalculateEnemyCount();
 
-            //GC.Collect();
-            Log.Info("Oryx is back to sleep.");
+            GC.Collect();
         }
 
         private void RecalculateEnemyCount()
@@ -929,10 +918,8 @@ namespace wServer.realm
 
         public void OnPlayerEntered(Player player)
         {
-            player.SendInfo("Welcome to Realm of the Mad God");
-            player.SendEnemy("Oryx the Mad God", "You are food for my minions!");
-            player.SendInfo("Use [WASDQE] to move; click to shoot!");
-            player.SendInfo("Type \"/help\" for more help");
+            player.SendInfo("Welcome to Valor!");
+            player.SendInfo("Use [WASD] to move, [QE] to rotate; click to shoot!");
         }
 
         private void SpawnEvent(string name, ISetPiece setpiece)
@@ -950,7 +937,6 @@ namespace wServer.realm
             pt.X -= (setpiece.Size - 1) / 2;
             pt.Y -= (setpiece.Size - 1) / 2;
             setpiece.RenderSetPiece(_world, pt);
-            Log.InfoFormat("Oryx spawned {0} at ({1}, {2}).", name, pt.X, pt.Y);
         }
 
         public void OnEnemyKilled(Enemy enemy, Player killer)

@@ -8,7 +8,7 @@ namespace wServer.realm.entities.vendors
     {
         public ClosedVaultChest(RealmManager manager, ushort objType) : base(manager, objType)
         {
-            Price = 2000;
+            Price = 1000;
             Currency = CurrencyType.Gold;
         }
 

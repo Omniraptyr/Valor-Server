@@ -28,7 +28,7 @@ namespace wServer.realm
             var networkMsg = (InterServerEventArgs<NetworkMsg>) e;
             if (networkMsg.Content.Info.type == ServerType.Account)
                 return;
-            Announce($"A new server has come online: {networkMsg.Content.Info.name}", true);
+            Announce($"A new server has come online: '{networkMsg.Content.Info.name}'", true);
         }
 
         private void AnnounceServerQuit(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace wServer.realm
             var networkMsg = (InterServerEventArgs<NetworkMsg>)e;
             if (networkMsg.Content.Info.type == ServerType.Account)
                 return;
-            Announce($"Server, {networkMsg.Content.Info.name}, is no longer online.", true);
+            Announce($"Server '{networkMsg.Content.Info.name}' is no longer online.", true);
         }
 
         public void Dispose()
@@ -125,8 +125,6 @@ namespace wServer.realm
             {
                 src.Owner.BroadcastPacketConditional(tp, conditional);
             }
-
-            Log.Info($"[{src.Owner.Name}({src.Owner.Id}){(filtered ? " *filtered*" : "")}] <{src.Name}> {tp.Txt}");
         }
 
         public void Mob(Entity entity, string text)
@@ -145,7 +143,6 @@ namespace wServer.realm
                 Name = $"#{name}",
                 Txt = text
             }, null, PacketPriority.Low);
-            Log.Info($"[{world.Name}({world.Id})] <{name}> {text}");
         }
 
         public void Announce(string text, bool local = false)
@@ -200,7 +197,6 @@ namespace wServer.realm
                 Name = "#Oryx the Mad God",
                 Txt = text
             }, null, PacketPriority.Low);
-            Log.InfoFormat("[{0}({1})] <Oryx the Mad God> {2}", world.Name, world.Id, text);
         }
         
         public bool Tell(Player src, string target, string text)

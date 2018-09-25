@@ -2,9 +2,9 @@
   <MenuMusic>fallenlight</MenuMusic>
   <DeadMusic>dedte</DeadMusic>
   <EditorMinRank>0</EditorMinRank>
-  <CharacterSlotCost>2000</CharacterSlotCost>
+  <CharacterSlotCost>1000</CharacterSlotCost>
   <CharacterSlotCurrency>0</CharacterSlotCurrency>
-  <VaultChestCost>250</VaultChestCost>
+  <VaultChestCost>1000</VaultChestCost>
   <InventorySize>20</InventorySize>
   <UseExternalPayments>0</UseExternalPayments>
   <MaxStackablePotions>6</MaxStackablePotions>

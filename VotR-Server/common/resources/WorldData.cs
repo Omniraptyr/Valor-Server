@@ -33,7 +33,7 @@ namespace common.resources
     {
         static readonly ILog Log = LogManager.GetLogger(typeof(WorldData));
 
-        public IDictionary<string, ProtoWorld> Data { get; private set; }
+        public IDictionary<string, ProtoWorld> Data { get; }
 
         public WorldData(string dir, XmlData gameData)
         {
@@ -46,9 +46,7 @@ namespace common.resources
             string basePath = Path.GetFullPath(dir);
             var jwFiles = Directory.EnumerateFiles(basePath, "*.jw", SearchOption.TopDirectoryOnly).ToArray();
             for (var i = 0; i < jwFiles.Length; i++)
-            {
-                Log.InfoFormat("Initializing world data: " + Path.GetFileName(jwFiles[i]) + " {0}/{1}...", i + 1, jwFiles.Length);
-                
+            {         
                 var jw = File.ReadAllText(jwFiles[i]);
                 var world = JsonConvert.DeserializeObject<ProtoWorld>(jw);
 
@@ -78,9 +76,6 @@ namespace common.resources
             }
         }
 
-        public ProtoWorld this [string name] 
-        {
-            get { return Data[name]; }
-        }
+        public ProtoWorld this [string name] => Data[name];
     }
 }

@@ -52,7 +52,6 @@ namespace server.account
 
             // return html page
             context.Respond(Program.Resources.ChangePass.GetResetHtml(password));
-            PassLog.Info($"Password reset. IP: {context.Request.ClientIP()}, Account: {acc.Name} ({acc.AccountId})");
         }
     }
 }

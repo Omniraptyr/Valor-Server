@@ -5,13 +5,12 @@ using wServer.networking.packets.outgoing;
 
 namespace wServer.networking.handlers
 {
-    class CreateGuildHandler : PacketHandlerBase<CreateGuild>
+    internal class CreateGuildHandler : PacketHandlerBase<CreateGuild>
     {
         public override PacketId ID => PacketId.CREATEGUILD;
 
         protected override void HandlePacket(Client client, CreateGuild packet)
         {
-            //client.Manager.Logic.AddPendingAction(t => Handle(client, packet.Name));
             Handle(client, packet.Name);
         }
 
@@ -40,8 +39,7 @@ namespace wServer.networking.handlers
                 return;
             }
 
-            DbGuild guild;
-            var guildResult = client.Manager.Database.CreateGuild(name, out guild);
+            var guildResult = client.Manager.Database.CreateGuild(name, out var guild);
             if (guildResult != GuildCreateStatus.OK)
             {
                 SendError(client, guildResult.ToString());
@@ -62,7 +60,7 @@ namespace wServer.networking.handlers
             SendSuccess(client);
         }
 
-        private void SendSuccess(Client client)
+        private static void SendSuccess(Client client)
         {
             client.SendPacket(new GuildResult()
             {
@@ -71,7 +69,7 @@ namespace wServer.networking.handlers
             });
         }
 
-        private void SendError(Client client, string message = null)
+        private static void SendError(Client client, string message = null)
         {
             client.SendPacket(new GuildResult()
             {

@@ -8,19 +8,19 @@ namespace wServer.realm.entities
     public class StaticObject : Entity
     {
         //Stats
-        public bool Vulnerable { get; private set; }
-        public bool Static { get; private set; }
-        public bool Hittestable { get; private set; }
-        public bool Dying { get; private set; }
+        public bool Vulnerable { get; }
+        public bool Static { get; }
+        public bool Hittestable { get; }
+        public bool Dying { get; }
 
-        private bool[] isSet = { false, false };
+        private readonly bool[] isSet = { false, false };
         private Timer timer;
 
         private readonly SV<int> _hp;
         public int HP
         {
-            get { return _hp.GetValue(); }
-            set { _hp.SetValue(value); }
+            get => _hp.GetValue();
+            set => _hp.SetValue(value);
         }
 
         public static int? GetHP(XElement elem)
@@ -28,15 +28,14 @@ namespace wServer.realm.entities
             var n = elem.Element("MaxHitPoints");
             if (n != null)
                 return Utils.FromString(n.Value);
-            else
-                return null;
+            return null;
         }
 
         public StaticObject(RealmManager manager, ushort objType, int? life, bool stat, bool dying, bool hittestable)
             : base(manager, objType)
         {
             _hp = new SV<int>(this, StatsType.HP, 0, dying);
-            if (Vulnerable = life.HasValue)
+            if (Vulnerable = life == 0 || life.HasValue)
                 HP = life.Value;
             else if (!isSet[0] && this is Portal) { //todo: make this not shit
                 int loops = 0;

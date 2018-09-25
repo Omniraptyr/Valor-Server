@@ -179,7 +179,6 @@ namespace common
             if (acc.Rank >= 10)
             {
                 acc.Skins = (from skin in _resources.GameData.Skins.Values
-                    where !skin.NoSkinSelect
                     select skin.Type).ToArray();
             }
 
@@ -1718,24 +1717,6 @@ namespace common
         public Task<bool> IsLegend(int accId)
         {
             return _db.HashExistsAsync("legend", accId);
-        }
-
-        public Task<bool> MissedHitDetection(DbAccount acc, int misses)
-        {
-            var key = $"missedHitDetections:{acc.AccountId}";
-            
-            var task = _db.StringIncrementAsync(key, misses).ContinueWith(r =>
-            {
-                if (r.IsFaulted || r.Result < 40)
-                    return false;
-                
-                Log.Warn($"[Missed Detection ({acc.Name}:{acc.AccountId})] Kicked.");
-                //Ban(acc.AccountId, "Auto ban for use of god mode.");
-                //BanIp(acc.IP, "Auto ban for use of god mode.");
-                return true;
-            });
-            _db.KeyExpireAsync(key, TimeSpan.FromSeconds(45), CommandFlags.FireAndForget);
-            return task;
         }
 
         public void RegisterDiscord(string discordId, int accId)

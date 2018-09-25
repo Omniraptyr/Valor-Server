@@ -11,21 +11,14 @@ using wServer.networking.packets.outgoing;
 
 namespace wServer.networking.handlers
 {
-    class InvSwapHandler : PacketHandlerBase<InvSwap>
+    internal class InvSwapHandler : PacketHandlerBase<InvSwap>
     {
         private static readonly Random Rand = new Random();
-        public Inventory inv { get; private set; }
+        public Inventory Inv => null;
         public override PacketId ID => PacketId.INVSWAP;
 
         protected override void HandlePacket(Client client, InvSwap packet)
         {
-            /*client.Manager.Logic.AddPendingAction(t => 
-                Handle(
-                client.Player,
-                client.Player.Owner.GetEntity(packet.SlotObj1.ObjectId),
-                client.Player.Owner.GetEntity(packet.SlotObj2.ObjectId),
-                packet.SlotObj1.SlotId, packet.SlotObj2.SlotId));*/
-
             Handle(
                 client.Player,
                 client.Player.Owner.GetEntity(packet.SlotObj1.ObjectId),
@@ -41,20 +34,23 @@ namespace wServer.networking.handlers
             if (player?.Owner == null)
                 return;
 
-            if (slotA != slotB && (slotA < 12 && slotB < 12 
-                || player.HasBackpack && slotA != (255 | 254) && slotB != (255 | 254))) {
+            if (slotA != slotB
+                && slotB != 255 && slotB != 254 
+                && slotA != 255 && slotA != 254 
+                && slotA < 12 && slotB < 12 
+                         || player.HasBackpack && slotA < 20 && slotB < 20) {
                 Player playerA = null, playerB = null;
-                if (a is Player player1) playerA = player1;
-                if (b is Player player2) playerB = player2;
+                if (a is Player plrA) playerA = plrA;
+                if (b is Player plrB) playerB = plrB;
 
                 if (slotA >= 0 && slotA < 4) {
                     playerA?.OnUnequip(playerA.Inventory[slotA]);
                     if (playerB?.Inventory[slotB] != null)
-                        playerB?.OnEquip(playerB.Inventory[slotB]);
+                        playerB.OnEquip(playerB.Inventory[slotB]);
                 } else if (slotB >= 0 && slotB < 4) {
                     playerA?.OnEquip(playerA.Inventory[slotA]);
                     if (playerB?.Inventory[slotB] != null)
-                        playerB?.OnUnequip(playerB.Inventory[slotB]);
+                        playerB.OnUnequip(playerB.Inventory[slotB]);
                 }
             }
 
@@ -144,15 +140,7 @@ namespace wServer.networking.handlers
                     player.Client.SendPacket(new InvResult() { Result = 0 });
                     return;
                 }
-                
-
-                // if execute failed, undo inventory changes
-                if (!Inventory.Revert(conATrans, conBTrans))
-                    
-                    Log.Warn($"Failed to revert changes. {player.Name} has an extra {itemA?.ObjectId} or {itemB?.ObjectId}");
-
             }
-
             a.ForceUpdate(slotA);
             b.ForceUpdate(slotB);
             player.Client.SendPacket(new InvResult() { Result = 1 });
@@ -172,15 +160,15 @@ namespace wServer.networking.handlers
                 b is Player && b != p)
                 return false;
 
-            if (a is Container &&
-                (a as Container).BagOwners.Length > 0 &&
-                !(a as Container).BagOwners.Contains(p.AccountId))
+            if (a is Container contA &&
+                contA.BagOwners.Length > 0 &&
+                !contA.BagOwners.Contains(p.AccountId))
                 return false;
 
 
-            if (b is Container &&
-                (b as Container).BagOwners.Length > 0 &&
-                !(b as Container).BagOwners.Contains(p.AccountId))
+            if (b is Container contB &&
+                contB.BagOwners.Length > 0 &&
+                !contB.BagOwners.Contains(p.AccountId))
                 return false;
 
             if (a is OneWayContainer && b != p ||
@@ -211,7 +199,7 @@ namespace wServer.networking.handlers
                    IsSoleContainerOwner(player, c as IContainer);
         }
 
-        private bool IsSoleContainerOwner(Player player, IContainer con)
+        private static bool IsSoleContainerOwner(Player player, IContainer con)
         {
             int[] owners = null;
             if (con is Container container)
@@ -220,13 +208,13 @@ namespace wServer.networking.handlers
             return owners != null && owners.Length == 1 && owners.Contains(player.AccountId);
         }
 
-        private void DropInSoulboundBag(Player player, Item item)
+        private static void DropInSoulboundBag(Player player, Item item)
         {
             var container = new Container(player.Manager, 0x0503, 1000 * 60, true)
             {
-                BagOwners = new int[] { player.AccountId }
+                BagOwners = new[] {player.AccountId},
+                Inventory = {[0] = item}
             };
-            container.Inventory[0] = item;
             container.Move(player.X + (float)((Rand.NextDouble() * 2 - 1) * 0.5),
                            player.Y + (float)((Rand.NextDouble() * 2 - 1) * 0.5));
             container.SetDefaultSize(75);

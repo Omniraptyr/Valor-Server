@@ -46,7 +46,7 @@ public class CharacterSkinListItemFactory {
     }
 
     private function makeIcon(_arg1:CharacterSkin):Bitmap {
-        var _local2:int = (((Parameters.skinTypes16.indexOf(_arg1.id)) != -1) ? 50 : 100);
+        var _local2:int = ((Parameters.skinTypes16.indexOf(_arg1.id) != -1 || _arg1.is16x16) ? 50 : 100);
         var _local3:BitmapData = this.characters.makeIcon(_arg1.template, _local2);
         return (new Bitmap(_local3));
     }

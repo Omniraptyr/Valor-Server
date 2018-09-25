@@ -5,8 +5,6 @@ import flash.filters.DropShadowFilter;
 import flash.text.TextFormat;
 import flash.text.TextFormatAlign;
 
-import flashx.textLayout.formats.TextAlign;
-
 import kabam.rotmg.text.model.FontModel;
 
 public class DefaultLabelFormat
@@ -96,7 +94,7 @@ public class DefaultLabelFormat
          _local_2.color = 16777215;
          _local_2.font = FontModel.DEFAULT_FONT_NAME;
          _local_2.size = 18;
-         _local_2.align = TextAlign.RIGHT;
+         _local_2.align = "right";
          applyTextFromat(_local_2,_arg_1);
       }
       

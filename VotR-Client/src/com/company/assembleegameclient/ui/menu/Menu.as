@@ -20,53 +20,55 @@ import flash.geom.Rectangle;
 import kabam.rotmg.ui.view.UnFocusAble;
 
 public class Menu extends Sprite implements UnFocusAble {
-
     private var backgroundFill_:GraphicsSolidFill = new GraphicsSolidFill(0, 1);
     private var outlineFill_:GraphicsSolidFill = new GraphicsSolidFill(0, 1);
-    private var lineStyle_:GraphicsStroke = new GraphicsStroke(1, false, LineScaleMode.NORMAL, CapsStyle.NONE, JointStyle.ROUND, 3, outlineFill_);
+    private var lineStyle_:GraphicsStroke = new GraphicsStroke(1, false, LineScaleMode.NORMAL, CapsStyle.NONE,
+            JointStyle.ROUND, 3, outlineFill_);
     private var path_:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
     private var background_:uint;
     private var outline_:uint;
     protected var yOffset:int;
 
-    private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[lineStyle_, backgroundFill_, path_, GraphicsUtil.END_FILL, GraphicsUtil.END_STROKE];
+    private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[lineStyle_, backgroundFill_, path_,
+        GraphicsUtil.END_FILL, GraphicsUtil.END_STROKE];
 
-    public function Menu(_arg1:uint, _arg2:uint) {
+    public function Menu(bgColor:uint, outlineColor:uint) {
         super();
-        this.background_ = _arg1;
-        this.outline_ = _arg2;
+        this.background_ = bgColor;
+        this.outline_ = outlineColor;
         this.yOffset = 40;
         filters = [new DropShadowFilter(0, 0, 0, 1, 16, 16)];
         addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
         addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
     }
 
-    protected function addOption(_arg1:MenuOption):void {
-        _arg1.x = 8;
-        _arg1.y = this.yOffset;
-        addChild(_arg1);
+    protected function addOption(option:MenuOption):void {
+        option.x = 8;
+        option.y = this.yOffset;
+        addChild(option);
         this.yOffset = (this.yOffset + 28);
     }
 
-    protected function onAddedToStage(_arg1:Event):void {
+    protected function onAddedToStage(e:Event):void {
         this.draw();
         this.position();
         addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
         addEventListener(MouseEvent.ROLL_OUT, this.onRollOut);
     }
 
-    protected function onRemovedFromStage(_arg1:Event):void {
+    protected function onRemovedFromStage(e:Event):void {
         removeEventListener(Event.ENTER_FRAME, this.onEnterFrame);
         removeEventListener(MouseEvent.ROLL_OUT, this.onRollOut);
     }
 
-    protected function onEnterFrame(_arg1:Event):void {
+    protected function onEnterFrame(e:Event):void {
         if (stage == null) {
             return;
         }
-        var _local2:Rectangle = getRect(stage);
-        var _local3:Number = RectangleUtil.pointDist(_local2, stage.mouseX, stage.mouseY);
-        if (_local3 > 40) {
+
+        var stageRect:Rectangle = getRect(stage);
+        var dist:Number = RectangleUtil.pointDist(stageRect, stage.mouseX, stage.mouseY);
+        if (dist > 40) {
             this.remove();
         }
     }
@@ -98,10 +100,8 @@ public class Menu extends Sprite implements UnFocusAble {
         var scale:Number = 600 / stage.stageHeight;
         this.scaleParent(scaleUI);
 
-        if (scaleUI) {
-            x = x * scale;
-            y = y * scale;
-        }
+        x = x * scale;
+        y = y * scale;
 
         if (stage == null) return;
 
@@ -122,7 +122,7 @@ public class Menu extends Sprite implements UnFocusAble {
         if (this.y < 14) this.y = 14;
     }
 
-    protected function onRollOut(_arg1:Event):void {
+    protected function onRollOut(e:Event):void {
         this.remove();
     }
 
@@ -142,4 +142,3 @@ public class Menu extends Sprite implements UnFocusAble {
     }
 }
 }
-

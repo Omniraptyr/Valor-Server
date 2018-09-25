@@ -35,15 +35,13 @@ namespace wServer.realm
         }
 
         public void TickLoop() {
-            Log.Info("Logic loop started.");
-
             var loopTime = 0;
             var t = new RealmTime();
             var watch = Stopwatch.StartNew();
             do {
                 t.TotalElapsedMs = watch.ElapsedMilliseconds;
-                var logicTime = (int)(watch.ElapsedMilliseconds - t.TotalElapsedMs);
-                _mre.WaitOne(Math.Max(0, MsPT - logicTime));
+                _mre.WaitOne(Math.Max(0, MsPT 
+                    - (int)(watch.ElapsedMilliseconds - t.TotalElapsedMs)));
 
                 t.TickDelta = loopTime / MsPT;
                 t.TickCount += t.TickDelta;
@@ -56,7 +54,6 @@ namespace wServer.realm
 
                 loopTime += (int)(watch.ElapsedMilliseconds - t.TotalElapsedMs) - t.ElapsedMsDelta;
             } while (true);
-            Log.Info("Logic loop stopped.");
         }
 
         private void DoLogic(RealmTime t)
@@ -87,11 +84,10 @@ namespace wServer.realm
                     client.Player.Flush();
         }
 
-        private void TickWorlds(RealmTime t)    //Continous simulation
+        private void TickWorlds(RealmTime t)
         {
             _worldTime.TickDelta += t.TickDelta;
             
-            // tick essentials
             try
             {
                 foreach (var w in _manager.Worlds.Values.Distinct())
@@ -102,7 +98,6 @@ namespace wServer.realm
                 Log.Error(e);
             }
 
-            // tick world every 200 ms
             if (_worldTask == null || _worldTask.IsCompleted)
             {
                 t.TickDelta = _worldTime.TickDelta;

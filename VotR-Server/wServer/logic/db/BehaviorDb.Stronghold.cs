@@ -169,8 +169,7 @@ namespace wServer.logic
                 new TierLoot(12, ItemType.Armor, 0.03),
                 new TierLoot(10, ItemType.Weapon, 0.04),
                 new TierLoot(11, ItemType.Weapon, 0.03),
-                new ItemLoot("Potion of Attack", 1),
-                new ItemLoot("Wine Cellar Incantation", 0.01)
+                new ItemLoot("Potion of Attack", 1)
                 )
             )
           .Init("GolemB Test Chest",
@@ -189,8 +188,7 @@ namespace wServer.logic
                 new TierLoot(12, ItemType.Armor, 0.03),
                 new TierLoot(10, ItemType.Weapon, 0.04),
                 new TierLoot(11, ItemType.Weapon, 0.03),
-                new ItemLoot("Potion of Vitality", 1),
-                new ItemLoot("Wine Cellar Incantation", 0.01)
+                new ItemLoot("Potion of Vitality", 1)
                 )
             )
                   .Init("GolemC Test Chest",
@@ -209,8 +207,7 @@ namespace wServer.logic
                 new TierLoot(12, ItemType.Armor, 0.03),
                 new TierLoot(10, ItemType.Weapon, 0.04),
                 new TierLoot(11, ItemType.Weapon, 0.03),
-                new ItemLoot("Potion of Dexterity", 1),
-                new ItemLoot("Wine Cellar Incantation", 0.01)
+                new ItemLoot("Potion of Dexterity", 1)
                 )
             )
       ;

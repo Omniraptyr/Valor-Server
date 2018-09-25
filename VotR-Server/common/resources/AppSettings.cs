@@ -8,29 +8,25 @@ namespace common.resources
 {
     public class AppSettings : InitSettings
     {
-        static ILog log = LogManager.GetLogger(typeof(AppSettings));
-
-        public string MenuMusic { get; private set; }
-        public string DeadMusic { get; private set; }
-        public int EditorMinRank { get; private set; }
-        public int CharacterSlotCost { get; private set; }
-        public int CharacterSlotCurrency { get; private set; }
-        public int VaultChestCost { get; private set; }
-        public int InventorySize { get; private set; }
-        public int MaxStackablePotions { get; private set; }
-        public int PotionPurchaseCooldown { get; private set; }
-        public int PotionPurchaseCostCooldown { get; private set; }
-        public int[] PotionPurchaseCosts { get; private set; }
-        public bool DisableRegistration { get; private set; }
-        public int MysteryBoxRefresh { get; private set; }
-        public int MaxPetCount { get; private set; }
-        public NewAccounts Accounts { get; private set; }
-        public NewCharacters Characters { get; private set; }
+        public string MenuMusic { get; }
+        public string DeadMusic { get; }
+        public int EditorMinRank { get; }
+        public int CharacterSlotCost { get; }
+        public int CharacterSlotCurrency { get; }
+        public int VaultChestCost { get; }
+        public int InventorySize { get; }
+        public int MaxStackablePotions { get; }
+        public int PotionPurchaseCooldown { get; }
+        public int PotionPurchaseCostCooldown { get; }
+        public int[] PotionPurchaseCosts { get; }
+        public bool DisableRegistration { get; }
+        public int MysteryBoxRefresh { get; }
+        public int MaxPetCount { get; }
+        public NewAccounts Accounts { get; }
+        public NewCharacters Characters { get; }
 
         public AppSettings(string path)
         {
-            log.Info("Loading app settings...");
-
             elem = XElement.Parse(File.ReadAllText(path));
 
             MenuMusic = GetStringValue("MenuMusic");
@@ -57,8 +53,7 @@ namespace common.resources
                 var potCostList = new List<int>();
                 foreach (var e in potCosts.XPathSelectElements("//cost"))
                 {
-                    int cost = 0;
-                    int.TryParse(e.Value, out cost);
+                    int.TryParse(e.Value, out var cost);
                     potCostList.Add(cost);
                 }
                 PotionPurchaseCosts = potCostList.ToArray();
@@ -68,23 +63,23 @@ namespace common.resources
 
     public class NewAccounts : InitSettings
     {
-        public int Gold { get; private set; }
-        public int Fame { get; private set; }
-        public int Onrane { get; private set; }
-        public int Kantos { get; private set; }
-        public int RaidToken { get; private set; }
-        public bool ClassesUnlocked { get; private set; }
-        public bool SkinsUnlocked { get; private set; }
-        public int PetYardType { get; private set; }
-        public int VaultCount { get; private set; }
-        public int MaxCharSlot { get; private set; }
-        public int Lootbox1 { get; private set; }
-        public int Lootbox2 { get; private set; }
-        public int Lootbox3 { get; private set; }
-        public int Lootbox4 { get; private set; }
-        public int Lootbox5 { get; private set; }
-        public int SorStorage { get; private set; }
-        public bool Striked { get; private set; }
+        public int Gold { get; }
+        public int Fame { get; }
+        public int Onrane { get; }
+        public int Kantos { get; }
+        public int RaidToken { get; }
+        public bool ClassesUnlocked { get; }
+        public bool SkinsUnlocked { get; }
+        public int PetYardType { get; }
+        public int VaultCount { get; }
+        public int MaxCharSlot { get; }
+        public int Lootbox1 { get; }
+        public int Lootbox2 { get; }
+        public int Lootbox3 { get; }
+        public int Lootbox4 { get; }
+        public int Lootbox5 { get; }
+        public int SorStorage { get; }
+        public bool Striked { get; }
         public NewAccounts(XElement e)
         {
             elem = e;
@@ -111,8 +106,8 @@ namespace common.resources
 
     public class NewCharacters : InitSettings
     {
-        public bool Maxed { get; private set; }
-        public int Level { get; private set; }
+        public bool Maxed { get; }
+        public int Level { get; }
 
         public NewCharacters(XElement e)
         {

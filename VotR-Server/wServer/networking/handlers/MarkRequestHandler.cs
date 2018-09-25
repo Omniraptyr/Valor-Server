@@ -5,206 +5,120 @@ using wServer.networking.packets.incoming;
 
 namespace wServer.networking.handlers
 {
-    class MarkRequestHandler : PacketHandlerBase<MarkRequest>
+    internal class MarkRequestHandler : PacketHandlerBase<MarkRequest>
     {
         public override PacketId ID => PacketId.MARKREQUEST;
 
-        protected override void HandlePacket(Client client, MarkRequest packet)
-        {
+        protected override void HandlePacket(Client client, MarkRequest packet) {
             client.Manager.Logic.AddPendingAction(t => Handle(client.Player, t, packet));
         }
 
-        public void MarkUpdate(Player player, int markId, int buyAmount)
-        {
-            if (player.MarksEnabled == true)
-            {
+        public void MarkUpdate(Player player, int markId, int buyAmount) {
+            if (buyAmount != 15 || buyAmount != 40) {
+                player.SendError("Inproper purchase cost.");
+                return;
+            }
 
-                if (player.Onrane >= buyAmount)
-                {
-                    
+            if (player.MarksEnabled) {
+                if (player.Onrane >= buyAmount) {
+                    player.Client.Manager.Database.UpdateOnrane(player.Client.Account, -buyAmount);
+                    player.Onrane = player.Client.Account.Onrane - buyAmount;
+                    player.ForceUpdate(player.Client.Account.Onrane);
 
-                    
-                        player.Client.Manager.Database.UpdateOnrane(player.Client.Account, -buyAmount);
-                        player.Onrane = player.Client.Account.Onrane - buyAmount;
-                        player.ForceUpdate(player.Client.Account.Onrane);
-
-                        switch (markId)
-                        {
-                            case 1:
-                                NodeSet(player, markId);
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 2:
-                                NodeSet(player, markId);
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 3:
-                                NodeSet(player, markId);
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 4:
-                                NodeSet(player, markId);
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 5:
-                                NodeSet(player, markId);
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 6:
-                                NodeSet(player, markId);
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 7:
-                                NodeSet(player, markId);
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 8:
-                                NodeSet(player, markId);
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 9:
-                                NodeSet(player, markId);
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 10:
-                                NodeSet(player, markId);
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 11:
-                                NodeSet(player, markId);
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 12:
-                                player.Mark = 1;
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 13:
-                                player.Mark = 2;
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 14:
-                                player.Mark = 3;
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 15:
-                                player.Mark = 4;
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 16:
-                                player.Mark = 5;
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 17:
-                                player.Mark = 6;
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                            case 18:
-                                player.Mark = 12;
-                                player.SendHelp("You have activated this mark/node!");
-                                break;
-                        }
-
-                }
-                else
-                {
+                    switch (markId) {
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10:
+                        case 11:
+                            NodeSet(player, markId);
+                            player.SendHelp("You have activated this mark/node!");
+                            break;
+                        case 12:
+                            player.Mark = 1;
+                            player.SendHelp("You have activated this mark/node!");
+                            break;
+                        case 13:
+                            player.Mark = 2;
+                            player.SendHelp("You have activated this mark/node!");
+                            break;
+                        case 14:
+                            player.Mark = 3;
+                            player.SendHelp("You have activated this mark/node!");
+                            break;
+                        case 15:
+                            player.Mark = 4;
+                            player.SendHelp("You have activated this mark/node!");
+                            break;
+                        case 16:
+                            player.Mark = 5;
+                            player.SendHelp("You have activated this mark/node!");
+                            break;
+                        case 17:
+                            player.Mark = 6;
+                            player.SendHelp("You have activated this mark/node!");
+                            break;
+                        case 18:
+                            player.Mark = 12;
+                            player.SendHelp("You have activated this mark/node!");
+                            break;
+                    }
+                } else {
                     player.SendError("You do not have enough onrane.");
                 }
-            }
-            else
-            {
+            } else {
                 player.SendError("You do not have marks enabled on this character!");
             }
         }
-        public void NodeSet(Player player, int markId)
-        {
-            if (player.Node1 == 0)
-            {
+        public void NodeSet(Player player, int markId) {
+            if (player.Node1 == 0) {
                 player.Node1 = markId;
                 player.SendError("The next node slot has been activated.");
-            }
-            else if (player.Node2 == 0)
-            {
+            } else if (player.Node2 == 0) {
                 player.Node2 = markId;
                 player.SendError("The next node slot has been activated.");
-            }
-            else if (player.Node3 == 0)
-            {
+            } else if (player.Node3 == 0) {
                 player.Node3 = markId;
                 player.SendError("The next node slot has been activated.");
-            }
-            else if (player.Node4 == 0)
-            {
+            } else if (player.Node4 == 0) {
                 player.Node4 = markId;
                 player.SendError("The next node slot has been activated.");
-            }
-            else
-            {
+            } else {
                 player.SendError("All of your node slots are full!");
             }
-
         }
-        void Handle(Player player, RealmTime time, MarkRequest packet)
-        {
 
-            switch (packet.MarkId)
-            {
+        private void Handle(Player player, RealmTime time, MarkRequest packet) {
+            switch (packet.MarkId) {
                 case 1:
-                    MarkUpdate(player, packet.MarkId, 15);
-                    break;
                 case 2:
-                    MarkUpdate(player, packet.MarkId, 15);
-                    break;
                 case 3:
-                    MarkUpdate(player, packet.MarkId, 15);
-                    break;
                 case 4:
-                    MarkUpdate(player, packet.MarkId, 15);
-                    break;
                 case 5:
-                    MarkUpdate(player, packet.MarkId, 15);
-                    break;
                 case 6:
-                    MarkUpdate(player, packet.MarkId, 15);
-                    break;
                 case 7:
-                    MarkUpdate(player, packet.MarkId, 15);
-                    break;
                 case 8:
-                    MarkUpdate(player, packet.MarkId, 15);
-                    break;
                 case 9:
-                    MarkUpdate(player, packet.MarkId, 15);
-                    break;
                 case 10:
-                    MarkUpdate(player, packet.MarkId, 15);
-                    break;
                 case 11:
                     MarkUpdate(player, packet.MarkId, 15);
                     break;
                 case 12:
-                    MarkUpdate(player, packet.MarkId, 40);
-                    break;
                 case 13:
-                    MarkUpdate(player, packet.MarkId, 40);
-                    break;
                 case 14:
-                    MarkUpdate(player, packet.MarkId, 40);
-                    break;
                 case 15:
-                    MarkUpdate(player, packet.MarkId, 40);
-                    break;
                 case 16:
-                    MarkUpdate(player, packet.MarkId, 40);
-                    break;
                 case 17:
-                    MarkUpdate(player, packet.MarkId, 40);
-                    break;
                 case 18:
                     MarkUpdate(player, packet.MarkId, 40);
                     break;
             }
-
-
         }
     }
 }

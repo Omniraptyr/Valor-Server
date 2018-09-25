@@ -14,7 +14,12 @@ namespace wServer.realm.worlds.logic
         protected override void Init()
         {
             base.Init();
-            
+
+            var en = Entity.Resolve(Manager, "Locked Oryx's Arena Portal");
+            en.Move(147.5f, 110.5f);
+            en.Name = "Oryx's Arena";
+            EnterWorld(en);
+
             var monitor = Manager.Monitor;
             foreach (var i in Manager.Worlds.Values)
             {
@@ -109,7 +114,7 @@ namespace wServer.realm.worlds.logic
 
                 if (i is Marketplace && Manager.Config.serverSettings.enableMarket)
                 {
-                    var portal = new Portal(Manager, 0x190, null)
+                    var portal = new Portal(Manager, 0x69f7, null)
                     {
                         Name = "Marketplace (0)",
                         WorldInstance = i
@@ -120,7 +125,6 @@ namespace wServer.realm.worlds.logic
                         continue;
 
                     monitor.AddPortal(i.Id, portal, pos);
-                    continue;
                 }
             }
         }

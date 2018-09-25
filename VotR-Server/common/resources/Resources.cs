@@ -11,21 +11,19 @@ namespace common.resources
 {
     public class Resources : IDisposable
     {
-        static readonly ILog Log = LogManager.GetLogger(typeof(Resources));
-
-        public string ResourcePath { get; private set; }
-        public AppSettings Settings { get; private set; }
-        public XmlData GameData { get; private set; }
-        public WorldData Worlds { get; private set; }
-        public ChangePassword ChangePass { get; private set; }
-        public MysteryBoxes MysteryBoxes { get; private set; }
-        public Packages Packages { get; private set; }
-        public Regex[] FilterList { get; private set; }
+        public string ResourcePath { get; }
+        public AppSettings Settings { get; }
+        public XmlData GameData { get; }
+        public WorldData Worlds { get; }
+        public ChangePassword ChangePass { get; }
+        public MysteryBoxes MysteryBoxes { get; }
+        public Packages Packages { get; }
+        public Regex[] FilterList { get; }
         public IDictionary<string, byte[]> WebFiles { get; private set; }
         public IDictionary<string, byte[]> Textures { get; private set; }
         public byte[] ZippedTextures { get; private set; }
         public IList<string> MusicNames { get; private set; }
-        public Ranks[] RoleRanks { get; private set; }
+        public Ranks[] RoleRanks { get; }
 
         public Resources(string resourcePath, bool wServer = false)
         {
@@ -59,8 +57,6 @@ namespace common.resources
 
         private void webFiles(string dir)
         {
-            Log.Info("Loading web data...");
-
             Dictionary<string, byte[]> webFiles;
 
             WebFiles =
@@ -79,8 +75,6 @@ namespace common.resources
 
         private void music(string baseDir)
         {
-            Log.Info("Loading music list...");
-
             List<string> music;
             
             MusicNames = 
@@ -94,8 +88,6 @@ namespace common.resources
 
         private void textures(string dir)
         {
-            Log.Info("Loading texture data...");
-
             Dictionary<string, byte[]> textures;
 
             Textures = 
@@ -114,10 +106,9 @@ namespace common.resources
                     if (maskData != null)
                         textures.Add(tex[1] + "_mask", maskData);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    Log.WarnFormat("Getting remote texture for '{0}, {1}' failed! {2}",
-                            tex[0], tex[1], e.Message);
+                    // ignored
                 }
             }
 

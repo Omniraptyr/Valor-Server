@@ -4,12 +4,12 @@ import com.company.assembleegameclient.ui.SoundIcon;
 import flash.display.Sprite;
 
 public class ScreenBase extends Sprite {
-
+    private static var TitleScreenBackground:Class = ScreenBase_TitleScreenBackground;
     public function ScreenBase() {
-        addChild(new MapBackground());
+        super();
+        addChild(new TitleScreenBackground());
         addChild(new DarkLayer());
         addChild(new SoundIcon());
     }
-
 }
 }

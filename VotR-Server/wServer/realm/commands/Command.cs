@@ -48,7 +48,6 @@ namespace wServer.realm.commands
             }
             catch (Exception ex)
             {
-                Log.Error("Error when executing the command.", ex);
                 player.SendError("Error when executing the command.");
                 return false;
             }
@@ -88,15 +87,12 @@ namespace wServer.realm.commands
             var cmd = text.Substring(1, index == -1 ? text.Length - 1 : index - 1);
             var args = index == -1 ? "" : text.Substring(index + 1);
 
-            Command command;
-            if (!_cmds.TryGetValue(cmd, out command))
+            if (!_cmds.TryGetValue(cmd, out var command))
             {
                 player.SendError("Unknown command!");
                 return false;
             }
 
-            var owner = player.Owner;
-            Log.InfoFormat("[Command] [{0}] <{1}> {2}", owner?.Name ?? "", player.Name, text);
             return command.Execute(player, time, args);
         }
     }

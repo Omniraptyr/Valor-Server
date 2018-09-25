@@ -101,8 +101,7 @@ namespace wServer.logic
                     ),
                    new Threshold(0.10,
                        new ItemLoot("Phoenix Ring", 0.02),
-                    new ItemLoot("Phoenix Wand", 0.02),
-                    new ItemLoot("Wine Cellar Incantation", 0.005)
+                    new ItemLoot("Phoenix Wand", 0.02)
                 )
             )
             ;

@@ -11,82 +11,81 @@ namespace common.resources
 {
     public class XmlData : IDisposable
     {
-        static ILog log = LogManager.GetLogger(typeof(XmlData));
+        static readonly ILog log = LogManager.GetLogger(typeof(XmlData));
 
         private readonly List<string> _gameXmls;
-        public IList<string> GameXmls { get; private set; }
+        public IList<string> GameXmls { get; }
 
         private readonly List<string[]> _usedRemoteTextures;
-        public IList<string[]> UsedRemoteTextures { get; private set; }
+        public IList<string[]> UsedRemoteTextures { get; }
 
-        public byte[] ZippedXmls { get; private set; }
+        public byte[] ZippedXmls { get; }
 
-        Dictionary<ushort, XElement> type2elem_obj;
-        Dictionary<ushort, string> type2id_obj;
-        Dictionary<string, ushort> id2type_obj;
-        Dictionary<string, ushort> d_name2type_obj;
-        Dictionary<ushort, XElement> type2elem_tile;
-        Dictionary<ushort, string> type2id_tile;
-        Dictionary<string, ushort> id2type_tile;
-        Dictionary<ushort, XElement> type2elem_equipSet;
-        Dictionary<ushort, string> type2id_equipSet;
-        Dictionary<string, ushort> id2type_equipSet;
-        Dictionary<ushort, XElement> type2elem_lootBox;
-        Dictionary<ushort, string> type2id_lootBox;
-        Dictionary<string, ushort> id2type_lootBox;
-        Dictionary<ushort, ushort> skinType2equipSetType;
-        Dictionary<ushort, TileDesc> tiles;
-        Dictionary<ushort, Item> items;
-        Dictionary<ushort, ObjectDesc> objDescs;
-        Dictionary<ushort, PortalDesc> portals;
-        Dictionary<ushort, SkinDesc> skins;
-        Dictionary<ushort, EquipmentSetDesc> equipmentSets;
-        Dictionary<ushort, Lootbox> lootBox;
-        Dictionary<ushort, PlayerDesc> classes;
-        Dictionary<ushort, ObjectDesc> merchants; 
-        Dictionary<ushort, PetDesc> pets;
-        Dictionary<ushort, PetSkinDesc> petSkins;
-        Dictionary<ushort, PetBehaviorDesc> petBehaviors;
-        Dictionary<ushort, PetAbilityDesc> petAbilities;
-        Dictionary<int, ItemType> slotType2ItemType;
+        readonly Dictionary<ushort, XElement> type2elem_obj;
+        readonly Dictionary<ushort, string> type2id_obj;
+        readonly Dictionary<string, ushort> id2type_obj;
+        readonly Dictionary<string, ushort> d_name2type_obj;
+        readonly Dictionary<ushort, XElement> type2elem_tile;
+        readonly Dictionary<ushort, string> type2id_tile;
+        readonly Dictionary<string, ushort> id2type_tile;
+        readonly Dictionary<ushort, XElement> type2elem_equipSet;
+        readonly Dictionary<ushort, string> type2id_equipSet;
+        readonly Dictionary<string, ushort> id2type_equipSet;
+        readonly Dictionary<ushort, XElement> type2elem_lootBox;
+        readonly Dictionary<ushort, string> type2id_lootBox;
+        readonly Dictionary<string, ushort> id2type_lootBox;
+        readonly Dictionary<ushort, ushort> skinType2equipSetType;
+        readonly Dictionary<ushort, TileDesc> tiles;
+        readonly Dictionary<ushort, Item> items;
+        readonly Dictionary<ushort, ObjectDesc> objDescs;
+        readonly Dictionary<ushort, PortalDesc> portals;
+        readonly Dictionary<ushort, SkinDesc> skins;
+        readonly Dictionary<ushort, EquipmentSetDesc> equipmentSets;
+        readonly Dictionary<ushort, Lootbox> lootBox;
+        readonly Dictionary<ushort, PlayerDesc> classes;
+        readonly Dictionary<ushort, ObjectDesc> merchants;
+        readonly Dictionary<ushort, PetDesc> pets;
+        readonly Dictionary<ushort, PetSkinDesc> petSkins;
+        readonly Dictionary<ushort, PetBehaviorDesc> petBehaviors;
+        readonly Dictionary<ushort, PetAbilityDesc> petAbilities;
+        readonly Dictionary<int, ItemType> slotType2ItemType;
 
-        public IDictionary<ushort, XElement> ObjectTypeToElement { get; private set; }
-        public IDictionary<ushort, string> ObjectTypeToId { get; private set; }
-        public IDictionary<string, ushort> IdToObjectType { get; private set; }
-        public IDictionary<string, ushort> DisplayIdToObjectType { get; private set; }
-        public IDictionary<ushort, XElement> TileTypeToElement { get; private set; }
-        public IDictionary<ushort, string> TileTypeToId { get; private set; }
-        public IDictionary<string, ushort> IdToTileType { get; private set; }
-        public IDictionary<ushort, XElement> EquipSetTypeToElement { get; private set; }
-        public IDictionary<ushort, string> EquipSetTypeToId { get; private set; }
-        public IDictionary<string, ushort> IdToEquipSetType { get; private set; }
-        		public IDictionary<ushort, XElement> LootboxTypeToElement { get; private set; }
-        public IDictionary<ushort, string> LootboxTypetoId { get; private set; }
-        public IDictionary<string, ushort> IdtoLootboxType { get; private set; }
-        public IDictionary<ushort, ushort> SkinTypeToEquipSetType { get; private set; } 
-        public IDictionary<ushort, TileDesc> Tiles { get; private set; }
-        public IDictionary<ushort, Item> Items { get; private set; }
-        public IDictionary<ushort, ObjectDesc> ObjectDescs { get; private set; }
-        public IDictionary<ushort, PortalDesc> Portals { get; private set; }
-        public IDictionary<ushort, SkinDesc> Skins { get; private set; }
-        public IDictionary<ushort, EquipmentSetDesc> EquipmentSets { get; private set; }
-        public IDictionary<ushort, Lootbox> Lootboxes { get; private set; }
-        public IDictionary<ushort, PlayerDesc> Classes { get; private set; }
-        public IDictionary<ushort, ObjectDesc> Merchants { get; private set; }
-        public IDictionary<ushort, PetDesc> Pets { get; private set; }
-        public IDictionary<ushort, PetSkinDesc> PetSkins { get; private set; }
-        public IDictionary<ushort, PetBehaviorDesc> PetBehaviors { get; private set; }
-        public IDictionary<ushort, PetAbilityDesc> PetAbilities { get; private set; }
-        public IDictionary<int, ItemType> SlotType2ItemType { get; private set; }
+        public IDictionary<ushort, XElement> ObjectTypeToElement { get; }
+        public IDictionary<ushort, string> ObjectTypeToId { get; }
+        public IDictionary<string, ushort> IdToObjectType { get; }
+        public IDictionary<string, ushort> DisplayIdToObjectType { get; }
+        public IDictionary<ushort, XElement> TileTypeToElement { get; }
+        public IDictionary<ushort, string> TileTypeToId { get; }
+        public IDictionary<string, ushort> IdToTileType { get; }
+        public IDictionary<ushort, XElement> EquipSetTypeToElement { get; }
+        public IDictionary<ushort, string> EquipSetTypeToId { get; }
+        public IDictionary<string, ushort> IdToEquipSetType { get; }
+        		public IDictionary<ushort, XElement> LootboxTypeToElement { get; }
+        public IDictionary<ushort, string> LootboxTypetoId { get; }
+        public IDictionary<string, ushort> IdtoLootboxType { get; }
+        public IDictionary<ushort, ushort> SkinTypeToEquipSetType { get; } 
+        public IDictionary<ushort, TileDesc> Tiles { get; }
+        public IDictionary<ushort, Item> Items { get; }
+        public IDictionary<ushort, ObjectDesc> ObjectDescs { get; }
+        public IDictionary<ushort, PortalDesc> Portals { get; }
+        public IDictionary<ushort, SkinDesc> Skins { get; }
+        public IDictionary<ushort, EquipmentSetDesc> EquipmentSets { get; }
+        public IDictionary<ushort, Lootbox> Lootboxes { get; }
+        public IDictionary<ushort, PlayerDesc> Classes { get; }
+        public IDictionary<ushort, ObjectDesc> Merchants { get; }
+        public IDictionary<ushort, PetDesc> Pets { get; }
+        public IDictionary<ushort, PetSkinDesc> PetSkins { get; }
+        public IDictionary<ushort, PetBehaviorDesc> PetBehaviors { get; }
+        public IDictionary<ushort, PetAbilityDesc> PetAbilities { get; }
+        public IDictionary<int, ItemType> SlotType2ItemType { get; }
 
         int updateCount;
         int prevUpdateCount = -1;
-        XElement addition;
+        readonly XElement addition;
         string[] addXml;
 
         public XmlData(string path)
         {
-            log.Info("Loading xml data...");
 
             GameXmls = 
                 new ReadOnlyCollection<string>(
@@ -198,23 +197,6 @@ namespace common.resources
 
             // add embedded client xmls to GameXmls string array
             LoadXmls(basePath, "*.dat");
-
-            log.Info("Finish loading game data.");
-            log.InfoFormat("{0} Items", items.Count);
-            log.InfoFormat("{0} Tiles", tiles.Count);
-            log.InfoFormat("{0} Objects", objDescs.Count);
-            log.InfoFormat("{0} Skins", skins.Count);
-            log.InfoFormat("{0} Equipment Sets", equipmentSets.Count);
-            log.InfoFormat("{0} Lootboxes", lootBox.Count);
-            log.InfoFormat("{0} Classes", classes.Count);
-            log.InfoFormat("{0} Portals", portals.Count);
-            log.InfoFormat("{0} Merchants", merchants.Count);
-            log.InfoFormat("{0} Pets", pets.Count);
-            log.InfoFormat("{0} PetSkins", petSkins.Count);
-            log.InfoFormat("{0} PetBehaviors", petBehaviors.Count);
-            log.InfoFormat("{0} PetsAbility", petAbilities.Count);
-            log.InfoFormat("{0} Remote Textures", _usedRemoteTextures.Count);
-            log.InfoFormat("{0} Additions", addition.Elements().Count());
         }
 
         private void LoadXmls(string basePath, string ext)
@@ -222,7 +204,6 @@ namespace common.resources
             var xmls = Directory.EnumerateFiles(basePath, ext, SearchOption.AllDirectories).ToArray();
             for (var i = 0; i < xmls.Length; i++)
             {
-                //log.InfoFormat("Loading '{0}'({1}/{2})...", xmls[i], i + 1, xmls.Length);
                 var xml = File.ReadAllText(xmls[i]);
                 _gameXmls.Add(xml);
                 ProcessXml(XElement.Parse(xml));
@@ -256,7 +237,6 @@ namespace common.resources
                 var typeAttr = elem.Attribute("type");
                 if (typeAttr == null)
                 {
-                    log.Error($"{id} is missing type number. Skipped.");
                     continue;
                 }
                 type = (ushort)Utils.FromString(typeAttr.Value);
@@ -519,6 +499,7 @@ namespace common.resources
 
         public void Dispose()
         {
+            prevUpdateCount = 0;
         }
     }
 }

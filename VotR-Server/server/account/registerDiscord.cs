@@ -41,7 +41,6 @@ namespace server.account
 
                 Database.RegisterDiscord(dId, accId);
                 Write(context, "<Success/>");
-                RankManagerLog.Info($"[{acc.Name}] Registered discord to account ({dId}:{accId})");
             }
             else
                 Write(context, "<Error>" + status.GetInfo() + "</Error>");

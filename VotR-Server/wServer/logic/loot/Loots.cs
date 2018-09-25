@@ -29,6 +29,38 @@ namespace wServer.logic.loot
 
         private static readonly Random Rand = new Random();
 
+        private static readonly string[] ValuableItems = {
+            "Master Eon",
+            "10000 Gold",
+            "Three Tiny Sor Fragments",
+            "Sor Fragment Cache",
+            "Small Sor Fragment",
+            "Medium Sor Fragment",
+            "Large Sor Fragment",
+            "Sor Crystal",
+            "Legendary Sor Crystal",
+            "Warped Worlds Staff",
+            "Null-Magic Trap",
+            "Marble Tablet",
+            "The ET Experience",
+            "Wildfire Crossbow",
+            "The Eye of Peril",
+            "Shard of Ancient Assault",
+            "Shard of the Stone Soul",
+            "Spirit of the Heart",
+            "Wrath of Aldragine",
+            "Age of Zol",
+            "Spiritclaw",
+            "Hunter Necklace",
+            "Quiver of the Onslaught",
+            "Banner of Revenge",
+            "Twisted Amulet",
+            "Evisceration Claws",
+            "Titanic Bracelet",
+            "Drannol's Judgement",
+            "Toxin of the Vicious"
+        };
+
         public IEnumerable<Item> GetLoots(RealmManager manager, int min, int max) {  //For independent loots(e.g. chests)
             var consideration = new List<LootDef>();
             foreach (var i in this)
@@ -104,10 +136,10 @@ namespace wServer.logic.loot
                 items[idx] = i;
                 idx++;
 
-                if (i.Fabled || i.Legendary)
+                if (ValuableItems.Contains(i.ObjectId))
                     foreach (var p in enemy.Owner.Players.Values)
-                        p.SendHelp(owners[0].Name + " has just received the following item: '"
-                                                  + i.ObjectId + "'!");
+                        p.SendHelp("<" + owners[0].Name + "> has received a drop: '"
+                                                  + i.ObjectId + "'");
 
                 if (idx == 8) {
                     ShowBag(enemy, ownerIds, bagType, items);
@@ -180,7 +212,7 @@ namespace wServer.logic.loot
             container.Move(
                 enemy.X + (float)((Rand.NextDouble() * 2 - 1) * 0.5),
                 enemy.Y + (float)((Rand.NextDouble() * 2 - 1) * 0.5));
-            container.SetDefaultSize(bagType == 11 ? 140 : (bagType > 3 ? 120 : 80));
+            container.SetDefaultSize(bagType == 11 ? 120 : (bagType > 3 ? 110 : 80));
             enemy.Owner.EnterWorld(container);
         }
     }

@@ -11,8 +11,6 @@ namespace wServer.realm.setpieces
 {
     partial class SetPieces
     {
-        static ILog log = LogManager.GetLogger(typeof(SetPieces));
-
         struct Rect
         {
             public int x;
@@ -96,8 +94,6 @@ namespace wServer.realm.setpieces
 
         public static void ApplySetPieces(World world)
         {
-            log.InfoFormat("Applying set pieces to world {0}({1}).", world.Id, world.Name);
-
             var map = world.Map;
             int w = map.Width, h = map.Height;
 
@@ -127,8 +123,6 @@ namespace wServer.realm.setpieces
                     rects.Add(rect);
                 }
             }
-
-            log.Info("Set pieces applied.");
         }
 
         public static void RenderFromProto(World world, IntPoint pos, ProtoWorld proto)

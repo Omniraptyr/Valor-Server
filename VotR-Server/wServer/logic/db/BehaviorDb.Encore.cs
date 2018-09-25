@@ -651,7 +651,6 @@ namespace wServer.logic
                 new TierLoot(11, ItemType.Armor, 0.08),
                 new TierLoot(11, ItemType.Weapon, 0.051),
                 new TierLoot(12, ItemType.Armor, 0.0629),
-                new ItemLoot("Wine Cellar Incantation", 0.0182),
                 new TierLoot(5, ItemType.Ring, 0.0205),
                 new ItemLoot("Thousand Shot", 0.0100)
                 )

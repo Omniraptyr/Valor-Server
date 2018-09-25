@@ -84,7 +84,7 @@ namespace wServer.logic.behaviors
             }, host, null, PacketPriority.Low);
 
             // kill player
-            player.Death(host.ObjectDesc.DisplayId, rekt: _rekt);
+            player.Death(host.ObjectDesc.ObjectId, rekt: _rekt);
         }
     }
 }

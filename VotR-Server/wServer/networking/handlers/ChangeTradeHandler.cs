@@ -50,7 +50,6 @@ namespace wServer.networking.handlers
 
             if (sb)
             {
-                CheatLog.InfoFormat("User {0} tried to trade a Soulbound item.", player.Name);
                 player.SendError("You can't trade Soulbound items.");
             }
         }

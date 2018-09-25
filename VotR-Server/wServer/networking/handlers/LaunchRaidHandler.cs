@@ -40,7 +40,7 @@ namespace wServer.networking.handlers
                                     return;
                                 var timeoutTime = gameData.Portals[objType].Timeout;
                                 var entity = Entity.Resolve(Manager, objType);
-                                entity.Move(4, 37);
+                                entity.Move(149, 114);
                                 player.Owner.EnterWorld(entity);
 
                                 (entity as Portal).PlayerOpened = true;
@@ -80,7 +80,7 @@ namespace wServer.networking.handlers
                                     return;
                                 var entity = Entity.Resolve(Manager, objType);
 
-                                entity.Move(4, 37);
+                                entity.Move(149, 114);
                                 player.Owner.EnterWorld(entity);
 
                                 (entity as Portal).PlayerOpened = true;
@@ -108,7 +108,7 @@ namespace wServer.networking.handlers
                         break;
 
                     case 2:
-					if (ultra == false)
+                        if (ultra == false)
                         {
                             if (player.startRaid2(player) == false)
                             {
@@ -126,7 +126,7 @@ namespace wServer.networking.handlers
                                     return;
                                 var timeoutTime = gameData.Portals[objType].Timeout;
                                 var entity = Entity.Resolve(Manager, objType);
-                                entity.Move(4, 37);
+                                entity.Move(149, 114);
                                 player.Owner.EnterWorld(entity);
 
                                 (entity as Portal).PlayerOpened = true;
@@ -167,7 +167,7 @@ namespace wServer.networking.handlers
                                     return;
                                 var entity = Entity.Resolve(Manager, objType);
 
-                                entity.Move(4, 37);
+                                entity.Move(149, 114);
                                 player.Owner.EnterWorld(entity);
 
                                 (entity as Portal).PlayerOpened = true;
@@ -193,8 +193,8 @@ namespace wServer.networking.handlers
                             }
                         }
                         break;
-                        
-                       
+
+
                         break;
                 }
             }
@@ -202,8 +202,8 @@ namespace wServer.networking.handlers
             {
                 player.SendError("You need at least " + gold + " to launch this raid.");
             }
-        
-    }
+
+        }
         void Handle(Player player, RealmTime time, LaunchRaid packet)
         {
 
@@ -253,5 +253,5 @@ namespace wServer.networking.handlers
 
 
 }
-    
+
 

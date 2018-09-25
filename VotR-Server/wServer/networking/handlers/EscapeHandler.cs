@@ -5,7 +5,7 @@ using wServer.realm.worlds;
 
 namespace wServer.networking.handlers
 {
-    class EscapeHandler : PacketHandlerBase<Escape>
+    internal class EscapeHandler : PacketHandlerBase<Escape>
     {
         public override PacketId ID => PacketId.ESCAPE;
 
@@ -15,9 +15,9 @@ namespace wServer.networking.handlers
             Handle(client, packet);
         }
 
-        private void Handle(Client client, Escape packet)
+        private static void Handle(Client client, Escape packet)
         {
-            if (client.Player == null || client.Player.Owner == null)
+            if (client.Player?.Owner == null)
                 return;
 
             var map = client.Player.Owner;
@@ -34,7 +34,7 @@ namespace wServer.networking.handlers
                 Port = 2050,
                 GameId = World.Nexus,
                 Name = "Nexus",
-                IsFromArena = false //map.Name.Equals("Arena")
+                IsFromArena = false
             });
         }
     }

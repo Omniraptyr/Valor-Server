@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("server")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Application Engine")]
+[assembly: AssemblyDescription("Dispatches resources to remote clients and allows communication between said clients and the server.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("K")]
-[assembly: AssemblyProduct("server")]
-[assembly: AssemblyCopyright("Copyright © K 2012")]
+[assembly: AssemblyCompany("Valor")]
+[assembly: AssemblyProduct("Application Engine")]
+[assembly: AssemblyCopyright("Copyright © Valor 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

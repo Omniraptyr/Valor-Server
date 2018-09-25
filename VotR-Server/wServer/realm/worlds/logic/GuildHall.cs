@@ -5,7 +5,7 @@ namespace wServer.realm.worlds.logic
 {
     public class GuildHall : World
     {
-        public int GuildId { get; private set; }
+        public int GuildId { get; }
 
         public GuildHall(ProtoWorld proto, Client client = null) : base(proto)
         {
@@ -42,7 +42,7 @@ namespace wServer.realm.worlds.logic
         private int Level()
         {
             var guild = Manager.Database.GetGuild(GuildId);
-            return (guild != null) ? guild.Level : 0;
+            return guild?.Level ?? 0;
         }
 
         public override World GetInstance(Client client)
@@ -64,8 +64,7 @@ namespace wServer.realm.worlds.logic
             }
 
             // create new instance of guild hall
-            var gWorld = new GuildHall(manager.Resources.Worlds[Name], client);
-            gWorld.IsLimbo = false;
+            var gWorld = new GuildHall(manager.Resources.Worlds[Name], client) {IsLimbo = false};
             return Manager.AddWorld(gWorld);
         }
     }

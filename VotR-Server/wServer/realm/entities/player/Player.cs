@@ -370,6 +370,7 @@ namespace wServer.realm.entities
         public Pet Pet { get; set; }
         public int? GuildInvite { get; set; }
         public bool Muted { get; set; }
+        public long LastAltAttack { get; set; }
 
         public RInventory DbLink { get; }
         public int[] SlotTypes { get; }
@@ -1193,8 +1194,7 @@ namespace wServer.realm.entities
             }
 
             if (HP <= 0)
-                Death(projectile.ProjectileOwner.Self.ObjectDesc.DisplayId ??
-                      projectile.ProjectileOwner.Self.ObjectDesc.ObjectId,
+                Death(projectile.ProjectileOwner.Self.ObjectDesc.ObjectId,
                       projectile.ProjectileOwner.Self);
 
             return base.HitByProjectile(projectile, time);
@@ -1228,9 +1228,7 @@ namespace wServer.realm.entities
             }, this, this, PacketPriority.Low);
 
             if (HP <= 0)
-                Death(src.ObjectDesc.DisplayId ??
-                      src.ObjectDesc.ObjectId,
-                      src);
+                Death(src.ObjectDesc.ObjectId, src);
         }
 
         public void Unbox(int type)
@@ -1252,12 +1250,14 @@ namespace wServer.realm.entities
             Owner.Timers.Add(new WorldTimer(15000, (world, t) =>
             {
                 foreach (var player in Owner.Players.Values)
-                    player.SendHelp(Name + " has unboxed the following from the " + LootboxType(type) + ": '" + Manager.Resources.GameData.Items[items[45]].ObjectId  + "'!");
+                    player.SendHelp("<" + Name + "> unboxed a " 
+                                    + "'" + Manager.Resources.GameData.Items[items[45]].ObjectId  + "'" 
+                                    + "from the " + LootboxType(type) + "!");
             }));
         }
 
 
-        void GenerateGravestone(bool phantomDeath = false)
+        void GenerateGravestone()
         {
             var playerDesc = Manager.Resources.GameData.Classes[ObjectType];
             var maxed = playerDesc.Stats.Where((t, i) => Stats.Base[i] >= t.MaxValue).Count();
@@ -1265,7 +1265,6 @@ namespace wServer.realm.entities
             int time;
             if (Owner.PvP)
             {
-
                 switch (maxed)
                 {
                     case 12: objType = 0x69cf; time = 600000; break;
@@ -1315,7 +1314,7 @@ namespace wServer.realm.entities
             {
                 var obj = new Container(Manager, objType, 10000, true);
                 obj.Move(X, Y);
-                obj.Name = (!phantomDeath) ? Name : $"{Name} got rekt";
+                obj.Name = Name;
 
                 for (int i = 0; i < 4; i++)
                     obj.Inventory[i] = this.Inventory[i];
@@ -1325,7 +1324,7 @@ namespace wServer.realm.entities
             {
                 var obj = new StaticObject(Manager, objType, time, true, true, false);
                 obj.Move(X, Y);
-                obj.Name = (!phantomDeath) ? Name : $"{Name} got rekt";
+                obj.Name = Name;
                 Owner.EnterWorld(obj);
             }
         }
@@ -1433,10 +1432,6 @@ namespace wServer.realm.entities
             if (!entity.Spawned && entity.Controller == null)
                 return false;
 
-            //foreach (var player in Owner.Players.Values)
-            //    player.SendInfo(Name + " was sent home crying by a phantom " + killer);
-
-            GenerateGravestone(true);
             ReconnectToNexus();
             return true;
         }
@@ -1446,7 +1441,6 @@ namespace wServer.realm.entities
             if (!rekt)
                 return false;
 
-            GenerateGravestone(true);
             ReconnectToNexus();
             return true;
         }
@@ -1585,11 +1579,9 @@ namespace wServer.realm.entities
                         => Stats.Base[i] >= t.MaxValue + 10
                            || Stats.Base[i] >= t.MaxValue + 50).Count() : 0); //ghetto code
 
-            var deathMessage = "{\"key\":\"server.death\",\"tokens\":{\"player\":\"" + Name + "'s "
-                               + maxed + (AscensionEnabled ? "/24 " : "/12 ")
-                               + playerDesc.ObjectId + "\",\"level\":\""
-                               + Level + "\",\"enemy\":\""
-                               + killer + "\"}}";
+            var deathMessage = "<" + Name + "> died to " + killer
+                               + " (" + maxed + (AscensionEnabled ? "/24 " : "/12 ") + playerDesc.ObjectId
+                               + ", " + Fame + " BF)";
 
             // notable deaths
             if ((maxed >= 12 || Fame >= 10000) && !Client.Account.Admin) {
@@ -1628,9 +1620,6 @@ namespace wServer.realm.entities
 
         public void Death(string killer, Entity entity = null, WmapTile tile = null, bool rekt = false)
         {
-            int[] x = null;
-            int[] y = null;
-
             if (_client.State == ProtocolState.Disconnected || _dead)
                 return;
 
@@ -1727,7 +1716,16 @@ namespace wServer.realm.entities
 
         public void CheckZolReborn(string entity)
         {
-            if (Owner.Name == "Aldragine's Hideout" || Owner.Name == "Ultra Aldragine's Hideout" || Owner.Name == "Sincryer's Gate" || Owner.Name == "Ultra Sincryer's Gate" || Owner.Name == "Nontridus" || Owner.Name == "NontridusUltra" || Owner.Name == "Core of the Hideout" || Owner.Name == "Ultra Core of the Hideout" || Owner.Name == "Keeping of Aldragine" || Owner.Name == "KeepingUltra")
+            if (Owner.Name == "Aldragine's Hideout" 
+                || Owner.Name == "Ultra Aldragine's Hideout" 
+                || Owner.Name == "Sincryer's Gate" 
+                || Owner.Name == "Ultra Sincryer's Gate" 
+                || Owner.Name == "Nontridus" 
+                || Owner.Name == "NontridusUltra" 
+                || Owner.Name == "Core of the Hideout"
+                || Owner.Name == "Ultra Core of the Hideout" 
+                || Owner.Name == "Keeping of Aldragine" 
+                || Owner.Name == "KeepingUltra")
             {
                 Entity en = Entity.Resolve(Owner.Manager, entity);
                 en.Move((int)X, (int)Y);
@@ -1745,20 +1743,25 @@ namespace wServer.realm.entities
             });
         }
 
-        public void Reconnect(object portal, World world)
-        {
+        public void Reconnect(object portal, World world) {
             ((Portal)portal).WorldInstanceSet -= Reconnect;
 
-            if (world == null)
-                SendError("Portal Not Implemented!");
-            else
-                Client.Reconnect(new Reconnect()
-                {
-                    Host = "",
-                    Port = 2050,
-                    GameId = world.Id,
-                    Name = world.Name
-                });
+            if (((Portal)portal).Locked) {
+                SendError("Portal is locked.");
+                return;
+            }
+
+            if (world == null) {
+                SendError("Portal is not implemented.");
+                return;
+            }
+
+            Client.Reconnect(new Reconnect() {
+                Host = "",
+                Port = 2050,
+                GameId = world.Id,
+                Name = world.Name
+            });
         }
 
         public int GetCurrency(CurrencyType currency)
@@ -1837,10 +1840,8 @@ namespace wServer.realm.entities
             {
                 return player.Admin != 0;
             }
-            else
-            {
-                return true;
-            }
+
+            return true;
         }
 
         public void SetDefaultSkin(int skin)

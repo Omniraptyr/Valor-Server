@@ -261,7 +261,6 @@ namespace wServer.logic
                 new ItemLoot("Large Midnight Dragon Scale Cloth", 0.045),
                 new ItemLoot("Small Midnight Dragon Scale Cloth", 0.045),
                 new ItemLoot("The World Tarot Card", 0.03),
-                new ItemLoot("Wine Cellar Incantation", 0.01),
                 new ItemLoot("Dragon Pearl", 0.08)
                 )
             )
@@ -288,7 +287,6 @@ namespace wServer.logic
                 new ItemLoot("Large Red Dragon Scale Cloth", 0.045),
                 new ItemLoot("Small Red Dragon Scale Cloth", 0.045),
                 new ItemLoot("The World Tarot Card", 0.03),
-                new ItemLoot("Wine Cellar Incantation", 0.01),
                 new ItemLoot("Dragon Pearl", 0.08)
                 )
             )
@@ -312,7 +310,6 @@ namespace wServer.logic
                 new ItemLoot("Large Ivory Dragon Scale Cloth", 0.045),
                 new ItemLoot("Small Ivory Dragon Scale Cloth", 0.047),
                 new ItemLoot("The World Tarot Card", 0.05),
-                new ItemLoot("Wine Cellar Incantation", 0.02),
                 new ItemLoot("Dragon Pearl", 0.1)
                 )
             )*/

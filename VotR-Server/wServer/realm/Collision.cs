@@ -110,7 +110,7 @@ namespace wServer.realm
             }
 
             if (obj.Parent != this)
-                throw new InvalidOperationException("Cannot move object accoss different map.");
+                throw new InvalidOperationException("Cannot move object across different map.");
 
             var x = (int)(newX / CHUNK_SIZE);
             var y = (int)(newY / CHUNK_SIZE);
