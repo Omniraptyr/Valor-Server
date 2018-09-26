@@ -123802,15 +123802,15 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile>
             <ObjectId>Red Arrow</ObjectId>
             <Speed>160</Speed>
-            <MinDamage>88</MinDamage>
-            <MaxDamage>105</MaxDamage>
+            <MinDamage>97</MinDamage>
+            <MaxDamage>150</MaxDamage>
             <LifetimeMS>440</LifetimeMS>
             <Amplitude>0.3</Amplitude>
             <Frequency>1.2</Frequency>
             <Size>100</Size>
             <MultiHit/>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="140">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="160">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
         <NumProjectiles>3</NumProjectiles>
         <ArcGap>20</ArcGap>
@@ -129287,4 +129287,54 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <EnemyOccupySquare/>
       <BlocksSight/>
    </Object>
+    <Object type="0x6706" id="Urumi">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x126</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <Description>Full of vitriol, the defeated struck under the cover of darkness, slaying all 9 brothers with a single slash.</Description>
+        <RateOfFire>1.3</RateOfFire>
+        <Sound>weapon/blunt_dagger</Sound>
+        <Projectile>
+            <ObjectId>Urumi Projectile</ObjectId>
+            <Speed>194</Speed>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>155</MaxDamage>
+            <LifetimeMS>237</LifetimeMS>
+            <Amplitude>0.25</Amplitude>
+            <Frequency>0.85</Frequency>
+            <Size>100</Size>
+            <ArmorPiercing/>
+        </Projectile>
+        <NumProjectiles>3</NumProjectiles>
+        <ArcGap>8</ArcGap>
+        <ActivateOnEquip stat="0" amount="110">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="-70">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="-10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>11</BagType>
+        <FameBonus>8</FameBonus>
+        <feedPower>5</feedPower>
+        <Legend id="4" stat="27">
+            <Name>Slayer Recovery Technique</Name>
+            <Description>If your surge is at least 10 when using your ability you gain health based on how much surge you have.</Description>
+            <HP>0</HP>
+            <MP>0</MP>
+            <Surge>0</Surge>
+        </Legend>
+        <Legendary/>
+        <DisplayId>Urumi</DisplayId>
+    </Object>
+	    <Object type="0x6707" id="Urumi Projectile">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x127</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
 </Objects>

@@ -6962,4 +6962,12 @@
       </Texture>
       <AngleCorrection>1</AngleCorrection>
    </Object>
+    <Object type="0x6707" id="Urumi Projectile">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x127</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
 </Objects>

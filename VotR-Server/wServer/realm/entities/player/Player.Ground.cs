@@ -30,6 +30,8 @@ namespace wServer.realm.entities
 
                 if (time.TotalElapsedMs - l <= 100 || Owner?.Name != "SummoningPoint") return;
 
+                if (time.TotalElapsedMs - l <= 100 || Owner?.Name != "UltraSummoningPoint") return;
+
                 if (this.GetNearestEntity(150, 0x63ed) == null)
                 {
                     this.GetNearestEntity(999, 0x63e7).ApplyConditionEffect(ConditionEffectIndex.Invulnerable);

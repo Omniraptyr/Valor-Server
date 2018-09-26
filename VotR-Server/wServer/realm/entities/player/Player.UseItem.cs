@@ -311,6 +311,9 @@ namespace wServer.realm.entities
                 case "Dimensional Prism" when Surge > 10:
                     MP += item.MpCost;
                     break;
+                case "Urumi" when Surge >= 10:
+                    AEHealNoRest(time, item, target, 2*Surge+20);
+                    break;
             }
 
             if (Mark == 12)

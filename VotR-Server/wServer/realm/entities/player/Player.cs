@@ -810,6 +810,8 @@ namespace wServer.realm.entities
 
             if (owner.Name.Equals("SummoningPoint"))
                 RageBar = 100;
+            if (owner.Name.Equals("UltraSummoningPoint"))
+                RageBar = 100;
             if ((owner.Name.Equals("BastilleofDrannol") 
                  || owner.Name.Equals("AldraginesHideout") 
                  || owner.Name.Equals("UltraAldraginesHideout"))
@@ -1251,7 +1253,7 @@ namespace wServer.realm.entities
             {
                 foreach (var player in Owner.Players.Values)
                     player.SendHelp("<" + Name + "> unboxed a " 
-                                    + "'" + Manager.Resources.GameData.Items[items[45]].ObjectId  + "'" 
+                                    + "'" + Manager.Resources.GameData.Items[items[45]].ObjectId  + "' " 
                                     + "from the " + LootboxType(type) + "!");
             }));
         }
