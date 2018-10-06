@@ -105,6 +105,7 @@
     <Compile Include="logic\behaviors\ConditionalBehavior.cs" />
     <Compile Include="logic\behaviors\CopyDamageOnDeath.cs" />
     <Compile Include="logic\behaviors\DropPortalOnDeath.cs" />
+    <Compile Include="logic\behaviors\FamiliarFollow.cs" />
     <Compile Include="logic\behaviors\InvisiToss.cs" />
     <Compile Include="logic\behaviors\MoveTo2.cs" />
     <Compile Include="logic\behaviors\OnDeathBehavior.cs" />
@@ -114,6 +115,7 @@
     <Compile Include="logic\behaviors\ReplaceTile.cs" />
     <Compile Include="logic\behaviors\ScaleHP.cs" />
     <Compile Include="logic\behaviors\SetNoXP.cs" />
+    <Compile Include="logic\behaviors\TalismanAttack.cs" />
     <Compile Include="logic\db\BehaviorDb.Asylum.cs" />
     <Compile Include="logic\db\BehaviorDb.Drannol.cs" />
     <Compile Include="logic\db\BehaviorDb.Encore.cs" />
@@ -241,7 +243,6 @@
     <Compile Include="networking\packets\outgoing\KeyInfoResponse.cs" />
     <Compile Include="networking\packets\outgoing\SorForge.cs" />
     <Compile Include="networking\packets\outgoing\UnboxResult.cs" />
-    <Compile Include="realm\ActivateBoost2.cs" />
     <Compile Include="realm\ChunkManager.cs" />
     <Compile Include="realm\entities\player\Player.Gambling.cs" />
     <Compile Include="realm\entities\player\Player.Marks.cs" />

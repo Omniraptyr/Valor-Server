@@ -5733,6 +5733,7 @@
         <Description>Fame, fortune, Death... Know what you're getting into before unlocking that door.</Description>
         <Sound>use_key</Sound>
         <Consumable />
+        <Soulbound/>
         <BagType>6</BagType>
         <Activate dungeonName="DeathArena" lockedName="Locked Oryx's Arena Portal">UnlockPortal</Activate>
         <feedPower>500</feedPower>

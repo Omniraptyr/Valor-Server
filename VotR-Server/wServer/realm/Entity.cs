@@ -28,6 +28,7 @@ namespace wServer.realm
         public CollisionNode<Entity> CollisionNode { get; set; }
         public CollisionMap<Entity> Parent { get; set; }
         public event EventHandler<StatChangedEventArgs> StatChanged;
+        private Player playerOwner;
 
         private readonly Position[] _posHistory;
         private byte _posIdx;
@@ -212,6 +213,18 @@ namespace wServer.realm
             };
         }
 
+        public Player GetPlayerOwner()
+        {
+            return playerOwner;
+        }
+
+        public void SetPlayerOwner(Player target)
+        {
+            playerOwner = target;
+
+            //Owner.Timers.Add(new WorldTimer(30 * 1000, (w, t) => w.LeaveWorld(this)));
+        }
+
         public virtual void Init(World owner)
         {
             Owner = owner;
@@ -220,6 +233,11 @@ namespace wServer.realm
         public virtual void Tick(RealmTime time)
         {
             if (this is Projectile || Owner == null) return;
+            if (playerOwner != null)
+            {
+                if (this.Dist(playerOwner) > 20)
+                    Move(playerOwner.X, playerOwner.Y);
+            }
             if (CurrentState != null && Owner != null)
             {
                 if (!HasConditionEffect(ConditionEffects.Stasis) &&

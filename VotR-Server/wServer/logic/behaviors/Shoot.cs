@@ -5,6 +5,7 @@ using Mono.Game;
 using wServer.networking.packets.outgoing;
 using wServer.realm;
 using wServer.realm.entities;
+using Player = wServer.realm.entities.Player;
 
 namespace wServer.logic.behaviors
 {

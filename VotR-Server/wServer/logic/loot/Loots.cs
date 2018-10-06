@@ -31,7 +31,6 @@ namespace wServer.logic.loot
 
         private static readonly string[] ValuableItems = {
             "Master Eon",
-            "10000 Gold",
             "Three Tiny Sor Fragments",
             "Sor Fragment Cache",
             "Small Sor Fragment",
@@ -58,7 +57,12 @@ namespace wServer.logic.loot
             "Evisceration Claws",
             "Titanic Bracelet",
             "Drannol's Judgement",
-            "Toxin of the Vicious"
+            "Toxin of the Vicious",
+			"Ring of Undeadly Conjury",
+			"Staff of the Withering",
+			"Told Before Time",
+			"The Zol Awakening (Token)",
+			"Calling of the Titan (Token)"
         };
 
         public IEnumerable<Item> GetLoots(RealmManager manager, int min, int max) {  //For independent loots(e.g. chests)

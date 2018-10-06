@@ -14678,9 +14678,8 @@
         <ActivateOnEquip stat="21" amount="23">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="26" amount="12">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="27" amount="12">IncrementStat</ActivateOnEquip>
-        <BagType>6</BagType>
-        <feedPower>800</feedPower>
         <Steal type="mana" amount="1"/>
+		<BagType>6</BagType>
         <FameBonus>6</FameBonus>
     </Object>
     <Object type="0x1389" id="Blade of the Great Tsunami">
@@ -17318,13 +17317,11 @@
         </Projectile>
         <ActivateOnEquip stat="3" amount="140">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
+        <Steal type="mana" amount="1"/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
-        <Steal type="mana" amount="1"/>
         <OldSound>bladeSwing</OldSound>
-        <feedPower>800</feedPower>
         <NumProjectiles>3</NumProjectiles>
-        <DisplayId>Nether Blade</DisplayId>
     </Object>
     <Object type="0x5075" id="Ring of the Wildfire">
         <Class>Equipment</Class>
@@ -18756,14 +18753,11 @@
         </Texture>
         <SlotType>9</SlotType>
         <Description>A ring that will give you the strength of the undead on your side.</Description>
-        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="3" amount="80">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
+		<ActivateOnEquip stat="0" amount="90">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
-        <feedPower>1000</feedPower>
-        <DisplayId>Ring of Undeadly Conjury</DisplayId>
     </Object>
     <Object type="0x519b" id="Olden Necromancy Cloth">
         <Class>Equipment</Class>
@@ -19878,22 +19872,20 @@
         </Texture>
         <SlotType>2</SlotType>
         <Description>A darkened dagger with an emerald jewel in the middle of the blade. It's a popular dagger but hard to retrieve since few merchants sell them because of material of the blade.</Description>
-        <RateOfFire>0.85</RateOfFire>
+        <RateOfFire>0.95</RateOfFire>
         <Sound>weapon/fire_dagger</Sound>
         <Projectile>
             <ObjectId>Notorious Slash</ObjectId>
             <Speed>140</Speed>
             <MinDamage>183</MinDamage>
             <MaxDamage>250</MaxDamage>
-            <LifetimeMS>418</LifetimeMS>
+            <LifetimeMS>521</LifetimeMS>
         </Projectile>
-        <ActivateOnEquip stat="21" amount="14">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="21">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <OldSound>daggerSwing</OldSound>
-        <feedPower>1550</feedPower>
         <Legendary/>
-        <DisplayId>Dirk of Notorious Agents</DisplayId>
     </Object>
     <Object type="0x42c5" id="The 2-K">
         <Class>Equipment</Class>
@@ -21726,8 +21718,7 @@
         <feedPower>1850</feedPower>
         <DisplayId>The Atium</DisplayId>
     </Object>
-    <Object type="0x47cb" id="Amulet of Resurrection (Charged)">
-        <DisplayId>Amulet of Resurrection (C)</DisplayId>
+    <Object type="0x47cb" id="Amulet of Resurrection">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -21738,8 +21729,7 @@
         <Description>An amulet that will resurrect you upon your death.</Description>
         <Resurrects/>
         <BagType>6</BagType>
-        <QuestItem/>
-        <feedPower>2200</feedPower>
+        <Legendary/>
     </Object>
     <Object type="0x47cc" id="Mind over Matter">
         <Class>Equipment</Class>
@@ -29000,16 +28990,15 @@
             <Index>0x0f</Index>
         </Texture>
         <SlotType>9</SlotType>
-        <Description>Boundless energies fill this gemstone..</Description>
+        <Description>Boundless energies fill this gemstone...</Description>
         <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="15">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
-        <feedPower>2000</feedPower>
         <Legendary/>
-        <EffectEquip effect="Surged" delay="120"/>
+        <EffectEquip effect="Surged" delay="60"/>
         <Legend id="3" stat="27">
             <Name>Insurgency</Name>
             <Description>The surge you gain is doubled while this item is equipped.</Description>
@@ -29017,7 +29006,6 @@
             <MP>0</MP>
             <Surge>0</Surge>
         </Legend>
-        <DisplayId>Insurgency Amulet</DisplayId>
     </Object>
     <Object type="0x69d1" id="The Mocking Raven">
         <Class>Equipment</Class>
@@ -29693,7 +29681,7 @@
         </Texture>
         <SlotType>9</SlotType>
         <Description>Utter destruction will follow your path. Unstoppable.</Description>
-        <ActivateOnEquip stat="20" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="15">IncrementStat</ActivateOnEquip>
 	    <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -29705,7 +29693,6 @@
             <MP>0</MP>
             <Surge>0</Surge>
         </Legend>
-        <DisplayId>Bracelet of the Demolished</DisplayId>
     </Object>
     <Object type="0x42f2" id="Poseidon's Will">
         <Class>Equipment</Class>
@@ -30211,7 +30198,7 @@
             <EffectInfo name="Sprited by" description="BubbaBlu"/>
         </ExtraTooltipData>
         <SlotType>11</SlotType>
-        <Description>The remains of the Gargoyle, ennchanted with its residual energy.</Description>
+        <Description>The remains of the Gargoyle, enchanted with its residual energy.</Description>
         <Sound>spell/magic_nova</Sound>
         <Projectile>
             <ObjectId>Marble Tablet Proj</ObjectId>
@@ -33707,7 +33694,7 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x126</Index>
+            <Index>0x136</Index>
         </Texture>
         <SlotType>34</SlotType>
         <Description>Full of vitriol, the defeated struck under the cover of darkness, slaying all 9 brothers with a single slash.</Description>
@@ -33716,8 +33703,8 @@
         <Projectile>
             <ObjectId>Urumi Projectile</ObjectId>
             <Speed>194</Speed>
-            <MinDamage>140</MinDamage>
-            <MaxDamage>155</MaxDamage>
+            <MinDamage>127</MinDamage>
+            <MaxDamage>135</MaxDamage>
             <LifetimeMS>237</LifetimeMS>
             <Amplitude>0.25</Amplitude>
             <Frequency>0.85</Frequency>
@@ -33733,7 +33720,6 @@
         <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>11</BagType>
         <FameBonus>8</FameBonus>
-        <feedPower>5</feedPower>
         <Legend id="4" stat="27">
             <Name>Slayer Recovery Technique</Name>
             <Description>If your surge is at least 10 when using your ability you gain health based on how much surge you have.</Description>
@@ -33743,5 +33729,237 @@
         </Legend>
         <Legendary/>
         <DisplayId>Urumi</DisplayId>
+    </Object>
+    <Object type="0x6707" id="Urumi Projectile">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x127</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6708" id="Basic Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x140</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Tier>0</Tier>
+        <Description>A basic talisman used to summon ghost.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="140"/>
+            <EffectInfo name="Lifetime" description="4"/>
+            <EffectInfo name="Effect" description="Bleeding for 2 secs"/>
+        </ExtraTooltipData>
+        <Activate duration="4" objType="0x670f">TalismanAbility</Activate>
+        <BagType>1</BagType>
+        <MpCost>70</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x6709" id="Wooden Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x141</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Tier>1</Tier>
+        <Description>A talisman carved from ancient oak.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="160"/>
+            <EffectInfo name="Lifetime" description="4"/>
+            <EffectInfo name="Effect" description="Bleeding for 2 secs"/>
+        </ExtraTooltipData>
+        <Activate duration="4" objType="0x670a">TalismanAbility</Activate>
+        <BagType>1</BagType>
+        <MpCost>70</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x670a" id="Soul Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x142</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Tier>2</Tier>
+        <Description>A talisman that seems to glow a strange color when used.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="200"/>
+            <EffectInfo name="Lifetime" description="4"/>
+            <EffectInfo name="Effect" description="Bleeding for 2 secs"/>
+        </ExtraTooltipData>
+        <Activate duration="4" objType="0x671b">TalismanAbility</Activate>
+        <BagType>1</BagType>
+        <MpCost>75</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x670b" id="Jungle Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x143</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Tier>3</Tier>
+        <Description>A specialized talisman commonly used to distract Mixcoatl.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="260"/>
+            <EffectInfo name="Lifetime" description="4"/>
+            <EffectInfo name="Effect" description="Bleeding for 3 secs"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="2">IncrementStat</ActivateOnEquip>
+        <Activate duration="4" objType="0x671c">TalismanAbility</Activate>
+        <BagType>2</BagType>
+        <MpCost>75</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x670c" id="Cronus Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x144</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Tier>4</Tier>
+        <Description>A talisman that is bound to anger the gods.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="300"/>
+            <EffectInfo name="Lifetime" description="5"/>
+            <EffectInfo name="Effect" description="Bleeding for 4 secs"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="122" amount="15">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <Activate duration="5" objType="0x671d">TalismanAbility</Activate>
+        <BagType>2</BagType>
+        <MpCost>80</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x670d" id="Sentinel Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x145</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Tier>5</Tier>
+        <Description>A talisman used to distract the Bridge Sentinel of the Shatters.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="320"/>
+            <EffectInfo name="Lifetime" description="5"/>
+            <EffectInfo name="Effect" description="Bleeding for 5 secs"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="122" amount="15">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+        <Activate duration="5" objType="0x671e">TalismanAbility</Activate>
+        <BagType>4</BagType>
+        <MpCost>85</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x670e" id="Oryx Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x146</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Tier>6</Tier>
+        <Description>A talisman that calls upon the power of Oryx to conjure some of the deadliest souls.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="340"/>
+            <EffectInfo name="Lifetime" description="6"/>
+            <EffectInfo name="Effect" description="Bleeding for 6 secs"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+        <Activate duration="6" objType="0x671f">TalismanAbility</Activate>
+        <BagType>4</BagType>
+        <MpCost>90</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x672b" id="Phantom Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x147</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Description>A talisman that calls the lost spirits that haunt the undead lair.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="340"/>
+            <EffectInfo name="Lifetime" description="6"/>
+            <EffectInfo name="Effect" description="Cursed for 4 secs"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+        <Activate duration="6" objType="0x672a">TalismanAbility</Activate>
+        <BagType>6</BagType>
+        <MpCost>100</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x672c" id="Demon's Stone">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x148</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Description>A talisman that summons a special type of phantom to our realm with demonic powers that will enrages the user.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="400"/>
+            <EffectInfo name="Lifetime" description="6"/>
+            <EffectInfo name="Effect" description="Bleeding for 6 secs"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
+        <Activate duration="6" objType="0x672d">TalismanAbility</Activate>
+        <Activate effect="Berserk" duration="6">ConditionEffectSelf</Activate>
+        <Activate effect="Paralyzed" duration="4" range="5" color="0xffff00" target="enemy" center="player" useWisMod="false">GenericActivate
+        </Activate>
+        <Legendary/>
+        <BagType>6</BagType>
+        <MpCost>100</MpCost>
+        <Cooldown>3</Cooldown>
     </Object>
 </Objects>

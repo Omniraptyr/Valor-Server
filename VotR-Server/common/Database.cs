@@ -106,18 +106,9 @@ namespace common
                 PassResetToken = ""
             };
 
-            if (acnt.Elite == 1)
-            {
-                acnt.VaultCount = 52;
-            }
-            if (acnt.Elite == 1 && acnt.MaxCharSlot == 2)
-            {
-                acnt.MaxCharSlot = 20;
-            }
-
             // make sure guest have all classes if they are supposed to
             var stats = new DbClassStats(acnt);
-            if (_resources.Settings.Accounts.ClassesUnlocked || acnt.Elite == 1)
+            if (_resources.Settings.Accounts.ClassesUnlocked)
             {
                 foreach (var @class in _resources.GameData.Classes.Keys)
                     stats.Unlock(@class);
@@ -130,7 +121,6 @@ namespace common
             if (acnt.Rank >= 10)
             {
                 acnt.Skins = (from skin in _resources.GameData.Skins.Values
-                    where !skin.NoSkinSelect
                     select skin.Type).ToArray();
             }
 
@@ -154,23 +144,17 @@ namespace common
 
             // make sure account has all classes if they are supposed to
             var stats = new DbClassStats(acc);
-            if (_resources.Settings.Accounts.ClassesUnlocked)
+            if (_resources.Settings.Accounts.ClassesUnlocked || acc.Elite == 1)
                 foreach (var @class in _resources.GameData.Classes.Keys)
                     stats.Unlock(@class);
             stats.FlushAsync();
 
-            if (acc.Elite == 1)
-            {
-                foreach (var @class in _resources.GameData.Classes.Keys)
-                    stats.Unlock(@class);
-                stats.FlushAsync();
-            }
-
-            if (acc.Elite == 1)
+            if (acc.Elite == 1 && acc.VaultCount < 52)
             {
                 acc.VaultCount = 52;
             }
-            if (acc.Elite == 1 && acc.MaxCharSlot == 2)
+
+            if (acc.Elite == 1 && acc.MaxCharSlot < 20)
             {
                 acc.MaxCharSlot = 20;
             }

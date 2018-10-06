@@ -505,7 +505,8 @@ namespace server
             var cs = db.ReadClassStats(acc);
             foreach (string c in cs.AllKeys
                 .Select(key => _classes[(ushort)key]))
-                classes[c] = "unrestricted";
+               if (classes.ContainsKey(c))
+                   classes[c] = "unrestricted";
 
             return new ClassAvailability()
             {

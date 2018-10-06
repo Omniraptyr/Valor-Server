@@ -31,6 +31,7 @@ namespace wServer.networking.handlers
             Entity a, Entity b,
             int slotA, int slotB)
         {
+
             if (player?.Owner == null)
                 return;
 

@@ -38,9 +38,7 @@ public class ItemConstants {
     public static const DICE_TYPE:int = 33;
     public static const DUALBLADES_TYPE:int = 34;
     public static const JACKET_TYPE:int = 35;
-    public static const CHALLENGER_WEAPON:int = 36;
-    public static const CHALLENGER_ABILITY:int = 37;
-    public static const CHALLENGER_ARMOR:int = 38;
+    public static const TALISMAN_TYPE:int = 36;
 
 
     public static function itemTypeToName(_arg_1:int):String {
@@ -117,12 +115,8 @@ public class ItemConstants {
                 return ("Dual Blades");
             case JACKET_TYPE:
                 return ("Jacket");
-            case CHALLENGER_WEAPON:
-                return ("Challenger Weapon");
-            case CHALLENGER_ABILITY:
-                return ("Challenger Ability");
-            case CHALLENGER_ARMOR:
-                return ("Challenger Armor");
+            case TALISMAN_TYPE:
+                return ("Talisman");
         }
         return ("EquipmentType.InvalidType");
     }

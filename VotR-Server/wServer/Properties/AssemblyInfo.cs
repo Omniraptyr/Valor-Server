@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("wServer")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Game Server")]
+[assembly: AssemblyDescription("Handles logic crucial to the game loop.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("K")]
-[assembly: AssemblyProduct("wServer")]
-[assembly: AssemblyCopyright("Copyright © K 2012")]
+[assembly: AssemblyCompany("Valor")]
+[assembly: AssemblyProduct("Game Server")]
+[assembly: AssemblyCopyright("Copyright © Valor 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

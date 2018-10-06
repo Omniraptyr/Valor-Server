@@ -57,9 +57,7 @@ namespace wServer.networking.handlers
                     client.SendFailure("Bad Login", Failure.MessageWithDisconnect);
                     return null;
                 }
-            }
-            else if (s1 == LoginStatus.InvalidCredentials)
-            {
+            } else if (s1 == LoginStatus.InvalidCredentials) {
                 client.SendFailure("Bad Login", Failure.MessageWithDisconnect);
                 return null;
             }
@@ -88,7 +86,6 @@ namespace wServer.networking.handlers
                 return null;
             }
             
-
             var minRank = client.Manager.Config.serverInfo.minRank;
             if (acc.Rank < minRank)
             {

@@ -2,6 +2,7 @@
 using wServer.realm.entities;
 using wServer.networking.packets;
 using wServer.networking.packets.incoming;
+using Player = wServer.realm.entities.Player;
 
 namespace wServer.networking.handlers
 {

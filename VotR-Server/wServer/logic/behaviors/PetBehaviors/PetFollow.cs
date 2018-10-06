@@ -3,6 +3,7 @@ using wServer.realm;
 using wServer.realm.entities;
 using wServer.realm.terrain;
 using wServer.realm.worlds.logic;
+using Player = wServer.realm.entities.Player;
 
 namespace wServer.logic.behaviors.PetBehaviors
 {

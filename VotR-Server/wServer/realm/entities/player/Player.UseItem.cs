@@ -515,12 +515,6 @@ namespace wServer.realm.entities
                     case ActivateEffects.BulletNova2:
                         AEBulletNova2(time, item, target, eff);
                         break;
-                    case ActivateEffects.CSmokeGrenade:
-                        AECSmokeGrenade(time, item, target, eff);
-                        break;
-                    case ActivateEffects.CFlashGrenade:
-                        AECFlashGrenade(time, item, target, eff);
-                        break;
                     case ActivateEffects.AstonAbility:
                         AEAstonAbility(time, item, target, eff);
                         break;
@@ -647,6 +641,9 @@ namespace wServer.realm.entities
                     case ActivateEffects.FUnlockPortal:
                         break;
                     case ActivateEffects.CreateGauntlet:
+                        break;
+                    case ActivateEffects.TalismanAbility:
+                        AETalismanAbility(time, item, target, eff);
                         break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
@@ -1170,7 +1167,8 @@ namespace wServer.realm.entities
                 }
             };
 
-            Owner.AOE(target, eff.Range, false, enemy => {
+            Owner.AOE(target, eff.Range, false, enemy =>
+            {
 
                 ((Enemy)enemy).Damage(this, time, MP * 2 * (drained / 2) / 4 + eff.Amount, false);
             });
@@ -1181,6 +1179,18 @@ namespace wServer.realm.entities
 
             ApplyConditionEffect(ConditionEffectIndex.DrakzixCharging, 0);
             ApplyConditionEffect(ConditionEffectIndex.Empowered, eff.DurationMS);
+        }
+
+        private void AETalismanAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            Entity en = Entity.Resolve(Owner.Manager, eff.ObjType);
+            en.Move(X, Y);
+            Owner.EnterWorld(en);
+            en.SetPlayerOwner(this);
+            Owner.Timers.Add(new WorldTimer(eff.DurationMS, (w, t) =>
+            {
+                w.LeaveWorld(en);
+            }));
         }
 
         private void AEDye(RealmTime time, Item item, Position target, ActivateEffect eff)
@@ -1547,78 +1557,6 @@ namespace wServer.realm.entities
                 world.AOE(target, eff.Radius, false, entity => {
                     PoisonEnemy(world, (Enemy)entity, eff);
                     ((Enemy)entity).Damage(this, time, impDamage, false);
-                });
-            }));
-        }
-
-        private void AECSmokeGrenade(RealmTime time, Item item, Position target, ActivateEffect eff)
-        {
-            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
-            BroadcastSync(new ShowEffect
-            {
-                EffectType = EffectType.Throw,
-                Color = new ARGB(0x000000),
-                TargetObjectId = Id,
-                Pos1 = target,
-                Duration = 2
-            }, p => this.DistSqr(p) < RadiusSqr);
-
-            var x = new Placeholder(Manager, 2000);
-            x.Move(target.X, target.Y);
-            Owner.EnterWorld(x);
-            Owner.Timers.Add(new WorldTimer(2000, (world, t) => {
-                world.BroadcastPacketNearby(new ShowEffect
-                {
-                    EffectType = EffectType.AreaBlast,
-                    Color = new ARGB(0x000000),
-                    TargetObjectId = x.Id,
-                    Pos1 = new Position { X = 6 }
-                }, x, null, PacketPriority.High);
-
-                world.AOE(target, 6, true, player => {
-                    player.ApplyConditionEffect(new ConditionEffect
-                    {
-                        Effect = ConditionEffectIndex.Darkness,
-                        DurationMS = 3000
-                    });
-
-
-                });
-            }));
-        }
-
-        private void AECFlashGrenade(RealmTime time, Item item, Position target, ActivateEffect eff)
-        {
-            if (MathsUtils.DistSqr(target.X, target.Y, X, Y) > MaxAbilityDist * MaxAbilityDist) return;
-            BroadcastSync(new ShowEffect
-            {
-                EffectType = EffectType.Throw,
-                Color = new ARGB(0xFFFF00),
-                TargetObjectId = Id,
-                Pos1 = target,
-                Duration = 2
-            }, p => this.DistSqr(p) < RadiusSqr);
-
-            var x = new Placeholder(Manager, 2000);
-            x.Move(target.X, target.Y);
-            Owner.EnterWorld(x);
-            Owner.Timers.Add(new WorldTimer(2000, (world, t) => {
-                world.BroadcastPacketNearby(new ShowEffect
-                {
-                    EffectType = EffectType.AreaBlast,
-                    Color = new ARGB(0xFFFF00),
-                    TargetObjectId = x.Id,
-                    Pos1 = new Position { X = 4 }
-                }, x, null, PacketPriority.High);
-
-                world.AOE(target, 5, true, player => {
-                    player.ApplyConditionEffect(new ConditionEffect
-                    {
-                        Effect = ConditionEffectIndex.Confused,
-                        DurationMS = 3000
-                    });
-
-
                 });
             }));
         }
@@ -2790,7 +2728,6 @@ namespace wServer.realm.entities
 
         private float UseWisMod(float value, int offset = 1)
         {
-            return value;
             double totalWisdom = Stats.Base[7] + Stats.Boost[7];
 
             if (totalWisdom < 30)

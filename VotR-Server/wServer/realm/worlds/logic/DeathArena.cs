@@ -189,7 +189,7 @@ namespace wServer.realm.worlds.logic
             var enemies = new List<string>();
             var r = new Random();
 
-            for (var i = 0; i < Math.Ceiling((_wave + _difficulty) * 1.5f); i++)
+            for (var i = 0; i < Math.Ceiling((_wave + _difficulty) * 1.1f); i++)
                 enemies.Add(_randomEnemies[r.Next(0, _randomEnemies.Length)]);
 
             foreach (var i in enemies) {
@@ -300,7 +300,7 @@ namespace wServer.realm.worlds.logic
                 _countDown = CountDownState.Done;
                 CurrentState = ArenaState.Start;
                 _time = 0;
-                _difficulty = Players.Count(p => p.Value.Level >= 15);
+                _difficulty = Math.Min(Players.Count(p => p.Value.Level == 20), 15);
 
                 Manager.Monitor.ClosePortal(DeathArena);
 

@@ -1507,7 +1507,7 @@ namespace wServer.logic
                         new EntityExistsTransition("BD Logic 1", 999, "vuln")
                         ),
                     new State("vuln",
-                        new HealSelf(coolDown: 5600)
+                        new HealSelf(coolDown: 5000)
                         )
                     )
                 )
@@ -3765,7 +3765,7 @@ namespace wServer.logic
                         )
                      ),
                     new State(
-                        new HpLessTransition(0.035, "Bshadows"),
+                        new DamageTakenTransition(400000, "Bshadows"),
                     new State("fight1",
                         new RemoveEntity(60, "BD Logic 2"),
                         new Flash(0x00FFFF, 1, 1),
@@ -3842,8 +3842,6 @@ namespace wServer.logic
                         new Swirl(0.5, 2),
                         new Shoot(10, count: 7, shootAngle: 6, projectileIndex: 0, coolDown: 1000),
                         new Shoot(10, count: 14, projectileIndex: 2, predictive: 0.5, coolDown: 1000),
-                        new Shoot(10, count: 4, projectileIndex: 4, predictive: 0.5, coolDown: 2000),
-                        new Shoot(10, count: 4, shootAngle: 30, projectileIndex: 4, predictive: 0.5, coolDown: 2000, coolDownOffset: 800),
                         new TimedTransition(5000, "fight2a")
                         ),
                     new State("fight2a",
@@ -3924,7 +3922,6 @@ namespace wServer.logic
                             new StayCloseToSpawn(0.8, 3),
                             new Wander(0.5)
                         ),
-                        new Shoot(10, count: 7, shootAngle: 10, projectileIndex: 4, predictive: 1, coolDown: 2000),
                         new Shoot(10, count: 4, projectileIndex: 0, predictive: 1, coolDown: 2000),
                         new Shoot(10, projectileIndex: 2, coolDownOffset: 800, coolDown: 2000),
                         new TimedTransition(4000, "shadows")
@@ -3979,7 +3976,7 @@ namespace wServer.logic
                             )
                         ),
                     new State(
-                        new HpLessTransition(0.035, "Cshadows"),
+                        new DamageTakenTransition(750000, "Cshadows"),
                     new State("Bfight1",
                         new RemoveEntity(60, "BD Logic 2"),
                         new Flash(0x00FFFF, 1, 1),
@@ -4056,8 +4053,6 @@ namespace wServer.logic
                         new Swirl(0.5, 2),
                         new Shoot(10, count: 7, shootAngle: 6, projectileIndex: 0, coolDown: 1000),
                         new Shoot(10, count: 14, projectileIndex: 2, predictive: 0.5, coolDown: 1000),
-                        new Shoot(10, count: 4, projectileIndex: 4, predictive: 0.5, coolDown: 2000),
-                        new Shoot(10, count: 4, shootAngle: 30, projectileIndex: 4, predictive: 0.5, coolDown: 2000, coolDownOffset: 800),
                         new TimedTransition(5000, "Bfight2a")
                         ),
                     new State("Bfight2a",
@@ -4138,7 +4133,6 @@ namespace wServer.logic
                             new StayCloseToSpawn(0.8, 3),
                             new Wander(0.5)
                         ),
-                        new Shoot(10, count: 7, shootAngle: 10, projectileIndex: 4, predictive: 1, coolDown: 2000),
                         new Shoot(10, count: 4, projectileIndex: 0, predictive: 1, coolDown: 2000),
                         new Shoot(10, projectileIndex: 2, coolDownOffset: 800, coolDown: 2000),
                         new TimedTransition(4000, "Bshadows")
@@ -4244,8 +4238,6 @@ namespace wServer.logic
                         new Swirl(0.5, 2),
                         new Shoot(10, count: 7, shootAngle: 6, projectileIndex: 0, coolDown: 1000),
                         new Shoot(10, count: 14, projectileIndex: 2, predictive: 0.5, coolDown: 1000),
-                        new Shoot(10, count: 4, projectileIndex: 4, predictive: 0.5, coolDown: 2000),
-                        new Shoot(10, count: 4, shootAngle: 30, projectileIndex: 4, predictive: 0.5, coolDown: 2000, coolDownOffset: 800),
                         new TimedTransition(5000, "Cfight2a")
                         ),
                     new State("Cfight2a",
@@ -4326,7 +4318,6 @@ namespace wServer.logic
                             new StayCloseToSpawn(0.8, 3),
                             new Wander(0.5)
                         ),
-                        new Shoot(10, count: 7, shootAngle: 10, projectileIndex: 4, predictive: 1, coolDown: 2000),
                         new Shoot(10, count: 4, projectileIndex: 0, predictive: 1, coolDown: 2000),
                         new Shoot(10, projectileIndex: 2, coolDownOffset: 800, coolDown: 2000),
                         new TimedTransition(4000, "Cshadows")
@@ -4382,7 +4373,7 @@ namespace wServer.logic
                         )
                      ),
                     new State(
-                        new HpLessTransition(0.035, "Bshadows"),
+                        new DamageTakenTransition(400000, "Bshadows"),
                     new State("fight1",
                         new ReplaceTile("Black Lava", "BD Hunter Den Floor", 11),
                         new Order(100, "BerikaoPath", "idle"),
@@ -4462,8 +4453,6 @@ namespace wServer.logic
                         new Swirl(0.5, 2),
                         new Shoot(10, count: 7, shootAngle: 6, projectileIndex: 0, coolDown: 1000),
                         new Shoot(10, count: 14, projectileIndex: 2, predictive: 0.5, coolDown: 1000),
-                        new Shoot(10, count: 4, projectileIndex: 4, predictive: 0.5, coolDown: 2000),
-                        new Shoot(10, count: 4, shootAngle: 30, projectileIndex: 4, predictive: 0.5, coolDown: 2000, coolDownOffset: 800),
                         new TimedTransition(5000, "fight2a")
                         ),
                     new State("fight2a",
@@ -4544,7 +4533,6 @@ namespace wServer.logic
                             new StayCloseToSpawn(0.8, 3),
                             new Wander(0.5)
                         ),
-                        new Shoot(10, count: 7, shootAngle: 10, projectileIndex: 4, predictive: 1, coolDown: 2000),
                         new Shoot(10, count: 4, projectileIndex: 0, predictive: 1, coolDown: 2000),
                         new Shoot(10, projectileIndex: 2, coolDownOffset: 800, coolDown: 2000),
                         new TimedTransition(4000, "shadows")
@@ -4634,7 +4622,7 @@ namespace wServer.logic
                             )
                         ),
                     new State(
-                        new HpLessTransition(0.035, "Cshadows"),
+                        new DamageTakenTransition(750000, "Cshadows"),
                     new State("Bfight1",
                         new ReplaceTile("Black Lava", "BD Hunter Den Floor", 11),
                         new Order(100, "BerikaoPath", "spawn"),
@@ -4714,8 +4702,6 @@ namespace wServer.logic
                         new Swirl(0.5, 2),
                         new Shoot(10, count: 7, shootAngle: 6, projectileIndex: 0, coolDown: 1000),
                         new Shoot(10, count: 14, projectileIndex: 2, predictive: 0.5, coolDown: 1000),
-                        new Shoot(10, count: 4, projectileIndex: 4, predictive: 0.5, coolDown: 2000),
-                        new Shoot(10, count: 4, shootAngle: 30, projectileIndex: 4, predictive: 0.5, coolDown: 2000, coolDownOffset: 800),
                         new TimedTransition(5000, "Bfight2a")
                         ),
                     new State("Bfight2a",
@@ -4796,7 +4782,6 @@ namespace wServer.logic
                             new StayCloseToSpawn(0.8, 3),
                             new Wander(0.5)
                         ),
-                        new Shoot(10, count: 7, shootAngle: 10, projectileIndex: 4, predictive: 1, coolDown: 2000),
                         new Shoot(10, count: 4, projectileIndex: 0, predictive: 1, coolDown: 2000),
                         new Shoot(10, projectileIndex: 2, coolDownOffset: 800, coolDown: 2000),
                         new TimedTransition(4000, "Bshadows")
@@ -4923,8 +4908,6 @@ namespace wServer.logic
                         new Swirl(0.5, 2),
                         new Shoot(10, count: 7, shootAngle: 6, projectileIndex: 0, coolDown: 1000),
                         new Shoot(10, count: 14, projectileIndex: 2, predictive: 0.5, coolDown: 1000),
-                        new Shoot(10, count: 4, projectileIndex: 4, predictive: 0.5, coolDown: 2000),
-                        new Shoot(10, count: 4, shootAngle: 30, projectileIndex: 4, predictive: 0.5, coolDown: 2000, coolDownOffset: 800),
                         new TimedTransition(5000, "Cfight2a")
                         ),
                     new State("Cfight2a",
@@ -5005,7 +4988,6 @@ namespace wServer.logic
                             new StayCloseToSpawn(0.8, 3),
                             new Wander(0.5)
                         ),
-                        new Shoot(10, count: 7, shootAngle: 10, projectileIndex: 4, predictive: 1, coolDown: 2000),
                         new Shoot(10, count: 4, projectileIndex: 0, predictive: 1, coolDown: 2000),
                         new Shoot(10, projectileIndex: 2, coolDownOffset: 800, coolDown: 2000),
                         new TimedTransition(4000, "Cshadows")

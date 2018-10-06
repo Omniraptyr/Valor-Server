@@ -86,7 +86,7 @@ namespace wServer.logic.loot
     public class TierLoot : ILootDef
     {
         public static readonly int[] WeaponT = { 1, 2, 3, 8, 17, 24, 29, 34 };
-        public static readonly int[] AbilityT = { 4, 5, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 27, 28, 30, 32, 33, 35 };
+        public static readonly int[] AbilityT = { 4, 5, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 27, 28, 30, 32, 33, 35, 36 };
         public static readonly int[] ArmorT = { 6, 7, 14 };
         public static readonly int[] RingT = { 9 };
         public static readonly int[] PotionT = { 10 };
@@ -618,9 +618,6 @@ namespace wServer.logic.loot
                     new ItemLoot("Tiny Sor Fragment", 0.01)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Wine Cellar Incantation", 0.005)
-                ),
-                new OnlyOne(
                     new ItemLoot("Shine", 0.005)
                 )
             };
@@ -633,9 +630,6 @@ namespace wServer.logic.loot
                     new ItemLoot("Two Tiny Sor Fragments", 0.02),
                     new ItemLoot("Three Tiny Sor Fragments", 0.02),
                     new ItemLoot("Tiny Sor Fragment", 0.02)
-                ),
-                new OnlyOne(
-                    new ItemLoot("Wine Cellar Incantation", 0.005)
                 ),
                 new OnlyOne(
                     new ItemLoot("Shine", 0.005)
@@ -652,9 +646,6 @@ namespace wServer.logic.loot
                     new ItemLoot("Tiny Sor Fragment", 0.03)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Wine Cellar Incantation", 0.005)
-                ),
-                new OnlyOne(
                     new ItemLoot("Shine", 0.005)
                 )
             };
@@ -669,9 +660,6 @@ namespace wServer.logic.loot
                     new ItemLoot("Tiny Sor Fragment", 0.04)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Wine Cellar Incantation", 0.005)
-                ),
-                new OnlyOne(
                     new ItemLoot("Shine", 0.005)
                 )
             };
@@ -684,9 +672,6 @@ namespace wServer.logic.loot
                     new ItemLoot("Two Tiny Sor Fragments", 0.05),
                     new ItemLoot("Three Tiny Sor Fragments", 0.05),
                     new ItemLoot("Tiny Sor Fragment", 0.05)
-                ),
-                new OnlyOne(
-                    new ItemLoot("Wine Cellar Incantation", 0.005)
                 ),
                 new OnlyOne(
                     new ItemLoot("Shine", 0.005)

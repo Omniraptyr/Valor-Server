@@ -16,7 +16,7 @@ namespace wServer.networking.handlers
 
         void Handle(Player player, RealmTime time, UseItem packet)
         {
-            if (player?.Owner == null)
+            if (player.Owner == null)
                 return;
 
             player.UseItem(time, packet.SlotObject.ObjectId, packet.SlotObject.SlotId, packet.ItemUsePos);

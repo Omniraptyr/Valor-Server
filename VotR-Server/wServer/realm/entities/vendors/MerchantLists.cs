@@ -78,7 +78,7 @@ namespace wServer.realm.entities.vendors
             new ShopItem("Acropolis Armor", 1000),
             new ShopItem("Wyrmhide Armor", 7500),
             new ShopItem("Robe of the Star Mother", 7500),
-            new ShopItem("Dominion Armor", 1000)
+            new ShopItem("Dominion Armor", 7500)
         };
 
         private static readonly List<ISellableItem> Rings = new List<ISellableItem> {

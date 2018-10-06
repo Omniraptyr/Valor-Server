@@ -126,7 +126,7 @@ public class GetCharListTask extends BaseTask {
 
     private function onTextError(_arg1:String):void {
         var _local2:WebLoginDialog;
-        this.setLoadingMessage.dispatch("error.loadError");
+        this.setLoadingMessage.dispatch(_arg1);
         if (_arg1 == "Account credentials not valid") {
             if (this.fromMigration) {
                 _local2 = new WebLoginDialog();

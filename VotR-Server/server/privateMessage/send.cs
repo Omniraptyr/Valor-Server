@@ -11,6 +11,7 @@ namespace server.privateMessage
     {
         public override void HandleRequest(RequestContext context, NameValueCollection query)
         {
+            return; //disable pms
             var recipient = HttpUtility.UrlDecode(query["recipient"]);
             var subject = HttpUtility.UrlDecode(query["subject"]);
             var message = HttpUtility.UrlDecode(query["message"]);

@@ -4,6 +4,7 @@ using common.resources;
 using wServer.logic.behaviors;
 using wServer.logic.loot;
 using wServer.logic.transitions;
+using wServer.logic.behaviors.PetBehaviors;
 
 #endregion
 
@@ -258,6 +259,61 @@ namespace wServer.logic
                             new Wander(0.1)
                         )
                     )
+                )
+            )
+
+           .Init("T0 Talisman",
+                new State(
+                    new FamiliarFollow(),
+                    new TalismanAttack(damage: 140, effect: ConditionEffectIndex.Bleeding, duration: 2000)
+                )
+            )
+            .Init("T1 Talisman",
+                new State(
+                    new FamiliarFollow(),
+                    new TalismanAttack(damage: 160, effect: ConditionEffectIndex.Bleeding, duration: 2000)
+                )
+            )
+            .Init("T2 Talisman",
+                new State(
+                    new FamiliarFollow(),
+                    new TalismanAttack(damage: 200, effect: ConditionEffectIndex.Bleeding, duration: 2000)
+                )
+            )
+            .Init("T3 Talisman",
+                new State(
+                    new FamiliarFollow(),
+                    new TalismanAttack(damage: 260, effect: ConditionEffectIndex.Bleeding, duration: 3000)
+                )
+            )
+            .Init("T4 Talisman",
+                new State(
+                    new FamiliarFollow(),
+                    new TalismanAttack(damage: 300, effect: ConditionEffectIndex.Bleeding, duration: 4000)
+                )
+            )
+            .Init("T5 Talisman",
+                new State(
+                    new FamiliarFollow(),
+                    new TalismanAttack(damage: 320, effect: ConditionEffectIndex.Bleeding, duration: 5000)
+                )
+            )
+            .Init("T6 Talisman",
+                new State(
+                    new FamiliarFollow(),
+                    new TalismanAttack(damage: 340, effect: ConditionEffectIndex.Bleeding, duration: 6000)
+                )
+            )
+           .Init("UDL Talisman",
+                new State(
+                    new FamiliarFollow(),
+                    new TalismanAttack(damage: 340, effect: ConditionEffectIndex.Curse, duration: 4000)
+                )
+            )
+           .Init("Demon Talisman",
+                new State(
+                    new FamiliarFollow(),
+                    new TalismanAttack(damage: 400, effect: ConditionEffectIndex.Bleeding, duration: 6000)
                 )
             );
     }

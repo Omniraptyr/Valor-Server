@@ -98,7 +98,7 @@ public class ItemGridMediator extends Mediator {
 
         if ((_local3 is InteractiveItemTile)) {
             _local4 = (_local3 as InteractiveItemTile);
-            if ((_local2.ownerGrid.owner as Player).hasBackpack_ || this.view.curPlayer.lockedSlot[_local4.tileId] == 0) {
+            if (this.view.curPlayer.hasBackpack_ || this.view.curPlayer.lockedSlot[_local4.tileId] == 0) {
                 if (this.canSwapItems(_local2, _local4)) {
                     this.swapItemTiles(_local2, _local4);
                 }

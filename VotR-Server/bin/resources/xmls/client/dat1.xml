@@ -75304,15 +75304,15 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <Equipment>0xc44, 0xc53, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="680">130</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
-        <Attack max="70">15</Attack>
+        <Attack max="80">15</Attack>
         <Defense max="25">0</Defense>
         <Speed max="65">10</Speed>
         <Dexterity max="80">12</Dexterity>
         <HpRegen max="35">10</HpRegen>
         <MpRegen max="70">12</MpRegen>
-        <Might max="50">2</Might>
-        <Luck max="50">2</Luck>
-		<Restoration max="60">10</Restoration>
+        <Might max="70">2</Might>
+        <Luck max="100">2</Luck>
+        <Restoration max="60">10</Restoration>
         <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
@@ -75324,12 +75324,53 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
-		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
         <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0300">Rogue</UnlockLevel>
         <UnlockLevel level="20" type="0x031d">Warrior</UnlockLevel>
         <UnlockCost>999</UnlockCost>
         <DisplayId>{players.Ninja}</DisplayId>
+    </Object>
+    <Object type="0x55b9" id="Spirithunter">
+        <Class>Player</Class>
+        <Description>The spirithunter uses dark talisman's in order to summon souls to fight along with him.</Description>
+        <AnimatedTexture>
+            <File>players</File>
+            <Index>21</Index>
+        </AnimatedTexture>
+        <HitSound>player/rogue_hit</HitSound>
+        <DeathSound>player/rogue_death</DeathSound>
+        <Player/>
+        <BloodProb>1.0</BloodProb>
+        <SlotTypes>3, 36, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Equipment>0xa1a, 0x6708, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <MaxHitPoints max="660">100</MaxHitPoints>
+        <MaxMagicPoints max="280">120</MaxMagicPoints>
+        <Attack max="60">15</Attack>
+        <Defense max="25">0</Defense>
+        <Speed max="65">10</Speed>
+        <Dexterity max="60">12</Dexterity>
+        <HpRegen max="50">10</HpRegen>
+        <MpRegen max="75">12</MpRegen>
+        <Might max="50">2</Might>
+        <Luck max="50">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="75">4</Protection>
+        <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
+        <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
+        <LevelIncrease min="1" max="2">Attack</LevelIncrease>
+        <LevelIncrease min="0" max="0">Defense</LevelIncrease>
+        <LevelIncrease min="0" max="2">Speed</LevelIncrease>
+        <LevelIncrease min="1" max="2">Dexterity</LevelIncrease>
+        <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
+        <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
+        <LevelIncrease min="0" max="1">Might</LevelIncrease>
+        <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
+        <UnlockLevel level="20" type="0x0325">Sorcerer</UnlockLevel>
+        <UnlockLevel level="20" type="0x0307">Archer</UnlockLevel>
+        <DisplayId>Spirithunter</DisplayId>
     </Object>
     <Object type="0x0327" id="Samurai">
         <Class>Player</Class>
@@ -75344,7 +75385,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>24, 27, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xc44, 0x185a, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="690">130</MaxHitPoints>
+        <MaxHitPoints max="760">130</MaxHitPoints>
         <MaxMagicPoints max="225">100</MaxMagicPoints>
         <Attack max="65">15</Attack>
         <Defense max="25">0</Defense>
@@ -75352,9 +75393,9 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <Dexterity max="60">12</Dexterity>
         <HpRegen max="70">10</HpRegen>
         <MpRegen max="45">12</MpRegen>
-        <Might max="60">2</Might>
-        <Luck max="25">2</Luck>
-		<Restoration max="60">10</Restoration>
+        <Might max="80">2</Might>
+        <Luck max="80">2</Luck>
+        <Restoration max="60">10</Restoration>
         <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
         <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
@@ -75366,7 +75407,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
         <LevelIncrease min="0" max="1">Might</LevelIncrease>
         <LevelIncrease min="0" max="0">Luck</LevelIncrease>
-		<LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
         <LevelIncrease min="0" max="1">Protection</LevelIncrease>
         <UnlockLevel level="20" type="0x0300">Necromancer</UnlockLevel>
         <UnlockLevel level="20" type="0x031d">Ninja</UnlockLevel>
@@ -75512,11 +75553,11 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <BloodProb>1.0</BloodProb>
         <SlotTypes>2, 33, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa14, 0x5829, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="620">80</MaxHitPoints>
+        <MaxHitPoints max="580">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
-        <Attack max="80">10</Attack>
+        <Attack max="70">10</Attack>
         <Defense max="25">0</Defense>
-        <Speed max="60">10</Speed>
+        <Speed max="55">10</Speed>
         <Dexterity max="55">12</Dexterity>
         <HpRegen max="60">10</HpRegen>
         <MpRegen max="100">15</MpRegen>
@@ -75778,22 +75819,24 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
     <FameBonus>5</FameBonus>
     <DisplayId>Sheath of the Blade Cardinal</DisplayId>
   </Object>
-   <Object type="0x1388" id="Soulreaper Armor">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>d3LofiObjEmbed</File>
-      <Index>0x80</Index>
-    </Texture>
-    <SlotType>7</SlotType>
-    <Description>A armor that seals dark souls away from the underworld by the gray gem engraved in the plate.</Description>
-    <ActivateOnEquip stat="21" amount="22">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="26" amount="12">IncrementStat</ActivateOnEquip>
-	<ActivateOnEquip stat="27" amount="12">IncrementStat</ActivateOnEquip>
-    <BagType>6</BagType>
-     <feedPower>800</feedPower>
-    <FameBonus>6</FameBonus>
-  </Object>
+    <Object type="0x1388" id="Soulreaper Armor">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x80</Index>
+        </Texture>
+        <SlotType>7</SlotType>
+        <Description>A armor that seals dark souls away from the underworld by the gray gem engraved in the plate.</Description>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="23">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="12">IncrementStat</ActivateOnEquip>
+        <Steal type="mana" amount="1"/>
+		<BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+    </Object>
   <Object type="0x1389" id="Blade of the Great Tsunami">
     <Class>Equipment</Class>
     <Item/>
@@ -79540,7 +79583,7 @@ This dagger was a myth, will you live to tell the tale?
         </Texture>
         <SlotType>17</SlotType>
         <Description>A wicked staff that brings about a sensation of emptiness, but whispers occasionally seep forth from the darkness.</Description>
-        <RateOfFire>1.05</RateOfFire>
+        <RateOfFire>1.1</RateOfFire>
         <Sound>weapon/wand_of_death</Sound>
         <Projectile>
             <ObjectId>Malediction Missile</ObjectId>
@@ -79550,9 +79593,9 @@ This dagger was a myth, will you live to tell the tale?
             <LifetimeMS>485</LifetimeMS>
             <Amplitude>0.5</Amplitude>
             <Frequency>2</Frequency>
+            <MultiHit/>
         </Projectile>
         <ActivateOnEquip stat="3" amount="80">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="27" amount="2">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <NumProjectiles>2</NumProjectiles>
@@ -81642,20 +81685,20 @@ This dagger was a myth, will you live to tell the tale?
         <Projectile>
             <ObjectId>Nether Bullet</ObjectId>
             <Speed>75</Speed>
-            <MinDamage>100</MinDamage>
-            <MaxDamage>120</MaxDamage>
+            <MinDamage>172</MinDamage>
+            <MaxDamage>185</MaxDamage>
             <LifetimeMS>390</LifetimeMS>
             <Wavy/>
             <MultiHit/>
             <Size>80</Size>
         </Projectile>
-        <ActivateOnEquip stat="3" amount="160">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="140">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
+		<Steal type="mana" amount="1"/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <OldSound>bladeSwing</OldSound>
-        <feedPower>800</feedPower>
         <NumProjectiles>3</NumProjectiles>
-        <DisplayId>Nether Blade</DisplayId>
     </Object>
  <Object type="0x5074" id="Nether Bullet">
     <Class>Projectile</Class>
@@ -84394,14 +84437,11 @@ This dagger was a myth, will you live to tell the tale?
     </Texture>
     <SlotType>9</SlotType>
     <Description>A ring that will give you the strength of the undead on your side.</Description>
-    <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="3" amount="80">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>    
+    <ActivateOnEquip stat="0" amount="90">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
     <BagType>6</BagType>
-    <feedPower>1000</feedPower>
-    <DisplayId>Ring of Undeadly Conjury</DisplayId>
   </Object>
   <Object type="0x519a" id="ICD Shot">
     <Class>Projectile</Class>
@@ -88986,15 +89026,15 @@ A whole thanksgiving turkey!
         <HitSound>monster/golems_hit</HitSound>
         <DeathSound>monster/golems_death</DeathSound>
         <Size>135</Size>
-        <MaxHitPoints>150000</MaxHitPoints>
-        <Defense>60</Defense>
+        <MaxHitPoints>175000</MaxHitPoints>
+        <Defense>80</Defense>
         <Projectile id="0">
             <ObjectId>Silver Shield</ObjectId>
             <Speed>100</Speed>
-            <Damage>145</Damage>
+            <Damage>200</Damage>
             <Size>120</Size>
             <LifetimeMS>4000</LifetimeMS>
-            <ConditionEffect duration="6">Quiet</ConditionEffect>
+            <ConditionEffect duration="8">Quiet</ConditionEffect>
         </Projectile>
         <DisplayId>Corrupted Stone Giant</DisplayId>
     </Object>
@@ -89098,6 +89138,7 @@ A whole thanksgiving turkey!
             <Speed>100</Speed>
             <LifetimeMS>2500</LifetimeMS>
             <ConditionEffect duration="2">Weak</ConditionEffect>
+            <ConditionEffect duration="1">Confused</ConditionEffect>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Fire Bolt</ObjectId>
@@ -92874,7 +92915,6 @@ A whole thanksgiving turkey!
     <AngleCorrection>1</AngleCorrection>
   </Object>
 <Object type="0x47cb" id="Amulet of Resurrection">
-    <DisplayId>Amulet of Resurrection</DisplayId>
     <Class>Equipment</Class>
     <Item/>
     <Texture>
@@ -92886,7 +92926,6 @@ A whole thanksgiving turkey!
     <Resurrects/>
     <BagType>6</BagType>
     <Legendary/>
-    <feedPower>2200</feedPower>
   </Object>
   <Object type="0x47cd" id="Wraith of Sorrow">
     <Enemy/>
@@ -95703,15 +95742,16 @@ A whole thanksgiving turkey!
             <Index>0xd7</Index>
         </Texture>
         <SlotType>28</SlotType>
-        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="-2">IncrementStat</ActivateOnEquip>
         <Description>A machine infused with dark energy that sends a pulse of shadow particles into the sky.</Description>
         <Usable/>
         <BagType>6</BagType>
         <MpCost>85</MpCost>
         <Activate range="3" amount="6" duration="5">Banner</Activate>
-        <Activate effect="Invulnerable" duration="1">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="2">ConditionEffectSelf</Activate>
         <Activate effect="Damaging" duration="3">ConditionEffectSelf</Activate>
+        <Activate effect="Armored" duration="4">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
         <feedPower>760</feedPower>
         <FameBonus>6</FameBonus>
@@ -105748,16 +105788,15 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Index>0x0f</Index>
         </Texture>
         <SlotType>9</SlotType>
-        <Description>Boundless energies fill this gemstone..</Description>
+        <Description>Boundless energies fill this gemstone...</Description>
         <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="15">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
-        <feedPower>2000</feedPower>
         <Legendary/>
-        <EffectEquip effect="Surged" delay="120"/>
+        <EffectEquip effect="Surged" delay="60"/>
         <Legend id="3" stat="27">
             <Name>Insurgency</Name>
             <Description>The surge you gain is doubled while this item is equipped.</Description>
@@ -105765,7 +105804,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <MP>0</MP>
             <Surge>0</Surge>
         </Legend>
-        <DisplayId>Insurgency Amulet</DisplayId>
     </Object>
 	    <Object type="0x69d1" id="The Mocking Raven">
         <Class>Equipment</Class>
@@ -106401,22 +106439,20 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>2</SlotType>
         <Description>A darkened dagger with an emerald jewel in the middle of the blade. It's a popular dagger but hard to retrieve since few merchants sell them because of material of the blade.</Description>
-        <RateOfFire>0.85</RateOfFire>
+        <RateOfFire>0.95</RateOfFire>
         <Sound>weapon/fire_dagger</Sound>
         <Projectile>
             <ObjectId>Notorious Slash</ObjectId>
             <Speed>140</Speed>
             <MinDamage>183</MinDamage>
             <MaxDamage>250</MaxDamage>
-            <LifetimeMS>418</LifetimeMS>
+            <LifetimeMS>521</LifetimeMS>
         </Projectile>
-        <ActivateOnEquip stat="21" amount="14">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="21">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <OldSound>daggerSwing</OldSound>
-        <feedPower>1550</feedPower>
         <Legendary/>
-        <DisplayId>Dirk of Notorious Agents</DisplayId>
     </Object>
     <Object type="0x42c5" id="The 2-K">
         <Class>Equipment</Class>
@@ -107016,7 +107052,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>9</SlotType>
         <Description>Utter destruction will follow your path. Unstoppable.</Description>
-        <ActivateOnEquip stat="20" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="15">IncrementStat</ActivateOnEquip>
 	    <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -108317,7 +108353,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <EffectInfo name="Sprited by" description="BubbaBlu"/>
         </ExtraTooltipData>
         <SlotType>11</SlotType>
-        <Description>The remains of the Gargoyle, ennchanted with its residual energy.</Description>
+        <Description>The remains of the Gargoyle, enchanted with its residual energy.</Description>
         <Sound>spell/magic_nova</Sound>
         <Projectile>
             <ObjectId>Marble Tablet Proj</ObjectId>
@@ -114683,6 +114719,14 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <Boomerang/>
             <LifetimeMS>4000</LifetimeMS>
         </Projectile>
+		<Projectile id="2">
+            <ObjectId>Blue Star</ObjectId>
+            <Speed>70</Speed>
+            <Damage>40</Damage>
+            <Size>125</Size>
+            <ConditionEffect duration="0.5">Petrify</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
         <Size>0</Size>
         <Defense>50</Defense>
         <DisplayId>Corrupted Entity</DisplayId>
@@ -115088,6 +115132,15 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </AnimatedTexture>
         <PlayerClassType>0x031d</PlayerClassType>
     </Object>
+	   <Object type="0x63d4" id="Soulslayer Skin">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>405</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x55b9</PlayerClassType>
+   </Object>
 	    <Object type="0x364" id="Unholy Wand Proj">
         <Class>Projectile</Class>
         <RemoteTexture>
@@ -121292,22 +121345,23 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
     <Soulbound />
     <BagType>6</BagType>
   </Object>
-  <Object type="0x143" id="Oryx's Arena Key">
-    <Class>Equipment</Class>
-    <Item />
-    <Texture>
-        <File>lofiObj3</File>
-        <Index>0x427</Index>
-    </Texture>
-    <SlotType>10</SlotType>
-    <Description>Fame, fortune, death... Know what you're getting into before unlocking that door.</Description>
-    <Sound>use_key</Sound>
-    <Consumable />
-    <BagType>6</BagType>
-    <Activate dungeonName="DeathArena" lockedName="Locked Oryx's Arena Portal">UnlockPortal</Activate>
-    <feedPower>500</feedPower>
-    <DisplayId>Oryx's Arena Key</DisplayId>
-  </Object>
+    <Object type="0x143" id="Oryx's Arena Key">
+        <Class>Equipment</Class>
+        <Item />
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x427</Index>
+        </Texture>
+        <SlotType>10</SlotType>
+        <Description>Fame, fortune, Death... Know what you're getting into before unlocking that door.</Description>
+        <Sound>use_key</Sound>
+        <Consumable />
+        <Soulbound/>
+        <BagType>6</BagType>
+        <Activate dungeonName="DeathArena" lockedName="Locked Oryx's Arena Portal">UnlockPortal</Activate>
+        <feedPower>500</feedPower>
+        <DisplayId>Oryx's Arena Key</DisplayId>
+    </Object>
     <Object type="0x775E" id="Asylum Portal">
     <Class>Portal</Class>
     <IntergamePortal />
@@ -128451,19 +128505,19 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ShadowSize>0</ShadowSize>
         <Quest/>
         <MaxHitPoints>1750000</MaxHitPoints>
-        <Defense>60</Defense>
+        <Defense>80</Defense>
         <Projectile id="0">
             <ObjectId>Twisted Shot 1</ObjectId>
             <MinDamage>120</MinDamage>
             <MaxDamage>140</MaxDamage>
             <Speed>60</Speed>
-            <ConditionEffect duration="2">Dazed</ConditionEffect>
+            <ConditionEffect duration="4">Dazed</ConditionEffect>
             <LifetimeMS>2500</LifetimeMS>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Twisted Shot 2</ObjectId>
-            <MinDamage>60</MinDamage>
-            <MaxDamage>80</MaxDamage>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>120</MaxDamage>
             <Speed>60</Speed>
             <ConditionEffect duration="6">Armor Broken</ConditionEffect>
             <LifetimeMS>1000</LifetimeMS>
@@ -128471,8 +128525,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile id="2">
             <ObjectId>White Flame</ObjectId>
             <MinDamage>160</MinDamage>
-            <MaxDamage>225</MaxDamage>
-            <Speed>30</Speed>
+            <MaxDamage>255</MaxDamage>
+            <Speed>60</Speed>
             <LifetimeMS>6000</LifetimeMS>
             <MultiHit/>
             <Amplitude>1.2</Amplitude>
@@ -128490,13 +128544,13 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile id="4">
             <ObjectId>Twisted Boomerang 2</ObjectId>
             <MinDamage>75</MinDamage>
-            <MaxDamage>100</MaxDamage>
+            <MaxDamage>150</MaxDamage>
             <Speed>110</Speed>
             <LifetimeMS>2000</LifetimeMS>
             <MultiHit/>
         </Projectile>
     </Object>
-<Object type="0x75d4" id="Ultra The Steps">
+	<Object type="0x75d4" id="Ultra The Steps">
         <Class>Portal</Class>
         <IntergamePortal/>
         <DungeonName>Ultra The Steps</DungeonName>
@@ -129287,12 +129341,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <EnemyOccupySquare/>
       <BlocksSight/>
    </Object>
-    <Object type="0x6706" id="Urumi">
+<Object type="0x6706" id="Urumi">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x126</Index>
+            <Index>0x136</Index>
         </Texture>
         <SlotType>34</SlotType>
         <Description>Full of vitriol, the defeated struck under the cover of darkness, slaying all 9 brothers with a single slash.</Description>
@@ -129301,8 +129355,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Projectile>
             <ObjectId>Urumi Projectile</ObjectId>
             <Speed>194</Speed>
-            <MinDamage>140</MinDamage>
-            <MaxDamage>155</MaxDamage>
+            <MinDamage>127</MinDamage>
+            <MaxDamage>135</MaxDamage>
             <LifetimeMS>237</LifetimeMS>
             <Amplitude>0.25</Amplitude>
             <Frequency>0.85</Frequency>
@@ -129337,4 +129391,390 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
+    <Object type="0x6708" id="Basic Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x140</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Tier>0</Tier>
+        <Description>A basic talisman used to summon ghost.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="140"/>
+            <EffectInfo name="Lifetime" description="4"/>
+            <EffectInfo name="Effect" description="Bleeding for 2 secs"/>
+        </ExtraTooltipData>
+        <Activate duration="4" objType="0x670f">TalismanAbility</Activate>
+        <BagType>1</BagType>
+        <MpCost>70</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x6709" id="Wooden Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x141</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Tier>1</Tier>
+        <Description>A talisman carved from ancient oak.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="160"/>
+            <EffectInfo name="Lifetime" description="4"/>
+            <EffectInfo name="Effect" description="Bleeding for 2 secs"/>
+        </ExtraTooltipData>
+        <Activate duration="4" objType="0x670a">TalismanAbility</Activate>
+        <BagType>1</BagType>
+        <MpCost>70</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x670a" id="Soul Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x142</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Tier>2</Tier>
+        <Description>A talisman that seems to glow a strange color when used.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="200"/>
+            <EffectInfo name="Lifetime" description="4"/>
+            <EffectInfo name="Effect" description="Bleeding for 2 secs"/>
+        </ExtraTooltipData>
+        <Activate duration="4" objType="0x671b">TalismanAbility</Activate>
+        <BagType>1</BagType>
+        <MpCost>75</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x670b" id="Jungle Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x143</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Tier>3</Tier>
+        <Description>A specialized talisman commonly used to distract Mixcoatl.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="260"/>
+            <EffectInfo name="Lifetime" description="4"/>
+            <EffectInfo name="Effect" description="Bleeding for 3 secs"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="2">IncrementStat</ActivateOnEquip>
+        <Activate duration="4" objType="0x671c">TalismanAbility</Activate>
+        <BagType>2</BagType>
+        <MpCost>75</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x670c" id="Cronus Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x144</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Tier>4</Tier>
+        <Description>A talisman that is bound to anger the gods.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="300"/>
+            <EffectInfo name="Lifetime" description="5"/>
+            <EffectInfo name="Effect" description="Bleeding for 4 secs"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="122" amount="15">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+        <Activate duration="5" objType="0x671d">TalismanAbility</Activate>
+        <BagType>2</BagType>
+        <MpCost>80</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x670d" id="Sentinel Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x145</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Tier>5</Tier>
+        <Description>A talisman used to distract the Bridge Sentinel of the Shatters.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="320"/>
+            <EffectInfo name="Lifetime" description="5"/>
+            <EffectInfo name="Effect" description="Bleeding for 5 secs"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="122" amount="15">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+        <Activate duration="5" objType="0x671e">TalismanAbility</Activate>
+        <BagType>4</BagType>
+        <MpCost>85</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x670e" id="Oryx Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x146</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Tier>6</Tier>
+        <Description>A talisman that calls upon the power of Oryx to conjure some of the deadliest souls.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="340"/>
+            <EffectInfo name="Lifetime" description="6"/>
+            <EffectInfo name="Effect" description="Bleeding for 6 secs"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+        <Activate duration="6" objType="0x671f">TalismanAbility</Activate>
+        <BagType>4</BagType>
+        <MpCost>90</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x672b" id="Phantom Talisman">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x147</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Description>A talisman that calls the lost spirits that haunt the undead lair.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="340"/>
+            <EffectInfo name="Lifetime" description="6"/>
+            <EffectInfo name="Effect" description="Cursed for 4 secs"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+        <Activate duration="6" objType="0x672a">TalismanAbility</Activate>
+        <BagType>6</BagType>
+        <MpCost>100</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x672c" id="Demon's Stone">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x148</Index>
+        </Texture>
+        <SlotType>36</SlotType>
+        <Description>A talisman that summons a special type of phantom to our realm with demonic powers that will enrages the user.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <Usable/>
+        <ExtraTooltipData>
+            <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
+            <EffectInfo name="Damage" description="400"/>
+            <EffectInfo name="Lifetime" description="6"/>
+            <EffectInfo name="Effect" description="Bleeding for 6 secs"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
+        <Activate duration="6" objType="0x672d">TalismanAbility</Activate>
+        <Activate effect="Berserk" duration="6">ConditionEffectSelf</Activate>
+        <Activate effect="Paralyzed" duration="4" range="5" color="0xffff00" target="enemy" center="player" useWisMod="false">GenericActivate
+        </Activate>
+        <Legendary/>
+        <BagType>6</BagType>
+        <MpCost>100</MpCost>
+        <Cooldown>3</Cooldown>
+    </Object>
+	<Object type="0x670f" id="T0 Talisman">
+      <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+		<NoMiniMap/>
+      <Flying/>
+      <Z>0.2</Z>
+	  <ParalyzeImmune/>
+      <StasisImmune/>
+      <DazedImmune/>
+	  <ArmorBreakImmune/>
+      <SlowedImmune/>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>0</MaxHitPoints>
+    </Object>
+    <Object type="0x671a" id="T1 Talisman">
+      <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+		<NoMiniMap/>
+      <Flying/>
+      <Z>0.2</Z>
+	  <ParalyzeImmune/>
+      <StasisImmune/>
+      <DazedImmune/>
+	  <ArmorBreakImmune/>
+      <SlowedImmune/>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>0</MaxHitPoints>
+   </Object>
+   <Object type="0x671b" id="T2 Talisman">
+      <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+		<NoMiniMap/>
+      <Flying/>
+      <Z>0.2</Z>
+	  <ParalyzeImmune/>
+      <StasisImmune/>
+      <DazedImmune/>
+	  <ArmorBreakImmune/>
+      <SlowedImmune/>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>0</MaxHitPoints>
+   </Object>
+   <Object type="0x671c" id="T3 Talisman">
+      <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+		<NoMiniMap/>
+      <Flying/>
+      <Z>0.2</Z>
+	  <ParalyzeImmune/>
+      <StasisImmune/>
+      <DazedImmune/>
+	  <ArmorBreakImmune/>
+      <SlowedImmune/>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>0</MaxHitPoints>
+   </Object>
+   <Object type="0x671d" id="T4 Talisman">
+      <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+		<NoMiniMap/>
+      <Flying/>
+      <Z>0.2</Z>
+	  <ParalyzeImmune/>
+      <StasisImmune/>
+      <DazedImmune/>
+	  <ArmorBreakImmune/>
+      <SlowedImmune/>
+      <Size>120</Size>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>0</MaxHitPoints>
+   </Object>
+   <Object type="0x671e" id="T5 Talisman">
+      <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+      <Size>120</Size>
+	  <NoMiniMap/>
+      <Flying/>
+      <Z>0.2</Z>
+	  <ParalyzeImmune/>
+      <StasisImmune/>
+      <DazedImmune/>
+	  <ArmorBreakImmune/>
+      <SlowedImmune/>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>0</MaxHitPoints>
+   </Object>
+   <Object type="0x671f" id="T6 Talisman">
+      <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+	  <NoMiniMap/>
+      <Flying/>
+      <Z>0.2</Z>
+      <Size>120</Size>
+	  <ParalyzeImmune/>
+      <StasisImmune/>
+      <DazedImmune/>
+	  <ArmorBreakImmune/>
+      <SlowedImmune/>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>0</MaxHitPoints>
+   </Object>
+   <Object type="0x672a" id="UDL Talisman">
+      <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+	  <NoMiniMap/>
+      <Flying/>
+      <Z>0.2</Z>
+      <Size>120</Size>
+	  <ParalyzeImmune/>
+      <StasisImmune/>
+      <DazedImmune/>
+	  <ArmorBreakImmune/>
+      <SlowedImmune/>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>0</MaxHitPoints>
+   </Object>
+   <Object type="0x672d" id="Demon Talisman">
+      <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>14</Index>
+        </AnimatedTexture>
+	  <NoMiniMap/>
+      <Flying/>
+      <Z>0.2</Z>
+      <Size>120</Size>
+	  <ParalyzeImmune/>
+      <StasisImmune/>
+      <DazedImmune/>
+	  <ArmorBreakImmune/>
+      <SlowedImmune/>
+      <ShadowSize>50</ShadowSize>
+      <MaxHitPoints>0</MaxHitPoints>
+   </Object>
 </Objects>

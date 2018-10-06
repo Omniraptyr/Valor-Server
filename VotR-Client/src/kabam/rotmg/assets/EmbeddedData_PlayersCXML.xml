@@ -556,14 +556,14 @@
         <Equipment>0xc44, 0xc53, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
         <MaxHitPoints max="680">130</MaxHitPoints>
         <MaxMagicPoints max="252">100</MaxMagicPoints>
-        <Attack max="70">15</Attack>
+        <Attack max="80">15</Attack>
         <Defense max="25">0</Defense>
         <Speed max="65">10</Speed>
         <Dexterity max="80">12</Dexterity>
         <HpRegen max="35">10</HpRegen>
         <MpRegen max="70">12</MpRegen>
-        <Might max="50">2</Might>
-        <Luck max="50">2</Luck>
+        <Might max="70">2</Might>
+        <Luck max="100">2</Luck>
         <Restoration max="60">10</Restoration>
         <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
@@ -596,7 +596,7 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>24, 27, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xc44, 0x185a, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="690">130</MaxHitPoints>
+        <MaxHitPoints max="760">130</MaxHitPoints>
         <MaxMagicPoints max="225">100</MaxMagicPoints>
         <Attack max="65">15</Attack>
         <Defense max="25">0</Defense>
@@ -604,8 +604,8 @@
         <Dexterity max="60">12</Dexterity>
         <HpRegen max="70">10</HpRegen>
         <MpRegen max="45">12</MpRegen>
-        <Might max="60">2</Might>
-        <Luck max="25">2</Luck>
+        <Might max="80">2</Might>
+        <Luck max="80">2</Luck>
         <Restoration max="60">10</Restoration>
         <Protection max="30">4</Protection>
         <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
@@ -764,11 +764,11 @@
         <BloodProb>1.0</BloodProb>
         <SlotTypes>2, 33, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
         <Equipment>0xa14, 0x5829, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
-        <MaxHitPoints max="620">80</MaxHitPoints>
+        <MaxHitPoints max="580">80</MaxHitPoints>
         <MaxMagicPoints max="385">100</MaxMagicPoints>
-        <Attack max="80">10</Attack>
+        <Attack max="70">10</Attack>
         <Defense max="25">0</Defense>
-        <Speed max="60">10</Speed>
+        <Speed max="55">10</Speed>
         <Dexterity max="55">12</Dexterity>
         <HpRegen max="60">10</HpRegen>
         <MpRegen max="100">15</MpRegen>
@@ -872,4 +872,45 @@
         <LevelIncrease min="0" max="0">Protection</LevelIncrease>
         <DisplayId>Challenger</DisplayId>
     </Object>-->
+    <Object type="0x55b9" id="Spirithunter">
+        <Class>Player</Class>
+        <Description>The spirithunter uses dark talisman's in order to summon souls to fight along with him.</Description>
+        <AnimatedTexture>
+            <File>players</File>
+            <Index>21</Index>
+        </AnimatedTexture>
+        <HitSound>player/rogue_hit</HitSound>
+        <DeathSound>player/rogue_death</DeathSound>
+        <Player/>
+        <BloodProb>1.0</BloodProb>
+        <SlotTypes>3, 36, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+        <Equipment>0xa1a, 0x6708, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
+        <MaxHitPoints max="660">100</MaxHitPoints>
+        <MaxMagicPoints max="280">120</MaxMagicPoints>
+        <Attack max="60">15</Attack>
+        <Defense max="25">0</Defense>
+        <Speed max="65">10</Speed>
+        <Dexterity max="60">12</Dexterity>
+        <HpRegen max="50">10</HpRegen>
+        <MpRegen max="75">12</MpRegen>
+        <Might max="50">2</Might>
+        <Luck max="50">2</Luck>
+        <Restoration max="60">10</Restoration>
+        <Protection max="75">4</Protection>
+        <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
+        <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
+        <LevelIncrease min="1" max="2">Attack</LevelIncrease>
+        <LevelIncrease min="0" max="0">Defense</LevelIncrease>
+        <LevelIncrease min="0" max="2">Speed</LevelIncrease>
+        <LevelIncrease min="1" max="2">Dexterity</LevelIncrease>
+        <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
+        <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
+        <LevelIncrease min="0" max="1">Might</LevelIncrease>
+        <LevelIncrease min="0" max="0">Luck</LevelIncrease>
+        <LevelIncrease min="0" max="1">Restoration</LevelIncrease>
+        <LevelIncrease min="0" max="1">Protection</LevelIncrease>
+        <UnlockLevel level="20" type="0x0325">Sorcerer</UnlockLevel>
+        <UnlockLevel level="20" type="0x0307">Archer</UnlockLevel>
+        <DisplayId>Spirithunter</DisplayId>
+    </Object>
 </Objects>

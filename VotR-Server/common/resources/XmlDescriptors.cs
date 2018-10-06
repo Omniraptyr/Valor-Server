@@ -415,8 +415,8 @@ namespace common.resources
         Torii,
         JacketAbility,
         SorActivate,
-        CSmokeGrenade,
-        CFlashGrenade
+        TalismanAbility
+
     }
 
     public class ActivateEffect
@@ -763,16 +763,19 @@ namespace common.resources
             Texture2 = (n = elem.Element("Tex2")) != null ? Convert.ToInt32(n.Value, 16) : 0;
 
             var stats = new List<KeyValuePair<int, int>>();
+            var percStats = new List<KeyValuePair<int, int>>();
             StatsBoost = stats.ToArray();
-            StatsBoostPerc = stats.ToArray();
+            StatsBoostPerc = percStats.ToArray();
             foreach (var i in elem.Elements("ActivateOnEquip")) {
-                stats.Add(new KeyValuePair<int, int>(
-                    int.Parse(i.Attribute("stat").Value),
-                    int.Parse(i.Attribute("amount").Value)));
-                if (elem.Element("ActivateOnEquip").Value == "IncrementStat") {
-                    StatsBoost = stats.ToArray();
-                } else if (elem.Element("ActivateOnEquip").Value == "IncrStatPerc") {
-                    StatsBoostPerc = stats.ToArray();
+                switch (i.Value) {
+                    case "IncrementStat":
+                        stats.Add(new KeyValuePair<int, int>(int.Parse(i.Attribute("stat").Value), int.Parse(i.Attribute("amount").Value)));
+                        StatsBoost = stats.ToArray();
+                        break;
+                    /*case "IncrStatPerc":
+                        percStats.Add(new KeyValuePair<int, int>(int.Parse(i.Attribute("stat").Value), int.Parse(i.Attribute("amount").Value)));
+                        StatsBoostPerc = percStats.ToArray();
+                        break;*/
                 }
             }
 

@@ -3,6 +3,8 @@ using System.Linq;
 using wServer.realm;
 using wServer.realm.entities;
 using common.resources;
+using Player = wServer.realm.entities.Player;
+
 namespace wServer.logic.behaviors
 {
     class RemoveTileObject : Behavior

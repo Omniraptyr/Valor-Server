@@ -6,6 +6,7 @@ using common.resources;
 using wServer.realm;
 using wServer.realm.entities;
 using wServer.realm.worlds;
+using Player = wServer.realm.entities.Player;
 
 namespace wServer
 {
@@ -87,6 +88,18 @@ namespace wServer
 
             var lowestHp = entities.Min(e => e.HP);
             return entities.FirstOrDefault(e => e.HP == lowestHp);
+        }
+
+        public static IEnumerable<Entity> GetNearestEntities(this Entity entity, double dist)
+        {
+            if (entity.Owner == null)
+                yield break;
+            foreach (Entity i in entity.Owner.EnemiesCollision.HitTest(entity.X, entity.Y, (float)dist))
+            {
+                double d = i.Dist(entity);
+                if (d < dist)
+                    yield return i;
+            }
         }
 
         public static Entity GetNearestEntity(this Entity entity, double dist, ushort? objType, bool seeInvis = false)   //Null for player

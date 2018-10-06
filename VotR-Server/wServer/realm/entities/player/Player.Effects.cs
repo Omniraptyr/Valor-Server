@@ -69,9 +69,9 @@ namespace wServer.realm.entities
                 }
 
                 if (CheckGHelm()) {
-                    tghbonus = 8;
+                    _gildHelmBonus = 8;
                 } else {
-                    tghbonus = 0;
+                    _gildHelmBonus = 0;
                 }
 
                 if (CheckForce()) {
@@ -202,7 +202,7 @@ namespace wServer.realm.entities
                         _surgeWither = true;
                     }
                 }
-                _surgeDepletion += (28-(surgeBonus+tghbonus)) * (time.ElapsedMsDelta / 1000f);
+                _surgeDepletion += (28-(_surgeBonus+_gildHelmBonus)) * (time.ElapsedMsDelta / 1000f);
             }
 
             if (_surgeWither)

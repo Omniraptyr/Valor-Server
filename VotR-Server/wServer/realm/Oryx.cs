@@ -817,9 +817,10 @@ namespace wServer.realm
             foreach (var i in _world.Enemies) //Kill
             {
                 var idx = (int) i.Value.Terrain - 1;
+                var entity = i.Value.GetNearestEntity(10, true);
 
                 if (idx == -1 || state[idx] == 0 ||
-                    i.Value.GetNearestEntity(10, true) != null ||
+                    entity != null ||
                     diff[idx] == 0)
                     continue;
 
@@ -833,6 +834,8 @@ namespace wServer.realm
                 
                 if (c == 0) 
                     break;
+
+                entity = null;
             }
 
             var w = _world.Map.Width;
@@ -853,11 +856,11 @@ namespace wServer.realm
                         continue;
 
                     j += Spawn(_world.Manager.Resources.GameData.ObjectDescs[objType], t, w, h);
+
+                    objType = 0;
                 }
             }
             RecalculateEnemyCount();
-
-            GC.Collect();
         }
 
         private void RecalculateEnemyCount()

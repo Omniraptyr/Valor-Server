@@ -5,6 +5,8 @@ using wServer.networking.packets.incoming;
 using wServer.networking.packets.outgoing;
 using wServer.realm.worlds;
 using System;
+using Player = wServer.realm.entities.Player;
+
 namespace wServer.networking.handlers
 {
     internal class AlertNoticeHandler : PacketHandlerBase<AlertNotice>

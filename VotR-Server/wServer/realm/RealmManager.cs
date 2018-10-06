@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Threading;
-using common.resources;
-using common;
 using System.Collections.Concurrent;
-using wServer.networking;
-using System.Threading.Tasks;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using common;
+using common.resources;
 using wServer.logic;
+using wServer.networking;
 using wServer.realm.commands;
 using wServer.realm.entities.vendors;
 using wServer.realm.worlds;
@@ -27,7 +27,7 @@ namespace wServer.realm
         Emergent,
         Destruction,
         Normal,
-        Creation,
+        Creation
     }
 
     public enum PacketPriority
@@ -68,8 +68,8 @@ namespace wServer.realm
         public readonly ConcurrentDictionary<int, World> Worlds = new ConcurrentDictionary<int, World>();
         public readonly ConcurrentDictionary<Client, PlayerInfo> Clients = new ConcurrentDictionary<Client, PlayerInfo>();
 
-        private int _nextWorldId = 0;
-        private int _nextClientId = 0;
+        private int _nextWorldId;
+        private int _nextClientId;
         public bool _isRaidLaunched = false;
 
         public RealmManager(Resources resources, Database db, ServerConfig config)
@@ -167,7 +167,7 @@ namespace wServer.realm
                 return false;
 
             client.Id = Interlocked.Increment(ref _nextClientId);
-            var plrInfo = new PlayerInfo()
+            var plrInfo = new PlayerInfo
             {
                 AccountId = client.Account.AccountId,
                 GuildId = client.Account.GuildId,
@@ -269,18 +269,19 @@ namespace wServer.realm
                 OnWorldRemoved(world);
                 return true;
             }
-            else
-                return false;
+
+            return false;
         }
 
-        void OnWorldAdded(World world)
+        private void OnWorldAdded(World world)
         {
             world.Manager = this;
         }
 
-        void OnWorldRemoved(World world)
+        private void OnWorldRemoved(World world)
         {
-            //world.Manager = null;
+            if (!(world is DeathArena))
+                world.Manager = null;
             Monitor.RemovePortal(world.Id);
         }
 

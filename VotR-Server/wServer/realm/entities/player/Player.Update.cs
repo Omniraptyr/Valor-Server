@@ -222,28 +222,28 @@ namespace wServer.realm.entities
             while (ClientKilledEntity.TryDequeue(out entity))
                 _clientEntities.Remove(entity);
 
-            foreach (var i in Owner.Players)
-                if ((i.Value == this || (i.Value.Client.Account != null && i.Value.Client.Player.CanBeSeenBy(this))) && _clientEntities.Add(i.Value))
-                    yield return i.Value;
+            if (Owner != null) {
+                foreach (var i in Owner.Players)
+                    if ((i.Value == this || (i.Value.Client.Account != null && i.Value.Client.Player.CanBeSeenBy(this))) && _clientEntities.Add(i.Value))
+                        yield return i.Value;
 
-            foreach (var i in Owner.PlayersCollision.HitTest(X, Y, Radius))
-                if ((i is Decoy || i is Pet) && _clientEntities.Add(i))
-                    yield return i;
+                foreach (var i in Owner.PlayersCollision.HitTest(X, Y, Radius))
+                    if ((i is Decoy || i is Pet) && _clientEntities.Add(i))
+                        yield return i;
 
-            var p = new IntPoint(0, 0);
-            foreach (var i in Owner.EnemiesCollision.HitTest(X, Y, Radius))
-            {
-                if (i is Container)
-                {
-                    int[] owners = (i as Container).BagOwners;
-                    if (owners.Length > 0 && Array.IndexOf(owners, AccountId) == -1)
-                        continue;
+                var p = new IntPoint(0, 0);
+                foreach (var i in Owner.EnemiesCollision.HitTest(X, Y, Radius)) {
+                    if (i is Container) {
+                        int[] owners = (i as Container).BagOwners;
+                        if (owners.Length > 0 && Array.IndexOf(owners, AccountId) == -1)
+                            continue;
+                    }
+
+                    p.X = (int)i.X;
+                    p.Y = (int)i.Y;
+                    if (visibleTiles.Contains(p) && _clientEntities.Add(i))
+                        yield return i;
                 }
-
-                p.X = (int)i.X;
-                p.Y = (int)i.Y;
-                if (visibleTiles.Contains(p) && _clientEntities.Add(i))
-                    yield return i;
             }
 
             if (Quest?.Owner != null && _clientEntities.Add(Quest))

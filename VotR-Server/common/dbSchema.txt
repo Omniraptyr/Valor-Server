@@ -179,10 +179,3 @@ discordRank
 	discordId => rank
 discordAccount.(discordId)
    (accId) => 0
-127.0.0.1:6379> hget names patpot
-"5"
-127.0.0.1:6379> hset account.5 admin 1
-(integer) 0
-127.0.0.1:6379> hset account.5 rank 100
-(integer) 0
-127.0.0.1:6379>

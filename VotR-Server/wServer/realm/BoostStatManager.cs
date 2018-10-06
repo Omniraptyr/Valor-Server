@@ -12,7 +12,6 @@ namespace wServer.realm
         private readonly int[] _boost;
 
         public ActivateBoost[] ActivateBoost { get; }    
-        public ActivateBoost2[] ActivateBoost2 { get; }
         public int this[int index] => _boost[index];
 
         public BoostStatManager(StatsManager parent)
@@ -27,9 +26,6 @@ namespace wServer.realm
             ActivateBoost = new ActivateBoost[_boost.Length];
             for (int i = 0; i < ActivateBoost.Length; i++)
                 ActivateBoost[i] = new ActivateBoost();
-            ActivateBoost2 = new ActivateBoost2[_boost.Length];
-            for (int i = 0; i < ActivateBoost2.Length; i++)
-                ActivateBoost2[i] = new ActivateBoost2();
             ReCalculateValues();
         }
 
@@ -57,8 +53,7 @@ namespace wServer.realm
                 foreach (var b in _player.Inventory[i].StatsBoostPerc)
                     if (b.Value != 0) {
                         var index = StatsManager.GetStatIndex((StatsType)b.Key);
-                        IncrementBoost((StatsType)b.Key, (_parent.Base[index]
-                            + _boost[index]) * b.Value / 100);
+                        IncrementBoost((StatsType)b.Key, (_parent.Base[index] + _boost[index]) * (b.Value / 100));
                     }
             }
         }
@@ -158,15 +153,6 @@ namespace wServer.realm
                             DurationMS = 0
                         });
                 }
-            }
-            //MARK BOOST
-
-            for (var i = 0; i < ActivateBoost2.Length; i++)
-            {
-                // set boost
-                var b = ActivateBoost2[i].GetBoost();
-                _boost[i] += b;
-
             }
         }
 

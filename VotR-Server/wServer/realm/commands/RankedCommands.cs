@@ -171,6 +171,11 @@ namespace wServer.realm.commands
                 return false;
             }
 
+            if(player.Owner.Name == "Nexus")
+            {
+                player.SendError("Can't spawn in the nexus.");
+            }
+
             if (props.spawns != null)
                 foreach (var spawn in props.spawns)
                 {
@@ -2406,9 +2411,9 @@ namespace wServer.realm.commands
         }
     }
 
-    internal class CompactLOHCommand : Command
+    internal class TryClearCommand : Command
     {
-        public CompactLOHCommand() : base("compactLOH", permLevel: 100, listCommand: false) { }
+        public TryClearCommand() : base("tryClear", permLevel: 90, listCommand: false) { }
 
         protected override bool Process(Player player, RealmTime time, string name)
         {

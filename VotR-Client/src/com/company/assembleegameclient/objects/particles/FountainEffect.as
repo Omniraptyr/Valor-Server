@@ -10,7 +10,7 @@ public class FountainEffect extends ParticleEffect {
 
     public function FountainEffect(_arg1:GameObject, _arg2:EffectProperties) {
         this.go_ = _arg1;
-        this.color_ = _arg2.color;
+        this.color_ = 4285909;
     }
 
     override public function update(_arg1:int, _arg2:int):Boolean {

@@ -5277,15 +5277,15 @@
         <HitSound>monster/golems_hit</HitSound>
         <DeathSound>monster/golems_death</DeathSound>
         <Size>135</Size>
-        <MaxHitPoints>150000</MaxHitPoints>
-        <Defense>60</Defense>
+        <MaxHitPoints>175000</MaxHitPoints>
+        <Defense>80</Defense>
         <Projectile id="0">
             <ObjectId>Silver Shield</ObjectId>
             <Speed>100</Speed>
-            <Damage>145</Damage>
+            <Damage>200</Damage>
             <Size>120</Size>
             <LifetimeMS>4000</LifetimeMS>
-            <ConditionEffect duration="6">Quiet</ConditionEffect>
+            <ConditionEffect duration="8">Quiet</ConditionEffect>
         </Projectile>
         <DisplayId>Corrupted Stone Giant</DisplayId>
     </Object>
@@ -5389,6 +5389,7 @@
             <Speed>100</Speed>
             <LifetimeMS>2500</LifetimeMS>
             <ConditionEffect duration="2">Weak</ConditionEffect>
+            <ConditionEffect duration="1">Confused</ConditionEffect>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Fire Bolt</ObjectId>
@@ -12159,6 +12160,14 @@
             <Boomerang/>
             <LifetimeMS>4000</LifetimeMS>
         </Projectile>
+        <Projectile id="2">
+            <ObjectId>Blue Star</ObjectId>
+            <Speed>70</Speed>
+            <Damage>40</Damage>
+            <Size>125</Size>
+            <ConditionEffect duration="0.5">Petrify</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
         <Size>0</Size>
         <Defense>50</Defense>
         <DisplayId>Corrupted Entity</DisplayId>
@@ -15137,19 +15146,19 @@
         <ShadowSize>0</ShadowSize>
         <Quest/>
         <MaxHitPoints>1750000</MaxHitPoints>
-        <Defense>60</Defense>
+        <Defense>80</Defense>
         <Projectile id="0">
             <ObjectId>Twisted Shot 1</ObjectId>
             <MinDamage>120</MinDamage>
             <MaxDamage>140</MaxDamage>
             <Speed>60</Speed>
-            <ConditionEffect duration="2">Dazed</ConditionEffect>
+            <ConditionEffect duration="4">Dazed</ConditionEffect>
             <LifetimeMS>2500</LifetimeMS>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Twisted Shot 2</ObjectId>
-            <MinDamage>60</MinDamage>
-            <MaxDamage>80</MaxDamage>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>120</MaxDamage>
             <Speed>60</Speed>
             <ConditionEffect duration="6">Armor Broken</ConditionEffect>
             <LifetimeMS>1000</LifetimeMS>
@@ -15157,8 +15166,8 @@
         <Projectile id="2">
             <ObjectId>White Flame</ObjectId>
             <MinDamage>160</MinDamage>
-            <MaxDamage>225</MaxDamage>
-            <Speed>30</Speed>
+            <MaxDamage>255</MaxDamage>
+            <Speed>60</Speed>
             <LifetimeMS>6000</LifetimeMS>
             <MultiHit/>
             <Amplitude>1.2</Amplitude>
@@ -15176,7 +15185,7 @@
         <Projectile id="4">
             <ObjectId>Twisted Boomerang 2</ObjectId>
             <MinDamage>75</MinDamage>
-            <MaxDamage>100</MaxDamage>
+            <MaxDamage>150</MaxDamage>
             <Speed>110</Speed>
             <LifetimeMS>2000</LifetimeMS>
             <MultiHit/>
@@ -15972,5 +15981,167 @@
         <OccupySquare/>
         <EnemyOccupySquare/>
         <BlocksSight/>
+    </Object>
+    <Object type="0x670f" id="T0 Talisman">
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+        <NoMiniMap/>
+        <Flying/>
+        <Z>0.2</Z>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <ArmorBreakImmune/>
+        <SlowedImmune/>
+        <Size>120</Size>
+        <ShadowSize>50</ShadowSize>
+        <MaxHitPoints>0</MaxHitPoints>
+    </Object>
+    <Object type="0x671a" id="T1 Talisman">
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+        <NoMiniMap/>
+        <Flying/>
+        <Z>0.2</Z>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <ArmorBreakImmune/>
+        <SlowedImmune/>
+        <Size>120</Size>
+        <ShadowSize>50</ShadowSize>
+        <MaxHitPoints>0</MaxHitPoints>
+    </Object>
+    <Object type="0x671b" id="T2 Talisman">
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+        <NoMiniMap/>
+        <Flying/>
+        <Z>0.2</Z>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <ArmorBreakImmune/>
+        <SlowedImmune/>
+        <Size>120</Size>
+        <ShadowSize>50</ShadowSize>
+        <MaxHitPoints>0</MaxHitPoints>
+    </Object>
+    <Object type="0x671c" id="T3 Talisman">
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+        <NoMiniMap/>
+        <Flying/>
+        <Z>0.2</Z>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <ArmorBreakImmune/>
+        <SlowedImmune/>
+        <Size>120</Size>
+        <ShadowSize>50</ShadowSize>
+        <MaxHitPoints>0</MaxHitPoints>
+    </Object>
+    <Object type="0x671d" id="T4 Talisman">
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+        <NoMiniMap/>
+        <Flying/>
+        <Z>0.2</Z>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <ArmorBreakImmune/>
+        <SlowedImmune/>
+        <Size>120</Size>
+        <ShadowSize>50</ShadowSize>
+        <MaxHitPoints>0</MaxHitPoints>
+    </Object>
+    <Object type="0x671e" id="T5 Talisman">
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+        <Size>120</Size>
+        <NoMiniMap/>
+        <Flying/>
+        <Z>0.2</Z>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <ArmorBreakImmune/>
+        <SlowedImmune/>
+        <ShadowSize>50</ShadowSize>
+        <MaxHitPoints>0</MaxHitPoints>
+    </Object>
+    <Object type="0x671f" id="T6 Talisman">
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+        <NoMiniMap/>
+        <Flying/>
+        <Z>0.2</Z>
+        <Size>120</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <ArmorBreakImmune/>
+        <SlowedImmune/>
+        <ShadowSize>50</ShadowSize>
+        <MaxHitPoints>0</MaxHitPoints>
+    </Object>
+    <Object type="0x672a" id="UDL Talisman">
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>13</Index>
+        </AnimatedTexture>
+        <NoMiniMap/>
+        <Flying/>
+        <Z>0.2</Z>
+        <Size>120</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <ArmorBreakImmune/>
+        <SlowedImmune/>
+        <ShadowSize>50</ShadowSize>
+        <MaxHitPoints>0</MaxHitPoints>
+    </Object>
+    <Object type="0x672d" id="Demon Talisman">
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars8x8rEmbed</File>
+            <Index>14</Index>
+        </AnimatedTexture>
+        <NoMiniMap/>
+        <Flying/>
+        <Z>0.2</Z>
+        <Size>120</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <ArmorBreakImmune/>
+        <SlowedImmune/>
+        <ShadowSize>50</ShadowSize>
+        <MaxHitPoints>0</MaxHitPoints>
     </Object>
 </Objects>

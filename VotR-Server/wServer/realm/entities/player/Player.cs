@@ -924,8 +924,14 @@ namespace wServer.realm.entities
 
             var tickCount = time.TickCount;
 
-            if (tickCount % 3 == 0) {
+            if (tickCount % 3 == 0)
+            {
                 HandleBastille(time);
+            }
+
+            if (tickCount % 3 == 0)
+            {
+                HandleUltraBastille(time);
             }
 
             if (tickCount % 20 == 0) {
@@ -1249,9 +1255,10 @@ namespace wServer.realm.entities
             {
                 Items = items
             });
+
             Owner.Timers.Add(new WorldTimer(15000, (world, t) =>
             {
-                foreach (var player in Owner.Players.Values)
+                foreach (var player in Manager.GetWorld(World.Nexus).Players.Values)
                     player.SendHelp("<" + Name + "> unboxed a " 
                                     + "'" + Manager.Resources.GameData.Items[items[45]].ObjectId  + "' " 
                                     + "from the " + LootboxType(type) + "!");

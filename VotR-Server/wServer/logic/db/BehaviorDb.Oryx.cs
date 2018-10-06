@@ -292,7 +292,7 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.20,
-                    new ItemLoot("Oryx's Arena Key", 0.01)
+                    new ItemLoot("Oryx's Arena Key", 0.005)
                 ),
                 new Threshold(0.05,
                     new ItemLoot("Potion of Attack", 0.3),

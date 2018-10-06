@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using wServer.realm;
 using wServer.realm.entities;
+using Player = wServer.realm.entities.Player;
 
 namespace wServer.logic.transitions
 {

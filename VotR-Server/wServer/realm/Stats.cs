@@ -1,5 +1,6 @@
 ﻿using System;
 using wServer.realm.entities;
+using Player = wServer.realm.entities.Player;
 
 namespace wServer.realm
 {

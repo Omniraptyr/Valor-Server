@@ -18,19 +18,18 @@ import flash.filters.DropShadowFilter;
 import flash.geom.Rectangle;
 
 import kabam.rotmg.ui.view.UnFocusAble;
-
 public class Menu extends Sprite implements UnFocusAble {
     private var backgroundFill_:GraphicsSolidFill = new GraphicsSolidFill(0, 1);
     private var outlineFill_:GraphicsSolidFill = new GraphicsSolidFill(0, 1);
-    private var lineStyle_:GraphicsStroke = new GraphicsStroke(1, false, LineScaleMode.NORMAL, CapsStyle.NONE,
-            JointStyle.ROUND, 3, outlineFill_);
+    private var lineStyle_:GraphicsStroke = new GraphicsStroke(1, false, LineScaleMode.NORMAL,
+            CapsStyle.NONE, JointStyle.ROUND, 3, outlineFill_);
     private var path_:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
     private var background_:uint;
     private var outline_:uint;
     protected var yOffset:int;
 
-    private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[lineStyle_, backgroundFill_, path_,
-        GraphicsUtil.END_FILL, GraphicsUtil.END_STROKE];
+    private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[lineStyle_, backgroundFill_,
+        path_, GraphicsUtil.END_FILL, GraphicsUtil.END_STROKE];
 
     public function Menu(bgColor:uint, outlineColor:uint) {
         super();
@@ -46,7 +45,7 @@ public class Menu extends Sprite implements UnFocusAble {
         option.x = 8;
         option.y = this.yOffset;
         addChild(option);
-        this.yOffset = (this.yOffset + 28);
+        this.yOffset += 28;
     }
 
     protected function onAddedToStage(e:Event):void {
@@ -62,46 +61,32 @@ public class Menu extends Sprite implements UnFocusAble {
     }
 
     protected function onEnterFrame(e:Event):void {
-        if (stage == null) {
-            return;
-        }
+        if (stage == null) return;
 
         var stageRect:Rectangle = getRect(stage);
         var dist:Number = RectangleUtil.pointDist(stageRect, stage.mouseX, stage.mouseY);
+
         if (dist > 40) {
-            this.remove();
+            this.remove()
         }
     }
 
-    public function scaleParent(scaleUI:Boolean):void {
-        var container:DisplayObjectContainer = null;
+    public function scaleParent():void {
+        var parent:DisplayObjectContainer = null;
 
-        if (this.parent is GameSprite) {
-            container = this;
-        } else {
-            container = this.parent;
-        }
+        if (this.parent is GameSprite) parent = this;
+        else parent = this.parent;
 
         var scaleX:Number = 800 / stage.stageWidth;
         var scaleY:Number = 600 / stage.stageHeight;
-        if (scaleUI) {
-            container.scaleX = scaleX / scaleY;
-            container.scaleY = 1;
-        } else {
-            container.scaleX = scaleX;
-            container.scaleY = scaleY;
-        }
+        parent.scaleX = scaleX;
+        parent.scaleY = scaleY;
     }
 
     private function position():void {
-        var scaleUI:Boolean = false;
         var x:Number = (stage.stageWidth - 800) / 2 + stage.mouseX;
         var y:Number = (stage.stageHeight - 600) / 2 + stage.mouseY;
-        var scale:Number = 600 / stage.stageHeight;
-        this.scaleParent(scaleUI);
-
-        x = x * scale;
-        y = y * scale;
+        this.scaleParent();
 
         if (stage == null) return;
 
@@ -111,7 +96,7 @@ public class Menu extends Sprite implements UnFocusAble {
             this.x = x - width - 1;
         }
 
-        if (this.x < 14) this.x = 14;
+        if (this.x < 12) this.x = 12;
 
         if (stage.mouseY + 0.5 * stage.stageHeight - 300 < stage.stageHeight / 3) {
             this.y = y + 12;
@@ -119,9 +104,8 @@ public class Menu extends Sprite implements UnFocusAble {
             this.y = y - height - 1;
         }
 
-        if (this.y < 14) this.y = 14;
+        if (this.y < 12) this.y = 12;
     }
-
     protected function onRollOut(e:Event):void {
         this.remove();
     }
@@ -137,7 +121,10 @@ public class Menu extends Sprite implements UnFocusAble {
         this.outlineFill_.color = this.outline_;
         graphics.clear();
         GraphicsUtil.clearPath(this.path_);
-        GraphicsUtil.drawCutEdgeRect(-6, -6, Math.max(154, (width + 12)), (height + 12), 4, [1, 1, 1, 1], this.path_);
+        GraphicsUtil.drawCutEdgeRect(-6, -6,
+                Math.max(154, (width + 12)),
+                (height + 12), 4,
+                [1, 1, 1, 1], this.path_);
         graphics.drawGraphicsData(this.graphicsData_);
     }
 }

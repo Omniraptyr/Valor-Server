@@ -2,6 +2,7 @@
 using wServer.networking;
 using wServer.networking.packets.outgoing;
 using wServer.realm.entities;
+using Player = wServer.realm.entities.Player;
 
 namespace wServer.realm.worlds.logic
 {
