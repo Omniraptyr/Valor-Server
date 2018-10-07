@@ -309,13 +309,16 @@ namespace wServer.logic
             )
         .Init("Haunting Knight",
             new State(
+                new ScaleHP(30000),
                 new ConditionalEffect(ConditionEffectIndex.StunImmune),
                 new ConditionalEffect(ConditionEffectIndex.ArmorBreakImmune),
                 new ConditionalEffect(ConditionEffectIndex.StasisImmune),
                 new State("fight1",
+                    new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 3000),
+                    new Grenade(4, 140, coolDown: 2000, effect: ConditionEffectIndex.Blind, effectDuration: 4000, color: 0x000000),
                     new Prioritize(
-                        new Follow(1.5, 8, 1),
-                        new Wander(0.2)
+                        new Follow(1.7, 8, 1),
+                        new Wander(0.5)
                         ),
                      new Shoot(10, count: 8, shootAngle: 22, projectileIndex: 1, coolDown: 5000, coolDownOffset: 3000),
                      new Shoot(10, count: 9, projectileIndex: 0, coolDown: 6000, coolDownOffset: 3000),
@@ -1258,7 +1261,7 @@ namespace wServer.logic
                     ),
                 new Threshold(0.1,
                     new TierLoot(7, ItemType.Ring, 0.08),
-                    new ItemLoot("Spiritclaw", 0.007),
+                    new ItemLoot("Spiritclaw", 0.002),
                     new ItemLoot("Ultimate Onrane Cache", 0.75),
                     new ItemLoot("The Stronghold Key", 0.05),
                     new ItemLoot("10000 Gold", 0.50),
@@ -1291,7 +1294,7 @@ namespace wServer.logic
                 ),
                 new Threshold(0.1,
                     new TierLoot(7, ItemType.Ring, 0.1),
-                    new ItemLoot("Spiritclaw", 0.014),
+                    new ItemLoot("Spiritclaw", 0.004),
                     new ItemLoot("Sor Fragment Cache", 0.33),
                     new ItemLoot("Ultimate Onrane Cache", 1),
                     new ItemLoot("The Stronghold Key", 0.1),
@@ -1965,10 +1968,10 @@ namespace wServer.logic
                         //Shoot projectiles in a ring every other moment
                         new Shoot(10, count: 22, projectileIndex: 0, coolDown: 8000),
                         //Spawn the Zol Sorcerers
-                        new InvisiToss("Zol Sorcerer", 5, 0, coolDown: 9999999),
-                        new InvisiToss("Zol Sorcerer", 5, 90, coolDown: 9999999),
-                        new InvisiToss("Zol Sorcerer", 5, 180, coolDown: 9999999),
-                        new InvisiToss("Zol Sorcerer", 5, 270, coolDown: 9999999),
+                        new InvisiToss("Zol Sorcerer", 5, 0, coolDown: 10000),
+                        new InvisiToss("Zol Sorcerer", 5, 90, coolDown: 10000),
+                        new InvisiToss("Zol Sorcerer", 5, 180, coolDown: 10000),
+                        new InvisiToss("Zol Sorcerer", 5, 270, coolDown: 10000),
                         //Start Spawning Servants shortly after
                         new InvisiToss("Corrupted Stone Giant B", 10, 45, coolDown: 20000, coolDownOffset: 3400),
                         new InvisiToss("Corrupted Stone Giant B", 10, 135, coolDown: 20000, coolDownOffset: 3400),
@@ -1985,10 +1988,10 @@ namespace wServer.logic
                         new InvisiToss("Giant Cube of Zol", 6, 245, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 335, coolDown: 34000, coolDownOffset: 6000),
                         //Start Spawning Slimes
-                        new InvisiToss("AH Feral of the Zol", 8, 65, coolDown: 30000, coolDownOffset: 6000),
-                        new InvisiToss("AH Feral of the Zol", 8, 155, coolDown: 30000, coolDownOffset: 6000),
-                        new InvisiToss("AH Feral of the Zol", 8, 245, coolDown: 30000, coolDownOffset: 6000),
-                        new InvisiToss("AH Feral of the Zol", 8, 335, coolDown: 30000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 65, coolDown: 20000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 155, coolDown: 20000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 245, coolDown: 20000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 335, coolDown: 20000, coolDownOffset: 6000),
                         // Spawn niolru
                         new InvisiToss("Niolru", 8, 45, coolDown: 10000, coolDownOffset: 2600),
                         new InvisiToss("Niolru", 8, 135, coolDown: 10000, coolDownOffset: 2600),

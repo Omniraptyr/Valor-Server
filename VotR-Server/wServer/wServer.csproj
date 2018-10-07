@@ -128,6 +128,7 @@
     <Compile Include="logic\db\BehaviorDb.Larry.cs" />
     <Compile Include="logic\db\BehaviorDb.QueenOfHearts.cs" />
     <Compile Include="logic\db\BehaviorDb.Shatters.cs" />
+    <Compile Include="logic\db\BehaviorDb.SkyPalace.cs" />
     <Compile Include="logic\db\BehaviorDb.SorGiant.cs" />
     <Compile Include="logic\db\BehaviorDb.Abyss.cs" />
     <Compile Include="logic\db\BehaviorDb.Aldragine.cs" />
@@ -530,6 +531,8 @@
     <Compile Include="realm\setpieces\TempleB.cs" />
     <Compile Include="realm\setpieces\TestChicken.cs" />
     <Compile Include="realm\setpieces\TimePiece.cs" />
+    <Compile Include="realm\setpieces\TLava.cs" />
+    <Compile Include="realm\setpieces\Tod.cs" />
     <Compile Include="realm\setpieces\Tower.cs" />
     <Compile Include="realm\setpieces\Unknown.cs" />
     <Compile Include="realm\setpieces\Yazanahar.cs" />

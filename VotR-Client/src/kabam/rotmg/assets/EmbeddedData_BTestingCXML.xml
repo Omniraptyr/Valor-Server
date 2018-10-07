@@ -16144,4 +16144,491 @@
         <ShadowSize>50</ShadowSize>
         <MaxHitPoints>0</MaxHitPoints>
     </Object>
+    <Object type="0x6808" id="Sky Palace Wall">
+        <Class>Wall</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x140</Index>
+        </Texture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x13f</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x6809" id="Sky Palace Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>SkyPalace</DungeonName>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x141</Index>
+        </Texture>
+        <Size>100</Size>
+        <DisplayId>Sky Palace Portal</DisplayId>
+    </Object>
+    <Object type="0x680a" id="Colothiois the Exalted">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Colothiois the Exalted</DisplayId>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>42</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>200</Size>
+        <MaxHitPoints>200000</MaxHitPoints>
+        <Defense>35</Defense>
+        <ParalyzeImmune/>
+        <DazedImmune/>
+        <StasisImmune/>
+        <StunImmune/>
+        <SlowImmune/>
+        <Projectile id="0">
+            <ObjectId>Zeus Bolt</ObjectId>
+            <Damage>35</Damage>
+            <Speed>75</Speed>
+            <ConditionEffect duration="1">Paralyzed</ConditionEffect>
+            <ArmorPiercing/>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Lightning Wide</ObjectId>
+            <Damage>50</Damage>
+            <Speed>75</Speed>
+            <ConditionEffect duration="2">Slowed</ConditionEffect>
+            <MultiHit/>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x680b" id="Elemental Cloud">
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1e3</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1e4</Index>
+            </Texture>
+        </AltTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>monster/dark_elves_death</DeathSound>
+        <Size>130</Size>
+        <ShadowSize>70</ShadowSize>
+        <Projectile id="0">
+            <ObjectId>Invisible</ObjectId>
+            <Damage>250</Damage>
+            <Speed>0</Speed>
+            <LifetimeMS>2500</LifetimeMS>
+            <Size>150</Size>
+            <ConditionEffect duration="2">Paralyzed</ConditionEffect>
+            <MultiHit/>
+        </Projectile>
+    </Object>
+    <Object type="0x680c" id="Lightning Wide">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>mountainTempleObjects8x8</File>
+            <Index>0x132</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x680d" id="Lightning Arrow">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>mountainTempleObjects8x8</File>
+            <Index>0x133</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x680e" id="Elemental Turret1">
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>mountainTempleObjects8x8</File>
+            <Index>0x134</Index>
+        </Texture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>monster/dark_elves_death</DeathSound>
+        <MaxHitPoints>20000</MaxHitPoints>
+        <Size>100</Size>
+        <ShadowSize>70</ShadowSize>
+        <Projectile id="0">
+            <ObjectId>Lightning Arrow</ObjectId>
+            <Damage>25</Damage>
+            <Speed>60</Speed>
+            <LifetimeMS>20000</LifetimeMS>
+            <Size>100</Size>
+            <ConditionEffect duration="2">Bleeding</ConditionEffect>
+            <MultiHit/>
+            <ArmorPiercing/>
+        </Projectile>
+    </Object>
+    <Object type="0x6710" id="Elemental Turret2">
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>mountainTempleObjects8x8</File>
+            <Index>0x134</Index>
+        </Texture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>monster/dark_elves_death</DeathSound>
+        <MaxHitPoints>20000</MaxHitPoints>
+        <Size>100</Size>
+        <ShadowSize>70</ShadowSize>
+        <Projectile id="0">
+            <ObjectId>Lightning Arrow</ObjectId>
+            <Damage>25</Damage>
+            <Speed>60</Speed>
+            <LifetimeMS>40000</LifetimeMS>
+            <Size>100</Size>
+            <ConditionEffect duration="2">Bleeding</ConditionEffect>
+            <MultiHit/>
+            <ArmorPiercing/>
+        </Projectile>
+    </Object>
+    <Object type="0x6711" id="Elemental Turret3">
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>mountainTempleObjects8x8</File>
+            <Index>0x134</Index>
+        </Texture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>monster/dark_elves_death</DeathSound>
+        <MaxHitPoints>20000</MaxHitPoints>
+        <Size>100</Size>
+        <ShadowSize>70</ShadowSize>
+        <Projectile id="0">
+            <ObjectId>Lightning Arrow</ObjectId>
+            <Damage>25</Damage>
+            <Speed>60</Speed>
+            <LifetimeMS>40000</LifetimeMS>
+            <Size>100</Size>
+            <ConditionEffect duration="2">Bleeding</ConditionEffect>
+            <MultiHit/>
+            <ArmorPiercing/>
+        </Projectile>
+    </Object>
+    <Object type="0x6712" id="Elemental Turret4">
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>mountainTempleObjects8x8</File>
+            <Index>0x134</Index>
+        </Texture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>monster/dark_elves_death</DeathSound>
+        <MaxHitPoints>20000</MaxHitPoints>
+        <Size>100</Size>
+        <ShadowSize>70</ShadowSize>
+        <Projectile id="0">
+            <ObjectId>Lightning Arrow</ObjectId>
+            <Damage>25</Damage>
+            <Speed>60</Speed>
+            <LifetimeMS>40000</LifetimeMS>
+            <Size>100</Size>
+            <ConditionEffect duration="2">Bleeding</ConditionEffect>
+            <MultiHit/>
+            <ArmorPiercing/>
+        </Projectile>
+    </Object>
+    <Object type="0x6713" id="Tod">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Tod</DisplayId>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>26</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>150</Size>
+        <MaxHitPoints>200000</MaxHitPoints>
+        <Defense>35</Defense>
+        <ParalyzeImmune/>
+        <DazedImmune/>
+        <StasisImmune/>
+        <StunImmune/>
+        <SlowImmune/>
+        <Quest/>
+        <Flying/>
+        <Lootdrop/>
+        <Z>0.2</Z>
+        <Level>20</Level>
+        <God/>
+        <Projectile id="0">
+            <ObjectId>Tod Red Slash</ObjectId>
+            <Damage>105</Damage>
+            <Speed>75</Speed>
+            <ConditionEffect duration="3.5">Bleeding</ConditionEffect>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Tod Grey Slash</ObjectId>
+            <Damage>85</Damage>
+            <Speed>75</Speed>
+            <ConditionEffect duration="1.2">Petrify</ConditionEffect>
+            <MultiHit/>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Tod Red Circle</ObjectId>
+            <Damage>75</Damage>
+            <Speed>100</Speed>
+            <ConditionEffect duration="1.7">Bleeding</ConditionEffect>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <LifetimeMS>8000</LifetimeMS>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Tod Grey Circle</ObjectId>
+            <Damage>65</Damage>
+            <Speed>100</Speed>
+            <ConditionEffect duration="0.8">Petrify</ConditionEffect>
+            <MultiHit/>
+            <LifetimeMS>8000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x6714" id="Tod Red Slash">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>mountainTempleObjects8x8</File>
+            <Index>0x135</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6715" id="Tod Grey Slash">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>mountainTempleObjects8x8</File>
+            <Index>0x136</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6716" id="TLava Spawner">
+        <DisplayId>TLava Spawner</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <Class>Character</Class>
+        <NoMiniMap/>
+        <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x6717" id="Tod Red Circle">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>mountainTempleObjects8x8</File>
+            <Index>0x137</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x6718" id="Tod Grey Circle">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>mountainTempleObjects8x8</File>
+            <Index>0x138</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x6719" id="TaL Projectile">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x146</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x681a" id="Thunder and Lightning">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x145</Index>
+        </Texture>
+        <SlotType>34</SlotType>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <Description>You won't like what follows.</Description>
+        <RateOfFire>1.15</RateOfFire>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>TaL Projectile</ObjectId>
+            <Speed>180</Speed>
+            <MinDamage>150</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <LifetimeMS>250</LifetimeMS>
+            <CondChance effect="Paralyzed" chance="0.25" duration="3"/>
+            <ArmorPiercing/>
+            <MultiHit/>
+            <Wavy/>
+        </Projectile>
+        <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="112" amount="45">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="7">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="-70">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <NumProjectiles>2</NumProjectiles>
+        <ArcGap>0</ArcGap>
+        <OldSound>daggerSwing</OldSound>
+    </Object>
+    <Object type="0x681b" id="Tod Spike">
+        <DisplayId>Tod Spike</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1e5</Index>
+        </Texture>
+        <Class>Character</Class>
+        <NoMiniMap/>
+        <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x673c" id="Malgor Torii">
+        <Class>Character</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1e9</Index>
+        </Texture>
+        <Size>120</Size>
+        <ShadowSize>50</ShadowSize>
+        <MaxHitPoints>0</MaxHitPoints>
+    </Object>
+    <Object type="0x681c" id="MLair Wall1">
+        <Class>Wall</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x149</Index>
+        </Texture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x147</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x681d" id="MLair Wall2">
+        <Class>Wall</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x14a</Index>
+        </Texture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x147</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x681e" id="MLair Wall3">
+        <Class>Wall</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x14b</Index>
+        </Texture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x147</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x6820" id="MLair Wall4">
+        <Class>Wall</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x149</Index>
+        </Texture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x148</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x6821" id="MLair Wall5">
+        <Class>Wall</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x14a</Index>
+        </Texture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x148</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x6822" id="MLair Wall6">
+        <Class>Wall</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x14b</Index>
+        </Texture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x148</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/stone_walls_hit</HitSound>
+        <DeathSound>monster/stone_walls_death</DeathSound>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
 </Objects>

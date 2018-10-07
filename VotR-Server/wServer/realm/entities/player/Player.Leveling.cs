@@ -80,6 +80,7 @@ namespace wServer.realm.entities
             { "shtrs Defense System",           Tuple.Create(14,15, 20) },
             { "Fanatic of Chaos",               Tuple.Create(14,15, 20) },
             { "Skull Shrine",                   Tuple.Create(14,15, 20) },
+            { "Tod",                            Tuple.Create(14,15, 20) },
             { "Pentaract",                      Tuple.Create(14,15, 20) },
             { "Cube God",                       Tuple.Create(14,15, 20) },
             { "Grand Sphinx",                   Tuple.Create(14,15, 20) },

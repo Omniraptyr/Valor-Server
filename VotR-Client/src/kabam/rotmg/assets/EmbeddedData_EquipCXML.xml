@@ -18878,7 +18878,7 @@
         <Track/>
         <DisplayId>The Dojo Key</DisplayId>
     </Object>
-    <Object type="0x5227" id="Tome of Wild Wreckage">
+    <Object type="0x5227" id="Sky Tome">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -18886,18 +18886,20 @@
             <Index>0x13c</Index>
         </Texture>
         <SlotType>4</SlotType>
-        <Description>A tome that will make you become plenty more powerful than your enemies.</Description>
+        <Description>An odd book that fell from the sky out of nowhere..</Description>
         <Sound>spell/major_heal</Sound>
-        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="2">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
-        <MpCost>110</MpCost>
-        <Activate amount="275" range="5.5" useWisMod="true">HealNova</Activate>
-        <Activate effect="Damaging" duration="8" useWisMod="true">ConditionEffectSelf</Activate>
-        <feedPower>1000</feedPower>
-        <DisplayId>Tome of Wild Wreckage</DisplayId>
+        <MpCost>90</MpCost>
+        <ActivateOnEquip stat="3" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <Activate effect="Weak" duration="3" range="5" color="0xffff00" target="enemy" center="player" visualEffect="5" useWisMod="false">GenericActivate</Activate>
+        <Activate effect="Healing" duration="6" range="5" useWisMod="true">ConditionEffectAura</Activate>
+        <Activate range="5" amount="160" useWisMod="true">HealNova</Activate>
+        <Activate range="4">RemoveNegativeConditions</Activate>
+        <feedPower>380</feedPower>
+        <DisplayId>Sky Tome</DisplayId>
     </Object>
     <Object type="0x5228" id="Dagger of Uranium">
         <Class>Equipment</Class>
@@ -20730,9 +20732,9 @@
         <FameBonus>8</FameBonus>
         <feedPower>1850</feedPower>
         <Legendary/>
-        <MpCost>105</MpCost>
+        <MpCost>90</MpCost>
         <Activate totalDamage="650" condEffect="Slowed" condDuration="2.2" maxTargets="7" useWisMod="true">Lightning</Activate>
-        <Activate effect="Berserk" duration="3.25">ConditionEffectSelf</Activate>
+        <Activate effect="Berserk" duration="3.5">ConditionEffectSelf</Activate>
     </Object>
     <Object type="0x17da" id="Bow of the Spider Silk" setType="0x0010" setName="Spider Queen Set">
         <Class>Equipment</Class>
@@ -23637,7 +23639,7 @@
         <MpCost>80</MpCost>
         <Activate effect="Surged" duration="4" range="4">ConditionEffectAura</Activate>
         <Activate range="3" amount="5" duration="5">Banner</Activate>
-        <Activate effect="Invulnerable" duration="0.8">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="0.4">ConditionEffectSelf</Activate>
         <Cooldown>7.5</Cooldown>
         <FameBonus>2</FameBonus>
         <feedPower>90</feedPower>
@@ -23660,7 +23662,7 @@
         <MpCost>85</MpCost>
         <Activate effect="Surged" duration="4" range="4">ConditionEffectAura</Activate>
         <Activate range="4" amount="5" duration="5">Banner</Activate>
-        <Activate effect="Invulnerable" duration="1.00">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="0.5">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
         <FameBonus>3</FameBonus>
         <feedPower>185</feedPower>
@@ -23682,7 +23684,7 @@
         <MpCost>90</MpCost>
         <Activate effect="Surged" duration="4" range="5">ConditionEffectAura</Activate>
         <Activate range="4" amount="6" duration="5">Banner</Activate>
-        <Activate effect="Invulnerable" duration="1.25">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="0.6">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
         <FameBonus>4</FameBonus>
         <feedPower>380</feedPower>
@@ -23703,7 +23705,7 @@
         <BagType>6</BagType>
         <MpCost>85</MpCost>
         <Activate range="3" amount="6" duration="5">Banner</Activate>
-        <Activate effect="Invulnerable" duration="2">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="1">ConditionEffectSelf</Activate>
         <Activate effect="Damaging" duration="3">ConditionEffectSelf</Activate>
         <Activate effect="Armored" duration="4">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
@@ -24684,7 +24686,7 @@
         <BagType>6</BagType>
         <MpCost>90</MpCost>
         <Activate range="4" amount="6" duration="4">Banner</Activate>
-        <Activate effect="Invulnerable" duration="1.5">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration=".75">ConditionEffectSelf</Activate>
         <Activate effect="Speedy" duration="3.5">ConditionEffectSelf</Activate>
         <Activate effect="Surged" duration="6" range="3">ConditionEffectAura</Activate>
         <Cooldown>8</Cooldown>
@@ -25004,6 +25006,7 @@
             <ArmorPiercing/>
         </Projectile>
         <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="-5">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <OldSound>weapon/blunt_sword</OldSound>
@@ -25651,7 +25654,7 @@
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <MpCost>120</MpCost>
-        <Activate totalDamage="1800" maxTargets="8" condEffect="Stasis" condDuration="2.7" color="0x000000">Lightning</Activate>
+        <Activate totalDamage="1200" maxTargets="8" condEffect="Stasis" condDuration="2.7" color="0x000000">Lightning</Activate>
         <Activate effect="Slowed" duration="1.5">ConditionEffectSelf</Activate>
         <feedPower>2000</feedPower>
         <Legendary/>
@@ -28435,12 +28438,11 @@
             <MaxDamage>220</MaxDamage>
             <LifetimeMS>325</LifetimeMS>
         </Projectile>
-        <ActivateOnEquip stat="22" amount="-25">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <Legendary/>
         <Legend id="2" stat="21">
             <Name>Warcry</Name>
-            <Description>When your Surge is at least 25 you gain a bonus 200% bonus health and your health regenerates faster.</Description>
+            <Description>When your Surge is at least 25 you gain a bonus 300 bonus health and your health regenerates faster.</Description>
             <HP>0</HP>
             <MP>0</MP>
             <Surge>25</Surge>
@@ -29198,13 +29200,13 @@
         </Texture>
         <SlotType>29</SlotType>
         <Description></Description>
-        <RateOfFire>0.80</RateOfFire>
+        <RateOfFire>0.70</RateOfFire>
         <Sound>weapon/mithril_sword</Sound>
         <Projectile>
             <ObjectId>Moon Magic</ObjectId>
             <Speed>60</Speed>
-            <MinDamage>520</MinDamage>
-            <MaxDamage>680</MaxDamage>
+            <MinDamage>500</MinDamage>
+            <MaxDamage>600</MaxDamage>
             <LifetimeMS>600</LifetimeMS>
             <ArmorPiercing/>
             <MultiHit/>
@@ -29776,8 +29778,8 @@
         </Texture>
         <SlotType>9</SlotType>
         <Description>A gauntlet that empowers the power of your thoughts and lends you the power of the celestial gods.</Description>
-        <ActivateOnEquip stat="122" amount="100">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="-140">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="75">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="-100">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="27" amount="30">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -30622,8 +30624,8 @@
         <Projectile>
             <ObjectId>Dragonslayer Bolt</ObjectId>
             <Speed>100</Speed>
-            <MinDamage>110</MinDamage>
-            <MaxDamage>138</MaxDamage>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>112</MaxDamage>
             <LifetimeMS>360</LifetimeMS>
             <ArmorPiercing/>
             <MultiHit/>
@@ -30891,8 +30893,7 @@
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <MpCost>90</MpCost>
-        <Activate totalDamage="1200" maxTargets="12">BurningLightning</Activate>
-		<Activate effect="Damaging" duration="2.5" useWisMod="true">ConditionEffectSelf</Activate>
+        <Activate totalDamage="840" maxTargets="12">BurningLightning</Activate>
         <feedPower>2000</feedPower>
         <Steal type="life" amount="2"/>
 		<Legend id="3" stat="27">
@@ -31884,7 +31885,7 @@
         <MpCost>85</MpCost>
         <Activate range="4" amount="6" duration="6">Banner</Activate>
         <Activate stat="3" amount="75" duration="4" range="4.5" noStack="true" useWisMod="true">StatBoostAura</Activate>
-        <Activate effect="Invulnerable" duration="3">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="1.25">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
         <feedPower>900</feedPower>
         <FameBonus>6</FameBonus>
@@ -33335,9 +33336,9 @@
         <BagType>6</BagType>
         <MpCost>90</MpCost>
         <Activate range="7" amount="6" duration="7">Banner</Activate>
-        <ActivateOnEquip stat="122" amount="75">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="50">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="121" amount="-20">IncrementStat</ActivateOnEquip>
-        <Activate effect="Invulnerable" duration="3.75">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="1.5">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
         <feedPower>2200</feedPower>
         <FameBonus>8</FameBonus>
@@ -33372,8 +33373,7 @@
             <Amplitude>2</Amplitude>
             <Frequency>0.7</Frequency>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
@@ -33719,6 +33719,7 @@
         <ActivateOnEquip stat="21" amount="-10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>11</BagType>
+        <OldSound>bladeSwing</OldSound>
         <FameBonus>8</FameBonus>
         <Legend id="4" stat="27">
             <Name>Slayer Recovery Technique</Name>
@@ -33743,7 +33744,7 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x140</Index>
+            <Index>0x160</Index>
         </Texture>
         <SlotType>36</SlotType>
         <Tier>0</Tier>
@@ -33766,7 +33767,7 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x141</Index>
+            <Index>0x161</Index>
         </Texture>
         <SlotType>36</SlotType>
         <Tier>1</Tier>
@@ -33789,7 +33790,7 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x142</Index>
+            <Index>0x162</Index>
         </Texture>
         <SlotType>36</SlotType>
         <Tier>2</Tier>
@@ -33812,7 +33813,7 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x143</Index>
+            <Index>0x163</Index>
         </Texture>
         <SlotType>36</SlotType>
         <Tier>3</Tier>
@@ -33837,7 +33838,7 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x144</Index>
+            <Index>0x164</Index>
         </Texture>
         <SlotType>36</SlotType>
         <Tier>4</Tier>
@@ -33862,7 +33863,7 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x145</Index>
+            <Index>0x165</Index>
         </Texture>
         <SlotType>36</SlotType>
         <Tier>5</Tier>
@@ -33887,7 +33888,7 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x146</Index>
+            <Index>0x166</Index>
         </Texture>
         <SlotType>36</SlotType>
         <Tier>6</Tier>
@@ -33912,7 +33913,7 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x147</Index>
+            <Index>0x167</Index>
         </Texture>
         <SlotType>36</SlotType>
         <Description>A talisman that calls the lost spirits that haunt the undead lair.</Description>
@@ -33937,7 +33938,7 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x148</Index>
+            <Index>0x168</Index>
         </Texture>
         <SlotType>36</SlotType>
         <Description>A talisman that summons a special type of phantom to our realm with demonic powers that will enrages the user.</Description>
@@ -33961,5 +33962,76 @@
         <BagType>6</BagType>
         <MpCost>100</MpCost>
         <Cooldown>4</Cooldown>
+    </Object>
+    <Object type="0x672e" id="Malgoric Skull">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x169</Index>
+        </Texture>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <SlotType>19</SlotType>
+        <Description>The skull of Malgor himself.</Description>
+        <ActivateOnEquip stat="28" amount="12">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>90</MpCost>
+        <Activate radius="6" totalDamage="100">VampireBlast</Activate>
+        <Activate effect="Bleeding" duration="3" range="6" color="0x05c2b5" target="enemy" center="mouse" visualEffect="0" useWisMod="false">GenericActivate</Activate>
+    </Object>
+    <Object type="0x672f" id="Bone Axe">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x16a</Index>
+        </Texture>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <SlotType>1</SlotType>
+        <Description>An axe made of Malgor's bones.</Description>
+        <RateOfFire>0.8</RateOfFire>
+        <Sound>weapon/mithril_sword</Sound>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="25">IncrementStat</ActivateOnEquip>
+        <Projectile>
+            <ObjectId>Malgor Swipe</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>220</MaxDamage>
+            <LifetimeMS>400</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <NumProjectiles>4</NumProjectiles>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>bladeSwing</OldSound>
+        <feedPower>450</feedPower>
+        <DisplayId>Bone Axe</DisplayId>
+    </Object>
+    <Object type="0x673b" id="Malgoric Charm">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x16b</Index>
+        </Texture>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <SlotType>32</SlotType>
+        <Description>A charm used to summon a Torii charged with the malicious power of Malgor.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>120</MpCost>
+        <Activate range="6" amount="6" players="false" duration="6" effect="Bleeding" color="0xFF0044" objType="0x673c">Torii</Activate>
+        <Cooldown>3</Cooldown>
     </Object>
 </Objects>

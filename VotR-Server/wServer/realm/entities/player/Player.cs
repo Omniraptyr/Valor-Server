@@ -1394,27 +1394,27 @@ namespace wServer.realm.entities
             }
             else if (SupportScore >= 15001 && SupportScore <= 16000)
             {
-                return .56;
+                return .60;
             }
             else if (SupportScore >= 16001 && SupportScore <= 17000)
             {
-                return .57;
+                return .65;
             }
             else if (SupportScore >= 17001 && SupportScore <= 18000)
             {
-                return .58;
+                return .70;
             }
             else if (SupportScore >= 18001 && SupportScore <= 19000)
             {
-                return .69;
+                return .75;
             }
             else if (SupportScore >= 19001 && SupportScore <= 20000)
             {
-                return .70;
+                return .80;
             }
             else if (SupportScore > 20000)
             {
-                return .80;
+                return .90;
             }
             return 0;
         }

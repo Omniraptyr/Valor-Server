@@ -4953,4 +4953,92 @@
             <Index>0x124</Index>
         </Texture>
     </Ground>
+    <Ground type="0x29a6" id="Sky Palace floor1">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x13b</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29a7" id="Sky Palace floor2">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x13c</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29a8" id="Sky Palace floor3">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x13d</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29a9" id="Sky Palace floor4">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x13e</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29aa" id="Tod Floor">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x142</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29ab" id="Tod Brick">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x143</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29ac" id="Tod Lava">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x144</Index>
+        </Texture>
+        <MinDamage>40</MinDamage>
+        <MaxDamage>60</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <BlendPriority>1</BlendPriority>
+    </Ground>
+    <Ground type="0x29ca" id="MLair Floor">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x14c</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29cb" id="MLair Floor2">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x14d</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29cc" id="MLair Floor3">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x14e</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29cd" id="MLair Floor4">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x14f</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29ce" id="MLair Floor5">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x150</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29cf" id="Super Mega Hot Lava">
+        <Texture>
+            <File>lofiObj3</File>
+            <Index>0x483</Index>
+        </Texture>
+        <MinDamage>320</MinDamage>
+        <MaxDamage>400</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.222</Speed>
+    </Ground>
 </GroundTypes>

@@ -51,6 +51,7 @@ namespace wServer.realm
             Tuple.Create("Dragon Head", (ISetPiece) new RockDragon()),
             Tuple.Create("Test Egg", (ISetPiece) new TestChicken()),
             Tuple.Create("The Horrific", (ISetPiece) new TheHorrific()),
+            Tuple.Create("Tod", (ISetPiece) new Tod()),
 
 
         };
@@ -200,6 +201,18 @@ namespace wServer.realm
                 },
                 Killed = new string[] {
                     "How could you just slay my Horrific Creature with such ease, {PLAYER}?"
+                }
+            }),
+            Tuple.Create("Tod", new TauntData()
+            {
+                Spawn = new string[] {
+                    "Tod? What are you doing here?"
+                },
+                NumberOfEnemies = new string[] {
+                    "Stupid cretins! My {COUNT} Tods still prevail!"
+                },
+                Killed = new string[] {
+                    "Tod was my best friend.."
                 }
             }),
             Tuple.Create("Test Egg", new TauntData()

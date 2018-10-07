@@ -6060,4 +6060,153 @@
         <EnemyOccupySquare/>
         <BlocksSight/>
     </Object>
+    <Object type="0x681f" id="Chamber of Malgor Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Chamber of Malgor</DungeonName>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1e6</Index>
+        </Texture>
+        <Size>120</Size>
+        <Animation prob="1" period="0.6">
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1e7</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1e8</Index>
+                </Texture>
+            </Frame>
+        </Animation>
+        <DisplayId>Chamber of Malgor</DisplayId>
+    </Object>
+    <Object type="0x6724" id="MLair Bones">
+        <Class>GameObject</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x153</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x154</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x155</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x156</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x157</Index>
+            </Texture>
+        </RandomTexture>
+        <Size>35</Size>
+        <ShadowSize>60</ShadowSize>
+        <DisplayId>Chasm Bones</DisplayId>
+    </Object>
+    <Object type="0x6725" id="MLair Throne">
+        <Enemy/>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars16x16dMountains2</File>
+            <Index>9</Index>
+        </AnimatedTexture>
+        <HitSound>monster/golems_hit</HitSound>
+        <DeathSound>monster/slimes_death</DeathSound>
+        <Size>165</Size>
+        <MaxHitPoints>999999</MaxHitPoints>
+    </Object>
+    <Object type="0x6727" id="Malgor Blast">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x158</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6728" id="Malgor Wide">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x159</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6729" id="Malgor Thin">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x15a</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x673f" id="Malgor Small Blast">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x15b</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6726" id="Demon Lord Malgor">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Demon Lord Malgor</DisplayId>
+        <AnimatedTexture>
+            <File>chars16x16dMountains2</File>
+            <Index>10</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>200</Size>
+        <MaxHitPoints>200000</MaxHitPoints>
+        <Defense>35</Defense>
+        <ParalyzeImmune/>
+        <DazedImmune/>
+        <StasisImmune/>
+        <StunImmune/>
+        <SlowImmune/>
+        <Projectile id="0">
+            <ObjectId>Malgor Blast</ObjectId>
+            <Damage>105</Damage>
+            <Speed>100</Speed>
+            <ConditionEffect duration="2.5">Bleeding</ConditionEffect>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Malgor Wide</ObjectId>
+            <Damage>95</Damage>
+            <Speed>45</Speed>
+            <ConditionEffect duration="1.4">Stunned</ConditionEffect>
+            <MultiHit/>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Malgor Thin</ObjectId>
+            <Damage>125</Damage>
+            <Speed>130</Speed>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <LifetimeMS>8000</LifetimeMS>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Malgor Small Blast</ObjectId>
+            <Damage>50</Damage>
+            <Speed>100</Speed>
+            <ConditionEffect duration="1.2">Unstable</ConditionEffect>
+            <MultiHit/>
+            <LifetimeMS>8000</LifetimeMS>
+        </Projectile>
+    </Object>
 </Objects>
