@@ -1183,6 +1183,10 @@ namespace wServer.realm.entities
 
         private void AETalismanAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
+            if(Owner.Name == "Nexus")
+            {
+                return;
+            }
             Entity en = Entity.Resolve(Owner.Manager, eff.ObjType);
             en.Move(X, Y);
             Owner.EnterWorld(en);

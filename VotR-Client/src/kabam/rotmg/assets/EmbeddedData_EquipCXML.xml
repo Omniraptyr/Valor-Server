@@ -33694,7 +33694,7 @@
         <Item/>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x136</Index>
+            <Index>0x139</Index>
         </Texture>
         <SlotType>34</SlotType>
         <Description>Full of vitriol, the defeated struck under the cover of darkness, slaying all 9 brothers with a single slash.</Description>
@@ -33734,7 +33734,7 @@
         <Class>Projectile</Class>
         <Texture>
             <File>legendaries8x8Embed</File>
-            <Index>0x127</Index>
+            <Index>0x13a</Index>
         </Texture>
         <AngleCorrection>1</AngleCorrection>
     </Object>
@@ -33752,14 +33752,14 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
-            <EffectInfo name="Damage" description="140"/>
+            <EffectInfo name="Damage" description="280"/>
             <EffectInfo name="Lifetime" description="4"/>
-            <EffectInfo name="Effect" description="Bleeding for 2 secs"/>
+            <EffectInfo name="Effect" description="Dazed for 1 secs"/>
         </ExtraTooltipData>
         <Activate duration="4" objType="0x670f">TalismanAbility</Activate>
         <BagType>1</BagType>
         <MpCost>70</MpCost>
-        <Cooldown>3</Cooldown>
+        <Cooldown>4</Cooldown>
     </Object>
     <Object type="0x6709" id="Wooden Talisman">
         <Class>Equipment</Class>
@@ -33775,14 +33775,14 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
-            <EffectInfo name="Damage" description="160"/>
+            <EffectInfo name="Damage" description="320"/>
             <EffectInfo name="Lifetime" description="4"/>
-            <EffectInfo name="Effect" description="Bleeding for 2 secs"/>
+            <EffectInfo name="Effect" description="Dazed for 1 secs"/>
         </ExtraTooltipData>
         <Activate duration="4" objType="0x670a">TalismanAbility</Activate>
         <BagType>1</BagType>
         <MpCost>70</MpCost>
-        <Cooldown>3</Cooldown>
+        <Cooldown>4</Cooldown>
     </Object>
     <Object type="0x670a" id="Soul Talisman">
         <Class>Equipment</Class>
@@ -33798,14 +33798,14 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
-            <EffectInfo name="Damage" description="200"/>
+            <EffectInfo name="Damage" description="400"/>
             <EffectInfo name="Lifetime" description="4"/>
-            <EffectInfo name="Effect" description="Bleeding for 2 secs"/>
+            <EffectInfo name="Effect" description="Dazed for 1 secs"/>
         </ExtraTooltipData>
         <Activate duration="4" objType="0x671b">TalismanAbility</Activate>
         <BagType>1</BagType>
         <MpCost>75</MpCost>
-        <Cooldown>3</Cooldown>
+        <Cooldown>4</Cooldown>
     </Object>
     <Object type="0x670b" id="Jungle Talisman">
         <Class>Equipment</Class>
@@ -33821,16 +33821,16 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
-            <EffectInfo name="Damage" description="260"/>
+            <EffectInfo name="Damage" description="520"/>
             <EffectInfo name="Lifetime" description="4"/>
-            <EffectInfo name="Effect" description="Bleeding for 3 secs"/>
+            <EffectInfo name="Effect" description="Dazed for 1 secs"/>
         </ExtraTooltipData>
         <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="2">IncrementStat</ActivateOnEquip>
         <Activate duration="4" objType="0x671c">TalismanAbility</Activate>
         <BagType>2</BagType>
         <MpCost>75</MpCost>
-        <Cooldown>3</Cooldown>
+        <Cooldown>4</Cooldown>
     </Object>
     <Object type="0x670c" id="Cronus Talisman">
         <Class>Equipment</Class>
@@ -33846,16 +33846,16 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
-            <EffectInfo name="Damage" description="300"/>
+            <EffectInfo name="Damage" description="600"/>
             <EffectInfo name="Lifetime" description="5"/>
-            <EffectInfo name="Effect" description="Bleeding for 4 secs"/>
+            <EffectInfo name="Effect" description="Dazed for 2 secs"/>
         </ExtraTooltipData>
         <ActivateOnEquip stat="122" amount="15">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
         <Activate duration="5" objType="0x671d">TalismanAbility</Activate>
         <BagType>2</BagType>
         <MpCost>80</MpCost>
-        <Cooldown>3</Cooldown>
+        <Cooldown>4</Cooldown>
     </Object>
     <Object type="0x670d" id="Sentinel Talisman">
         <Class>Equipment</Class>
@@ -33871,16 +33871,16 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
-            <EffectInfo name="Damage" description="320"/>
+            <EffectInfo name="Damage" description="640"/>
             <EffectInfo name="Lifetime" description="5"/>
-            <EffectInfo name="Effect" description="Bleeding for 5 secs"/>
+            <EffectInfo name="Effect" description="Dazed for 2 secs"/>
         </ExtraTooltipData>
         <ActivateOnEquip stat="122" amount="15">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
         <Activate duration="5" objType="0x671e">TalismanAbility</Activate>
         <BagType>4</BagType>
         <MpCost>85</MpCost>
-        <Cooldown>3</Cooldown>
+        <Cooldown>4</Cooldown>
     </Object>
     <Object type="0x670e" id="Oryx Talisman">
         <Class>Equipment</Class>
@@ -33896,16 +33896,16 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
-            <EffectInfo name="Damage" description="340"/>
+            <EffectInfo name="Damage" description="680"/>
             <EffectInfo name="Lifetime" description="6"/>
-            <EffectInfo name="Effect" description="Bleeding for 6 secs"/>
+            <EffectInfo name="Effect" description="Dazed for 3 secs"/>
         </ExtraTooltipData>
         <ActivateOnEquip stat="122" amount="20">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
         <Activate duration="6" objType="0x671f">TalismanAbility</Activate>
         <BagType>4</BagType>
         <MpCost>90</MpCost>
-        <Cooldown>3</Cooldown>
+        <Cooldown>4</Cooldown>
     </Object>
     <Object type="0x672b" id="Phantom Talisman">
         <Class>Equipment</Class>
@@ -33920,7 +33920,7 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
-            <EffectInfo name="Damage" description="340"/>
+            <EffectInfo name="Damage" description="680"/>
             <EffectInfo name="Lifetime" description="6"/>
             <EffectInfo name="Effect" description="Cursed for 4 secs"/>
         </ExtraTooltipData>
@@ -33930,7 +33930,7 @@
         <Activate duration="6" objType="0x672a">TalismanAbility</Activate>
         <BagType>6</BagType>
         <MpCost>100</MpCost>
-        <Cooldown>3</Cooldown>
+        <Cooldown>4</Cooldown>
     </Object>
     <Object type="0x672c" id="Demon's Stone">
         <Class>Equipment</Class>
@@ -33945,9 +33945,9 @@
         <Usable/>
         <ExtraTooltipData>
             <EffectInfo name="Spawns a ghost to aid you in combat." description=""/>
-            <EffectInfo name="Damage" description="400"/>
+            <EffectInfo name="Damage" description="800"/>
             <EffectInfo name="Lifetime" description="6"/>
-            <EffectInfo name="Effect" description="Bleeding for 6 secs"/>
+            <EffectInfo name="Effect" description="Dazed for 4 secs"/>
         </ExtraTooltipData>
         <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
@@ -33960,6 +33960,6 @@
         <Legendary/>
         <BagType>6</BagType>
         <MpCost>100</MpCost>
-        <Cooldown>3</Cooldown>
+        <Cooldown>4</Cooldown>
     </Object>
 </Objects>

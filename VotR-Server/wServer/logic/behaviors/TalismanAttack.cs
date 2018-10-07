@@ -60,7 +60,7 @@ namespace wServer.logic.behaviors
                         DurationMS = _duration
                     });
                 }
-                cool = 200;
+                cool = 600;
             }
             else
                 cool -= time.ElapsedMsDelta;
