@@ -4211,13 +4211,4 @@
       </AnimatedTexture>
       <PlayerClassType>0x031d</PlayerClassType>
    </Object>
-   <Object type="0x63d4" id="Soulslayer Skin">
-      <Skin/>
-      <Class>Skin</Class>
-      <AnimatedTexture>
-         <File>playerskins</File>
-         <Index>405</Index>
-      </AnimatedTexture>
-      <PlayerClassType>0x55b9</PlayerClassType>
-   </Object>
 </Objects>
