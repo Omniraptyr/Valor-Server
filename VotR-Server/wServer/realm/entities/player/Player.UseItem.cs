@@ -1401,7 +1401,8 @@ namespace wServer.realm.entities
                 {
                     Manager._isChallengeLaunched = false;
                 }));
-
+                Owner.ChallengeCount = 0;
+                Manager.Chat.Announce("Your acts of valor have angered Sidon! A public challenge has unlocked on " + Manager.Config.serverInfo.name + "!");
             }
             else
             {
@@ -1415,16 +1416,17 @@ namespace wServer.realm.entities
                     Txt = Name + ", becareful what you wish for..."
                 };
                 Owner.BroadcastPacket(packet, null);
+
+                var countPacket = new Text
+                {
+                    BubbleTime = 0,
+                    NumStars = -1,
+                    TextColor = 0xFF00FF,
+                    Name = "",
+                    Txt = "Valor Count: " + Owner.ChallengeCount + "/5"
+                };
+                Owner.BroadcastPacket(countPacket, null);
             }
-            var countPacket = new Text
-            {
-                BubbleTime = 0,
-                NumStars = -1,
-                TextColor = 0xFF00FF,
-                Name = "",
-                Txt = "Valor Count: " + Owner.ChallengeCount +"/5"
-            };
-            Owner.BroadcastPacket(countPacket, null);
         }
 
         private void AERandomGold(RealmTime time, Item item, Position target, ActivateEffect eff)

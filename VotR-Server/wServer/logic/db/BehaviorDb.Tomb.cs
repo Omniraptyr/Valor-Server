@@ -88,7 +88,8 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                     new Threshold(0.32,
-                        new ItemLoot("Onrane", 0.05),
+                        new ItemLoot("Onrane", 0.75),
+                        new ItemLoot("Gold Cache", 0.02),
                         new ItemLoot("Potion of Life", 1)
                     ),
                     new Threshold(0.1,
@@ -325,7 +326,8 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                                 new Threshold(0.01,
-                                        new ItemLoot("Onrane", 0.05),
+                                        new ItemLoot("Onrane", 0.75),
+                                        new ItemLoot("Gold Cache", 0.02),
                                         new ItemLoot("Potion of Life", 1),
                                         new ItemLoot("Potion of Vitality", 0.8),
                                         new ItemLoot("Ring of the Sphinx", 0.1)
@@ -552,8 +554,8 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                                 new Threshold(0.01,
-                                        new ItemLoot("Onrane", 0.05),
-                                        new ItemLoot("Potion of Life", 1),
+                                        new ItemLoot("Onrane", 0.75),
+                                        new ItemLoot("Gold Cache", 0.02),
                                         new ItemLoot("Potion of Attack", 0.8),
                                         new ItemLoot("Ring of the Nile", 0.1),
                                         new ItemLoot("Book of Geb", 0.042),
