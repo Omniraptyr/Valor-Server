@@ -1393,10 +1393,10 @@ namespace wServer.realm.entities
                 (entity as Portal).PlayerOpened = true;
                 (entity as Portal).Opener = Name;
 
-                entity.Move(144, 106);
+                entity.Move(145, 107);
                 Owner.EnterWorld(entity);
                 var timeoutTime = gameData.Portals[objType].Timeout;
-                Owner.Timers.Add(new WorldTimer(timeoutTime * 1000, (world, t) => Owner.LeaveWorld(entity)));
+                Owner.Timers.Add(new WorldTimer(timeoutTime * 1000, (world, t) => world.LeaveWorld(entity)));
                 Owner.Timers.Add(new WorldTimer(60000, (w, t) =>
                 {
                     Manager._isChallengeLaunched = false;
