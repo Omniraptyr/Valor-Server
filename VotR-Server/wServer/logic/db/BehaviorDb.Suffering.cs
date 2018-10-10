@@ -109,8 +109,8 @@ namespace wServer.logic
                     ),
                     new State(
                         new DamageTakenTransition(1700000, "ragestart"),
-                        new Reproduce("Mage of Malgor", 10, 3, coolDown: 3000),
-                        new Reproduce("Ranger of Malgor", 10, 3, coolDown: 3000),
+                        new Reproduce("Mage of Malgor", 10, 4, coolDown: 2000),
+                        new Reproduce("Ranger of Malgor", 10, 4, coolDown: 2000),
                     new State("Blast",
                         new Shoot(10, 12, projectileIndex: 11, coolDown: 2000),
                         new TimedTransition(2000, "fight1")
@@ -212,10 +212,10 @@ namespace wServer.logic
                         new Order(99, "Malgoric Altar Taskmaster", "idle"),
                         new EntitiesNotExistsTransition(99, "fight5", "Malgoric Altar"),
                         new Prioritize(
-                            new Follow(0.3, 99, 1),
+                            new Follow(0.7, 99, 1),
                             new Wander(0.1)
                         ),
-                        new Shoot(10, 5, shootAngle: 20, projectileIndex: 11, coolDown: 2000)
+                        new Shoot(10, 6, shootAngle: 20, projectileIndex: 11, coolDown: 2000)
                             )
                         ),
                     new State("fight5",
@@ -244,14 +244,15 @@ namespace wServer.logic
                             )
                         ),
                     new State("ragefightstart",
+                        new HealSelf(coolDown: 4000, amount: 750000),
                         new MoveTo(1, 21, 19),
                         new TimedTransition(4000, "ragefight")
                             ),
                     new State("ragefight",
                         new Grenade(3, 200, 5, coolDown: 6000),
                         new Reproduce("Demonic Scarab", 10, 2, coolDown: 3000),
-                        new Reproduce("Mage of Malgor", 10, 2, coolDown: 4000),
-                        new Reproduce("Ranger of Malgor", 10, 2, coolDown: 4000),
+                        new Reproduce("Mage of Malgor", 10, 3, coolDown: 2000),
+                        new Reproduce("Ranger of Malgor", 10, 3, coolDown: 2000),
                         new Shoot(10, count: 2, shootAngle: 180, projectileIndex: 14, rotateAngle: 90, coolDown: 3600),
                         new Shoot(10, count: 5, shootAngle: 20, projectileIndex: 15, predictive: 0.5, coolDown: 2400),
                         new Shoot(10, count: 1, projectileIndex: 8, coolDown: 3000, predictive: 0.5),

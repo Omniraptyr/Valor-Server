@@ -34006,7 +34006,7 @@
         <Projectile>
             <ObjectId>Malgor Swipe</ObjectId>
             <Speed>100</Speed>
-            <MinDamage>140</MinDamage>
+            <MinDamage>150</MinDamage>
             <MaxDamage>220</MaxDamage>
             <LifetimeMS>400</LifetimeMS>
             <MultiHit/>

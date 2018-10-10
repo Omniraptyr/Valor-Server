@@ -19,7 +19,7 @@
   "serverSettings": {
     "logFolder": "./logs",
     "resourceFolder": "./resources",
-    "version": "75.A3",
+    "version": "75.A5",
     "tps": "5",
     "mode": "Single",
     "key": "BA15DE",

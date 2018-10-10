@@ -1390,6 +1390,9 @@ namespace wServer.realm.entities
                     return;
                 var entity = Entity.Resolve(Manager, objType);
 
+                (entity as Portal).PlayerOpened = true;
+                (entity as Portal).Opener = Name;
+
                 entity.Move(144, 106);
                 Owner.EnterWorld(entity);
                 var timeoutTime = gameData.Portals[objType].Timeout;

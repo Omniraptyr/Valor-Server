@@ -5827,6 +5827,7 @@
             <Index>0</Index>
         </Texture>
         <Defense>0</Defense>
+        <MaxHitPoints>999999</MaxHitPoints>
         <Size>0</Size>
         <XpMult>0.0</XpMult>
         <Elitedrop/>
@@ -9902,6 +9903,7 @@
             <File>invisible</File>
             <Index>0</Index>
         </Texture>
+        <MaxHitPoints>999999</MaxHitPoints>
         <Defense>0</Defense>
         <Size>0</Size>
         <XpMult>0.0</XpMult>
@@ -16656,24 +16658,27 @@
         <Defense>50</Defense>
         <Projectile id="0">
             <ObjectId>Malgor Blast</ObjectId>
-            <MinDamage>80</MinDamage>
-            <MaxDamage>100</MaxDamage>
+            <MinDamage>160</MinDamage>
+            <MaxDamage>180</MaxDamage>
             <Speed>100</Speed>
             <LifetimeMS>2000</LifetimeMS>
+            <MultiHit/>
         </Projectile>
         <Projectile id="1">
             <ObjectId>Malgor Blast</ObjectId>
-            <MinDamage>140</MinDamage>
-            <MaxDamage>160</MaxDamage>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>220</MaxDamage>
             <Speed>90</Speed>
             <LifetimeMS>2000</LifetimeMS>
+            <MultiHit/>
         </Projectile>
         <Projectile id="2">
             <ObjectId>Malgor Blast</ObjectId>
-            <MinDamage>160</MinDamage>
-            <MaxDamage>180</MaxDamage>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>240</MaxDamage>
             <Speed>80</Speed>
             <LifetimeMS>2000</LifetimeMS>
+            <MultiHit/>
         </Projectile>
         <Projectile id="3">
             <ObjectId>Malgor Blast</ObjectId>
@@ -16681,6 +16686,7 @@
             <MaxDamage>260</MaxDamage>
             <Speed>70</Speed>
             <LifetimeMS>2000</LifetimeMS>
+            <MultiHit/>
         </Projectile>
         <Projectile id="4">
             <ObjectId>Malgor Blast</ObjectId>
@@ -16688,6 +16694,7 @@
             <MaxDamage>280</MaxDamage>
             <Speed>60</Speed>
             <LifetimeMS>2000</LifetimeMS>
+            <MultiHit/>
         </Projectile>
         <Projectile id="5">
             <ObjectId>Malgor Blast</ObjectId>
@@ -16695,6 +16702,7 @@
             <MaxDamage>320</MaxDamage>
             <Speed>50</Speed>
             <LifetimeMS>2000</LifetimeMS>
+            <MultiHit/>
         </Projectile>
         <Projectile id="6">
             <ObjectId>Malgor Confuse Shot</ObjectId>
@@ -16734,6 +16742,7 @@
             <Speed>90</Speed>
             <LifetimeMS>3000</LifetimeMS>
             <Size>160</Size>
+            <MultiHit/>
         </Projectile>
         <Projectile id="11">
             <ObjectId>Malgor Big Spinner</ObjectId>
@@ -16763,6 +16772,7 @@
             <Speed>60</Speed>
             <LifetimeMS>2000</LifetimeMS>
             <Size>160</Size>
+            <MultiHit/>
         </Projectile>
         <Projectile id="15">
             <ObjectId>Malgor Meteor</ObjectId>
@@ -16770,6 +16780,7 @@
             <Speed>40</Speed>
             <LifetimeMS>2000</LifetimeMS>
             <Size>160</Size>
+            <MultiHit/>
         </Projectile>
     </Object>
     <Object type="0x6824" id="Mage of Malgor">
