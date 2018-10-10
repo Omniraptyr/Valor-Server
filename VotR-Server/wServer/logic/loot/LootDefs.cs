@@ -621,7 +621,7 @@ namespace wServer.logic.loot
                     new ItemLoot("Shine", 0.005)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Insignia of Valor", 0.005)
+                    new ItemLoot("Insignia of Valor", 0.002)
                 )
             };
         }
@@ -638,7 +638,7 @@ namespace wServer.logic.loot
                     new ItemLoot("Shine", 0.005)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Insignia of Valor", 0.005)
+                    new ItemLoot("Insignia of Valor", 0.002)
                 )
             };
         }
@@ -655,7 +655,7 @@ namespace wServer.logic.loot
                     new ItemLoot("Shine", 0.005)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Insignia of Valor", 0.005)
+                    new ItemLoot("Insignia of Valor", 0.002)
                 )
 
             };
@@ -673,7 +673,7 @@ namespace wServer.logic.loot
                     new ItemLoot("Shine", 0.005)
                 ),
                new OnlyOne(
-                    new ItemLoot("Insignia of Valor", 0.005)
+                    new ItemLoot("Insignia of Valor", 0.002)
                 )
             };
         }
@@ -690,7 +690,7 @@ namespace wServer.logic.loot
                     new ItemLoot("Shine", 0.005)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Insignia of Valor", 0.005)
+                    new ItemLoot("Insignia of Valor", 0.002)
                 )
             };
         }

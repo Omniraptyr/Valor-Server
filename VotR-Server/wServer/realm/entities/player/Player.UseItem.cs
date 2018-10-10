@@ -1369,7 +1369,7 @@ namespace wServer.realm.entities
                 return;
             }
 
-            if (Owner.ChallengeCount >= 5)
+            if (Owner.ChallengeCount >= 4)
             {
                 //announce
                 var packet = new Text
@@ -1392,8 +1392,8 @@ namespace wServer.realm.entities
 
                 entity.Move(144, 106);
                 Owner.EnterWorld(entity);
-
-                Owner.Timers.Add(new WorldTimer(60 * 1000, (world, t) => Owner.LeaveWorld(entity)));
+                var timeoutTime = gameData.Portals[objType].Timeout;
+                Owner.Timers.Add(new WorldTimer(timeoutTime * 1000, (world, t) => Owner.LeaveWorld(entity)));
                 Owner.Timers.Add(new WorldTimer(60000, (w, t) =>
                 {
                     Manager._isChallengeLaunched = false;

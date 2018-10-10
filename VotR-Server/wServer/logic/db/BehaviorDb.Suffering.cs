@@ -80,6 +80,7 @@ namespace wServer.logic
                 new State(
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new ScaleHP(200000),
                     new State("default",
                         new PlayerWithinTransition(6, "taunt1")
                         ),
@@ -107,9 +108,9 @@ namespace wServer.logic
                         )
                     ),
                     new State(
-                        new HpLessTransition(0.3, "ragestart"),
-                        new Reproduce("Mage of Malgor", 10, 2, coolDown: 4000),
-                        new Reproduce("Ranger of Malgor", 10, 2, coolDown: 4000),
+                        new DamageTakenTransition(1700000, "ragestart"),
+                        new Reproduce("Mage of Malgor", 10, 3, coolDown: 3000),
+                        new Reproduce("Ranger of Malgor", 10, 3, coolDown: 3000),
                     new State("Blast",
                         new Shoot(10, 12, projectileIndex: 11, coolDown: 2000),
                         new TimedTransition(2000, "fight1")
@@ -139,7 +140,7 @@ namespace wServer.logic
                             new Orbit(0.7, 3, target: null, orbitClockwise: true)
                         ),
                         //Rapid Shotgun and Stun Spiral
-                        new Shoot(10, count: 4, shootAngle: 10, projectileIndex: 9, coolDown: 400, predictive: 1),
+                        new Shoot(10, count: 7, shootAngle: 10, projectileIndex: 9, coolDown: 400, predictive: 1),
                         new Shoot(10, count: 3, shootAngle: 30, projectileIndex: 8, coolDown: 600, rotateAngle: 40),
                         new TimedTransition(8000, "return1")
                         ),
@@ -158,7 +159,7 @@ namespace wServer.logic
                         new Taunt("You will not prevail!"),
                         //Sporadic Meteor Shotgun
                         new Shoot(10, count: 1, projectileIndex: 10, coolDown: 1800, coolDownOffset: 800),
-                        new Shoot(10, count: 1, projectileIndex: 10, coolDown: 1800, coolDownOffset: 1000, angleOffset: 70),
+                        new Shoot(10, count: 1, projectileIndex: 10, coolDown: 1800, coolDownOffset: 600, angleOffset: 70),
                         new Shoot(10, count: 1, projectileIndex: 10, coolDown: 1800, coolDownOffset: 1000, angleOffset: 320),
                         new Shoot(10, count: 1, projectileIndex: 10, coolDown: 1800, coolDownOffset: 1000, predictive: 0.5),
                         new Shoot(10, count: 3, shootAngle: 24, projectileIndex: 10, coolDown: 800, predictive: 0.5),
@@ -167,7 +168,7 @@ namespace wServer.logic
                     new State("fight4A",
                         //Up Down Shotguns
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 6000),
-                        new Reproduce("Demonic Scarab", 10, 1, coolDown: 1000),
+                        new Reproduce("Demonic Scarab", 10, 4, coolDown: 2000),
                         new Wander(0.5),
                         new Grenade(5, 400, range: 5, coolDown: 1000),
 
@@ -180,7 +181,7 @@ namespace wServer.logic
                         ),
                    new State("fight4B",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 4000),
-                        new Reproduce("Demonic Scarab", 10, 1, coolDown: 1000),
+                        new Reproduce("Demonic Scarab", 10, 4, coolDown: 2000),
                         new Prioritize(
                             new Follow(1, 8, 1),
                             new Wander(0.1)
@@ -247,9 +248,12 @@ namespace wServer.logic
                         new TimedTransition(4000, "ragefight")
                             ),
                     new State("ragefight",
-                        new Reproduce("Demonic Scarab", 10, 1, coolDown: 8000),
-                        new Shoot(10, count: 2, shootAngle: 180, projectileIndex: 14, rotateAngle: 90, coolDown: 6000),
-                        new Shoot(10, count: 5, shootAngle: 20, projectileIndex: 15, predictive: 0.5, coolDown: 3000),
+                        new Grenade(3, 200, 5, coolDown: 6000),
+                        new Reproduce("Demonic Scarab", 10, 2, coolDown: 3000),
+                        new Reproduce("Mage of Malgor", 10, 2, coolDown: 4000),
+                        new Reproduce("Ranger of Malgor", 10, 2, coolDown: 4000),
+                        new Shoot(10, count: 2, shootAngle: 180, projectileIndex: 14, rotateAngle: 90, coolDown: 3600),
+                        new Shoot(10, count: 5, shootAngle: 20, projectileIndex: 15, predictive: 0.5, coolDown: 2400),
                         new Shoot(10, count: 1, projectileIndex: 8, coolDown: 3000, predictive: 0.5),
                         new Shoot(10, count: 4, shootAngle: 16, projectileIndex: 6, coolDown: 6000, predictive: 0.5)
                         )
@@ -264,16 +268,25 @@ namespace wServer.logic
                     LootTemplates.StatPots()
                     ),
                 new Threshold(0.001,
-                    new ItemLoot("Tiny Sor Fragment", 1),
+                    new ItemLoot("Two Tiny Sor Fragments", 1),
                     new ItemLoot("Onrane Cache", 1),
                     new ItemLoot("Gold Cache", 0.6),
                     new ItemLoot("Onrane", 0.5),
                     new ItemLoot("Small Sor Fragment", 0.25),
-                    new ItemLoot("Medium Sor Fragment", 0.05),
+                    new ItemLoot("Medium Sor Fragment", 0.1),
                     new ItemLoot("Bone Axe", 0.02),
                     new ItemLoot("Malgoric Skull", 0.02),
                     new ItemLoot("Malgoric Charm", 0.02),
                     new ItemLoot("Master Eon", 0.0005),
+                    new ItemLoot("Greater Potion of Protection", 1),
+                    new ItemLoot("Greater Potion of Vitality", 1),
+                    new ItemLoot("Greater Potion of Defense", 1),
+                    new ItemLoot("Greater Potion of Life", 1),
+                    new ItemLoot("Greater Potion of Defense", 1),
+                    new ItemLoot("Greater Potion of Attack", 0.6),
+                    new ItemLoot("Greater Potion of Dexterity", 0.5),
+                    new ItemLoot("Greater Potion of Luck", 0.5),
+                    new ItemLoot("Greater Potion of Restoration", 0.5),
                     new TierLoot(12, ItemType.Weapon, 0.1),
                     new TierLoot(6, ItemType.Ability, 0.1),
                     new TierLoot(13, ItemType.Armor, 0.1),
