@@ -30,6 +30,8 @@ namespace wServer.realm.worlds
         private static readonly ILog Log = LogManager.GetLogger(typeof(World));
         protected static readonly Random Rand = new Random((int)DateTime.Now.Ticks);
 
+        public int ChallengeCount = 0;
+
         public const int Tutorial = -1;
         public const int Nexus = -2;
         public const int Realm = 1;

@@ -111,6 +111,7 @@
 			<Loot name="Sor Fragment Cache">Item</Loot>
 			<Loot name="Lost Scripture">Item</Loot>
 			<Loot name="Lost Scripture #2">Item</Loot>
+			<Loot name="Insignia of Valor">Item</Loot>
         </CrateLoot>
         <CrateLoot chance="0.19">
 			<Loot name="1000 Gold">Item</Loot>

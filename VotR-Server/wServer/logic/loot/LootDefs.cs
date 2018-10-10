@@ -516,7 +516,7 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Tiny Sor Fragment", 0.0008)
+                    new ItemLoot("Tiny Sor Fragment", 0.0004)
                 )
              };
         }
@@ -525,7 +525,7 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Tiny Sor Fragment", 0.002)
+                    new ItemLoot("Tiny Sor Fragment", 0.008)
                 )
              };
         }
@@ -534,7 +534,7 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Tiny Sor Fragment", 0.001)
+                    new ItemLoot("Tiny Sor Fragment", 0.0002)
                 )
              };
         }
@@ -543,7 +543,7 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Tiny Sor Fragment", 0.04)
+                    new ItemLoot("Tiny Sor Fragment", 0.001)
                 )
              };
         }
@@ -613,12 +613,15 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.01),
-                    new ItemLoot("Three Tiny Sor Fragments", 0.01),
-                    new ItemLoot("Tiny Sor Fragment", 0.01)
+                    new ItemLoot("Two Tiny Sor Fragments", 0.001),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.001),
+                    new ItemLoot("Tiny Sor Fragment", 0.002)
                 ),
                 new OnlyOne(
                     new ItemLoot("Shine", 0.005)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Insignia of Valor", 0.005)
                 )
             };
         }
@@ -627,12 +630,15 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.02),
-                    new ItemLoot("Three Tiny Sor Fragments", 0.02),
-                    new ItemLoot("Tiny Sor Fragment", 0.02)
+                    new ItemLoot("Two Tiny Sor Fragments", 0.002),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.002),
+                    new ItemLoot("Tiny Sor Fragment", 0.004)
                 ),
                 new OnlyOne(
                     new ItemLoot("Shine", 0.005)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Insignia of Valor", 0.005)
                 )
             };
         }
@@ -641,13 +647,17 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.03),
-                    new ItemLoot("Three Tiny Sor Fragments", 0.03),
-                    new ItemLoot("Tiny Sor Fragment", 0.03)
+                    new ItemLoot("Two Tiny Sor Fragments", 0.003),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.003),
+                    new ItemLoot("Tiny Sor Fragment", 0.006)
                 ),
                 new OnlyOne(
                     new ItemLoot("Shine", 0.005)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Insignia of Valor", 0.005)
                 )
+
             };
         }
 
@@ -655,12 +665,15 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.04),
-                    new ItemLoot("Three Tiny Sor Fragments", 0.04),
-                    new ItemLoot("Tiny Sor Fragment", 0.04)
+                    new ItemLoot("Two Tiny Sor Fragments", 0.004),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.004),
+                    new ItemLoot("Tiny Sor Fragment", 0.007)
                 ),
                 new OnlyOne(
                     new ItemLoot("Shine", 0.005)
+                ),
+               new OnlyOne(
+                    new ItemLoot("Insignia of Valor", 0.005)
                 )
             };
         }
@@ -669,12 +682,15 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.05),
-                    new ItemLoot("Three Tiny Sor Fragments", 0.05),
-                    new ItemLoot("Tiny Sor Fragment", 0.05)
+                    new ItemLoot("Two Tiny Sor Fragments", 0.005),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.005),
+                    new ItemLoot("Tiny Sor Fragment", 0.008)
                 ),
                 new OnlyOne(
                     new ItemLoot("Shine", 0.005)
+                ),
+                new OnlyOne(
+                    new ItemLoot("Insignia of Valor", 0.005)
                 )
             };
         }

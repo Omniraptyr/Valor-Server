@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Chamber of Malgor",
+"sbName":"Chamber of Malgor",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x681f],
+"maps":["Suffering.jm"],
+"music":["sorc4"]}

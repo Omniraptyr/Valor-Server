@@ -203,6 +203,7 @@
     <Compile Include="logic\db\BehaviorDb.SpiderDen.cs" />
     <Compile Include="logic\db\BehaviorDb.SpriteWorld.cs" />
     <Compile Include="logic\db\BehaviorDb.Stronghold.cs" />
+    <Compile Include="logic\db\BehaviorDb.Suffering.cs" />
     <Compile Include="logic\db\BehaviorDb.SwampBoss.cs" />
     <Compile Include="logic\db\BehaviorDb.Tomb.cs" />
     <Compile Include="logic\db\BehaviorDb.Torii.cs" />

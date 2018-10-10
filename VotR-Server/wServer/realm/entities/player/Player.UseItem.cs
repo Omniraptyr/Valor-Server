@@ -518,6 +518,9 @@ namespace wServer.realm.entities
                     case ActivateEffects.AstonAbility:
                         AEAstonAbility(time, item, target, eff);
                         break;
+                    case ActivateEffects.InsigniaActivate:
+                        AEInsigniaActivate(time, item, target, eff);
+                        break;
                     case ActivateEffects.DualShoot:
                         break;
                     case ActivateEffects.BurningLightning:
@@ -603,8 +606,6 @@ namespace wServer.realm.entities
                     case ActivateEffects.PetStoneActivate:
                         break;
                     case ActivateEffects.PLootboxActivate:
-                        break;
-                    case ActivateEffects.InsigniaActivate:
                         break;
                     case ActivateEffects.SorMachine:
                         break;
@@ -947,20 +948,6 @@ namespace wServer.realm.entities
                     break;
             }
             SaveToCharacter();
-        }
-
-        private void AEInsigniaActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
-        {
-            if (CurrentFame >= 1000)
-            {
-                Client.Manager.Database.UpdateFame(Client.Account, -1000);
-                CurrentFame = Client.Account.Fame - 1000;
-                this.ForceUpdate(CurrentFame);
-                Client.Manager.Database.UpdateCredit(Client.Account, 200);
-                Credits = Client.Account.Credits + 200;
-                this.ForceUpdate(Credits);
-                SendInfo("You have converted 1000 fame to 200 gold!");
-            }
         }
 
         private void AEAddFame(RealmTime time, Item item, Position target, ActivateEffect eff)
@@ -1366,6 +1353,75 @@ namespace wServer.realm.entities
                     break;
             }
 
+        }
+
+        private void AEInsigniaActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
+        {
+            if (Owner.Name != "Nexus")
+            {
+                SendError("You can only use this item in the nexus.");
+                return;
+            }
+
+            if (Manager._isChallengeLaunched == true)
+            {
+                SendError("A challenge has already been launched");
+                return;
+            }
+
+            if (Owner.ChallengeCount >= 5)
+            {
+                //announce
+                var packet = new Text
+                {
+                    BubbleTime = 0,
+                    NumStars = -1,
+                    TextColor = 0x8B0000,
+                    Name = "Sidon, the Dark Elder",
+                    Txt = "Very impressive. Let's see what your acts of valor have earned you this time."
+                };
+                Owner.BroadcastPacket(packet, null);
+                //open
+                var gameData = Manager.Resources.GameData;
+                Manager._isChallengeLaunched = true;
+                ushort objType;
+                if (!gameData.IdToObjectType.TryGetValue("Chamber of Malgor Portal", out objType) ||
+                    !gameData.Portals.ContainsKey(objType))
+                    return;
+                var entity = Entity.Resolve(Manager, objType);
+
+                entity.Move(144, 106);
+                Owner.EnterWorld(entity);
+
+                Owner.Timers.Add(new WorldTimer(60 * 1000, (world, t) => Owner.LeaveWorld(entity)));
+                Owner.Timers.Add(new WorldTimer(60000, (w, t) =>
+                {
+                    Manager._isChallengeLaunched = false;
+                }));
+
+            }
+            else
+            {
+                Owner.ChallengeCount += 1;
+                var packet = new Text
+                {
+                    BubbleTime = 0,
+                    NumStars = -1,
+                    TextColor = 0x8B0000,
+                    Name = "Sidon, the Dark Elder",
+                    Txt = Name + ", becareful what you wish for..."
+                };
+                Owner.BroadcastPacket(packet, null);
+            }
+            var countPacket = new Text
+            {
+                BubbleTime = 0,
+                NumStars = -1,
+                TextColor = 0xFF00FF,
+                Name = "",
+                Txt = "Valor Count: " + Owner.ChallengeCount +"/5"
+            };
+            Owner.BroadcastPacket(countPacket, null);
         }
 
         private void AERandomGold(RealmTime time, Item item, Position target, ActivateEffect eff)

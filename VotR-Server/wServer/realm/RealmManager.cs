@@ -71,6 +71,7 @@ namespace wServer.realm
         private int _nextWorldId;
         private int _nextClientId;
         public bool _isRaidLaunched = false;
+        public bool _isChallengeLaunched = false;
 
         public RealmManager(Resources resources, Database db, ServerConfig config)
         {

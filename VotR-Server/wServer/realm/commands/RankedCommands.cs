@@ -465,8 +465,8 @@ namespace wServer.realm.commands
                 Name = "",
                 Txt = "An 'Admin Arena' has been opened by <" + player.Name + ">"
             };
-
             player.Owner.BroadcastPacket(packet, null);
+
             we.Timers.Add(new WorldTimer(TimeoutTime * 1000,
                 (world, t) => //default portal close time * 1000
                 {

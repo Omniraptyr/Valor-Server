@@ -16472,8 +16472,8 @@
         <Projectile>
             <ObjectId>TaL Projectile</ObjectId>
             <Speed>180</Speed>
-            <MinDamage>150</MinDamage>
-            <MaxDamage>200</MaxDamage>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>145</MaxDamage>
             <LifetimeMS>250</LifetimeMS>
             <CondChance effect="Paralyzed" chance="0.25" duration="3"/>
             <ArmorPiercing/>
@@ -16630,5 +16630,292 @@
         <OccupySquare/>
         <EnemyOccupySquare/>
         <BlocksSight/>
+    </Object>
+    <Object type="0x6823" id="Malgor, the Eternal Fiend">
+        <Enemy/>
+        <Group>Malgor</Group>
+        <DisplayId>Malgor, the Eternal Fiend</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>chars16x16dMountains2</File>
+            <Index>10</Index>
+        </AnimatedTexture>
+        <HitSound>monster/abyss_brutes_hit</HitSound>
+        <DeathSound>monster/abyss_brutes_death</DeathSound>
+        <Size>140</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <Elitedrop/>
+        <DazedImmune/>
+        <SlowedImmune/>
+        <CurseImmune/>
+        <StunImmune/>
+        <ShadowSize>60</ShadowSize>
+        <Quest/>
+        <MaxHitPoints>2000000</MaxHitPoints>
+        <Defense>50</Defense>
+        <Projectile id="0">
+            <ObjectId>Malgor Blast</ObjectId>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <Speed>100</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Malgor Blast</ObjectId>
+            <MinDamage>140</MinDamage>
+            <MaxDamage>160</MaxDamage>
+            <Speed>90</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Malgor Blast</ObjectId>
+            <MinDamage>160</MinDamage>
+            <MaxDamage>180</MaxDamage>
+            <Speed>80</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Malgor Blast</ObjectId>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>260</MaxDamage>
+            <Speed>70</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Malgor Blast</ObjectId>
+            <MinDamage>240</MinDamage>
+            <MaxDamage>280</MaxDamage>
+            <Speed>60</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Malgor Blast</ObjectId>
+            <MinDamage>300</MinDamage>
+            <MaxDamage>320</MaxDamage>
+            <Speed>50</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="6">
+            <ObjectId>Malgor Confuse Shot</ObjectId>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>160</MaxDamage>
+            <Speed>75</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <MultiHit/>
+            <ConditionEffect duration="4">Confused</ConditionEffect>
+        </Projectile>
+        <Projectile id="7">
+            <ObjectId>Malgor Wide</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <ConditionEffect duration="4">Bleeding</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="8">
+            <ObjectId>Malgor Thin</ObjectId>
+            <Damage>120</Damage>
+            <Speed>60</Speed>
+            <LifetimeMS>1800</LifetimeMS>
+            <ArmorPiercing/>
+            <ConditionEffect duration="6">Stunned</ConditionEffect>
+            <Wavy/>
+        </Projectile>
+        <Projectile id="9">
+            <ObjectId>Malgor Small Blast</ObjectId>
+            <MinDamage>80</MinDamage>
+            <MaxDamage>100</MaxDamage>
+            <Speed>80</Speed>
+            <LifetimeMS>1600</LifetimeMS>
+        </Projectile>
+        <Projectile id="10">
+            <ObjectId>Malgor Meteor</ObjectId>
+            <Damage>500</Damage>
+            <Speed>90</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <Size>160</Size>
+        </Projectile>
+        <Projectile id="11">
+            <ObjectId>Malgor Big Spinner</ObjectId>
+            <Damage>400</Damage>
+            <Speed>70</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="8">Slowed</ConditionEffect>
+        </Projectile>
+        <Projectile id="12">
+            <ObjectId>Dragon Attack Red Big Fireball</ObjectId>
+            <Damage>300</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <Projectile id="13">
+            <ObjectId>Dragon Attack Red Spinning Fireball</ObjectId>
+            <Damage>120</Damage>
+            <Speed>100</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+            <ConditionEffect duration="6">Armor Broken</ConditionEffect>
+            <Wavy/>
+        </Projectile>
+        <Projectile id="14">
+            <ObjectId>Malgor Meteor</ObjectId>
+            <Damage>300</Damage>
+            <Speed>60</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <Size>160</Size>
+        </Projectile>
+        <Projectile id="15">
+            <ObjectId>Malgor Meteor</ObjectId>
+            <Damage>500</Damage>
+            <Speed>40</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+            <Size>160</Size>
+        </Projectile>
+    </Object>
+    <Object type="0x6824" id="Mage of Malgor">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Mage of Malgor</DisplayId>
+        <AnimatedTexture>
+            <File>d1chars8x8r</File>
+            <Index>21</Index>
+        </AnimatedTexture>
+        <HitSound>monster/abyss_brutes_hit</HitSound>
+        <DeathSound>monster/flying_brain_death</DeathSound>
+        <Size>110</Size>
+        <MaxHitPoints>8000</MaxHitPoints>
+        <Defense>10</Defense>
+        <Projectile id="0">
+            <ObjectId>Fire Boomerang</ObjectId>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>120</MaxDamage>
+            <Speed>80</Speed>
+            <LifetimeMS>2400</LifetimeMS>
+            <ArmorPiercing/>
+            <Boomerang/>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Directed Explosion</ObjectId>
+            <Damage>180</Damage>
+            <Speed>80</Speed>
+            <LifetimeMS>1800</LifetimeMS>
+            <ConditionEffect duration="6">Bleeding</ConditionEffect>
+        </Projectile>
+    </Object>
+    <Object type="0x6825" id="Ranger of Malgor">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Ranger of Malgor</DisplayId>
+        <AnimatedTexture>
+            <File>d1chars8x8r</File>
+            <Index>22</Index>
+        </AnimatedTexture>
+        <HitSound>monster/abyss_brutes_hit</HitSound>
+        <DeathSound>monster/flying_brain_death</DeathSound>
+        <Size>110</Size>
+        <MaxHitPoints>3000</MaxHitPoints>
+        <Defense>10</Defense>
+        <Projectile id="0">
+            <ObjectId>Black Arrow</ObjectId>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>400</MaxDamage>
+            <Speed>70</Speed>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x6826" id="Malgoric Altar">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Malgoric Altar</DisplayId>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1f0</Index>
+        </Texture>
+        <Animation prob="1" period="0.6">
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1f0</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1f1</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1f2</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1f3</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1f4</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1f5</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1f6</Index>
+                </Texture>
+            </Frame>
+        </Animation>
+        <HitSound>monster/abyss_brutes_hit</HitSound>
+        <DeathSound>monster/flying_brain_death</DeathSound>
+        <Size>140</Size>
+        <MaxHitPoints>100000</MaxHitPoints>
+        <Defense>40</Defense>
+        <Projectile id="0">
+            <ObjectId>Fire Bullet</ObjectId>
+            <MinDamage>400</MinDamage>
+            <MaxDamage>600</MaxDamage>
+            <Speed>60</Speed>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x6827" id="Demonic Scarab">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Demonic Scarab</DisplayId>
+        <AnimatedTexture>
+            <File>d1chars8x8r</File>
+            <Index>23</Index>
+        </AnimatedTexture>
+        <HitSound>monster/abyss_brutes_hit</HitSound>
+        <DeathSound>monster/flying_brain_death</DeathSound>
+        <Size>110</Size>
+        <MaxHitPoints>600</MaxHitPoints>
+        <Defense>10</Defense>
+        <Projectile id="0">
+            <ObjectId>Fire Magic</ObjectId>
+            <Damage>40</Damage>
+            <Speed>70</Speed>
+            <LifetimeMS>200</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Fire Claw</ObjectId>
+            <Damage>20</Damage>
+            <Speed>70</Speed>
+            <LifetimeMS>200</LifetimeMS>
+            <ConditionEffect duration="0.8">Paralyzed</ConditionEffect>
+            <ConditionEffect duration="3">Unstable</ConditionEffect>
+            <Size>40</Size>
+        </Projectile>
     </Object>
 </Objects>

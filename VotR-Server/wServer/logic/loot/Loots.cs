@@ -62,7 +62,8 @@ namespace wServer.logic.loot
 			"Staff of the Withering",
 			"Told Before Time",
 			"The Zol Awakening (Token)",
-			"Calling of the Titan (Token)"
+			"Calling of the Titan (Token)",
+            "Insignia of Valor"
         };
 
         public IEnumerable<Item> GetLoots(RealmManager manager, int min, int max) {  //For independent loots(e.g. chests)
