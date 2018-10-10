@@ -1342,79 +1342,79 @@ namespace wServer.realm.entities
         {
             if (SupportScore >= 1000 && SupportScore <= 2000)
             {
-                return .15;
+                return .015;
             }
             else if (SupportScore >= 2001 && SupportScore <= 3000)
             {
-                return .16;
+                return .016;
             }
             else if (SupportScore >= 4001 && SupportScore <= 5000)
             {
-                return .17;
+                return .017;
             }
             else if (SupportScore >= 5001 && SupportScore <= 6000)
             {
-                return .18;
+                return .018;
             }
             else if (SupportScore >= 6001 && SupportScore <= 7000)
             {
-                return .19;
+                return .019;
             }
             else if (SupportScore >= 7001 && SupportScore <= 8000)
             {
-                return .20;
+                return .020;
             }
             else if (SupportScore >= 8001 && SupportScore <= 9000)
             {
-                return .25;
+                return .025;
             }
             else if (SupportScore >= 9001 && SupportScore <= 10000)
             {
-                return .30;
+                return .030;
             }
             else if (SupportScore >= 10001 && SupportScore <= 11000)
             {
-                return .35;
+                return .035;
             }
             else if (SupportScore >= 11001 && SupportScore <= 12000)
             {
-                return .40;
+                return .040;
             }
             else if (SupportScore >= 12001 && SupportScore <= 13001)
             {
-                return .45;
+                return .045;
             }
             else if (SupportScore >= 14001 && SupportScore <= 15000)
             {
-                return .50;
+                return .050;
             }
             else if (SupportScore >= 14001 && SupportScore <= 15000)
             {
-                return .55;
+                return .055;
             }
             else if (SupportScore >= 15001 && SupportScore <= 16000)
             {
-                return .60;
+                return .060;
             }
             else if (SupportScore >= 16001 && SupportScore <= 17000)
             {
-                return .65;
+                return .065;
             }
             else if (SupportScore >= 17001 && SupportScore <= 18000)
             {
-                return .70;
+                return .07;
             }
             else if (SupportScore >= 18001 && SupportScore <= 19000)
             {
-                return .75;
+                return .075;
             }
             else if (SupportScore >= 19001 && SupportScore <= 20000)
             {
-                return .80;
+                return .08;
             }
             else if (SupportScore > 20000)
             {
-                return .90;
+                return .09;
             }
             return 0;
         }

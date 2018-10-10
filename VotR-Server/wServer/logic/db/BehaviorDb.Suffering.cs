@@ -169,7 +169,7 @@ namespace wServer.logic
                     new State("fight4A",
                         //Up Down Shotguns
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 6000),
-                        new Reproduce("Demonic Scarab", 10, 4, coolDown: 2000),
+                        new Reproduce("Demonic Scarab", 10, 4, coolDown: 1000),
                         new Wander(0.5),
                         new Grenade(5, 400, range: 5, coolDown: 1000),
 
@@ -182,7 +182,7 @@ namespace wServer.logic
                         ),
                    new State("fight4B",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 4000),
-                        new Reproduce("Demonic Scarab", 10, 4, coolDown: 2000),
+                        new Reproduce("Demonic Scarab", 10, 4, coolDown: 1000),
                         new Prioritize(
                             new Follow(1, 8, 1),
                             new Wander(0.1)
@@ -277,9 +277,10 @@ namespace wServer.logic
                     new ItemLoot("Small Sor Fragment", 0.25),
                     new ItemLoot("Medium Sor Fragment", 0.1),
                     new ItemLoot("Bone Axe", 0.02),
+                    new ItemLoot("Sor Crystal", 0.005),
                     new ItemLoot("Malgoric Skull", 0.02),
                     new ItemLoot("Malgoric Charm", 0.02),
-                    new ItemLoot("Master Eon", 0.0005),
+                    new ItemLoot("Master Eon", 0.001),
                     new ItemLoot("Greater Potion of Protection", 1),
                     new ItemLoot("Greater Potion of Vitality", 1),
                     new ItemLoot("Greater Potion of Defense", 1),

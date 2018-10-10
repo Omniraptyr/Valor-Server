@@ -156,7 +156,7 @@ namespace wServer.logic
                 new ItemLoot("Wand of Pristine Environments", .001),
                 new ItemLoot("Cloak of the Planewalker", 0.005),
                 new ItemLoot("Staff of Extreme Prejudice", 0.005),
-
+                new ItemLoot("Wine Cellar Incantation", 0.005),
                     new TierLoot(3, ItemType.Ring, 0.2),
 
                     new TierLoot(6, ItemType.Armor, 0.2),

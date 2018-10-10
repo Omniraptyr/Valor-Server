@@ -112911,7 +112911,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <MpCost>90</MpCost>
         <Activate effect="Surged" duration="4" range="5">ConditionEffectAura</Activate>
         <Activate range="6" amount="5" duration="5">Banner</Activate>
-        <Activate effect="Invulnerable" duration="3.5">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="1.5">ConditionEffectSelf</Activate>
         <Activate effect="Damaging" duration="4">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
         <FameBonus>6</FameBonus>
