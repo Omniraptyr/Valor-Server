@@ -11,7 +11,7 @@ namespace wServer.logic
             .Init("Colothiois the Exalted",
                 new State(
                     new State("default",
-                        new ScaleHP(35000),
+                        new ScaleHP(55000),
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new PlayerWithinTransition(10, "talk")
                         ),
@@ -78,7 +78,30 @@ namespace wServer.logic
                         new Grenade(2, 100, range: 6, fixedAngle: 270, coolDown: 4000, color: 0xFFFF00),
                         new Grenade(2, 100, range: 6, fixedAngle: 360, coolDown: 4000, color: 0xFFFF00)
                         )
-                    )
+                     ),
+                     new MostDamagers(3,
+                        LootTemplates.Sor1Perc()
+                    ),
+                 new Threshold(0.15,
+                     new ItemLoot("Thunder and Lightning", 0.005),
+                     new ItemLoot("Seal of Sky Serenade", 0.005),
+                     new ItemLoot("Potion of Dexterity", 1.0),
+                     new ItemLoot("Potion of Mana", 1.0),
+                     new TierLoot(3, ItemType.Ring, 0.2),
+                     new TierLoot(7, ItemType.Armor, 0.2),
+                     new TierLoot(8, ItemType.Weapon, 0.2),
+                     new TierLoot(4, ItemType.Ability, 0.1),
+                     new TierLoot(8, ItemType.Armor, 0.1),
+                     new TierLoot(4, ItemType.Ring, 0.05),
+                     new TierLoot(9, ItemType.Armor, 0.03),
+                     new TierLoot(5, ItemType.Ability, 0.03),
+                     new TierLoot(9, ItemType.Weapon, 0.03),
+                     new TierLoot(10, ItemType.Armor, 0.02),
+                     new TierLoot(10, ItemType.Weapon, 0.02),
+                     new TierLoot(11, ItemType.Armor, 0.01),
+                     new TierLoot(11, ItemType.Weapon, 0.01),
+                     new TierLoot(5, ItemType.Ring, 0.01)
+                 )
             )
             .Init("Elemental Cloud",
                 new State(
@@ -164,8 +187,8 @@ namespace wServer.logic
             )
          .Init("Tod",
             new State(
-                new ScaleHP(25000),
-                //new DropPortalOnDeath("Sky Palace Portal"),
+                new ScaleHP(50000),
+                new DropPortalOnDeath("Sky Palace Portal"),
                 new State("shoot",
                     new Taunt("Skrrt"),
                     new Wander(0.4),
@@ -228,7 +251,7 @@ namespace wServer.logic
                 new State("deadboy",
                     new Suicide()
                     )
-                ),  
+                ),
                new MostDamagers(3,
                      LootTemplates.StatPots()
                      ),
@@ -236,6 +259,7 @@ namespace wServer.logic
                         LootTemplates.Sor1Perc()
                     ),
                  new Threshold(0.15,
+                     new ItemLoot("Sky Tome", 0.005),
                      new TierLoot(3, ItemType.Ring, 0.2),
                      new TierLoot(7, ItemType.Armor, 0.2),
                      new TierLoot(8, ItemType.Weapon, 0.2),
@@ -249,9 +273,7 @@ namespace wServer.logic
                      new TierLoot(10, ItemType.Weapon, 0.02),
                      new TierLoot(11, ItemType.Armor, 0.01),
                      new TierLoot(11, ItemType.Weapon, 0.01),
-                     new TierLoot(5, ItemType.Ring, 0.01),
-                     new ItemLoot("Sky Tome", 0.005),
-                     new ItemLoot("Thunder and Lightning", 0.005)
+                     new TierLoot(5, ItemType.Ring, 0.01)
                  )
             )
         .Init("TLava Spawner",
@@ -265,10 +287,91 @@ namespace wServer.logic
                     new Suicide()
                     )
                 )
-            )    
+            )
         .Init("Tod Spike",
             new State(
                 new ConditionalEffect(ConditionEffectIndex.Invincible)
+                )
+            )
+            .Init("Zeus",
+                 new State(
+                     new ScaleHP(35000),
+                     new TimedTransition(6000, "wait"),
+                     new State("wait",
+                     new PlayerWithinTransition(7, "move")
+                         ),
+                     new State("move",
+                         new Wander(0.1),
+                         new Shoot(20, 1, coolDown: 1500),
+                         new Shoot(20, count: 14, projectileIndex: 1, coolDown: 1700),
+                         new Spawn("Zeus Cloud", 5, coolDown: 5000)
+                         )
+                     ),
+                     new MostDamagers(3,
+                         LootTemplates.SorRare()
+                         ),
+                     new Threshold(0.025,
+                         new ItemLoot("Thunder and Lightning", 0.001),
+                         new ItemLoot("Seal of Sky Serenade", 0.001),
+                         new ItemLoot("Potion of Dexterity", 1.0)
+                     )
+            )
+            .Init("Zeus Cloud",
+                   new State(
+                       new State("fight",
+                           new Orbit(1.5, 5, target: "Zeus", orbitClockwise: true),
+                           new Shoot(20, count: 7, projectileIndex: 0, coolDown: 600),
+                           new TimedTransition(2500, "switch")
+                           ),
+                       new State("switch",
+                           new Orbit(1.5, 5, target: "Zeus", orbitClockwise: false),
+                           new Shoot(20, count: 7, projectileIndex: 0, coolDown: 600),
+                           new TimedTransition(2500, "fight")
+                           )
+                       )
+                )
+            .Init("Cloud Elemental",
+                new State(
+                    new State("shotgun",
+                        new Follow(0.5, 8, 1),
+                        new Shoot(10, 6, coolDown: 2500, projectileIndex: 0),
+                        new Shoot(10, count: 6, shootAngle: 10, projectileIndex: 1, coolDown: 1500),
+                        new TimedTransition(10000, "turret")
+                        ),
+                    new State("turret",
+                        new ConditionalEffect(ConditionEffectIndex.Armored),
+                        new Flash(0xFFFF00, 4, 4),
+                        new Shoot(10, count: 8, projectileIndex: 1, rotateAngle: 60, shootAngle: 20, coolDown: 500, fixedAngle: 270),
+                        new Shoot(10, count: 8, projectileIndex: 1, rotateAngle: 60, shootAngle: 20, coolDown: 1000, fixedAngle: 90)
+                        )
+
+                    )
+            )
+            .Init("Angel",
+            new State(
+                new State("shots",
+                    new Wander(0.1),
+                    new Shoot(15, 1, coolDown: 750),
+                    new TimedTransition(3750, "charge")
+                    ),
+                new State("charge",
+                    new Charge(2, 6, coolDown: 6000),
+                    new Shoot(15, 5, shootAngle: 15, coolDown: 6000),
+                    new TimedTransition(1000, "shots")
+                    )
+                )
+            )
+            .Init("Angel2",
+            new State(
+                new State("grenades",
+                    new Wander(0.1),
+                    new Grenade(5, 65, range: 5, coolDown: 1000),
+                    new TimedTransition(3000, "ubermode")
+                    ),
+                new State("ubermode",
+                    new Grenade(7, 100, range: 5, coolDown: 350),
+                    new TimedTransition(1750, "grenades")
+                    )
                 )
             )
             ;

@@ -16195,6 +16195,9 @@
         <StasisImmune/>
         <StunImmune/>
         <SlowImmune/>
+        <Level>20</Level>
+        <God/>
+        <Quest/>
         <Projectile id="0">
             <ObjectId>Zeus Bolt</ObjectId>
             <Damage>35</Damage>
@@ -16365,12 +16368,12 @@
         <StasisImmune/>
         <StunImmune/>
         <SlowImmune/>
-        <Quest/>
         <Flying/>
         <Lootdrop/>
         <Z>0.2</Z>
         <Level>20</Level>
         <God/>
+        <Quest/>
         <Projectile id="0">
             <ObjectId>Tod Red Slash</ObjectId>
             <Damage>105</Damage>
@@ -16649,9 +16652,7 @@
         <StasisImmune/>
         <Elitedrop/>
         <DazedImmune/>
-        <SlowedImmune/>
         <CurseImmune/>
-        <StunImmune/>
         <ShadowSize>60</ShadowSize>
         <Quest/>
         <MaxHitPoints>2000000</MaxHitPoints>
@@ -16928,5 +16929,216 @@
             <ConditionEffect duration="3">Unstable</ConditionEffect>
             <Size>40</Size>
         </Projectile>
+    </Object>
+    <Object type="0x6743" id="Destructible Sky Palace Wall">
+        <Class>Wall</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x152</Index>
+        </Texture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x151</Index>
+            </Texture>
+        </Top>
+        <HitSound>monster/wooden_walls_hit</HitSound>
+        <DeathSound>monster/wooden_walls_death</DeathSound>
+        <MaxHitPoints>2000</MaxHitPoints>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <Enemy/>
+        <XpMult>0.0</XpMult>
+        <BlocksSight/>
+        <DisplayId>Destructible Sky Palace Wall</DisplayId>
+    </Object>
+    <Object type="0x6744" id="Sky Palace Candle">
+        <Class>GameObject</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1e9</Index>
+        </Texture>
+        <Size>120</Size>
+        <Animation prob="1" period="1">
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1ea</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1eb</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1ec</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.20">
+                <Texture>
+                    <File>lofiObjBig</File>
+                    <Index>0x1ed</Index>
+                </Texture>
+            </Frame>
+        </Animation>
+        <DisplayId>Sky Palace Candle</DisplayId>
+    </Object>
+    <Object type="0x6745" id="Zeus">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Zeus</DisplayId>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>58</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>200</Size>
+        <MaxHitPoints>150000</MaxHitPoints>
+        <Defense>55</Defense>
+        <ParalyzeImmune/>
+        <DazedImmune/>
+        <StasisImmune/>
+        <StunImmune/>
+        <SlowImmune/>
+        <Level>20</Level>
+        <God/>
+        <Quest/>
+        <Projectile id="0">
+            <ObjectId>Zeus Bolt</ObjectId>
+            <Damage>55</Damage>
+            <Speed>105</Speed>
+            <ConditionEffect duration="1">Paralyzed</ConditionEffect>
+            <ArmorPiercing/>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Lightning Wide</ObjectId>
+            <Damage>100</Damage>
+            <Speed>35</Speed>
+            <ConditionEffect duration="2">Unstable</ConditionEffect>
+            <ArmorPiercing/>
+            <MultiHit/>
+            <LifetimeMS>1000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x6746" id="Zeus Cloud">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Zeus Cloud</DisplayId>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>59</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>5000</MaxHitPoints>
+        <Defense>10</Defense>
+        <Projectile id="0">
+            <ObjectId>Cloud Blast</ObjectId>
+            <Damage>75</Damage>
+            <Speed>65</Speed>
+            <ArmorPiercing/>
+            <Size>80</Size>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x6747" id="Cloud Blast">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>mountainTempleObjects8x8</File>
+            <Index>0x139</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6748" id="Cloud Elemental">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Cloud Elemental</DisplayId>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbed</File>
+            <Index>60</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>20000</MaxHitPoints>
+        <Defense>60</Defense>
+        <Projectile id="0">
+            <ObjectId>Cloud Wide</ObjectId>
+            <Damage>60</Damage>
+            <Speed>85</Speed>
+            <Size>80</Size>
+            <ConditionEffect duration="2.6">Slowed</ConditionEffect>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Cloud Blast</ObjectId>
+            <Damage>75</Damage>
+            <Speed>45</Speed>
+            <Size>80</Size>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x6749" id="Cloud Wide">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>mountainTempleObjects8x8</File>
+            <Index>0x13a</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x674a" id="Angel Blade">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>mountainTempleObjects8x8</File>
+            <Index>0x13b</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x674b" id="Angel">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Angel</DisplayId>
+        <AnimatedTexture>
+            <File>mountainTempleChars8x8</File>
+            <Index>11</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>6500</MaxHitPoints>
+        <Defense>25</Defense>
+        <Projectile id="0">
+            <ObjectId>Angel Blade</ObjectId>
+            <Damage>85</Damage>
+            <Speed>85</Speed>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <Size>80</Size>
+            <ConditionEffect duration="2.1">Bleeding</ConditionEffect>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x674c" id="Angel2">
+        <Enemy/>
+        <Class>Character</Class>
+        <DisplayId>Angel</DisplayId>
+        <AnimatedTexture>
+            <File>mountainTempleChars8x8</File>
+            <Index>12</Index>
+        </AnimatedTexture>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>6500</MaxHitPoints>
+        <Defense>25</Defense>
     </Object>
 </Objects>

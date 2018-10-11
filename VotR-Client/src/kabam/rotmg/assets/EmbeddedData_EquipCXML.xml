@@ -16185,28 +16185,6 @@
         <FameBonus>6</FameBonus>
         <OldSound>weapon/glass_sword</OldSound>
     </Object>
-    <Object type="0x1619" id="Cloak of Vivacity">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>lofiObj2</File>
-            <Index>0xaa</Index>
-        </Texture>
-        <SlotType>13</SlotType>
-        <Description>Formed from the inner soul and from down earth even its aura of meaning will not only create a vast fog but will destroy your spirit.</Description>
-        <Sound>spell/fire_nova</Sound>
-        <ActivateOnEquip stat="22" amount="12">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="3" amount="160">IncrementStat</ActivateOnEquip>
-        <Usable/>
-        <BagType>6</BagType>
-        <Legendary/>
-        <feedPower>1600</feedPower>
-        <FameBonus>8</FameBonus>
-        <MpCost>160</MpCost>
-        <Activate effect="Invisible" duration="3.3" range="5">ConditionEffectAura</Activate>
-        <Cooldown>8</Cooldown>
-    </Object>
     <Object type="0x1620" id="Soul Heart Necklace">
         <Class>Equipment</Class>
         <Item/>
@@ -19829,16 +19807,18 @@
         </Texture>
         <SlotType>1</SlotType>
         <Description>A sword of that you must weild furiously and with courage; taken under the the ownership of Seus -- lost forever after his death.</Description>
-        <RateOfFire>1.2</RateOfFire>
+        <RateOfFire>1.3</RateOfFire>
         <Sound>weapon/mithril_sword</Sound>
         <Projectile>
             <ObjectId>Restless Slash</ObjectId>
             <Speed>100</Speed>
-            <MinDamage>280</MinDamage>
-            <MaxDamage>442</MaxDamage>
+            <MinDamage>290</MinDamage>
+            <MaxDamage>460</MaxDamage>
             <LifetimeMS>350</LifetimeMS>
         </Projectile>
-        <ActivateOnEquip stat="26" amount="75">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <OldSound>bladeSwing</OldSound>
@@ -19972,7 +19952,7 @@
         </Texture>
         <SlotType>1</SlotType>
         <Description>An ivory curved sword that shoots blast of holy light.</Description>
-        <RateOfFire>0.92</RateOfFire>
+        <RateOfFire>0.9</RateOfFire>
         <Sound>weapon/poison_fang_dagger</Sound>
         <Projectile>
             <ObjectId>FaithShot</ObjectId>
@@ -19984,8 +19964,8 @@
             <MultiHit/>
             <ParticleTrail intensity="0.3" lifetimeMS="270">0xffff00</ParticleTrail>
         </Projectile>
+        <Steal type="life" amount="5"/>
         <ActivateOnEquip stat="0" amount="160">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="27" amount="8">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <OldSound>magicShoot</OldSound>
@@ -21581,12 +21561,12 @@
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
-        <MpCost>110</MpCost>
-        <Legendary/>
+        <MpCost>120</MpCost>
         <feedPower>2000</feedPower>
-        <Activate stat="0" amount="150" duration="4" range="4.5" noStack="true" useWisMod="true">StatBoostAura</Activate>
+        <Legendary/>
+        <Activate stat="0" amount="100" duration="4" range="4.5" noStack="true" useWisMod="true">StatBoostAura</Activate>
         <Activate effect="Damaging" duration="8" range="7.5">ConditionEffectAura</Activate>
-        <Activate effect="Armored" duration="3" useWisMod="true">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="1.5" useWisMod="false">ConditionEffectSelf</Activate>
         <Cooldown>3</Cooldown>
     </Object>
     <Object type="0x47c1" id="Spear of the Unforgiven">
@@ -28438,6 +28418,7 @@
             <MaxDamage>220</MaxDamage>
             <LifetimeMS>325</LifetimeMS>
         </Projectile>
+        <Activate stat="21" amount="20">IncrementStat</Activate>
         <BagType>6</BagType>
         <Legendary/>
         <Legend id="2" stat="21">
@@ -28464,19 +28445,20 @@
         </ExtraTooltipData>
         <SlotType>1</SlotType>
         <Description>Eons have past but this ancient weapon has never failed to annihilate opposers.</Description>
-        <RateOfFire>0.6</RateOfFire>
+        <RateOfFire>0.7</RateOfFire>
         <Sound>weapon/mithril_sword</Sound>
         <Projectile>
             <ObjectId>Oath Projectile</ObjectId>
             <Speed>80</Speed>
             <MinDamage>370</MinDamage>
             <MaxDamage>550</MaxDamage>
-            <LifetimeMS>900</LifetimeMS>
+            <LifetimeMS>1200</LifetimeMS>
             <Boomerang/>
         </Projectile>
-        <ActivateOnEquip stat="3" amount="220">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="20">IncrementStat</ActivateOnEquip>
         <Legendary/>
-        <Steal type="mana" amount="2"/>
+        <Steal type="mana" amount="3"/>
         <Legend id="8" stat="27">
             <Name>Mana Focus</Name>
             <Description>When your surge is at least 10 you regenerate mana faster.</Description>
@@ -32250,7 +32232,7 @@
         <MpCost>90</MpCost>
         <Activate effect="Surged" duration="4" range="5">ConditionEffectAura</Activate>
         <Activate range="6" amount="5" duration="5">Banner</Activate>
-        <Activate effect="Invulnerable" duration="3.5">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="1.5">ConditionEffectSelf</Activate>
         <Activate effect="Damaging" duration="4">ConditionEffectSelf</Activate>
         <Cooldown>8</Cooldown>
         <FameBonus>6</FameBonus>
@@ -34039,5 +34021,49 @@
         <Activate effect="Berserk" duration="3">ConditionEffectSelf</Activate>
         <Activate range="6" amount="6" players="false" duration="6" effect="Bleeding" color="0xFF0044" objType="0x673c">Torii</Activate>
         <Cooldown>3</Cooldown>
+    </Object>
+    <Object type="0x1619" id="Cloak of Vivacity">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj2</File>
+            <Index>0xaa</Index>
+        </Texture>
+        <SlotType>13</SlotType>
+        <Description>Formed from the inner soul and from down earth even its aura of meaning will not only create a vast fog but will destroy your spirit.</Description>
+        <Sound>spell/fire_nova</Sound>
+        <ActivateOnEquip stat="22" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="160">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <Legendary/>
+        <feedPower>1600</feedPower>
+        <FameBonus>8</FameBonus>
+        <MpCost>200</MpCost>
+        <Activate effect="Invisible" duration="3" range="4">ConditionEffectAura</Activate>
+        <Cooldown>8</Cooldown>
+    </Object>
+    <Object type="0x674d" id="Seal of Sky Serenade">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x430</Index>
+        </Texture>
+        <SlotType>12</SlotType>
+        <Description>The weather won't be too good today.</Description>
+        <Sound>spell/light_heal</Sound>
+        <Usable/>
+        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>125</MpCost>
+        <Activate stat="0" amount="300" duration="6" range="4" noStack="true" useWisMod="true">StatBoostAura</Activate>
+        <Activate effect="Armored" duration="4" range="5" useWisMod="true">ConditionEffectAura</Activate>
+        <feedPower>380</feedPower>
+        <DisplayId>Seal of Sky Serenade</DisplayId>
     </Object>
 </Objects>
