@@ -150,7 +150,7 @@ namespace wServer.realm.entities.vendors
             new ShopItem("Tunnel of Pain Key", 3000),
             new ShopItem("Storm Palace Key", 3000),
             new ShopItem("Abandoned Basement Key", 3500),
-            new ShopItem("Galactic Plateau Key", 5000)
+            new ShopItem("Galactic Plateau Key", 50000)
         };
 
         public static readonly Dictionary<TileRegion, Tuple<List<ISellableItem>, CurrencyType, int>> Shops =
