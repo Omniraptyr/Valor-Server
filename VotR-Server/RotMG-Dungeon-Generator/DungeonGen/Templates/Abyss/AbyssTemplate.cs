@@ -55,25 +55,25 @@ namespace DungeonGenerator.Templates.Abyss {
 			MapTemplate = ReadTemplate(typeof(AbyssTemplate));
 		}
 
-		public override int MaxDepth { get { return 50; } }
+		public override int MaxDepth => 35;
 
-		NormDist targetDepth;
-		public override NormDist TargetDepth { get { return targetDepth; } }
+	    NormDist targetDepth;
+		public override NormDist TargetDepth => targetDepth;
 
-		NormDist specialRmCount;
-		public override NormDist SpecialRmCount { get { return specialRmCount; } }
+	    NormDist specialRmCount;
+		public override NormDist SpecialRmCount => specialRmCount;
 
-		NormDist specialRmDepthDist;
-		public override NormDist SpecialRmDepthDist { get { return specialRmDepthDist; } }
+	    NormDist specialRmDepthDist;
+		public override NormDist SpecialRmDepthDist => specialRmDepthDist;
 
-		public override Range RoomSeparation { get { return new Range(0, 1); } }
+	    public override Range RoomSeparation => new Range(0, 1);
 
-		public override int CorridorWidth { get { return 3; } }
+	    public override int CorridorWidth => 3;
 
-		public override void Initialize() {
-			targetDepth = new NormDist(3, 20, 15, 35, Rand.Next());
+	    public override void Initialize() {
+			targetDepth = new NormDist(3, 20, 15, 25, Rand.Next());
 			specialRmCount = new NormDist(1.5f, 0.5f, 0, 5, Rand.Next());
-			specialRmDepthDist = new NormDist(5, 20, 10, 35, Rand.Next());
+			specialRmDepthDist = new NormDist(5, 20, 10, 25, Rand.Next());
 		}
 
 		public override Room CreateStart(int depth) {

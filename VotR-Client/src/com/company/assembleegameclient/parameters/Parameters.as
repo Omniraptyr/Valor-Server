@@ -1,5 +1,4 @@
 ﻿package com.company.assembleegameclient.parameters {
-import com.company.assembleegameclient.map.Map;
 import com.company.util.KeyCodes;
 import com.company.util.MoreDateUtil;
 
@@ -11,9 +10,8 @@ import flash.system.Capabilities;
 import flash.utils.Dictionary;
 
 public class Parameters {
-
-    public static const BUILD_VERSION:String = "75";
-    public static const MINOR_VERSION:String = "A6";
+    public static const BUILD_VERSION:String = "77";
+    public static const MINOR_VERSION:String = "33";
     public static const FULL_BUILD:String = BUILD_VERSION + "." + MINOR_VERSION;
     public static const ENABLE_ENCRYPTION:Boolean = true;
     public static const PORT:int = 2050;
@@ -191,13 +189,7 @@ public class Parameters {
         setDefault("disableAllyParticles", false);
         setDefault("disablePlayersHitParticles", false);
         setDefault("cursorSelect", "4");
-        setDefault("friendListDisplayFlag", false);
-        if (Capabilities.playerType == "Desktop") {
-            setDefault("GPURender", false);
-        }
-        else {
-            setDefault("GPURender", false);
-        }
+        setDefault("GPURender", false);
         setDefault("forceChatQuality", false);
         setDefault("hidePlayerChat", false);
         setDefault("chatStarRequirement", 1);

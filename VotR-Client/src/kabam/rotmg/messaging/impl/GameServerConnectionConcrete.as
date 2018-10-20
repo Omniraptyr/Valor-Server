@@ -636,7 +636,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         var _local1:ICipher;
         var _local2:ICipher;
         if (Parameters.ENABLE_ENCRYPTION) {
-            _local1 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray("BA15DE"));
+            _local1 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray("AB51ED"));
             _local2 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray("612a806cac78114ba5013cb531"));
             serverConnection.setOutgoingCipher(_local1);
             serverConnection.setIncomingCipher(_local2);
@@ -851,18 +851,29 @@ public class GameServerConnectionConcrete extends GameServerConnection {
 
     private var lastUseTime:int;
     override public function useItem_new(go:GameObject, slot:int):Boolean {
-        if (getTimer() - 550 > this.lastUseTime) this.lastUseTime = getTimer();
-        else return false;
-
         var itemId:int = go.equipment_[slot];
         var itemXML:XML = (itemId >= 0x9000 && itemId < 0xF000
                 ? ObjectLibrary.xmlLibrary_[36863] : ObjectLibrary.xmlLibrary_[itemId]);
 
+        if (getTimer() > this.lastUseTime)
+            this.lastUseTime = getTimer() + (itemXML.hasOwnProperty("Cooldown")
+                                           ? itemXML.Cooldown * 1000 : 550);
+        else {
+            if (itemXML.hasOwnProperty("InvUse"))
+                this.addTextLine.dispatch(ChatMessage.make("",
+                        "Please wait '" + ((this.lastUseTime - getTimer()) / 1000).toFixed(0)
+                        + "' more seconds before attempting to use this item."));
+            SoundEffectLibrary.play("error");
+            return false;
+        }
         if (itemXML && !go.isPaused()) {
             if (itemXML.Activate == "IncrementStat" || itemXML.Activate == "PowerStat") {
                 var player:Player = (go is Player ? go as Player : this.player);
                 var stats:Vector.<int> = StatData.statToPlayerValues(itemXML.Activate.@stat, player);
-                if (stats == null) return false;
+                if (stats == null) {
+                    SoundEffectLibrary.play("error");
+                    return false;
+                }
 
                 var baseStat:int = (stats[0] - stats[1]);
                 var consumeResult:String;
@@ -872,6 +883,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                         if (baseStat == stats[2] + postMaxOffset) {
                             this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' not consumed." +
                                     " You already fully ascended this stat."));
+                            SoundEffectLibrary.play("error");
                             return false;
                         }
 
@@ -883,6 +895,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                         this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' consumed. " + consumeResult));
                     } else {
                         this.addTextLine.dispatch(ChatMessage.make("", "You must have ascension enabled in order to consume vials."));
+                        SoundEffectLibrary.play("error");
                         return false;
                     }
                 }
@@ -891,6 +904,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
                     if (baseStat >= stats[2]) {
                         this.addTextLine.dispatch(ChatMessage.make("", "'" + itemXML.attribute("id") + "' not consumed. " +
                                 "You already maxed this stat."));
+                        SoundEffectLibrary.play("error");
                         return false;
                     }
 
@@ -914,19 +928,18 @@ public class GameServerConnectionConcrete extends GameServerConnection {
         return false;
     }
 
-    private function applyUseItem(_arg1:GameObject, _arg2:int, _arg3:int, _arg4:XML):void {
-        var _local5:UseItem = (this.messages.require(USEITEM) as UseItem);
-        _local5.time_ = getTimer();
-        _local5.slotObject_.objectId_ = _arg1.objectId_;
-        _local5.slotObject_.slotId_ = _arg2;
-        _local5.slotObject_.objectType_ = _arg3;
-        _local5.itemUsePos_.x_ = 0;
-        _local5.itemUsePos_.y_ = 0;
-        serverConnection.queueMessage(_local5);
-        if (_arg4.hasOwnProperty("Consumable")) {
-            _arg1.equipment_[_arg2] = -1;
-            if (((_arg4.hasOwnProperty("Activate")) && ((_arg4.Activate == "UnlockSkin")))) {
-            }
+    private function applyUseItem(go:GameObject, slotId:int, objType:int, xml:XML):void {
+        var useItem:UseItem = (this.messages.require(USEITEM) as UseItem);
+        useItem.time_ = getTimer();
+        useItem.slotObject_.objectId_ = go.objectId_;
+        useItem.slotObject_.slotId_ = slotId;
+        useItem.slotObject_.objectType_ = objType;
+        useItem.itemUsePos_.x_ = 0;
+        useItem.itemUsePos_.y_ = 0;
+        serverConnection.queueMessage(useItem);
+        if (xml.hasOwnProperty("Consumable")) {
+            go.equipment_[slotId] = -1;
+            //if (xml.hasOwnProperty("Activate") && xml.Activate == "UnlockSkin") {}
         }
     }
 

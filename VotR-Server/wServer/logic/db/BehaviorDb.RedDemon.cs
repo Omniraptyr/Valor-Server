@@ -12,7 +12,7 @@ namespace wServer.logic
         private _ RedDemon = () => Behav()
             .Init("Red Demon",
                 new State(
-                    new DropPortalOnDeath("Crimson Caverns Portal", 25),
+                    new DropPortalOnDeath("Crimson Caverns Portal"),
                     new Shoot(10, projectileIndex: 0, count: 5, shootAngle: 5, predictive: 1, coolDown: 1200),
                     new Shoot(11, projectileIndex: 1, coolDown: 1400),
                     new Prioritize(

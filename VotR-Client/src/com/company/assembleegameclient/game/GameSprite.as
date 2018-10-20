@@ -42,10 +42,10 @@ import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.dialogs.model.DialogsModel;
 import kabam.rotmg.game.view.AlertStatusDisplay;
-import kabam.rotmg.game.view.ArenaDisplay;
+import kabam.rotmg.game.view.DiscordButtonDisplay;
 import kabam.rotmg.game.view.CreditDisplay;
-import kabam.rotmg.game.view.GlobalArenaInformation;
 import kabam.rotmg.game.view.LootboxModalButton;
+import kabam.rotmg.game.view.MarkShopButton;
 import kabam.rotmg.game.view.RaidLauncherButton;
 import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
 import kabam.rotmg.maploading.signals.MapLoadedSignal;
@@ -77,6 +77,7 @@ public class GameSprite extends AGameSprite {
     public var alertStatusDisplay:AlertStatusDisplay;
     public var raidLauncherButton:RaidLauncherButton;
     public var lootBoxButton:LootboxModalButton;
+    public var markShopButton:MarkShopButton;
     public var arenaTimer:ArenaTimer;
     public var arenaWaveCounter:ArenaWaveCounter;
     public var mapModel:MapModel;
@@ -94,7 +95,7 @@ public class GameSprite extends AGameSprite {
     private var displaysPosY:uint = 4;
     private var currentPackage:DisplayObject;
     public var chatPlayerMenu:PlayerMenu;
-    public var arenaDisplay:ArenaDisplay;
+    public var discordButton:DiscordButtonDisplay;
 
     public function GameSprite(_arg1:Server, _arg2:int, _arg3:Boolean, _arg4:int, _arg5:int, _arg6:ByteArray, _arg7:PlayerModel, _arg8:String, _arg9:Boolean) {
         this.showPackage = new Signal();
@@ -110,7 +111,6 @@ public class GameSprite extends AGameSprite {
         this.chatBox_.list.addEventListener(MouseEvent.MOUSE_UP, this.onChatUp);
         addChild(this.chatBox_);
         this.idleWatcher_ = new IdleWatcher();
-        (StaticInjectorContext.getInjector().getInstance(GlobalArenaInformation) as GlobalArenaInformation).reset();
     }
 
     public static function dispatchMapLoaded(_arg1:MapInfo):void {
@@ -221,9 +221,10 @@ public class GameSprite extends AGameSprite {
         this.showRankText();
         this.showGuildText();
         this.showAlertStatusDisplay();
-        this.addArenaDisplay();
+        this.addDiscordButton();
         this.showRaidLauncher();
         this.showLootboxButton();
+        this.showMarkShopButton();
     }
 
     private function showTimer():void {
@@ -239,12 +240,12 @@ public class GameSprite extends AGameSprite {
         addChild(this.arenaWaveCounter);
     }
 
-    private function addArenaDisplay():void {
-        this.arenaDisplay = new ArenaDisplay(this);
-        this.arenaDisplay.x = 6;
-        this.arenaDisplay.y = (this.displaysPosY + 2);
+    private function addDiscordButton():void {
+        this.discordButton = new DiscordButtonDisplay(this);
+        this.discordButton.x = 6;
+        this.discordButton.y = (this.displaysPosY + 2);
         this.displaysPosY = (this.displaysPosY + UIUtils.NOTIFICATION_SPACE);
-        addChild(this.arenaDisplay);
+        addChild(this.discordButton);
     }
 
     private function showAlertStatusDisplay():void {
@@ -268,6 +269,13 @@ public class GameSprite extends AGameSprite {
         this.lootBoxButton.x = this.raidLauncherButton.x + 32;
         this.lootBoxButton.y = this.raidLauncherButton.y;
         addChild(this.lootBoxButton);
+    }
+
+    private function showMarkShopButton():void {
+        this.markShopButton = new MarkShopButton();
+        this.markShopButton.x = this.lootBoxButton.x + 32;
+        this.markShopButton.y = this.lootBoxButton.y;
+        addChild(this.markShopButton);
     }
 
     private function showGuildText():void {
@@ -349,17 +357,23 @@ public class GameSprite extends AGameSprite {
             this.creditDisplay_.scaleX = scaleX;
             this.creditDisplay_.scaleY = scaleY;
         }
-        if (this.arenaDisplay != null) {
-            this.arenaDisplay.scaleX = scaleX;
-            this.arenaDisplay.scaleY = scaleY;
-            this.arenaDisplay.x = 6 * this.arenaDisplay.scaleX;
-            this.arenaDisplay.y = 62 * this.arenaDisplay.scaleY;
+        if (this.discordButton != null) {
+            this.discordButton.scaleX = scaleX;
+            this.discordButton.scaleY = scaleY;
+            this.discordButton.x = 6 * this.discordButton.scaleX;
+            this.discordButton.y = 62 * this.discordButton.scaleY;
         }
         if (this.alertStatusDisplay != null) {
             this.alertStatusDisplay.scaleX = scaleX;
             this.alertStatusDisplay.scaleY = scaleY;
             this.alertStatusDisplay.x = 6 * this.alertStatusDisplay.scaleX;
             this.alertStatusDisplay.y = 34 * this.alertStatusDisplay.scaleY;
+        }
+        if (this.markShopButton != null) {
+            this.markShopButton.scaleX = scaleX;
+            this.markShopButton.scaleY = scaleY;
+            this.markShopButton.x = 70 * this.markShopButton.scaleX;
+            this.markShopButton.y = 90 * this.markShopButton.scaleY;
         }
         if (this.lootBoxButton != null) {
             this.lootBoxButton.scaleX = scaleX;

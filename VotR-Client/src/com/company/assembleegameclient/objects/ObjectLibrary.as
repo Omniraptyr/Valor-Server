@@ -73,8 +73,7 @@ public class ObjectLibrary {
         "PetUpgrader": PetUpgrader,
         "YardUpgrader": YardUpgrader,
         "SorForger": SorForger,
-        "MarketNPC":MarketNPC,
-        "MarksGround": MarksGround
+        "MarketNPC":MarketNPC
     };
 
     public static var textureDataFactory:TextureDataFactory = new TextureDataFactory();

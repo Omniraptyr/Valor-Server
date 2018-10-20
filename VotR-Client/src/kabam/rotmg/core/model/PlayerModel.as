@@ -69,10 +69,6 @@ public class PlayerModel {
         return (this.charList.credits_);
     }
 
-    public function getSalesForceData():String {
-        return (this.charList.salesForceData_);
-    }
-
     public function changeCredits(_arg1:int):void {
         this.charList.credits_ = (this.charList.credits_ + _arg1);
         this.creditsChanged.dispatch(this.charList.credits_);

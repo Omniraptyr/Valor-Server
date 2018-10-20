@@ -309,16 +309,13 @@ namespace wServer.logic
             )
         .Init("Haunting Knight",
             new State(
-                new ScaleHP(30000),
                 new ConditionalEffect(ConditionEffectIndex.StunImmune),
                 new ConditionalEffect(ConditionEffectIndex.ArmorBreakImmune),
                 new ConditionalEffect(ConditionEffectIndex.StasisImmune),
                 new State("fight1",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 3000),
-                    new Grenade(4, 140, coolDown: 2000, effect: ConditionEffectIndex.Blind, effectDuration: 4000, color: 0x000000),
                     new Prioritize(
-                        new Follow(1.7, 8, 1),
-                        new Wander(0.5)
+                        new Follow(1.5, 8, 1),
+                        new Wander(0.2)
                         ),
                      new Shoot(10, count: 8, shootAngle: 22, projectileIndex: 1, coolDown: 5000, coolDownOffset: 3000),
                      new Shoot(10, count: 9, projectileIndex: 0, coolDown: 6000, coolDownOffset: 3000),
@@ -445,8 +442,6 @@ namespace wServer.logic
                         new Shoot(10, count: 1, fixedAngle: 270, projectileIndex: 1, coolDown: 4000, coolDownOffset: 4000),
 
                         new Shoot(10, count: 5, shootAngle: 12, projectileIndex: 0, coolDown: 2000, coolDownOffset: 4000),
-
-                        new Shoot(10, count: 2, shootAngle: 14, projectileIndex: 2, predictive: 1, coolDown: 3000),
                 new State("fight2",
                      new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                      new TimedTransition(4000, "fight3")
@@ -775,7 +770,7 @@ namespace wServer.logic
         .Init("AH The Sincryer",
                 new State(
                     new DropPortalOnDeath("The Nontridus Portal", 100, timeout: 180),
-                    new ScaleHP(100000),
+                    new ScaleHP(35000),
                     new HpLessTransition(0.14, "spookded"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -784,7 +779,7 @@ namespace wServer.logic
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("talk1",
-                        new Taunt("Revealing the power of Zol can't be returned.", "The Zol is everywhere..you've released evil upon yourself."),
+                        new Taunt("Revealing the power of Zol can't be returned.", "The Zol is everywhere... You've released evil upon yourself."),
                         new TimedTransition(5000, "talk2")
                         ),
                     new State("talk2",
@@ -825,7 +820,7 @@ namespace wServer.logic
                         new TimedTransition(3000, "go3")
                         ),
                     new State("go3",
-                        new Taunt("They will fight with their lives!"),
+                        new Taunt("They fight with their lives!"),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new TossObject("Zol Bomber", 6, 0, coolDown: 9999999),
                         new TossObject("Zol Bomber", 6, 45, coolDown: 9999999),
@@ -882,7 +877,7 @@ namespace wServer.logic
                         new TimedTransition(5000, "cryofsin")
                         ),
                     new State("cryofsin",
-                        new Taunt(true, "THE TIME IS NOW!", "A SERENADE FOR YOUR DOOM"),
+                        new Taunt(true, "THE TIME IS NOW!", "A SERENADE FOR YOUR DOOM!"),
                         new Flash(0xFF0000, 1, 2),
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new ReturnToSpawn(1),
@@ -911,13 +906,12 @@ namespace wServer.logic
                         ),
                     new State("spookded",
                         new Flash(0x00FF00, 1, 3),
-                        new Taunt("YOU WON'T LEAVE LONG AFTER THIS. FATE WILL TELL!"),
+                        new Taunt("YOU WILL NOT SURVIVE THE ONSLAUGHT OF THE ZOL!"),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new ReturnToSpawn(1),
                         new TimedTransition(6000, "ded")
                         ),
                     new State("ded",
-                        //new InvisiToss("AH Loot Chest 1", 2, 270, coolDown: 9999999),
                         new Suicide()
                         )
                     ),
@@ -925,9 +919,8 @@ namespace wServer.logic
                     LootTemplates.Sor4Perc()
                     ),
                     new Threshold(0.1,
-                       new ItemLoot("Onrane Cache", 0.25),
-                       new ItemLoot("The Stronghold Key", 0.06),
-                       new ItemLoot("Gold Cache", 0.025),
+                       new ItemLoot("Onrane Cache", 0.015),
+                       new ItemLoot("Gold Cache", 0.07),
                        new ItemLoot("Vial of Life", 1),
                        new ItemLoot("Vial of Mana", 1)
                        )
@@ -944,7 +937,7 @@ namespace wServer.logic
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("talk1",
-                        new Taunt("The Zol grows stronger night by night..can you not see your failure already?"),
+                        new Taunt("The Zol grows stronger night by night... Can you not see your failure already?"),
                         new TimedTransition(5000, "talk2")
                         ),
                     new State("talk2",
@@ -952,7 +945,7 @@ namespace wServer.logic
                         new TimedTransition(5000, "talk3")
                         ),
                     new State("talk3",
-                        new Taunt("Now, this mistake WILL be your end."),
+                        new Taunt("Now, this mistake will be your end."),
                         new TimedTransition(5000, "talk4")
                         ),
                     new State("talk4",
@@ -989,7 +982,7 @@ namespace wServer.logic
                         new TimedTransition(3000, "go3")
                         ),
                     new State("go3",
-                        new Taunt("They will fight with their lives!"),
+                        new Taunt("They fight with their lives!"),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new TossObject("Zol Bomber", 6, 0, coolDown: 9999999),
                         new TossObject("Zol Bomber", 6, 45, coolDown: 9999999),
@@ -1017,7 +1010,7 @@ namespace wServer.logic
                         new EntitiesNotExistsTransition(9999, "tauntu", "Zol Bomber")
                         ),
                     new State("tauntu",
-                        new Taunt("Your life now belongs to me and me ONLY!"),
+                        new Taunt("Your life now belongs to me and me only!"),
                         new TimedTransition(4000, "swag21")
                         ),
                     new State("swag21",
@@ -1050,7 +1043,7 @@ namespace wServer.logic
                         new TimedTransition(5000, "cryofsin")
                         ),
                     new State("cryofsin",
-                        new Taunt(true, "THE TIME IS NOW!", "A SERENADE FOR YOUR DOOM"),
+                        new Taunt(true, "THE TIME IS NOW!", "A SERENADE FOR YOUR DOOM!"),
                         new Flash(0xFF0000, 1, 2),
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new ReturnToSpawn(1),
@@ -1080,7 +1073,7 @@ namespace wServer.logic
                     ),
                     new State("spookded",
                         new Flash(0x00FF00, 1, 3),
-                        new Taunt("YOU WON'T LEAVE LONG AFTER THIS. FATE WILL TELL!"),
+                        new Taunt("YOU WILL NOT SURVIVE THE ONSLAUGHT OF THE ZOL!"),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new ReturnToSpawn(1),
                         new TimedTransition(6000, "ded")
@@ -1093,64 +1086,13 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                     new Threshold(0.1,
-                       new TierLoot(7, ItemType.Ring, 0.06),
-                       new ItemLoot("Onrane Cache", 0.40),
-                       new ItemLoot("Gold Cache", 0.050),
+                       new TierLoot(7, ItemType.Ring, 0.0011),
+                       new ItemLoot("Onrane Cache", 0.2),
+                       new ItemLoot("Gold Cache", 0.1),
                        new ItemLoot("Vial of Life", 1),
                        new ItemLoot("Vial of Mana", 1)
                        )
             )
-            /* .Init("AH Loot Chest 1",
-                     new State(
-                         new State("Idle",
-                             new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                             new TimedTransition(5000, "UnsetEffect")
-                         ),
-                         new State("UnsetEffect")
-                     ),
-                     new MostDamagers(3,
-                         LootTemplates.FabledItemsLoot2()
-                     ),
-                     new Threshold(0.05,
-                     new TierLoot(12, ItemType.Weapon, 0.08),
-                     new TierLoot(5, ItemType.Ability, 0.07),
-                     new TierLoot(6, ItemType.Ability, 0.05),
-                     new TierLoot(13, ItemType.Armor, 0.06),
-                     new TierLoot(5, ItemType.Ring, 0.06),
-                     new ItemLoot("Onrane Cache", 0.25),
-                     new ItemLoot("The Stronghold Key", 0.06),
-                     new ItemLoot("Gold Cache", 0.025),
-                     new ItemLoot("Potion of Life", 1),
-                     new ItemLoot("Potion of Mana", 1)
-                     )
-                 )*/
-            /*.Init("AH Loot Chest 2",
-                    new State(
-                        new State("Idle",
-                            new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                            new TimedTransition(5000, "UnsetEffect")
-                        ),
-                        new State("UnsetEffect")
-                    ),
-                    new MostDamagers(3,
-                        LootTemplates.FabledItemsLoot2()
-                    ),
-                    new Threshold(0.05,
-                    new TierLoot(12, ItemType.Weapon, 0.08),
-                    new TierLoot(5, ItemType.Ability, 0.07),
-                    new TierLoot(6, ItemType.Ability, 0.05),
-                    new TierLoot(13, ItemType.Armor, 0.06),
-                    new TierLoot(7, ItemType.Ring, 0.08),
-                    new ItemLoot("Onrane Cache", 1),
-                    new ItemLoot("The Stronghold Key", 0.07),
-                    new ItemLoot("Gold Cache", 0.5),
-                    new ItemLoot("Potion of Life", 1),
-                    new ItemLoot("Potion of Defense", 1),
-                    new ItemLoot("Potion of Attack", 0.6),
-                    new ItemLoot("Potion of Dexterity", 0.5),
-                    new ItemLoot("Potion of Vitality", 0.5)
-                    )
-                )*/
             .Init("AH Heart Portal Spawner",
                 new State(
                    new DropPortalOnDeath("Keeping of Aldragine Portal", timeout: 60),
@@ -1184,11 +1126,11 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.1,
-                new TierLoot(7, ItemType.Ring, 0.08),
-                new ItemLoot("Onrane Cache", 1),
-                new ItemLoot("Gold Cache", 0.75),
-                new ItemLoot("Wisdom Eon", 0.1),
-                new ItemLoot("Attack Eon", 0.1),
+                new TierLoot(7, ItemType.Ring, 0.003),
+                new ItemLoot("Onrane Cache", 0.1),
+                new ItemLoot("Gold Cache", 0.3),
+                new ItemLoot("Wisdom Eon", 0.01),
+                new ItemLoot("Attack Eon", 0.01),
                 new ItemLoot("Vial of Life", 1),
                 new ItemLoot("Vial of Mana", 1),
                 new ItemLoot("Vial of Defense", 1),
@@ -1216,11 +1158,11 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.1,
-                new TierLoot(7, ItemType.Ring, 0.085),
-                new ItemLoot("Onrane Cache", 1),
-                new ItemLoot("Gold Cache", 1),
-                new ItemLoot("Wisdom Eon", 0.2),
-                new ItemLoot("Attack Eon", 0.2),
+                new TierLoot(7, ItemType.Ring, 0.0033),
+                new ItemLoot("Onrane Cache", 0.2),
+                new ItemLoot("Gold Cache", 0.5),
+                new ItemLoot("Wisdom Eon", 0.02),
+                new ItemLoot("Attack Eon", 0.02),
                 new ItemLoot("Vial of Life", 1),
                 new ItemLoot("Vial of Mana", 1),
                 new ItemLoot("Vial of Defense", 1),
@@ -1260,11 +1202,12 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.1,
-                    new TierLoot(7, ItemType.Ring, 0.08),
-                    new ItemLoot("Spiritclaw", 0.002),
-                    new ItemLoot("Ultimate Onrane Cache", 0.75),
-                    new ItemLoot("The Stronghold Key", 0.05),
-                    new ItemLoot("10000 Gold", 0.50),
+                    new TierLoot(7, ItemType.Ring, 0.0033),
+                    new ItemLoot("Spiritclaw", 0.001),
+                    new ItemLoot("Zol Elixir", 0.003),
+                    new ItemLoot("Ultimate Onrane Cache", 0.3),
+                    new ItemLoot("The Stronghold Key", 0.01),
+                    new ItemLoot("10000 Gold", 0.1),
                     new ItemLoot("Vial of Life", 1),
                     new ItemLoot("Vial of Defense", 1),
                     new ItemLoot("Vial of Attack", 0.6),
@@ -1294,11 +1237,12 @@ namespace wServer.logic
                 ),
                 new Threshold(0.1,
                     new TierLoot(7, ItemType.Ring, 0.1),
-                    new ItemLoot("Spiritclaw", 0.004),
-                    new ItemLoot("Sor Fragment Cache", 0.33),
-                    new ItemLoot("Ultimate Onrane Cache", 1),
-                    new ItemLoot("The Stronghold Key", 0.1),
-                    new ItemLoot("10000 Gold", 1.00),
+                    new ItemLoot("Spiritclaw", 0.003),
+                    new ItemLoot("Zol Elixir", 0.007),
+                    new ItemLoot("Sor Fragment Cache", 0.1),
+                    new ItemLoot("Ultimate Onrane Cache", 0.33),
+                    new ItemLoot("The Stronghold Key", 0.01),
+                    new ItemLoot("10000 Gold", 0.15),
                     new ItemLoot("Vial of Life", 1),
                     new ItemLoot("Vial of Defense", 1),
                     new ItemLoot("Vial of Attack", 1),
@@ -1311,6 +1255,7 @@ namespace wServer.logic
             )
         .Init("AH Secret Chest",
                 new State(
+                    new ScaleHP(10000),
                     new State("Idle",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new TimedTransition(5000, "UnsetEffect")
@@ -1358,7 +1303,7 @@ namespace wServer.logic
             )
         .Init("AH The Vision of Aldragine",
                 new State(
-                    new ScaleHP(125000),
+                    new ScaleHP(50000),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new DropPortalOnDeath("Core of the Hideout Portal", 100, timeout: 180),
                     new HpLessTransition(0.15, "spookded"),
@@ -1500,9 +1445,9 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                     new Threshold(0.1,
-                        new TierLoot(7, ItemType.Ring, 0.08),
-                        new ItemLoot("Onrane Cache", 0.75),
-                        new ItemLoot("Gold Cache", 0.33),
+                        new TierLoot(7, ItemType.Ring, 0.003),
+                        new ItemLoot("Onrane Cache", 0.5),
+                        new ItemLoot("Gold Cache", 0.3),
                         new ItemLoot("Vial of Life", 1),
                         new ItemLoot("Vial of Defense", 1),
                         new ItemLoot("Vial of Attack", 0.6),
@@ -1513,7 +1458,7 @@ namespace wServer.logic
             )
         .Init("AH ULTRA The Vision of Aldragine",
                 new State(
-                    new ScaleHP(150000),
+                    new ScaleHP(125000),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new DropPortalOnDeath("Ultra Core of the Hideout Portal", 100, timeout: 180),
                     new HpLessTransition(0.15, "spookded"),
@@ -1529,12 +1474,11 @@ namespace wServer.logic
                         new TimedTransition(4000, "talk")
                         ),
                     new State("talk",
-                        new Taunt("They say the Zol was only a Myth...what fools.....it's always been no mystery to you though..."),
+                        new Taunt("They say the Zol was only a Myth... what fools... it's always been no mystery to you though..."),
                         new TimedTransition(6500, "SummonConstructs")
                         )
                       ),
                     new State(
-                        new Reproduce("Zol Sorcerer", 20, 4, 4000),
                         new Shoot(14, count: 2, projectileIndex: 5, predictive: 1, coolDown: new Cooldown(4000, 2000)),
                         new Grenade(4, 200, range: 8, coolDown: 8000, effect: ConditionEffectIndex.Quiet, effectDuration: 6, color: 8388736),
                     new State("SummonConstructs",
@@ -1651,7 +1595,7 @@ namespace wServer.logic
                     ),
                     new State("spookded",
                         new Flash(0xF0FFF0, 1, 3),
-                        new Taunt("....Have I not succeeded this time?", "Aaah..so you don't see it?", "Will the vision finally be broken?"),
+                        new Taunt("...Have I not succeeded this time?", "Aaah... so you don't see it?", "Will the vision finally be broken?"),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new ReturnToSpawn(1),
                         new TimedTransition(6000, "ded")
@@ -1664,9 +1608,9 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                     new Threshold(0.1,
-                        new TierLoot(7, ItemType.Ring, 0.08),
-                        new ItemLoot("Onrane Cache", 1),
-                        new ItemLoot("Gold Cache", 0.5),
+                        new TierLoot(7, ItemType.Ring, 0.0033),
+                        new ItemLoot("Onrane Cache", 0.55),
+                        new ItemLoot("Gold Cache", 0.33),
                         new ItemLoot("Vial of Life", 1),
                         new ItemLoot("Vial of Defense", 1),
                         new ItemLoot("Vial of Attack", 1),
@@ -1943,10 +1887,10 @@ namespace wServer.logic
                         new InvisiToss("AH Big Purple Slime", 8, 245, coolDown: 25000, coolDownOffset: 6000),
                         new InvisiToss("AH Big Purple Slime", 8, 335, coolDown: 25000, coolDownOffset: 6000),
                         // Spawn niolru
-                        new InvisiToss("Niolru", 8, 45, coolDown: 20000, coolDownOffset: 2600),
-                        new InvisiToss("Niolru", 8, 135, coolDown: 20000, coolDownOffset: 2600),
-                        new InvisiToss("Niolru", 8, 225, coolDown: 20000, coolDownOffset: 2600),
-                        new InvisiToss("Niolru", 8, 315, coolDown: 20000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 45, coolDown: 38000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 135, coolDown: 38000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 225, coolDown: 38000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 315, coolDown: 38000, coolDownOffset: 2600),
                         new TimedTransition(74000, "ReadyFinalBurst")
                       ),
                       new State("ReadyFinalBurst",
@@ -1968,15 +1912,15 @@ namespace wServer.logic
                         //Shoot projectiles in a ring every other moment
                         new Shoot(10, count: 22, projectileIndex: 0, coolDown: 8000),
                         //Spawn the Zol Sorcerers
-                        new InvisiToss("Zol Sorcerer", 5, 0, coolDown: 10000),
-                        new InvisiToss("Zol Sorcerer", 5, 90, coolDown: 10000),
-                        new InvisiToss("Zol Sorcerer", 5, 180, coolDown: 10000),
-                        new InvisiToss("Zol Sorcerer", 5, 270, coolDown: 10000),
+                        new InvisiToss("Zol Sorcerer", 5, 0, coolDown: 9999999),
+                        new InvisiToss("Zol Sorcerer", 5, 90, coolDown: 9999999),
+                        new InvisiToss("Zol Sorcerer", 5, 180, coolDown: 9999999),
+                        new InvisiToss("Zol Sorcerer", 5, 270, coolDown: 9999999),
                         //Start Spawning Servants shortly after
-                        new InvisiToss("Corrupted Stone Giant B", 10, 45, coolDown: 20000, coolDownOffset: 3400),
-                        new InvisiToss("Corrupted Stone Giant B", 10, 135, coolDown: 20000, coolDownOffset: 3400),
-                        new InvisiToss("Corrupted Stone Giant B", 10, 225, coolDown: 20000, coolDownOffset: 3400),
-                        new InvisiToss("Corrupted Stone Giant B", 10, 315, coolDown: 20000, coolDownOffset: 3400),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 45, coolDown: 30000, coolDownOffset: 2600),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 135, coolDown: 30000, coolDownOffset: 2600),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 225, coolDown: 30000, coolDownOffset: 2600),
+                        new InvisiToss("Corrupted Stone Giant B", 10, 315, coolDown: 30000, coolDownOffset: 2600),
                         // Spawn demons
                         new InvisiToss("Demon of the Dark", 8, 45, coolDown: 25000, coolDownOffset: 2600),
                         new InvisiToss("Demon of the Dark", 8, 135, coolDown: 25000, coolDownOffset: 2600),
@@ -1988,15 +1932,15 @@ namespace wServer.logic
                         new InvisiToss("Giant Cube of Zol", 6, 245, coolDown: 34000, coolDownOffset: 6000),
                         new InvisiToss("Giant Cube of Zol", 6, 335, coolDown: 34000, coolDownOffset: 6000),
                         //Start Spawning Slimes
-                        new InvisiToss("AH Feral of the Zol", 8, 65, coolDown: 20000, coolDownOffset: 6000),
-                        new InvisiToss("AH Feral of the Zol", 8, 155, coolDown: 20000, coolDownOffset: 6000),
-                        new InvisiToss("AH Feral of the Zol", 8, 245, coolDown: 20000, coolDownOffset: 6000),
-                        new InvisiToss("AH Feral of the Zol", 8, 335, coolDown: 20000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 65, coolDown: 50000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 155, coolDown: 50000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 245, coolDown: 50000, coolDownOffset: 6000),
+                        new InvisiToss("AH Feral of the Zol", 8, 335, coolDown: 50000, coolDownOffset: 6000),
                         // Spawn niolru
-                        new InvisiToss("Niolru", 8, 45, coolDown: 10000, coolDownOffset: 2600),
-                        new InvisiToss("Niolru", 8, 135, coolDown: 10000, coolDownOffset: 2600),
-                        new InvisiToss("Niolru", 8, 225, coolDown: 10000, coolDownOffset: 2600),
-                        new InvisiToss("Niolru", 8, 315, coolDown: 10000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 45, coolDown: 25000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 135, coolDown: 25000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 225, coolDown: 25000, coolDownOffset: 2600),
+                        new InvisiToss("Niolru", 8, 315, coolDown: 25000, coolDownOffset: 2600),
                         new TimedTransition(74000, "Done")
                         )
                       ),
@@ -2036,7 +1980,7 @@ namespace wServer.logic
                 )
         .Init("AH Aldragine",
                 new State(
-                    new ScaleHP(150000),
+                    new ScaleHP(70000),
                     new HpLessTransition(0.13, "ded"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -2123,10 +2067,8 @@ namespace wServer.logic
                         ),
                     new State("HauntingKnightsClear",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 180, coolDown: 2000, coolDownOffset: 3000),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 0, coolDown: 2000, coolDownOffset: 3000),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 90, coolDown: 2000, coolDownOffset: 3000),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 27, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 180, coolDown: 4000, coolDownOffset: 3000),
+                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 0, coolDown: 4000, coolDownOffset: 3000),
                         new Shoot(8, count: 14, shootAngle: 22, projectileIndex: 4, fixedAngle: 0, coolDown: 6400, coolDownOffset: 3000),
                         new InvisiToss("Zol Sorcerer", 13, 0, coolDown: 9999999),
                         new InvisiToss("Zol Sorcerer", 13, 20, coolDown: 9999999),
@@ -2257,10 +2199,8 @@ namespace wServer.logic
                         ),
                     new State("HauntingKnightsClearB",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 180, coolDown: 2000, coolDownOffset: 3000),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 0, coolDown: 2000, coolDownOffset: 3000),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 90, coolDown: 2000, coolDownOffset: 3000),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 27, coolDown: 2000, coolDownOffset: 3000),
+                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 180, coolDown: 4000, coolDownOffset: 3000),
+                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 0, coolDown: 4000, coolDownOffset: 3000),
                         new Shoot(8, count: 14, shootAngle: 22, projectileIndex: 4, fixedAngle: 180, coolDown: 6400, coolDownOffset: 3000),
                         new InvisiToss("Zol Sorcerer", 13, 180, coolDown: 9999999),
                         new InvisiToss("Zol Sorcerer", 13, 200, coolDown: 9999999),
@@ -2515,10 +2455,8 @@ namespace wServer.logic
                         ),
                     new State("HauntingKnightsClear",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 180, coolDown: 2000, coolDownOffset: 3000),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 0, coolDown: 2000, coolDownOffset: 3000),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 90, coolDown: 2000, coolDownOffset: 3000),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 27, coolDown: 2000, coolDownOffset: 3000),
+                                                new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 180, coolDown: 4000, coolDownOffset: 3000),
+                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 0, coolDown: 4000, coolDownOffset: 3000),
                         new Shoot(8, count: 14, shootAngle: 22, projectileIndex: 4, fixedAngle: 0, coolDown: 6400, coolDownOffset: 3000),
                         new InvisiToss("Zol Sorcerer", 13, 0, coolDown: 9999999),
                         new InvisiToss("Zol Sorcerer", 13, 20, coolDown: 9999999),
@@ -2673,10 +2611,8 @@ namespace wServer.logic
                         ),
                     new State("HauntingKnightsClearB",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 180, coolDown: 2000, coolDownOffset: 3000),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 0, coolDown: 2000, coolDownOffset: 3000),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 90, coolDown: 2000, coolDownOffset: 3000),
-                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 27, coolDown: 2000, coolDownOffset: 3000),
+                                                new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 180, coolDown: 4000, coolDownOffset: 3000),
+                        new Shoot(8, count: 1, projectileIndex: 4, fixedAngle: 0, coolDown: 4000, coolDownOffset: 3000),
                         new Shoot(8, count: 14, shootAngle: 22, projectileIndex: 4, fixedAngle: 180, coolDown: 6400, coolDownOffset: 3000),
                         new InvisiToss("Zol Sorcerer", 13, 180, coolDown: 9999999),
                         new InvisiToss("Zol Sorcerer", 13, 200, coolDown: 9999999),

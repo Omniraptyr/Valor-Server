@@ -7,9 +7,9 @@ namespace wServer.networking.handlers
 {
     public class PlayerMessage
     {
-        public Player Player { get; private set; }
-        public string Message { get; private set; }
-        public long Time { get; private set; }
+        public Player Player { get; }
+        public string Message { get; }
+        public long Time { get; }
 
         public PlayerMessage(Player player, RealmTime time, string msg)
         {

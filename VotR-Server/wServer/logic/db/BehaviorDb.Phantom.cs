@@ -11,7 +11,7 @@ namespace wServer.logic
             .Init("Elemental Phantom",
                 new State(
                     new ConditionalEffect(ConditionEffectIndex.StasisImmune),
-                    new DropPortalOnDeath("Elemental Ruins Portal", 90),
+                    new DropPortalOnDeath("Elemental Ruins Portal"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new PlayerWithinTransition(8, "taunt1")
@@ -90,7 +90,7 @@ namespace wServer.logic
                  new MostDamagers(3,
                     LootTemplates.Sor2Perc()
                     ),
-                new Threshold(0.025,
+                new Threshold(0.01,
                     new ItemLoot("Potion of Vitality", 1.0),
                     new ItemLoot("Potion of Speed", 1.0),
                     new TierLoot(10, ItemType.Weapon, 0.1),

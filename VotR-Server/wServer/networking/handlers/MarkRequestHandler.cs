@@ -14,11 +14,6 @@ namespace wServer.networking.handlers
         }
 
         public void MarkUpdate(Player player, int markId, int buyAmount) {
-            if (buyAmount != 15 || buyAmount != 40) {
-                player.SendError("Inproper purchase cost.");
-                return;
-            }
-
             if (player.MarksEnabled) {
                 if (player.Onrane >= buyAmount) {
                     player.Client.Manager.Database.UpdateOnrane(player.Client.Account, -buyAmount);

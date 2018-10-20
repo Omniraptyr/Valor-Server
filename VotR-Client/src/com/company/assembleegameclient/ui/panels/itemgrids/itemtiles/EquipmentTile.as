@@ -118,9 +118,6 @@ public class EquipmentTile extends InteractiveItemTile {
             case ItemConstants.SIPHON_TYPE:
                 _local2 = AssetLibrary.getImageFromSet("lofiObj6", 224);
                 break;
-            /*case ItemConstants.TURRET_TYPE:
-                _local2 = AssetLibrary.getImageFromSet("lofiObj6", 240);
-                break;*/
             case ItemConstants.CHARM_TYPE:
                 _local2 = AssetLibrary.getImageFromSet("d3LofiObjEmbed", 1027);
                 break;
@@ -134,7 +131,7 @@ public class EquipmentTile extends InteractiveItemTile {
                 _local2 = AssetLibrary.getImageFromSet("lofiObj6", 240);
                 break;
             case ItemConstants.TALISMAN_TYPE:
-                _local2 = AssetLibrary.getImageFromSet("legendaries8x8Embed", 320);
+                _local2 = AssetLibrary.getImageFromSet("legendaries8x8Embed", 352);
                 break;
         }
         if (_local2 != null) {

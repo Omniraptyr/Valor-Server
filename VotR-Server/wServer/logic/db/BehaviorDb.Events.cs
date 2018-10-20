@@ -41,7 +41,7 @@ namespace wServer.logic
               new MostDamagers(3,
                      LootTemplates.StatPots()
                      ),
-                new Threshold(0.05,
+                new Threshold(0.01,
                     new TierLoot(8, ItemType.Weapon, 0.2),
                     new TierLoot(9, ItemType.Weapon, 0.03),
                     new TierLoot(10, ItemType.Weapon, 0.02),
@@ -58,7 +58,7 @@ namespace wServer.logic
                     new TierLoot(5, ItemType.Ability, 0.03),
                     new ItemLoot("Flaming Boomerang", 0.001),
                     new ItemLoot("Dagger of Brimstone", 0.005),
-                    new ItemLoot("Orb of Conflict", 0.03)
+                    new ItemLoot("Orb of Conflict", 0.003)
                     )
             )
             .Init("Red Flaming Skull",
@@ -200,10 +200,10 @@ namespace wServer.logic
                     new MostDamagers(3,
                         LootTemplates.Sor2Perc()
                     ),
-                new Threshold(0.05,
+                new Threshold(0.01,
                     new ItemLoot("Potion of Dexterity", 1),
                     new ItemLoot("Potion of Vitality", 1),
-                    new ItemLoot("Helm of the Juggernaut", 0.03)
+                    new ItemLoot("Helm of the Juggernaut", 0.003)
                 )
             );
 

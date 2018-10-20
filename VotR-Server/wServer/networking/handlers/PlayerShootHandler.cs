@@ -13,8 +13,7 @@ namespace wServer.networking.handlers
         private static readonly ILog CheatLog = LogManager.GetLogger("CheatLog");
 
         protected override void HandlePacket(Client client, PlayerShoot packet) {
-            //client.Manager.Logic.AddPendingAction(t => Handle(client.Player, packet, t));
-            Handle(client.Player, packet);
+            client.Manager.Logic.AddPendingAction(t => Handle(client.Player, packet));
         }
 
         private static void Handle(Player player, PlayerShoot packet) {

@@ -12,14 +12,14 @@ namespace common
             InstanceId = instId;
             Content = val;
         }
-        public string InstanceId { get; private set; }
-        public T Content { get; private set; }
+        public string InstanceId { get; }
+        public T Content { get; }
     }
 
     public class InterServerChannel
     {
-        public string InstanceId { get; private set; }
-        public Database Database { get; private set; }
+        public string InstanceId { get; }
+        public Database Database { get; }
 
         public InterServerChannel(Database db, string instId)
         {

@@ -56,7 +56,7 @@ namespace wServer.logic
         .Init("The Mothership",
                 new State(
                     new ScaleHP(90000),
-                    new DropPortalOnDeath("Galactic Plateau Portal", .33),
+                    new DropPortalOnDeath("Galactic Plateau Portal"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new PlayerWithinTransition(6, "taunt1")
@@ -260,7 +260,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.Sor3Perc()
                     ),
-                new Threshold(0.025,
+                new Threshold(0.01,
                     new ItemLoot("Potion of Defense", 1.0),
                     new TierLoot(8, ItemType.Weapon, 0.2),
                     new TierLoot(9, ItemType.Weapon, 0.03),

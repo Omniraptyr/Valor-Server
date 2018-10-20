@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Concurrent;
 using System.Diagnostics;
+using System.Runtime;
 using System.Threading;
 using System.Threading.Tasks;
 using log4net;
@@ -14,7 +15,7 @@ namespace wServer.realm
 
         private readonly RealmManager _manager;
         private readonly ConcurrentQueue<Action<RealmTime>>[] _pendings;
-        
+
         public readonly int TPS;
         public readonly int MsPT;
 
@@ -22,8 +23,7 @@ namespace wServer.realm
         private Task _worldTask;
         private RealmTime _worldTime;
 
-        public FLLogicTicker(RealmManager manager)
-        {
+        public FLLogicTicker(RealmManager manager) {
             _manager = manager;
             MsPT = 1000 / manager.TPS;
             _mre = new ManualResetEvent(false);
@@ -40,7 +40,7 @@ namespace wServer.realm
             var watch = Stopwatch.StartNew();
             do {
                 t.TotalElapsedMs = watch.ElapsedMilliseconds;
-                _mre.WaitOne(Math.Max(0, MsPT 
+                _mre.WaitOne(Math.Max(0, MsPT
                     - (int)(watch.ElapsedMilliseconds - t.TotalElapsedMs)));
 
                 t.TickDelta = loopTime / MsPT;
@@ -56,19 +56,15 @@ namespace wServer.realm
             } while (true);
         }
 
-        private void DoLogic(RealmTime t)
-        {
+        private void DoLogic(RealmTime t) {
             var clients = _manager.Clients.Keys;
-            
-            foreach (var i in _pendings)
-            {
+
+            foreach (var i in _pendings) {
                 while (i.TryDequeue(out var callback))
-                    try
-                    {
+                    try {
                         callback(t);
                     }
-                    catch (Exception e)
-                    {
+                    catch (Exception e) {
                         Log.Error(e);
                     }
             }
@@ -77,38 +73,45 @@ namespace wServer.realm
             _manager.Monitor.Tick(t);
             _manager.InterServer.Tick(t.ElapsedMsDelta);
 
+            if (t.TotalElapsedMs % 900000 == 0) {
+                GCSettings.LargeObjectHeapCompactionMode = GCLargeObjectHeapCompactionMode.CompactOnce;
+                GC.Collect();
+            }
+
             TickWorlds(t);
 
-            foreach (var client in clients)
+            foreach (var client in clients) {
+                if (t.TickCount % 300 == 0)
+                    client.PacketCount = 0;
+
+                if (client.PacketCount > 3000)
+                    client.Disconnect();
+
                 if (client.Player?.Owner != null)
                     client.Player.Flush();
+            }
         }
 
-        private void TickWorlds(RealmTime t)
-        {
+        private void TickWorlds(RealmTime t) {
             _worldTime.TickDelta += t.TickDelta;
-            
-            try
-            {
+
+            try {
                 foreach (var w in _manager.Worlds.Values.Distinct())
                     w.TickLogic(t);
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 Log.Error(e);
             }
 
-            if (_worldTask == null || _worldTask.IsCompleted)
-            {
+            if (_worldTask == null || _worldTask.IsCompleted) {
                 t.TickDelta = _worldTime.TickDelta;
                 t.ElapsedMsDelta = t.TickDelta * MsPT;
 
-                if (t.ElapsedMsDelta < 200) 
+                if (t.ElapsedMsDelta < 200)
                     return;
 
                 _worldTime.TickDelta = 0;
-                _worldTask = Task.Factory.StartNew(() =>
-                {
+                _worldTask = Task.Factory.StartNew(() => {
                     foreach (var i in _manager.Worlds.Values.Distinct())
                         i.Tick(t);
                 }).ContinueWith(e =>
@@ -118,8 +121,7 @@ namespace wServer.realm
         }
 
         public void AddPendingAction(Action<RealmTime> callback,
-            PendingPriority priority = PendingPriority.Normal)
-        {
+            PendingPriority priority = PendingPriority.Normal) {
             _pendings[(int)priority].Enqueue(callback);
         }
     }

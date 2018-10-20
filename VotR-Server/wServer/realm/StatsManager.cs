@@ -110,6 +110,7 @@ namespace wServer.realm
                 return (Owner.Stats[0] - Owner.HP) / 2;
             return 0;
         }
+
         private float CriticalModifier()
         {
             Random rnd = new Random();
@@ -135,32 +136,15 @@ namespace wServer.realm
             }
             return ret;
         }
-        public int CritChance()
-        {
-            if (Owner.HasConditionEffect(ConditionEffects.Bravery) && Owner.CheckTinda() == true)
-            {
-                return Owner.Stats[9] + 300;
-            }
-            if (Owner.HasConditionEffect(ConditionEffects.Bravery))
-            {
-                return Owner.Stats[9]+100;
-            }
-            if (Owner.CheckTinda() == true)
-            {
-                return Owner.Stats[9] + 200;
-            }
-            else
-            {
-                return Owner.Stats[9];
-            }
 
+        public int CritChance() {
+            return Owner.Stats[9] + (Owner.CheckTinda() ? 200 : 0);
         }
 
-        public float MightMultiplier()
-        {
+        public float MightMultiplier() {
             float ret = Math.Min(2.5f + Owner.Stats[2] / 50, 1.0f + Owner.Stats[8] / 70);
             if (Owner.HasConditionEffect(ConditionEffects.Bravery))
-                return ret * 2;
+                return ret * 1.33f;
             return ret;
         }
 
@@ -194,14 +178,14 @@ namespace wServer.realm
             if (host.HasConditionEffect(ConditionEffects.ArmorBroken))
                 def = 0;
 
-            float limit = dmg * 0.25f;//0.15f;
+            float limit = dmg * 0.25f;
 
             float ret;
             if (dmg - def < limit) ret = limit;
             else ret = dmg - def;
 
             if (host.HasConditionEffect(ConditionEffects.Curse))
-                ret = (int)(ret * 1.20);
+                ret *= 1.2f;
 
             if (host.HasConditionEffect(ConditionEffects.Invulnerable) ||
                 host.HasConditionEffect(ConditionEffects.Invincible))
@@ -217,7 +201,7 @@ namespace wServer.realm
             if (Owner.HasConditionEffect(ConditionEffects.ArmorBroken) || noDef)
                 def = 0;
 
-            float limit = dmg * 0.25f;//0.15f;
+            float limit = dmg * 0.25f;
 
             float ret;
             if (dmg - def < limit) ret = limit;

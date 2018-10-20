@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using common;
+using log4net;
+using Newtonsoft.Json;
 using wServer.networking.packets;
+using wServer.networking.packets.incoming;
+using wServer.networking.packets.outgoing;
 using wServer.networking.server;
 using wServer.realm;
 using wServer.realm.entities;
-using log4net;
-using Newtonsoft.Json;
-using wServer.networking.packets.incoming;
-using wServer.networking.packets.outgoing;
 using wServer.realm.worlds.logic;
 
 namespace wServer.networking
@@ -36,6 +37,7 @@ namespace wServer.networking
 
         public RC4 ReceiveKey { get; private set; }
         public RC4 SendKey { get; private set; }
+        public int PacketCount;
 
         private readonly Server _server;
         private readonly CommHandler _handler;
@@ -58,7 +60,6 @@ namespace wServer.networking
 
         public Socket Skt { get; private set; }
         public string IP { get; private set; }
-        public bool IsLagging { get; private set; }
 
         internal readonly object DcLock = new object();
 
@@ -105,16 +106,20 @@ namespace wServer.networking
         }
 
         public void SendPacket(Packet pkt, PacketPriority priority = PacketPriority.Normal) {
-            using (TimedLock.Lock(DcLock)) {
-                if (State != ProtocolState.Disconnected)
+            lock (DcLock) {
+                if (State != ProtocolState.Disconnected) {
                     _handler.SendPacket(pkt, priority);
+                }
+                PacketCount++;
             }
         }
 
         public void SendPackets(IEnumerable<Packet> pkts, PacketPriority priority = PacketPriority.Normal) {
-            using (TimedLock.Lock(DcLock)) {
-                if (State != ProtocolState.Disconnected)
+            lock (DcLock) {
+                if (State != ProtocolState.Disconnected) {
                     _handler.SendPackets(pkts, priority);
+                }
+                PacketCount += pkts.Count();
             }
         }
 
@@ -128,23 +133,17 @@ namespace wServer.networking
             return true;
         }
 
-        public bool CheckForLag() {
-            IsLagging = _handler.IsLagging();
-            return IsLagging;
-        }
-
         internal void ProcessPacket(Packet pkt) {
             lock (DcLock) {
                 if (State == ProtocolState.Disconnected)
                     return;
 
                 try {
-                    if (!PacketHandlers.Handlers.TryGetValue(pkt.ID, out var handler))
-                        return;
-
-                    handler.Handle(this, (IncomingMessage)pkt);
+                    if (PacketHandlers.Handlers.TryGetValue(pkt.ID, out var handler))
+                        handler.Handle(this, (IncomingMessage)pkt);
                 }
-                catch (Exception) {
+                catch (Exception e) {
+                    Log.Error($"Error when handling packet '{pkt}'...", e);
                     Disconnect("Packet handling error.");
                 }
             }
@@ -161,7 +160,7 @@ namespace wServer.networking
         }
 
         public async void SendFailure(string text, int errorId = 0) {
-            SendPacket(new Failure() {
+            SendPacket(new Failure {
                 ErrorId = errorId,
                 ErrorDescription = text
             });
@@ -178,12 +177,12 @@ namespace wServer.networking
             // has, the error dialog will be an update client dialog
             // instead.
 
-            var jsonMsg = new FailureJsonDialogMessage() {
+            var jsonMsg = new FailureJsonDialogMessage {
                 build = Manager.Config.serverSettings.version,
                 title = title,
                 description = description
             };
-            SendPacket(new Failure() {
+            SendPacket(new Failure {
                 ErrorId = Failure.JsonDialogDisconnect,
                 ErrorDescription = JsonConvert.SerializeObject(jsonMsg)
             });
@@ -201,20 +200,25 @@ namespace wServer.networking
 
                 State = ProtocolState.Disconnected;
 
+                if (!string.IsNullOrEmpty(reason))
+                    Log.InfoFormat("Disconnecting client ({0}) @ {1}... {2}",
+                        Account?.Name ?? " ", IP, reason);
+
                 if (Account != null)
                     try {
-                        Save();
+                        Save().ContinueWith(t => {
+                            Manager.Disconnect(this);
+                            _server.Disconnect(this);
+                        });
                     }
                     catch (Exception e) {
                         var msg = $"{e.Message}\n{e.StackTrace}";
                         Log.Error(msg);
                     }
-                Manager.Disconnect(this);
-                _server.Disconnect(this);
             }
         }
 
-        private void Save() // only when disconnect
+        private async Task Save() // only when disconnect
         {
             var acc = Account;
 
@@ -226,10 +230,9 @@ namespace wServer.networking
             Player.SaveToCharacter();
             if (!acc.Hidden && acc.AccountIdOverrider == 0)
                 acc.RefreshLastSeen();
-            acc.FlushAsync();
-
-            Manager.Database.SaveCharacter(acc, Character, Player.FameCounter.ClassStats, true).GetAwaiter();
-            Manager.Database.ReleaseLock(acc);
+            await acc.FlushAsync();
+            await Manager.Database.SaveCharacter(acc, Character, Player.FameCounter.ClassStats, true)
+                .ContinueWith(t => Manager.Database.ReleaseLock(acc));
         }
 
         public void Dispose() {

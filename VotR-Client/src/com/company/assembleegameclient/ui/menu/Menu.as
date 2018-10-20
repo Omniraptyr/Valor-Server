@@ -71,41 +71,60 @@ public class Menu extends Sprite implements UnFocusAble {
         }
     }
 
-    public function scaleParent():void {
-        var parent:DisplayObjectContainer = null;
+    private function position() : void {
+        if (stage == null) {
+            return;
+        }
 
-        if (this.parent is GameSprite) parent = this;
-        else parent = this.parent;
+        this.positionFixed();
+    }
+
+    public function scaleParent() : void {
+        var sprite:* = null;
+
+        if (this.parent is GameSprite) sprite = this;
+        else sprite = this.parent;
 
         var scaleX:Number = 800 / stage.stageWidth;
         var scaleY:Number = 600 / stage.stageHeight;
-        parent.scaleX = scaleX;
-        parent.scaleY = scaleY;
+
+        sprite.scaleX = scaleX / scaleY;
+        sprite.scaleY = 1;
     }
 
-    private function position():void {
-        var x:Number = (stage.stageWidth - 800) / 2 + stage.mouseX;
-        var y:Number = (stage.stageHeight - 600) / 2 + stage.mouseY;
+    public function positionFixed() : void {
+        var relX:Number = (stage.stageWidth - 800) * 0.5 + stage.mouseX;
+        var relY:Number = (stage.stageHeight - 600) * 0.5 + stage.mouseY;
+        var scale:Number = 600 / stage.stageHeight;
+
         this.scaleParent();
 
-        if (stage == null) return;
+        relX = relX * scale;
+        relY = relY * scale;
 
-        if (stage.mouseX + 0.5 * stage.stageWidth - 400 < stage.stageWidth / 2) {
-            this.x = x + 12;
-        } else {
-            this.x = x - width - 1;
+        if(stage == null) {
+            return;
         }
 
-        if (this.x < 12) this.x = 12;
-
-        if (stage.mouseY + 0.5 * stage.stageHeight - 300 < stage.stageHeight / 3) {
-            this.y = y + 12;
+        if( stage.mouseX + 0.5 * stage.stageWidth - 400 < stage.stageWidth * 0.5) {
+            x = relX + 12;
         } else {
-            this.y = y - height - 1;
+            x = relX - width - 1;
+        }
+        if (x < 12) {
+            x = 12;
         }
 
-        if (this.y < 12) this.y = 12;
+        if (stage.mouseY + 0.5 * stage.stageHeight - 300 < stage.stageHeight * 0.333333333333333) {
+            y = relY + 12;
+        } else {
+            y = relY - height - 1;
+        }
+        if (y < 12) {
+            y = 12;
+        }
     }
+
     protected function onRollOut(e:Event):void {
         this.remove();
     }

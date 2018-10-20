@@ -8,6 +8,7 @@ import com.company.assembleegameclient.ui.LineBreakDesign;
 import com.company.assembleegameclient.util.TierUtil;
 import com.company.util.BitmapUtil;
 import com.company.util.KeyCodes;
+import com.company.util.MoreStringUtil;
 
 import flash.display.Bitmap;
 import flash.display.BitmapData;
@@ -236,7 +237,10 @@ public class EquipmentToolTip extends ToolTip {
     }
 
     private function addNumProjectilesTagsToEffectsList():void {
-        if (((this.objectXML.hasOwnProperty("NumProjectiles")) && (!((this.comparisonResults.processedTags.hasOwnProperty(this.objectXML.NumProjectiles.toXMLString()) == true))))) {
+        if (this.objectXML.hasOwnProperty("NumProjectiles"
+                && this.objectXML.NumProjectiles != 1
+                && !this.comparisonResults.processedTags
+                        .hasOwnProperty(this.objectXML.NumProjectiles.toXMLString()) == true)) {
             this.effects.push(new Effect(TextKey.SHOTS, {"numShots": this.objectXML.NumProjectiles}));
         }
     }
@@ -414,6 +418,13 @@ public class EquipmentToolTip extends ToolTip {
                             "duration": _local_1.@duration
                         }));
                         break;
+                    case ActivationType.STAT_BOOST_SELF:
+                        this.effects.push(new Effect("{amount} {stat} for {duration} ",{
+                            "amount": prefix(_local_1.@amount),
+                            "stat": new LineBuilder().setParams(StatData.statToName(int(_local_1.@stat))),
+                            "duration": TooltipHelper.getPlural(_local_1.@duration, "second")
+                        }));
+                        continue;
                     case ActivationType.HEAL:
                         this.effects.push(new Effect(TextKey.INCREMENT_STAT, {
                             "statAmount": (("+" + _local_1.@amount) + " "),
@@ -475,7 +486,7 @@ public class EquipmentToolTip extends ToolTip {
                             }, TooltipHelper.getOpenTag(TooltipHelper.NO_DIFF_COLOR), TooltipHelper.getCloseTag())
                         }));
                         break;
-                    case ActivationType.BURNINGLIGHTNING:
+                    case ActivationType.BURNING_LIGHTNING:
                         this.effects.push(new Effect(TextKey.LIGHTNING, {
                             "data": new AppendingLineBuilder().pushParams(TextKey.DAMAGE_TO_TARGETS, {
                                 "damage": _local_1.@totalDamage,
@@ -538,7 +549,7 @@ public class EquipmentToolTip extends ToolTip {
                             "effect": _local_1.@effect,
                             "duration": _local_1.@duration
                         };
-                        _local_12 = "Within {range} sqrs {effect} for {duration} seconds";
+                        _local_12 = "Within {range} sqrs\n{effect} for {duration} seconds";
                         if (_local_1.@target != "enemy") {
                             this.effects.push(new Effect(TextKey.PARTY_EFFECT, {"effect": LineBuilder.returnStringReplace(_local_12, _local_11)}).setReplacementsColor(_local_9));
                         }
@@ -576,7 +587,7 @@ public class EquipmentToolTip extends ToolTip {
                             "amount": _local_1.@amount,
                             "duration": _local_1.@duration
                         };
-                        _local_17 = "Within {range} sqrs increase {stat} by {amount} for {duration} seconds";
+                        _local_17 = "Within {range} sqrs\nincrease {stat} by {amount} for {duration} seconds";
                         this.effects.push(new Effect(TextKey.PARTY_EFFECT, {"effect": LineBuilder.returnStringReplace(_local_17, _local_16)}).setReplacementsColor(_local_13));
                         break;
                     case ActivationType.INCREMENT_STAT:
@@ -614,7 +625,9 @@ public class EquipmentToolTip extends ToolTip {
                         this.effects.push(new Effect(_local_2, _local_18));
                         break;
                     case ActivationType.TORII:
-                        this.effects.push(new Effect("Spawns {type} Torii \nDisappears after {lifetime} seconds \nApplies '{effect}' in a {radius} sqrs area for {duration} seconds", {
+                        this.effects.push(new Effect("Spawns {type} Torii\n" +
+                                "Disappears after {lifetime} seconds\n" +
+                                "Applies '{effect}' in a {radius} sqrs area for {duration} seconds", {
                             "lifetime": _local_1.@amount,
                             "duration": _local_1.@duration,
                             "radius": _local_1.@range,
@@ -622,10 +635,22 @@ public class EquipmentToolTip extends ToolTip {
                             "type": (_local_1.@players == "true" ? "a defensive" : "an offensive")
                         }).setColor(TooltipHelper.NO_DIFF_COLOR));
                         break;
-                    case ActivationType.SORACTIVATE:
+                    case ActivationType.SOR_ACTIVATE:
                         this.effects.push(new Effect("+{amount} Sor Fragments", {
                             "amount": _local_1.@amount
                         }).setColor(TooltipHelper.NO_DIFF_COLOR));
+                        break;
+                    case ActivationType.DICE:
+                        this.effects.push(new Effect("Grants either {effs} for {dur} seconds", {
+                            "effs": MoreStringUtil.gcArray(_local_1.@randVals.split(","), "or"),
+                            "dur": _local_1.@duration
+                        }));
+                        break;
+                    case ActivationType.RANDOM_CURRENCY:
+                        this.effects.push(new Effect("Grants either {vals} {currency}", {
+                            "vals": MoreStringUtil.gcArray(_local_1.@randVals.split(","), "or"),
+                            "currency": _local_1.@currencyType
+                        }));
                         break;
                 }
             }
@@ -641,7 +666,7 @@ public class EquipmentToolTip extends ToolTip {
                 return (tag);
             }
         }
-        return (null);
+        return null;
     }
 
     private function getStatTag(xml:XML, statValue:String):XML {
@@ -653,7 +678,7 @@ public class EquipmentToolTip extends ToolTip {
                 return (tag);
             }
         }
-        return (null);
+        return null;
     }
 
     private function addActivateOnEquipTagsToEffectsList():void {
@@ -665,10 +690,9 @@ public class EquipmentToolTip extends ToolTip {
                 _local2 = false;
             }
             if (_local1.toString() == "IncrementStat") {
-                this.effects.push(new Effect(TextKey.INCREMENT_STAT, this.getComparedStatText(_local1, false)).setReplacementsColor(this.getComparedStatColor(_local1)));
-            }
-            if (_local1.toString() == "IncrStatPerc") {
-                this.effects.push(new Effect(TextKey.INCREMENT_STAT, this.getComparedStatText(_local1, true)).setReplacementsColor(this.getComparedStatColor(_local1)));
+                this.effects.push(new Effect(TextKey.INCREMENT_STAT, getComparedStatText(_local1,
+                         _local1.hasOwnProperty("isPerc") ? _local1.isPerc : false))
+                        .setReplacementsColor(this.getComparedStatColor(_local1)));
             }
         }
 
@@ -700,14 +724,18 @@ public class EquipmentToolTip extends ToolTip {
         }
     }
 
-    private function getComparedStatText(xml:XML, isPerc:Boolean):Object {
+    private static function getComparedStatText(xml:XML, isPerc:Boolean) : Object {
         var stat:int = int(xml.@stat);
         var amount:int = int(xml.@amount);
-        var _local4:String = amount > -1 ? "+" : "";
         return ({
-            "statAmount": ((_local4 + String(amount)) + (isPerc ? "% " : " ")),
+            "statAmount": prefix(amount) + (isPerc ? "% " : " "),
             "statName": new LineBuilder().setParams(StatData.statToName(stat))
         });
+    }
+
+    private static function prefix(input:int) : String {
+        var formattedStr:String = (input > -1 ? "+" : "");
+        return formattedStr + input;
     }
 
     private function getComparedStatColor(activateXML:XML):uint {
@@ -763,99 +791,80 @@ public class EquipmentToolTip extends ToolTip {
         this.restrictions.push(new Restriction(TextKey.DOUBLE_CLICK_OR_SHIFT_CLICK_TO_USE, 0xFFFFFF, false));
     }
 
-    private function makeRestrictionList():void
-    {
-        var _local_2:XML;
-        var _local_3:Boolean;
-        var _local_4:int;
-        var _local_5:int;
+    private function makeRestrictionList():void {
+        var xml:XML;
+        var meetsReq:Boolean;
+        var stat:int;
+        var val:int;
         this.restrictions = new Vector.<Restriction>();
-        if (((((this.objectXML.hasOwnProperty("VaultItem")) && (!((this.invType == -1))))) && (!((this.invType == ObjectLibrary.idToType_["Vault Chest"])))))
-        {
+
+        if (this.objectXML.hasOwnProperty("VaultItem")
+                && this.invType != -1
+                && this.invType != ObjectLibrary.idToType_["Vault Chest"]) {
             this.restrictions.push(new Restriction(TextKey.STORE_IN_VAULT, 16549442, true));
         }
-        if (this.objectXML.hasOwnProperty("Soulbound"))
-        {
+
+        if (this.objectXML.hasOwnProperty("Soulbound")) {
             this.restrictions.push(new Restriction(TextKey.ITEM_SOULBOUND, 0xB3B3B3, false));
         }
-        if (this.objectXML.hasOwnProperty("@setType"))
-        {
+
+        if (this.objectXML.hasOwnProperty("@setType")) {
             this.restrictions.push(new Restriction(("This item is a part of " + this.objectXML.attribute("setName")), 0xFF9900, false));
         }
-        if (this.objectXML.hasOwnProperty("Legendary"))
-        {
+
+        if (this.objectXML.hasOwnProperty("Legendary")) {
             this.titleText.setColor(0xFFFF00);
         }
-        if (this.objectXML.hasOwnProperty("Outfit"))
-        {
-            this.restrictions.push(new Restriction("This item adds both Large and Small dye effects.", 0xFF00, true));
-        }
-        if (this.objectXML.hasOwnProperty("Fabled"))
-        {;
+
+        if (this.objectXML.hasOwnProperty("Fabled")) {
             this.titleText.setColor(0xFF0000);
         }
-        if (this.objectXML.hasOwnProperty("PoZPage"))
-        {
-            this.restrictions.push(new Restriction("This item can be read to activate marks on your account..", 0xFF0000, true));
+
+        if (this.objectXML.hasOwnProperty("PoZPage")) {
+            this.restrictions.push(new Restriction("This item can be read to activate marks on your account.", 0xFF0000, true));
         }
-        if (this.objectXML.hasOwnProperty("Shard"))
-        {
-            this.restrictions.push(new Restriction("This item can be used to enchant items and forge legendaries.", 16738740, true));
+
+        if (this.objectXML.hasOwnProperty("Shard") || this.objectXML.hasOwnProperty("Ascended")) {
+            this.restrictions.push(new Restriction("This item can be used to forge legendaries.", 16738740, true));
         }
-        if (this.objectXML.hasOwnProperty("Fragment"))
-        {
-            this.restrictions.push(new Restriction("Double-click this item if you have Sor Fragment 1, 2 and 3 in your inventory to create a Sor Crystal.", 16738740, true));
-        }
-        if (this.objectXML.hasOwnProperty("Enchanter"))
-        {
-            this.restrictions.push(new Restriction("This item is neccessary to enchant an item.", 0x000099, true));
-        }
-        if (this.objectXML.hasOwnProperty("PetStone"))
-        {
-            this.restrictions.push(new Restriction("This magical stone changes the skin of your current following pet.", 16776960, true));
-        }
-        if (this.objectXML.hasOwnProperty("Ascended"))
-        {
-            this.restrictions.push(new Restriction("This item can be used to forge a legendary item.", 0xFFFFFF, false));
-        }
-        if (this.objectXML.hasOwnProperty("FabledToken"))
-        {
+
+        if (this.objectXML.hasOwnProperty("FabledToken")) {
             this.restrictions.push(new Restriction("This item is used to open raids.", 0xFF00FF, true));
         }
+
         if (this.playerCanUse) {
             if (this.objectXML.hasOwnProperty("Usable")) {
                 this.addAbilityItemRestrictions();
                 this.addEquipmentItemRestrictions();
-            }
-            else {
+            } else {
                 if (this.objectXML.hasOwnProperty("Consumable")) {
                     this.addConsumableItemRestrictions();
-                }
-                else {
+                } else {
                     if (this.objectXML.hasOwnProperty("InvUse")) {
                         this.addReusableItemRestrictions();
-                    }
-                    else {
+                    } else {
                         this.addEquipmentItemRestrictions();
                     }
                 }
             }
+        } else if (this.player != null) {
+            this.restrictions.push(new Restriction(TextKey.NOT_USABLE_BY, 16549442, true));
         }
-        else {
-            if (this.player != null) {
-                this.restrictions.push(new Restriction(TextKey.NOT_USABLE_BY, 16549442, true));
-            }
-        }
-        var _local_1:Vector.<String> = ObjectLibrary.usableBy(this.objectType);
-        if (_local_1 != null) {
+
+        if (ObjectLibrary.usableBy(this.objectType) != null) {
             this.restrictions.push(new Restriction(TextKey.USABLE_BY, 0xB3B3B3, false));
         }
-        for each (_local_2 in this.objectXML.EquipRequirement) {
-            _local_3 = ObjectLibrary.playerMeetsRequirement(_local_2, this.player);
-            if (_local_2.toString() == "Stat") {
-                _local_4 = int(_local_2.@stat);
-                _local_5 = int(_local_2.@value);
-                this.restrictions.push(new Restriction(((("Requires " + StatData.statToName(_local_4)) + " of ") + _local_5), ((_local_3) ? 0xB3B3B3 : 16549442), ((_local_3) ? false : true)));
+
+        for each (xml in this.objectXML.EquipRequirement) {
+            meetsReq = ObjectLibrary.playerMeetsRequirement(xml, this.player);
+            if (xml.toString() == "Stat") {
+                stat = int(xml.@stat);
+                val = int(xml.@value);
+                this.restrictions.push(
+                        new Restriction("Requires " + StatData.statToName(stat) + " of " + val,
+                                (meetsReq ? 0xB3B3B3 : 16549442),
+                                !meetsReq)
+                );
             }
         }
     }

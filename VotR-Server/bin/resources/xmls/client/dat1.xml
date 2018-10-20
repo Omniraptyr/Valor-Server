@@ -1,5 +1,4 @@
 ﻿<Objects>
-
    <Object type="0x0e56" id="Masked Party God">
       <Enemy/>
       <Class>Character</Class>
@@ -30196,377 +30195,351 @@ This strange weapon was used by ancient battle mages to deter invaders. The secr
       <OldSound>daggerSwing</OldSound>
       <feedPower>950</feedPower>
       <DisplayId>{equip.Dirk_of_Cronus}</DisplayId>
-   </Object>
-   <Object type="0xa1a" id="Shortbow">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj5</File>
-<Index>0x50</Index>
-</Texture>
-<SlotType>3</SlotType>
-<Tier>0</Tier>
-<Description>A well-made shortbow.</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/poor_quality_bow</Sound>
-<Projectile>
-<ObjectId>Green Arrow</ObjectId>
-<Speed>160</Speed>
-<MinDamage>15</MinDamage>
-<MaxDamage>45</MaxDamage>
-<LifetimeMS>440</LifetimeMS>
-<MultiHit/>
-</Projectile>
-<BagType>1</BagType>
-<OldSound>arrowShoot</OldSound>
-<feedPower>5</feedPower>
+   </Object>  
+<Object type="0xa1a" id="Shortbow">
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj5</File>
+        <Index>0x50</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Tier>0</Tier>
+    <Description>A well-made shortbow.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/poor_quality_bow</Sound>
+    <Projectile>
+        <ObjectId>Green Arrow</ObjectId>
+        <Speed>160</Speed>
+        <MinDamage>55</MinDamage>
+        <MaxDamage>95</MaxDamage>
+        <LifetimeMS>440</LifetimeMS>
+        <MultiHit/>
+    </Projectile>
+    <BagType>1</BagType>
 </Object>
 <Object type="0xa75" id="Reinforced Bow">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj5</File>
-<Index>0x51</Index>
-</Texture>
-<SlotType>3</SlotType>
-<Tier>1</Tier>
-<Description>An iron-reinforced bow.</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/poor_quality_bow</Sound>
-<Projectile>
-<ObjectId>Green Arrow</ObjectId>
-<Speed>160</Speed>
-<MinDamage>20</MinDamage>
-<MaxDamage>50</MaxDamage>
-<LifetimeMS>440</LifetimeMS>
-<MultiHit/>
-</Projectile>
-<BagType>1</BagType>
-<OldSound>arrowShoot</OldSound>
-<feedPower>7</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj5</File>
+        <Index>0x51</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Tier>1</Tier>
+    <Description>An iron-reinforced bow.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/poor_quality_bow</Sound>
+    <Projectile>
+        <ObjectId>Green Arrow</ObjectId>
+        <Speed>160</Speed>
+        <MinDamage>60</MinDamage>
+        <MaxDamage>100</MaxDamage>
+        <LifetimeMS>440</LifetimeMS>
+        <MultiHit/>
+    </Projectile>
+    <BagType>1</BagType>
 </Object>
 <Object type="0xa1b" id="Crossbow">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj5</File>
-<Index>0x52</Index>
-</Texture>
-<SlotType>3</SlotType>
-<Tier>2</Tier>
-<Description>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj5</File>
+        <Index>0x52</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Tier>2</Tier>
+    <Description>
 A bow mounted on a stock that shoots with amazing speed and accuracy.
 </Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/crossbow</Sound>
-<Projectile>
-<ObjectId>Crossbow Bolt</ObjectId>
-<Speed>200</Speed>
-<MinDamage>25</MinDamage>
-<MaxDamage>60</MaxDamage>
-<LifetimeMS>375</LifetimeMS>
-<MultiHit/>
-</Projectile>
-<BagType>1</BagType>
-<OldSound>arrowShoot</OldSound>
-<feedPower>10</feedPower>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/crossbow</Sound>
+    <Projectile>
+        <ObjectId>Crossbow Bolt</ObjectId>
+        <Speed>200</Speed>
+        <MinDamage>65</MinDamage>
+        <MaxDamage>105</MaxDamage>
+        <LifetimeMS>375</LifetimeMS>
+        <MultiHit/>
+    </Projectile>
+    <BagType>1</BagType>
 </Object>
 <Object type="0xa76" id="Greywood Bow">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj5</File>
-<Index>0x53</Index>
-</Texture>
-<SlotType>3</SlotType>
-<Tier>3</Tier>
-<Description>A bow made from the rare greywood tree.</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/poor_quality_bow</Sound>
-<Projectile>
-<ObjectId>Green Arrow</ObjectId>
-<Speed>160</Speed>
-<MinDamage>30</MinDamage>
-<MaxDamage>65</MaxDamage>
-<LifetimeMS>440</LifetimeMS>
-<MultiHit/>
-</Projectile>
-<BagType>1</BagType>
-<OldSound>arrowShoot</OldSound>
-<feedPower>15</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj5</File>
+        <Index>0x53</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Tier>3</Tier>
+    <Description>A bow made from the rare greywood tree.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/poor_quality_bow</Sound>
+    <Projectile>
+        <ObjectId>Green Arrow</ObjectId>
+        <Speed>160</Speed>
+        <MinDamage>70</MinDamage>
+        <MaxDamage>110</MaxDamage>
+        <LifetimeMS>440</LifetimeMS>
+        <MultiHit/>
+    </Projectile>
+    <BagType>1</BagType>
 </Object>
 <Object type="0xa77" id="Ironwood Bow">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj5</File>
-<Index>0x54</Index>
-</Texture>
-<SlotType>3</SlotType>
-<Tier>4</Tier>
-<Description>A high-quality bow made of magical ironwood.</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/poor_quality_bow</Sound>
-<Projectile>
-<ObjectId>Green Arrow</ObjectId>
-<Speed>160</Speed>
-<MinDamage>40</MinDamage>
-<MaxDamage>70</MaxDamage>
-<LifetimeMS>440</LifetimeMS>
-<MultiHit/>
-</Projectile>
-<BagType>1</BagType>
-<OldSound>arrowShoot</OldSound>
-<feedPower>22</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj5</File>
+        <Index>0x54</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Tier>4</Tier>
+    <Description>A high-quality bow made of magical ironwood.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/poor_quality_bow</Sound>
+    <Projectile>
+        <ObjectId>Green Arrow</ObjectId>
+        <Speed>160</Speed>
+        <MinDamage>75</MinDamage>
+        <MaxDamage>115</MaxDamage>
+        <LifetimeMS>440</LifetimeMS>
+        <MultiHit/>
+    </Projectile>
+    <BagType>1</BagType>
 </Object>
 <Object type="0xa1c" id="Fire Bow">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj5</File>
-<Index>0x55</Index>
-</Texture>
-<SlotType>3</SlotType>
-<Tier>5</Tier>
-<Description>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj5</File>
+        <Index>0x55</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Tier>5</Tier>
+    <Description>
 A bow that shoots arrows that burn with an unholy fire.
 </Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/fire_bow</Sound>
-<Projectile>
-<ObjectId>Red Fire</ObjectId>
-<Speed>160</Speed>
-<MinDamage>50</MinDamage>
-<MaxDamage>75</MaxDamage>
-<LifetimeMS>440</LifetimeMS>
-<MultiHit/>
-</Projectile>
-<BagType>1</BagType>
-<OldSound>arrowShoot</OldSound>
-<feedPower>32</feedPower>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/fire_bow</Sound>
+    <Projectile>
+        <ObjectId>Red Fire</ObjectId>
+        <Speed>160</Speed>
+        <MinDamage>80</MinDamage>
+        <MaxDamage>120</MaxDamage>
+        <LifetimeMS>440</LifetimeMS>
+        <MultiHit/>
+    </Projectile>
+    <BagType>1</BagType>
 </Object>
 <Object type="0xa1d" id="Double Bow">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj5</File>
-<Index>0x56</Index>
-</Texture>
-<SlotType>3</SlotType>
-<Tier>6</Tier>
-<Description>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj5</File>
+        <Index>0x56</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Tier>6</Tier>
+    <Description>
 A bow that somehow manages to shoot two arrows in different directions.
 </Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/double_bow</Sound>
-<Projectile>
-<ObjectId>Blue Arrow</ObjectId>
-<Speed>160</Speed>
-<MinDamage>30</MinDamage>
-<MaxDamage>55</MaxDamage>
-<LifetimeMS>440</LifetimeMS>
-<MultiHit/>
-</Projectile>
-<BagType>1</BagType>
-<NumProjectiles>2</NumProjectiles>
-<OldSound>arrowShoot</OldSound>
-<feedPower>47</feedPower>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/double_bow</Sound>
+    <Projectile>
+        <ObjectId>Blue Arrow</ObjectId>
+        <Speed>160</Speed>
+        <MinDamage>40</MinDamage>
+        <MaxDamage>65</MaxDamage>
+        <LifetimeMS>440</LifetimeMS>
+        <MultiHit/>
+    </Projectile>
+    <BagType>1</BagType>
+    <NumProjectiles>2</NumProjectiles>
+    <ArcGap>4</ArcGap>
 </Object>
 <Object type="0xa3a" id="Heavy Crossbow">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj5</File>
-<Index>0x57</Index>
-</Texture>
-<SlotType>3</SlotType>
-<Tier>7</Tier>
-<Description>A slow but powerful crossbow with a good grip.</Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/heavy_crossbow</Sound>
-<Projectile>
-<ObjectId>Heavy Crossbow Bolt</ObjectId>
-<Speed>150</Speed>
-<MinDamage>55</MinDamage>
-<MaxDamage>80</MaxDamage>
-<LifetimeMS>500</LifetimeMS>
-<MultiHit/>
-</Projectile>
-<BagType>2</BagType>
-<OldSound>arrowShoot</OldSound>
-<feedPower>70</feedPower>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj5</File>
+        <Index>0x57</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Tier>7</Tier>
+    <Description>A slow but powerful crossbow with a good grip.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/heavy_crossbow</Sound>
+    <Projectile>
+        <ObjectId>Heavy Crossbow Bolt</ObjectId>
+        <Speed>150</Speed>
+        <MinDamage>100</MinDamage>
+        <MaxDamage>215</MaxDamage>
+        <LifetimeMS>500</LifetimeMS>
+        <MultiHit/>
+    </Projectile>
+    <BagType>2</BagType>
 </Object>
 <Object type="0xa1e" id="Golden Bow">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj5</File>
-<Index>0x58</Index>
-</Texture>
-<SlotType>3</SlotType>
-<Tier>8</Tier>
-<Description>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj5</File>
+        <Index>0x58</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Tier>8</Tier>
+    <Description>
 A bow gifted to mortals from the gods themselves. It shoots powerful arrows in three directions at once.
 </Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/golden_bow</Sound>
-<Projectile>
-<ObjectId>Gold Arrow</ObjectId>
-<Speed>160</Speed>
-<MinDamage>40</MinDamage>
-<MaxDamage>61</MaxDamage>
-<LifetimeMS>440</LifetimeMS>
-<MultiHit/>
-</Projectile>
-<BagType>2</BagType>
-<FameBonus>1</FameBonus>
-<NumProjectiles>3</NumProjectiles>
-<ArcGap>8</ArcGap>
-<OldSound>arrowShoot</OldSound>
-<feedPower>100</feedPower>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/golden_bow</Sound>
+    <Projectile>
+        <ObjectId>Gold Arrow</ObjectId>
+        <Speed>160</Speed>
+        <MinDamage>40</MinDamage>
+        <MaxDamage>75</MaxDamage>
+        <LifetimeMS>440</LifetimeMS>
+        <MultiHit/>
+    </Projectile>
+    <BagType>2</BagType>
+    <FameBonus>1</FameBonus>
+    <NumProjectiles>3</NumProjectiles>
+    <ArcGap>4</ArcGap>
 </Object>
 <Object type="0xa8b" id="Verdant Bow">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj5</File>
-<Index>0x59</Index>
-</Texture>
-<SlotType>3</SlotType>
-<Tier>9</Tier>
-<Description>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj5</File>
+        <Index>0x59</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Tier>9</Tier>
+    <Description>
 A highly effective bow fashioned of still-living magical springwood.
 </Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/golden_bow</Sound>
-<Projectile>
-<ObjectId>Green Arrow</ObjectId>
-<Speed>160</Speed>
-<MinDamage>40</MinDamage>
-<MaxDamage>67</MaxDamage>
-<LifetimeMS>440</LifetimeMS>
-<MultiHit/>
-</Projectile>
-<BagType>2</BagType>
-<FameBonus>1</FameBonus>
-<NumProjectiles>3</NumProjectiles>
-<ArcGap>8</ArcGap>
-<OldSound>arrowShoot</OldSound>
-<feedPower>145</feedPower>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/golden_bow</Sound>
+    <Projectile>
+        <ObjectId>Green Arrow</ObjectId>
+        <Speed>160</Speed>
+        <MinDamage>45</MinDamage>
+        <MaxDamage>75</MaxDamage>
+        <LifetimeMS>440</LifetimeMS>
+        <MultiHit/>
+    </Projectile>
+    <BagType>2</BagType>
+    <FameBonus>1</FameBonus>
+    <NumProjectiles>3</NumProjectiles>
+    <ArcGap>4</ArcGap>
 </Object>
 <Object type="0xa8c" id="Bow of Fey Magic">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj5</File>
-<Index>0x5a</Index>
-</Texture>
-<SlotType>3</SlotType>
-<Tier>10</Tier>
-<Description>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj5</File>
+        <Index>0x5a</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Tier>10</Tier>
+    <Description>
 A powerful bow crafted by dryads and blessed by the spirits of the woodlands.
 </Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/golden_bow</Sound>
-<Projectile>
-<ObjectId>Purple Arrow</ObjectId>
-<Speed>160</Speed>
-<MinDamage>48</MinDamage>
-<MaxDamage>65</MaxDamage>
-<LifetimeMS>440</LifetimeMS>
-<MultiHit/>
-</Projectile>
-<BagType>4</BagType>
-<FameBonus>2</FameBonus>
-<NumProjectiles>3</NumProjectiles>
-<ArcGap>8</ArcGap>
-<OldSound>arrowShoot</OldSound>
-<feedPower>212</feedPower>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/golden_bow</Sound>
+    <Projectile>
+        <ObjectId>Purple Arrow</ObjectId>
+        <Speed>160</Speed>
+        <MinDamage>50</MinDamage>
+        <MaxDamage>75</MaxDamage>
+        <LifetimeMS>440</LifetimeMS>
+        <MultiHit/>
+    </Projectile>
+    <BagType>4</BagType>
+    <FameBonus>2</FameBonus>
+    <NumProjectiles>3</NumProjectiles>
+    <ArcGap>4</ArcGap>
 </Object>
 <Object type="0xa8d" id="Bow of Innocent Blood">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj5</File>
-<Index>0x5b</Index>
-</Texture>
-<SlotType>3</SlotType>
-<Tier>11</Tier>
-<Description>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj5</File>
+        <Index>0x5b</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Tier>11</Tier>
+    <Description>
 A runed bow steeped in the dark power of ancient injustice.
 </Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/golden_bow</Sound>
-<Projectile>
-<ObjectId>Red Arrow</ObjectId>
-<Speed>160</Speed>
-<MinDamage>49</MinDamage>
-<MaxDamage>70</MaxDamage>
-<LifetimeMS>440</LifetimeMS>
-<MultiHit/>
-</Projectile>
-<BagType>4</BagType>
-<FameBonus>3</FameBonus>
-<NumProjectiles>3</NumProjectiles>
-<ArcGap>8</ArcGap>
-<OldSound>arrowShoot</OldSound>
-<feedPower>310</feedPower>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/golden_bow</Sound>
+    <Projectile>
+        <ObjectId>Red Arrow</ObjectId>
+        <Speed>160</Speed>
+        <MinDamage>50</MinDamage>
+        <MaxDamage>80</MaxDamage>
+        <LifetimeMS>440</LifetimeMS>
+        <MultiHit/>
+    </Projectile>
+    <BagType>4</BagType>
+    <FameBonus>3</FameBonus>
+    <NumProjectiles>3</NumProjectiles>
+    <ArcGap>4</ArcGap>
 </Object>
 <Object type="0xb02" id="Bow of Covert Havens">
-<Class>Equipment</Class>
-<Item/>
-<Texture>
-<File>lofiObj5</File>
-<Index>0x5c</Index>
-</Texture>
-<SlotType>3</SlotType>
-<Tier>12</Tier>
-<Description>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj5</File>
+        <Index>0x5c</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Tier>12</Tier>
+    <Description>
 A diamondwire bow used by guardians of the unseen ethereal shrines.
 </Description>
-<RateOfFire>1</RateOfFire>
-<Sound>weapon/golden_bow</Sound>
-<Projectile>
-<ObjectId>Blue Arrow</ObjectId>
-<Speed>160</Speed>
-<MinDamage>50</MinDamage>
-<MaxDamage>75</MaxDamage>
-<LifetimeMS>440</LifetimeMS>
-<MultiHit/>
-</Projectile>
-<BagType>4</BagType>
-<FameBonus>4</FameBonus>
-<NumProjectiles>3</NumProjectiles>
-<ArcGap>8</ArcGap>
-<OldSound>arrowShoot</OldSound>
-<feedPower>450</feedPower>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/golden_bow</Sound>
+    <Projectile>
+        <ObjectId>Blue Arrow</ObjectId>
+        <Speed>160</Speed>
+        <MinDamage>55</MinDamage>
+        <MaxDamage>85</MaxDamage>
+        <LifetimeMS>440</LifetimeMS>
+        <MultiHit/>
+    </Projectile>
+    <BagType>4</BagType>
+    <FameBonus>4</FameBonus>
+    <NumProjectiles>3</NumProjectiles>
+    <ArcGap>4</ArcGap>
 </Object>
-   <Object type="0x9cc" id="Bow of Mystical Energy">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>lofiObj5</File>
-         <Index>0x5d</Index>
-      </Texture>
-	  <Tier>13</Tier>
-      <SlotType>3</SlotType>
-      <Description>{equip.A_superlative_bow_of_sunsteel_and_diamondwire,_created_by_a}</Description>
-      <RateOfFire>1</RateOfFire>
-      <Sound>weapon/golden_bow</Sound>
-      <Projectile>
-         <ObjectId>Mystical Energy Arrow</ObjectId>
-         <Speed>160</Speed>
-         <MinDamage>55</MinDamage>
-         <MaxDamage>75</MaxDamage>
-         <LifetimeMS>440</LifetimeMS>
-         <MultiHit/>
-      </Projectile>
-      <BagType>4</BagType>
-      <FameBonus>4</FameBonus>
-      <NumProjectiles>3</NumProjectiles>
-      <OldSound>arrowShoot</OldSound>
-      <DisplayId>{equip.Bow_of_Mystical_Energy}</DisplayId>
-   </Object>
+<Object type="0x9cc" id="Bow of Mystical Energy">
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+        <File>lofiObj5</File>
+        <Index>0x5d</Index>
+    </Texture>
+    <Tier>13</Tier>
+    <SlotType>3</SlotType>
+    <Description>{equip.A_superlative_bow_of_sunsteel_and_diamondwire,_created_by_a}</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/golden_bow</Sound>
+    <Projectile>
+        <ObjectId>Mystical Energy Arrow</ObjectId>
+        <Speed>160</Speed>
+        <MinDamage>60</MinDamage>
+        <MaxDamage>85</MaxDamage>
+        <LifetimeMS>440</LifetimeMS>
+        <MultiHit/>
+    </Projectile>
+    <BagType>4</BagType>
+    <FameBonus>4</FameBonus>
+    <NumProjectiles>3</NumProjectiles>
+    <ArcGap>4</ArcGap>
+</Object>
    <Object type="0x9cd" id="Bow of Deep Enchantment">
       <Class>Equipment</Class>
       <Item/>
@@ -36743,7 +36716,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <Class>Equipment</Class>
       <Item/>
       <Texture>
-         <File>lofiObj3w</File>
+         <File>lofiObj3</File>
          <Index>0x22b</Index>
       </Texture>
       <SlotType>25</SlotType>
@@ -37343,12 +37316,9 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <Sound>spell/light_heal</Sound>
         <Consumable/>
         <Backpack/>
-        <Soulbound/>
         <Activate>Backpack</Activate>
         <BagType>2</BagType>
         <OldSound>use_potion</OldSound>
-        <feedPower>200</feedPower>
-        <DisplayId>{equip.Backpack}</DisplayId>
     </Object>
    <Object type="0xc6e" id="Resurrected Warrior's Armor">
       <Class>Equipment</Class>
@@ -43365,14 +43335,6 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <OccupySquare/>
       <Enemy/>
       <XpMult>0.0</XpMult>
-   </Object>
-   <Object type="0x017a" id="Pandora's Box">
-      <Class>GameObject</Class>
-      <Model>Cube</Model>
-      <Texture>
-         <File>lofiObjBig</File>
-         <Index>0x30</Index>
-      </Texture>
    </Object>
    <Object type="0x017b" id="Grey Pillar">
       <Class>GameObject</Class>
@@ -74746,10 +74708,6 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <DisplayId>{tombOfTheAncients.Lion_Archer}</DisplayId>
    </Object>
 
-
-
-
-
 <Object type="0x0300" id="Rogue">
         <Class>Player</Class>
         <Description>{players.The_rogue_relies_on_his_speed_to_deal_damage_at_medium_ra}</Description>
@@ -78436,7 +78394,7 @@ This dagger was a myth, will you live to tell the tale?
         <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="3" amount="60">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="112" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="10">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="10" isPerc="true">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
     </Object>
@@ -81454,20 +81412,18 @@ This dagger was a myth, will you live to tell the tale?
     </Texture>
     <SlotType>3</SlotType>
     <Description>Pew.</Description>
-    <Tier>0</Tier>
     <RateOfFire>1.5</RateOfFire>
     <Sound>weapon/double_bow</Sound>
     <Projectile>
       <ObjectId>White Bullet</ObjectId>
-      <Speed>120</Speed>
+      <Speed>210</Speed>
       <MinDamage>200</MinDamage>
       <MaxDamage>300</MaxDamage>
       <LifetimeMS>440</LifetimeMS>
     </Projectile>
     <BagType>6</BagType>
-    <NumProjectiles>1</NumProjectiles>
-    <feedPower>1000</feedPower>
-    <OldSound>weapon/fire_wand</OldSound>
+    <NumProjectiles>3</NumProjectiles>
+    <Legendary/>
   </Object>
 
   <Object type="0x5065" id="Black Scroll">
@@ -85082,7 +85038,7 @@ This dagger was a myth, will you live to tell the tale?
 		<ConditionEffect duration="8.5">Paralyzed</ConditionEffect>
 		</Projectile>
 		<Projectile id="3">
-			<ObjectId>>Blue Star</ObjectId>
+			<ObjectId>Blue Star</ObjectId>
 			<Damage>45</Damage>
 			<Speed>130</Speed>
 			<LifetimeMS>2000</LifetimeMS>
@@ -88486,15 +88442,12 @@ A whole thanksgiving turkey!
             <File>d3LofiObjEmbed</File>
             <Index>0x1f8</Index>
         </Texture>
-        <Description>Using this item gives you 250, 500, 750 gold.</Description>
+        <Description>A crate containing a moderate amount of Gold.</Description>
         <ExtraTooltipData>
-            <EffectInfo name="" description="This item drops from weekly loyalty packages."/>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
         </ExtraTooltipData>
         <Consumable/>
-        <Activate>RandomGold</Activate>
-        <Sound>spell/fire_nova</Sound>
-        <feedPower>275</feedPower>
-        <DisplayId>Gold Cache</DisplayId>
+        <Activate currencyType="Gold" randVals="250, 500, 750">RandomCurrency</Activate>
     </Object>
 <Object type="0x42fb" id="Star Bloop">
     <Class>Projectile</Class>
@@ -94592,24 +94545,21 @@ A whole thanksgiving turkey!
     <BagType>0</BagType>
     <DisplayId>Marksman Skin</DisplayId>
   </Object>
-  <Object type="0x49a1" id="Onrane Cache">
-    <Class>Equipment</Class>
-    <Item/>
-    <SlotType>10</SlotType>
-    <Texture>
-      <File>d3LofiObjEmbed</File>
-      <Index>0x1f7</Index>
-    </Texture>
-    <Description>Using this item gives you 2, 4, 6, 8, or 10 onrane.</Description>
-    <ExtraTooltipData>
-      <EffectInfo name="" description="This item drops from weekly loyalty packages."/>
-    </ExtraTooltipData>
-    <Consumable/>
-    <Activate>RandomOnrane</Activate>
-    <Sound>spell/fire_nova</Sound>
-    <feedPower>275</feedPower> 
-    <DisplayId>Onrane Cache</DisplayId>
-  </Object>
+    <Object type="0x49a1" id="Onrane Cache">
+        <Class>Equipment</Class>
+        <Item/>
+        <SlotType>10</SlotType>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1f7</Index>
+        </Texture>
+        <Description>A crate containing a moderate amount of Onrane.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <Consumable/>
+        <Activate currencyType="Onrane" randVals="2, 4, 6, 8, 10">RandomCurrency</Activate>
+    </Object>
   <Object type="0x49a2" id="Kantos Cache">
     <Class>Equipment</Class>
     <Item/>
@@ -94623,10 +94573,7 @@ A whole thanksgiving turkey!
       <EffectInfo name="" description="This item drops from weekly loyalty packages."/>
     </ExtraTooltipData>
     <Consumable/>
-    <Activate>RandomKantos</Activate>
-    <Sound>spell/fire_nova</Sound>
-    <feedPower>275</feedPower> 
-    <DisplayId>Kantos Cache</DisplayId>
+    <Activate currencyType="Kantos" randVals="100, 200, 300">RandomCurrency</Activate>
   </Object>
   <Object type="0x49a5" id="Onrane">
     <Class>Equipment</Class>
@@ -95163,24 +95110,21 @@ A whole thanksgiving turkey!
         <Size>120</Size>
         <Static/>
     </Object>
-  <Object type="0x49e9" id="Ultimate Onrane Cache">
-    <Class>Equipment</Class>
-    <Item/>
-    <SlotType>10</SlotType>
-    <Texture>
-      <File>d3LofiObjEmbed</File>
-      <Index>0x1f7</Index>
-    </Texture>
-    <Description>Using this item gives you 12, 14, 16, 18, or 20 onrane.</Description>
-    <ExtraTooltipData>
-      <EffectInfo name="" description="This item only drops from Final Fabled Bosses."/>
-    </ExtraTooltipData>
-    <Consumable/>
-    <Activate>URandomOnrane</Activate>
-    <Sound>spell/fire_nova</Sound>
-    <feedPower>275</feedPower> 
-    <DisplayId>Ultimate Onrane Cache</DisplayId>
-  </Object>
+    <Object type="0x49e9" id="Ultimate Onrane Cache">
+        <Class>Equipment</Class>
+        <Item/>
+        <SlotType>10</SlotType>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x1f7</Index>
+        </Texture>
+        <Description>A crate containing a large amount of Onrane.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <Consumable/>
+        <Activate currencyType="Onrane" randVals="12, 14, 16, 18, 20">RandomCurrency</Activate>
+    </Object>
   <Object type="0x49f1" id="Keeping Key">
     <Class>Equipment</Class>
     <Item/>
@@ -96821,7 +96765,7 @@ A whole thanksgiving turkey!
     <Top>
       <Texture>
         <File>lofiObj3</File>
-        <Index>0x574</Index>
+        <Index>0x453</Index>
       </Texture>
     </Top>
     <HitSound>monster/wooden_walls_hit</HitSound>
@@ -96855,7 +96799,7 @@ A whole thanksgiving turkey!
     <Top>
       <Texture>
         <File>lofiObj3</File>
-        <Index>0x574</Index>
+        <Index>0x453</Index>
       </Texture>
     </Top>
     <HitSound>monster/wooden_walls_hit</HitSound>
@@ -96889,7 +96833,7 @@ A whole thanksgiving turkey!
     <Top>
       <Texture>
         <File>lofiObj3</File>
-        <Index>0x574</Index>
+        <Index>0x453</Index>
       </Texture>
     </Top>
     <HitSound>monster/wooden_walls_hit</HitSound>
@@ -104021,18 +103965,13 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		  <File>d3LofiObjEmbed</File>
 	      <Index>0x40f</Index>
 	  </Texture>
-	  <ExtraTooltipData>
-         <EffectInfo name="" description="Applies a random gambler effect. (1s) "/>
-      </ExtraTooltipData>
       <SlotType>33</SlotType>
       <Tier>0</Tier>
       <Description>A standard dice that any gambler can utilize.</Description>
       <Usable/>
       <BagType>1</BagType>
       <MpCost>35</MpCost>
-      <Activate duration="1">DiceActivate</Activate>
-      <feedPower>5</feedPower>
-      <DisplayId>Classic Dice</DisplayId>
+      <Activate duration="1" randVals="Healing, Bravery, Berserk">Dice</Activate>
    </Object>
    <Object type="0x583a" id="Power Dice">
       <Class>Equipment</Class>
@@ -104043,17 +103982,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 	  </Texture>
       <SlotType>33</SlotType>
       <Tier>1</Tier>
-      <ExtraTooltipData>
-         <EffectInfo name="" description="Applies a random gambler effect. (2s)"/>
-      </ExtraTooltipData>
       <Description>Seems like a regular dice but seems to glow just a bit.</Description>
       <Usable/>
       <BagType>1</BagType>
       <MpCost>45</MpCost>
       <ActivateOnEquip stat="114" amount="10">IncrementStat</ActivateOnEquip>
-      <Activate duration="2">DiceActivate</Activate>
-      <feedPower>10</feedPower>
-      <DisplayId>Power Dice</DisplayId>
+      <Activate duration="2" randVals="Healing, Bravery, Berserk">Dice</Activate>
    </Object>
    <Object type="0x583b" id="Violet Dice">
       <Class>Equipment</Class>
@@ -104065,16 +103999,11 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <SlotType>33</SlotType>
       <Tier>2</Tier>
       <Description>This dice tends to roll on 6 a lot.</Description>
-      <ExtraTooltipData>
-         <EffectInfo name="" description="Applies a random gambler effect. (3s)"/>
-      </ExtraTooltipData>
       <Usable/>
       <BagType>1</BagType>
       <MpCost>55</MpCost>
       <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
-      <Activate duration="3">DiceActivate</Activate>
-      <feedPower>20</feedPower>
-      <DisplayId>Violet Dice</DisplayId>
+      <Activate duration="3" randVals="Healing, Bravery, Berserk">Dice</Activate>
    </Object>
    <Object type="0x583c" id="Aqua Dice">
       <Class>Equipment</Class>
@@ -104086,17 +104015,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <SlotType>33</SlotType>
       <Tier>3</Tier>
       <Description>This dice feels pretty watery..</Description>
-      <ExtraTooltipData>
-         <EffectInfo name="" description="Applies a random gambler effect. (4s)"/>
-      </ExtraTooltipData>
       <Usable/>
       <BagType>2</BagType>
       <FameBonus>1</FameBonus>
       <MpCost>65</MpCost>
       <ActivateOnEquip stat="114" amount="30">IncrementStat</ActivateOnEquip>
-      <Activate duration="4">DiceActivate</Activate>
-      <feedPower>45</feedPower>
-      <DisplayId>Aqua Dice</DisplayId>
+      <Activate duration="4" randVals="Healing, Bravery, Berserk">Dice</Activate>
    </Object>
    <Object type="0x583d" id="Red Dice">
       <Class>Equipment</Class>
@@ -104105,9 +104029,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 		  <File>d3LofiObjEmbed</File>
 	      <Index>0x41e</Index>
 	  </Texture>
-	  <ExtraTooltipData>
-         <EffectInfo name="" description="Applies a random gambler effect. (4.5s)"/>
-      </ExtraTooltipData>
       <SlotType>33</SlotType>
       <Tier>4</Tier>
       <Description>A warm dice that seems to let you control the spin of it's roll.</Description>
@@ -104116,9 +104037,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <FameBonus>2</FameBonus>
       <MpCost>75</MpCost>
       <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
-      <Activate duration="4.5">DiceActivate</Activate>
-      <feedPower>90</feedPower>
-      <DisplayId>Red Dice</DisplayId>
+      <Activate duration="4.5" randVals="Healing, Bravery, Berserk">Dice</Activate>
    </Object>
    <Object type="0x583e" id="Yellow Dice">
       <Class>Equipment</Class>
@@ -104129,18 +104048,13 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 	  </Texture>
       <SlotType>33</SlotType>
       <Tier>5</Tier>
-      <ExtraTooltipData>
-         <EffectInfo name="" description="Applies a random gambler effect. (5s)"/>
-      </ExtraTooltipData>
       <Description>It seems to have a mind of it's own.</Description>
       <Usable/>
       <BagType>4</BagType>
       <FameBonus>3</FameBonus>
       <MpCost>80</MpCost>
       <ActivateOnEquip stat="114" amount="50">IncrementStat</ActivateOnEquip>
-      <Activate duration="5">DiceActivate</Activate>
-      <feedPower>185</feedPower>
-      <DisplayId>Yellow Dice</DisplayId>
+      <Activate duration="5" randVals="Healing, Bravery, Berserk">Dice</Activate>
    </Object>
    <Object type="0x583f" id="Stone Dice">
       <Class>Equipment</Class>
@@ -104152,18 +104066,13 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <SlotType>33</SlotType>
       <Tier>6</Tier>
       <Description>A dice created from the stone found from the mountains where the gods abide.</Description>
-      <ExtraTooltipData>
-         <EffectInfo name="" description="Applies a random gambler effect. (5.5s)"/>
-      </ExtraTooltipData>
       <Usable/>
       <BagType>4</BagType>
       <FameBonus>4</FameBonus>
       <MpCost>85</MpCost>
       <ActivateOnEquip stat="112" amount="10">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="114" amount="60">IncrementStat</ActivateOnEquip>
-      <Activate duration="5.5">DiceActivate</Activate>
-      <feedPower>380</feedPower>
-      <DisplayId>Stone Dice</DisplayId>
+      <Activate duration="5.5" randVals="Healing, Bravery, Berserk">Dice</Activate>
    </Object>
    <Object type="0x5831" id="Night Dice">
         <Class>Equipment</Class>
@@ -104172,9 +104081,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <File>d3LofiObjEmbed</File>
             <Index>0x411</Index>
         </Texture>
-        <ExtraTooltipData>
-            <EffectInfo name="" description="Applies a random gambler effect. (5s)"/>
-        </ExtraTooltipData>
         <SlotType>33</SlotType>
         <Description>A dice that embraces the power of the night.</Description>
         <Usable/>
@@ -104184,11 +104090,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="112" amount="40">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
-        <Activate duration="5">DiceActivate</Activate>
-        <Activate effect="Invulnerable" duration="1">ConditionEffectSelf</Activate>
-        <feedPower>880</feedPower>
-        <DisplayId>Night Dice</DisplayId>
-    </Object>
+        <Activate duration="5" randVals="Healing, Bravery, Berserk">Dice</Activate>
+   </Object>
    <Object type="0x5833" id="Sacrifice Bolt">
     <Class>Projectile</Class>
 	  <Texture>
@@ -107030,7 +106933,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       </Projectile>
       <ActivateOnEquip stat="21" amount="15">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="121" amount="30">IncrementStat</ActivateOnEquip>
-      <ActivateOnEquip stat="0" amount="30">IncrStatPerc</ActivateOnEquip>
+      <ActivateOnEquip stat="0" amount="30" isPerc="true">IncrementStat</ActivateOnEquip>
       <ConditionEffect duration="7">Stunned</ConditionEffect>
       <Usable/>
 	  <Legendary/>
@@ -107444,7 +107347,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Description>Sturdy armor with a cape attached to it worn when going into an intense battle.</Description>
         <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="24">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="50">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="50" isPerc="true">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <feedPower>1600</feedPower>
@@ -108419,7 +108322,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <FameBonus>6</FameBonus>
         <MpCost>120</MpCost>
         <Steal type="life" amount="1"/>
-        <ActivateOnEquip stat="0" amount="12">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="12" isPerc="true">IncrementStat</ActivateOnEquip>
         <Activate>BulletNova</Activate>
     </Object>
 	<Object type="0x61b1" id="Marble Tablet Proj">
@@ -108497,7 +108400,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <LifetimeMS>565</LifetimeMS>
             <ConditionEffect duration="0.6">Paralyzed</ConditionEffect>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="100">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="100" isPerc="true">IncrementStat</ActivateOnEquip>
         <Legendary/>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -108594,9 +108497,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ActivateOnEquip stat="0" amount="20">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="15">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="25">IncrStatPerc</ActivateOnEquip>
-        <ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="25">IncrStatPerc</ActivateOnEquip>
+		<ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="25" isPerc="true">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="25" isPerc="true">IncrementStat</ActivateOnEquip>
         <BagType>8</BagType>
 		<Legendary/>
     </Object>
@@ -108639,9 +108542,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Description>A seal that grants a shield of impenetrable light and energy around you.</Description>
         <Sound>spell/light_heal</Sound>
         <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="122" amount="25">IncrStatPerc</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="121" amount="-10">IncrementStat</ActivateOnEquip>
+	    <ActivateOnEquip stat="122" amount="25" isPerc="true">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
@@ -108725,7 +108628,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <MaxDamage>215</MaxDamage>
             <LifetimeMS>430</LifetimeMS>
         </Projectile>
-        <ActivateOnEquip stat="0" amount="12">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="12" isPerc="true">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="28" amount="-15">IncrementStat</ActivateOnEquip>
         <NumProjectiles>3</NumProjectiles>
@@ -108751,16 +108654,12 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <File>d3LofiObjEmbed</File>
             <Index>0x1ec</Index>
         </Texture>
-        <Description>Using this item sends 1-15 Sor Fragments to your gift chest.</Description>
+        <Description>A crate containing a moderate amount of Sor Fragments.</Description>
         <ExtraTooltipData>
-            <EffectInfo name="" description="This item only drops from Elite Lootboxes"/>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
         </ExtraTooltipData>
         <Consumable/>
-        <Activate>ActivateFragment</Activate>
-        <Sound>spell/fire_nova</Sound>
-        <feedPower>275</feedPower>
-        <Fabled/>
-        <DisplayId>Sor Fragment Cache</DisplayId>
+        <Activate currencyType="Sor Fragments" randVals="5, 10, 15">RandomCurrency</Activate>
     </Object>
     <Object type="0x61c5" id="Dreamweaver of Darogek">
         <Class>Equipment</Class>
@@ -109006,7 +108905,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Activate effect="Armored" duration="3" range="6" useWisMod="true">ConditionEffectAura</Activate>
         <feedPower>2000</feedPower>
         <Legendary/>
-        <ActivateOnEquip stat="20" amount="25">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="25" isPerc="true">IncrementStat</ActivateOnEquip>
         <Legend id="3" stat="27">
             <Name>True Inferno</Name>
             <Description>Using this ability explodes and burns enemies in a radius of 4 squares around you. This explosion does 8000 damage over 8 seconds.</Description>
@@ -109035,7 +108934,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </ExtraTooltipData>
         <ActivateOnEquip stat="21" amount="15">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="121" amount="15">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="20">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="20" isPerc="true">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>6</BagType>
         <MpCost>20</MpCost>
@@ -109056,9 +108955,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <File>legendaries8x8Embed</File>
             <Index>0x5f</Index>
         </Texture>
-        <ExtraTooltipData>
-            <EffectInfo name="" description="Applies a random devil gambler effect. (4s)"/>
-        </ExtraTooltipData>
         <SlotType>33</SlotType>
         <Description>Gamblin' with the devil.</Description>
         <Usable/>
@@ -109066,12 +108962,10 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <FameBonus>8</FameBonus>
         <MpCost>60</MpCost>
         <ActivateOnEquip stat="114" amount="150">IncrementStat</ActivateOnEquip>
-        <Activate duration="4">DiceActivate</Activate>
-        <Activate effect="Invulnerable" duration="2">ConditionEffectSelf</Activate>
+        <Activate duration="4" randVals="Healing, Bravery, Berserk">Dice</Activate>
         <Activate effect="Surged" duration="3.5">ConditionEffectSelf</Activate>
         <Cooldown>4</Cooldown>
         <Legendary/>
-        <DisplayId>Devil Dice</DisplayId>
     </Object>
     <Object type="0x45d1" id="Oracle's Nightmare">
         <Class>Equipment</Class>
@@ -109111,7 +109005,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <MultiHit/>
         </Projectile>
         <Steal type="life" amount="8"/>
-        <ActivateOnEquip stat="114" amount="50">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="50" isPerc="true">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <OldSound>daggerSwing</OldSound>
@@ -111532,7 +111426,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <MP>0</MP>
             <Surge>0</Surge>
         </Legend>
-        <ActivateOnEquip stat="22" amount="5">IncrStatPerc</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="5" isPerc="true">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <NumProjectiles>2</NumProjectiles>
@@ -112792,16 +112686,14 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <SlotType>10</SlotType>
         <Description>A token to recognize your valor and your will to fight against Sidon.</Description>
         <ExtraTooltipData>
-            <EffectInfo name="" description="Use this item to contribute to the Public Challenge Event."/>
+            <EffectInfo name="" description="Use this item in the Nexus to contribute to the Public Challenge Event."/>
         </ExtraTooltipData>
         <Sound>use_potion</Sound>
         <BagType>5</BagType>
-        <feedPower>250</feedPower>
         <Soulbound/>
 		<Legendary/>
 		<Consumable/>
         <Activate>InsigniaActivate</Activate>
-        <DisplayId>Insignia of Valor</DisplayId>
     </Object>
     <Object type="0x621b" id="The Master's Betrayal">
         <Class>Equipment</Class>
@@ -122564,9 +122456,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <File>d3LofiObjEmbed</File>
             <Index>0x11e</Index>
         </Texture>
-        <ExtraTooltipData>
-            <EffectInfo name="" description="Applies a random gambler effect. (8s)"/>
-        </ExtraTooltipData>
         <SlotType>33</SlotType>
         <Description>A dice infused with the power of the earth itself.</Description>
         <Usable/>
@@ -122574,10 +122463,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <FameBonus>5</FameBonus>
         <MpCost>100</MpCost>
         <ActivateOnEquip stat="0" amount="20">IncrementStat</ActivateOnEquip>
-        <Activate duration="8">DiceActivate</Activate>
+        <Activate duration="8" randVals="Sick, Bravery, Berserk">Dice</Activate>
         <Activate effect="Berserk" duration="2">ConditionEffectSelf</Activate>
-        <feedPower>880</feedPower>
-        <DisplayId>Earthforce Dice</DisplayId>
     </Object>
     <Object type="0x64d4" id="Giant Warrior">
         <Enemy/>
@@ -123772,8 +123659,8 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         </Texture>
         <SlotType>7</SlotType>
         <Description>Its material is harvested from the coveted hide of Uber Shrek, making it an extremely tough yet powerful armor.</Description>
-	    <ActivateOnEquip stat="3" amount="-33">IncrStatPerc</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="30">IncrStatPerc</ActivateOnEquip>
+	    <ActivateOnEquip stat="3" amount="-33" isPerc="true">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="30" isPerc="true">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="25">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
@@ -127350,7 +127237,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>362</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0x5f35" id="Tattooed Yakuza Samurai">
@@ -127360,7 +127247,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>363</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0x1884" id="Cowboy Samurai">
@@ -127370,7 +127257,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>364</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0xe02" id="Tennis Player Archer">
@@ -127500,7 +127387,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>377</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0x280d" id="Stone Statue Samurai">
@@ -127510,7 +127397,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>378</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <UnlockSpecial>Month of the Mad God Reward!</UnlockSpecial>
    </Object>
    <Object type="0x223e" id="Chonmage Samurai">
@@ -127520,7 +127407,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>379</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
    </Object>
    <Object type="0x223f" id="Baywatch Samurai">
       <Skin/>
@@ -127529,7 +127416,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>380</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0x2240" id="Shark Hunter Ninja">
@@ -127549,7 +127436,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>382</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0x2246" id="Slime Samurai">
@@ -127559,7 +127446,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>383</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0x2247" id="Onna Bugeisha Samurai">
@@ -127569,7 +127456,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>384</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0x4848" id="Foreign General Samurai">
@@ -127579,7 +127466,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>385</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0x620e" id="Silex Almighty Knight">
@@ -127679,7 +127566,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>395</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0x2604" id="Masked Samurai">
@@ -127689,7 +127576,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>396</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0x2606" id="Little Prince Rogue">
@@ -127709,7 +127596,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>398</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0x260a" id="Silent Samurai">
@@ -127719,7 +127606,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>399</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0x73a0" id="Samurai - Artist Extraordinaire">
@@ -127729,7 +127616,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>400</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0x73a2" id="Samurai - Dungeon Mastermind">
@@ -127739,7 +127626,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>401</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0x73a4" id="Shogun Samurai">
@@ -127749,7 +127636,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <File>playerskins</File>
          <Index>402</Index>
       </AnimatedTexture>
-      <PlayerClassType>0x0311</PlayerClassType>
+      <PlayerClassType>0x0327</PlayerClassType>
       <NoSkinSelect/>
    </Object>
    <Object type="0x65a9" id="mini Paladin skin Placeholder">
@@ -127780,6 +127667,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
          <LifetimeMS>365</LifetimeMS>
          <MinDamage>145</MinDamage>
          <MaxDamage>185</MaxDamage>
+		 <CondChance effect="Bleeding" chance="12" duration="3"/>
          <MultiHit/>
       </Projectile>
       <BagType>9</BagType>
@@ -129396,7 +129284,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <Legendary/>
         <DisplayId>Urumi</DisplayId>
     </Object>
-	    <Object type="0x6707" id="Urumi Projectile">
+	<Object type="0x6707" id="Urumi Projectile">
         <Class>Projectile</Class>
         <Texture>
             <File>legendaries8x8Embed</File>
@@ -129790,7 +129678,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
       <ShadowSize>50</ShadowSize>
       <MaxHitPoints>0</MaxHitPoints>
    </Object>
-        <Object type="0x6808" id="Sky Palace Wall">
+        <Object type="0x680f" id="Sky Palace Wall">
         <Class>Wall</Class>
         <Texture>
             <File>legendaries8x8Embed</File>
@@ -131059,5 +130947,216 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 	  <Activate effect="Armored" duration="4" range="5" useWisMod="true">ConditionEffectAura</Activate>
       <feedPower>380</feedPower>
       <DisplayId>Seal of Sky Serenade</DisplayId>
+   </Object>
+    <Object type="0x6800" id="Speedier Sprout">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x5a4</Index>
+      </Texture>
+	  <ExtraTooltipData>
+         <EffectInfo name="Sprited by" description="Bituloss"/>
+      </ExtraTooltipData>
+      <SlotType>10</SlotType>
+      <Description>Even more potent than the previous one.</Description>
+      <BagType>6</BagType>
+      <Activate effect="Speedy" duration="7">ConditionEffectSelf</Activate>
+	  <Cooldown>20</Cooldown>
+	  <Legendary/>
+      <InvUse/>
+   </Object>
+   <Object type="0x6801" id="Purification Crystal">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x5a5</Index>
+      </Texture>
+	  <ExtraTooltipData>
+         <EffectInfo name="Sprited by" description="SkySlurp"/>
+      </ExtraTooltipData>
+      <SlotType>10</SlotType>
+      <Description>A diamond prism charged with unknown power.</Description>
+      <BagType>6</BagType>
+      <Activate>RemoveNegativeConditionsSelf</Activate>
+	  <Cooldown>30</Cooldown>
+	  <Legendary/>
+      <InvUse/>
+   </Object>
+   <Object type="0x6802" id="Pandora's Box">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x5a3</Index>
+      </Texture>
+	  <ExtraTooltipData>
+         <EffectInfo name="Sprited by" description="Bituloss"/>
+      </ExtraTooltipData>
+      <SlotType>10</SlotType>
+      <Description>A box containing all kinds of mysteries.</Description>
+      <BagType>6</BagType>
+      <Activate duration="3" randVals="Sick, Slowed, Armor Broken">Dice</Activate>
+	  <Activate stat="20" amount="10" duration="5">StatBoostSelf</Activate>
+	  <Cooldown>10</Cooldown>
+	  <Legendary/>
+      <InvUse/>
+   </Object>
+   <Object type="0x6803" id="Ornate Lance">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x5aa</Index>
+      </Texture>
+      <SlotType>29</SlotType>
+      <Tier>13</Tier>
+      <Description>A beautifully crafted lance encrusted with gems and a gold coating, only held by those of the highest order.</Description>
+      <RateOfFire>0.68</RateOfFire>
+      <Sound>weapon/mithril_sword</Sound>
+      <Projectile>
+         <ObjectId>White Bolt</ObjectId>
+         <Speed>75</Speed>
+         <MinDamage>250</MinDamage>
+         <MaxDamage>295</MaxDamage>
+         <LifetimeMS>370</LifetimeMS>
+      <ArmorPiercing/>
+      </Projectile>
+      <BagType>4</BagType>
+      <FameBonus>4</FameBonus>
+   </Object>
+    <Object type="0x6804" id="Ivory Blade Proj">
+        <Class>Projectile</Class>
+        <Texture>
+           <File>lofiObj3</File>
+           <Index>0x5a9</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+   	<Object type="0x6805" id="Ivory Blades">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+           <File>lofiObj3</File>
+           <Index>0x5a8</Index>
+        </Texture>
+		<RateOfFire>1</RateOfFire>
+        <SlotType>34</SlotType>
+        <Tier>13</Tier>
+        <Description>Blades forged with ivory dragonscales, enchanted with a potent spell.</Description>
+        <Sound>weapon/fire_dagger</Sound>
+        <Projectile>
+            <ObjectId>Ivory Blade Proj</ObjectId>
+            <Speed>180</Speed>
+            <MinDamage>130</MinDamage>
+            <MaxDamage>185</MaxDamage>
+            <LifetimeMS>300</LifetimeMS>
+            <MultiHit/>
+            <Wavy/>
+        </Projectile>
+        <BagType>4</BagType>
+        <FameBonus>4</FameBonus>
+        <NumProjectiles>2</NumProjectiles>
+        <ArcGap>0</ArcGap>
+    </Object>
+	<Object type="0x6806" id="Human Blademaster">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>406</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x6140</PlayerClassType>
+   </Object>
+   <Object type="0x6807" id="Miko Attire">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>407</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x582a</PlayerClassType>
+   </Object>
+   <Object type="0x6808" id="Ghost Maiden">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>408</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x582a</PlayerClassType>
+   </Object>
+   <Object type="0x6810" id="shtrs obelisk controller">
+    <DisplayId>shtrs obelisk controller</DisplayId>
+    <Enemy/>
+    <Texture>
+      <File>invisible</File>
+      <Index>0</Index>
+    </Texture>
+    <Class>Character</Class>
+    <NoMiniMap/>
+    <ShadowSize>0</ShadowSize>
+  </Object>
+  <Object type="0x6811" id="shtrs obelisk timer">
+    <DisplayId>shtrs obelisk timer</DisplayId>
+    <Enemy/>
+    <Texture>
+      <File>invisible</File>
+      <Index>0</Index>
+    </Texture>
+    <Class>Character</Class>
+    <NoMiniMap/>
+    <ShadowSize>0</ShadowSize>
+  </Object>
+  <Object type="0x6812" id="shtrs Lava Souls maker">
+    <DisplayId>shtrs Lava Souls maker</DisplayId>
+    <Enemy/>
+    <Texture>
+      <File>invisible</File>
+      <Index>0</Index>
+    </Texture>
+    <Class>Character</Class>
+    <NoMiniMap/>
+    <ShadowSize>0</ShadowSize>
+  </Object>
+   <Object type="0x6813" id="Zol Elixir">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x5a6</Index>
+      </Texture>
+	  <ExtraTooltipData>
+         <EffectInfo name="Sprited by" description="SkySlurp"/>
+      </ExtraTooltipData>
+      <SlotType>10</SlotType>
+      <Description>Bottled, pure Zol Energy. Be careful with this one.</Description>
+      <BagType>6</BagType>
+      <Activate stat="20" amount="25" duration="5">StatBoostSelf</Activate>
+	  <Activate stat="0" amount="-200" duration="10">StatBoostSelf</Activate>
+	  <Cooldown>15</Cooldown>
+	  <Legendary/>
+      <InvUse/>
+   </Object>
+   <Object type="0x6814" id="Bloodstone of Enmity">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x5a7</Index>
+      </Texture>
+	  <ExtraTooltipData>
+         <EffectInfo name="Sprited by" description="SkySlurp"/>
+      </ExtraTooltipData>
+      <SlotType>10</SlotType>
+      <Description>A rock found near the grave of Drannol. It seems to hold a great amount of power.</Description>
+      <BagType>6</BagType>
+      <Activate effect="Berserk" duration="7">ConditionEffectSelf</Activate>
+	  <Activate effect="Bravery" duration="7">ConditionEffectSelf</Activate>
+	  <Activate effect="Slowed" duration="7">ConditionEffectSelf</Activate>
+	  <Cooldown>15</Cooldown>
+	  <Legendary/>
+      <InvUse/>
    </Object>
 </Objects>

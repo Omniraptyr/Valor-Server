@@ -15,12 +15,12 @@ namespace wServer.logic
         private _ Misc = () => Behav()
             .Init("White Fountain",
                 new State(
-                    new HealPlayer(5, coolDown: 450, healAmount: 100)
+                    new HealPlayer(5, 450, 100)
                 )
             )
             .Init("Winter Fountain Frozen",
                 new State(
-                    new HealPlayer(5, coolDown: 450, healAmount: 100)
+                    new HealPlayer(5, 450, 100)
                 )
             )
             .Init("Nexus Crier",
@@ -36,16 +36,16 @@ namespace wServer.logic
                             new Follow(1.2, 8, 1),
                             new Wander(0.4)
                         ),
-                        new Shoot(8, count: 6, shootAngle: 8, projectileIndex: 2, coolDown: 800),
+                        new Shoot(8, 6, 8, 2, coolDown: 800),
                         new TimedTransition(3000, "Default1")
                     ),
                     new State("Default1",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Prioritize(
-                            new Charge(2, range: 10, coolDown: 1000),
+                            new Charge(2, 10, 1000),
                             new Wander(0.4)
                         ),
-                        new Shoot(8, count: 12, projectileIndex: 1, coolDown: 200),
+                        new Shoot(8, 12, projectileIndex: 1, coolDown: 200),
                         new TimedTransition(2000, "Default2")
                     ),
                     new State("Default2",
@@ -53,7 +53,7 @@ namespace wServer.logic
                             new StayBack(1, 4),
                             new Wander(0.4)
                         ),
-                        new Shoot(8, count: 4, shootAngle: 8, projectileIndex: 0, coolDown: 800),
+                        new Shoot(8, 4, 8, 0, coolDown: 800),
                         new TimedTransition(3000, "Default3")
                     ),
                     new State("Default3",
@@ -105,8 +105,8 @@ namespace wServer.logic
                         )
                     ),
                     new State("GoDumb",
-                        new Shoot(8.4, count: 8, shootAngle: 24, projectileIndex: 0, coolDown: 2500),
-                        new Grenade(3, 160, range: 8, coolDown: 1000),
+                        new Shoot(8.4, 8, 24, 0, coolDown: 2500),
+                        new Grenade(3, 160, 8, coolDown: 1000),
                         new TimedTransition(8000, "recker")
                     ),
                     new State("die",
@@ -135,27 +135,27 @@ namespace wServer.logic
                         new State("plantspookstart",
                             new Taunt(
                                 "Ah. The time has come. The time for the end of the human race. Consuming your spirits will make me more powerful than ever!"),
-                            new InvisiToss("TF Sector", 8, 0, coolDown: 9999999),
-                            new InvisiToss("TF Sector", 8, 180, coolDown: 9999999),
+                            new InvisiToss("TF Sector", 8, 0, 9999999),
+                            new InvisiToss("TF Sector", 8, 180, 9999999),
                             new TimedTransition(5000, "fight1")
                         )
                     ),
                     new State("fight1",
-                        new Shoot(8.4, count: 1, projectileIndex: 3, coolDown: 1),
-                        new Shoot(8.4, count: 5, projectileIndex: 0, coolDown: 2000),
+                        new Shoot(8.4, 1, projectileIndex: 3, coolDown: 1),
+                        new Shoot(8.4, 5, projectileIndex: 0, coolDown: 2000),
                         new TimedTransition(8000, "fight2")
                     ),
                     new State("fight2",
-                        new HealSelf(2000, amount: 6000),
+                        new HealSelf(2000, 6000),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new Shoot(8.4, count: 8, shootAngle: 16, projectileIndex: 2, coolDown: 2000),
-                        new Shoot(8.4, count: 4, shootAngle: 16, predictive: 4, projectileIndex: 0, coolDown: 2000),
+                        new Shoot(8.4, 8, 16, 2, coolDown: 2000),
+                        new Shoot(8.4, 4, 16, predictive: 4, projectileIndex: 0, coolDown: 2000),
                         new TimedTransition(8000, "fight3")
                     ),
                     new State("fight3",
                         new ConditionalEffect(ConditionEffectIndex.Armored),
-                        new Shoot(8.4, count: 5, projectileIndex: 3, coolDown: 2000),
-                        new Shoot(8.4, count: 8, shootAngle: 12, predictive: 2, projectileIndex: 2, coolDown: 1),
+                        new Shoot(8.4, 5, projectileIndex: 3, coolDown: 2000),
+                        new Shoot(8.4, 8, 12, predictive: 2, projectileIndex: 2, coolDown: 1),
                         new TimedTransition(10000, "fight1"),
                         new State("Quadforce1",
                             new Shoot(0, projectileIndex: 4, count: 5, shootAngle: 60, fixedAngle: 0, coolDown: 100),
@@ -265,55 +265,55 @@ namespace wServer.logic
            .Init("T0 Talisman",
                 new State(
                     new FamiliarFollow(),
-                    new TalismanAttack(damage: 280, effect: ConditionEffectIndex.Dazed, duration: 1000)
+                    new TalismanAttack(280, ConditionEffectIndex.Dazed, 1000)
                 )
             )
             .Init("T1 Talisman",
                 new State(
                     new FamiliarFollow(),
-                    new TalismanAttack(damage: 320, effect: ConditionEffectIndex.Dazed, duration: 1000)
+                    new TalismanAttack(320, ConditionEffectIndex.Dazed, 1000)
                 )
             )
             .Init("T2 Talisman",
                 new State(
                     new FamiliarFollow(),
-                    new TalismanAttack(damage: 400, effect: ConditionEffectIndex.Dazed, duration: 1000)
+                    new TalismanAttack(400, ConditionEffectIndex.Dazed, 1000)
                 )
             )
             .Init("T3 Talisman",
                 new State(
                     new FamiliarFollow(),
-                    new TalismanAttack(damage: 520, effect: ConditionEffectIndex.Dazed, duration: 1000)
+                    new TalismanAttack(520, ConditionEffectIndex.Dazed, 1000)
                 )
             )
             .Init("T4 Talisman",
                 new State(
                     new FamiliarFollow(),
-                    new TalismanAttack(damage: 600, effect: ConditionEffectIndex.Dazed, duration: 2000)
+                    new TalismanAttack(600, ConditionEffectIndex.Dazed, 2000)
                 )
             )
             .Init("T5 Talisman",
                 new State(
                     new FamiliarFollow(),
-                    new TalismanAttack(damage: 640, effect: ConditionEffectIndex.Dazed, duration: 2000)
+                    new TalismanAttack(640, ConditionEffectIndex.Dazed, 2000)
                 )
             )
             .Init("T6 Talisman",
                 new State(
                     new FamiliarFollow(),
-                    new TalismanAttack(damage: 680, effect: ConditionEffectIndex.Dazed, duration: 3000)
+                    new TalismanAttack(680, ConditionEffectIndex.Dazed, 3000)
                 )
             )
            .Init("UDL Talisman",
                 new State(
                     new FamiliarFollow(),
-                    new TalismanAttack(damage: 680, effect: ConditionEffectIndex.Curse, duration: 4000)
+                    new TalismanAttack(680, ConditionEffectIndex.Curse, 4000)
                 )
             )
            .Init("Demon Talisman",
                 new State(
                     new FamiliarFollow(),
-                    new TalismanAttack(damage: 800, effect: ConditionEffectIndex.Dazed, duration: 4000)
+                    new TalismanAttack(800, ConditionEffectIndex.Dazed, 4000)
                 )
             );
     }

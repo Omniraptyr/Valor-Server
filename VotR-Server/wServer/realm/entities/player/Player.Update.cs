@@ -64,7 +64,7 @@ namespace wServer.realm.entities
         public const int Radius = 20;
         public const int RadiusSqr = Radius * Radius;
         private const int StaticBoundingBox = Radius * 2;
-        private const int AppoxAreaOfSight = (int)(Math.PI * Radius * Radius + 1);
+        private const int ApproxAreaOfSight = (int)(Math.PI * Radius * Radius + 1);
 
         private readonly HashSet<IntPoint> _clientStatic = new HashSet<IntPoint>();
         private readonly UpdatedSet _clientEntities;
@@ -130,25 +130,24 @@ namespace wServer.realm.entities
             var sCircle = Sight.GetSightCircle(Owner.Blocking);
 
             // get list of tiles for update
-            var tilesUpdate = new List<Update.TileData>(AppoxAreaOfSight);
-            foreach (var point in sCircle)
-            {
-                var x = point.X;
-                var y = point.Y;
-                var tile = Owner.Map[x, y];
+            var tilesUpdate = new List<Update.TileData>(ApproxAreaOfSight);
+            if (sCircle?.Count > 0)
+                foreach (var point in sCircle) {
+                    var x = point.X;
+                    var y = point.Y;
+                    var tile = Owner.Map[x, y];
 
-                if (tile.TileId == 255 ||
-                    tiles[x, y] >= tile.UpdateCount)
-                    continue;
+                    if (tile.TileId == 255 ||
+                        tiles[x, y] >= tile.UpdateCount)
+                        continue;
 
-                tilesUpdate.Add(new Update.TileData()
-                {
-                    X = (short)x,
-                    Y = (short)y,
-                    Tile = (Tile)tile.TileId
-                });
-                tiles[x, y] = tile.UpdateCount;
-            }
+                    tilesUpdate.Add(new Update.TileData() {
+                        X = (short)x,
+                        Y = (short)y,
+                        Tile = (Tile)tile.TileId
+                    });
+                    tiles[x, y] = tile.UpdateCount;
+                }
             FameCounter.TileSent(tilesUpdate.Count);
             
             // get list of new static objects to add
@@ -270,7 +269,7 @@ namespace wServer.realm.entities
             }
         }
 
-        private readonly List<ObjectDef> _newStatics = new List<ObjectDef>(AppoxAreaOfSight);
+        private readonly List<ObjectDef> _newStatics = new List<ObjectDef>(ApproxAreaOfSight);
         private IEnumerable<ObjectDef> GetNewStatics(HashSet<IntPoint> visibleTiles)
         {
             _newStatics.Clear();

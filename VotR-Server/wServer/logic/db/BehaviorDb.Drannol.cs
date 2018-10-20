@@ -1699,7 +1699,7 @@ namespace wServer.logic
                     new Threshold(0.1,
                        new ItemLoot("Onrane Cache", 0.025),
                        new ItemLoot("Onrane", 0.045),
-                       new ItemLoot("1000 Gold", 0.050),
+                       new ItemLoot("1000 Gold", 0.05),
                        new ItemLoot("Vial of Life", 0.5),
                        new ItemLoot("Vial of Speed", 0.5)
                        )
@@ -2862,7 +2862,7 @@ namespace wServer.logic
 
                 .Init("Revil, the Twisted Vanguard",
                 new State(
-                    new ScaleHP(100000),
+                    new ScaleHP(35000),
                     new DropPortalOnDeath("The Steps Portal", 1, 120),
                     new ChangeMusicOnDeath("oldcity"),
                     new State("default",
@@ -3389,26 +3389,7 @@ namespace wServer.logic
                         new Suicide()
                             )
                         )
-                    ),
-                new MostDamagers(3,
-                    LootTemplates.FabledItemsLoots2B()
-                ),
-                new MostDamagers(3,
-                    LootTemplates.GreaterPots()
-                ),
-                new MostDamagers(3,
-                    LootTemplates.Sor4Perc()
-                    ),
-                    new Threshold(0.1,
-                       new TierLoot(7, ItemType.Ring, 0.06),
-                       new ItemLoot("Onrane Cache", 0.75),
-                       new ItemLoot("Gold Cache", 0.33),
-                       new ItemLoot("Vial of Life", 1),
-                       new ItemLoot("Vial of Protection", 1),
-                       new ItemLoot("Vial of Vitality", 1),
-                       new ItemLoot("Vial of Defense", 1),
-                       new ItemLoot("Vial of Attack", 1)
-                       )
+                    )
             )
         .Init("Ultra Revil, the Twisted Vanguard",
                 new State(
@@ -3422,7 +3403,7 @@ namespace wServer.logic
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("getit",
-                        new Taunt("You will not reach Lin; we have been sealed off for centuries, but she knows I stand guard."),
+                        new Taunt("You will not reach Lin, we have been sealed off for centuries, but she knows I stand guard."),
                         new TimedTransition(6000, "getit2")
                             ),
                     new State("getit2",
@@ -3666,26 +3647,7 @@ namespace wServer.logic
                         new Suicide()
                             )
                         )
-                    ),
-                new MostDamagers(3,
-                    LootTemplates.FabledItemsLoots2B()
-                ),
-                new MostDamagers(3,
-                    LootTemplates.GreaterPots()
-                ),
-                new MostDamagers(3,
-                    LootTemplates.Sor4Perc()
-                    ),
-                    new Threshold(0.1,
-                       new TierLoot(7, ItemType.Ring, 0.06),
-                       new ItemLoot("Onrane Cache", 0.75),
-                       new ItemLoot("Gold Cache", 0.33),
-                       new ItemLoot("Vial of Life", 1),
-                       new ItemLoot("Vial of Protection", 1),
-                       new ItemLoot("Vial of Vitality", 1),
-                       new ItemLoot("Vial of Defense", 1),
-                       new ItemLoot("Vial of Attack", 1)
-                       )
+                    )
             )
 
                 .Init("BD Portal Spawner 2",
@@ -3699,12 +3661,12 @@ namespace wServer.logic
                         )
                 ),
                 new MostDamagers(3,
-                    LootTemplates.FabledItemsLoot2B()
+                    LootTemplates.FabledItemsLoots2B()
                 ),
                 new Threshold(0.1,
-                    new TierLoot(7, ItemType.Ring, 0.08),
-                    new ItemLoot("Sor Fragment Cache", 0.1),
-                    new ItemLoot("Onrane Cache", 0.25),
+                    new TierLoot(7, ItemType.Ring, 0.0033),
+                    new ItemLoot("Sor Fragment Cache", 0.02),
+                    new ItemLoot("Onrane Cache", 0.3),
                     new ItemLoot("Vial of Protection", 0.4),
                     new ItemLoot("Vial of Defense", 0.4),
                     new ItemLoot("Vial of Attack", 0.4),
@@ -3725,12 +3687,12 @@ namespace wServer.logic
                         )
                 ),
                 new MostDamagers(3,
-                    LootTemplates.FabledItemsLoot2B()
+                    LootTemplates.FabledItemsLoots2B()
                 ),
                 new Threshold(0.1,
-                    new TierLoot(7, ItemType.Ring, 0.08),
-                    new ItemLoot("Sor Fragment Cache", 0.1),
-                    new ItemLoot("Onrane Cache", 0.25),
+                    new TierLoot(7, ItemType.Ring, 0.0033),
+                    new ItemLoot("Sor Fragment Cache", 0.03),
+                    new ItemLoot("Onrane Cache", 0.33),
                     new ItemLoot("Vial of Protection", 0.4),
                     new ItemLoot("Vial of Defense", 0.4),
                     new ItemLoot("Vial of Attack", 0.4),
@@ -3742,7 +3704,7 @@ namespace wServer.logic
             )
             .Init("BD Berikao, the Dark Hunter",
                 new State(
-                    new ScaleHP(100000),
+                    new ScaleHP(35000),
                     new DropPortalOnDeath("Twisted Trials Portal", 1, 120),
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -4324,7 +4286,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.FabledItemsLoot2B()
+                    LootTemplates.FabledItemsLoots2B()
                 ),
                 new MostDamagers(3,
                     LootTemplates.GreaterPots()
@@ -4333,15 +4295,8 @@ namespace wServer.logic
                     LootTemplates.Sor4Perc()
                     ),
                     new Threshold(0.1,
-                       new TierLoot(12, ItemType.Weapon, 0.08),
-                       new TierLoot(5, ItemType.Ability, 0.07),
-                       new TierLoot(6, ItemType.Ability, 0.05),
-                       new TierLoot(13, ItemType.Armor, 0.06),
-                       new TierLoot(7, ItemType.Ring, 0.06),
-                       new ItemLoot("Onrane", 0.085),
-                       new ItemLoot("Onrane Cache", 0.46),
-                       new ItemLoot("Gold Cache", 0.5),
-                       new ItemLoot("100 Gold", 0.5),
+                       new ItemLoot("Onrane Cache", 0.2),
+                       new ItemLoot("Gold Cache", 0.077),
                        new ItemLoot("Vial of Life", 1),
                        new ItemLoot("Vial of Dexterity", 1),
                        new ItemLoot("Vial of Protection", 1),
@@ -4994,7 +4949,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.FabledItemsLoot2B()
+                    LootTemplates.FabledItemsLoots2B()
                 ),
                 new MostDamagers(3,
                     LootTemplates.GreaterPots()
@@ -5003,15 +4958,9 @@ namespace wServer.logic
                     LootTemplates.Sor4Perc()
                     ),
                     new Threshold(0.1,
-                       new TierLoot(12, ItemType.Weapon, 0.08),
-                       new TierLoot(5, ItemType.Ability, 0.07),
-                       new TierLoot(6, ItemType.Ability, 0.05),
-                       new TierLoot(13, ItemType.Armor, 0.06),
                        new TierLoot(7, ItemType.Ring, 0.06),
-                       new ItemLoot("Onrane", 0.085),
-                       new ItemLoot("Onrane Cache", 0.46),
-                       new ItemLoot("Gold Cache", 0.5),
-                       new ItemLoot("100 Gold", 0.5),
+                       new ItemLoot("Onrane Cache", 0.22),
+                       new ItemLoot("Gold Cache", 0.11),
                        new ItemLoot("Vial of Life", 1),
                        new ItemLoot("Vial of Dexterity", 1),
                        new ItemLoot("Vial of Protection", 1),
@@ -5393,7 +5342,7 @@ namespace wServer.logic
                     //new DropPortalOnDeath("Summoning Point Portal", 1, 120),
                     new TransformOnDeath("Lin2", 1, 1),
                 new State(
-                    new ScaleHP(35000),
+                    new ScaleHP(15000),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("default",
                         new PlayerWithinTransition(8, "taunt")
@@ -5707,12 +5656,11 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.1,
-                new TierLoot(7, ItemType.Ring, 0.08),
-                new ItemLoot("Onrane Cache", 0.86),
-                new ItemLoot("Onrane", 0.1),
-                new ItemLoot("Gold Cache", 1),
-                new ItemLoot("Vitality Eon", 0.1),
-                new ItemLoot("Defense Eon", 0.1),
+                new TierLoot(7, ItemType.Ring, 0.003),
+                new ItemLoot("Onrane Cache", 0.15),
+                new ItemLoot("Gold Cache", 0.33),
+                new ItemLoot("Vitality Eon", 0.02),
+                new ItemLoot("Defense Eon", 0.02),
                 new ItemLoot("Vial of Protection", 1),
                 new ItemLoot("Vial of Vitality", 1),
                 new ItemLoot("Vial of Defense", 1),
@@ -6043,12 +5991,11 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.1,
-                new TierLoot(7, ItemType.Ring, 0.08),
-                new ItemLoot("Onrane Cache", 0.86),
-                new ItemLoot("Onrane", 0.1),
-                new ItemLoot("Gold Cache", 1),
-                new ItemLoot("Vitality Eon", 0.1),
-                new ItemLoot("Defense Eon", 0.1),
+                new TierLoot(7, ItemType.Ring, 0.0033),
+                new ItemLoot("Onrane Cache", 0.22),
+                new ItemLoot("Gold Cache", 0.6),
+                new ItemLoot("Vitality Eon", 0.03),
+                new ItemLoot("Defense Eon", 0.03),
                 new ItemLoot("Vial of Protection", 1),
                 new ItemLoot("Vial of Vitality", 1),
                 new ItemLoot("Vial of Defense", 1),
@@ -6881,13 +6828,14 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.004,
-                    new TierLoot(7, ItemType.Ring, 0.08),
-                    new ItemLoot("Drannol's Judgement", 0.007),
-                    new ItemLoot("Ultimate Onrane Cache", 0.75),
-                    new ItemLoot("10000 Gold", 0.25),
-                    new ItemLoot("Large Sor Fragment", 0.066),
-                    new ItemLoot("Medium Sor Fragment", 0.15),
-                    new ItemLoot("Gold Cache", 0.75),
+                    new TierLoot(7, ItemType.Ring, 0.0033),
+                    new ItemLoot("Drannol's Judgement", 0.001),
+                    new ItemLoot("Bloodstone of Enmity", 0.003),
+                    new ItemLoot("Ultimate Onrane Cache", 0.33),
+                    new ItemLoot("10000 Gold", 0.12),
+                    new ItemLoot("Large Sor Fragment", 0.006),
+                    new ItemLoot("Medium Sor Fragment", 0.015),
+                    new ItemLoot("Gold Cache", 0.5),
                     new ItemLoot("Vial of Life", 1),
                     new ItemLoot("Vial of Defense", 1),
                     new ItemLoot("Vial of Attack", 0.6),
@@ -6909,7 +6857,7 @@ namespace wServer.logic
                         new PlayerWithinTransition(30, "letusbegin")
                         ),
                     new State("letusbegin",
-                        new Taunt(true, "Centuries...I have waited..The seal soon breaks."),
+                        new Taunt(true, "Centuries... I have waited... The seal soon breaks."),
                         new TimedTransition(6000, "taunt1")
                         ),
                     new State("taunt1",
@@ -6917,13 +6865,13 @@ namespace wServer.logic
                         new TimedTransition(6000, "taunt2")
                         ),
                     new State("taunt2",
-                        new Taunt(true, "Sidon claims to aid me..mere mortals shouldn't interfere with the deals of gods."),
+                        new Taunt(true, "Sidon claims to aid me... Mere mortals shouldn't interfere with the deals of gods."),
                         new TimedTransition(4000, "taunt3")
                         ),
                     new State("taunt3",
                         new Spawn("BD Taskmaster 3", 1, 1, coolDown: 99999),
                         new ChangeMusic("DrannolCage"),
-                        new Taunt(true, "I will rip you to shreds..and when I'm done I'll destroy your puny safehaven so called the Nexus.", "My rage is an unstoppable force. Finally, this is the day of my judgement."),
+                        new Taunt(true, "I will rip you to shreds... and when I'm done I'll destroy your puny safehaven so called the Nexus.", "My rage is an unstoppable force. Finally, this is the day of my judgement."),
                         new MoveTo(1, 44, 40),
                         new TimedTransition(10000, "DT1")
                         )
@@ -7653,8 +7601,8 @@ namespace wServer.logic
                             new TimedRandomTransition(6000, false, "4suppressionpurple", "4suppressionblue", "4suppressiongreen", "4suppressionorange")
                             ),
                         new State("continue4",
-                            new Taunt(0.05, "NOOOOOOOOO, I'VE BEEN SPRITED BY BITULOSS"),
-                            new Taunt("Not.......again..."),
+                            new Taunt(0.05, "NOOOOOOOOO, I'VE BEEN SPRITED BY BITULOSS!"),
+                            new Taunt("Not... again..."),
                             new ReplaceTile("BD Ground 6a", "BD Ground 5a", 99),
                             new ReplaceTile("BD Ground 6b", "BD Ground 5b", 99),
                             new ReplaceTile("BD Ground 6c", "BD Ground 5c", 99),
@@ -7696,13 +7644,14 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.004,
-                    new TierLoot(7, ItemType.Ring, 0.08),
-                    new ItemLoot("Drannol's Judgement", 0.014),
-                    new ItemLoot("Ultimate Onrane Cache", 1),
-                    new ItemLoot("10000 Gold", 1.00),
-                    new ItemLoot("Large Sor Fragment", 0.1),
-                    new ItemLoot("Medium Sor Fragment", 0.15),
-                    new ItemLoot("Gold Cache", 0.75),
+                    new TierLoot(7, ItemType.Ring, 0.01),
+                    new ItemLoot("Drannol's Judgement", 0.003),
+                    new ItemLoot("Bloodstone of Enmity", 0.007),
+                    new ItemLoot("Ultimate Onrane Cache", 0.4),
+                    new ItemLoot("10000 Gold", 0.2),
+                    new ItemLoot("Large Sor Fragment", 0.01),
+                    new ItemLoot("Medium Sor Fragment", 0.033),
+                    new ItemLoot("Gold Cache", 0.66),
                     new ItemLoot("Vial of Life", 1),
                     new ItemLoot("Vial of Defense", 1),
                     new ItemLoot("Vial of Attack", 0.6),

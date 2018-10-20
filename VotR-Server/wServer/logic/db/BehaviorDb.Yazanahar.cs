@@ -10,7 +10,7 @@ namespace wServer.logic
         private _ Yazanahar = () => Behav()
             .Init("Yazanahar",
                 new State(
-                    new DropPortalOnDeath("Ancient Depths Portal", probability: .75),
+                    new DropPortalOnDeath("Ancient Depths Portal"),
                     new ScaleHP(100000),
                     new HpLessTransition(0.20, "death1"),
                     new SetAltTexture(2),
@@ -191,7 +191,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.Sor3Perc()
                     ),
-                new Threshold(0.010,
+                new Threshold(0.01,
                     new ItemLoot("Potion of Life", 0.5),
                     new ItemLoot("Potion of Mana", 0.5),
                     new ItemLoot("Potion of Vitality", 0.5),
@@ -310,7 +310,7 @@ namespace wServer.logic
                 new State(
                     new RemoveObjectOnDeath("The Depths Wall 3", 90),
                     new HpLessTransition(0.15, "rage"),
-                    new ScaleHP(30000),
+                    new ScaleHP(15000),
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("default",
@@ -323,7 +323,7 @@ namespace wServer.logic
                     ),
                     new State("fight1",
                         new Wander(0.4),
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 1000),
                         new Shoot(10, count: 6, shootAngle: 10, predictive: 0.5, projectileIndex: 1, coolDown: 800),
                         new TimedTransition(4000, "fight2")
                         ),
@@ -340,7 +340,7 @@ namespace wServer.logic
                         new TimedTransition(8000, "fight3")
                         ),
                     new State("fight3",
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 2000),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 500),
                         new Prioritize(
                             new Follow(0.4, acquireRange: 15, range: 8),
                             new Wander(1)
@@ -353,7 +353,7 @@ namespace wServer.logic
                         new TimedTransition(6000, "fight4")
                         ),
                     new State("fight4",
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 4000),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 1000),
                         new Prioritize(
                             new Follow(0.8, acquireRange: 15, range: 8),
                             new Wander(1)
@@ -376,7 +376,7 @@ namespace wServer.logic
                         ),
                     new State("fight5",
                         new Wander(1),
-                        new HealSelf(coolDown: 3000, amount: 7000),
+                        new HealSelf(coolDown: 3000, amount: 1000),
                         new Shoot(10, count: 6, projectileIndex: 2, coolDown: 1000, rotateAngle: 20),
                         new Shoot(10, count: 4, shootAngle: 12, projectileIndex: 4, coolDown: 200),
                         new ConditionalEffect(ConditionEffectIndex.Armored),
@@ -385,7 +385,7 @@ namespace wServer.logic
                         ),
                     new State("rage",
                         new Flash(0xFF0000, 0.2, 4),
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 6000),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 1000),
                         new Prioritize(
                             new Charge(2, range: 10, coolDown: 4000),
                             new Follow(1.5, acquireRange: 15, range: 8),
@@ -411,25 +411,18 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.025,
-                    new ItemLoot("Potion of Might", 1),
-                    new ItemLoot("Potion of Attack", 0.66),
-                    new ItemLoot("Potion of Restoration", 0.33),
-                    new ItemLoot("Draketail Blade", 0.005),
-                    new ItemLoot("Crashing Crescendo", 0.005),
-                    new TierLoot(9, ItemType.Weapon, 0.1),
-                    new TierLoot(4, ItemType.Ability, 0.1),
-                    new TierLoot(9, ItemType.Armor, 0.1),
-                    new TierLoot(3, ItemType.Ring, 0.05),
-                    new TierLoot(10, ItemType.Armor, 0.05),
-                    new TierLoot(10, ItemType.Weapon, 0.05),
-                    new TierLoot(4, ItemType.Ring, 0.025)
+                    new ItemLoot("Greater Potion of Might", 1),
+                    new ItemLoot("Greater Potion of Attack", 1),
+                    new ItemLoot("Greater Potion of Restoration", 1),
+                    new ItemLoot("Draketail Blade", 0.01),
+                    new ItemLoot("Crashing Crescendo", 0.01)
                 )
             )
 
          .Init("Xanarich, the Chosen One",
                 new State(
                     new HpLessTransition(0.15, "rage"),
-                    new ScaleHP(30000),
+                    new ScaleHP(15000),
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("default",
@@ -452,7 +445,7 @@ namespace wServer.logic
                         new Follow(1.2, 8, 1),
                         new Shoot(10, count: 12, projectileIndex: 1, coolDown: new Cooldown(2000, 4000)),
                         new Shoot(10, count: 6, projectileIndex: 0, coolDown: 800),
-                        new Taunt("My trusty followers..take care of these fools."),
+                        new Taunt("My trusty followers... Take care of these fools."),
                         new EntityNotExistsTransition("Orbiter Richmaster", 99, "begin")
                         ),
                    new State("begin",
@@ -468,11 +461,7 @@ namespace wServer.logic
                         new Shoot(1, count: 8, projectileIndex: 1, coolDown: 10000, fixedAngle: 180, coolDownOffset: 2000, shootAngle: 45),
                         new Shoot(1, count: 4, projectileIndex: 1, coolDown: 200, fixedAngle: 180, rotateAngle: -10, coolDownOffset: 0, shootAngle: 90),
                         new Shoot(1, count: 4, projectileIndex: 1, coolDown: 10000, fixedAngle: 90, coolDownOffset: 2000, shootAngle: 22.5),
-                        new TimedTransition(2000, "Wait")
-                        ),
-                   new State("Wait",
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new TimedTransition(6000, "fight2b")
+                        new TimedTransition(2000, "fight2b")
                         ),
                     new State("fight2b",
                         new Shoot(1, count: 4, projectileIndex: 1, coolDown: 200, fixedAngle: 90, rotateAngle: 10, coolDownOffset: 0, shootAngle: 90),
@@ -482,7 +471,7 @@ namespace wServer.logic
                         new TimedTransition(2000, "fight3")
                         ),
                     new State("fight3",
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 4000),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 1000),
                         new Prioritize(
                             new Follow(1, 8, 1),
                             new Wander(1)
@@ -494,7 +483,7 @@ namespace wServer.logic
                         ),
                     new State("fight4",
                         new Grenade(6, 200, range: 8, coolDown: 2000, effect: ConditionEffectIndex.Blind, effectDuration: 4000, color: 0x00FF00),
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 2000),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 500),
                         new Prioritize(
                             new Swirl(0.6, radius: 4),
                             new Wander(1)
@@ -508,9 +497,8 @@ namespace wServer.logic
                         new TimedTransition(8000, "Return")
                         ),
                     new State("Return",
-                        new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new ReturnToSpawn(2),
-                        new TimedTransition(6000, "fight5")
+                        new TimedTransition(3000, "fight5")
                         ),
                     new State("fight5",
                         new Wander(0.1),
@@ -522,7 +510,7 @@ namespace wServer.logic
                             ),
                     new State("spiral",
                         new Grenade(2, 200, range: 8, coolDown: 2000, effect: ConditionEffectIndex.Confused, effectDuration: 4000, color: 0x0000FF),
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 4000),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, duration: 1000),
                         new TimedTransition(8000, "droporb"),
                         new Shoot(10, count: 10, projectileIndex: 1, coolDown: 2000),
                         new Shoot(10, count: 5, shootAngle: 10, projectileIndex: 0, coolDown: 2000),
@@ -589,7 +577,7 @@ namespace wServer.logic
                         )
                     ),
                     new State("rage",
-                        new Taunt("I won't stand this foolery any longer!"),
+                        new Taunt("I will not stand this foolery any longer!"),
                         new Grenade(3, 200, range: 8, coolDown: 2000, effect: ConditionEffectIndex.Paralyzed, effectDuration: 2000, color: 0x00FF00),
                         new Reproduce("Book of Lore", 20, 8, 1000),
                         new Flash(0xFF0000, 0.2, 4),
@@ -606,23 +594,18 @@ namespace wServer.logic
                     LootTemplates.Sor5Perc()
                     ),
                 new Threshold(0.025,
-                    new ItemLoot("Potion of Life", 1),
-                    new ItemLoot("Potion of Protection", 0.66),
-                    new ItemLoot("Chosen Bow", 0.005),
-                    new ItemLoot("Quiver of the Chosen", 0.005),
-                    new ItemLoot("Chosen Armor", 0.005),
-                    new ItemLoot("Onrane", 0.5),
-                    new ItemLoot("Shard of Ancient Assault", 0.005),
-                    new TierLoot(10, ItemType.Weapon, 0.1),
-                    new TierLoot(5, ItemType.Ability, 0.1),
-                    new TierLoot(10, ItemType.Armor, 0.1),
-                    new TierLoot(4, ItemType.Ring, 0.05),
-                    new TierLoot(11, ItemType.Armor, 0.05),
-                    new TierLoot(11, ItemType.Weapon, 0.05)
+                    new ItemLoot("Greater Potion of Life", 1),
+                    new ItemLoot("Greater Potion of Protection", 1),
+                    new ItemLoot("Gold Cache", 1),
+                    new ItemLoot("Onrane", 1),
+                    new ItemLoot("Chosen Bow", 0.01),
+                    new ItemLoot("Quiver of the Chosen", 0.01),
+                    new ItemLoot("Chosen Armor", 0.01),
+                    new ItemLoot("Shard of Ancient Assault", 0.005)
                 )
             )
 
-                    .Init("Orbiter Richmaster",
+           .Init("Orbiter Richmaster",
             new State(
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
                 new State(
@@ -664,9 +647,9 @@ namespace wServer.logic
                     new Shoot(8, count: 1, projectileIndex: 1, coolDown: 400, fixedAngle: 180),
                     new Shoot(8, count: 1, projectileIndex: 1, coolDown: 400, fixedAngle: 270),
                     new Shoot(8, count: 5, shootAngle: 14, projectileIndex: 0, coolDown: 1600),
-                    new HealEntity(20, "Janirich", healAmount: null, coolDown: 2000),
-                    new HealEntity(20, "Zanarich", healAmount: null, coolDown: 2000),
-                    new HealSelf(coolDown: 10000, amount: null),
+                    new HealEntity(20, "Janirich", healAmount: 500, coolDown: 2000),
+                    new HealEntity(20, "Zanarich", healAmount: 500, coolDown: 2000),
+                    new HealSelf(coolDown: 10000, amount: 500),
                     new State("OrbitOut",
                         new Orbit(0.6, 6, acquireRange: 15, target: "Orbiter Richmaster", speedVariance: 0.01, orbitClockwise: true),
                         new TimedTransition(8000, "OrbitIn")
@@ -695,7 +678,5 @@ namespace wServer.logic
                         )
                     )
             );
-
-
     }
 }

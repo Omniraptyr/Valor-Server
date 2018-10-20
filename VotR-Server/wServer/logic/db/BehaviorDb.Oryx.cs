@@ -166,7 +166,7 @@ namespace wServer.logic
 
             .Init("Oryx the Mad God 1",
                 new State(
-                    new DropPortalOnDeath("Locked Wine Cellar Portal", 100, timeout: 120),
+                    new DropPortalOnDeath("Wine Cellar Portal", 100, timeout: 120),
                     new HpLessTransition(.2, "rage"),
                     new State("Slow",
                         new Taunt("Fools! I still have {HP} hitpoints!"),

@@ -1,6 +1,5 @@
 ﻿package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles {
 import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
-
 import flash.display.DisplayObject;
 import flash.events.Event;
 import flash.events.MouseEvent;
@@ -9,7 +8,6 @@ import flash.geom.Point;
 import flash.utils.Timer;
 
 public class InteractiveItemTile extends ItemTile {
-
     private static const DOUBLE_CLICK_PAUSE:uint = 250;
     private static const DRAG_DIST:int = 3;
 
@@ -18,140 +16,142 @@ public class InteractiveItemTile extends ItemTile {
     private var pendingSecondClick:Boolean;
     private var isDragging:Boolean;
 
-    public function InteractiveItemTile(_arg1:int, _arg2:ItemGrid, _arg3:Boolean) {
-        super(_arg1, _arg2);
+    public function InteractiveItemTile(tileId:int, ownerId:ItemGrid, isInteractive:Boolean) {
+        super(tileId, ownerId);
         mouseChildren = false;
         this.doubleClickTimer = new Timer(DOUBLE_CLICK_PAUSE, 1);
         this.doubleClickTimer.addEventListener(TimerEvent.TIMER_COMPLETE, this.onDoubleClickTimerComplete);
-        this.setInteractive(_arg3);
+        this.setInteractive(isInteractive);
     }
 
-    public function setInteractive(_arg1:Boolean):void {
-        if (_arg1) {
+    public function setInteractive(isInteractive:Boolean) : void {
+        if (isInteractive) {
             addEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
             addEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
             addEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
-        }
-        else {
+        } else {
             removeEventListener(MouseEvent.MOUSE_DOWN, this.onMouseDown);
             removeEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
             removeEventListener(MouseEvent.MOUSE_OUT, this.onMouseOut);
         }
     }
 
-    public function getDropTarget():DisplayObject {
-        return (itemSprite.dropTarget);
+    public function getDropTarget() : DisplayObject {
+        return itemSprite.dropTarget;
     }
 
-    protected function beginDragCallback():void {
-    }
+    protected function beginDragCallback() : void {}
 
-    protected function endDragCallback():void {
-    }
+    protected function endDragCallback() : void {}
 
-    private function onMouseOut(_arg1:MouseEvent):void {
+    private function onMouseOut(e:MouseEvent) : void {
         this.setPendingDoubleClick(false);
     }
 
-    private function onMouseUp(_arg1:MouseEvent):void {
-        if (this.isDragging) {
-            return;
-        }
-        if (_arg1.shiftKey) {
+    private function onMouseUp(e:MouseEvent) : void {
+        if (this.isDragging) return;
+
+        if (e.shiftKey) {
             this.setPendingDoubleClick(false);
             dispatchEvent(new ItemTileEvent(ItemTileEvent.ITEM_SHIFT_CLICK, this));
-        }
-        else {
-            if (_arg1.ctrlKey) {
-                this.setPendingDoubleClick(false);
-                dispatchEvent(new ItemTileEvent(ItemTileEvent.ITEM_CTRL_CLICK, this));
-            }
-            else {
-                if (!this.pendingSecondClick) {
-                    this.setPendingDoubleClick(true);
-                }
-                else {
-                    this.setPendingDoubleClick(false);
-                    dispatchEvent(new ItemTileEvent(ItemTileEvent.ITEM_DOUBLE_CLICK, this));
-                }
-            }
+        } else if (e.ctrlKey) {
+            this.setPendingDoubleClick(false);
+            dispatchEvent(new ItemTileEvent(ItemTileEvent.ITEM_CTRL_CLICK, this));
+        } else if (!this.pendingSecondClick) {
+            this.setPendingDoubleClick(true);
+        } else {
+            this.setPendingDoubleClick(false);
+            dispatchEvent(new ItemTileEvent(ItemTileEvent.ITEM_DOUBLE_CLICK, this));
         }
     }
 
-    private function onMouseDown(_arg1:MouseEvent):void {
-        if (getItemId() == -1) {
-            return;
-        }
-        this.beginDragCheck(_arg1);
+    private function onMouseDown(e:MouseEvent) : void {
+        if (getItemId() == -1) return;
+        this.beginDragCheck(e);
     }
 
-    private function setPendingDoubleClick(_arg1:Boolean):void {
-        this.pendingSecondClick = _arg1;
+    private function setPendingDoubleClick(pending:Boolean) : void {
+        this.pendingSecondClick = pending;
         if (this.pendingSecondClick) {
             this.doubleClickTimer.reset();
             this.doubleClickTimer.start();
-        }
-        else {
+        } else {
             this.doubleClickTimer.stop();
         }
     }
 
-    private function beginDragCheck(_arg1:MouseEvent):void {
-        this.dragStart = new Point(_arg1.stageX, _arg1.stageY);
+    private function beginDragCheck(e:MouseEvent) : void {
+        this.dragStart = new Point(e.stageX, e.stageY);
         addEventListener(MouseEvent.MOUSE_MOVE, this.onMouseMoveCheckDrag);
         addEventListener(MouseEvent.MOUSE_OUT, this.cancelDragCheck);
         addEventListener(MouseEvent.MOUSE_UP, this.cancelDragCheck);
     }
 
-    private function cancelDragCheck(_arg1:MouseEvent):void {
+    private function cancelDragCheck(e:MouseEvent) : void {
         removeEventListener(MouseEvent.MOUSE_MOVE, this.onMouseMoveCheckDrag);
         removeEventListener(MouseEvent.MOUSE_OUT, this.cancelDragCheck);
         removeEventListener(MouseEvent.MOUSE_UP, this.cancelDragCheck);
     }
 
-    private function onMouseMoveCheckDrag(_arg1:MouseEvent):void {
-        var _local2:Number = (_arg1.stageX - this.dragStart.x);
-        var _local3:Number = (_arg1.stageY - this.dragStart.y);
-        var _local4:Number = Math.sqrt(((_local2 * _local2) + (_local3 * _local3)));
-        if (_local4 > DRAG_DIST) {
+    private function onMouseMoveCheckDrag(e:MouseEvent) : void {
+        var x:Number = e.stageX - this.dragStart.x;
+        var y:Number = e.stageY - this.dragStart.y;
+        var dist:Number = Math.sqrt(x * x + y * y);
+        if (dist > DRAG_DIST) {
             this.cancelDragCheck(null);
             this.setPendingDoubleClick(false);
-            this.beginDrag(_arg1);
+            this.beginDrag(e);
         }
     }
 
-    private function onDoubleClickTimerComplete(_arg1:TimerEvent):void {
+    private function onDoubleClickTimerComplete(e:TimerEvent) : void {
         this.setPendingDoubleClick(false);
         dispatchEvent(new ItemTileEvent(ItemTileEvent.ITEM_CLICK, this));
     }
 
-    private function beginDrag(_arg1:MouseEvent):void {
+    private function beginDrag(e:MouseEvent) : void {
         this.isDragging = true;
+        toggleDragState(false);
         stage.addChild(itemSprite);
         itemSprite.startDrag(true);
-        itemSprite.x = _arg1.stageX;
-        itemSprite.y = _arg1.stageY;
+        itemSprite.x = e.stageX;
+        itemSprite.y = e.stageY;
         itemSprite.addEventListener(MouseEvent.MOUSE_UP, this.endDrag);
         this.beginDragCallback();
     }
 
-    private function endDrag(_arg1:MouseEvent):void {
+    private function endDrag(e:MouseEvent) : void {
         this.isDragging = false;
+        toggleDragState(true);
         itemSprite.stopDrag();
         itemSprite.removeEventListener(MouseEvent.MOUSE_UP, this.endDrag);
         dispatchEvent(new ItemTileEvent(ItemTileEvent.ITEM_MOVE, this));
         this.endDragCallback();
     }
 
-    private function onRemovedFromStage(_arg1:Event):void {
-        this.setPendingDoubleClick(false);
-        this.cancelDragCheck(null);
-        if (this.isDragging) {
-            itemSprite.stopDrag();
-        }
+    override public function setItem(itemId:int) : Boolean {
+        var success:Boolean = super.setItem(itemId);
+        if (success)
+            this.stopDragging();
+
+        return success;
     }
 
+    private function onRemovedFromStage(e:Event) : void {
+        this.setPendingDoubleClick(false);
+        this.cancelDragCheck(null);
+        this.stopDragging();
+    }
 
+    private function stopDragging() : void {
+        if (this.isDragging) {
+            itemSprite.stopDrag();
+            if (stage.contains(itemSprite)) {
+                stage.removeChild(itemSprite);
+            }
+            this.isDragging = false;
+        }
+    }
 }
 }

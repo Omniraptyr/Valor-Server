@@ -238,11 +238,11 @@ namespace wServer.realm
                 world = client.Manager.GetWorld(World.Nexus);
             }
 
-            if (world is Test &&
-                !(world as Test).JsonLoaded &&
-                acc.Rank < 70) //client.Manager.Resources.Settings.EditorMinRank)
+            if (world is Test test &&
+                !test.JsonLoaded &&
+                acc.Rank < 80) //client.Manager.Resources.Settings.EditorMinRank)
             {
-                client.SendFailure("Only players with a rank of 50 and above can make test maps.",
+                client.SendFailure("Only players with a rank of 80 and above can make test maps.",
                     Failure.MessageWithDisconnect);
                 return;
             }

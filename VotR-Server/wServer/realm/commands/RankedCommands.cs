@@ -513,32 +513,25 @@ namespace wServer.realm.commands
     {
         public ToggleEffCommand() : base("eff", permLevel: 90) { }
 
-        protected override bool Process(Player player, RealmTime time, string args)
-        {
-            if (!Enum.TryParse(args, true, out ConditionEffectIndex effect))
-            {
+        protected override bool Process(Player player, RealmTime time, string args) {
+            if (!Enum.TryParse(args, true, out ConditionEffectIndex effect)) {
                 player.SendError("Invalid effect!");
                 return false;
             }
 
             var target = player.IsControlling ? player.SpectateTarget : player;
-            if ((target.ConditionEffects & (ConditionEffects)((ulong)1 << (int)effect)) != 0)
-            {
-                //remove
-                target.ApplyConditionEffect(new ConditionEffect()
-                {
+            if ((target.ConditionEffects & (ConditionEffects)((ulong)1 << (int)effect)) != 0) {
+                target.ApplyConditionEffect(new ConditionEffect() {
                     Effect = effect,
                     DurationMS = 0
                 });
-            }
-            else
-            {
-                //add
-                target.ApplyConditionEffect(new ConditionEffect()
-                {
+                player.SendInfo($"Effect removed: '{Enum.GetName(typeof(ConditionEffects), (int)effect)}'");
+            } else {
+                target.ApplyConditionEffect(new ConditionEffect() {
                     Effect = effect,
                     DurationMS = -1
                 });
+                player.SendInfo($"Effect granted: '{Enum.GetName(typeof(ConditionEffects), (int)effect)}'");
             }
             return true;
         }
@@ -621,9 +614,9 @@ namespace wServer.realm.commands
         }
     }
 
-    internal class GimmeCommand : Command
+    internal class GiveCommand : Command
     {
-        public GimmeCommand() : base("gimme", permLevel: 90, alias: "give") { }
+        public GiveCommand() : base("give", permLevel: 90, alias: "gimme") { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
@@ -634,14 +627,14 @@ namespace wServer.realm.commands
             {
                 if (!gameData.IdToObjectType.TryGetValue(args, out objType))
                 {
-                    player.SendError("Unknown item type!");
+                    player.SendError($"'{args}' not found in game files.");
                     return false;
                 }
             }
 
             if (!gameData.Items.ContainsKey(objType))
             {
-                player.SendError("Not an item!");
+                player.SendError($"'{args}' is not an item.");
                 return false;
             }
 
@@ -651,6 +644,7 @@ namespace wServer.realm.commands
             if (availableSlot != -1)
             {
                 player.Inventory[availableSlot] = item;
+                player.SendInfo($"You've been given the item '{item.ObjectId}'.");
                 return true;
             }
 
@@ -721,7 +715,7 @@ namespace wServer.realm.commands
             }
             else
             {
-                player.SendInfo("/setpiece not allowed in Nexus. (Yes, I'm talking to you Q.)");
+                player.SendInfo("/setpiece not allowed in Nexus.");
                 return false;
             }
         }
@@ -1291,24 +1285,15 @@ namespace wServer.realm.commands
 
     internal class MaxCommand : Command
     {
-        public MaxCommand() : base("max", permLevel: 80) { }
+        public MaxCommand() : base("max", permLevel: 50) { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
             var pd = player.Manager.Resources.GameData.Classes[player.ObjectType];
 
-            player.Stats.Base[0] = pd.Stats[0].MaxValue;
-            player.Stats.Base[1] = pd.Stats[1].MaxValue;
-            player.Stats.Base[2] = pd.Stats[2].MaxValue;
-            player.Stats.Base[3] = pd.Stats[3].MaxValue;
-            player.Stats.Base[4] = pd.Stats[4].MaxValue;
-            player.Stats.Base[5] = pd.Stats[5].MaxValue;
-            player.Stats.Base[6] = pd.Stats[6].MaxValue;
-            player.Stats.Base[7] = pd.Stats[7].MaxValue;
-            player.Stats.Base[8] = pd.Stats[8].MaxValue;
-            player.Stats.Base[9] = pd.Stats[9].MaxValue;
-            player.Stats.Base[10] = pd.Stats[10].MaxValue;
-            player.Stats.Base[11] = pd.Stats[11].MaxValue;
+            for (var i = 0; i < 12; i++)
+                player.Stats.Base[i] = pd.Stats[i].MaxValue;
+
             player.SendInfo("Your character stats have been maxed.");
             return true;
         }

@@ -10,7 +10,7 @@ namespace wServer.logic
         private _ Truvix = () => Behav()
             .Init("Truvix, the Lord Wanderer",
                 new State(
-                    new DropPortalOnDeath("The Genisus Portal", 0.50),
+                    new DropPortalOnDeath("The Genisus Portal"),
                     new OrderOnDeath(60, "Genisus Inhibitor", "dead"),
                     new State(
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -143,7 +143,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.Sor3Perc()
                     ),
-                new Threshold(0.015,
+                new Threshold(0.01,
                     new ItemLoot("Potion of Vitality", 0.1),
                     new ItemLoot("Potion of Attack", 0.1),
                     new TierLoot(11, ItemType.Weapon, 1),

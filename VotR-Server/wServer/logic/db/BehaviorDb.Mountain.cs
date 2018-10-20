@@ -42,8 +42,7 @@ namespace wServer.logic
                         new Flash(0xF0E68C, 1, 1000),
                         new Shoot(15, 3, shootAngle: 25, projectileIndex: 0, coolDown: 1000),
                         new Shoot(15, projectileIndex: 1, coolDown: 1000)
-                        ),
-                    new DropPortalOnDeath("Haunted Cemetery Portal", .4)
+                        )
                     ),
                 new Threshold(0.07,
                     new ItemLoot("Potion of Defense", 0.2),
@@ -52,7 +51,7 @@ namespace wServer.logic
             )
             .Init("White Demon",
                 new State(
-                    new DropPortalOnDeath("Abyss of Demons Portal", .17),
+                    new DropPortalOnDeath("Abyss of Demons Portal", .27),
                     new Prioritize(
                         new StayAbove(1, 200),
                         new Follow(1, range: 7),
@@ -124,7 +123,7 @@ namespace wServer.logic
             )
             .Init("Angelic Commander",
             new State(
-                new DropPortalOnDeath("Heavenly Rift Portal", .50),
+                new DropPortalOnDeath("Heavenly Rift Portal", .75),
                 new Reproduce(densityMax: 3),
                 new State("First",
                     new Prioritize(
@@ -167,12 +166,12 @@ namespace wServer.logic
                         new Protect(0.4, "Sprite God", protectionRange: 1),
                         new Wander(0.4)
                         ),
-                    new DropPortalOnDeath("Glowing Portal", .11)
+                    new DropPortalOnDeath("Glowing Portal", .21)
                     )
             )
             .Init("Medusa",
                 new State(
-                    new DropPortalOnDeath("Snake Pit Portal", .17),
+                    new DropPortalOnDeath("Snake Pit Portal", .27),
                     new Prioritize(
                         new StayAbove(1, 200),
                         new Follow(1, range: 7),
@@ -202,7 +201,7 @@ namespace wServer.logic
             )
            .Init("Thunder God",
                 new State(
-                    new DropPortalOnDeath("Storm Palace Portal", 0.3),
+                    new DropPortalOnDeath("Storm Palace Portal", 0.7),
                     new Prioritize(
                         new Swirl(0.4, 7),
                         new Wander(0.4)
@@ -259,7 +258,7 @@ namespace wServer.logic
             )
             .Init("Beholder",
                 new State(
-                    new DropPortalOnDeath("Tunnel of Pain Portal", .10),
+                    new DropPortalOnDeath("Tunnel of Pain Portal", .21),
                     new Prioritize(
                         new StayAbove(1, 200),
                         new Follow(1, range: 7),
@@ -354,7 +353,7 @@ namespace wServer.logic
                         ),
                     new Shoot(12, count: 7, shootAngle: 25, predictive: 0.5, coolDown: 900),
                     new Reproduce(densityMax: 3),
-                    new DropPortalOnDeath("Undead Lair Portal", 0.17)
+                    new DropPortalOnDeath("Undead Lair Portal", 0.27)
                     ),
                 new MostDamagers(3,
                     LootTemplates.SorVeryRare()
@@ -380,7 +379,7 @@ namespace wServer.logic
                     new Wander(0.6),
                     new Shoot(12, 2, 1, coolDown: 10),
                     new Shoot(12, 10, 1, projectileIndex: 1, coolDown: 2000),
-                    new DropPortalOnDeath("Concealment of the Dreadnought Portal", .20)
+                    new DropPortalOnDeath("Concealment of the Dreadnought Portal", .35)
                     ),
                 new MostDamagers(3,
                     LootTemplates.SorVeryRare()
@@ -516,7 +515,7 @@ namespace wServer.logic
             )
             .Init("Djinn",
                 new State(
-                    new DropPortalOnDeath("Trial of the Illusionist Portal", .05),
+                    new DropPortalOnDeath("Trial of the Illusionist Portal", .11),
                     new State("Idle",
                         new Prioritize(
                             new StayAbove(1, 200),
@@ -573,7 +572,7 @@ namespace wServer.logic
             )
             .Init("Leviathan",
                 new State(
-                    new DropPortalOnDeath("Puppet Theatre Portal", .10),
+                    new DropPortalOnDeath("Puppet Theatre Portal", .33),
                     new State("Wander",
                         new Swirl(),
                         new Shoot(10, 2, 10, 1, coolDown: 500),
@@ -676,7 +675,7 @@ namespace wServer.logic
                     new TierLoot(5, ItemType.Ring, 0.2),
                     new TierLoot(5, ItemType.Ability, 0.2)
                     ),
-                new Threshold(0.15,
+                new Threshold(0.05,
                                                         new ItemLoot("Lucky Sword", 0.002),
                 new ItemLoot("Lucky Armor", 0.002),
                 new ItemLoot("Lucky Seal", 0.002),
@@ -710,7 +709,7 @@ namespace wServer.logic
                     new TierLoot(5, ItemType.Ring, 0.2),
                     new TierLoot(5, ItemType.Ability, 0.2)
                     ),
-                new Threshold(0.15,
+                new Threshold(0.05,
                                     new ItemLoot("Lucky Sword", 0.002),
                 new ItemLoot("Lucky Armor", 0.002),
                 new ItemLoot("Lucky Seal", 0.002),

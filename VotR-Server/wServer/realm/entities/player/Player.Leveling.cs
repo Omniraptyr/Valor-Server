@@ -1,36 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using wServer.networking.packets.outgoing;
 using common.resources;
+using wServer.networking.packets.outgoing;
+
 namespace wServer.realm.entities
 {
     public partial class Player
     {
-        public static int GetExpGoal(int level)
-        {
+        public static int GetExpGoal(int level) {
             return 50 + (level - 1) * 100;
         }
-        public static int GetLevelExp(int level)
-        {
+
+        public static int GetLevelExp(int level) {
             if (level == 1) return 0;
             return 50 * (level - 1) + (level - 2) * (level - 1) * 50;
         }
-        public static int GetFameGoal(int fame)
-        {
-            if (fame >= 2000) return 0;
-            else if (fame >= 800) return 2000;
-            else if (fame >= 400) return 800;
-            else if (fame >= 150) return 400;
-            else if (fame >= 20) return 150;
-            else return 20;
+
+        public static int GetFameGoal(int fame) {
+            switch (fame) {
+                case 2000: return 0;
+                case 800: return 2000;
+                case 400: return 800;
+                case 150: return 400;
+                case 20: return 150;
+                default: return 20;
+            }
         }
 
-        public int GetStars()
-        {
+        public int GetStars() {
             int ret = 0;
-            foreach (var i in FameCounter.ClassStats.AllKeys)
-            {
+            foreach (var i in FameCounter.ClassStats.AllKeys) {
                 var entry = FameCounter.ClassStats[ushort.Parse(i)];
                 if (entry.BestFame >= 2000) ret += 5;
                 else if (entry.BestFame >= 800) ret += 4;
@@ -41,8 +41,8 @@ namespace wServer.realm.entities
             return ret;
         }
 
-        static readonly Dictionary<string, Tuple<int, int, int>> QuestDat =
-            new Dictionary<string, Tuple<int, int, int>>()  //Priority, Min, Max
+        private static readonly Dictionary<string, Tuple<int, int, int>> QuestDat =
+            new Dictionary<string, Tuple<int, int, int>> //Priority, Min, Max
         {
             // wandering quest enemies
             { "Scorpion Queen",                 Tuple.Create(1, 1, 6) },
@@ -80,7 +80,6 @@ namespace wServer.realm.entities
             { "shtrs Defense System",           Tuple.Create(14,15, 20) },
             { "Fanatic of Chaos",               Tuple.Create(14,15, 20) },
             { "Skull Shrine",                   Tuple.Create(14,15, 20) },
-            { "Tod",                            Tuple.Create(14,15, 20) },
             { "Pentaract",                      Tuple.Create(14,15, 20) },
             { "Cube God",                       Tuple.Create(14,15, 20) },
             { "Grand Sphinx",                   Tuple.Create(14,15, 20) },
@@ -189,39 +188,25 @@ namespace wServer.realm.entities
             {"The Horrific",                    Tuple.Create(20, 15, 1000)},
             {"Codename G-24, Nitrostorm",       Tuple.Create(15,1, 20) },
             {"Ogla, the Giant God",             Tuple.Create(15,1, 20) },
-            {"Zeus",                   Tuple.Create(15, 15, 20)},
-            {"Colothiois the Exalted",                     Tuple.Create(15, 15, 20)},
-
-            // special events
-            { "Megaman",                        Tuple.Create(50,20, 20) },
-            { "Boshy",                          Tuple.Create(50,20, 20) },
-            { "The Kid",                        Tuple.Create(50,20, 20) },
-            { "Sanic",                          Tuple.Create(50,20, 20) }
-
         };
 
-        Entity FindQuest(Position? destination = null)
-        {
+        private Entity FindQuest(Position? destination = null) {
             Entity ret = null;
             double? bestScore = null;
-            var pX = !destination.HasValue ? X : destination.Value.X;
-            var pY = !destination.HasValue ? Y : destination.Value.Y;
-            
+            var pX = destination?.X ?? X;
+            var pY = destination?.Y ?? Y;
+
             foreach (var i in Owner.Quests.Values
-                .OrderBy(quest => MathsUtils.DistSqr(quest.X, quest.Y, pX, pY)))
-            {
+                .OrderBy(quest => MathsUtils.DistSqr(quest.X, quest.Y, pX, pY))) {
                 if (i.ObjectDesc == null || !i.ObjectDesc.Quest) continue;
 
-                Tuple<int, int, int> x;
-                if (!QuestDat.TryGetValue(i.ObjectDesc.ObjectId, out x))
+                if (!QuestDat.TryGetValue(i.ObjectDesc.ObjectId, out var x))
                     continue;
 
-                if ((Level >= x.Item2 && Level <= x.Item3))
-                {
+                if ((Level >= x.Item2 && Level <= x.Item3)) {
                     var score = (20 - Math.Abs((i.ObjectDesc.Level ?? 0) - Level)) * x.Item1 -   //priority * level diff
                             this.Dist(i) / 100;    //minus 1 for every 100 tile distance
-                    if (bestScore == null || score > bestScore)
-                    {
+                    if (bestScore == null || score > bestScore) {
                         bestScore = score;
                         ret = i;
                     }
@@ -231,17 +216,12 @@ namespace wServer.realm.entities
         }
 
         public Entity Quest { get; private set; }
-        public void HandleQuest(RealmTime time, bool force = false, Position? destination = null)
-        {
-            if (force || time.TickCount % 500 == 0 || Quest?.Owner == null)
-            {
+        public void HandleQuest(RealmTime time, bool force = false, Position? destination = null) {
+            if (force || time.TickCount % 500 == 0 || Quest?.Owner == null) {
                 var newQuest = FindQuest(destination);
-                if (newQuest != null && newQuest != Quest)
-                {
-                    Owner.Timers.Add(new WorldTimer(100, (w, t) =>
-                    {
-                        _client.SendPacket(new QuestObjId()
-                        {
+                if (newQuest != null && newQuest != Quest) {
+                    Owner.Timers.Add(new WorldTimer(100, (w, t) => {
+                        _client.SendPacket(new QuestObjId {
                             ObjectId = newQuest.Id
                         });
                     }));
@@ -250,52 +230,37 @@ namespace wServer.realm.entities
             }
         }
 
-        public void CalculateFame()
-        {
+        public void CalculateFame() {
             var newFame = (Experience < 200 * 1000) ?
                 Experience / 1000 :
                 200 + (Experience - 200 * 1000) / 1000;
 
-            if (newFame == Fame) 
+            if (newFame == Fame)
                 return;
 
             var stats = FameCounter.ClassStats[ObjectType];
             var newGoal = GetFameGoal(stats.BestFame > newFame ? stats.BestFame : newFame);
 
-            if (newGoal > FameGoal)
-            {
-                BroadcastSync(new Notification()
-                {
+            if (newGoal > FameGoal) {
+                BroadcastSync(new Notification {
                     ObjectId = Id,
                     Color = new ARGB(0xFF00FF00),
                     Message = "{\"key\": \"server.class_quest_complete\"}"
                 }, p => this.DistSqr(p) < RadiusSqr);
                 Stars = GetStars();
             }
-            else if (newFame != Fame)
-            {
-               // BroadcastSync(new Notification()
-             //   {
-            //        ObjectId = Id,
-             //       Color = new ARGB(0xFFE25F00),
-             //       Message = "+" + (newFame - Fame) + " fame"
-            //    }, p => this.DistSqr(p) < RadiusSqr);
-            }
 
             Fame = newFame;
             FameGoal = newGoal;
         }
 
-        bool CheckLevelUp()
-        {
-            if (Experience - GetLevelExp(Level) >= ExperienceGoal && Level < 20)
-            {
+        private bool CheckLevelUp() {
+            if (Experience - GetLevelExp(Level) >= ExperienceGoal && Level < 20) {
                 Level++;
                 ExperienceGoal = GetExpGoal(Level);
                 var statInfo = Manager.Resources.GameData.Classes[ObjectType].Stats;
                 var rand = new Random();
-                for (var i = 0; i < statInfo.Length; i++)
-                {
+                for (var i = 0; i < statInfo.Length; i++) {
                     var min = statInfo[i].MinIncrease;
                     var max = statInfo[i].MaxIncrease + 1;
                     Stats.Base[i] += rand.Next(min, max);
@@ -307,19 +272,15 @@ namespace wServer.realm.entities
 
                 var playerDesc = Manager.Resources.GameData.Classes[ObjectType];
 
-                if (Level == 20)
-                {
-                    foreach (var i in Owner.Players.Values)
-                    {
+                if (Level == 20) {
+                    foreach (var i in Owner.Players.Values) {
                         i.SendInfo(Name + " achieved level 20 as a " + playerDesc.ObjectId + "!");
                     }
-                }
-                else
-                {
+                } else {
                     // to get exp scaled to new exp goal
                     InvokeStatChange(StatsType.Experience, Experience - GetLevelExp(Level), true);
                 }
-                      
+
                 Quest = null;
 
                 return true;
@@ -327,81 +288,53 @@ namespace wServer.realm.entities
             CalculateFame();
             return false;
         }
-        public int SurgeBonus()
-        {
-            if (CheckInsurgency() == true)
-            {
-                return 2;
-            }
-            return 1;
+
+        public int SurgeBonus() {
+            return CheckInsurgency() ? 2 : 1;
         }
 
-        public int MockingBonus()
-        {
-            if (CheckMocking() == true)
-            {
-                return 5*(Surge+1);
-            }
-            return 0;
+        public int EnergyEyeBonus() {
+            return Mark == 4 ? 2 : 0;
         }
-        public int EnergyEyeBonus()
-        {
-            if (Mark == 4)
-            {
-                return 2;
-            }
-            return 0;
-        }
-        public void SurgeActivation(RealmTime time)
-        {   
-            if (Surge <= 100)
-            {
-                SurgeCounter =  100;
-                if (HasConditionEffect(ConditionEffects.Surged))
-                {
-                    Surge += 4*SurgeBonus() + EnergyEyeBonus();
-                }
-                else
-                {
-                    Surge += 2*SurgeBonus() + EnergyEyeBonus();
+
+        public void SurgeActivation(RealmTime time) {
+            if (Surge <= 100) {
+                SurgeCounter = 100;
+                if (HasConditionEffect(ConditionEffects.Surged)) {
+                    Surge += 4 * SurgeBonus() + EnergyEyeBonus();
+                } else {
+                    Surge += 2 * SurgeBonus() + EnergyEyeBonus();
                 }
                 _isSurgeGone = true;
                 _surgeWither = false;
             }
-            if (Surge >= protRestore())
-            {
+            if (Surge >= protRestore()) {
                 ProtectionDamage = 0;
             }
         }
-        public int protRestore()
-        {
-            if (Stats[11] >= 0 && Stats[11] <= 40)
-            {
+
+        public int protRestore() {
+            if (Stats[11] >= 0 && Stats[11] <= 40) {
                 return 100;
             }
 
-            if (Stats[11] >= 41 && Stats[11] <= 50)
-            {
+            if (Stats[11] >= 41 && Stats[11] <= 50) {
                 return 90;
             }
 
-            if (Stats[11] >= 51 && Stats[11] <= 60)
-            {
+            if (Stats[11] >= 51 && Stats[11] <= 60) {
                 return 75;
             }
 
             return 100;
         }
 
-        public bool EnemyKilled(Enemy enemy, int exp, bool killer)
-        {
+        public bool EnemyKilled(Enemy enemy, int exp, bool killer) {
             var acc = Client.Account;
             var rnd = new Random();
             var time = new RealmTime();
-            if (enemy == Quest)
-            {
-                BroadcastSync(new Notification
-                {
+            if (enemy == Quest) {
+                BroadcastSync(new Notification {
                     ObjectId = Id,
                     Color = new ARGB(0xFF00FF00),
                     Message = "{\"key\":\"server.quest_complete\"}"
@@ -434,34 +367,31 @@ namespace wServer.realm.entities
                 }
             }
 
-            if (enemy.ObjectDesc.Elitedrop && rnd.NextDouble() <= 0.6) {
+            if (enemy.ObjectDesc.Elitedrop && rnd.NextDouble() <= 0.1) {
                 Client.Manager.Database.UpdateEliteLootbox(acc, 1);
                 EliteLootbox++;
                 this.ForceUpdate(EliteLootbox);
                 SendHelp("You have obtained an Elite Lootbox drop! Go to the Nexus to open it!");
             }
 
-            if (enemy.ObjectDesc.ResetSS)
-            {
+            if (enemy.ObjectDesc.ResetSS) {
                 foreach (var player in Owner.Players.Values)
                     player.SupportScore = 0;
             }
 
-            if (enemy.ObjectDesc.UElitedrop)
-            {
+            if (enemy.ObjectDesc.UElitedrop) {
                 Client.Manager.Database.UpdateEliteLootbox(acc, 1);
                 EliteLootbox++;
                 this.ForceUpdate(EliteLootbox);
                 SendHelp("You have obtained an Elite Lootbox drop! Go to the Nexus to open it!");
             }
 
-            if (exp != 0)
-            {
-                foreach (var i in Owner.PlayersCollision.HitTest(X, Y, 16).Where(e => e is Player))
-                {
+            if (exp != 0) {
+                foreach (var _ in Owner.PlayersCollision.HitTest(X, Y, 16).Where(e => e is Player)) {
                     Experience += exp;
                 }
             }
+
             if (!HasConditionEffect(ConditionEffects.Exhausted))
                 SurgeActivation(time);
 

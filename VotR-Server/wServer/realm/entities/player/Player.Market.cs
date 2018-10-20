@@ -37,9 +37,7 @@ namespace wServer.realm.entities
         [Description("Market item does not exist. Perhaps someone bought it already or you removed it already?")]
         InvalidShopItemId,
         [Description("Failed to remove item from Market. Please try again later.")]
-        RemoveMarketFailure,
-        [Description("Can't market tiered items.")]
-        IsTiered
+        RemoveMarketFailure
     }
 
     public partial class Player

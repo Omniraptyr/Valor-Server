@@ -20,11 +20,10 @@ public class TierUtil
          var _local_11:String = null;
          var _local_3:* = isPet(_arg_1) == false;
          var _local_4:* = _arg_1.hasOwnProperty("Consumable") == false;
-         var _local_5:* = _arg_1.hasOwnProperty("InvUse") == false;
          var _local_6:* = _arg_1.hasOwnProperty("Treasure") == false;
          var _local_7:* = _arg_1.hasOwnProperty("PetFood") == false;
          var _local_8:Boolean = _arg_1.hasOwnProperty("Tier");
-         if(_local_3 && _local_4 && _local_5 && _local_6 && _local_7)
+         if(_local_3 && _local_4 && _local_6 && _local_7)
          {
             _local_9 = new UILabel();
             if(_local_8)

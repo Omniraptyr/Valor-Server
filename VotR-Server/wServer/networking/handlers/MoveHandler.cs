@@ -34,16 +34,16 @@ namespace wServer.networking.handlers
                 player.Move(newX, newY);
             }
 
-            CheckLabConditions(player, packet);
+            CheckTileEffs(player, packet);
             player.MoveReceived(time, packet);
         }
 
-        private static void CheckLabConditions(Entity player, Move packet)
+        private static void CheckTileEffs(Entity player, Move packet)
         {
             var tile = player.Owner.Map[(int)packet.NewPosition.X, (int)packet.NewPosition.Y];
             switch (tile.TileId)
             {
-                //Green water
+                //Green Water
                 case 0xa9:
                 case 0x82:
                     if (tile.ObjId != 0)
@@ -57,7 +57,7 @@ namespace wServer.networking.handlers
                         player.ApplyConditionEffect(ConditionEffectIndex.Speedy);
                     }
                     break;
-                //Blue water
+                //Blue Water
                 case 0xa7:
                 case 0x83:
                     if (tile.ObjId != 0)

@@ -41,12 +41,16 @@ namespace wServer.realm.entities.vendors
             new ShopItem("Wand of Recompense", 1000),
             new ShopItem("Sword of Acclaim", 1000),
             new ShopItem("Masamune", 1000),
+            new ShopItem("Lance of the Last Stand", 1000),
+            new ShopItem("Master Blades", 1000),
             new ShopItem("Staff of the Vital Unity", 7500),
             new ShopItem("Sadamune", 7500),
             new ShopItem("Sword of Splendor", 7500),
             new ShopItem("Wand of Evocation", 7500),
             new ShopItem("Bow of Mystical Energy", 7500),
             new ShopItem("Dagger of Sinister Deeds", 7500),
+            new ShopItem("Ornate Lance", 7500),
+            new ShopItem("Ivory Blades", 7500)
         };
 
         private static readonly List<ISellableItem> Ability = new List<ISellableItem> {
@@ -64,12 +68,13 @@ namespace wServer.realm.entities.vendors
             new ShopItem("Prism of Apparitions", 2000),
             new ShopItem("Scepter of Storms", 2000),
             new ShopItem("Doom Circle", 2000),
-            new ShopItem("Sheath of the Holy Revival", 2000),
+            new ShopItem("Sheath of Transcendence", 2000),
             new ShopItem("Banner of True War", 2000),
             new ShopItem("Siphon of Redemption", 2000),
             new ShopItem("Sanctified Charm", 2000),
             new ShopItem("Stone Dice", 2000),
-            new ShopItem("Jacket of Sorrows", 2000)
+            new ShopItem("Jacket of Sorrows", 2000),
+            new ShopItem("Oryx Talisman", 2000)
         };
 
         private static readonly List<ISellableItem> Armor = new List<ISellableItem> {
@@ -89,7 +94,11 @@ namespace wServer.realm.entities.vendors
              new ShopItem("Ring of Unbound Vitality", 3000),
              new ShopItem("Ring of Unbound Wisdom", 3000),
              new ShopItem("Ring of Unbound Health", 3000),
-             new ShopItem("Ring of Unbound Magic", 3000)
+             new ShopItem("Ring of Unbound Magic", 3000),
+             new ShopItem("Ring of Unbound Restoration", 3000),
+             new ShopItem("Ring of Unbound Protection", 3000),
+             new ShopItem("Ring of Unbound Luck", 3000),
+             new ShopItem("Ring of Unbound Might", 3000)
         };
 
         private static readonly List<ISellableItem> Aldragine = new List<ISellableItem> {
@@ -111,7 +120,10 @@ namespace wServer.realm.entities.vendors
         };
 
         private static readonly List<ISellableItem> Special = new List<ISellableItem> {
-            new ShopItem("Backpack", 100000),
+            new ShopItem("Backpack", 50000),
+            new ShopItem("Pandora's Box", 500000),
+            new ShopItem("Speedier Sprout", 100000),
+            new ShopItem("Purification Crystal", 300000),
             new ShopItem("Amulet of Resurrection", 1000000)
         };
 
@@ -122,6 +134,25 @@ namespace wServer.realm.entities.vendors
             new ShopItem("100000 Gold", 100000)
         };
 
+        private static readonly List<ISellableItem> FameCoins = new List<ISellableItem> {
+            new ShopItem("1000 Gold", 10000),
+            new ShopItem("10000 Gold", 100000)
+        };
+
+        private static readonly List<ISellableItem> LowTierKeys = new List<ISellableItem> {
+            new ShopItem("Abyss of Demons Key", 1000),
+            new ShopItem("Undead Lair Key", 1000),
+            new ShopItem("Sprite World Key", 1000),
+            new ShopItem("Heavenly Rift Key", 1500),
+            new ShopItem("Concealment Key", 2000)
+        };
+        private static readonly List<ISellableItem> HighTierKeys = new List<ISellableItem> {
+            new ShopItem("Tunnel of Pain Key", 3000),
+            new ShopItem("Storm Palace Key", 3000),
+            new ShopItem("Abandoned Basement Key", 3500),
+            new ShopItem("Galactic Plateau Key", 5000)
+        };
+
         public static readonly Dictionary<TileRegion, Tuple<List<ISellableItem>, CurrencyType, int>> Shops =
             new Dictionary<TileRegion, Tuple<List<ISellableItem>, CurrencyType, int>>
         {
@@ -130,7 +161,10 @@ namespace wServer.realm.entities.vendors
             { TileRegion.Store_3, new Tuple<List<ISellableItem>, CurrencyType, int>(Armor, CurrencyType.Fame, 0) },
             { TileRegion.Store_4, new Tuple<List<ISellableItem>, CurrencyType, int>(Rings, CurrencyType.Fame, 0) },
             { TileRegion.Store_5, new Tuple<List<ISellableItem>, CurrencyType, int>(Coins, CurrencyType.Gold, 0) },
+            { TileRegion.Store_6, new Tuple<List<ISellableItem>, CurrencyType, int>(FameCoins, CurrencyType.Fame, 20) },
             { TileRegion.Store_7, new Tuple<List<ISellableItem>, CurrencyType, int>(Special, CurrencyType.Fame, 0) },
+            { TileRegion.Store_8, new Tuple<List<ISellableItem>, CurrencyType, int>(LowTierKeys, CurrencyType.Fame, 5) },
+            { TileRegion.Store_9, new Tuple<List<ISellableItem>, CurrencyType, int>(HighTierKeys, CurrencyType.Fame, 20) },
             { TileRegion.Store_15, new Tuple<List<ISellableItem>, CurrencyType, int>(Aldragine, CurrencyType.Onrane, 20) },
             { TileRegion.Store_16, new Tuple<List<ISellableItem>, CurrencyType, int>(Drannol, CurrencyType.Onrane, 20) },
         };

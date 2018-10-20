@@ -371,6 +371,7 @@ namespace wServer.realm.entities
         public int? GuildInvite { get; set; }
         public bool Muted { get; set; }
         public long LastAltAttack { get; set; }
+        public long LastInvUse { get; set; }
 
         public RInventory DbLink { get; }
         public int[] SlotTypes { get; }
@@ -571,7 +572,8 @@ namespace wServer.realm.entities
             stats[StatsType.SorStorage] = SorStorage;
             stats[StatsType.Elite] = Elite;
             stats[StatsType.PvP] = PvP;
-            if (Owner.Name == "SummoningPoint") stats[StatsType.RageBar] = RageBar;
+            if (Owner.Name == "Summoning Point" || Owner.Name == "Ultra Summoning Point")
+                stats[StatsType.RageBar] = RageBar;
             if (Owner.Name == "Nexus") {
                 stats[StatsType.BronzeLootbox] = BronzeLootbox;
                 stats[StatsType.SilverLootbox] = SilverLoootbox;
@@ -772,15 +774,13 @@ namespace wServer.realm.entities
             });
         }
 
-        public override void Init(World owner)
-        {           
+        public override void Init(World owner) {
             var x = 0;
             var y = 0;
             var spawnRegions = owner.GetSpawnPoints();
 
             MarksActivate();
-            if (spawnRegions.Any())
-            {
+            if (spawnRegions.Any()) {
                 var rand = new System.Random();
                 var sRegion = spawnRegions.ElementAt(rand.Next(0, spawnRegions.Length));
                 x = sRegion.Key.X;
@@ -791,11 +791,9 @@ namespace wServer.realm.entities
 
             // spawn pet if player has one attached
             var petId = _client.Character.PetId;
-            if (petId > 0 && Manager.Config.serverSettings.enablePets)
-            {
+            if (petId > 0 && Manager.Config.serverSettings.enablePets) {
                 var dbPet = new DbPet(Client.Account, petId);
-                if (dbPet.ObjectType != 0)
-                {
+                if (dbPet.ObjectType != 0) {
                     var pet = new Pet(Manager, this, dbPet);
                     pet.Move(X, Y);
                     owner.EnterWorld(pet);
@@ -808,20 +806,9 @@ namespace wServer.realm.entities
             ExperienceGoal = GetExpGoal(_client.Character.Level);
             Stars = GetStars();
 
-            if (owner.Name.Equals("SummoningPoint"))
-                RageBar = 100;
-            if (owner.Name.Equals("UltraSummoningPoint"))
-                RageBar = 100;
-            if ((owner.Name.Equals("BastilleofDrannol") 
-                 || owner.Name.Equals("AldraginesHideout") 
-                 || owner.Name.Equals("UltraAldraginesHideout"))
-                 && owner.Opener != Name) {
-                Client.Manager.Database.UpdateCredit(Client.Account, -3000);
-                this.ForceUpdate(Credits);
-            }
-            if (owner.Name.Equals("Nexus"))
-            {
-                int amount = (int)Math.Min(Math.Floor(Stats[10] / 90d * 6), 6);
+            if (owner.Name == "Summoning Point" || owner.Name == "Ultra Summoning Point") RageBar = 100;
+            if (owner.Name.Equals("Nexus")) {
+                var amount = (int)Math.Min(Math.Floor(Stats[10] / 90d * 6), 6);
 
                 if (amount > HealthPots.Count)
                     HealthPots = new ItemStacker(this, 254, 0x0A22, amount, 6);
@@ -829,40 +816,27 @@ namespace wServer.realm.entities
                 if (amount > MagicPots.Count)
                     MagicPots = new ItemStacker(this, 255, 0x0A23, amount, 6);
 
+                //this is fine being in nex only since that's the first place you load to
+                var pd = Manager.Resources.GameData.Classes[ObjectType];
+                for (var i = 0; i < pd.Stats.Length; i++) {
+                    var maxVal = AscensionEnabled
+                        ? pd.Stats[i].MaxValue + (i < 2 ? 50 : 10)
+                        : pd.Stats[i].MaxValue;
+                    if (maxVal < Stats.Base[i]) Stats.Base[i] = maxVal;
+                }
                 SaveToCharacter();
             }
 
             SetNewbiePeriod();
 
-            if (owner.IsNotCombatMapArea)
-            {
-                if (DeathArena.Instance?.CurrentState != DeathArena.ArenaState.NotStarted && DeathArena.Instance?.CurrentState != DeathArena.ArenaState.Ended)
-                {
-                    Client.SendPacket(new GlobalNotification
-                    {
-                        Type = GlobalNotification.ADD_ARENA,
-                        Text = $"{{\"name\":\"Oryx Arena\",\"open\":{DeathArena.Instance?.CurrentState == DeathArena.ArenaState.CountDown}}}"
-                    });
-                }
-
-                if (worlds.logic.Arena.Instance?.CurrentState != worlds.logic.Arena.ArenaState.NotStarted)
-                {
-                    Client.SendPacket(new GlobalNotification
-                    {
-                        Type = GlobalNotification.ADD_ARENA,
-                        Text = $"{{\"name\":\"Public Arena\",\"open\":{worlds.logic.Arena.Instance?.CurrentState == worlds.logic.Arena.ArenaState.CountDown}}}"
-                    });
-                }
-            }
-
-            for (int i = 0; i < 4; i++)
+            for (var i = 0; i < 4; i++)
                 if (Inventory[i] != null) OnEquip(Inventory[i]);
 
             base.Init(owner);
         }
 
         private readonly List<Timer> _timerList = new List<Timer>();
-        public int[] StealAmount = { 0, 0 };
+        public int LifeSteal, ManaLeech;
 
         private void TimerHandler(int delay, ConditionEffectIndex cei) {
             var timer = new Timer(delay, (int)cei);
@@ -890,8 +864,8 @@ namespace wServer.realm.entities
 
                 foreach (var pair in item.Steal)
                     if (pair.Key != "") {
-                        if (pair.Key == "life") StealAmount[0] += pair.Value;
-                        else StealAmount[1] += pair.Value;
+                        if (pair.Key == "life") LifeSteal += pair.Value;
+                        else ManaLeech += pair.Value;
                     }
             }
         }
@@ -911,27 +885,28 @@ namespace wServer.realm.entities
                     }
                 foreach (var pair in item.Steal) {
                     if (pair.Key != "") {
-                        if (pair.Key == "life") StealAmount[0] -= pair.Value;
-                        else StealAmount[1] -= pair.Value;
+                        if (pair.Key == "life") LifeSteal -= pair.Value;
+                        else ManaLeech -= pair.Value;
                     }
                 }
             }
         }
 
         public override void Tick(RealmTime time) {
-            if (!KeepAlive(time)) //todo: simplify this later on
+            if (!KeepAlive(time))
                 return;
 
             var tickCount = time.TickCount;
 
-            if (tickCount % 3 == 0)
-            {
-                HandleBastille(time);
-            }
-
-            if (tickCount % 3 == 0)
-            {
-                HandleUltraBastille(time);
+            if (tickCount % 3 == 0) {
+                switch (Owner.Name) {
+                    case "Ultra Summoning Point":
+                        HandleBastille(time, "Ultra Summoning Point");
+                        break;
+                    case "Summoning Point":
+                        HandleBastille(time, string.Empty); //no reason to pass a valid one here
+                        break;
+                }
             }
 
             if (tickCount % 20 == 0) {
@@ -942,9 +917,6 @@ namespace wServer.realm.entities
             if (!HasConditionEffect(ConditionEffects.Paused)) {
                 if (tickCount % 300 == 0)
                     FameCounter.Tick(time);
-                // TODO, server side ground damage
-                //if (HandleGround(time))
-                //    return; // death resulted
             }
 
             base.Tick(time);
@@ -952,8 +924,8 @@ namespace wServer.realm.entities
             SendUpdate(time);
             SendNewTick(time);
             HandleEffects(time);
-            HandleRegen(time); //moved here so people don't get 'slow' refills
-                               //todo: perhaps check if hp/mp is at max (and subsequientally remove it from the check)
+            HandleRegen(time);
+
             if (HP <= 0) Death("Unknown", rekt: true);
         }
 
@@ -1038,7 +1010,7 @@ namespace wServer.realm.entities
 
         public bool ascendSorCrystal(Player player)
         {
-            for (int i = 0; i < Inventory.Length; i++)
+            for (var i = 0; i < Inventory.Length; i++)
             {
                 if (Inventory[i] == null)
                     continue;
@@ -1055,40 +1027,21 @@ namespace wServer.realm.entities
             }
             return true;
         }
-        public bool startRaid1(Player player)
-        {
-            for (int i = 0; i < Inventory.Length; i++)
-            {
+
+        public bool TryUseItem(string itemName) {
+            for (var i = 0; i < Inventory.Length; i++) {
                 if (Inventory[i] == null)
                     continue;
 
-                if (Inventory[i].ObjectId == "The Zol Awakening (Token)")
-                {
+                if (Inventory[i].ObjectId == itemName) {
                     Inventory[i] = null;
                     SaveToCharacter();
-                    SendInfo("Your Zol Token has been used!");
-                    return false;
+                    return true;
                 };
             }
-            return true;
+            return false;
         }
-        public bool startRaid2(Player player)
-        {
-            for (int i = 0; i < Inventory.Length; i++)
-            {
-                if (Inventory[i] == null)
-                    continue;
 
-                if (Inventory[i].ObjectId == "Calling of the Titan (Token)")
-                {
-                    Inventory[i] = null;
-                    SaveToCharacter();
-                    SendInfo("Your Titan Token has been used!");
-                    return false;
-                };
-            }
-            return true;
-        }
         public void Teleport(RealmTime time, int objId, bool ignoreRestrictions = false)
         {
             var obj = Owner.GetEntity(objId);
@@ -1144,12 +1097,10 @@ namespace wServer.realm.entities
 
         public bool IsInvulnerable()
         {
-            if (HasConditionEffect(ConditionEffects.Paused) ||
-                HasConditionEffect(ConditionEffects.Stasis) ||
-                HasConditionEffect(ConditionEffects.Invincible) ||
-                HasConditionEffect(ConditionEffects.Invulnerable))
-                return true;
-            return false;
+            return HasConditionEffect(ConditionEffects.Paused) ||
+                   HasConditionEffect(ConditionEffects.Stasis) ||
+                   HasConditionEffect(ConditionEffects.Invincible) ||
+                   HasConditionEffect(ConditionEffects.Invulnerable);
         }
 
         private int RestorationHeal() {
@@ -1192,9 +1143,9 @@ namespace wServer.realm.entities
             {
                 Owner.BroadcastPacketNearby(new Damage()
                 {
-                    TargetId = this.Id,
+                    TargetId = Id,
                     Effects = HasConditionEffect(ConditionEffects.Invincible) ? 0 : projectile.ConditionEffects,
-                    DamageAmount = (ushort)dmgAmount,
+                    DamageAmount = dmgAmount,
                     Kill = HP <= 0,
                     BulletId = projectile.ProjectileId,
                     ObjectId = projectile.ProjectileOwner.Self.Id
@@ -1242,9 +1193,9 @@ namespace wServer.realm.entities
         public void Unbox(int type)
         {
             var acc = Client.Account;
-            Random rand1 = new Random();
-            ushort[] items = new ushort[50];
-            for (int x = 0; x < 50; x++)
+            var rand1 = new Random();
+            var items = new ushort[50];
+            for (var x = 0; x < 50; x++)
             {
                 var result = GetUnboxResult(type, rand1);
                 items[x] = result.Item1.ObjectType;
@@ -1325,7 +1276,7 @@ namespace wServer.realm.entities
                 obj.Move(X, Y);
                 obj.Name = Name;
 
-                for (int i = 0; i < 4; i++)
+                for (var i = 0; i < 4; i++)
                     obj.Inventory[i] = this.Inventory[i];
                 Owner.EnterWorld(obj);
             }
@@ -1467,7 +1418,7 @@ namespace wServer.realm.entities
         bool _dead;
         bool Resurrection()
         {
-            for (int i = 0; i < 4; i++)
+            for (var i = 0; i < 4; i++)
             {
                 var item = Inventory[i];
 
@@ -1486,8 +1437,8 @@ namespace wServer.realm.entities
 
         bool SecondChance()
         {
-            Random rnd = new Random();
-            int chance = rnd.Next(1, 5);
+            var rnd = new Random();
+            var chance = rnd.Next(1, 3);
             if (Mark == 5)
             {
                 if (chance == 1)
@@ -1501,6 +1452,7 @@ namespace wServer.realm.entities
             }
             return false;
         }
+
         bool isAlertArea()
         {
             var amount = (int)(Credits * 0.1);
@@ -1513,12 +1465,13 @@ namespace wServer.realm.entities
             }
             return false;
         }
+
         bool isAdminsArena()
         {
             if (Owner.Name == "Admins Arena")
             {
-                Random rnd = new Random();
-                int num = rnd.Next(1, 11);
+                var rnd = new Random();
+                var num = rnd.Next(1, 11);
                 switch (num)
                 {
                     case 1:
@@ -1736,7 +1689,7 @@ namespace wServer.realm.entities
                 || Owner.Name == "Keeping of Aldragine" 
                 || Owner.Name == "KeepingUltra")
             {
-                Entity en = Entity.Resolve(Owner.Manager, entity);
+                var en = Entity.Resolve(Owner.Manager, entity);
                 en.Move((int)X, (int)Y);
                 Owner.EnterWorld(en);
             }

@@ -40,7 +40,7 @@ namespace wServer.logic
             )
             .Init("Pentaract Tower Corpse",
                 new State(
-                    new DropPortalOnDeath("The Unspeakable Portal", 0.1),
+                    new DropPortalOnDeath("The Unspeakable Portal", 0.33),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new State("Waiting",
                         new TimedTransition(15000, "Spawn"),

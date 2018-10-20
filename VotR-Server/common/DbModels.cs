@@ -1423,7 +1423,7 @@ namespace common
 
             return task;
         }
-        
+
         private bool Item2List(PlayerShopItem shopItem, Task<bool> t, bool add)
         {
             var success = !t.IsCanceled && t.Result;
@@ -1454,6 +1454,14 @@ namespace common
             using (TimedLock.Lock(ListLock))
             {
                 return _entries.ToArray();
+            }
+        }
+
+        public void RemoveEntries(PlayerShopItem[] remove) {
+            using (TimedLock.Lock(ListLock))
+            {
+                for (var i = 0; i < remove.Length; i++)
+                    _entries.RemoveAll(x => x.ItemId == remove[i].ItemId);
             }
         }
     }

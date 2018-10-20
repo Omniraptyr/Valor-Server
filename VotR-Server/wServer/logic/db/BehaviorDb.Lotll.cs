@@ -68,7 +68,6 @@ namespace wServer.logic
                         new TimedTransition(5250, "dead")
                         ),
                     new State("dead",
-                        new DropPortalOnDeath("Ice Cave Portal", 35),
                         new Shoot(8.4, count: 6, shootAngle: 60, projectileIndex: 1),
                         new Suicide()
                         )
@@ -79,7 +78,7 @@ namespace wServer.logic
                 new MostDamagers(3,
                     LootTemplates.Sor3Perc()
                     ),
-                new Threshold(0.05,
+                new Threshold(0.01,
                     new ItemLoot("Shield of Ogmur", 0.002),
                     new TierLoot(8, ItemType.Weapon, 0.3),
                     new TierLoot(9, ItemType.Weapon, 0.275),

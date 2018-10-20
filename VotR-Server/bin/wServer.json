@@ -1,6 +1,6 @@
 {
   "dbInfo": {
-    "host": "127.0.0.1", //144.217.80.74
+    "host": "144.217.80.74", //144.217.80.74
     "port": "1985", //1985 - 6379
     "auth": "2NSVsRREv3FYXPGm", //2NSVsRREv3FYXPGm - none
     "index": "0"
@@ -19,10 +19,10 @@
   "serverSettings": {
     "logFolder": "./logs",
     "resourceFolder": "./resources",
-    "version": "75.A5",
+    "version": "77.33",
     "tps": "5",
     "mode": "Single",
-    "key": "BA15DE",
+    "key": "AB51ED",
     "maxConnections": "300",
     "maxPlayers": "200",
     "maxPlayersWithPriority": "200",

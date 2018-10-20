@@ -11,7 +11,7 @@ namespace wServer.logic
             .Init("Dragon Head",
                 new State(
                     new Reproduce("Rock Dragon Bat", 5, 5, coolDown: 10000),
-                    new DropPortalOnDeath("Lair of Draconis Portal", 75),
+                    new DropPortalOnDeath("Lair of Draconis Portal"),
                     new State("default",
                         new PlayerWithinTransition(10, "spawnbody")
                         ),

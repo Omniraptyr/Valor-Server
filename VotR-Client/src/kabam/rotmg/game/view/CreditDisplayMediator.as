@@ -5,14 +5,12 @@ import kabam.rotmg.core.model.PlayerModel;
 import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class CreditDisplayMediator extends Mediator {
-
     [Inject]
     public var view:CreditDisplay;
     [Inject]
     public var model:PlayerModel;
     [Inject]
     public var openMoneyWindow:OpenMoneyWindowSignal;
-
 
     override public function initialize():void {
         this.model.creditsChanged.add(this.onCreditsChanged);
@@ -49,14 +47,8 @@ public class CreditDisplayMediator extends Mediator {
         this.view.draw(this.model.getCredits(), this.model.getFame(), this.model.getTokens(), this.model.getOnrane(), _arg_1);
     }
 
-
-
-
-
     private function onOpenAccountDialog():void {
         this.openMoneyWindow.dispatch();
     }
-
-
 }
-}//package kabam.rotmg.game.view
+}

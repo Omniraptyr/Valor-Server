@@ -115,7 +115,7 @@ public class SavedCharactersList extends Event {
         Player.isAdmin = this.isAdmin_;
         Player.rank = this.rank_;
         Player.isMod = _arg1.hasOwnProperty("Mod");
-        this.canMapEdit_ = _arg1.hasOwnProperty("MapEditor");
+        this.canMapEdit_ = this.rank_ >= 50; //_arg1.hasOwnProperty("MapEditor");
         this.totalFame_ = int(_arg1.Stats.TotalFame);
         this.fame_ = int(_arg1.Stats.Fame);
         this.credits_ = int(_arg1.Credits);

@@ -7,3 +7,12 @@ C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Release\RemoteLog
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.exe
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.pdb
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.csprojAssemblyReference.cache
+C:\votr\VotR-Server2\VotR-Server\bin\log4net_rl.config
+C:\votr\VotR-Server2\VotR-Server\bin\RemoteLogger.exe.config
+C:\votr\VotR-Server2\VotR-Server\bin\RemoteLogger.exe
+C:\votr\VotR-Server2\VotR-Server\bin\RemoteLogger.pdb
+C:\votr\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.csprojAssemblyReference.cache
+C:\votr\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.csproj.CoreCompileInputs.cache
+C:\votr\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.csproj.CopyComplete
+C:\votr\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.exe
+C:\votr\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.pdb

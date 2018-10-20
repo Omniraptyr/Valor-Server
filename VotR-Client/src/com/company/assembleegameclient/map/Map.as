@@ -197,14 +197,13 @@ public class Map extends AbstractMap {
         party_.update(_arg1, _arg2);
     }
 
-    override public function pSTopW(_arg1:Number, _arg2:Number):Point {
-        var _local3:Square;
-        for each (_local3 in this.visibleSquares_) {
-            if (((!((_local3.faces_.length == 0))) && (_local3.faces_[0].face_.contains(_arg1, _arg2)))) {
-                return (new Point(_local3.center_.x, _local3.center_.y));
+    override public function pSTopW(param1:Number, param2:Number) : Point {
+        for each (var _loc3_:Square in this.visibleSquares_) {
+            if (_loc3_.faces_.length != 0 && _loc3_.faces_[0].face_.contains(param1, param2)) {
+                return new Point(_loc3_.center_.x, _loc3_.center_.y);
             }
         }
-        return (null);
+        return null;
     }
 
     override public function setGroundTile(_arg1:int, _arg2:int, _arg3:uint):void {

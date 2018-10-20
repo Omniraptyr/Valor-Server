@@ -1,11 +1,14 @@
 ﻿using System.Linq;
 using common.resources;
+using log4net;
 using wServer.realm.entities;
 
 namespace wServer.realm
 {
     class BoostStatManager
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(BoostStatManager));
+
         private readonly StatsManager _parent;
         private readonly Player _player;
         private readonly SV<int>[] _boostSV;
@@ -49,12 +52,9 @@ namespace wServer.realm
 
                 foreach (var b in _player.Inventory[i].StatsBoost)
                     IncrementBoost((StatsType)b.Key, b.Value);
-
-                foreach (var b in _player.Inventory[i].StatsBoostPerc)
-                    if (b.Value != 0) {
-                        var index = StatsManager.GetStatIndex((StatsType)b.Key);
-                        IncrementBoost((StatsType)b.Key, (_parent.Base[index] + _boost[index]) * (b.Value / 100));
-                    }
+                
+                foreach (var b in _player.Inventory[i].StatsBoostPerc)                    
+                    IncrementBoost((StatsType)b.Key, b.Value, true);
             }
         }
 
@@ -156,12 +156,14 @@ namespace wServer.realm
             }
         }
 
-        private void IncrementBoost(StatsType stat, int amount)
-        {
+        private void IncrementBoost(StatsType stat, int amount, bool isPerc = false) {
             var i = StatsManager.GetStatIndex(stat);
-            if (_parent.Base[i] + amount < 1)
-            {
-                amount = (i == 0) ? -_parent.Base[i] + 2 : -_parent.Base[i];
+            if (isPerc) {
+                amount = (int)((_parent.Base[i] + _boost[i]) * (amount / 100f));
+            }
+
+            if (_parent.Base[i] + amount < 1) {
+                amount = i == 0 ? -_parent.Base[i] + 1 : -_parent.Base[i];
             }
             _boost[i] += amount;
         }

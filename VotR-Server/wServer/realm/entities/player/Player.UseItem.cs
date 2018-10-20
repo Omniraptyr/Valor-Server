@@ -116,9 +116,6 @@ namespace wServer.realm.entities
         private readonly object _useLock = new object();
         public void UseItem(RealmTime time, int objId, int slot, Position pos)
         {
-            if (LastAltAttack > time.TotalElapsedMs)
-                return;
-
             using (TimedLock.Lock(_useLock))
             {
                 var entity = Owner.GetEntity(objId);
@@ -167,9 +164,11 @@ namespace wServer.realm.entities
                 if (item == null)
                     return;
 
-                LastAltAttack = 550;
-                if (item.Cooldown != 0)
-                    LastAltAttack = (long)item.Cooldown;
+                if (item.InvUse && LastInvUse > time.TotalElapsedMs)
+                    return;
+
+                if (!item.Consumable && LastAltAttack > time.TotalElapsedMs)
+                    return;
 
                 // make sure not trading and trying to consume item
                 if (tradeTarget != null && item.Consumable)
@@ -247,9 +246,16 @@ namespace wServer.realm.entities
                 }
 
                 if (item.Consumable || item.SlotType == slotType || item.InvUse)
+                {
+                    var delay = time.TotalElapsedMs + (item.Cooldown != 0
+                                ? (long)item.Cooldown * 1000
+                                : 550);
+
+                    if (item.InvUse) LastInvUse = delay;
+                    else if (!item.Consumable) LastAltAttack = delay;
+
                     Activate(time, item, pos);
-                else
-                    Client.SendPacket(new InvResult { Result = 1 });
+                } else Client.SendPacket(new InvResult { Result = 1 });
             }
         }
 
@@ -270,7 +276,7 @@ namespace wServer.realm.entities
                     HP -= item.MpCost * 2;
                     break;
                 case "Moonlight" when MP >= Stats[1]:
-                    ProtectionDamage = 0;
+                    Protection = ProtectionMax;
                     break;
                 case "Iok's Relief" when Surge >= 5:
                     ApplyConditionEffect(NegativeEffs);
@@ -443,14 +449,8 @@ namespace wServer.realm.entities
                     case ActivateEffects.OnraneActivate:
                         AEOnraneActivate(time, item, target, eff);
                         break;
-                    case ActivateEffects.RandomOnrane:
-                        AERandomOnrane(time, item, target, eff);
-                        break;
-                    case ActivateEffects.URandomOnrane:
-                        AEURandomOnrane(time, item, target, eff);
-                        break;
-                    case ActivateEffects.RandomGold:
-                        AERandomGold(time, item, target, eff);
+                    case ActivateEffects.RandomCurrency:
+                        AERandomCurrency(item, eff);
                         break;
                     case ActivateEffects.SamuraiAbility:
                         AESamuraiAbility(time, item, target, eff);
@@ -467,8 +467,8 @@ namespace wServer.realm.entities
                     case ActivateEffects.Magic2:
                         AEMagic2(time, item, target, eff);
                         break;
-                    case ActivateEffects.DiceActivate:
-                        AEDice(time, item, target, eff);
+                    case ActivateEffects.Dice:
+                        AEDice(item, eff);
                         break;
                     case ActivateEffects.BigStasisBlast:
                         BigStasisBlast(time, item, target, eff);
@@ -479,14 +479,8 @@ namespace wServer.realm.entities
                     case ActivateEffects.SorConstruct:
                         AESorConstruct(time, item, target, eff);
                         break;
-                    case ActivateEffects.ActivateFragment:
-                        AEActivateFragment(time, item, target, eff);
-                        break;
                     case ActivateEffects.BurstInferno:
                         AEBurstInferno(time, item, target, eff);
-                        break;
-                    case ActivateEffects.DDiceActivate:
-                        AEDDiceActivate(time, item, target, eff);
                         break;
                     case ActivateEffects.AbbyConstruct:
                         AEAbbyConstruct(time, item, target, eff);
@@ -609,8 +603,6 @@ namespace wServer.realm.entities
                         break;
                     case ActivateEffects.SorMachine:
                         break;
-                    case ActivateEffects.RandomKantos:
-                        break;
                     case ActivateEffects.PoZPage:
                         break;
                     case ActivateEffects.FameActivate:
@@ -644,25 +636,13 @@ namespace wServer.realm.entities
                     case ActivateEffects.CreateGauntlet:
                         break;
                     case ActivateEffects.TalismanAbility:
-                        AETalismanAbility(time, item, target, eff);
+                        AETalismanAbility(eff);
                         break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
                 }
             }
-        }
-
-        private void AEDDiceActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
-        {
-            ConditionEffectIndex[] gamblerEffs = {
-                ConditionEffectIndex.Armored,
-                ConditionEffectIndex.Invulnerable,
-                ConditionEffectIndex.Sick
-            };
-            var roll = new Random().Next(0, 3);
-            if (roll != 3)
-                ApplyConditionEffect(gamblerEffs[roll], eff.DurationMS);
         }
 
         private void AEUnlockEmote(RealmTime time, Item item, ActivateEffect eff)
@@ -1168,19 +1148,17 @@ namespace wServer.realm.entities
             ApplyConditionEffect(ConditionEffectIndex.Empowered, eff.DurationMS);
         }
 
-        private void AETalismanAbility(RealmTime time, Item item, Position target, ActivateEffect eff)
-        {
-            if(Owner.Name == "Nexus")
-            {
+        private void AETalismanAbility(ActivateEffect eff) {
+            if (Owner.Name == "Nexus")
                 return;
-            }
-            Entity en = Entity.Resolve(Owner.Manager, eff.ObjType);
-            en.Move(X, Y);
-            Owner.EnterWorld(en);
-            en.SetPlayerOwner(this);
-            Owner.Timers.Add(new WorldTimer(eff.DurationMS, (w, t) =>
-            {
-                w.LeaveWorld(en);
+
+            var entity = Resolve(Owner.Manager, eff.ObjType);
+            entity.Move(X, Y);
+            Owner.EnterWorld(entity);
+
+            entity.SetPlayerOwner(this);
+            Owner.Timers.Add(new WorldTimer(eff.DurationMS, (w, t) => {
+                w.LeaveWorld(entity);
             }));
         }
 
@@ -1245,17 +1223,7 @@ namespace wServer.realm.entities
             Client.Manager.Database.UpdateCredit(acc, eff.Amount);
             Credits += eff.Amount;
             this.ForceUpdate(Credits);
-
         }
-
-        /* private void AEFameActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
-         {
-             var acc = Client.Account;
-             Client.Manager.Database.UpdateFame(acc, eff.Amount);
-             Fame += eff.Amount;
-             this.ForceUpdate(Fame);
-
-         }*/
 
         private void AEOnraneActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
@@ -1263,96 +1231,41 @@ namespace wServer.realm.entities
             Client.Manager.Database.UpdateOnrane(acc, eff.Amount);
             Onrane += eff.Amount;
             this.ForceUpdate(Onrane);
-
         }
 
-
-        private void AEActivateFragment(RealmTime time, Item item, Position target, ActivateEffect eff)
+        private void AERandomCurrency(Item item, ActivateEffect eff)
         {
-            var acc = Client.Account;
-            var rnd = new Random();
-            var amount = 0;
-            var Chance = Random.Next(0, 6);
-            switch (Chance)
+            if (eff.RandVals.Length <= 0)
+                Log.Error("ActivateEffect 'RandomCurrency' was attempted to be called with no random values set. " +
+                          "Item: '" + item.ObjectId + "'");
+
+            var values = Array.ConvertAll(eff.RandVals, int.Parse);
+            var value = values[new Random().Next(values.Length)];
+            switch (eff.CurrencyType.ToLower())
             {
-                case 0:
-                    amount = 5;
-                    SendInfo("You received " + amount + " Sor Fragments.");
+                case "sor fragments":
+                    Client.Manager.Database.UpdateSorStorage(Client.Account, value); SorStorage += value;
+                    this.ForceUpdate(SorStorage);
                     break;
-
-                case 1:
-                    amount = 5;
-                    SendInfo("You received " + amount + " Sor Fragments.");
+                case "kantos":
+                    Client.Manager.Database.UpdateKantos(Client.Account, value); Kantos += value;
+                    this.ForceUpdate(Kantos);
                     break;
-
-                case 2:
-                    amount = 5;
-                    SendInfo("You received " + amount + " Sor Fragments.");
+                case "onrane":
+                    Client.Manager.Database.UpdateOnrane(Client.Account, value); Onrane += value;
+                    this.ForceUpdate(Onrane);
                     break;
-
-                case 3:
-                    amount = 10;
-                    SendInfo("You received " + amount + " Sor Fragments.");
+                case "gold":
+                    Client.Manager.Database.UpdateCredit(Client.Account, value); Credits += value;
+                    this.ForceUpdate(Credits);
                     break;
-
-                case 4:
-                    amount = 10;
-                    SendInfo("You received " + amount + " Sor Fragments.");
+                case "fame":
+                    Client.Manager.Database.UpdateFame(Client.Account, value); Fame += value;
+                    this.ForceUpdate(Fame);
                     break;
-
-                case 5:
-                    amount = 15;
-                    SendInfo("You received " + amount + " Sor Fragments.");
-                    break;
+                default: return;
             }
-            Client.Manager.Database.UpdateSorStorage(acc, amount);
-            SorStorage += amount;
-            this.ForceUpdate(SorStorage);
-            SendInfo("You currently have " + SorStorage + " sor fragments in storage.");
-        }
-
-        private void AERandomOnrane(RealmTime time, Item item, Position target, ActivateEffect eff)
-        {
-            var acc = Client.Account;
-            var OnraneChance = Random.Next(0, 5);
-            switch (OnraneChance)
-            {
-                case 0:
-                    Client.Manager.Database.UpdateOnrane(acc, 2);
-                    Onrane += 2;
-                    this.ForceUpdate(Onrane);
-                    SendInfo("You have obtained 2 Onrane.");
-                    break;
-
-                case 1:
-                    Client.Manager.Database.UpdateOnrane(acc, 4);
-                    Onrane += 4;
-                    this.ForceUpdate(Onrane);
-                    SendInfo("You have obtained 4 Onrane.");
-                    break;
-
-                case 2:
-                    Client.Manager.Database.UpdateOnrane(acc, 6);
-                    Onrane += 6;
-                    this.ForceUpdate(Onrane);
-                    SendInfo("You have obtained 6 Onrane.");
-                    break;
-
-                case 3:
-                    Client.Manager.Database.UpdateOnrane(acc, 8);
-                    Onrane += 8;
-                    this.ForceUpdate(Onrane);
-                    SendInfo("You have obtained 8 Onrane.");
-                    break;
-
-                case 4:
-                    Client.Manager.Database.UpdateOnrane(acc, 10);
-                    Onrane += 10;
-                    this.ForceUpdate(Onrane);
-                    SendInfo("You have obtained 10 Onrane.");
-                    break;
-            }
-
+            SendInfo($"You have obtained {value} {eff.CurrencyType}.");
         }
 
         private void AEInsigniaActivate(RealmTime time, Item item, Position target, ActivateEffect eff)
@@ -1363,9 +1276,9 @@ namespace wServer.realm.entities
                 return;
             }
 
-            if (Manager._isChallengeLaunched == true)
+            if (Manager.ChallengeRecentlyLaunched)
             {
-                SendError("A challenge has already been launched");
+                SendError("A challenge has already been launched recently.");
                 return;
             }
 
@@ -1383,7 +1296,7 @@ namespace wServer.realm.entities
                 Owner.BroadcastPacket(packet, null);
                 //open
                 var gameData = Manager.Resources.GameData;
-                Manager._isChallengeLaunched = true;
+                Manager.ChallengeRecentlyLaunched = true;
                 ushort objType;
                 if (!gameData.IdToObjectType.TryGetValue("Chamber of Malgor Portal", out objType) ||
                     !gameData.Portals.ContainsKey(objType))
@@ -1393,16 +1306,16 @@ namespace wServer.realm.entities
                 (entity as Portal).PlayerOpened = true;
                 (entity as Portal).Opener = Name;
 
-                entity.Move(145, 107);
+                entity.Move(156.5f, 114.5f);
                 Owner.EnterWorld(entity);
                 var timeoutTime = gameData.Portals[objType].Timeout;
                 Owner.Timers.Add(new WorldTimer(timeoutTime * 1000, (world, t) => world.LeaveWorld(entity)));
                 Owner.Timers.Add(new WorldTimer(60000, (w, t) =>
                 {
-                    Manager._isChallengeLaunched = false;
+                    Manager.ChallengeRecentlyLaunched = false;
                 }));
                 Owner.ChallengeCount = 0;
-                Manager.Chat.Announce("Your acts of valor have angered Sidon! A public challenge has unlocked on " + Manager.Config.serverInfo.name + "!");
+                Manager.Chat.Announce("A Public Challenge has opened in the Nexus." + Manager.Config.serverInfo.name + "!");
             }
             else
             {
@@ -1413,7 +1326,7 @@ namespace wServer.realm.entities
                     NumStars = -1,
                     TextColor = 0x8B0000,
                     Name = "Sidon, the Dark Elder",
-                    Txt = Name + ", becareful what you wish for..."
+                    Txt = Name + ", be careful what you wish for..."
                 };
                 Owner.BroadcastPacket(packet, null);
 
@@ -1428,82 +1341,6 @@ namespace wServer.realm.entities
                 Owner.BroadcastPacket(countPacket, null);
             }
         }
-
-        private void AERandomGold(RealmTime time, Item item, Position target, ActivateEffect eff)
-        {
-            var acc = Client.Account;
-            var GoldChance = Random.Next(0, 3);
-            switch (GoldChance)
-            {
-                case 0:
-                    Client.Manager.Database.UpdateCredit(acc, 250);
-                    Credits += 250;
-                    this.ForceUpdate(Credits);
-                    SendInfo("You have obtained 250 Gold.");
-                    break;
-
-                case 1:
-                    Client.Manager.Database.UpdateCredit(acc, 500);
-                    Credits += 500;
-                    this.ForceUpdate(Credits);
-                    SendInfo("You have obtained 500 Gold.");
-                    break;
-
-                case 2:
-                    Client.Manager.Database.UpdateCredit(acc, 750);
-                    Credits += 750;
-                    this.ForceUpdate(Credits);
-                    SendInfo("You have obtained 750 Gold.");
-                    break;
-            }
-
-        }
-        private void AEURandomOnrane(RealmTime time, Item item, Position target, ActivateEffect eff)
-        {
-            var acc = Client.Account;
-            var OnraneChance = Random.Next(0, 5);
-            switch (OnraneChance)
-            {
-                case 0:
-                    Client.Manager.Database.UpdateOnrane(acc, 12);
-                    Onrane += 12;
-                    this.ForceUpdate(Onrane);
-                    SendInfo("You have obtained 12 Onrane.");
-                    break;
-
-                case 1:
-                    Client.Manager.Database.UpdateOnrane(acc, 14);
-                    Onrane += 14;
-                    this.ForceUpdate(Onrane);
-                    SendInfo("You have obtained 14 Onrane.");
-                    break;
-
-                case 2:
-                    Client.Manager.Database.UpdateOnrane(acc, 16);
-                    Onrane += 16;
-                    this.ForceUpdate(Onrane);
-                    SendInfo("You have obtained 16 Onrane.");
-                    break;
-
-                case 3:
-                    Client.Manager.Database.UpdateOnrane(acc, 18);
-                    Onrane += 18;
-                    this.ForceUpdate(Onrane);
-                    SendInfo("You have obtained 18 Onrane.");
-                    break;
-
-                case 4:
-                    Client.Manager.Database.UpdateOnrane(acc, 20);
-                    Onrane += 20;
-                    this.ForceUpdate(Onrane);
-                    SendInfo("You have obtained 20 Onrane.");
-                    break;
-            }
-
-
-        }
-
-
 
         private void AECreate(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
@@ -1551,16 +1388,15 @@ namespace wServer.realm.entities
 
         private void AEPowerStat(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
-            if (AscensionEnabled)
-            {
+            if (AscensionEnabled) {
                 var idx = StatsManager.GetStatIndex((StatsType)eff.Stats);
                 var statInfo = Manager.Resources.GameData.Classes[ObjectType].Stats;
+                var maxVal = statInfo[idx].MaxValue + (idx < 2 ? 50 : 10);
 
                 Stats.Base[idx] += eff.Amount;
-                if (Stats.Base[idx] > statInfo[idx].MaxValue + (idx < 2 ? 50 : 10))
-                    Stats.Base[idx] = statInfo[idx].MaxValue + (idx < 2 ? 50 : 10);
-            }
-            else SendInfo("A character that isn't ascended can't use vials.");
+                if (Stats.Base[idx] > maxVal)
+                    Stats.Base[idx] = maxVal;
+            } else SendInfo("A character that isn't ascended can't use vials.");
         }
 
         private void AEFixedStat(RealmTime time, Item item, Position target, ActivateEffect eff)
@@ -2140,16 +1976,17 @@ namespace wServer.realm.entities
             BroadcastSync(pkts, p => this.DistSqr(p) < RadiusSqr);
         }
 
-        private void AEDice(RealmTime time, Item item, Position target, ActivateEffect eff)
+        private void AEDice(Item item, ActivateEffect eff)
         {
-            ConditionEffectIndex[] gamblerEffs = {
-                ConditionEffectIndex.Sick,
-                ConditionEffectIndex.Berserk,
-                ConditionEffectIndex.Bravery
-            };
-            var roll = new Random().Next(0, 3);
-            if (roll != 3)
-                ApplyConditionEffect(gamblerEffs[roll], eff.DurationMS);
+            if (eff.RandVals.Length <= 0) 
+                Log.Error("Dice activation attempted with no effects set. Item: '" + item.ObjectId + "'");
+
+            ConditionEffectIndex[] effs =
+                eff.RandVals.Select(ceStr =>
+                    (ConditionEffectIndex) Enum.Parse(typeof(ConditionEffectIndex), ceStr.Replace(" ", ""), true))
+                    .ToArray();
+
+            ApplyConditionEffect(effs[new Random().Next(effs.Length)], eff.DurationMS);
         }
 
         private void AEUnlockSkin(RealmTime time, Item item, Position target, ActivateEffect eff)
@@ -2544,7 +2381,7 @@ namespace wServer.realm.entities
 
             var maxHp = player.Stats[0];
             var newHp = Math.Min(maxHp, player.HP + amount);
-            if (newHp == player.HP)
+            if (newHp == player.HP || amount <= 0)
                 return;
 
             pkts.Add(new ShowEffect

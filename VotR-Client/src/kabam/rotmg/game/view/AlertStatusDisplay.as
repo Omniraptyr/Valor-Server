@@ -25,19 +25,20 @@ public class AlertStatusDisplay extends Sprite implements TooltipAble {
     public var hoverTooltipDelegate:HoverTooltipDelegate;
     private var bitmap:Bitmap;
     private var background:Sprite;
-    private var giftOpenProcessedTexture:BitmapData;
+    private var bitmapData:BitmapData;
     private var text:TextFieldDisplayConcrete;
     private var tooltip:TextToolTip;
-    private var alertNum:int = -1;
+    private var alertNum:int = 0;
 
     public function AlertStatusDisplay() {
         this.hoverTooltipDelegate = new HoverTooltipDelegate();
         this.tooltip = new TextToolTip(0x363636, 0x9B9B9B, null, ALERT_TEXT, 200);
         super();
         mouseChildren = false;
-        this.giftOpenProcessedTexture = TextureRedrawer.redraw(AssetLibrary.getImageFromSet(IMAGE_NAME, IMAGE_ID), 40, true, 0);
+
+        this.bitmapData = TextureRedrawer.redraw(AssetLibrary.getImageFromSet(IMAGE_NAME, IMAGE_ID), 40, true, 0);
         this.background = UIUtils.makeStaticHUDBackground();
-        this.bitmap = new Bitmap(this.giftOpenProcessedTexture);
+        this.bitmap = new Bitmap(this.bitmapData);
         this.bitmap.x = -5;
         this.bitmap.y = -8;
         this.text = new TextFieldDisplayConcrete().setSize(16).setColor(0xFFFFFF);
@@ -47,17 +48,16 @@ public class AlertStatusDisplay extends Sprite implements TooltipAble {
         this.hoverTooltipDelegate.setDisplayObject(this);
         this.hoverTooltipDelegate.tooltip = this.tooltip;
         this.drawAsOpen();
+
         var bounds:Rectangle = this.bitmap.getBounds(this);
-        var offset:int = 10;
-        this.text.x = (bounds.right - offset);
-        this.text.y = (bounds.bottom - offset);
+        this.text.x = bounds.right - 10;
+        this.text.y = bounds.bottom - 12;
     }
 
     internal function updateAlertNum(alertNum:int) : void {
         if (this.alertNum == alertNum) return;
 
         this.tooltip.setText(new StaticStringBuilder(ALERT_TEXT + "\n\nCurrent amount of alerts: " + (this.alertNum = alertNum)));
-        //this.hoverTooltipDelegate.tooltip = this.tooltip;
     }
 
     public function setShowToolTipSignal(showTooltip:ShowTooltipSignal):void {

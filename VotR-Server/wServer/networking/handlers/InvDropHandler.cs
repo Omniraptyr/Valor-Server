@@ -15,15 +15,11 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, InvDrop packet)
         {
-            //client.Manager.Logic.AddPendingAction(t => Handle(client.Player, packet.SlotObject.SlotId));
-            Handle(client.Player, packet.SlotObject);
+            client.Manager.Logic.AddPendingAction(t => Handle(client.Player, packet.SlotObject));
         }
 
         private static void Handle(Player player, ObjectSlot slot)
         {
-            if (player.Owner.Name == "Nexus")
-                return;
-
             if (player.Owner == null || player.tradeTarget != null)
                 return;
 

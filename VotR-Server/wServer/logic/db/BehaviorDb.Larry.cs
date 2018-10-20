@@ -98,14 +98,14 @@ namespace wServer.logic
                     ),
                 new Threshold(0.025,
                     new ItemLoot("Larry Gun", 0.00005),
-                    new ItemLoot("Sword of Orange Fever", 0.6),
-                    new ItemLoot("Papercutter", 0.6),
-                    new ItemLoot("No Sunflowers", 0.6),
-                    new ItemLoot("Smileyman's Shank", 0.6),
-                    new ItemLoot("Thisswordugly", 0.6),
-                    new ItemLoot("Tree Stick Red Wand", 0.6),
-                    new ItemLoot("Master Eon", 0.005),
-                    new ItemLoot("Gold Cache", 0.8)
+                    new ItemLoot("Sword of Orange Fever", 0.1),
+                    new ItemLoot("Papercutter", 0.1),
+                    new ItemLoot("No Sunflowers", 0.1),
+                    new ItemLoot("Smileyman's Shank", 0.1),
+                    new ItemLoot("Thisswordugly", 0.1),
+                    new ItemLoot("Tree Stick Red Wand", 0.1),
+                    new ItemLoot("Master Eon", 0.003),
+                    new ItemLoot("Gold Cache", 0.1)
                 )
           )
         ;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Xml.Linq;
+using log4net;
 
 namespace common.resources
 {
@@ -366,7 +367,6 @@ namespace common.resources
         DareFistBox,
         VorvBox,
         GPBox,
-        RandomGold,
         EffectRandom,
         MayhemBox,
         SunshineBox,
@@ -375,8 +375,7 @@ namespace common.resources
         TreasureActivate,
         LootboxActivate,
         PetStoneActivate,
-        DiceActivate,
-        DDiceActivate,
+        Dice,
         PLootboxActivate,
         MarksActivate,
         AscensionActivate,
@@ -385,12 +384,9 @@ namespace common.resources
         SorMachine,
         SiphonAbility,
         OnraneActivate,
-        RandomKantos,
-        RandomOnrane,
+        RandomCurrency,
         PoZPage,
-        URandomOnrane,
         FameActivate,
-        ActivateFragment,
         AsiHeal,
         AsiimovBox,
         NewCharSlot,
@@ -416,7 +412,6 @@ namespace common.resources
         JacketAbility,
         SorActivate,
         TalismanAbility
-
     }
 
     public class ActivateEffect
@@ -455,6 +450,8 @@ namespace common.resources
         public string Center { get; }
         public int VisualEffect { get; }
         public bool Players { get; }
+        public string[] RandVals { get; }
+        public string CurrencyType { get; }
         public ushort ObjType { get; }
 
         public ActivateEffect(XElement elem)
@@ -567,6 +564,12 @@ namespace common.resources
             if (elem.Attribute("players") != null)
                 Players = elem.Attribute("players").Value.Equals("true");
 
+            if (elem.Attribute("randVals") != null)
+                RandVals = elem.Attribute("randVals").Value.Split(',');
+
+            if (elem.Attribute("currencyType") != null)
+                CurrencyType = elem.Attribute("currencyType").Value;
+
             if (elem.Attribute("objType") != null)
                 ObjType = ushort.Parse(elem.Attribute("objType").Value.Substring(2), NumberStyles.AllowHexSpecifier);
         }
@@ -607,6 +610,8 @@ namespace common.resources
     }
     public class Item
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(Item));
+
         public ushort ObjectType { get; }
         public string ObjectId { get; }
         public int SlotType { get; }
@@ -653,10 +658,10 @@ namespace common.resources
         public PRarity Rarity { get; }
 
         public KeyValuePair<int, int>[] StatsBoost { get; }
+        public KeyValuePair<int, int>[] StatsBoostPerc { get; }
         public ActivateEffect[] ActivateEffects { get; }
         public ProjectileDesc[] Projectiles { get; }
         public LegendaryPower[] Legend { get; }
-        public KeyValuePair<int, int>[] StatsBoostPerc { get; }
         public KeyValuePair<string, int>[] Steal { get; }
         public KeyValuePair<int, int>[] StatReq { get; }
         public KeyValuePair<string, int>[] EffectEquip { get; }
@@ -763,21 +768,19 @@ namespace common.resources
             Texture2 = (n = elem.Element("Tex2")) != null ? Convert.ToInt32(n.Value, 16) : 0;
 
             var stats = new List<KeyValuePair<int, int>>();
-            var percStats = new List<KeyValuePair<int, int>>();
-            StatsBoost = stats.ToArray();
-            StatsBoostPerc = percStats.ToArray();
+            var statsPerc = new List<KeyValuePair<int, int>>();
+
             foreach (var i in elem.Elements("ActivateOnEquip")) {
-                switch (i.Value) {
-                    case "IncrementStat":
-                        stats.Add(new KeyValuePair<int, int>(int.Parse(i.Attribute("stat").Value), int.Parse(i.Attribute("amount").Value)));
-                        StatsBoost = stats.ToArray();
-                        break;
-                    /*case "IncrStatPerc":
-                        percStats.Add(new KeyValuePair<int, int>(int.Parse(i.Attribute("stat").Value), int.Parse(i.Attribute("amount").Value)));
-                        StatsBoostPerc = percStats.ToArray();
-                        break;*/
-                }
+                var kvp = new KeyValuePair<int, int>(
+                    int.Parse(i.Attribute("stat").Value),
+                    int.Parse(i.Attribute("amount").Value));
+
+                if (i.Attribute("isPerc")?.Value == "true") statsPerc.Add(kvp);
+                else stats.Add(kvp);
             }
+
+            StatsBoost = stats.ToArray();
+            StatsBoostPerc = statsPerc.ToArray();
 
             ActivateEffects = elem.Elements("Activate").Select(i => new ActivateEffect(i)).ToArray();
 

@@ -19,11 +19,11 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, InvSwap packet)
         {
-            Handle(
+            client.Manager.Logic.AddPendingAction(t => Handle(
                 client.Player,
                 client.Player.Owner.GetEntity(packet.SlotObj1.ObjectId),
                 client.Player.Owner.GetEntity(packet.SlotObj2.ObjectId),
-                packet.SlotObj1.SlotId, packet.SlotObj2.SlotId);
+                packet.SlotObj1.SlotId, packet.SlotObj2.SlotId));
         }
         
         private void Handle(

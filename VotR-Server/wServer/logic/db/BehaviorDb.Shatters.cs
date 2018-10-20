@@ -11,6 +11,7 @@ using wServer.logic.transitions;
 //BEHAVIORS
 //MADE BY
 //MIKE (Qkm)
+//MOISTED ON BY PATPOT
 
 namespace wServer.logic
 {
@@ -72,8 +73,8 @@ namespace wServer.logic
                     ),
                     new State("Charge",
                         new TimedTransition(2000, "Follow"),
-                        new Charge(4, 5),
-                        new Shoot(5, 6, projectileIndex: 0, coolDown: 3000)
+                        new Charge(2.5, 6, coolDown: 2000),
+                        new Shoot(5, 16, projectileIndex: 0, coolDown: 2400, coolDownOffset: 400)
                         )
                     )
             )
@@ -148,6 +149,9 @@ namespace wServer.logic
                 new State("Hide",
                     new SetAltTexture(1),
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable)
+                    ),
+                new State("vulnerable",
+                    new ConditionalEffect(ConditionEffectIndex.Armored)
                     ),
                 new State("Despawn",
                     new Decay()
@@ -364,7 +368,6 @@ namespace wServer.logic
                         new State("Suicide",
                             new Shoot(35, projectileIndex: 0, count: 30),
                             new Order(1, "shtrs Chest Spawner 1", "Open"),
-                            new Order(46, "shtrs Spawn Bridge", "Open"),
                             new Suicide()
                     )
                 )
@@ -374,7 +377,7 @@ namespace wServer.logic
             .Init("shtrs Blobomb",
                 new State(
                     new State("active",
-                        new Follow(.7, range: 0),
+                        new Follow(.7,acquireRange: 40, range: 0),
                         new PlayerWithinTransition(2, "blink")
                     ),
                     new State("blink",
@@ -463,15 +466,17 @@ namespace wServer.logic
                         ),
                     new State("PreNewShit2",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new ReturnToSpawn(1),
                         new TimedTransition(3000, "NewShit2")
                         ),
                     new State("NewShit2",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new MoveTo(0, -6, 1),
+                        new MoveTo2(0, -6, 1),
                         new TimedTransition(3000, "Active2")
                         ),
                     new State("Active2",
                         new Taunt("THE POWER...IT CONSUMES ME!"),
+                        new Order(2, "shtrs MagiGenerators", "vulnerable"),
                         new Shoot(15, 20, projectileIndex: 2, coolDown: 100000000, coolDownOffset: 100),
                         new Shoot(15, 20, projectileIndex: 3, coolDown: 100000000, coolDownOffset: 200),
                         new Shoot(15, 20, projectileIndex: 4, coolDown: 100000000, coolDownOffset: 300),
@@ -482,11 +487,12 @@ namespace wServer.logic
                         ),
                     new State("NewShit3",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new MoveTo(4, 0, 1),
+                        new MoveTo2(4, 0, 1),
                         new TimedTransition(3000, "Active3")
                         ),
                     new State("Active3",
                         new Taunt("THE POWER...IT CONSUMES ME!"),
+                        new Order(2, "shtrs MagiGenerators", "vulnerable"),
                         new Shoot(15, 20, projectileIndex: 2, coolDown: 100000000, coolDownOffset: 100),
                         new Shoot(15, 20, projectileIndex: 3, coolDown: 100000000, coolDownOffset: 200),
                         new Shoot(15, 20, projectileIndex: 4, coolDown: 100000000, coolDownOffset: 300),
@@ -497,11 +503,12 @@ namespace wServer.logic
                         ),
                     new State("NewShit4",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new MoveTo(0, 13, 1),
+                        new MoveTo2(0, 13, 1),
                         new TimedTransition(3000, "Active4")
                             ),
                     new State("Active4",
                         new Taunt("THE POWER...IT CONSUMES ME!"),
+                        new Order(2, "shtrs MagiGenerators", "vulnerable"),
                         new Shoot(15, 20, projectileIndex: 2, coolDown: 100000000, coolDownOffset: 100),
                         new Shoot(15, 20, projectileIndex: 3, coolDown: 100000000, coolDownOffset: 200),
                         new Shoot(15, 20, projectileIndex: 4, coolDown: 100000000, coolDownOffset: 300),
@@ -512,11 +519,12 @@ namespace wServer.logic
                         ),
                     new State("NewShit5",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new MoveTo(-4, 0, 1),
+                        new MoveTo2(-4, 0, 1),
                         new TimedTransition(3000, "Active5")
                             ),
                     new State("Active5",
                         new Taunt("THE POWER...IT CONSUMES ME!"),
+                        new Order(2, "shtrs MagiGenerators", "vulnerable"),
                         new Shoot(15, 20, projectileIndex: 2, coolDown: 100000000, coolDownOffset: 100),
                         new Shoot(15, 20, projectileIndex: 3, coolDown: 100000000, coolDownOffset: 200),
                         new Shoot(15, 20, projectileIndex: 4, coolDown: 100000000, coolDownOffset: 300),
@@ -527,11 +535,12 @@ namespace wServer.logic
                         ),
                     new State("NewShit6",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new MoveTo(-4, 0, 1),
+                        new MoveTo2(-4, 0, 1),
                         new TimedTransition(3000, "Active6")
                             ),
                     new State("Active6",
                         new Taunt("THE POWER...IT CONSUMES ME!"),
+                        new Order(2, "shtrs MagiGenerators", "vulnerable"),
                         new Shoot(15, 20, projectileIndex: 2, coolDown: 100000000, coolDownOffset: 100),
                         new Shoot(15, 20, projectileIndex: 3, coolDown: 100000000, coolDownOffset: 200),
                         new Shoot(15, 20, projectileIndex: 4, coolDown: 100000000, coolDownOffset: 300),
@@ -542,11 +551,12 @@ namespace wServer.logic
                         ),
                     new State("NewShit7",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new MoveTo(0, -13, 1),
+                        new MoveTo2(0, -13, 1),
                         new TimedTransition(3000, "Active7")
                             ),
                     new State("Active7",
                         new Taunt("THE POWER...IT CONSUMES ME!"),
+                        new Order(2, "shtrs MagiGenerators", "vulnerable"),
                         new Shoot(15, 20, projectileIndex: 2, coolDown: 100000000, coolDownOffset: 100),
                         new Shoot(15, 20, projectileIndex: 3, coolDown: 100000000, coolDownOffset: 200),
                         new Shoot(15, 20, projectileIndex: 4, coolDown: 100000000, coolDownOffset: 300),
@@ -660,9 +670,11 @@ namespace wServer.logic
                 new State(
                     new State("Idle",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Order(46, "shtrs Spawn Bridge", "Open"),
                         new TimedTransition(5000, "Bridge")
                     ),
                     new State("Bridge")
+
                 ),
                 new Threshold(0.1,
                     new TierLoot(11, ItemType.Weapon, 1),
@@ -717,7 +729,15 @@ namespace wServer.logic
                     new State("AFK",
                             new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                             new Flash(0x0000FF0C, 0.5, 4),
-                            new TimedTransition(2500, "Shoot")
+                            new TimedTransition(2500, "activatetimer")
+                        ),
+                    new State("activatetimer",
+                            new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                            new Order(60, "shtrs obelisk timer", "timer1"),
+                            new TimedTransition(1,"stopsettingoffmytimer")
+                        ),
+                    new State("stopsettingoffmytimer",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable)
                         ),
                     new State("Shoot",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -771,11 +791,12 @@ namespace wServer.logic
                             new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 9400),
                             new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 9600),
                             new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 9800),
-                            new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 10000),
-                            new TimedTransition(10000, "Pause")
+                            new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 10000)
                         ),
                     new State("Pause",
-                        new TimedTransition(7000, "Shoot")
+                        new RemoveConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Spawn("shtrs Stone Knight", maxChildren: 1, initialSpawn: 1, coolDown: 7500),
+                        new Spawn("shtrs Stone Mage", maxChildren: 1, initialSpawn: 1, coolDown: 7500)
                         )
                     )
             )
@@ -792,8 +813,7 @@ namespace wServer.logic
                         ),
                     new State("AFK",
                             new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                            new Flash(0x0000FF0C, 0.5, 4),
-                            new TimedTransition(2500, "Shoot")
+                            new Flash(0x0000FF0C, 0.5, 4)
                         ),
                     new State("Shoot",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -847,11 +867,15 @@ namespace wServer.logic
                             new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 9400),
                             new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 9600),
                             new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 9800),
-                            new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 10000),
-                            new TimedTransition(10000, "Pause")
+                            new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 10000)
+                        ),
+                    new State("guardiancheck",
+                        new EntitiesNotExistsTransition(30, "Pause", "shtrs Bridge Obelisk A")
                         ),
                     new State("Pause",
-                        new TimedTransition(7000, "Shoot")
+                        new RemoveConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Spawn("shtrs Stone Knight", maxChildren: 1, initialSpawn: 1),
+                        new Spawn("shtrs Stone Mage", maxChildren: 1, initialSpawn: 1)
                         )
                     )
             )
@@ -868,8 +892,7 @@ namespace wServer.logic
                         ),
                     new State("AFK",
                             new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                            new Flash(0x0000FF0C, 0.5, 4),
-                            new TimedTransition(2500, "Shoot")
+                            new Flash(0x0000FF0C, 0.5, 4)
                         ),
                     new State("Shoot",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -923,13 +946,17 @@ namespace wServer.logic
                             new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 9400),
                             new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 9600),
                             new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 9800),
-                            new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 10000),
-                            new TimedTransition(10000, "Pause")
+                            new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 10000)
+                        ),
+                    new State("guardiancheck",
+                        new EntitiesNotExistsTransition(30, "Pause", "shtrs Bridge Obelisk B")
                         ),
                     new State("Pause",
-                        new TimedTransition(7000, "Shoot")
-                        )
+                        new RemoveConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Spawn("shtrs Stone Knight", maxChildren: 1, initialSpawn: 1),
+                        new Spawn("shtrs Stone Mage", maxChildren: 1, initialSpawn: 1)
                     )
+            )
             )
             .Init("shtrs Bridge Obelisk E",
                 new State(
@@ -944,8 +971,7 @@ namespace wServer.logic
                         ),
                     new State("AFK",
                             new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                            new Flash(0x0000FF0C, 0.5, 4),
-                            new TimedTransition(2500, "Shoot")
+                            new Flash(0x0000FF0C, 0.5, 4)
                         ),
                     new State("Shoot",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -999,13 +1025,17 @@ namespace wServer.logic
                             new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 9400),
                             new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 9600),
                             new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 9800),
-                            new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 10000),
-                            new TimedTransition(10000, "Pause")
+                            new Shoot(0, projectileIndex: 0, count: 4, shootAngle: 90, fixedAngle: 45, coolDown: 10000, coolDownOffset: 10000)
+                        ),
+                    new State("guardiancheck",
+                        new EntitiesNotExistsTransition(30, "Pause", "shtrs Bridge Obelisk D")
                         ),
                     new State("Pause",
-                        new TimedTransition(7000, "Shoot")
-                        )
+                        new RemoveConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Spawn("shtrs Stone Knight", maxChildren: 1, initialSpawn: 1),
+                        new Spawn("shtrs Stone Mage", maxChildren: 1, initialSpawn: 1)
                     )
+            )
             )
             .Init("shtrs Bridge Obelisk C",                                                     //YELLOW TOWERS!
                 new State(
@@ -1082,6 +1112,7 @@ namespace wServer.logic
                         ),
                     new State("Pause",
                         new ConditionalEffect(ConditionEffectIndex.Armored),
+                        new Spawn("shtrs Stone Paladin", maxChildren: 1, initialSpawn: 1, coolDown: 7500),
                         new TimedTransition(7000, "Shoot")
                         )
                     )
@@ -1161,20 +1192,65 @@ namespace wServer.logic
                         ),
                     new State("Pause",
                         new ConditionalEffect(ConditionEffectIndex.Armored),
+                        new Spawn("shtrs Stone Paladin", maxChildren: 1, initialSpawn: 1, coolDown: 7500),
                         new TimedTransition(7000, "Shoot")
                         )
                     )
             )
         #endregion BridgeStatues
         #region SomeMobs
+            .Init("shtrs obelisk controller",
+            new State(
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("wait",
+                    new EntitiesNotExistsTransition(30, "obeliskshoot", "shtrs Bridge Obelisk A", "shtrs Bridge Obelisk B", "shtrs Bridge Obelisk D", "shtrs Bridge Obelisk E")
+                        ),
+                    new State("obeliskshoot",
+                        new Order(60, "shtrs Bridge Obelisk A", "Shoot"),
+                        new Order(60, "shtrs Bridge Obelisk B", "Shoot"),
+                        new Order(60, "shtrs Bridge Obelisk D", "Shoot"),
+                        new Order(60, "shtrs Bridge Obelisk E", "Shoot")
+                        ),
+                    new State("guardiancheck",
+                        new Order(60, "shtrs Bridge Obelisk A", "Pause"),
+                        new Order(60, "shtrs Bridge Obelisk B", "guardiancheck"),
+                        new Order(60, "shtrs Bridge Obelisk D", "guardiancheck"),
+                        new Order(60, "shtrs Bridge Obelisk E", "guardiancheck"),
+                        new TimedTransition(1,"leavemychecksalone")
+                        ),
+                    new State("leavemychecksalone",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible)
+                        )
+                )
+            )
+            .Init("shtrs obelisk timer",
+            new State(
+                new ConditionalEffect(ConditionEffectIndex.Invincible),
+                new State("wait",
+                    new EntitiesNotExistsTransition(30, "timer1", "shtrs Bridge Obelisk A", "shtrs Bridge Obelisk B", "shtrs Bridge Obelisk D", "shtrs Bridge Obelisk E")
+                        ),
+                    new State("timer1",
+                        new Order(60, "shtrs obelisk controller", "obeliskshoot"),
+                        new TimedTransition(10000, "guardiancheck")
+                        ),
+                    new State("guardiancheck",
+                        new Order(60, "shtrs obelisk controller", "guardiancheck"),
+                        new TimedTransition(1,"leavemychecksalone")
+                        ),
+                    new State("leavemychecksalone",
+                        new TimedTransition(7000,"timer1")
+                        )
+                )
+            )
             .Init("shtrs Titanum",
                 new State(
                     new State("Wait",
-                        new PlayerWithinTransition(5, "spawn")
+                        new PlayerWithinTransition(7, "spawn")
                             ),
                     new State("spawn",
                         new Spawn("shtrs Stone Knight", maxChildren: 1, initialSpawn: 1, coolDown: 5000),
-                        new Spawn("shtrs Stone Mage", maxChildren: 1, initialSpawn: 1, coolDown: 7500)
+                        new Spawn("shtrs Stone Mage", maxChildren: 1, initialSpawn: 1, coolDown: 7500),
+                        new TimedTransition(5000,"Wait")
                         )
                     )
             )
@@ -1564,7 +1640,7 @@ namespace wServer.logic
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
                         new ConditionalEffect(ConditionEffectIndex.Invisible),
                         new ConditionalEffect(ConditionEffectIndex.Stasis),
-                            new MoveTo(0, 8, 0.5f),
+                            new MoveTo2(0, 8, 0.5f),
                             new TimedTransition(3000, "J Guardians")
                             ),
                         new State("J Guardians",
@@ -1609,6 +1685,7 @@ namespace wServer.logic
                         new State("Raged1",
                             new Taunt("TENTACLES OF WRATH"),
                             new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new Order(60, "shtrs Lava Souls maker", "Spawn"),
                             new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 3, coolDown: 10800),
                             new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 4, coolDown: 10800),
                             new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 6, coolDown: 10800, coolDownOffset: 200),
@@ -1724,152 +1801,46 @@ namespace wServer.logic
                             ),
                         new State("Pause",
                             new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new Order(60, "shtrs Lava Souls maker","Idle"),
                             new TimedTransition(4000, "littlerage")
                             ),
                         new State("MoveTo",
                             new ConditionalEffect(ConditionEffectIndex.Invincible),
-                            new MoveTo(0, -8, 0.5f),
+                            new MoveTo2(0, -8, 0.5f),
                             new TimedTransition(1800, "God")
                             ),
                         new State("God",
                             new Taunt("YOU TEST THE PATIENCE OF A GOD"),
+                            new Order(60, "shtrs Lava Souls maker", "Idle"),
                             new ConditionalEffect(ConditionEffectIndex.Invincible),
+                            new Shoot(10, 1, projectileIndex: 2, coolDown: 10),
+                            new Shoot(10, 1, projectileIndex: 3, coolDown: 10),
+                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 0, coolDown: 500),
+                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 5, coolDown: 500),
+                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 15, coolDown: 500),
+                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 20, coolDown: 500),
+                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 25, coolDown: 500),
+                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 30, coolDown: 500),
+                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 40, coolDown: 500),
+                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 45, coolDown: 500),
+                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 55, coolDown: 500),
+                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 60, coolDown: 500),
+                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 70, coolDown: 500),
+                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 75, coolDown: 500),
                             new Shoot(15, 1, projectileIndex: 1, fixedAngle: 85, coolDown: 500),
                             new Shoot(15, 1, projectileIndex: 1, fixedAngle: 95, coolDown: 500),
-                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 75, coolDown: 500),
-                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 70, coolDown: 500),
                             new Shoot(15, 1, projectileIndex: 1, fixedAngle: 105, coolDown: 500),
                             new Shoot(15, 1, projectileIndex: 1, fixedAngle: 110, coolDown: 500),
-                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 60, coolDown: 500),
-                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 55, coolDown: 500),
                             new Shoot(15, 1, projectileIndex: 1, fixedAngle: 120, coolDown: 500),
                             new Shoot(15, 1, projectileIndex: 1, fixedAngle: 125, coolDown: 500),
-                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 45, coolDown: 500),
-                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 40, coolDown: 500),
                             new Shoot(15, 1, projectileIndex: 1, fixedAngle: 135, coolDown: 500),
                             new Shoot(15, 1, projectileIndex: 1, fixedAngle: 140, coolDown: 500),
-                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 30, coolDown: 500),
-                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 25, coolDown: 500),
                             new Shoot(15, 1, projectileIndex: 1, fixedAngle: 150, coolDown: 500),
                             new Shoot(15, 1, projectileIndex: 1, fixedAngle: 155, coolDown: 500),
-                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 20, coolDown: 500),
-                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 15, coolDown: 500),
                             new Shoot(15, 1, projectileIndex: 1, fixedAngle: 165, coolDown: 500),
                             new Shoot(15, 1, projectileIndex: 1, fixedAngle: 170, coolDown: 500),
-                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 5, coolDown: 500),
-                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 0, coolDown: 500),
-                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 180, coolDown: 500),
                             new Shoot(15, 1, projectileIndex: 1, fixedAngle: 175, coolDown: 500),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 3, coolDown: 10800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 4, coolDown: 10800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 6, coolDown: 10800, coolDownOffset: 200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 7, coolDown: 10800, coolDownOffset: 200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 9, coolDown: 10800, coolDownOffset: 400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 10, coolDown: 10800, coolDownOffset: 400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 12, coolDown: 10800, coolDownOffset: 600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 13, coolDown: 10800, coolDownOffset: 600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 15, coolDown: 10800, coolDownOffset: 800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 16, coolDown: 10800, coolDownOffset: 800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 18, coolDown: 10800, coolDownOffset: 1000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 19, coolDown: 10800, coolDownOffset: 1000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 21, coolDown: 10800, coolDownOffset: 1200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 22, coolDown: 10800, coolDownOffset: 1200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 24, coolDown: 10800, coolDownOffset: 1400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 25, coolDown: 10800, coolDownOffset: 1400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 27, coolDown: 10800, coolDownOffset: 1600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 28, coolDown: 10800, coolDownOffset: 1600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 30, coolDown: 10800, coolDownOffset: 1800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 31, coolDown: 10800, coolDownOffset: 1800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 33, coolDown: 10800, coolDownOffset: 2000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 34, coolDown: 10800, coolDownOffset: 2000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 36, coolDown: 10800, coolDownOffset: 2200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 37, coolDown: 10800, coolDownOffset: 2200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 39, coolDown: 10800, coolDownOffset: 2400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 40, coolDown: 10800, coolDownOffset: 2400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 42, coolDown: 10800, coolDownOffset: 2600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 43, coolDown: 10800, coolDownOffset: 2600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 45, coolDown: 10800, coolDownOffset: 2800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 46, coolDown: 10800, coolDownOffset: 2800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 48, coolDown: 10800, coolDownOffset: 3000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 49, coolDown: 10800, coolDownOffset: 3000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 51, coolDown: 10800, coolDownOffset: 3200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 52, coolDown: 10800, coolDownOffset: 3200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 54, coolDown: 10800, coolDownOffset: 3400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 55, coolDown: 10800, coolDownOffset: 3400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 57, coolDown: 10800, coolDownOffset: 3600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 58, coolDown: 10800, coolDownOffset: 3600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 60, coolDown: 10800, coolDownOffset: 3800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 61, coolDown: 10800, coolDownOffset: 3800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 63, coolDown: 10800, coolDownOffset: 4000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 64, coolDown: 10800, coolDownOffset: 4000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 66, coolDown: 10800, coolDownOffset: 4200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 67, coolDown: 10800, coolDownOffset: 4200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 69, coolDown: 10800, coolDownOffset: 4400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 70, coolDown: 10800, coolDownOffset: 4400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 72, coolDown: 10800, coolDownOffset: 4600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 73, coolDown: 10800, coolDownOffset: 4600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 75, coolDown: 10800, coolDownOffset: 4800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 76, coolDown: 10800, coolDownOffset: 4800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 78, coolDown: 10800, coolDownOffset: 5000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 79, coolDown: 10800, coolDownOffset: 5000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 81, coolDown: 10800, coolDownOffset: 5200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 82, coolDown: 10800, coolDownOffset: 5200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 84, coolDown: 10800, coolDownOffset: 5400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 85, coolDown: 10800, coolDownOffset: 5400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 87, coolDown: 10800, coolDownOffset: 5600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 88, coolDown: 10800, coolDownOffset: 5600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 90, coolDown: 10800, coolDownOffset: 5800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 91, coolDown: 10800, coolDownOffset: 5800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 93, coolDown: 10800, coolDownOffset: 6000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 94, coolDown: 10800, coolDownOffset: 6000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 96, coolDown: 10800, coolDownOffset: 6200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 97, coolDown: 10800, coolDownOffset: 6200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 99, coolDown: 10800, coolDownOffset: 6400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 100, coolDown: 10800, coolDownOffset: 6400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 102, coolDown: 10800, coolDownOffset: 6600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 103, coolDown: 10800, coolDownOffset: 6600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 105, coolDown: 10800, coolDownOffset: 6800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 106, coolDown: 10800, coolDownOffset: 6800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 108, coolDown: 10800, coolDownOffset: 7000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 109, coolDown: 10800, coolDownOffset: 7000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 111, coolDown: 10800, coolDownOffset: 7200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 112, coolDown: 10800, coolDownOffset: 7200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 114, coolDown: 10800, coolDownOffset: 7400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 115, coolDown: 10800, coolDownOffset: 7400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 117, coolDown: 10800, coolDownOffset: 7600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 118, coolDown: 10800, coolDownOffset: 7600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 120, coolDown: 10800, coolDownOffset: 7800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 121, coolDown: 10800, coolDownOffset: 7800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 123, coolDown: 10800, coolDownOffset: 8000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 124, coolDown: 10800, coolDownOffset: 8000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 126, coolDown: 10800, coolDownOffset: 8200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 127, coolDown: 10800, coolDownOffset: 8200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 129, coolDown: 10800, coolDownOffset: 8400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 130, coolDown: 10800, coolDownOffset: 8400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 132, coolDown: 10800, coolDownOffset: 8600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 133, coolDown: 10800, coolDownOffset: 8600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 135, coolDown: 10800, coolDownOffset: 8800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 136, coolDown: 10800, coolDownOffset: 8800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 138, coolDown: 10800, coolDownOffset: 9000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 139, coolDown: 10800, coolDownOffset: 9000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 141, coolDown: 10800, coolDownOffset: 9200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 142, coolDown: 10800, coolDownOffset: 9200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 144, coolDown: 10800, coolDownOffset: 9400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 145, coolDown: 10800, coolDownOffset: 9400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 147, coolDown: 10800, coolDownOffset: 9600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 148, coolDown: 10800, coolDownOffset: 9600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 150, coolDown: 10800, coolDownOffset: 9800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 151, coolDown: 10800, coolDownOffset: 9800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 153, coolDown: 10800, coolDownOffset: 10000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 154, coolDown: 10800, coolDownOffset: 10000),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 156, coolDown: 10800, coolDownOffset: 10200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 157, coolDown: 10800, coolDownOffset: 10200),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 159, coolDown: 10800, coolDownOffset: 10400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 160, coolDown: 10800, coolDownOffset: 10400),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 162, coolDown: 10800, coolDownOffset: 10600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 163, coolDown: 10800, coolDownOffset: 10600),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 165, coolDown: 10800, coolDownOffset: 10800),
-                            new Shoot(50, projectileIndex: 4, count: 6, shootAngle: 60, fixedAngle: 166, coolDown: 10800, coolDownOffset: 10800),
+                            new Shoot(15, 1, projectileIndex: 1, fixedAngle: 180, coolDown: 500),
                             new TimedTransition(10800, "Hahaha")
                             ),
                         new State("Hahaha",
@@ -1918,20 +1889,25 @@ namespace wServer.logic
             )
             .Init("shtrs Green Crystal",
                 new State(
-                    new HealGroup(1000, "idkanymore", coolDown: 2000),
+                    new HealGroup(30, "Crystals", coolDown: 2000, healAmount:3000),
                     new State("orbit",
-                        new Orbit(1.0, 2, 5, "shtrs The Forgotten King"),
-                        new TimedTransition(8000, "dafuq")
+                        new Orbit(1.0, 2, 10, "shtrs Yellow Crystal"),
+                        new Follow(0.4, range: 6),
+                        new Follow(0.6, range: 2),
+                        new TimedTransition(3000, "dafuq")
                         ),
                     new State("dafuq",
-                        new Orbit(1.0, 2, 5, "shtrs The Forgotten King")
+                        new Follow(0.4, range: 2,duration: 2000,coolDown:1500),
+                        new TimedTransition(2000,"orbit")
                         )
                     )
             )
             .Init("shtrs Yellow Crystal",
                 new State(
                     new State("orbit",
-                        new Orbit(1.0, 2, 5, "shtrs The Forgotten King"),
+                        new Orbit(1.0, 2, 10, "shtrs Blue Crystal"),
+                        new Follow(0.4, range: 6),
+                        new Follow(0.4, range: 6),
                         new TimedTransition(25, "shoot")
                         ),
                     new State("shoot",
@@ -1939,7 +1915,8 @@ namespace wServer.logic
                         new TimedTransition(1, "dafuq")
                         ),
                     new State("dafuq",
-                        new Orbit(1.0, 2, 5, "shtrs The Forgotten King"),
+                        new Orbit(1.0, 2, 5, "shtrs Blue Crystal"),
+                        new Follow(0.4, range: 6),
                         new Shoot(5, 4, 4, projectileIndex: 0)
                         )
                     )
@@ -1947,32 +1924,30 @@ namespace wServer.logic
             .Init("shtrs Red Crystal",
                 new State(
                     new State("orbit",
-                        new Orbit(1.0, 2, 5, "shtrs The Forgotten King"),
-                        new TimedTransition(8000, "dafuq")
-                        ),
-                    new State("dafuq",
-                        new Orbit(1.0, 2, 5, "shtrs The Forgotten King"),
-                        new TimedTransition(15000, "ThrowPortal")
+                        new Orbit(1.0, 2, 10, "shtrs Green Crystal"),
+                        new Follow(0.4,range:6),
+                        new TimedTransition(5000, "ThrowPortal")
                         ),
                     new State("ThrowPortal",
-                        new TossObject("shtrs Fire Portal", 5, coolDown: 8000, coolDownOffset: 7000),
-                        new TimedTransition(25, "orbit")
+                        new Orbit(1.0, 2, 10, "shtrs Green Crystal"),
+                        new Follow(0.4, range: 6),
+                        new TossObject("shtrs Fire Portal", 5, coolDown: 8000),
+                        new TimedTransition(8000, "orbit")
                         )
                     )
             )
             .Init("shtrs Blue Crystal",
                 new State(
                     new State("orbit",
-                        new Orbit(1.0, 2, 5, "shtrs The Forgotten King"),
-                        new TimedTransition(8000, "dafuq")
-                        ),
-                    new State("dafuq",
-                        new Orbit(1.0, 2, 5, "shtrs The Forgotten King"),
-                        new TimedTransition(15000, "ThrowPortal")
+                        new Orbit(1.0, 2, 10, "shtrs Red Crystal"),
+                        new Follow(0.4, range: 6),
+                        new TimedTransition(5000, "ThrowPortal")
                         ),
                     new State("ThrowPortal",
-                        new TossObject("shtrs Ice Portal", 5, coolDown: 8000, coolDownOffset: 7000),
-                        new TimedTransition(25, "orbit")
+                        new Orbit(1.0, 2, 10, "shtrs Red Crystal"),
+                        new Follow(0.4, range: 6),
+                        new TossObject("shtrs Ice Portal", 5, coolDown: 8000),
+                        new TimedTransition(8000, "orbit")
                         )
                     )
             )
@@ -1984,7 +1959,7 @@ namespace wServer.logic
                     ),
                 new State("Open",
                     new ConditionalEffect(ConditionEffectIndex.Invincible, true),
-                    new MoveTo(0, -15, 0.5f),
+                    new MoveTo2(0, -15, 0.5f),
                     new TimedTransition(3000, "WADAFAK")
                     ),
                 new State("WADAFAK",
@@ -2085,16 +2060,35 @@ namespace wServer.logic
                 )
             )
         .Init("shtrs blobomb maker",
-new State(
-new State("Idle",
-new ConditionalEffect(ConditionEffectIndex.Invincible)
-),
-new State("Spawn",
-new Spawn("shtrs Blobomb", coolDown: 1000),
-new TimedTransition(6000, "Idle")
-)
-)
-)
+            new State(
+                 new State("Idle",
+                    new ConditionalEffect(ConditionEffectIndex.Invincible)
+                    ),
+                     new State("Spawn",
+                        new Spawn("shtrs Blobomb", coolDown: 1500),
+                        new TimedTransition(3000, "Spawn2")
+                         ),
+                     new State("Spawn2",
+                         new Spawn("shtrs Blobomb", coolDown: 1000),
+                         new TimedTransition(3000,"Idle")
+                        )
+                    )
+                )
+          .Init("shtrs Lava Souls maker",
+            new State(
+                 new State("Idle",
+                    new ConditionalEffect(ConditionEffectIndex.Invincible)
+                    ),
+                     new State("Spawn",
+                        new Spawn("shtrs Lava Souls",maxChildren:1, coolDown: 8000),
+                        new TimedTransition(8000, "Spawn2")
+                         ),
+                     new State("Spawn2",
+                         new Spawn("shtrs Lava Souls", maxChildren: 1, coolDown: 8000),
+                         new TimedTransition(8000, "Spawn")
+                        )
+                    )
+                )
 
         .Init("shtrs Chest Spawner 3",
             new State(
