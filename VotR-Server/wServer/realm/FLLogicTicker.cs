@@ -84,7 +84,7 @@ namespace wServer.realm
                 if (t.TickCount % 300 == 0)
                     client.PacketCount = 0;
 
-                if (client.PacketCount > 3000)
+                if (client.PacketCount > 7000)
                     client.Disconnect();
 
                 if (client.Player?.Owner != null)

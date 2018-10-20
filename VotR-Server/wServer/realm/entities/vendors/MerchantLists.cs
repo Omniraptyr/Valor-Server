@@ -164,7 +164,7 @@ namespace wServer.realm.entities.vendors
             { TileRegion.Store_6, new Tuple<List<ISellableItem>, CurrencyType, int>(FameCoins, CurrencyType.Fame, 20) },
             { TileRegion.Store_7, new Tuple<List<ISellableItem>, CurrencyType, int>(Special, CurrencyType.Fame, 0) },
             { TileRegion.Store_8, new Tuple<List<ISellableItem>, CurrencyType, int>(LowTierKeys, CurrencyType.Fame, 5) },
-            { TileRegion.Store_9, new Tuple<List<ISellableItem>, CurrencyType, int>(HighTierKeys, CurrencyType.Fame, 20) },
+            { TileRegion.Store_30, new Tuple<List<ISellableItem>, CurrencyType, int>(HighTierKeys, CurrencyType.Fame, 20) },
             { TileRegion.Store_15, new Tuple<List<ISellableItem>, CurrencyType, int>(Aldragine, CurrencyType.Onrane, 20) },
             { TileRegion.Store_16, new Tuple<List<ISellableItem>, CurrencyType, int>(Drannol, CurrencyType.Onrane, 20) },
         };

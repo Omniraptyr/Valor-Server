@@ -1,12 +1,3 @@
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\log4net_rl.config
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\RemoteLogger.exe.config
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\RemoteLogger.exe
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\RemoteLogger.pdb
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.csproj.CoreCompileInputs.cache
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.csproj.CopyComplete
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.exe
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.pdb
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.csprojAssemblyReference.cache
 C:\votr\VotR-Server2\VotR-Server\bin\log4net_rl.config
 C:\votr\VotR-Server2\VotR-Server\bin\RemoteLogger.exe.config
 C:\votr\VotR-Server2\VotR-Server\bin\RemoteLogger.exe
@@ -16,3 +7,12 @@ C:\votr\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.csproj.Co
 C:\votr\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.csproj.CopyComplete
 C:\votr\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.exe
 C:\votr\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.pdb
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\log4net_rl.config
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\RemoteLogger.exe.config
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\RemoteLogger.exe
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\RemoteLogger.pdb
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.csprojAssemblyReference.cache
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.csproj.CopyComplete
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.exe
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.pdb

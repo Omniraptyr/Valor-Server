@@ -14,8 +14,9 @@ namespace wServer.networking.handlers
 
         public override PacketId ID => PacketId.USEPORTAL;
 
-        protected override void HandlePacket(Client client, UsePortal packet) {
-            client.Manager.Logic.AddPendingAction(t => Handle(client, packet));
+        protected override void HandlePacket(Client client, UsePortal packet)
+        {
+            Handle(client, packet);
         }
 
         private void Handle(Client client, UsePortal packet) {

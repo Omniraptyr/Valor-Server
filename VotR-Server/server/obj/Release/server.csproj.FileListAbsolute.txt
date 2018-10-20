@@ -1,13 +1,3 @@
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\log4net.config
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\server.json
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\server.exe.config
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\server.exe
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\server.pdb
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\server\obj\Release\server.csproj.CoreCompileInputs.cache
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\server\obj\Release\server.csproj.CopyComplete
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\server\obj\Release\server.exe
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\server\obj\Release\server.pdb
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\server\obj\Release\server.csprojAssemblyReference.cache
 C:\votr\VotR-Server2\VotR-Server\bin\log4net.config
 C:\votr\VotR-Server2\VotR-Server\bin\server.json
 C:\votr\VotR-Server2\VotR-Server\bin\server.exe.config
@@ -18,3 +8,13 @@ C:\votr\VotR-Server2\VotR-Server\server\obj\Release\server.csproj.CoreCompileInp
 C:\votr\VotR-Server2\VotR-Server\server\obj\Release\server.csproj.CopyComplete
 C:\votr\VotR-Server2\VotR-Server\server\obj\Release\server.exe
 C:\votr\VotR-Server2\VotR-Server\server\obj\Release\server.pdb
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\log4net.config
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\server.json
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\server.exe.config
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\server.exe
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\server.pdb
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\server\obj\Release\server.csprojAssemblyReference.cache
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\server\obj\Release\server.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\server\obj\Release\server.csproj.CopyComplete
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\server\obj\Release\server.exe
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\server\obj\Release\server.pdb
