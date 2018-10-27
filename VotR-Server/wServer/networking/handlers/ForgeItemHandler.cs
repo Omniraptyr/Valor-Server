@@ -28,7 +28,11 @@ namespace wServer.networking.handlers
             WarpedWorlds = 0x1463,
             Dreamweaver = 0x61c5,
             EmpWhip = 0x61d8,
-            AbbyWhip = 0x61d7;
+            AbbyWhip = 0x61d7,
+            Bloodstone = 0x6814,
+            Pandora = 0x6802,
+            Purification = 0x6801,
+            Speedier = 0x6800;
 
         private readonly ushort[] _cosmicList = { 0x69cd, 0x47cb, 0x46d8, 0x42c5, 0x42c7, 0x54d9, 0x46d5, 0x64aa,
                 0x48fa, 0x69d1, 0x69d4, 0x42fa, 0x69d6, 0x69dc, 0x1644, 0x69db, 0x42fc,
@@ -45,7 +49,7 @@ namespace wServer.networking.handlers
         private readonly ushort[] _stoneList = { 0x61b2, 0x56c5, 0x56c4, 0x61d3 };
         private readonly ushort[] _ancientList = { 0x1636, 0x55f6, 0x6120, 0x69c9, 0x43a6, 0x69e5 };
         private readonly ushort[] _rerollExclude = { Shine, LSor, CosmicShard, FuryShard, ZolShard,
-                StoneShard, AncientShard, Nemesis, Dreamweaver, PredNeck, AbbyWhip };
+                StoneShard, AncientShard, Nemesis, Dreamweaver, PredNeck, AbbyWhip, Speedier, Purification, Pandora, Bloodstone};
 
         private void Handle(Client client, ForgeItem packet) {
             var rnd = new Random();

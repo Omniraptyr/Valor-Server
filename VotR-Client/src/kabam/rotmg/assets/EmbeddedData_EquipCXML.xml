@@ -16996,8 +16996,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
             <LifetimeMS>440</LifetimeMS>
         </Projectile>
         <BagType>6</BagType>
-        <NumProjectiles>3</NumProjectiles>
-        <Legendary/>
+        <NumProjectiles>1</NumProjectiles>
     </Object>
     <Object type="0x5065" id="Black Scroll">
         <Class>Equipment</Class>

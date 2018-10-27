@@ -3661,7 +3661,7 @@ namespace wServer.logic
                         )
                 ),
                 new MostDamagers(3,
-                    LootTemplates.FabledItemsLoots2B()
+                    LootTemplates.NFabledItemsLoots2B()
                 ),
                 new Threshold(0.1,
                     new TierLoot(7, ItemType.Ring, 0.0033),
@@ -4286,7 +4286,7 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.FabledItemsLoots2B()
+                    LootTemplates.NFabledItemsLoots2B()
                 ),
                 new MostDamagers(3,
                     LootTemplates.GreaterPots()
@@ -5650,7 +5650,7 @@ namespace wServer.logic
                        )
                     ),
                 new MostDamagers(3,
-                    LootTemplates.FabledItemsLoots2B()
+                    LootTemplates.NFabledItemsLoots2B()
                 ),
                 new MostDamagers(3,
                     LootTemplates.Sor5Perc()

@@ -14587,6 +14587,7 @@
             <ObjectId>Stone Slash</ObjectId>
             <Damage>175</Damage>
             <Speed>85</Speed>
+            <MultiHit/>
             <LifetimeMS>1200</LifetimeMS>
         </Projectile>
         <Projectile id="1">

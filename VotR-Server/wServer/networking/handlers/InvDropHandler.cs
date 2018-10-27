@@ -41,8 +41,7 @@ namespace wServer.networking.handlers
             else
             {
                 con = player;
-            }
-
+            } 
 
             if (slot.ObjectId == player.Id && player.Stacks.Any(stack => stack.Slot == slot.SlotId))
             {
@@ -75,6 +74,7 @@ namespace wServer.networking.handlers
 
             // create new container for item to be placed in
             Container container;
+            player.OnUnequip(player.Inventory[slot.SlotId]);
             if (item.Soulbound || player.Client.Account.Admin || player.Client.Account.Elite == 1)
             {
                 container = new Container(player.Manager, soulBag, 1000 * 60, true)

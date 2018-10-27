@@ -81403,28 +81403,27 @@ This dagger was a myth, will you live to tell the tale?
     <XpMult>0.0</XpMult>
     <StasisImmune/>
   </Object>
-  <Object type="0x5060" id="Larry Gun">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>d3LofiObjEmbed</File>
-      <Index>0xbd</Index>
-    </Texture>
-    <SlotType>3</SlotType>
-    <Description>Pew.</Description>
-    <RateOfFire>1.5</RateOfFire>
-    <Sound>weapon/double_bow</Sound>
-    <Projectile>
-      <ObjectId>White Bullet</ObjectId>
-      <Speed>210</Speed>
-      <MinDamage>200</MinDamage>
-      <MaxDamage>300</MaxDamage>
-      <LifetimeMS>440</LifetimeMS>
-    </Projectile>
-    <BagType>6</BagType>
-    <NumProjectiles>3</NumProjectiles>
-    <Legendary/>
-  </Object>
+      <Object type="0x5060" id="Larry Gun">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0xbd</Index>
+        </Texture>
+        <SlotType>3</SlotType>
+        <Description>Pew.</Description>
+        <RateOfFire>1.5</RateOfFire>
+        <Sound>weapon/double_bow</Sound>
+        <Projectile>
+            <ObjectId>White Bullet</ObjectId>
+            <Speed>210</Speed>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>300</MaxDamage>
+            <LifetimeMS>440</LifetimeMS>
+        </Projectile>
+        <BagType>6</BagType>
+        <NumProjectiles>1</NumProjectiles>
+    </Object>
 
   <Object type="0x5065" id="Black Scroll">
     <Class>Equipment</Class>
@@ -89373,6 +89372,7 @@ A whole thanksgiving turkey!
         <StasisImmune/>
         <DazedImmune/>
         <StunImmune/>
+		<Elitedrop/>
         <ArmorBreakImmune/>
         <Quest/>
         <MaxHitPoints>600000</MaxHitPoints>
@@ -127861,6 +127861,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <ObjectId>Stone Slash</ObjectId>
             <Damage>175</Damage>
             <Speed>85</Speed>
+			<MultiHit/>
             <LifetimeMS>1200</LifetimeMS>
         </Projectile>
         <Projectile id="1">
@@ -130053,80 +130054,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ShadowSize>50</ShadowSize>
         <MaxHitPoints>0</MaxHitPoints>
     </Object>
-    <Object type="0x672e" id="Malgoric Skull">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x169</Index>
-        </Texture>
-        <ExtraTooltipData>
-            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
-        </ExtraTooltipData>
-        <SlotType>19</SlotType>
-        <Description>The skull of Malgor himself.</Description>
-        <ActivateOnEquip stat="28" amount="12">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
-        <Usable/>
-        <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
-        <MpCost>90</MpCost>
-        <Activate radius="6" totalDamage="300">VampireBlast</Activate>
-        <Activate effect="Bleeding" duration="3" range="6" color="0x05c2b5" target="enemy" center="mouse" visualEffect="0" useWisMod="false">GenericActivate</Activate>
-    </Object>
-    <Object type="0x672f" id="Bone Axe">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x16a</Index>
-        </Texture>
-        <ExtraTooltipData>
-            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
-        </ExtraTooltipData>
-        <SlotType>1</SlotType>
-        <Description>An axe made of Malgor's bones.</Description>
-        <RateOfFire>0.8</RateOfFire>
-        <Sound>weapon/mithril_sword</Sound>
-        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="121" amount="25">IncrementStat</ActivateOnEquip>
-        <Projectile>
-            <ObjectId>Malgor Swipe</ObjectId>
-            <Speed>100</Speed>
-            <MinDamage>150</MinDamage>
-            <MaxDamage>220</MaxDamage>
-            <LifetimeMS>400</LifetimeMS>
-            <MultiHit/>
-        </Projectile>
-        <NumProjectiles>4</NumProjectiles>
-        <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
-        <OldSound>bladeSwing</OldSound>
-        <feedPower>450</feedPower>
-        <DisplayId>Bone Axe</DisplayId>
-    </Object>
-    <Object type="0x673b" id="Malgoric Charm">
-        <Class>Equipment</Class>
-        <Item/>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x16b</Index>
-        </Texture>
-        <ExtraTooltipData>
-            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
-        </ExtraTooltipData>
-        <SlotType>32</SlotType>
-        <Description>A charm used to summon a Torii charged with the malicious power of Malgor.</Description>
-        <Sound>spell/fire_spray</Sound>
-        <Usable/>
-        <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
-        <BagType>6</BagType>
-        <FameBonus>6</FameBonus>
-        <MpCost>120</MpCost>
-		<Activate effect="Berserk" duration="3">ConditionEffectSelf</Activate>
-        <Activate range="6" amount="6" players="false" duration="6" effect="Bleeding" color="0xFF0044" objType="0x673c">Torii</Activate>
-        <Cooldown>3</Cooldown>
-    </Object>
 	<Object type="0x681f" id="Chamber of Malgor Portal">
         <Class>Portal</Class>
         <IntergamePortal/>
@@ -130444,7 +130371,6 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <StasisImmune/>
         <Elitedrop/>
         <DazedImmune/>
-        <SlowedImmune/>
         <CurseImmune/>
         <ShadowSize>60</ShadowSize>
         <Quest/>
@@ -131159,4 +131085,78 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
 	  <Legendary/>
       <InvUse/>
    </Object>
+       <Object type="0x672e" id="Malgoric Skull">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x169</Index>
+        </Texture>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <SlotType>19</SlotType>
+        <Description>The skull of Malgor himself.</Description>
+        <ActivateOnEquip stat="28" amount="12">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>90</MpCost>
+        <Activate radius="6" totalDamage="300">VampireBlast</Activate>
+        <Activate effect="Bleeding" duration="3" range="6" color="0x05c2b5" target="enemy" center="mouse" visualEffect="0" useWisMod="false">GenericActivate</Activate>
+    </Object>
+    <Object type="0x672f" id="Bone Axe">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x16a</Index>
+        </Texture>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <SlotType>1</SlotType>
+        <Description>An axe made of Malgor's bones.</Description>
+        <RateOfFire>0.8</RateOfFire>
+        <Sound>weapon/mithril_sword</Sound>
+        <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="25">IncrementStat</ActivateOnEquip>
+        <Projectile>
+            <ObjectId>Malgor Swipe</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>150</MinDamage>
+            <MaxDamage>220</MaxDamage>
+            <LifetimeMS>400</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <NumProjectiles>4</NumProjectiles>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>bladeSwing</OldSound>
+        <feedPower>450</feedPower>
+        <DisplayId>Bone Axe</DisplayId>
+    </Object>
+    <Object type="0x673b" id="Malgoric Charm">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x16b</Index>
+        </Texture>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <SlotType>32</SlotType>
+        <Description>A charm used to summon a Torii charged with the malicious power of Malgor.</Description>
+        <Sound>spell/fire_spray</Sound>
+        <Usable/>
+        <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>120</MpCost>
+        <Activate effect="Berserk" duration="3">ConditionEffectSelf</Activate>
+        <Activate range="6" amount="6" players="false" duration="6" effect="Bleeding" color="0xFF0044" objType="0x673c">Torii</Activate>
+        <Cooldown>3</Cooldown>
+    </Object>
 </Objects>

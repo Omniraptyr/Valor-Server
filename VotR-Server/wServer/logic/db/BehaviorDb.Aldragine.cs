@@ -916,6 +916,9 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
+                    LootTemplates.FabledItemsLootZol()
+                    ),
+                new MostDamagers(3,
                     LootTemplates.Sor4Perc()
                     ),
                     new Threshold(0.1,
@@ -1083,6 +1086,9 @@ namespace wServer.logic
                         )
                     ),
                 new MostDamagers(3,
+                    LootTemplates.FabledItemsLootZolUltra()
+                    ),
+                new MostDamagers(3,
                     LootTemplates.Sor5Perc()
                     ),
                     new Threshold(0.1,
@@ -1120,8 +1126,8 @@ namespace wServer.logic
                         )
                 ),
                 new MostDamagers(3,
-                    LootTemplates.FabledItemsLoot2()
-                ),
+                    LootTemplates.FabledItemsLootZol()
+                    ),
                 new MostDamagers(3,
                     LootTemplates.Sor5Perc()
                     ),
@@ -1152,8 +1158,8 @@ namespace wServer.logic
                         )
                 ),
                 new MostDamagers(3,
-                    LootTemplates.FabledItemsLoot2()
-                ),
+                    LootTemplates.FabledItemsLootZolUltra()
+                    ),
                 new MostDamagers(3,
                     LootTemplates.Sor5Perc()
                     ),
@@ -1439,7 +1445,7 @@ namespace wServer.logic
                         )
                     ),
                new MostDamagers(3,
-                    LootTemplates.FabledItemsLoot2()
+                    LootTemplates.FabledItemsLootZol()
                     ),
                 new MostDamagers(3,
                     LootTemplates.Sor5Perc()
@@ -1603,6 +1609,9 @@ namespace wServer.logic
                     new State("ded",
                         new Suicide()
                         )
+                    ),
+                new MostDamagers(3,
+                    LootTemplates.FabledItemsLootZolUltra()
                     ),
                 new MostDamagers(3,
                     LootTemplates.Sor5Perc()

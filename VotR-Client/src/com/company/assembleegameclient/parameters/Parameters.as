@@ -10,8 +10,8 @@ import flash.system.Capabilities;
 import flash.utils.Dictionary;
 
 public class Parameters {
-    public static const BUILD_VERSION:String = "77";
-    public static const MINOR_VERSION:String = "33";
+    public static const BUILD_VERSION:String = "75";
+    public static const MINOR_VERSION:String = "A6";
     public static const FULL_BUILD:String = BUILD_VERSION + "." + MINOR_VERSION;
     public static const ENABLE_ENCRYPTION:Boolean = true;
     public static const PORT:int = 2050;
@@ -35,7 +35,7 @@ public class Parameters {
     public static const TERMS_OF_USE_URL:String = ""; //add tos later (?)
     public static const PRIVACY_POLICY_URL:String = ""; //add pp later (?)
     public static const USER_GENERATED_CONTENT_TERMS:String = ""; //add tos later (?)
-    public static const RANDOM1:String = "B1A5ED";
+    public static const RANDOM1:String = "BA15DE";
     public static const RANDOM2:String = "612a806cac78114ba5013cb531";
     public static const RSA_PUBLIC_KEY:String =
             "-----BEGIN PUBLIC KEY-----\n" +
