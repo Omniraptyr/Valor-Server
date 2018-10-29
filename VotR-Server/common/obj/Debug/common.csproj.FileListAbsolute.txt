@@ -1,0 +1,103 @@
+C:\Users\darkd\Desktop\NR-CORE-master\bin\log4net.config
+C:\Users\darkd\Desktop\NR-CORE-master\bin\common.dll.config
+C:\Users\darkd\Desktop\NR-CORE-master\bin\common.dll
+C:\Users\darkd\Desktop\NR-CORE-master\bin\common.pdb
+C:\Users\darkd\Desktop\NR-CORE-master\common\obj\Debug\common.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\NR-CORE-master\common\obj\Debug\common.dll
+C:\Users\darkd\Desktop\NR-CORE-master\common\obj\Debug\common.pdb
+C:\Users\darkd\Desktop\votr-server2.0\bin\log4net.config
+C:\Users\darkd\Desktop\votr-server2.0\bin\common.dll.config
+C:\Users\darkd\Desktop\votr-server2.0\bin\common.dll
+C:\Users\darkd\Desktop\votr-server2.0\bin\common.pdb
+C:\Users\darkd\Desktop\votr-server2.0\common\obj\Debug\common.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\votr-server2.0\common\obj\Debug\common.dll
+C:\Users\darkd\Desktop\votr-server2.0\common\obj\Debug\common.pdb
+C:\Users\darkd\Desktop\votr-server2.0\common\obj\Debug\common.csprojResolveAssemblyReference.cache
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\bin\log4net.config
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\bin\common.dll.config
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\bin\common.dll
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\bin\common.pdb
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\common\obj\Debug\common.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\common\obj\Debug\common.dll
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\common\obj\Debug\common.pdb
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\bin\log4net.config
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\bin\common.dll.config
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\bin\common.dll
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\bin\common.pdb
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\common\obj\Debug\common.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\common\obj\Debug\common.dll
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\common\obj\Debug\common.pdb
+C:\Users\darkd\Desktop\New folder (5)\votr-server2.0\votrserver\common\obj\Debug\common.csprojResolveAssemblyReference.cache
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\log4net.config
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\common.dll.config
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\common.dll
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\bin\common.pdb
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\common\obj\Debug\common.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\common\obj\Debug\common.dll
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\common\obj\Debug\common.pdb
+C:\Users\darkd\Desktop\votrmaster\VotR-Server\common\obj\Debug\common.csprojResolveAssemblyReference.cache
+C:\Users\darkd\Desktop\votrmaster2\VotR-Server2\VotR-Server\bin\log4net.config
+C:\Users\darkd\Desktop\votrmaster2\VotR-Server2\VotR-Server\bin\common.dll.config
+C:\Users\darkd\Desktop\votrmaster2\VotR-Server2\VotR-Server\bin\common.dll
+C:\Users\darkd\Desktop\votrmaster2\VotR-Server2\VotR-Server\bin\common.pdb
+C:\Users\darkd\Desktop\votrmaster2\VotR-Server2\VotR-Server\common\obj\Debug\common.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\votrmaster2\VotR-Server2\VotR-Server\common\obj\Debug\common.dll
+C:\Users\darkd\Desktop\votrmaster2\VotR-Server2\VotR-Server\common\obj\Debug\common.pdb
+C:\Users\darkd\Desktop\votrmaster2\VotR-Server2\VotR-Server\common\obj\Debug\common.csprojResolveAssemblyReference.cache
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\bin\log4net.config
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\bin\common.dll.config
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\bin\common.dll
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\bin\common.pdb
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\common\obj\Debug\common.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\common\obj\Debug\common.dll
+C:\Users\darkd\Desktop\VotR-Server2\VotR-Server\common\obj\Debug\common.pdb
+C:\Users\darkd\Desktop\votr\master\VotR-Server\bin\log4net.config
+C:\Users\darkd\Desktop\votr\master\VotR-Server\bin\common.dll.config
+C:\Users\darkd\Desktop\votr\master\VotR-Server\bin\common.dll
+C:\Users\darkd\Desktop\votr\master\VotR-Server\bin\common.pdb
+C:\Users\darkd\Desktop\votr\master\VotR-Server\common\obj\Debug\common.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\votr\master\VotR-Server\common\obj\Debug\common.csproj.CopyComplete
+C:\Users\darkd\Desktop\votr\master\VotR-Server\common\obj\Debug\common.dll
+C:\Users\darkd\Desktop\votr\master\VotR-Server\common\obj\Debug\common.pdb
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\common.dll
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\log4net.config
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\common.dll.config
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\common.pdb
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Debug\common.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Debug\common.csproj.CopyComplete
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Debug\common.dll
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Debug\common.pdb
+C:\votr\VotR-Server2\VotR-Server\bin\log4net.config
+C:\votr\VotR-Server2\VotR-Server\bin\common.dll.config
+C:\votr\VotR-Server2\VotR-Server\bin\common.dll
+C:\votr\VotR-Server2\VotR-Server\bin\common.pdb
+C:\votr\VotR-Server2\VotR-Server\common\obj\Debug\common.csproj.CoreCompileInputs.cache
+C:\votr\VotR-Server2\VotR-Server\common\obj\Debug\common.csproj.CopyComplete
+C:\votr\VotR-Server2\VotR-Server\common\obj\Debug\common.dll
+C:\votr\VotR-Server2\VotR-Server\common\obj\Debug\common.pdb
+C:\votr\VotR-Server2\VotR-Server\common\obj\Debug\common.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\VotR-Server2-master\VotR-Server\bin\log4net.config
+C:\Users\PC\Desktop\VotR-Server2-master\VotR-Server\bin\common.dll.config
+C:\Users\PC\Desktop\VotR-Server2-master\VotR-Server\bin\common.dll
+C:\Users\PC\Desktop\VotR-Server2-master\VotR-Server\bin\common.pdb
+C:\Users\PC\Desktop\VotR-Server2-master\VotR-Server\common\obj\Debug\common.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\VotR-Server2-master\VotR-Server\common\obj\Debug\common.csproj.CopyComplete
+C:\Users\PC\Desktop\VotR-Server2-master\VotR-Server\common\obj\Debug\common.dll
+C:\Users\PC\Desktop\VotR-Server2-master\VotR-Server\common\obj\Debug\common.pdb
+C:\Users\user01\Desktop\VotR-Server2-master\VotR-Server\bin\log4net.config
+C:\Users\user01\Desktop\VotR-Server2-master\VotR-Server\bin\common.dll.config
+C:\Users\user01\Desktop\VotR-Server2-master\VotR-Server\bin\common.dll
+C:\Users\user01\Desktop\VotR-Server2-master\VotR-Server\bin\common.pdb
+C:\Users\user01\Desktop\VotR-Server2-master\VotR-Server\common\obj\Debug\common.csproj.CoreCompileInputs.cache
+C:\Users\user01\Desktop\VotR-Server2-master\VotR-Server\common\obj\Debug\common.csproj.CopyComplete
+C:\Users\user01\Desktop\VotR-Server2-master\VotR-Server\common\obj\Debug\common.dll
+C:\Users\user01\Desktop\VotR-Server2-master\VotR-Server\common\obj\Debug\common.pdb
+C:\Users\user01\Desktop\this can only go well\VotR-Server2\VotR-Server\bin\log4net.config
+C:\Users\user01\Desktop\this can only go well\VotR-Server2\VotR-Server\bin\common.dll.config
+C:\Users\user01\Desktop\this can only go well\VotR-Server2\VotR-Server\bin\common.dll
+C:\Users\user01\Desktop\this can only go well\VotR-Server2\VotR-Server\bin\common.pdb
+C:\Users\user01\Desktop\this can only go well\VotR-Server2\VotR-Server\common\obj\Debug\common.csproj.CoreCompileInputs.cache
+C:\Users\user01\Desktop\this can only go well\VotR-Server2\VotR-Server\common\obj\Debug\common.csproj.CopyComplete
+C:\Users\user01\Desktop\this can only go well\VotR-Server2\VotR-Server\common\obj\Debug\common.dll
+C:\Users\user01\Desktop\this can only go well\VotR-Server2\VotR-Server\common\obj\Debug\common.pdb
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Debug\common.csprojAssemblyReference.cache
