@@ -1,0 +1,12 @@
+{"id":0,
+"isLimbo":false,
+"name":"Garden of Chaos",
+"sbName":"Garden of Chaos",
+"difficulty":5,
+"background":0,
+"blocking":1,
+"restrictTp":true,
+"showDisplays":false,
+"portals":[0x673d],
+"maps":["garden.jm"],
+"music":["safe"]}

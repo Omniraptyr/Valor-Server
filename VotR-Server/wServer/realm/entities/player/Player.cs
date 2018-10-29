@@ -807,6 +807,23 @@ namespace wServer.realm.entities
             Stars = GetStars();
 
             if (owner.Name == "Summoning Point" || owner.Name == "Ultra Summoning Point") RageBar = 100;
+
+            if ((owner.Name.Equals("Bastille of Drannol")
+
+                 || owner.Name.Equals("Aldragine's Hideout")
+
+                 || owner.Name.Equals("Ultra Aldragine's Hideout")
+
+                 || owner.Name.Equals("Ultra Bastille of Drannol"))
+
+                 && owner.Opener != Name)
+            {
+
+                Client.Manager.Database.UpdateCredit(Client.Account, -2500);
+
+                this.ForceUpdate(Credits);
+
+            }
             if (owner.Name.Equals("Nexus")) {
                 var amount = (int)Math.Min(Math.Floor(Stats[10] / 90d * 6), 6);
 

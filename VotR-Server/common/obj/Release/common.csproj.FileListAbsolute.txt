@@ -23,3 +23,4 @@ C:\Users\user01\Desktop\VotR-Server2\VotR-Server\common\obj\Release\common.cspro
 C:\Users\user01\Desktop\VotR-Server2\VotR-Server\common\obj\Release\common.csproj.CopyComplete
 C:\Users\user01\Desktop\VotR-Server2\VotR-Server\common\obj\Release\common.dll
 C:\Users\user01\Desktop\VotR-Server2\VotR-Server\common\obj\Release\common.pdb
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Release\common.csprojAssemblyReference.cache
