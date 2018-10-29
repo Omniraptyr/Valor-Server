@@ -99,7 +99,7 @@ namespace wServer.logic
             )
         .Init("Vitalia",
             new State(
-                new RemoveObjectOnDeath("CGarden Wall Lenin",600),
+                new RemoveObjectOnDeath("CGarden Wall Lenin", 600),
                 new State("wait",
                     new ScaleHP(45000),
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -153,7 +153,7 @@ namespace wServer.logic
                     new Shoot(40, 3, fixedAngle: 135, projectileIndex: 8, coolDown: 750, coolDownOffset: 500),
                     new Shoot(40, 3, fixedAngle: 225, projectileIndex: 9, coolDown: 750, coolDownOffset: 750),
                     new Shoot(40, 3, fixedAngle: 315, projectileIndex: 10, coolDown: 750, coolDownOffset: 1000),
-                    new HpLessTransition(0.6,"fight2b"),
+                    new HpLessTransition(0.6, "fight2b"),
                     new TimedTransition(7500, "fight2b")
                     ),
                 new State("fight2b",
@@ -165,23 +165,23 @@ namespace wServer.logic
                     new TossObject("Chomper", 5, 315, coolDown: 1000000),
                     new TossObject("Kwargnor the Devourer of worlds", 5, 45, coolDown: 10000, coolDownOffset: 15000),
                     new TossObject("Kwargnor the Devourer of worlds", 5, 225, coolDown: 10000, coolDownOffset: 15000),
-                    new TimedTransition(20000,"waitfight2b")
+                    new TimedTransition(20000, "waitfight2b")
                     ),
                 new State("waitfight2b",
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new Shoot(40, 4, fixedAngle: 45, shootAngle: 90, projectileIndex: 11, coolDown: 50, coolDownOffset: 100),
-                    new EntitiesNotExistsTransition(20,"fight2c","Chomper", "Kwargnor the Devourer of worlds")
+                    new EntitiesNotExistsTransition(20, "fight2c", "Chomper", "Kwargnor the Devourer of worlds")
                     ),
                 new State("fight2c",
                     new Taunt("Fine! I didn't need them anyway"),
                     new Shoot(40, 4, fixedAngle: 45, shootAngle: 90, projectileIndex: 11, coolDown: 50, coolDownOffset: 100),
-                    new Shoot(40,4, shootAngle:13, projectileIndex:0, coolDown:300),
+                    new Shoot(40, 4, shootAngle: 13, projectileIndex: 0, coolDown: 300),
                     new TossObject("The Y-Eater", 2, coolDown: 3000),
-                    new HpLessTransition(0.4,"fight3")
+                    new HpLessTransition(0.4, "fight3")
                     ),
                 new State("fight3",
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Order(70,"Vitalia Colour Changer","blank"),
+                    new Order(70, "Vitalia Colour Changer", "blank"),
                     new TimedTransition(10000, "Purple", true),
                     new TimedTransition(10000, "Red", true),
                     new TimedTransition(10000, "Blue", true),
@@ -189,12 +189,12 @@ namespace wServer.logic
                     ),
                 new State("Purple",
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Order(70,"Vitalia Colour Changer","purple"),
-                    new TimedTransition(4000,"purplelava")
+                    new Order(70, "Vitalia Colour Changer", "purple"),
+                    new TimedTransition(4000, "purplelava")
                     ),
                 new State("purplelava",
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new ReplaceTile("CGarden Floor","CGarden Lava1",80),
+                    new ReplaceTile("CGarden Floor", "CGarden Lava1", 80),
                     new ReplaceTile("CGarden Floor Dark", "CGarden Lava2", 80),
                     new ReplaceTile("CGarden Bridge", "CGarden Lava3", 80),
                     new ReplaceTile("CGarden Floor Yellow", "CGarden Lava4", 80),
@@ -265,7 +265,7 @@ namespace wServer.logic
                     new ReplaceTile("CGarden Floor Purple1", "CGarden Lava10", 80),
                     new ReplaceTile("CGarden Floor Red1", "CGarden Lava11", 80),
                     new ReplaceTile("Hanami Grass 3 Light", "CGarden Lava12", 80),
-                    new TimedTransition(7500,"normalize")
+                    new TimedTransition(7500, "normalize")
                     ),
                 new State("normalize",
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -281,7 +281,7 @@ namespace wServer.logic
                     new ReplaceTile("CGarden Lava10", "CGarden Floor Purple1", 80),
                     new ReplaceTile("CGarden Lava11", "CGarden Floor Red1", 80),
                     new ReplaceTile("CGarden Lava12", "Hanami Grass 3 Light", 80),
-                    new TimedTransition(4000,"lavaagain")
+                    new TimedTransition(4000, "lavaagain")
                     ),
                 new State("lavaagain",
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -349,7 +349,7 @@ namespace wServer.logic
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                     new Charge(0.5, 10, coolDown: 10000),
                     new Follow(0.3, 10, 3),
-                    new Shoot(40, 18, shootAngle: 20,projectileIndex:12, coolDown: 3750),
+                    new Shoot(40, 18, shootAngle: 20, projectileIndex: 12, coolDown: 3750),
                     new ReplaceTile("CGarden Floor", "CGarden Lava1", 80),
                     new ReplaceTile("CGarden Floor Dark", "CGarden Lava2", 80),
                     new ReplaceTile("CGarden Bridge", "CGarden Lava3", 80),
@@ -371,8 +371,8 @@ namespace wServer.logic
                     ),
                 new State("yellowlava1",
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Charge(0.5,10,coolDown:10000),
-                    new Follow(0.3,10,3),
+                    new Charge(0.5, 10, coolDown: 10000),
+                    new Follow(0.3, 10, 3),
                     new Shoot(40, 18, shootAngle: 20, projectileIndex: 12, coolDown: 3750),
                     new ReplaceTile("CGarden Floor", "CGarden Lava1", 80),
                     new ReplaceTile("CGarden Floor Dark", "CGarden Lava2", 80),
@@ -407,76 +407,76 @@ namespace wServer.logic
                 new State("fight3b",
                      new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                      new Taunt("AAAAAAAA"),
-                     new TimedTransition(2000,"skinswitch")
+                     new TimedTransition(2000, "skinswitch")
                     ),
                 new State("skinswitch",
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                     new SetAltTexture(2),
-                    new TimedTransition(1000,"skinswitch2")
+                    new TimedTransition(1000, "skinswitch2")
                     ),
                 new State("skinswitch2",
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                     new SetAltTexture(3),
-                    new TimedTransition(1000,"skinswitch3")
+                    new TimedTransition(1000, "skinswitch3")
                     ),
                 new State("skinswitch3",
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                     new SetAltTexture(1),
-                    new TimedTransition(1000,"fight4t")
+                    new TimedTransition(1000, "fight4t")
                     ),
                 new State("fight4t",
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                     new Taunt("Finally I could get out of that form, thank you warrior."),
-                    new TimedTransition(2000,"fight4")
+                    new TimedTransition(2000, "fight4")
                     ),
                 new State("fight4",
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                     new Flash(0xfFF0000, flashRepeats: 1, flashPeriod: 3),
-                    new ChangeSize(25,200),
+                    new ChangeSize(25, 200),
                     new Taunt("This does not mean you shall be spared."),
-                    new TimedTransition(2000,"fight4a")
+                    new TimedTransition(2000, "fight4a")
                     ),
                 new State("fight4a",
-                    new Spawn("Vitalia Tracker",1,1),
-                    new Follow(1,10,0),
+                    new Spawn("Vitalia Tracker", 1, 1),
+                    new Follow(1, 10, 0),
                     new Wander(0.4),
                     new Shoot(40, 18, shootAngle: 20, projectileIndex: 13, coolDown: 3000),
-                    new TimedTransition(5000,"fight4aa"),
-                    new HpLessTransition(0.25,"fight5")
+                    new TimedTransition(5000, "fight4aa"),
+                    new HpLessTransition(0.25, "fight5")
                     ),
                 new State("fight4aa",
-                    new Charge(2,1, coolDown:100000),
+                    new Charge(2, 1, coolDown: 100000),
                     new Flash(0xfFF0000, flashRepeats: 1, flashPeriod: 3),
                     new Shoot(40, 20, projectileIndex: 14, coolDown: 100000000, coolDownOffset: 3000),
                     new Shoot(40, 20, projectileIndex: 15, coolDown: 100000000, coolDownOffset: 3500),
                     new Shoot(40, 20, projectileIndex: 14, coolDown: 100000000, coolDownOffset: 5000),
                     new Shoot(40, 20, projectileIndex: 15, coolDown: 100000000, coolDownOffset: 5500),
-                    new TimedTransition(5000,"fight4b"),
+                    new TimedTransition(5000, "fight4b"),
                     new HpLessTransition(0.25, "fight5")
                     ),
                 new State("fight4b",
-                    new Follow(1,10,0),
+                    new Follow(1, 10, 0),
                     new Shoot(40, 18, shootAngle: 20, projectileIndex: 13, coolDown: 3000),
-                    new Shoot(40,3,shootAngle:13, projectileIndex:15, coolDown: 400, coolDownOffset:500),
-                    new TimedTransition(5000,"fight4a"),
+                    new Shoot(40, 3, shootAngle: 13, projectileIndex: 15, coolDown: 400, coolDownOffset: 500),
+                    new TimedTransition(5000, "fight4a"),
                     new HpLessTransition(0.25, "fight5")
                     ),
                 new State("fight5",
-                    new Orbit(1,5,10,"Vitalia Tracker"),
-                    new Charge(3,10,coolDown:6000),
+                    new Orbit(1, 5, 10, "Vitalia Tracker"),
+                    new Charge(3, 10, coolDown: 6000),
                     new Follow(2, 10, 1),
-                    new TossObject("Vitalia Vine",5, coolDown:3500),
-                    new Shoot(40,1,projectileIndex:15, coolDown:600),
-                    new Shoot(40,6,projectileIndex:14,coolDown:6000,coolDownOffset:6000),
+                    new TossObject("Vitalia Vine", 5, coolDown: 3500),
+                    new Shoot(40, 1, projectileIndex: 15, coolDown: 600),
+                    new Shoot(40, 6, projectileIndex: 14, coolDown: 6000, coolDownOffset: 6000),
                     new Shoot(40, 3, fixedAngle: 45, projectileIndex: 7, coolDown: 1000, coolDownOffset: 250),
-                    new HpLessTransition(0.15,"fight5a")
+                    new HpLessTransition(0.15, "fight5a")
                     ),
                 new State("fight5a",
                     new Orbit(1, 5, 10, "Vitalia Tracker"),
                     new Charge(3, 10, coolDown: 6000),
                     new Follow(2, 10, 1),
                     new TossObject("Vitalia Vine", 5, coolDown: 3500),
-                    new TossObject("Chomper",5,coolDown:6000),
+                    new TossObject("Chomper", 5, coolDown: 6000),
                     new Shoot(40, 1, projectileIndex: 15, coolDown: 600),
                     new Shoot(40, 6, projectileIndex: 14, coolDown: 6000, coolDownOffset: 6000),
                     new Shoot(40, 3, fixedAngle: 45, projectileIndex: 7, coolDown: 1000, coolDownOffset: 250),
@@ -489,7 +489,7 @@ namespace wServer.logic
                     new Follow(2, 10, 1),
                     new TossObject("Vitalia Vine", 5, coolDown: 3500),
                     new TossObject("Chomper", 5, coolDown: 6000),
-                    new TossObject("Kwargnor the Devourer of worlds",5, coolDown:8000),
+                    new TossObject("Kwargnor the Devourer of worlds", 5, coolDown: 8000),
                     new Shoot(40, 1, projectileIndex: 15, coolDown: 600),
                     new Shoot(40, 6, projectileIndex: 14, coolDown: 6000, coolDownOffset: 6000),
                     new Shoot(40, 3, fixedAngle: 45, projectileIndex: 7, coolDown: 1000, coolDownOffset: 250),
@@ -503,12 +503,12 @@ namespace wServer.logic
                     new Flash(0xFFFFFF, 1, 2),
                     new ReturnToSpawn(2),
                     new Taunt("You.. Cant.. Kill.. Nature.."),
-                    new TimedTransition(2500,"ripmyman")
+                    new TimedTransition(2500, "ripmyman")
                     ),
                 new State("ripmyman",
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new SetAltTexture(3),
-                    new TimedTransition(2000,"canyoudiealready")
+                    new TimedTransition(2000, "canyoudiealready")
                     ),
                 new State("canyoudiealready",
                     new Suicide()
@@ -589,7 +589,7 @@ namespace wServer.logic
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new SetAltTexture(1),
                     new ApplySetpiece("VitaliaVine"),
-                    new TimedTransition(500,"wait")
+                    new TimedTransition(500, "wait")
                     ),
                 new State("wait",
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -602,7 +602,7 @@ namespace wServer.logic
                 new State("begin",
                      new ConditionalEffect(ConditionEffectIndex.Invincible),
                      new Shoot(5, 1, projectileIndex: 0, coolDown: 500),
-                     new TimedTransition(3000,"death")
+                     new TimedTransition(3000, "death")
                     ),
                 new State("death",
                     new Suicide()
@@ -615,11 +615,11 @@ namespace wServer.logic
                     new ConditionalEffect(ConditionEffectIndex.Invincible)
                     ),
                 new State("timer",
-                    new TimedTransition(10000,"spawn")
+                    new TimedTransition(10000, "spawn")
                     ),
                 new State("spawn",
                     new Spawn("Vitalia Vine", 1, 1, coolDown: 999999),
-                    new TimedTransition(1000,"timer")
+                    new TimedTransition(1000, "timer")
                     )
                 )
             )
@@ -630,15 +630,15 @@ namespace wServer.logic
                     ),
                 new State("blank",
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
-                    new ReplaceTile("CGarden Floor Blue1","CGarden Floor",0),
+                    new ReplaceTile("CGarden Floor Blue1", "CGarden Floor", 0),
                     new ReplaceTile("CGarden Floor Red1", "CGarden Floor", 0),
                     new ReplaceTile("CGarden Floor Yellow1", "CGarden Floor", 0),
                     new ReplaceTile("CGarden Floor Purple1", "CGarden Floor", 0)
                     ),
                 new State("purple",
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
-                    new ReplaceTile("CGarden Floor","CGarden Floor Purple1",0),
-                    new TimedTransition(1000,"wait")
+                    new ReplaceTile("CGarden Floor", "CGarden Floor Purple1", 0),
+                    new TimedTransition(1000, "wait")
                     ),
                 new State("blue",
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
