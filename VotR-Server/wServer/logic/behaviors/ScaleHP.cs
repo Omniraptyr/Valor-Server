@@ -11,11 +11,11 @@ namespace wServer.logic.behaviors
         private int _lastPlayerNum = -1;
 
         public ScaleHP(int amount) {
-            //_amount = amount;
+            _amount = amount;
         }
 
         protected override void TickCore(Entity host, RealmTime time, ref object state) {
-            /*var cool = (int?)state ?? -1;
+            var cool = (int?)state ?? -1;
 
             if (cool <= 0) {
                 if (_lastPlayerNum == host.Owner.Players.Count) return;
@@ -36,7 +36,7 @@ namespace wServer.logic.behaviors
                 _lastPlayerNum = playerNum;
             } else cool -= time.ElapsedMsDelta;
 
-            state = cool;*/
+            state = cool;
         }
     }
 }

@@ -8,7 +8,7 @@
   "serverInfo": {
     "type": "World",
     "name": "Aldragine",
-    "address": "127.0.0.1", //144.217.80.74 - 127.0.0.1
+    "address": "144.217.80.74", //144.217.80.74 - 127.0.0.1
     "port": "2050",
     "coordinates": {
       "latitude": "0",

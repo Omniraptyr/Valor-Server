@@ -11,16 +11,8 @@ C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\log4net.config
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\common.dll.config
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\common.dll
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\common.pdb
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Release\common.csprojAssemblyReference.cache
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Release\common.csproj.CoreCompileInputs.cache
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Release\common.csproj.CopyComplete
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Release\common.dll
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Release\common.pdb
-C:\Users\user01\Desktop\VotR-Server2\VotR-Server\bin\log4net.config
-C:\Users\user01\Desktop\VotR-Server2\VotR-Server\bin\common.dll.config
-C:\Users\user01\Desktop\VotR-Server2\VotR-Server\bin\common.dll
-C:\Users\user01\Desktop\VotR-Server2\VotR-Server\bin\common.pdb
-C:\Users\user01\Desktop\VotR-Server2\VotR-Server\common\obj\Release\common.csproj.CoreCompileInputs.cache
-C:\Users\user01\Desktop\VotR-Server2\VotR-Server\common\obj\Release\common.csproj.CopyComplete
-C:\Users\user01\Desktop\VotR-Server2\VotR-Server\common\obj\Release\common.dll
-C:\Users\user01\Desktop\VotR-Server2\VotR-Server\common\obj\Release\common.pdb
-C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Release\common.csprojAssemblyReference.cache

@@ -32,20 +32,9 @@ namespace wServer.networking.handlers
                     player.SendError("Invalid raid ID.");
                     return;
             }
-            if(player.Credits >= 10000)
-            {
-                player.Client.Manager.Database.UpdateCredit(player.Client.Account, -10000);
-                player.Credits = player.Client.Account.Credits - 10000;
-                player.ForceUpdate(player.Credits);
-                if (!player.TryUseItem(raidName + " (Token)"))
-                {
-                    player.SendError("You need to have the respective token in your inventory in order to launch it.");
-                    return;
-                }
-            }
-            else
-            {
-                player.SendError("You need to have enough gold as the opener to launch this raid.");
+
+            if (!player.TryUseItem(raidName + " (Token)")) {
+                player.SendError("You need to have the respective token in your inventory in order to launch it.");
                 return;
             }
 
