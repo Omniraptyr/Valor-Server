@@ -1299,7 +1299,7 @@ namespace wServer.realm.commands
         }
     }
 
-    /*class WipeServer : Command
+    class WipeServer : Command
     {
         public WipeServer() : base("wipeServer", permLevel: 110) { }
 
@@ -1318,7 +1318,7 @@ namespace wServer.realm.commands
             Program.Stop();
             return true;
         }
-    }*/
+    }
 
     internal class TpQuestCommand : Command
     {

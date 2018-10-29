@@ -255,8 +255,8 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("The Zol Awakening (Token)", 0.25),
-                    new ItemLoot("Calling of the Titan (Token)", 0.25)
+                    new ItemLoot("The Zol Awakening (Token)", 0.05),
+                    new ItemLoot("Calling of the Titan (Token)", 0.05)
                    // new ItemLoot("A Fallen Light (Token)", 0.25),
                   //  new ItemLoot("Sidon's Fall (Token)", 0.25),
                  //   new ItemLoot("War of Decades (Token)", 0.25)
@@ -544,7 +544,7 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Tiny Sor Fragment", 0.008)
+                    new ItemLoot("Tiny Sor Fragment", 0.0003)
                 )
              };
         }
@@ -564,7 +564,7 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Tiny Sor Fragment", 0.001)
+                    new ItemLoot("Tiny Sor Fragment", 0.0001)
                 )
              };
         }
@@ -722,7 +722,7 @@ namespace wServer.logic.loot
                 new OnlyOne(
                     new ItemLoot("Two Tiny Sor Fragments", 0.002),
                     new ItemLoot("Three Tiny Sor Fragments", 0.002),
-                    new ItemLoot("Tiny Sor Fragment", 0.004)
+                    new ItemLoot("Tiny Sor Fragment", 0.003)
                 ),
                 new OnlyOne(
                     new ItemLoot("Shine", 0.005)
@@ -738,9 +738,9 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.003),
-                    new ItemLoot("Three Tiny Sor Fragments", 0.003),
-                    new ItemLoot("Tiny Sor Fragment", 0.006)
+                    new ItemLoot("Two Tiny Sor Fragments", 0.002),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.002),
+                    new ItemLoot("Tiny Sor Fragment", 0.003)
                 ),
                 new OnlyOne(
                     new ItemLoot("Shine", 0.005)
@@ -757,9 +757,9 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.004),
-                    new ItemLoot("Three Tiny Sor Fragments", 0.004),
-                    new ItemLoot("Tiny Sor Fragment", 0.007)
+                    new ItemLoot("Two Tiny Sor Fragments", 0.002),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.002),
+                    new ItemLoot("Tiny Sor Fragment", 0.003)
                 ),
                 new OnlyOne(
                     new ItemLoot("Shine", 0.005)
@@ -775,9 +775,9 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Two Tiny Sor Fragments", 0.005),
-                    new ItemLoot("Three Tiny Sor Fragments", 0.005),
-                    new ItemLoot("Tiny Sor Fragment", 0.008)
+                    new ItemLoot("Two Tiny Sor Fragments", 0.002),
+                    new ItemLoot("Three Tiny Sor Fragments", 0.002),
+                    new ItemLoot("Tiny Sor Fragment", 0.004)
                 ),
                 new OnlyOne(
                     new ItemLoot("Shine", 0.005)

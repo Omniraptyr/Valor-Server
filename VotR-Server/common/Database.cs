@@ -1477,7 +1477,7 @@ namespace common
             _db.HashSetAsync(acc.Key, "totalTokens", 0, flags: CommandFlags.FireAndForget);
             _db.HashSetAsync(acc.Key, "onrane", 0, flags: CommandFlags.FireAndForget);
             _db.HashSetAsync(acc.Key, "totalOnrane", 0, flags: CommandFlags.FireAndForget);
-            _db.HashSetAsync(acc.Key, "kantos", 0, flags: CommandFlags.FireAndForget);
+            //_db.HashSetAsync(acc.Key, "kantos", 0, flags: CommandFlags.FireAndForget);
             _db.HashSetAsync(acc.Key, "lootBox1", 0, flags: CommandFlags.FireAndForget);
             _db.HashSetAsync(acc.Key, "lootBox2", 0, flags: CommandFlags.FireAndForget);
             _db.HashSetAsync(acc.Key, "lootBox3", 0, flags: CommandFlags.FireAndForget);

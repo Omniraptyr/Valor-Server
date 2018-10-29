@@ -326,6 +326,7 @@ namespace wServer.logic
             )
             .Init("vlntns Loot Balloon Bella",
                 new State(
+                    new DropPortalOnDeath("Garden of Chaos Portal", .10),
                     new State("Idle",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new TimedTransition(5000, "UnsetEffect")

@@ -5041,4 +5041,340 @@
         <Sink/>
         <Speed>.222</Speed>
     </Ground>
+    <Ground type="0x29d2" id="CGarden Floor">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x172</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29d3" id="CGarden Lava">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x174</Index>
+        </Texture>
+        <MinDamage>70</MinDamage>
+        <MaxDamage>95</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.333</Speed>
+        <BlendPriority>1</BlendPriority>
+    </Ground>
+    <Ground type="0x29d4" id="CGarden Floor Flower">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x173</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29d5" id="CGarden Floor Rock">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x179</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29d6" id="CGarden Floor Tree Dark">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x17a</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29d7" id="CGarden Floor Tree Light">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x17b</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29d8" id="CGarden Floor Dark">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x17c</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29d9" id="CGarden Floor Bush Dark">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x17d</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29da" id="CGarden Floor Red">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x17e</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29db" id="CGarden Floor Yellow">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x17f</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29dc" id="CGarden Bridge">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x184</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29dd" id="CGarden Floor Purple">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x185</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29de" id="CGarden Floor Blue">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x186</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29df" id="CGarden Lava1">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x174</Index>
+        </Texture>
+        <MinDamage>70</MinDamage>
+        <MaxDamage>95</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.333</Speed>
+        <BlendPriority>1</BlendPriority>
+    </Ground>
+    <Ground type="0x29e0" id="CGarden Lava2">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x174</Index>
+        </Texture>
+        <MinDamage>70</MinDamage>
+        <MaxDamage>95</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.333</Speed>
+        <BlendPriority>1</BlendPriority>
+    </Ground>
+    <Ground type="0x29e1" id="CGarden Lava3">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x174</Index>
+        </Texture>
+        <MinDamage>70</MinDamage>
+        <MaxDamage>95</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.333</Speed>
+        <BlendPriority>1</BlendPriority>
+    </Ground>
+    <Ground type="0x29e2" id="CGarden Lava4">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x174</Index>
+        </Texture>
+        <MinDamage>70</MinDamage>
+        <MaxDamage>95</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.333</Speed>
+        <BlendPriority>1</BlendPriority>
+    </Ground>
+    <Ground type="0x29e3" id="CGarden Lava5">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x174</Index>
+        </Texture>
+        <MinDamage>70</MinDamage>
+        <MaxDamage>95</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.333</Speed>
+        <BlendPriority>1</BlendPriority>
+    </Ground>
+    <Ground type="0x29e4" id="CGarden Lava6">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x174</Index>
+        </Texture>
+        <MinDamage>70</MinDamage>
+        <MaxDamage>95</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.333</Speed>
+        <BlendPriority>1</BlendPriority>
+    </Ground>
+    <Ground type="0x29e5" id="CGarden Lava7">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x174</Index>
+        </Texture>
+        <MinDamage>70</MinDamage>
+        <MaxDamage>95</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.333</Speed>
+        <BlendPriority>1</BlendPriority>
+    </Ground>
+    <Ground type="0x29e6" id="CGarden Floor Red1">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x17e</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29e7" id="CGarden Floor Yellow1">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x17f</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29e8" id="CGarden Floor Purple1">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x185</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29e9" id="CGarden Floor Blue1">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x186</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29ea" id="CGarden Lava8">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x174</Index>
+        </Texture>
+        <MinDamage>70</MinDamage>
+        <MaxDamage>95</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.333</Speed>
+        <BlendPriority>1</BlendPriority>
+    </Ground>
+    <Ground type="0x29eb" id="CGarden Lava9">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x174</Index>
+        </Texture>
+        <MinDamage>70</MinDamage>
+        <MaxDamage>95</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.333</Speed>
+        <BlendPriority>1</BlendPriority>
+    </Ground>
+    <Ground type="0x29ec" id="CGarden Lava10">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x174</Index>
+        </Texture>
+        <MinDamage>70</MinDamage>
+        <MaxDamage>95</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.333</Speed>
+        <BlendPriority>1</BlendPriority>
+    </Ground>
+    <Ground type="0x29ed" id="CGarden Lava11">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x174</Index>
+        </Texture>
+        <MinDamage>70</MinDamage>
+        <MaxDamage>95</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.333</Speed>
+        <BlendPriority>1</BlendPriority>
+    </Ground>
+    <Ground type="0x29ee" id="CGarden Lava12">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x174</Index>
+        </Texture>
+        <MinDamage>70</MinDamage>
+        <MaxDamage>95</MaxDamage>
+        <Animate dx=".33" dy=".33">Flow</Animate>
+        <Sink/>
+        <Speed>.333</Speed>
+        <BlendPriority>1</BlendPriority>
+    </Ground>
+    <Ground type="0x29ef" id="Lenin Carpet1">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x19b</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29f0" id="Lenin Carpet2">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x19c</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29f1" id="Lenin Carpet3">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x19d</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29f2" id="Lenin Floor1">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x19e</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29f3" id="Lenin Floor2">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x19f</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29f4" id="Lenin Carpet1a">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1a0</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29f5" id="Lenin Carpet2a">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1a1</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29f6" id="Lenin Carpet3a">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1a2</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29f7" id="Lenin Carpet4a">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1a3</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29f8" id="Lenin Carpet5a">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1a4</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29f9" id="Lenin Carpet6a">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1a5</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29fa" id="Lenin Carpet7a">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1a6</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29fb" id="Lenin Carpet8a">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1a7</Index>
+        </Texture>
+    </Ground>
+    <Ground type="0x29fc" id="Lenin Carpet9a">
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1a8</Index>
+        </Texture>
+    </Ground>
 </GroundTypes>

@@ -17159,4 +17159,1087 @@
     <NoMiniMap/>
     <ShadowSize>0</ShadowSize>
   </Object>
+    <Object type="0x6772" id="CGarden Wall">
+        <Class>Wall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x16e</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x16f</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x170</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x171</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x16d</Index>
+            </Texture>
+        </Top>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x673d" id="Garden of Chaos Portal">
+        <Class>Portal</Class>
+        <IntergamePortal/>
+        <DungeonName>Garden of Chaos</DungeonName>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x175</Index>
+        </Texture>
+        <Size>100</Size>
+        <DisplayId>Garden of Chaos Portal</DisplayId>
+    </Object>
+    <Object type="0x673e" id="CGarden Rock">
+        <Class>GameObject</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x176</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x177</Index>
+            </Texture>
+        </RandomTexture>
+        <Static/>
+        <OccupySquare/>
+        <DisplayId>CGarden Rock</DisplayId>
+    </Object>
+    <Object type="0x6773" id="CGarden Tree Small">
+        <Class>GameObject</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x178</Index>
+        </Texture>
+        <Size>100</Size>
+        <Static/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+    </Object>
+    <Object type="0x6740" id="CGarden Tree Big">
+        <Class>GameObject</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1ee</Index>
+        </Texture>
+        <Size>150</Size>
+        <Static/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+    </Object>
+    <Object type="0x6741" id="CGarden Tree Big2">
+        <Class>GameObject</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1ef</Index>
+        </Texture>
+        <Size>150</Size>
+        <Static/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+    </Object>
+    <Object type="0x6742" id="CGarden Rock Wall">
+        <Class>Wall</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x180</Index>
+        </Texture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x181</Index>
+            </Texture>
+        </Top>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x6774" id="Chomper">
+        <Enemy/>
+        <Group>CGarden Big</Group>
+        <DisplayId>Chomper</DisplayId>
+        <Class>Character</Class>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbedAlt</File>
+            <Index>0x04</Index>
+        </AnimatedTexture>
+        <HitSound>monster/oryx_hit</HitSound>
+        <DeathSound>monster/abyss_brutes_death</DeathSound>
+        <Size>160</Size>
+        <ParalyzeImmune/>
+        <StasisImmune/>
+        <DazedImmune/>
+        <SlowedImmune/>
+        <MaxHitPoints>35000</MaxHitPoints>
+        <Defense>45</Defense>
+        <Projectile id="0">
+            <ObjectId>Chomper Spit</ObjectId>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>135</MaxDamage>
+            <Speed>100</Speed>
+            <Size>100</Size>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <ConditionEffect duration="3.5">ArmorBroken</ConditionEffect>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Chomper Spinner</ObjectId>
+            <MinDamage>150</MinDamage>
+            <MaxDamage>200</MaxDamage>
+            <Speed>15</Speed>
+            <MultiHit/>
+            <Size>75</Size>
+            <ArmorPiercing/>
+            <ConditionEffect duration="5.5">Slowed</ConditionEffect>
+            <LifetimeMS>6500</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Chomper Wave</ObjectId>
+            <MinDamage>30</MinDamage>
+            <MaxDamage>80</MaxDamage>
+            <Speed>15</Speed>
+            <Size>85</Size>
+            <ArmorPiercing/>
+            <LifetimeMS>1000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x6775" id="CGarden Kwargnor Shot1">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>mountainTempleObjects8x8</File>
+            <Index>0x13e</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6776" id="CGarden Kwargnor Shot2">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x188</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x6777" id="Chomper Spit">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x182</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6778" id="Chomper Spinner">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x183</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x6779" id="Chomper Wave">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x187</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x677a" id="The Y-Eater">
+        <DisplayId>The Y-Eater</DisplayId>
+        <Enemy/>
+        <AnimatedTexture>
+            <File>mountainTempleChars8x8</File>
+            <Index>14</Index>
+        </AnimatedTexture>
+        <Class>Character</Class>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>10000</MaxHitPoints>
+        <Defense>45</Defense>
+        <Projectile id="0">
+            <ObjectId>Chomper Wave</ObjectId>
+            <Damage>85</Damage>
+            <Speed>45</Speed>
+            <MultiHit/>
+            <Size>85</Size>
+            <ConditionEffect duration="2">Bleeding</ConditionEffect>
+            <LifetimeMS>450</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x677b" id="Kwargnor the Devourer of worlds">
+        <DisplayId>Kwargnor the Devourer of worlds</DisplayId>
+        <Enemy/>
+        <StasisImmune/>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbedAlt</File>
+            <Index>0x05</Index>
+        </AnimatedTexture>
+        <Class>Character</Class>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>40000</MaxHitPoints>
+        <Defense>75</Defense>
+        <Projectile id="0">
+            <ObjectId>CGarden Kwargnor Shot1</ObjectId>
+            <Damage>100</Damage>
+            <Speed>100</Speed>
+            <MultiHit/>
+            <Size>125</Size>
+            <ArmorPiercing/>
+            <ConditionEffect duration="3.5">Confused</ConditionEffect>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>CGarden Kwargnor Shot2</ObjectId>
+            <Damage>85</Damage>
+            <Speed>70</Speed>
+            <MultiHit/>
+            <Size>100</Size>
+            <ArmorPiercing/>
+            <ConditionEffect duration="2">Unstable</ConditionEffect>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Kwargnor Rock</ObjectId>
+            <Damage>300</Damage>
+            <Speed>45</Speed>
+            <MultiHit/>
+            <Size>180</Size>
+            <ArmorPiercing/>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x677c" id="Kwargnor Rock">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1f7</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x677d" id="Garganite Shot">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x189</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x677e" id="Garganite Shot2">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x18a</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x674e" id="Garganite">
+        <DisplayId>Garganite</DisplayId>
+        <Enemy/>
+        <StasisImmune/>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbedAlt</File>
+            <Index>0x06</Index>
+        </AnimatedTexture>
+        <Class>Character</Class>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>130</Size>
+        <MaxHitPoints>60000</MaxHitPoints>
+        <Defense>60</Defense>
+        <Projectile id="0">
+            <ObjectId>Garganite Shot</ObjectId>
+            <Damage>160</Damage>
+            <Speed>80</Speed>
+            <MultiHit/>
+            <Size>125</Size>
+            <ArmorPiercing/>
+            <LifetimeMS>8000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Garganite Shot2</ObjectId>
+            <Damage>85</Damage>
+            <Speed>70</Speed>
+            <MultiHit/>
+            <Size>130</Size>
+            <ConditionEffect duration="5">Slowed</ConditionEffect>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Garganite Shot</ObjectId>
+            <Damage>160</Damage>
+            <Speed>40</Speed>
+            <MultiHit/>
+            <Size>125</Size>
+            <ArmorPiercing/>
+            <LifetimeMS>4000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x674f" id="Vitalia Shot">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x18b</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6750" id="Vitalia Shot2a">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x18c</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x6751" id="Vitalia Shot2b">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x18d</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x6752" id="Vitalia Shot2c">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x18e</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x6753" id="Vitalia Shot2d">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x18f</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x6754" id="Vitalia">
+        <DisplayId>Vitalia</DisplayId>
+        <Enemy/>
+        <ParalyzeImmune/>
+        <DazedImmune/>
+        <StasisImmune/>
+        <StunImmune/>
+        <SlowImmune/>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbedAlt</File>
+            <Index>0x07</Index>
+        </AnimatedTexture>
+        <AltTexture id="1">
+            <AnimatedTexture>
+                <File>chars16x16rEncounters</File>
+                <Index>125</Index>
+            </AnimatedTexture>
+        </AltTexture>
+        <AltTexture id="2">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1f8</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="3">
+            <Texture>
+                <File>lofiObjBig</File>
+                <Index>0x1f9</Index>
+            </Texture>
+        </AltTexture>
+        <Class>Character</Class>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>650000</MaxHitPoints>
+        <Defense>60</Defense>
+        <Projectile id="0">
+            <ObjectId>Vitalia Shot</ObjectId>
+            <Damage>80</Damage>
+            <Speed>65</Speed>
+            <MultiHit/>
+            <Size>125</Size>
+            <ArmorPiercing/>
+            <LifetimeMS>20000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>Vitalia Shot2a</ObjectId>
+            <Damage>120</Damage>
+            <Speed>80</Speed>
+            <MultiHit/>
+            <Size>120</Size>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+            <Amplitude>1.5</Amplitude>
+            <Frequency>3</Frequency>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>Vitalia Shot2b</ObjectId>
+            <Damage>120</Damage>
+            <Speed>80</Speed>
+            <MultiHit/>
+            <Size>120</Size>
+            <ConditionEffect duration="3">Quiet</ConditionEffect>
+            <Amplitude>1.5</Amplitude>
+            <Frequency>3</Frequency>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>Vitalia Shot2c</ObjectId>
+            <Damage>120</Damage>
+            <Speed>80</Speed>
+            <MultiHit/>
+            <Size>120</Size>
+            <ConditionEffect duration="3">ArmorBroken</ConditionEffect>
+            <Amplitude>1.5</Amplitude>
+            <Frequency>3</Frequency>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Vitalia Shot2d</ObjectId>
+            <Damage>120</Damage>
+            <Speed>80</Speed>
+            <MultiHit/>
+            <Size>120</Size>
+            <ConditionEffect duration="3">Stunned</ConditionEffect>
+            <Amplitude>1.5</Amplitude>
+            <Frequency>3</Frequency>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Vitalia Shot3</ObjectId>
+            <Damage>0</Damage>
+            <Speed>140</Speed>
+            <MultiHit/>
+            <ConditionEffect duration="5">Healing</ConditionEffect>
+            <Size>100</Size>
+            <LifetimeMS>12000</LifetimeMS>
+        </Projectile>
+        <Projectile id="6">
+            <ObjectId>Vitalia Shot4</ObjectId>
+            <Damage>50</Damage>
+            <Speed>120</Speed>
+            <MultiHit/>
+            <ConditionEffect duration="3">Speedy</ConditionEffect>
+            <ConditionEffect duration="3">Confused</ConditionEffect>
+            <Size>100</Size>
+            <ArmorPiercing/>
+            <LifetimeMS>12000</LifetimeMS>
+        </Projectile>
+        <Projectile id="7">
+            <ObjectId>Vitalia Shot2a</ObjectId>
+            <Damage>120</Damage>
+            <Speed>20</Speed>
+            <MultiHit/>
+            <Size>120</Size>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+            <Amplitude>1.5</Amplitude>
+            <Frequency>3</Frequency>
+            <LifetimeMS>12000</LifetimeMS>
+        </Projectile>
+        <Projectile id="8">
+            <ObjectId>Vitalia Shot2b</ObjectId>
+            <Damage>120</Damage>
+            <Speed>20</Speed>
+            <MultiHit/>
+            <Size>120</Size>
+            <ConditionEffect duration="3">Quiet</ConditionEffect>
+            <Amplitude>1.5</Amplitude>
+            <Frequency>3</Frequency>
+            <LifetimeMS>12000</LifetimeMS>
+        </Projectile>
+        <Projectile id="9">
+            <ObjectId>Vitalia Shot2c</ObjectId>
+            <Damage>120</Damage>
+            <Speed>20</Speed>
+            <MultiHit/>
+            <Size>120</Size>
+            <ConditionEffect duration="3">ArmorBroken</ConditionEffect>
+            <Amplitude>1.5</Amplitude>
+            <Frequency>3</Frequency>
+            <LifetimeMS>12000</LifetimeMS>
+        </Projectile>
+        <Projectile id="10">
+            <ObjectId>Vitalia Shot2d</ObjectId>
+            <Damage>120</Damage>
+            <Speed>20</Speed>
+            <MultiHit/>
+            <Size>120</Size>
+            <ConditionEffect duration="3">Stunned</ConditionEffect>
+            <Amplitude>1.5</Amplitude>
+            <Frequency>3</Frequency>
+            <LifetimeMS>12000</LifetimeMS>
+        </Projectile>
+        <Projectile id="11">
+            <ObjectId>Vitalia Shot5</ObjectId>
+            <Damage>75</Damage>
+            <Speed>50</Speed>
+            <MultiHit/>
+            <Size>100</Size>
+            <ArmorPiercing/>
+            <ConditionEffect duration="2">Stunned</ConditionEffect>
+            <LifetimeMS>12000</LifetimeMS>
+        </Projectile>
+        <Projectile id="12">
+            <ObjectId>Chomper Wave</ObjectId>
+            <Damage>85</Damage>
+            <Speed>45</Speed>
+            <MultiHit/>
+            <Size>85</Size>
+            <LifetimeMS>450</LifetimeMS>
+        </Projectile>
+        <Projectile id="13">
+            <ObjectId>Vitalia Shot6</ObjectId>
+            <Damage>80</Damage>
+            <Speed>60</Speed>
+            <MultiHit/>
+            <Size>85</Size>
+            <LifetimeMS>2000</LifetimeMS>
+        </Projectile>
+        <Projectile id="14">
+            <ObjectId>Vitalia Shot7</ObjectId>
+            <Damage>150</Damage>
+            <Speed>80</Speed>
+            <MultiHit/>
+            <Size>140</Size>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+        <Projectile id="15">
+            <ObjectId>Vitalia Shot8</ObjectId>
+            <Damage>100</Damage>
+            <Speed>100</Speed>
+            <MultiHit/>
+            <Size>120</Size>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x6755" id="Vitalia Shot3">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x190</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6756" id="Vitalia Shot4">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x191</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6757" id="Vitalia Turret">
+        <DisplayId>Vitalia Turret</DisplayId>
+        <Enemy/>
+        <StasisImmune/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x192</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x193</Index>
+            </Texture>
+        </AltTexture>
+        <AltTexture id="2">
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x192</Index>
+            </Texture>
+        </AltTexture>
+        <Class>Character</Class>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>25000</MaxHitPoints>
+        <Defense>10</Defense>
+        <Projectile id="0">
+            <ObjectId>Vitalia Turret Shot</ObjectId>
+            <Damage>50</Damage>
+            <Speed>65</Speed>
+            <MultiHit/>
+            <Size>100</Size>
+            <ArmorPiercing/>
+            <LifetimeMS>5000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x6758" id="Vitalia Turret Helper">
+        <Enemy/>
+        <Class>Character</Class>
+        <StasisImmune/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>0</Defense>
+        <DrawOnGround/>
+        <NoMiniMap/>
+        <Projectile id="0">
+            <ObjectId>Vitalia Turret Shot</ObjectId>
+            <Damage>50</Damage>
+            <Speed>65</Speed>
+            <MultiHit/>
+            <Size>100</Size>
+            <ArmorPiercing/>
+            <LifetimeMS>5000</LifetimeMS>
+        </Projectile>
+        <DisplayId>Vitalia Turret</DisplayId>
+    </Object>
+    <Object type="0x6759" id="Vitalia Turret Shot">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x194</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x675a" id="Vitalia Turret Helper2">
+        <Enemy/>
+        <Class>Character</Class>
+        <StasisImmune/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>0</Defense>
+        <DrawOnGround/>
+        <NoMiniMap/>
+        <DisplayId>Vitalia Turret</DisplayId>
+    </Object>
+    <Object type="0x675b" id="Vitalia Vine">
+        <DisplayId>Vitalia Vine</DisplayId>
+        <Enemy/>
+        <NoMiniMap/>
+        <ShadowSize>0</ShadowSize>
+        <StasisImmune/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x195</Index>
+        </Texture>
+        <AltTexture id="1">
+            <Texture>
+                <File>invisible</File>
+                <Index>0</Index>
+            </Texture>
+        </AltTexture>
+        <Projectile id="0">
+            <ObjectId>Invisible</ObjectId>
+            <Damage>45</Damage>
+            <Speed>0</Speed>
+            <LifetimeMS>500</LifetimeMS>
+            <Size>75</Size>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+            <MultiHit/>
+        </Projectile>
+        <Class>Character</Class>
+        <Size>100</Size>
+        <MaxHitPoints>0</MaxHitPoints>
+    </Object>
+    <Object type="0x675c" id="Vitalia Vine2">
+        <DisplayId>Vitalia Vine</DisplayId>
+        <Enemy/>
+        <NoMiniMap/>
+        <StasisImmune/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x196</Index>
+        </Texture>
+        <Projectile id="0">
+            <ObjectId>Invisible</ObjectId>
+            <Damage>45</Damage>
+            <Speed>0</Speed>
+            <LifetimeMS>500</LifetimeMS>
+            <Size>75</Size>
+            <ConditionEffect duration="3">Petrify</ConditionEffect>
+            <ConditionEffect duration="1.5">Bleeding</ConditionEffect>
+            <MultiHit/>
+        </Projectile>
+        <Class>Character</Class>
+        <Size>100</Size>
+        <MaxHitPoints>0</MaxHitPoints>
+    </Object>
+    <Object type="0x675d" id="Vitalia Vine Helper">
+        <Enemy/>
+        <Class>Character</Class>
+        <StasisImmune/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>0</Defense>
+        <DrawOnGround/>
+        <NoMiniMap/>
+        <DisplayId>Vitalia Vine Helper</DisplayId>
+    </Object>
+    <Object type="0x675e" id="Vitalia Shot5">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x197</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x675f" id="Vitalia Colour Changer">
+        <Enemy/>
+        <Class>Character</Class>
+        <StasisImmune/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>0</Defense>
+        <DrawOnGround/>
+        <NoMiniMap/>
+        <DisplayId>Vitalia Colour Changer</DisplayId>
+    </Object>
+    <Object type="0x6760" id="Vitalia Shot6">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x198</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6761" id="Vitalia Shot7">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x199</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x6762" id="Vitalia Shot8">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x19a</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6763" id="Vitalia Tracker">
+        <Class>Character</Class>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/dwarves_death</DeathSound>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Size>0</Size>
+        <Defense>0</Defense>
+        <XpMult>0.0</XpMult>
+        <ShadowSize>0</ShadowSize>
+        <DisplayId>Vitalia Tracker</DisplayId>
+    </Object>
+    <Object type="0x6764" id="CGarden Wall Lenin">
+        <Class>Wall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x16e</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x16f</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x170</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x171</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x16d</Index>
+            </Texture>
+        </Top>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x6765" id="Lenin Big">
+        <DisplayId>Lenin</DisplayId>
+        <Enemy/>
+        <AnimatedTexture>
+            <File>raiding32x32Embed</File>
+            <Index>0x02</Index>
+        </AnimatedTexture>
+        <Class>Character</Class>
+        <Size>150</Size>
+        <NoMiniMap/>
+        <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x6766" id="CGarden Wall Lenin Spawner">
+        <Class>Character</Class>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/dwarves_death</DeathSound>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Size>0</Size>
+        <Defense>0</Defense>
+        <XpMult>0.0</XpMult>
+        <ShadowSize>0</ShadowSize>
+        <DisplayId>CGarden Wall Lenin Spawner</DisplayId>
+    </Object>
+    <Object type="0x6767" id="Viperstring Shot">
+        <Class>Projectile</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x1aa</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x1ab</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x1ac</Index>
+            </Texture>
+        </RandomTexture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6768" id="Viperstring">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1a9</Index>
+        </Texture>
+        <SlotType>3</SlotType>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <Description>This bow still has leftover sap from Vitalia, it seems deadly.</Description>
+        <RateOfFire>1.3</RateOfFire>
+        <Sound>weapon/golden_bow</Sound>
+        <Projectile>
+            <ObjectId>Venomstrike Shot</ObjectId>
+            <Speed>100</Speed>
+            <MinDamage>150</MinDamage>
+            <MaxDamage>220</MaxDamage>
+            <LifetimeMS>840</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="175">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="7">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="20">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>arrowShoot</OldSound>
+        <DisplayId>Viperstring</DisplayId>
+    </Object>
+    <Object type="0x6769" id="BoT Shot">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1ae</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x676a" id="Blade of Thorns">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1ad</Index>
+        </Texture>
+        <SlotType>24</SlotType>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <Description>A long, narrow, curved blade made of thorns held together by the petals of Vitalia.</Description>
+        <RateOfFire>1.45</RateOfFire>
+        <Sound>weapon/long_sword</Sound>
+        <Projectile id="0">
+            <ObjectId>BoT Shot</ObjectId>
+            <Speed>130</Speed>
+            <MinDamage>200</MinDamage>
+            <MaxDamage>220</MaxDamage>
+            <LifetimeMS>450</LifetimeMS>
+            <Size>90</Size>
+            <MultiHit/>
+            <CondChance effect="Bleeding" chance="10" duration="7"/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="125">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="8">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>bladeSwing</OldSound>
+        <DisplayId>Blade of Thorns</DisplayId>
+    </Object>
+    <Object type="0x676b" id="Rose Petal Amulet">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1af</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <Description>A petal plucked from the chest of Vitalia.</Description>
+        <ActivateOnEquip stat="0" amount="150">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+    </Object>
+    <Object type="0x676c" id="Rose Petal Shot">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1b1</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x676d" id="Rose Petal Staff">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1b0</Index>
+        </Texture>
+        <SlotType>17</SlotType>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <Description>A staff of concentrated energy harvested from the spirit of Vitalia.</Description>
+        <RateOfFire>1.2</RateOfFire>
+        <Sound>weapon/sprite_wand</Sound>
+        <Projectile>
+            <ObjectId>Rose Petal Shot</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>100</MinDamage>
+            <MaxDamage>125</MaxDamage>
+            <LifetimeMS>550</LifetimeMS>
+            <ArmorPiercing/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="150">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="20">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>magicShoot</OldSound>
+        <NumProjectiles>2</NumProjectiles>
+        <DisplayId>Rose Petal Staff</DisplayId>
+    </Object>
+    <Object type="0x676e" id="Skull of Lenin">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1b2</Index>
+        </Texture>
+        <SlotType>19</SlotType>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <Description>Use the power of Lenin to redistribute health among the people!</Description>
+        <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="3" amount="100">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="112" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="5">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <MpCost>120</MpCost>
+        <Activate radius="5" totalDamage="400">VampireBlast</Activate>
+        <feedPower>250</feedPower>
+        <Soulbound/>
+        <DisplayId>Skull of Lenin</DisplayId>
+    </Object>
+    <Object type="0x6770" id="CGarden Lenin Wall">
+        <Class>Wall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x1b4</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x1b5</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x1b3</Index>
+            </Texture>
+        </Top>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+    </Object>
+    <Object type="0x6771" id="Lenin">
+        <DisplayId>Lenin</DisplayId>
+        <Class>Character</Class>
+        <Enemy/>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1ed</Index>
+        </Texture>
+        <MaxHitPoints>120000</MaxHitPoints>
+        <Defense>35</Defense>
+        <Size>160</Size>
+        <XpMult>0.0</XpMult>
+    </Object>// last index used 0x677e
 </Objects>

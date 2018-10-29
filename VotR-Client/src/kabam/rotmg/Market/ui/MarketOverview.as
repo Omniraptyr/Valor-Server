@@ -25,7 +25,7 @@ public class MarketOverview extends EmptyFrame
       public function MarketOverview()
       {
          super();
-         var _loc1_:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(46).setBold(true).setStringBuilder(new StaticStringBuilder("Market")).setAutoSize(TextFieldAutoSize.CENTER).setTextWidth(600).setColor(16777215).setPosition(0,20);
+         var _loc1_:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(46).setBold(true).setStringBuilder(new StaticStringBuilder("market")).setAutoSize(TextFieldAutoSize.CENTER).setTextWidth(600).setColor(16777215).setPosition(0,20);
          addChild(_loc1_);
          this.closeButton_ = new DialogCloseButton(0.8);
          this.closeButton_.x = 566;

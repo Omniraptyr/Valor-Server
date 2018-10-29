@@ -16,6 +16,7 @@ namespace wServer.logic
             )
             .Init("Arena Headless Horseman",
                 new State(
+                    new DropPortalOnDeath("Haunted Cemetery Portal", .40),
                     new Spawn("Arena Horseman Anchor", 1, 1),
                     new State("Default",
                         new HpLessTransition(0.1, "End"),

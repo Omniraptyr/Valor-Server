@@ -1,8 +1,8 @@
 {
   "dbInfo": {
-    "host": "127.0.0.1", //144.217.80.74
-    "port": "6379", //1985 - 6379
-    "auth": "", //2NSVsRREv3FYXPGm - none
+    "host": "144.217.80.74", //144.217.80.74
+    "port": "1985", //1985 - 6379
+    "auth": "2NSVsRREv3FYXPGm", //2NSVsRREv3FYXPGm - none
     "index": "0"
   },
   "serverInfo": {
@@ -19,7 +19,7 @@
   "serverSettings": {
     "logFolder": "./logs",
     "resourceFolder": "./resources",
-    "version": "75.A6",
+    "version": "75.A7",
     "tps": "5",
     "mode": "Single",
     "key": "BA15DE",
