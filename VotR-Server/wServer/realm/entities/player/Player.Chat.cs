@@ -268,9 +268,9 @@ namespace wServer.realm.entities
             });
         }
 
-        internal void AnnouncementReceived(string text, string anouncee = "ANNOUNCEMENT")
+        internal void AnnouncementReceived(string text)
         {
-            _client.Player.SendInfo(string.Concat($"<{anouncee}> ", text));
+            _client.Player.SendInfo(string.Concat("<ANNOUNCEMENT> ", text));
 
             /*client.SendPacket(new Text()
             {

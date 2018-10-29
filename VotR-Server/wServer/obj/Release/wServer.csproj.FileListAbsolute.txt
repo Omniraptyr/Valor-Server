@@ -1,13 +1,3 @@
-C:\votr\VotR-Server2\VotR-Server\bin\log4net.config
-C:\votr\VotR-Server2\VotR-Server\bin\wServer.json
-C:\votr\VotR-Server2\VotR-Server\bin\wServer.exe.config
-C:\votr\VotR-Server2\VotR-Server\bin\wServer.exe
-C:\votr\VotR-Server2\VotR-Server\bin\wServer.pdb
-C:\votr\VotR-Server2\VotR-Server\wServer\obj\Release\wServer.csprojAssemblyReference.cache
-C:\votr\VotR-Server2\VotR-Server\wServer\obj\Release\wServer.csproj.CoreCompileInputs.cache
-C:\votr\VotR-Server2\VotR-Server\wServer\obj\Release\wServer.csproj.CopyComplete
-C:\votr\VotR-Server2\VotR-Server\wServer\obj\Release\wServer.exe
-C:\votr\VotR-Server2\VotR-Server\wServer\obj\Release\wServer.pdb
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\log4net.config
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\wServer.json
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\bin\wServer.exe.config

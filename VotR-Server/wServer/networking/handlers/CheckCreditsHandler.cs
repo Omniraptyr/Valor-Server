@@ -9,7 +9,8 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, CheckCredits packet)
         {
-            client.Manager.Logic.AddPendingAction(t => Handle(client));
+            //client.Manager.Logic.AddPendingAction(t => Handle(client));
+            Handle(client);
         }
 
         void Handle(Client client)

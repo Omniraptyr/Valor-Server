@@ -13,27 +13,27 @@ namespace wServer.networking.handlers
     {
         public override PacketId ID => PacketId.MARKET_COMMAND;
 
-        protected override void HandlePacket(Client client, MarketCommand packet)
+        protected override async void HandlePacket(Client client, MarketCommand packet)
         {
-            client.Manager.Logic.AddPendingAction(async t =>
+            try
             {
-                try {
-                    switch (packet.CommandId) {
-                        case MarketCommand.REQUEST_MY_ITEMS:
-                            MyItems(client);
-                            break;
-                        case MarketCommand.ADD_OFFER:
-                            AddOffers(client, packet.NewOffers);
-                            break;
-                        case MarketCommand.REMOVE_OFFER:
-                            await RemoveOffer(client, packet.OfferId);
-                            break;
-                    }
+                switch (packet.CommandId)
+                {
+                    case MarketCommand.REQUEST_MY_ITEMS:
+                        MyItems(client);
+                        break;
+                    case MarketCommand.ADD_OFFER:
+                        AddOffers(client, packet.NewOffers);
+                        break;
+                    case MarketCommand.REMOVE_OFFER:
+                        await RemoveOffer(client, packet.OfferId);
+                        break;
                 }
-                catch (Exception e) {
-                    Log.Error(e);
-                }
-            });
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+            }
         }
 
         private void MyItems(Client client)

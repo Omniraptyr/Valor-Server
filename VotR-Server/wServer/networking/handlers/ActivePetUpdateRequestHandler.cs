@@ -14,7 +14,6 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, ActivePetUpdateRequest packet)
         {
-            return; //disable since no pets
             var petYard = client.Player.Owner as PetYard;
             var pet = petYard?.Pets.Values.SingleOrDefault(p => p.PetId == packet.InstanceId);
             if (pet == null)

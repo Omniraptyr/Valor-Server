@@ -31,7 +31,10 @@ namespace wServer.logic.loot
 
         private static readonly string[] ValuableItems = {
             "Master Eon",
-            "Abyssal Rune",
+            "Three Tiny Sor Fragments",
+            "Sor Fragment Cache",
+            "Small Sor Fragment",
+            "Medium Sor Fragment",
             "Large Sor Fragment",
             "Sor Crystal",
             "Legendary Sor Crystal",
@@ -58,13 +61,9 @@ namespace wServer.logic.loot
 			"Ring of Undeadly Conjury",
 			"Staff of the Withering",
 			"Told Before Time",
-            "Oryx's Arena Key",
 			"The Zol Awakening (Token)",
 			"Calling of the Titan (Token)",
-            "Insignia of Valor",
-            "Larry Gun",
-            "Zol Elixir",
-            "Bloodstone of Enmity"
+            "Insignia of Valor"
         };
 
         public IEnumerable<Item> GetLoots(RealmManager manager, int min, int max) {  //For independent loots(e.g. chests)

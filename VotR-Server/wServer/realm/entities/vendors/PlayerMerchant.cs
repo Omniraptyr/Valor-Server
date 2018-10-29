@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using common;
+using System;
 using wServer.networking.packets.outgoing;
 
 namespace wServer.realm.entities.vendors
@@ -92,7 +93,7 @@ namespace wServer.realm.entities.vendors
                     seller.Player.CurrentFame = seller.Account.Fame;*/
 
                 var itemDesc = Manager.Resources.GameData.Items[type];
-                Manager.Chat.SendInfo(sellerId, $"[Market] '{itemDesc.DisplayName}' has sold for {price} Gold.");
+                Manager.Chat.SendInfo(sellerId, $"Your {itemDesc.DisplayName} has sold for {price} gold.");
                 Reload();
                 BeingPurchased = false;
                 AwaitingReload = false;

@@ -13,7 +13,7 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, EditAccountList packet)
         {
-            client.Manager.Logic.AddPendingAction(t => Handle(client, packet.AccountListId, packet.ObjectId, packet.Add));
+            Handle(client, packet.AccountListId, packet.ObjectId, packet.Add);
         }
 
         private void Handle(Client client, int action, int objId, bool add)

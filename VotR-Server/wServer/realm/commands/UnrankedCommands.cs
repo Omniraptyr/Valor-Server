@@ -29,6 +29,34 @@ namespace wServer.realm.commands
         }
     }
 
+    internal class TutorialCommand : Command
+    {
+        public TutorialCommand() : base("tutorial") { }
+
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+            player.Client.Reconnect(new Reconnect()
+            {
+                Host = "",
+                Port = 2050,
+                GameId = World.PetYard,
+                Name = "Tutorial"
+            });
+            return true;
+        }
+    }
+
+    internal class ServerCommand : Command
+    {
+        public ServerCommand() : base("world") { }
+
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+            player.SendInfo($"[{player.Owner.Id}] {player.Owner.GetDisplayName()} ({player.Owner.Players.Count} players)");
+            return true;
+        }
+    }
+
     internal class PauseCommand : Command
     {
         public PauseCommand() : base("pause") { }
@@ -173,7 +201,7 @@ namespace wServer.realm.commands
         }
     }
 
-    /*internal class LocalCommand : Command
+    internal class LocalCommand : Command
     {
         public LocalCommand() : base("l") { }
 
@@ -210,7 +238,7 @@ namespace wServer.realm.commands
 
             return sent;
         }
-    }*/
+    }
 
     internal class HelpCommand : Command
     {
@@ -438,6 +466,28 @@ namespace wServer.realm.commands
         }
     }
 
+  /*  class NpeCommand : Command
+    {
+        public NpeCommand() : base("npe") { }
+
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+            player.Stats[0] = 100;
+            player.Stats[1] = 100;
+            player.Stats[2] = 10;
+            player.Stats[3] = 0;
+            player.Stats[4] = 10;
+            player.Stats[5] = 10;
+            player.Stats[6] = 10;
+            player.Stats[7] = 10;
+            player.Level = 1;
+            player.Experience = 0;
+            
+            player.SendInfo("You character stats, level, and experience has be npe'ified.");
+            return true;
+        }
+    }
+    */
     internal class PositionCommand : Command
     {
         public PositionCommand() : base("pos", alias: "position") { }
@@ -580,6 +630,40 @@ namespace wServer.realm.commands
         }
     }
 
+    /*  class ArenaCommand : Command
+      {
+          public ArenaCommand() : base("arena") { }
+
+          protected override bool Process(Player player, RealmTime time, string args)
+          {
+              player.Client.Reconnect(new Reconnect()
+              {
+                  Host = "",
+                  Port = 2050,
+                  GameId = World.Arena,
+                  Name = "Arena"
+              });
+              return true;
+          }
+      }
+
+      class DeathArenaCommand : Command
+      {
+          public DeathArenaCommand() : base("oa") { }
+
+          protected override bool Process(Player player, RealmTime time, string args)
+          {
+              player.Client.Reconnect(new Reconnect()
+              {
+                  Host = "",
+                  Port = 2050,
+                  GameId = World.DeathArena,
+                  Name = "Oryx's Arena"
+              });
+              return true;
+          }
+      }*/
+
     internal class PickGambleCommand : Command
     {
         public PickGambleCommand() : base("pg") { }
@@ -612,6 +696,23 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
+  /*  class SoloArenaCommand : Command
+    {
+        public SoloArenaCommand() : base("sa") { }
+
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+            player.Client.Reconnect(new Reconnect()
+            {
+                Host = "",
+                Port = 2050,
+                GameId = World.ArenaSolo,
+                Name = "Arena Solo"
+            });
+            return true;
+        }
+    }*/
 
     internal class GhallCommand : Command
     {
@@ -884,29 +985,20 @@ namespace wServer.realm.commands
 
         protected override bool Process(Player player, RealmTime time, string args)
         {
-            try
+            var shopItems = player.GetMarketItems();
+            if (shopItems.Length <= 0)
             {
-                var shopItems = player.GetMarketItems();
-                if (shopItems.Length <= 0)
-                {
-                    player.SendInfo("You have no items currently listed on the market.");
-                    return true;
-                }
-
-                player.SendInfo($"Your items ({shopItems.Length}): (format: [id] Name, fame)");
-                foreach (var shopItem in shopItems)
-                {
-                    var item = player.Manager.Resources.GameData.Items[shopItem.ItemId];
-                    player.SendInfo($"[{shopItem.Id}] {item.DisplayName}, {shopItem.Price}");
-                }
-
+                player.SendInfo("You have no items currently listed on the market.");
                 return true;
             }
-            catch (Exception e)
+
+            player.SendInfo($"Your items ({shopItems.Length}): (format: [id] Name, fame)");
+            foreach (var shopItem in shopItems)
             {
-                Log.Error(e.StackTrace);
-                return false;
+                var item = player.Manager.Resources.GameData.Items[shopItem.ItemId];
+                player.SendInfo($"[{shopItem.Id}] {item.DisplayName}, {shopItem.Price}");
             }
+            return true;
         }
     }
 

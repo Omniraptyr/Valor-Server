@@ -14,13 +14,13 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, EnterArena packet)
         {
-            return; //disable, we don't use arena
             //client.Manager.Logic.AddPendingAction(t => Handle(client, (CurrencyType)packet.PaymentTransType));
             Handle(client, (CurrencyType)packet.Currency);
         }
 
         void Handle(Client client, CurrencyType currency)
         {
+            return; //disable, we don't use arena
             if (IsTest(client))
                 return;
 

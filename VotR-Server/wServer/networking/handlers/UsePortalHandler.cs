@@ -16,10 +16,12 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, UsePortal packet)
         {
+            //client.Manager.Logic.AddPendingAction(t => Handle(client, packet));
             Handle(client, packet);
         }
 
-        private void Handle(Client client, UsePortal packet) {
+        private void Handle(Client client, UsePortal packet)
+        {
             var player = client.Player;
             if (player?.Owner == null || IsTest(client))
                 return;
@@ -27,7 +29,8 @@ namespace wServer.networking.handlers
             var entity = player.Owner.GetEntity(packet.ObjectId);
             if (entity == null) return;
 
-            if (entity is GuildHallPortal portal) {
+            if (entity is GuildHallPortal portal)
+            {          
                 HandleGuildPortal(player, portal);
                 return;
             }
@@ -35,8 +38,10 @@ namespace wServer.networking.handlers
             HandlePortal(player, entity as Portal);
         }
 
-        private static void HandleGuildPortal(Player player, GuildHallPortal portal) {
-            if (portal.ObjectType == 0x072f) {
+        private static void HandleGuildPortal(Player player, GuildHallPortal portal)
+        {
+            if (portal.ObjectType == 0x072f)
+            {
                 var proto = player.Manager.Resources.Worlds["GuildHall"];
                 var world = player.Manager.GetWorld(proto.id);
                 player.Reconnect(world);
@@ -46,32 +51,46 @@ namespace wServer.networking.handlers
             player.SendInfo("Portal not implemented.");
         }
 
-        private void HandlePortal(Player player, Portal portal) {
+        private void HandlePortal(Player player, Portal portal)
+        {
             if (portal == null || !portal.Usable)
                 return;
 
-            using (TimedLock.Lock(portal.CreateWorldLock)) {
+            using (TimedLock.Lock(portal.CreateWorldLock))
+            {
                 var world = portal.WorldInstance;
 
+                if (player.Owner.Opener != player.Name && player.Credits < 3000 &&
+                   (portal.ObjectType == 0x22c3 || portal.ObjectType == 0x63ae || portal.ObjectType == 0x612b || portal.ObjectType == 0x75b3)) {
+                    player.SendError("You do not have enough gold to enter this raid!");
+                    return;
+                }
+
                 // special portal case lookup
-                if (world == null && _realmPortals.Contains(portal.ObjectType)) {
+                if (world == null && _realmPortals.Contains(portal.ObjectType))
+                {
                     world = player.Manager.GetRandomGameWorld();
                     if (world == null)
                         return;
                 }
 
-                if (world is Realm && !player.Manager.Resources.GameData.ObjectTypeToId[portal.ObjectDesc.ObjectType].Contains("Cowardice")) {
+                if (world is Realm && !player.Manager.Resources.GameData.ObjectTypeToId[portal.ObjectDesc.ObjectType].Contains("Cowardice"))
+                {                 
                     player.FameCounter.CompleteDungeon(player.Owner.Name);
                 }
 
-                if (world != null) {
+                if (world != null)
+                {
                     player.Reconnect(world);
 
-                    if (portal.WorldInstance != null) {
-                        portal.WorldInstance.Invites?.Remove(player.Name.ToLower());
-                        portal.WorldInstance.Invited?.Add(player.Name.ToLower());
+                    if (portal.WorldInstance?.Invites != null)
+                    {
+                        portal.WorldInstance.Invites.Remove(player.Name.ToLower());
                     }
-
+                    if (portal.WorldInstance?.Invited != null)
+                    {
+                        portal.WorldInstance.Invited.Add(player.Name.ToLower());
+                    }
                     return;
                 }
 

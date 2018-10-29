@@ -10,7 +10,8 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, GuildRemove packet)
         {
-            client.Manager.Logic.AddPendingAction(t => Handle(client, packet.Name));
+            //client.Manager.Logic.AddPendingAction(t => Handle(client, packet.Name));
+            Handle(client, packet.Name);
         }
 
         private void Handle(Client source, string name)

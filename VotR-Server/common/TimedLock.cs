@@ -16,7 +16,7 @@ public struct TimedLock : IDisposable
 {
     public static TimedLock Lock(object o)
     {
-        return Lock(o, TimeSpan.FromSeconds(2)); //TimeSpan.FromSeconds(10));
+        return Lock(o, TimeSpan.FromSeconds(1)); //TimeSpan.FromSeconds(10));
     }
 
     public static TimedLock Lock(object o, TimeSpan timeout)

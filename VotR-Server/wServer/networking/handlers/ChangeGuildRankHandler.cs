@@ -10,7 +10,8 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, ChangeGuildRank packet)
         {
-            client.Manager.Logic.AddPendingAction(t => Handle(client, packet.Name, packet.GuildRank));
+            //client.Manager.Logic.AddPendingAction(t => Handle(client, packet.Name, packet.GuildRank));
+            Handle(client, packet.Name, packet.GuildRank);
         }
 
         private void Handle(Client client, string name, int rank)

@@ -21,7 +21,7 @@ namespace wServer.networking.handlers
             if (entity?.Owner == null)
                 return;
 
-            if (player.HasConditionEffect(ConditionEffects.Hidden))
+            if (player.Client.IsLagging || player.HasConditionEffect(ConditionEffects.Hidden))
                 return;
 
             var prj = (player as IProjectileOwner).Projectiles[pkt.BulletId];

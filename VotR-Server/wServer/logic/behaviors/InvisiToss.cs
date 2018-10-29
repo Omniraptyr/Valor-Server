@@ -51,13 +51,6 @@ namespace wServer.logic.behaviors
                 host.Owner.Timers.Add(new WorldTimer(0, (world, t) =>
                 {
                     Entity entity = Entity.Resolve(world.Manager, child);
-                    if (host.Spawned) {
-                        entity.Spawned = true;
-                        entity.ApplyConditionEffect(new ConditionEffect() {
-                            Effect = ConditionEffectIndex.Invisible,
-                            DurationMS = -1
-                        });
-                    }
                     entity.Move(target.X, target.Y);
                     (entity as Enemy).Terrain = (host as Enemy).Terrain;
                     world.EnterWorld(entity);

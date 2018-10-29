@@ -94,7 +94,7 @@ namespace wServer.realm.entities
             return 0;
         }
 
-        private int hpHits, manaHits;
+        private readonly int[] stealHits = { 0, 0 };
 
         public override bool HitByProjectile(Projectile projectile, RealmTime time)
         {
@@ -133,29 +133,31 @@ namespace wServer.realm.entities
                     ObjectId = projectile.ProjectileOwner.Self.Id
                 }, this, p, PacketPriority.Low);
 
-                if (p.LifeSteal != 0 && !p.HasConditionEffect(ConditionEffects.Sick)) {
-                    var maxHP = p.Stats[0];
-                    var lifeSteal = p.LifeSteal;
+                if (p.StealAmount != null) {
+                    if (p.StealAmount[0] != 0 && !p.HasConditionEffect(ConditionEffects.Sick)) {
+                        var maxHP = p.Stats[0];
+                        var lifeSteal = p.StealAmount[0];
 
-                    if (lifeSteal >= 1 && p.HP < maxHP)
-                        p.HP = p.HP + lifeSteal > maxHP ? maxHP : p.HP + lifeSteal;
-                    else {
-                        hpHits++;
-                        if (hpHits >= 1 / lifeSteal)
+                        if (lifeSteal >= 1 && p.HP < maxHP)
                             p.HP = p.HP + lifeSteal > maxHP ? maxHP : p.HP + lifeSteal;
+                        else {
+                            stealHits[0]++;
+                            if (stealHits[0] >= 1 / lifeSteal)
+                                p.HP = p.HP + lifeSteal > maxHP ? maxHP : p.HP + lifeSteal;
+                        }
                     }
-                }
 
-                if (p.ManaLeech != 0 && !p.HasConditionEffect(ConditionEffects.Quiet)) {
-                    var maxMP = p.Stats[1];
-                    var manaLeech = p.ManaLeech;
+                    if (p.StealAmount[1] != 0 && !p.HasConditionEffect(ConditionEffects.Quiet)) {
+                        var maxMP = p.Stats[1];
+                        var manaLeech = p.StealAmount[1];
 
-                    if (manaLeech >= 1 && p.MP < maxMP)
-                        p.MP = p.MP + manaLeech > maxMP ? maxMP : p.MP + manaLeech;
-                    else {
-                        manaHits++;
-                        if (manaHits >= 1 / manaLeech)
+                        if (manaLeech >= 1 && p.MP < maxMP)
                             p.MP = p.MP + manaLeech > maxMP ? maxMP : p.MP + manaLeech;
+                        else {
+                            stealHits[1]++;
+                            if (stealHits[1] >= 1 / manaLeech)
+                                p.MP = p.MP + manaLeech > maxMP ? maxMP : p.MP + manaLeech;
+                        }
                     }
                 }
 

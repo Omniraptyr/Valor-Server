@@ -1,7 +1,7 @@
 <AppSettings>
   <MenuMusic>fallenlight</MenuMusic>
   <DeadMusic>dedte</DeadMusic>
-  <EditorMinRank>50</EditorMinRank>
+  <EditorMinRank>0</EditorMinRank>
   <CharacterSlotCost>1000</CharacterSlotCost>
   <CharacterSlotCurrency>0</CharacterSlotCurrency>
   <VaultChestCost>1000</VaultChestCost>

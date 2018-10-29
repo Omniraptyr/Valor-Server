@@ -17,7 +17,8 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, ChooseName packet)
         {
-            client.Manager.Logic.AddPendingAction(t => Handle(client, packet));
+            //client.Manager.Logic.AddPendingAction(t => Handle(client, packet));
+            Handle(client, packet);
         }
 
         private void Handle(Client client, ChooseName packet)

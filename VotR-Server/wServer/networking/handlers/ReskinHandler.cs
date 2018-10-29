@@ -11,7 +11,8 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, Reskin packet)
         {
-            client.Manager.Logic.AddPendingAction(t => Handle(client, (ushort)packet.SkinId));
+            //client.Manager.Logic.AddPendingAction(t => Handle(client, (ushort)packet.SkinId));
+            Handle(client, (ushort)packet.SkinId);
         }
 
         void Handle(Client client, ushort skin)

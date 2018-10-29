@@ -175,7 +175,7 @@ namespace common
             var tran = _db.CreateTransaction();
 
             var lockToken = Guid.NewGuid().ToString();
-            
+
             var aKey = $"lock:{acc.AccountId}";
             tran.AddCondition(Condition.KeyNotExists(aKey));
             tran.StringSetAsync(aKey, lockToken, TimeSpan.FromSeconds(_lockTTL));

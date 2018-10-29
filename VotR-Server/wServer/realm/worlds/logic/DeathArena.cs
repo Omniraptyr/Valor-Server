@@ -43,7 +43,7 @@ namespace wServer.realm.worlds.logic
         // _bossLevel defines the wave at which the random bosses change
         // _randomBosses defines the set of bosses that are used for a particular boss level
         private int _bossLevel;
-        private readonly int[] _changeBossLevel = {0, 10, 20, 35, 50, 75};
+        private readonly int[] _changeBossLevel = { 0, 4, 10, 16, 23, 30 /*0, 1, 6, 11, 16, 21, 36*/ };
 
         private readonly string[][] _randomBosses = {
             new[]
@@ -82,9 +82,9 @@ namespace wServer.realm.worlds.logic
         private readonly Dictionary<int, string[]> _waveRewards = new Dictionary<int, string[]>
         {
             { 5,  new[] { "Onrane", "100 Gold" } },
-            { 10, new[] { "Onrane", "100 Gold", "Tiny Sor Fragment" } },
-            { 20, new[] { "Onrane", "Gold Cache", "Tiny Sor Fragment" } },
-            { 25, new[] { "Onrane", "Gold Cache", "Two Tiny Sor Fragments" } },
+            { 10, new[] { "100 Gold", "Onrane", "Tiny Sor Fragment" } },
+            { 20, new[] { "Onrane", "Tiny Sor Fragment" } },
+            { 25, new[] { "100 Gold", "Onrane", "Gold Cache", "Two Tiny Sor Fragments" } },
             { 30, new[] { "Onrane", "100 Gold", "Onrane Cache", "Two Tiny Sor Fragments" } },
             { 50, new[] { "Onrane Cache", "Medium Sor Fragment", "Two Tiny Sor Fragments" } },
             { 75, new[] { "Ultimate Onrane Cache", "Medium Sor Fragment", "Three Tiny Sor Fragments" } },
@@ -92,7 +92,6 @@ namespace wServer.realm.worlds.logic
             { 125, new[] { "Gold Cache", "Sor Crystal", "Shard of Zol Corruption" } },
             { 150, new[] { "Gold Cache", "Sor Crystal", "Shard of Eternal Fury" } },
             { 200, new[] { "Gold Cache", "Legendary Sor Crystal", "Shard of Cosmic Collapse" } },
-            { 300, new[] { "Gold Cache", "100 Gold", "Larry Gun" } }
         };
 
         private CountDownState _countDown;

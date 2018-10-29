@@ -11,7 +11,7 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, CreateGuild packet)
         {
-            client.Manager.Logic.AddPendingAction(t => Handle(client, packet.Name));
+            Handle(client, packet.Name);
         }
 
         private void Handle(Client client, string name)

@@ -181,7 +181,6 @@ namespace wServer.realm
 
         public PlayerShopItem[] GetItems(Player player)
         {
-            _dbMarket.RemoveEntries(_dbMarket.GetAll().Where(e => !ValidateShopItem(e)).ToArray());
             return _dbMarket.GetAll()
                 .Where(e => e.AccountId == player.AccountId)
                 .ToArray();

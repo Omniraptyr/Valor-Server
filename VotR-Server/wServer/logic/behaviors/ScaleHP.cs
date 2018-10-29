@@ -7,11 +7,13 @@ namespace wServer.logic.behaviors
     internal class ScaleHP : Behavior
     {
         private readonly int _amount;
+        private readonly bool _checkMax;
         private int _cachedMaxHp = -1;
         private int _lastPlayerNum = -1;
 
-        public ScaleHP(int amount) {
+        public ScaleHP(int amount, bool checkMax = true) {
             _amount = amount;
+            _checkMax = checkMax;
         }
 
         protected override void TickCore(Entity host, RealmTime time, ref object state) {
@@ -28,7 +30,7 @@ namespace wServer.logic.behaviors
                     _cachedMaxHp = enemy.MaximumHP;
 
                 enemy.MaximumHP = _cachedMaxHp + _amount * Math.Max(playerNum - 1, 0);
-                enemy.HP = enemy.MaximumHP * hpPerc;
+                enemy.HP += _amount * Math.Max(playerNum - 1, 0) * hpPerc;
 
                 enemy.HP = Math.Min(enemy.MaximumHP, enemy.HP);
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using common.resources;
 using wServer.networking.packets.outgoing;
 using wServer.realm.terrain;
@@ -9,38 +10,98 @@ namespace wServer.realm.entities
     {
         long l;
 
-        private void HandleBastille(RealmTime time, string mapName)
+        private void HandleBastille(RealmTime time)
         {
-            var checkeeId = (ushort)(mapName == "Ultra Summoning Point" ? 0x75f2 : 0x63e7);
-
-            if (RageBar > 0) {
-                ApplyConditionEffect(ConditionEffectIndex.Weak, 0);
-                ApplyConditionEffect(ConditionEffectIndex.Quiet, 0);
-            }
-
-            if (RageBar >= 90)
-                ApplyConditionEffect(ConditionEffectIndex.Empowered, 2000);
-
-            if (HasConditionEffect(ConditionEffects.Hidden) 
-                || time.TotalElapsedMs - l <= 100 || Owner?.Name != mapName) return;
-
-            if (this.GetNearestEntity(150, 0x63ed) == null) {
-                this.GetNearestEntity(999, checkeeId).ApplyConditionEffect(ConditionEffectIndex.Invulnerable);
-                if (RageBar == 0) {
-                    ApplyConditionEffect(ConditionEffectIndex.Weak);
-                    ApplyConditionEffect(ConditionEffectIndex.Quiet);
-                } else {
-                    RageBar -= 2;
+            try
+            {
+                if (RageBar > 0)
+                {
+                    ApplyConditionEffect(ConditionEffectIndex.Weak, 0);
+                    ApplyConditionEffect(ConditionEffectIndex.Quiet, 0);
                 }
-            } else {
-                this.GetNearestEntity(999, checkeeId).ApplyConditionEffect(ConditionEffectIndex.Invulnerable, 0);
-                if (RageBar < 100)
-                    RageBar += 1;
-                if (RageBar > 100)
-                    RageBar = 100;
-            }
+                if (RageBar >= 90)
+                {
+                    ApplyConditionEffect(ConditionEffectIndex.Empowered, 2000);
+                }
 
-            l = time.TotalElapsedMs;
+                if (HasConditionEffect(ConditionEffects.Hidden)) return;
+
+                if (time.TotalElapsedMs - l <= 100 || Owner?.Name != "SummoningPoint") return;
+
+                if (this.GetNearestEntity(150, 0x63ed) == null)
+                {
+                    this.GetNearestEntity(999, 0x63e7).ApplyConditionEffect(ConditionEffectIndex.Invulnerable);
+                    if (RageBar == 0)
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.Weak);
+                        ApplyConditionEffect(ConditionEffectIndex.Quiet);
+                    }
+                    else
+                    {
+                        RageBar -= 2;
+                    }
+                }
+                else
+                {
+                    this.GetNearestEntity(999, 0x63e7).ApplyConditionEffect(ConditionEffectIndex.Invulnerable, 0);
+                    if (RageBar < 100)
+                        RageBar += 1;
+                    if (RageBar > 100)
+                        RageBar = 100;
+                }
+                l = time.TotalElapsedMs;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+            }
+        }
+
+        private void HandleUltraBastille(RealmTime time)
+        {
+            try
+            {
+                if (RageBar > 0)
+                {
+                    ApplyConditionEffect(ConditionEffectIndex.Weak, 0);
+                    ApplyConditionEffect(ConditionEffectIndex.Quiet, 0);
+                }
+                if (RageBar >= 90)
+                {
+                    ApplyConditionEffect(ConditionEffectIndex.Empowered, 2000);
+                }
+
+                if (HasConditionEffect(ConditionEffects.Hidden)) return;
+
+                if (time.TotalElapsedMs - l <= 100 || Owner?.Name != "UltraSummoningPoint") return;
+
+                if (this.GetNearestEntity(150, 0x63ed) == null)
+                {
+                    this.GetNearestEntity(999, 0x75f2).ApplyConditionEffect(ConditionEffectIndex.Invulnerable);
+                    if (RageBar == 0)
+                    {
+                        ApplyConditionEffect(ConditionEffectIndex.Weak);
+                        ApplyConditionEffect(ConditionEffectIndex.Quiet);
+                    }
+                    else
+                    {
+                        RageBar -= 2;
+                    }
+                }
+                else
+                {
+                    this.GetNearestEntity(999, 0x75f2).ApplyConditionEffect(ConditionEffectIndex.Invulnerable, 0);
+                    if (RageBar < 100)
+                        RageBar += 1;
+                    if (RageBar > 100)
+                        RageBar = 100;
+                }
+                l = time.TotalElapsedMs;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+            }
         }
 
         bool HandleGround(RealmTime time)

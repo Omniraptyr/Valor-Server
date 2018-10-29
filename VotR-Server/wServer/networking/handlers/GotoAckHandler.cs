@@ -9,7 +9,7 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, GotoAck packet)
         {
-            client.Manager.Logic.AddPendingAction(t => client.Player.GotoAckReceived());
+            client.Player.GotoAckReceived();
         }
     }
 }
