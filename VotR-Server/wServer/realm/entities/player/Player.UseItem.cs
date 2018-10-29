@@ -2791,6 +2791,41 @@ namespace wServer.realm.entities
             world.Timers.Add(tmr);
         }
 
+        private void AERandomCurrency(Item item, ActivateEffect eff)
+        {
+            if (eff.RandVals.Length <= 0)
+                Log.Error("ActivateEffect 'RandomCurrency' was attempted to be called with no random values set. " +
+                          "Item: '" + item.ObjectId + "'");
+
+            var values = Array.ConvertAll(eff.RandVals, int.Parse);
+            var value = values[new Random().Next(values.Length)];
+            switch (eff.CurrencyType.ToLower())
+            {
+                case "sor fragments":
+                    Client.Manager.Database.UpdateSorStorage(Client.Account, value); SorStorage += value;
+                    this.ForceUpdate(SorStorage);
+                    break;
+                case "kantos":
+                    Client.Manager.Database.UpdateKantos(Client.Account, value); Kantos += value;
+                    this.ForceUpdate(Kantos);
+                    break;
+                case "onrane":
+                    Client.Manager.Database.UpdateOnrane(Client.Account, value); Onrane += value;
+                    this.ForceUpdate(Onrane);
+                    break;
+                case "gold":
+                    Client.Manager.Database.UpdateCredit(Client.Account, value); Credits += value;
+                    this.ForceUpdate(Credits);
+                    break;
+                case "fame":
+                    Client.Manager.Database.UpdateFame(Client.Account, value); Fame += value;
+                    this.ForceUpdate(Fame);
+                    break;
+                default: return;
+            }
+            SendInfo($"You have obtained {value} {eff.CurrencyType}.");
+        }
+
         private float UseWisMod(float value, int offset = 1)
         {
             double totalWisdom = Stats.Base[7] + Stats.Boost[7];

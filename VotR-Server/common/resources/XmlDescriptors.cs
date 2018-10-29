@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Xml.Linq;
+using log4net;
 
 namespace common.resources
 {
@@ -31,68 +32,68 @@ namespace common.resources
     [Flags]
     public enum ConditionEffects : ulong
     {
-        Dead =              1 << 0,
-        Quiet =             1 << 1,
-        Weak =              1 << 2,
-        Slowed =            1 << 3,
-        Sick =              1 << 4,
-        Dazed =             1 << 5,
-        Stunned =           1 << 6,
-        Blind =             1 << 7,
-        Hallucinating =     1 << 8,
-        Drunk =             1 << 9,
-        Confused =          1 << 10,
-        StunImmume =        1 << 11,
-        Invisible =         1 << 12,
-        Paralyzed =         1 << 13,
-        Speedy =            1 << 14,
-        Bleeding =          1 << 15,
-        ArmorBreakImmune =  1 << 16,
-        Healing =           1 << 17,
-        Damaging =          1 << 18,
-        Berserk =           1 << 19,
-        Paused =            1 << 20,
-        Stasis =            1 << 21,
-        StasisImmune =      1 << 22,
-        Invincible =        1 << 23,
-        Invulnerable =      1 << 24,
-        Armored =           1 << 25,
-        ArmorBroken =       1 << 26,
-        Hexed =             1 << 27,
-        NinjaSpeedy =       1 << 28,
-        Unstable =          1 << 29,
-        Darkness =          1 << 30,
-        SlowedImmune =      (ulong) 1 << 31,
-        DazedImmune =       (ulong) 1 << 32,
-        ParalyzeImmune =    (ulong) 1 << 33,
-        Petrify =           (ulong) 1 << 34,
-        PetrifyImmune =     (ulong) 1 << 35,
-        Swiftness =         (ulong) 1 << 36,
-        Curse =             (ulong) 1 << 37,
-        CurseImmune =       (ulong) 1 << 38,
-        HPBoost =           (ulong) 1 << 39,
-        MPBoost =           (ulong) 1 << 40,
-        AttBoost =          (ulong) 1 << 41,
-        DefBoost =          (ulong) 1 << 42,
-        SpdBoost =          (ulong) 1 << 43,
-        DexBoost =          (ulong) 1 << 44,
-        VitBoost =          (ulong) 1 << 45,
-        WisBoost =          (ulong) 1 << 46,
-        Hidden =            (ulong) 1 << 47,
-        Muted =             (ulong) 1 << 48,
-        Empowered =         (ulong) 1 << 49,
-        Bravery =           (ulong) 1 << 50,
-        Exhausted =         (ulong)1 << 51,
-        Surged =            (ulong)1 << 52,
-        Corrupted =         (ulong)1 << 53,
-        GraspofZol =        (ulong)1 << 54,
-        SamuraiBerserk =    (ulong)1 << 55,
-        DrakzixCharging =   (ulong)1 << 56,
-        Relentless =        (ulong)1 << 58,
-        Vengeance =         (ulong)1 << 59,
-        ManaRecovery =      (ulong)1 << 60,
-        Alliance =          (ulong)1 << 61,
-        HealthRecovery =    (ulong)1 << 62
+        Dead = 1 << 0,
+        Quiet = 1 << 1,
+        Weak = 1 << 2,
+        Slowed = 1 << 3,
+        Sick = 1 << 4,
+        Dazed = 1 << 5,
+        Stunned = 1 << 6,
+        Blind = 1 << 7,
+        Hallucinating = 1 << 8,
+        Drunk = 1 << 9,
+        Confused = 1 << 10,
+        StunImmume = 1 << 11,
+        Invisible = 1 << 12,
+        Paralyzed = 1 << 13,
+        Speedy = 1 << 14,
+        Bleeding = 1 << 15,
+        ArmorBreakImmune = 1 << 16,
+        Healing = 1 << 17,
+        Damaging = 1 << 18,
+        Berserk = 1 << 19,
+        Paused = 1 << 20,
+        Stasis = 1 << 21,
+        StasisImmune = 1 << 22,
+        Invincible = 1 << 23,
+        Invulnerable = 1 << 24,
+        Armored = 1 << 25,
+        ArmorBroken = 1 << 26,
+        Hexed = 1 << 27,
+        NinjaSpeedy = 1 << 28,
+        Unstable = 1 << 29,
+        Darkness = 1 << 30,
+        SlowedImmune = (ulong)1 << 31,
+        DazedImmune = (ulong)1 << 32,
+        ParalyzeImmune = (ulong)1 << 33,
+        Petrify = (ulong)1 << 34,
+        PetrifyImmune = (ulong)1 << 35,
+        Swiftness = (ulong)1 << 36,
+        Curse = (ulong)1 << 37,
+        CurseImmune = (ulong)1 << 38,
+        HPBoost = (ulong)1 << 39,
+        MPBoost = (ulong)1 << 40,
+        AttBoost = (ulong)1 << 41,
+        DefBoost = (ulong)1 << 42,
+        SpdBoost = (ulong)1 << 43,
+        DexBoost = (ulong)1 << 44,
+        VitBoost = (ulong)1 << 45,
+        WisBoost = (ulong)1 << 46,
+        Hidden = (ulong)1 << 47,
+        Muted = (ulong)1 << 48,
+        Empowered = (ulong)1 << 49,
+        Bravery = (ulong)1 << 50,
+        Exhausted = (ulong)1 << 51,
+        Surged = (ulong)1 << 52,
+        Corrupted = (ulong)1 << 53,
+        GraspofZol = (ulong)1 << 54,
+        SamuraiBerserk = (ulong)1 << 55,
+        DrakzixCharging = (ulong)1 << 56,
+        Relentless = (ulong)1 << 58,
+        Vengeance = (ulong)1 << 59,
+        ManaRecovery = (ulong)1 << 60,
+        Alliance = (ulong)1 << 61,
+        HealthRecovery = (ulong)1 << 62
     }
 
     public enum ConditionEffectIndex
@@ -167,7 +168,8 @@ namespace common.resources
         public int DurationMS { get; set; }
         public float Range { get; set; }
         public ConditionEffect() { }
-        public ConditionEffect(XElement elem, bool isCondChance = false) {
+        public ConditionEffect(XElement elem, bool isCondChance = false)
+        {
             Effect = (ConditionEffectIndex)Enum.Parse(typeof(ConditionEffectIndex),
                 isCondChance ?
                     elem.Attribute("effect") != null ?
@@ -255,7 +257,8 @@ namespace common.resources
 
             List<KeyValuePair<ConditionEffect, double>> condChance
                 = new List<KeyValuePair<ConditionEffect, double>>();
-            foreach (XElement i in elem.Elements("CondChance")) {
+            foreach (XElement i in elem.Elements("CondChance"))
+            {
                 condChance.Add(new KeyValuePair<ConditionEffect, double>(
                     new ConditionEffect(i, true),
                     double.Parse(i.Attribute("chance").Value)));
@@ -359,6 +362,7 @@ namespace common.resources
         RenamePet,
         IdScroll,
         BrownScroll,
+        Dice,
         HealNovaSigil,
         SorForge,
         RevivementBox,
@@ -393,6 +397,7 @@ namespace common.resources
         ActivateFragment,
         AsiHeal,
         AsiimovBox,
+        RandomCurrency,
         NewCharSlot,
         RageReapBox,
         SamuraiAbility2,
@@ -416,7 +421,6 @@ namespace common.resources
         JacketAbility,
         SorActivate,
         TalismanAbility
-
     }
 
     public class ActivateEffect
@@ -455,6 +459,8 @@ namespace common.resources
         public string Center { get; }
         public int VisualEffect { get; }
         public bool Players { get; }
+        public string[] RandVals { get; }
+        public string CurrencyType { get; }
         public ushort ObjType { get; }
 
         public ActivateEffect(XElement elem)
@@ -474,7 +480,7 @@ namespace common.resources
             if (elem.Attribute("duration") != null)
             {
                 DurationSec = float.Parse(elem.Attribute("duration").Value);
-                DurationMS = (int) (DurationSec * 1000);
+                DurationMS = (int)(DurationSec * 1000);
             }
 
             if (elem.Attribute("duration2") != null)
@@ -567,6 +573,12 @@ namespace common.resources
             if (elem.Attribute("players") != null)
                 Players = elem.Attribute("players").Value.Equals("true");
 
+            if (elem.Attribute("randVals") != null)
+                RandVals = elem.Attribute("randVals").Value.Split(',');
+
+            if (elem.Attribute("currencyType") != null)
+                CurrencyType = elem.Attribute("currencyType").Value;
+
             if (elem.Attribute("objType") != null)
                 ObjType = ushort.Parse(elem.Attribute("objType").Value.Substring(2), NumberStyles.AllowHexSpecifier);
         }
@@ -599,7 +611,7 @@ namespace common.resources
             if (elem.Element("NexusPortal") != null)
                 NexusPortal = true;
 
-            Timeout = (n = elem.Element("Timeout")) != null ? 
+            Timeout = (n = elem.Element("Timeout")) != null ?
                 int.Parse(n.Value) : 30;
 
             Locked = elem.Element("LockedPortal") != null;
@@ -607,6 +619,8 @@ namespace common.resources
     }
     public class Item
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(Item));
+
         public ushort ObjectType { get; }
         public string ObjectId { get; }
         public int SlotType { get; }
@@ -653,10 +667,10 @@ namespace common.resources
         public PRarity Rarity { get; }
 
         public KeyValuePair<int, int>[] StatsBoost { get; }
+        public KeyValuePair<int, int>[] StatsBoostPerc { get; }
         public ActivateEffect[] ActivateEffects { get; }
         public ProjectileDesc[] Projectiles { get; }
         public LegendaryPower[] Legend { get; }
-        public KeyValuePair<int, int>[] StatsBoostPerc { get; }
         public KeyValuePair<string, int>[] Steal { get; }
         public KeyValuePair<int, int>[] StatReq { get; }
         public KeyValuePair<string, int>[] EffectEquip { get; }
@@ -763,21 +777,20 @@ namespace common.resources
             Texture2 = (n = elem.Element("Tex2")) != null ? Convert.ToInt32(n.Value, 16) : 0;
 
             var stats = new List<KeyValuePair<int, int>>();
-            var percStats = new List<KeyValuePair<int, int>>();
-            StatsBoost = stats.ToArray();
-            StatsBoostPerc = percStats.ToArray();
-            foreach (var i in elem.Elements("ActivateOnEquip")) {
-                switch (i.Value) {
-                    case "IncrementStat":
-                        stats.Add(new KeyValuePair<int, int>(int.Parse(i.Attribute("stat").Value), int.Parse(i.Attribute("amount").Value)));
-                        StatsBoost = stats.ToArray();
-                        break;
-                    /*case "IncrStatPerc":
-                        percStats.Add(new KeyValuePair<int, int>(int.Parse(i.Attribute("stat").Value), int.Parse(i.Attribute("amount").Value)));
-                        StatsBoostPerc = percStats.ToArray();
-                        break;*/
-                }
+            var statsPerc = new List<KeyValuePair<int, int>>();
+
+            foreach (var i in elem.Elements("ActivateOnEquip"))
+            {
+                var kvp = new KeyValuePair<int, int>(
+                    int.Parse(i.Attribute("stat").Value),
+                    int.Parse(i.Attribute("amount").Value));
+
+                if (i.Attribute("isPerc")?.Value == "true") statsPerc.Add(kvp);
+                else stats.Add(kvp);
             }
+
+            StatsBoost = stats.ToArray();
+            StatsBoostPerc = statsPerc.ToArray();
 
             ActivateEffects = elem.Elements("Activate").Select(i => new ActivateEffect(i)).ToArray();
 
@@ -841,7 +854,7 @@ namespace common.resources
                 if (ae.SkinType != 0)
                     skinType = ae.SkinType;
             }
-                
+
             var setpiece = new List<Setpiece>();
             foreach (XElement i in setElem.Elements("Setpiece"))
                 setpiece.Add(new Setpiece(i));
@@ -881,7 +894,7 @@ namespace common.resources
             lootbox.CrateLoot = crateLoot;
             return lootbox;
         }
-       
+
     }
 
     public class SkinDesc
@@ -912,7 +925,7 @@ namespace common.resources
             sd.Expires = skinElem.Element("Expires") != null;
             sd.UnlockSpecial = skinElem.Element("UnlockSpecial") != null;
             sd.NoSkinSelect = skinElem.Element("NoSkinSelect") != null;
-            sd.PlayerExclusive = skinElem.Element("PlayerExclusive") == null ? 
+            sd.PlayerExclusive = skinElem.Element("PlayerExclusive") == null ?
                 null : skinElem.Element("PlayerExclusive").Value;
 
             var ul = skinElem.Element("UnlockLevel");
@@ -1010,11 +1023,11 @@ namespace common.resources
                 n.Attribute("type") != null &&
                 n.Attribute("level") != null)
             {
-                Type = (ushort) Utils.FromString(n.Attribute("type").Value);
-                Level = (ushort) Utils.FromString(n.Attribute("level").Value);
+                Type = (ushort)Utils.FromString(n.Attribute("type").Value);
+                Level = (ushort)Utils.FromString(n.Attribute("level").Value);
             }
             if ((n = elem.Element("UnlockCost")) != null)
-                Cost = (uint) Utils.FromString(n.Value);
+                Cost = (uint)Utils.FromString(n.Value);
         }
     }
     public class Stat
@@ -1035,7 +1048,7 @@ namespace common.resources
                 StartingValue = int.Parse(x.Value);
                 MaxValue = int.Parse(x.Attribute("max").Value);
             }
-            
+
             var y = elem.Elements("LevelIncrease");
             foreach (var s in y)
                 if (s.Value == Type)
@@ -1062,7 +1075,8 @@ namespace common.resources
                 case 9: return "Luck";
                 case 10: return "Restoration";
                 case 11: return "Protection";
-            } return null;
+            }
+            return null;
         }
     }
     public class PlayerDesc : ObjectDesc
@@ -1179,11 +1193,11 @@ namespace common.resources
             }
             else
             {
-                MinSize = (n = elem.Element("MinSize")) != null ? 
+                MinSize = (n = elem.Element("MinSize")) != null ?
                     Utils.FromString(n.Value) : 100;
-                MaxSize = (n = elem.Element("MaxSize")) != null ? 
+                MaxSize = (n = elem.Element("MaxSize")) != null ?
                     Utils.FromString(n.Value) : 100;
-                SizeStep = (n = elem.Element("SizeStep")) != null ? 
+                SizeStep = (n = elem.Element("SizeStep")) != null ?
                     Utils.FromString(n.Value) : 0;
             }
 
@@ -1229,7 +1243,7 @@ namespace common.resources
 
             Oryx = elem.Element("Oryx") != null;
             Hero = elem.Element("Hero") != null;
-            
+
             if ((n = elem.Element("PerRealmMax")) != null)
                 PerRealmMax = Utils.FromString(n.Value);
             else
