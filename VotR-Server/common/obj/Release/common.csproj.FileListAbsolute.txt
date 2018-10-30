@@ -6,3 +6,4 @@ C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Release\common.csproj.C
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Release\common.csproj.CopyComplete
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Release\common.dll
 C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Release\common.pdb
+C:\Users\darkd\Desktop\VotRLegacy\VotR-Server\common\obj\Release\common.csprojAssemblyReference.cache

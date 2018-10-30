@@ -537,6 +537,7 @@
     <Compile Include="realm\setpieces\Tod.cs" />
     <Compile Include="realm\setpieces\Tower.cs" />
     <Compile Include="realm\setpieces\Unknown.cs" />
+    <Compile Include="realm\setpieces\VitaliaVine.cs" />
     <Compile Include="realm\setpieces\Yazanahar.cs" />
     <Compile Include="realm\setpieces\Zombie.cs" />
     <Compile Include="realm\worlds\DynamicWorld.cs" />

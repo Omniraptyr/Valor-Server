@@ -88446,7 +88446,7 @@ A whole thanksgiving turkey!
             <EffectInfo name="Sprited by" description="BLOODQWEN"/>
         </ExtraTooltipData>
         <Consumable/>
-        <Activate currencyType="Gold" randVals="250, 500, 750">RandomCurrency</Activate>
+        <Activate>RandomGold</Activate>
     </Object>
 <Object type="0x42fb" id="Star Bloop">
     <Class>Projectile</Class>
@@ -94545,7 +94545,7 @@ A whole thanksgiving turkey!
     <BagType>0</BagType>
     <DisplayId>Marksman Skin</DisplayId>
   </Object>
-    <Object type="0x49a1" id="Onrane Cache">
+   <Object type="0x49a1" id="Onrane Cache">
         <Class>Equipment</Class>
         <Item/>
         <SlotType>10</SlotType>
@@ -94558,7 +94558,7 @@ A whole thanksgiving turkey!
             <EffectInfo name="Sprited by" description="BLOODQWEN"/>
         </ExtraTooltipData>
         <Consumable/>
-        <Activate currencyType="Onrane" randVals="2, 4, 6, 8, 10">RandomCurrency</Activate>
+        <Activate>RandomOnrane</Activate>
     </Object>
   <Object type="0x49a2" id="Kantos Cache">
     <Class>Equipment</Class>
@@ -95123,7 +95123,7 @@ A whole thanksgiving turkey!
             <EffectInfo name="Sprited by" description="BLOODQWEN"/>
         </ExtraTooltipData>
         <Consumable/>
-        <Activate currencyType="Onrane" randVals="12, 14, 16, 18, 20">RandomCurrency</Activate>
+        <Activate>URandomOnrane</Activate>
     </Object>
   <Object type="0x49f1" id="Keeping Key">
     <Class>Equipment</Class>
@@ -108635,7 +108635,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
             <EffectInfo name="Sprited by" description="BLOODQWEN"/>
         </ExtraTooltipData>
         <Consumable/>
-        <Activate currencyType="Sor Fragments" randVals="5, 10, 15">RandomCurrency</Activate>
+        <Activate>ActivateFragment</Activate>
     </Object>
     <Object type="0x61c5" id="Dreamweaver of Darogek">
         <Class>Equipment</Class>

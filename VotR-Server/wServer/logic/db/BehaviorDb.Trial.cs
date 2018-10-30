@@ -300,10 +300,10 @@ namespace wServer.logic
                     new TierLoot(13, ItemType.Armor, 0.05),
                     new TierLoot(12, ItemType.Weapon, 0.05),
                     new ItemLoot("Onrane", 0.8),
-                    new ItemLoot("Gold Cache", 0.7),
-                    new ItemLoot("Warped Worlds Staff", 0.01),
-                    new ItemLoot("Null-Magic Trap", 0.025),
-                    new ItemLoot("Mirage Lance", 0.025)
+                    new ItemLoot("Gold Cache", 0.4),
+                    new ItemLoot("Warped Worlds Staff", 0.005),
+                    new ItemLoot("Null-Magic Trap", 0.005),
+                    new ItemLoot("Mirage Lance", 0.005)
                 )
             )
     ;
