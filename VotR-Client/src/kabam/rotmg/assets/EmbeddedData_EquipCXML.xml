@@ -3411,28 +3411,28 @@ A bow that somehow manages to shoot two arrows in different directions.
     <NumProjectiles>2</NumProjectiles>
     <ArcGap>4</ArcGap>
 </Object>
-<Object type="0xa3a" id="Heavy Crossbow">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-        <File>lofiObj5</File>
-        <Index>0x57</Index>
-    </Texture>
-    <SlotType>3</SlotType>
-    <Tier>7</Tier>
-    <Description>A slow but powerful crossbow with a good grip.</Description>
-    <RateOfFire>1</RateOfFire>
-    <Sound>weapon/heavy_crossbow</Sound>
-    <Projectile>
-        <ObjectId>Heavy Crossbow Bolt</ObjectId>
-        <Speed>150</Speed>
-        <MinDamage>100</MinDamage>
-        <MaxDamage>215</MaxDamage>
-        <LifetimeMS>500</LifetimeMS>
-        <MultiHit/>
-    </Projectile>
-    <BagType>2</BagType>
-</Object>
+    <Object type="0xa3a" id="Heavy Crossbow">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>lofiObj5</File>
+            <Index>0x57</Index>
+        </Texture>
+        <SlotType>3</SlotType>
+        <Tier>7</Tier>
+        <Description>A slow but powerful crossbow with a good grip.</Description>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/heavy_crossbow</Sound>
+        <Projectile>
+            <ObjectId>Heavy Crossbow Bolt</ObjectId>
+            <Speed>150</Speed>
+            <MinDamage>75</MinDamage>
+            <MaxDamage>115</MaxDamage>
+            <LifetimeMS>500</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <BagType>2</BagType>
+    </Object>
 <Object type="0xa1e" id="Golden Bow">
     <Class>Equipment</Class>
     <Item/>
@@ -18847,7 +18847,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <Track/>
         <DisplayId>The Dojo Key</DisplayId>
     </Object>
-    <Object type="0x5227" id="Tome of Wild Wreckage">
+    <Object type="0x5227" id="Sky Tome">
         <Class>Equipment</Class>
         <Item/>
         <Texture>
@@ -18855,18 +18855,20 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
             <Index>0x13c</Index>
         </Texture>
         <SlotType>4</SlotType>
-        <Description>A tome that will make you become plenty more powerful than your enemies.</Description>
+        <Description>An odd book that fell from the sky out of nowhere..</Description>
         <Sound>spell/major_heal</Sound>
-        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="2">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
-        <MpCost>110</MpCost>
-        <Activate amount="275" range="5.5" useWisMod="true">HealNova</Activate>
-        <Activate effect="Damaging" duration="8" useWisMod="true">ConditionEffectSelf</Activate>
-        <feedPower>1000</feedPower>
-        <DisplayId>Tome of Wild Wreckage</DisplayId>
+        <MpCost>90</MpCost>
+        <ActivateOnEquip stat="3" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="10">IncrementStat</ActivateOnEquip>
+        <Activate effect="Weak" duration="3" range="5" color="0xffff00" target="enemy" center="player" visualEffect="5" useWisMod="false">GenericActivate</Activate>
+        <Activate effect="Healing" duration="6" range="5" useWisMod="true">ConditionEffectAura</Activate>
+        <Activate range="5" amount="160" useWisMod="true">HealNova</Activate>
+        <Activate range="4">RemoveNegativeConditions</Activate>
+        <feedPower>380</feedPower>
+        <DisplayId>Sky Tome</DisplayId>
     </Object>
     <Object type="0x5228" id="Dagger of Uranium">
         <Class>Equipment</Class>
