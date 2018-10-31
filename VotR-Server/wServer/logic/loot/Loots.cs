@@ -63,7 +63,13 @@ namespace wServer.logic.loot
 			"Told Before Time",
 			"The Zol Awakening (Token)",
 			"Calling of the Titan (Token)",
-            "Insignia of Valor"
+            "Insignia of Valor",
+			"Rose Petal Amulet",
+			"Rose Petal Staff",
+			"Blade of Thorns",
+			"Vipersting",
+			"Skull of Lenin",
+			"Shine"
         };
 
         public IEnumerable<Item> GetLoots(RealmManager manager, int min, int max) {  //For independent loots(e.g. chests)
