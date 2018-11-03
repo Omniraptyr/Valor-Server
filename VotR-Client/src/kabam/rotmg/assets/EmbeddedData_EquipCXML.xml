@@ -19798,16 +19798,18 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         </Texture>
         <SlotType>1</SlotType>
         <Description>A sword of that you must weild furiously and with courage; taken under the the ownership of Seus -- lost forever after his death.</Description>
-        <RateOfFire>1.2</RateOfFire>
+        <RateOfFire>1.3</RateOfFire>
         <Sound>weapon/mithril_sword</Sound>
         <Projectile>
             <ObjectId>Restless Slash</ObjectId>
             <Speed>100</Speed>
-            <MinDamage>280</MinDamage>
-            <MaxDamage>442</MaxDamage>
+            <MinDamage>290</MinDamage>
+            <MaxDamage>460</MaxDamage>
             <LifetimeMS>350</LifetimeMS>
         </Projectile>
-        <ActivateOnEquip stat="26" amount="75">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="26" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="40">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
         <OldSound>bladeSwing</OldSound>
@@ -21543,16 +21545,16 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="121" amount="-10">IncrementStat</ActivateOnEquip>
-		<ActivateOnEquip stat="122" amount="25" isPerc="true">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="122" amount="25">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>
-        <MpCost>110</MpCost>
-        <Legendary/>
+        <MpCost>120</MpCost>
         <feedPower>2000</feedPower>
-        <Activate stat="0" amount="150" duration="4" range="4.5" noStack="true" useWisMod="true">StatBoostAura</Activate>
+        <Legendary/>
+        <Activate stat="0" amount="100" duration="4" range="4.5" noStack="true" useWisMod="true">StatBoostAura</Activate>
         <Activate effect="Damaging" duration="8" range="7.5">ConditionEffectAura</Activate>
-        <Activate effect="Armored" duration="3" useWisMod="true">ConditionEffectSelf</Activate>
+        <Activate effect="Invulnerable" duration="1.5" useWisMod="false">ConditionEffectSelf</Activate>
         <Cooldown>3</Cooldown>
     </Object>
     <Object type="0x47c1" id="Spear of the Unforgiven">
@@ -27053,7 +27055,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <Usable/>
       <BagType>1</BagType>
       <MpCost>35</MpCost>
-      <Activate duration="1" randVals="Healing, Bravery, Berserk">Dice</Activate>
+      <Activate duration="1" randVals="Sick, Bravery, Berserk">Dice</Activate>
    </Object>
    <Object type="0x583a" id="Power Dice">
       <Class>Equipment</Class>
@@ -27069,7 +27071,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <BagType>1</BagType>
       <MpCost>45</MpCost>
       <ActivateOnEquip stat="114" amount="10">IncrementStat</ActivateOnEquip>
-      <Activate duration="2" randVals="Healing, Bravery, Berserk">Dice</Activate>
+      <Activate duration="2" randVals="Sick, Bravery, Berserk">Dice</Activate>
    </Object>
    <Object type="0x583b" id="Violet Dice">
       <Class>Equipment</Class>
@@ -27085,7 +27087,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <BagType>1</BagType>
       <MpCost>55</MpCost>
       <ActivateOnEquip stat="114" amount="20">IncrementStat</ActivateOnEquip>
-      <Activate duration="3" randVals="Healing, Bravery, Berserk">Dice</Activate>
+      <Activate duration="3" randVals="Sick, Bravery, Berserk">Dice</Activate>
    </Object>
    <Object type="0x583c" id="Aqua Dice">
       <Class>Equipment</Class>
@@ -27102,7 +27104,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <FameBonus>1</FameBonus>
       <MpCost>65</MpCost>
       <ActivateOnEquip stat="114" amount="30">IncrementStat</ActivateOnEquip>
-      <Activate duration="4" randVals="Healing, Bravery, Berserk">Dice</Activate>
+      <Activate duration="4" randVals="Sick, Bravery, Berserk">Dice</Activate>
    </Object>
    <Object type="0x583d" id="Red Dice">
       <Class>Equipment</Class>
@@ -27119,7 +27121,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <FameBonus>2</FameBonus>
       <MpCost>75</MpCost>
       <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
-      <Activate duration="4.5" randVals="Healing, Bravery, Berserk">Dice</Activate>
+      <Activate duration="4.5" randVals="Sick, Bravery, Berserk">Dice</Activate>
    </Object>
    <Object type="0x583e" id="Yellow Dice">
       <Class>Equipment</Class>
@@ -27136,7 +27138,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <FameBonus>3</FameBonus>
       <MpCost>80</MpCost>
       <ActivateOnEquip stat="114" amount="50">IncrementStat</ActivateOnEquip>
-      <Activate duration="5" randVals="Healing, Bravery, Berserk">Dice</Activate>
+      <Activate duration="5" randVals="Sick, Bravery, Berserk">Dice</Activate>
    </Object>
    <Object type="0x583f" id="Stone Dice">
       <Class>Equipment</Class>
@@ -27154,7 +27156,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
       <MpCost>85</MpCost>
       <ActivateOnEquip stat="112" amount="10">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="114" amount="60">IncrementStat</ActivateOnEquip>
-      <Activate duration="5.5" randVals="Healing, Bravery, Berserk">Dice</Activate>
+      <Activate duration="5.5" randVals="Sick, Bravery, Berserk">Dice</Activate>
    </Object>
     <Object type="0x5831" id="Night Dice">
         <Class>Equipment</Class>
@@ -27172,7 +27174,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="112" amount="40">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="114" amount="40">IncrementStat</ActivateOnEquip>
-        <Activate duration="5" randVals="Healing, Bravery, Berserk">Dice</Activate>
+        <Activate duration="5" randVals="Sick, Bravery, Berserk">Dice</Activate>
     </Object>
     <Object type="0x5834" id="Dagger of Demon Sacrifice">
         <Class>Equipment</Class>
@@ -30252,9 +30254,9 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <ActivateOnEquip stat="0" amount="20">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="15">IncrementStat</ActivateOnEquip>
-		<ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="25" isPerc="true">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="25" isPerc="true">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="121" amount="10" >IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="75">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="25">IncrementStat</ActivateOnEquip>
         <BagType>8</BagType>
         <Legendary/>
     </Object>
@@ -30637,7 +30639,7 @@ A diamondwire bow used by guardians of the unseen ethereal shrines.
         <FameBonus>8</FameBonus>
         <MpCost>60</MpCost>
         <ActivateOnEquip stat="114" amount="150">IncrementStat</ActivateOnEquip>
-        <Activate duration="4" randVals="Healing, Bravery, Berserk">Dice</Activate>
+        <Activate duration="4" randVals="Bravery, Armored, Berserk">Dice</Activate>
         <Activate effect="Surged" duration="3.5">ConditionEffectSelf</Activate>
         <Cooldown>2</Cooldown>
         <Legendary/>

@@ -657,8 +657,8 @@ namespace wServer.realm.entities
         {
             ConditionEffectIndex[] gamblerEffs = {
                 ConditionEffectIndex.Armored,
-                ConditionEffectIndex.Invulnerable,
-                ConditionEffectIndex.Sick
+                ConditionEffectIndex.Bravery,
+                ConditionEffectIndex.Berserk
             };
             var roll = new Random().Next(0, 3);
             if (roll != 3)

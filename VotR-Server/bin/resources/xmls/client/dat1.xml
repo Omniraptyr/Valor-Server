@@ -80234,6 +80234,7 @@ This dagger was a myth, will you live to tell the tale?
     <Size>150</Size>
     <MaxHitPoints>65000</MaxHitPoints>
     <Defense>50</Defense>
+    <Quest/>
     <Projectile id="0">
       <ObjectId>Purple Star</ObjectId>
       <Damage>40</Damage>
@@ -108473,9 +108474,9 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ActivateOnEquip stat="0" amount="20">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="20" amount="15">IncrementStat</ActivateOnEquip>
-		<ActivateOnEquip stat="121" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="114" amount="25" isPerc="true">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="22" amount="25" isPerc="true">IncrementStat</ActivateOnEquip>
+		    <ActivateOnEquip stat="121" amount="10" >IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="114" amount="75">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="22" amount="25">IncrementStat</ActivateOnEquip>
         <BagType>8</BagType>
 		<Legendary/>
     </Object>
@@ -108520,7 +108521,7 @@ All initiates who start the path of becoming a Dragon Tamer are given a special 
         <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="121" amount="-10">IncrementStat</ActivateOnEquip>
-	    <ActivateOnEquip stat="122" amount="25" isPerc="true">IncrementStat</ActivateOnEquip>
+	    <ActivateOnEquip stat="122" amount="25">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>6</BagType>
         <FameBonus>8</FameBonus>

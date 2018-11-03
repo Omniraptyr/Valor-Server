@@ -25,44 +25,17 @@
       <file leaf-file-name="EmbeddedData_BTestingCXML.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_BTestingCXML.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18289" column="24" selection-start-line="18289" selection-start-column="18" selection-end-line="18289" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmbeddedData_EquipCXML.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="18849" selection-start-line="18849" selection-end-line="18871" selection-end-column="13" />
+            <state relative-caret-position="833">
+              <caret line="18277" column="17" selection-start-line="18277" selection-start-column="17" selection-end-line="18277" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="EmbeddedData_EquipCXML.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bin-debug/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
+        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="18872" column="13" selection-start-line="18872" selection-start-column="13" selection-end-line="18872" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PetsConfig.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/pets/PetsConfig.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EquipmentToolTip.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/tooltip/EquipmentToolTip.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+            <state relative-caret-position="697">
+              <caret line="21558" column="13" selection-start-line="21558" selection-start-column="13" selection-end-line="21558" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -70,7 +43,7 @@
       <file leaf-file-name="WebMain.as" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WebMain.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
+            <state relative-caret-position="612">
               <caret line="93" selection-start-line="93" selection-end-line="93" />
             </state>
           </provider>
@@ -114,15 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nexus</find>
-      <find>arenainfoite</find>
-      <find>ar</find>
-      <find>mark shop</find>
-      <find>markshopbutt</find>
-      <find>sheath</find>
-      <find>numprojectile</find>
-      <find>navigatet</find>
-      <find>class menu</find>
       <find>incrstatper</find>
       <find>invuse</find>
       <find>cdtext</find>
@@ -144,6 +108,15 @@
       <find>heavy cross</find>
       <find>sky tome</find>
       <find>0x5227</find>
+      <find>quest</find>
+      <find>varghus</find>
+      <find>restless spectre</find>
+      <find>grants either</find>
+      <find>classic dice</find>
+      <find>Dice</find>
+      <find>diceact</find>
+      <find>dice</find>
+      <find>predator necklace</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -234,9 +207,9 @@
         <option value="$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/GameServerConnectionConcrete.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as" />
         <option value="$PROJECT_DIR$/src/WebMain.as" />
+        <option value="$PROJECT_DIR$/bin-debug/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_BTestingCXML.xml" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml" />
-        <option value="$PROJECT_DIR$/bin-debug/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml" />
       </list>
     </option>
   </component>
@@ -249,10 +222,10 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="631" />
-    <option name="y" value="34" />
-    <option name="width" value="1023" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="428" />
+    <option name="y" value="95" />
+    <option name="width" value="1217" />
     <option name="height" value="850" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -261,7 +234,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -284,6 +256,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -793,14 +766,15 @@
       <workItem from="1540724347270" duration="582000" />
       <workItem from="1540766409530" duration="2725000" />
       <workItem from="1541005682986" duration="2999000" />
+      <workItem from="1541275990198" duration="6417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1672091000" />
+    <option name="totallyTimeSpent" value="1678508000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -810,9 +784,9 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -823,8 +797,8 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -1102,13 +1076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/tooltip/EquipmentToolTip.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/util/MoreStringUtil.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -1132,36 +1099,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WebMain.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
+        <state relative-caret-position="612">
           <caret line="93" selection-start-line="93" selection-end-line="93" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/pets/PetsConfig.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="44">
           <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_BTestingCXML.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18289" column="24" selection-start-line="18289" selection-start-column="18" selection-end-line="18289" selection-end-column="24" />
+        <state relative-caret-position="833">
+          <caret line="18277" column="17" selection-start-line="18277" selection-start-column="17" selection-end-line="18277" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/tooltip/EquipmentToolTip.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="18849" selection-start-line="18849" selection-end-line="18871" selection-end-column="13" />
+        <state relative-caret-position="365">
+          <caret line="644" column="73" selection-start-line="644" selection-start-column="73" selection-end-line="644" selection-end-column="73" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin-debug/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="18872" column="13" selection-start-line="18872" selection-start-column="13" selection-end-line="18872" selection-end-column="13" />
+        <state relative-caret-position="289">
+          <caret line="30242" column="47" selection-start-line="30242" selection-start-column="30" selection-end-line="30242" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="21558" column="13" selection-start-line="21558" selection-start-column="13" selection-end-line="21558" selection-end-column="13" />
         </state>
       </provider>
     </entry>

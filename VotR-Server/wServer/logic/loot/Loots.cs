@@ -69,7 +69,9 @@ namespace wServer.logic.loot
 			"Blade of Thorns",
 			"Vipersting",
 			"Skull of Lenin",
-			"Shine"
+			"Shine",
+            "Sky Tome",
+            "Robe of the Gargoyle Summoner"
         };
 
         public IEnumerable<Item> GetLoots(RealmManager manager, int min, int max) {  //For independent loots(e.g. chests)

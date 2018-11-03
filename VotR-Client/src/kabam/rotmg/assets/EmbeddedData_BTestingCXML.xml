@@ -907,6 +907,7 @@
         <Size>150</Size>
         <MaxHitPoints>65000</MaxHitPoints>
         <Defense>50</Defense>
+        <Quest/>
         <Projectile id="0">
             <ObjectId>Purple Star</ObjectId>
             <Damage>40</Damage>
