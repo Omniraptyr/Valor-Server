@@ -18111,10 +18111,10 @@
             <EffectInfo name="Sprited by" description="BLOODQWEN"/>
         </ExtraTooltipData>
         <Description>A petal plucked from the chest of Vitalia.</Description>
-        <ActivateOnEquip stat="0" amount="150">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="26" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
     </Object>
@@ -18776,5 +18776,106 @@
         <EnemyOccupySquare/>
         <BlocksSight/>
         <DisplayId>CGarden Wall Rock N</DisplayId>
+    </Object>
+    <Object type="0x67a2" id="Amulet of Granithia">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1c6</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>A gem plucked off of the crown of Granithia hung gracefully on a band of rock.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="-5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="-5">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <DisplayId>Amulet of Granithia</DisplayId>
+    </Object>
+    <Object type="0x67a3" id="Granithia's Garments">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1c7</Index>
+        </Texture>
+        <SlotType>14</SlotType>
+        <Description>You can feel the strength of Granithia embedded in this robe.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="0" amount="240">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="24">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="-5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="-5">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <DisplayId>Granithia's Garments</DisplayId>
+    </Object>
+    <Object type="0x67a4" id="Stone-Forged Spear">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1c8</Index>
+        </Texture>
+        <SlotType>23</SlotType>
+        <Description>A sharpened spear that shatters your enemies.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <Sound>spell/magic_nova</Sound>
+        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="-5">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <MpCost>100</MpCost>
+        <Activate totalDamage="2500" maxTargets="1" condEffect="ArmorBroken" condDuration="3" color="0x808080">Lightning
+        </Activate>
+        <DisplayId>Stone-Forged Spear</DisplayId>
+    </Object>
+    <Object type="0x67a5" id="Granithia's Blaster">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1c9</Index>
+        </Texture>
+        <SlotType>8</SlotType>
+        <Description>A wand capable of leveling a mountain in an instant.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/wand_of_death</Sound>
+        <Projectile>
+            <ObjectId>Granithia Blaster Shot</ObjectId>
+            <Speed>140</Speed>
+            <LifetimeMS>600</LifetimeMS>
+            <MinDamage>180</MinDamage>
+            <MaxDamage>280</MaxDamage>
+            <MultiHit/>
+            <Wavy/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="90">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="14">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="-7">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="-7">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>magicShoot</OldSound>
+    </Object>
+    <Object type="0x67a6" id="Granithia Blaster Shot">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1ca</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
     </Object>
 </Objects>

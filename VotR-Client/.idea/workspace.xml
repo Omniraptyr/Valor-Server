@@ -25,17 +25,8 @@
       <file leaf-file-name="EmbeddedData_BTestingCXML.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_BTestingCXML.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="18748" column="42" lean-forward="true" selection-start-line="18748" selection-start-column="42" selection-end-line="18748" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmbeddedData_GroundCXML.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_GroundCXML.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="5405" selection-start-line="5389" selection-end-line="5405" />
+            <state relative-caret-position="324">
+              <caret line="18852" column="27" selection-start-line="18852" selection-start-column="27" selection-end-line="18852" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -87,7 +78,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cdtext</find>
       <find>d/sound</find>
       <find>talism</find>
       <find>tali</find>
@@ -115,8 +105,9 @@
       <find>diceact</find>
       <find>dice</find>
       <find>predator necklace</find>
-      <find>cgarden floor rock</find>
       <find>cgarden rock wall</find>
+      <find>store_</find>
+      <find>cgarden floor rock</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -222,7 +213,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="685" />
     <option name="y" value="22" />
     <option name="width" value="1214" />
@@ -773,15 +764,15 @@
       <workItem from="1540766409530" duration="2725000" />
       <workItem from="1541005682986" duration="2999000" />
       <workItem from="1541275990198" duration="6417000" />
-      <workItem from="1541332911428" duration="15895000" />
+      <workItem from="1541332911428" duration="18742000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1694403000" />
+    <option name="totallyTimeSpent" value="1697250000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="685" y="22" width="1214" height="850" extended-state="0" />
+    <frame x="685" y="22" width="1214" height="850" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -1142,8 +1133,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_BTestingCXML.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="18748" column="42" lean-forward="true" selection-start-line="18748" selection-start-column="42" selection-end-line="18748" selection-end-column="42" />
+        <state relative-caret-position="324">
+          <caret line="18852" column="27" selection-start-line="18852" selection-start-column="27" selection-end-line="18852" selection-end-column="27" />
         </state>
       </provider>
     </entry>

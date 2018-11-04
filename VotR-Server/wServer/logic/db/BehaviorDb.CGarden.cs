@@ -35,6 +35,9 @@ namespace wServer.logic
                      new Shoot(40, 18, shootAngle: 20, projectileIndex: 2, coolDown: 600, coolDownOffset: 400),
                      new TimedTransition(8000, "begin")
                     )
+                    ),
+                new Threshold(0.01,
+                    new ItemLoot("Rose Petal Amulet", 0.0007)
                 )
             )
                .Init("The Y-Eater",
@@ -310,7 +313,6 @@ namespace wServer.logic
                     new ItemLoot("Onrane", 1),
                     new ItemLoot("Viperstring", 0.01),
                     new ItemLoot("Blade of Thorns", 0.01),
-                    new ItemLoot("Rose Petal Amulet", 0.01),
                     new ItemLoot("Rose Petal Staff", 0.01)
                 )
             )
@@ -494,8 +496,16 @@ namespace wServer.logic
            .Init("Lenin Big",
                 new State(
                     new State("Idle",
-                        new ConditionalEffect(ConditionEffectIndex.Invincible)
-
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new EntityNotExistsTransition("Vitalia", 1000, "waitfortext")
+                        ),
+                    new State("waitfortext",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new PlayerTextTransition("text", "Almighty Lenin, grant us passage!", 8, false, false)
+                        ),
+                    new State("text",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new Taunt("I heard rumblings in the stone zone, proceed with caution Granithia won't be happy.")
                 )
             )
             )
@@ -741,11 +751,25 @@ namespace wServer.logic
                          ),
                      new State("sodramatic",
                          new Suicide()
-                         
+                         )
+                     ),
+                new MostDamagers(3,
+                    LootTemplates.Sor5Perc()
+                    ),
+                new Threshold(0.01,
+                    new ItemLoot("Greater Potion of Defense", 1),
+                    new ItemLoot("Greater Potion of Life", 1),
+                    new ItemLoot("Medium Sor Fragment", 0.1),
+                    new ItemLoot("1000 Gold", 1),
+                    new ItemLoot("Onrane Cache", 1),
+                    new ItemLoot("Granithia's Blaster", 0.01),
+                    new ItemLoot("Stone-Forged Spear", 0.01),
+                    new ItemLoot("Granithia's Garments", 0.01),
+                    new ItemLoot("Amulet of Granithia", 0.01)
+
 
                             )
                         )
-                    )
           .Init("Granithia Bomb",
                 new State(
                     new State("Idle",
