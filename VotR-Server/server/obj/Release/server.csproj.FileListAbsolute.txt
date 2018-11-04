@@ -13,8 +13,8 @@ C:\Users\PC\Desktop\VotR-Server2\VotR-Server\bin\server.json
 C:\Users\PC\Desktop\VotR-Server2\VotR-Server\bin\server.exe.config
 C:\Users\PC\Desktop\VotR-Server2\VotR-Server\bin\server.exe
 C:\Users\PC\Desktop\VotR-Server2\VotR-Server\bin\server.pdb
-C:\Users\PC\Desktop\VotR-Server2\VotR-Server\server\obj\Release\server.csprojAssemblyReference.cache
 C:\Users\PC\Desktop\VotR-Server2\VotR-Server\server\obj\Release\server.csproj.CoreCompileInputs.cache
 C:\Users\PC\Desktop\VotR-Server2\VotR-Server\server\obj\Release\server.csproj.CopyComplete
 C:\Users\PC\Desktop\VotR-Server2\VotR-Server\server\obj\Release\server.exe
 C:\Users\PC\Desktop\VotR-Server2\VotR-Server\server\obj\Release\server.pdb
+C:\Users\PC\Desktop\VotR-Server2\VotR-Server\server\obj\Release\server.csprojAssemblyReference.cache

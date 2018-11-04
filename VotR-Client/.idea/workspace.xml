@@ -22,20 +22,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EmbeddedData_BTestingCXML.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EmbeddedData_BTestingCXML.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_BTestingCXML.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="18277" column="17" selection-start-line="18277" selection-start-column="17" selection-end-line="18277" selection-end-column="17" />
+            <state relative-caret-position="117">
+              <caret line="18748" column="42" lean-forward="true" selection-start-line="18748" selection-start-column="42" selection-end-line="18748" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmbeddedData_EquipCXML.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
+      <file leaf-file-name="EmbeddedData_GroundCXML.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_GroundCXML.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="21558" column="13" selection-start-line="21558" selection-start-column="13" selection-end-line="21558" selection-end-column="13" />
+            <state relative-caret-position="542">
+              <caret line="5405" selection-start-line="5389" selection-end-line="5405" />
             </state>
           </provider>
         </entry>
@@ -43,7 +43,7 @@
       <file leaf-file-name="WebMain.as" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WebMain.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
+            <state relative-caret-position="1581">
               <caret line="93" selection-start-line="93" selection-end-line="93" />
             </state>
           </provider>
@@ -61,7 +61,7 @@
       <file leaf-file-name="EquipmentTile.as" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/panels/itemgrids/itemtiles/EquipmentTile.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1666">
+            <state relative-caret-position="1836">
               <caret line="108" column="43" selection-start-line="108" selection-start-column="43" selection-end-line="108" selection-end-column="43" />
             </state>
           </provider>
@@ -87,8 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>incrstatper</find>
-      <find>invuse</find>
       <find>cdtext</find>
       <find>d/sound</find>
       <find>talism</find>
@@ -117,6 +115,8 @@
       <find>diceact</find>
       <find>dice</find>
       <find>predator necklace</find>
+      <find>cgarden floor rock</find>
+      <find>cgarden rock wall</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -159,7 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/kabam/lib/net/api/MessageProvider.as" />
         <option value="$PROJECT_DIR$/src/kabam/lib/net/impl/SocketServer.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_StaticObjectsCXML.xml" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/particles/ParticleEffect.as" />
@@ -208,8 +207,9 @@
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as" />
         <option value="$PROJECT_DIR$/src/WebMain.as" />
         <option value="$PROJECT_DIR$/bin-debug/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml" />
-        <option value="$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_BTestingCXML.xml" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_GroundCXML.xml" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_BTestingCXML.xml" />
       </list>
     </option>
   </component>
@@ -222,10 +222,10 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="428" />
-    <option name="y" value="95" />
-    <option name="width" value="1217" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="685" />
+    <option name="y" value="22" />
+    <option name="width" value="1214" />
     <option name="height" value="850" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -234,6 +234,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,12 +253,16 @@
               <item name="VotR-Client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Valor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VotR-Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="kabam" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -271,12 +277,12 @@
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\votr\VotR-Server2\VotR-Client\src\com\company\assembleegameclient\util" />
-      <recent name="C:\votr\VotR-Server2\VotR-Client\src\kabam\rotmg\game\view" />
-      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\kabam\rotmg\messaging\impl\outgoing" />
-      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\com\company\assembleegameclient\ui\panels" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\votr\VotR-Server2\VotR-Client\src\kabam\rotmg\assets" />
+      <recent name="C:\votr\VotR-Server2\VotR-Client\src\kabam\rotmg\ui\view\components" />
       <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\kabam\rotmg\assets" />
+      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\com\company\assembleegameclient\util" />
+      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\kabam\rotmg\markPurchaser" />
     </key>
     <key name="CreateActionScriptClassDialog.DESTINATION_PACKAGE_RECENT_KEY">
       <recent name="kabam.rotmg.messaging.impl.outgoing" />
@@ -285,12 +291,12 @@
       <recent name="kabam.rotmg.game.view.components" />
       <recent name="kabam.rotmg.game.view" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\votr\VotR-Server2\VotR-Client\src\kabam\rotmg\assets" />
-      <recent name="C:\votr\VotR-Server2\VotR-Client\src\kabam\rotmg\ui\view\components" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\votr\VotR-Server2\VotR-Client\src\com\company\assembleegameclient\util" />
+      <recent name="C:\votr\VotR-Server2\VotR-Client\src\kabam\rotmg\game\view" />
+      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\kabam\rotmg\messaging\impl\outgoing" />
+      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\com\company\assembleegameclient\ui\panels" />
       <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\kabam\rotmg\assets" />
-      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\com\company\assembleegameclient\util" />
-      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\kabam\rotmg\markPurchaser" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -767,14 +773,16 @@
       <workItem from="1540766409530" duration="2725000" />
       <workItem from="1541005682986" duration="2999000" />
       <workItem from="1541275990198" duration="6417000" />
+      <workItem from="1541332911428" duration="15895000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1678508000" />
+    <option name="totallyTimeSpent" value="1694403000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="685" y="22" width="1214" height="850" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -790,7 +798,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25041735" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -830,13 +838,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/util/FreeList.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WebMain.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1904">
@@ -1062,7 +1063,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/panels/itemgrids/itemtiles/EquipmentTile.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
+        <state relative-caret-position="1836">
           <caret line="108" column="43" selection-start-line="108" selection-start-column="43" selection-end-line="108" selection-end-column="43" />
         </state>
       </provider>
@@ -1099,7 +1100,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WebMain.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
+        <state relative-caret-position="1581">
           <caret line="93" selection-start-line="93" selection-end-line="93" />
         </state>
       </provider>
@@ -1108,13 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_BTestingCXML.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="18277" column="17" selection-start-line="18277" selection-start-column="17" selection-end-line="18277" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1134,8 +1128,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="21558" column="13" selection-start-line="21558" selection-start-column="13" selection-end-line="21558" selection-end-column="13" />
+        <state relative-caret-position="161">
+          <caret line="21529" column="35" selection-start-line="21529" selection-start-column="35" selection-end-line="21529" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_GroundCXML.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="5405" selection-start-line="5389" selection-end-line="5405" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_BTestingCXML.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="18748" column="42" lean-forward="true" selection-start-line="18748" selection-start-column="42" selection-end-line="18748" selection-end-column="42" />
         </state>
       </provider>
     </entry>

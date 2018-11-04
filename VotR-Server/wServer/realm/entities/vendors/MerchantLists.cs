@@ -41,12 +41,16 @@ namespace wServer.realm.entities.vendors
             new ShopItem("Wand of Recompense", 1000),
             new ShopItem("Sword of Acclaim", 1000),
             new ShopItem("Masamune", 1000),
+            new ShopItem("Master Blades", 1000),
+            new ShopItem("Lance of the Last Stand", 1000),
             new ShopItem("Staff of the Vital Unity", 7500),
             new ShopItem("Sadamune", 7500),
             new ShopItem("Sword of Splendor", 7500),
             new ShopItem("Wand of Evocation", 7500),
             new ShopItem("Bow of Mystical Energy", 7500),
             new ShopItem("Dagger of Sinister Deeds", 7500),
+            new ShopItem("Ivory Blades", 7500),
+            new ShopItem("Ornate Lance", 7500)
         };
 
         private static readonly List<ISellableItem> Ability = new List<ISellableItem> {
@@ -112,7 +116,13 @@ namespace wServer.realm.entities.vendors
 
         private static readonly List<ISellableItem> Special = new List<ISellableItem> {
             new ShopItem("Backpack", 100000),
-            new ShopItem("Amulet of Resurrection", 1000000)
+            new ShopItem("Amulet of Resurrection", 750000)
+        };
+
+        private static readonly List<ISellableItem> LegendaryConsumables = new List<ISellableItem> {
+            new ShopItem("Speedier Sprout", 100000),
+            new ShopItem("Pandora's Box", 500000),
+            new ShopItem("Purification Crystal", 250000)
         };
 
         private static readonly List<ISellableItem> Coins = new List<ISellableItem> {
@@ -131,6 +141,7 @@ namespace wServer.realm.entities.vendors
             { TileRegion.Store_4, new Tuple<List<ISellableItem>, CurrencyType, int>(Rings, CurrencyType.Fame, 0) },
             { TileRegion.Store_5, new Tuple<List<ISellableItem>, CurrencyType, int>(Coins, CurrencyType.Gold, 0) },
             { TileRegion.Store_7, new Tuple<List<ISellableItem>, CurrencyType, int>(Special, CurrencyType.Fame, 0) },
+            { TileRegion.Store_8, new Tuple<List<ISellableItem>, CurrencyType, int>(LegendaryConsumables, CurrencyType.Fame, 0) },
             { TileRegion.Store_15, new Tuple<List<ISellableItem>, CurrencyType, int>(Aldragine, CurrencyType.Onrane, 20) },
             { TileRegion.Store_16, new Tuple<List<ISellableItem>, CurrencyType, int>(Drannol, CurrencyType.Onrane, 20) },
         };

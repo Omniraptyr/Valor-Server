@@ -195,7 +195,6 @@ namespace wServer.logic
                     new ConditionalEffect(ConditionEffectIndex.StasisImmune),
                     new ConditionalEffect(ConditionEffectIndex.DazedImmune),
                     new ConditionalEffect(ConditionEffectIndex.SlowedImmune),
-                    new TransformOnDeath("Dark Knight Test Chest", 1, 1, 1),
                     new HpLessTransition(0.12, "deathbegins"),
                     new State("default",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -353,23 +352,13 @@ namespace wServer.logic
                    new State("rip",
                        new Shoot(10, count: 10, projectileIndex: 1, coolDown: 9999),
                        new Suicide()
-                    )
-                 )
-            )
-
-         .Init("Dark Knight Test Chest",
-                new State(
-                    new State("Idle",
-                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new TimedTransition(5000, "UnsetEffect")
+                       )
                     ),
-                    new State("UnsetEffect")
-                ),
-                                new MostDamagers(3,
+                    new MostDamagers(3,
                     LootTemplates.Sor4Perc()
                     ),
-                new Threshold(0.11,
-				new ItemLoot("Potion of Luck", 1),
+                    new Threshold(0.11,
+                    new ItemLoot("Potion of Luck", 1),
                 new ItemLoot("Potion of Mana", 1),
                 new ItemLoot("Potion of Defense", 1),
                 new ItemLoot("Potion of Attack", 0.6),
@@ -377,7 +366,7 @@ namespace wServer.logic
                 new ItemLoot("Potion of Wisdom", 0.5),
                 new ItemLoot("Potion of Dexterity", 0.5),
                 new ItemLoot("Potion of Vitality", 0.5),
-		    	new ItemLoot("Night Dice", 0.005),
+                new ItemLoot("Night Dice", 0.005),
                     new ItemLoot("Unholy Short Sword", 0.005),
                     new ItemLoot("Unholy Bow", 0.005),
                     new ItemLoot("Unholy Dagger", 0.005),
@@ -399,6 +388,8 @@ namespace wServer.logic
                     new TierLoot(13, ItemType.Armor, 0.05),
                     new TierLoot(5, ItemType.Ring, 0.06)
                 )
-            );
+                    );
+
+
     }
 }
