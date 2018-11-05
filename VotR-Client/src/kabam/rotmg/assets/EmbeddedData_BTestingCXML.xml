@@ -18791,8 +18791,8 @@
         </ExtraTooltipData>
         <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="-5">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="-5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <DisplayId>Amulet of Granithia</DisplayId>
     </Object>
@@ -18810,8 +18810,8 @@
         </ExtraTooltipData>
         <ActivateOnEquip stat="0" amount="240">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="24">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="-5">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="-5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <DisplayId>Granithia's Garments</DisplayId>
@@ -18831,7 +18831,7 @@
         <Sound>spell/magic_nova</Sound>
         <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="27" amount="-5">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
         <Usable/>
         <BagType>6</BagType>
         <MpCost>100</MpCost>
@@ -18864,8 +18864,8 @@
         </Projectile>
         <ActivateOnEquip stat="0" amount="90">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="21" amount="14">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="-7">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="-7">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
         <OldSound>magicShoot</OldSound>

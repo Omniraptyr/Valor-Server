@@ -15,3 +15,11 @@ C:\Users\PC\Desktop\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogg
 C:\Users\PC\Desktop\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.csproj.CopyComplete
 C:\Users\PC\Desktop\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.exe
 C:\Users\PC\Desktop\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.pdb
+C:\Users\user01\Desktop\VotR-Server2\VotR-Server\bin\log4net_rl.config
+C:\Users\user01\Desktop\VotR-Server2\VotR-Server\bin\RemoteLogger.exe.config
+C:\Users\user01\Desktop\VotR-Server2\VotR-Server\bin\RemoteLogger.exe
+C:\Users\user01\Desktop\VotR-Server2\VotR-Server\bin\RemoteLogger.pdb
+C:\Users\user01\Desktop\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.csproj.CoreCompileInputs.cache
+C:\Users\user01\Desktop\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.csproj.CopyComplete
+C:\Users\user01\Desktop\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.exe
+C:\Users\user01\Desktop\VotR-Server2\VotR-Server\RemoteLogger\obj\Release\RemoteLogger.pdb

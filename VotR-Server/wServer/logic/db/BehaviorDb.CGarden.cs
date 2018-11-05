@@ -569,6 +569,7 @@ namespace wServer.logic
                 new State(
                     new State("locate",
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new ScaleHP(45000),
                         new PlayerWithinTransition(8, "preyeet")
                         ),
                     new State("preyeet",
