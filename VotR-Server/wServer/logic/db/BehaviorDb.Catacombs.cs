@@ -112,9 +112,9 @@ namespace wServer.logic
                     new TierLoot(12, ItemType.Armor, 0.06),
                     new TierLoot(13, ItemType.Armor, 0.05),
                     new TierLoot(5, ItemType.Ring, 0.06),
-                    new ItemLoot("Forsaken Shield", 0.04),
+                    new ItemLoot("Forsaken Shield", 0.004),
                     new ItemLoot("Sword of Dark Necromancy", 0.005),
-                    new ItemLoot("Ring of Undeadly Conjury", 0.03),
+                    new ItemLoot("Ring of Undeadly Conjury", 0.002),
                     new ItemLoot("Gold Cache", 0.8)
 
                 )
@@ -359,7 +359,7 @@ namespace wServer.logic
                     new TierLoot(11, ItemType.Armor, 0.05),
                     new TierLoot(4, ItemType.Ring, 0.06),
                     new ItemLoot("Sword of Dark Necromancy", 0.005),
-                    new ItemLoot("Olden Necromancy Cloth", 0.035)
+                    new ItemLoot("Olden Necromancy Cloth", 0.002)
 
                 )
             )
@@ -555,12 +555,12 @@ namespace wServer.logic
                     new TierLoot(6, ItemType.Ring, 0.075),
                     new ItemLoot("Forsaken Shield", 0.05),
                     new ItemLoot("Sword of Dark Necromancy", 0.025),
-                    new ItemLoot("Staff of the Withering", 0.035),
+                    new ItemLoot("Staff of the Withering", 0.002),
                     new ItemLoot("Gold Cache", 0.8),
-                    new ItemLoot("Daring Windrage Robe", 0.04),
-                    new ItemLoot("Necromantic Charm", 0.04),
-                    new ItemLoot("Skull of Glowing Plagues", 0.035),
-                    new ItemLoot("Ring of Pestilence", 0.025)
+                    new ItemLoot("Daring Windrage Robe", 0.002),
+                    new ItemLoot("Necromantic Charm", 0.002),
+                    new ItemLoot("Skull of Glowing Plagues", 0.002),
+                    new ItemLoot("Ring of Pestilence", 0.002)
 
                 )
             )
