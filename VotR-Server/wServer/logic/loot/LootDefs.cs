@@ -182,18 +182,18 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Kismet Seal", 0.75),
-                    new ItemLoot("Soundpiercer Shuriken", 0.75),
-                    new ItemLoot("Doomgrazer", 0.75),
-                    new ItemLoot("Age of Zol", 0.75),
-                    new ItemLoot("Wrath of Aldragine", 0.75),
-                    new ItemLoot("Bane of the Vision", 0.75),
-                    new ItemLoot("Spirit of the Heart", 0.75),
-                    new ItemLoot("The Grand Finale", 0.75),
-                    new ItemLoot("Merit of Rebellion", 0.75),
-                    new ItemLoot("Enigma Wand", 0.75),
-                    new ItemLoot("Spear of the Unforgiven", 0.75),
-                    new ItemLoot("Dagger of Corruption", 0.75)
+                    new ItemLoot("Kismet Seal", 0.10),
+                    new ItemLoot("Soundpiercer Shuriken", 0.10),
+                    new ItemLoot("Doomgrazer", 0.10),
+                    new ItemLoot("Age of Zol", 0.10),
+                    new ItemLoot("Wrath of Aldragine", 0.10),
+                    new ItemLoot("Bane of the Vision", 0.10),
+                    new ItemLoot("Spirit of the Heart", 0.10),
+                    new ItemLoot("The Grand Finale", 0.10),
+                    new ItemLoot("Merit of Rebellion", 0.10),
+                    new ItemLoot("Enigma Wand", 0.10),
+                    new ItemLoot("Spear of the Unforgiven", 0.10),
+                    new ItemLoot("Dagger of Corruption", 0.10)
                 ),
                 //Have another chance to get fabled iten
                 new OnlyOne(
@@ -217,8 +217,8 @@ namespace wServer.logic.loot
                 ),
                 //You have a 25% chance to get ANOTHER attack or wisdom eon
                 new OnlyOne(
-                    new ItemLoot("Attack Eon", 0.25),
-                    new ItemLoot("Wisdom Eon", 0.25)
+                    new ItemLoot("Attack Eon", 0.10),
+                    new ItemLoot("Wisdom Eon", 0.10)
                 ),
                 //High chance to get 2 cloth
                 new OnlyOne(
@@ -257,9 +257,9 @@ namespace wServer.logic.loot
                 new OnlyOne(
                     new ItemLoot("The Zol Awakening (Token)", 0.05),
                     new ItemLoot("Calling of the Titan (Token)", 0.05)
-                   // new ItemLoot("A Fallen Light (Token)", 0.25),
-                  //  new ItemLoot("Sidon's Fall (Token)", 0.25),
-                 //   new ItemLoot("War of Decades (Token)", 0.25)
+                   // new ItemLoot("A Fallen Light (Token)", 0.10),
+                  //  new ItemLoot("Sidon's Fall (Token)", 0.10),
+                 //   new ItemLoot("War of Decades (Token)", 0.05)
                 )
              };
         }
@@ -295,33 +295,33 @@ namespace wServer.logic.loot
                     new ItemLoot("Dagger of Corruption", 1)
                 ),
                 new OnlyOne(
-                    new ItemLoot("Kismet Seal", 0.75),
-                    new ItemLoot("Soundpiercer Shuriken", 0.75),
-                    new ItemLoot("Doomgrazer", 0.75),
-                    new ItemLoot("Age of Zol", 0.75),
-                    new ItemLoot("Wrath of Aldragine", 0.75),
-                    new ItemLoot("Bane of the Vision", 0.75),
-                    new ItemLoot("Spirit of the Heart", 0.75),
-                    new ItemLoot("The Grand Finale", 0.75),
-                    new ItemLoot("Merit of Rebellion", 0.75),
-                    new ItemLoot("Enigma Wand", 0.75),
-                    new ItemLoot("Spear of the Unforgiven", 0.75),
-                    new ItemLoot("Dagger of Corruption", 0.75)
+                    new ItemLoot("Kismet Seal", 0.10),
+                    new ItemLoot("Soundpiercer Shuriken", 0.10),
+                    new ItemLoot("Doomgrazer", 0.10),
+                    new ItemLoot("Age of Zol", 0.10),
+                    new ItemLoot("Wrath of Aldragine", 0.10),
+                    new ItemLoot("Bane of the Vision", 0.10),
+                    new ItemLoot("Spirit of the Heart", 0.10),
+                    new ItemLoot("The Grand Finale", 0.10),
+                    new ItemLoot("Merit of Rebellion", 0.10),
+                    new ItemLoot("Enigma Wand", 0.10),
+                    new ItemLoot("Spear of the Unforgiven", 0.10),
+                    new ItemLoot("Dagger of Corruption", 0.10)
                 ),
                 //Have another chance to get fabled iten
                 new OnlyOne(
-                    new ItemLoot("Kismet Seal", 0.75),
-                    new ItemLoot("Soundpiercer Shuriken", 0.75),
-                    new ItemLoot("Doomgrazer", 0.75),
-                    new ItemLoot("Age of Zol", 0.75),
-                    new ItemLoot("Wrath of Aldragine", 0.75),
-                    new ItemLoot("Bane of the Vision", 0.75),
-                    new ItemLoot("Spirit of the Heart", 0.75),
-                    new ItemLoot("The Grand Finale", 0.75),
-                    new ItemLoot("Merit of Rebellion", 0.75),
-                    new ItemLoot("Enigma Wand", 0.75),
-                    new ItemLoot("Spear of the Unforgiven", 0.75),
-                    new ItemLoot("Dagger of Corruption", 0.75)
+                    new ItemLoot("Kismet Seal", 0.10),
+                    new ItemLoot("Soundpiercer Shuriken", 0.10),
+                    new ItemLoot("Doomgrazer", 0.10),
+                    new ItemLoot("Age of Zol", 0.10),
+                    new ItemLoot("Wrath of Aldragine", 0.10),
+                    new ItemLoot("Bane of the Vision", 0.10),
+                    new ItemLoot("Spirit of the Heart", 0.10),
+                    new ItemLoot("The Grand Finale", 0.10),
+                    new ItemLoot("Merit of Rebellion", 0.10),
+                    new ItemLoot("Enigma Wand", 0.10),
+                    new ItemLoot("Spear of the Unforgiven", 0.10),
+                    new ItemLoot("Dagger of Corruption", 0.10)
                 ),
                 //You have a 100% chance to get attack or wisdom eon
                 new OnlyOne(
@@ -370,26 +370,26 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Bloodwell", 0.75),
-                    new ItemLoot("Lavos Armor", 0.75),
-                    new ItemLoot("Quiver of the Onslaught", 0.75),
-                    new ItemLoot("Stonepraise Tome", 0.75),
-                    new ItemLoot("Realitytaker Orb", 0.75),
-                    new ItemLoot("Evisceration Claws", 0.75),
-                    new ItemLoot("Heatblast Trap", 0.75),
-                    new ItemLoot("Royalty Bow", 0.75),
-                    new ItemLoot("Banner of Revenge", 0.75),
-                    new ItemLoot("Percussion Shield", 0.75),
-                    new ItemLoot("Toxin of the Vicious", 0.75),
-                    new ItemLoot("Implacable Ram", 0.75),
-                    new ItemLoot("Darkin Blades", 0.75),
-                    new ItemLoot("The Twisted Cloak", 0.75),
-                    new ItemLoot("The Twisted Axe", 0.75),
-                    new ItemLoot("Twisted Amulet", 0.75),
-                    new ItemLoot("The Twisted Axe", 0.75),
-                    new ItemLoot("Hunter Necklace", 0.75),
-                    new ItemLoot("Corruption Spell", 0.75),
-                    new ItemLoot("Titanic Bracelet", 0.75)
+                    new ItemLoot("Bloodwell", 0.10),
+                    new ItemLoot("Lavos Armor", 0.10),
+                    new ItemLoot("Quiver of the Onslaught", 0.10),
+                    new ItemLoot("Stonepraise Tome", 0.10),
+                    new ItemLoot("Realitytaker Orb", 0.10),
+                    new ItemLoot("Evisceration Claws", 0.10),
+                    new ItemLoot("Heatblast Trap", 0.10),
+                    new ItemLoot("Royalty Bow", 0.10),
+                    new ItemLoot("Banner of Revenge", 0.10),
+                    new ItemLoot("Percussion Shield", 0.10),
+                    new ItemLoot("Toxin of the Vicious", 0.10),
+                    new ItemLoot("Implacable Ram", 0.10),
+                    new ItemLoot("Darkin Blades", 0.10),
+                    new ItemLoot("The Twisted Cloak", 0.10),
+                    new ItemLoot("The Twisted Axe", 0.10),
+                    new ItemLoot("Twisted Amulet", 0.10),
+                    new ItemLoot("The Twisted Axe", 0.10),
+                    new ItemLoot("Hunter Necklace", 0.10),
+                    new ItemLoot("Corruption Spell", 0.10),
+                    new ItemLoot("Titanic Bracelet", 0.10)
                 ),
                 //Have another chance to get fabled item
                 new OnlyOne(
@@ -469,49 +469,49 @@ namespace wServer.logic.loot
                     new ItemLoot("Titanic Bracelet", 1)
                     ),
                 new OnlyOne(
-                    new ItemLoot("Bloodwell", 0.75),
-                    new ItemLoot("Lavos Armor", 0.75),
-                    new ItemLoot("Quiver of the Onslaught", 0.75),
-                    new ItemLoot("Stonepraise Tome", 0.75),
-                    new ItemLoot("Realitytaker Orb", 0.75),
-                    new ItemLoot("Evisceration Claws", 0.75),
-                    new ItemLoot("Heatblast Trap", 0.75),
-                    new ItemLoot("Royalty Bow", 0.75),
-                    new ItemLoot("Banner of Revenge", 0.75),
-                    new ItemLoot("Percussion Shield", 0.75),
-                    new ItemLoot("Toxin of the Vicious", 0.75),
-                    new ItemLoot("Implacable Ram", 0.75),
-                    new ItemLoot("Darkin Blades", 0.75),
-                    new ItemLoot("The Twisted Cloak", 0.75),
-                    new ItemLoot("The Twisted Axe", 0.75),
-                    new ItemLoot("Twisted Amulet", 0.75),
-                    new ItemLoot("The Twisted Axe", 0.75),
-                    new ItemLoot("Hunter Necklace", 0.75),
-                    new ItemLoot("Corruption Spell", 0.75),
-                    new ItemLoot("Titanic Bracelet", 0.75)
+                    new ItemLoot("Bloodwell", 0.10),
+                    new ItemLoot("Lavos Armor", 0.10),
+                    new ItemLoot("Quiver of the Onslaught", 0.10),
+                    new ItemLoot("Stonepraise Tome", 0.10),
+                    new ItemLoot("Realitytaker Orb", 0.10),
+                    new ItemLoot("Evisceration Claws", 0.10),
+                    new ItemLoot("Heatblast Trap", 0.10),
+                    new ItemLoot("Royalty Bow", 0.10),
+                    new ItemLoot("Banner of Revenge", 0.10),
+                    new ItemLoot("Percussion Shield", 0.10),
+                    new ItemLoot("Toxin of the Vicious", 0.10),
+                    new ItemLoot("Implacable Ram", 0.10),
+                    new ItemLoot("Darkin Blades", 0.10),
+                    new ItemLoot("The Twisted Cloak", 0.10),
+                    new ItemLoot("The Twisted Axe", 0.10),
+                    new ItemLoot("Twisted Amulet", 0.10),
+                    new ItemLoot("The Twisted Axe", 0.10),
+                    new ItemLoot("Hunter Necklace", 0.10),
+                    new ItemLoot("Corruption Spell", 0.10),
+                    new ItemLoot("Titanic Bracelet", 0.10)
                 ),
                 //Have another chance to get fabled iten
                 new OnlyOne(
-                    new ItemLoot("Bloodwell", 0.75),
-                    new ItemLoot("Lavos Armor", 0.75),
-                    new ItemLoot("Quiver of the Onslaught", 0.75),
-                    new ItemLoot("Stonepraise Tome", 0.75),
-                    new ItemLoot("Realitytaker Orb", 0.75),
-                    new ItemLoot("Evisceration Claws", 0.75),
-                    new ItemLoot("Heatblast Trap", 0.75),
-                    new ItemLoot("Royalty Bow", 0.75),
-                    new ItemLoot("Banner of Revenge", 0.75),
-                    new ItemLoot("Percussion Shield", 0.75),
-                    new ItemLoot("Toxin of the Vicious", 0.75),
-                    new ItemLoot("Implacable Ram", 0.75),
-                    new ItemLoot("Darkin Blades", 0.75),
-                    new ItemLoot("The Twisted Cloak", 0.75),
-                    new ItemLoot("The Twisted Axe", 0.75),
-                    new ItemLoot("Twisted Amulet", 0.75),
-                    new ItemLoot("The Twisted Axe", 0.75),
-                    new ItemLoot("Hunter Necklace", 0.75),
-                    new ItemLoot("Corruption Spell", 0.75),
-                    new ItemLoot("Titanic Bracelet", 0.75)
+                    new ItemLoot("Bloodwell", 0.10),
+                    new ItemLoot("Lavos Armor", 0.10),
+                    new ItemLoot("Quiver of the Onslaught", 0.10),
+                    new ItemLoot("Stonepraise Tome", 0.10),
+                    new ItemLoot("Realitytaker Orb", 0.10),
+                    new ItemLoot("Evisceration Claws", 0.10),
+                    new ItemLoot("Heatblast Trap", 0.10),
+                    new ItemLoot("Royalty Bow", 0.10),
+                    new ItemLoot("Banner of Revenge", 0.10),
+                    new ItemLoot("Percussion Shield", 0.10),
+                    new ItemLoot("Toxin of the Vicious", 0.10),
+                    new ItemLoot("Implacable Ram", 0.10),
+                    new ItemLoot("Darkin Blades", 0.10),
+                    new ItemLoot("The Twisted Cloak", 0.10),
+                    new ItemLoot("The Twisted Axe", 0.10),
+                    new ItemLoot("Twisted Amulet", 0.10),
+                    new ItemLoot("The Twisted Axe", 0.10),
+                    new ItemLoot("Hunter Necklace", 0.10),
+                    new ItemLoot("Corruption Spell", 0.10),
+                    new ItemLoot("Titanic Bracelet", 0.10)
                 ),
                 //You have a 100% chance to get attack or wisdom eon
                 new OnlyOne(
@@ -574,25 +574,25 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Bloodwell", 0.25),
-                    new ItemLoot("Lavos Armor", 0.25),
-                    new ItemLoot("Quiver of the Onslaught", 0.25),
-                    new ItemLoot("Stonepraise Tome", 0.25),
-                    new ItemLoot("Realitytaker Orb", 0.25),
-                    new ItemLoot("Evisceration Claws", 0.75),
-                    new ItemLoot("Titanic Bracelet", 0.25),
-                    new ItemLoot("Heatblast Trap", 0.25),
-                    new ItemLoot("Royalty Bow", 0.25),
-                    new ItemLoot("Banner of Revenge", 0.25),
-                    new ItemLoot("Percussion Shield", 0.25),
-                    new ItemLoot("Toxin of the Vicious", 0.25),
-                    new ItemLoot("Implacable Ram", 0.25),
-                    new ItemLoot("Darkin Blades", 0.25),
-                    new ItemLoot("The Twisted Cloak", 0.25),
-                    new ItemLoot("The Twisted Axe", 0.25),
-                    new ItemLoot("Twisted Amulet", 0.25),
-                    new ItemLoot("The Twisted Axe", 0.25),
-                    new ItemLoot("Corruption Spell", 0.25)
+                    new ItemLoot("Bloodwell", 0.05),
+                    new ItemLoot("Lavos Armor", 0.05),
+                    new ItemLoot("Quiver of the Onslaught", 0.05),
+                    new ItemLoot("Stonepraise Tome", 0.05),
+                    new ItemLoot("Realitytaker Orb", 0.05),
+                    new ItemLoot("Evisceration Claws", 0.05),
+                    new ItemLoot("Titanic Bracelet", 0.05),
+                    new ItemLoot("Heatblast Trap", 0.05),
+                    new ItemLoot("Royalty Bow", 0.05),
+                    new ItemLoot("Banner of Revenge", 0.05),
+                    new ItemLoot("Percussion Shield", 0.05),
+                    new ItemLoot("Toxin of the Vicious", 0.05),
+                    new ItemLoot("Implacable Ram", 0.05),
+                    new ItemLoot("Darkin Blades", 0.05),
+                    new ItemLoot("The Twisted Cloak", 0.05),
+                    new ItemLoot("The Twisted Axe", 0.05),
+                    new ItemLoot("Twisted Amulet", 0.05),
+                    new ItemLoot("The Twisted Axe", 0.05),
+                    new ItemLoot("Corruption Spell", 0.05)
                 ),
                 new OnlyOne(
                     new ItemLoot("Small Sor Fragment", 0.1)
@@ -605,25 +605,25 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Bloodwell", 0.75),
-                    new ItemLoot("Lavos Armor", 0.75),
-                    new ItemLoot("Quiver of the Onslaught", 0.75),
-                    new ItemLoot("Stonepraise Tome", 0.75),
-                    new ItemLoot("Realitytaker Orb", 0.75),
-                    new ItemLoot("Evisceration Claws", 0.75),
-                    new ItemLoot("Titanic Bracelet", 0.75),
-                    new ItemLoot("Heatblast Trap", 0.75),
-                    new ItemLoot("Royalty Bow", 0.75),
-                    new ItemLoot("Banner of Revenge", 0.75),
-                    new ItemLoot("Percussion Shield", 0.75),
-                    new ItemLoot("Toxin of the Vicious", 0.75),
-                    new ItemLoot("Implacable Ram", 0.75),
-                    new ItemLoot("Darkin Blades", 0.75),
-                    new ItemLoot("The Twisted Cloak", 0.75),
-                    new ItemLoot("The Twisted Axe", 0.75),
-                    new ItemLoot("Twisted Amulet", 0.75),
-                    new ItemLoot("The Twisted Axe", 0.75),
-                    new ItemLoot("Corruption Spell", 0.75)
+                    new ItemLoot("Bloodwell", 0.10),
+                    new ItemLoot("Lavos Armor", 0.10),
+                    new ItemLoot("Quiver of the Onslaught", 0.10),
+                    new ItemLoot("Stonepraise Tome", 0.10),
+                    new ItemLoot("Realitytaker Orb", 0.10),
+                    new ItemLoot("Evisceration Claws", 0.10),
+                    new ItemLoot("Titanic Bracelet", 0.10),
+                    new ItemLoot("Heatblast Trap", 0.10),
+                    new ItemLoot("Royalty Bow", 0.10),
+                    new ItemLoot("Banner of Revenge", 0.10),
+                    new ItemLoot("Percussion Shield", 0.10),
+                    new ItemLoot("Toxin of the Vicious", 0.10),
+                    new ItemLoot("Implacable Ram", 0.10),
+                    new ItemLoot("Darkin Blades", 0.10),
+                    new ItemLoot("The Twisted Cloak", 0.10),
+                    new ItemLoot("The Twisted Axe", 0.10),
+                    new ItemLoot("Twisted Amulet", 0.10),
+                    new ItemLoot("The Twisted Axe", 0.10),
+                    new ItemLoot("Corruption Spell", 0.10)
                 ),
                 new OnlyOne(
                     new ItemLoot("Small Sor Fragment", 0.1)
@@ -636,26 +636,26 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Bloodwell", 0.25),
-                    new ItemLoot("Lavos Armor", 0.25),
-                    new ItemLoot("Quiver of the Onslaught", 0.25),
-                    new ItemLoot("Stonepraise Tome", 0.25),
-                    new ItemLoot("Realitytaker Orb", 0.25),
-                    new ItemLoot("Evisceration Claws", 0.25),
-                    new ItemLoot("Titanic Bracelet", 0.25),
-                    new ItemLoot("Heatblast Trap", 0.25),
-                    new ItemLoot("Royalty Bow", 0.25),
-                    new ItemLoot("Banner of Revenge", 0.25),
-                    new ItemLoot("Percussion Shield", 0.25),
-                    new ItemLoot("Toxin of the Vicious", 0.25),
-                    new ItemLoot("Implacable Ram", 0.25),
-                    new ItemLoot("Darkin Blades", 0.25),
-                    new ItemLoot("The Twisted Cloak", 0.25),
-                    new ItemLoot("The Twisted Axe", 0.25),
-                    new ItemLoot("Twisted Amulet", 0.25),
-                    new ItemLoot("The Twisted Axe", 0.25),
-                    new ItemLoot("Hunter Necklace", 0.25),
-                    new ItemLoot("Corruption Spell", 0.25)
+                    new ItemLoot("Bloodwell", 0.05),
+                    new ItemLoot("Lavos Armor", 0.05),
+                    new ItemLoot("Quiver of the Onslaught", 0.05),
+                    new ItemLoot("Stonepraise Tome", 0.05),
+                    new ItemLoot("Realitytaker Orb", 0.05),
+                    new ItemLoot("Evisceration Claws", 0.05),
+                    new ItemLoot("Titanic Bracelet", 0.05),
+                    new ItemLoot("Heatblast Trap", 0.05),
+                    new ItemLoot("Royalty Bow", 0.05),
+                    new ItemLoot("Banner of Revenge", 0.05),
+                    new ItemLoot("Percussion Shield", 0.05),
+                    new ItemLoot("Toxin of the Vicious", 0.05),
+                    new ItemLoot("Implacable Ram", 0.05),
+                    new ItemLoot("Darkin Blades", 0.05),
+                    new ItemLoot("The Twisted Cloak", 0.05),
+                    new ItemLoot("The Twisted Axe", 0.05),
+                    new ItemLoot("Twisted Amulet", 0.05),
+                    new ItemLoot("The Twisted Axe", 0.05),
+                    new ItemLoot("Hunter Necklace", 0.05),
+                    new ItemLoot("Corruption Spell", 0.05)
                 ),
                 new OnlyOne(
                     new ItemLoot("Small Sor Fragment", 0.1)
@@ -669,26 +669,26 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Bloodwell", 0.75),
-                    new ItemLoot("Lavos Armor", 0.75),
-                    new ItemLoot("Quiver of the Onslaught", 0.75),
-                    new ItemLoot("Stonepraise Tome", 0.75),
-                    new ItemLoot("Realitytaker Orb", 0.75),
-                    new ItemLoot("Evisceration Claws", 0.75),
-                    new ItemLoot("Titanic Bracelet", 0.75),
-                    new ItemLoot("Heatblast Trap", 0.75),
-                    new ItemLoot("Royalty Bow", 0.75),
-                    new ItemLoot("Banner of Revenge", 0.75),
-                    new ItemLoot("Percussion Shield", 0.75),
-                    new ItemLoot("Toxin of the Vicious", 0.75),
-                    new ItemLoot("Implacable Ram", 0.75),
-                    new ItemLoot("Darkin Blades", 0.75),
-                    new ItemLoot("The Twisted Cloak", 0.75),
-                    new ItemLoot("The Twisted Axe", 0.75),
-                    new ItemLoot("Twisted Amulet", 0.75),
-                    new ItemLoot("The Twisted Axe", 0.75),
-                    new ItemLoot("Hunter Necklace", 0.75),
-                    new ItemLoot("Corruption Spell", 0.75)
+                    new ItemLoot("Bloodwell", 0.10),
+                    new ItemLoot("Lavos Armor", 0.10),
+                    new ItemLoot("Quiver of the Onslaught", 0.10),
+                    new ItemLoot("Stonepraise Tome", 0.10),
+                    new ItemLoot("Realitytaker Orb", 0.10),
+                    new ItemLoot("Evisceration Claws", 0.10),
+                    new ItemLoot("Titanic Bracelet", 0.10),
+                    new ItemLoot("Heatblast Trap", 0.10),
+                    new ItemLoot("Royalty Bow", 0.10),
+                    new ItemLoot("Banner of Revenge", 0.10),
+                    new ItemLoot("Percussion Shield", 0.10),
+                    new ItemLoot("Toxin of the Vicious", 0.10),
+                    new ItemLoot("Implacable Ram", 0.10),
+                    new ItemLoot("Darkin Blades", 0.10),
+                    new ItemLoot("The Twisted Cloak", 0.10),
+                    new ItemLoot("The Twisted Axe", 0.10),
+                    new ItemLoot("Twisted Amulet", 0.10),
+                    new ItemLoot("The Twisted Axe", 0.10),
+                    new ItemLoot("Hunter Necklace", 0.10),
+                    new ItemLoot("Corruption Spell", 0.10)
                 ),
                 new OnlyOne(
                     new ItemLoot("Small Sor Fragment", 0.1)
@@ -794,18 +794,18 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Kismet Seal", 0.25),
-                    new ItemLoot("Soundpiercer Shuriken", 0.25),
-                    new ItemLoot("Doomgrazer", 0.25),
-                    new ItemLoot("Age of Zol", 0.25),
-                    new ItemLoot("Wrath of Aldragine", 0.25),
-                    new ItemLoot("Bane of the Vision", 0.25),
-                    new ItemLoot("Spirit of the Heart", 0.25),
-                    new ItemLoot("The Grand Finale", 0.25),
-                    new ItemLoot("Merit of Rebellion", 0.25),
-                    new ItemLoot("Enigma Wand", 0.25),
-                    new ItemLoot("Spear of the Unforgiven", 0.25),
-                    new ItemLoot("Dagger of Corruption", 0.25)
+                    new ItemLoot("Kismet Seal", 0.1),
+                    new ItemLoot("Soundpiercer Shuriken", 0.05),
+                    new ItemLoot("Doomgrazer", 0.05),
+                    new ItemLoot("Age of Zol", 0.05),
+                    new ItemLoot("Wrath of Aldragine", 0.05),
+                    new ItemLoot("Bane of the Vision", 0.05),
+                    new ItemLoot("Spirit of the Heart", 0.05),
+                    new ItemLoot("The Grand Finale", 0.05),
+                    new ItemLoot("Merit of Rebellion", 0.05),
+                    new ItemLoot("Enigma Wand", 0.05),
+                    new ItemLoot("Spear of the Unforgiven", 0.05),
+                    new ItemLoot("Dagger of Corruption", 0.05)
                 ),
                 new OnlyOne(
                     new ItemLoot("Sword of Dark Retribution", 0.8),
@@ -824,18 +824,18 @@ namespace wServer.logic.loot
             return new ILootDef[]
             {
                 new OnlyOne(
-                    new ItemLoot("Kismet Seal", 0.75),
-                    new ItemLoot("Soundpiercer Shuriken", 0.75),
-                    new ItemLoot("Doomgrazer", 0.75),
-                    new ItemLoot("Age of Zol", 0.75),
-                    new ItemLoot("Wrath of Aldragine", 0.75),
-                    new ItemLoot("Bane of the Vision", 0.75),
-                    new ItemLoot("Spirit of the Heart", 0.75),
-                    new ItemLoot("The Grand Finale", 0.75),
-                    new ItemLoot("Merit of Rebellion", 0.75),
-                    new ItemLoot("Enigma Wand", 0.75),
-                    new ItemLoot("Spear of the Unforgiven", 0.75),
-                    new ItemLoot("Dagger of Corruption", 0.75)
+                    new ItemLoot("Kismet Seal", 0.10),
+                    new ItemLoot("Soundpiercer Shuriken", 0.10),
+                    new ItemLoot("Doomgrazer", 0.10),
+                    new ItemLoot("Age of Zol", 0.10),
+                    new ItemLoot("Wrath of Aldragine", 0.10),
+                    new ItemLoot("Bane of the Vision", 0.10),
+                    new ItemLoot("Spirit of the Heart", 0.10),
+                    new ItemLoot("The Grand Finale", 0.10),
+                    new ItemLoot("Merit of Rebellion", 0.10),
+                    new ItemLoot("Enigma Wand", 0.10),
+                    new ItemLoot("Spear of the Unforgiven", 0.10),
+                    new ItemLoot("Dagger of Corruption", 0.10)
                 ),
                 new OnlyOne(
                     new ItemLoot("Sword of Dark Retribution", 0.8),

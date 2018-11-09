@@ -35,6 +35,9 @@ namespace wServer.logic
                      new Shoot(40, 18, shootAngle: 20, projectileIndex: 2, coolDown: 600, coolDownOffset: 400),
                      new TimedTransition(8000, "begin")
                     )
+                    ),
+                new Threshold(0.01,
+                    new ItemLoot("Rose Petal Amulet", 0.0007)
                 )
             )
                .Init("The Y-Eater",
@@ -140,7 +143,7 @@ namespace wServer.logic
                     new TossObject("The Y-Eater", 4, 180, coolDown: 7500),
                     new TossObject("The Y-Eater", 4, 270, coolDown: 7500),
                     new TossObject("The Y-Eater", 4, 0, coolDown: 7500),
-                    new HpLessTransition(0.75, "fight2")
+                    new DamageTakenTransition(162500,"fight2")
                     ),
                 new State("fight2",
                     new Taunt("Good luck dodging when you're trapped in my vines!"),
@@ -153,7 +156,7 @@ namespace wServer.logic
                     new Shoot(40, 3, fixedAngle: 135, projectileIndex: 8, coolDown: 750, coolDownOffset: 500),
                     new Shoot(40, 3, fixedAngle: 225, projectileIndex: 9, coolDown: 750, coolDownOffset: 750),
                     new Shoot(40, 3, fixedAngle: 315, projectileIndex: 10, coolDown: 750, coolDownOffset: 1000),
-                    new HpLessTransition(0.6, "fight2b"),
+                    new DamageTakenTransition(250000,"fight2b"),
                     new TimedTransition(7500, "fight2b")
                     ),
                 new State("fight2b",
@@ -177,232 +180,16 @@ namespace wServer.logic
                     new Shoot(40, 4, fixedAngle: 45, shootAngle: 90, projectileIndex: 11, coolDown: 50, coolDownOffset: 100),
                     new Shoot(40, 4, shootAngle: 13, projectileIndex: 0, coolDown: 300),
                     new TossObject("The Y-Eater", 2, coolDown: 3000),
-                    new HpLessTransition(0.4, "fight3")
+                    new DamageTakenTransition(375000,"fight3")
                     ),
                 new State("fight3",
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Order(70, "Vitalia Colour Changer", "blank"),
-                    new TimedTransition(10000, "Purple", true),
-                    new TimedTransition(10000, "Red", true),
-                    new TimedTransition(10000, "Blue", true),
-                    new TimedTransition(10000, "Yellow", true)
-                    ),
-                new State("Purple",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Order(70, "Vitalia Colour Changer", "purple"),
-                    new TimedTransition(4000, "purplelava")
+                    new TimedTransition(2000, "purplelava")
                     ),
                 new State("purplelava",
                     new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new ReplaceTile("CGarden Floor", "CGarden Lava1", 80),
                     new ReplaceTile("CGarden Floor Dark", "CGarden Lava2", 80),
-                    new ReplaceTile("CGarden Bridge", "CGarden Lava3", 80),
-                    new ReplaceTile("CGarden Floor Yellow", "CGarden Lava4", 80),
-                    new ReplaceTile("CGarden Floor Blue", "CGarden Lava5", 80),
-                    new ReplaceTile("CGarden Floor Red", "CGarden Lava6", 80),
-                    new ReplaceTile("CGarden Floor Yellow1", "CGarden Lava8", 80),
-                    new ReplaceTile("CGarden Floor Blue1", "CGarden Lava9", 80),
-                    new ReplaceTile("CGarden Floor Purple1", "CGarden Lava10", 80),
-                    new ReplaceTile("CGarden Floor Red1", "CGarden Lava11", 80),
-                    new ReplaceTile("Hanami Grass 3 Light", "CGarden Lava12", 80),
-                    new TimedTransition(7500, "normalize")
-                    ),
-                new State("Red",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Order(70, "Vitalia Colour Changer", "red"),
-                    new TimedTransition(4000, "redlava")
-                    ),
-                new State("redlava",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new ReplaceTile("CGarden Floor", "CGarden Lava1", 80),
-                    new ReplaceTile("CGarden Floor Dark", "CGarden Lava2", 80),
-                    new ReplaceTile("CGarden Bridge", "CGarden Lava3", 80),
-                    new ReplaceTile("CGarden Floor Yellow", "CGarden Lava4", 80),
-                    new ReplaceTile("CGarden Floor Blue", "CGarden Lava5", 80),
-                    new ReplaceTile("CGarden Floor Purple", "CGarden Lava7", 80),
-                    new ReplaceTile("CGarden Floor Yellow1", "CGarden Lava8", 80),
-                    new ReplaceTile("CGarden Floor Blue1", "CGarden Lava9", 80),
-                    new ReplaceTile("CGarden Floor Purple1", "CGarden Lava10", 80),
-                    new ReplaceTile("CGarden Floor Red1", "CGarden Lava11", 80),
-                    new ReplaceTile("Hanami Grass 3 Light", "CGarden Lava12", 80),
-                    new TimedTransition(7500, "normalize")
-                    ),
-                new State("Blue",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Order(70, "Vitalia Colour Changer", "blue"),
-                    new TimedTransition(4000, "bluelava")
-                    ),
-                new State("bluelava",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new ReplaceTile("CGarden Floor", "CGarden Lava1", 80),
-                    new ReplaceTile("CGarden Floor Dark", "CGarden Lava2", 80),
-                    new ReplaceTile("CGarden Bridge", "CGarden Lava3", 80),
-                    new ReplaceTile("CGarden Floor Yellow", "CGarden Lava4", 80),
-                    new ReplaceTile("CGarden Floor Purple", "CGarden Lava7", 80),
-                    new ReplaceTile("CGarden Floor Red", "CGarden Lava6", 80),
-                    new ReplaceTile("CGarden Floor Yellow1", "CGarden Lava8", 80),
-                    new ReplaceTile("CGarden Floor Blue1", "CGarden Lava9", 80),
-                    new ReplaceTile("CGarden Floor Purple1", "CGarden Lava10", 80),
-                    new ReplaceTile("CGarden Floor Red1", "CGarden Lava11", 80),
-                    new ReplaceTile("Hanami Grass 3 Light", "CGarden Lava12", 80),
-                    new TimedTransition(7500, "normalize")
-                    ),
-                new State("Yellow",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Order(70, "Vitalia Colour Changer", "yellow"),
-                    new TimedTransition(4000, "yellowlava")
-                    ),
-                new State("yellowlava",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new ReplaceTile("CGarden Floor", "CGarden Lava1", 80),
-                    new ReplaceTile("CGarden Floor Dark", "CGarden Lava2", 80),
-                    new ReplaceTile("CGarden Bridge", "CGarden Lava3", 80),
-                    new ReplaceTile("CGarden Floor Purple", "CGarden Lava7", 80),
-                    new ReplaceTile("CGarden Floor Blue", "CGarden Lava5", 80),
-                    new ReplaceTile("CGarden Floor Red", "CGarden Lava6", 80),
-                    new ReplaceTile("CGarden Floor Yellow1", "CGarden Lava8", 80),
-                    new ReplaceTile("CGarden Floor Blue1", "CGarden Lava9", 80),
-                    new ReplaceTile("CGarden Floor Purple1", "CGarden Lava10", 80),
-                    new ReplaceTile("CGarden Floor Red1", "CGarden Lava11", 80),
-                    new ReplaceTile("Hanami Grass 3 Light", "CGarden Lava12", 80),
-                    new TimedTransition(7500, "normalize")
-                    ),
-                new State("normalize",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new ReplaceTile("CGarden Lava1", "CGarden Floor", 80),
-                    new ReplaceTile("CGarden Lava2", "CGarden Floor Dark", 80),
-                    new ReplaceTile("CGarden Lava3", "CGarden Bridge", 80),
-                    new ReplaceTile("CGarden Lava4", "CGarden Floor Yellow", 80),
-                    new ReplaceTile("CGarden Lava5", "CGarden Floor Blue", 80),
-                    new ReplaceTile("CGarden Lava6", "CGarden Floor Red", 80),
-                    new ReplaceTile("CGarden Lava7", "CGarden Floor Purple", 80),
-                    new ReplaceTile("CGarden Lava8", "CGarden Floor Yellow1", 80),
-                    new ReplaceTile("CGarden Lava9", "CGarden Floor Blue1", 80),
-                    new ReplaceTile("CGarden Lava10", "CGarden Floor Purple1", 80),
-                    new ReplaceTile("CGarden Lava11", "CGarden Floor Red1", 80),
-                    new ReplaceTile("CGarden Lava12", "Hanami Grass 3 Light", 80),
-                    new TimedTransition(4000, "lavaagain")
-                    ),
-                new State("lavaagain",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Order(70, "Vitalia Colour Changer", "blank"),
-                    new TimedTransition(10000, "Purple1", true),
-                    new TimedTransition(10000, "Red1", true),
-                    new TimedTransition(10000, "Blue1", true),
-                    new TimedTransition(10000, "Yellow1", true)
-                    ),
-                new State("Purple1",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new MoveTo2(10, 10, 2, true),
-                    new Order(70, "Vitalia Colour Changer", "purple"),
-                    new TimedTransition(4000, "purplelava1")
-                    ),
-                new State("purplelava1",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Charge(0.5, 10, coolDown: 10000),
-                    new Follow(0.1, 10, 3),
-                    new Shoot(40, 18, shootAngle: 20, projectileIndex: 12, coolDown: 3750),
-                    new ReplaceTile("CGarden Floor", "CGarden Lava1", 80),
-                    new ReplaceTile("CGarden Floor Dark", "CGarden Lava2", 80),
-                    new ReplaceTile("CGarden Bridge", "CGarden Lava3", 80),
-                    new ReplaceTile("CGarden Floor Yellow", "CGarden Lava4", 80),
-                    new ReplaceTile("CGarden Floor Blue", "CGarden Lava5", 80),
-                    new ReplaceTile("CGarden Floor Red", "CGarden Lava6", 80),
-                    new ReplaceTile("CGarden Floor Yellow1", "CGarden Lava8", 80),
-                    new ReplaceTile("CGarden Floor Blue1", "CGarden Lava9", 80),
-                    new ReplaceTile("CGarden Floor Purple1", "CGarden Lava10", 80),
-                    new ReplaceTile("CGarden Floor Red1", "CGarden Lava11", 80),
-                    new ReplaceTile("Hanami Grass 3 Light", "CGarden Lava12", 80),
-                    new TimedTransition(7500, "normalize1")
-                    ),
-                new State("Red1",
-                    new MoveTo2(10, -10, 2, true),
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Order(70, "Vitalia Colour Changer", "red"),
-                    new TimedTransition(4000, "redlava1")
-                    ),
-                new State("redlava1",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Charge(0.5, 10, coolDown: 10000),
-                    new Follow(0.3, 10, 3),
-                    new Shoot(40, 18, shootAngle: 20, projectileIndex: 12, coolDown: 3750),
-                    new ReplaceTile("CGarden Floor", "CGarden Lava1", 80),
-                    new ReplaceTile("CGarden Floor Dark", "CGarden Lava2", 80),
-                    new ReplaceTile("CGarden Bridge", "CGarden Lava3", 80),
-                    new ReplaceTile("CGarden Floor Yellow", "CGarden Lava4", 80),
-                    new ReplaceTile("CGarden Floor Blue", "CGarden Lava5", 80),
-                    new ReplaceTile("CGarden Floor Purple", "CGarden Lava7", 80),
-                    new ReplaceTile("CGarden Floor Yellow1", "CGarden Lava8", 80),
-                    new ReplaceTile("CGarden Floor Blue1", "CGarden Lava9", 80),
-                    new ReplaceTile("CGarden Floor Purple1", "CGarden Lava10", 80),
-                    new ReplaceTile("CGarden Floor Red1", "CGarden Lava11", 80),
-                    new ReplaceTile("Hanami Grass 3 Light", "CGarden Lava12", 80),
-                    new TimedTransition(7500, "normalize1")
-                    ),
-                new State("Blue1",
-                    new MoveTo2(-10, -10, 2, true),
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Order(70, "Vitalia Colour Changer", "blue"),
-                    new TimedTransition(4000, "bluelava1")
-                    ),
-                new State("bluelava1",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Charge(0.5, 10, coolDown: 10000),
-                    new Follow(0.3, 10, 3),
-                    new Shoot(40, 18, shootAngle: 20, projectileIndex: 12, coolDown: 3750),
-                    new ReplaceTile("CGarden Floor", "CGarden Lava1", 80),
-                    new ReplaceTile("CGarden Floor Dark", "CGarden Lava2", 80),
-                    new ReplaceTile("CGarden Bridge", "CGarden Lava3", 80),
-                    new ReplaceTile("CGarden Floor Yellow", "CGarden Lava4", 80),
-                    new ReplaceTile("CGarden Floor Purple", "CGarden Lava7", 80),
-                    new ReplaceTile("CGarden Floor Red", "CGarden Lava6", 80),
-                    new ReplaceTile("CGarden Floor Yellow1", "CGarden Lava8", 80),
-                    new ReplaceTile("CGarden Floor Blue1", "CGarden Lava9", 80),
-                    new ReplaceTile("CGarden Floor Purple1", "CGarden Lava10", 80),
-                    new ReplaceTile("CGarden Floor Red1", "CGarden Lava11", 80),
-                    new ReplaceTile("Hanami Grass 3 Light", "CGarden Lava12", 80),
-                    new TimedTransition(7500, "normalize1")
-                    ),
-                new State("Yellow1",
-                    new MoveTo2(-10, 10, 2, true),
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Order(70, "Vitalia Colour Changer", "yellow"),
-                    new TimedTransition(4000, "yellowlava1")
-                    ),
-                new State("yellowlava1",
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new Charge(0.5, 10, coolDown: 10000),
-                    new Follow(0.3, 10, 3),
-                    new Shoot(40, 18, shootAngle: 20, projectileIndex: 12, coolDown: 3750),
-                    new ReplaceTile("CGarden Floor", "CGarden Lava1", 80),
-                    new ReplaceTile("CGarden Floor Dark", "CGarden Lava2", 80),
-                    new ReplaceTile("CGarden Bridge", "CGarden Lava3", 80),
-                    new ReplaceTile("CGarden Floor Purple", "CGarden Lava7", 80),
-                    new ReplaceTile("CGarden Floor Blue", "CGarden Lava5", 80),
-                    new ReplaceTile("CGarden Floor Red", "CGarden Lava6", 80),
-                    new ReplaceTile("CGarden Floor Yellow1", "CGarden Lava8", 80),
-                    new ReplaceTile("CGarden Floor Blue1", "CGarden Lava9", 80),
-                    new ReplaceTile("CGarden Floor Purple1", "CGarden Lava10", 80),
-                    new ReplaceTile("CGarden Floor Red1", "CGarden Lava11", 80),
-                    new ReplaceTile("Hanami Grass 3 Light", "CGarden Lava12", 80),
-                    new TimedTransition(7500, "normalize1")
-                    ),
-                new State("normalize1",
-                    new ReturnToSpawn(1),
-                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                    new ReplaceTile("CGarden Lava1", "CGarden Floor", 80),
-                    new ReplaceTile("CGarden Lava2", "CGarden Floor Dark", 80),
-                    new ReplaceTile("CGarden Lava3", "CGarden Bridge", 80),
-                    new ReplaceTile("CGarden Lava4", "CGarden Floor Yellow", 80),
-                    new ReplaceTile("CGarden Lava5", "CGarden Floor Blue", 80),
-                    new ReplaceTile("CGarden Lava6", "CGarden Floor Red", 80),
-                    new ReplaceTile("CGarden Lava7", "CGarden Floor Purple", 80),
-                    new ReplaceTile("CGarden Lava8", "CGarden Floor Yellow1", 80),
-                    new ReplaceTile("CGarden Lava9", "CGarden Floor Blue1", 80),
-                    new ReplaceTile("CGarden Lava10", "CGarden Floor Purple1", 80),
-                    new ReplaceTile("CGarden Lava11", "CGarden Floor Red1", 80),
-                    new ReplaceTile("CGarden Lava12", "Hanami Grass 3 Light", 80),
-                    new TimedTransition(5000, "fight3b")
+                    new TimedTransition(3000,"fight3b")
                     ),
                 new State("fight3b",
                      new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -442,7 +229,7 @@ namespace wServer.logic
                     new Wander(0.4),
                     new Shoot(40, 18, shootAngle: 20, projectileIndex: 13, coolDown: 3000),
                     new TimedTransition(5000, "fight4aa"),
-                    new HpLessTransition(0.25, "fight5")
+                    new DamageTakenTransition(468750,"fight5")
                     ),
                 new State("fight4aa",
                     new Charge(2, 1, coolDown: 100000),
@@ -452,14 +239,14 @@ namespace wServer.logic
                     new Shoot(40, 20, projectileIndex: 14, coolDown: 100000000, coolDownOffset: 5000),
                     new Shoot(40, 20, projectileIndex: 15, coolDown: 100000000, coolDownOffset: 5500),
                     new TimedTransition(5000, "fight4b"),
-                    new HpLessTransition(0.25, "fight5")
+                    new DamageTakenTransition(468750, "fight5")
                     ),
                 new State("fight4b",
                     new Follow(1, 10, 0),
                     new Shoot(40, 18, shootAngle: 20, projectileIndex: 13, coolDown: 3000),
                     new Shoot(40, 3, shootAngle: 13, projectileIndex: 15, coolDown: 400, coolDownOffset: 500),
                     new TimedTransition(5000, "fight4a"),
-                    new HpLessTransition(0.25, "fight5")
+                    new DamageTakenTransition(468750, "fight5")
                     ),
                 new State("fight5",
                     new Orbit(1, 5, 10, "Vitalia Tracker"),
@@ -469,7 +256,7 @@ namespace wServer.logic
                     new Shoot(40, 1, projectileIndex: 15, coolDown: 600),
                     new Shoot(40, 6, projectileIndex: 14, coolDown: 6000, coolDownOffset: 6000),
                     new Shoot(40, 3, fixedAngle: 45, projectileIndex: 7, coolDown: 1000, coolDownOffset: 250),
-                    new HpLessTransition(0.15, "fight5a")
+                    new DamageTakenTransition(531250,"fight5a")
                     ),
                 new State("fight5a",
                     new Orbit(1, 5, 10, "Vitalia Tracker"),
@@ -481,7 +268,7 @@ namespace wServer.logic
                     new Shoot(40, 6, projectileIndex: 14, coolDown: 6000, coolDownOffset: 6000),
                     new Shoot(40, 3, fixedAngle: 45, projectileIndex: 7, coolDown: 1000, coolDownOffset: 250),
                     new Shoot(40, 3, fixedAngle: 135, projectileIndex: 8, coolDown: 1000, coolDownOffset: 500),
-                    new HpLessTransition(0.10, "fight5b")
+                    new DamageTakenTransition(562500,"fight5b")
                     ),
                 new State("fight5b",
                     new Orbit(1, 5, 10, "Vitalia Tracker"),
@@ -496,12 +283,13 @@ namespace wServer.logic
                     new Shoot(40, 3, fixedAngle: 135, projectileIndex: 8, coolDown: 1000, coolDownOffset: 500),
                     new Shoot(40, 3, fixedAngle: 225, projectileIndex: 9, coolDown: 1000, coolDownOffset: 750),
                     new Shoot(40, 3, fixedAngle: 315, projectileIndex: 10, coolDown: 1000, coolDownOffset: 1000),
-                    new HpLessTransition(0.05, "death")
+                    new DamageTakenTransition(593750,"death")
                     ),
                 new State("death",
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
                     new Flash(0xFFFFFF, 1, 2),
                     new ReturnToSpawn(2),
+                    new ReplaceTile("CGarden Lava2","CGarden Floor Dark", 80),
                     new Taunt("You.. Cant.. Kill.. Nature.."),
                     new TimedTransition(2500, "ripmyman")
                     ),
@@ -525,7 +313,6 @@ namespace wServer.logic
                     new ItemLoot("Onrane", 1),
                     new ItemLoot("Viperstring", 0.01),
                     new ItemLoot("Blade of Thorns", 0.01),
-                    new ItemLoot("Rose Petal Amulet", 0.01),
                     new ItemLoot("Rose Petal Staff", 0.01)
                 )
             )
@@ -709,10 +496,320 @@ namespace wServer.logic
            .Init("Lenin Big",
                 new State(
                     new State("Idle",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new EntityNotExistsTransition("Vitalia", 1000, "waitfortext")
+                        ),
+                    new State("waitfortext",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new PlayerTextTransition("text", "Almighty Lenin, grant us passage!", 8, false, false)
+                        ),
+                    new State("text",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new Taunt("I heard rumblings in the stone zone, proceed with caution Granithia won't be happy.")
+                )
+            )
+            )
+        .Init("CGarden Boulder",
+                new State(
+                    new State("Idle",
                         new ConditionalEffect(ConditionEffectIndex.Invincible)
+                        ),
+                    new State("rollout",
+                        new Shoot(500, 1, projectileIndex: 0, fixedAngle: 90, coolDown: 50000),
+                        new TimedTransition(1500, "shootagain")
+                        ),
+                    new State("shootagain",
+                        new Shoot(500, 1, projectileIndex: 0, fixedAngle: 90, coolDown: 50000),
+                        new Suicide()
 
                 )
             )
+            )
+        .Init("CGarden Skull wait",
+                new State(
+                    new TransformOnDeath("CGarden Skull Fountain"),
+                    new State("Idle",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible)
+                        ),
+                    new State("order",
+                        new Suicide()
+
+                )
+            )
+            )
+        .Init("CGarden Skull Fountain",
+                new State(
+                    new TransformOnDeath("CGarden Skull Fountain Loop"),
+                    new State("Idle",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new TimedTransition(2800, "loop animation")
+                        ),
+                    new State("loop animation",
+                        new Suicide()
+
+                )
+            )
+            )
+           .Init("CGarden Skull Fountain Loop",
+                new State(
+                    new TransformOnDeath("CGarden Skull wait"),
+                    new State("bombs",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new TossObject("Granithia Bomb", range: 5, coolDown: 2000),
+                        new TossObject("Granithia Bomb", range: 5, coolDown: 2000, coolDownOffset: 450)
+                        ),
+                    new State("death",
+                        new Suicide()
+
+
+                )
+            )
+            )
+        .Init("Granithia",
+                new State(
+                    new State("locate",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new ScaleHP(45000),
+                        new PlayerWithinTransition(8, "preyeet")
+                        ),
+                    new State("preyeet",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new Taunt("How dare you come into our Garden and slay my sister!"),
+                        new TimedTransition(2500, "yeet")
+                        ),
+                    new State("yeet",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new Taunt("You will not find me so easy to defeat."),
+                        new TimedTransition(2500, "stillyeeting")
+                        ),
+                    new State("stillyeeting",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new Taunt("She was always the kinder one, I show no such mercy"),
+                        new TimedTransition(3000, "fight")
+                        ),
+                    new State("fight",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new Taunt("Dodge this!"),
+                        new Order(40, "CGarden Boulder", "rollout"),
+                        new TimedTransition(200, "fighta")
+                        ),
+                    new State("fighta",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new Order(500, "CGarden Skull wait", "order"),
+                        new TimedTransition(2000, "fightb")
+                        ),
+                    new State("fightb",
+                        new Taunt("Lets see how well you do when split apart!"),
+                        new Shoot(50, 8, fixedAngle: 45, projectileIndex: 4, shootAngle: 45, coolDown: 25),
+                        new Shoot(50, 8, fixedAngle: 45, projectileIndex: 4, shootAngle: 45, coolDown: 50, coolDownOffset: 50),
+                        new DamageTakenTransition(100000, "fight2"),
+                        new TimedTransition(4500, "fightba")
+                        ),
+                    new State("fightba",
+                        new Taunt("SWITCH!"),
+                        new Shoot(50, 8, fixedAngle: 72, projectileIndex: 4, shootAngle: 45, coolDown: 25),
+                        new Shoot(50, 8, fixedAngle: 72, projectileIndex: 4, shootAngle: 45, coolDown: 50, coolDownOffset: 50),
+                        new DamageTakenTransition(100000, "fight2"),
+                        new TimedTransition(4500, "fightbb")
+                        ),
+                    new State("fightbb",
+                        new Taunt("SWITCH!"),
+                        new Shoot(50, 8, fixedAngle: 45, projectileIndex: 4, shootAngle: 45, coolDown: 25),
+                        new Shoot(50, 8, fixedAngle: 45, projectileIndex: 4, shootAngle: 45, coolDown: 50, coolDownOffset: 50),
+                        new DamageTakenTransition(100000, "fight2"),
+                        new TimedTransition(4500, "fightba")
+                        ),
+                    new State("fight2",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new Order(500, "CGarden Skull Fountain Loop", "death"),
+                        new Taunt("Pathetic, maybe you can deal more damage when all together."),
+                        new MoveTo2(0, -10, 0.3, true),
+                        new TimedTransition(1500, "fight2a")
+                        ),
+                    new State("fight2a",
+                        new Wander(0.3),
+                        new Shoot(50, 3, shootAngle: 12, projectileIndex: 0, coolDown: 1150),
+                        new Shoot(50, 8, fixedAngle: 45, shootAngle: 5, projectileIndex: 1, coolDown: 3000),
+                        new DamageTakenTransition(250000, "fight3"),
+                        new TimedTransition(5000, "fight2b")
+                        ),
+                    new State("fight2b",
+                        new Shoot(60, 36, shootAngle: 10, projectileIndex: 5, coolDown: 2000),
+                        new Grenade(5, 150, 0, fixedAngle: 0, coolDown: 2000),
+                        new DamageTakenTransition(250000, "fight3"),
+                        new TimedTransition(4000, "fight2a")
+                        ),
+                    new State("fight3",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new ReturnToSpawn(1),
+                        new Taunt("Servants, ATTACK!"),
+                        new TossObject("Servant of Granithia", 4, 270, coolDown: 99999),
+                        new TossObject("Servant of Granithia", 4, 225, coolDown: 99999),
+                        new TossObject("Servant of Granithia", 4, 315, coolDown: 99999),
+                        new TossObject("Servant of Granithia", 4, 315, coolDown: 99999, coolDownOffset: 8000),
+                        new TossObject("Servant of Granithia", 4, 360, coolDown: 99999, coolDownOffset: 8000),
+                        new TossObject("Servant of Granithia", 4, 45, coolDown: 99999, coolDownOffset: 8000),
+                        new TossObject("Servant of Granithia", 4, 45, coolDown: 99999, coolDownOffset: 16000),
+                        new TossObject("Servant of Granithia", 4, 90, coolDown: 99999, coolDownOffset: 16000),
+                        new TossObject("Servant of Granithia", 4, 135, coolDown: 99999, coolDownOffset: 16000),
+                        new TossObject("Servant of Granithia", 4, 135, coolDown: 99999, coolDownOffset: 24000),
+                        new TossObject("Servant of Granithia", 4, 180, coolDown: 99999, coolDownOffset: 24000),
+                        new TossObject("Servant of Granithia", 4, 225, coolDown: 99999, coolDownOffset: 24000),
+                        new TimedTransition(28000, "waitforservants")
+                        ),
+                    new State("waitforservants",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new EntitiesNotExistsTransition(30, "fight4", "Servant of Granithia")
+                        ),
+                    new State("fight4",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Taunt("IM GETTING SICK OF YOU! LEAVE MY GARDEN!"),
+                        new TimedTransition(2000, "fight4a")
+                        ),
+                    new State("fight4a",
+                        new Follow(0.6, 10, 0),
+                        new Order(500, "CGarden Skull wait", "order"),
+                        new Grenade(3, 200, 5, coolDown: 1300),
+                        new Shoot(50, 3, shootAngle: 12, projectileIndex: 0, coolDown: 950),
+                        new Shoot(50, 8, shootAngle: 30, projectileIndex: 6, coolDown: 800),
+                        new DamageTakenTransition(275000, "fight4b")
+                        ),
+                     new State("fight4b",
+                        new Follow(0.8, 10, 0),
+                        new Grenade(3, 200, 5, coolDown: 1300),
+                        new Shoot(50, 3, shootAngle: 12, projectileIndex: 0, coolDown: 950),
+                        new Shoot(50, 8, shootAngle: 30, projectileIndex: 6, coolDown: 800),
+                        new DamageTakenTransition(300000, "fight4c")
+                         ),
+                     new State("fight4c",
+                        new Follow(1, 10, 0),
+                        new Grenade(3, 200, 5, coolDown: 1300),
+                        new Shoot(50, 3, shootAngle: 12, projectileIndex: 0, coolDown: 950),
+                        new Shoot(50, 8, shootAngle: 30, projectileIndex: 6, coolDown: 800),
+                        new DamageTakenTransition(350000, "fight4d")
+                         ),
+                     new State("fight4d",
+                        new Follow(1.2, 10, 0),
+                        new Grenade(3, 200, 5, coolDown: 1300),
+                        new Shoot(50, 3, shootAngle: 12, projectileIndex: 0, coolDown: 950),
+                        new Shoot(50, 8, shootAngle: 30, projectileIndex: 6, coolDown: 800),
+                        new DamageTakenTransition(400000, "fight5")
+                         ),
+                     new State("fight5",
+                         new ConditionalEffect(ConditionEffectIndex.Invincible),
+                         new ChangeSize(5, 200),
+                         new Taunt("ENOUGH!I SHALL END YOU ALL!"),
+                         new TimedTransition(1500, "fight5a")
+                         ),
+                     new State("fight5a",
+                          new Wander(0.1),
+                          new Shoot(60, 36, shootAngle: 10, projectileIndex: 5, coolDown: 2000),
+                          new Shoot(60, 36, shootAngle: 10, projectileIndex: 5, coolDown: 2000, coolDownOffset: 1000),
+                          new Shoot(60, 36, shootAngle: 10, projectileIndex: 5, coolDown: 2000, coolDownOffset: 2000),
+                          new Shoot(60, 36, shootAngle: 10, projectileIndex: 5, coolDown: 2000, coolDownOffset: 3000),
+                          new DamageTakenTransition(490000, "death"),
+                          new TimedTransition(5000, "fight5b")
+                         ),
+                     new State("fight5b",
+                         new Charge(2, 10),
+                         new Shoot(60, 1, projectileIndex:1, fixedAngle: 90, coolDown: 2000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 100, coolDown: 2000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 110, coolDown: 2000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 127, coolDown: 2000,coolDownOffset:500),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 145, coolDown: 2000,coolDownOffset:1000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 162, coolDown: 2000,coolDownOffset:1500),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 180, coolDown: 2000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 190, coolDown: 2000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 200, coolDown: 2000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 217, coolDown: 2000, coolDownOffset: 500),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 235, coolDown: 2000, coolDownOffset: 1000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 252, coolDown: 2000, coolDownOffset: 1500),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 270, coolDown: 2000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 280, coolDown: 2000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 290, coolDown: 2000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 307, coolDown: 2000, coolDownOffset: 500),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 325, coolDown: 2000, coolDownOffset: 1000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 342, coolDown: 2000, coolDownOffset: 1500),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 0, coolDown: 2000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 10, coolDown: 2000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 20, coolDown: 2000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 37, coolDown: 2000, coolDownOffset: 500),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 55, coolDown: 2000, coolDownOffset: 1000),
+                         new Shoot(60, 1, projectileIndex: 1, fixedAngle: 72, coolDown: 2000, coolDownOffset: 1500),
+                         new DamageTakenTransition(490000, "death"),
+                         new TimedTransition(5000,"fight5c")
+                         ),
+                     new State("fight5c",
+                         new Taunt("Try not to get flattened!"),
+                         new Shoot(60,1,projectileIndex:3,predictive:1,coolDown:750),
+                         new DamageTakenTransition(490000,"death"),
+                         new TimedTransition(5000,"fight5a")
+                         ),
+                     new State("death",
+                         new ConditionalEffect(ConditionEffectIndex.Invincible),
+                         new Taunt("You can weather a rock as much as you'd like... but it will never be gone for good..."),
+                         new TimedTransition(2000,"sodramatic")
+                         ),
+                     new State("sodramatic",
+                         new Suicide()
+                         )
+                     ),
+                new MostDamagers(3,
+                    LootTemplates.Sor5Perc()
+                    ),
+                new Threshold(0.01,
+                    new ItemLoot("Greater Potion of Defense", 1),
+                    new ItemLoot("Greater Potion of Life", 1),
+                    new ItemLoot("Medium Sor Fragment", 0.1),
+                    new ItemLoot("1000 Gold", 1),
+                    new ItemLoot("Onrane Cache", 1),
+                    new ItemLoot("Granithia's Blaster", 0.01),
+                    new ItemLoot("Stone-Forged Spear", 0.01),
+                    new ItemLoot("Granithia's Garments", 0.01),
+                    new ItemLoot("Amulet of Granithia", 0.01)
+
+
+                            )
+                        )
+          .Init("Granithia Bomb",
+                new State(
+                    new State("Idle",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new TimedTransition(600, "Explode")
+                        ),
+                    new State("Explode",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new Shoot(100, projectileIndex: 0, count: 8),
+                        new Suicide()
+                        )
+                    )
+            )
+        .Init("Servant of Granithia",
+            new State(
+                new State("wait",
+                    new ScaleHP(2000),
+                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                    new PlayerWithinTransition(7, "attack")
+                    ),
+                new State("attack",
+                    new Follow(0.7, 10, 3),
+                    new Shoot(20, 5, shootAngle: 36, coolDown: 1750, coolDownOffset: 250),
+                    new Shoot(20, 3, shootAngle: 15, projectileIndex: 1, coolDown: 1500, coolDownOffset: 350),
+                    new DamageTakenTransition(10000,"uberattack"),
+                    new TimedTransition(5000, "attackbutwander")
+                    ),
+                new State("attackbutwander",
+                    new Wander(1),
+                    new Shoot(20, 5, shootAngle: 36, coolDown: 1750, coolDownOffset: 250),
+                    new Shoot(20, 3, shootAngle: 15, projectileIndex: 1, coolDown: 1500, coolDownOffset: 350),
+                    new HpLessTransition(0.15, "uberattack"),
+                    new TimedTransition(3500, "attack")
+                    ),
+                new State("uberattack",
+                    new Flash(0xff00ff00, 0.1, 20),
+                    new Shoot(20, 9, shootAngle: 30, projectileIndex: 1, coolDown: 100, coolDownOffset: 250)
+                    )
+                )
             )
             ;
     }

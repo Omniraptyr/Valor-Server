@@ -23,7 +23,6 @@ namespace wServer.logic
 						),
 							new State("turn",
 								new SetAltTexture(1),
-								new Order(50, "Stone Gargoyle", "swag"),
 								new TimedTransition(2000, "alive")
 							)
 					),

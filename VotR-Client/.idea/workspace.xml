@@ -21,42 +21,69 @@
     <option name="HIDE_WARNINGS" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameServerConnectionConcrete.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/GameServerConnectionConcrete.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6511">
-              <caret line="638" column="89" lean-forward="false" selection-start-line="638" selection-start-column="89" selection-end-line="638" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Parameters.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="30" column="46" lean-forward="false" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PetsConfig.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/pets/PetsConfig.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="114" column="29" lean-forward="false" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file leaf-file-name="WebMain.as" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WebMain.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="162" column="9" lean-forward="false" selection-start-line="162" selection-start-column="9" selection-end-line="162" selection-end-column="9" />
+            <state relative-caret-position="299">
+              <caret line="113" column="29" lean-forward="false" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="793">
+              <caret line="945" column="10" lean-forward="false" selection-start-line="945" selection-start-column="10" selection-end-line="945" selection-end-column="10" />
+              <folding>
+                <marker date="1541735497679" expanded="true" signature="55132:55151" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="55132:55169" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="55132:55182" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="55132:55197" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="55232:57389" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="55245:57374" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="55299:55601" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="55318:55586" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="55381:55566" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="55421:55532" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="55442:55510" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="55651:55985" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="55670:55970" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="55765:55950" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="55805:55916" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="55826:55894" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="56036:56308" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="56055:56293" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="56088:56273" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="56128:56239" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="56149:56217" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="56351:56664" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="56370:56649" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="56444:56629" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="56484:56595" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="56505:56573" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="56715:57036" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="56734:57021" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="56816:57001" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="56856:56967" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="56877:56945" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="57088:57360" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="57107:57345" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="57140:57325" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="57180:57291" ph="..." />
+                <marker date="1541735497679" expanded="true" signature="57201:57269" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmbeddedData_EquipCXML.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="6062" column="74" lean-forward="false" selection-start-line="6062" selection-start-column="74" selection-end-line="6062" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -65,58 +92,8 @@
       <file leaf-file-name="EmbeddedData_BTestingCXML.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_BTestingCXML.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98957">
-              <caret line="5821" column="31" lean-forward="false" selection-start-line="5821" selection-start-column="31" selection-end-line="5821" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmbeddedData_EquipCXML.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580431">
-              <caret line="34143" column="38" lean-forward="false" selection-start-line="34143" selection-start-column="38" selection-end-line="34143" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EquipmentToolTip.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/tooltip/EquipmentToolTip.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MoreStringUtil.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/util/MoreStringUtil.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EquipmentTile.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/panels/itemgrids/itemtiles/EquipmentTile.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1666">
-              <caret line="108" column="43" lean-forward="false" selection-start-line="108" selection-start-column="43" selection-end-line="108" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RandomUtil.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/util/RandomUtil.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            <state relative-caret-position="4522">
+              <caret line="18841" column="30" lean-forward="true" selection-start-line="18841" selection-start-column="30" selection-end-line="18841" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -124,33 +101,8 @@
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="ActionScript Class" />
-      </list>
-    </option>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>basesimplete</find>
-      <find>enemy_effect</find>
-      <find>launcher</find>
-      <find>navigateto</find>
-      <find>nexus</find>
-      <find>arenainfoite</find>
-      <find>ar</find>
-      <find>mark shop</find>
-      <find>markshopbutt</find>
-      <find>sheath</find>
-      <find>numprojectile</find>
-      <find>navigatet</find>
-      <find>class menu</find>
-      <find>incrstatper</find>
-      <find>invuse</find>
-      <find>cdtext</find>
-      <find>d/sound</find>
-      <find>talism</find>
       <find>tali</find>
       <find>talis</find>
       <find>useitem</find>
@@ -163,6 +115,24 @@
       <find>Malgor, the</find>
       <find>purification</find>
       <find>Elitedrop</find>
+      <find>viper</find>
+      <find>heavy cross</find>
+      <find>sky tome</find>
+      <find>0x5227</find>
+      <find>quest</find>
+      <find>varghus</find>
+      <find>restless spectre</find>
+      <find>grants either</find>
+      <find>classic dice</find>
+      <find>Dice</find>
+      <find>diceact</find>
+      <find>dice</find>
+      <find>predator necklace</find>
+      <find>cgarden rock wall</find>
+      <find>store_</find>
+      <find>cgarden floor rock</find>
+      <find>Granith</find>
+      <find>Granit</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -195,8 +165,8 @@
       <dir>C:\Users\darkd\Desktop\votrmaster2\VotR-Server2\VotR-Client\src</dir>
       <dir>C:\Users\darkd\Desktop\VotR-Server2\VotR-Client</dir>
       <dir>C:\Users\darkd\Desktop\VotRLegacy\VotR-Client</dir>
-      <dir>C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src</dir>
       <dir>C:\votr\VotR-Server2\VotR-Client\src\com\company\assembleegameclient\ui\menu</dir>
+      <dir>C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -210,9 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/kabam/lib/net/impl/SocketServerModel.as" />
-        <option value="$PROJECT_DIR$/src/kabam/lib/net/api/MessageProvider.as" />
-        <option value="$PROJECT_DIR$/src/kabam/lib/net/impl/SocketServer.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_StaticObjectsCXML.xml" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/particles/ParticleEffect.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/objects/GameObject.as" />
@@ -257,9 +224,12 @@
         <option value="$PROJECT_DIR$/src/com/company/util/MoreStringUtil.as" />
         <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/ui/tooltip/EquipmentToolTip.as" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/GameServerConnectionConcrete.as" />
+        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as" />
+        <option value="$PROJECT_DIR$/bin-debug/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml" />
+        <option value="$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_GroundCXML.xml" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_BTestingCXML.xml" />
         <option value="$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml" />
-        <option value="$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/WebMain.as" />
       </list>
     </option>
@@ -273,7 +243,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-12" />
     <option name="width" value="1023" />
     <option name="height" value="603" />
@@ -294,6 +264,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -301,11 +274,6 @@
             <path>
               <item name="Valor" type="b2602c69:ProjectViewProjectNode" />
               <item name="VotR-Client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Valor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VotR-Client" type="462c0819:PsiDirectoryNode" />
-              <item name="bin-debug" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Valor" type="b2602c69:ProjectViewProjectNode" />
@@ -337,9 +305,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -353,12 +318,12 @@
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\votr\VotR-Server2\VotR-Client\src\com\company\assembleegameclient\util" />
-      <recent name="C:\votr\VotR-Server2\VotR-Client\src\kabam\rotmg\game\view" />
-      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\kabam\rotmg\messaging\impl\outgoing" />
-      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\com\company\assembleegameclient\ui\panels" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\votr\VotR-Server2\VotR-Client\src\kabam\rotmg\assets" />
+      <recent name="C:\votr\VotR-Server2\VotR-Client\src\kabam\rotmg\ui\view\components" />
       <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\kabam\rotmg\assets" />
+      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\com\company\assembleegameclient\util" />
+      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\kabam\rotmg\markPurchaser" />
     </key>
     <key name="CreateActionScriptClassDialog.DESTINATION_PACKAGE_RECENT_KEY">
       <recent name="kabam.rotmg.messaging.impl.outgoing" />
@@ -367,12 +332,12 @@
       <recent name="kabam.rotmg.game.view.components" />
       <recent name="kabam.rotmg.game.view" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\votr\VotR-Server2\VotR-Client\src\kabam\rotmg\assets" />
-      <recent name="C:\votr\VotR-Server2\VotR-Client\src\kabam\rotmg\ui\view\components" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\votr\VotR-Server2\VotR-Client\src\com\company\assembleegameclient\util" />
+      <recent name="C:\votr\VotR-Server2\VotR-Client\src\kabam\rotmg\game\view" />
+      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\kabam\rotmg\messaging\impl\outgoing" />
+      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\com\company\assembleegameclient\ui\panels" />
       <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\kabam\rotmg\assets" />
-      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\com\company\assembleegameclient\util" />
-      <recent name="C:\Users\darkd\Desktop\VotRLegacy\VotR-Client\src\kabam\rotmg\markPurchaser" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -388,44 +353,11 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Valor" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="Valor" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="flex sdk 4.6" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="Player" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="C:/rotmg/flashplayer_13_sa_debug.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="Valor" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HEIGHT" value="0" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="WIDTH" value="0" />
       <module />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -461,6 +393,19 @@
       </option>
       <envs />
       <patterns />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -498,420 +443,48 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cae20479-2504-456f-8cba-82caff22139d" name="Default" comment="" />
-      <created>1505662924280</created>
+      <changelist id="8d5097e0-4f60-4fe1-b4f5-734bc1207c1d" name="Default" comment="" />
+      <created>1541731257692</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1505662924280</updated>
-      <workItem from="1505663106036" duration="910000" />
-      <workItem from="1505992973849" duration="3160000" />
-      <workItem from="1506199081201" duration="1853000" />
-      <workItem from="1506216239716" duration="1113000" />
-      <workItem from="1506261257016" duration="7177000" />
-      <workItem from="1506285672340" duration="4170000" />
-      <workItem from="1506306548931" duration="4037000" />
-      <workItem from="1506782278081" duration="4277000" />
-      <workItem from="1506810312522" duration="3222000" />
-      <workItem from="1506819255755" duration="19556000" />
-      <workItem from="1506900278898" duration="15562000" />
-      <workItem from="1507029262679" duration="164000" />
-      <workItem from="1507601580056" duration="481000" />
-      <workItem from="1507634450371" duration="6756000" />
-      <workItem from="1507720957618" duration="1209000" />
-      <workItem from="1508009535920" duration="2172000" />
-      <workItem from="1508086399509" duration="9535000" />
-      <workItem from="1508180944055" duration="6971000" />
-      <workItem from="1508288940375" duration="9197000" />
-      <workItem from="1508361018994" duration="2816000" />
-      <workItem from="1508547705816" duration="2773000" />
-      <workItem from="1508558434874" duration="1670000" />
-      <workItem from="1508599915222" duration="15917000" />
-      <workItem from="1508725407520" duration="2664000" />
-      <workItem from="1508757124125" duration="12621000" />
-      <workItem from="1508844201361" duration="6271000" />
-      <workItem from="1508887775505" duration="4728000" />
-      <workItem from="1508931525856" duration="10171000" />
-      <workItem from="1509017841120" duration="9188000" />
-      <workItem from="1509316637844" duration="1470000" />
-      <workItem from="1509400315506" duration="4217000" />
-      <workItem from="1509535192769" duration="10461000" />
-      <workItem from="1509622519399" duration="9163000" />
-      <workItem from="1509675858781" duration="1333000" />
-      <workItem from="1509708033499" duration="11636000" />
-      <workItem from="1509807903128" duration="25320000" />
-      <workItem from="1509848093832" duration="598000" />
-      <workItem from="1509854404604" duration="5038000" />
-      <workItem from="1509901690361" duration="12844000" />
-      <workItem from="1509933574184" duration="1603000" />
-      <workItem from="1510015033380" duration="4567000" />
-      <workItem from="1510057263926" duration="8695000" />
-      <workItem from="1510177217014" duration="1293000" />
-      <workItem from="1510277175596" duration="29223000" />
-      <workItem from="1510409917280" duration="3807000" />
-      <workItem from="1510432757875" duration="8450000" />
-      <workItem from="1510498055096" duration="8017000" />
-      <workItem from="1510541754832" duration="886000" />
-      <workItem from="1510607736662" duration="5996000" />
-      <workItem from="1510631141450" duration="3942000" />
-      <workItem from="1510711422735" duration="14594000" />
-      <workItem from="1510810940363" duration="5758000" />
-      <workItem from="1510957910002" duration="20932000" />
-      <workItem from="1511107499782" duration="14684000" />
-      <workItem from="1511151014229" duration="22090000" />
-      <workItem from="1511292738317" duration="14694000" />
-      <workItem from="1511335321485" duration="1951000" />
-      <workItem from="1511370621261" duration="12317000" />
-      <workItem from="1511474898539" duration="1971000" />
-      <workItem from="1511557080791" duration="1980000" />
-      <workItem from="1511584659149" duration="5514000" />
-      <workItem from="1511633952912" duration="1591000" />
-      <workItem from="1511720114178" duration="20825000" />
-      <workItem from="1511754279397" duration="353000" />
-      <workItem from="1511756473988" duration="623000" />
-      <workItem from="1511825317753" duration="34937000" />
-      <workItem from="1512390063420" duration="8948000" />
-      <workItem from="1512752202525" duration="12110000" />
-      <workItem from="1512841222296" duration="2601000" />
-      <workItem from="1512873082859" duration="138000" />
-      <workItem from="1512880251714" duration="623000" />
-      <workItem from="1512929128556" duration="15662000" />
-      <workItem from="1512968044236" duration="150000" />
-      <workItem from="1513468393551" duration="1276000" />
-      <workItem from="1513541683218" duration="2059000" />
-      <workItem from="1514001347622" duration="1168000" />
-      <workItem from="1514066324650" duration="2993000" />
-      <workItem from="1514328604755" duration="31000" />
-      <workItem from="1514607319559" duration="1873000" />
-      <workItem from="1514772387947" duration="1207000" />
-      <workItem from="1514782560330" duration="17514000" />
-      <workItem from="1514867985320" duration="3498000" />
-      <workItem from="1514875643312" duration="412000" />
-      <workItem from="1514876558035" duration="508000" />
-      <workItem from="1515017496077" duration="2964000" />
-      <workItem from="1515057912437" duration="209000" />
-      <workItem from="1516549470028" duration="1300000" />
-      <workItem from="1516552193446" duration="1706000" />
-      <workItem from="1516554361030" duration="447000" />
-      <workItem from="1517540081167" duration="544000" />
-      <workItem from="1517626231149" duration="20775000" />
-      <workItem from="1517713593090" duration="279000" />
-      <workItem from="1517719391017" duration="268000" />
-      <workItem from="1517721221944" duration="1187000" />
-      <workItem from="1517723936134" duration="256000" />
-      <workItem from="1517727304922" duration="4988000" />
-      <workItem from="1518121742387" duration="1927000" />
-      <workItem from="1518368726612" duration="488000" />
-      <workItem from="1518396121013" duration="257000" />
-      <workItem from="1518565842801" duration="1045000" />
-      <workItem from="1518934552081" duration="1342000" />
-      <workItem from="1519426147953" duration="1183000" />
-      <workItem from="1519492303251" duration="16432000" />
-      <workItem from="1519517660323" duration="366000" />
-      <workItem from="1519532548583" duration="190000" />
-      <workItem from="1519534183981" duration="230000" />
-      <workItem from="1519536391082" duration="738000" />
-      <workItem from="1519576242917" duration="6210000" />
-      <workItem from="1519592132660" duration="1980000" />
-      <workItem from="1519595575819" duration="902000" />
-      <workItem from="1519598000665" duration="268000" />
-      <workItem from="1519600028531" duration="423000" />
-      <workItem from="1519601343532" duration="80000" />
-      <workItem from="1529039523700" duration="451000" />
-      <workItem from="1529188247359" duration="14913000" />
-      <workItem from="1529310498909" duration="3794000" />
-      <workItem from="1529320400935" duration="120000" />
-      <workItem from="1529361865502" duration="2995000" />
-      <workItem from="1529374289376" duration="5864000" />
-      <workItem from="1529382676801" duration="219000" />
-      <workItem from="1529384644920" duration="1457000" />
-      <workItem from="1529391477736" duration="4780000" />
-      <workItem from="1529478180405" duration="7401000" />
-      <workItem from="1529495675087" duration="1671000" />
-      <workItem from="1529530536270" duration="9549000" />
-      <workItem from="1529548450831" duration="3218000" />
-      <workItem from="1529556390297" duration="16162000" />
-      <workItem from="1529719781731" duration="5112000" />
-      <workItem from="1529794470562" duration="7636000" />
-      <workItem from="1529824851963" duration="4485000" />
-      <workItem from="1529877686886" duration="4427000" />
-      <workItem from="1529910881371" duration="1197000" />
-      <workItem from="1529953402018" duration="4751000" />
-      <workItem from="1529975268731" duration="28934000" />
-      <workItem from="1530057276372" duration="1381000" />
-      <workItem from="1530159401640" duration="51019000" />
-      <workItem from="1530411549248" duration="1421000" />
-      <workItem from="1530443063188" duration="596000" />
-      <workItem from="1530487652606" duration="4057000" />
-      <workItem from="1530497034981" duration="13403000" />
-      <workItem from="1530531808220" duration="606000" />
-      <workItem from="1530568817427" duration="13522000" />
-      <workItem from="1530665425560" duration="41568000" />
-      <workItem from="1530864540936" duration="15933000" />
-      <workItem from="1531002512984" duration="28337000" />
-      <workItem from="1531046372489" duration="44000" />
-      <workItem from="1531090814017" duration="17798000" />
-      <workItem from="1531128138644" duration="4878000" />
-      <workItem from="1531139074897" duration="22000" />
-      <workItem from="1531150648987" duration="21538000" />
-      <workItem from="1531236870788" duration="17124000" />
-      <workItem from="1531276935970" duration="4491000" />
-      <workItem from="1531287854317" duration="110000" />
-      <workItem from="1531290778467" duration="593000" />
-      <workItem from="1531363427639" duration="9111000" />
-      <workItem from="1531376232209" duration="4513000" />
-      <workItem from="1531459312299" duration="729000" />
-      <workItem from="1531460902318" duration="1979000" />
-      <workItem from="1531548318020" duration="10834000" />
-      <workItem from="1531567624548" duration="125000" />
-      <workItem from="1531609924245" duration="10541000" />
-      <workItem from="1531629729880" duration="1348000" />
-      <workItem from="1531639496605" duration="32152000" />
-      <workItem from="1531808788332" duration="141000" />
-      <workItem from="1531810776033" duration="89000" />
-      <workItem from="1531869534192" duration="10003000" />
-      <workItem from="1531971146286" duration="3872000" />
-      <workItem from="1531978856590" duration="9895000" />
-      <workItem from="1532034431231" duration="20339000" />
-      <workItem from="1532096620377" duration="33493000" />
-      <workItem from="1532237723516" duration="15000" />
-      <workItem from="1532241871899" duration="20189000" />
-      <workItem from="1532321347533" duration="52000" />
-      <workItem from="1532402508805" duration="19523000" />
-      <workItem from="1532473697400" duration="16282000" />
-      <workItem from="1532570790306" duration="24134000" />
-      <workItem from="1532732564163" duration="25712000" />
-      <workItem from="1532782407237" duration="469000" />
-      <workItem from="1532782933889" duration="51000" />
-      <workItem from="1532783427102" duration="1373000" />
-      <workItem from="1532814418073" duration="15290000" />
-      <workItem from="1532858231719" duration="37000" />
-      <workItem from="1532914518835" duration="6591000" />
-      <workItem from="1532935262716" duration="7048000" />
-      <workItem from="1532948030837" duration="597000" />
-      <workItem from="1532991162107" duration="15640000" />
-      <workItem from="1533096318802" duration="8157000" />
-      <workItem from="1533111599065" duration="2349000" />
-      <workItem from="1533118268355" duration="5231000" />
-      <workItem from="1533182303553" duration="233000" />
-      <workItem from="1533186592933" duration="1685000" />
-      <workItem from="1533277831608" duration="3399000" />
-      <workItem from="1533356938371" duration="9096000" />
-      <workItem from="1533374245646" duration="436000" />
-      <workItem from="1533436258247" duration="1499000" />
-      <workItem from="1533550133283" duration="4920000" />
-      <workItem from="1533591272081" duration="12216000" />
-      <workItem from="1533629734486" duration="3527000" />
-      <workItem from="1533667014784" duration="50831000" />
-      <workItem from="1533813553397" duration="962000" />
-      <workItem from="1533816822623" duration="5012000" />
-      <workItem from="1533876023181" duration="1928000" />
-      <workItem from="1533991028023" duration="16421000" />
-      <workItem from="1534058059277" duration="4981000" />
-      <workItem from="1534118708711" duration="5707000" />
-      <workItem from="1534308191014" duration="325000" />
-      <workItem from="1534604687089" duration="76000" />
-      <workItem from="1534607343483" duration="7660000" />
-      <workItem from="1534624327428" duration="35000" />
-      <workItem from="1534670460678" duration="588000" />
-      <workItem from="1534977375152" duration="7891000" />
-      <workItem from="1535001089733" duration="524000" />
-      <workItem from="1535070561636" duration="16502000" />
-      <workItem from="1535224609990" duration="382000" />
-      <workItem from="1535429262861" duration="606000" />
-      <workItem from="1535431260939" duration="1892000" />
-      <workItem from="1535475611118" duration="1471000" />
-      <workItem from="1535483511890" duration="4129000" />
-      <workItem from="1535509364087" duration="1729000" />
-      <workItem from="1535511517560" duration="3144000" />
-      <workItem from="1535517117977" duration="953000" />
-      <workItem from="1535523024854" duration="365000" />
-      <workItem from="1535523870635" duration="6034000" />
-      <workItem from="1535570148209" duration="652000" />
-      <workItem from="1535571362935" duration="370000" />
-      <workItem from="1535573063992" duration="3652000" />
-      <workItem from="1535581829572" duration="220000" />
-      <workItem from="1535587119944" duration="3233000" />
-      <workItem from="1535592551453" duration="118000" />
-      <workItem from="1535595385024" duration="784000" />
-      <workItem from="1535651291932" duration="7319000" />
-      <workItem from="1535666623976" duration="1339000" />
-      <workItem from="1535677217201" duration="1819000" />
-      <workItem from="1535682089322" duration="374000" />
-      <workItem from="1535683919985" duration="639000" />
-      <workItem from="1535684844344" duration="892000" />
-      <workItem from="1535686067367" duration="1195000" />
-      <workItem from="1535702244178" duration="1130000" />
-      <workItem from="1535709598072" duration="5000" />
-      <workItem from="1535711161157" duration="1005000" />
-      <workItem from="1535715725273" duration="754000" />
-      <workItem from="1535716649243" duration="1264000" />
-      <workItem from="1535718126766" duration="91000" />
-      <workItem from="1535719848697" duration="407000" />
-      <workItem from="1535720658569" duration="210000" />
-      <workItem from="1535721114524" duration="171000" />
-      <workItem from="1535721580742" duration="409000" />
-      <workItem from="1535722234186" duration="764000" />
-      <workItem from="1535723542347" duration="197000" />
-      <workItem from="1535724595048" duration="710000" />
-      <workItem from="1535725863316" duration="71000" />
-      <workItem from="1535752137330" duration="133000" />
-      <workItem from="1535752486429" duration="214000" />
-      <workItem from="1535753556903" duration="1414000" />
-      <workItem from="1535755611953" duration="170000" />
-      <workItem from="1535760594214" duration="767000" />
-      <workItem from="1535763601157" duration="708000" />
-      <workItem from="1535766184678" duration="538000" />
-      <workItem from="1535767893456" duration="1348000" />
-      <workItem from="1535770197866" duration="425000" />
-      <workItem from="1535770849031" duration="347000" />
-      <workItem from="1535782908327" duration="113000" />
-      <workItem from="1535801963664" duration="790000" />
-      <workItem from="1535805724365" duration="781000" />
-      <workItem from="1535807726280" duration="78000" />
-      <workItem from="1535842904577" duration="1519000" />
-      <workItem from="1535846276652" duration="221000" />
-      <workItem from="1535867500188" duration="544000" />
-      <workItem from="1535868949285" duration="6219000" />
-      <workItem from="1535882490623" duration="122000" />
-      <workItem from="1535882858509" duration="153000" />
-      <workItem from="1535883259437" duration="2065000" />
-      <workItem from="1535893572887" duration="119000" />
-      <workItem from="1535975855369" duration="84000" />
-      <workItem from="1535978459435" duration="176000" />
-      <workItem from="1536021998919" duration="1081000" />
-      <workItem from="1536340238149" duration="2715000" />
-      <workItem from="1536386609182" duration="455000" />
-      <workItem from="1536389041532" duration="210000" />
-      <workItem from="1536423542766" duration="2412000" />
-      <workItem from="1536429923937" duration="738000" />
-      <workItem from="1536593805371" duration="249000" />
-      <workItem from="1536666504166" duration="1377000" />
-      <workItem from="1536744398131" duration="1027000" />
-      <workItem from="1536763553438" duration="3500000" />
-      <workItem from="1536792285326" duration="232000" />
-      <workItem from="1536792954938" duration="552000" />
-      <workItem from="1536794159621" duration="589000" />
-      <workItem from="1536831986636" duration="687000" />
-      <workItem from="1536838954356" duration="755000" />
-      <workItem from="1536918310930" duration="91000" />
-      <workItem from="1536920028167" duration="369000" />
-      <workItem from="1536920650649" duration="646000" />
-      <workItem from="1536939229773" duration="185000" />
-      <workItem from="1536951019137" duration="2010000" />
-      <workItem from="1537015728021" duration="832000" />
-      <workItem from="1537017021870" duration="2427000" />
-      <workItem from="1537275920069" duration="686000" />
-      <workItem from="1537280862251" duration="945000" />
-      <workItem from="1537294373423" duration="1482000" />
-      <workItem from="1537298043415" duration="128000" />
-      <workItem from="1537303640611" duration="464000" />
-      <workItem from="1537390049828" duration="427000" />
-      <workItem from="1537469661538" duration="156000" />
-      <workItem from="1537469959584" duration="195000" />
-      <workItem from="1537541166988" duration="120000" />
-      <workItem from="1537564121101" duration="985000" />
-      <workItem from="1537565673531" duration="901000" />
-      <workItem from="1537613343090" duration="1159000" />
-      <workItem from="1537627004131" duration="572000" />
-      <workItem from="1537628760506" duration="1307000" />
-      <workItem from="1537648007156" duration="164000" />
-      <workItem from="1537705597268" duration="101000" />
-      <workItem from="1537706115991" duration="251000" />
-      <workItem from="1537712289742" duration="2025000" />
-      <workItem from="1537981537527" duration="1400000" />
-      <workItem from="1537984769388" duration="231000" />
-      <workItem from="1538057871553" duration="519000" />
-      <workItem from="1538058995228" duration="1812000" />
-      <workItem from="1538066850843" duration="4683000" />
-      <workItem from="1538074658059" duration="7000" />
-      <workItem from="1538145626780" duration="84000" />
-      <workItem from="1538145948329" duration="202000" />
-      <workItem from="1538160397423" duration="517000" />
-      <workItem from="1538162601381" duration="121000" />
-      <workItem from="1538171658242" duration="126000" />
-      <workItem from="1538498272040" duration="211000" />
-      <workItem from="1538501916114" duration="702000" />
-      <workItem from="1538945445042" duration="367000" />
-      <workItem from="1538946348250" duration="919000" />
-      <workItem from="1538953990878" duration="172000" />
-      <workItem from="1539035639611" duration="184000" />
-      <workItem from="1539037690184" duration="1595000" />
-      <workItem from="1539042553036" duration="1070000" />
-      <workItem from="1539050713065" duration="1928000" />
-      <workItem from="1539088298542" duration="1598000" />
-      <workItem from="1539099537160" duration="2635000" />
-      <workItem from="1539111857911" duration="2965000" />
-      <workItem from="1539117884934" duration="2990000" />
-      <workItem from="1539265438873" duration="1966000" />
-      <workItem from="1539268986770" duration="80000" />
-      <workItem from="1539269530167" duration="122000" />
-      <workItem from="1539269784008" duration="5935000" />
-      <workItem from="1539392158040" duration="7244000" />
-      <workItem from="1539430067692" duration="1429000" />
-      <workItem from="1539623658754" duration="1236000" />
-      <workItem from="1539701503248" duration="554000" />
-      <workItem from="1539702903796" duration="481000" />
-      <workItem from="1539704705717" duration="2158000" />
-      <workItem from="1539708616753" duration="158000" />
-      <workItem from="1539712570464" duration="73000" />
-      <workItem from="1539712742749" duration="53000" />
-      <workItem from="1539718127433" duration="1212000" />
-      <workItem from="1539807537533" duration="663000" />
-      <workItem from="1539821518614" duration="853000" />
-      <workItem from="1539823348831" duration="829000" />
-      <workItem from="1539824363289" duration="1375000" />
-      <workItem from="1539888801881" duration="603000" />
-      <workItem from="1539890724783" duration="243000" />
-      <workItem from="1539900720097" duration="513000" />
-      <workItem from="1539958743410" duration="510000" />
-      <workItem from="1539974047462" duration="569000" />
-      <workItem from="1540000532581" duration="708000" />
-      <workItem from="1540001279920" duration="270000" />
-      <workItem from="1540004358271" duration="736000" />
-      <workItem from="1540672215294" duration="4807000" />
-      <workItem from="1540724347270" duration="582000" />
-      <workItem from="1540766409530" duration="2725000" />
-      <workItem from="1540943366823" duration="96000" />
-      <workItem from="1541201889686" duration="632000" />
-      <workItem from="1541220639131" duration="60000" />
-      <workItem from="1541270758470" duration="711000" />
-      <workItem from="1541369888136" duration="586000" />
+      <updated>1541731257692</updated>
+      <workItem from="1541731272632" duration="2313000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1671177000" />
+    <option name="totallyTimeSpent" value="1700561000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24791667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -939,28 +512,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/util/RandomUtil.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/util/FreeList.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebMain.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="112" column="24" lean-forward="true" selection-start-line="112" selection-start-column="24" selection-end-line="112" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/view/GlobalArenaInformation.as" />
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/game/view/CreditDisplayMediator.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1180,7 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1666">
           <caret line="108" column="43" lean-forward="false" selection-start-line="108" selection-start-column="43" selection-end-line="108" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1190,15 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/tooltip/EquipmentToolTip.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1206,54 +747,123 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="30" column="46" lean-forward="false" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/messaging/impl/GameServerConnectionConcrete.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6511">
-          <caret line="638" column="89" lean-forward="false" selection-start-line="638" selection-start-column="89" selection-end-line="638" selection-end-column="89" />
+        <state relative-caret-position="0">
+          <caret line="637" column="9" lean-forward="false" selection-start-line="637" selection-start-column="9" selection-end-line="637" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/pets/PetsConfig.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="114" column="29" lean-forward="false" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/ui/tooltip/EquipmentToolTip.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="644" column="73" lean-forward="false" selection-start-line="644" selection-start-column="73" selection-end-line="644" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin-debug/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="30242" column="47" lean-forward="false" selection-start-line="30242" selection-start-column="30" selection-end-line="30242" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_GroundCXML.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="5405" column="0" lean-forward="false" selection-start-line="5389" selection-start-column="0" selection-end-line="5405" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="793">
+          <caret line="945" column="10" lean-forward="false" selection-start-line="945" selection-start-column="10" selection-end-line="945" selection-end-column="10" />
+          <folding>
+            <marker date="1541735497679" expanded="true" signature="55132:55151" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="55132:55169" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="55132:55182" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="55132:55197" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="55232:57389" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="55245:57374" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="55299:55601" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="55318:55586" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="55381:55566" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="55421:55532" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="55442:55510" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="55651:55985" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="55670:55970" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="55765:55950" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="55805:55916" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="55826:55894" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="56036:56308" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="56055:56293" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="56088:56273" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="56128:56239" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="56149:56217" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="56351:56664" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="56370:56649" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="56444:56629" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="56484:56595" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="56505:56573" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="56715:57036" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="56734:57021" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="56816:57001" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="56856:56967" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="56877:56945" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="57088:57360" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="57107:57345" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="57140:57325" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="57180:57291" ph="..." />
+            <marker date="1541735497679" expanded="true" signature="57201:57269" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="6062" column="74" lean-forward="false" selection-start-line="6062" selection-start-column="74" selection-end-line="6062" selection-end-column="74" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_BTestingCXML.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98957">
-          <caret line="5821" column="31" lean-forward="false" selection-start-line="5821" selection-start-column="31" selection-end-line="5821" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/assets/EmbeddedData_EquipCXML.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580431">
-          <caret line="34143" column="38" lean-forward="false" selection-start-line="34143" selection-start-column="38" selection-end-line="34143" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kabam/rotmg/pets/PetsConfig.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="114" column="29" lean-forward="false" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/assembleegameclient/parameters/Parameters.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="30" column="46" lean-forward="false" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+        <state relative-caret-position="4522">
+          <caret line="18841" column="30" lean-forward="true" selection-start-line="18841" selection-start-column="30" selection-end-line="18841" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WebMain.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="162" column="9" lean-forward="false" selection-start-line="162" selection-start-column="9" selection-end-line="162" selection-end-column="9" />
+        <state relative-caret-position="299">
+          <caret line="113" column="29" lean-forward="false" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
           <folding />
         </state>
       </provider>

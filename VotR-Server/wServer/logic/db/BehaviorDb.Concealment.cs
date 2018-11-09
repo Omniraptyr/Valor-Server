@@ -13,7 +13,7 @@ namespace wServer.logic
                     new ScaleHP(35000),
                     new RealmPortalDrop(),
                     new State("default",
-                        new PlayerWithinTransition(8, "fight1")
+                        new PlayerWithinTransition(14, "fight1")
                         ),
                     new State("fight1",
                         new Taunt(1.00, "....*silent tone*......"),

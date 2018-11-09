@@ -1291,7 +1291,7 @@ namespace wServer.realm.commands
 
     internal class MaxCommand : Command
     {
-        public MaxCommand() : base("max", permLevel: 80) { }
+        public MaxCommand() : base("max", permLevel: 50) { }
 
         protected override bool Process(Player player, RealmTime time, string args)
         {

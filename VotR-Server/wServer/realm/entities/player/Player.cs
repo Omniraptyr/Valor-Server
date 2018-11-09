@@ -812,13 +812,13 @@ namespace wServer.realm.entities
                 RageBar = 100;
             if (owner.Name.Equals("UltraSummoningPoint"))
                 RageBar = 100;
-            if ((owner.Name.Equals("BastilleofDrannol") 
+           /* if ((owner.Name.Equals("BastilleofDrannol") 
                  || owner.Name.Equals("AldraginesHideout") 
                  || owner.Name.Equals("UltraAldraginesHideout"))
                  && owner.Opener != Name) {
-                Client.Manager.Database.UpdateCredit(Client.Account, -3000);
+                Client.Manager.Database.UpdateCredit(Client.Account, -1000);
                 this.ForceUpdate(Credits);
-            }
+            }*/
             if (owner.Name.Equals("Nexus"))
             {
                 int amount = (int)Math.Min(Math.Floor(Stats[10] / 90d * 6), 6);

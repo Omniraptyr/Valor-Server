@@ -907,6 +907,7 @@
         <Size>150</Size>
         <MaxHitPoints>65000</MaxHitPoints>
         <Defense>50</Defense>
+        <Quest/>
         <Projectile id="0">
             <ObjectId>Purple Star</ObjectId>
             <Damage>40</Damage>
@@ -17251,24 +17252,6 @@
         <OccupySquare/>
         <EnemyOccupySquare/>
     </Object>
-    <Object type="0x6742" id="CGarden Rock Wall">
-        <Class>Wall</Class>
-        <Texture>
-            <File>legendaries8x8Embed</File>
-            <Index>0x180</Index>
-        </Texture>
-        <Top>
-            <Texture>
-                <File>legendaries8x8Embed</File>
-                <Index>0x181</Index>
-            </Texture>
-        </Top>
-        <Static/>
-        <FullOccupy/>
-        <OccupySquare/>
-        <EnemyOccupySquare/>
-        <BlocksSight/>
-    </Object>
     <Object type="0x6774" id="Chomper">
         <Enemy/>
         <Group>CGarden Big</Group>
@@ -17362,6 +17345,7 @@
     <Object type="0x677a" id="The Y-Eater">
         <DisplayId>The Y-Eater</DisplayId>
         <Enemy/>
+        <XpMult>0.0</XpMult>
         <AnimatedTexture>
             <File>mountainTempleChars8x8</File>
             <Index>14</Index>
@@ -18060,7 +18044,7 @@
         <RateOfFire>1.3</RateOfFire>
         <Sound>weapon/golden_bow</Sound>
         <Projectile>
-            <ObjectId>Venomstrike Shot</ObjectId>
+            <ObjectId>Viperstring Shot</ObjectId>
             <Speed>100</Speed>
             <MinDamage>150</MinDamage>
             <MaxDamage>220</MaxDamage>
@@ -18127,10 +18111,10 @@
             <EffectInfo name="Sprited by" description="BLOODQWEN"/>
         </ExtraTooltipData>
         <Description>A petal plucked from the chest of Vitalia.</Description>
-        <ActivateOnEquip stat="0" amount="150">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
         <ActivateOnEquip stat="26" amount="20">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
-        <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
         <BagType>6</BagType>
         <FameBonus>6</FameBonus>
     </Object>
@@ -18202,7 +18186,6 @@
         <MpCost>120</MpCost>
         <Activate radius="5" totalDamage="400">VampireBlast</Activate>
         <feedPower>250</feedPower>
-        <Soulbound/>
         <DisplayId>Skull of Lenin</DisplayId>
     </Object>
     <Object type="0x6770" id="CGarden Lenin Wall">
@@ -18241,5 +18224,658 @@
         <Defense>35</Defense>
         <Size>160</Size>
         <XpMult>0.0</XpMult>
-    </Object>// last index used 0x677e
+    </Object>
+    <Object type="0x678c" id="shtrs Crystal Tracker">
+        <Class>Character</Class>
+        <StasisImmune/>
+        <NoMiniMap/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/skeletons_hit</HitSound>
+        <DeathSound>monster/dwarves_death</DeathSound>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Size>0</Size>
+        <Defense>0</Defense>
+        <XpMult>0.0</XpMult>
+        <ShadowSize>0</ShadowSize>
+        <DisplayId>shtrs Crystal Tracker</DisplayId>
+    </Object>
+    <Object type="0x678d" id="shtrs king timer">
+        <DisplayId>shtrs king timer</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <Class>Character</Class>
+        <NoMiniMap/>
+        <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x678e" id="shtrs king lava1">
+        <Group>Trap</Group>
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>0</Defense>
+        <DrawOnGround/>
+        <NoMiniMap/>
+        <DisplayId>shtrs king lava1</DisplayId>
+    </Object>
+    <Object type="0x678f" id="shtrs king lava2">
+        <Group>Trap</Group>
+        <Enemy/>
+        <Class>Character</Class>
+        <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+        </Texture>
+        <HitSound>monster/traps_hit</HitSound>
+        <DeathSound>monster/traps_death</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>99999</MaxHitPoints>
+        <Defense>0</Defense>
+        <DrawOnGround/>
+        <NoMiniMap/>
+        <DisplayId>shtrs king lava2</DisplayId>
+    </Object>
+    <Object type="0x6790" id="CGarden Boulder">
+        <DisplayId>CGarden Boulder</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>d1lofiObjBig</File>
+            <Index>0x18</Index>
+        </Texture>
+        <Class>Character</Class>
+        <Size>100</Size>
+        <Projectile id="0">
+            <ObjectId>CGarden Boulder Projectile</ObjectId>
+            <Damage>500</Damage>
+            <Speed>65</Speed>
+            <MultiHit/>
+            <Size>180</Size>
+            <ArmorPiercing/>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+        <NoMiniMap/>
+        <ShadowSize>0</ShadowSize>
+        <MaxHitPoints>0</MaxHitPoints>
+        <OccupySquare/>
+    </Object>
+    <Object type="0x6791" id="CGarden Skull Fountain">
+        <DisplayId>Skull Fountain</DisplayId>
+        <Class>Character</Class>
+        <Enemy/>
+        <Texture>
+            <File>d1lofiObjBig</File>
+            <Index>0x19</Index>
+        </Texture>
+        <Size>100</Size>
+        <ShadowSize>0</ShadowSize>
+        <Animation prob="1" period="0">
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x19</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x1a</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x1b</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x1c</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x1d</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x1e</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x1f</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x20</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x21</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x22</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x23</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x24</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x25</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x26</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x27</Index>
+                </Texture>
+            </Frame>
+        </Animation>
+    </Object>
+    <Object type="0x6792" id="CGarden Skull Fountain Loop">
+        <DisplayId>Skull Fountain</DisplayId>
+        <Class>Character</Class>
+        <Enemy/>
+        <Texture>
+            <File>d1lofiObjBig</File>
+            <Index>0x26</Index>
+        </Texture>
+        <Size>100</Size>
+        <ShadowSize>0</ShadowSize>
+        <Animation prob="1" period="0">
+            <Frame time="0.8">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x26</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d1lofiObjBig</File>
+                    <Index>0x27</Index>
+                </Texture>
+            </Frame>
+        </Animation>
+    </Object>
+    <Object type="0x6793" id="CGarden Skull wait">
+        <DisplayId>Skull Fountain</DisplayId>
+        <Class>Character</Class>
+        <Enemy/>
+        <Texture>
+            <File>d1lofiObjBig</File>
+            <Index>0x19</Index>
+        </Texture>
+        <Size>100</Size>
+        <ShadowSize>0</ShadowSize>
+    </Object>
+    <Object type="0x6794" id="CGarden Spinner Projectile">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1fa</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x6795" id="CGarden Spikes Projectile">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1fb</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x6796" id="CGarden Spike Projectile">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1fc</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x6797" id="CGarden Boulder Projectile">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>lofiObjBig</File>
+            <Index>0x1fd</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x6798" id="Granithia">
+        <DisplayId>Granithia</DisplayId>
+        <Enemy/>
+        <ParalyzeImmune/>
+        <DazedImmune/>
+        <StasisImmune/>
+        <StunImmune/>
+        <SlowImmune/>
+        <AnimatedTexture>
+            <File>d3Chars16x16rEmbedAlt</File>
+            <Index>0x08</Index>
+        </AnimatedTexture>
+        <Class>Character</Class>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>500000</MaxHitPoints>
+        <Defense>60</Defense>
+        <Projectile id="0">
+            <ObjectId>CGarden Spinner Projectile</ObjectId>
+            <Damage>160</Damage>
+            <Speed>85</Speed>
+            <MultiHit/>
+            <Size>200</Size>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+            <ArmorPiercing/>
+            <LifetimeMS>20000</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>CGarden Spikes Projectile</ObjectId>
+            <Damage>80</Damage>
+            <Speed>80</Speed>
+            <Size>160</Size>
+            <ConditionEffect duration="3">Bleeding</ConditionEffect>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+        <Projectile id="2">
+            <ObjectId>CGarden Spike Projectile</ObjectId>
+            <Damage>200</Damage>
+            <Speed>35</Speed>
+            <MultiHit/>
+            <Size>160</Size>
+            <ConditionEffect duration="1.5">Stunned</ConditionEffect>
+            <LifetimeMS>3000</LifetimeMS>
+        </Projectile>
+        <Projectile id="3">
+            <ObjectId>CGarden Boulder Projectile</ObjectId>
+            <Damage>500</Damage>
+            <Speed>45</Speed>
+            <MultiHit/>
+            <Size>180</Size>
+            <ArmorPiercing/>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+        <Projectile id="4">
+            <ObjectId>Granithia Random Split yes</ObjectId>
+            <Damage>125</Damage>
+            <Speed>75</Speed>
+            <MultiHit/>
+            <Size>90</Size>
+            <ArmorPiercing/>
+            <LifetimeMS>7500</LifetimeMS>
+        </Projectile>
+        <Projectile id="5">
+            <ObjectId>Granithia Random Split red no</ObjectId>
+            <Damage>125</Damage>
+            <Speed>75</Speed>
+            <MultiHit/>
+            <Size>90</Size>
+            <ArmorPiercing/>
+            <ConditionEffect duration="1.5">Bleeding</ConditionEffect>
+            <LifetimeMS>7500</LifetimeMS>
+        </Projectile>
+        <Projectile id="6">
+            <ObjectId>Granithia Ball</ObjectId>
+            <Speed>30</Speed>
+            <Damage>75</Damage>
+            <LifetimeMS>10000</LifetimeMS>
+            <Parametric/>
+            <ArmorPiercing/>
+            <MultiHit/>
+        </Projectile>
+    </Object>
+    <Object type="0x6799" id="Granithia Random Split yes">
+        <Class>Projectile</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x45f</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x464</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x465</Index>
+            </Texture>
+        </RandomTexture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x679a" id="Granithia Bomb">
+        <Class>Character</Class>
+        <DisplayId>Granithia Bomb</DisplayId>
+        <Enemy/>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x466</Index>
+        </Texture>
+        <Animation prob="1" period="0">
+            <Frame time="0.2">
+                <Texture>
+                    <File>d3LofiObjEmbed</File>
+                    <Index>0x466</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d3LofiObjEmbed</File>
+                    <Index>0x467</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d3LofiObjEmbed</File>
+                    <Index>0x468</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.2">
+                <Texture>
+                    <File>d3LofiObjEmbed</File>
+                    <Index>0x469</Index>
+                </Texture>
+            </Frame>
+            <Frame time="0.5">
+                <Texture>
+                    <File>d3LofiObjEmbed</File>
+                    <Index>0x46a</Index>
+                </Texture>
+            </Frame>
+        </Animation>
+        <Projectile id="0">
+            <ObjectId>Granithia BombBlast</ObjectId>
+            <Speed>20</Speed>
+            <Damage>150</Damage>
+            <Size>150</Size>
+            <LifetimeMS>1500</LifetimeMS>
+            <MultiHit/>
+        </Projectile>
+        <MaxHitPoints>10</MaxHitPoints>
+        <XpMult>0.0</XpMult>
+        <Size>100</Size>
+    </Object>
+    <Object type="0x679b" id="Granithia BombBlast">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x46b</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x679c" id="Granithia Random Split red no">
+        <Class>Projectile</Class>
+        <RandomTexture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x46c</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x46d</Index>
+            </Texture>
+            <Texture>
+                <File>d3LofiObjEmbed</File>
+                <Index>0x46e</Index>
+            </Texture>
+        </RandomTexture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x679d" id="Servant of Granithia">
+        <DisplayId>Servant of Granithia</DisplayId>
+        <Enemy/>
+        <AnimatedTexture>
+            <File>mountainTempleChars8x8</File>
+            <Index>15</Index>
+        </AnimatedTexture>
+        <Class>Character</Class>
+        <HitSound>monster/default_hit</HitSound>
+        <DeathSound>spell/fire_spray</DeathSound>
+        <Size>100</Size>
+        <MaxHitPoints>12500</MaxHitPoints>
+        <Defense>20</Defense>
+        <Projectile id="0">
+            <ObjectId>SoG Flame</ObjectId>
+            <Damage>55</Damage>
+            <Speed>25</Speed>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <Size>140</Size>
+            <ConditionEffect duration="2">Bleeding</ConditionEffect>
+            <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
+            <LifetimeMS>4500</LifetimeMS>
+        </Projectile>
+        <Projectile id="1">
+            <ObjectId>SoG Ball</ObjectId>
+            <Damage>50</Damage>
+            <Speed>75</Speed>
+            <MultiHit/>
+            <ArmorPiercing/>
+            <Size>90</Size>
+            <ConditionEffect duration="5">Darkness</ConditionEffect>
+            <LifetimeMS>6000</LifetimeMS>
+        </Projectile>
+    </Object>
+    <Object type="0x679e" id="SoG Flame">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x46f</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
+    <Object type="0x679f" id="SoG Ball">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x474</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x67a0" id="Granithia Ball">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>d3LofiObjEmbed</File>
+            <Index>0x475</Index>
+        </Texture>
+        <Rotation>100</Rotation>
+    </Object>
+    <Object type="0x6742" id="CGarden Wall Rock">
+        <Class>Wall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x1bc</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x1bd</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x1be</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x1bf</Index>
+            </Texture>
+        </Top>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+        <DisplayId>CGarden Wall Rock</DisplayId>
+    </Object>
+    <Object type="0x67a1" id="CGarden Wall Rock N">
+        <Class>Wall</Class>
+        <RandomTexture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x1c3</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x1c4</Index>
+            </Texture>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x1c5</Index>
+            </Texture>
+        </RandomTexture>
+        <Top>
+            <Texture>
+                <File>legendaries8x8Embed</File>
+                <Index>0x1bf</Index>
+            </Texture>
+        </Top>
+        <Static/>
+        <FullOccupy/>
+        <OccupySquare/>
+        <EnemyOccupySquare/>
+        <BlocksSight/>
+        <DisplayId>CGarden Wall Rock N</DisplayId>
+    </Object>
+    <Object type="0x67a2" id="Amulet of Granithia">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1c6</Index>
+        </Texture>
+        <SlotType>9</SlotType>
+        <Description>A gem plucked off of the crown of Granithia hung gracefully on a band of rock.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <DisplayId>Amulet of Granithia</DisplayId>
+    </Object>
+    <Object type="0x67a3" id="Granithia's Garments">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1c7</Index>
+        </Texture>
+        <SlotType>14</SlotType>
+        <Description>You can feel the strength of Granithia embedded in this robe.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <ActivateOnEquip stat="0" amount="240">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="24">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <DisplayId>Granithia's Garments</DisplayId>
+    </Object>
+    <Object type="0x67a4" id="Stone-Forged Spear">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1c8</Index>
+        </Texture>
+        <SlotType>23</SlotType>
+        <Description>A sharpened spear that shatters your enemies.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <Sound>spell/magic_nova</Sound>
+        <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
+        <Usable/>
+        <BagType>6</BagType>
+        <MpCost>100</MpCost>
+        <Activate totalDamage="2500" maxTargets="1" condEffect="ArmorBroken" condDuration="3" color="0x808080">Lightning
+        </Activate>
+        <DisplayId>Stone-Forged Spear</DisplayId>
+    </Object>
+    <Object type="0x67a5" id="Granithia's Blaster">
+        <Class>Equipment</Class>
+        <Item/>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1c9</Index>
+        </Texture>
+        <SlotType>8</SlotType>
+        <Description>A wand capable of leveling a mountain in an instant.</Description>
+        <ExtraTooltipData>
+            <EffectInfo name="Sprited by" description="BLOODQWEN"/>
+        </ExtraTooltipData>
+        <RateOfFire>1</RateOfFire>
+        <Sound>weapon/wand_of_death</Sound>
+        <Projectile>
+            <ObjectId>Granithia Blaster Shot</ObjectId>
+            <Speed>140</Speed>
+            <LifetimeMS>600</LifetimeMS>
+            <MinDamage>180</MinDamage>
+            <MaxDamage>280</MaxDamage>
+            <MultiHit/>
+            <Wavy/>
+        </Projectile>
+        <ActivateOnEquip stat="0" amount="90">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="21" amount="14">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+        <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
+        <BagType>6</BagType>
+        <FameBonus>6</FameBonus>
+        <OldSound>magicShoot</OldSound>
+    </Object>
+    <Object type="0x67a6" id="Granithia Blaster Shot">
+        <Class>Projectile</Class>
+        <Texture>
+            <File>legendaries8x8Embed</File>
+            <Index>0x1ca</Index>
+        </Texture>
+        <AngleCorrection>1</AngleCorrection>
+    </Object>
 </Objects>
